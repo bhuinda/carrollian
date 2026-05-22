@@ -1,57 +1,45 @@
-# Gnatural verifier
+# Q* verifier
 
-One-command certificate:
+This is the v38 audit-grade verifier for the finite Q* / Natural Object certificate stack.
 
-```powershell
-.\certify.ps1
+## Run
+
+```bash
+python certify.py --mode fast --pretty
+python certify.py --mode audit --pretty
+python certify.py --mode rebuild --pretty
 ```
 
-Pretty certificate:
+Expected headline:
 
-```powershell
-.\certify.ps1 -Pretty -Out .\certificate.pretty.json
+```text
+QSTAR_VERIFIER_FULL_CERTIFIED
 ```
 
-The default command is non-stalling. Heavy categorical lifts are explicit opt-in commands.
+## Tamper tests
 
-Generate concrete relation memberships, if source generation is desired:
-
-```powershell
-.\certify.ps1 -GenerateRelations -GenerateBe3 -Pretty -Out .\certificate.pretty.json
+```bash
+python tests/tamper_tests.py
 ```
 
-Generate F-symbol chain-set samples after relation memberships exist:
+The test suite mutates the root certificate, a layer certificate, a raw array, a manifest, and a theorem-status guardrail. Each mutation must be rejected.
 
-```powershell
-.\certify.ps1 -GenerateFSymbols -FSymbolSampleLimit 32 -Pretty -Out .\certificate.pretty.json
+## Release signature
+
+```bash
+python tools/verify_release_signature.py
 ```
 
-Generate F-symbol left/right basis orderings and sparse permutation samples after relation memberships exist:
+The signature is a detached OpenSSL signature over `release/SHA256SUMS.txt`. It verifies integrity of the release checksum ledger using the included public key. Trust in the key itself is external to this bundle.
 
-```powershell
-.\certify.ps1 -GenerateFPermutations -FPermutationSampleLimit 32 -Pretty -Out .\certificate.pretty.json
+## Appendix export
+
+```bash
+python tools/export_appendix.py
 ```
 
-The certificate records the exact boundary between the finite K0 object, the incidence multiplicity skeleton, the relation-membership generator, the F-symbol chain-set generator, and the F-symbol permutation-sample generator.
+This writes TeX appendix tables under `appendices/`.
 
-### Optional C985 full F-symbol inventory manifest
+## Guardrails
 
-After concrete relation memberships have been generated, a chunked inventory manifest for associator/F-symbol domains can be generated explicitly:
-
-```powershell
-.\certify.ps1 -GenerateRelations -GenerateBe3
-.\certify.ps1 -GenerateFInventory -FInventoryChunkLimit 100000 -Pretty -Out .\certificate.pretty.json
-```
-
-The default `./certify.ps1` remains non-stalling and does not generate the full inventory by default.
-
-### Optional C985 full F-symbol inventory manifest
-
-After concrete relation memberships have been generated, a chunked inventory manifest for associator/F-symbol domains can be generated explicitly:
-
-```powershell
-.\certify.ps1 -GenerateRelations -GenerateBe3
-.\certify.ps1 -GenerateFInventory -FInventoryChunkLimit 100000 -Pretty -Out .\certificate.pretty.json
-```
-
-The default `./certify.ps1` remains non-stalling and does not generate the full inventory by default.
+The verifier certifies the finite stack and its obstruction results. It does not claim Golay independence from the Golay-conditioned source, a nontrivial strict modular S,T pair, or row canonicity from pair-octad/Wu/6j data alone.

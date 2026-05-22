@@ -1,0 +1,174 @@
+{
+  "schema": "gnatural.c985.derived_line_surface_trace.v1",
+  "status": "DERIVED_LINE_SURFACE_TRACE_OPERATOR_CERTIFIED",
+  "field": {
+    "prime": 1000003
+  },
+  "interpretation": {
+    "construction": "4d-inspired categorical line-surface trace, diagonal only after Drinfeld/Wedderburn spectral reduction",
+    "not_a_modular_S_matrix": true,
+    "not_a_raw_line_line_Hopf_operator": true,
+    "operator_type": "derived diagonal spectral surface operator",
+    "formula_Lambda42": "Lambda42[i,K] = d_i^{-1} * sum_{a:q42(a)=K} chi_i(R_a) over F_1000003",
+    "formula_Lambda12": "Lambda12[i,K] = d_i^{-1} * sum_{a:q12(a)=K} chi_i(R_a) over F_1000003"
+  },
+  "inputs": {
+    "drinfeld_full_A985_lift_sha256": "32b6e7c865e15a17ec54448e02c1bf0163491387c03ee28e8734471f29be72fc",
+    "twist_completion_test_sha256": "61003fcd99476b2315aec9ae66ac9eb83c9d2cf56b1ea50bbbd5ec65f0c5dce8",
+    "character_table_sha256": "3751bdba9b90c17c6f5658fe45d1d4d76d1692ed8a84ea5e0cc78338245cab34",
+    "E_full_sha256": "e9066713580845e187b29aaa41b148581e6c43266f993a010b3a192e4d41c8c7"
+  },
+  "pairings": {
+    "Lambda42_shape": [
+      39,
+      42
+    ],
+    "Lambda42_sha256": "06636c96a75c649bed85d31b03f4f24eb10011163849bf08f0e8b40fdb23ff11",
+    "Lambda42_nonzero_entries": 168,
+    "Lambda42_nonzero_columns": 12,
+    "Lambda42_class_sizes_first_12": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      32,
+      15,
+      13,
+      85,
+      43,
+      103
+    ],
+    "Lambda12_shape": [
+      39,
+      12
+    ],
+    "Lambda12_sha256": "5e67462db8868c2d547667efbe9c94a5af34500e48d92593d0ea073d52dfc9a9",
+    "Lambda12_nonzero_entries": 140,
+    "Lambda12_nonzero_columns": 6,
+    "Lambda12_class_sizes_first_6": [
+      2,
+      2,
+      2,
+      71,
+      142,
+      234
+    ],
+    "full_relation_pairing_shape": [
+      39,
+      985
+    ],
+    "full_relation_pairing_rank": 39,
+    "full_relation_pairing_row_signatures": 39,
+    "full_relation_pairing_separates_all_39_sectors": true
+  },
+  "public_surface_trace_algebras": {
+    "A42_diagonal_surface_linear_rank": 7,
+    "A42_diagonal_surface_pointwise_algebra_dimension": 37,
+    "A42_diagonal_surface_closure_rounds": 3,
+    "A42_diagonal_surface_signature_partition_histogram": {
+      "1": 36,
+      "3": 1
+    },
+    "A42_diagonal_surface_non_singleton_sector_classes": [
+      [
+        16,
+        24,
+        34
+      ]
+    ],
+    "A12_diagonal_surface_linear_rank": 4,
+    "A12_diagonal_surface_pointwise_algebra_dimension": 35,
+    "A12_diagonal_surface_closure_rounds": 3,
+    "A12_diagonal_surface_signature_partition_histogram": {
+      "1": 33,
+      "3": 2
+    },
+    "A12_diagonal_surface_non_singleton_sector_classes": [
+      [
+        5,
+        22,
+        38
+      ],
+      [
+        16,
+        24,
+        34
+      ]
+    ],
+    "A42_refines_A12_partition": true
+  },
+  "secondary_surface_insertion": {
+    "relation_index": 351,
+    "relation_q42_class": 9,
+    "relation_q12_class": 4,
+    "relation_pairing_column_support": 8,
+    "reason": "first relation-basis surface insertion whose categorical trace splits the residual A42 diagonal surface degeneracy",
+    "A42_plus_secondary_linear_rank": 8,
+    "A42_plus_secondary_pointwise_algebra_dimension": 39,
+    "A42_plus_secondary_closure_rounds": 3,
+    "A42_plus_secondary_signature_partition_histogram": {
+      "1": 39
+    },
+    "A42_plus_secondary_non_singleton_sector_classes": [],
+    "splits_all_39_sectors": true
+  },
+  "canonical_derived_diagonal_operator": {
+    "name": "LineSurfaceTraceSeparator",
+    "weights_on_A42_diagonal_classes": "3^K for K=0,...,11",
+    "secondary_relation_added": "R_351 with coefficient 1",
+    "eigenvalue_formula": "eta_i = sum_{K=0}^{11} 3^K Lambda42[i,K] + d_i^{-1} chi_i(R_351)",
+    "eigenvalues_sha256": "10cb332393e123c499a3048af4b2d9f3dd3f1945ca2edf626e7b460738ac4a55",
+    "eigenvalues_unique_count": 39,
+    "public_A42_separator_unique_count_before_secondary": 37,
+    "diagonal_matrix_rank": 39,
+    "diagonal_operator_support": 39,
+    "diagonal_operator_distinct_eigenvalues": 39,
+    "central_A985_lift_support": 297,
+    "central_A985_lift_sha256": "8b58f2d61389516551d98731fd667ed03f57aea1c81d5a6d479eefbf1e51bd02",
+    "central_A985_lift_definition": "U_eta = sum_i eta_i e_i, using the previously certified full central primitive idempotents e_i in A985"
+  },
+  "residual_splitting_table": {
+    "16,24,34": [
+      {
+        "sector": 16,
+        "block_dimension": 3,
+        "q42_separator_value": 980347,
+        "secondary_R351_value": 666670,
+        "combined_value": 647014
+      },
+      {
+        "sector": 24,
+        "block_dimension": 1,
+        "q42_separator_value": 980347,
+        "secondary_R351_value": 4,
+        "combined_value": 980351
+      },
+      {
+        "sector": 34,
+        "block_dimension": 1,
+        "q42_separator_value": 980347,
+        "secondary_R351_value": 0,
+        "combined_value": 980347
+      }
+    ]
+  },
+  "array_hashes": {
+    "A42_surface_algebra_basis_sha256": "02c1ff0f4b0bb9502a3a5527fc0231c7a622b6973e607966e6ec5e0ac34746fc",
+    "A12_surface_algebra_basis_sha256": "bb0f7b1fa748c5dec20a944ab8a67fc635a397a58e84fb6e7936c2149dced6c8",
+    "A42_plus_secondary_surface_algebra_basis_sha256": "50c5894e49578598f2611736352af1cf6156d4a7b71da4aa69a674cfed839e91",
+    "separator_eigenvalues_sha256": "10cb332393e123c499a3048af4b2d9f3dd3f1945ca2edf626e7b460738ac4a55"
+  },
+  "verified_claims": [
+    "The robust diagonal operator is line-surface/categorical-trace data, not a primitive line-line Hopf link.",
+    "The A42 public diagonal surface classes generate a 37-dimensional diagonal trace algebra on the 39 Drinfeld sectors.",
+    "The A12 public diagonal surface classes generate a 35-dimensional diagonal trace algebra, and the A42 partition refines it.",
+    "The only A42 residual degeneracy is the three-sector class [16,24,34].",
+    "The first relation-level secondary surface insertion R_351 splits that residual class and expands the pointwise trace algebra to dimension 39.",
+    "The resulting LineSurfaceTraceSeparator has 39 distinct spectral eigenvalues and therefore recovers the full Drinfeld/Wedderburn eigenbasis after categorical reduction.",
+    "This construction supplies derived diagonal line-surface data; it is not a completed modular S,T datum."
+  ],
+  "runtime_seconds": 0.32863664627075195,
+  "derived_line_surface_trace_sha256": "e35ea3fdab7a208044cdb83e67dc217a57732e451ff8f813f08f82f9aef460ef"
+}

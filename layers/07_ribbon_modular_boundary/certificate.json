@@ -1,0 +1,212 @@
+{
+  "canonical_twist": {
+    "T_matrix": "identity_39",
+    "T_matrix_sha256": "50c5894e49578598f2611736352af1cf6156d4a7b71da4aa69a674cfed839e91",
+    "acts_diagonally_on_primitive_drinfeld_idempotents": true,
+    "all_twists_equal_one": true,
+    "hb_subspace_stable": true,
+    "operator": "closed-loop transpose / tube dual-swap",
+    "twist_eigenvalues_signed": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "character_fourier_matrix": {
+    "S_char_invertible_over_field": true,
+    "S_char_rank": 39,
+    "S_char_sha256": "59edda1776eea22a9a683bb9a8fcb7d31cdb2a0474849972ee1a650315d0410d",
+    "S_char_shape": [
+      39,
+      39
+    ],
+    "S_char_signed_preview_first_6x6": [
+      [
+        2,
+        1,
+        -2,
+        2,
+        -1,
+        -2
+      ],
+      [
+        2,
+        -1,
+        2,
+        -2,
+        -1,
+        -2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        -1,
+        2,
+        -2,
+        -1,
+        -2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "meaning": "canonical 39x39 pivot submatrix of the irreducible A985 character table; useful as a Fourier/eigenvalue table, but not a modular S-matrix.",
+    "pivot_relation_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      14,
+      17,
+      18,
+      20,
+      25,
+      28,
+      151,
+      152,
+      154,
+      155,
+      156,
+      157,
+      158,
+      227,
+      228,
+      229,
+      230,
+      231,
+      349,
+      350,
+      351,
+      353,
+      354,
+      355,
+      356,
+      358,
+      613,
+      615,
+      618
+    ],
+    "rank_full_character_table": 39
+  },
+  "dimensions": {
+    "closed_loop_dimension": 297,
+    "drinfeld_sector_count": 39,
+    "section_nonzero_coefficients": 15247,
+    "tube_pair_basis": 44521
+  },
+  "failed_nontrivial_ribbon_candidates": {
+    "annular_pair_swap": {
+      "action_rank": 10,
+      "hb_subspace_stable": false,
+      "operator_matrix_sha256": "5f288da799d3451b2de98fc3026b141ce40cccd8d8a2022f8ae3fa47a9366762",
+      "primitive_action_support": 136,
+      "row_support_hist": {
+        "0": 16,
+        "10": 4,
+        "17": 3,
+        "2": 3,
+        "3": 13
+      }
+    },
+    "dual_each_pair_rotation": {
+      "action_rank": 13,
+      "hb_subspace_stable": false,
+      "operator_matrix_sha256": "0b6f44147c7e85a2323c310589a22259355b4f3da9cee2339397aaea4dddaf69",
+      "primitive_action_support": 152,
+      "row_support_hist": {
+        "0": 16,
+        "10": 5,
+        "17": 3,
+        "2": 3,
+        "3": 9,
+        "6": 3
+      }
+    },
+    "nontrivial_pair_rotations_preserve_HB39": false
+  },
+  "field": {
+    "prime": 1000003
+  },
+  "input": {
+    "drinfeld_full_A985_lift_sha256": "32b6e7c865e15a17ec54448e02c1bf0163491387c03ee28e8734471f29be72fc",
+    "ribbon_twist_candidate_audit_sha256": "12cbbabe41275ba615eabd57628805084c906e9fa2913ac63dbab0e520c1e864"
+  },
+  "modular_boundary": {
+    "extra_input_needed": "a certified braiding or Hopf-link pairing on the 39 sectors, equivalently a ribbon element whose action is not just the transpose/dual identity.",
+    "modular_S_matrix_certified": false,
+    "not_a_failure_of_linear_algebra": "The Drinfeld/Grothendieck center and full A985 character table remain certified; this stage identifies the missing categorical input needed for modular data.",
+    "reason": "The certified data contains the semisimple A985 center, character table, tube-pair section, and duality. It does not contain a nontrivial braiding/Hopf-link operator. The natural annular swap candidates fail to preserve the 39-dimensional half-braiding subspace. The only stable canonical duality/ribbon candidate acts as identity on every primitive sector, giving T=I_39 and no nondegenerate modular S certificate."
+  },
+  "ribbon_and_modular_boundary_sha256": "cb0f720dfddcd85355db0a55bd996df6918394f81e10f9fe0451b0f3b6534f1c",
+  "schema": "gnatural.c985.ribbon_and_modular_boundary.v1",
+  "status": "RIBBON_TWIST_TRIVIAL_AND_MODULAR_S_OBSTRUCTED",
+  "verified_claims": [
+    "The closed-loop transpose and tube dual-swap preserve HB_39 and act as identity on all 39 primitive Drinfeld idempotents.",
+    "Therefore the only canonical twist/ribbon operator present in the certified v16 data gives T=I_39.",
+    "The annular pair-swap and dual-each pair-rotation do not preserve HB_39, so they cannot be used as modular ribbon/twist operators.",
+    "A deterministic 39x39 character-Fourier pivot matrix is invertible over F_1000003, but it is a character table slice, not modular S.",
+    "No nontrivial modular S,T pair is certified from the current data."
+  ]
+}

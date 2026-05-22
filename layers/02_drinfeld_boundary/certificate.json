@@ -1,0 +1,107 @@
+{
+  "closed_loop_center_before_half_braiding": {
+    "center_dimension_by_object": [
+      16,
+      13,
+      14,
+      24,
+      20,
+      22
+    ],
+    "center_dimension_total": 109,
+    "closed_loop_basis_dimension": 297,
+    "idempotents_orthogonal": true,
+    "idempotents_sum_to_units": true,
+    "primitive_idempotents_by_object": [
+      16,
+      13,
+      14,
+      24,
+      20,
+      22
+    ],
+    "primitive_idempotents_total": 109
+  },
+  "drinfeld_boundary_certificate_sha256": "8d32e797aee0e707c31361b11679f27c72d5a7171d63a56a6adda331da508fba",
+  "drinfeld_interpretation": {
+    "grothendieck_drinfeld_dimension": 39,
+    "half_braiding_constraints_cut_from_109_to_39": true,
+    "meaning": "The full 985-relation half-braiding equations have been solved over the 297 closed-loop unknowns. This certifies the Grothendieck-level Drinfeld center dimension and cuts the closed-loop center skeleton to the 39 compatible half-braiding degrees.",
+    "pre_half_braiding_closed_loop_idempotents": 109,
+    "sector_count_at_solved_Grothendieck_level": 39
+  },
+  "failed_local_attempts": [
+    {
+      "attempt": "compute_drinfeld_grothendieck.py",
+      "local_command": "cd /mnt/data/drinfeld_work && python3 compute_drinfeld_grothendieck.py",
+      "result": "timed out during full algebra/idempotent materialization; no certificate emitted"
+    },
+    {
+      "attempt": "compute_drinfeld_algebra_stage.py",
+      "local_command": "cd /mnt/data/drinfeld_work && python3 compute_drinfeld_algebra_stage.py",
+      "result": "timed out during half-braiding algebra materialization; no certificate emitted"
+    }
+  ],
+  "field_primes": [
+    1000003,
+    1000033
+  ],
+  "half_braiding_solve": {
+    "equation": "For every simple relation alpha:i->j, solve z_i * alpha = alpha * z_j with z_i in Hom(i,i).",
+    "free_columns_sha256": "7bbb6f4344419402546b80adef2baeb9c422c16a23b06b862cc3623bc4cb44e2",
+    "nullity": 39,
+    "nullity_matches_A985_center_dimension": true,
+    "pivot_columns_sha256": "9a8d9dd1fa7ae27020298591faf191a15ad53b53fe7bea16ad1bff9114e807f0",
+    "rank": 258,
+    "raw_rows_seen": 39860,
+    "reducer_sha256": "31d4f4019d04d08d6d2337fb425f6763bc5da2c26dfe742eb6eb41fe370240c5",
+    "relations_used": 985,
+    "unknown_count": 297,
+    "unknown_count_by_object": [
+      33,
+      16,
+      14,
+      86,
+      44,
+      104
+    ]
+  },
+  "prime_stability": {
+    "nullity": 39,
+    "primes": [
+      1000003,
+      1000033
+    ],
+    "rank": 258,
+    "raw_rows_seen": 39860,
+    "stable": true,
+    "unknown_count": 297
+  },
+  "remaining_for_full_modular_data": [
+    "materialize or stream the 39-dimensional half-braiding nullspace basis, not only its rank/nullity certificate",
+    "transport multiplication onto that basis and split its primitive idempotents",
+    "retain the 44,224-dimensional projection-kernel tube-module data for full tube representations",
+    "compute modular S and T matrices only after full tube modules are available"
+  ],
+  "schema": "gnatural.c985.drinfeld_boundary_certificate.v1",
+  "source_bundle": "verifier_core_v12_tube_projection_section.zip",
+  "status": "DRINFELD_GROTHENDIECK_BOUNDARY_CERTIFIED",
+  "tube_pair_projection": {
+    "closed_loop_quotient_dimension": 297,
+    "projection_kernel_dimension": 44224,
+    "projection_surjective": true,
+    "section_hash_root": "ec0015d605c42f725b501cefd363b07b7e04a93e17abaa80ebae9d36b5d52a69",
+    "section_identity": true,
+    "section_nonzero_coefficients": 15247,
+    "section_pivots": 297,
+    "tube_pair_basis_total": 44521
+  },
+  "verified_claims": [
+    "The tube-pair basis has 44,521 elements and surjects onto the 297-dimensional closed-loop quotient.",
+    "A deterministic section S:Loop^297 -> TubePair^44521 is certified with P S = I_297.",
+    "The closed-loop block centers split into 109 primitive idempotents before imposing half-braiding compatibility.",
+    "The complete half-braiding system over all 985 relations has rank 258 and nullity 39.",
+    "The rank/nullity pair is stable over two certified primes.",
+    "The solved 39-dimensional half-braiding space is the current certified Grothendieck-level Drinfeld boundary."
+  ]
+}

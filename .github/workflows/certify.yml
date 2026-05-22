@@ -1,0 +1,32 @@
+name: certify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install runtime dependencies
+        run: python -m pip install --upgrade pip numpy
+      - name: Fast certificate verification
+        working-directory: verifier
+        run: python certify.py --mode fast --pretty
+      - name: Audit verification
+        working-directory: verifier
+        run: python certify.py --mode audit --pretty
+      - name: Rebuild-boundary verification
+        working-directory: verifier
+        run: python certify.py --mode rebuild --pretty
+      - name: Tamper rejection tests
+        working-directory: verifier
+        run: python tests/tamper_tests.py
+      - name: Release signature check
+        working-directory: verifier
+        run: python tools/verify_release_signature.py
