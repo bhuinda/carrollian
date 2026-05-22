@@ -1,0 +1,191 @@
+{
+  "leech": {
+    "H_name": "H",
+    "autH_consequence": {
+      "AutH_eq_Co1_status": "CERTIFIED_MODULO_CLASSICAL_LEECH_UNIQUENESS_AND_AUTOMORPHISM_THEOREM",
+      "H_equals_zero_and_Co1_subgroup": "certified by aut-h-rigidity/aut-h modules",
+      "reverse_containment": "Aut(H)<=Co1 follows once the H-layer is identified with the projective minimal-shell metric of the reconstructed Leech lattice."
+    },
+    "classification_step": {
+      "classical_dependency": "The unique even unimodular rootless lattice of rank 24 is the Leech lattice.",
+      "consequence": "Aut of the reconstructed lattice is Co0, and the projective minimal-shell metric automorphism group is Co1.",
+      "finite_result": "The signed shell generates a rank-24 even unimodular rootless lattice under B(x,y)=dot(x,y)/8."
+    },
+    "lattice_generation": {
+      "hnf_determinant_abs": 68719476736,
+      "hnf_determinant_equals_2_36": true,
+      "hnf_determinant_power_of_two": 36,
+      "hnf_sha256": "e73021d8906bbd0961273f518456ee9b37d23ddfb0265605153bf895a7c918dc",
+      "hnf_shape": [
+        24,
+        24
+      ]
+    },
+    "leech_reconstruction_sha256": "1711b8bc76f81615c67acff79ef535228c95b3ce9d558366f2ef998a3f5de19f",
+    "lll_reduced_basis": {
+      "basis_norm_square_histogram": {
+        "32": 24
+      },
+      "basis_rank": 24,
+      "basis_sha256": "a9fe969c080c8d0ce203a2066e0a6434044f3222b86224b7042dc80990bff4a8",
+      "delta": "99/100"
+    },
+    "object": "Gnatural",
+    "root_test": {
+      "algorithm": "Fincke-Pohst/QR branch-and-bound with exact final norm validation",
+      "example_vectors": {},
+      "no_nonzero_vectors_at_or_below_unscaled_norm_16": true,
+      "no_unscaled_norm_16_vectors": true,
+      "root_vectors_found": 0,
+      "rootless_scaled_lattice": true,
+      "scaled_root_norm_target": 2,
+      "unscaled_norm_bound_checked": 16,
+      "unscaled_root_norm_target": 16,
+      "vectors_found_by_unscaled_norm": {},
+      "visited_nodes": 33569
+    },
+    "scaled_lattice_certificate": {
+      "all_gram_entries_divisible_by_8": true,
+      "gram_sha256": "c00b87c4701ec569f1bd4d874c044bd78dad3de247b14f88048d027c95eb0930",
+      "scaled_bilinear_form": "B(x,y)=dot(x,y)/8",
+      "scaled_diagonal_even": true,
+      "scaled_diagonal_histogram": {
+        "4": 22,
+        "6": 1,
+        "8": 1
+      },
+      "scaled_even_unimodular_rank_24": true,
+      "scaled_gram_abs_histogram": {
+        "0": 50,
+        "1": 140,
+        "2": 304,
+        "3": 34,
+        "4": 44,
+        "5": 2,
+        "6": 1,
+        "8": 1
+      },
+      "scaled_gram_determinant_statement": "det(dot/8)=1 because det(dot)=2^72 and 8^24=2^72",
+      "scaled_gram_integral": true,
+      "scaled_gram_unimodular": true,
+      "unscaled_gram_abs_determinant": 4722366482869645213696,
+      "unscaled_gram_abs_determinant_power_of_two": 72
+    },
+    "schema": "gnatural.H.leech_reconstruction.self_certifying.v1",
+    "self_certificate": {
+      "data_dependencies": {
+        "data_dependency_sha256": "bc6cb6665f890f6153835bfd3d42428d631b941cfa6474096de0cdfeef3627cd",
+        "files": [
+          {
+            "path": "data/constants.json",
+            "sha256": "c91eb44f96c5bc32ca4f125b3658a8066a00c7f81e4f71970314dc8b51814bd0"
+          },
+          {
+            "path": "data/quotients.npz",
+            "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+          },
+          {
+            "path": "data/tensor_sparse.npz",
+            "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+          },
+          {
+            "path": "generators/co1/projective_generators.npz",
+            "sha256": "ecb6d4338db9f6eadca553987946f1bae9fb7dc0b0fcada76b720969aec98400"
+          }
+        ]
+      },
+      "source_tree": {
+        "files": [
+          {
+            "path": "source/gnat/__init__.py",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "source/gnat/aut_h.py",
+            "sha256": "73254939b4a15060ac9c89d97e1cf32503ebd7db8895b351f52c1768a9873542"
+          },
+          {
+            "path": "source/gnat/aut_h_bruteforce.py",
+            "sha256": "7c2d4bd1aa717a2f84c25783dbaa11020c02b1414588bd8dda4eae86ff1ea4ce"
+          },
+          {
+            "path": "source/gnat/aut_h_option_b.py",
+            "sha256": "a340d1753ac3df27d7e49b9af86208d45ec3ceea4331ca534259170185cc9868"
+          },
+          {
+            "path": "source/gnat/aut_h_rigidity.py",
+            "sha256": "c279bc2c421aa7c82bf18f5e9b8a3cf324e11b38b5ae36de6d689b12bc789cc3"
+          },
+          {
+            "path": "source/gnat/certificate.py",
+            "sha256": "9d2a831204a628939f5d692fe5b332179f68858bb1ba775c8c257c019c741f9e"
+          },
+          {
+            "path": "source/gnat/co1.py",
+            "sha256": "c1c74b5cf064f79d3e5fba686e27900b3b0caecaad350f2595ae2bb257d25544"
+          },
+          {
+            "path": "source/gnat/deepcheck.py",
+            "sha256": "1fbe1daf691f64bad7c3453c24cd1d5d4ac744787cfd5593cb83961dd1e7dd27"
+          },
+          {
+            "path": "source/gnat/exact.py",
+            "sha256": "5a91f28ad8c30b4219de4903b5e225726e531d067c610383f72e44cdb3f479bd"
+          },
+          {
+            "path": "source/gnat/golay.py",
+            "sha256": "3e7ebf902b16a1520f0d15ba080b1372c9d236e2f0bbe7ea6e0868567d004f34"
+          },
+          {
+            "path": "source/gnat/h_cycle.py",
+            "sha256": "6c63a68a24ae1afa7b7c5c36f17e6555884ca789bb672af21b24d7cd137f780a"
+          },
+          {
+            "path": "source/gnat/hamiltonian.py",
+            "sha256": "d672f0d805ffab33e0ba16d9fd28bd7b91c5a6a6efc55c451d2f47d4c220a732"
+          },
+          {
+            "path": "source/gnat/leech.py",
+            "sha256": "01452b5efe90b3784f996ad7e1c9c69d2a733079dff54b68579650ac3704605d"
+          },
+          {
+            "path": "source/gnat/packet20.py",
+            "sha256": "b0e77b0c88a873d2eed0601b08ce1fb2d2c705f225cb4d623e6be0b427aed4c3"
+          },
+          {
+            "path": "source/gnat/quotients.py",
+            "sha256": "17376b45a8a9cf78065a8adb9f9ee8d8aef1ddfb2d6e57ab2358256b61a22302"
+          },
+          {
+            "path": "source/gnat/sixj.py",
+            "sha256": "ae83406de642899f16e2a758ccdcb6afc3602367a3034c9605531f99a7c7f48a"
+          },
+          {
+            "path": "source/gnat/tensor.py",
+            "sha256": "4286e32a5155fce478c5e5aa40597ad6139e6190c9d12d3e9dd3b95e468edf3c"
+          },
+          {
+            "path": "source/verify.py",
+            "sha256": "85bf5f883708d95ec0b3b8c6d4540a5644b969e2e0cfb5cda5dfb7e2945ed38f"
+          }
+        ],
+        "source_tree_sha256": "fc820f208fc77e8d0746bacde981a3ab15f021480a5ee6fc6b4044933a9217c1"
+      }
+    },
+    "shell": {
+      "ambient_rank": 24,
+      "coordinate_type_counts": {
+        "A_pair_44": 552,
+        "B_octad_22222222": 48576,
+        "C_golay_311": 49152
+      },
+      "projective_norm_square_histogram": {
+        "32": 98280
+      },
+      "projective_shell_sha256": "5ce85205404cf9d1dbeb9a7c8c70aa1b849582e2e82eaa12c720fa7428b0456f",
+      "projective_vertex_count": 98280,
+      "signed_shell_count": 196560
+    },
+    "status": "LEECH_RECONSTRUCTION_CERTIFIED"
+  }
+}
