@@ -1,0 +1,179 @@
+{
+  "ladder": [
+    {
+      "burden_to_beat_integrity": "produce Pi33 or delta33 inside certified public-integral span; currently false",
+      "default_integrity_type": "finite C/V split",
+      "status": "computed",
+      "system": "Certified operation algebra O_cert",
+      "tier": 0,
+      "what_is_known": "36-dimensional operation algebra; 1-dimensional integrity-integral subspace; 35-dimensional commutator-visible complement"
+    },
+    {
+      "burden_to_beat_integrity": "provide a public proof trace that derives an e33 detector without V/X; forbidden by current finite typing",
+      "default_integrity_type": "C",
+      "status": "covered as public-integral",
+      "system": "Public resolution / proof-logged CDCL",
+      "tier": 1,
+      "what_is_known": "steps operate on public clauses and remain pure C when proof witnesses are public"
+    },
+    {
+      "burden_to_beat_integrity": "show the extractor is public-integral or provide the hidden e33 map; otherwise counted as X",
+      "default_integrity_type": "X",
+      "status": "extractor-adjoin",
+      "system": "CDCL with native XOR / Gaussian elimination over GF(2)",
+      "tier": 2,
+      "what_is_known": "constructs a parity/coorientation system explicitly; this is not public-integral"
+    },
+    {
+      "burden_to_beat_integrity": "prove it acts through public data without hidden parity; otherwise X",
+      "default_integrity_type": "X",
+      "status": "extractor-adjoin",
+      "system": "Polynomial calculus over GF(2) / algebraic parity proof",
+      "tier": 3,
+      "what_is_known": "field choice directly carries parity structure; typed as explicit hidden-character algebra"
+    },
+    {
+      "burden_to_beat_integrity": "type each learned inequality: public consequence, commutator-visible wall step, or hidden extractor",
+      "default_integrity_type": "mixed: C or X",
+      "status": "requires witness typing",
+      "system": "Cutting planes / pseudo-Boolean / integer linear proof",
+      "tier": 4,
+      "what_is_known": "public inequalities are C; parity/cardinality gadgets that recover hidden sector are X"
+    },
+    {
+      "burden_to_beat_integrity": "certify extension variables preserve public kernel; otherwise mark as X",
+      "default_integrity_type": "mixed: C or X",
+      "status": "requires extension audit",
+      "system": "Extended resolution / extension variables",
+      "tier": 5,
+      "what_is_known": "public definitional extensions may be C; extensions that reconstruct e33 are X"
+    },
+    {
+      "burden_to_beat_integrity": "compile each formula/inference into C/V/X with polynomial overhead",
+      "default_integrity_type": "unknown -> X until typed",
+      "status": "open universality target",
+      "system": "Frege / Extended Frege",
+      "tier": 6,
+      "what_is_known": "too expressive to call public-integral without sector-interface semantics"
+    },
+    {
+      "burden_to_beat_integrity": "provide dual/transform certificate and show whether it is public C, visible V, or extractor X",
+      "default_integrity_type": "unknown -> X until typed",
+      "status": "external extractor candidate",
+      "system": "Fourier/spectral/SDP/global optimization solver",
+      "tier": 7,
+      "what_is_known": "global basis changes can hide extractor construction"
+    },
+    {
+      "burden_to_beat_integrity": "prove faithful polynomial integrity trace or exhibit a solver outside the type system",
+      "default_integrity_type": "open",
+      "status": "P-vs-NP-grade universality bridge",
+      "system": "Arbitrary polynomial-time Turing machine",
+      "tier": 8,
+      "what_is_known": "must be compiled to sector-interface trace to enter finite theorem"
+    }
+  ],
+  "next_tests": [
+    {
+      "artifact_needed": "DRAT/LRAT logs plus integrity classifier output",
+      "expected_type": "C unless preprocessing enters X",
+      "purpose": "establish empirical pure-C failure or proof-size blowup",
+      "test": "Resolution/CDCL proof logging on hidden e33 families"
+    },
+    {
+      "artifact_needed": "recovered XOR equations and equivalence proof",
+      "expected_type": "X if successful",
+      "purpose": "test whether parity extractor can be polynomially reconstructed",
+      "test": "XOR-recovery resistance under hidden projection"
+    },
+    {
+      "artifact_needed": "extension definitions and sector-interface action",
+      "expected_type": "C for harmless definitional extensions; X for e33-recovering extensions",
+      "purpose": "classify extended-resolution style gadgets as public C or extractor X",
+      "test": "Extension-variable audit"
+    },
+    {
+      "artifact_needed": "transform basis, recovered character, public-equivalence check",
+      "expected_type": "X if it recovers hidden character",
+      "purpose": "see whether global transform recovers sector 33",
+      "test": "Spectral/Fourier attack"
+    },
+    {
+      "artifact_needed": "opcode trace JSON conforming to schema",
+      "expected_type": "mixed",
+      "purpose": "instrument actual solver into C/V/X trace",
+      "test": "Faithful trace compiler prototype for a real solver"
+    }
+  ],
+  "schema": "gnatural.proof_system_integrity_ladder.v1",
+  "sha256": "733763bb882cec32659853fa944e15a7f5e4dd08544f60c7baf002e8a68427d0",
+  "status": "PROOF_SYSTEM_INTEGRITY_LADDER_BUILT",
+  "summary": {
+    "finite_base": {
+      "Pi33_in_full_operation_algebra": false,
+      "delta33_after_public_integral_operations": false,
+      "integrity_integral_codimension": 35,
+      "integrity_integral_dimension": 1,
+      "operation_algebra_dimension": 36,
+      "primitive_kernel_sector": [
+        33
+      ],
+      "public_kernel_dimension": 19,
+      "public_rank": 20
+    },
+    "main_message": "Known proof systems now receive an integrity type. Public proof systems are C; parity/algebraic hidden extractors are X; certified wall-crossing is V; arbitrary P-time remains the universality bridge.",
+    "next_tests": 5,
+    "program": "proof_system_integrity_ladder",
+    "theorem_steps": 7,
+    "tiers": 9
+  },
+  "theorem": {
+    "name": "Proof-System Integrity Ladder",
+    "statement": "Standard solver/proof-system steps can be placed on the C/V/X integrity ladder. Public proof systems remain C and cannot see e33; parity/algebraic extractors are X; certified commutator wall-crossings are V; arbitrary polynomial-time solvers remain the open universality tier.",
+    "use": "This identifies exactly what kind of evidence is required to challenge or complete the No-Escape theorem."
+  },
+  "theorem_ladder": [
+    {
+      "assumption": "operation belongs to certified O_cert",
+      "conclusion": "operation is C iff Delta=0; otherwise commutator-visible V",
+      "name": "Finite Integrity Theorem",
+      "status": "proved/computed"
+    },
+    {
+      "assumption": "trace remains in C",
+      "conclusion": "trace cannot extract e33",
+      "name": "No Public Extractor Theorem",
+      "status": "proved/computed for certified algebra"
+    },
+    {
+      "assumption": "solver trace consists only of public resolution/CDCL proof steps",
+      "conclusion": "trace is C and cannot extract e33",
+      "name": "Proof-Logged Public Solver Corollary",
+      "status": "formal consequence of typing"
+    },
+    {
+      "assumption": "solver recovers XOR/GF(2)/coorientation equations",
+      "conclusion": "solver enters X by explicit extractor-adjoin",
+      "name": "Parity-Solver Classification",
+      "status": "definition/typing result"
+    },
+    {
+      "assumption": "solver uses extensions, cutting planes, SDP, or spectral steps",
+      "conclusion": "each step must be certified C/V or marked X",
+      "name": "Mixed-System Integrity Audit",
+      "status": "contract built; proof depends on supplied trace"
+    },
+    {
+      "assumption": "every polynomial solver has a faithful polynomial integrity trace",
+      "conclusion": "any solver deciding e33-obstructed instances must contain V or X",
+      "name": "Algorithmic Universality Theorem",
+      "status": "open"
+    },
+    {
+      "assumption": "Algorithmic Universality + no polynomial X-extractor for hidden e33 family",
+      "conclusion": "public-integral polynomial solving fails; full separation follows for the encoded family if SAT-complete",
+      "name": "Conditional P-vs-NP No-Escape",
+      "status": "conditional"
+    }
+  ]
+}

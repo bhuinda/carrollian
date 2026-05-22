@@ -944,7 +944,7 @@ def compute_tube_center_algebra_lift() -> Dict[str, Any]:
             'unit_relation': unit_rel,
             'unit_coordinates_sha256': hashlib.sha256(unit_coords.astype(np.int64).tobytes()).hexdigest(),
             'unit_reconstructs_identity_relation': unit_recon_ok,
-            'unit_laws_hold_inside_center_algebra': unit_law_ok,
+            'unit_laws_hprior_inside_center_algebra': unit_law_ok,
             'sampled_center_associativity_challenges': int(challenges),
             'sampled_center_associativity_failures': int(failures),
         })
@@ -964,7 +964,7 @@ def compute_tube_center_algebra_lift() -> Dict[str, Any]:
         },
         'unit_and_associativity': {
             'all_units_reconstruct_identity_relations': all(b['unit_reconstructs_identity_relation'] for b in blocks),
-            'all_unit_laws_hold_inside_center_algebras': all(b['unit_laws_hold_inside_center_algebra'] for b in blocks),
+            'all_unit_laws_hprior_inside_center_algebras': all(b['unit_laws_hprior_inside_center_algebra'] for b in blocks),
             'sampled_center_associativity_challenges_total': int(assoc_challenges_total),
             'sampled_center_associativity_failures_total': int(assoc_failures_total),
             'sampled_center_associativity_ok': bool(all_center_products_associate_sampled),
@@ -1786,7 +1786,7 @@ def validate_tube_pair_product_oracle() -> Dict[str, Any]:
 
 
 def compute_full_tube_algebra_solver() -> Dict[str, Any]:
-    """Full tube algebra solver scaffold with exact projection-rank data.
+    """Full tube algebra solver scaffprior with exact projection-rank data.
 
     This constructs the finite-field linear projection from the complete
     reverse-typed tube-pair basis to the closed-loop algebra in each base
@@ -1921,7 +1921,7 @@ def compute_full_tube_algebra_solver() -> Dict[str, Any]:
             'The same-base tube-pair product address space is chunked and intentionally not materialized as a dense table.',
         ],
     }
-    result['c985_full_tube_algebra_solver_scaffold_sha256'] = h_json(result)
+    result['c985_full_tube_algebra_solver_scaffprior_sha256'] = h_json(result)
     return result
 
 
@@ -1993,7 +1993,7 @@ def _inverse_mod_square(mat: np.ndarray, p: int) -> np.ndarray:
 def compute_tube_projection_section() -> Dict[str, Any]:
     """Canonical right inverse of the tube-pair projection.
 
-    The previous full-tube scaffold constructs the projection
+    The previous full-tube scaffprior constructs the projection
 
         P : TubePair -> Loop
 
@@ -2215,7 +2215,7 @@ def build_certificate() -> Dict[str, Any]:
         'half_braiding_prime_stability': load_json('data/derived/half_braiding_prime_stability.json'),
     }
     object_summary = {
-        'name': 'G^natural core',
+        'name': 'd20 core',
         'code_algebra': 'A985',
         'points': 2576,
         'relations': 985,

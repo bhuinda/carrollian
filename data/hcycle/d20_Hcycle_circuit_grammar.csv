@@ -1,0 +1,13 @@
+circuit,symbol,input_type,output_type,composition,closed_condition,costs,game_role
+edge swap,τ_e,"adjacent faces f,g ∈ F20 with e={f,g}∈E30",permutation in S20,serial composition τ_e_n⋯τ_e_1,word product is identity,1 + interface weight T(e),primitive legal move
+path transport,P(f→g),path in Γ_d20,token moved along path via adjacent swaps,concatenate paths when endpoint matches,path returns to source,sum of edge costs along path,controlled relocation
+commuting swap pair,τ_e τ_e',edge-disjoint swaps,two independent local moves,τ_eτ_e'=τ_e'τ_e when supports disjoint,each pair repeated twice,additive,parallel tactics
+backtrack,τ_e^2,one edge e,identity permutation,cancellable,always closed,"2T(e), curvature may survive in lifted algebra if decorated",null public move / possible lifted residue test
+H-cycle,C ∈ H1(Γ_d20),closed walk in Γ_d20,cycle residue vector in Z^11,add in H1; concatenate closed walks,start=end,"A_opt(C), A_Γ(C), S_H↺(C)",closed tactic / memory-residue generator
+primitive pentagon,K5-loop,girth-5 cycle,minimal nontrivial H-cycle candidate,tile/stack into higher cycles,five-step return,entropy packet normalization when order-5 closure applies,minimum tactical loop
+connection turn,b_ij b_jk = Γ_ijk b_ik,two-step sheet transport i→j→k,compressed transport i→k with coefficient Γ_ijk,associative path multiplication where defined,returns to i after cycle,log Γ_ijk,weighted corner / medium transition
+Pin projection,q_42,A985 relation/circuit,A42 signed-sheet circuit,compatible with multiplication,closes in A42,information loss from 985 to 42,signed-strategy readout
+CY projection,q_12,A42 or A985 circuit,A12 terminal sector circuit,q_12∘q_42,terminal readout closes,loss of sign/sheet data,public score/result
+hidden obstruction test,Proj_33 Hol_985(C),closed or public-null circuit,sector-33 residue,linear projection after lifted holonomy,can be public-null but hidden-nonzero,obstruction norm ||Ω_33||,"trap, bluff, hidden resource, extractor target"
+rgba visibility circuit,H8^3 ⊕ O8^W,semantic pixel / 32-channel state,visible RGB plus alpha mask,visibility-gated readout,alpha-compatible visible projection,visibility/alpha obstruction,what the player can see
+integrity move,"C, V, X",proof/game action,"public-compatible, wall-crossing, or extractor-adjoined transition",C∘C stays public; V crosses certified wall; X adjoins external extractor,depends on integrity type,"C lowest, V certified premium, X external/adjoined",rules of play / allowed player classes

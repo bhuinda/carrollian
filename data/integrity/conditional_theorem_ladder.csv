@@ -1,0 +1,8 @@
+name,assumption,conclusion,status
+Finite Integrity Theorem,operation belongs to certified O_cert,operation is C iff Delta=0; otherwise commutator-visible V,proved/computed
+No Public Extractor Theorem,trace remains in C,trace cannot extract e33,proved/computed for certified algebra
+Proof-Logged Public Solver Corollary,solver trace consists only of public resolution/CDCL proof steps,trace is C and cannot extract e33,formal consequence of typing
+Parity-Solver Classification,solver recovers XOR/GF(2)/coorientation equations,solver enters X by explicit extractor-adjoin,definition/typing result
+Mixed-System Integrity Audit,"solver uses extensions, cutting planes, SDP, or spectral steps",each step must be certified C/V or marked X,contract built; proof depends on supplied trace
+Algorithmic Universality Theorem,every polynomial solver has a faithful polynomial integrity trace,any solver deciding e33-obstructed instances must contain V or X,open
+Conditional P-vs-NP No-Escape,Algorithmic Universality + no polynomial X-extractor for hidden e33 family,public-integral polynomial solving fails; full separation follows for the encoded family if SAT-complete,conditional
