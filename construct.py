@@ -29,12 +29,14 @@ from src.derive_coorient_canonical_marker import derive as derive_coorient_canon
 from src.derive_absolute_coorient_word_presentation import derive as derive_absolute_coorient_word_presentation
 from src.derive_d20_optics import derive as derive_d20_optics
 from src.derive_d20 import derive as derive_d20
+from src.layer_registry import layer_path
 from src.certify_constructor import (
     COMPLETED_FULL_SCRATCH_STEPS,
     MISSING_FULL_SCRATCH_STEPS,
     construct_from_supplied_raw_seeds,
     sha_json,
 )
+from src.certify_io import raw_tensor_relpath
 
 ROOT = Path(__file__).resolve().parent
 GENERATED = ROOT / "generated"
@@ -179,7 +181,7 @@ def main() -> None:
     elif args.derive_center_idempotents:
         result = derive_center_idempotents(
             ROOT / "generated/tensor_from_source_coorient.npz",
-            ROOT / "layers/06_drinfeld_full_A985_lift/certificate.json",
+            layer_path("drinfeld.full_a985_lift"),
             ROOT / "generated/relation_memberships_from_source_coorient_aligned.npz",
             ROOT / "generated/terminal_quotients_from_source_coorient.npz",
             ROOT / "generated/center_idempotents_from_generated_T985.npz",
@@ -188,7 +190,7 @@ def main() -> None:
     elif args.align_generated_sectors:
         result = derive_generated_sector_alignment(
             ROOT / "generated/center_idempotents_from_generated_T985.npz",
-            ROOT / "layers/06_drinfeld_full_A985_lift/certificate.json",
+            layer_path("drinfeld.full_a985_lift"),
             ROOT / "generated/relation_memberships_from_source_coorient_aligned.npz",
             ROOT / "generated/generated_sector_alignment.npz",
             ROOT / "generated/generated_sector_alignment_report.json",
@@ -203,8 +205,8 @@ def main() -> None:
         result = derive_representation_integral_wall(
             ROOT / "data/raw/simple_branching_matrices.npz",
             ROOT / "generated/terminal_quotients_from_source_coorient.npz",
-            ROOT / "layers/06_drinfeld_full_A985_lift/certificate.json",
-            ROOT / "layers/25_proof_system_integrity/certificate.json",
+            layer_path("drinfeld.full_a985_lift"),
+            layer_path("integrity.proof_system"),
             ROOT / "generated/a236_representation_fusion_from_center.npz",
             ROOT / "generated/remaining_representation_integral_chain_report.json",
         )
@@ -270,7 +272,7 @@ def main() -> None:
         result = compute_tensor_from_orbitals(
             ROOT / "data/raw/relation_memberships.npz",
             ROOT / "generated/tensor_from_orbitals.npz",
-            ROOT / "data/raw/tensor_sparse.npz",
+            ROOT / raw_tensor_relpath(),
             None,
             False,
         )

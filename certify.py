@@ -4,9 +4,11 @@ import argparse, hashlib, json, sys
 from pathlib import Path
 from typing import Any
 
+from src.certify_io import raw_tensor_relpath
+from src.layer_registry import LAYER_INDEX, layer_relpath, load_layer_registry
+
 ROOT = Path(__file__).resolve().parent
 MUTABLE = {"certificate.json", "manifests/file_hashes.json", "manifests/canonical.json"}
-LAYER_INDEX = ROOT / "layers" / "index.json"
 
 EXPECTED = {
     "00_core": "PASS",
@@ -75,6 +77,34 @@ def verify_root(errors: list[str]) -> dict[str, Any]:
     return cert
 
 
+def verify_root_layers(root: dict[str, Any], registry: dict[str, Any], errors: list[str]) -> None:
+    root_layers = root.get("layers", [])
+    registry_layers = registry.get("layers", [])
+    require(isinstance(root_layers, list), "root layers list missing", errors)
+    require(isinstance(registry_layers, list), "registry layers list missing", errors)
+    if not isinstance(root_layers, list) or not isinstance(registry_layers, list):
+        return
+
+    by_id = {entry.get("id"): entry for entry in root_layers if isinstance(entry, dict)}
+    require(len(root_layers) == len(registry_layers), "root layer count does not match registry", errors)
+    for entry in registry_layers:
+        if not isinstance(entry, dict):
+            continue
+        layer_id = entry.get("id")
+        rel = entry.get("path")
+        root_entry = by_id.get(layer_id)
+        require(isinstance(root_entry, dict), f"root certificate missing layer id: {layer_id}", errors)
+        if not isinstance(root_entry, dict) or not isinstance(rel, str):
+            continue
+        p = ROOT / rel
+        require(root_entry.get("certificate") == rel, f"root layer path mismatch for {layer_id}", errors)
+        require(root_entry.get("legacy_dir") == entry.get("legacy_dir"), f"root legacy_dir mismatch for {layer_id}", errors)
+        require(root_entry.get("group") == entry.get("group"), f"root group mismatch for {layer_id}", errors)
+        require(root_entry.get("status") == entry.get("expected_status"), f"root status mismatch for {layer_id}", errors)
+        if p.exists():
+            require(root_entry.get("certificate_file_sha256") == sha_file(p), f"root layer hash mismatch for {layer_id}", errors)
+
+
 def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     p = ROOT / "d20.json"
     require(p.exists(), "missing d20.json", errors)
@@ -94,6 +124,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "zero_axiom_coorient",
         "universal_integral_uniqueness",
         "pre_A985_relation_body_theorem",
+        "tensor_chain",
         "layer_registry",
         "layer_certificates",
         "json_invariants",
@@ -126,6 +157,22 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     require(pr.get("uses_relation_table_as_input") is False, "pre-A985 theorem uses relation table as input", errors)
     require(pr.get("A985_relation_count") == 985, "pre-A985 relation count mismatch", errors)
     require(pr.get("T985_support") == 1414965, "pre-A985 tensor support mismatch", errors)
+    tensor_chain = data.get("tensor_chain", {})
+    require(tensor_chain.get("status") == "TENSOR_CHAIN_EVIDENCE_CERTIFIED", "tensor_chain status mismatch", errors)
+    require(tensor_chain.get("present") is True, "tensor_chain evidence missing", errors)
+    require(tensor_chain.get("public_name") == "tensor_chain", "tensor_chain public name mismatch", errors)
+    require(tensor_chain.get("path") == "data/tensor_chain", "tensor_chain path mismatch", errors)
+    plain_name_view = tensor_chain.get("plain_name_view", {})
+    require(plain_name_view.get("present") is True, "tensor_chain plain-name view missing", errors)
+    require(plain_name_view.get("status") == "TENSOR_CHAIN_PLAIN_NAME_VIEW_GENERATED", "tensor_chain plain-name view status mismatch", errors)
+    plain_name_summary = plain_name_view.get("summary", {})
+    require(plain_name_summary.get("source_file_count", 0) > 0, "tensor_chain plain-name view has no files", errors)
+    require(plain_name_summary.get("changed_file_alias_count", 0) > 0, "tensor_chain plain-name view has no renamed file aliases", errors)
+    require(
+        plain_name_summary.get("remaining_legacy_plain_token_count") == 0,
+        "tensor_chain plain-name view still contains legacy glossary tokens",
+        errors,
+    )
     fin = data.get("final_investigation", {})
     require(fin.get("status") == "D20_INVESTIGATION_FINALIZED_WITH_A985_INTEGRAL_UNIQUENESS", "final investigation status mismatch", errors)
     require(fin.get("finite_computational_closure") is True, "final investigation finite closure mismatch", errors)
@@ -153,6 +200,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "layer_registry_entries": len(registry.get("layers", [])),
         "json_invariant_file_count": len(data.get("json_invariants", {})),
         "npz_array_manifest_count": len(data.get("npz_array_manifests", {})),
+        "tensor_chain_present": bool(tensor_chain.get("present", False)),
         "hcycle_present": bool(data.get("game_theory", {}).get("present", False)),
         "hcycle_primitive_cycles": data.get("game_theory", {}).get("primitive_H_cycles", {}).get("count"),
         "hcycle_state_space": data.get("game_theory", {}).get("state_space", {}).get("S20_order"),
@@ -164,7 +212,7 @@ def verify_layer_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, 
     if not LAYER_INDEX.exists():
         return {}, {"registry_entries": 0, "groups": []}
 
-    data = load_json(LAYER_INDEX)
+    data = load_layer_registry()
     require(data.get("schema") == "d20.layer_registry.v1", "layer registry schema mismatch", errors)
     require(data.get("status") == "LAYER_REGISTRY_BUILT", "layer registry status mismatch", errors)
 
@@ -174,6 +222,9 @@ def verify_layer_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, 
     require(isinstance(groups, dict) and bool(groups), "layer registry groups missing", errors)
     require(isinstance(policy, dict), "layer registry policy missing", errors)
     require(isinstance(layers, list) and bool(layers), "layer registry layers missing", errors)
+    if isinstance(policy, dict):
+        require(policy.get("physical_layout") == "semantic_grouped_files", "layer registry physical layout is not flat semantic groups", errors)
+        require(policy.get("path_migration") == "complete", "layer registry path migration is not complete", errors)
 
     ids: set[str] = set()
     dirs: set[str] = set()
@@ -190,6 +241,7 @@ def verify_layer_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, 
         ordinal = entry.get("ordinal")
         group = entry.get("group")
         rel = entry.get("path")
+        legacy_rel = entry.get("legacy_path")
 
         require(isinstance(layer_id, str) and bool(layer_id), f"layer registry entry {i} missing id", errors)
         require(layer_id not in ids, f"duplicate layer id: {layer_id}", errors)
@@ -208,10 +260,15 @@ def verify_layer_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, 
 
         require(group in group_names, f"{layer_id}: unknown group {group!r}", errors)
         require(isinstance(rel, str), f"{layer_id}: path is not a string", errors)
-        if isinstance(dirname, str) and isinstance(rel, str):
-            expected_rel = f"layers/{dirname}/certificate.json"
-            require(rel == expected_rel, f"{layer_id}: path {rel!r} != {expected_rel!r}", errors)
+        if isinstance(dirname, str):
+            expected_legacy_rel = f"layers/{dirname}/certificate.json"
+            require(legacy_rel == expected_legacy_rel, f"{layer_id}: legacy_path {legacy_rel!r} != {expected_legacy_rel!r}", errors)
+        if isinstance(group, str) and isinstance(rel, str):
+            rel_path = Path(rel)
+            require(rel_path.parent.as_posix() == f"layers/{group}", f"{layer_id}: path {rel!r} is not a direct child of its group", errors)
+            require(rel_path.suffix == ".json" and rel_path.name != "certificate.json", f"{layer_id}: path {rel!r} is not a flat JSON certificate", errors)
             require((ROOT / rel).exists(), f"{layer_id}: registry path missing: {rel}", errors)
+            require(rel != legacy_rel, f"{layer_id}: path still points at legacy layout", errors)
 
         if isinstance(dirname, str) and dirname in EXPECTED:
             require(
@@ -245,8 +302,71 @@ def verify_layer_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, 
         "status": data.get("status"),
         "registry_entries": len(layers) if isinstance(layers, list) else 0,
         "groups": sorted(group_names),
-        "legacy_layout": policy.get("physical_layout") if isinstance(policy, dict) else None,
+        "physical_layout": policy.get("physical_layout") if isinstance(policy, dict) else None,
+        "path_migration": policy.get("path_migration") if isinstance(policy, dict) else None,
         "file_sha256": sha_file(LAYER_INDEX),
+    }
+
+
+def verify_layer_layout(registry: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    layer_root = ROOT / "layers"
+    require(layer_root.is_dir(), "missing layers directory", errors)
+    if not layer_root.is_dir():
+        return {
+            "status": "MISSING",
+            "groups": [],
+            "certificate_files": 0,
+            "summary_files": 0,
+        }
+
+    groups = registry.get("groups", {})
+    group_names = set(groups) if isinstance(groups, dict) else set()
+    actual_top_dirs = {p.name for p in layer_root.iterdir() if p.is_dir()}
+    top_files = {p.name for p in layer_root.iterdir() if p.is_file()}
+
+    require(actual_top_dirs == group_names, f"layer group directory set mismatch: {sorted(actual_top_dirs ^ group_names)}", errors)
+    require(top_files <= {"index.json"}, f"unexpected top-level layer files: {sorted(top_files - {'index.json'})}", errors)
+
+    nested_dirs = [
+        p.relative_to(ROOT).as_posix()
+        for p in layer_root.rglob("*")
+        if p.is_dir() and p.parent != layer_root
+    ]
+    require(not nested_dirs, f"nested layer directories are not allowed: {nested_dirs}", errors)
+
+    registry_files = {
+        entry.get("path")
+        for entry in registry.get("layers", [])
+        if isinstance(entry, dict) and isinstance(entry.get("path"), str)
+    }
+    unexpected_files: list[str] = []
+    summary_files: list[str] = []
+    for path in layer_root.rglob("*"):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(ROOT).as_posix()
+        if rel == "layers/index.json":
+            continue
+        rel_path = Path(rel)
+        parts = rel_path.parts
+        is_direct_group_file = len(parts) == 3 and parts[0] == "layers" and parts[1] in group_names
+        if not is_direct_group_file or rel_path.suffix != ".json":
+            unexpected_files.append(rel)
+            continue
+        if rel in registry_files:
+            continue
+        if rel_path.name.endswith(".summary.json"):
+            summary_files.append(rel)
+            continue
+        unexpected_files.append(rel)
+
+    require(not unexpected_files, f"unexpected layer files: {unexpected_files}", errors)
+
+    return {
+        "status": "PASS" if not nested_dirs and not unexpected_files and actual_top_dirs == group_names and top_files <= {"index.json"} else "FAIL",
+        "groups": sorted(actual_top_dirs),
+        "certificate_files": len(registry_files),
+        "summary_files": len(summary_files),
     }
 
 
@@ -295,7 +415,7 @@ def verify_core_arrays(errors: list[str]) -> dict[str, Any]:
     import numpy as np
 
     out: dict[str, Any] = {}
-    z = np.load(ROOT / "data/raw/tensor_sparse.npz")
+    z = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(z["triples"], dtype=np.int64)
     reps = np.asarray(z["reps"], dtype=np.int64)
     M = np.asarray(z["M"], dtype=np.int64)
@@ -361,8 +481,8 @@ def verify_core_arrays(errors: list[str]) -> dict[str, Any]:
     return out
 
 
-def verify_integrity(errors: list[str]) -> dict[str, Any]:
-    data = load_json("layers/25_proof_system_integrity/certificate.json")
+def verify_integrity(errors: list[str], registry: dict[str, Any]) -> dict[str, Any]:
+    data = load_json(layer_relpath("integrity.proof_system", registry))
     summary = data.get("summary", {})
     fb = summary.get("finite_base", {})
     expected = {
@@ -461,15 +581,18 @@ def run(mode: str) -> dict[str, Any]:
     root = verify_root(errors)
     d20 = verify_d20_json(errors)
     layer_registry, layer_registry_summary = verify_layer_registry(errors)
+    layer_layout = verify_layer_layout(layer_registry, errors)
+    verify_root_layers(root, layer_registry, errors)
     layers = verify_layers(errors, layer_registry)
     core = verify_core_arrays(errors)
-    integrity = verify_integrity(errors)
+    integrity = verify_integrity(errors, layer_registry)
     out: dict[str, Any] = {
         "status": "PASS" if not errors else "FAIL",
         "mode": mode,
         "headline": root.get("status"),
         "d20": d20,
         "layer_registry": layer_registry_summary,
+        "layer_layout": layer_layout,
         "layer_count": len(layers),
         "core": core,
         "integrity": integrity,

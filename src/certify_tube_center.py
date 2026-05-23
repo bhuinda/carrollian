@@ -6,9 +6,9 @@ from typing import Any, Dict
 import numpy as np
 
 try:
-    from .certify_io import cached_core_block, h_json, load_json, ROOT
+    from .certify_io import cached_core_block, h_json, load_json, raw_tensor_relpath, ROOT
 except ImportError:  # Supports `python src/certify_tube_center.py`.
-    from certify_io import cached_core_block, h_json, load_json, ROOT
+    from certify_io import cached_core_block, h_json, load_json, raw_tensor_relpath, ROOT
 
 try:
     from .certify_linear import (
@@ -45,7 +45,7 @@ def compute_tube_center_algebra_lift() -> Dict[str, Any]:
     object_of_point = np.asarray(rel['object_of_point'], dtype=np.int64)
     block_i = np.asarray(rel['block_i'], dtype=np.int64)
     block_j = np.asarray(rel['block_j'], dtype=np.int64)
-    tensor = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    tensor = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(tensor['triples'], dtype=np.int64)
     identity_relations = find_identity_relations(encoded, offsets, object_of_point, block_i, block_j)
 
@@ -221,7 +221,7 @@ def validate_tube_center_primitive_idempotents() -> Dict[str, Any]:
     object_of_point = np.asarray(rel['object_of_point'], dtype=np.int64)
     block_i = np.asarray(rel['block_i'], dtype=np.int64)
     block_j = np.asarray(rel['block_j'], dtype=np.int64)
-    tensor = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    tensor = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(tensor['triples'], dtype=np.int64)
     identity_relations = find_identity_relations(encoded, offsets, object_of_point, block_i, block_j)
 

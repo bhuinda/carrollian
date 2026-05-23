@@ -11,6 +11,7 @@ import numpy as np
 
 from .build_be3_from_coorient import construct_be3_from_source_coorient
 from .build_orbit_tensor import compute_tensor_from_orbitals
+from .certify_io import raw_tensor_relpath
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -72,7 +73,7 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
         compute_tensor_from_orbitals(
             relation_aligned,
             tensor,
-            ROOT / "data/raw/tensor_sparse.npz",
+            ROOT / raw_tensor_relpath(),
             None,
             False,
         )
@@ -80,14 +81,15 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
     generated_relation = load_relation_manifest(relation_aligned)
     generated_tensor = load_tensor_manifest(tensor)
     canonical_relation = load_relation_manifest(ROOT / "data/raw/relation_memberships.npz")
-    canonical_tensor = load_tensor_manifest(ROOT / "data/raw/tensor_sparse.npz")
+    tensor_rel = raw_tensor_relpath()
+    canonical_tensor = load_tensor_manifest(ROOT / tensor_rel)
 
     relation_matches = (
         generated_relation["encoded_pairs_sha256"] == canonical_relation["encoded_pairs_sha256"]
         and generated_relation["offsets_sha256"] == canonical_relation["offsets_sha256"]
         and generated_relation["object_of_point_sha256"] == canonical_relation["object_of_point_sha256"]
     )
-    # tensor_sparse.npz and generated tensors may use different row order.
+    # The canonical tensor and generated tensors may use different row order.
     # Compare the relation algebra as a multiset of (alpha,beta,gamma,coefficient).
     tensor_report_payload = {}
     if tensor_report.exists():
@@ -96,7 +98,7 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
         except Exception:
             tensor_report_payload = {}
     gen_triples = np.asarray(np.load(tensor)["triples"], dtype=np.int64)
-    can_triples = np.asarray(np.load(ROOT / "data/raw/tensor_sparse.npz")["triples"], dtype=np.int64)
+    can_triples = np.asarray(np.load(ROOT / tensor_rel)["triples"], dtype=np.int64)
     idx_g = np.lexsort((gen_triples[:,3], gen_triples[:,2], gen_triples[:,1], gen_triples[:,0]))
     idx_c = np.lexsort((can_triples[:,3], can_triples[:,2], can_triples[:,1], can_triples[:,0]))
     tensor_matches = bool(np.array_equal(gen_triples[idx_g], can_triples[idx_c]))
@@ -105,7 +107,7 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
         "schema": "d20.theorem.pre_A985_relation_body@1",
         "status": "PRE_A985_RELATION_BODY_DERIVED_WITHOUT_RELATION_TABLE_PASS" if relation_matches and tensor_matches else "PRE_A985_RELATION_BODY_DERIVATION_NEEDS_REVIEW",
         "theorem_name": "Pre-A985 Relation Body Theorem",
-        "claim": "The 985-relation body and T985 are derived from the pre-A985 source construction plus the unique coorient action; data/raw/relation_memberships.npz and data/raw/tensor_sparse.npz are comparison targets, not constructor inputs.",
+        "claim": f"The 985-relation body and T985 are derived from the pre-A985 source construction plus the unique coorient action; data/raw/relation_memberships.npz and {tensor_rel} are comparison targets, not constructor inputs.",
         "constructor_inputs": [
             "H8 = RM(1,3)",
             "three Type-II neighbor vectors v1,v2,v3",
@@ -115,7 +117,7 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
         ],
         "not_constructor_inputs": [
             "data/raw/relation_memberships.npz",
-            "data/raw/tensor_sparse.npz",
+            tensor_rel,
             "data/raw/quotients.npz",
             "data/raw/simple_branching_matrices.npz",
         ],

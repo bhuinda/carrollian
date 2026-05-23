@@ -10,6 +10,11 @@ ROOT = Path(__file__).resolve().parents[1]
 NREL = 985
 P_DEFAULT = 1000003
 
+try:
+    from .certify_io import raw_tensor_relpath
+except ImportError:  # Supports `python src/solve_half_braiding.py`.
+    from certify_io import raw_tensor_relpath
+
 
 def canonical(obj: Any) -> bytes:
     return json.dumps(obj, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')
@@ -38,7 +43,7 @@ def load_blocks():
 
 
 def build_pair_terms():
-    triples = np.asarray(np.load(ROOT / 'data/raw/tensor_sparse.npz')['triples'], dtype=np.int64)
+    triples = np.asarray(np.load(ROOT / raw_tensor_relpath())['triples'], dtype=np.int64)
     pair_terms: dict[tuple[int,int], list[tuple[int,int]]] = defaultdict(list)
     for a, b, c, v in triples.tolist():
         pair_terms[(int(a), int(b))].append((int(c), int(v)))

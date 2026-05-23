@@ -10,6 +10,11 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 
+try:
+    from .certify_io import raw_tensor_relpath
+except ImportError:  # Supports `python src/certify_constructor.py`.
+    from certify_io import raw_tensor_relpath
+
 COMPLETED_FULL_SCRATCH_STEPS = [
     "construct H8 = RM(1,3) from affine linear functions on F2^3",
     "construct C0 = H8^{oplus 3} inside F2^24",
@@ -73,7 +78,8 @@ def quotient_tensor_from_sparse(triples: np.ndarray, qmap: np.ndarray, nclasses:
 
 
 def construct_from_supplied_raw_seeds() -> dict[str, Any]:
-    tensor = load_npz("data/raw/tensor_sparse.npz")
+    tensor_rel = raw_tensor_relpath()
+    tensor = load_npz(tensor_rel)
     triples = np.asarray(tensor["triples"], dtype=np.int64)
     reps = np.asarray(tensor["reps"], dtype=np.int64)
     M = np.asarray(tensor["M"], dtype=np.int64)
@@ -132,7 +138,7 @@ def construct_from_supplied_raw_seeds() -> dict[str, Any]:
         "constructs_from_supplied_raw_seeds": True,
         "seed_boundary": [
             "data/raw/relation_memberships.npz",
-            "data/raw/tensor_sparse.npz",
+            tensor_rel,
             "data/raw/quotients.npz",
             "data/raw/simple_branching_matrices.npz",
         ],

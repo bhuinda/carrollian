@@ -11,6 +11,7 @@ from typing import Any
 
 import numpy as np
 
+from src.certify_io import raw_tensor_relpath
 from src.derive_zero_axiom_coorient import derive as derive_zero_axiom_coorient
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,6 +42,10 @@ EXCLUDED_SCAN_DIRS = {
     ".venv",
     "__pycache__",
     "a236_compute_py_bundle",
+    "d20_coherent_annihilator_verifier_bundle",
+    "d20_coherent_annihilator_verifier_bundle_v3",
+    "ingest",
+    "terwilliger_local_runner",
 }
 
 EXCLUDED_SCAN_SUFFIXES = {
@@ -48,10 +53,18 @@ EXCLUDED_SCAN_SUFFIXES = {
     ".pyo",
 }
 
+EXCLUDED_SCAN_FILES = {
+    "test.zip",
+}
+
 
 def excluded_scan_path(path: Path) -> bool:
     rel = path.relative_to(ROOT)
-    return any(part in EXCLUDED_SCAN_DIRS for part in rel.parts) or path.suffix in EXCLUDED_SCAN_SUFFIXES
+    return (
+        any(part in EXCLUDED_SCAN_DIRS for part in rel.parts)
+        or path.suffix in EXCLUDED_SCAN_SUFFIXES
+        or path.name in EXCLUDED_SCAN_FILES
+    )
 
 
 def canonical(obj: Any) -> bytes:
@@ -439,12 +452,12 @@ def hcycle_game_theory() -> dict[str, Any]:
 
 
 def json_payloads() -> dict[str, Any]:
-    skip = {"d20.json", "certificate.json", "layers/index.json", "layers\\index.json"}
+    skip = {"d20.json", "certificate.json", "layers/index.json"}
     payloads: dict[str, Any] = {}
     for path in sorted(ROOT.rglob("*.json")):
         if excluded_scan_path(path):
             continue
-        rel = str(path.relative_to(ROOT))
+        rel = path.relative_to(ROOT).as_posix()
         if rel in skip:
             continue
         if rel.startswith("manifests/"):
@@ -497,7 +510,7 @@ def source_file_manifest() -> dict[str, Any]:
 
 def core_invariants() -> dict[str, Any]:
     out: dict[str, Any] = {}
-    z = np.load(ROOT / "data/raw/tensor_sparse.npz")
+    z = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(z["triples"], dtype=np.int64)
     reps = np.asarray(z["reps"], dtype=np.int64)
     M = np.asarray(z["M"], dtype=np.int64)
@@ -661,10 +674,16 @@ def optics_invariants() -> dict[str, Any]:
     }
 
 
-def layer_payloads() -> dict[str, Any]:
+def layer_payloads(registry: dict[str, Any]) -> dict[str, Any]:
     out = {}
-    for p in sorted((ROOT / "layers").glob("*/certificate.json")):
-        out[p.parent.name] = load_json(p)
+    for entry in registry.get("layers", []):
+        if not isinstance(entry, dict):
+            continue
+        layer_id = entry.get("id")
+        rel = entry.get("path")
+        if not isinstance(layer_id, str) or not isinstance(rel, str):
+            continue
+        out[layer_id] = load_json(ROOT / rel)
     return out
 
 
@@ -703,6 +722,74 @@ def npz_manifests() -> dict[str, Any]:
             continue
         out[rel] = npz_manifest(path)
     return out
+
+
+def tensor_chain_evidence() -> dict[str, Any]:
+    base = ROOT / "data" / "tensor_chain"
+    if not base.exists():
+        return {"status": "TENSOR_CHAIN_EVIDENCE_MISSING", "present": False}
+
+    suffix_counts: dict[str, int] = {}
+    for path in base.rglob("*"):
+        if not path.is_file():
+            continue
+        suffix = path.suffix.lower() or "<none>"
+        suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
+
+    key_report_names = [
+        "Romega_classification_report.json",
+        "fano/fano_layer_report.json",
+        "fano_6j/fano_6j_contraction_report.json",
+        "v13_decisive_tests/v13_decisive_tests_report.json",
+        "v14_curvature_descent/v14_curvature_descent_report.json",
+        "v15_chamber_source/v15_chamber_source_report.json",
+        "v16_mechanism_test/v16_mechanism_test_report.json",
+        "v17_signed_fano_global_recovery/v17_signed_fano_global_recovery_report.json",
+        "v18_constructed_signed_fano_action/v18_constructed_signed_fano_action_report.json",
+        "v19_chamber_projector/v19_chamber_projector_report.json",
+        "v20_all_four_lifts/v20_all_four_lifts_report.json",
+        "v21_typeC_csdo_resolution/v21_typeC_csdo_resolution_report.json",
+        "v22_raw_tensor_chain_test/v22_raw_tensor_chain_report.json",
+    ]
+    key_reports: dict[str, Any] = {}
+    for rel in key_report_names:
+        path = base / rel
+        if not path.exists():
+            key_reports[rel] = {"present": False}
+            continue
+        payload = load_json(path)
+        key_reports[rel] = {
+            "present": True,
+            "schema": payload.get("schema"),
+            "status": payload.get("status"),
+            "sha256": sha_file(path),
+        }
+
+    index_path = base / "index.json"
+    index = load_json(index_path) if index_path.exists() else {}
+    plain_name_view_path = base / "plain_name_view.json"
+    plain_name_view = load_json(plain_name_view_path) if plain_name_view_path.exists() else {}
+    plain_name_summary = {
+        "present": bool(plain_name_view),
+        "path": "data/tensor_chain/plain_name_view.json",
+        "schema": plain_name_view.get("schema"),
+        "status": plain_name_view.get("status"),
+        "sha256": sha_file(plain_name_view_path) if plain_name_view_path.exists() else None,
+        "summary": plain_name_view.get("summary", {}),
+    }
+    return {
+        "status": "TENSOR_CHAIN_EVIDENCE_CERTIFIED",
+        "present": True,
+        "public_name": "tensor_chain",
+        "path": "data/tensor_chain",
+        "source_folder": "ingest/g_v22_Romega_raw_tensor_chain_test",
+        "source_preservation": "original artifact filenames and table headers are retained for traceability",
+        "file_counts_by_suffix": suffix_counts,
+        "plain_names": index.get("plain_names", {}),
+        "plain_name_view": plain_name_summary,
+        "artifact_groups": index.get("artifact_groups", {}),
+        "key_reports": key_reports,
+    }
 
 
 
@@ -864,6 +951,7 @@ def pre_a985_relation_body_theorem() -> dict[str, Any]:
 def derive() -> dict[str, Any]:
     zero_axiom = derive_zero_axiom_coorient()
     universal_uniqueness = universal_integral_uniqueness_payload()
+    registry = layer_registry()
     result: dict[str, Any] = {
         "schema": "d20.object.v2",
         "status": "D20_CERTIFIED",
@@ -884,10 +972,11 @@ def derive() -> dict[str, Any]:
         "zero_axiom_coorient": zero_axiom,
         "universal_integral_uniqueness": universal_uniqueness,
         "pre_A985_relation_body_theorem": pre_a985_relation_body_theorem(),
+        "tensor_chain": tensor_chain_evidence(),
         "coorient_seed": coorient_seed_invariants(),
         "final_investigation": final_investigation_status(zero_axiom, universal_uniqueness),
-        "layer_registry": layer_registry(),
-        "layer_certificates": layer_payloads(),
+        "layer_registry": registry,
+        "layer_certificates": layer_payloads(registry),
         "json_invariants": json_payloads(),
         "csv_invariants": csv_payloads(),
         "npz_array_manifests": npz_manifests(),

@@ -27,13 +27,14 @@ The object is not represented by stored orbitals/tensors as primitive data. It j
 - `1,414,965` tensor entries
 - `A985 -> A236 -> A42 -> A12`
 - packet-20, optics, integrity, H-cycles, and game/control invariants
+- `data/tensor_chain` contains the extracted tensor-chain evidence, with a
+  plain-name index at `data/tensor_chain/index.json`
 
-The layer stack is indexed by `layers/index.json`. The numbered layer
-directories are still the physical layout, but the registry is now the
-source of truth for layer ids, groups, expected statuses, dependency edges,
-and proposed semantic paths.
+The layer stack is indexed by `layers/index.json` and stored as flat JSON files
+inside semantic group directories such as `layers/tube`, `layers/drinfeld`, and
+`layers/selectors`. The registry is the source of truth for layer ids, legacy
+numbering, expected statuses, dependency edges, and certificate paths.
 
 TO-DO:
-- migrate layer directories from numbered legacy paths to the registry paths
 - move the construction harness out of the top-level path
 - add visuals? a notebook?

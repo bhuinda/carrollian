@@ -2,6 +2,11 @@ from __future__ import annotations
 
 from typing import Any, Callable, Dict
 
+try:
+    from .certify_io import raw_tensor_relpath
+except ImportError:  # Supports `python src/certify_report.py`.
+    from certify_io import raw_tensor_relpath
+
 
 def data_catalog(manifest: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
     """Human-readable object-data catalog.
@@ -9,6 +14,7 @@ def data_catalog(manifest: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any
     The certificate commits to files, but arrays stay external. This module owns
     report prose so the core verifier can focus on numerical checks.
     """
+    tensor_path = raw_tensor_relpath()
     required_catalog = {
         'data/raw/constants.json': {
             'role': 'global constants and declared finite-object dimensions',
@@ -16,7 +22,7 @@ def data_catalog(manifest: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any
             'required_for_reconstruction': True,
             'contains': ['object sizes', 'Wedderburn summary', 'declared tensor counts'],
         },
-        'data/raw/tensor_sparse.npz': {
+        tensor_path: {
             'role': 'sparse multiplication tensor T_985',
             'complete': True,
             'required_for_reconstruction': True,

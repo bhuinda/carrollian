@@ -1,0 +1,132 @@
+{
+  "schema": "G.d20.v17.signed_fano_global_action_recovery",
+  "status": "V17_SIGNED_FANO_GLOBAL_ACTION_RECOVERY_COMPLETE",
+  "attempt": "recover a signed-Fano/Fano action on the 16 builder and 16 jabber labels from v8 Fano-zone data; test global R_Omega equivariance and mechanism certification",
+  "automorphism_group": {
+    "GL3F2_order": 168,
+    "flag_stabilizer_count": 8,
+    "point_stabilizer_count": 24
+  },
+  "recoverable_action": {
+    "exactly_recoverable_count": 8,
+    "exactly_recoverable_classes": {
+      "flag_stabilizer": 8
+    },
+    "best_nonflag_cost": 0.05257161458333333,
+    "flag_cost_max": 0.0
+  },
+  "equivariance": {
+    "best_nontrivial_R_equivariance_error": 0.0,
+    "mean_point_stabilizer_R_error": 0.0,
+    "mean_all_GL_R_error": 0.9517261277137279
+  },
+  "composition_defects": [
+    {
+      "group": "all_GL3F2",
+      "pair_tests": 28224,
+      "builder_composition_defect_mean": 0.4880952380952381,
+      "builder_composition_defect_max": 0.75,
+      "jabber_composition_defect_mean": 0.5467687074829932,
+      "jabber_composition_defect_max": 0.8125
+    },
+    {
+      "group": "exact_recoverable",
+      "pair_tests": 64,
+      "builder_composition_defect_mean": 0.0,
+      "builder_composition_defect_max": 0.0,
+      "jabber_composition_defect_mean": 0.0,
+      "jabber_composition_defect_max": 0.0
+    },
+    {
+      "group": "point_stabilizer",
+      "pair_tests": 576,
+      "builder_composition_defect_mean": 0.0,
+      "builder_composition_defect_max": 0.0,
+      "jabber_composition_defect_mean": 0.0,
+      "jabber_composition_defect_max": 0.0
+    },
+    {
+      "group": "flag_stabilizer",
+      "pair_tests": 64,
+      "builder_composition_defect_mean": 0.0,
+      "builder_composition_defect_max": 0.0,
+      "jabber_composition_defect_mean": 0.0,
+      "jabber_composition_defect_max": 0.0
+    }
+  ],
+  "projection_summary": [
+    {
+      "group": "exact_recoverable",
+      "size": 8,
+      "projection_energy_fraction_vs_R": 1.0,
+      "breaking_energy_fraction_vs_R": 1.362664574186698e-32,
+      "projection_cos2_with_R": 1.0,
+      "projection_participation_rank": 3.842555775650312,
+      "breaking_participation_rank": 9.017992185726625,
+      "projection_relerr_to_R": 1.1673322467004407e-16
+    },
+    {
+      "group": "flag_stabilizer",
+      "size": 8,
+      "projection_energy_fraction_vs_R": 1.0,
+      "breaking_energy_fraction_vs_R": 1.362664574186698e-32,
+      "projection_cos2_with_R": 1.0,
+      "projection_participation_rank": 3.842555775650312,
+      "breaking_participation_rank": 9.017992185726625,
+      "projection_relerr_to_R": 1.1673322467004407e-16
+    },
+    {
+      "group": "point_stabilizer",
+      "size": 24,
+      "projection_energy_fraction_vs_R": 0.9999999999999997,
+      "breaking_energy_fraction_vs_R": 1.5134465340126553e-31,
+      "projection_cos2_with_R": 1.0,
+      "projection_participation_rank": 3.8425557756503097,
+      "breaking_participation_rank": 7.883245663351824,
+      "projection_relerr_to_R": 3.890304016413956e-16
+    },
+    {
+      "group": "all_GL3F2",
+      "size": 168,
+      "projection_energy_fraction_vs_R": 0.5777261535539403,
+      "breaking_energy_fraction_vs_R": 0.6535424608225104,
+      "projection_cos2_with_R": 0.36960222964484335,
+      "projection_participation_rank": 3.655019413637954,
+      "breaking_participation_rank": 4.042518844786951,
+      "projection_relerr_to_R": 0.8084197305994645
+    }
+  ],
+  "resolution_loss": {
+    "available_resolution": "three Fano-zone coordinates split uniformly over 7 points",
+    "builder_distribution_matrix_rank": 3,
+    "jabber_distribution_matrix_rank": 3,
+    "builder_singular_values": [
+      3.7846253839612287,
+      0.18560189594840143,
+      0.01167792080964181,
+      6.77798075555366e-18,
+      3.188226128391062e-19,
+      6.611544263893253e-35,
+      2.5144993750928305e-50
+    ],
+    "jabber_singular_values": [
+      3.7960965298849096,
+      0.28273503981434905,
+      0.010160437985845485,
+      9.023145221547042e-19,
+      2.964785238173367e-19,
+      3.161658549454808e-20,
+      1.3678096715864902e-34
+    ],
+    "theoretical_full_point_resolution": 7,
+    "available_zone_resolution": 3,
+    "signed_D6_part_observable": false,
+    "reason_signed_D6_part_unobservable": "sign flips act trivially on unsigned Fano point probability distributions; no signed edge/channel data is present at the 16-label level."
+  },
+  "verdict": {
+    "global_signed_fano_action_certified": false,
+    "reason": "The v8 label data are only three-zone Fano aggregates. They recover the incident flag stabilizer but do not recover the null-point S4 or signed-D6 action on 16 labels. The signed part is completely invisible to unsigned point distributions.",
+    "six_channel_mechanism_status": "unchanged: mechanism certified inside quotient shadow",
+    "global_mechanism_status": "still not certified; now the obstruction is diagnosed as missing label-level signed-Fano resolution, not just numerical ill-conditioning."
+  }
+}

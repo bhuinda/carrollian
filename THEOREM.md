@@ -55,7 +55,7 @@ The core verifier checks:
 - the Leech boundary array has shape `[98280, 24]`;
 - the sector-33 integrity gate has the recorded rank and kernel data;
 - `layers/index.json` names all 26 layer certificates, their groups,
-  dependency edges, expected statuses, and proposed semantic paths;
+  dependency edges, expected statuses, legacy numbering, and flat semantic paths;
 - all 26 layer certificates have their expected statuses through that registry.
 
 ## Boundary

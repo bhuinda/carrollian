@@ -6,9 +6,9 @@ from typing import Any, Dict
 import numpy as np
 
 try:
-    from .certify_io import h_json, load_json, ROOT
+    from .certify_io import h_json, load_json, raw_tensor_relpath, ROOT
 except ImportError:  # Supports `python src/certify_tube_projection.py`.
-    from certify_io import h_json, load_json, ROOT
+    from certify_io import h_json, load_json, raw_tensor_relpath, ROOT
 
 try:
     from .certify_linear import inverse_mod_square, pivot_columns_for_full_row_rank_matrix, rank_mod
@@ -33,7 +33,7 @@ def compute_tube_pair_product_oracle() -> Dict[str, Any]:
     rel = np.load(ROOT / 'data/raw/relation_memberships.npz')
     block_i = np.asarray(rel['block_i'], dtype=np.int64)
     block_j = np.asarray(rel['block_j'], dtype=np.int64)
-    tensor = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    tensor = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(tensor['triples'], dtype=np.int64)
 
     # Reverse-typed products alpha:i->j, beta:j->i.  In this incidence
@@ -247,7 +247,7 @@ def compute_full_tube_algebra_solver() -> Dict[str, Any]:
     rel = np.load(ROOT / 'data/raw/relation_memberships.npz')
     block_i = np.asarray(rel['block_i'], dtype=np.int64)
     block_j = np.asarray(rel['block_j'], dtype=np.int64)
-    tensor = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    tensor = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(tensor['triples'], dtype=np.int64)
 
     reverse_mask = (block_i[triples[:,0]] == block_j[triples[:,1]]) & (block_j[triples[:,0]] == block_i[triples[:,1]])
@@ -392,7 +392,7 @@ def compute_tube_projection_section() -> Dict[str, Any]:
     rel = np.load(ROOT / 'data/raw/relation_memberships.npz')
     block_i = np.asarray(rel['block_i'], dtype=np.int64)
     block_j = np.asarray(rel['block_j'], dtype=np.int64)
-    tensor = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    tensor = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(tensor['triples'], dtype=np.int64)
 
     reverse_mask = (block_i[triples[:, 0]] == block_j[triples[:, 1]]) & (block_j[triples[:, 0]] == block_i[triples[:, 1]])

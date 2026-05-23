@@ -41,12 +41,20 @@ EXCLUDED_DIRS = {
     ".venv",
     "__pycache__",
     "a236_compute_py_bundle",
+    "d20_coherent_annihilator_verifier_bundle",
+    "d20_coherent_annihilator_verifier_bundle_v3",
+    "ingest",
+    "terwilliger_local_runner",
     "generated",
 }
 
 EXCLUDED_SUFFIXES = {
     ".pyc",
     ".pyo",
+}
+
+EXCLUDED_FILES = {
+    "test.zip",
 }
 
 
@@ -74,12 +82,44 @@ def run(cmd: list[str], *, check: bool = True, capture: bool = False) -> subproc
     return subprocess.run(cmd, cwd=ROOT, text=True, check=check)
 
 
+def refresh_tensor_chain_plain_name_view() -> bool:
+    base = ROOT / "data" / "tensor_chain"
+    if not base.exists():
+        return False
+    from src.derive_tensor_chain_plain_names import OUT, derive
+
+    OUT.write_text(json.dumps(derive(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print("refreshed data/tensor_chain/plain_name_view.json", flush=True)
+    return True
+
+
 def rebuild_d20(pretty: bool) -> None:
     from src.derive_d20 import derive
+    refresh_tensor_chain_plain_name_view()
     print("$ derive d20.json", flush=True)
     obj = derive()
     D20.write_text(json.dumps(obj, indent=2 if pretty else None, sort_keys=bool(pretty)), encoding="utf-8")
     print("rebuilt d20.json", flush=True)
+
+
+def layer_certificate_summaries() -> list[dict[str, Any]]:
+    index = json.loads((ROOT / "layers" / "index.json").read_text(encoding="utf-8"))
+    rows: list[dict[str, Any]] = []
+    for layer in index.get("layers", []):
+        rel = layer["path"]
+        path = ROOT / rel
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        rows.append({
+            "id": layer.get("id"),
+            "group": layer.get("group"),
+            "legacy_dir": layer.get("legacy_dir"),
+            "legacy_path": layer.get("legacy_path"),
+            "certificate": rel,
+            "directory": Path(rel).parent.as_posix(),
+            "certificate_file_sha256": sha_file(path),
+            "status": payload.get("status"),
+        })
+    return rows
 
 
 def refresh_certificate() -> None:
@@ -102,6 +142,8 @@ def refresh_certificate() -> None:
         "sha256_object": d20_object_hash,
         "invariant_sections": sorted(k for k in d20.keys() if k != "d20_sha256"),
     }
+    cert["layers"] = layer_certificate_summaries()
+    cert["layer_count"] = len(cert["layers"])
     cert["d20_sha256"] = sha_json_body(cert, "d20_sha256")
     CERTIFICATE.write_text(json.dumps(cert, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
@@ -124,6 +166,8 @@ def refresh_manifest() -> int:
         if any(part in EXCLUDED_DIRS for part in path.relative_to(ROOT).parts):
             continue
         if path.suffix in EXCLUDED_SUFFIXES:
+            continue
+        if path.name in EXCLUDED_FILES:
             continue
         entries.append({
             "path": rel,

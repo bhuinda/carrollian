@@ -13,6 +13,11 @@ from scipy.sparse import csr_matrix
 
 ROOT = Path(__file__).resolve().parents[1]
 
+try:
+    from .certify_io import raw_tensor_relpath
+except ImportError:  # Supports `python src/build_orbit_tensor.py`.
+    from certify_io import raw_tensor_relpath
+
 
 def sha_bytes(a: np.ndarray) -> str:
     return hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
@@ -179,7 +184,7 @@ def compute_tensor_from_orbitals(
 def main() -> None:
     ap = argparse.ArgumentParser(description="Rebuild the A985 multiplication tensor from supplied ordered-pair orbitals by two-step incidence.")
     ap.add_argument("--relation-seed", default="data/raw/relation_memberships.npz")
-    ap.add_argument("--compare", default="data/raw/tensor_sparse.npz")
+    ap.add_argument("--compare", default=raw_tensor_relpath())
     ap.add_argument("--out-npz", default="generated/tensor_from_orbitals.npz")
     ap.add_argument("--out-json", default="generated/orbitals_to_tensor_report.json")
     ap.add_argument("--sample-limit", type=int, default=None)

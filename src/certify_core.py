@@ -10,9 +10,14 @@ except ImportError:  # Supports `python src/certify_core.py`.
     from certify_report import assemble_certificate, verified_claims
 
 try:
-    from .certify_io import cached_core_block, file_manifest, h_json, load_json, ROOT
+    from .certify_io import cached_core_block, file_manifest, h_json, load_json, raw_tensor_relpath, ROOT
 except ImportError:  # Supports `python src/certify_core.py`.
-    from certify_io import cached_core_block, file_manifest, h_json, load_json, ROOT
+    from certify_io import cached_core_block, file_manifest, h_json, load_json, raw_tensor_relpath, ROOT
+
+try:
+    from .layer_registry import layer_relpath
+except ImportError:  # Supports `python src/certify_core.py`.
+    from layer_registry import layer_relpath
 
 try:
     from .certify_raw import (
@@ -83,16 +88,17 @@ except ImportError:  # Supports `python src/certify_core.py`.
 
 CORE_FILES = [
     'data/raw/constants.json',
-    'data/raw/tensor_sparse.npz',
+    raw_tensor_relpath(),
     'data/raw/quotients.npz',
     'data/raw/relation_memberships.npz',
     'data/raw/simple_branching_matrices.npz',
     'data/raw/leech_projective_generators.npz',
-    'layers/00_core/certificate.json',
+    layer_relpath('core.a985'),
     'src/certify_core.py',
     'src/certify_half_braiding.py',
     'src/certify_io.py',
     'src/certify_linear.py',
+    'src/layer_registry.py',
     'src/certify_raw.py',
     'src/certify_tube.py',
     'src/certify_tube_center.py',

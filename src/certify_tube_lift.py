@@ -6,9 +6,9 @@ from typing import Any, Dict
 import numpy as np
 
 try:
-    from .certify_io import h_json, load_json, ROOT
+    from .certify_io import h_json, load_json, raw_tensor_relpath, ROOT
 except ImportError:  # Supports `python src/certify_tube_lift.py`.
-    from certify_io import h_json, load_json, ROOT
+    from certify_io import h_json, load_json, raw_tensor_relpath, ROOT
 
 try:
     from .certify_linear import rank_mod
@@ -78,7 +78,7 @@ def compute_tube_center_lift() -> Dict[str, Any]:
     object_of_point = np.asarray(rel['object_of_point'], dtype=np.int64)
     block_i = np.asarray(rel['block_i'], dtype=np.int64)
     block_j = np.asarray(rel['block_j'], dtype=np.int64)
-    tensor = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    tensor = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(tensor['triples'], dtype=np.int64)
     quot = np.load(ROOT / 'data/raw/quotients.npz')
     q42t = np.asarray(quot['q42_tensor'], dtype=np.int64)
@@ -228,7 +228,7 @@ def compute_tube_algebra_lift() -> Dict[str, Any]:
     object_of_point = np.asarray(rel['object_of_point'], dtype=np.int64)
     block_i = np.asarray(rel['block_i'], dtype=np.int64)
     block_j = np.asarray(rel['block_j'], dtype=np.int64)
-    tensor = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    tensor = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(tensor['triples'], dtype=np.int64)
 
     ids_by_obj = [np.where((block_i == i) & (block_j == i))[0].astype(np.int64) for i in range(6)]

@@ -7,16 +7,16 @@ from typing import Any, Dict
 import numpy as np
 
 try:
-    from .certify_io import ROOT
+    from .certify_io import ROOT, raw_tensor_relpath
 except ImportError:  # Supports `python src/certify_raw.py`.
-    from certify_io import ROOT
+    from certify_io import ROOT, raw_tensor_relpath
 
 NPOINTS = 2576
 NREL = 985
 
 
 def validate_tensor(constants: Dict[str, Any]) -> Dict[str, Any]:
-    z = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    z = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(z['triples'], dtype=np.int64)
     M = np.asarray(z['M'], dtype=np.int64)
     reps = np.asarray(z['reps'], dtype=np.int64)
@@ -189,7 +189,7 @@ def validate_simple_branching() -> Dict[str, Any]:
 
 
 def validate_f_symbol_shape(fallback: Dict[str, Any] | None = None) -> Dict[str, Any]:
-    z = np.load(ROOT / 'data/raw/tensor_sparse.npz')
+    z = np.load(ROOT / raw_tensor_relpath())
     triples = np.asarray(z['triples'], dtype=np.int64)
     gamma_in_counts = np.bincount(triples[:, 2], minlength=NREL).astype(np.int64)
     left_out_counts = np.bincount(triples[:, 0], minlength=NREL).astype(np.int64)
