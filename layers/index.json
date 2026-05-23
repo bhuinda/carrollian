@@ -1,0 +1,380 @@
+{
+  "schema": "d20.layer_registry.v1",
+  "status": "LAYER_REGISTRY_BUILT",
+  "policy": {
+    "physical_layout": "legacy_flat_numbered_layers",
+    "registry_is_source_of_truth": true,
+    "directory_ordinals_are_display_order_only": true,
+    "path_migration": "not_started"
+  },
+  "groups": {
+    "core": {
+      "title": "Core algebra",
+      "description": "The base A985 certificate and its primary directory witness."
+    },
+    "tube": {
+      "title": "Tube algebra and lift checks",
+      "description": "Tube-basis projection, lift, and kernel-descent witnesses."
+    },
+    "drinfeld": {
+      "title": "Drinfeld center boundary",
+      "description": "Boundary, center, gluing, trace, and full lift certificates."
+    },
+    "modular": {
+      "title": "Ribbon and modular obstructions",
+      "description": "Twist, modular completion, Hopf, trace, character, and lasso audits."
+    },
+    "geometry": {
+      "title": "Geometry and syzygy frame",
+      "description": "Carrier dependency, MDS/Hilbert geometry, resolvent, and coordinate-frame witnesses."
+    },
+    "selectors": {
+      "title": "Golay and selector obstructions",
+      "description": "Selector obstruction, marking, MOG, row-refinement, and hexacode witnesses."
+    },
+    "integrity": {
+      "title": "Proof-system integrity",
+      "description": "End-to-end proof-ladder integrity certificate."
+    }
+  },
+  "layers": [
+    {
+      "id": "core.a985",
+      "ordinal": 0,
+      "group": "core",
+      "legacy_dir": "00_core",
+      "path": "layers/00_core/certificate.json",
+      "proposed_path": "layers/core/a985/certificate.json",
+      "expected_status": "PASS",
+      "claim_level": "core_directory_certificate",
+      "depends_on": []
+    },
+    {
+      "id": "tube.projection_section",
+      "ordinal": 1,
+      "group": "tube",
+      "legacy_dir": "01_tube_projection_section",
+      "path": "layers/01_tube_projection_section/certificate.json",
+      "proposed_path": "layers/tube/projection_section/certificate.json",
+      "expected_status": null,
+      "claim_level": "verified_right_inverse",
+      "depends_on": [
+        "core.a985"
+      ]
+    },
+    {
+      "id": "drinfeld.boundary",
+      "ordinal": 2,
+      "group": "drinfeld",
+      "legacy_dir": "02_drinfeld_boundary",
+      "path": "layers/02_drinfeld_boundary/certificate.json",
+      "proposed_path": "layers/drinfeld/boundary/certificate.json",
+      "expected_status": "DRINFELD_GROTHENDIECK_BOUNDARY_CERTIFIED",
+      "claim_level": "boundary_certificate",
+      "depends_on": [
+        "tube.projection_section"
+      ]
+    },
+    {
+      "id": "drinfeld.grothendieck_center",
+      "ordinal": 3,
+      "group": "drinfeld",
+      "legacy_dir": "03_drinfeld_grothendieck_center",
+      "path": "layers/03_drinfeld_grothendieck_center/certificate.json",
+      "proposed_path": "layers/drinfeld/grothendieck_center/certificate.json",
+      "expected_status": "DRINFELD_GROTHENDIECK_CENTER_CERTIFIED",
+      "claim_level": "center_certificate",
+      "depends_on": [
+        "drinfeld.boundary"
+      ]
+    },
+    {
+      "id": "drinfeld.idempotent_gluing",
+      "ordinal": 4,
+      "group": "drinfeld",
+      "legacy_dir": "04_drinfeld_idempotent_gluing",
+      "path": "layers/04_drinfeld_idempotent_gluing/certificate.json",
+      "proposed_path": "layers/drinfeld/idempotent_gluing/certificate.json",
+      "expected_status": "DRINFELD_IDEMPOTENT_GLUING_CERTIFIED",
+      "claim_level": "gluing_certificate",
+      "depends_on": [
+        "drinfeld.grothendieck_center"
+      ]
+    },
+    {
+      "id": "drinfeld.wedderburn_trace",
+      "ordinal": 5,
+      "group": "drinfeld",
+      "legacy_dir": "05_drinfeld_wedderburn_trace",
+      "path": "layers/05_drinfeld_wedderburn_trace/certificate.json",
+      "proposed_path": "layers/drinfeld/wedderburn_trace/certificate.json",
+      "expected_status": "DRINFELD_WEDDERBURN_TRACE_CERTIFIED",
+      "claim_level": "trace_certificate",
+      "depends_on": [
+        "drinfeld.idempotent_gluing"
+      ]
+    },
+    {
+      "id": "drinfeld.full_a985_lift",
+      "ordinal": 6,
+      "group": "drinfeld",
+      "legacy_dir": "06_drinfeld_full_A985_lift",
+      "path": "layers/06_drinfeld_full_A985_lift/certificate.json",
+      "proposed_path": "layers/drinfeld/full_a985_lift/certificate.json",
+      "expected_status": "DRINFELD_FULL_A985_LIFT_CERTIFIED",
+      "claim_level": "full_lift_certificate",
+      "depends_on": [
+        "drinfeld.wedderburn_trace"
+      ]
+    },
+    {
+      "id": "modular.ribbon_boundary",
+      "ordinal": 7,
+      "group": "modular",
+      "legacy_dir": "07_ribbon_modular_boundary",
+      "path": "layers/07_ribbon_modular_boundary/certificate.json",
+      "proposed_path": "layers/modular/ribbon_boundary/certificate.json",
+      "expected_status": "RIBBON_TWIST_TRIVIAL_AND_MODULAR_S_OBSTRUCTED",
+      "claim_level": "ribbon_boundary_certificate",
+      "depends_on": [
+        "drinfeld.full_a985_lift"
+      ]
+    },
+    {
+      "id": "modular.completion_obstruction",
+      "ordinal": 8,
+      "group": "modular",
+      "legacy_dir": "08_modular_completion_obstruction",
+      "path": "layers/08_modular_completion_obstruction/certificate.json",
+      "proposed_path": "layers/modular/completion_obstruction/certificate.json",
+      "expected_status": "MODULAR_COMPLETION_OBSTRUCTION_CERTIFIED",
+      "claim_level": "modular_obstruction_certificate",
+      "depends_on": [
+        "modular.ribbon_boundary"
+      ]
+    },
+    {
+      "id": "tube.kernel_descent_audit",
+      "ordinal": 9,
+      "group": "tube",
+      "legacy_dir": "09_tube_kernel_descent_audit",
+      "path": "layers/09_tube_kernel_descent_audit/certificate.json",
+      "proposed_path": "layers/tube/kernel_descent_audit/certificate.json",
+      "expected_status": "TUBE_KERNEL_DESCENT_AUDIT_CERTIFIED",
+      "claim_level": "kernel_descent_audit",
+      "depends_on": [
+        "tube.projection_section",
+        "modular.completion_obstruction"
+      ]
+    },
+    {
+      "id": "modular.adjoined_hopf_operator",
+      "ordinal": 10,
+      "group": "modular",
+      "legacy_dir": "10_adjoined_hopf_operator",
+      "path": "layers/10_adjoined_hopf_operator/certificate.json",
+      "proposed_path": "layers/modular/adjoined_hopf_operator/certificate.json",
+      "expected_status": "ADJOINED_HOPF_OPERATOR_CONSTRUCTED",
+      "claim_level": "operator_construction_certificate",
+      "depends_on": [
+        "modular.completion_obstruction"
+      ]
+    },
+    {
+      "id": "modular.twist_completion_test",
+      "ordinal": 11,
+      "group": "modular",
+      "legacy_dir": "11_twist_completion_test",
+      "path": "layers/11_twist_completion_test/certificate.json",
+      "proposed_path": "layers/modular/twist_completion_test/certificate.json",
+      "expected_status": "TWIST_COMPLETION_OBSTRUCTED_FOR_ADJOINED_HOPF_OPERATOR",
+      "claim_level": "twist_completion_test",
+      "depends_on": [
+        "modular.adjoined_hopf_operator"
+      ]
+    },
+    {
+      "id": "modular.derived_line_surface_trace",
+      "ordinal": 12,
+      "group": "modular",
+      "legacy_dir": "12_derived_line_surface_trace",
+      "path": "layers/12_derived_line_surface_trace/certificate.json",
+      "proposed_path": "layers/modular/derived_line_surface_trace/certificate.json",
+      "expected_status": "DERIVED_LINE_SURFACE_TRACE_OPERATOR_CERTIFIED",
+      "claim_level": "trace_operator_certificate",
+      "depends_on": [
+        "modular.twist_completion_test"
+      ]
+    },
+    {
+      "id": "modular.hesse_tube_character_pencil",
+      "ordinal": 13,
+      "group": "modular",
+      "legacy_dir": "13_hesse_tube_character_pencil",
+      "path": "layers/13_hesse_tube_character_pencil/certificate.json",
+      "proposed_path": "layers/modular/hesse_tube_character_pencil/certificate.json",
+      "expected_status": "HESSE_TUBE_CHARACTER_PENCIL_CERTIFIED",
+      "claim_level": "character_pencil_certificate",
+      "depends_on": [
+        "modular.derived_line_surface_trace"
+      ]
+    },
+    {
+      "id": "modular.lasso_uniqueness_pseudomodular_audit",
+      "ordinal": 14,
+      "group": "modular",
+      "legacy_dir": "14_lasso_uniqueness_pseudomodular_audit",
+      "path": "layers/14_lasso_uniqueness_pseudomodular_audit/certificate.json",
+      "proposed_path": "layers/modular/lasso_uniqueness_pseudomodular_audit/certificate.json",
+      "expected_status": "LASSO_UNIQUENESS_AND_PSEUDOMODULAR_INVARIANT_AUDIT_CERTIFIED",
+      "claim_level": "pseudomodular_audit",
+      "depends_on": [
+        "modular.hesse_tube_character_pencil"
+      ]
+    },
+    {
+      "id": "geometry.intrinsic_carrier_dependency",
+      "ordinal": 15,
+      "group": "geometry",
+      "legacy_dir": "15_intrinsic_carrier_dependency_geometry",
+      "path": "layers/15_intrinsic_carrier_dependency_geometry/certificate.json",
+      "proposed_path": "layers/geometry/intrinsic_carrier_dependency/certificate.json",
+      "expected_status": "INTRINSIC_CARRIER_DEPENDENCY_GEOMETRY_CERTIFIED",
+      "claim_level": "geometry_dependency_certificate",
+      "depends_on": [
+        "modular.lasso_uniqueness_pseudomodular_audit"
+      ]
+    },
+    {
+      "id": "geometry.mds_arc_hilbert",
+      "ordinal": 16,
+      "group": "geometry",
+      "legacy_dir": "16_mds_arc_hilbert_geometry",
+      "path": "layers/16_mds_arc_hilbert_geometry/certificate.json",
+      "proposed_path": "layers/geometry/mds_arc_hilbert/certificate.json",
+      "expected_status": "MDS_ARC_HILBERT_AND_QUINTIC_WALL_CERTIFIED",
+      "claim_level": "hilbert_geometry_certificate",
+      "depends_on": [
+        "geometry.intrinsic_carrier_dependency"
+      ]
+    },
+    {
+      "id": "geometry.wu_golay_quintic_resolvent",
+      "ordinal": 17,
+      "group": "geometry",
+      "legacy_dir": "17_wu_golay_quintic_resolvent",
+      "path": "layers/17_wu_golay_quintic_resolvent/certificate.json",
+      "proposed_path": "layers/geometry/wu_golay_quintic_resolvent/certificate.json",
+      "expected_status": "WU_GOLAY_QUINTIC_RESOLVENT_CERTIFIED_WITH_GOLAY_EXTENSION_UNRESOLVED",
+      "claim_level": "resolvent_certificate",
+      "depends_on": [
+        "geometry.mds_arc_hilbert"
+      ]
+    },
+    {
+      "id": "geometry.canonical_24_syzygy_frame",
+      "ordinal": 18,
+      "group": "geometry",
+      "legacy_dir": "18_canonical_24_syzygy_frame",
+      "path": "layers/18_canonical_24_syzygy_frame/certificate.json",
+      "proposed_path": "layers/geometry/canonical_24_syzygy_frame/certificate.json",
+      "expected_status": "CANONICAL_24_COORDINATE_SYZYGY_FRAME_CERTIFIED_GOLAY_SELECTION_STILL_OPEN",
+      "claim_level": "syzygy_frame_certificate",
+      "depends_on": [
+        "geometry.wu_golay_quintic_resolvent"
+      ]
+    },
+    {
+      "id": "selectors.quadratic_golay_obstruction",
+      "ordinal": 19,
+      "group": "selectors",
+      "legacy_dir": "19_quadratic_golay_selector_obstruction",
+      "path": "layers/19_quadratic_golay_selector_obstruction/certificate.json",
+      "proposed_path": "layers/selectors/quadratic_golay_obstruction/certificate.json",
+      "expected_status": "QUADRATIC_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED",
+      "claim_level": "selector_obstruction_certificate",
+      "depends_on": [
+        "geometry.canonical_24_syzygy_frame"
+      ]
+    },
+    {
+      "id": "selectors.wu_spinh_6j_marking",
+      "ordinal": 20,
+      "group": "selectors",
+      "legacy_dir": "20_wu_spinh_6j_marking",
+      "path": "layers/20_wu_spinh_6j_marking/certificate.json",
+      "proposed_path": "layers/selectors/wu_spinh_6j_marking/certificate.json",
+      "expected_status": "WU_SPINH_OCTAD_SPIN12_6J_MARKING_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "claim_level": "marking_certificate",
+      "depends_on": [
+        "selectors.quadratic_golay_obstruction"
+      ]
+    },
+    {
+      "id": "selectors.mog_resolvent_invariant",
+      "ordinal": 21,
+      "group": "selectors",
+      "legacy_dir": "21_mog_resolvent_invariant",
+      "path": "layers/21_mog_resolvent_invariant/certificate.json",
+      "proposed_path": "layers/selectors/mog_resolvent_invariant/certificate.json",
+      "expected_status": "MOG_RESOLVENT_SEXTET_AND_WU_6J_TETRAHEDRON_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "claim_level": "mog_resolvent_certificate",
+      "depends_on": [
+        "selectors.wu_spinh_6j_marking"
+      ]
+    },
+    {
+      "id": "selectors.mog_canonicity_boundary",
+      "ordinal": 22,
+      "group": "selectors",
+      "legacy_dir": "22_mog_canonicity_boundary",
+      "path": "layers/22_mog_canonicity_boundary/certificate.json",
+      "proposed_path": "layers/selectors/mog_canonicity_boundary/certificate.json",
+      "expected_status": "MOG_COLUMN_SEXTET_CANONICITY_CERTIFIED_FULL_ROW_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "claim_level": "mog_canonicity_boundary",
+      "depends_on": [
+        "selectors.mog_resolvent_invariant"
+      ]
+    },
+    {
+      "id": "selectors.full_row_refined_obstruction",
+      "ordinal": 23,
+      "group": "selectors",
+      "legacy_dir": "23_full_row_refined_selector_obstruction",
+      "path": "layers/23_full_row_refined_selector_obstruction/certificate.json",
+      "proposed_path": "layers/selectors/full_row_refined_obstruction/certificate.json",
+      "expected_status": "FULL_ROW_REFINED_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED_HEXACODE_REQUIRED",
+      "claim_level": "row_refined_obstruction",
+      "depends_on": [
+        "selectors.mog_canonicity_boundary"
+      ]
+    },
+    {
+      "id": "selectors.hexacode_row_selector",
+      "ordinal": 24,
+      "group": "selectors",
+      "legacy_dir": "24_hexacode_row_selector",
+      "path": "layers/24_hexacode_row_selector/certificate.json",
+      "proposed_path": "layers/selectors/hexacode_row_selector/certificate.json",
+      "expected_status": "HEXACODE_ROW_SELECTOR_CONSTRUCTED_GOLAY_CERTIFIED_CANONICALITY_EXTERNAL",
+      "claim_level": "hexacode_selector_certificate",
+      "depends_on": [
+        "selectors.full_row_refined_obstruction"
+      ]
+    },
+    {
+      "id": "integrity.proof_system",
+      "ordinal": 25,
+      "group": "integrity",
+      "legacy_dir": "25_proof_system_integrity",
+      "path": "layers/25_proof_system_integrity/certificate.json",
+      "proposed_path": "layers/integrity/proof_system/certificate.json",
+      "expected_status": "PROOF_SYSTEM_INTEGRITY_LADDER_BUILT",
+      "claim_level": "integrity_ladder_certificate",
+      "depends_on": [
+        "selectors.hexacode_row_selector",
+        "tube.kernel_descent_audit"
+      ]
+    }
+  ]
+}

@@ -31,6 +31,28 @@ D20_EDGE_CLOSURE_ORDER = 5
 
 MAX_EMBED_ARRAY = 2048
 
+EXCLUDED_SCAN_DIRS = {
+    ".git",
+    ".codex_deps",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".tools",
+    ".venv",
+    "__pycache__",
+    "a236_compute_py_bundle",
+}
+
+EXCLUDED_SCAN_SUFFIXES = {
+    ".pyc",
+    ".pyo",
+}
+
+
+def excluded_scan_path(path: Path) -> bool:
+    rel = path.relative_to(ROOT)
+    return any(part in EXCLUDED_SCAN_DIRS for part in rel.parts) or path.suffix in EXCLUDED_SCAN_SUFFIXES
+
 
 def canonical(obj: Any) -> bytes:
     return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
@@ -417,9 +439,11 @@ def hcycle_game_theory() -> dict[str, Any]:
 
 
 def json_payloads() -> dict[str, Any]:
-    skip = {"d20.json", "certificate.json"}
+    skip = {"d20.json", "certificate.json", "layers/index.json", "layers\\index.json"}
     payloads: dict[str, Any] = {}
     for path in sorted(ROOT.rglob("*.json")):
+        if excluded_scan_path(path):
+            continue
         rel = str(path.relative_to(ROOT))
         if rel in skip:
             continue
@@ -454,14 +478,14 @@ def source_file_manifest() -> dict[str, Any]:
     for path in sorted(ROOT.rglob("*")):
         if not path.is_file():
             continue
-        rel = str(path.relative_to(ROOT))
+        if excluded_scan_path(path):
+            continue
+        rel = path.relative_to(ROOT).as_posix()
         if rel.startswith("generated/"):
             continue
         if rel.startswith("manifests/"):
             continue
         if rel in {"d20.json", "certificate.json"}:
-            continue
-        if "__pycache__/" in rel or rel.endswith(".pyc"):
             continue
         entries.append({
             "path": rel,
@@ -644,19 +668,36 @@ def layer_payloads() -> dict[str, Any]:
     return out
 
 
+def layer_registry() -> dict[str, Any]:
+    path = ROOT / "layers" / "index.json"
+    if not path.exists():
+        return {"path": "layers/index.json", "status": "LAYER_REGISTRY_MISSING"}
+    payload = load_json(path)
+    return {
+        "path": "layers/index.json",
+        "file_sha256": sha_file(path),
+        **payload,
+    }
+
+
 def csv_payloads() -> dict[str, Any]:
     out = {}
     for path in sorted(ROOT.rglob("*.csv")):
-        if "/generated/" in str(path):
+        if excluded_scan_path(path):
             continue
-        out[str(path.relative_to(ROOT))] = csv_payload(path)
+        rel = path.relative_to(ROOT).as_posix()
+        if rel.startswith("generated/"):
+            continue
+        out[rel] = csv_payload(path)
     return out
 
 
 def npz_manifests() -> dict[str, Any]:
     out = {}
     for path in sorted(ROOT.rglob("*.npz")):
-        rel = str(path.relative_to(ROOT))
+        if excluded_scan_path(path):
+            continue
+        rel = path.relative_to(ROOT).as_posix()
         # generated NPZ cache is not source; if present it is not part of canonical d20.
         if rel.startswith("generated/"):
             continue
@@ -845,6 +886,7 @@ def derive() -> dict[str, Any]:
         "pre_A985_relation_body_theorem": pre_a985_relation_body_theorem(),
         "coorient_seed": coorient_seed_invariants(),
         "final_investigation": final_investigation_status(zero_axiom, universal_uniqueness),
+        "layer_registry": layer_registry(),
         "layer_certificates": layer_payloads(),
         "json_invariants": json_payloads(),
         "csv_invariants": csv_payloads(),

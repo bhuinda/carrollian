@@ -4,10 +4,9 @@ import argparse, hashlib, json, sys
 from pathlib import Path
 from typing import Any
 
-import numpy as np
-
 ROOT = Path(__file__).resolve().parent
 MUTABLE = {"certificate.json", "manifests/file_hashes.json", "manifests/canonical.json"}
+LAYER_INDEX = ROOT / "layers" / "index.json"
 
 EXPECTED = {
     "00_core": "PASS",
@@ -21,7 +20,7 @@ EXPECTED = {
     "08_modular_completion_obstruction": "MODULAR_COMPLETION_OBSTRUCTION_CERTIFIED",
     "09_tube_kernel_descent_audit": "TUBE_KERNEL_DESCENT_AUDIT_CERTIFIED",
     "10_adjoined_hopf_operator": "ADJOINED_HOPF_OPERATOR_CONSTRUCTED",
-    "11_twist_completion_test": "TWIST_COMPLETION_OBSTRUCTED_FOR_ADJOINED_HOP_OPERATOR",
+    "11_twist_completion_test": "TWIST_COMPLETION_OBSTRUCTED_FOR_ADJOINED_HOPF_OPERATOR",
     "12_derived_line_surface_trace": "DERIVED_LINE_SURFACE_TRACE_OPERATOR_CERTIFIED",
     "13_hesse_tube_character_pencil": "HESSE_TUBE_CHARACTER_PENCIL_CERTIFIED",
     "14_lasso_uniqueness_pseudomodular_audit": "LASSO_UNIQUENESS_AND_PSEUDOMODULAR_INVARIANT_AUDIT_CERTIFIED",
@@ -37,8 +36,6 @@ EXPECTED = {
     "24_hexacode_row_selector": "HEXACODE_ROW_SELECTOR_CONSTRUCTED_GOLAY_CERTIFIED_CANONICALITY_EXTERNAL",
     "25_proof_system_integrity": "PROOF_SYSTEM_INTEGRITY_LADDER_BUILT",
 }
-# Canonical typo guard: layer 11 status uses HOPF, not HOP.
-EXPECTED["11_twist_completion_test"] = "TWIST_COMPLETION_OBSTRUCTED_FOR_ADJOINED_HOPF_OPERATOR"
 
 
 def canonical(obj: Any) -> bytes:
@@ -97,6 +94,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "zero_axiom_coorient",
         "universal_integral_uniqueness",
         "pre_A985_relation_body_theorem",
+        "layer_registry",
         "layer_certificates",
         "json_invariants",
         "npz_array_manifests",
@@ -136,6 +134,13 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     require(fin.get("full_zero_axiom_constructor") is False, "final investigation zero-axiom boundary mismatch", errors)
     rb = fin.get("remaining_boundary", {})
     require(rb.get("remaining_seed_integer_count_in_A985_integral_theory") == 0, "final investigation remaining A985-integral seed count mismatch", errors)
+    registry = data.get("layer_registry", {})
+    require(registry.get("schema") == "d20.layer_registry.v1", "d20 layer registry schema mismatch", errors)
+    require(registry.get("status") == "LAYER_REGISTRY_BUILT", "d20 layer registry status mismatch", errors)
+    require(registry.get("path") == "layers/index.json", "d20 layer registry path mismatch", errors)
+    require(len(registry.get("layers", [])) == len(EXPECTED), "d20 layer registry entry count mismatch", errors)
+    if LAYER_INDEX.exists():
+        require(registry.get("file_sha256") == sha_file(LAYER_INDEX), "d20 layer registry file hash mismatch", errors)
 
     return {
         "schema": data.get("schema"),
@@ -145,6 +150,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "size": p.stat().st_size,
         "section_count": len(data),
         "layer_count": len(data.get("layer_certificates", {})),
+        "layer_registry_entries": len(registry.get("layers", [])),
         "json_invariant_file_count": len(data.get("json_invariants", {})),
         "npz_array_manifest_count": len(data.get("npz_array_manifests", {})),
         "hcycle_present": bool(data.get("game_theory", {}).get("present", False)),
@@ -153,10 +159,120 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     }
 
 
-def verify_layers(errors: list[str]) -> list[dict[str, Any]]:
+def verify_layer_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, Any]]:
+    require(LAYER_INDEX.exists(), "missing layer registry: layers/index.json", errors)
+    if not LAYER_INDEX.exists():
+        return {}, {"registry_entries": 0, "groups": []}
+
+    data = load_json(LAYER_INDEX)
+    require(data.get("schema") == "d20.layer_registry.v1", "layer registry schema mismatch", errors)
+    require(data.get("status") == "LAYER_REGISTRY_BUILT", "layer registry status mismatch", errors)
+
+    groups = data.get("groups", {})
+    policy = data.get("policy", {})
+    layers = data.get("layers", [])
+    require(isinstance(groups, dict) and bool(groups), "layer registry groups missing", errors)
+    require(isinstance(policy, dict), "layer registry policy missing", errors)
+    require(isinstance(layers, list) and bool(layers), "layer registry layers missing", errors)
+
+    ids: set[str] = set()
+    dirs: set[str] = set()
+    ordinals: set[int] = set()
+    group_names = set(groups) if isinstance(groups, dict) else set()
+
+    for i, entry in enumerate(layers if isinstance(layers, list) else []):
+        require(isinstance(entry, dict), f"layer registry entry {i} is not an object", errors)
+        if not isinstance(entry, dict):
+            continue
+
+        layer_id = entry.get("id")
+        dirname = entry.get("legacy_dir")
+        ordinal = entry.get("ordinal")
+        group = entry.get("group")
+        rel = entry.get("path")
+
+        require(isinstance(layer_id, str) and bool(layer_id), f"layer registry entry {i} missing id", errors)
+        require(layer_id not in ids, f"duplicate layer id: {layer_id}", errors)
+        if isinstance(layer_id, str):
+            ids.add(layer_id)
+
+        require(isinstance(dirname, str) and bool(dirname), f"{layer_id}: missing legacy_dir", errors)
+        require(dirname not in dirs, f"duplicate layer legacy_dir: {dirname}", errors)
+        if isinstance(dirname, str):
+            dirs.add(dirname)
+
+        require(isinstance(ordinal, int), f"{layer_id}: ordinal is not an integer", errors)
+        require(ordinal not in ordinals, f"duplicate layer ordinal: {ordinal}", errors)
+        if isinstance(ordinal, int):
+            ordinals.add(ordinal)
+
+        require(group in group_names, f"{layer_id}: unknown group {group!r}", errors)
+        require(isinstance(rel, str), f"{layer_id}: path is not a string", errors)
+        if isinstance(dirname, str) and isinstance(rel, str):
+            expected_rel = f"layers/{dirname}/certificate.json"
+            require(rel == expected_rel, f"{layer_id}: path {rel!r} != {expected_rel!r}", errors)
+            require((ROOT / rel).exists(), f"{layer_id}: registry path missing: {rel}", errors)
+
+        if isinstance(dirname, str) and dirname in EXPECTED:
+            require(
+                entry.get("expected_status") == EXPECTED[dirname],
+                f"{layer_id}: expected_status does not match verifier expectation for {dirname}",
+                errors,
+            )
+
+        depends_on = entry.get("depends_on", [])
+        require(isinstance(depends_on, list), f"{layer_id}: depends_on is not a list", errors)
+        if isinstance(depends_on, list):
+            for dep in depends_on:
+                require(isinstance(dep, str), f"{layer_id}: dependency id is not a string", errors)
+
+    require(dirs == set(EXPECTED), f"layer registry legacy_dir set mismatch: {sorted(dirs ^ set(EXPECTED))}", errors)
+    require(ordinals == set(range(len(EXPECTED))), "layer registry ordinal set mismatch", errors)
+
+    for entry in layers if isinstance(layers, list) else []:
+        if not isinstance(entry, dict):
+            continue
+        layer_id = entry.get("id")
+        depends_on = entry.get("depends_on", [])
+        if not isinstance(depends_on, list):
+            continue
+        for dep in depends_on:
+            if isinstance(dep, str):
+                require(dep in ids, f"{layer_id}: unknown dependency {dep}", errors)
+
+    return data, {
+        "schema": data.get("schema"),
+        "status": data.get("status"),
+        "registry_entries": len(layers) if isinstance(layers, list) else 0,
+        "groups": sorted(group_names),
+        "legacy_layout": policy.get("physical_layout") if isinstance(policy, dict) else None,
+        "file_sha256": sha_file(LAYER_INDEX),
+    }
+
+
+def verify_layers(errors: list[str], registry: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for dirname, expected_status in EXPECTED.items():
-        rel = f"layers/{dirname}/certificate.json"
+    entries = registry.get("layers", [])
+    if not isinstance(entries, list) or not entries:
+        entries = [
+            {
+                "id": dirname,
+                "group": "legacy",
+                "legacy_dir": dirname,
+                "path": f"layers/{dirname}/certificate.json",
+                "expected_status": expected_status,
+            }
+            for dirname, expected_status in EXPECTED.items()
+        ]
+
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        dirname = entry.get("legacy_dir")
+        rel = entry.get("path")
+        expected_status = entry.get("expected_status")
+        if not isinstance(dirname, str) or not isinstance(rel, str):
+            continue
         p = ROOT / rel
         require(p.exists(), f"missing layer certificate: {rel}", errors)
         if not p.exists():
@@ -165,11 +281,19 @@ def verify_layers(errors: list[str]) -> list[dict[str, Any]]:
         status = data.get("status")
         if expected_status is not None:
             require(status == expected_status, f"{dirname}: status {status!r} != {expected_status!r}", errors)
-        rows.append({"layer": dirname, "status": status, "file_sha256": sha_file(p)})
+        rows.append({
+            "id": entry.get("id"),
+            "group": entry.get("group"),
+            "layer": dirname,
+            "status": status,
+            "file_sha256": sha_file(p),
+        })
     return rows
 
 
 def verify_core_arrays(errors: list[str]) -> dict[str, Any]:
+    import numpy as np
+
     out: dict[str, Any] = {}
     z = np.load(ROOT / "data/raw/tensor_sparse.npz")
     triples = np.asarray(z["triples"], dtype=np.int64)
@@ -271,11 +395,73 @@ def verify_manifest(errors: list[str]) -> dict[str, Any]:
     return {"manifest_entries_checked": checked}
 
 
+def verify_constructor_witness(errors: list[str]) -> dict[str, Any]:
+    try:
+        from src.certify_constructor import construct_from_supplied_raw_seeds
+
+        witness = construct_from_supplied_raw_seeds()
+    except Exception as exc:
+        errors.append(f"constructor witness exception: {type(exc).__name__}: {exc}")
+        return {"status": "ERROR", "error": f"{type(exc).__name__}: {exc}"}
+
+    require(witness.get("schema") == "d20.constructor.supplied_raw_seed_result", "constructor witness schema mismatch", errors)
+    require(witness.get("constructor_status") == "RAW_SEED_CONSTRUCTOR_PASS", "constructor witness status mismatch", errors)
+    require(witness.get("constructs_from_supplied_raw_seeds") is True, "constructor witness did not use supplied raw seeds", errors)
+    require(witness.get("full_scratch_object_constructor") is False, "constructor witness overclaims full scratch construction", errors)
+    require(witness.get("zero_axiom_reduction_available") is True, "constructor witness zero-axiom reduction missing", errors)
+
+    finite = witness.get("finite_object", {})
+    require(finite.get("points") == 2576, "constructor witness point count mismatch", errors)
+    require(finite.get("group_order_from_seed") == 9216, "constructor witness group order mismatch", errors)
+    require(finite.get("relations") == 985, "constructor witness relation count mismatch", errors)
+    require(finite.get("object_pair_relation_matrix_matches_tensor_header") is True, "constructor witness relation matrix mismatch", errors)
+    require(finite.get("ordered_pair_partition_ok") is True, "constructor witness ordered-pair partition failed", errors)
+    require(finite.get("block_mass_is_object_size_outer_product") is True, "constructor witness block mass failed", errors)
+
+    tensor = witness.get("tensor", {})
+    require(tensor.get("support") == 1_414_965, "constructor witness tensor support mismatch", errors)
+    require(tensor.get("coefficient_total") == 2_537_360, "constructor witness tensor coefficient total mismatch", errors)
+
+    quotients = witness.get("generated_quotients", {})
+    q42 = quotients.get("q42", {})
+    q12 = quotients.get("q12", {})
+    require(q42.get("matches_supplied_q42_tensor") is True, "constructor witness q42 tensor mismatch", errors)
+    require(q12.get("matches_supplied_q12_tensor") is True, "constructor witness q12 tensor mismatch", errors)
+    require(quotients.get("q42_to_q12_consistent") is True, "constructor witness q42 -> q12 consistency failed", errors)
+
+    branching = witness.get("simple_branching", {})
+    require(branching.get("naturality_exact") is True, "constructor witness simple branching naturality failed", errors)
+    require(branching.get("defect_l1") == 0, "constructor witness simple branching defect mismatch", errors)
+
+    return {
+        "status": witness.get("constructor_status"),
+        "schema": witness.get("schema"),
+        "result_sha256": witness.get("constructor_result_sha256"),
+        "constructs_from_supplied_raw_seeds": witness.get("constructs_from_supplied_raw_seeds"),
+        "full_scratch_object_constructor": witness.get("full_scratch_object_constructor"),
+        "seed_boundary": witness.get("seed_boundary"),
+        "finite_object": finite,
+        "tensor": {
+            "support": tensor.get("support"),
+            "coefficient_total": tensor.get("coefficient_total"),
+            "tensor_sha256": tensor.get("tensor_sha256"),
+        },
+        "generated_quotients": {
+            "q42_matches_supplied_tensor": q42.get("matches_supplied_q42_tensor"),
+            "q12_matches_supplied_tensor": q12.get("matches_supplied_q12_tensor"),
+            "q42_to_q12_consistent": quotients.get("q42_to_q12_consistent"),
+        },
+        "simple_branching": branching,
+        "missing_full_scratch_steps": witness.get("missing_full_scratch_steps"),
+    }
+
+
 def run(mode: str) -> dict[str, Any]:
     errors: list[str] = []
     root = verify_root(errors)
     d20 = verify_d20_json(errors)
-    layers = verify_layers(errors)
+    layer_registry, layer_registry_summary = verify_layer_registry(errors)
+    layers = verify_layers(errors, layer_registry)
     core = verify_core_arrays(errors)
     integrity = verify_integrity(errors)
     out: dict[str, Any] = {
@@ -283,12 +469,14 @@ def run(mode: str) -> dict[str, Any]:
         "mode": mode,
         "headline": root.get("status"),
         "d20": d20,
+        "layer_registry": layer_registry_summary,
         "layer_count": len(layers),
         "core": core,
         "integrity": integrity,
         "errors": errors,
     }
     if mode in {"audit", "rebuild"}:
+        out["constructor_witness"] = verify_constructor_witness(errors)
         out["manifest"] = verify_manifest(errors)
         out["status"] = "PASS" if not errors else "FAIL"
     if mode == "rebuild":
@@ -307,12 +495,24 @@ def maybe_regenerate(mode: str, pretty: bool, enabled: bool) -> dict[str, Any]:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(
+        description="Verify the d20 bundle. Only --mode rebuild or --regenerate rewrites files."
+    )
     ap.add_argument("--mode", choices=["fast", "audit", "rebuild"], default="audit")
     ap.add_argument("--pretty", action="store_true")
-    ap.add_argument("--no-regenerate", action="store_true", help="Do not rebuild d20.json or refresh hashes before audit/rebuild.")
+    ap.add_argument(
+        "--regenerate",
+        action="store_true",
+        help="Rebuild d20.json and refresh certificate/manifest hashes before verification.",
+    )
+    ap.add_argument(
+        "--no-regenerate",
+        action="store_true",
+        help=argparse.SUPPRESS,
+    )
     args = ap.parse_args()
-    regen_info = maybe_regenerate(args.mode, args.pretty, not args.no_regenerate)
+    should_regenerate = (args.mode == "rebuild" or args.regenerate) and not args.no_regenerate
+    regen_info = maybe_regenerate(args.mode, args.pretty, should_regenerate)
     out = run(args.mode)
     out["regeneration"] = regen_info
     if out["status"] != "PASS":

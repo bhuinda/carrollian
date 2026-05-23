@@ -9,7 +9,7 @@ This is the single rebuild command. It performs, in order:
   1. rebuild d20.json from the checked source data;
   2. refresh certificate.json's embedded d20 metadata and self hash;
   3. refresh manifests/file_hashes.json for all tracked files;
-  4. run certify.py --mode audit.
+  4. run certify.py --mode audit without a second regeneration pass.
 """
 from __future__ import annotations
 
@@ -30,6 +30,24 @@ ADDED_TRACKED_FILES = [
     "regen.py",
     "d20.py",
 ]
+
+EXCLUDED_DIRS = {
+    ".git",
+    ".codex_deps",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".tools",
+    ".venv",
+    "__pycache__",
+    "a236_compute_py_bundle",
+    "generated",
+}
+
+EXCLUDED_SUFFIXES = {
+    ".pyc",
+    ".pyo",
+}
 
 
 def canonical(obj: Any) -> bytes:
@@ -103,9 +121,9 @@ def refresh_manifest() -> int:
         rel = path.relative_to(ROOT).as_posix()
         if rel == "manifests/file_hashes.json":
             continue
-        if rel.startswith("generated/"):
+        if any(part in EXCLUDED_DIRS for part in path.relative_to(ROOT).parts):
             continue
-        if "__pycache__/" in rel or rel.endswith(".pyc"):
+        if path.suffix in EXCLUDED_SUFFIXES:
             continue
         entries.append({
             "path": rel,
@@ -118,7 +136,7 @@ def refresh_manifest() -> int:
 
 
 def audit(pretty: bool) -> None:
-    cmd = [sys.executable, "certify.py", "--mode", "audit"]
+    cmd = [sys.executable, "certify.py", "--mode", "audit", "--no-regenerate"]
     if pretty:
         cmd.append("--pretty")
     run(cmd)

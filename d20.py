@@ -12,5 +12,6 @@ import subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-cmd = [sys.executable, str(ROOT / "certify.py"), *sys.argv[1:]]
+args = sys.argv[1:] or ["--mode", "rebuild"]
+cmd = [sys.executable, str(ROOT / "certify.py"), *args]
 raise SystemExit(subprocess.call(cmd, cwd=ROOT))
