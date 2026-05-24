@@ -1,0 +1,282 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "edf42832972d7d95d6372e0986953dbb44a637e6019f03e2610bfdd796dd79eb",
+  "checks": {
+    "automorphism_group_order_is_120": true,
+    "cycle_rank_is_11": true,
+    "fourier_screen_best_nontrivial_phase_gate_has_two_defects": true,
+    "nonbacktracking_entropy_is_log_2": true,
+    "public_graph_diameter_is_5": true,
+    "public_graph_girth_is_5": true,
+    "public_graph_has_20_vertices": true,
+    "public_graph_has_30_edges": true,
+    "public_graph_is_3_regular": true,
+    "public_graph_is_connected": true,
+    "public_graph_is_dodecahedral": true,
+    "sandpile_group_matches_readme_value": true,
+    "sandpile_report_agrees_if_present": true,
+    "shift_entropy_is_log_3": true,
+    "spanning_tree_count_is_5184000": true
+  },
+  "claim": "The D20 public boundary is the dodecahedral 20-vertex, 30-edge, cubic graph. Its cycle rank is 11, automorphism group order is 120, sandpile critical group is Z/2 x Z/12 x Z/60^3, walk entropy is log(3), nonbacktracking entropy is log(2), and the best nontrivial signed-turn Fourier screen has two primitive-cycle defects.",
+  "definition": {
+    "cycle_rank": "For a connected graph, beta_1 = |E|-|V|+1.",
+    "fourier_screen": "A nontrivial signed-turn phase gate assigns each of B+, B-, S+, S-, V+, V- a phase in {+1,-1}. A primitive H-cycle is coherent when the product of its turn-address phases is +1; otherwise it is a defect.",
+    "nonbacktracking_entropy": "Entropy of geodesic/nonbacktracking histories on a cubic graph: log(2).",
+    "public_graph": "The unweighted legal H-cycle graph from subscript_Hcycle_d20_edges.csv.",
+    "shift_entropy": "Topological entropy of legal public walks on the cubic adjacency graph: log(spectral_radius(A)) = log(3)."
+  },
+  "derived": {
+    "automorphisms": {
+      "aut_gamma_order": 120,
+      "automorphism_records_sha256": "0f3b3ecbe6885be1dc231eccb41d128ca6359cebf88d4228f51725564d881454",
+      "pair_orbit_count": 5,
+      "summary_order": 120,
+      "vertex_orbits": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      ]
+    },
+    "cycle_space": {
+      "cycle_rank": 11,
+      "cycle_rank_formula": "30 - 20 + 1"
+    },
+    "fourier_screen": {
+      "all_best_gate_records_sha256": "a5aabd64d7cf8be8ab068458dba6a578fb86dce36197d06e5eac1fef5a3ee2e8",
+      "best_gate_count": 3,
+      "best_nontrivial_defect_count": 2,
+      "definition": "A nontrivial signed-turn phase gate assigns each of B+, B-, S+, S-, V+, V- a phase in {+1,-1}. A primitive H-cycle is coherent when the product of its turn-address phases is +1; otherwise it is a defect.",
+      "primitive_cycle_count": 11,
+      "representative_best_gates": [
+        {
+          "coherent_cycle_count": 9,
+          "defect_count": 2,
+          "defect_cycle_ids": [
+            7,
+            9
+          ],
+          "negative_phase_labels": [
+            "B-",
+            "V-"
+          ],
+          "positive_phase_labels": [
+            "B+",
+            "S+",
+            "S-",
+            "V+"
+          ]
+        },
+        {
+          "coherent_cycle_count": 9,
+          "defect_count": 2,
+          "defect_cycle_ids": [
+            2,
+            8
+          ],
+          "negative_phase_labels": [
+            "S-",
+            "V+"
+          ],
+          "positive_phase_labels": [
+            "B+",
+            "B-",
+            "S+",
+            "V-"
+          ]
+        },
+        {
+          "coherent_cycle_count": 9,
+          "defect_count": 2,
+          "defect_cycle_ids": [
+            5,
+            6
+          ],
+          "negative_phase_labels": [
+            "B+",
+            "S+"
+          ],
+          "positive_phase_labels": [
+            "B-",
+            "S-",
+            "V+",
+            "V-"
+          ]
+        }
+      ],
+      "turn_address_labels": [
+        "B+",
+        "B-",
+        "S+",
+        "S-",
+        "V+",
+        "V-"
+      ]
+    },
+    "public_graph": {
+      "connected": true,
+      "degree_histogram": {
+        "3": 20
+      },
+      "diameter": 5,
+      "dodecahedral_isomorphism_found": true,
+      "edges": 30,
+      "girth": 5,
+      "sample_dodecahedral_isomorphism": [
+        0,
+        1,
+        5,
+        4,
+        19,
+        15,
+        14,
+        8,
+        3,
+        7,
+        18,
+        10,
+        17,
+        11,
+        2,
+        6,
+        9,
+        13,
+        16,
+        12
+      ],
+      "vertices": 20
+    },
+    "sandpile": {
+      "critical_group": "Z/2 x Z/12 x Z/60^3",
+      "invariant_factors": [
+        2,
+        12,
+        60,
+        60,
+        60
+      ],
+      "smith_diagonal": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        12,
+        60,
+        60,
+        60
+      ],
+      "spanning_tree_count": 5184000
+    },
+    "symbolic_dynamics": {
+      "legal_public_history_branching_base": 3,
+      "nonbacktracking_branching_base": 2,
+      "nonbacktracking_directed_edge_count": 60,
+      "nonbacktracking_entropy_log2": 1.0,
+      "nonbacktracking_entropy_natural": "log(2)",
+      "shift_entropy_log2": 1.584962500721156,
+      "shift_entropy_natural": "log(3)"
+    }
+  },
+  "inputs": {
+    "automorphism_summary": {
+      "path": "data/invariants/hcycle/d20_Hcycle_automorphism_summary.json",
+      "sha256": "67a8df4a30eaa42d925fe2d3f760a666d856131d3a748952e7573f44e2d6f925"
+    },
+    "hcycle_edge_table": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "primitive_cycles": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
+      "sha256": "a6fd82c3cafc0767c6ed7a41a157326d249933a6be62d6aad0f27f989dc7e84c"
+    },
+    "sandpile_critical_group_report": {
+      "path": "data/invariants/d20/theorems/sandpile_critical_group/report.json",
+      "sha256": "b4ed4c43b42191008b0d735ef9a9706d616eb5197314adc02ab51b7e68d64b5b"
+    }
+  },
+  "interpretation": {
+    "table_rows": [
+      [
+        "Public graph",
+        "20 vertices, 30 edges, 3-regular, connected, diameter 5",
+        "finite public boundary"
+      ],
+      [
+        "Dodecahedral check",
+        "isomorphic to the standard dodecahedral graph",
+        "confirms spherical public board"
+      ],
+      [
+        "Cycle rank",
+        "30 - 20 + 1 = 11",
+        "geon/residue space"
+      ],
+      [
+        "Automorphisms",
+        "|Aut(Gamma_d20)| = 120",
+        "public board symmetry"
+      ],
+      [
+        "Sandpile group",
+        "Z/2 x Z/12 x (Z/60)^3",
+        "recurrent boundary residues"
+      ],
+      [
+        "Spanning trees",
+        "5,184,000",
+        "order of critical group"
+      ],
+      [
+        "Shift entropy",
+        "log(3)",
+        "legal public histories"
+      ],
+      [
+        "Nonbacktracking entropy",
+        "log(2)",
+        "geodesic histories"
+      ],
+      [
+        "Fourier screen",
+        "best nontrivial signed-turn phase gate has 2 defects",
+        "Ulam-style hidden chamber candidate"
+      ]
+    ],
+    "what_this_does_not_prove": "This certifies the finite public-boundary graph and a signed-turn phase screen. It does not yet lift the phase screen into an A985 sector character or classify sandpile recurrence for each of the 2048 closed-return residue masks."
+  },
+  "next_highest_yield_item": "Lift the two-defect signed-turn Fourier screen into the A985/sector-character language and pair it with the 2048 closed-return residue masks.",
+  "object": "d20",
+  "schema": "d20.theorem.public_boundary_graph_invariants",
+  "status": "D20_PUBLIC_BOUNDARY_GRAPH_INVARIANTS_CERTIFIED"
+}

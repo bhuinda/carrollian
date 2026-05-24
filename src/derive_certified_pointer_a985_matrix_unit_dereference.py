@@ -20,9 +20,9 @@ VERIFY_STATUS = "D20_CERTIFIED_POINTER_A985_MATRIX_UNIT_DEREFERENCE_VERIFIED"
 THEOREM_ID = "certified_pointer_a985_matrix_unit_dereference"
 OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
-FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "nested_pointer_a985_full_legacy_sector_match"
-REGISTERED_DIR = D20_INVARIANTS / "theorems" / "nested_pointer_a985_registered_support_matrix_units"
-TRANSPORT_DIR = D20_INVARIANTS / "theorems" / "nested_pointer_a985_legacy_matrix_unit_transport"
+FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_legacy_sector_match"
+REGISTERED_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_registered_support_matrix_units"
+TRANSPORT_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_legacy_matrix_unit_transport"
 
 IDENTITY_RELATIONS = [6, 163, 227, 349, 618, 893]
 REQUIRED_POINTER_SLOTS = [
@@ -164,7 +164,7 @@ def build_pointer_instance(
             "central_sector_count": 39,
             "address_atoms": ["raw_sector", "matrix_unit_i", "matrix_unit_j", "orbital_relation_R_alpha"],
             "block_dimension_histogram": transport.get("derived", {}).get("block_dimension_histogram", {}),
-            "central_idempotent_report": rel(FULL_MATCH_DIR.parent / "nested_pointer_a985_orbital_central_idempotents" / "report.json"),
+            "central_idempotent_report": rel(FULL_MATCH_DIR.parent / "tiny_pointer_a985_orbital_central_idempotents" / "report.json"),
         },
         "pointer_map": {
             "domain": "legacy_sector",
@@ -301,11 +301,11 @@ def build_pointer() -> dict[str, Any]:
     checks = {
         "schema_required_slots_present": pointer_slots == REQUIRED_POINTER_SLOTS,
         "full_match_is_certified": full_match.get("all_checks_pass") is True
-        and full_match.get("status") == "D20_NESTED_POINTER_A985_FULL_LEGACY_SECTOR_MATCH_CERTIFIED",
+        and full_match.get("status") == "D20_TINY_POINTER_A985_FULL_LEGACY_SECTOR_MATCH_CERTIFIED",
         "registered_matrix_units_are_certified": registered.get("all_checks_pass") is True
-        and registered.get("status") == "D20_NESTED_POINTER_A985_REGISTERED_SUPPORT_MATRIX_UNITS_CERTIFIED",
+        and registered.get("status") == "D20_TINY_POINTER_A985_REGISTERED_SUPPORT_MATRIX_UNITS_CERTIFIED",
         "legacy_matrix_unit_transport_is_certified": transport.get("all_checks_pass") is True
-        and transport.get("status") == "D20_NESTED_POINTER_A985_LEGACY_MATRIX_UNIT_TRANSPORT_CERTIFIED",
+        and transport.get("status") == "D20_TINY_POINTER_A985_LEGACY_MATRIX_UNIT_TRANSPORT_CERTIFIED",
         "legacy_to_raw_map_has_39_rows": len(legacy_to_raw) == 39,
         "legacy_to_raw_map_is_bijective": len({row["legacy_sector"] for row in legacy_to_raw}) == 39
         and len({row["raw_sector"] for row in legacy_to_raw}) == 39,

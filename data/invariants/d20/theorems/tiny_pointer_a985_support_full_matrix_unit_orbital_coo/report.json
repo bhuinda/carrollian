@@ -1,0 +1,79 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8912593c42931e7f5ad2a7eb60639d7de077222ad128f23e062041c784305b59",
+  "checks": {
+    "all_projectors_equal_central_page_sums": true,
+    "all_rows_dereference_full_coo": true,
+    "full_matrix_unit_coo_certified": true,
+    "legacy_transport_certified": true,
+    "projector_count_is_7": true,
+    "projector_product_failures_zero": true,
+    "registered_stage_certified": true,
+    "registered_subsupport_rows_preserved": true,
+    "registered_subsupport_rows_use_registered_source": true,
+    "support_coo_rows_match_nonzero_count": true,
+    "support_manifest_has_1011_rows": true,
+    "top_projector_is_unit": true,
+    "top_rows_follow_full_coo_order": true,
+    "top_support_replaced_with_full_coo_985_rows": true,
+    "zero_projector_is_zero": true
+  },
+  "claim": "The registered support matrix-unit layer is now dereferenced through the all-39 legacy-labeled raw-orbital matrix-unit COO table. The top support is replaced by the full COO-backed table, registered subsupport rows retain their support labels, and all support projectors are emitted as sums of full COO diagonal matrix units.",
+  "derived": {
+    "coefficient_source_counts": {
+      "CONSTRUCTED_FROM_PROMOTED_CENTRAL_PAGE": 975,
+      "REGISTERED_SUPPORT_COO": 36
+    },
+    "projector_products": {
+      "checked": 49,
+      "failure_count": 0,
+      "failures": []
+    },
+    "registered_subsupport_rows": 26,
+    "support_matrix_unit_rows": 1011,
+    "support_matrix_units_sha256": "8e07c4980ccc18e2cf13b6ea5106c91e76bb408b1096d22690cc0794c79dbae2",
+    "support_orbital_coo_rows": 77535,
+    "support_projector_coo_rows": 278,
+    "support_projector_count": 7,
+    "support_projectors_sha256": "7ce58745d0776f306df0716e84b5c6a59c055b86267e9414a74219f5fd5cb051",
+    "support_row_source_counts": {
+      "REGISTERED_SUPPORT_DEREFERENCED_TO_FULL_COO": 26,
+      "TOP_SUPPORT_REPLACED_FROM_FULL_COO": 985
+    },
+    "tables": {
+      "arrays": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_and_projectors_raw_orbital_arrays.npz",
+      "projector_coo": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_projectors_orbital_coo.csv",
+      "projector_summary": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_projector_summary.csv",
+      "support_coo": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_orbital_coo.csv",
+      "support_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_orbital_manifest.csv"
+    },
+    "top_support_rows": 985
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "central_idempotents": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "a343d6f592e7183e784cad7902458540576005646d6e28f32611f6ef7727f2d4"
+    },
+    "legacy_matrix_unit_transport": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/report.json",
+      "sha256": "b44fceb659ac57a889852d66daa08d92e1c17e6c9b1a41d8f3c3159e0b17624b"
+    },
+    "registered_support_matrix_units": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/report.json",
+      "sha256": "c760241ccdc80d2977c718dae6385c33d99687d32adaac3add6fef732a114d3c"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "next_highest_yield_item": "Use the support projectors to build support-restricted multiplication tables and separate the remaining sector-local matrix-unit change-of-basis obligations from support-level dereferencing.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_support_full_matrix_unit_orbital_coo.source_drop",
+  "status": "D20_TINY_POINTER_A985_SUPPORT_FULL_MATRIX_UNIT_ORBITAL_COO_CERTIFIED"
+}

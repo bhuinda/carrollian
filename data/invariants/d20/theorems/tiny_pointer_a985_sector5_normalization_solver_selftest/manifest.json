@@ -1,0 +1,42 @@
+{
+  "inputs": {
+    "sector5_candidate_schema": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/sector5_candidate_input_schema.json",
+      "sha256": "885e93848cb19689771fd5c3bf0b1ae3ad7b9aa2664426e33cbb00c6b4d0a547"
+    },
+    "sector5_normalization_pilot": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/report.json",
+      "sha256": "e4ecd658b78d0529a4ed9480a2dff4459c5e24fb1c4042aedeb11ee5f9b8224f"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "manifest_sha256": "148dd904231005b1bba5f51d6e26ee244a6a70f460de911e81c74e067ebcb349",
+  "name": "tiny_pointer_a985_sector5_normalization_solver_selftest",
+  "outputs": {
+    "coordinates": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_self_candidate_coordinates.csv",
+    "gl2_solution": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_gl2_solution.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/manifest.json",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/report.json",
+    "residuals": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_solver_residuals.csv",
+    "row_chart": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_row_chart.json",
+    "self_candidate": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_self_candidate_units.csv"
+  },
+  "report_sha256": "56f2d043801aa59ab4ad4f51ca7cfa9533d44fc6df81222dc12c582516e60053",
+  "schema": "d20.theorem.tiny_pointer_a985_sector5_normalization_solver_selftest_manifest.source_drop",
+  "validation_tests": [
+    "pilot_certified",
+    "self_candidate_has_144_coo_rows",
+    "row_chart_has_4_rows",
+    "coordinate_matrix_is_identity",
+    "gl2_solution_g_is_identity",
+    "gl2_solution_ginv_is_identity",
+    "gl2_left_inverse_holds",
+    "gl2_right_inverse_holds",
+    "formula_reconstructs_candidate",
+    "solver_residuals_zero",
+    "candidate_raw_matrix_unit_law_exhaustive"
+  ]
+}

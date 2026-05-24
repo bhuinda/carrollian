@@ -14,6 +14,10 @@ REPORT_PATH = CVX / "reports" / "parameterized_e33_target_schema_certificate.jso
 ASSIGNMENT_TARGET_OBLIGATION = CVX / "reports" / "assignment_bearing_e33_target_family_obligation.json"
 FORMULA_TO_BOUNDARY_CYCLE_CANDIDATE = CVX / "reports" / "formula_to_boundary_cycle_family_candidate.json"
 ENCODED_FAMILY_FRONTIER = CVX / "reports" / "encoded_family_sat_frontier_certificate.json"
+CNF_TO_PARAMETERIZED_PACKET_COMPILER = (
+    CVX / "reports" / "cnf_to_parameterized_e33_packet_compiler_certificate.json"
+)
+FORALL_YES_NO_THEOREM = CVX / "reports" / "forall_yes_no_preservation_theorem.json"
 
 
 SCHEMA_ID = "d20.integrity.parameterized_e33_target_instance.source_drop"
@@ -28,17 +32,24 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_json_if_exists(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    return load_json(path)
+
+
 def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def report_status(path: Path, expected_status: str) -> dict[str, Any]:
+def report_status(path: Path, expected_status: str | tuple[str, ...]) -> dict[str, Any]:
     data = load_json(path)
+    expected = (expected_status,) if isinstance(expected_status, str) else expected_status
     return {
         "path": rel(path),
         "status": data.get("status"),
-        "expected_status": expected_status,
-        "passed": data.get("status") == expected_status,
+        "expected_status": expected_status if isinstance(expected_status, str) else list(expected_status),
+        "passed": data.get("status") in expected,
     }
 
 
@@ -497,6 +508,8 @@ def build_report() -> dict[str, Any]:
         "target accepts despite" in error for error in unsat_errors
     )
     obligation = load_json(ASSIGNMENT_TARGET_OBLIGATION)
+    packet_compiler = load_json_if_exists(CNF_TO_PARAMETERIZED_PACKET_COMPILER)
+    forall_theorem = load_json_if_exists(FORALL_YES_NO_THEOREM)
 
     pass_condition = (
         not schema_errors
@@ -527,7 +540,30 @@ def build_report() -> dict[str, Any]:
             ),
             "encoded_family_sat_frontier": report_status(
                 ENCODED_FAMILY_FRONTIER,
-                "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+                (
+                    "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+                    "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED",
+                ),
+            ),
+            **(
+                {
+                    "cnf_to_parameterized_e33_packet_compiler": report_status(
+                        CNF_TO_PARAMETERIZED_PACKET_COMPILER,
+                        "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN",
+                    )
+                }
+                if packet_compiler is not None
+                else {}
+            ),
+            **(
+                {
+                    "forall_yes_no_preservation_theorem": report_status(
+                        FORALL_YES_NO_THEOREM,
+                        "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+                    )
+                }
+                if forall_theorem is not None
+                else {}
             ),
         },
         "schema_shape_check": {
@@ -580,10 +616,25 @@ def build_report() -> dict[str, Any]:
             "This does not prove P != NP.",
         ],
         "next_highest_yield_item": {
-            "id": "cnf_to_parameterized_e33_packet_compiler",
+            "id": (
+                "full_no_escape_closure"
+                if forall_theorem is not None
+                else "forall_yes_no_preservation_theorem"
+                if packet_compiler is not None
+                else "cnf_to_parameterized_e33_packet_compiler"
+            ),
             "action": (
-                "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits "
-                "clause-local circuit data and validates SAT/UNSAT canaries against the schema."
+                "Refresh the full no-escape closure ledger against the certified encoded-family reduction."
+                if forall_theorem is not None
+                else (
+                "Promote the compiler/replay construction to a theorem: for every CNF phi, phi is "
+                "satisfiable iff there exists an accepting E(phi) assignment witness, with inverse projection."
+                )
+                if packet_compiler is not None
+                else (
+                    "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits "
+                    "clause-local circuit data and validates SAT/UNSAT canaries against the schema."
+                )
             ),
         },
     }

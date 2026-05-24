@@ -1,0 +1,38 @@
+{
+  "inputs": {
+    "central_idempotent_stage": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/orbital_central_idempotents_certificate.json",
+      "sha256": "f5437007fb854cadc59552ba9aa2aff21bb4a81fa61a14635296a7a2bd63e05e"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "registered_support_stage": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/registered_support_matrix_units_certificate.json",
+      "sha256": "03b8eb7a1de2dbd4c979743e4f4920517fec4ea8712595529e63479f8b69c94d"
+    }
+  },
+  "manifest_sha256": "992957829ea6e5ab732491c985c93cad93f0422966d57a3b41caf075be4e1cdd",
+  "name": "tiny_pointer_a985_full_legacy_sector_match",
+  "outputs": {
+    "legacy_fingerprints": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/legacy_sector_identity_fingerprints.csv",
+    "legacy_to_raw": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/legacy_to_raw_sector_full_match.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/manifest.json",
+    "raw_fingerprints": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/raw_sector_identity_fingerprints.csv",
+    "raw_to_legacy": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/raw_to_legacy_sector_full_match.csv",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json"
+  },
+  "report_sha256": "aaa862574e6784397d1c554b2af28afc3cb024ca6297e5294d80bd66dbf1c759",
+  "schema": "d20.theorem.tiny_pointer_a985_full_legacy_sector_match_manifest.source_drop",
+  "validation_tests": [
+    "legacy_sector_count_is_39",
+    "raw_sector_count_is_39",
+    "all_legacy_sectors_matched",
+    "legacy_match_is_bijective",
+    "identity_fingerprints_unique_on_raw_sectors",
+    "identity_fingerprints_unique_on_legacy_sectors",
+    "block_dimensions_match",
+    "registered_subset_agrees_with_registered_support_stage"
+  ]
+}

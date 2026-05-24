@@ -54,6 +54,36 @@ except ImportError:  # Supports `python src/certify_core.py`.
     )
 
 try:
+    from .certify_sandpile import validate_sandpile_critical_group
+except ImportError:  # Supports `python src/certify_core.py`.
+    from certify_sandpile import validate_sandpile_critical_group
+
+try:
+    from .certify_public_boundary import validate_public_boundary_graph_invariants
+except ImportError:  # Supports `python src/certify_core.py`.
+    from certify_public_boundary import validate_public_boundary_graph_invariants
+
+try:
+    from .certify_fourier_residue import validate_fourier_residue_screen
+except ImportError:  # Supports `python src/certify_core.py`.
+    from certify_fourier_residue import validate_fourier_residue_screen
+
+try:
+    from .certify_fourier_a985 import validate_fourier_a985_sector_character_candidates
+except ImportError:  # Supports `python src/certify_core.py`.
+    from certify_fourier_a985 import validate_fourier_a985_sector_character_candidates
+
+try:
+    from .certify_fourier_screen0_tube import validate_fourier_screen0_tube_central_element
+except ImportError:  # Supports `python src/certify_core.py`.
+    from certify_fourier_screen0_tube import validate_fourier_screen0_tube_central_element
+
+try:
+    from .certify_tube_sandpile import validate_tube_sandpile_divisor_map
+except ImportError:  # Supports `python src/certify_core.py`.
+    from certify_tube_sandpile import validate_tube_sandpile_divisor_map
+
+try:
     from .certify_tube_center import (
         validate_tube_center_algebra_lift,
         validate_tube_center_primitive_idempotents,
@@ -110,6 +140,37 @@ CORE_FILES = [
     'src/derive_half_braiding_prime_sweep.py',
     'src/derive_half_braiding_local_snf.py',
     'src/derive_half_braiding_snf_certificate.py',
+    'src/certify_sandpile.py',
+    'src/derive_d20_sandpile_critical_group_theorem.py',
+    'data/invariants/hcycle/subscript_Hcycle_d20_edges.csv',
+    'data/invariants/d20/theorems/sandpile_critical_group/manifest.json',
+    'data/invariants/d20/theorems/sandpile_critical_group/report.json',
+    'src/certify_public_boundary.py',
+    'src/derive_d20_public_boundary_graph_theorem.py',
+    'data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv',
+    'data/invariants/hcycle/d20_Hcycle_automorphism_summary.json',
+    'data/invariants/d20/theorems/public_boundary_graph_invariants/manifest.json',
+    'data/invariants/d20/theorems/public_boundary_graph_invariants/report.json',
+    'src/certify_fourier_residue.py',
+    'src/derive_d20_fourier_residue_screen_theorem.py',
+    'data/invariants/hcycle/d20_Hcycle_mod2_residue_spectrum_all_subsets.csv',
+    'data/invariants/d20/theorems/fourier_residue_screen/manifest.json',
+    'data/invariants/d20/theorems/fourier_residue_screen/report.json',
+    'src/certify_fourier_a985.py',
+    'src/derive_d20_fourier_a985_sector_character_candidates.py',
+    'data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json',
+    'data/invariants/d20/theorems/sector_idempotent_support_admissibility/report.json',
+    'layers/drinfeld/full_a985_lift.json',
+    'data/invariants/d20/theorems/fourier_a985_sector_character_candidates/manifest.json',
+    'data/invariants/d20/theorems/fourier_a985_sector_character_candidates/report.json',
+    'src/certify_fourier_screen0_tube.py',
+    'src/derive_d20_fourier_screen0_tube_central_element.py',
+    'data/invariants/d20/theorems/fourier_screen0_tube_central_element/manifest.json',
+    'data/invariants/d20/theorems/fourier_screen0_tube_central_element/report.json',
+    'src/certify_tube_sandpile.py',
+    'src/derive_d20_tube_sandpile_divisor_map.py',
+    'data/invariants/d20/theorems/tube_sandpile_divisor_map/manifest.json',
+    'data/invariants/d20/theorems/tube_sandpile_divisor_map/report.json',
 ]
 
 
@@ -145,6 +206,12 @@ def build_certificate() -> Dict[str, Any]:
         'half_braiding_full_solve': validate_half_braiding_full_solve(),
         'half_braiding_prime_stability': validate_half_braiding_prime_stability(),
         'half_braiding_snf_certificate': validate_half_braiding_snf_certificate(),
+        'sandpile_critical_group': validate_sandpile_critical_group(),
+        'public_boundary_graph_invariants': validate_public_boundary_graph_invariants(),
+        'fourier_residue_screen': validate_fourier_residue_screen(),
+        'fourier_a985_sector_character_candidates': validate_fourier_a985_sector_character_candidates(),
+        'fourier_screen0_tube_central_element': validate_fourier_screen0_tube_central_element(),
+        'tube_sandpile_divisor_map': validate_tube_sandpile_divisor_map(),
     }
     return assemble_certificate(
         constants=constants,

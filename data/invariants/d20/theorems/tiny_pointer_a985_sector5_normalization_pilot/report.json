@@ -1,0 +1,70 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c5bb500f68ce4f84ed724f3c56caad3ffdb5f1aace9cf1fe5bbf70c1a981598b",
+  "checks": {
+    "current_coo_rows_match_manifest_nonzeros": true,
+    "current_manifest_has_4_units": true,
+    "full_matrix_unit_coo_certified": true,
+    "gl2_change_of_basis_has_16_terms": true,
+    "gl2_constraints_have_9_rows": true,
+    "legacy_lift_has_no_matrix_unit_basis": true,
+    "normalization_obligations_certified": true,
+    "sector5_diagonal_sum_equals_central_page": true,
+    "sector5_matrix_unit_law_exhaustive": true,
+    "sector_units_array_shape_is_985_by_4": true,
+    "target_sector_has_min_open_dimension_two": true,
+    "target_sector_is_5": true,
+    "target_sector_is_open": true
+  },
+  "claim": "Legacy sector 5 is isolated as the first minimum-dimension open block. Its current raw-orbital matrix units are exhaustively certified, and the exact GL2/scalar normalization interface is emitted. This does not claim a legacy off-diagonal basis has been supplied; it defines the verifier-ready equation for one.",
+  "derived": {
+    "block_dimension": 2,
+    "candidate_schema": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/sector5_candidate_input_schema.json",
+    "current_matrix_unit_coo_rows": 144,
+    "current_matrix_unit_rows": 4,
+    "current_matrix_units_sha256": "28f6878577e44b5610ad9c0d65bb36e4fe95260c7cffa8830814fff0b0a298d3",
+    "gl2_change_of_basis_terms": 16,
+    "gl2_constraints": 9,
+    "raw_product_check": {
+      "checked": 16,
+      "failure_count": 0,
+      "failures": []
+    },
+    "remaining_projective_gauge_dimension": 3,
+    "tables": {
+      "current_coo": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/sector5_current_matrix_unit_coo.csv",
+      "current_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/sector5_current_matrix_unit_manifest.csv",
+      "gl2_constraints": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/sector5_gl2_constraints.csv",
+      "gl2_terms": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/sector5_gl2_change_of_basis_terms.csv"
+    },
+    "target_legacy_sector": 5,
+    "target_raw_sector": 21
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "central_idempotents": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "a343d6f592e7183e784cad7902458540576005646d6e28f32611f6ef7727f2d4"
+    },
+    "sector_normalization_obligations": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/report.json",
+      "sha256": "6c1f966b0e66888cf958a052ee2dce5d5d27eec921c8e026b633088dc5445036"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "next_highest_yield_item": "Supply four candidate legacy sector-5 matrix units in the candidate schema, then solve for the GL2 variables and verify equality in raw-orbital coordinates.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_sector5_normalization_pilot.source_drop",
+  "status": "D20_TINY_POINTER_A985_SECTOR5_NORMALIZATION_PILOT_CERTIFIED"
+}

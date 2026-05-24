@@ -701,8 +701,8 @@
     "reason": "The public compiler now emits parameterized E(phi) packets without hidden advice or solver-outcome reads, and the replay checker accepts SAT canary witnesses while rejecting all claimed accepting witnesses for the bounded UNSAT canaries. The forall CNF theorem is still open."
   },
   "next_highest_yield_item": {
-    "action": "Promote the compiler/replay construction to a theorem: for every CNF phi, phi is satisfiable iff there exists an accepting E(phi) assignment witness, with inverse projection.",
-    "id": "forall_yes_no_preservation_theorem"
+    "action": "Refresh the full no-escape closure ledger against the certified encoded-family reduction.",
+    "id": "full_no_escape_closure"
   },
   "non_claims": [
     "This does not find satisfying assignments for arbitrary formulas.",
@@ -732,6 +732,12 @@
       "passed": true,
       "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
       "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
+    },
+    "forall_yes_no_preservation_theorem": {
+      "expected_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
     },
     "formula_to_boundary_cycle_family_candidate": {
       "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",

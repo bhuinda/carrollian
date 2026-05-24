@@ -28,6 +28,7 @@ from build_parameterized_e33_target_schema_certificate import (  # noqa: E402
 PARAMETERIZED_TARGET_SCHEMA = CVX / "reports" / "parameterized_e33_target_schema_certificate.json"
 ASSIGNMENT_TARGET_OBLIGATION = CVX / "reports" / "assignment_bearing_e33_target_family_obligation.json"
 FORMULA_TO_BOUNDARY_CYCLE_CANDIDATE = CVX / "reports" / "formula_to_boundary_cycle_family_candidate.json"
+FORALL_YES_NO_THEOREM = CVX / "reports" / "forall_yes_no_preservation_theorem.json"
 
 COMPILER_ID = "public_dimacs_to_parameterized_assignment_e33_packet_v0"
 
@@ -59,6 +60,12 @@ def rel(path: Path) -> str:
 
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_json_if_exists(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    return load_json(path)
 
 
 def parse_dimacs_text(text: str, source_id: str) -> dict[str, Any]:
@@ -414,6 +421,7 @@ def build_report() -> dict[str, Any]:
     compile_surface = compile_surface_summary()
     replay = canary_replay_checks()
     schema_certificate = load_json(PARAMETERIZED_TARGET_SCHEMA)
+    forall_theorem = load_json_if_exists(FORALL_YES_NO_THEOREM)
 
     compiler_passed = (
         compile_surface["compile_error_count"] == 0
@@ -451,6 +459,16 @@ def build_report() -> dict[str, Any]:
             "formula_to_boundary_cycle_family_candidate": report_status(
                 FORMULA_TO_BOUNDARY_CYCLE_CANDIDATE,
                 "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
+            ),
+            **(
+                {
+                    "forall_yes_no_preservation_theorem": report_status(
+                        FORALL_YES_NO_THEOREM,
+                        "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+                    )
+                }
+                if forall_theorem is not None
+                else {}
             ),
         },
         "compiler": {
@@ -509,10 +527,14 @@ def build_report() -> dict[str, Any]:
             "This does not prove P != NP.",
         ],
         "next_highest_yield_item": {
-            "id": "forall_yes_no_preservation_theorem",
+            "id": "full_no_escape_closure" if forall_theorem is not None else "forall_yes_no_preservation_theorem",
             "action": (
-                "Promote the compiler/replay construction to a theorem: for every CNF phi, phi is "
-                "satisfiable iff there exists an accepting E(phi) assignment witness, with inverse projection."
+                "Refresh the full no-escape closure ledger against the certified encoded-family reduction."
+                if forall_theorem is not None
+                else (
+                    "Promote the compiler/replay construction to a theorem: for every CNF phi, phi is "
+                    "satisfiable iff there exists an accepting E(phi) assignment witness, with inverse projection."
+                )
             ),
         },
     }

@@ -1,0 +1,44 @@
+{
+  "inputs": {
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "full_legacy_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json",
+      "sha256": "e17d77f1bc6cdef09ad2445377b470425da8202ecaac34adc06dd2e0a051967b"
+    },
+    "registered_support_matrix_units": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/report.json",
+      "sha256": "16e11f949775572ee17ee7f3d347efc44d1d5d10eda13be28d6d4aec0ece3ffe"
+    },
+    "registered_raw_manifest": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/registered_support_matrix_unit_manifest.csv",
+      "sha256": "d9d55c66a2e3c205a673d4617b43e1aa1c515aa192946dfbe97365f6adc01b28"
+    }
+  },
+  "manifest_sha256": "9a303de1ddc1e01ee154f39408634a88e5a7bb02f2c2beae61e388228244153c",
+  "name": "tiny_pointer_a985_legacy_matrix_unit_transport",
+  "outputs": {
+    "legacy_labeled_matrix_unit_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/legacy_labeled_matrix_unit_manifest.csv",
+    "legacy_sector_matrix_unit_profiles": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/legacy_sector_matrix_unit_profiles.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/manifest.json",
+    "registered_support_legacy_transport": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/registered_support_legacy_transport.csv",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/report.json"
+  },
+  "report_sha256": "68300aa8a8ddbd5fe002b8debe2095ea1fa0eb7427be30054ffee501e5064795",
+  "schema": "d20.theorem.tiny_pointer_a985_legacy_matrix_unit_transport_manifest.source_drop",
+  "validation_tests": [
+    "full_match_is_certified",
+    "registered_stage_is_certified",
+    "transported_manifest_row_count_is_1011",
+    "all_rows_have_legacy_sector",
+    "no_transport_mismatch_rows",
+    "top_support_has_985_rows",
+    "top_support_covers_all_39_legacy_sectors",
+    "top_support_counts_are_d_squared",
+    "sector_profile_count_is_39",
+    "sector_profile_matrix_unit_counts_match_d_squared",
+    "registered_support_legacy_transport_matches_source"
+  ]
+}

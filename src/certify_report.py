@@ -146,6 +146,24 @@ def object_summary(constants: Dict[str, Any], blocks: Dict[str, Any]) -> Dict[st
         'half_braiding_snf_diagonal_multiplicities': blocks['half_braiding_snf_certificate']['smith_normal_form']['diagonal_multiplicities'],
         'half_braiding_snf_rank_bad_primes': blocks['half_braiding_snf_certificate']['smith_normal_form']['rank_bad_primes'],
         'half_braiding_rank_determinantal_divisor': blocks['half_braiding_snf_certificate']['smith_normal_form']['rank_determinantal_divisor'],
+        'sandpile_critical_group': blocks['sandpile_critical_group']['derived']['critical_group']['presentation'],
+        'sandpile_critical_group_order': blocks['sandpile_critical_group']['derived']['critical_group']['order'],
+        'sandpile_reduced_laplacian_snf': blocks['sandpile_critical_group']['derived']['smith_normal_form']['reduced_laplacian_diagonal'],
+        'public_boundary_graph': blocks['public_boundary_graph_invariants']['derived']['public_graph'],
+        'public_boundary_shift_entropy': blocks['public_boundary_graph_invariants']['derived']['symbolic_dynamics']['shift_entropy_natural'],
+        'public_boundary_nonbacktracking_entropy': blocks['public_boundary_graph_invariants']['derived']['symbolic_dynamics']['nonbacktracking_entropy_natural'],
+        'public_boundary_fourier_screen_defects': blocks['public_boundary_graph_invariants']['derived']['fourier_screen']['best_nontrivial_defect_count'],
+        'fourier_residue_screen_count': len(blocks['fourier_residue_screen']['derived']['screens']),
+        'fourier_residue_combined_rank': blocks['fourier_residue_screen']['derived']['combined_screen']['rank_over_f2'],
+        'fourier_residue_cell_counts': blocks['fourier_residue_screen']['derived']['combined_screen']['cell_counts_by_signature'],
+        'fourier_a985_candidate_count': blocks['fourier_a985_sector_character_candidates']['derived']['candidate_count'],
+        'fourier_a985_public_zero_scalar_profile': blocks['fourier_a985_sector_character_candidates']['derived']['public_zero_scalar_profile'],
+        'fourier_screen0_tube_element_support': blocks['fourier_screen0_tube_central_element']['derived']['reconstructed_from_local_primitives']['support'],
+        'fourier_screen0_tube_closed_loop_commutator_failures': blocks['fourier_screen0_tube_central_element']['derived']['closed_loop_commutator']['failure_count'],
+        'fourier_screen0_tube_full_a985_commutator_failures': blocks['fourier_screen0_tube_central_element']['derived']['full_a985_commutator_boundary']['failure_count'],
+        'tube_sandpile_class_count_in_mask_image': blocks['tube_sandpile_divisor_map']['derived']['sandpile_class_count_in_mask_image'],
+        'tube_sandpile_mixed_class_count': blocks['tube_sandpile_divisor_map']['derived']['tube_grade_vs_sandpile_class']['mixed_class_count'],
+        'tube_sandpile_mixed_class_mask_count': blocks['tube_sandpile_divisor_map']['derived']['tube_grade_vs_sandpile_class']['mixed_class_mask_count'],
     }
 
 
@@ -394,6 +412,128 @@ def verified_claims(blocks: Dict[str, Any]) -> list[Dict[str, Any]]:
                 'rank_mod_2': blocks.get('half_braiding_snf_certificate', {}).get('two_primary_local_snf', {}).get('rank_mod_2'),
                 'rank_drop_mod_2': blocks.get('half_braiding_snf_certificate', {}).get('two_primary_local_snf', {}).get('rank_drop_mod_2'),
                 'odd_prime_gcd_exclusion': blocks.get('half_braiding_snf_certificate', {}).get('odd_prime_exclusion', {}).get('gcd_odd_part'),
+            },
+        },
+
+        {
+            'id': 'sandpile_critical_group',
+            'name': 'D20 sandpile critical group',
+            'status': 'certified reduced-Laplacian Smith normal form',
+            'statement': 'The unweighted D20 H-cycle boundary graph has critical group Z/2 x Z/12 x Z/60^3 and 5,184,000 recurrent sandpile states.',
+            'evidence': {
+                'graph': blocks.get('sandpile_critical_group', {}).get('derived', {}).get('graph'),
+                'invariant_factors': blocks.get('sandpile_critical_group', {}).get('derived', {}).get('critical_group', {}).get('invariant_factors'),
+                'order': blocks.get('sandpile_critical_group', {}).get('derived', {}).get('critical_group', {}).get('order'),
+                'spanning_tree_count': blocks.get('sandpile_critical_group', {}).get('derived', {}).get('critical_group', {}).get('spanning_tree_count'),
+                'snf_diagonal_multiplicities': blocks.get('sandpile_critical_group', {}).get('derived', {}).get('smith_normal_form', {}).get('diagonal_multiplicities'),
+            },
+        },
+
+        {
+            'id': 'public_boundary_graph_invariants',
+            'name': 'D20 public-boundary graph invariants',
+            'status': 'certified finite graph, dynamics, and phase-screen invariants',
+            'statement': 'The public boundary is the dodecahedral 20-vertex cubic graph with cycle rank 11, automorphism order 120, shift entropy log(3), nonbacktracking entropy log(2), and a best nontrivial signed-turn Fourier screen with two defects.',
+            'evidence': {
+                'graph': blocks.get('public_boundary_graph_invariants', {}).get('derived', {}).get('public_graph'),
+                'cycle_rank': blocks.get('public_boundary_graph_invariants', {}).get('derived', {}).get('cycle_space', {}).get('cycle_rank'),
+                'automorphism_order': blocks.get('public_boundary_graph_invariants', {}).get('derived', {}).get('automorphisms', {}).get('aut_gamma_order'),
+                'sandpile': blocks.get('public_boundary_graph_invariants', {}).get('derived', {}).get('sandpile'),
+                'symbolic_dynamics': blocks.get('public_boundary_graph_invariants', {}).get('derived', {}).get('symbolic_dynamics'),
+                'fourier_screen': blocks.get('public_boundary_graph_invariants', {}).get('derived', {}).get('fourier_screen'),
+            },
+        },
+
+        {
+            'id': 'fourier_residue_screen',
+            'name': 'D20 Fourier residue-screen characters',
+            'status': 'certified finite F2 residue characters',
+            'statement': 'The three best signed-turn two-defect screens act on all 2048 closed-return masks as nonzero F2 characters; each splits 1024/1024, and together they have rank 3 with eight 256-mask cells.',
+            'evidence': {
+                'residue_space': blocks.get('fourier_residue_screen', {}).get('derived', {}).get('residue_space'),
+                'screens': blocks.get('fourier_residue_screen', {}).get('derived', {}).get('screens'),
+                'combined_screen': {
+                    key: value
+                    for key, value in blocks.get('fourier_residue_screen', {})
+                    .get('derived', {})
+                    .get('combined_screen', {})
+                    .items()
+                    if key != 'residue_screen_rows'
+                },
+                'sandpile_pairing_seam': blocks.get('fourier_residue_screen', {}).get('derived', {}).get('sandpile_pairing_seam'),
+            },
+        },
+
+        {
+            'id': 'fourier_a985_sector_character_candidates',
+            'name': 'D20 Fourier A985 sector-character candidates',
+            'status': 'candidate evaluation certified',
+            'statement': 'The three signed-turn residue screens act as signed-object involutions on the 109 local primitive tube pieces, but none is scalar on all 39 A985/tube sectors; only the first is scalar on every nonzero public-zero idempotent support.',
+            'evidence': {
+                'sector_count': blocks.get('fourier_a985_sector_character_candidates', {}).get('derived', {}).get('sector_count'),
+                'local_primitive_piece_count': blocks.get('fourier_a985_sector_character_candidates', {}).get('derived', {}).get('local_primitive_piece_count'),
+                'public_zero_scalar_profile': blocks.get('fourier_a985_sector_character_candidates', {}).get('derived', {}).get('public_zero_scalar_profile'),
+                'pi33_scalars': blocks.get('fourier_a985_sector_character_candidates', {}).get('derived', {}).get('pi33_scalars'),
+                'candidate_summary': [
+                    {
+                        'screen_id': row.get('screen_id'),
+                        'homogeneous_sector_count': row.get('homogeneous_sector_count'),
+                        'mixed_sector_count': row.get('mixed_sector_count'),
+                        'descends_to_all_39_sector_scalars': row.get('descends_to_all_39_sector_scalars'),
+                        'all_nonzero_public_zero_supports_scalar': row.get('all_nonzero_public_zero_supports_scalar'),
+                    }
+                    for row in blocks.get('fourier_a985_sector_character_candidates', {})
+                    .get('derived', {})
+                    .get('candidates', [])
+                ],
+            },
+        },
+
+        {
+            'id': 'fourier_screen0_tube_central_element',
+            'name': 'D20 Fourier screen-0 tube central element',
+            'status': 'closed-loop central involution certified',
+            'statement': 'The public-zero-compatible screen reconstructs from the 109 local primitive tube pieces as a six-term signed object unit. It squares to the closed-loop unit, commutes with all 297 closed-loop basis relations, and is explicitly not central on the full 985-relation algebra.',
+            'evidence': {
+                'object_phase_assignment': blocks.get('fourier_screen0_tube_central_element', {}).get('derived', {}).get('object_phase_assignment'),
+                'signed_object_unit': blocks.get('fourier_screen0_tube_central_element', {}).get('derived', {}).get('signed_object_unit'),
+                'closed_loop_commutator': blocks.get('fourier_screen0_tube_central_element', {}).get('derived', {}).get('closed_loop_commutator'),
+                'full_a985_commutator_boundary': {
+                    key: value
+                    for key, value in blocks.get('fourier_screen0_tube_central_element', {})
+                    .get('derived', {})
+                    .get('full_a985_commutator_boundary', {})
+                    .items()
+                    if key != 'failures_first_16'
+                },
+                'public_zero_support_action': blocks.get('fourier_screen0_tube_central_element', {}).get('derived', {}).get('public_zero_support_action'),
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_divisor_map',
+            'name': 'D20 tube grade to sandpile divisor map',
+            'status': 'certified divisor-class comparison',
+            'statement': 'The screen-0 tube grade and canonical oriented-edge divisor map send the 2048 closed-return masks to 1360 D20 sandpile classes. The tube grade is not sandpile-class invariant: 154 classes are mixed, accounting for 576 masks.',
+            'evidence': {
+                'tree_count': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('tree_count'),
+                'screen0_defect_mask': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('screen0_defect_mask'),
+                'tube_grade_counts': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('tube_grade_counts'),
+                'sandpile_class_count_in_mask_image': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('sandpile_class_count_in_mask_image'),
+                'zero_class_masks': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('zero_class_masks'),
+                'tube_grade_vs_sandpile_class': {
+                    key: value
+                    for key, value in blocks.get('tube_sandpile_divisor_map', {})
+                    .get('derived', {})
+                    .get('tube_grade_vs_sandpile_class', {})
+                    .items()
+                    if key != 'mixed_classes_first_16'
+                },
+                'class_multiplicity_histogram': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('class_multiplicity_histogram'),
+                'sandpile_class_order_histogram_by_class': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('sandpile_class_order_histogram_by_class'),
+                'adjugate_certificate': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('adjugate_certificate'),
+                'mask_divisor_rows_sha256': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('mask_divisor_rows_sha256'),
+                'sandpile_class_rows_sha256': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('sandpile_class_rows_sha256'),
             },
         },
 

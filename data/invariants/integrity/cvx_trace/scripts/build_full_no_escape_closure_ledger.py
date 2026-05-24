@@ -25,6 +25,10 @@ REPORTS = {
     / "reports"
     / "formula_to_boundary_cycle_family_candidate.json",
     "parameterized_e33_target_schema": CVX / "reports" / "parameterized_e33_target_schema_certificate.json",
+    "cnf_to_parameterized_e33_packet_compiler": CVX
+    / "reports"
+    / "cnf_to_parameterized_e33_packet_compiler_certificate.json",
+    "forall_yes_no_preservation_theorem": CVX / "reports" / "forall_yes_no_preservation_theorem.json",
     "encoded_family_scope": CVX / "reports" / "encoded_family_scope_certificate.json",
     "polynomial_trace_compiler_scope": CVX / "reports" / "polynomial_trace_compiler_scope_certificate.json",
     "universal_trace_compiler": CVX / "reports" / "universal_trace_compiler_report.json",
@@ -49,6 +53,8 @@ FULLY_WITNESSED_STATUSES = {
     "universal_v_surface_accounted_certificate_guarded",
     "universal_public_bit_machine_trace_compiler_witnessed",
     "formal_x_policy_boundary_certified_x_not_public_p",
+    "encoded_family_sat_complete_reduction_certified",
+    "dependency_ledger_built_full_closure_closed",
 }
 
 SCOPED_WITNESSED_STATUSES = {
@@ -78,6 +84,7 @@ OPEN_STATUSES = {
     "blocked_by_open_obligations",
     "assignment_bearing_target_obligation_built_reduction_open",
     "parameterized_e33_target_schema_defined_reduction_open",
+    "cnf_to_parameterized_e33_packet_compiler_built_forall_theorem_open",
     "sat_complete_frontier_blocked_uniform_reduction_missing",
     "formula_to_boundary_cycle_candidate_built_sat_preservation_blocked",
 }
@@ -176,14 +183,13 @@ def main() -> int:
     blocker_ids = [item["id"] for item in hard_blockers + scope_declaration_blockers + scoped_blockers]
     full_claim_allowed = not blocker_ids and current_surface_closed
     conditional_claim_allowed = current_surface_closed
-
     classified_by_id = {item["id"]: item for item in classified}
     remaining_gaps = []
     if classified_by_id["encoded_family_sat_complete"]["blocks_full_closure"]:
         remaining_gaps.append(
             {
                 "id": "encoded_family_sat_complete",
-                "gap": "A public formula-to-boundary-cycle compiler candidate now emits D20 masks and recomputes rho_33 from circuit data, but it is a finite nonzero-residual fingerprint and fails SAT preservation. The finite target is fenced as a lookup testbed, and the parameterized E(phi) schema now names assignment witnesses, clause-local gates, inverse projection, and intrinsic rho_33 transport. Full closure still needs the public DIMACS-to-E(phi) compiler, forall-instance yes/no preservation theorem, inverse witness interpretation, and no-hidden-advice proof for the reduction algorithm.",
+                "gap": "A public formula-to-boundary-cycle compiler candidate emits D20 masks and recomputes rho_33 from circuit data, but it is a finite nonzero-residual fingerprint and fails SAT preservation. The finite target is fenced as a lookup testbed. The parameterized E(phi) schema names assignment witnesses, clause-local gates, inverse projection, and intrinsic rho_33 transport. The public DIMACS-to-E(phi) compiler now builds packets and the supplied-witness replay checker passes bounded SAT/UNSAT canaries. Full closure still needs a forall-instance yes/no preservation theorem, inverse witness theorem, and no-hidden-advice proof for the reduction algorithm.",
                 "needed": items["encoded_family_sat_complete"]["required_artifact"],
                 "assignment_target_obligation_witness": items["encoded_family_sat_complete"].get(
                     "assignment_target_obligation_witness"
@@ -191,6 +197,7 @@ def main() -> int:
                 "parameterized_target_schema_witness": items["encoded_family_sat_complete"].get(
                     "parameterized_target_schema_witness"
                 ),
+                "compiler_witness": items["encoded_family_sat_complete"].get("compiler_witness"),
                 "candidate_witness": items["encoded_family_sat_complete"].get("candidate_witness"),
                 "investigation_witness": items["encoded_family_sat_complete"].get("investigation_witness"),
             }
@@ -204,17 +211,21 @@ def main() -> int:
             }
         )
 
-    next_item = (
-        {
-            "id": "cnf_to_parameterized_e33_packet_compiler",
-            "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    if classified_by_id["encoded_family_sat_complete"]["blocks_full_closure"]:
+        next_item = {
+            "id": "forall_yes_no_preservation_theorem",
+            "action": "Promote the compiler/replay construction to a theorem: for every CNF phi, phi is satisfiable iff there exists an accepting E(phi) assignment witness, with inverse projection.",
         }
-        if classified_by_id["encoded_family_sat_complete"]["blocks_full_closure"]
-        else {
+    elif full_claim_allowed:
+        next_item = {
+            "id": "external_formal_audit_pack",
+            "action": "Package the closed dependency ledger, theorem certificates, and minimal replay commands for external formal audit.",
+        }
+    else:
+        next_item = {
             "id": "full_no_escape_closure",
             "action": "Promote the dependency ledger to a closed no-escape theorem after all bridge obligations are witnessed.",
         }
-    )
 
     ledger = {
         "schema": "d20.integrity.full_no_escape_closure_ledger.source_drop",

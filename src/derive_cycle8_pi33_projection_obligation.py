@@ -87,6 +87,48 @@ CANONICAL_LOOP_PI33_OBSTRUCTION_REPORT = (
 CANONICAL_FINITE_WARD_IDENTITY_REPORT = (
     D20_INVARIANTS / "theorems" / "canonical_finite_ward_identity" / "report.json"
 )
+CANONICAL_ALL_MASK_WARD_IDENTITY_REPORT = (
+    D20_INVARIANTS / "theorems" / "canonical_all_mask_ward_identity" / "report.json"
+)
+FINITE_BMS_CARROLLIAN_FLUX_BALANCE_REPORT = (
+    D20_INVARIANTS / "theorems" / "finite_bms_carrollian_flux_balance" / "report.json"
+)
+HIDDEN_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT = (
+    D20_INVARIANTS / "theorems" / "hidden_packet_charge_frame_classifier" / "report.json"
+)
+CANONICAL_FINITE_SCATTERING_TABLE_REPORT = (
+    D20_INVARIANTS / "theorems" / "canonical_finite_scattering_table" / "report.json"
+)
+LOOP297_SCATTERING_AMPLITUDE_LIFT_REPORT = (
+    D20_INVARIANTS / "theorems" / "loop297_scattering_amplitude_lift" / "report.json"
+)
+COMPACT_AMPLITUDE_QUOTIENT_REPORT = (
+    D20_INVARIANTS / "theorems" / "compact_amplitude_quotient" / "report.json"
+)
+REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "reduced_amplitude_quotient_scattering_automaton"
+    / "report.json"
+)
+AMPLITUDE_QUOTIENT_FOURIER_MODE_CLASSIFIER_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "amplitude_quotient_fourier_mode_classifier"
+    / "report.json"
+)
+FINITE_VIRASORO_STRING_KERNEL_CANDIDATE_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "finite_virasoro_string_kernel_candidate"
+    / "report.json"
+)
+FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "finite_virasoro_generator_algebra"
+    / "report.json"
+)
 
 
 def canonical(obj: Any) -> bytes:
@@ -293,6 +335,56 @@ def build_report() -> dict[str, Any]:
         if CANONICAL_FINITE_WARD_IDENTITY_REPORT.exists()
         else {}
     )
+    canonical_all_mask_ward_identity = (
+        load_json(CANONICAL_ALL_MASK_WARD_IDENTITY_REPORT)
+        if CANONICAL_ALL_MASK_WARD_IDENTITY_REPORT.exists()
+        else {}
+    )
+    finite_bms_carrollian_flux_balance = (
+        load_json(FINITE_BMS_CARROLLIAN_FLUX_BALANCE_REPORT)
+        if FINITE_BMS_CARROLLIAN_FLUX_BALANCE_REPORT.exists()
+        else {}
+    )
+    hidden_packet_charge_frame_classifier = (
+        load_json(HIDDEN_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT)
+        if HIDDEN_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT.exists()
+        else {}
+    )
+    canonical_finite_scattering_table = (
+        load_json(CANONICAL_FINITE_SCATTERING_TABLE_REPORT)
+        if CANONICAL_FINITE_SCATTERING_TABLE_REPORT.exists()
+        else {}
+    )
+    loop297_scattering_amplitude_lift = (
+        load_json(LOOP297_SCATTERING_AMPLITUDE_LIFT_REPORT)
+        if LOOP297_SCATTERING_AMPLITUDE_LIFT_REPORT.exists()
+        else {}
+    )
+    compact_amplitude_quotient = (
+        load_json(COMPACT_AMPLITUDE_QUOTIENT_REPORT)
+        if COMPACT_AMPLITUDE_QUOTIENT_REPORT.exists()
+        else {}
+    )
+    reduced_amplitude_quotient_scattering_automaton = (
+        load_json(REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_REPORT)
+        if REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_REPORT.exists()
+        else {}
+    )
+    amplitude_quotient_fourier_mode_classifier = (
+        load_json(AMPLITUDE_QUOTIENT_FOURIER_MODE_CLASSIFIER_REPORT)
+        if AMPLITUDE_QUOTIENT_FOURIER_MODE_CLASSIFIER_REPORT.exists()
+        else {}
+    )
+    finite_virasoro_string_kernel_candidate = (
+        load_json(FINITE_VIRASORO_STRING_KERNEL_CANDIDATE_REPORT)
+        if FINITE_VIRASORO_STRING_KERNEL_CANDIDATE_REPORT.exists()
+        else {}
+    )
+    finite_virasoro_generator_algebra = (
+        load_json(FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT)
+        if FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT.exists()
+        else {}
+    )
 
     cycle = read_cycle8()
     cycle_edges = edge_rows(cycle["edge_ids"])
@@ -343,6 +435,32 @@ def build_report() -> dict[str, Any]:
     canonical_flux_balance_gauge_derived = canonical_flux_balance_gauge.get("derived", {})
     canonical_loop_pi33_obstruction_derived = canonical_loop_pi33_obstruction.get("derived", {})
     canonical_finite_ward_identity_derived = canonical_finite_ward_identity.get("derived", {})
+    canonical_all_mask_ward_identity_derived = canonical_all_mask_ward_identity.get("derived", {})
+    finite_bms_carrollian_flux_balance_derived = finite_bms_carrollian_flux_balance.get(
+        "derived", {}
+    )
+    hidden_packet_charge_frame_classifier_derived = hidden_packet_charge_frame_classifier.get(
+        "derived", {}
+    )
+    canonical_finite_scattering_table_derived = canonical_finite_scattering_table.get(
+        "derived", {}
+    )
+    loop297_scattering_amplitude_lift_derived = loop297_scattering_amplitude_lift.get(
+        "derived", {}
+    )
+    compact_amplitude_quotient_derived = compact_amplitude_quotient.get("derived", {})
+    reduced_amplitude_quotient_scattering_automaton_derived = (
+        reduced_amplitude_quotient_scattering_automaton.get("derived", {})
+    )
+    amplitude_quotient_fourier_mode_classifier_derived = (
+        amplitude_quotient_fourier_mode_classifier.get("derived", {})
+    )
+    finite_virasoro_string_kernel_candidate_derived = (
+        finite_virasoro_string_kernel_candidate.get("derived", {})
+    )
+    finite_virasoro_generator_algebra_derived = (
+        finite_virasoro_generator_algebra.get("derived", {})
+    )
 
     character_values_materialized = has_any_key(
         character,
@@ -472,6 +590,56 @@ def build_report() -> dict[str, Any]:
         canonical_finite_ward_identity.get("status")
         == "D20_CANONICAL_FINITE_WARD_IDENTITY_CERTIFIED"
         and canonical_finite_ward_identity.get("all_checks_pass") is True
+    )
+    canonical_all_mask_ward_identity_certified = (
+        canonical_all_mask_ward_identity.get("status")
+        == "D20_CANONICAL_ALL_MASK_WARD_IDENTITY_CERTIFIED"
+        and canonical_all_mask_ward_identity.get("all_checks_pass") is True
+    )
+    finite_bms_carrollian_flux_balance_certified = (
+        finite_bms_carrollian_flux_balance.get("status")
+        == "D20_FINITE_BMS_CARROLLIAN_FLUX_BALANCE_CERTIFIED"
+        and finite_bms_carrollian_flux_balance.get("all_checks_pass") is True
+    )
+    hidden_packet_charge_frame_classifier_certified = (
+        hidden_packet_charge_frame_classifier.get("status")
+        == "D20_HIDDEN_PACKET_CHARGE_FRAME_CLASSIFIER_CERTIFIED"
+        and hidden_packet_charge_frame_classifier.get("all_checks_pass") is True
+    )
+    canonical_finite_scattering_table_certified = (
+        canonical_finite_scattering_table.get("status")
+        == "D20_CANONICAL_FINITE_SCATTERING_TABLE_CERTIFIED"
+        and canonical_finite_scattering_table.get("all_checks_pass") is True
+    )
+    loop297_scattering_amplitude_lift_certified = (
+        loop297_scattering_amplitude_lift.get("status")
+        == "D20_LOOP297_SCATTERING_AMPLITUDE_LIFT_CERTIFIED"
+        and loop297_scattering_amplitude_lift.get("all_checks_pass") is True
+    )
+    compact_amplitude_quotient_certified = (
+        compact_amplitude_quotient.get("status")
+        == "D20_COMPACT_AMPLITUDE_QUOTIENT_CERTIFIED"
+        and compact_amplitude_quotient.get("all_checks_pass") is True
+    )
+    reduced_amplitude_quotient_scattering_automaton_certified = (
+        reduced_amplitude_quotient_scattering_automaton.get("status")
+        == "D20_REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_CERTIFIED"
+        and reduced_amplitude_quotient_scattering_automaton.get("all_checks_pass") is True
+    )
+    amplitude_quotient_fourier_mode_classifier_certified = (
+        amplitude_quotient_fourier_mode_classifier.get("status")
+        == "D20_AMPLITUDE_QUOTIENT_FOURIER_MODE_CLASSIFIER_CERTIFIED"
+        and amplitude_quotient_fourier_mode_classifier.get("all_checks_pass") is True
+    )
+    finite_virasoro_string_kernel_candidate_certified = (
+        finite_virasoro_string_kernel_candidate.get("status")
+        == "D20_FINITE_VIRASORO_STRING_KERNEL_CANDIDATE_CERTIFIED"
+        and finite_virasoro_string_kernel_candidate.get("all_checks_pass") is True
+    )
+    finite_virasoro_generator_algebra_certified = (
+        finite_virasoro_generator_algebra.get("status")
+        == "D20_FINITE_VIRASORO_GENERATOR_ALGEBRA_CERTIFIED"
+        and finite_virasoro_generator_algebra.get("all_checks_pass") is True
     )
 
     checks = {
@@ -823,6 +991,407 @@ def build_report() -> dict[str, Any]:
             and canonical_finite_ward_identity.get("checks", {}).get("finite_ward_scalar_sum_is_zero")
             is True
         ),
+        "canonical_all_mask_ward_identity_is_certified": canonical_all_mask_ward_identity_certified,
+        "canonical_all_mask_ward_identity_balances_all_2048_masks": (
+            canonical_all_mask_ward_identity.get("checks", {}).get(
+                "all_ward_scalar_sums_are_zero"
+            )
+            is True
+            and canonical_all_mask_ward_identity.get("checks", {}).get(
+                "residue_masks_are_complete"
+            )
+            is True
+            and canonical_all_mask_ward_identity_derived.get("mask_count") == 2048
+        ),
+        "canonical_all_mask_ward_identity_extends_gamma8": (
+            canonical_all_mask_ward_identity.get("checks", {}).get(
+                "gamma8_row_extends_canonical_finite_ward_identity"
+            )
+            is True
+            and canonical_all_mask_ward_identity_derived.get("gamma8_row", {}).get(
+                "height_corrected_R33"
+            )
+            == -374784
+            and canonical_all_mask_ward_identity_derived.get("gamma8_row", {}).get(
+                "ward_scalar_sum"
+            )
+            == 0
+        ),
+        "canonical_all_mask_ward_identity_preserves_global_hidden_split": (
+            canonical_all_mask_ward_identity.get("checks", {}).get(
+                "global_corrected_character_is_additive"
+            )
+            is True
+            and canonical_all_mask_ward_identity.get("checks", {}).get(
+                "global_corrected_kernel_has_dimension_10"
+            )
+            is True
+        ),
+        "finite_bms_carrollian_flux_balance_is_certified": (
+            finite_bms_carrollian_flux_balance_certified
+        ),
+        "finite_bms_carrollian_flux_balance_names_all_masks": (
+            finite_bms_carrollian_flux_balance.get("checks", {}).get("all_2048_masks_are_named")
+            is True
+            and finite_bms_carrollian_flux_balance_derived.get("balance_summary", {}).get(
+                "mask_count"
+            )
+            == 2048
+        ),
+        "finite_bms_carrollian_flux_balance_closes_public_and_hidden_terms": (
+            finite_bms_carrollian_flux_balance.get("checks", {}).get(
+                "public_flux_balance_holds_for_all_masks"
+            )
+            is True
+            and finite_bms_carrollian_flux_balance.get("checks", {}).get(
+                "hidden_r33_action_balance_holds_for_all_masks"
+            )
+            is True
+            and finite_bms_carrollian_flux_balance.get("checks", {}).get(
+                "r33_residual_is_negative_height_flux_for_all_masks"
+            )
+            is True
+        ),
+        "finite_bms_carrollian_flux_balance_preserves_hidden_packet_split": (
+            finite_bms_carrollian_flux_balance.get("checks", {}).get(
+                "global_corrected_r33_split_is_preserved"
+            )
+            is True
+            and finite_bms_carrollian_flux_balance_derived.get("balance_summary", {}).get(
+                "hidden_packet_histogram"
+            )
+            == {"kernel": 1024, "odd": 1024}
+        ),
+        "hidden_packet_charge_frame_classifier_is_certified": (
+            hidden_packet_charge_frame_classifier_certified
+        ),
+        "hidden_packet_charge_frame_classifier_splits_kernel_and_odd": (
+            hidden_packet_charge_frame_classifier.get("checks", {}).get(
+                "hidden_packets_split_evenly"
+            )
+            is True
+            and hidden_packet_charge_frame_classifier_derived.get("packet_histograms", {}).get(
+                "hidden_packet"
+            )
+            == {"kernel": 1024, "odd": 1024}
+        ),
+        "hidden_packet_charge_frame_classifier_refines_to_2032_classes": (
+            hidden_packet_charge_frame_classifier.get("checks", {}).get(
+                "coarse_charge_frame_classifier_has_942_classes"
+            )
+            is True
+            and hidden_packet_charge_frame_classifier.get("checks", {}).get(
+                "refined_charge_frame_classifier_has_2032_classes"
+            )
+            is True
+        ),
+        "hidden_packet_charge_frame_classifier_action_separates_all_masks": (
+            hidden_packet_charge_frame_classifier.get("checks", {}).get(
+                "complete_charge_action_classifier_separates_all_masks"
+            )
+            is True
+            and hidden_packet_charge_frame_classifier_derived.get("classifiers", {})
+            .get("complete_charge_action", {})
+            .get("class_count")
+            == 2048
+        ),
+        "canonical_finite_scattering_table_is_certified": (
+            canonical_finite_scattering_table_certified
+        ),
+        "canonical_finite_scattering_table_names_all_generator_transitions": (
+            canonical_finite_scattering_table.get("checks", {}).get(
+                "directed_transition_count_is_2048_times_11"
+            )
+            is True
+            and canonical_finite_scattering_table_derived.get("transition_counts", {}).get(
+                "directed_transition_count"
+            )
+            == 22528
+        ),
+        "canonical_finite_scattering_table_has_involutive_reverse_rows": (
+            canonical_finite_scattering_table.get("checks", {}).get(
+                "every_transition_has_involutive_reverse"
+            )
+            is True
+            and canonical_finite_scattering_table.get("checks", {}).get(
+                "height_flux_delta_histogram_matches_generator_actions"
+            )
+            is True
+        ),
+        "canonical_finite_scattering_table_has_expected_packet_transfers": (
+            canonical_finite_scattering_table.get("checks", {}).get(
+                "packet_transfer_histogram_matches_basis_clock"
+            )
+            is True
+            and canonical_finite_scattering_table_derived.get("hidden_R33_transfer_mod26_histogram")
+            == {"0": 2048, "13": 20480}
+        ),
+        "loop297_scattering_amplitude_lift_is_certified": (
+            loop297_scattering_amplitude_lift_certified
+        ),
+        "loop297_scattering_amplitude_lift_attaches_all_generator_packets": (
+            loop297_scattering_amplitude_lift.get("checks", {}).get(
+                "primitive_generator_amplitude_packet_count_is_11"
+            )
+            is True
+            and loop297_scattering_amplitude_lift_derived.get("lifted_transition_counts", {}).get(
+                "primitive_generator_count"
+            )
+            == 11
+        ),
+        "loop297_scattering_amplitude_lift_covers_all_scattering_rows": (
+            loop297_scattering_amplitude_lift.get("checks", {}).get(
+                "lifted_transition_count_matches_scattering_table"
+            )
+            is True
+            and loop297_scattering_amplitude_lift_derived.get("lifted_transition_counts", {}).get(
+                "directed_transition_count"
+            )
+            == 22528
+        ),
+        "loop297_scattering_amplitude_lift_balances_pi33_and_height_transfer": (
+            loop297_scattering_amplitude_lift.get("checks", {}).get(
+                "all_lifted_rows_have_zero_bare_pi33"
+            )
+            is True
+            and loop297_scattering_amplitude_lift.get("checks", {}).get(
+                "all_lifted_rows_balance_height_corrected_r33_transfer"
+            )
+            is True
+            and loop297_scattering_amplitude_lift.get("checks", {}).get(
+                "gamma8_self_generator_lift_returns_to_zero_with_positive_correction"
+            )
+            is True
+        ),
+        "compact_amplitude_quotient_is_certified": compact_amplitude_quotient_certified,
+        "compact_amplitude_quotient_collapses_tube_zero_class": (
+            compact_amplitude_quotient.get("checks", {}).get(
+                "bare_pi33_quotient_collapses_all_generators"
+            )
+            is True
+            and compact_amplitude_quotient_derived.get("quotient_summary", {}).get(
+                "bare_pi33_quotient_class_count"
+            )
+            == 1
+        ),
+        "compact_amplitude_quotient_uses_25_loop_atoms": (
+            compact_amplitude_quotient.get("checks", {}).get("used_step_atom_count_is_25")
+            is True
+            and compact_amplitude_quotient_derived.get("quotient_summary", {}).get(
+                "used_loop_step_atom_count"
+            )
+            == 25
+        ),
+        "compact_amplitude_quotient_separates_all_generators": (
+            compact_amplitude_quotient.get("checks", {}).get(
+                "step_hash_multiset_quotient_separates_generators"
+            )
+            is True
+            and compact_amplitude_quotient.get("checks", {}).get(
+                "ordered_step_chain_quotient_separates_generators"
+            )
+            is True
+            and compact_amplitude_quotient_derived.get("quotient_summary", {}).get(
+                "ordered_step_chain_quotient_class_count"
+            )
+            == 11
+        ),
+        "compact_amplitude_quotient_tracks_gamma8_and_generator3": (
+            compact_amplitude_quotient.get("checks", {}).get(
+                "gamma8_row_matches_certified_cycle8_packet"
+            )
+            is True
+            and compact_amplitude_quotient.get("checks", {}).get(
+                "hidden_packet_preserving_generator_is_exactly_3"
+            )
+            is True
+        ),
+        "reduced_amplitude_quotient_scattering_automaton_is_certified": (
+            reduced_amplitude_quotient_scattering_automaton_certified
+        ),
+        "reduced_amplitude_quotient_scattering_automaton_covers_all_states_and_transitions": (
+            reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "state_count_is_2048"
+            )
+            is True
+            and reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "transition_count_is_2048_times_11"
+            )
+            is True
+            and reduced_amplitude_quotient_scattering_automaton_derived.get(
+                "automaton_summary", {}
+            ).get("directed_transition_count")
+            == 22528
+        ),
+        "reduced_amplitude_quotient_scattering_automaton_is_regular_reversible_and_connected": (
+            reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "automaton_is_connected"
+            )
+            is True
+            and reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "outdegree_and_indegree_are_11_regular"
+            )
+            is True
+            and reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "every_transition_has_reverse_with_same_compact_label"
+            )
+            is True
+        ),
+        "reduced_amplitude_quotient_scattering_automaton_certifies_spectrum_and_sector_matrix": (
+            reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "adjacency_spectrum_has_expected_dimension_and_moments"
+            )
+            is True
+            and reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "hidden_sector_quotient_matrix_is_1_10_10_1"
+            )
+            is True
+            and reduced_amplitude_quotient_scattering_automaton_derived.get(
+                "sector_invariants", {}
+            )
+            .get("per_state_sector_quotient_matrix", {})
+            .get("matrix")
+            == [[1, 10], [10, 1]]
+        ),
+        "reduced_amplitude_quotient_scattering_automaton_tracks_gamma8_and_atoms": (
+            reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "gamma8_label_has_2048_transitions_and_expected_action"
+            )
+            is True
+            and reduced_amplitude_quotient_scattering_automaton.get("checks", {}).get(
+                "atom_exposure_uses_25_step_atoms"
+            )
+            is True
+        ),
+        "amplitude_quotient_fourier_mode_classifier_is_certified": (
+            amplitude_quotient_fourier_mode_classifier_certified
+        ),
+        "amplitude_quotient_fourier_mode_classifier_covers_all_2048_modes": (
+            amplitude_quotient_fourier_mode_classifier.get("checks", {}).get(
+                "mode_count_matches_automaton_state_count"
+            )
+            is True
+            and amplitude_quotient_fourier_mode_classifier_derived.get(
+                "classifier_summary", {}
+            ).get("mode_count")
+            == 2048
+        ),
+        "amplitude_quotient_fourier_mode_classifier_matches_hypercube_spectrum": (
+            amplitude_quotient_fourier_mode_classifier.get("checks", {}).get(
+                "spectral_histogram_matches_hypercube_formula"
+            )
+            is True
+            and amplitude_quotient_fourier_mode_classifier.get("checks", {}).get(
+                "spectral_histogram_matches_automaton_report"
+            )
+            is True
+        ),
+        "amplitude_quotient_fourier_mode_classifier_matches_sector26_clock": (
+            amplitude_quotient_fourier_mode_classifier.get("checks", {}).get(
+                "sector26_optical_clock_hits_all_26_residues"
+            )
+            is True
+            and amplitude_quotient_fourier_mode_classifier.get("checks", {}).get(
+                "nonzero_sector26_optical_clock_histogram_matches_sector26_suite"
+            )
+            is True
+        ),
+        "amplitude_quotient_fourier_mode_classifier_tracks_hidden_and_gamma8_modes": (
+            amplitude_quotient_fourier_mode_classifier.get("checks", {}).get(
+                "hidden_sign_mode_matches_sector_quotient_eigenvalue"
+            )
+            is True
+            and amplitude_quotient_fourier_mode_classifier.get("checks", {}).get(
+                "gamma8_basis_mode_matches_first_obstruction_clock"
+            )
+            is True
+        ),
+        "finite_virasoro_string_kernel_candidate_is_certified": (
+            finite_virasoro_string_kernel_candidate_certified
+        ),
+        "finite_virasoro_string_kernel_candidate_identifies_rank10_closure": (
+            finite_virasoro_string_kernel_candidate.get("checks", {}).get(
+                "minimal_kernel_closure_has_rank_10_and_1024_modes"
+            )
+            is True
+            and finite_virasoro_string_kernel_candidate.get("checks", {}).get(
+                "kernel_closure_is_defined_by_5_9_10_parity"
+            )
+            is True
+        ),
+        "finite_virasoro_string_kernel_candidate_records_seed_nonclosure": (
+            finite_virasoro_string_kernel_candidate.get("checks", {}).get(
+                "seed_zero_clock_fiber_has_83_modes"
+            )
+            is True
+            and finite_virasoro_string_kernel_candidate.get("checks", {}).get(
+                "seed_zero_clock_fiber_is_not_additively_closed"
+            )
+            is True
+        ),
+        "finite_virasoro_string_kernel_candidate_closes_by_cross_return_composites": (
+            finite_virasoro_string_kernel_candidate.get("checks", {}).get(
+                "primitive_generators_split_as_8_preserving_3_crossing"
+            )
+            is True
+            and finite_virasoro_string_kernel_candidate.get("checks", {}).get(
+                "paired_cross_return_composites_connect_kernel"
+            )
+            is True
+        ),
+        "finite_virasoro_string_kernel_candidate_tracks_gamma8_and_hidden_sign": (
+            finite_virasoro_string_kernel_candidate.get("checks", {}).get(
+                "kernel_closure_contains_gamma8_but_not_hidden_sign_mode"
+            )
+            is True
+            and finite_virasoro_string_kernel_candidate.get("checks", {}).get(
+                "kernel_closure_keeps_constant_but_excludes_hidden_sign_projection"
+            )
+            is True
+        ),
+        "finite_virasoro_generator_algebra_is_certified": (
+            finite_virasoro_generator_algebra_certified
+        ),
+        "finite_virasoro_generator_algebra_has_rank10_operator_basis": (
+            finite_virasoro_generator_algebra.get("checks", {}).get(
+                "operator_basis_has_1024_rank10_masks"
+            )
+            is True
+            and finite_virasoro_generator_algebra_derived.get(
+                "algebra_summary", {}
+            ).get("operator_basis_rank")
+            == 10
+        ),
+        "finite_virasoro_generator_algebra_commutators_vanish": (
+            finite_virasoro_generator_algebra.get("checks", {}).get(
+                "all_generator_commutators_vanish"
+            )
+            is True
+            and finite_virasoro_generator_algebra_derived.get(
+                "algebra_summary", {}
+            ).get("all_commutators_zero")
+            is True
+        ),
+        "finite_virasoro_generator_algebra_has_single_cross_composite_relation": (
+            finite_virasoro_generator_algebra.get("checks", {}).get(
+                "generator_masks_have_rank10_with_one_relation"
+            )
+            is True
+            and finite_virasoro_generator_algebra_derived.get(
+                "algebra_summary", {}
+            ).get("relation_count_mod_involutions")
+            == 1
+        ),
+        "finite_virasoro_generator_algebra_classifies_sector26_clock_defect": (
+            finite_virasoro_generator_algebra.get("checks", {}).get(
+                "sector26_clock_defect_is_classified_on_generator_products"
+            )
+            is True
+            and finite_virasoro_generator_algebra.get("checks", {}).get(
+                "sector26_clock_defect_is_only_overlap_cancellation"
+            )
+            is True
+        ),
         "character_table_only_hash_materialized": not character_values_materialized
         and character.get("character_table_sha256") is not None
         and character.get("shape") == [39, 985],
@@ -837,7 +1406,7 @@ def build_report() -> dict[str, Any]:
     }
     all_checks_pass = all(checks.values())
     status = (
-        "D20_CYCLE8_PI33_CANONICAL_WARD_IDENTITY_CERTIFIED"
+        "D20_CYCLE8_PI33_FINITE_VIRASORO_GENERATOR_ALGEBRA_CERTIFIED"
         if all_checks_pass
         else "D20_CYCLE8_PI33_PROJECTION_OBLIGATION_NEEDS_REVIEW"
     )
@@ -856,7 +1425,14 @@ def build_report() -> dict[str, Any]:
             "; global_counterterm_lattice_certified; global_corrected_charge_map_certified; "
             "global_corrected_hidden_split_symmetry_certified; "
             "hidden_split_augmented_ledger_stabilizer_certified; canonical_flux_balance_gauge_certified; "
-            "canonical_loop_pi33_obstruction_certified; canonical_finite_ward_identity_certified"
+            "canonical_loop_pi33_obstruction_certified; canonical_finite_ward_identity_certified; "
+            "canonical_all_mask_ward_identity_certified; finite_bms_carrollian_flux_balance_certified; "
+            "hidden_packet_charge_frame_classifier_certified; canonical_finite_scattering_table_certified; "
+            "loop297_scattering_amplitude_lift_certified; compact_amplitude_quotient_certified; "
+            "reduced_amplitude_quotient_scattering_automaton_certified; "
+            "amplitude_quotient_fourier_mode_classifier_certified; "
+            "finite_virasoro_string_kernel_candidate_certified; "
+            "finite_virasoro_generator_algebra_certified"
         ),
         "object": "d20",
         "target": (
@@ -1020,6 +1596,102 @@ def build_report() -> dict[str, Any]:
                 "path": rel(GLOBAL_COUNTERTERM_LATTICE_REPORT),
                 "sha256": sha_file(GLOBAL_COUNTERTERM_LATTICE_REPORT)
                 if GLOBAL_COUNTERTERM_LATTICE_REPORT.exists()
+                else None,
+            },
+            "global_corrected_charge_map_report": {
+                "path": rel(GLOBAL_CORRECTED_CHARGE_MAP_REPORT),
+                "sha256": sha_file(GLOBAL_CORRECTED_CHARGE_MAP_REPORT)
+                if GLOBAL_CORRECTED_CHARGE_MAP_REPORT.exists()
+                else None,
+            },
+            "global_corrected_hidden_split_symmetry_report": {
+                "path": rel(GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_REPORT),
+                "sha256": sha_file(GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_REPORT)
+                if GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_REPORT.exists()
+                else None,
+            },
+            "hidden_split_augmented_ledger_stabilizer_report": {
+                "path": rel(HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_REPORT),
+                "sha256": sha_file(HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_REPORT)
+                if HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_REPORT.exists()
+                else None,
+            },
+            "canonical_flux_balance_gauge_report": {
+                "path": rel(CANONICAL_FLUX_BALANCE_GAUGE_REPORT),
+                "sha256": sha_file(CANONICAL_FLUX_BALANCE_GAUGE_REPORT)
+                if CANONICAL_FLUX_BALANCE_GAUGE_REPORT.exists()
+                else None,
+            },
+            "canonical_loop_pi33_obstruction_report": {
+                "path": rel(CANONICAL_LOOP_PI33_OBSTRUCTION_REPORT),
+                "sha256": sha_file(CANONICAL_LOOP_PI33_OBSTRUCTION_REPORT)
+                if CANONICAL_LOOP_PI33_OBSTRUCTION_REPORT.exists()
+                else None,
+            },
+            "canonical_finite_ward_identity_report": {
+                "path": rel(CANONICAL_FINITE_WARD_IDENTITY_REPORT),
+                "sha256": sha_file(CANONICAL_FINITE_WARD_IDENTITY_REPORT)
+                if CANONICAL_FINITE_WARD_IDENTITY_REPORT.exists()
+                else None,
+            },
+            "canonical_all_mask_ward_identity_report": {
+                "path": rel(CANONICAL_ALL_MASK_WARD_IDENTITY_REPORT),
+                "sha256": sha_file(CANONICAL_ALL_MASK_WARD_IDENTITY_REPORT)
+                if CANONICAL_ALL_MASK_WARD_IDENTITY_REPORT.exists()
+                else None,
+            },
+            "finite_bms_carrollian_flux_balance_report": {
+                "path": rel(FINITE_BMS_CARROLLIAN_FLUX_BALANCE_REPORT),
+                "sha256": sha_file(FINITE_BMS_CARROLLIAN_FLUX_BALANCE_REPORT)
+                if FINITE_BMS_CARROLLIAN_FLUX_BALANCE_REPORT.exists()
+                else None,
+            },
+            "hidden_packet_charge_frame_classifier_report": {
+                "path": rel(HIDDEN_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT),
+                "sha256": sha_file(HIDDEN_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT)
+                if HIDDEN_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT.exists()
+                else None,
+            },
+            "canonical_finite_scattering_table_report": {
+                "path": rel(CANONICAL_FINITE_SCATTERING_TABLE_REPORT),
+                "sha256": sha_file(CANONICAL_FINITE_SCATTERING_TABLE_REPORT)
+                if CANONICAL_FINITE_SCATTERING_TABLE_REPORT.exists()
+                else None,
+            },
+            "loop297_scattering_amplitude_lift_report": {
+                "path": rel(LOOP297_SCATTERING_AMPLITUDE_LIFT_REPORT),
+                "sha256": sha_file(LOOP297_SCATTERING_AMPLITUDE_LIFT_REPORT)
+                if LOOP297_SCATTERING_AMPLITUDE_LIFT_REPORT.exists()
+                else None,
+            },
+            "compact_amplitude_quotient_report": {
+                "path": rel(COMPACT_AMPLITUDE_QUOTIENT_REPORT),
+                "sha256": sha_file(COMPACT_AMPLITUDE_QUOTIENT_REPORT)
+                if COMPACT_AMPLITUDE_QUOTIENT_REPORT.exists()
+                else None,
+            },
+            "reduced_amplitude_quotient_scattering_automaton_report": {
+                "path": rel(REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_REPORT),
+                "sha256": sha_file(REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_REPORT)
+                if REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_REPORT.exists()
+                else None,
+            },
+            "amplitude_quotient_fourier_mode_classifier_report": {
+                "path": rel(AMPLITUDE_QUOTIENT_FOURIER_MODE_CLASSIFIER_REPORT),
+                "sha256": sha_file(AMPLITUDE_QUOTIENT_FOURIER_MODE_CLASSIFIER_REPORT)
+                if AMPLITUDE_QUOTIENT_FOURIER_MODE_CLASSIFIER_REPORT.exists()
+                else None,
+            },
+            "finite_virasoro_string_kernel_candidate_report": {
+                "path": rel(FINITE_VIRASORO_STRING_KERNEL_CANDIDATE_REPORT),
+                "sha256": sha_file(FINITE_VIRASORO_STRING_KERNEL_CANDIDATE_REPORT)
+                if FINITE_VIRASORO_STRING_KERNEL_CANDIDATE_REPORT.exists()
+                else None,
+            },
+            "finite_virasoro_generator_algebra_report": {
+                "path": rel(FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT),
+                "sha256": sha_file(FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT)
+                if FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT.exists()
                 else None,
             },
         },
@@ -1604,6 +2276,199 @@ def build_report() -> dict[str, Any]:
                 ),
                 "status": "certified",
             },
+            "canonical_all_mask_ward_identity": {
+                "needed_type": (
+                    "explicit finite Ward identity over all 2048 closed-return residue masks"
+                ),
+                "needed_for": (
+                    "promote the gamma_8 Ward witness to a full-residue finite Ward ledger with public "
+                    "exact term zero, bare Pi_33 term zero, and height-corrected R33 cancelling height action"
+                ),
+                "report": rel(CANONICAL_ALL_MASK_WARD_IDENTITY_REPORT),
+                "term_contract": canonical_all_mask_ward_identity_derived.get("term_contract"),
+                "global_corrected_character": canonical_all_mask_ward_identity_derived.get(
+                    "global_corrected_character"
+                ),
+                "gamma8_row": canonical_all_mask_ward_identity_derived.get("gamma8_row"),
+                "ward_rows_sha256": canonical_all_mask_ward_identity_derived.get(
+                    "ward_rows_sha256"
+                ),
+                "status": "certified",
+            },
+            "finite_bms_carrollian_flux_balance": {
+                "needed_type": (
+                    "finite BMS/Carrollian flux-balance projection of the all-mask Ward ledger"
+                ),
+                "needed_for": (
+                    "name the public boundary charge vector, exact flux term, public A985 residual, "
+                    "height flux, and hidden R33 residual for every closed-return mask"
+                ),
+                "report": rel(FINITE_BMS_CARROLLIAN_FLUX_BALANCE_REPORT),
+                "public_charge_frame": finite_bms_carrollian_flux_balance_derived.get(
+                    "public_charge_frame"
+                ),
+                "balance_summary": finite_bms_carrollian_flux_balance_derived.get(
+                    "balance_summary"
+                ),
+                "gamma8_row": finite_bms_carrollian_flux_balance_derived.get("gamma8_row"),
+                "status": "certified",
+            },
+            "hidden_packet_charge_frame_classifier": {
+                "needed_type": (
+                    "canonical charge-frame classifier for hidden kernel and odd flux packets"
+                ),
+                "needed_for": (
+                    "classify the 1024 hidden-kernel and 1024 hidden-odd finite flux packets by root, "
+                    "edge-support, public-flux moment, and action invariants"
+                ),
+                "report": rel(HIDDEN_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT),
+                "packet_histograms": hidden_packet_charge_frame_classifier_derived.get(
+                    "packet_histograms"
+                ),
+                "classifiers": hidden_packet_charge_frame_classifier_derived.get("classifiers"),
+                "gamma8_row": hidden_packet_charge_frame_classifier_derived.get("gamma8_row"),
+                "status": "certified",
+            },
+            "canonical_finite_scattering_table": {
+                "needed_type": (
+                    "canonical primitive-generator scattering table over complete packet signatures"
+                ),
+                "needed_for": (
+                    "record incoming and outgoing packet signatures, signed height flux, and hidden "
+                    "R33 transfer for every primitive closed-return generator move"
+                ),
+                "report": rel(CANONICAL_FINITE_SCATTERING_TABLE_REPORT),
+                "transition_counts": canonical_finite_scattering_table_derived.get(
+                    "transition_counts"
+                ),
+                "packet_transfer_histogram": canonical_finite_scattering_table_derived.get(
+                    "packet_transfer_histogram"
+                ),
+                "hidden_R33_transfer_mod26_histogram": canonical_finite_scattering_table_derived.get(
+                    "hidden_R33_transfer_mod26_histogram"
+                ),
+                "gamma8_scattering_star": canonical_finite_scattering_table_derived.get(
+                    "gamma8_scattering_star"
+                ),
+                "status": "certified",
+            },
+            "loop297_scattering_amplitude_lift": {
+                "needed_type": (
+                    "Loop_297/tube amplitude lift for canonical finite scattering rows"
+                ),
+                "needed_for": (
+                    "attach generator-level boundary-to-Loop_297 amplitude packets, bare zero Pi_33 "
+                    "tube amplitudes, and height-corrected R33 transition balances"
+                ),
+                "report": rel(LOOP297_SCATTERING_AMPLITUDE_LIFT_REPORT),
+                "lifted_transition_counts": loop297_scattering_amplitude_lift_derived.get(
+                    "lifted_transition_counts"
+                ),
+                "hidden_R33_transfer_mod26_histogram": loop297_scattering_amplitude_lift_derived.get(
+                    "hidden_R33_transfer_mod26_histogram"
+                ),
+                "gamma8_generator_amplitude_packet": loop297_scattering_amplitude_lift_derived.get(
+                    "gamma8_generator_amplitude_packet"
+                ),
+                "gamma8_lifted_scattering_star": loop297_scattering_amplitude_lift_derived.get(
+                    "gamma8_lifted_scattering_star"
+                ),
+                "status": "certified",
+            },
+            "compact_amplitude_quotient": {
+                "needed_type": (
+                    "compact quotient of the 11 primitive generator amplitude packets"
+                ),
+                "needed_for": (
+                    "collapse the public tube-zero class while retaining the 25 Loop_297 "
+                    "step atoms that separate primitive generator chains"
+                ),
+                "report": rel(COMPACT_AMPLITUDE_QUOTIENT_REPORT),
+                "quotient_summary": compact_amplitude_quotient_derived.get(
+                    "quotient_summary"
+                ),
+                "gamma8_quotient_row": compact_amplitude_quotient_derived.get(
+                    "gamma8_quotient_row"
+                ),
+                "status": "certified",
+            },
+            "reduced_amplitude_quotient_scattering_automaton": {
+                "needed_type": (
+                    "finite automaton over the 2048 residue masks labelled by compact amplitude quotients"
+                ),
+                "needed_for": (
+                    "certify the reduced transition system, hidden-sector quotient matrix, exact spectrum, "
+                    "and Loop_297 step-atom exposure counts"
+                ),
+                "report": rel(REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_REPORT),
+                "automaton_summary": reduced_amplitude_quotient_scattering_automaton_derived.get(
+                    "automaton_summary"
+                ),
+                "spectral_invariants": reduced_amplitude_quotient_scattering_automaton_derived.get(
+                    "spectral_invariants"
+                ),
+                "sector_invariants": reduced_amplitude_quotient_scattering_automaton_derived.get(
+                    "sector_invariants"
+                ),
+                "gamma8_transition_summary": reduced_amplitude_quotient_scattering_automaton_derived.get(
+                    "gamma8_transition_summary"
+                ),
+                "status": "certified",
+            },
+            "amplitude_quotient_fourier_mode_classifier": {
+                "needed_type": (
+                    "finite Fourier character classifier for the reduced amplitude-quotient automaton"
+                ),
+                "needed_for": (
+                    "diagonalize the automaton by F_2^11 characters and classify modes by eigenvalue, "
+                    "hidden sector, gamma_8 support, sector-26 clock, and compact step-atom exposure"
+                ),
+                "report": rel(AMPLITUDE_QUOTIENT_FOURIER_MODE_CLASSIFIER_REPORT),
+                "classifier_summary": amplitude_quotient_fourier_mode_classifier_derived.get(
+                    "classifier_summary"
+                ),
+                "distinguished_modes": amplitude_quotient_fourier_mode_classifier_derived.get(
+                    "distinguished_modes"
+                ),
+                "status": "certified",
+            },
+            "finite_virasoro_string_kernel_candidate": {
+                "needed_type": (
+                    "finite sector-26 string-kernel candidate inside the Fourier mode classifier"
+                ),
+                "needed_for": (
+                    "isolate the clock-zero seed fiber, certify its rank-10 additive closure, "
+                    "and identify primitive preserving moves plus paired cross-return composites"
+                ),
+                "report": rel(FINITE_VIRASORO_STRING_KERNEL_CANDIDATE_REPORT),
+                "closure_summary": finite_virasoro_string_kernel_candidate_derived.get(
+                    "closure_summary"
+                ),
+                "kernel_internal_graph": finite_virasoro_string_kernel_candidate_derived.get(
+                    "kernel_internal_graph"
+                ),
+                "distinguished_membership": finite_virasoro_string_kernel_candidate_derived.get(
+                    "distinguished_membership"
+                ),
+                "status": "certified",
+            },
+            "finite_virasoro_generator_algebra": {
+                "needed_type": (
+                    "finite generator algebra on the rank-10 string-kernel candidate"
+                ),
+                "needed_for": (
+                    "certify the rank-10 translation operator algebra, its commutators, "
+                    "cross-composite relation, and sector-26 clock defect"
+                ),
+                "report": rel(FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT),
+                "algebra_summary": finite_virasoro_generator_algebra_derived.get(
+                    "algebra_summary"
+                ),
+                "defining_relations": finite_virasoro_generator_algebra_derived.get(
+                    "defining_relations"
+                ),
+                "status": "certified",
+            },
         },
         "missing_maps": {
             "full_drinfeld_projection_coordinates": {
@@ -1696,16 +2561,57 @@ def build_report() -> dict[str, Any]:
             "canonical_finite_ward_identity": (
                 "discharged by data/invariants/d20/theorems/canonical_finite_ward_identity/report.json"
             ),
+            "canonical_all_mask_ward_identity": (
+                "discharged by "
+                "data/invariants/d20/theorems/canonical_all_mask_ward_identity/report.json"
+            ),
+            "finite_bms_carrollian_flux_balance": (
+                "discharged by "
+                "data/invariants/d20/theorems/finite_bms_carrollian_flux_balance/report.json"
+            ),
+            "hidden_packet_charge_frame_classifier": (
+                "discharged by "
+                "data/invariants/d20/theorems/hidden_packet_charge_frame_classifier/report.json"
+            ),
+            "canonical_finite_scattering_table": (
+                "discharged by "
+                "data/invariants/d20/theorems/canonical_finite_scattering_table/report.json"
+            ),
+            "loop297_scattering_amplitude_lift": (
+                "discharged by "
+                "data/invariants/d20/theorems/loop297_scattering_amplitude_lift/report.json"
+            ),
+            "compact_amplitude_quotient": (
+                "discharged by "
+                "data/invariants/d20/theorems/compact_amplitude_quotient/report.json"
+            ),
+            "reduced_amplitude_quotient_scattering_automaton": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "reduced_amplitude_quotient_scattering_automaton/report.json"
+            ),
+            "amplitude_quotient_fourier_mode_classifier": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "amplitude_quotient_fourier_mode_classifier/report.json"
+            ),
+            "finite_virasoro_string_kernel_candidate": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "finite_virasoro_string_kernel_candidate/report.json"
+            ),
+            "finite_virasoro_generator_algebra": (
+                "discharged by "
+                "data/invariants/d20/theorems/finite_virasoro_generator_algebra/report.json"
+            ),
             "remaining_recovery_obligation": (
-                "Generalize the canonical Ward identity from gamma_8 to all 2048 closed-return masks using "
-                "the global counterterm lattice and all-residue height-coherent transport."
+                "Test finite central-extension/anomaly cocycles on the generator algebra."
             ),
         },
         "checks": checks,
         "all_checks_pass": all_checks_pass,
         "next_highest_yield_item": (
-            "Generalize the canonical Ward identity from gamma_8 to all 2048 closed-return masks using the "
-            "global counterterm lattice and all-residue height-coherent transport."
+            "Test finite central-extension/anomaly cocycles on the generator algebra."
         ),
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})
@@ -1749,6 +2655,16 @@ def write_report(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "verify the canonical root-fixed exact flux-balance gauge is unique",
             "verify the canonical gauge pushforward preserves the cycle-8 Loop_297/Pi_33 obstruction statement",
             "verify the canonical finite Ward identity balances public zero, bare Pi_33 zero, and R33 residual",
+            "verify the canonical all-mask Ward identity balances all 2048 closed-return residues",
+            "verify the finite BMS/Carrollian projection names and balances public and hidden terms",
+            "verify the hidden packet charge-frame classifier separates packets through action invariants",
+            "verify the canonical finite scattering table covers all primitive-generator transitions",
+            "verify the Loop_297 scattering amplitude lift attaches generator packets and balances transfers",
+            "verify the compact amplitude quotient collapses tube-zero packets and separates generator chains",
+            "verify the reduced amplitude-quotient scattering automaton is regular, reversible, spectral, and sector-classified",
+            "verify the amplitude-quotient Fourier mode classifier diagonalizes and sector-26-classifies all 2048 modes",
+            "verify the finite Virasoro/string-kernel candidate identifies the rank-10 sector-26 closure",
+            "verify the finite Virasoro generator algebra and its sector-26 clock defect",
             "verify the full Drinfeld idempotent matrix remains hash-only in the current JSON artifacts",
         ],
     }

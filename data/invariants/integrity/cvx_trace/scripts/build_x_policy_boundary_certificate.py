@@ -159,8 +159,8 @@ def build_policy() -> dict[str, Any]:
             "This does not prove P != NP.",
         ],
         "next_highest_yield_item": {
-            "id": "cnf_to_parameterized_e33_packet_compiler",
-            "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+            "id": "full_no_escape_closure",
+            "action": "Refresh the full no-escape closure ledger against the certified encoded-family reduction.",
         },
     }
 

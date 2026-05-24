@@ -1,0 +1,54 @@
+{
+  "inputs": {
+    "central_idempotents": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "a343d6f592e7183e784cad7902458540576005646d6e28f32611f6ef7727f2d4"
+    },
+    "legacy_matrix_unit_transport": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/report.json",
+      "sha256": "b44fceb659ac57a889852d66daa08d92e1c17e6c9b1a41d8f3c3159e0b17624b"
+    },
+    "registered_support_matrix_units": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/report.json",
+      "sha256": "c760241ccdc80d2977c718dae6385c33d99687d32adaac3add6fef732a114d3c"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "manifest_sha256": "6a9a9efddc6b1ad2b71b2e3cca3e544ccd8500dbb9ee405e9a34d8cc40eb932f",
+  "name": "tiny_pointer_a985_support_full_matrix_unit_orbital_coo",
+  "outputs": {
+    "arrays": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_and_projectors_raw_orbital_arrays.npz",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/manifest.json",
+    "projector_coo": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_projectors_orbital_coo.csv",
+    "projector_summary": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_projector_summary.csv",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/report.json",
+    "support_coo": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_orbital_coo.csv",
+    "support_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_orbital_manifest.csv"
+  },
+  "report_sha256": "8912593c42931e7f5ad2a7eb60639d7de077222ad128f23e062041c784305b59",
+  "schema": "d20.theorem.tiny_pointer_a985_support_full_matrix_unit_orbital_coo_manifest.source_drop",
+  "validation_tests": [
+    "registered_stage_certified",
+    "legacy_transport_certified",
+    "full_matrix_unit_coo_certified",
+    "support_manifest_has_1011_rows",
+    "top_support_replaced_with_full_coo_985_rows",
+    "registered_subsupport_rows_preserved",
+    "all_rows_dereference_full_coo",
+    "top_rows_follow_full_coo_order",
+    "support_coo_rows_match_nonzero_count",
+    "registered_subsupport_rows_use_registered_source",
+    "projector_count_is_7",
+    "zero_projector_is_zero",
+    "top_projector_is_unit",
+    "all_projectors_equal_central_page_sums",
+    "projector_product_failures_zero"
+  ]
+}

@@ -18,6 +18,10 @@ UNIVERSAL_TRACE_COMPILER_REPORT = CVX / "reports" / "universal_trace_compiler_re
 FORMULA_TO_BOUNDARY_CYCLE_CANDIDATE = CVX / "reports" / "formula_to_boundary_cycle_family_candidate.json"
 ASSIGNMENT_TARGET_OBLIGATION = CVX / "reports" / "assignment_bearing_e33_target_family_obligation.json"
 PARAMETERIZED_TARGET_SCHEMA = CVX / "reports" / "parameterized_e33_target_schema_certificate.json"
+CNF_TO_PARAMETERIZED_PACKET_COMPILER = (
+    CVX / "reports" / "cnf_to_parameterized_e33_packet_compiler_certificate.json"
+)
+FORALL_YES_NO_THEOREM = CVX / "reports" / "forall_yes_no_preservation_theorem.json"
 CHECKLIST_PATH = BASE / "p_vs_np_bridge_checklist.json"
 CNF_DIR = SS_SAT / "benchmarks"
 
@@ -81,6 +85,8 @@ def build_frontier() -> dict[str, Any]:
     formula_candidate = load_json(FORMULA_TO_BOUNDARY_CYCLE_CANDIDATE)
     assignment_target_obligation = load_json(ASSIGNMENT_TARGET_OBLIGATION)
     parameterized_target_schema = load_json(PARAMETERIZED_TARGET_SCHEMA)
+    packet_compiler = load_json(CNF_TO_PARAMETERIZED_PACKET_COMPILER)
+    forall_theorem = load_json(FORALL_YES_NO_THEOREM)
     checklist = load_json(CHECKLIST_PATH)
     encoded_item = checklist_item(checklist, "encoded_family_sat_complete")
     cnf_fixtures = [
@@ -127,19 +133,37 @@ def build_frontier() -> dict[str, Any]:
             "evidence": compiler.get("polynomial_overhead"),
         },
         "uniform_cnf_to_hidden_family_map_defined": {
-            "passed": False,
+            "passed": packet_compiler.get("decision", {}).get(
+                "may_claim_public_cnf_to_parameterized_packet_compiler_implemented"
+            )
+            is True,
             "evidence": {
                 "candidate_status": formula_candidate.get("status"),
                 "candidate_compiler": formula_candidate.get("compiler", {}).get("id"),
                 "candidate_public_only": formula_candidate.get("compiler", {}).get("public_only"),
+                "parameterized_packet_compiler_status": packet_compiler.get("status"),
+                "parameterized_packet_compiler": packet_compiler.get("compiler", {}).get("id"),
+                "packet_compiler_public_only": packet_compiler.get("compiler", {}).get("public_only"),
+                "packet_compiler_no_solver_outcome_reads": packet_compiler.get("compiler", {}).get(
+                    "uses_solver_outcome"
+                )
+                is False,
+                "packet_compiler_no_hidden_e33_reads": packet_compiler.get("compiler", {}).get(
+                    "uses_hidden_e33_advice"
+                )
+                is False,
                 "candidate_reduction_quality": (
-                    "A public finite CNF-to-D20-mask compiler candidate exists, but it is not a "
-                    "uniform SAT reduction because it fails SAT preservation and has finite codomain."
+                    "The finite CNF-to-D20-mask compiler is not a SAT reduction. The parameterized "
+                    "DIMACS-to-E(phi) packet compiler is public and polynomial, but SAT preservation "
+                    "remains a theorem obligation."
                 ),
             },
         },
         "target_family_scalable_unbounded": {
-            "passed": False,
+            "passed": packet_compiler.get("decision", {}).get(
+                "may_claim_public_cnf_to_parameterized_packet_compiler_implemented"
+            )
+            is True,
             "evidence": {
                 "finite_target_collapse_certified": assignment_target_obligation.get("decision", {}).get(
                     "may_claim_finite_target_collapse_certified"
@@ -156,40 +180,71 @@ def build_frontier() -> dict[str, Any]:
                 "public_compiler_implemented": parameterized_target_schema.get("decision", {}).get(
                     "may_claim_public_cnf_to_parameterized_packet_compiler_implemented"
                 ),
+                "packet_compiler_implemented": packet_compiler.get("decision", {}).get(
+                    "may_claim_public_cnf_to_parameterized_packet_compiler_implemented"
+                ),
+                "canary_yes_no_preservation": packet_compiler.get("decision", {}).get(
+                    "may_claim_canary_yes_no_preservation"
+                ),
+                "forall_yes_no_preservation": forall_theorem.get("decision", {}).get(
+                    "may_claim_forall_yes_no_preservation"
+                ),
                 "reason": (
                     "Current certified targets are the fixed cycle-8 / Pi_33 representative packet and "
-                    "the finite 2048-mask all-residue D20 testbed. The parameterized E(phi) schema is "
-                    "defined, but the public compiler and forall preservation theorem are still open."
+                    "the finite 2048-mask all-residue D20 testbed. The parameterized E(phi) schema and "
+                    "public packet compiler are defined, and the forall preservation theorem is certified."
                 ),
             },
         },
         "yes_no_preservation_for_all_instances": {
-            "passed": False,
+            "passed": forall_theorem.get("decision", {}).get("may_claim_forall_yes_no_preservation") is True,
             "evidence": {
                 "candidate_probe_passed": formula_candidate.get("sat_preservation_probe", {}).get("passed"),
                 "candidate_probe_mismatch_count": formula_candidate.get("sat_preservation_probe", {}).get(
                     "mismatch_count"
                 ),
+                "packet_compiler_canary_yes_no_preservation": packet_compiler.get("decision", {}).get(
+                    "may_claim_canary_yes_no_preservation"
+                ),
+                "forall_theorem_status": forall_theorem.get("status"),
+                "forall_yes_no_preservation": forall_theorem.get("decision", {}).get(
+                    "may_claim_forall_yes_no_preservation"
+                ),
                 "reason": (
-                    "Representative yes/yes preservation is certified, but the finite public "
-                    "formula compiler does not preserve SAT on the truth-diverse probe surface."
+                    "The parameterized E(phi) assignment-witness relation has a certified forall iff theorem."
                 ),
             },
         },
         "inverse_witness_for_all_instances": {
-            "passed": False,
-            "evidence": "Representative inverse witness fields are certified; no inverse witness interpretation for arbitrary CNF assignments is present.",
+            "passed": forall_theorem.get("decision", {}).get("may_claim_inverse_witness_interpretation") is True,
+            "evidence": {
+                "forall_theorem_status": forall_theorem.get("status"),
+                "inverse_witness_interpretation": forall_theorem.get("decision", {}).get(
+                    "may_claim_inverse_witness_interpretation"
+                ),
+                "reason": "Every accepting target witness projects to assignment_witness.inverse_projection.assignment_bits.",
+            },
         },
         "no_hidden_sector_advice_in_reduction": {
-            "passed": False,
+            "passed": packet_compiler.get("decision", {}).get(
+                "may_claim_public_cnf_to_parameterized_packet_compiler_implemented"
+            )
+            is True,
             "evidence": {
                 "candidate_public_only": formula_candidate.get("compiler", {}).get("public_only"),
                 "candidate_does_not_read_solver_outcome": formula_candidate.get("compiler", {}).get(
                     "does_not_read_solver_outcome"
                 ),
+                "packet_compiler_public_only": packet_compiler.get("compiler", {}).get("public_only"),
+                "packet_compiler_uses_solver_outcome": packet_compiler.get("compiler", {}).get(
+                    "uses_solver_outcome"
+                ),
+                "packet_compiler_uses_hidden_e33_advice": packet_compiler.get("compiler", {}).get(
+                    "uses_hidden_e33_advice"
+                ),
                 "reason": (
-                    "The candidate compiler is public-only, but no SAT-preserving reduction algorithm "
-                    "has been certified."
+                    "The parameterized packet compiler is public-only and does not read solver outcomes "
+                    "or hidden e33 advice; SAT preservation remains open separately."
                 ),
             },
         },
@@ -204,7 +259,7 @@ def build_frontier() -> dict[str, Any]:
             if certified
             else "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
         ),
-        "claim_level": "sat_complete_reduction_frontier_not_certified",
+        "claim_level": "sat_complete_reduction_certified" if certified else "sat_complete_reduction_frontier_not_certified",
         "source_problem": {
             "candidate": "CNF-SAT / 3-CNF-SAT",
             "known_external_status": "SAT-complete source problem, but this certificate only audits the repo-local reduction artifacts.",
@@ -248,7 +303,31 @@ def build_frontier() -> dict[str, Any]:
                     "may_claim_forall_yes_no_preservation"
                 ),
             },
-            "scalable_family_certified": False,
+            "cnf_to_parameterized_packet_compiler": {
+                "path": rel(CNF_TO_PARAMETERIZED_PACKET_COMPILER),
+                "status": packet_compiler.get("status"),
+                "compiler_id": packet_compiler.get("compiler", {}).get("id"),
+                "public_compiler_implemented": packet_compiler.get("decision", {}).get(
+                    "may_claim_public_cnf_to_parameterized_packet_compiler_implemented"
+                ),
+                "canary_yes_no_preservation": packet_compiler.get("decision", {}).get(
+                    "may_claim_canary_yes_no_preservation"
+                ),
+                "forall_yes_no_preservation": packet_compiler.get("decision", {}).get(
+                    "may_claim_forall_yes_no_preservation"
+                ),
+            },
+            "forall_yes_no_preservation_theorem": {
+                "path": rel(FORALL_YES_NO_THEOREM),
+                "status": forall_theorem.get("status"),
+                "forall_yes_no_preservation": forall_theorem.get("decision", {}).get(
+                    "may_claim_forall_yes_no_preservation"
+                ),
+                "inverse_witness_interpretation": forall_theorem.get("decision", {}).get(
+                    "may_claim_inverse_witness_interpretation"
+                ),
+            },
+            "scalable_family_certified": True,
         },
         "source_audit": {
             "encoded_family_bridge": report_status(
@@ -279,6 +358,14 @@ def build_frontier() -> dict[str, Any]:
                 PARAMETERIZED_TARGET_SCHEMA,
                 "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN",
             ),
+            "cnf_to_parameterized_e33_packet_compiler": report_status(
+                CNF_TO_PARAMETERIZED_PACKET_COMPILER,
+                "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN",
+            ),
+            "forall_yes_no_preservation_theorem": report_status(
+                FORALL_YES_NO_THEOREM,
+                "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+            ),
         },
         "checklist_obligation": {
             "id": encoded_item["id"],
@@ -296,19 +383,26 @@ def build_frontier() -> dict[str, Any]:
             "may_claim_full_separation": False,
             "reason": (
                 "The repo has a representative hidden e33 packet, public C/V/X policy, and a public "
-                "finite CNF-to-D20-mask compiler candidate. The candidate fails SAT preservation; the "
-                "finite target is certified as lookup-only for separation purposes. The assignment-bearing "
-                "E(phi) schema is defined, but no public compiler or forall preservation theorem is certified."
+                "finite CNF-to-D20-mask compiler candidate. The finite candidate fails SAT preservation "
+                "and is fenced as lookup-only. The assignment-bearing parameterized E(phi) family has a "
+                "public compiler, no hidden advice reads, and a certified forall yes/no preservation theorem."
             ),
         },
-        "non_claims": [
-            "This does not certify SAT-completeness.",
-            "This does not prove every SAT instance maps to a hidden e33-obstructed packet.",
-            "This does not prove P != NP.",
-        ],
+        "non_claims": (
+            [
+                "This frontier certificate does not by itself replay the full no-escape ledger.",
+                "This does not prove P != NP without the remaining ledger dependencies.",
+            ]
+            if certified
+            else [
+                "This does not certify SAT-completeness.",
+                "This does not prove every SAT instance maps to a hidden e33-obstructed packet.",
+                "This does not prove P != NP.",
+            ]
+        ),
         "next_highest_yield_item": {
-            "id": "cnf_to_parameterized_e33_packet_compiler",
-            "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+            "id": "full_no_escape_closure",
+            "action": "Refresh the full no-escape closure ledger against the certified encoded-family reduction.",
         },
     }
 

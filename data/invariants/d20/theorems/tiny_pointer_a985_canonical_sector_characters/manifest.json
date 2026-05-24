@@ -1,0 +1,49 @@
+{
+  "inputs": {
+    "canonical_legacy_matrix_units": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_legacy_matrix_units/report.json",
+      "sha256": "3cab1c6db227d21616649c2bf8d6f933b39a697771d23a81514642a16899e846"
+    },
+    "central_idempotents": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "full_matrix_unit_arrays": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_raw_orbital_arrays.npz",
+      "sha256": "2a23eb5de3d8408bb0b1963549bbb654d0e623f705e0db10b5f7e39989321ab9"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "bf9cc74c497d68309ff288d39b4c64ee56ba70fc09766925ebd267ec933d0259"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "manifest_sha256": "2e59225a8c89c75ea471238042345c2df2d9a87c5ec80c2439db76339c687a64",
+  "name": "tiny_pointer_a985_canonical_sector_characters",
+  "outputs": {
+    "character_table_csv": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_character_table.csv",
+    "character_table_npz": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_character_table.npz",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/manifest.json",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/report.json",
+    "trace_summary": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_trace_summary.csv"
+  },
+  "report_sha256": "0658265daf6dcd058890ef94b8953c2eb7bf4094d5a4c0d332edb0525bb2d173",
+  "schema": "d20.theorem.tiny_pointer_a985_canonical_sector_characters_manifest.source_drop",
+  "validation_tests": [
+    "canonical_legacy_matrix_units_certified",
+    "full_matrix_unit_coo_certified",
+    "central_page_count_is_39",
+    "sector_count_is_39",
+    "character_table_shape_is_39_by_985",
+    "character_csv_has_38415_rows",
+    "block_dimensions_sum_to_159",
+    "matrix_unit_counts_sum_to_985",
+    "identity_character_matches_block_dimensions",
+    "central_page_trace_matches_block_dimensions",
+    "canonical_matrix_unit_traces_match_delta",
+    "central_projection_sample_commutes"
+  ]
+}

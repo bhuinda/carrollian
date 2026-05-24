@@ -1,0 +1,98 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ab34d230ee5b62458d56a3e6db8d70fce06e9e4806090503ee8d718d5bffccb1",
+  "checks": {
+    "all_diagonal_sums_equal_central_pages": true,
+    "central_page_count_is_39": true,
+    "constructed_bridge_failures_zero": true,
+    "coo_rows_match_nonzero_count": true,
+    "full_legacy_sector_match_certified": true,
+    "legacy_transport_certified": true,
+    "manifest_row_count_is_985": true,
+    "matrix_unit_count_is_985": true,
+    "registered_blocks_preserved": true,
+    "registered_direct_product_failures_zero": true,
+    "registered_duplicate_conflicts_zero": true,
+    "sampled_matrix_unit_products_pass": true,
+    "sector_summary_count_is_39": true
+  },
+  "claim": "All 985 legacy-labeled A985 block matrix units now have raw-orbital COO coefficient rows. Registered public-zero support blocks preserve the promoted registered COO coordinates; the remaining blocks are constructed from the promoted central pages inside the raw T985 algebra.",
+  "derived": {
+    "coo_source_counts": {
+      "CONSTRUCTED_FROM_PROMOTED_CENTRAL_PAGE": 76367,
+      "REGISTERED_SUPPORT_COO": 336
+    },
+    "identity_indices": [
+      6,
+      163,
+      227,
+      349,
+      618,
+      893
+    ],
+    "legacy_matrix_unit_count": 985,
+    "matrix_unit_source_counts": {
+      "CONSTRUCTED_FROM_PROMOTED_CENTRAL_PAGE": 975,
+      "REGISTERED_SUPPORT_COO": 10
+    },
+    "matrix_units_sha256": "370eb27fccfaf88649371fea7819b819c2f76cf012e874d4e8ba6e35e571c57f",
+    "matrix_units_shape": [
+      985,
+      985
+    ],
+    "orbital_coo_rows": 76703,
+    "registered_summary": {
+      "registered_coo_rows_read": 832,
+      "registered_duplicate_conflicts": [],
+      "registered_incomplete_raw_sectors": [],
+      "registered_raw_sectors_available": [
+        9,
+        19,
+        29,
+        30
+      ]
+    },
+    "sampled_products": {
+      "checked": 256,
+      "failure_count": 0,
+      "failures": []
+    },
+    "sector_source_counts": {
+      "constructed_blocks": 35,
+      "registered_blocks": 4
+    },
+    "tables": {
+      "arrays": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_raw_orbital_arrays.npz",
+      "coo": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_orbital_coo.csv",
+      "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_orbital_manifest.csv",
+      "sector_summary": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/sector_matrix_unit_source_summary.csv"
+    }
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "central_idempotents": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "full_legacy_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json",
+      "sha256": "69341804011de3836292f5baa4a16b335b813e4e930abc49ffb0030aca734047"
+    },
+    "legacy_matrix_unit_transport": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/report.json",
+      "sha256": "c97ba9903cece22fa172b554099abadb6adf33f773ffe2beb63fe6de08f518ad"
+    },
+    "registered_subset_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/registered_null_support_matrix_units_orbital_coo.csv",
+      "sha256": "4a08ec0dd4dabc07c74e3351f6d2f1ded5bfd3a7efa37ae22c8deeec1804d0d0"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "next_highest_yield_item": "Replace the registered support manifest's top-support rows with this all-39 COO-backed legacy matrix-unit table, or derive support-level projectors directly from the full COO table.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_full_matrix_unit_orbital_coo.source_drop",
+  "status": "D20_TINY_POINTER_A985_FULL_MATRIX_UNIT_ORBITAL_COO_CERTIFIED"
+}

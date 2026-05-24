@@ -1,0 +1,41 @@
+{
+  "inputs": {
+    "canonical_sector_character_table": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_character_table.npz",
+      "sha256": "83e93ed648fa4a99dc981bfc80ddbaf5a8b3ca5ed7f69979500ea9819c9fa936"
+    },
+    "canonical_sector_characters": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/report.json",
+      "sha256": "cd057be15de453bdaa5676e299d15179931b334baa2b73bf377cebc2f920aa0b"
+    },
+    "fourier_a985_sector_character_candidates": {
+      "path": "data/invariants/d20/theorems/fourier_a985_sector_character_candidates/report.json",
+      "sha256": "cd736ac3f7639afdd92f544d672cb128c275a8cede5838dfec6028c68d4d5da6"
+    }
+  },
+  "manifest_sha256": "0726d6e0c9c0917ea149d38ed0597ac818f2dc966082d04fb93ab674c4201491",
+  "name": "tiny_pointer_a985_fourier_trace_candidate_evaluation",
+  "outputs": {
+    "candidate_relation_traces": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/fourier_trace_candidate_relation_traces.csv",
+    "candidate_summary": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/fourier_trace_candidate_summary.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/manifest.json",
+    "public_zero_support_summary": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/fourier_trace_public_zero_support_summary.csv",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/report.json"
+  },
+  "report_sha256": "9d9643a5a30e2a188decf3fcfbbb01e51352e20478590301ba863bed4af1426c",
+  "schema": "d20.theorem.tiny_pointer_a985_fourier_trace_candidate_evaluation_manifest.source_drop",
+  "validation_tests": [
+    "fourier_candidate_report_certified",
+    "canonical_sector_characters_certified",
+    "character_table_shape_is_39_by_985",
+    "candidate_count_is_3",
+    "relation_trace_rows_are_3_by_985",
+    "homogeneous_mixed_counts_match_prior_profile",
+    "homogeneous_identity_traces_match_character_table",
+    "pi33_identity_traces_match_character_table",
+    "public_zero_identity_traces_match_character_table",
+    "no_candidate_has_full_a985_trace",
+    "public_zero_scalar_profile_preserved",
+    "pi33_scalar_profile_preserved"
+  ]
+}

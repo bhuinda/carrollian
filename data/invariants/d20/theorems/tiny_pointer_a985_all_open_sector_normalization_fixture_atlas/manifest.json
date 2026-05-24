@@ -1,0 +1,51 @@
+{
+  "inputs": {
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "bf9cc74c497d68309ff288d39b4c64ee56ba70fc09766925ebd267ec933d0259"
+    },
+    "matrix_unit_arrays": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_raw_orbital_arrays.npz",
+      "sha256": "2a23eb5de3d8408bb0b1963549bbb654d0e623f705e0db10b5f7e39989321ab9"
+    },
+    "sector5_nontrivial_fixture": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture/report.json",
+      "sha256": "fa4d2a41e2d0299e36789407cebe3045df95541bc541d6a4e25092c04e58cb50"
+    },
+    "sector_normalization_obligations": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/report.json",
+      "sha256": "54bca1f8f7f4d279e997a670f457ba9ab9955384df3d138386b78e82d5e2fe54"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "manifest_sha256": "5979ff5ce09a4bd68d254902f67e892622ed0e88621c3fcdb731713ed76244c1",
+  "name": "tiny_pointer_a985_all_open_sector_normalization_fixture_atlas",
+  "outputs": {
+    "coordinates": "data/invariants/d20/theorems/tiny_pointer_a985_all_open_sector_normalization_fixture_atlas/open_sector_fixture_coordinate_nonzeros.csv",
+    "gl_source_and_solution": "data/invariants/d20/theorems/tiny_pointer_a985_all_open_sector_normalization_fixture_atlas/open_sector_fixture_gl_source_and_solution.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_all_open_sector_normalization_fixture_atlas/manifest.json",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_all_open_sector_normalization_fixture_atlas/report.json",
+    "residuals": "data/invariants/d20/theorems/tiny_pointer_a985_all_open_sector_normalization_fixture_atlas/open_sector_fixture_solver_residuals.csv",
+    "summary": "data/invariants/d20/theorems/tiny_pointer_a985_all_open_sector_normalization_fixture_atlas/open_sector_fixture_summary.csv"
+  },
+  "report_sha256": "fe4a98f112ed7982962a6d6f080c52eea2a33b32aa59d6feee7a0fb4634e7607",
+  "schema": "d20.theorem.tiny_pointer_a985_all_open_sector_normalization_fixture_atlas_manifest.source_drop",
+  "validation_tests": [
+    "full_matrix_unit_coo_certified",
+    "normalization_obligations_certified",
+    "sector5_nontrivial_fixture_certified",
+    "open_sector_count_is_30",
+    "open_matrix_unit_count_is_970",
+    "coordinate_rows_match_summary",
+    "all_source_gl_nonidentity",
+    "all_solved_gl_nonidentity",
+    "all_solved_left_inverses_hold",
+    "all_solved_right_inverses_hold",
+    "all_formula_residuals_zero",
+    "all_diagonal_sums_preserved",
+    "sampled_raw_candidate_products_pass"
+  ]
+}

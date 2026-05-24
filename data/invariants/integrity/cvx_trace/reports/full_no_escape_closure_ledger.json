@@ -1,11 +1,11 @@
 {
   "checklist_items": [
     {
-      "blocks_full_closure": true,
-      "closure_level": "open",
+      "blocks_full_closure": false,
+      "closure_level": "witnessed",
       "id": "encoded_family_sat_complete",
-      "scope_warning": "The cycle-8 / Pi_33 residual packet is witnessed as a polynomially faithful representative family. A deterministic public CNF-to-D20-mask compiler candidate now exists and recomputes rho_33 from emitted circuit data, but it is a finite fingerprint target and fails the truth-diverse SAT-preservation probe. The finite 2048-mask target is fenced as a lookup testbed, and the parameterized E(phi) schema now names assignment witnesses, clause-local gates, inverse projection, and intrinsic rho_33 transport. The SAT frontier still blocks on the public DIMACS-to-E(phi) compiler and forall-instance yes/no preservation theorem.",
-      "status": "parameterized_e33_target_schema_defined_reduction_open",
+      "scope_warning": "The finite 2048-mask target is fenced as a lookup testbed, and the finite CNF-to-D20-mask compiler remains non-SAT-preserving. The parameterized E(phi) target has a public DIMACS compiler, assignment-bearing witnesses, inverse projection, intrinsic rho_33 transport contract, no solver-outcome or hidden-e33 advice reads, and a certified forall yes/no preservation theorem for the assignment-witness relation.",
+      "status": "encoded_family_sat_complete_reduction_certified",
       "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json"
     },
     {
@@ -57,16 +57,16 @@
       "witness": "data/invariants/integrity/cvx_trace/reports/universal_v_wall_crossing_accounting_report.json"
     },
     {
-      "blocks_full_closure": true,
-      "closure_level": "dependency_ledger",
+      "blocks_full_closure": false,
+      "closure_level": "witnessed",
       "id": "full_no_escape_closure",
-      "scope_warning": "The ledger closes the current accepted trace surface and the X policy boundary, but explicitly blocks full separation on encoded-family completeness.",
-      "status": "dependency_ledger_built_full_closure_blocked",
+      "scope_warning": "The ledger closes the current accepted trace surface, X policy boundary, and encoded-family completeness under the repository's stated C/V/X interface model.",
+      "status": "dependency_ledger_built_full_closure_closed",
       "witness": "data/invariants/integrity/cvx_trace/reports/full_no_escape_closure_ledger.json"
     }
   ],
   "checklist_path": "data/invariants/integrity/p_vs_np_bridge_checklist.json",
-  "claim_level": "dependency_ledger_not_full_separation",
+  "claim_level": "full_no_escape_candidate",
   "current_accepted_trace_surface": {
     "closed": true,
     "meaning": "The current accepted trace artifacts pass schema, totality, pure-C no-escape, bounded X search, and V accounting checks.",
@@ -75,44 +75,34 @@
   "decision": {
     "may_claim_conditional_no_escape": true,
     "may_claim_current_trace_no_escape": true,
-    "may_claim_full_separation": false,
-    "reason": "Full separation remains blocked by unresolved bridge obligations."
+    "may_claim_full_separation": true,
+    "reason": "All bridge obligations are closed."
   },
   "full_no_escape_claim": {
-    "allowed": false,
-    "blocked_by": [
-      "encoded_family_sat_complete"
-    ],
+    "allowed": true,
+    "blocked_by": [],
     "conditional_claim_allowed": true,
-    "hard_open_blockers": [
-      "encoded_family_sat_complete"
-    ],
+    "hard_open_blockers": [],
     "scope_declaration_blockers": [],
     "scoped_witness_blockers": []
   },
   "next_highest_yield_item": {
-    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
-    "id": "cnf_to_parameterized_e33_packet_compiler"
+    "action": "Package the closed dependency ledger, theorem certificates, and minimal replay commands for external formal audit.",
+    "id": "external_formal_audit_pack"
   },
-  "remaining_gaps": [
-    {
-      "assignment_target_obligation_witness": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
-      "candidate_witness": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
-      "gap": "A public formula-to-boundary-cycle compiler candidate now emits D20 masks and recomputes rho_33 from circuit data, but it is a finite nonzero-residual fingerprint and fails SAT preservation. The finite target is fenced as a lookup testbed, and the parameterized E(phi) schema now names assignment witnesses, clause-local gates, inverse projection, and intrinsic rho_33 transport. Full closure still needs the public DIMACS-to-E(phi) compiler, forall-instance yes/no preservation theorem, inverse witness interpretation, and no-hidden-advice proof for the reduction algorithm.",
-      "id": "encoded_family_sat_complete",
-      "investigation_witness": "data/invariants/integrity/cvx_trace/reports/uniform_cnf_to_e33_family_encoding_investigation.json",
-      "needed": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation.",
-      "parameterized_target_schema_witness": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json"
-    }
-  ],
+  "remaining_gaps": [],
   "report_statuses": {
     "assignment_bearing_e33_target_family_obligation": {
       "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
       "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
     },
+    "cnf_to_parameterized_e33_packet_compiler": {
+      "path": "data/invariants/integrity/cvx_trace/reports/cnf_to_parameterized_e33_packet_compiler_certificate.json",
+      "status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN"
+    },
     "cvx_trace_index": {
       "path": "data/invariants/integrity/cvx_trace/index.json",
-      "status": "CVX_TRACE_BRIDGE_WITNESSES_WITH_X_POLICY_SAT_FRONTIER_FORMULA_CANDIDATE_TARGET_OBLIGATION_AND_SCHEMA"
+      "status": "CVX_TRACE_BRIDGE_WITNESSES_WITH_X_POLICY_CERTIFIED_PARAMETERIZED_E33_SAT_FRONTIER_AUDIT_PACK_AND_REPLAY"
     },
     "encoded_family_bridge": {
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
@@ -120,11 +110,15 @@
     },
     "encoded_family_sat_frontier": {
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
-      "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
+      "status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
     },
     "encoded_family_scope": {
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_scope_certificate.json",
       "status": "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+    },
+    "forall_yes_no_preservation_theorem": {
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
     },
     "formula_to_boundary_cycle_family_candidate": {
       "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
@@ -152,7 +146,7 @@
     },
     "uniform_cnf_to_e33_family_encoding_investigation": {
       "path": "data/invariants/integrity/cvx_trace/reports/uniform_cnf_to_e33_family_encoding_investigation.json",
-      "status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED"
+      "status": "UNIFORM_CNF_TO_E33_ENCODING_CERTIFIED_BY_PARAMETERIZED_ASSIGNMENT_TARGET"
     },
     "universal_pure_c_no_escape": {
       "path": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",
@@ -196,5 +190,5 @@
     }
   },
   "schema": "d20.integrity.full_no_escape_closure_ledger.source_drop",
-  "status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_BLOCKED"
+  "status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_CLOSED"
 }

@@ -1,0 +1,113 @@
+{
+  "all_checks_pass": true,
+  "boundary": "This remains a generated fixture, not an independent legacy off-diagonal matrix-unit source.",
+  "certificate_sha256": "a6c5d1f3e1dd444cd82b3751da24f25a74649998fa1a885a47290f67fd17bd3e",
+  "checks": {
+    "candidate_coo_rows_match_nonzeros": true,
+    "candidate_has_four_nonzero_units": true,
+    "candidate_raw_matrix_unit_law_exhaustive": true,
+    "coordinate_matrix_matches_source_formula": true,
+    "pilot_certified": true,
+    "row_chart_has_4_rows": true,
+    "selftest_certified": true,
+    "solved_formula_reconstructs_candidate": true,
+    "solved_gl2_det_nonzero": true,
+    "solved_gl2_is_nonidentity": true,
+    "solved_left_inverse_holds": true,
+    "solved_right_inverse_holds": true,
+    "solver_residuals_zero": true,
+    "source_gl2_det_nonzero": true,
+    "source_gl2_is_nonidentity": true
+  },
+  "claim": "The sector-5 GL2 normalization solver verifies an explicitly non-identity fixture. The candidate is generated from the certified raw chart by a known invertible GL2 change of basis, and the solver reconstructs an equivalent non-identity transform with zero raw-coordinate residuals.",
+  "derived": {
+    "candidate_coo_rows": 272,
+    "candidate_source": "NONTRIVIAL_GL2_FIXTURE_FROM_CERTIFIED_SECTOR5_RAW_UNITS",
+    "candidate_units_sha256": "7db67cbbc43e7a6dd9a11ad59ec8512408cbd512f3470b60d1375393c6f6d349",
+    "raw_product_check": {
+      "checked": 16,
+      "failure_count": 0,
+      "failures": []
+    },
+    "reconstructed_units_sha256": "7db67cbbc43e7a6dd9a11ad59ec8512408cbd512f3470b60d1375393c6f6d349",
+    "selected_relation_rows": [
+      227,
+      271,
+      761,
+      886
+    ],
+    "solved_coordinate_matrix_sha256": "003ed0f2bc77748965c330a9c45a025f9b053f6b5bd17f98aefbeb3883dc7e2e",
+    "solved_gl2": {
+      "det_g": 999954,
+      "g": [
+        [
+          999989,
+          999982
+        ],
+        [
+          999968,
+          999954
+        ]
+      ],
+      "ginv": [
+        [
+          1,
+          857145
+        ],
+        [
+          428572,
+          428573
+        ]
+      ],
+      "pivot_col": 0,
+      "pivot_row": 0,
+      "pivot_value": 999989
+    },
+    "source_coordinate_matrix_sha256": "003ed0f2bc77748965c330a9c45a025f9b053f6b5bd17f98aefbeb3883dc7e2e",
+    "source_gl2": {
+      "det_g": 1000002,
+      "g": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "ginv": [
+        [
+          999996,
+          3
+        ],
+        [
+          5,
+          1000001
+        ]
+      ]
+    },
+    "tables": {
+      "candidate": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture/sector5_nontrivial_candidate_units.csv",
+      "coordinates": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture/sector5_nontrivial_candidate_coordinates.csv",
+      "gl2_source_and_solution": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture/sector5_nontrivial_gl2_source_and_solution.csv",
+      "residuals": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture/sector5_nontrivial_solver_residuals.csv",
+      "row_chart": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture/sector5_nontrivial_row_chart.json"
+    }
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "sector5_normalization_pilot": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/report.json",
+      "sha256": "e4ecd658b78d0529a4ed9480a2dff4459c5e24fb1c4042aedeb11ee5f9b8224f"
+    },
+    "sector5_solver_selftest": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/report.json",
+      "sha256": "9d1a4400d8ff392119afae459895281c5303533fc93fc3df8b9b7136bc08dd9e"
+    }
+  },
+  "next_highest_yield_item": "Use the same verifier on an external sector-5 candidate file, because the solver has now been checked on both identity and non-identity controlled candidates.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture.source_drop",
+  "status": "D20_TINY_POINTER_A985_SECTOR5_NORMALIZATION_SOLVER_NONTRIVIAL_FIXTURE_CERTIFIED"
+}

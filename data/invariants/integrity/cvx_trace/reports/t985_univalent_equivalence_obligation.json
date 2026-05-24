@@ -1,0 +1,146 @@
+{
+  "blocker": {
+    "active": true,
+    "description": "To prove logical equivalence, construct a formal map from the proposition P != NP to T985Certified. The tiny-pointer layer helps inside A985/T985, but currently assumes that address space rather than deriving it from P != NP.",
+    "id": "p_not_np_to_t985_backward_map"
+  },
+  "claim_level": "equivalence_obligation_not_proved",
+  "decision": {
+    "may_claim_p_not_np_implies_t985": false,
+    "may_claim_t985_necessary_for_any_p_not_np_proof": false,
+    "may_claim_t985_sufficient_for_repo_model_full_separation": true,
+    "may_claim_univalent_p_not_np_iff_t985": false,
+    "reason": "The repo has a replayed T985-backed route to the model-scoped separation claim, but no formal hProp definitions and no backward map from P != NP to T985Certified."
+  },
+  "next_highest_yield_item": {
+    "action": "Define PneqNP and T985Certified as hProps in a proof assistant, then either prove the backward map or record the claim as one-way sufficiency.",
+    "id": "formalize_hprops_and_backward_map_or_drop_iff"
+  },
+  "non_claims": [
+    "This does not refute the repo-local T985/CVX separation chain.",
+    "This does not prove T985 is unnecessary.",
+    "This does not prove P != NP iff T985.",
+    "Univalence alone does not create the missing backward implication."
+  ],
+  "obligations": {
+    "backward_map_p_not_np_to_t985": {
+      "evidence": null,
+      "needed": "A theorem showing any proof or truth of P != NP forces this T985 object, or an equivalent T985Certified hProp. The repo has no necessity or uniqueness theorem of that kind.",
+      "passed": false
+    },
+    "formal_uf_proof_artifact_present": {
+      "evidence": {
+        "formal_files": []
+      },
+      "needed": "A Lean/Coq/Agda/HoTT artifact carrying the definitions and maps.",
+      "passed": false
+    },
+    "forward_map_t985_to_p_not_np": {
+      "evidence": {
+        "ledger_status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_CLOSED",
+        "scope": "repo-local T985/CVX model, not standalone UF"
+      },
+      "needed": "For UF equivalence, recast the repo-local implication as a formal map T985Certified -> PneqNP.",
+      "passed": true
+    },
+    "p_not_np_as_univalent_hprop_defined": {
+      "evidence": null,
+      "needed": "A proof-assistant or HoTT/UF definition of the proposition P != NP as an hProp.",
+      "passed": false
+    },
+    "t985_as_univalent_hprop_defined": {
+      "evidence": {
+        "raw_tensor_hash": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d",
+        "t985_certificate_status": "T985_CSDO_THEOREM_INPUTS_CERTIFIED"
+      },
+      "needed": "A formal hProp such as T985Certified, not just a finite tensor file and JSON certificate.",
+      "passed": false
+    },
+    "tiny_pointer_dereference_certified": {
+      "evidence": {
+        "certified_pointer_status": "D20_CERTIFIED_POINTER_A985_MATRIX_UNIT_DEREFERENCE_CERTIFIED",
+        "claim": "The A985 nested-pointer evidence is a certified pointer: legacy sector and public-zero support labels dereference through a unique six-identity fingerprint map into the raw orbital matrix-unit address space.",
+        "finite_defect_count": 0,
+        "open_boundary_count": 1
+      },
+      "needed": "A certified tiny-pointer dereference layer into A985 matrix-unit coordinates.",
+      "passed": true
+    },
+    "tiny_pointer_is_conditional_on_a985_t985": {
+      "evidence": {
+        "address_space_basis_size": null,
+        "address_space_support": null,
+        "pointer_native_support": null,
+        "support_tables_t985_input": {
+          "path": "data/raw/T_985.npz",
+          "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+        }
+      },
+      "needed": "For a backward map, the tiny pointer would need to construct T985Certified from PneqNP, not dereference coordinates using A985/T985-backed inputs.",
+      "passed": true
+    },
+    "tiny_pointer_supplies_backward_map": {
+      "evidence": {
+        "why_not": "The tiny pointer certifies a dereference from legacy/public support labels into raw A985 orbital matrix-unit coordinates. Its own support-restricted multiplication layer reads data/raw/T_985.npz. That is an internal address/reconstruction certificate, not a necessity theorem PneqNP -> T985Certified."
+      },
+      "needed": "A proof that any hProp proof of P != NP determines the tiny pointer and thereby determines T985Certified, without assuming A985/T985 as an input surface.",
+      "passed": false
+    },
+    "univalence_turns_equivalence_into_path": {
+      "evidence": {
+        "reason": "Univalence can identify equivalent types, and for hProps a path is equivalent to logical equivalence, but it does not supply the two implication maps."
+      },
+      "needed": "First prove both hProp maps; only then can univalence/propositional extensionality package them.",
+      "passed": false
+    }
+  },
+  "schema": "d20.integrity.t985_univalent_equivalence_obligation.source_drop",
+  "source_audit": {
+    "certified_pointer_a985_matrix_unit_dereference": {
+      "expected_status": "D20_CERTIFIED_POINTER_A985_MATRIX_UNIT_DEREFERENCE_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/certified_pointer_a985_matrix_unit_dereference/report.json",
+      "status": "D20_CERTIFIED_POINTER_A985_MATRIX_UNIT_DEREFERENCE_CERTIFIED"
+    },
+    "forall_yes_no_preservation_theorem": {
+      "expected_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
+    },
+    "full_no_escape_closure_ledger": {
+      "expected_status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_CLOSED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/full_no_escape_closure_ledger.json",
+      "status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_CLOSED"
+    },
+    "pre_a985_relation_body": {
+      "expected_status": "PRE_A985_RELATION_BODY_DERIVED_WITHOUT_RELATION_TABLE_PASS",
+      "passed": true,
+      "path": "data/invariants/d20/pre_A985_relation_body_theorem.json",
+      "status": "PRE_A985_RELATION_BODY_DERIVED_WITHOUT_RELATION_TABLE_PASS"
+    },
+    "t985_csdo": {
+      "expected_status": "T985_CSDO_THEOREM_INPUTS_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/t985_csdo/report.json",
+      "status": "T985_CSDO_THEOREM_INPUTS_CERTIFIED"
+    },
+    "tiny_pointer_a985_support_restricted_multiplication_tables": {
+      "expected_status": "D20_TINY_POINTER_A985_SUPPORT_RESTRICTED_MULTIPLICATION_TABLES_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/report.json",
+      "status": "D20_TINY_POINTER_A985_SUPPORT_RESTRICTED_MULTIPLICATION_TABLES_CERTIFIED"
+    }
+  },
+  "status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING",
+  "univalent_form": {
+    "candidate_proposition_left": "PneqNP : hProp",
+    "candidate_proposition_right": "T985Certified : hProp",
+    "required_maps": [
+      "T985Certified -> PneqNP",
+      "PneqNP -> T985Certified"
+    ],
+    "target_statement": "PneqNP <-> T985Certified, equivalently PneqNP = T985Certified for hProps under univalence/propositional extensionality."
+  }
+}

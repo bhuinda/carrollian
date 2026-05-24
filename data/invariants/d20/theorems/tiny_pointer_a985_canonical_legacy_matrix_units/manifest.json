@@ -1,0 +1,49 @@
+{
+  "inputs": {
+    "full_legacy_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json",
+      "sha256": "f1843fd7a5ae21b66d24f712b86d90f9a5e7e4210e5cc7361882813b3c35a20e"
+    },
+    "full_matrix_unit_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_orbital_coo.csv",
+      "sha256": "7077ce13df2cfe5e16d64e197c73aef1a661759f751c55f3dc5a3d3e8a92bd81"
+    },
+    "full_matrix_unit_manifest": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_orbital_manifest.csv",
+      "sha256": "96fa10a5cd26f7d306377885966050ce71e6dd85ff0f371317ffa185e9db9161"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "bf9cc74c497d68309ff288d39b4c64ee56ba70fc09766925ebd267ec933d0259"
+    },
+    "support_restricted_multiplication": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/report.json",
+      "sha256": "93c389c20b556d2579c57bdf3b84ab42f8be65987abdf698ce51ebd1bffd8245"
+    }
+  },
+  "manifest_sha256": "ae1d1a94f1040e6c74698eeb21cda13184c3f99158a2111325413ab38867220e",
+  "name": "tiny_pointer_a985_canonical_legacy_matrix_units",
+  "outputs": {
+    "canonical_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_legacy_matrix_units/canonical_legacy_matrix_units_manifest.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_legacy_matrix_units/manifest.json",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_legacy_matrix_units/report.json",
+    "sector_summary": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_legacy_matrix_units/canonical_legacy_sector_matrix_unit_summary.csv"
+  },
+  "report_sha256": "3565334197bb1e1f80b4c8b4998214649e4f25e8bc86c18ab7e4b4b931cee6ea",
+  "schema": "d20.theorem.tiny_pointer_a985_canonical_legacy_matrix_units_manifest.source_drop",
+  "validation_tests": [
+    "full_legacy_sector_match_certified",
+    "full_matrix_unit_coo_certified",
+    "support_restricted_multiplication_certified",
+    "all_39_legacy_sectors_present",
+    "all_985_matrix_units_present",
+    "diagonal_count_is_159",
+    "off_diagonal_count_is_826",
+    "all_sector_unit_grids_complete",
+    "all_units_have_raw_orbital_coo",
+    "manifest_nonzero_counts_match_coo",
+    "no_missing_local_matrix_unit_labels",
+    "top_support_symbolic_matrix_unit_table_complete",
+    "top_support_nonzero_products_match_sum_d_cubed"
+  ]
+}

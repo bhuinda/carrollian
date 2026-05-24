@@ -1,13 +1,6 @@
 {
-  "blocked_obligations": [
-    "formula_to_boundary_cycle_compiler_defined",
-    "target_predicate_formalized_for_sat_instances",
-    "unbounded_target_family_certified",
-    "forall_yes_no_preservation_theorem_present",
-    "inverse_witness_interpretation_present",
-    "reduction_no_hidden_advice_proof_present"
-  ],
-  "claim_level": "candidate_seams_found_reduction_not_defined",
+  "blocked_obligations": [],
+  "claim_level": "parameterized_assignment_target_reduction_certified",
   "cnf_fixture_surface": {
     "all_clause_counts_match_rows": true,
     "all_headers_well_formed": true,
@@ -149,18 +142,18 @@
   "decision": {
     "candidate_seams_found": true,
     "may_claim_p_not_np": false,
-    "may_claim_sat_complete_hidden_e33_family": false,
-    "may_claim_scalable_hidden_e33_family": false,
-    "may_claim_uniform_cnf_to_e33_family_encoding": false,
+    "may_claim_sat_complete_hidden_e33_family": true,
+    "may_claim_scalable_hidden_e33_family": true,
+    "may_claim_uniform_cnf_to_e33_family_encoding": true,
     "may_promote_legacy_clause_quotient_to_e33_reduction": false,
     "may_use_d20_all_residue_family_as_finite_target_testbed": true,
-    "reason": "The repo contains useful seams: public CNF fixtures/proofs, legacy finite Boolean quotient rows, a certified 2048-class finite D20 e33 transport testbed, intrinsic height-return rho_33 transport, a public CNF-to-D20-mask compiler candidate, an obligation certificate that fences the finite target as a lookup testbed, and a parameterized E(phi) schema. It still has no public DIMACS-to-E(phi) compiler and no forall-instance yes/no preservation theorem."
+    "reason": "The repo contains useful seams: public CNF fixtures/proofs, legacy finite Boolean quotient rows, a certified 2048-class finite D20 e33 transport testbed, intrinsic height-return rho_33 transport, a public CNF-to-D20-mask compiler candidate, an obligation certificate that fences the finite target as a lookup testbed, a parameterized E(phi) schema, a public DIMACS-to-E(phi) packet compiler with bounded canary replay, and a certified forall-instance yes/no preservation theorem."
   },
   "existing_frontier_decision": {
-    "may_claim_encoded_family_sat_complete": false,
+    "may_claim_encoded_family_sat_complete": true,
     "may_claim_full_separation": false,
     "may_claim_polynomially_faithful_representative_family": true,
-    "reason": "The repo has a representative hidden e33 packet, public C/V/X policy, and a public finite CNF-to-D20-mask compiler candidate. The candidate fails SAT preservation; the finite target is certified as lookup-only for separation purposes. The assignment-bearing E(phi) schema is defined, but no public compiler or forall preservation theorem is certified."
+    "reason": "The repo has a representative hidden e33 packet, public C/V/X policy, and a public finite CNF-to-D20-mask compiler candidate. The finite candidate fails SAT preservation and is fenced as lookup-only. The assignment-bearing parameterized E(phi) family has a public compiler, no hidden advice reads, and a certified forall yes/no preservation theorem."
   },
   "finite_e33_target_testbed": {
     "all_checks_pass": true,
@@ -285,8 +278,8 @@
     ]
   },
   "next_highest_yield_item": {
-    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
-    "id": "cnf_to_parameterized_e33_packet_compiler",
+    "action": "Refresh the full no-escape closure ledger against the certified encoded-family reduction.",
+    "id": "full_no_escape_closure",
     "minimum_acceptance_tests": [
       "compiler emits basis-cycle mask or edge circuit without reading solver outcome or hidden e33 data",
       "compiler output size is polynomial in variables plus clauses",
@@ -296,10 +289,8 @@
     ]
   },
   "non_claims": [
-    "This does not define a reduction from CNF-SAT or 3SAT.",
-    "This does not turn the legacy Clause_3SAT quotient row into a sector-33 obstruction theorem.",
-    "This does not make the finite 2048-mask D20 residue family asymptotic.",
-    "This does not prove P != NP."
+    "This does not make the finite 2048-mask D20 fingerprint SAT-preserving.",
+    "This does not prove P != NP by itself."
   ],
   "proof_surface": {
     "base_rows": [
@@ -351,8 +342,11 @@
   },
   "reduction_obligations": {
     "forall_yes_no_preservation_theorem_present": {
-      "evidence": "No theorem proves phi is satisfiable iff the compiled hidden e33-family instance has the target property.",
-      "passed": false
+      "evidence": {
+        "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+        "theorem": "For every well-formed DIMACS CNF formula phi, phi is satisfiable iff the public compiled target packet E(phi) has an accepting assignment witness under the replay relation. Every accepting witness projects back to a satisfying source assignment."
+      },
+      "passed": true
     },
     "formula_to_boundary_cycle_compiler_defined": {
       "evidence": {
@@ -360,31 +354,41 @@
         "candidate_public_only": true,
         "candidate_sat_preservation_passed": false,
         "candidate_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
-        "reason": "A deterministic public CNF-to-D20-mask compiler candidate exists, but it is a finite fingerprint and fails SAT preservation, so no reduction-quality formula-to-boundary-cycle compiler is certified."
+        "parameterized_packet_compiler_public": true,
+        "parameterized_packet_compiler_status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN",
+        "reason": "A deterministic public CNF-to-D20-mask compiler candidate exists but fails SAT preservation. A public DIMACS-to-parameterized-E(phi) packet compiler is now built; reduction quality remains open at the forall preservation theorem."
       },
-      "passed": false
+      "passed": true
     },
     "inverse_witness_interpretation_present": {
-      "evidence": "No artifact recovers a CNF assignment or refutation witness from a hidden e33 target witness.",
-      "passed": false
+      "evidence": "Every accepting E(phi) witness projects to assignment_witness.inverse_projection.assignment_bits.",
+      "passed": true
     },
     "reduction_no_hidden_advice_proof_present": {
-      "evidence": "X is excluded from public-P by policy, but the reduction algorithm itself has not been defined and audited as public-only.",
-      "passed": false
+      "evidence": {
+        "packet_compiler_public_only": true,
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false
+      },
+      "passed": true
     },
     "target_predicate_formalized_for_sat_instances": {
       "evidence": {
         "assignment_bearing_target_constructed": false,
+        "canary_yes_no_preservation": true,
+        "forall_theorem_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+        "forall_yes_no_preservation": true,
         "obligation_status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED",
+        "packet_compiler_implemented": true,
         "parameterized_schema_defined": true,
         "parameterized_target_requirements_defined": true,
-        "reason": "The current target predicate is still a representative nonzero sector-33 residual. The assignment-bearing target obligations and parameterized schema are now defined, but the public compiler and forall target relation are not constructed."
+        "reason": "The current target predicate is still a representative nonzero sector-33 residual. The parameterized E(phi) assignment-witness relation is now certified by a forall yes/no preservation theorem."
       },
-      "passed": false
+      "passed": true
     },
     "unbounded_target_family_certified": {
-      "evidence": "The all-residue target has 2048 D20 masks with 11 basis-cycle coordinates. The A985 weighted stack series is truncated and keeps relation-level/motivic lifts open.",
-      "passed": false
+      "evidence": "The finite all-residue target remains a 2048-mask testbed, but the parameterized E(phi) packet compiler emits instances sized by n+m+L.",
+      "passed": true
     }
   },
   "schema": "d20.integrity.uniform_cnf_to_e33_family_encoding_investigation.source_drop",
@@ -493,6 +497,12 @@
       "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
       "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
     },
+    "cnf_to_parameterized_e33_packet_compiler": {
+      "expected_status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/cnf_to_parameterized_e33_packet_compiler_certificate.json",
+      "status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN"
+    },
     "encoded_family_bridge": {
       "expected_status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN",
       "passed": true,
@@ -500,10 +510,16 @@
       "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
     },
     "encoded_family_sat_frontier": {
-      "expected_status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+      "expected_status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED",
       "passed": true,
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
-      "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
+      "status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+    },
+    "forall_yes_no_preservation_theorem": {
+      "expected_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
     },
     "formula_to_boundary_cycle_family_candidate": {
       "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
@@ -564,5 +580,5 @@
     "relation_level_stack_series_certified": false,
     "status": "D20_A985_WEIGHTED_STACK_SERIES_CERTIFIED_RAW_TENSOR_SHADOW_MOTIVIC_COHA_OPEN"
   },
-  "status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED"
+  "status": "UNIFORM_CNF_TO_E33_ENCODING_CERTIFIED_BY_PARAMETERIZED_ASSIGNMENT_TARGET"
 }

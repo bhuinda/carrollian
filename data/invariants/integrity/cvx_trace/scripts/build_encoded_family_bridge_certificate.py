@@ -303,10 +303,9 @@ def main() -> int:
             "reason": "The cycle-8 / Pi_33 / residual packet is now a polynomially bounded representative-family bridge. The X policy boundary is certified, while SAT-completeness remains open.",
         },
         "next_highest_yield_item": {
-            "id": "cnf_to_parameterized_e33_packet_compiler",
+            "id": "full_no_escape_closure",
             "action": (
-                "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits "
-                "clause-local circuit data and validates SAT/UNSAT canaries against the schema."
+                "Refresh the full no-escape closure ledger against the certified encoded-family reduction."
                 if representative_passed
                 else "Repair the representative encoded-family bridge inputs before relying on the witness."
             ),

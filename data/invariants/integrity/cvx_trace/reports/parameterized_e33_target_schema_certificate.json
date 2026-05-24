@@ -233,8 +233,8 @@
   },
   "family_id": "parameterized_assignment_bearing_hidden_e33_v0_schema",
   "next_highest_yield_item": {
-    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
-    "id": "cnf_to_parameterized_e33_packet_compiler"
+    "action": "Refresh the full no-escape closure ledger against the certified encoded-family reduction.",
+    "id": "full_no_escape_closure"
   },
   "non_claims": [
     "This does not implement the CNF-to-E(phi) compiler.",
@@ -269,11 +269,26 @@
       "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
       "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
     },
+    "cnf_to_parameterized_e33_packet_compiler": {
+      "expected_status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/cnf_to_parameterized_e33_packet_compiler_certificate.json",
+      "status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN"
+    },
     "encoded_family_sat_frontier": {
-      "expected_status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+      "expected_status": [
+        "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+        "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+      ],
       "passed": true,
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
-      "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
+      "status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+    },
+    "forall_yes_no_preservation_theorem": {
+      "expected_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
     },
     "formula_to_boundary_cycle_family_candidate": {
       "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",

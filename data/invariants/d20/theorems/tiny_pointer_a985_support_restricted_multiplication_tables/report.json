@@ -1,0 +1,74 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5068b045fe1c9714b90604b2ef0409c16b2d43a5acaa82b045029e3b91529862",
+  "checks": {
+    "all_symbolic_tables_complete": true,
+    "direct_raw_product_failures_zero": true,
+    "direct_raw_products_checked_positive": true,
+    "product_rows_match_expected_nonzero_products": true,
+    "projector_product_table_has_49_rows": true,
+    "projector_raw_product_failures_zero": true,
+    "summary_has_7_rows": true,
+    "support_arrays_shape_is_985_by_1011": true,
+    "support_basis_manifest_has_1011_rows": true,
+    "support_full_coo_certified": true,
+    "support_projector_count_is_7": true,
+    "top_support_has_985_basis_rows": true,
+    "zero_support_has_no_basis_or_products": true
+  },
+  "claim": "Each named A985 support now has an explicit sparse multiplication table in its legacy-labeled matrix-unit basis, and the seven support projectors have an explicit projector-intersection multiplication table.",
+  "derived": {
+    "basis_manifest_sha256": "719c12d2e1519b952a44f47bf8f56991d30cee34e3a69a5393d8db554b793d7f",
+    "basis_rows": 1011,
+    "matrix_unit_product_rows": 7969,
+    "matrix_unit_product_table_sha256": "3b3f6027651052f094b3a569c8f0eb823417085c62f48c185de27f45b99fbd12",
+    "multiplication_arrays_sha256": "4d4ce1b9bfb771968ff677539e0a49b7aac340244af12a7fa093c4e5727f279a",
+    "projector_product_rows": 49,
+    "projector_products": {
+      "checked": 49,
+      "failure_count": 0,
+      "failures": []
+    },
+    "raw_matrix_unit_products": {
+      "checked": 226,
+      "failure_count": 0,
+      "failures": []
+    },
+    "summary_sha256": "f22055511682eb9ed580b075667924770292f4b2c6c5ebf1e8564d62407497f7",
+    "tables": {
+      "arrays": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/support_restricted_multiplication_arrays.npz",
+      "basis_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/support_restricted_basis_manifest.csv",
+      "matrix_unit_products": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/support_restricted_matrix_unit_products.csv",
+      "projector_products": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/support_projector_multiplication_table.csv",
+      "raw_product_checks": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/support_restricted_raw_product_checks.csv",
+      "summary": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/support_restricted_table_summary.csv"
+    }
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "central_idempotents": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "full_legacy_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json",
+      "sha256": "cff667391bb0368af9b1ff0077754a3192ac700e3f9130b34c8ba8bba548f715"
+    },
+    "support_arrays": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_and_projectors_raw_orbital_arrays.npz",
+      "sha256": "219b08d0754fe9429947a49b9731e79a62c01f1a047d653e6dfaf33cbfe3817b"
+    },
+    "support_full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "4fa1edfeb1af0a969dc934b6630e842db37c913c0d1d2796e605cff692100f12"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "next_highest_yield_item": "Use these support-restricted tables to isolate the remaining sector-local change-of-basis problem: legacy matrix-unit normalization within each primitive block.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_support_restricted_multiplication_tables.source_drop",
+  "status": "D20_TINY_POINTER_A985_SUPPORT_RESTRICTED_MULTIPLICATION_TABLES_CERTIFIED"
+}

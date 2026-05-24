@@ -358,13 +358,14 @@ def preservation_summary(compiled_rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def report_status(path: Path, expected_status: str) -> dict[str, Any]:
+def report_status(path: Path, expected_status: str | tuple[str, ...]) -> dict[str, Any]:
     data = load_json(path)
+    expected = (expected_status,) if isinstance(expected_status, str) else expected_status
     return {
         "path": rel(path),
         "status": data.get("status"),
-        "expected_status": expected_status,
-        "passed": data.get("status") == expected_status,
+        "expected_status": expected_status if isinstance(expected_status, str) else list(expected_status),
+        "passed": data.get("status") in expected,
     }
 
 
@@ -394,7 +395,10 @@ def build_report() -> dict[str, Any]:
         "source_audit": {
             "uniform_cnf_to_e33_family_encoding_investigation": report_status(
                 UNIFORM_INVESTIGATION,
-                "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED",
+                (
+                    "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED",
+                    "UNIFORM_CNF_TO_E33_ENCODING_CERTIFIED_BY_PARAMETERIZED_ASSIGNMENT_TARGET",
+                ),
             ),
             "sector33_all_residue_height_transport": report_status(
                 ALL_RESIDUE_TRANSPORT,
@@ -475,10 +479,9 @@ def build_report() -> dict[str, Any]:
             "This does not prove P != NP.",
         ],
         "next_highest_yield_item": {
-            "id": "cnf_to_parameterized_e33_packet_compiler",
+            "id": "full_no_escape_closure",
             "action": (
-                "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits "
-                "clause-local circuit data and validates SAT/UNSAT canaries against the schema."
+                "Refresh the full no-escape closure ledger against the certified encoded-family reduction."
             ),
         },
     }

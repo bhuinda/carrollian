@@ -11,7 +11,6 @@
   },
   "finite_d20_target": {
     "basis_cycle_coordinate_count": 11,
-    "support_sector": 33,
     "checks": {
       "all_transport_coefficients_match_height_residuals": true,
       "all_transports_carried_by_sector33": true,
@@ -24,16 +23,21 @@
     "nonzero_residual_class_count": 2047,
     "source": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
     "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+    "support_sector": 33,
     "zero_residual_class_count": 1
   },
   "finite_target_collapse": {
     "certified": true,
     "checks": {
-      "assignment_payload_absent_from_current_target": {
+      "assignment_payload_absent_from_fixed_finite_target": {
         "evidence": {
-          "current_target_predicate": "nonzero sector-33 height residual after public CNF fingerprint compilation",
-          "frontier_scalable_family_certified": false,
-          "frontier_scope": "fixed representative cycle-8 / Pi_33 residual packet"
+          "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+          "compiler_public_only": true,
+          "finite_target_codomain_size": 2048,
+          "finite_target_relation": "nonzero sector-33 height residual after public CNF fingerprint compilation",
+          "finite_target_scope": "fixed 11-bit D20 mask / sector-33 residual lookup",
+          "frontier_scalable_family_certified": true,
+          "meaning": "This check applies only to the earlier fixed finite D20 target. A separately certified parameterized assignment-bearing target does not change the finite lookup collapse."
         },
         "passed": true
       },
@@ -113,8 +117,8 @@
     "all size and replay bounds are polynomial in the source formula size"
   ],
   "next_highest_yield_item": {
-    "action": "Implement the machine-checkable schema for E(phi), assignment witnesses, clause-local gates, and intrinsic rho_33 transport over an unbounded target family.",
-    "id": "parameterized_e33_target_schema"
+    "action": "Refresh the full no-escape closure ledger against the certified encoded-family reduction.",
+    "id": "full_no_escape_closure"
   },
   "non_claims": [
     "This does not construct the parameterized target family.",
@@ -166,17 +170,38 @@
   },
   "schema": "d20.integrity.assignment_bearing_e33_target_family_obligation.source_drop",
   "source_audit": {
+    "cnf_to_parameterized_e33_packet_compiler": {
+      "expected_status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/cnf_to_parameterized_e33_packet_compiler_certificate.json",
+      "status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN"
+    },
     "encoded_family_sat_frontier": {
-      "expected_status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+      "expected_status": [
+        "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+        "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+      ],
       "passed": true,
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
-      "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
+      "status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+    },
+    "forall_yes_no_preservation_theorem": {
+      "expected_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
     },
     "formula_to_boundary_cycle_family_candidate": {
       "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
       "passed": true,
       "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
       "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+    },
+    "parameterized_e33_target_schema": {
+      "expected_status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json",
+      "status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN"
     },
     "sector33_all_residue_height_transport": {
       "expected_status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
@@ -185,10 +210,13 @@
       "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
     },
     "uniform_cnf_to_e33_family_encoding_investigation": {
-      "expected_status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED",
+      "expected_status": [
+        "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED",
+        "UNIFORM_CNF_TO_E33_ENCODING_CERTIFIED_BY_PARAMETERIZED_ASSIGNMENT_TARGET"
+      ],
       "passed": true,
       "path": "data/invariants/integrity/cvx_trace/reports/uniform_cnf_to_e33_family_encoding_investigation.json",
-      "status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED"
+      "status": "UNIFORM_CNF_TO_E33_ENCODING_CERTIFIED_BY_PARAMETERIZED_ASSIGNMENT_TARGET"
     },
     "x_extractor_target": {
       "expected_status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",

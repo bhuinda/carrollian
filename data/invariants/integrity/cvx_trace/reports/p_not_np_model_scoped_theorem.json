@@ -1,0 +1,261 @@
+{
+  "claim_level": "model_scoped_theorem_extraction",
+  "decision": {
+    "may_claim_literal_p_not_np_iff_t985": false,
+    "may_claim_repo_model_p_not_np": true,
+    "may_claim_standard_global_p_not_np": false,
+    "may_claim_standard_p_not_np_conditional_on_model_equivalence": true,
+    "reason": "The dependency chain closes inside the repository C/V/X model. Standard global P != NP still requires an external formal identification of P_CVX with standard polynomial-time Turing computation."
+  },
+  "definitions": {
+    "E_phi": "The parameterized assignment-bearing e33 target family produced from DIMACS CNF inputs.",
+    "NP_CVX": "Certificate-bearing computations over the encoded E(phi) family with public witness checking and inverse assignment projection.",
+    "P_CVX": "Polynomial-time public computations whose executions compile with polynomial overhead into the certified public C/V/X trace model and do not use X extractor/oracle/advice events."
+  },
+  "next_highest_yield_item": {
+    "action": "Formalize P_CVX and standard P in a proof assistant, then prove or refute their extensional equivalence.",
+    "id": "formal_standard_model_identification"
+  },
+  "non_claims": [
+    "This is not a peer-reviewed or proof-assistant-checked Clay theorem proof.",
+    "This does not assert the blocked literal equivalence P != NP iff T985.",
+    "This does not allow X extractor/oracle/advice access inside public P.",
+    "This does not use the finite 2048-mask candidate as a SAT-preserving reduction."
+  ],
+  "obligations": {
+    "full_no_escape_ledger_closed": {
+      "evidence": {
+        "blocked_by": [],
+        "decision": {
+          "may_claim_conditional_no_escape": true,
+          "may_claim_current_trace_no_escape": true,
+          "may_claim_full_separation": true,
+          "reason": "All bridge obligations are closed."
+        },
+        "status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_CLOSED"
+      },
+      "needed": "A dependency ledger linking the reduction, trace, no-escape, V, and X policy obligations with no blockers.",
+      "passed": true
+    },
+    "literal_t985_iff_not_used": {
+      "evidence": {
+        "decision": {
+          "may_claim_p_not_np_implies_t985": false,
+          "may_claim_t985_necessary_for_any_p_not_np_proof": false,
+          "may_claim_t985_sufficient_for_repo_model_full_separation": true,
+          "may_claim_univalent_p_not_np_iff_t985": false,
+          "reason": "The repo has a replayed T985-backed route to the model-scoped separation claim, but no formal hProp definitions and no backward map from P != NP to T985Certified."
+        },
+        "status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING"
+      },
+      "needed": "The theorem extraction must not rely on the blocked literal P != NP iff T985 equivalence.",
+      "passed": true
+    },
+    "public_polynomial_trace_model": {
+      "evidence": {
+        "compiler_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+        "typing_status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+      },
+      "needed": "A polynomial-overhead public trace compiler and total C/V/X typing for accepted public executions.",
+      "passed": true
+    },
+    "pure_c_no_escape": {
+      "evidence": {
+        "status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
+      },
+      "needed": "A replayed theorem that pure C traces cannot recover the hidden obstruction.",
+      "passed": true
+    },
+    "quotient_kernel_noncollapse_reflection": {
+      "evidence": {
+        "bridge_map": {
+          "codomain_role": "closed-loop public quotient surface",
+          "domain_role": "full tube-pair interior/fiber data",
+          "hidden_kernel_dimension": 44224,
+          "map": "P: TubePair_44521 -> Loop_297",
+          "name": "tube_pair_projection",
+          "quotient_visible_dimension": 297,
+          "section": "S: Loop_297 -> TubePair_44521 with P*S=I_297"
+        },
+        "decision": {
+          "may_claim_global_p_not_np_from_this_certificate_alone": false,
+          "may_claim_literal_p_not_np_iff_t985": false,
+          "may_claim_public_quotient_recovers_hidden_kernel": false,
+          "may_claim_quotient_kernel_rolewise_reflection": true,
+          "reason": "The certified projection has a 297-dimensional quotient, a retained 44,224-dimensional kernel, a chosen section, and certified kernel-obstructed operations. This supports the rolewise reflection, not a public inverse or a standalone global separation theorem."
+        },
+        "status": "QUOTIENT_KERNEL_REFLECTION_CERTIFIED_ROLEWISE"
+      },
+      "needed": "A certified structural witness that public quotient access is not hidden kernel recovery.",
+      "passed": true
+    },
+    "sat_complete_encoded_family": {
+      "evidence": {
+        "frontier_decision": {
+          "may_claim_encoded_family_sat_complete": true,
+          "may_claim_full_separation": false,
+          "may_claim_polynomially_faithful_representative_family": true,
+          "reason": "The repo has a representative hidden e33 packet, public C/V/X policy, and a public finite CNF-to-D20-mask compiler candidate. The finite candidate fails SAT preservation and is fenced as lookup-only. The assignment-bearing parameterized E(phi) family has a public compiler, no hidden advice reads, and a certified forall yes/no preservation theorem."
+        },
+        "status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+      },
+      "needed": "A public polynomial reduction from DIMACS CNF-SAT to the encoded E(phi) family with yes/no preservation.",
+      "passed": true
+    },
+    "v_is_public_boundary_not_hidden_advice": {
+      "evidence": {
+        "status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS"
+      },
+      "needed": "V events must be visible, replayable boundary crossings rather than hidden extractor access.",
+      "passed": true
+    },
+    "x_excluded_from_public_p": {
+      "evidence": {
+        "decision": {
+          "may_claim_full_separation": false,
+          "may_claim_no_polynomial_size_x_extractor": false,
+          "may_claim_public_p_excludes_x": true,
+          "may_claim_x_obligation_closed_by_explicit_extractor_policy": true,
+          "may_claim_x_policy_boundary_certified": true,
+          "reason": "The explicit sector-33 extractor exists at family scope, but the formal policy keeps it on the X surface. Public-P executions compile to C-only traces; V is public-certificate surface; X is oracle/advice/extractor surface."
+        },
+        "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+      },
+      "needed": "X access must remain typed as extractor/oracle/advice surface, not public-P computation.",
+      "passed": true
+    }
+  },
+  "proof_chain": [
+    {
+      "claim": "DIMACS CNF-SAT reduces publicly and polynomially to the E(phi) encoded family with forall yes/no preservation.",
+      "step": "SAT completeness",
+      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json"
+    },
+    {
+      "claim": "Accepted public polynomial executions compile to the C/V/X trace vocabulary with polynomial overhead.",
+      "step": "Trace universality",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json"
+    },
+    {
+      "claim": "Accepted trace events are C, V, X, or explicit residues; no untyped escape is silently accepted.",
+      "step": "Total typing",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json"
+    },
+    {
+      "claim": "Pure public C traces do not recover the hidden e33 obstruction needed to decide the family.",
+      "step": "Pure-C no escape",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json"
+    },
+    {
+      "claim": "Visible V wall crossings are public boundary certificates, not hidden advice.",
+      "step": "V accounting",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_v_wall_crossing_accounting_report.json"
+    },
+    {
+      "claim": "Successful hidden-sector extraction is typed X and excluded from public-P computation.",
+      "step": "X boundary",
+      "witness": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json"
+    },
+    {
+      "claim": "A public polynomial decider would need either an impossible pure-C recovery or an X extractor outside public P.",
+      "step": "No-escape closure",
+      "witness": "data/invariants/integrity/cvx_trace/reports/full_no_escape_closure_ledger.json"
+    }
+  ],
+  "schema": "d20.integrity.p_not_np_model_scoped_theorem.source_drop",
+  "source_audit": {
+    "bridge_checklist": {
+      "expected_status": "P_VS_NP_BRIDGE_CHECKLIST_FORMALIZED",
+      "passed": true,
+      "path": "data/invariants/integrity/p_vs_np_bridge_checklist.json",
+      "sha256": "a86361389bea94ce37159c038eed7d13c9c455cf563bb039ae875468e3fa8c6d",
+      "status": "P_VS_NP_BRIDGE_CHECKLIST_FORMALIZED"
+    },
+    "encoded_family_sat_frontier": {
+      "expected_status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
+      "sha256": "65954b287439052a0612d793f0ffd0a76d0baed92e3a6d7ed9a6e40b1a0f3d07",
+      "status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+    },
+    "forall_yes_no_preservation": {
+      "expected_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "sha256": "2cc3cb4ca14dc3dee17eb1aaf979f7b23ac62d144cbbec2b8aed6cc7c0c385fc",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
+    },
+    "full_no_escape_closure": {
+      "expected_status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_CLOSED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/full_no_escape_closure_ledger.json",
+      "sha256": "a1dc240fa8e3c8017583b4d6e1a0d9ca38b94280c8b57416786e8622457e6d0d",
+      "status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_CLOSED"
+    },
+    "quotient_kernel_reflection": {
+      "expected_status": "QUOTIENT_KERNEL_REFLECTION_CERTIFIED_ROLEWISE",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/quotient_kernel_reflection_certificate.json",
+      "sha256": "5776ee5949136c2ccc489389fbbbd7b1c27b97712a216cfa1962f2dd7b964215",
+      "status": "QUOTIENT_KERNEL_REFLECTION_CERTIFIED_ROLEWISE"
+    },
+    "t985_univalent_equivalence_obligation": {
+      "expected_status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/t985_univalent_equivalence_obligation.json",
+      "sha256": "77d86f4a5ee4fc29f5568d2cf597df09b092a0c478f7e9b68d923dde7c57583d",
+      "status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING"
+    },
+    "universal_pure_c_no_escape": {
+      "expected_status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",
+      "sha256": "e9cde6be365744fd673ef1516393feeda019c2022441a335c1c85a00ad17ae5d",
+      "status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
+    },
+    "universal_trace_compiler": {
+      "expected_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "sha256": "86fd22cd03d89ff72614b88266c307a4f94d1d414e65c6fec2da10b942a34d33",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
+    "universal_trace_typing": {
+      "expected_status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "sha256": "aac294c9355a2226dfb08ea34874e354a05f904a767e9655e413c5d229d07a52",
+      "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    },
+    "universal_v_wall_crossing": {
+      "expected_status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_v_wall_crossing_accounting_report.json",
+      "sha256": "75815f29672dfc67ca90b5bcb50f39e6cfb1f5fa27abafe47e9d644b6923956f",
+      "status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "sha256": "42fb3a22481cdde0b942b2bd26fa06acbd47f6ec86e0ece1ba49ac46def0e04f",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+    }
+  },
+  "status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
+  "supporting_geometry": {
+    "quotient_kernel_reflection": {
+      "role": "The 297-dimensional public quotient and 44,224-dimensional retained kernel certify the surface/fiber non-collapse pattern used as structural support.",
+      "witness": "data/invariants/integrity/cvx_trace/reports/quotient_kernel_reflection_certificate.json"
+    },
+    "t985_boundary": {
+      "role": "T985 suffices for the repo-local separation chain, while the blocked backward map prevents replacing the theorem by a literal P != NP iff T985 slogan.",
+      "witness": "data/invariants/integrity/cvx_trace/reports/t985_univalent_equivalence_obligation.json"
+    }
+  },
+  "theorem": {
+    "conditional_standard_form": "If the repository C/V/X public trace model is proved extensionally equivalent to the standard Turing-machine definition of polynomial-time public computation, then this model-scoped theorem promotes to the standard statement P != NP.",
+    "name": "C/V/X Model P != NP Separation",
+    "statement": "In the repository C/V/X public computation model, no public polynomial-time C-only computation decides the SAT-complete parameterized E(phi) family. Equivalently, P_CVX != NP_CVX for this encoded family under the certified C/V/X interface."
+  }
+}

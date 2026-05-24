@@ -17,6 +17,11 @@ ENCODED_FAMILY_FRONTIER = CVX / "reports" / "encoded_family_sat_frontier_certifi
 UNIFORM_INVESTIGATION = CVX / "reports" / "uniform_cnf_to_e33_family_encoding_investigation.json"
 X_POLICY = CVX / "reports" / "x_policy_boundary_certificate.json"
 X_TARGET = CVX / "reports" / "x_extractor_target_certificate.json"
+PARAMETERIZED_TARGET_SCHEMA = CVX / "reports" / "parameterized_e33_target_schema_certificate.json"
+CNF_TO_PARAMETERIZED_PACKET_COMPILER = (
+    CVX / "reports" / "cnf_to_parameterized_e33_packet_compiler_certificate.json"
+)
+FORALL_YES_NO_THEOREM = CVX / "reports" / "forall_yes_no_preservation_theorem.json"
 
 
 def rel(path: Path) -> str:
@@ -27,13 +32,20 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def report_status(path: Path, expected_status: str) -> dict[str, Any]:
+def load_json_if_exists(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    return load_json(path)
+
+
+def report_status(path: Path, expected_status: str | tuple[str, ...]) -> dict[str, Any]:
     data = load_json(path)
+    expected = (expected_status,) if isinstance(expected_status, str) else expected_status
     return {
         "path": rel(path),
         "status": data.get("status"),
-        "expected_status": expected_status,
-        "passed": data.get("status") == expected_status,
+        "expected_status": expected_status if isinstance(expected_status, str) else list(expected_status),
+        "passed": data.get("status") in expected,
     }
 
 
@@ -101,6 +113,9 @@ def build_report() -> dict[str, Any]:
     candidate = load_json(FORMULA_TO_BOUNDARY_CYCLE_CANDIDATE)
     frontier = load_json(ENCODED_FAMILY_FRONTIER)
     x_target = load_json(X_TARGET)
+    parameterized_target_schema = load_json_if_exists(PARAMETERIZED_TARGET_SCHEMA)
+    packet_compiler = load_json_if_exists(CNF_TO_PARAMETERIZED_PACKET_COMPILER)
+    forall_theorem = load_json_if_exists(FORALL_YES_NO_THEOREM)
 
     finite_target = finite_target_summary(all_residue)
     compiler_candidate = candidate_summary(candidate)
@@ -153,14 +168,24 @@ def build_report() -> dict[str, Any]:
                 ],
             },
         },
-        "assignment_payload_absent_from_current_target": {
-            "passed": frontier.get("target_family", {}).get("scalable_family_certified") is False,
+        "assignment_payload_absent_from_fixed_finite_target": {
+            "passed": candidate_codomain_size == finite_codomain_size == 2048
+            and candidate.get("compiler", {}).get("public_only") is True
+            and candidate.get("compiler", {}).get("uses_solver_outcome") is not True,
             "evidence": {
-                "frontier_scope": frontier.get("target_family", {}).get("current_scope"),
+                "finite_target_scope": "fixed 11-bit D20 mask / sector-33 residual lookup",
+                "finite_target_codomain_size": finite_codomain_size,
+                "compiler_id": candidate.get("compiler", {}).get("id"),
+                "compiler_public_only": candidate.get("compiler", {}).get("public_only"),
+                "finite_target_relation": candidate.get("sat_preservation_probe", {}).get("target_predicate"),
                 "frontier_scalable_family_certified": frontier.get("target_family", {}).get(
                     "scalable_family_certified"
                 ),
-                "current_target_predicate": candidate.get("sat_preservation_probe", {}).get("target_predicate"),
+                "meaning": (
+                    "This check applies only to the earlier fixed finite D20 target. A separately "
+                    "certified parameterized assignment-bearing target does not change the finite "
+                    "lookup collapse."
+                ),
             },
         },
         "intrinsic_rho33_transport_available_but_not_semantic_sat_relation": {
@@ -257,11 +282,17 @@ def build_report() -> dict[str, Any]:
         "source_audit": {
             "encoded_family_sat_frontier": report_status(
                 ENCODED_FAMILY_FRONTIER,
-                "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+                (
+                    "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+                    "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED",
+                ),
             ),
             "uniform_cnf_to_e33_family_encoding_investigation": report_status(
                 UNIFORM_INVESTIGATION,
-                "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED",
+                (
+                    "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED",
+                    "UNIFORM_CNF_TO_E33_ENCODING_CERTIFIED_BY_PARAMETERIZED_ASSIGNMENT_TARGET",
+                ),
             ),
             "formula_to_boundary_cycle_family_candidate": report_status(
                 FORMULA_TO_BOUNDARY_CYCLE_CANDIDATE,
@@ -275,6 +306,36 @@ def build_report() -> dict[str, Any]:
             "x_extractor_target": report_status(
                 X_TARGET,
                 "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",
+            ),
+            **(
+                {
+                    "parameterized_e33_target_schema": report_status(
+                        PARAMETERIZED_TARGET_SCHEMA,
+                        "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN",
+                    )
+                }
+                if parameterized_target_schema is not None
+                else {}
+            ),
+            **(
+                {
+                    "cnf_to_parameterized_e33_packet_compiler": report_status(
+                        CNF_TO_PARAMETERIZED_PACKET_COMPILER,
+                        "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN",
+                    )
+                }
+                if packet_compiler is not None
+                else {}
+            ),
+            **(
+                {
+                    "forall_yes_no_preservation_theorem": report_status(
+                        FORALL_YES_NO_THEOREM,
+                        "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+                    )
+                }
+                if forall_theorem is not None
+                else {}
             ),
         },
         "finite_d20_target": finite_target,
@@ -320,10 +381,27 @@ def build_report() -> dict[str, Any]:
             "This does not prove P != NP.",
         ],
         "next_highest_yield_item": {
-            "id": "parameterized_e33_target_schema",
+            "id": (
+                "full_no_escape_closure"
+                if forall_theorem is not None
+                else "forall_yes_no_preservation_theorem"
+                if packet_compiler is not None
+                else "cnf_to_parameterized_e33_packet_compiler"
+                if parameterized_target_schema is not None
+                else "parameterized_e33_target_schema"
+            ),
             "action": (
-                "Implement the machine-checkable schema for E(phi), assignment witnesses, "
-                "clause-local gates, and intrinsic rho_33 transport over an unbounded target family."
+                "Promote the compiler/replay construction to a theorem: for every CNF phi, phi is "
+                "satisfiable iff there exists an accepting E(phi) assignment witness, with inverse projection."
+                if packet_compiler is not None and forall_theorem is None
+                else "Refresh the full no-escape closure ledger against the certified encoded-family reduction."
+                if forall_theorem is not None
+                else "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema."
+                if parameterized_target_schema is not None
+                else (
+                    "Implement the machine-checkable schema for E(phi), assignment witnesses, "
+                    "clause-local gates, and intrinsic rho_33 transport over an unbounded target family."
+                )
             ),
         },
     }

@@ -320,6 +320,272 @@ zero. The next target is to generalize this Ward identity from `gamma_8` to
 all `2048` closed-return masks using the global counterterm lattice and
 all-residue height-coherent transport.
 
+The canonical all-mask Ward identity is certified at:
+
+```text
+data/invariants/d20/theorems/canonical_all_mask_ward_identity/report.json
+```
+
+It promotes the `gamma_8` Ward witness to every closed-return residue mask.
+For all `2048` masks, the scalar balance is
+`0 + 0 - A_h(mask) + A_h(mask) = 0`: exact public flux contributes `0`, the
+bare tube-visible `Pi_33` term contributes `0`, and the height-corrected
+`R33/Pi_33` residual is exactly the negative finite height action. The global
+sector-26 correction remains the additive order-two hidden character with a
+`1024`-mask kernel and a `1024`-mask odd sector. The next target is to project
+this all-mask Ward ledger into a finite BMS/Carrollian flux-balance theorem
+with named public charge, finite flux, and `R33` residual terms.
+
+The finite BMS/Carrollian flux-balance projection is certified at:
+
+```text
+data/invariants/d20/theorems/finite_bms_carrollian_flux_balance/report.json
+```
+
+It names the finite public boundary charge vector `(M,J,P,Phi)` in the
+canonical root-fixed gauge and gives every closed-return mask an explicit
+balance row. Publicly, all `2048` masks have
+`Delta Q_public = Flux_D20_public_exact + Res_A985_public = 0`. In the hidden
+channel, all masks satisfy
+`bare Pi33 + R33_height_residual + finite_height_flux = 0`. The `R33` packet
+split remains `1024` kernel / `1024` odd, with `gamma_8` as the public-zero
+hidden-odd witness. The next target is to classify those two packet classes by
+canonical charge-frame invariants.
+
+The hidden packet charge-frame classifier is certified at:
+
+```text
+data/invariants/d20/theorems/hidden_packet_charge_frame_classifier/report.json
+```
+
+It classifies the `1024` hidden-kernel and `1024` hidden-odd packets using
+the canonical root-fixed public charge frame. Coarse root/edge-support
+signatures give `942` packet classes. Adding public flux moment sums in
+`(M,J,P,Phi)` refines this to `2032` classes: `2016` singleton classes and
+`16` doubletons. Adding the finite action pair
+`(height_action, edge_mod2_height_action)` separates all `2048` masks.
+`gamma_8` is located as an odd one-basis, five-edge, root-edge-active packet.
+The next target is to turn this complete classifier into a canonical finite
+scattering table.
+
+The canonical finite scattering table is certified at:
+
+```text
+data/invariants/d20/theorems/canonical_finite_scattering_table/report.json
+```
+
+It turns the complete packet classifier into the primitive-generator transition
+table on the closed-return residue cube. Each row is
+`T_i(mask)=mask xor 2^i`, with incoming and outgoing complete packet-signature
+hashes, signed height-flux delta, and hidden `R33` transfer. The table has
+`22528` directed transitions and `11264` involutive undirected generator
+pairs. Generator `3` preserves the hidden packet (`1024` kernel-to-kernel and
+`1024` odd-to-odd transitions); the other ten generators flip kernel and odd
+(`10240` transitions each way). The next target is to lift these rows through
+the certified boundary-to-`Loop_297` map and attach tube/`A985` transition
+amplitudes.
+
+The `Loop_297` scattering amplitude lift is certified at:
+
+```text
+data/invariants/d20/theorems/loop297_scattering_amplitude_lift/report.json
+```
+
+It attaches certified boundary-to-`Loop_297` amplitude provenance to the
+scattering table. The `11` primitive generators now carry ordered chains of
+directed channel-pair Loop-vector hashes, and all `22528` scattering rows
+reference one of those generator amplitude packets. The bare tube-visible
+`Pi_33` amplitude is `0` for every directed channel-pair lift, so every
+transition-level nonzero balance is carried by the height-corrected `R33`
+transfer. The `gamma_8` generator packet matches the previously certified
+cycle-8 boundary lift.
+
+The compact amplitude quotient is certified at:
+
+```text
+data/invariants/d20/theorems/compact_amplitude_quotient/report.json
+```
+
+It compresses the `11` primitive generator amplitude packets into the public
+tube-visible quotient and the retained `Loop_297` atom quotient. The
+tube-visible `Pi_33` quotient has one zero class containing all `11`
+generators. Retaining certified Loop-vector atoms gives `25` distinct step
+atoms across `72` generator-step occurrences; support profiles, unordered
+step-hash multisets, and ordered chains each separate all `11` primitive
+generators. Generator `3` is the unique hidden-packet-preserving quotient row.
+
+The reduced amplitude-quotient scattering automaton is certified at:
+
+```text
+data/invariants/d20/theorems/reduced_amplitude_quotient_scattering_automaton/report.json
+```
+
+It labels the full `2048`-state closed-return residue cube by the compact
+amplitude quotient. The automaton has `22528` directed transitions,
+`11264` undirected transitions, and is connected, reversible, and `11`-regular.
+The public tube-zero quotient collapses all transitions to one visible label,
+while the ordered-chain quotient keeps `11` primitive generator labels and
+exposes `25` `Loop_297` step atoms. Its exact adjacency spectrum is the
+`F_2^11` hypercube spectrum `11-2k` with multiplicity `binom(11,k)`, and the
+hidden packet quotient has per-state matrix `[[1,10],[10,1]]`. The next target
+is the amplitude-quotient Fourier mode classifier.
+
+The amplitude-quotient Fourier mode classifier is certified at:
+
+```text
+data/invariants/d20/theorems/amplitude_quotient_fourier_mode_classifier/report.json
+```
+
+It diagonalizes the reduced automaton by the `2048` characters of `F_2^11`.
+A mode of support weight `k` has adjacency eigenvalue `11-2k` and Laplacian
+eigenvalue `2k`. The hidden-sector projection has exactly one constant mode,
+one kernel/odd sign mode, and `2046` sector-orthogonal modes; the sign mode is
+the ten-generator hidden-flip mask with eigenvalue `-9`. The `gamma_8` basis
+mode has eigenvalue `9`, corrected hidden clock `13`, sector-26 optical clock
+`18`, and exposes the five certified `gamma_8` step atoms. The nonzero
+sector-26 optical clock histogram matches the certified `2047`-class optical
+clock. The next target is a finite Virasoro/string-kernel candidate from the
+sector-26 clock and Fourier modes.
+
+The finite Virasoro/string-kernel candidate is certified at:
+
+```text
+data/invariants/d20/theorems/finite_virasoro_string_kernel_candidate/report.json
+```
+
+It isolates the sector-26 clock-zero Fourier seed fiber and then tests closure
+instead of assuming it. The raw clock-zero seed has `83` modes (`82` nonzero)
+and is not additively closed: `2847` unordered seed pairs leave the zero-clock
+fiber. Its minimal `F_2`-linear closure is the rank-10 hyperplane
+`m_5 + m_9 + m_10 = 0`, containing `1024` modes. This kernel contains the
+`gamma_8` basis mode and excludes the hidden kernel/odd sign mode. Eight
+primitive generators preserve the kernel; generators `5`, `9`, and `10` cross
+it, and their paired cross-return composites connect the kernel internally.
+The next target is the finite Virasoro generator algebra on this rank-10
+kernel.
+
+The finite Virasoro generator algebra layer is certified at:
+
+```text
+data/invariants/d20/theorems/finite_virasoro_generator_algebra/report.json
+```
+
+It builds the generator algebra on the rank-10 kernel. At this finite
+translation layer the algebra is `C2^10`, generated by eight primitive-
+preserving moves and three paired cross-return composites. All named
+commutators vanish, and the only nontrivial dependency among the `11` named
+generators is `C5_9 C5_10 C9_10 = 1`. The sector-26 clock remains even on the
+kernel but is not a group homomorphism on the exponent-2 layer; its `17`
+generator-product defects are exactly overlap-cancellation defects. The next
+target is a finite central-extension/anomaly cocycle test.
+
+## Current D20 sandpile critical-group result
+
+The D20 sandpile/chip-firing critical group is certified at:
+
+```text
+data/invariants/d20/theorems/sandpile_critical_group/report.json
+```
+
+It derives the unweighted H-cycle boundary graph Laplacian from
+`data/invariants/hcycle/subscript_Hcycle_d20_edges.csv`, deletes one sink row
+and column, and computes the reduced Smith normal form:
+
+```text
+diag = 1^14, 2, 12, 60, 60, 60
+```
+
+Thus the critical group is `Z/2 x Z/12 x Z/60^3`, with order `5,184,000`.
+All `20` reduced cofactors have determinant `5,184,000`, so the spanning-tree
+count and recurrent sandpile-state count agree. The residue comparison below
+now pairs the `2048` closed-return masks with explicit sandpile classes; the
+remaining target is to explain the mixed classes by extracting class-preserving
+tube-grade flips.
+
+The full public-boundary graph invariant table is certified at:
+
+```text
+data/invariants/d20/theorems/public_boundary_graph_invariants/report.json
+```
+
+| invariant | value | role |
+|---|---|---|
+| Public graph | `20` vertices, `30` edges, 3-regular, connected, diameter `5` | finite public boundary |
+| Dodecahedral check | isomorphic to the standard dodecahedral graph | spherical public board |
+| Cycle rank | `30 - 20 + 1 = 11` | geon/residue space |
+| Automorphisms | `|Aut(Gamma_d20)| = 120` | public board symmetry |
+| Sandpile group | `Z/2 x Z/12 x (Z/60)^3` | recurrent boundary residues |
+| Spanning trees | `5,184,000` | order of critical group |
+| Shift entropy | `log(3)` | legal public histories |
+| Nonbacktracking entropy | `log(2)` | geodesic histories |
+| Fourier screen | best nontrivial signed-turn phase gate has `2` defects | Ulam-style hidden chamber candidate |
+
+The Fourier screen here is the signed-turn screen: assign each of
+`B+`, `B-`, `S+`, `S-`, `V+`, and `V-` a phase in `{+1,-1}`. A primitive
+H-cycle is coherent when the product of its turn-address phases is `+1`;
+otherwise it is a defect. The best nonconstant screens have exactly two
+primitive-cycle defects.
+
+The all-mask Fourier residue-screen lift is certified at:
+
+```text
+data/invariants/d20/theorems/fourier_residue_screen/report.json
+```
+
+It turns the three best two-defect signed-turn screens into explicit
+characters on the `2048` closed-return masks. Each screen splits the masks
+into a `1024`-mask kernel and a `1024`-mask odd coset. Together the three
+defect vectors have rank `3` over `F2`, so the combined screen has `8` cells
+of `256` masks each. This is still a finite residue-screen certificate, not
+yet an `A985` sector-character certificate. The sandpile comparison below
+supplies the mask-to-divisor map.
+
+The A985/tube sector-character candidate evaluation is certified at:
+
+```text
+data/invariants/d20/theorems/fourier_a985_sector_character_candidates/report.json
+```
+
+The three screens act as signed-object involutions on the `109` local
+primitive closed-loop pieces, but none is scalar on all `39` materialized
+`A985`/tube sector idempotents. Their homogeneous/mixed sector counts are
+`16/23`, `12/27`, and `16/23`. On the public-zero idempotent supports, only the
+first screen is scalar on every nonzero support; it evaluates as `+1` on
+`[33]`, `[6,26]`, `[25,26]`, `[6,26,33]`, and `[25,26,33]`. The next target is
+recorded in the screen-0 tube central-element certificate below.
+
+The surviving screen-0 tube central element is certified at:
+
+```text
+data/invariants/d20/theorems/fourier_screen0_tube_central_element/report.json
+```
+
+It reconstructs `signed_turn_screen_0` from all `109` local primitive
+closed-loop pieces and collapses to the six-term signed object unit
+`-1_B- + 1_B+ -1_V- + 1_V+ + 1_S- + 1_S+`. This element squares to the
+closed-loop unit and commutes with all `297` closed-loop basis relations. It is
+not central in the full `985`-relation algebra: the certificate finds `304`
+full-algebra commutator failures, exactly the relations whose source and target
+objects have opposite screen-0 phase. So the result is a genuine closed-loop
+tube central involution, with the full-`A985` boundary explicitly recorded.
+
+The screen-0 tube grade to sandpile divisor-map comparison is certified at:
+
+```text
+data/invariants/d20/theorems/tube_sandpile_divisor_map/report.json
+```
+
+For each mask, active public edges are oriented by
+`data/invariants/hcycle/subscript_Hcycle_d20_edges.csv`; an active edge
+`u -> v` contributes `e_v - e_u` to a degree-zero divisor. With sink vertex
+`0` removed, the sandpile class key is
+`adj(L_reduced) d_reduced mod det(L_reduced)`, where
+`det(L_reduced) = 5,184,000`. Under this explicit map, the `2048` masks land
+in `1360` sandpile classes. The screen-0 tube grade splits the masks
+`1024/1024`, but it is not a function of the sandpile class: `154` classes are
+mixed, accounting for `576` masks. The next target is to extract the kernel
+moves that preserve the divisor class while flipping the tube grade.
+
 TARGETS:
 
 Given d20’s current maturity, holotopy can stop looking only for “new” structure and start weaponizing old classical structure as probes.

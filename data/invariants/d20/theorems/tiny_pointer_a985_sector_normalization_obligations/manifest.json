@@ -1,0 +1,50 @@
+{
+  "inputs": {
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "full_legacy_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json",
+      "sha256": "cff667391bb0368af9b1ff0077754a3192ac700e3f9130b34c8ba8bba548f715"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "a343d6f592e7183e784cad7902458540576005646d6e28f32611f6ef7727f2d4"
+    },
+    "registered_support_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/legacy_to_raw_sector_match.csv",
+      "sha256": "7b7cb0b62a903ecf00b21933eeb029de05d2a834afb7ccfd3643c4c69489720d"
+    },
+    "support_restricted_multiplication": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/report.json",
+      "sha256": "d59f461d8ecaa87592d2903501d0bb2fc20479de67d634a8404927556fc6f02f"
+    }
+  },
+  "manifest_sha256": "f3ee32708b1393a2998cab983e7d05fa51bcdf331da39f1bc5c7b4597778f0b6",
+  "name": "tiny_pointer_a985_sector_normalization_obligations",
+  "outputs": {
+    "change_of_basis_terms": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/sector_local_change_of_basis_terms.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/manifest.json",
+    "obligations": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/sector_local_normalization_obligations.csv",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/report.json",
+    "summary": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/sector_local_normalization_summary.csv"
+  },
+  "report_sha256": "f71957b4e74232109602f6cfe34f51a3fe7e1cbcccdbf18a777ec012bffe34f1",
+  "schema": "d20.theorem.tiny_pointer_a985_sector_normalization_obligations_manifest.source_drop",
+  "validation_tests": [
+    "full_legacy_sector_match_certified",
+    "full_matrix_unit_coo_certified",
+    "support_restricted_multiplication_certified",
+    "legacy_lift_has_no_matrix_unit_basis",
+    "obligation_rows_cover_39_sectors",
+    "matrix_unit_counts_sum_to_985",
+    "matrix_unit_products_sum_to_top_support_products",
+    "dimension_one_fixed_sector_count_is_7",
+    "registered_support_anchored_nontrivial_sector_count_is_2",
+    "open_sector_count_is_30",
+    "registered_source_sector_count_is_4",
+    "change_of_basis_terms_match_sector_templates",
+    "remaining_projective_gauge_dimension_positive"
+  ]
+}

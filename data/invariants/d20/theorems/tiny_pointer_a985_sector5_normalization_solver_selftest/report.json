@@ -1,0 +1,88 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "56f2d043801aa59ab4ad4f51ca7cfa9533d44fc6df81222dc12c582516e60053",
+  "checks": {
+    "candidate_raw_matrix_unit_law_exhaustive": true,
+    "coordinate_matrix_is_identity": true,
+    "formula_reconstructs_candidate": true,
+    "gl2_left_inverse_holds": true,
+    "gl2_right_inverse_holds": true,
+    "gl2_solution_g_is_identity": true,
+    "gl2_solution_ginv_is_identity": true,
+    "pilot_certified": true,
+    "row_chart_has_4_rows": true,
+    "self_candidate_has_144_coo_rows": true,
+    "solver_residuals_zero": true
+  },
+  "claim": "The sector-5 GL2 normalization solver path is executable and verified on a controlled self-candidate. The self-candidate is the current certified raw matrix-unit chart, so the solved transform is the identity; this is not an independent legacy off-diagonal basis certification.",
+  "derived": {
+    "candidate_coo_rows": 144,
+    "candidate_source": "SELF_CANDIDATE_FROM_CERTIFIED_SECTOR5_RAW_UNITS",
+    "candidate_units_sha256": "28f6878577e44b5610ad9c0d65bb36e4fe95260c7cffa8830814fff0b0a298d3",
+    "coordinate_matrix_sha256": "9d0c730032f2944f43cd3c5707b30d25f99161ece5fd487f0e5ae285c2ec2665",
+    "gl2_solution": {
+      "det_g": 1,
+      "g": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "ginv": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "pivot_col": 0,
+      "pivot_row": 0,
+      "pivot_value": 1
+    },
+    "raw_product_check": {
+      "checked": 16,
+      "failure_count": 0,
+      "failures": []
+    },
+    "reconstructed_units_sha256": "28f6878577e44b5610ad9c0d65bb36e4fe95260c7cffa8830814fff0b0a298d3",
+    "selected_relation_rows": [
+      227,
+      271,
+      761,
+      886
+    ],
+    "tables": {
+      "coordinates": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_self_candidate_coordinates.csv",
+      "gl2_solution": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_gl2_solution.csv",
+      "residuals": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_solver_residuals.csv",
+      "row_chart": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_row_chart.json",
+      "self_candidate": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/sector5_self_candidate_units.csv"
+    }
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "sector5_candidate_schema": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/sector5_candidate_input_schema.json",
+      "sha256": "885e93848cb19689771fd5c3bf0b1ae3ad7b9aa2664426e33cbb00c6b4d0a547"
+    },
+    "sector5_normalization_pilot": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/report.json",
+      "sha256": "e4ecd658b78d0529a4ed9480a2dff4459c5e24fb1c4042aedeb11ee5f9b8224f"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "next_highest_yield_item": "Run this solver against a non-self sector-5 candidate source, or derive such a candidate from an upstream legacy off-diagonal construction.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_sector5_normalization_solver_selftest.source_drop",
+  "status": "D20_TINY_POINTER_A985_SECTOR5_NORMALIZATION_SOLVER_SELFTEST_CERTIFIED"
+}
