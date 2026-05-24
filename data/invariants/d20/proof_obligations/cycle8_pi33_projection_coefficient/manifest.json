@@ -1,0 +1,67 @@
+{
+  "inputs": {
+    "boundary_to_loop_report": {
+      "path": "data/invariants/d20/boundary_to_loop/report.json",
+      "sha256": "8e2db781ff5c076da0a24499b1e42dfc501150db065803c8fb29bc6217e940d4"
+    },
+    "d20_edges": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "0f0b38642de3a082109613f5411e0b0615501903bd5b233f07bbdd3718c6cbae"
+    },
+    "primitive_cycles": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
+      "sha256": "a6fd82c3cafc0767c6ed7a41a157326d249933a6be62d6aad0f27f989dc7e84c"
+    },
+    "sector33_all_residue_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "405325f402e57c8246277d23ff9f251a3582e8e4c56868ca58c6480e8e995140"
+    },
+    "sector33_boundary_annihilation_report": {
+      "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+      "sha256": "c09baf8454e93d3901d0d9c3ea4ba89994844c035f3e84af74cce14f5a9bd3d6"
+    },
+    "sector33_height_coherent_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "sha256": "8f584b9fa197d43232322f3ed5d5babe2d40e3132ce9ae89ae84e1924272bff7"
+    },
+    "sector33_unique_public_zero_carrier_report": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json",
+      "sha256": "9ede2e5f5732a4e28fbde20bc313eae45c081a29986c8c8372e77fc1c7da0fab"
+    },
+    "sector_attachment_report": {
+      "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
+      "sha256": "6737e82cb63d93a26e1faf2604d8c36e993993fdb27951783566455ae84286bf"
+    },
+    "tube_projection_section": {
+      "path": "layers/tube/projection_section.json",
+      "sha256": "b0db5ebce30a8cb43bf367984623d861248a1b89e340265c0b057777b59a3e82"
+    },
+    "wedderburn_trace": {
+      "path": "layers/drinfeld/wedderburn_trace.json",
+      "sha256": "b23baa45adda7f9af339ca95234fcd5a917ed38128427d822717be63a4f2b3e6"
+    }
+  },
+  "manifest_sha256": "8e853e824622ce48db75fac853a4a16ffe072f0ad94acd3ada5db182cc7d9e16",
+  "name": "cycle8_pi33_projection_coefficient",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/cycle8_pi33_projection_coefficient/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/cycle8_pi33_projection_coefficient/report.json"
+  },
+  "report_sha256": "70e30828f4db8690a5a1dc104608bbfecb34ed896848e78c073665b8a5b92581",
+  "schema": "d20.proof_obligation.cycle8_pi33_projection_coefficient_manifest.v1",
+  "validation_tests": [
+    "verify gamma_8 is the certified first obstruction cycle",
+    "verify Pi_33 sector attachment is certified",
+    "verify the tube section exists and satisfies P S = I",
+    "verify the certified boundary-to-Loop_297 map exists and lifts gamma_8",
+    "verify the tube-visible Pi_33 functional evaluates the bare gamma_8 lift to zero",
+    "verify the height-coherent transport recovers the sector-33 residual from edge/circuit data",
+    "verify the global height-coherent transport covers all 2047 nonzero residue classes",
+    "verify sector 33 is the unique single-sector public-zero carrier among all 39 sectors",
+    "verify the full Drinfeld idempotent matrix remains hash-only in the current JSON artifacts"
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "bridge_kind": "representative_family_witness",
+  "claim_level": "polynomially_faithful_representative_family_not_sat_complete",
+  "decision": {
+    "may_claim_encoded_family_sat_complete": false,
+    "may_claim_full_separation": false,
+    "may_claim_polynomially_faithful_representative_family": true,
+    "reason": "The cycle-8 / Pi_33 / residual packet is now a polynomially bounded representative-family bridge, while SAT-completeness and the X-extractor lower bound remain open."
+  },
+  "integrity_report_audit": {
+    "universal_pure_c_no_escape": {
+      "expected_status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",
+      "status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
+    },
+    "universal_trace_compiler": {
+      "expected_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
+    "universal_trace_typing": {
+      "expected_status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    },
+    "universal_v_wall_crossing_accounting": {
+      "expected_status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_v_wall_crossing_accounting_report.json",
+      "status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS"
+    },
+    "universal_x_extractor_isolation": {
+      "expected_status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_x_extractor_isolation_report.json",
+      "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
+    }
+  },
+  "next_highest_yield_item": {
+    "action": "Attack the polynomial-size X-extractor lower bound, because the representative encoded-family bridge is now witnessed but SAT-completeness is still not certified.",
+    "id": "x_extractor_lower_bound"
+  },
+  "non_claims": [
+    "This is not a SAT-complete reduction certificate.",
+    "This does not prove every SAT instance maps to a hidden e33-obstructed packet.",
+    "This does not prove a polynomial-size lower bound against X extractors.",
+    "This does not prove P != NP."
+  ],
+  "polynomial_faithfulness": {
+    "bound_kind": "representative_family_payload_bound",
+    "construction_time_bound": "one pass over the public cycle edge list plus fixed certified sector/audit payloads for this representative family witness",
+    "integrity_report_count": 5,
+    "polynomial_bound": "source_size_measure^3",
+    "polynomial_bound_value": 4913,
+    "source_edge_count": 5,
+    "source_public_field_count": 6,
+    "source_size_measure": 17,
+    "target_payload_leaf_count": 33,
+    "within_bound": true
+  },
+  "representative_encoding": {
+    "family_id": "cycle8_sector33_residual_family",
+    "source_family": {
+      "name": "d20_closed_return_boundary_obstruction_packets",
+      "representative_instance": {
+        "boundary_cycle_id": 8,
+        "edge_ids": [
+          11,
+          1,
+          2,
+          22,
+          21
+        ],
+        "forced_residual_integral": -374784,
+        "forced_residual_mod_prime": 625219,
+        "mask": 256,
+        "optical_action": 374784
+      },
+      "yes_instance_definition": "a public D20 closed-return boundary packet whose certified optical action forces a nonzero A985 residual"
+    },
+    "target_encoding": {
+      "packet": {
+        "a985_sector": 33,
+        "a985_sector_name": "Pi_33",
+        "boundary_cycle_id": 8,
+        "public_terminal_shadow": {
+          "A12": "zero",
+          "A42": "zero",
+          "q12_nonzero_count": 0,
+          "q42_nonzero_count": 0
+        },
+        "residual_integral": -374784,
+        "residual_mod_prime": 625219
+      },
+      "sector_witness": {
+        "active_cy_sectors": [
+          "B",
+          "S"
+        ],
+        "active_objects": [
+          "B+",
+          "S+"
+        ],
+        "block_dimension": 2,
+        "permutation_rank": 36,
+        "q12_nonzero_count": 0,
+        "q42_nonzero_count": 0,
+        "sector": 33,
+        "spectral_signature": [
+          {
+            "label": "B+",
+            "local_pre_idempotents": [
+              12
+            ],
+            "object": 1,
+            "separator_eigenvalues": [
+              999881
+            ]
+          },
+          {
+            "label": "S+",
+            "local_pre_idempotents": [
+              6
+            ],
+            "object": 5,
+            "separator_eigenvalues": [
+              1746
+            ]
+          }
+        ]
+      },
+      "target_yes_definition": "the encoded packet has a nonzero residual attached to the unique public-zero, tube-visible sector 33",
+      "visibility_witness": {
+        "drinfeld_half_braiding_nullity": 39,
+        "drinfeld_sector_count": 39,
+        "full_relation_pairing_separates_all_39_sectors": true,
+        "projection_section_identity": true,
+        "secondary_surface_splits_all_39_sectors": true,
+        "unique_Hesse_pencils": 39
+      }
+    }
+  },
+  "schema": "d20.integrity.encoded_family_bridge_certificate.v1",
+  "sector33_audit": {
+    "passed": true,
+    "public_zero_obstruction_visible": true,
+    "required_sector33_checks": {
+      "accepted_pure_c_traces_do_not_extract_e33": {
+        "passed": true,
+        "value": true
+      },
+      "bounded_x_search_finds_no_extractor": {
+        "passed": true,
+        "value": true
+      },
+      "cycle_8_edges_are_present": {
+        "passed": true,
+        "value": true
+      },
+      "first_obstruction_is_cycle_8": {
+        "passed": true,
+        "value": true
+      },
+      "first_obstruction_mask_is_256": {
+        "passed": true,
+        "value": true
+      },
+      "first_residual_nonzero_mod_field": {
+        "passed": true,
+        "value": true
+      },
+      "first_residual_nonzero_over_integers": {
+        "passed": true,
+        "value": true
+      },
+      "hesse_tube_pencil_sees_all_39_sectors": {
+        "passed": true,
+        "value": true
+      },
+      "line_surface_trace_separates_all_sectors": {
+        "passed": true,
+        "value": true
+      },
+      "sector33_exists_once": {
+        "passed": true,
+        "value": true
+      },
+      "sector33_is_unique_public_zero_sector": {
+        "passed": true,
+        "value": true
+      },
+      "sector33_signature_matches_public_zero_obstruction": {
+        "passed": true,
+        "value": true
+      },
+      "tube_kernel_descent_audit_certified": {
+        "passed": true,
+        "value": true
+      },
+      "tube_projection_section_certified": {
+        "passed": true,
+        "value": true
+      },
+      "visible_v_accounting_has_no_current_v_events": {
+        "passed": true,
+        "value": true
+      }
+    },
+    "sector33_report": {
+      "all_checks_pass": true,
+      "expected_status": "D20_SECTOR33_RESIDUAL_ATTACHMENT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
+      "status": "D20_SECTOR33_RESIDUAL_ATTACHMENT_CERTIFIED"
+    },
+    "universal_integral_report": {
+      "expected_status": "UNIVERSAL_A985_INTEGRAL_UNIQUENESS_PASS",
+      "passed": true,
+      "path": "data/invariants/d20/universal_integral_uniqueness.json",
+      "sector33_reading": "e33 is public-zero but obstruction-visible: e33 \u2208 ker(q_public,*) and e33 \u2209 ker(d)",
+      "status": "UNIVERSAL_A985_INTEGRAL_UNIQUENESS_PASS"
+    }
+  },
+  "source_reports": {
+    "sector33_residual_attachment": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
+    "universal_integral_uniqueness": "data/invariants/d20/universal_integral_uniqueness.json"
+  },
+  "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN",
+  "yes_no_preservation": {
+    "advice_policy": "The certificate uses canonical public reports and sector witnesses as audited inputs. Solver-side hidden-sector reads remain typed X and are not used by the representative bridge construction.",
+    "forward_preservation": true,
+    "inverse_witness_interpretation": {
+      "passed": true,
+      "recoverable_fields": {
+        "a985_sector": 33,
+        "boundary_cycle_id": 8,
+        "mask": 256,
+        "residual_integral": -374784,
+        "residual_mod_prime": 625219
+      }
+    },
+    "passed": true,
+    "source_yes": true,
+    "target_yes": true,
+    "without_solver_hidden_sector_advice": true
+  }
+}

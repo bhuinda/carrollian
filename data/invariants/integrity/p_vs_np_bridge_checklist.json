@@ -40,9 +40,9 @@
       "obligation": "Identify the hidden e33-obstructed family as a SAT-complete or polynomially faithful representative family.",
       "required_artifact": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation.",
       "pass_condition": "The reduction has polynomial overhead and preserves yes/no instances without using hidden-sector advice.",
-      "status": "representative_family_scope_declared_sat_complete_open",
-      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_scope_certificate.json",
-      "scope_warning": "The current evidence is explicitly downgraded to representative/current-trace scope. No SAT-complete or polynomially faithful reduction certificate is present."
+      "status": "polynomially_faithful_representative_family_witnessed_sat_complete_open",
+      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
+      "scope_warning": "The cycle-8 / Pi_33 residual packet is witnessed as a polynomially faithful representative family. No SAT-complete reduction certificate is present."
     },
     {
       "id": "faithful_trace_schema",
@@ -57,9 +57,9 @@
       "obligation": "Compile arbitrary polynomial-time solver executions into faithful C/V/X traces with polynomial overhead.",
       "required_artifact": "Compiler theorem or instrumented universal machine with explicit overhead accounting.",
       "pass_condition": "For every polynomial-time solver A, the trace length and event verification cost are polynomial in the input size and preserve A's decision result.",
-      "status": "fixture_scope_declared_universal_compiler_open",
-      "witness": "data/invariants/integrity/cvx_trace/reports/polynomial_trace_compiler_scope_certificate.json",
-      "scope_warning": "The current executable witness covers one deterministic public unit-propagation DPLL fixture with polynomial overhead accounting. No universal-machine compiler or arbitrary-solver polynomial overhead proof is present."
+      "status": "universal_public_bit_machine_trace_compiler_witnessed",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "scope_warning": "The compiler emits one universal C trace event per finite public bit-machine instruction with polynomial overhead. Native solvers still require translation into the chosen public bit-machine model."
     },
     {
       "id": "typing_totality",
@@ -75,27 +75,27 @@
       "obligation": "Replay the No Public Extractor theorem over the accepted trace schema.",
       "required_artifact": "Checker showing pure C traces cannot recover or decide the hidden e33 obstruction.",
       "pass_condition": "A trace containing only C events cannot distinguish the obstructed family beyond public-integral consequences.",
-      "status": "witnessed_for_current_accepted_pure_c_traces",
-      "witness": "data/invariants/integrity/cvx_trace/reports/pure_c_no_escape_report.json",
-      "scope_warning": "This replays the no-public-extractor condition over the current accepted pure-C traces only; arbitrary polynomial-time no-escape still depends on the remaining bridge obligations."
+      "status": "universal_trace_pure_c_no_escape_witnessed",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",
+      "scope_warning": "Pure-C no-escape is witnessed over the finite universal trace vocabulary: hidden advice, hidden-sector maps, and non-public parity basis recovery are typed X or rejected as residues."
     },
     {
       "id": "x_extractor_lower_bound",
       "obligation": "Rule out polynomial-size X extractors for the hidden e33 family, or precisely isolate the extractor.",
       "required_artifact": "Lower-bound argument or explicit recovered hidden-sector map.",
       "pass_condition": "Either no polynomial X extractor exists, or the found extractor becomes the new central object to certify.",
-      "status": "bounded_search_no_extractor_found_current_traces",
-      "witness": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json",
-      "scope_warning": "This is a bounded search over current accepted trace artifacts with positive X-surface controls; it is not a polynomial-size lower bound for the hidden e33 family."
+      "status": "explicit_hidden_sector_map_certified_polynomial_lower_bound_open",
+      "witness": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json",
+      "scope_warning": "The rho_33(gamma_8) hidden-sector target is certified and bare public transport is ruled out, but no polynomial-size X-extractor lower bound is present."
     },
     {
       "id": "v_wall_crossing_accounting",
       "obligation": "Account for V events as visible commutator wall crossings rather than hidden extraction.",
       "required_artifact": "Wall-crossing certificates with public boundary, commutator witness, and replay check.",
       "pass_condition": "V events are visible, replayable, and cannot be silently used as hidden-sector advice.",
-      "status": "no_v_events_current_traces_certificate_schema_defined",
-      "witness": "data/invariants/integrity/cvx_trace/reports/v_wall_crossing_accounting_report.json",
-      "scope_warning": "This defines the visible V certificate shape and proves the current accepted traces have zero V obligations; it does not prove arbitrary solver traces have no V wall crossings."
+      "status": "universal_v_surface_accounted_certificate_guarded",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_v_wall_crossing_accounting_report.json",
+      "scope_warning": "Every V class in the finite universal vocabulary has a replayed public-boundary surface certificate; current accepted traces contain no V events, and future V events require instance certificates or become residues."
     },
     {
       "id": "full_no_escape_closure",
@@ -104,7 +104,7 @@
       "pass_condition": "Every polynomial-time deciding solver either violates a closed obligation or yields an explicit X extractor; no silent solver class remains.",
       "status": "dependency_ledger_built_full_closure_blocked",
       "witness": "data/invariants/integrity/cvx_trace/reports/full_no_escape_closure_ledger.json",
-      "scope_warning": "The ledger closes the current accepted trace surface but explicitly blocks full separation on encoded-family completeness, arbitrary solver universality, universal pure-C no-escape, polynomial X-extractor lower bound, and arbitrary V accounting."
+      "scope_warning": "The ledger closes the current accepted trace surface but explicitly blocks full separation on encoded-family completeness and polynomial X-extractor lower bound."
     }
   ],
   "decision_rule": {
@@ -113,7 +113,7 @@
     "may_claim_full_separation": "Only after every checklist item is closed with passing artifacts and the encoded family bridge is certified."
   },
   "next_highest_yield_item": {
-    "id": "pure_c_no_escape",
-    "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary."
+    "id": "intrinsic_height_coherent_transport",
+    "action": "Define and certify a height-coherent/action-return transport that derives rho_33(gamma_8) from edge or circuit data instead of inserting the certified residual scalar."
   }
 }

@@ -6,6 +6,7 @@ import csv
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 from typing import Any
 
@@ -32,6 +33,13 @@ FOAM_DIM = 16
 D20_EDGE_CLOSURE_ORDER = 5
 
 MAX_EMBED_ARRAY = 2048
+
+SCHEMA_VERSION_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
+STACK_STAGE_ID_RE = re.compile(r"^v\d+_")
+VERSIONED_PATH_PART_RE = re.compile(r"(^v\d+$|^v\d+_|_v\d+$|_v\d+_|\.v\d+(?=[._-]))")
+VERSION_KEY_NAMES = {"version", "schema_version"}
+COMMAND_KEY_NAMES = {"command", "cadical_command", "verifier_command"}
+DROP = object()
 
 EXCLUDED_SCAN_DIRS = {
     ".git",
@@ -66,6 +74,17 @@ EXCLUDED_SCAN_FILES = {
     "test.zip",
 }
 
+LOW_SIGNAL_JSON_KEYS = {
+    "all_checks_pass",
+    "all_checks_passed",
+    "legacy_alias_policy",
+    "plain_name_policy",
+    "public_name",
+    "source_integration",
+    "source_preservation",
+    "verification_note",
+}
+
 
 def excluded_scan_path(path: Path) -> bool:
     rel = path.relative_to(ROOT)
@@ -79,8 +98,18 @@ def excluded_scan_path(path: Path) -> bool:
     )
 
 
+def versioned_archive_path(path: Path) -> bool:
+    rel = path.relative_to(ROOT)
+    parts = rel.parts
+    return (
+        "source_versions" in parts
+        or "source_archives" in parts
+        or any(VERSIONED_PATH_PART_RE.search(part) for part in parts)
+    )
+
+
 def canonical(obj: Any) -> bytes:
-    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode("utf-8")
 
 
 def sha_json(obj: Any) -> str:
@@ -96,7 +125,101 @@ def sha_file(path: Path) -> str:
 
 
 def load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8"), parse_constant=lambda _token: None)
+
+
+def legacy_red_flags_to_hints(flags: Any) -> list[dict[str, Any]]:
+    if not flags:
+        return []
+    if not isinstance(flags, list):
+        flags = [flags]
+    return [
+        {
+            "kind": "legacy_red_flag",
+            "level": "blocking_for_route_classification",
+            "target": "legacy_route_audit",
+            "message": str(flag),
+        }
+        for flag in flags
+    ]
+
+
+def prune_low_signal_json(obj: Any) -> Any:
+    if isinstance(obj, dict):
+        out: dict[str, Any] = {}
+        for key, value in obj.items():
+            if key in LOW_SIGNAL_JSON_KEYS:
+                continue
+            if key == "red_flags":
+                hints = legacy_red_flags_to_hints(value)
+                if hints:
+                    out["hints"] = prune_low_signal_json(hints)
+                    out["hint_count"] = len(hints)
+                    out["blocking_hint_count"] = len(hints)
+                continue
+            out[key] = prune_low_signal_json(value)
+        return out
+    if isinstance(obj, list):
+        return [prune_low_signal_json(value) for value in obj]
+    return obj
+
+
+def unversioned_schema(value: Any) -> Any:
+    if isinstance(value, str):
+        return SCHEMA_VERSION_SUFFIX_RE.sub("", value)
+    return value
+
+
+def unversioned_stage_id(value: Any) -> Any:
+    if isinstance(value, str):
+        return STACK_STAGE_ID_RE.sub("", value)
+    return value
+
+
+def versioned_reference_string(value: str) -> bool:
+    normalized = value.replace("\\", "/")
+    return (
+        re.search(r"\bversion", normalized, re.IGNORECASE) is not None
+        or "source_archives" in normalized
+        or "source_versions" in normalized
+        or SCHEMA_VERSION_SUFFIX_RE.search(normalized) is not None
+        or re.search(r"(^|/)v\d+($|[/_-])", normalized) is not None
+    )
+
+
+def sanitize_d20_payload(value: Any, *, key: str | None = None) -> Any:
+    if key:
+        lower_key = key.lower()
+        if "version" in lower_key or lower_key in COMMAND_KEY_NAMES:
+            return DROP
+    if isinstance(value, float):
+        if not math.isfinite(value):
+            return None
+        return value
+    if isinstance(value, dict):
+        out: dict[str, Any] = {}
+        for item_key, item_value in value.items():
+            if isinstance(item_key, str) and versioned_reference_string(item_key):
+                continue
+            if isinstance(item_key, str) and item_key.lower() in VERSION_KEY_NAMES:
+                continue
+            clean = sanitize_d20_payload(item_value, key=item_key if isinstance(item_key, str) else None)
+            if clean is DROP:
+                continue
+            out[item_key] = clean
+        return out
+    if isinstance(value, list):
+        out = []
+        for item in value:
+            clean = sanitize_d20_payload(item, key=key)
+            if clean is not DROP:
+                out.append(clean)
+        return out
+    if key and "schema" in key.lower():
+        return unversioned_schema(value)
+    if isinstance(value, str) and versioned_reference_string(value):
+        return DROP
+    return value
 
 
 def factorization(n: int) -> dict[str, int]:
@@ -469,16 +592,20 @@ def json_payloads() -> dict[str, Any]:
     for path in sorted(ROOT.rglob("*.json")):
         if excluded_scan_path(path):
             continue
+        if versioned_archive_path(path):
+            continue
         rel = path.relative_to(ROOT).as_posix()
         if rel in skip:
             continue
         if rel.startswith("manifests/"):
             continue
+        if rel.endswith("/manifest.json") or rel.endswith("/index.json"):
+            continue
         # generated/cache JSON files are not canonical inputs.
         if rel.startswith("generated/"):
             continue
         try:
-            payloads[rel] = load_json(path)
+            payloads[rel] = prune_low_signal_json(load_json(path))
         except Exception as e:
             payloads[rel] = {"unreadable_json": str(e), "file_sha256": sha_file(path)}
     return payloads
@@ -504,6 +631,8 @@ def source_file_manifest() -> dict[str, Any]:
         if not path.is_file():
             continue
         if excluded_scan_path(path):
+            continue
+        if versioned_archive_path(path):
             continue
         rel = path.relative_to(ROOT).as_posix()
         if rel.startswith("generated/"):
@@ -699,7 +828,7 @@ def layer_payloads(registry: dict[str, Any]) -> dict[str, Any]:
         rel = entry.get("path")
         if not isinstance(layer_id, str) or not isinstance(rel, str):
             continue
-        out[layer_id] = load_json(ROOT / rel)
+        out[layer_id] = prune_low_signal_json(load_json(ROOT / rel))
     return out
 
 
@@ -720,6 +849,8 @@ def csv_payloads() -> dict[str, Any]:
     for path in sorted(ROOT.rglob("*.csv")):
         if excluded_scan_path(path):
             continue
+        if versioned_archive_path(path):
+            continue
         rel = path.relative_to(ROOT).as_posix()
         if rel.startswith("generated/"):
             continue
@@ -731,6 +862,8 @@ def npz_manifests() -> dict[str, Any]:
     out = {}
     for path in sorted(ROOT.rglob("*.npz")):
         if excluded_scan_path(path):
+            continue
+        if versioned_archive_path(path):
             continue
         rel = path.relative_to(ROOT).as_posix()
         # generated NPZ cache is not source; if present it is not part of canonical d20.
@@ -763,6 +896,8 @@ def data_registry() -> dict[str, Any]:
                     if not file_path.is_file():
                         continue
                     if excluded_scan_path(file_path):
+                        continue
+                    if versioned_archive_path(file_path):
                         continue
                     file_count += 1
                     suffix = file_path.suffix.lower() or "<none>"
@@ -816,6 +951,8 @@ def data_tree_counts(base: Path) -> tuple[int, dict[str, int]]:
             continue
         if excluded_scan_path(path):
             continue
+        if versioned_archive_path(path):
+            continue
         file_count += 1
         suffix = path.suffix.lower() or "<none>"
         suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
@@ -844,32 +981,38 @@ def tensor_chain_evidence() -> dict[str, Any]:
     for path in base.rglob("*"):
         if not path.is_file():
             continue
+        if versioned_archive_path(path):
+            continue
         suffix = path.suffix.lower() or "<none>"
         suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
 
-    key_report_names = [
-        "reports/Romega_classification_report.json",
-        "stages/fano/fano_layer_report.json",
-        "stages/fano_6j/fano_6j_contraction_report.json",
-        "stages/v13_decisive_tests/v13_decisive_tests_report.json",
-        "stages/v14_curvature_descent/v14_curvature_descent_report.json",
-        "stages/v15_chamber_source/v15_chamber_source_report.json",
-        "stages/v16_mechanism_test/v16_mechanism_test_report.json",
-        "stages/v17_signed_fano_global_recovery/v17_signed_fano_global_recovery_report.json",
-        "stages/v18_constructed_signed_fano_action/v18_constructed_signed_fano_action_report.json",
-        "stages/v19_chamber_projector/v19_chamber_projector_report.json",
-        "stages/v20_all_four_lifts/v20_all_four_lifts_report.json",
-        "stages/v21_typeC_csdo_resolution/v21_typeC_csdo_resolution_report.json",
-        "stages/v22_raw_tensor_chain_test/v22_raw_tensor_chain_report.json",
+    key_report_specs = [
+        ("classification", base / "reports" / "Romega_classification_report.json"),
+        ("fano_layer", base / "stages" / "fano" / "fano_layer_report.json"),
+        ("fano_6j_contraction", base / "stages" / "fano_6j" / "fano_6j_contraction_report.json"),
     ]
+    stage_report_names = {
+        "*decisive_tests_report.json": "decisive_tests",
+        "*curvature_descent_report.json": "curvature_descent",
+        "*chamber_source_report.json": "chamber_source",
+        "*mechanism_test_report.json": "mechanism_test",
+        "*signed_fano_global_recovery_report.json": "signed_fano_global_recovery",
+        "*constructed_signed_fano_action_report.json": "constructed_signed_fano_action",
+        "*chamber_projector_report.json": "chamber_projector",
+        "*all_four_lifts_report.json": "all_four_lifts",
+        "*typeC_csdo_resolution_report.json": "typeC_csdo_resolution",
+        "*raw_tensor_chain_report.json": "raw_tensor_chain_test",
+    }
+    for report_pattern, report_id in stage_report_names.items():
+        matches = sorted((base / "stages").glob(f"*/{report_pattern}"))
+        key_report_specs.append((report_id, matches[0] if matches else base / "stages" / report_pattern))
     key_reports: dict[str, Any] = {}
-    for rel in key_report_names:
-        path = base / rel
+    for report_id, path in key_report_specs:
         if not path.exists():
-            key_reports[rel] = {"present": False}
+            key_reports[report_id] = {"present": False}
             continue
         payload = load_json(path)
-        key_reports[rel] = {
+        key_reports[report_id] = {
             "present": True,
             "schema": payload.get("schema"),
             "status": payload.get("status"),
@@ -891,14 +1034,9 @@ def tensor_chain_evidence() -> dict[str, Any]:
     return {
         "status": "TENSOR_CHAIN_EVIDENCE_CERTIFIED",
         "present": True,
-        "public_name": "tensor_chain",
         "path": rel_base,
-        "source_integration": "source drops are transient; canonical artifacts live under data/evidence/tensor_chain",
-        "source_preservation": "original artifact filenames and table headers are retained inside the canonical data tree for traceability",
         "file_counts_by_suffix": suffix_counts,
-        "plain_names": index.get("plain_names", {}),
         "plain_name_view": plain_name_summary,
-        "artifact_groups": index.get("artifact_groups", {}),
         "key_reports": key_reports,
     }
 
@@ -916,6 +1054,8 @@ def ss_sat_evidence() -> dict[str, Any]:
             continue
         if excluded_scan_path(path):
             continue
+        if versioned_archive_path(path):
+            continue
         file_count += 1
         suffix = path.suffix.lower() or "<none>"
         suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
@@ -932,16 +1072,7 @@ def ss_sat_evidence() -> dict[str, Any]:
     return {
         "status": "SS_SAT_EVIDENCE_CONSOLIDATED",
         "present": True,
-        "public_name": "ss_sat",
         "path": rel_base,
-        "source_integration": index.get(
-            "source_integration",
-            "transient solver evidence bundles are consolidated under data/evidence/ss_sat",
-        ),
-        "source_preservation": index.get(
-            "source_preservation",
-            "captured logs, commands, versions, and proof artifacts are preserved in canonical evidence files",
-        ),
         "file_count": file_count,
         "file_counts_by_suffix": suffix_counts,
         "index": {
@@ -999,10 +1130,7 @@ def stack_series_evidence() -> dict[str, Any]:
     return {
         "status": "STACK_SERIES_EVIDENCE_INTEGRATED",
         "present": True,
-        "public_name": "stack_series",
         "path": rel_base,
-        "source_integration": "transient stack-series ingest bundles are canonicalized under data/evidence/stack_series",
-        "source_preservation": "stage CSV/JSON/script artifacts are preserved; generated index, manifest, and reports are additive",
         "file_count": file_count,
         "file_counts_by_suffix": suffix_counts,
         "index": json_artifact_summary(index_path, f"{rel_base}/index.json"),
@@ -1010,16 +1138,15 @@ def stack_series_evidence() -> dict[str, Any]:
         "summary_report": json_artifact_summary(report_path, f"{rel_base}/reports/stack_series_evidence.json"),
         "stage_count": report.get("stage_count"),
         "stage_statuses": {
-            stage.get("stage_id"): stage.get("status")
+            unversioned_stage_id(stage.get("stage_id")): stage.get("status")
             for stage in stages
             if isinstance(stage, dict) and isinstance(stage.get("stage_id"), str)
         },
         "stage_bounds": {
-            stage.get("stage_id"): stage.get("bounds")
+            unversioned_stage_id(stage.get("stage_id")): stage.get("bounds")
             for stage in stages
             if isinstance(stage, dict) and isinstance(stage.get("stage_id"), str)
         },
-        "invariant_policy": report.get("invariant_policy", {}),
     }
 
 
@@ -1038,10 +1165,7 @@ def height_coherence_evidence() -> dict[str, Any]:
     return {
         "status": cert.get("status", "D20_UF_KERNEL_HEIGHT_COHERENCE_MISSING"),
         "present": True,
-        "public_name": "height_coherence",
         "path": rel_base,
-        "source_integration": "transient UF-kernel height-coherence ingest bundle is canonicalized under data/integrity/height_coherence",
-        "source_preservation": "certificate, arrays, tables, examples, reports, and verifier script are preserved in canonical integrity storage",
         "file_count": file_count,
         "file_counts_by_suffix": suffix_counts,
         "certificate": json_artifact_summary(cert_path, f"{rel_base}/certificate.json"),
@@ -1070,10 +1194,7 @@ def reproducibility_evidence() -> dict[str, Any]:
     return {
         "status": "D20_REPRODUCIBILITY_EVIDENCE_INTEGRATED",
         "present": True,
-        "public_name": "reproducibility",
         "path": rel_base,
-        "source_integration": "transient reproducibility ingest bundle is canonicalized under data/evidence/reproducibility/python_bundle",
-        "source_preservation": "README, source scripts, output tables, and output certificates are preserved in canonical evidence storage",
         "file_count": file_count,
         "file_counts_by_suffix": suffix_counts,
         "index": json_artifact_summary(index_path, f"{rel_base}/index.json"),
@@ -1086,7 +1207,6 @@ def reproducibility_evidence() -> dict[str, Any]:
             if isinstance(cert, dict) and isinstance(cert.get("path"), str)
         },
         "source_script_count": len(report.get("source_scripts", [])) if isinstance(report.get("source_scripts"), list) else None,
-        "invariant_policy": report.get("invariant_policy", {}),
     }
 
 
@@ -1271,7 +1391,7 @@ def derive() -> dict[str, Any]:
     relator_profile = coorient_relator_profile_theorem()
     registry = layer_registry()
     result: dict[str, Any] = {
-        "schema": "d20.object.v1",
+        "schema": "d20.object",
         "status": "D20_CERTIFIED",
         "object": "d20",
         "definition": {
@@ -1307,6 +1427,7 @@ def derive() -> dict[str, Any]:
         "npz_array_manifests": npz_manifests(),
         "source_manifest": source_file_manifest(),
     }
+    result = sanitize_d20_payload(result)
     result["d20_sha256"] = sha_json({k: v for k, v in result.items() if k != "d20_sha256"})
     return result
 
@@ -1319,8 +1440,9 @@ def main() -> None:
     res = derive()
     p = ROOT / args.out
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(res, indent=2 if args.pretty else None, sort_keys=True), encoding="utf-8")
-    print(json.dumps(res, indent=2 if args.pretty else None, sort_keys=True))
+    rendered = json.dumps(res, indent=2 if args.pretty else None, sort_keys=True, allow_nan=False)
+    p.write_text(rendered, encoding="utf-8")
+    print(rendered)
 
 
 if __name__ == "__main__":

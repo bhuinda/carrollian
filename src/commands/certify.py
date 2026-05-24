@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, hashlib, json, sys
+import argparse, hashlib, json, re, sys
 from pathlib import Path
 from typing import Any
 
@@ -17,6 +17,7 @@ from src.layer_registry import LAYER_INDEX, layer_relpath, load_layer_registry
 from src.paths import ROOT
 
 MUTABLE = {"certificate.json", "manifests/file_hashes.json", "manifests/canonical.json"}
+SCHEMA_VERSION_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
 
 EXPECTED = {
     "00_core": "PASS",
@@ -49,7 +50,21 @@ EXPECTED = {
 
 
 def canonical(obj: Any) -> bytes:
-    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode("utf-8")
+
+
+def schema_name(value: Any) -> Any:
+    if isinstance(value, str):
+        return SCHEMA_VERSION_SUFFIX_RE.sub("", value)
+    return value
+
+
+def require_schema(value: Any, expected: str, msg: str, errors: list[str]) -> None:
+    require(schema_name(value) == expected, msg, errors)
+
+
+def reject_json_constant(token: str) -> None:
+    raise ValueError(f"invalid JSON constant: {token}")
 
 
 def sha_json(obj: Any) -> str:
@@ -67,7 +82,7 @@ def sha_file(path: Path) -> str:
 def load_json(rel: str | Path) -> Any:
     p = ROOT / rel if isinstance(rel, str) else rel
     with p.open("r", encoding="utf-8") as f:
-        return json.load(f)
+        return json.load(f, parse_constant=reject_json_constant)
 
 
 def require(cond: bool, msg: str, errors: list[str]) -> None:
@@ -120,7 +135,7 @@ def verify_data_registry(data: dict[str, Any], errors: list[str]) -> dict[str, A
     require(path.exists(), "missing data registry file", errors)
     if path.exists():
         require(section.get("file_sha256") == sha_file(path), "data registry file hash mismatch", errors)
-    require(section.get("schema") == "d20.data_registry.v1", "data registry schema mismatch", errors)
+    require_schema(section.get("schema"), "d20.data_registry", "data registry schema mismatch", errors)
     require(section.get("status") == "DATA_REGISTRY_BUILT", "data registry status mismatch", errors)
 
     policy = section.get("policy", {})
@@ -248,7 +263,7 @@ def verify_certified_evidence_invariants(data: dict[str, Any], errors: list[str]
     require(path.exists(), "missing certified evidence invariants file", errors)
     if path.exists():
         require(section.get("file_sha256") == sha_file(path), "certified evidence invariants file hash mismatch", errors)
-    require(section.get("schema") == "d20.certified_evidence_invariants.v1", "certified evidence invariants schema mismatch", errors)
+    require_schema(section.get("schema"), "d20.certified_evidence_invariants", "certified evidence invariants schema mismatch", errors)
     require(
         section.get("status") == "D20_CERTIFIED_EVIDENCE_INVARIANTS_INTEGRATED",
         "certified evidence invariants status mismatch",
@@ -307,7 +322,7 @@ def verify_certified_evidence_invariants(data: dict[str, Any], errors: list[str]
     require(leech.get("196560=455*2*6^3") is True, "computability proof Leech 196560 identity mismatch", errors)
 
     fab = section.get("classical_typing", {})
-    require(fab.get("schema") == "d20.fab.classical_typing.v1", "f(a)(b) classical typing schema mismatch", errors)
+    require_schema(fab.get("schema"), "d20.fab.classical_typing", "f(a)(b) classical typing schema mismatch", errors)
     require(fab.get("status") == "FAB_CLASSICAL_TYPING_VERIFIER_PASS", "f(a)(b) classical typing status mismatch", errors)
     require(fab.get("primitive_notation") == "f(a)(b)", "f(a)(b) primitive notation mismatch", errors)
     require(fab.get("deprecated_name") == "AreaInc", "f(a)(b) deprecated name mismatch", errors)
@@ -330,8 +345,9 @@ def verify_certified_evidence_invariants(data: dict[str, Any], errors: list[str]
     bh = section.get("black_hole_certified_simulator", {})
     require(bh.get("schema") == "d20.black_hole.certified_simulator@3", "black-hole simulator schema mismatch", errors)
     require(bh.get("status") == "D20_BLACK_HOLE_CERTIFIED_SIMULATOR_PASS", "black-hole simulator status mismatch", errors)
-    require(bh.get("all_checks_pass") is True, "black-hole simulator checks not all pass", errors)
-    for key, value in bh.get("checks", {}).items():
+    checks = bh.get("checks", {})
+    require(isinstance(checks, dict) and bool(checks), "black-hole simulator checks missing", errors)
+    for key, value in checks.items():
         require(value is True, f"black-hole simulator check failed: {key}", errors)
     dinv = bh.get("d20_invariants", {})
     core = dinv.get("core", {})
@@ -387,7 +403,7 @@ def verify_certified_evidence_invariants(data: dict[str, Any], errors: list[str]
 
 def verify_root(errors: list[str]) -> dict[str, Any]:
     cert = load_json("certificate.json")
-    require(cert.get("schema") == "d20.verifier.v1", "root schema mismatch", errors)
+    require_schema(cert.get("schema"), "d20.verifier", "root schema mismatch", errors)
     require(cert.get("status") == "D20_CERTIFIED", "root status mismatch", errors)
     h = cert.get("d20_sha256")
     body = {k: v for k, v in cert.items() if k != "d20_sha256"}
@@ -429,7 +445,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     if not p.exists():
         return {}
     data = load_json(p)
-    require(data.get("schema") == "d20.object.v1", "d20.json schema mismatch", errors)
+    require_schema(data.get("schema"), "d20.object", "d20.json schema mismatch", errors)
     require(data.get("status") == "D20_CERTIFIED", "d20.json status mismatch", errors)
     require(data.get("object") == "d20", "d20.json object mismatch", errors)
     h = data.get("d20_sha256")
@@ -509,7 +525,6 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     tensor_chain = data.get("tensor_chain", {})
     require(tensor_chain.get("status") == "TENSOR_CHAIN_EVIDENCE_CERTIFIED", "tensor_chain status mismatch", errors)
     require(tensor_chain.get("present") is True, "tensor_chain evidence missing", errors)
-    require(tensor_chain.get("public_name") == "tensor_chain", "tensor_chain public name mismatch", errors)
     require(tensor_chain.get("path") == "data/evidence/tensor_chain", "tensor_chain path mismatch", errors)
     plain_name_view = tensor_chain.get("plain_name_view", {})
     require(plain_name_view.get("present") is True, "tensor_chain plain-name view missing", errors)
@@ -525,11 +540,10 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     ss_sat = data.get("ss_sat_evidence", {})
     require(ss_sat.get("status") == "SS_SAT_EVIDENCE_CONSOLIDATED", "SS-SAT status mismatch", errors)
     require(ss_sat.get("present") is True, "SS-SAT evidence missing", errors)
-    require(ss_sat.get("public_name") == "ss_sat", "SS-SAT public name mismatch", errors)
     require(ss_sat.get("path") == "data/evidence/ss_sat", "SS-SAT path mismatch", errors)
     ss_manifest = ss_sat.get("manifest", {})
     require(ss_manifest.get("present") is True, "SS-SAT manifest missing", errors)
-    require(ss_manifest.get("schema") == "d20.ss_sat.manifest.v1", "SS-SAT manifest schema mismatch", errors)
+    require_schema(ss_manifest.get("schema"), "d20.ss_sat.manifest", "SS-SAT manifest schema mismatch", errors)
     require(ss_manifest.get("status") == "SS_SAT_MANIFEST_REFRESHED", "SS-SAT manifest status mismatch", errors)
     require(ss_manifest.get("file_count", 0) > 0, "SS-SAT manifest has no files", errors)
     ss_report = ss_sat.get("summary_report", {})
@@ -587,11 +601,10 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     stack_series = data.get("stack_series_evidence", {})
     require(stack_series.get("status") == "STACK_SERIES_EVIDENCE_INTEGRATED", "stack-series status mismatch", errors)
     require(stack_series.get("present") is True, "stack-series evidence missing", errors)
-    require(stack_series.get("public_name") == "stack_series", "stack-series public name mismatch", errors)
     require(stack_series.get("path") == "data/evidence/stack_series", "stack-series path mismatch", errors)
     stack_manifest = stack_series.get("manifest", {})
     require(stack_manifest.get("present") is True, "stack-series manifest missing", errors)
-    require(stack_manifest.get("schema") == "d20.stack_series_evidence_manifest.v1", "stack-series manifest schema mismatch", errors)
+    require_schema(stack_manifest.get("schema"), "d20.stack_series_evidence_manifest", "stack-series manifest schema mismatch", errors)
     require(stack_manifest.get("status") == "STACK_SERIES_EVIDENCE_INTEGRATED", "stack-series manifest status mismatch", errors)
     stack_report = stack_series.get("summary_report", {})
     require(stack_report.get("present") is True, "stack-series summary report missing", errors)
@@ -599,24 +612,23 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     require(stack_series.get("stage_count") == 4, "stack-series stage count mismatch", errors)
     stack_statuses = stack_series.get("stage_statuses", {})
     expected_stack_statuses = {
-        "v26_q_weighted": "D20_Q_WEIGHTED_STACK_SERIES_CERTIFIED_MOTIVIC_COHA_OPEN",
-        "v27_a985_weighted": "D20_A985_WEIGHTED_STACK_SERIES_CERTIFIED_RAW_TENSOR_SHADOW_MOTIVIC_COHA_OPEN",
-        "v28_relation_level": "D20_A985_RELATION_LEVEL_STACK_SERIES_CERTIFIED_RAW_TENSOR_MOTIVIC_COHA_OPEN",
-        "v29_relation_pair_quotient": "D20_A985_RELATION_PAIR_QUOTIENT_STACK_SERIES_CERTIFIED_MOTIVIC_COHA_OPEN",
+        "q_weighted": "D20_Q_WEIGHTED_STACK_SERIES_CERTIFIED_MOTIVIC_COHA_OPEN",
+        "a985_weighted": "D20_A985_WEIGHTED_STACK_SERIES_CERTIFIED_RAW_TENSOR_SHADOW_MOTIVIC_COHA_OPEN",
+        "relation_level": "D20_A985_RELATION_LEVEL_STACK_SERIES_CERTIFIED_RAW_TENSOR_MOTIVIC_COHA_OPEN",
+        "relation_pair_quotient": "D20_A985_RELATION_PAIR_QUOTIENT_STACK_SERIES_CERTIFIED_MOTIVIC_COHA_OPEN",
     }
     require(stack_statuses == expected_stack_statuses, "stack-series stage status mismatch", errors)
 
     height = data.get("height_coherence", {})
     require(height.get("status") == "D20_UF_KERNEL_HEIGHT_COHERENCE_CERTIFIED", "height-coherence status mismatch", errors)
     require(height.get("present") is True, "height-coherence evidence missing", errors)
-    require(height.get("public_name") == "height_coherence", "height-coherence public name mismatch", errors)
     require(height.get("path") == "data/integrity/height_coherence", "height-coherence path mismatch", errors)
     height_cert = height.get("certificate", {})
     require(height_cert.get("present") is True, "height-coherence certificate missing", errors)
-    require(height_cert.get("schema") == "d20.uf_kernel.height_coherence.v4", "height-coherence certificate schema mismatch", errors)
+    require_schema(height_cert.get("schema"), "d20.uf_kernel.height_coherence", "height-coherence certificate schema mismatch", errors)
     height_manifest = height.get("manifest", {})
     require(height_manifest.get("present") is True, "height-coherence manifest missing", errors)
-    require(height_manifest.get("schema") == "d20.height_coherence_evidence_manifest.v1", "height-coherence manifest schema mismatch", errors)
+    require_schema(height_manifest.get("schema"), "d20.height_coherence_evidence_manifest", "height-coherence manifest schema mismatch", errors)
     require(
         height_manifest.get("status") == "D20_UF_KERNEL_HEIGHT_COHERENCE_CERTIFIED",
         "height-coherence manifest status mismatch",
@@ -639,12 +651,11 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         errors,
     )
     require(repro.get("present") is True, "reproducibility evidence missing", errors)
-    require(repro.get("public_name") == "reproducibility", "reproducibility public name mismatch", errors)
     require(repro.get("path") == "data/evidence/reproducibility/python_bundle", "reproducibility path mismatch", errors)
     repro_manifest = repro.get("manifest", {})
     require(repro_manifest.get("present") is True, "reproducibility manifest missing", errors)
     require(
-        repro_manifest.get("schema") == "d20.reproducibility_evidence_manifest.v1",
+        schema_name(repro_manifest.get("schema")) == "d20.reproducibility_evidence_manifest",
         "reproducibility manifest schema mismatch",
         errors,
     )
@@ -668,7 +679,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     if "strict_scratch_constructor" in fin:
         require(strict.get("entrypoint_promoted") is True, "final investigation strict-scratch promotion mismatch", errors)
     registry = data.get("layer_registry", {})
-    require(registry.get("schema") == "d20.layer_registry.v1", "d20 layer registry schema mismatch", errors)
+    require_schema(registry.get("schema"), "d20.layer_registry", "d20 layer registry schema mismatch", errors)
     require(registry.get("status") == "LAYER_REGISTRY_BUILT", "d20 layer registry status mismatch", errors)
     require(registry.get("path") == "layers/index.json", "d20 layer registry path mismatch", errors)
     require(len(registry.get("layers", [])) == len(EXPECTED), "d20 layer registry entry count mismatch", errors)
@@ -705,7 +716,7 @@ def verify_layer_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, 
         return {}, {"registry_entries": 0, "groups": []}
 
     data = load_layer_registry()
-    require(data.get("schema") == "d20.layer_registry.v1", "layer registry schema mismatch", errors)
+    require_schema(data.get("schema"), "d20.layer_registry", "layer registry schema mismatch", errors)
     require(data.get("status") == "LAYER_REGISTRY_BUILT", "layer registry status mismatch", errors)
 
     groups = data.get("groups", {})

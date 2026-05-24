@@ -1,0 +1,72 @@
+{
+  "antecedent": "A trace contains only C_PUBLIC_* events from the finite universal vocabulary, uses no hidden advice, contains no V/X/UNCLASSIFIED events, and emits no residues.",
+  "c_vocabulary_audit": {
+    "c_class_code_count": 22,
+    "failures": [],
+    "forbidden_text_tokens": [
+      "ADVICE",
+      "E33",
+      "EXTRACTOR",
+      "HIDDEN",
+      "NON-PUBLIC",
+      "NONPUBLIC",
+      "SECTOR"
+    ],
+    "passed": true
+  },
+  "classifier_path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_classifier.json",
+  "conditional_conclusion": "Under this antecedent, a pure-C universal trace has no operation capable of reading hidden advice, reconstructing the hidden e33 map, or recovering a non-public parity basis. Those operations are typed X or rejected as residues.",
+  "current_pure_c_report_path": "data/invariants/integrity/cvx_trace/reports/pure_c_no_escape_report.json",
+  "current_trace_audit": {
+    "errors": [],
+    "event_count": 5,
+    "passed": true,
+    "path": "data/invariants/integrity/cvx_trace/reports/pure_c_no_escape_report.json",
+    "status": "PURE_C_NO_ESCAPE_WITNESS_PASS",
+    "trace_count": 2
+  },
+  "decision": {
+    "may_claim_arbitrary_solver_no_escape": false,
+    "may_claim_full_separation": false,
+    "may_claim_universal_vocabulary_pure_c_no_escape": true,
+    "reason": "Pure-C no-escape is lifted to traces already expressed in the finite universal vocabulary. Arbitrary solvers still require the compiler bridge, X lower bound, V accounting, and encoded-family bridge."
+  },
+  "next_highest_yield_item": {
+    "action": "Build the reduction certificate for the hidden e33-obstructed family, or keep the claim representative/current-trace scoped.",
+    "id": "encoded_family_sat_complete"
+  },
+  "non_claim": "This report does not prove arbitrary solver compilation, no polynomial X extractor, arbitrary V wall-crossing accounting, encoded-family SAT-completeness, or P != NP.",
+  "schema": "d20.integrity.universal_pure_c_no_escape_report.v1",
+  "status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS",
+  "theorem_replayed": "No Public Extractor Theorem over the finite universal trace vocabulary",
+  "typing_report_audit": {
+    "current_trace_classified_counts": {
+      "C": 5,
+      "UNCLASSIFIED": 0,
+      "V": 0,
+      "X": 0
+    },
+    "errors": [],
+    "fallback_fixture": {
+      "class_code": "UNKNOWN_NATIVE_MACHINE_INSTRUCTION",
+      "integrity_type": "UNCLASSIFIED",
+      "passed": true,
+      "residue_path": "data/invariants/integrity/cvx_trace/residues/unsupported_universal_trace_event_residue.json",
+      "status": "residue"
+    },
+    "passed": true,
+    "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+    "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+  },
+  "typing_report_path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+  "x_surface_audit": {
+    "missing_required_x_surface_codes": [],
+    "passed": true,
+    "required_x_surface_codes": [
+      "X_EXTRACTOR_HIDDEN_ADVICE_READ",
+      "X_EXTRACTOR_HIDDEN_SECTOR_MAP",
+      "X_EXTRACTOR_PARITY_BASIS_RECOVERY"
+    ],
+    "x_class_code_count": 6
+  }
+}

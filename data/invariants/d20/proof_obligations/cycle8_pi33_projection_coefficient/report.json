@@ -1,0 +1,867 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "70e30828f4db8690a5a1dc104608bbfecb34ed896848e78c073665b8a5b92581",
+  "certified_maps": {
+    "all_residue_class_height_transport": {
+      "carrier_sector": 33,
+      "needed_for": "classify height-derived residuals under the selected sector-33 carrier",
+      "needed_type": "global Lambda_hc over all 2047 nonzero D20 closed-return classes",
+      "nonzero_residue_class_count": 2047,
+      "report": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "status": "certified"
+    },
+    "boundary_to_loop_lift": {
+      "cycle8_loop_vector_coefficient_sum": 53952,
+      "cycle8_loop_vector_sha256": "c0f0d8b81dd577a8f7f2e0ad652a911131516d42d4651f2a2ad2c0fd0c3c723c",
+      "cycle8_loop_vector_support": 193,
+      "cycle_table_lift_columns_found": [],
+      "edge_table_lift_columns_found": [],
+      "needed_for": "convert the five D20 edges of gamma_8 into a closed-loop vector",
+      "needed_type": "lambda_boundary: C_1(D20; F_1000003) -> Loop_297",
+      "report": "data/invariants/d20/boundary_to_loop/report.json",
+      "status": "certified"
+    },
+    "height_coherent_transport": {
+      "coefficient_signed": -374784,
+      "height_action": 374784,
+      "needed_for": "recover the nonzero sector-33 residual from edge/circuit height data",
+      "needed_type": "Lambda_hc(gamma)=lambda_boundary(gamma)-(A_h(gamma)/dim(Pi_33))e_33",
+      "report": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "status": "certified"
+    },
+    "pi33_tube_functional": {
+      "coefficient_mod_prime": 0,
+      "needed_for": "evaluate Pi_33(lambda_boundary(gamma_8)) for the bare structural lift",
+      "needed_type": "tube-visible Pi_33 idempotent/function chi_33^tube on Loop_297",
+      "report": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+      "status": "certified_zero_for_bare_lambda"
+    },
+    "unique_single_sector_public_zero_carrier": {
+      "local_pre_idempotent_keys_used": 109,
+      "needed_for": "prove the selected sector-33 carrier is the only single-sector public-zero carrier",
+      "needed_type": "materialized comparison of all 39 tube-visible sector idempotents",
+      "public_zero_sectors": [
+        33
+      ],
+      "report": "data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json",
+      "status": "certified"
+    }
+  },
+  "checks": {
+    "all_2047_nonzero_residue_classes_are_carried_by_sector33": true,
+    "all_nonzero_height_residuals_are_field_nonzero_for_unique_carrier": true,
+    "all_residue_height_transport_is_certified": true,
+    "bare_lambda_cycle8_pi33_coefficient_is_zero": true,
+    "basis_active_matrix_is_height_coherent": true,
+    "boundary_cycle8_lift_has_sector33_base_overlap": true,
+    "boundary_cycle8_lift_is_witnessed_in_loop297": true,
+    "boundary_cycle8_matches_target": true,
+    "boundary_to_loop_map_is_certified": true,
+    "boundary_to_loop_report_exists": true,
+    "character_table_only_hash_materialized": true,
+    "complete_tube_section_coefficients_not_materialized": true,
+    "cycle8_is_the_target": true,
+    "edge_mod2_height_caveat_is_witnessed": true,
+    "full_drinfeld_idempotent_matrix_still_hash_only": true,
+    "height_coherent_transport_is_certified": true,
+    "height_transport_public_shadows_are_zero": true,
+    "height_transport_recovers_sector33_residual": true,
+    "idempotent_matrix_only_hash_materialized": true,
+    "pi33_sector_interface_is_known": true,
+    "pi33_tube_functional_is_certified": true,
+    "sector33_is_unique_single_sector_public_zero_carrier": true,
+    "sector_attachment_is_certified": true,
+    "tube_section_is_certified": true,
+    "unique_public_zero_carrier_is_certified": true
+  },
+  "claim": "The boundary-to-Loop_297 lift for gamma_8 is certified, and the tube-visible Pi_33 functional has been reconstructed from the stored local pre-idempotents. For the bare lambda_boundary lift, c_33(gamma_8)=0. The refined height-coherent transport derives its scalar from the active edge circuit height action and recovers the sector-33 residual -374784 with zero A42/A12 public shadow. Materializing all 39 tube-visible sector idempotents proves that sector 33 is the unique single-sector public-zero carrier.",
+  "closure_state": "bare_lambda_zero; height_coherent_transport_recovers_nonzero_residual; sector33_unique_single_sector_public_zero_carrier",
+  "formal_obligation": {
+    "define_boundary_lift": "discharged by data/invariants/d20/boundary_to_loop/report.json",
+    "height_coherent_recovery": "discharged for gamma_8 by data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+    "materialize_or_recompute_pi33_functional": "discharged for the tube-visible Loop_297 functional by data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+    "remaining_recovery_obligation": "Compute the A42/A12 shadow kernel on the full 39-dimensional sector-idempotent span to decide whether public-zero linear combinations exist beyond the certified single-sector carrier e_33.",
+    "then_compute": "c_33(gamma_8) = 0 for the certified bare lambda_boundary lift in F_1000003.",
+    "unique_single_sector_carrier": "discharged by data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json"
+  },
+  "inputs": {
+    "boundary_to_loop_report": {
+      "path": "data/invariants/d20/boundary_to_loop/report.json",
+      "sha256": "8e2db781ff5c076da0a24499b1e42dfc501150db065803c8fb29bc6217e940d4"
+    },
+    "d20_edges": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "0f0b38642de3a082109613f5411e0b0615501903bd5b233f07bbdd3718c6cbae"
+    },
+    "primitive_cycles": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
+      "sha256": "a6fd82c3cafc0767c6ed7a41a157326d249933a6be62d6aad0f27f989dc7e84c"
+    },
+    "sector33_all_residue_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "405325f402e57c8246277d23ff9f251a3582e8e4c56868ca58c6480e8e995140"
+    },
+    "sector33_boundary_annihilation_report": {
+      "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+      "sha256": "c09baf8454e93d3901d0d9c3ea4ba89994844c035f3e84af74cce14f5a9bd3d6"
+    },
+    "sector33_height_coherent_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "sha256": "8f584b9fa197d43232322f3ed5d5babe2d40e3132ce9ae89ae84e1924272bff7"
+    },
+    "sector33_unique_public_zero_carrier_report": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json",
+      "sha256": "9ede2e5f5732a4e28fbde20bc313eae45c081a29986c8c8372e77fc1c7da0fab"
+    },
+    "sector_attachment_report": {
+      "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
+      "sha256": "6737e82cb63d93a26e1faf2604d8c36e993993fdb27951783566455ae84286bf"
+    },
+    "tube_projection_section": {
+      "path": "layers/tube/projection_section.json",
+      "sha256": "b0db5ebce30a8cb43bf367984623d861248a1b89e340265c0b057777b59a3e82"
+    },
+    "wedderburn_trace": {
+      "path": "layers/drinfeld/wedderburn_trace.json",
+      "sha256": "b23baa45adda7f9af339ca95234fcd5a917ed38128427d822717be63a4f2b3e6"
+    }
+  },
+  "known_certified_data": {
+    "all_residue_height_transport": {
+      "definition": {
+        "basis_active_circuit_matrix": "The 2048 x 11 matrix whose rows are basis-cycle activation masks in the residue spectrum.",
+        "basis_height_cochain": "h_B(c_i)=optical_action(c_i) for each primitive basis cycle.",
+        "carrier_sector": "Pi_33, because e_33 is public-zero and chi_33(e_33)=dim(Pi_33).",
+        "edge_mod2_caveat": "The 2048 x 30 incidence_vector_mod2 matrix records edge symmetric differences, not traversal multiplicity, so it is not globally height-coherent.",
+        "global_transport": "Lambda_hc(gamma)=lambda_boundary(gamma)-(<C_gamma,h>/dim(Pi_33))e_33.",
+        "height_coherence": "For every residue row C_gamma, <C_gamma,h_B> equals total_optical_action."
+      },
+      "edge_mod2_height_incoherence": {
+        "first_mismatch": {
+          "basis_cycle_ids": [
+            0,
+            1
+          ],
+          "edge_mod2_height_action": 1683456,
+          "edge_mod2_height_gap": 712704,
+          "incidence_vector_mod2": "110101101010101010000000000000",
+          "mask": 3,
+          "recorded_total_optical_action": 2396160
+        },
+        "mismatch_count": 2020
+      },
+      "field_zero_nonzero_residual_count": 0,
+      "max_height_action": 10564608,
+      "min_nonzero_height_action": 374784,
+      "nonzero_residue_class_count": 2047,
+      "residue_class_count": 2048,
+      "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "boundary_to_loop_lift": {
+      "cycle8_object_summary": {
+        "B+": {
+          "coefficient_sum": 6144,
+          "mod_prime_sum": 6144,
+          "support": 16
+        },
+        "B-": {
+          "coefficient_sum": 16896,
+          "mod_prime_sum": 16896,
+          "support": 33
+        },
+        "S-": {
+          "coefficient_sum": 6336,
+          "mod_prime_sum": 6336,
+          "support": 44
+        },
+        "V+": {
+          "coefficient_sum": 16512,
+          "mod_prime_sum": 16512,
+          "support": 86
+        },
+        "V-": {
+          "coefficient_sum": 8064,
+          "mod_prime_sum": 8064,
+          "support": 14
+        }
+      },
+      "cycle8_steps": [
+        {
+          "added": "B-",
+          "direction": "v_to_u",
+          "edge_id": 11,
+          "loop_base_object": "B+",
+          "removed": "B+",
+          "source_vertex": 10,
+          "step_vector_sha256": "a94e644efe6ecb178c4ad311d2cccded75f312696af314f477ab0126e7b46057",
+          "target_vertex": 4
+        },
+        {
+          "added": "B+",
+          "direction": "v_to_u",
+          "edge_id": 1,
+          "loop_base_object": "V+",
+          "removed": "V+",
+          "source_vertex": 4,
+          "step_vector_sha256": "01da396bb80eaf4723edb2cdd62c35472895126381aabaf444df7aa08b8e4340",
+          "target_vertex": 0
+        },
+        {
+          "added": "S-",
+          "direction": "u_to_v",
+          "edge_id": 2,
+          "loop_base_object": "B-",
+          "removed": "B-",
+          "source_vertex": 0,
+          "step_vector_sha256": "8a896ea0719a8c643e5f26f6cd677d25f55e0e4c817d6da80955395c3b57db19",
+          "target_vertex": 11
+        },
+        {
+          "added": "V+",
+          "direction": "u_to_v",
+          "edge_id": 22,
+          "loop_base_object": "V-",
+          "removed": "V-",
+          "source_vertex": 11,
+          "step_vector_sha256": "f0a40ecfe2ffdb8ac8d535ed93f7b86739d7a08c79b9d78e3c4c681796c301ec",
+          "target_vertex": 13
+        },
+        {
+          "added": "V-",
+          "direction": "v_to_u",
+          "edge_id": 21,
+          "loop_base_object": "S-",
+          "removed": "S-",
+          "source_vertex": 13,
+          "step_vector_sha256": "448efdfa0ff04f1254fcfaef7cc4f821c5a10acac0461d0a16fc95d8bf30e4a7",
+          "target_vertex": 10
+        }
+      ],
+      "cycle8_vector": {
+        "coefficient_abs_sum": 53952,
+        "coefficient_max": 576,
+        "coefficient_min": 144,
+        "coefficient_sum": 53952,
+        "mod_prime_sha256": "c0f0d8b81dd577a8f7f2e0ad652a911131516d42d4651f2a2ad2c0fd0c3c723c",
+        "mod_prime_sum": 53952,
+        "mod_prime_support": 193,
+        "sha256": "c0f0d8b81dd577a8f7f2e0ad652a911131516d42d4651f2a2ad2c0fd0c3c723c",
+        "support": 193
+      },
+      "definition": {
+        "codomain": "Loop_297 = direct sum_i Hom(i,i) closed-loop relation basis",
+        "field_prime_for_reductions": 1000003,
+        "lambda_boundary": "For an oriented D20 edge U->V, let r be the unique channel removed from U and a the unique channel added in V. lambda_boundary(U->V) is the sum, over all A985 relations alpha:r->a and beta:a->r, of the closed-loop product alpha*beta in Hom(r,r)."
+      },
+      "directed_object_pair_projection_count": 30,
+      "oriented_edge_count": 60,
+      "status": "D20_BOUNDARY_TO_LOOP_MAP_CERTIFIED"
+    },
+    "character_table_metadata": {
+      "central_character_matrix_sha256": "5438b109840a383d0bd28a7ce2dbd2edcdc07fbe21855dca71654149c7448438",
+      "central_character_on_primitive_idempotents_is_diagonal": true,
+      "character_support_histogram": {
+        "105": 1,
+        "109": 1,
+        "114": 1,
+        "115": 2,
+        "119": 1,
+        "12": 1,
+        "125": 1,
+        "133": 2,
+        "134": 1,
+        "156": 1,
+        "16": 2,
+        "180": 1,
+        "182": 1,
+        "190": 1,
+        "297": 1,
+        "32": 1,
+        "38": 1,
+        "44": 2,
+        "52": 1,
+        "56": 1,
+        "62": 3,
+        "64": 1,
+        "66": 1,
+        "74": 1,
+        "75": 1,
+        "77": 1,
+        "78": 1,
+        "79": 1,
+        "86": 1,
+        "88": 2,
+        "90": 1,
+        "92": 1
+      },
+      "character_table_sha256": "3751bdba9b90c17c6f5658fe45d1d4d76d1692ed8a84ea5e0cc78338245cab34",
+      "definition": "chi_i(R_a)=Trace_regular(L_{e_i R_a})/d_i over F_p",
+      "regular_character_reconstructs_regular_trace_on_all_985_basis_relations": true,
+      "shape": [
+        39,
+        985
+      ],
+      "trace_basis_nonzero_count": 287,
+      "trace_basis_sha256": "a96688ae0571b125791118077db4f498d65ff14743c7d8a1bb9a09c129bacffb",
+      "trace_numerators_sha256": "596ce0eb272b76f5b5696a17f63652eb17139fa594a3c961281fa1b94f2e4d1c",
+      "unit_character_values": [
+        10,
+        6,
+        4,
+        5,
+        4,
+        2,
+        2,
+        1,
+        3,
+        3,
+        1,
+        5,
+        4,
+        2,
+        5,
+        4,
+        3,
+        4,
+        6,
+        1,
+        2,
+        2,
+        2,
+        3,
+        1,
+        1,
+        1,
+        4,
+        5,
+        4,
+        4,
+        10,
+        2,
+        2,
+        1,
+        9,
+        12,
+        11,
+        8
+      ],
+      "unit_character_values_equal_block_dimensions": true
+    },
+    "cycle8": {
+      "cycle_id": 8,
+      "edge_ids": [
+        11,
+        1,
+        2,
+        22,
+        21
+      ],
+      "optical_action": 374784,
+      "vertex_labels": "{B+,V-,V+} -> {B-,V-,V+} -> {B-,B+,V-} -> {B+,V-,S-} -> {B+,V+,S-} -> {B+,V-,V+}",
+      "vertices": [
+        10,
+        4,
+        0,
+        11,
+        13,
+        10
+      ]
+    },
+    "cycle8_edges": [
+      {
+        "edge_id": "11",
+        "interface_weight": "82944",
+        "selector_choice": "0",
+        "selector_duad": "{V-,V+}",
+        "selector_duad_index": "9",
+        "shared_duad": "{V-,V+}",
+        "swapped_pair": "{B-,B+}",
+        "u": "4",
+        "u_label": "{B-,V-,V+}",
+        "v": "10",
+        "v_label": "{B+,V-,V+}"
+      },
+      {
+        "edge_id": "1",
+        "interface_weight": "55296",
+        "selector_choice": "0",
+        "selector_duad": "{B-,V-}",
+        "selector_duad_index": "1",
+        "shared_duad": "{B-,V-}",
+        "swapped_pair": "{B+,V+}",
+        "u": "0",
+        "u_label": "{B-,B+,V-}",
+        "v": "4",
+        "v_label": "{B-,V-,V+}"
+      },
+      {
+        "edge_id": "2",
+        "interface_weight": "27648",
+        "selector_choice": "1",
+        "selector_duad": "{B+,V-}",
+        "selector_duad_index": "5",
+        "shared_duad": "{B+,V-}",
+        "swapped_pair": "{B-,S-}",
+        "u": "0",
+        "u_label": "{B-,B+,V-}",
+        "v": "11",
+        "v_label": "{B+,V-,S-}"
+      },
+      {
+        "edge_id": "22",
+        "interface_weight": "98304",
+        "selector_choice": "2",
+        "selector_duad": "{B+,S-}",
+        "selector_duad_index": "7",
+        "shared_duad": "{B+,S-}",
+        "swapped_pair": "{V-,V+}",
+        "u": "11",
+        "u_label": "{B+,V-,S-}",
+        "v": "13",
+        "v_label": "{B+,V+,S-}"
+      },
+      {
+        "edge_id": "21",
+        "interface_weight": "110592",
+        "selector_choice": "2",
+        "selector_duad": "{B+,V+}",
+        "selector_duad_index": "6",
+        "shared_duad": "{B+,V+}",
+        "swapped_pair": "{V-,S-}",
+        "u": "10",
+        "u_label": "{B+,V-,V+}",
+        "v": "13",
+        "v_label": "{B+,V+,S-}"
+      }
+    ],
+    "height_coherent_transport": {
+      "active_circuit": {
+        "active_matrix_row": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            21,
+            1
+          ],
+          [
+            22,
+            1
+          ]
+        ],
+        "all_active_heights_positive": true,
+        "edge_count": 30,
+        "height_dot_active_row": 374784,
+        "height_vector_sha256": "908f97c726ca5955d1ef5c5aba871bf17d464b3bb870e3a49678ea9dc35035fd",
+        "signed_circuit_row": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            11,
+            -1
+          ],
+          [
+            21,
+            -1
+          ],
+          [
+            22,
+            1
+          ]
+        ],
+        "steps": [
+          {
+            "edge_id": 11,
+            "height": 82944,
+            "orientation_sign": -1,
+            "selector_choice": 0,
+            "selector_duad": "{V-,V+}",
+            "source": 10,
+            "target": 4
+          },
+          {
+            "edge_id": 1,
+            "height": 55296,
+            "orientation_sign": -1,
+            "selector_choice": 0,
+            "selector_duad": "{B-,V-}",
+            "source": 4,
+            "target": 0
+          },
+          {
+            "edge_id": 2,
+            "height": 27648,
+            "orientation_sign": 1,
+            "selector_choice": 1,
+            "selector_duad": "{B+,V-}",
+            "source": 0,
+            "target": 11
+          },
+          {
+            "edge_id": 22,
+            "height": 98304,
+            "orientation_sign": 1,
+            "selector_choice": 2,
+            "selector_duad": "{B+,S-}",
+            "source": 11,
+            "target": 13
+          },
+          {
+            "edge_id": 21,
+            "height": 110592,
+            "orientation_sign": -1,
+            "selector_choice": 2,
+            "selector_duad": "{B+,V+}",
+            "source": 13,
+            "target": 10
+          }
+        ],
+        "vertex_boundary": {}
+      },
+      "definition": {
+        "active_circuit": "The gamma_8 row in the D20 edge-circuit matrix with support {1,2,11,21,22}.",
+        "height_action": "A_h(gamma)=<C_gamma,h>, the dot product of the active circuit row with edge heights.",
+        "height_cochain": "h(e)=interface_weight(e), the certified optical edge height.",
+        "transport": "Lambda_hc(gamma)=lambda_boundary(gamma) - (A_h(gamma)/dim(Pi_33)) e_33."
+      },
+      "edge_derived_residual": {
+        "dimension": 2,
+        "height_action": 374784,
+        "inverse_dimension": 500002,
+        "residual_integral": -374784,
+        "residual_mod_prime": 625219,
+        "transport_scalar": 812611,
+        "transport_scalar_signed": -187392
+      },
+      "height_transport_character": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 181536,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+          "support": 56
+        },
+        "coefficient_mod_prime": 625219,
+        "coefficient_signed": -374784,
+        "regular_trace": 250435
+      },
+      "public_shadows": {
+        "height_transport_q12": {
+          "entries": [],
+          "nonzero_count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "height_transport_q42": {
+          "entries": [],
+          "nonzero_count": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      },
+      "status": "D20_SECTOR33_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "idempotent_matrix_metadata": {
+      "full_lift": {
+        "embedded_idempotent_matrix_sha256": "e9066713580845e187b29aaa41b148581e6c43266f993a010b3a192e4d41c8c7",
+        "embedded_idempotent_matrix_shape": [
+          39,
+          985
+        ],
+        "identity_relations_by_object": [
+          6,
+          163,
+          227,
+          349,
+          618,
+          893
+        ],
+        "pair_product_failure_count": 0,
+        "pair_product_failures_first": [],
+        "pair_products_checked": 1521,
+        "pairwise_orthogonal_idempotents_in_full_A985": true,
+        "sum_to_A985_unit": true
+      },
+      "wedderburn_trace": {
+        "embedded_idempotent_matrix_sha256": "e9066713580845e187b29aaa41b148581e6c43266f993a010b3a192e4d41c8c7",
+        "embedded_idempotent_matrix_shape": [
+          39,
+          985
+        ],
+        "note": "Orthogonality, unit sum, commutativity, associativity, and half-braiding centrality are inherited from the v14 Drinfeld Grothendieck center certificate. This fast trace certificate does not rerun the timed-out full A985 centrality sweep.",
+        "primitive_idempotents_loop_sha256": "6c85edf3515e8e78f20c7e01c131691e581806138f225f59e95a8c9fc067b193"
+      }
+    },
+    "pi33_public_zero_witness": {
+      "active_cy_sectors": [
+        "B",
+        "S"
+      ],
+      "active_objects": [
+        "B+",
+        "S+"
+      ],
+      "block_dimension": 2,
+      "character_support_size": 56,
+      "identity_coefficients_signed": [
+        0,
+        -31250,
+        0,
+        0,
+        0,
+        492189
+      ],
+      "loop_coordinate_support_total": 56,
+      "object_loop_coordinate_support": [
+        0,
+        12,
+        0,
+        0,
+        0,
+        44
+      ],
+      "object_pre_idempotent_counts": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "permutation_multiplicity": 18,
+      "permutation_rank": 36,
+      "pre_idempotent_support_size": 2,
+      "q12_nonzero_count": 0,
+      "q42_nonzero_count": 0,
+      "regular_trace_block_square": 4,
+      "sector": 33,
+      "spectral_signature": [
+        {
+          "label": "B+",
+          "local_pre_idempotents": [
+            12
+          ],
+          "object": 1,
+          "separator_eigenvalues": [
+            999881
+          ]
+        },
+        {
+          "label": "S+",
+          "local_pre_idempotents": [
+            6
+          ],
+          "object": 5,
+          "separator_eigenvalues": [
+            1746
+          ]
+        }
+      ]
+    },
+    "pi33_tube_functional": {
+      "cycle8_bare_lambda_coefficient": {
+        "coefficient_mod_prime": 0,
+        "coefficient_signed": 0,
+        "left_action": {
+          "coefficient_abs_sum_signed_lift": 0,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "support": 0
+        },
+        "left_equals_right": true,
+        "regular_trace": 0,
+        "right_action": {
+          "coefficient_abs_sum_signed_lift": 0,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "support": 0
+        }
+      },
+      "cycle8_optical_weighted_coefficient": {
+        "coefficient_mod_prime": 0,
+        "coefficient_signed": 0,
+        "left_action": {
+          "coefficient_abs_sum_signed_lift": 0,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "support": 0
+        },
+        "left_equals_right": true,
+        "regular_trace": 0,
+        "right_action": {
+          "coefficient_abs_sum_signed_lift": 0,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "support": 0
+        }
+      },
+      "definition": {
+        "pi33_tube_character": "chi_33^tube(x)=Trace_regular(L_{e_33 x}) / dim(Pi_33) over F_1000003.",
+        "pi33_tube_idempotent": "Sum the two local closed-loop pre-idempotents named by sector 33: B+ local 12 and S+ local 6, reconstructed from the stored tube-center primitive-idempotent certificate.",
+        "tested_boundary_lift": "lambda_boundary(r->a)=sum_{alpha:r->a, beta:a->r} alpha beta in Hom(r,r)."
+      },
+      "sector33_tube_idempotent": {
+        "identity_coefficients_signed": [
+          0,
+          -31250,
+          0,
+          0,
+          0,
+          492189
+        ],
+        "object_loop_coordinate_support": [
+          0,
+          12,
+          0,
+          0,
+          0,
+          44
+        ],
+        "pieces": [
+          {
+            "label": "B+",
+            "local_pre_idempotent": 12,
+            "object": 1,
+            "sha256": "77317cc627e755f508a6246da56953a277a49c2989d12dd3249e4987186157e9",
+            "support": 12
+          },
+          {
+            "label": "S+",
+            "local_pre_idempotent": 6,
+            "object": 5,
+            "sha256": "2a1b35d40525f330a668dc82556a46bb0ecc2209c52ef7eededdcb01d27dc714",
+            "support": 44
+          }
+        ],
+        "regular_trace": 4,
+        "vector": {
+          "coefficient_abs_sum_signed_lift": 13343790,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "80f86fd6281302c6bafc6bc4176923dfa41aa4dbe1d58e8a9a64f9cac1a5a348",
+          "support": 56
+        }
+      },
+      "status": "D20_SECTOR33_BOUNDARY_TO_LOOP_ANNIHILATION_CERTIFIED"
+    },
+    "sector_interface": {
+      "a985_sector": 33,
+      "a985_sector_name": "Pi_33",
+      "attachment_type": "unique public-zero, tube-visible A985 sector interface",
+      "boundary_cycle_id": 8,
+      "public_terminal_shadow": {
+        "A12": "zero",
+        "A42": "zero",
+        "q12_nonzero_count": 0,
+        "q42_nonzero_count": 0
+      },
+      "residual_integral": -374784,
+      "residual_mod_prime": 625219,
+      "why_this_sector": [
+        "sector 33 is the unique Drinfeld/Wedderburn sector with zero A42 and A12 terminal shadows",
+        "sector 33 remains visible to certified full relation, line-surface, and Hesse-tube traces",
+        "accepted pure-C integrity traces do not recover the hidden e33 obstruction"
+      ]
+    },
+    "tube_projection": {
+      "closed_loop_quotient_dimension": 297,
+      "projection_kernel_dimension": 44224,
+      "projection_surjective": true,
+      "tube_pair_basis_total": 44521
+    },
+    "tube_section": {
+      "pivot_tube_pair_representatives": 297,
+      "projection_section_identity": true,
+      "section_hash_root": "ec0015d605c42f725b501cefd363b07b7e04a93e17abaa80ebae9d36b5d52a69",
+      "section_nonzero_coefficients": 15247
+    },
+    "unique_public_zero_carrier": {
+      "definition": {
+        "public_zero_carrier": "A sector idempotent e_s with q42(e_s)=0 and q12(e_s)=0.",
+        "single_sector_uniqueness": "Among the 39 materialized tube-visible sector idempotents, exactly one has zero public A42/A12 shadow: e_33.",
+        "tube_visible_sector_idempotent": "For each sector profile, sum the local closed-loop pre-idempotents named in its spectral_signature."
+      },
+      "field_zero_nonzero_residual_count": 0,
+      "local_pre_idempotent_keys_used": 109,
+      "nonzero_height_residual_count": 2047,
+      "public_zero_sectors": [
+        33
+      ],
+      "sector_count": 39,
+      "status": "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_CARRIER_CERTIFIED",
+      "unique_public_zero_carrier": {
+        "active_objects": [
+          "B+",
+          "S+"
+        ],
+        "block_dimension": 2,
+        "local_pre_idempotent_keys": [
+          [
+            1,
+            12
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "q12_nonzero_count": 0,
+        "q42_nonzero_count": 0,
+        "sector": 33,
+        "vector": {
+          "coefficient_abs_sum_signed_lift": 13343790,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "80f86fd6281302c6bafc6bc4176923dfa41aa4dbe1d58e8a9a64f9cac1a5a348",
+          "support": 56
+        }
+      }
+    }
+  },
+  "missing_maps": {
+    "complete_section_entries": {
+      "complete_section_materialized": false,
+      "needed_for": "lift an already-defined Loop_297 vector through the certified section",
+      "needed_type": "full S: Loop_297 -> TubePair_44521 coefficient table, or deterministic recomputation",
+      "status": "hash-only but recomputable; not the primary blocker"
+    },
+    "full_drinfeld_projection_coordinates": {
+      "character_table_materialized": false,
+      "idempotent_matrix_materialized": false,
+      "needed_for": "compare the tube-visible zero coefficient against the full A985 projection model",
+      "needed_type": "full 39 x 985 Drinfeld idempotent/character coordinate matrix",
+      "status": "hash-only in current JSON artifacts"
+    },
+    "sector_idempotent_span_kernel": {
+      "needed_for": "prove whether there are nontrivial public-zero linear combinations of nonzero-public sectors, beyond the certified single-sector uniqueness of e_33",
+      "needed_type": "linear kernel of the A42/A12 shadow map on the full sector-idempotent span",
+      "status": "not yet certified"
+    }
+  },
+  "next_highest_yield_item": "Compute the public-shadow kernel on the full sector-idempotent span and prove whether its dimension is one, generated by e_33.",
+  "object": "d20",
+  "schema": "d20.proof_obligation.cycle8_pi33_projection_coefficient.v1",
+  "status": "D20_CYCLE8_PI33_UNIQUE_PUBLIC_ZERO_CARRIER_CERTIFIED",
+  "target": "Compute c_33(gamma_8)=Pi_33(lambda_boundary(gamma_8)), where lambda_boundary maps D20 closed boundary chains into Loop_297."
+}

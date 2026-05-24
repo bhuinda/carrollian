@@ -13,26 +13,38 @@ REPORT_PATH = CVX / "reports" / "full_no_escape_closure_ledger.json"
 
 REPORTS = {
     "cvx_trace_index": CVX / "index.json",
+    "encoded_family_bridge": CVX / "reports" / "encoded_family_bridge_certificate.json",
     "encoded_family_scope": CVX / "reports" / "encoded_family_scope_certificate.json",
     "polynomial_trace_compiler_scope": CVX / "reports" / "polynomial_trace_compiler_scope_certificate.json",
+    "universal_trace_compiler": CVX / "reports" / "universal_trace_compiler_report.json",
     "solver_execution_overhead": CVX / "reports" / "public_dpll_contradiction_4_overhead.json",
     "solver_opcode_totality": CVX / "reports" / "solver_opcode_totality_report.json",
     "universal_trace_typing": CVX / "reports" / "universal_trace_typing_report.json",
     "pure_c_no_escape": CVX / "reports" / "pure_c_no_escape_report.json",
+    "universal_pure_c_no_escape": CVX / "reports" / "universal_pure_c_no_escape_report.json",
     "x_extractor_bounded_search": CVX / "reports" / "x_extractor_bounded_search_report.json",
+    "universal_x_extractor_isolation": CVX / "reports" / "universal_x_extractor_isolation_report.json",
+    "x_extractor_target": CVX / "reports" / "x_extractor_target_certificate.json",
     "v_wall_crossing_accounting": CVX / "reports" / "v_wall_crossing_accounting_report.json",
+    "universal_v_wall_crossing_accounting": CVX / "reports" / "universal_v_wall_crossing_accounting_report.json",
 }
 
 FULLY_WITNESSED_STATUSES = {
     "witnessed_for_public_lrat_replay",
     "universal_trace_vocabulary_totality_witnessed_residue_guarded",
+    "universal_trace_pure_c_no_escape_witnessed",
+    "universal_v_surface_accounted_certificate_guarded",
+    "universal_public_bit_machine_trace_compiler_witnessed",
 }
 
 SCOPED_WITNESSED_STATUSES = {
+    "explicit_hidden_sector_map_certified_polynomial_lower_bound_open",
+    "polynomially_faithful_representative_family_witnessed_sat_complete_open",
     "prototype_witnessed_for_public_dpll_fixture",
     "witnessed_for_public_dpll_opcode_surface",
     "witnessed_for_current_accepted_pure_c_traces",
     "bounded_search_no_extractor_found_current_traces",
+    "universal_x_surface_isolated_polynomial_lower_bound_open",
     "no_v_events_current_traces_certificate_schema_defined",
 }
 
@@ -107,11 +119,15 @@ def report_statuses() -> dict[str, Any]:
 def current_trace_surface_closed(statuses: dict[str, Any]) -> bool:
     expected = {
         "solver_execution_overhead": "CVX_SOLVER_EXECUTION_TRACE_OVERHEAD_PASS",
+        "universal_trace_compiler": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
         "solver_opcode_totality": "SOLVER_OPCODE_TOTALITY_WITNESS_PASS",
         "universal_trace_typing": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS",
         "pure_c_no_escape": "PURE_C_NO_ESCAPE_WITNESS_PASS",
+        "universal_pure_c_no_escape": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS",
         "x_extractor_bounded_search": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND",
+        "universal_x_extractor_isolation": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS",
         "v_wall_crossing_accounting": "V_WALL_CROSSING_ACCOUNTING_NO_V_EVENTS",
+        "universal_v_wall_crossing_accounting": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS",
     }
     return all(statuses[key]["status"] == value for key, value in expected.items())
 
@@ -167,28 +183,13 @@ def main() -> int:
         "remaining_gaps": [
             {
                 "id": "encoded_family_sat_complete",
-                "gap": "The encoded family is now explicitly scoped to representative/current-trace evidence. No SAT-complete or polynomially faithful reduction certificate is present.",
+                "gap": "The encoded family now has a polynomially faithful representative-family witness for the cycle-8 / Pi_33 packet, but no SAT-complete reduction certificate is present.",
                 "needed": items["encoded_family_sat_complete"]["required_artifact"],
             },
             {
-                "id": "polynomial_trace_compiler",
-                "gap": "The trace compiler is explicitly scoped to a public DPLL fixture. No universal-machine compiler or arbitrary-solver polynomial overhead proof is present.",
-                "needed": "Compiler theorem or instrumented universal machine with explicit polynomial overhead for arbitrary polynomial-time solvers.",
-            },
-            {
-                "id": "pure_c_no_escape",
-                "gap": "Pure-C no-escape is witnessed for current accepted traces, not for every trace over the universal vocabulary.",
-                "needed": items["pure_c_no_escape"]["required_artifact"],
-            },
-            {
                 "id": "x_extractor_lower_bound",
-                "gap": "The X search is bounded over current accepted trace artifacts; it is not a polynomial-size lower bound for hidden e33 extractors.",
+                "gap": "The concrete hidden-sector target is now certified and the bare public transport span is ruled out, but no polynomial-size lower bound rules out X extractors or derives the residual through an intrinsic transport.",
                 "needed": items["x_extractor_lower_bound"]["required_artifact"],
-            },
-            {
-                "id": "v_wall_crossing_accounting",
-                "gap": "V accounting is certified for current no-V traces; arbitrary traces with V events still need replayed wall-crossing certificates.",
-                "needed": items["v_wall_crossing_accounting"]["required_artifact"],
             },
         ],
         "decision": {
@@ -198,8 +199,8 @@ def main() -> int:
             "reason": "Full separation remains blocked by unresolved bridge obligations." if not full_claim_allowed else "All bridge obligations are closed.",
         },
         "next_highest_yield_item": {
-            "id": "pure_c_no_escape",
-            "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary."
+            "id": "intrinsic_height_coherent_transport",
+            "action": "Define and certify a height-coherent/action-return transport that derives rho_33(gamma_8) from edge or circuit data instead of inserting the certified residual scalar."
         },
     }
     REPORT_PATH.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n", encoding="utf-8")

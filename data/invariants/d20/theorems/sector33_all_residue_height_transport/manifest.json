@@ -1,0 +1,52 @@
+{
+  "certification_tests": [
+    "verify the 2048 residue rows form a complete 11-cycle residue space",
+    "verify every edge-mod2 row has 30 columns and every basis activation row uses 11 cycles",
+    "verify each basis activation row dot primitive-cycle height vector equals its recorded optical action",
+    "verify edge-mod2 incidence is not globally height-coherent, due cancellation of repeated traversals",
+    "verify every height-derived residual is carried by the sector-33 e_33 transport",
+    "verify e_33 gives zero A42 and A12 shadows, hence all scalar transports do too"
+  ],
+  "inputs": {
+    "d20_edges": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "gamma8_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "sha256": "8f584b9fa197d43232322f3ed5d5babe2d40e3132ce9ae89ae84e1924272bff7"
+    },
+    "primitive_cycles": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
+      "sha256": "a6fd82c3cafc0767c6ed7a41a157326d249933a6be62d6aad0f27f989dc7e84c"
+    },
+    "quotients": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "residue_spectrum": {
+      "path": "data/invariants/hcycle/d20_Hcycle_mod2_residue_spectrum_all_subsets.csv",
+      "sha256": "47b3b16d797dd2105805c2a49db4ce303eac44cd5d8164856ede2567c423b81b"
+    },
+    "sector33_boundary_annihilation_report": {
+      "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+      "sha256": "c09baf8454e93d3901d0d9c3ea4ba89994844c035f3e84af74cce14f5a9bd3d6"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "manifest_sha256": "fa82697ddb88a3a9154932c6fda3d582c0fab3ed1a860e7da161c82b8fda6627",
+  "name": "sector33_all_residue_height_transport",
+  "outputs": {
+    "manifest": "data/invariants/d20/theorems/sector33_all_residue_height_transport/manifest.json",
+    "report": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json"
+  },
+  "report_sha256": "f7df7a0372ed0720a172247130b0c82cc49e579942d97e2b19e79460baeddf25",
+  "schema": "d20.theorem.sector33_all_residue_height_transport_manifest.v1"
+}

@@ -10,6 +10,7 @@ BASE = ROOT / "data" / "invariants" / "integrity"
 CVX = BASE / "cvx_trace"
 CHECKLIST_PATH = BASE / "p_vs_np_bridge_checklist.json"
 REPORT_PATH = CVX / "reports" / "encoded_family_scope_certificate.json"
+BRIDGE_REPORT_PATH = CVX / "reports" / "encoded_family_bridge_certificate.json"
 
 CURRENT_TRACE_REPORTS = {
     "solver_execution_overhead": CVX / "reports" / "public_dpll_contradiction_4_overhead.json",
@@ -61,14 +62,39 @@ def current_trace_surface_closed(statuses: dict[str, dict[str, Any]]) -> bool:
     return all(item["passed"] for item in statuses.values())
 
 
+def bridge_report_status() -> dict[str, Any]:
+    if not BRIDGE_REPORT_PATH.exists():
+        return {
+            "path": rel(BRIDGE_REPORT_PATH),
+            "status": "missing",
+            "may_claim_polynomially_faithful_representative_family": False,
+            "may_claim_encoded_family_sat_complete": False,
+            "passed": False,
+        }
+    data = load_json(BRIDGE_REPORT_PATH)
+    decision = data.get("decision", {})
+    return {
+        "path": rel(BRIDGE_REPORT_PATH),
+        "status": data.get("status"),
+        "may_claim_polynomially_faithful_representative_family": decision.get(
+            "may_claim_polynomially_faithful_representative_family", False
+        ),
+        "may_claim_encoded_family_sat_complete": decision.get("may_claim_encoded_family_sat_complete", False),
+        "passed": data.get("status") == "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN",
+    }
+
+
 def main() -> int:
     checklist = load_json(CHECKLIST_PATH)
     encoded_item = checklist_item(checklist, "encoded_family_sat_complete")
     report_statuses = current_trace_report_statuses()
     trace_surface_closed = current_trace_surface_closed(report_statuses)
+    bridge_status = bridge_report_status()
 
-    sat_complete_reduction_certified = False
-    polynomially_faithful_representative_certified = False
+    sat_complete_reduction_certified = bool(bridge_status["may_claim_encoded_family_sat_complete"])
+    polynomially_faithful_representative_certified = bool(
+        bridge_status["may_claim_polynomially_faithful_representative_family"]
+    )
     representative_current_trace_scope_declared = True
     may_claim_representative_current_trace_no_escape = (
         representative_current_trace_scope_declared
@@ -81,8 +107,16 @@ def main() -> int:
 
     certificate = {
         "schema": "d20.integrity.encoded_family_scope_certificate.v1",
-        "status": "ENCODED_FAMILY_SCOPE_DECLARED_REPRESENTATIVE_ONLY",
-        "claim_level": "representative_current_trace_family_only",
+        "status": (
+            "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+            if polynomially_faithful_representative_certified
+            else "ENCODED_FAMILY_SCOPE_DECLARED_REPRESENTATIVE_ONLY"
+        ),
+        "claim_level": (
+            "polynomially_faithful_representative_family_not_sat_complete"
+            if polynomially_faithful_representative_certified
+            else "representative_current_trace_family_only"
+        ),
         "checklist_path": rel(CHECKLIST_PATH),
         "checklist_item": {
             "id": encoded_item["id"],
@@ -92,15 +126,24 @@ def main() -> int:
             "checklist_status": encoded_item.get("status"),
         },
         "encoded_family_bridge": {
+            "bridge_report": bridge_status,
             "sat_complete_reduction_certified": sat_complete_reduction_certified,
             "polynomially_faithful_representative_certified": polynomially_faithful_representative_certified,
             "certified_bridge_present": may_claim_encoded_family_bridge,
-            "reason": "No reduction certificate with source problem, target encoding, polynomial size bound, yes/no preservation, and inverse witness interpretation is present in the canonical integrity data.",
+            "reason": (
+                "A polynomially bounded representative-family bridge is present for the cycle-8 / Pi_33 residual packet, but no SAT-complete reduction is certified."
+                if polynomially_faithful_representative_certified
+                else "No reduction certificate with source problem, target encoding, polynomial size bound, yes/no preservation, and inverse witness interpretation is present in the canonical integrity data."
+            ),
         },
         "declared_scope": {
             "representative_current_trace_scope_declared": representative_current_trace_scope_declared,
-            "meaning": "The current evidence may be read as a representative/current-trace no-escape certificate for the accepted public proof-log and public DPLL fixtures, not as a SAT-complete family bridge.",
-            "non_claim": "This certificate does not prove SAT-completeness, polynomial faithfulness of the hidden e33-obstructed family, arbitrary solver universality, an X-extractor lower bound, or P != NP.",
+            "meaning": (
+                "The current evidence now includes a representative-family bridge for the certified sector-33 residual packet, not a SAT-complete family bridge."
+                if polynomially_faithful_representative_certified
+                else "The current evidence may be read as a representative/current-trace no-escape certificate for the accepted public proof-log and public DPLL fixtures, not as a SAT-complete family bridge."
+            ),
+            "non_claim": "This certificate does not prove SAT-completeness, an X-extractor lower bound, or P != NP.",
         },
         "current_trace_surface": {
             "closed": trace_surface_closed,
@@ -111,7 +154,11 @@ def main() -> int:
             "may_claim_encoded_family_sat_complete": sat_complete_reduction_certified,
             "may_claim_polynomially_faithful_representative_family": polynomially_faithful_representative_certified,
             "may_claim_full_separation": False,
-            "reason": "The encoded-family bridge is explicitly downgraded to representative/current-trace scope until a real reduction or polynomial-faithfulness certificate is added.",
+            "reason": (
+                "The encoded-family bridge is witnessed at representative-family scope, but SAT-completeness and the X-extractor lower bound remain open."
+                if polynomially_faithful_representative_certified
+                else "The encoded-family bridge is explicitly downgraded to representative/current-trace scope until a real reduction or polynomial-faithfulness certificate is added."
+            ),
         },
         "promotion_requirements": [
             "name the source SAT-complete problem or source family",
@@ -123,8 +170,12 @@ def main() -> int:
             "connect the reduction certificate to the C/V/X trace and no-escape ledger",
         ],
         "next_highest_yield_item": {
-            "id": "pure_c_no_escape",
-            "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary.",
+            "id": "x_extractor_lower_bound" if polynomially_faithful_representative_certified else "encoded_family_sat_complete",
+            "action": (
+                "Attack the polynomial-size X-extractor lower bound; the encoded-family bridge is now witnessed only at representative-family scope."
+                if polynomially_faithful_representative_certified
+                else "Build the reduction certificate for the hidden e33-obstructed family, or keep the claim representative/current-trace scoped."
+            ),
         },
     }
 

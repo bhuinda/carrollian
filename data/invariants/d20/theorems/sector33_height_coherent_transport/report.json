@@ -1,0 +1,303 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b8723a036edf2876f3f83a1ea66b2dcbba1af94730d790547892157e2829368e",
+  "checks": {
+    "active_circuit_has_five_edges": true,
+    "active_circuit_is_closed": true,
+    "active_circuit_matches_gamma8_edges": true,
+    "bare_lambda_pi33_coefficient_is_zero": true,
+    "boundary_to_loop_is_certified": true,
+    "chi33_of_e33_equals_sector_dimension": true,
+    "corrected_transport_pi33_coefficient_is_edge_derived_residual": true,
+    "derived_residual_matches_sector_attachment": true,
+    "derived_scalar_matches_prior_normalized_residual_lift": true,
+    "height_dot_active_row_matches_cycle_optical_action": true,
+    "height_transport_has_zero_q12_shadow": true,
+    "height_transport_has_zero_q42_shadow": true,
+    "height_transport_pi33_coefficient_is_edge_derived_residual": true,
+    "height_values_positive_on_active_circuit": true,
+    "normalized_residual_lift_is_certified": true,
+    "sector33_annihilation_is_certified": true
+  },
+  "claim": "The first sector-33 hidden correction is derived from the active D20 circuit itself: the closed gamma_8 circuit has height action 374784, so the refined transport adds -374784/dim(Pi_33) times e_33. This recovers the Pi_33 residual while remaining invisible to A42 and A12.",
+  "definition": {
+    "active_circuit": "The gamma_8 row in the D20 edge-circuit matrix with support {1,2,11,21,22}.",
+    "height_action": "A_h(gamma)=<C_gamma,h>, the dot product of the active circuit row with edge heights.",
+    "height_cochain": "h(e)=interface_weight(e), the certified optical edge height.",
+    "transport": "Lambda_hc(gamma)=lambda_boundary(gamma) - (A_h(gamma)/dim(Pi_33)) e_33."
+  },
+  "derived": {
+    "active_circuit": {
+      "active_matrix_row": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          22,
+          1
+        ]
+      ],
+      "all_active_heights_positive": true,
+      "edge_count": 30,
+      "height_dot_active_row": 374784,
+      "height_vector_sha256": "908f97c726ca5955d1ef5c5aba871bf17d464b3bb870e3a49678ea9dc35035fd",
+      "signed_circuit_row": [
+        [
+          1,
+          -1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          11,
+          -1
+        ],
+        [
+          21,
+          -1
+        ],
+        [
+          22,
+          1
+        ]
+      ],
+      "steps": [
+        {
+          "edge_id": 11,
+          "height": 82944,
+          "orientation_sign": -1,
+          "selector_choice": 0,
+          "selector_duad": "{V-,V+}",
+          "source": 10,
+          "target": 4
+        },
+        {
+          "edge_id": 1,
+          "height": 55296,
+          "orientation_sign": -1,
+          "selector_choice": 0,
+          "selector_duad": "{B-,V-}",
+          "source": 4,
+          "target": 0
+        },
+        {
+          "edge_id": 2,
+          "height": 27648,
+          "orientation_sign": 1,
+          "selector_choice": 1,
+          "selector_duad": "{B+,V-}",
+          "source": 0,
+          "target": 11
+        },
+        {
+          "edge_id": 22,
+          "height": 98304,
+          "orientation_sign": 1,
+          "selector_choice": 2,
+          "selector_duad": "{B+,S-}",
+          "source": 11,
+          "target": 13
+        },
+        {
+          "edge_id": 21,
+          "height": 110592,
+          "orientation_sign": -1,
+          "selector_choice": 2,
+          "selector_duad": "{B+,V+}",
+          "source": 13,
+          "target": 10
+        }
+      ],
+      "vertex_boundary": {}
+    },
+    "cycle": {
+      "connection_log_action": "26.810725003903457",
+      "connection_product": 440301256704,
+      "cycle_id": 8,
+      "edge_ids": [
+        11,
+        1,
+        2,
+        22,
+        21
+      ],
+      "entropy_proxy_A_over_4WD6": "4.066666666666666",
+      "length": 5,
+      "optical_action": 374784,
+      "turn_addresses": [
+        "V+",
+        "V-",
+        "V-",
+        "B+",
+        "B+"
+      ],
+      "vertex_labels": "{B+,V-,V+} -> {B-,V-,V+} -> {B-,B+,V-} -> {B+,V-,S-} -> {B+,V+,S-} -> {B+,V-,V+}",
+      "vertices": [
+        10,
+        4,
+        0,
+        11,
+        13,
+        10
+      ]
+    },
+    "edge_derived_residual": {
+      "dimension": 2,
+      "height_action": 374784,
+      "inverse_dimension": 500002,
+      "residual_integral": -374784,
+      "residual_mod_prime": 625219,
+      "transport_scalar": 812611,
+      "transport_scalar_signed": -187392
+    },
+    "pi33_tube_character": {
+      "corrected_transport": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 181536,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+          "support": 56
+        },
+        "coefficient_mod_prime": 625219,
+        "coefficient_signed": -374784,
+        "regular_trace": 250435
+      },
+      "e33": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 13343790,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "80f86fd6281302c6bafc6bc4176923dfa41aa4dbe1d58e8a9a64f9cac1a5a348",
+          "support": 56
+        },
+        "coefficient_mod_prime": 2,
+        "coefficient_signed": 2,
+        "regular_trace": 4
+      },
+      "height_transport": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 181536,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+          "support": 56
+        },
+        "coefficient_mod_prime": 625219,
+        "coefficient_signed": -374784,
+        "regular_trace": 250435
+      },
+      "lambda_boundary_gamma8": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 0,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "support": 0
+        },
+        "coefficient_mod_prime": 0,
+        "coefficient_signed": 0,
+        "regular_trace": 0
+      }
+    },
+    "public_shadows": {
+      "height_transport_q12": {
+        "entries": [],
+        "nonzero_count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "height_transport_q42": {
+        "entries": [],
+        "nonzero_count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "vectors": {
+      "corrected_transport": {
+        "coefficient_abs_sum_signed_lift": 230880,
+        "coefficient_sum": 53952,
+        "coefficient_sum_signed": 53952,
+        "sha256": "08c5f8dd0ee29a3bdaf61dc4b0d70c30169550579a4aaad8ecaccb0a4d828859",
+        "support": 237
+      },
+      "e33": {
+        "coefficient_abs_sum_signed_lift": 13343790,
+        "coefficient_sum": 0,
+        "coefficient_sum_signed": 0,
+        "sha256": "80f86fd6281302c6bafc6bc4176923dfa41aa4dbe1d58e8a9a64f9cac1a5a348",
+        "support": 56
+      },
+      "height_transport": {
+        "coefficient_abs_sum_signed_lift": 181536,
+        "coefficient_sum": 0,
+        "coefficient_sum_signed": 0,
+        "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+        "support": 56
+      },
+      "lambda_boundary_gamma8": {
+        "coefficient_abs_sum_signed_lift": 53952,
+        "coefficient_sum": 53952,
+        "coefficient_sum_signed": 53952,
+        "sha256": "c0f0d8b81dd577a8f7f2e0ad652a911131516d42d4651f2a2ad2c0fd0c3c723c",
+        "support": 193
+      }
+    }
+  },
+  "inputs": {
+    "boundary_to_loop_report": {
+      "path": "data/invariants/d20/boundary_to_loop/report.json",
+      "sha256": "8e2db781ff5c076da0a24499b1e42dfc501150db065803c8fb29bc6217e940d4"
+    },
+    "d20_edges": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "primitive_cycles": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
+      "sha256": "a6fd82c3cafc0767c6ed7a41a157326d249933a6be62d6aad0f27f989dc7e84c"
+    },
+    "quotients": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "sector33_boundary_annihilation_report": {
+      "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+      "sha256": "c09baf8454e93d3901d0d9c3ea4ba89994844c035f3e84af74cce14f5a9bd3d6"
+    },
+    "sector33_residual_attachment_report": {
+      "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
+      "sha256": "6737e82cb63d93a26e1faf2604d8c36e993993fdb27951783566455ae84286bf"
+    },
+    "sector33_residual_lift_report": {
+      "path": "data/invariants/d20/theorems/sector33_residual_lift/report.json",
+      "sha256": "947fa4c47d6057b144c40133c44a5912892a15689033d539c87613a5ed1f164f"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "next_highest_yield_item": "Generalize Lambda_hc from gamma_8 to all 2047 nonzero D20 closed-return residue classes and certify which sector idempotent, if any, carries each height-derived residual.",
+  "object": "d20",
+  "schema": "d20.theorem.sector33_height_coherent_transport.v1",
+  "status": "D20_SECTOR33_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+}

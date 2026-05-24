@@ -1,13 +1,13 @@
 {
   "checklist_item": {
-    "checklist_status": "representative_family_scope_declared_sat_complete_open",
+    "checklist_status": "polynomially_faithful_representative_family_witnessed_sat_complete_open",
     "id": "encoded_family_sat_complete",
     "obligation": "Identify the hidden e33-obstructed family as a SAT-complete or polynomially faithful representative family.",
     "pass_condition": "The reduction has polynomial overhead and preserves yes/no instances without using hidden-sector advice.",
     "required_artifact": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation."
   },
   "checklist_path": "data/invariants/integrity/p_vs_np_bridge_checklist.json",
-  "claim_level": "representative_current_trace_family_only",
+  "claim_level": "polynomially_faithful_representative_family_not_sat_complete",
   "current_trace_surface": {
     "closed": true,
     "report_statuses": {
@@ -46,24 +46,31 @@
   "decision": {
     "may_claim_encoded_family_sat_complete": false,
     "may_claim_full_separation": false,
-    "may_claim_polynomially_faithful_representative_family": false,
+    "may_claim_polynomially_faithful_representative_family": true,
     "may_claim_representative_current_trace_no_escape": true,
-    "reason": "The encoded-family bridge is explicitly downgraded to representative/current-trace scope until a real reduction or polynomial-faithfulness certificate is added."
+    "reason": "The encoded-family bridge is witnessed at representative-family scope, but SAT-completeness and the X-extractor lower bound remain open."
   },
   "declared_scope": {
-    "meaning": "The current evidence may be read as a representative/current-trace no-escape certificate for the accepted public proof-log and public DPLL fixtures, not as a SAT-complete family bridge.",
-    "non_claim": "This certificate does not prove SAT-completeness, polynomial faithfulness of the hidden e33-obstructed family, arbitrary solver universality, an X-extractor lower bound, or P != NP.",
+    "meaning": "The current evidence now includes a representative-family bridge for the certified sector-33 residual packet, not a SAT-complete family bridge.",
+    "non_claim": "This certificate does not prove SAT-completeness, an X-extractor lower bound, or P != NP.",
     "representative_current_trace_scope_declared": true
   },
   "encoded_family_bridge": {
-    "certified_bridge_present": false,
-    "polynomially_faithful_representative_certified": false,
-    "reason": "No reduction certificate with source problem, target encoding, polynomial size bound, yes/no preservation, and inverse witness interpretation is present in the canonical integrity data.",
+    "bridge_report": {
+      "may_claim_encoded_family_sat_complete": false,
+      "may_claim_polynomially_faithful_representative_family": true,
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
+      "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+    },
+    "certified_bridge_present": true,
+    "polynomially_faithful_representative_certified": true,
+    "reason": "A polynomially bounded representative-family bridge is present for the cycle-8 / Pi_33 residual packet, but no SAT-complete reduction is certified.",
     "sat_complete_reduction_certified": false
   },
   "next_highest_yield_item": {
-    "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary.",
-    "id": "pure_c_no_escape"
+    "action": "Attack the polynomial-size X-extractor lower bound; the encoded-family bridge is now witnessed only at representative-family scope.",
+    "id": "x_extractor_lower_bound"
   },
   "promotion_requirements": [
     "name the source SAT-complete problem or source family",
@@ -75,5 +82,5 @@
     "connect the reduction certificate to the C/V/X trace and no-escape ledger"
   ],
   "schema": "d20.integrity.encoded_family_scope_certificate.v1",
-  "status": "ENCODED_FAMILY_SCOPE_DECLARED_REPRESENTATIVE_ONLY"
+  "status": "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
 }

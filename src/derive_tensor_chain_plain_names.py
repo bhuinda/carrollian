@@ -192,7 +192,6 @@ def derive() -> dict[str, Any]:
         "status": "TENSOR_CHAIN_PLAIN_NAME_VIEW_GENERATED",
         "canonical_folder": "data/evidence/tensor_chain",
         "generated_file": "data/evidence/tensor_chain/plain_name_view.json",
-        "source_preservation": "This is an alias view only. It does not rename or edit source evidence files.",
         "rule_source": "data/evidence/tensor_chain/index.json#/plain_names",
         "plain_names": index.get("plain_names", {}),
         "summary": {

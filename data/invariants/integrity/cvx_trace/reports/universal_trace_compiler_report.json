@@ -1,0 +1,68 @@
+{
+  "claim_level": "finite_public_bit_machine_universal_trace_compiler",
+  "classifier_path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_classifier.json",
+  "compiler_rules": {
+    "event_emission_rule": "exactly one universal trace event per executed public bit-machine instruction",
+    "machine_model": "finite_public_bit_ram",
+    "opcode_to_class_code": {
+      "bit_and": "C_PUBLIC_BIT_AND",
+      "bit_not": "C_PUBLIC_BIT_NOT",
+      "bit_or": "C_PUBLIC_BIT_OR",
+      "bit_xor": "C_PUBLIC_BIT_XOR",
+      "branch": "C_PUBLIC_BRANCH",
+      "compare_zero": "C_PUBLIC_COMPARE_ZERO",
+      "const": "C_PUBLIC_CONST",
+      "copy": "C_PUBLIC_COPY",
+      "emit_decision": "C_PUBLIC_EMIT_DECISION",
+      "halt_accept": "C_PUBLIC_HALT_ACCEPT",
+      "halt_reject": "C_PUBLIC_HALT_REJECT",
+      "input_read": "C_PUBLIC_INPUT_READ",
+      "loop_tick": "C_PUBLIC_LOOP_TICK",
+      "ram_load": "C_PUBLIC_RAM_LOAD",
+      "ram_store": "C_PUBLIC_RAM_STORE"
+    },
+    "unsupported_instruction_policy": "reject_before_trace_emission"
+  },
+  "decision": {
+    "may_claim_full_separation": false,
+    "may_claim_native_binary_frontend_without_translation": false,
+    "may_claim_polynomial_overhead_for_represented_solver_executions": true,
+    "may_claim_universal_public_bit_machine_trace_compiler": true,
+    "reason": "The compiler is polynomial for executions represented in the finite public bit-machine model. Native solvers still require a frontend translation into that model."
+  },
+  "event_schema": "data/invariants/integrity/cvx_trace/schemas/universal_trace_event.v1.schema.json",
+  "fixture_witness": {
+    "compile_errors": [],
+    "event_errors": [],
+    "max_public_payload_width": 128,
+    "program_errors": [],
+    "program_instruction_count": 8,
+    "result": "UNSAT",
+    "source_cnf": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+    "trace_event_count": 8
+  },
+  "general_compiler_certificate": {
+    "applies_to": "executions already represented in the finite_public_bit_ram model",
+    "decision_preservation": "the compiled trace preserves the source machine emit_decision and halt instruction outputs",
+    "local_event_verification": "one opcode/class-code lookup plus public payload checks",
+    "trace_length_for_runtime_T": "T"
+  },
+  "next_highest_yield_item": {
+    "action": "Build the reduction certificate for the hidden e33-obstructed family, or keep the claim representative/current-trace scoped.",
+    "id": "encoded_family_sat_complete"
+  },
+  "non_claim": "This report does not prove encoded-family SAT-completeness, no polynomial-size X extractor, or P != NP.",
+  "polynomial_overhead": {
+    "event_count_bound": "runtime_steps",
+    "event_count_bound_value": 8,
+    "event_verification_cost_bound": "O(runtime_steps * max_public_payload_width)",
+    "source_runtime_steps": 8,
+    "trace_event_count": 8,
+    "within_bound": true
+  },
+  "program_path": "data/invariants/integrity/cvx_trace/traces/universal_bit_machine_contradiction_4.program.json",
+  "program_schema": "data/invariants/integrity/cvx_trace/schemas/universal_public_bit_machine_program.v1.schema.json",
+  "schema": "d20.integrity.universal_trace_compiler_report.v1",
+  "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+  "trace_path": "data/invariants/integrity/cvx_trace/traces/universal_bit_machine_contradiction_4.trace.json"
+}

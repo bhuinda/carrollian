@@ -1,0 +1,162 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "3af74ff570935e2703d77cf6788e1a8388cbf88aa1cefb10cea2a13fd6835536",
+  "checks": {
+    "bare_lambda_pi33_coefficient_is_zero": true,
+    "boundary_to_loop_is_certified": true,
+    "chi33_of_e33_equals_sector_dimension": true,
+    "corrected_lift_pi33_coefficient_is_residual": true,
+    "nonexact_residual_matches_cycle8": true,
+    "residual_lift_has_zero_q12_shadow": true,
+    "residual_lift_has_zero_q42_shadow": true,
+    "residual_lift_pi33_coefficient_is_residual": true,
+    "residual_scalar_is_dimension_normalized": true,
+    "sector33_annihilation_is_certified": true,
+    "sector33_attachment_is_certified": true
+  },
+  "claim": "The bare structural lift lambda_boundary(gamma_8) has zero Pi_33 tube coefficient, but the dimension-normalized hidden lift (Res_A985^opt(gamma_8)/dim(Pi_33)) e_33 has Pi_33 coefficient equal to the certified residual -374784 and has zero A42/A12 public shadow.",
+  "definition": {
+    "corrected_lift": "Lambda_33(gamma_8) = lambda_boundary(gamma_8) + rho_33(gamma_8).",
+    "normalization": "chi_33^tube(e_33)=dim(Pi_33), so chi_33^tube(rho_33)=Res_A985^opt.",
+    "residual_lift": "rho_33(gamma_8) = (Res_A985^opt(gamma_8) / dim(Pi_33)) e_33 in Loop_297."
+  },
+  "derived": {
+    "cycle_id": 8,
+    "field_prime": 1000003,
+    "pi33_tube_character": {
+      "corrected_lift": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 181536,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+          "support": 56
+        },
+        "coefficient_mod_prime": 625219,
+        "coefficient_signed": -374784,
+        "regular_trace": 250435
+      },
+      "e33": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 13343790,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "80f86fd6281302c6bafc6bc4176923dfa41aa4dbe1d58e8a9a64f9cac1a5a348",
+          "support": 56
+        },
+        "coefficient_mod_prime": 2,
+        "coefficient_signed": 2,
+        "regular_trace": 4
+      },
+      "lambda_boundary_gamma8": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 0,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "support": 0
+        },
+        "coefficient_mod_prime": 0,
+        "coefficient_signed": 0,
+        "regular_trace": 0
+      },
+      "residual_lift": {
+        "action": {
+          "coefficient_abs_sum_signed_lift": 181536,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+          "support": 56
+        },
+        "coefficient_mod_prime": 625219,
+        "coefficient_signed": -374784,
+        "regular_trace": 250435
+      }
+    },
+    "public_shadows": {
+      "residual_lift_q12": {
+        "entries": [],
+        "nonzero_count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "residual_lift_q42": {
+        "entries": [],
+        "nonzero_count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "residual": {
+      "dimension": 2,
+      "integral": -374784,
+      "inverse_dimension": 500002,
+      "mod_prime": 625219,
+      "residual_lift_scalar": 812611,
+      "residual_lift_scalar_signed": -187392
+    },
+    "sector": 33,
+    "vectors": {
+      "corrected_lift": {
+        "coefficient_abs_sum_signed_lift": 230880,
+        "coefficient_sum": 53952,
+        "coefficient_sum_signed": 53952,
+        "sha256": "08c5f8dd0ee29a3bdaf61dc4b0d70c30169550579a4aaad8ecaccb0a4d828859",
+        "support": 237
+      },
+      "e33": {
+        "coefficient_abs_sum_signed_lift": 13343790,
+        "coefficient_sum": 0,
+        "coefficient_sum_signed": 0,
+        "sha256": "80f86fd6281302c6bafc6bc4176923dfa41aa4dbe1d58e8a9a64f9cac1a5a348",
+        "support": 56
+      },
+      "lambda_boundary_gamma8": {
+        "coefficient_abs_sum_signed_lift": 53952,
+        "coefficient_sum": 53952,
+        "coefficient_sum_signed": 53952,
+        "sha256": "c0f0d8b81dd577a8f7f2e0ad652a911131516d42d4651f2a2ad2c0fd0c3c723c",
+        "support": 193
+      },
+      "residual_lift": {
+        "coefficient_abs_sum_signed_lift": 181536,
+        "coefficient_sum": 0,
+        "coefficient_sum_signed": 0,
+        "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+        "support": 56
+      }
+    }
+  },
+  "inputs": {
+    "boundary_to_loop_report": {
+      "path": "data/invariants/d20/boundary_to_loop/report.json",
+      "sha256": "8e2db781ff5c076da0a24499b1e42dfc501150db065803c8fb29bc6217e940d4"
+    },
+    "nonexact_optical_residue_report": {
+      "path": "data/invariants/d20/theorems/nonexact_optical_residue/report.json",
+      "sha256": "737c76d07641173bc7fb3316feaa9c54b83dc854c06addb601c8c1ca1d91ec9f"
+    },
+    "quotients": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "sector33_boundary_annihilation_report": {
+      "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+      "sha256": "c09baf8454e93d3901d0d9c3ea4ba89994844c035f3e84af74cce14f5a9bd3d6"
+    },
+    "sector33_residual_attachment_report": {
+      "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
+      "sha256": "6737e82cb63d93a26e1faf2604d8c36e993993fdb27951783566455ae84286bf"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "next_highest_yield_item": "Replace this normalized residual injection with an intrinsic height-coherent transport rule that derives rho_33(gamma) from edge/circuit data rather than inserting the certified residual scalar.",
+  "object": "d20",
+  "schema": "d20.theorem.sector33_residual_lift.v1",
+  "status": "D20_SECTOR33_RESIDUAL_LIFT_CERTIFIED"
+}

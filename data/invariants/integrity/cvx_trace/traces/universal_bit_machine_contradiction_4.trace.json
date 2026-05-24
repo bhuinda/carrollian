@@ -1,0 +1,204 @@
+{
+  "compiler": {
+    "compiler_source": "data/invariants/integrity/cvx_trace/scripts/build_universal_trace_compiler.py",
+    "program_hash": "8a1afb4d70f054af26ed4b54a83cc19aaa5dea2b2766c4734ed89cb7d27f8ba8",
+    "rule": "one public bit-machine instruction emits one universal C trace event"
+  },
+  "events": [
+    {
+      "checks": {
+        "deterministic_replay": true,
+        "locally_checkable": true,
+        "uses_extension_variable": false,
+        "uses_hidden_advice": false
+      },
+      "class_code": "C_PUBLIC_INPUT_READ",
+      "event_id": "universal_bit_machine_contradiction_4:0001",
+      "integrity_type": "C",
+      "op": "universal_machine_opcode",
+      "public_inputs": {
+        "clause_id": 1,
+        "cnf_path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf"
+      },
+      "public_outputs": {
+        "literal": 1,
+        "sign_bit": 0,
+        "variable": 1
+      },
+      "reason": "read the first public unit clause literal",
+      "schema": "d20.integrity.universal_trace_event.v1",
+      "step": 1
+    },
+    {
+      "checks": {
+        "deterministic_replay": true,
+        "locally_checkable": true,
+        "uses_extension_variable": false,
+        "uses_hidden_advice": false
+      },
+      "class_code": "C_PUBLIC_INPUT_READ",
+      "event_id": "universal_bit_machine_contradiction_4:0002",
+      "integrity_type": "C",
+      "op": "universal_machine_opcode",
+      "public_inputs": {
+        "clause_id": 2,
+        "cnf_path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf"
+      },
+      "public_outputs": {
+        "literal": -1,
+        "sign_bit": 1,
+        "variable": 1
+      },
+      "reason": "read the complementary public unit clause literal",
+      "schema": "d20.integrity.universal_trace_event.v1",
+      "step": 2
+    },
+    {
+      "checks": {
+        "deterministic_replay": true,
+        "locally_checkable": true,
+        "uses_extension_variable": false,
+        "uses_hidden_advice": false
+      },
+      "class_code": "C_PUBLIC_COMPARE_ZERO",
+      "event_id": "universal_bit_machine_contradiction_4:0003",
+      "integrity_type": "C",
+      "op": "universal_machine_opcode",
+      "public_inputs": {
+        "difference": 0,
+        "left_variable": 1,
+        "right_variable": 1
+      },
+      "public_outputs": {
+        "same_variable": true
+      },
+      "reason": "check that both unit clauses mention the same public variable",
+      "schema": "d20.integrity.universal_trace_event.v1",
+      "step": 3
+    },
+    {
+      "checks": {
+        "deterministic_replay": true,
+        "locally_checkable": true,
+        "uses_extension_variable": false,
+        "uses_hidden_advice": false
+      },
+      "class_code": "C_PUBLIC_BIT_XOR",
+      "event_id": "universal_bit_machine_contradiction_4:0004",
+      "integrity_type": "C",
+      "op": "universal_machine_opcode",
+      "public_inputs": {
+        "left_sign_bit": 0,
+        "right_sign_bit": 1
+      },
+      "public_outputs": {
+        "opposite_sign": true
+      },
+      "reason": "check that the two public unit literals have opposite signs",
+      "schema": "d20.integrity.universal_trace_event.v1",
+      "step": 4
+    },
+    {
+      "checks": {
+        "deterministic_replay": true,
+        "locally_checkable": true,
+        "uses_extension_variable": false,
+        "uses_hidden_advice": false
+      },
+      "class_code": "C_PUBLIC_BIT_AND",
+      "event_id": "universal_bit_machine_contradiction_4:0005",
+      "integrity_type": "C",
+      "op": "universal_machine_opcode",
+      "public_inputs": {
+        "opposite_sign": true,
+        "same_variable": true
+      },
+      "public_outputs": {
+        "contradiction": true
+      },
+      "reason": "derive the public contradiction flag",
+      "schema": "d20.integrity.universal_trace_event.v1",
+      "step": 5
+    },
+    {
+      "checks": {
+        "deterministic_replay": true,
+        "locally_checkable": true,
+        "uses_extension_variable": false,
+        "uses_hidden_advice": false
+      },
+      "class_code": "C_PUBLIC_BRANCH",
+      "event_id": "universal_bit_machine_contradiction_4:0006",
+      "integrity_type": "C",
+      "op": "universal_machine_opcode",
+      "public_inputs": {
+        "condition": true
+      },
+      "public_outputs": {
+        "target": "emit_unsat"
+      },
+      "reason": "branch on the public contradiction flag",
+      "schema": "d20.integrity.universal_trace_event.v1",
+      "step": 6
+    },
+    {
+      "checks": {
+        "deterministic_replay": true,
+        "locally_checkable": true,
+        "uses_extension_variable": false,
+        "uses_hidden_advice": false
+      },
+      "class_code": "C_PUBLIC_EMIT_DECISION",
+      "event_id": "universal_bit_machine_contradiction_4:0007",
+      "integrity_type": "C",
+      "op": "universal_machine_opcode",
+      "public_inputs": {
+        "contradiction": true
+      },
+      "public_outputs": {
+        "decision": "UNSAT"
+      },
+      "reason": "emit the public SAT decision for the fixture",
+      "schema": "d20.integrity.universal_trace_event.v1",
+      "step": 7
+    },
+    {
+      "checks": {
+        "deterministic_replay": true,
+        "locally_checkable": true,
+        "uses_extension_variable": false,
+        "uses_hidden_advice": false
+      },
+      "class_code": "C_PUBLIC_HALT_REJECT",
+      "event_id": "universal_bit_machine_contradiction_4:0008",
+      "integrity_type": "C",
+      "op": "universal_machine_opcode",
+      "public_inputs": {
+        "decision": "UNSAT"
+      },
+      "public_outputs": {
+        "halted": true
+      },
+      "reason": "halt in the rejecting SAT state, meaning the input CNF is unsatisfiable",
+      "schema": "d20.integrity.universal_trace_event.v1",
+      "step": 8
+    }
+  ],
+  "machine_model": "finite_public_bit_ram",
+  "program_path": "data/invariants/integrity/cvx_trace/traces/universal_bit_machine_contradiction_4.program.json",
+  "schema": "d20.integrity.universal_trace.v1",
+  "status": "UNIVERSAL_TRACE_COMPILER_WITNESS",
+  "summary": {
+    "all_events_classified": true,
+    "event_count": 8,
+    "integrity_counts": {
+      "C": 8,
+      "UNCLASSIFIED": 0,
+      "V": 0,
+      "X": 0
+    },
+    "pure_c_trace": true,
+    "verdict": "C_PUBLIC_BIT_MACHINE_UNSAT"
+  },
+  "trace_id": "universal_bit_machine_contradiction_4"
+}

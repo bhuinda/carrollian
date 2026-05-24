@@ -1,0 +1,118 @@
+{
+  "expected_result": "UNSAT",
+  "instructions": [
+    {
+      "opcode": "input_read",
+      "pc": 1,
+      "public_inputs": {
+        "clause_id": 1,
+        "cnf_path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf"
+      },
+      "public_outputs": {
+        "literal": 1,
+        "sign_bit": 0,
+        "variable": 1
+      },
+      "reason": "read the first public unit clause literal"
+    },
+    {
+      "opcode": "input_read",
+      "pc": 2,
+      "public_inputs": {
+        "clause_id": 2,
+        "cnf_path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf"
+      },
+      "public_outputs": {
+        "literal": -1,
+        "sign_bit": 1,
+        "variable": 1
+      },
+      "reason": "read the complementary public unit clause literal"
+    },
+    {
+      "opcode": "compare_zero",
+      "pc": 3,
+      "public_inputs": {
+        "difference": 0,
+        "left_variable": 1,
+        "right_variable": 1
+      },
+      "public_outputs": {
+        "same_variable": true
+      },
+      "reason": "check that both unit clauses mention the same public variable"
+    },
+    {
+      "opcode": "bit_xor",
+      "pc": 4,
+      "public_inputs": {
+        "left_sign_bit": 0,
+        "right_sign_bit": 1
+      },
+      "public_outputs": {
+        "opposite_sign": true
+      },
+      "reason": "check that the two public unit literals have opposite signs"
+    },
+    {
+      "opcode": "bit_and",
+      "pc": 5,
+      "public_inputs": {
+        "opposite_sign": true,
+        "same_variable": true
+      },
+      "public_outputs": {
+        "contradiction": true
+      },
+      "reason": "derive the public contradiction flag"
+    },
+    {
+      "opcode": "branch",
+      "pc": 6,
+      "public_inputs": {
+        "condition": true
+      },
+      "public_outputs": {
+        "target": "emit_unsat"
+      },
+      "reason": "branch on the public contradiction flag"
+    },
+    {
+      "opcode": "emit_decision",
+      "pc": 7,
+      "public_inputs": {
+        "contradiction": true
+      },
+      "public_outputs": {
+        "decision": "UNSAT"
+      },
+      "reason": "emit the public SAT decision for the fixture"
+    },
+    {
+      "opcode": "halt_reject",
+      "pc": 8,
+      "public_inputs": {
+        "decision": "UNSAT"
+      },
+      "public_outputs": {
+        "halted": true
+      },
+      "reason": "halt in the rejecting SAT state, meaning the input CNF is unsatisfiable"
+    }
+  ],
+  "machine_model": "finite_public_bit_ram",
+  "program_id": "universal_bit_machine_contradiction_4",
+  "schema": "d20.integrity.universal_public_bit_machine_program.v1",
+  "source": {
+    "clauses": 5,
+    "cnf_path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+    "cnf_sha256": "7faffbcb0ea91aefcf41eefea00b42410b78b2e868c7e1d67edd09277b3f2806",
+    "literal_occurrences": 8,
+    "unit_contradiction": {
+      "left_clause": 1,
+      "literal": 1,
+      "right_clause": 2
+    },
+    "variables": 4
+  }
+}

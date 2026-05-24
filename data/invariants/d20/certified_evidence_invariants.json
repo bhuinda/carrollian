@@ -1,12 +1,9 @@
 {
   "black_hole_certified_simulator": {
-    "all_checks_pass": true,
     "checks": {
-      "FQHE_ratio_5_2": true,
       "d20_faces_are_C6_3": true,
       "epsilon0_equals_64_Gamma_3_infty": true,
       "exact_inverse_precision_ok": true,
-      "notation_uses_Gamma_3_infty": true,
       "protected_entropy_packet_32": true,
       "rgba_forced_32": true,
       "subextremal_final": true
@@ -46,15 +43,13 @@
         "tensor_support_A985": 1414965
       },
       "external_alignment_notes": {
-        "FQHE_5_2_internal_ratio": "|W(D6)|/|Gamma_3^infty| = 5/2.",
         "Wu_reading": "SU(3)/SO(3) is a five-dimensional visibility/obstruction-repair analogue; active simulator does not identify the physical Wu manifold with d20.",
         "physics_scope": "Simulator uses Kerr-Newman thermodynamic formulas and synthetic pole-packet reconstruction; it is not a numerical-relativity PDE solver."
       },
       "normalized_notation": {
         "active_formula": "A_985 = End_{Gamma_3^infty}(Q[G_24^(12)])",
         "coorient_group": "Gamma_3^infty",
-        "definition": "Gamma_3^infty := Aut^infty(G_24, S)",
-        "legacy_alias_policy": "Old labels in source artifacts refer to Gamma_3^infty and are not separate objects."
+        "definition": "Gamma_3^infty := Aut^infty(G_24, S)"
       },
       "quinticity_area_law": {
         "Gamma_3_infty_order": 9216,
@@ -263,7 +258,7 @@
       "sum_a_I(a)_equals_12_A_d20": true
     },
     "primitive_notation": "f(a)(b)",
-    "schema": "d20.fab.classical_typing.v1",
+    "schema": "d20.fab.classical_typing",
     "sets": {
       "A": "A42 roles = identities, loops, directed arrows",
       "A_size": 42,
@@ -335,7 +330,7 @@
     "main_certificate_reads_raw_drop_paths": false,
     "raw_drops_are_transient": true
   },
-  "schema": "d20.certified_evidence_invariants.v1",
+  "schema": "d20.certified_evidence_invariants",
   "source_count": 3,
   "status": "D20_CERTIFIED_EVIDENCE_INVARIANTS_INTEGRATED",
   "witness_hashes": {

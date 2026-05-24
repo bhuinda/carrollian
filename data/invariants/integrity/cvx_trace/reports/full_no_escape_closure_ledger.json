@@ -2,11 +2,11 @@
   "checklist_items": [
     {
       "blocks_full_closure": true,
-      "closure_level": "scope_declaration",
+      "closure_level": "scoped_witness",
       "id": "encoded_family_sat_complete",
-      "scope_warning": "The current evidence is explicitly downgraded to representative/current-trace scope. No SAT-complete or polynomially faithful reduction certificate is present.",
-      "status": "representative_family_scope_declared_sat_complete_open",
-      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_scope_certificate.json"
+      "scope_warning": "The cycle-8 / Pi_33 residual packet is witnessed as a polynomially faithful representative family. No SAT-complete reduction certificate is present.",
+      "status": "polynomially_faithful_representative_family_witnessed_sat_complete_open",
+      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json"
     },
     {
       "blocks_full_closure": false,
@@ -17,12 +17,12 @@
       "witness": "data/invariants/integrity/cvx_trace/index.json"
     },
     {
-      "blocks_full_closure": true,
-      "closure_level": "scope_declaration",
+      "blocks_full_closure": false,
+      "closure_level": "witnessed",
       "id": "polynomial_trace_compiler",
-      "scope_warning": "The current executable witness covers one deterministic public unit-propagation DPLL fixture with polynomial overhead accounting. No universal-machine compiler or arbitrary-solver polynomial overhead proof is present.",
-      "status": "fixture_scope_declared_universal_compiler_open",
-      "witness": "data/invariants/integrity/cvx_trace/reports/polynomial_trace_compiler_scope_certificate.json"
+      "scope_warning": "The compiler emits one universal C trace event per finite public bit-machine instruction with polynomial overhead. Native solvers still require translation into the chosen public bit-machine model.",
+      "status": "universal_public_bit_machine_trace_compiler_witnessed",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json"
     },
     {
       "blocks_full_closure": false,
@@ -33,34 +33,34 @@
       "witness": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json"
     },
     {
-      "blocks_full_closure": true,
-      "closure_level": "scoped_witness",
+      "blocks_full_closure": false,
+      "closure_level": "witnessed",
       "id": "pure_c_no_escape",
-      "scope_warning": "This replays the no-public-extractor condition over the current accepted pure-C traces only; arbitrary polynomial-time no-escape still depends on the remaining bridge obligations.",
-      "status": "witnessed_for_current_accepted_pure_c_traces",
-      "witness": "data/invariants/integrity/cvx_trace/reports/pure_c_no_escape_report.json"
+      "scope_warning": "Pure-C no-escape is witnessed over the finite universal trace vocabulary: hidden advice, hidden-sector maps, and non-public parity basis recovery are typed X or rejected as residues.",
+      "status": "universal_trace_pure_c_no_escape_witnessed",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json"
     },
     {
       "blocks_full_closure": true,
       "closure_level": "scoped_witness",
       "id": "x_extractor_lower_bound",
-      "scope_warning": "This is a bounded search over current accepted trace artifacts with positive X-surface controls; it is not a polynomial-size lower bound for the hidden e33 family.",
-      "status": "bounded_search_no_extractor_found_current_traces",
-      "witness": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json"
+      "scope_warning": "The rho_33(gamma_8) hidden-sector target is certified and bare public transport is ruled out, but no polynomial-size X-extractor lower bound is present.",
+      "status": "explicit_hidden_sector_map_certified_polynomial_lower_bound_open",
+      "witness": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json"
     },
     {
-      "blocks_full_closure": true,
-      "closure_level": "scoped_witness",
+      "blocks_full_closure": false,
+      "closure_level": "witnessed",
       "id": "v_wall_crossing_accounting",
-      "scope_warning": "This defines the visible V certificate shape and proves the current accepted traces have zero V obligations; it does not prove arbitrary solver traces have no V wall crossings.",
-      "status": "no_v_events_current_traces_certificate_schema_defined",
-      "witness": "data/invariants/integrity/cvx_trace/reports/v_wall_crossing_accounting_report.json"
+      "scope_warning": "Every V class in the finite universal vocabulary has a replayed public-boundary surface certificate; current accepted traces contain no V events, and future V events require instance certificates or become residues.",
+      "status": "universal_v_surface_accounted_certificate_guarded",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_v_wall_crossing_accounting_report.json"
     },
     {
       "blocks_full_closure": true,
       "closure_level": "dependency_ledger",
       "id": "full_no_escape_closure",
-      "scope_warning": "The ledger closes the current accepted trace surface but explicitly blocks full separation on encoded-family completeness, arbitrary solver universality, universal pure-C no-escape, polynomial X-extractor lower bound, and arbitrary V accounting.",
+      "scope_warning": "The ledger closes the current accepted trace surface but explicitly blocks full separation on encoded-family completeness and polynomial X-extractor lower bound.",
       "status": "dependency_ledger_built_full_closure_blocked",
       "witness": "data/invariants/integrity/cvx_trace/reports/full_no_escape_closure_ledger.json"
     }
@@ -82,66 +82,48 @@
     "allowed": false,
     "blocked_by": [
       "encoded_family_sat_complete",
-      "polynomial_trace_compiler",
-      "pure_c_no_escape",
-      "x_extractor_lower_bound",
-      "v_wall_crossing_accounting"
+      "x_extractor_lower_bound"
     ],
     "conditional_claim_allowed": true,
     "hard_open_blockers": [],
-    "scope_declaration_blockers": [
-      "encoded_family_sat_complete",
-      "polynomial_trace_compiler"
-    ],
+    "scope_declaration_blockers": [],
     "scoped_witness_blockers": [
-      "pure_c_no_escape",
-      "x_extractor_lower_bound",
-      "v_wall_crossing_accounting"
+      "encoded_family_sat_complete",
+      "x_extractor_lower_bound"
     ]
   },
   "next_highest_yield_item": {
-    "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary.",
-    "id": "pure_c_no_escape"
+    "action": "Define and certify a height-coherent/action-return transport that derives rho_33(gamma_8) from edge or circuit data instead of inserting the certified residual scalar.",
+    "id": "intrinsic_height_coherent_transport"
   },
   "remaining_gaps": [
     {
-      "gap": "The encoded family is now explicitly scoped to representative/current-trace evidence. No SAT-complete or polynomially faithful reduction certificate is present.",
+      "gap": "The encoded family now has a polynomially faithful representative-family witness for the cycle-8 / Pi_33 packet, but no SAT-complete reduction certificate is present.",
       "id": "encoded_family_sat_complete",
       "needed": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation."
     },
     {
-      "gap": "The trace compiler is explicitly scoped to a public DPLL fixture. No universal-machine compiler or arbitrary-solver polynomial overhead proof is present.",
-      "id": "polynomial_trace_compiler",
-      "needed": "Compiler theorem or instrumented universal machine with explicit polynomial overhead for arbitrary polynomial-time solvers."
-    },
-    {
-      "gap": "Pure-C no-escape is witnessed for current accepted traces, not for every trace over the universal vocabulary.",
-      "id": "pure_c_no_escape",
-      "needed": "Checker showing pure C traces cannot recover or decide the hidden e33 obstruction."
-    },
-    {
-      "gap": "The X search is bounded over current accepted trace artifacts; it is not a polynomial-size lower bound for hidden e33 extractors.",
+      "gap": "The concrete hidden-sector target is now certified and the bare public transport span is ruled out, but no polynomial-size lower bound rules out X extractors or derives the residual through an intrinsic transport.",
       "id": "x_extractor_lower_bound",
       "needed": "Lower-bound argument or explicit recovered hidden-sector map."
-    },
-    {
-      "gap": "V accounting is certified for current no-V traces; arbitrary traces with V events still need replayed wall-crossing certificates.",
-      "id": "v_wall_crossing_accounting",
-      "needed": "Wall-crossing certificates with public boundary, commutator witness, and replay check."
     }
   ],
   "report_statuses": {
     "cvx_trace_index": {
       "path": "data/invariants/integrity/cvx_trace/index.json",
-      "status": "CVX_TRACE_BRIDGE_WITNESSES_WITH_UNIVERSAL_TYPING"
+      "status": "CVX_TRACE_BRIDGE_WITNESSES_WITH_ENCODED_REPRESENTATIVE_FAMILY"
+    },
+    "encoded_family_bridge": {
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
+      "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
     },
     "encoded_family_scope": {
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_scope_certificate.json",
-      "status": "ENCODED_FAMILY_SCOPE_DECLARED_REPRESENTATIVE_ONLY"
+      "status": "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
     },
     "polynomial_trace_compiler_scope": {
       "path": "data/invariants/integrity/cvx_trace/reports/polynomial_trace_compiler_scope_certificate.json",
-      "status": "POLYNOMIAL_TRACE_COMPILER_SCOPE_DECLARED_FIXTURE_ONLY"
+      "status": "POLYNOMIAL_TRACE_COMPILER_UNIVERSAL_MACHINE_WITNESSED"
     },
     "pure_c_no_escape": {
       "path": "data/invariants/integrity/cvx_trace/reports/pure_c_no_escape_report.json",
@@ -155,9 +137,25 @@
       "path": "data/invariants/integrity/cvx_trace/reports/solver_opcode_totality_report.json",
       "status": "SOLVER_OPCODE_TOTALITY_WITNESS_PASS"
     },
+    "universal_pure_c_no_escape": {
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",
+      "status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
+    },
+    "universal_trace_compiler": {
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
     "universal_trace_typing": {
       "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
       "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    },
+    "universal_v_wall_crossing_accounting": {
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_v_wall_crossing_accounting_report.json",
+      "status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS"
+    },
+    "universal_x_extractor_isolation": {
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_x_extractor_isolation_report.json",
+      "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
     },
     "v_wall_crossing_accounting": {
       "path": "data/invariants/integrity/cvx_trace/reports/v_wall_crossing_accounting_report.json",
@@ -166,6 +164,10 @@
     "x_extractor_bounded_search": {
       "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json",
       "status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND"
+    },
+    "x_extractor_target": {
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json",
+      "status": "X_EXTRACTOR_TARGET_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN"
     }
   },
   "schema": "d20.integrity.full_no_escape_closure_ledger.v1",

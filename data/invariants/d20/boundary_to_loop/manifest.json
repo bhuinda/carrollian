@@ -1,0 +1,34 @@
+{
+  "inputs": {
+    "d20_edges": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "primitive_cycles": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
+      "sha256": "a6fd82c3cafc0767c6ed7a41a157326d249933a6be62d6aad0f27f989dc7e84c"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "manifest_sha256": "52f80b2730dfcbd91ad70b16a5f7de6e8730494860732bb58c18bea8d211541d",
+  "name": "boundary_to_loop",
+  "outputs": {
+    "manifest": "data/invariants/d20/boundary_to_loop/manifest.json",
+    "report": "data/invariants/d20/boundary_to_loop/report.json"
+  },
+  "report_sha256": "7f9b39ac5f57d15ed1289344e18b3c4679ff0ffdbd4b6b2f28122cf8ba59cff4",
+  "schema": "d20.boundary_to_loop_map_manifest.v1",
+  "validation_tests": [
+    "construct all 30 directed object-pair A985 tube projections",
+    "construct both orientations for all 30 D20 edges",
+    "verify every lift lands in the closed-loop relation basis at the removed object",
+    "verify the cycle-8 lift is nonzero over integers and modulo F_1000003"
+  ]
+}

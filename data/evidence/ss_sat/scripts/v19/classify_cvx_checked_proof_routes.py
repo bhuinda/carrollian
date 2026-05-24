@@ -148,6 +148,17 @@ def find_proof(bundle, base):
     return None, None
 
 
+def route_hint(kind, level, target, message, **extra):
+    hint = {
+        "kind": kind,
+        "level": level,
+        "target": target,
+        "message": message,
+    }
+    hint.update({key: value for key, value in extra.items() if value is not None})
+    return hint
+
+
 def audit_bundle(bundle):
     bundle = Path(bundle)
     rows = []
@@ -155,14 +166,21 @@ def audit_bundle(bundle):
     totals = Counter()
     per_class = Counter()
     per_integrity = Counter()
-    red_flags = []
+    hints = []
     proof_formats = Counter()
 
     for cnf_path in sorted(bundle.glob("*.cnf")):
         base = cnf_path.stem
         proof_path, proof_format = find_proof(bundle, base)
         if proof_path is None:
-            red_flags.append(f"missing proof for {cnf_path.name}")
+            hints.append(
+                route_hint(
+                    "missing_proof",
+                    "blocking_for_route_classification",
+                    cnf_path.name,
+                    f"No proof artifact was found for {cnf_path.name}.",
+                )
+            )
             continue
 
         proof_formats[proof_format] += 1
@@ -198,7 +216,17 @@ def audit_bundle(bundle):
             totals["proof_steps"] += 1
             totals["hint_references"] += parsed["hint_count"]
             if classification["uses_extension_variable"]:
-                red_flags.append(f"{proof_path.name}:{line_number}: extension variable")
+                hints.append(
+                    route_hint(
+                        "extension_variable",
+                        "blocking_for_public_c_route",
+                        f"{proof_path.name}:{line_number}",
+                        "Proof step uses a variable outside the DIMACS public variable range.",
+                        cnf=cnf_path.name,
+                        proof=proof_path.name,
+                        line=line_number,
+                    )
+                )
 
             rows.append(
                 {
@@ -248,9 +276,12 @@ def audit_bundle(bundle):
             }
         )
 
+    blocking_hint_count = sum(
+        1 for hint in hints if str(hint.get("level", "")).startswith("blocking")
+    )
     verdict = (
         "C_PUBLIC_CHECKED_PROOF_TRACE"
-        if not red_flags and per_integrity.get("X", 0) == 0
+        if blocking_hint_count == 0 and per_integrity.get("X", 0) == 0
         else "MIXED_OR_X_REQUIRES_REVIEW"
     )
     result = {
@@ -269,7 +300,9 @@ def audit_bundle(bundle):
             "hint_references": totals["hint_references"],
             "class_counts": dict(sorted(per_class.items())),
             "integrity_counts": dict(sorted(per_integrity.items())),
-            "red_flags": red_flags,
+            "hints": hints,
+            "hint_count": len(hints),
+            "blocking_hint_count": blocking_hint_count,
         },
         "negative_checks": {
             "native_xor_or_gf2_steps_detected": False,

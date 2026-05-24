@@ -1,5 +1,5 @@
 {
-  "schema": "d20.data_registry.v1",
+  "schema": "d20.data_registry",
   "status": "DATA_REGISTRY_BUILT",
   "policy": {
     "physical_layout": "domain_grouped_files",
@@ -28,9 +28,9 @@
     "data/invariants/integrity": "proof-system integrity and boundary ledgers",
     "data/evidence/tensor_chain": "tensor-chain evidence split into reports, tables, arrays, and stages",
     "data/evidence/a236_compute": "A236 computation cache and branching evidence",
-    "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, manifests, and versioned source provenance",
+    "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, manifests, and source provenance",
     "data/reference/dihedral": "general dihedral formula references",
-    "data/evidence/stack_series": "bounded stack-series evidence split into versioned stages, reports, and manifests",
+    "data/evidence/stack_series": "bounded stack-series evidence split into named stages, reports, and manifests",
     "data/evidence/reproducibility": "portable reproduction bundles retained under canonical evidence storage",
     "data/integrity/height_coherence": "height-coherence integrity certificates, guards, arrays, tables, and verification scripts"
   },
@@ -139,6 +139,7 @@
       "file_classes": [
         "csv_table",
         "json_checklist",
+        "json_certificate",
         "json_index",
         "json_report",
         "json_schema",
@@ -147,8 +148,11 @@
       ],
       "required_files": [
         "conditional_theorem_ladder.csv",
+        "cvx_trace/certificates/V_VISIBLE_COMMUTATOR_WALL_CROSSING.universal_v_wall_certificate.json",
+        "cvx_trace/certificates/V_VISIBLE_PUBLIC_BOUNDARY_TRANSPORT.universal_v_wall_certificate.json",
         "cvx_trace/index.json",
         "cvx_trace/reports/cadical_lrat_contradiction_4_validation.json",
+        "cvx_trace/reports/encoded_family_bridge_certificate.json",
         "cvx_trace/reports/encoded_family_scope_certificate.json",
         "cvx_trace/reports/full_no_escape_closure_ledger.json",
         "cvx_trace/reports/polynomial_trace_compiler_scope_certificate.json",
@@ -156,27 +160,42 @@
         "cvx_trace/reports/public_dpll_contradiction_4_overhead.json",
         "cvx_trace/reports/solver_opcode_totality_classifier.json",
         "cvx_trace/reports/solver_opcode_totality_report.json",
+        "cvx_trace/reports/universal_trace_compiler_report.json",
+        "cvx_trace/reports/universal_pure_c_no_escape_report.json",
         "cvx_trace/reports/universal_trace_typing_classifier.json",
         "cvx_trace/reports/universal_trace_typing_report.json",
+        "cvx_trace/reports/universal_v_wall_crossing_accounting_report.json",
+        "cvx_trace/reports/universal_x_extractor_isolation_report.json",
         "cvx_trace/reports/v_wall_crossing_accounting_report.json",
+        "cvx_trace/reports/x_extractor_target_certificate.json",
         "cvx_trace/reports/x_extractor_bounded_search_report.json",
         "cvx_trace/residues/unsupported_universal_trace_event_residue.json",
         "cvx_trace/residues/uncertified_v_wall_crossing_residue.json",
         "cvx_trace/residues/unsupported_solver_opcode_residue.json",
         "cvx_trace/schemas/cvx_trace.v1.schema.json",
+        "cvx_trace/schemas/universal_public_bit_machine_program.v1.schema.json",
         "cvx_trace/schemas/universal_trace_event.v1.schema.json",
+        "cvx_trace/schemas/universal_v_wall_crossing_certificate.v1.schema.json",
         "cvx_trace/schemas/v_wall_crossing_certificate.v1.schema.json",
         "cvx_trace/scripts/account_v_wall_crossing.py",
+        "cvx_trace/scripts/build_encoded_family_bridge_certificate.py",
         "cvx_trace/scripts/build_encoded_family_scope_certificate.py",
         "cvx_trace/scripts/build_full_no_escape_closure_ledger.py",
         "cvx_trace/scripts/build_polynomial_trace_compiler_scope_certificate.py",
+        "cvx_trace/scripts/build_universal_pure_c_no_escape.py",
         "cvx_trace/scripts/build_universal_trace_typing.py",
+        "cvx_trace/scripts/build_universal_trace_compiler.py",
+        "cvx_trace/scripts/build_universal_v_wall_crossing_accounting.py",
+        "cvx_trace/scripts/build_universal_x_extractor_isolation.py",
+        "cvx_trace/scripts/build_x_extractor_target_certificate.py",
         "cvx_trace/scripts/classify_solver_opcode_totality.py",
         "cvx_trace/scripts/instrument_public_dpll_trace.py",
         "cvx_trace/scripts/prove_pure_c_no_escape.py",
         "cvx_trace/scripts/search_x_extractor_bound.py",
         "cvx_trace/scripts/validate_cvx_trace.py",
         "cvx_trace/traces/cadical_lrat_contradiction_4.trace.json",
+        "cvx_trace/traces/universal_bit_machine_contradiction_4.program.json",
+        "cvx_trace/traces/universal_bit_machine_contradiction_4.trace.json",
         "cvx_trace/traces/public_dpll_contradiction_4.trace.json",
         "next_integrity_tests.csv",
         "p_vs_np_bridge_checklist.json",
@@ -246,7 +265,7 @@
         "reports": "human and machine report files",
         "tables": "CSV evidence tables",
         "arrays": "NPZ array payloads",
-        "stages": "versioned experiment stages"
+        "stages": "named experiment stages"
       }
     },
     "ss_sat_evidence": {
@@ -255,7 +274,7 @@
       "owner": "ss_sat",
       "storage_status": "canonical_standardized_layout",
       "target_path": "data/evidence/ss_sat",
-      "migration_policy": "transient gnatural_ontological_computation version bundles collapsed into canonical evidence tree with top-level drops archived locally",
+      "migration_policy": "transient gnatural_ontological_computation bundles collapsed into canonical evidence tree with top-level drops archived locally",
       "file_classes": [
         "cnf_benchmark",
         "csv_table",
@@ -295,9 +314,9 @@
         "reports": "human and machine reports",
         "tables": "CSV summary tables",
         "manifests": "source evidence manifests with command lines and hashes",
-        "source_versions": "versioned provenance copied from consolidated gnatural drops",
+        "source_versions": "source provenance copied from consolidated gnatural drops",
         "source_archives": "zip evidence bundles plus local-only archived staging roots",
-        "scripts": "versioned evidence analysis and extraction scripts",
+        "scripts": "evidence analysis and extraction scripts",
         "schema": "external evidence manifest schema"
       }
     },
@@ -329,7 +348,7 @@
       ],
       "standardized_subdirectories": {
         "reports": "human and machine evidence reports",
-        "stages": "versioned stack-series computation stages"
+        "stages": "named stack-series computation stages"
       }
     },
     "height_coherence_integrity": {

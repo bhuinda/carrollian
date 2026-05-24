@@ -1,0 +1,141 @@
+{
+  "bridge_context": {
+    "encoded_family_bridge_decision": {
+      "may_claim_encoded_family_sat_complete": false,
+      "may_claim_full_separation": false,
+      "may_claim_polynomially_faithful_representative_family": true,
+      "reason": "The cycle-8 / Pi_33 / residual packet is now a polynomially bounded representative-family bridge, while SAT-completeness and the X-extractor lower bound remain open."
+    },
+    "projection_obligation_closure_state": "discharged_for_bare_lambda; refined_transport_required_for_nonzero_residual_recovery",
+    "projection_obligation_remaining_recovery_obligation": "Define a refined height-coherent/action-return transport if the target is a nonzero sector-33 residual recovery rather than the bare structural coefficient."
+  },
+  "claim_level": "explicit_hidden_sector_target_not_polynomial_lower_bound",
+  "decision": {
+    "may_claim_explicit_hidden_sector_map_certified": true,
+    "may_claim_full_separation": false,
+    "may_claim_no_polynomial_size_x_extractor": false,
+    "may_claim_x_extractor_target_certified": true,
+    "reason": "The concrete hidden-sector target is certified, and the bare public transport span is ruled out for recovering it. This is not a polynomial-size X-extractor lower bound."
+  },
+  "lower_bound_state": {
+    "bare_public_transport_lower_bound_certified": true,
+    "explicit_hidden_sector_map_certified": true,
+    "must_leave_bare_public_transport_span_to_recover_residual": true,
+    "must_use_x_or_a_refined_non_bare_transport_for_hidden_residual_recovery": true,
+    "no_polynomial_size_x_extractor_proved": false
+  },
+  "next_highest_yield_item": {
+    "action": "Define and certify a height-coherent/action-return transport that derives rho_33(gamma_8) from edge or circuit data instead of inserting the certified residual scalar.",
+    "id": "intrinsic_height_coherent_transport"
+  },
+  "non_claims": [
+    "This does not prove that polynomial-size X extractors are impossible.",
+    "This does not derive rho_33(gamma_8) from an intrinsic height-coherent transport rule.",
+    "This does not certify SAT-completeness of the encoded family.",
+    "This does not prove P != NP."
+  ],
+  "schema": "d20.integrity.x_extractor_target_certificate.v1",
+  "source_audit": {
+    "cycle8_pi33_projection_obligation": {
+      "all_checks_pass": true,
+      "expected_status": "D20_CYCLE8_PI33_BARE_LAMBDA_COEFFICIENT_ZERO_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/proof_obligations/cycle8_pi33_projection_coefficient/report.json",
+      "status": "D20_CYCLE8_PI33_BARE_LAMBDA_COEFFICIENT_ZERO_CERTIFIED"
+    },
+    "encoded_family_bridge": {
+      "all_checks_pass": null,
+      "expected_status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
+      "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+    },
+    "sector33_boundary_annihilation": {
+      "all_checks_pass": true,
+      "expected_status": "D20_SECTOR33_BOUNDARY_TO_LOOP_ANNIHILATION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+      "status": "D20_SECTOR33_BOUNDARY_TO_LOOP_ANNIHILATION_CERTIFIED"
+    },
+    "sector33_residual_lift": {
+      "all_checks_pass": true,
+      "expected_status": "D20_SECTOR33_RESIDUAL_LIFT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_residual_lift/report.json",
+      "status": "D20_SECTOR33_RESIDUAL_LIFT_CERTIFIED"
+    },
+    "universal_x_extractor_isolation": {
+      "all_checks_pass": null,
+      "expected_status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_x_extractor_isolation_report.json",
+      "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
+    }
+  },
+  "status": "X_EXTRACTOR_TARGET_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",
+  "target": {
+    "cycle_id": 8,
+    "field_prime": 1000003,
+    "hidden_residual_lift": {
+      "corrected_lift_vector": {
+        "pi33_coefficient_mod_prime": 625219,
+        "pi33_coefficient_signed": -374784,
+        "sha256": "08c5f8dd0ee29a3bdaf61dc4b0d70c30169550579a4aaad8ecaccb0a4d828859",
+        "support": 237
+      },
+      "e33_vector": {
+        "pi33_coefficient_mod_prime": 2,
+        "pi33_coefficient_signed": 2,
+        "sha256": "80f86fd6281302c6bafc6bc4176923dfa41aa4dbe1d58e8a9a64f9cac1a5a348",
+        "support": 56
+      },
+      "meaning": "The explicit hidden-sector object is the dimension-normalized residual multiple of e33. It recovers the certified residual and remains invisible to A42/A12 public shadows.",
+      "public_shadows": {
+        "q12_nonzero_count": 0,
+        "q12_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "q42_nonzero_count": 0,
+        "q42_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "residual_lift_vector": {
+        "pi33_coefficient_mod_prime": 625219,
+        "pi33_coefficient_signed": -374784,
+        "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+        "support": 56
+      }
+    },
+    "object_id": "rho33_cycle8_hidden_residual_lift",
+    "public_transport_floor": {
+      "all_30_directed_pair_lifts_annihilated": true,
+      "bare_lambda_pi33_coefficient_mod_prime": 0,
+      "bare_lambda_pi33_coefficient_signed": 0,
+      "cycle8_optical_weighted_annihilated": true,
+      "cycle8_signed_orientation_annihilated": true,
+      "cycle8_unweighted_annihilated": true,
+      "meaning": "The certified bare D20 boundary-to-Loop_297 transport has zero Pi_33 coefficient, including every directed object-pair lift and the cycle-8 variants."
+    },
+    "residual": {
+      "dimension": 2,
+      "integral": -374784,
+      "mod_prime": 625219,
+      "residual_lift_scalar": 812611,
+      "residual_lift_scalar_signed": -187392
+    },
+    "sector": 33,
+    "x_surface_floor": {
+      "current_accepted_trace_x_event_count": 0,
+      "minimum_x_event_count_for_extractor_opcode": 1,
+      "zero_x_trace_can_contain_extractor_opcode": false
+    }
+  },
+  "target_audit": {
+    "checks": {
+      "bare_public_transport_pi33_zero": true,
+      "corrected_lift_recovers_target_residual": true,
+      "directed_pair_public_span_annihilated": true,
+      "hidden_lift_public_shadows_zero": true,
+      "residual_lift_recovers_target_residual": true,
+      "zero_x_trace_cannot_contain_extractor_opcode": true
+    },
+    "passed": true
+  }
+}

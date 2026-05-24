@@ -1,0 +1,117 @@
+{
+  "$id": "d20.integrity.universal_v_wall_crossing_certificate.v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "locally_checkable": {
+          "type": "boolean"
+        },
+        "no_hidden_advice": {
+          "type": "boolean"
+        },
+        "no_x_extractor": {
+          "type": "boolean"
+        },
+        "public_boundary_only": {
+          "type": "boolean"
+        },
+        "replayable": {
+          "type": "boolean"
+        },
+        "uncertified_instances_rejected": {
+          "type": "boolean"
+        },
+        "visible": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "visible",
+        "replayable",
+        "locally_checkable",
+        "public_boundary_only",
+        "no_hidden_advice",
+        "no_x_extractor",
+        "uncertified_instances_rejected"
+      ],
+      "type": "object"
+    },
+    "class_code": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "integrity_type": {
+      "const": "V"
+    },
+    "public_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "input_surface_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "output_surface_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "input_surface_hash",
+        "output_surface_hash"
+      ],
+      "type": "object"
+    },
+    "replay_witness": {
+      "additionalProperties": false,
+      "properties": {
+        "local_check": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "replay_status": {
+          "const": "REPLAYED"
+        },
+        "witness_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "witness_hash",
+        "replay_status",
+        "local_check"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "d20.integrity.universal_v_wall_crossing_certificate.v1"
+    },
+    "status": {
+      "const": "UNIVERSAL_V_WALL_CROSSING_SURFACE_CERTIFICATE"
+    },
+    "witness_type": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "status",
+    "class_code",
+    "integrity_type",
+    "witness_type",
+    "public_boundary",
+    "replay_witness",
+    "checks"
+  ],
+  "title": "D20 universal visible V wall-crossing surface certificate",
+  "type": "object"
+}

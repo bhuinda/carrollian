@@ -347,8 +347,8 @@ def main() -> int:
         },
         "non_claim": "This report does not provide the arbitrary-solver trace compiler, the no-escape theorem over all universal traces, an X-extractor lower bound, or P != NP.",
         "next_highest_yield_item": {
-            "id": "pure_c_no_escape",
-            "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary.",
+            "id": "encoded_family_sat_complete",
+            "action": "Build the reduction certificate for the hidden e33-obstructed family, or keep the claim representative/current-trace scoped.",
         },
     }
 

@@ -1,0 +1,63 @@
+{
+  "certificate_directory": "data/invariants/integrity/cvx_trace/certificates",
+  "certificate_errors": [],
+  "certificate_schema": "data/invariants/integrity/cvx_trace/schemas/universal_v_wall_crossing_certificate.v1.schema.json",
+  "claim_level": "finite_universal_v_surface_accounted_certificate_guarded",
+  "classifier_path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_classifier.json",
+  "current_trace_audit": {
+    "current_v_accounting": {
+      "fallback_fixture": {
+        "policy": "visible V events require a replayed wall-crossing certificate before entering accepted no-escape accounting",
+        "residue_path": "data/invariants/integrity/cvx_trace/residues/uncertified_v_wall_crossing_residue.json",
+        "status": "V_WALL_CROSSING_UNCERTIFIED_TYPED_RESIDUE"
+      },
+      "path": "data/invariants/integrity/cvx_trace/reports/v_wall_crossing_accounting_report.json",
+      "status": "V_WALL_CROSSING_ACCOUNTING_NO_V_EVENTS",
+      "v_event_count": 0
+    },
+    "errors": [],
+    "passed": true,
+    "typing_report": {
+      "current_trace_classified_counts": {
+        "C": 5,
+        "UNCLASSIFIED": 0,
+        "V": 0,
+        "X": 0
+      },
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    }
+  },
+  "decision": {
+    "may_claim_arbitrary_solver_v_events_accounted_without_certificates": false,
+    "may_claim_full_separation": false,
+    "may_claim_universal_v_surface_accounted": true,
+    "reason": "Every V class in the finite universal vocabulary has a replayed public-boundary surface certificate, and current accepted traces contain no V events. Future V events still require instance certificates or become residues."
+  },
+  "next_highest_yield_item": {
+    "action": "Build the reduction certificate for the hidden e33-obstructed family, or keep the claim representative/current-trace scoped.",
+    "id": "encoded_family_sat_complete"
+  },
+  "non_claim": "This report does not prove arbitrary solvers avoid V events. It certifies the finite universal V surface and the current no-V trace set.",
+  "schema": "d20.integrity.universal_v_wall_crossing_accounting.v1",
+  "status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS",
+  "surface_certificate_count": 2,
+  "surface_certificates": [
+    {
+      "certificate_path": "data/invariants/integrity/cvx_trace/certificates/V_VISIBLE_COMMUTATOR_WALL_CROSSING.universal_v_wall_certificate.json",
+      "class_code": "V_VISIBLE_COMMUTATOR_WALL_CROSSING",
+      "passed": true,
+      "witness_type": "commutator_wall_crossing"
+    },
+    {
+      "certificate_path": "data/invariants/integrity/cvx_trace/certificates/V_VISIBLE_PUBLIC_BOUNDARY_TRANSPORT.universal_v_wall_certificate.json",
+      "class_code": "V_VISIBLE_PUBLIC_BOUNDARY_TRANSPORT",
+      "passed": true,
+      "witness_type": "public_boundary_transport"
+    }
+  ],
+  "visible_v_class_codes": {
+    "V_VISIBLE_COMMUTATOR_WALL_CROSSING": "visible commutator wall crossing with replayable public boundary",
+    "V_VISIBLE_PUBLIC_BOUNDARY_TRANSPORT": "visible boundary transport with public replay data"
+  }
+}

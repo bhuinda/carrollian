@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -34,6 +35,9 @@ from src.paths import D20_INVARIANTS, MANIFESTS, ROOT
 MANIFEST = MANIFESTS / "file_hashes.json"
 D20 = ROOT / "d20.json"
 CERTIFICATE = ROOT / "certificate.json"
+SCHEMA_VERSION_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
+STACK_STAGE_ID_RE = re.compile(r"^v\d+_")
+VERSIONED_PATH_PART_RE = re.compile(r"(^v\d+$|^v\d+_|_v\d+$|_v\d+_|\.v\d+(?=[._-]))")
 
 EXCLUDED_DIRS = {
     ".git",
@@ -65,12 +69,34 @@ EXCLUDED_SUFFIXES = {
 }
 
 EXCLUDED_FILES = {
+    "d20.json",
     "test.zip",
 }
 
 
 def canonical(obj: Any) -> bytes:
-    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode("utf-8")
+
+
+def unversioned_schema(value: Any) -> Any:
+    if isinstance(value, str):
+        return SCHEMA_VERSION_SUFFIX_RE.sub("", value)
+    return value
+
+
+def unversioned_stage_id(value: Any) -> Any:
+    if isinstance(value, str):
+        return STACK_STAGE_ID_RE.sub("", value)
+    return value
+
+
+def versioned_archive_path(path: Path) -> bool:
+    parts = path.relative_to(ROOT).parts
+    return (
+        "source_versions" in parts
+        or "source_archives" in parts
+        or any(VERSIONED_PATH_PART_RE.search(part) for part in parts)
+    )
 
 
 def sha_json_body(obj: dict[str, Any], hash_key: str) -> str:
@@ -92,7 +118,7 @@ def load_json(path: Path) -> dict[str, Any]:
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
 
 
 def run(cmd: list[str], *, check: bool = True, capture: bool = False) -> subprocess.CompletedProcess[str]:
@@ -121,6 +147,8 @@ def refresh_standard_manifest(
     files: dict[str, Any] = {}
     for path in sorted(base.rglob("*")):
         if not path.is_file() or path == manifest_path:
+            continue
+        if versioned_archive_path(path):
             continue
         if any(
             part in EXCLUDED_DIRS or part.startswith(EXCLUDED_DIR_PREFIXES)
@@ -155,7 +183,7 @@ def refresh_tensor_chain_plain_name_view() -> bool:
         return False
     from src.derive_tensor_chain_plain_names import OUT, derive
 
-    OUT.write_text(json.dumps(derive(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    OUT.write_text(json.dumps(derive(), indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     print("refreshed data/evidence/tensor_chain/plain_name_view.json", flush=True)
     return True
 
@@ -169,25 +197,27 @@ def refresh_tensor_chain_manifest() -> bool:
     for path in sorted(base.rglob("*")):
         if not path.is_file() or path == manifest_path:
             continue
+        if versioned_archive_path(path):
+            continue
         rel = path.relative_to(base).as_posix()
         files[rel] = {
             "size": path.stat().st_size,
             "sha256": sha_file(path),
         }
     manifest = {
-        "schema": "d20.tensor_chain.manifest.v1",
+        "schema": "d20.tensor_chain.manifest",
         "status": "TENSOR_CHAIN_MANIFEST_REFRESHED",
         "canonical_folder": "data/evidence/tensor_chain",
         "layout": {
             "arrays": "NPZ array payloads",
             "reports": "machine and human report files",
-            "stages": "versioned and named experiment stages",
+            "stages": "named experiment stages",
             "tables": "CSV evidence tables",
         },
         "file_count": len(files),
         "files": files,
     }
-    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     print("refreshed data/evidence/tensor_chain/manifest.json", flush=True)
     return True
 
@@ -200,6 +230,8 @@ def refresh_ss_sat_manifest() -> bool:
     files: dict[str, Any] = {}
     for path in sorted(base.rglob("*")):
         if not path.is_file() or path == manifest_path:
+            continue
+        if versioned_archive_path(path):
             continue
         rel = path.relative_to(base).as_posix()
         if rel.startswith("source_archives/legacy_roots/"):
@@ -218,7 +250,7 @@ def refresh_ss_sat_manifest() -> bool:
             "sha256": sha_file(path),
         }
     manifest = {
-        "schema": "d20.ss_sat.manifest.v1",
+        "schema": "d20.ss_sat.manifest",
         "status": "SS_SAT_MANIFEST_REFRESHED",
         "canonical_folder": "data/evidence/ss_sat",
         "layout": {
@@ -230,15 +262,13 @@ def refresh_ss_sat_manifest() -> bool:
             "reports": "machine and human reports",
             "residues": "typed failed or blocked seams",
             "schema": "external evidence manifest schema",
-            "scripts": "versioned evidence analysis and extraction scripts",
-            "source_archives": "zip evidence bundles plus local-only archived staging roots",
-            "source_versions": "versioned provenance copied from consolidated gnatural drops",
+            "scripts": "evidence analysis and extraction scripts",
             "tables": "CSV evidence summaries",
         },
         "file_count": len(files),
         "files": files,
     }
-    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     print("refreshed data/evidence/ss_sat/manifest.json", flush=True)
     return True
 
@@ -253,9 +283,10 @@ def stack_series_stage_summary(stage_id: str, cert_name: str) -> dict[str, Any]:
         for path in sorted(stage_dir.rglob("*.csv"))
     } if stage_dir.exists() else {}
     return {
-        "stage_id": stage_id,
-        "certificate_path": f"stages/{stage_id}/{cert_name}",
-        "schema": certificate.get("schema"),
+        "stage_id": unversioned_stage_id(stage_id),
+        "certificate_file": cert_name,
+        "certificate_sha256": sha_file(cert_path) if cert_path.exists() else None,
+        "schema": unversioned_schema(certificate.get("schema")),
         "status": certificate.get("status"),
         "bounds": certificate.get("bounds"),
         "derived_row_counts": certificate.get("derived_row_counts") or certificate.get("coefficient_rows") or {},
@@ -271,38 +302,32 @@ def refresh_stack_series_evidence() -> bool:
     base = ROOT / "data" / "evidence" / "stack_series"
     if not base.exists():
         return False
-    stage_specs = [
-        ("v26_q_weighted", "q_weighted_stack_series_certificate.json"),
-        ("v27_a985_weighted", "a985_weighted_stack_series_certificate.json"),
-        ("v28_relation_level", "relation_level_stack_series_certificate.json"),
-        ("v29_relation_pair_quotient", "relation_pair_stack_series_certificate.json"),
+    cert_names = [
+        "q_weighted_stack_series_certificate.json",
+        "a985_weighted_stack_series_certificate.json",
+        "relation_level_stack_series_certificate.json",
+        "relation_pair_stack_series_certificate.json",
     ]
+    stage_specs = []
+    for cert_name in cert_names:
+        matches = sorted((base / "stages").glob(f"*/{cert_name}"))
+        if matches:
+            stage_specs.append((matches[0].parent.name, cert_name))
     stages = [stack_series_stage_summary(stage_id, cert_name) for stage_id, cert_name in stage_specs]
     report = {
-        "schema": "d20.stack_series_evidence_report.v1",
+        "schema": "d20.stack_series_evidence_report",
         "status": "STACK_SERIES_EVIDENCE_INTEGRATED",
         "present": True,
         "canonical_root": "data/evidence/stack_series",
         "stage_count": len(stages),
         "stages": stages,
-        "invariant_policy": {
-            "role": "bounded stack-series evidence archive",
-            "certificate_semantics": (
-                "certified truncated computations are preserved; motivic/sheafified CoHA completion "
-                "remains open where stated by certificates"
-            ),
-            "source_log_policy": (
-                "source CSV/JSON/script files are copied verbatim from transient ingest bundles; "
-                "generated manifests and reports are additive"
-            ),
-        },
     }
     write_json(base / "reports" / "stack_series_evidence.json", report)
 
     lines = [
         "# Stack-series evidence",
         "",
-        "Canonical archive for the migrated v26-v29 bounded stack-series evidence bundles.",
+        "Canonical archive for the migrated bounded stack-series evidence bundles.",
         "",
         "| Stage | Status | Bounds | Certificate |",
         "| --- | --- | --- | --- |",
@@ -311,7 +336,7 @@ def refresh_stack_series_evidence() -> bool:
         bounds = stage.get("bounds") or {}
         bounds_text = ", ".join(f"{key}={value}" for key, value in bounds.items()) if isinstance(bounds, dict) else str(bounds)
         lines.append(
-            f"| {stage['stage_id']} | {stage.get('status')} | {bounds_text} | {stage.get('certificate_path')} |"
+            f"| {stage['stage_id']} | {stage.get('status')} | {bounds_text} | {stage.get('certificate_file')} |"
         )
     lines.extend([
         "",
@@ -320,11 +345,11 @@ def refresh_stack_series_evidence() -> bool:
     (base / "reports" / "stack_series_evidence.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     index = {
-        "schema": "d20.stack_series_evidence_index.v1",
+        "schema": "d20.stack_series_evidence_index",
         "status": "STACK_SERIES_EVIDENCE_INTEGRATED",
         "canonical_root": "data/evidence/stack_series",
         "layout": {
-            "stages": "stages/<versioned_stage_id>",
+            "stages": "stages/<stage_id>",
             "reports": "reports/stack_series_evidence.{json,md}",
             "manifest": "manifest.json",
         },
@@ -333,7 +358,8 @@ def refresh_stack_series_evidence() -> bool:
                 "stage_id": stage["stage_id"],
                 "status": stage.get("status"),
                 "schema": stage.get("schema"),
-                "certificate_path": stage.get("certificate_path"),
+                "certificate_file": stage.get("certificate_file"),
+                "certificate_sha256": stage.get("certificate_sha256"),
             }
             for stage in stages
         ],
@@ -341,11 +367,11 @@ def refresh_stack_series_evidence() -> bool:
     write_json(base / "index.json", index)
     refresh_standard_manifest(
         base=base,
-        manifest_schema="d20.stack_series_evidence_manifest.v1",
+        manifest_schema="d20.stack_series_evidence_manifest",
         status="STACK_SERIES_EVIDENCE_INTEGRATED",
         canonical_folder="data/evidence/stack_series",
         layout={
-            "stages": "versioned stack-series evidence drops",
+            "stages": "named stack-series evidence drops",
             "reports": "machine and human evidence reports",
         },
     )
@@ -370,7 +396,7 @@ def refresh_height_coherence_evidence() -> bool:
         if isinstance(row, dict) and row.get("negative_control") is True
     ]
     report = {
-        "schema": "d20.height_coherence_evidence_report.v1",
+        "schema": "d20.height_coherence_evidence_report",
         "status": certificate.get("status"),
         "present": True,
         "canonical_root": "data/integrity/height_coherence",
@@ -399,7 +425,7 @@ def refresh_height_coherence_evidence() -> bool:
     (base / "reports" / "height_coherence_evidence.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     refresh_standard_manifest(
         base=base,
-        manifest_schema="d20.height_coherence_evidence_manifest.v1",
+        manifest_schema="d20.height_coherence_evidence_manifest",
         status=certificate.get("status") or "D20_UF_KERNEL_HEIGHT_COHERENCE_CERTIFIED",
         canonical_folder="data/integrity/height_coherence",
         layout={
@@ -431,17 +457,13 @@ def refresh_reproducibility_evidence() -> bool:
         for path in sorted((base / "src").glob("*.py"))
     ] if (base / "src").exists() else []
     report = {
-        "schema": "d20.reproducibility_evidence_report.v1",
+        "schema": "d20.reproducibility_evidence_report",
         "status": "D20_REPRODUCIBILITY_EVIDENCE_INTEGRATED",
         "present": True,
         "canonical_root": "data/evidence/reproducibility/python_bundle",
         "output_certificate_count": len(certs),
         "output_certificates": certs,
         "source_scripts": source_scripts,
-        "invariant_policy": {
-            "role": "portable Python/NumPy reproduction bundle",
-            "preservation": "README, source scripts, output tables, and output certificates are retained under canonical evidence storage",
-        },
     }
     write_json(base / "reports" / "reproducibility_evidence.json", report)
     lines = [
@@ -456,7 +478,7 @@ def refresh_reproducibility_evidence() -> bool:
         lines.append(f"| {certificate['path']} | {certificate.get('status')} | {certificate.get('schema')} |")
     (base / "reports" / "reproducibility_evidence.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     index = {
-        "schema": "d20.reproducibility_evidence_index.v1",
+        "schema": "d20.reproducibility_evidence_index",
         "status": "D20_REPRODUCIBILITY_EVIDENCE_INTEGRATED",
         "canonical_root": "data/evidence/reproducibility/python_bundle",
         "layout": {
@@ -471,7 +493,7 @@ def refresh_reproducibility_evidence() -> bool:
     write_json(base / "index.json", index)
     refresh_standard_manifest(
         base=base,
-        manifest_schema="d20.reproducibility_evidence_manifest.v1",
+        manifest_schema="d20.reproducibility_evidence_manifest",
         status="D20_REPRODUCIBILITY_EVIDENCE_INTEGRATED",
         canonical_folder="data/evidence/reproducibility/python_bundle",
         layout={
@@ -492,7 +514,7 @@ def refresh_coorient_marker() -> bool:
     write_outputs(marker, relation_npz=relation)
     out = ROOT / "generated" / "coorient_marker_from_orbitals_report.json"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(marker, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    out.write_text(json.dumps(marker, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     print("refreshed data/coorient coorient marker from pre-A985 regular orbital", flush=True)
     return marker.get("status") == "COORIENT_MARKER_DERIVED_FROM_ORBITALS_PASS"
 
@@ -551,7 +573,7 @@ def refresh_universal_integral_uniqueness() -> bool:
 
     result = derive()
     out = D20_INVARIANTS / "universal_integral_uniqueness.json"
-    out.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    out.write_text(json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     print("refreshed data/invariants/d20/universal_integral_uniqueness.json", flush=True)
     return result.get("status") == "UNIVERSAL_A985_INTEGRAL_UNIQUENESS_PASS"
 
@@ -587,7 +609,7 @@ def rebuild_d20(pretty: bool) -> None:
     refresh_reproducibility_evidence()
     print("$ derive d20.json", flush=True)
     obj = derive()
-    D20.write_text(json.dumps(obj, indent=2 if pretty else None, sort_keys=bool(pretty)), encoding="utf-8")
+    D20.write_text(json.dumps(obj, indent=2 if pretty else None, sort_keys=bool(pretty), allow_nan=False), encoding="utf-8")
     print("rebuilt d20.json", flush=True)
 
 
@@ -620,12 +642,13 @@ def refresh_certificate() -> None:
         raise SystemExit("d20.json missing valid d20_sha256")
 
     cert["object"] = "d20"
+    cert["schema"] = unversioned_schema(cert.get("schema")) or "d20.verifier"
     cert["status"] = "D20_CERTIFIED"
     cert["headline"] = "D20_CERTIFIED"
     cert["d20_status"] = "D20_PASS"
     cert["d20_json"] = {
         "path": "d20.json",
-        "schema": d20.get("schema"),
+        "schema": unversioned_schema(d20.get("schema")),
         "size": D20.stat().st_size,
         "sha256_file": sha_file(D20),
         "sha256_object": d20_object_hash,
@@ -634,13 +657,13 @@ def refresh_certificate() -> None:
     cert["layers"] = layer_certificate_summaries()
     cert["layer_count"] = len(cert["layers"])
     cert["d20_sha256"] = sha_json_body(cert, "d20_sha256")
-    CERTIFICATE.write_text(json.dumps(cert, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    CERTIFICATE.write_text(json.dumps(cert, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
 
 
 def refresh_manifest() -> int:
     """Rebuild manifests/file_hashes.json from the current canonical bundle files."""
     manifest = {
-        "schema": "d20.file_hashes.v1",
+        "schema": "d20.file_hashes",
         "generated_cache_required": False,
         "self_manifest_excluded": "manifests/file_hashes.json",
         "entries": [],
@@ -648,6 +671,8 @@ def refresh_manifest() -> int:
     entries: list[dict[str, Any]] = []
     for path in sorted(ROOT.rglob("*")):
         if not path.is_file():
+            continue
+        if versioned_archive_path(path):
             continue
         rel = path.relative_to(ROOT).as_posix()
         if rel == "manifests/file_hashes.json":
@@ -667,7 +692,7 @@ def refresh_manifest() -> int:
             "sha256": sha_file(path),
         })
     manifest["entries"] = entries
-    MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     return len(entries)
 
 

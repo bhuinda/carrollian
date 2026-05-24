@@ -1,0 +1,64 @@
+{
+  "claim_level": "finite_universal_vocabulary_x_surface_isolation",
+  "classifier_path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_classifier.json",
+  "decision": {
+    "may_claim_full_separation": false,
+    "may_claim_no_polynomial_size_x_extractor": false,
+    "may_claim_universal_vocabulary_x_surface_isolated": true,
+    "reason": "The X surface is isolated and current accepted traces contain no X extractor. This is not a lower bound against polynomial-size X traces for the hidden e33 family."
+  },
+  "isolation_witness": {
+    "current_accepted_trace_extractor_found": false,
+    "current_accepted_trace_x_event_count": 0,
+    "meaning": "Within the finite universal trace vocabulary, every extractor-capable operation is on the X surface. Pure C/V traces and residue-free zero-X traces do not contain extractor opcodes.",
+    "minimum_x_event_count_for_extractor_opcode": 1,
+    "zero_x_trace_can_contain_extractor_opcode": false
+  },
+  "next_highest_yield_item": {
+    "action": "Certify the concrete hidden-sector target that any X extractor must recover.",
+    "id": "x_extractor_target_certificate"
+  },
+  "non_claim": "This report does not rule out polynomial-size X extractors. It only isolates the extractor surface and preserves the lower-bound obligation.",
+  "schema": "d20.integrity.universal_x_extractor_isolation.v1",
+  "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS",
+  "surface_audit": {
+    "missing_required_x_codes": [],
+    "overlap_failures": [],
+    "passed": true,
+    "required_x_codes": [
+      "X_EXTRACTOR_GF2_GAUSSIAN_ELIMINATION",
+      "X_EXTRACTOR_HIDDEN_ADVICE_READ",
+      "X_EXTRACTOR_HIDDEN_SECTOR_MAP",
+      "X_EXTRACTOR_NATIVE_XOR_ELIMINATION",
+      "X_EXTRACTOR_NONPUBLIC_PARITY_BASIS",
+      "X_EXTRACTOR_PARITY_BASIS_RECOVERY"
+    ],
+    "surface_counts": {
+      "C": 22,
+      "V": 2,
+      "X": 6
+    },
+    "surface_failures": []
+  },
+  "upstream_audit": {
+    "bounded_current_trace_search": {
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json",
+      "result": {
+        "bounded_search_passed": true,
+        "e33_extraction_present": false,
+        "x_extractor_present": false
+      },
+      "status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND"
+    },
+    "errors": [],
+    "passed": true,
+    "typing_report": {
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    },
+    "universal_pure_c_no_escape": {
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",
+      "status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
+    }
+  }
+}
