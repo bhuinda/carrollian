@@ -1,0 +1,90 @@
+{
+  "canonical_relation_body_comparison": {
+    "comparison_target": {
+      "encoded_pairs_sha256": "7c0991629653db164aff52b91afcb58e3426fde3d331012e9a7470f59f81c91f",
+      "group_order": 9216,
+      "object_of_point_sha256": "b93902a7f846379c5fc7f7b853ef831f547fee70e7b97fb378b0f03638e10709",
+      "object_orbit_sizes": [
+        384,
+        192,
+        144,
+        576,
+        512,
+        768
+      ],
+      "offsets_sha256": "b536e827fec13d10ab869b5caed9d35e008fcbedc6b05f8b64b5bae66981e216",
+      "ordered_pair_partition_size": 6635776,
+      "path": "data\\raw\\relation_memberships.npz",
+      "points": 2576,
+      "relations": 985
+    },
+    "matches_canonical_relation_body": true
+  },
+  "canonical_tensor_comparison": {
+    "comparison_target": {
+      "coefficient_max": 64,
+      "coefficient_min": 1,
+      "coefficient_total": 2537360,
+      "path": "data\\raw\\T_985.npz",
+      "relations": 985,
+      "tensor_support": 1414965,
+      "triples_sha256": "6d3434bc5a8b5837ca7b8a860d8e8cb1c4e9d871da1982245186adea73bccc11"
+    },
+    "constructor_report_comparison": {},
+    "matches_canonical_T985_as_sparse_multiset": null,
+    "tensor_refresh_error": null
+  },
+  "claim": "The 985-relation body is derived from the pre-A985 source construction plus the unique coorient action; data/raw/relation_memberships.npz is a comparison target, not a constructor input. T985 comparison is included when the generated tensor witness is present.",
+  "constructor_inputs": [
+    "H8 = RM(1,3)",
+    "three Type-II neighbor vectors v1,v2,v3",
+    "generated G24 endpoint",
+    "generated 2576 dodecad shell",
+    "unique d20/A985-integral coorient action represented by data/coorient/be3_coorient_generators.npz"
+  ],
+  "generated_relation_body": {
+    "encoded_pairs_sha256": "7c0991629653db164aff52b91afcb58e3426fde3d331012e9a7470f59f81c91f",
+    "group_order": 9216,
+    "object_of_point_sha256": "b93902a7f846379c5fc7f7b853ef831f547fee70e7b97fb378b0f03638e10709",
+    "object_orbit_sizes": [
+      384,
+      192,
+      144,
+      576,
+      512,
+      768
+    ],
+    "offsets_sha256": "b536e827fec13d10ab869b5caed9d35e008fcbedc6b05f8b64b5bae66981e216",
+    "ordered_pair_partition_size": 6635776,
+    "path": "generated\\relation_memberships_pre_A985_from_source_aligned.npz",
+    "points": 2576,
+    "relations": 985
+  },
+  "generated_tensor_body": null,
+  "logical_form": {
+    "coorient_action": "unique A985-integral d20-compatible Be3 lift",
+    "pre_A985_source": "H8^3 -> G24 -> G24^(12)",
+    "relation_body": "ordered-pair orbits of Be3 on G24^(12) x G24^(12)",
+    "tensor_body": "representative two-step incidence over the generated relation body"
+  },
+  "not_constructor_inputs": [
+    "data/raw/relation_memberships.npz",
+    "data/raw/T_985.npz",
+    "data/raw/quotients.npz",
+    "data/raw/simple_branching_matrices.npz"
+  ],
+  "result": {
+    "A985_relation_count": 985,
+    "T985_coefficient_total": null,
+    "T985_support": null,
+    "generated_tensor_witness_present": false,
+    "ordered_pair_partition_size": 6635776,
+    "stronger_external_theorem_present": true,
+    "uses_relation_table_as_audit_target": true,
+    "uses_relation_table_as_input": false
+  },
+  "schema": "d20.theorem.pre_A985_relation_body@1",
+  "sha256": "37bec9cce0405da20392968c94d1824e646f5acb023b6aa68fd65dc60133761c",
+  "status": "PRE_A985_RELATION_BODY_DERIVED_WITHOUT_RELATION_TABLE_PASS",
+  "theorem_name": "Pre-A985 Relation Body Theorem"
+}

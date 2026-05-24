@@ -1,0 +1,350 @@
+{
+  "black_hole_certified_simulator": {
+    "all_checks_pass": true,
+    "checks": {
+      "FQHE_ratio_5_2": true,
+      "d20_faces_are_C6_3": true,
+      "epsilon0_equals_64_Gamma_3_infty": true,
+      "exact_inverse_precision_ok": true,
+      "notation_uses_Gamma_3_infty": true,
+      "protected_entropy_packet_32": true,
+      "rgba_forced_32": true,
+      "subextremal_final": true
+    },
+    "d20_invariants": {
+      "board": {
+        "automorphism_count": 120,
+        "cycle_rank": 11,
+        "degree": 3,
+        "diameter": 5,
+        "edges": 30,
+        "faces_are_all_C6_3": true,
+        "girth": 5,
+        "vertices": 20
+      },
+      "core": {
+        "A12_classes": 12,
+        "A42_classes": 42,
+        "A42_to_A12_consistent": true,
+        "H6": [
+          "B-",
+          "B+",
+          "V-",
+          "V+",
+          "S-",
+          "S+"
+        ],
+        "d20_status": "D20_CERTIFIED",
+        "dodecad_shell_size": 2576,
+        "object_pair_matrix_shape": [
+          6,
+          6
+        ],
+        "relation_count_A985": 985,
+        "source_sha256": "1b5260b1cc9631db799160c9ce48622257fda1f872fecd6a5c5b5bb9bc8fcba5",
+        "tensor_coefficient_total_A985": 2537360,
+        "tensor_support_A985": 1414965
+      },
+      "external_alignment_notes": {
+        "FQHE_5_2_internal_ratio": "|W(D6)|/|Gamma_3^infty| = 5/2.",
+        "Wu_reading": "SU(3)/SO(3) is a five-dimensional visibility/obstruction-repair analogue; active simulator does not identify the physical Wu manifold with d20.",
+        "physics_scope": "Simulator uses Kerr-Newman thermodynamic formulas and synthetic pole-packet reconstruction; it is not a numerical-relativity PDE solver."
+      },
+      "normalized_notation": {
+        "active_formula": "A_985 = End_{Gamma_3^infty}(Q[G_24^(12)])",
+        "coorient_group": "Gamma_3^infty",
+        "definition": "Gamma_3^infty := Aut^infty(G_24, S)",
+        "legacy_alias_policy": "Old labels in source artifacts refer to Gamma_3^infty and are not separate objects."
+      },
+      "quinticity_area_law": {
+        "Gamma_3_infty_order": 9216,
+        "S_d20": 14560,
+        "W_D6_order": 23040,
+        "W_D6_over_Gamma_3_infty": "5/2",
+        "area_law": "For A=N*epsilon0, S=(32/5)*N. Protected closure requires N=5k, giving S=32k.",
+        "closed_packets_in_E_d20": 455,
+        "d20_etendue_over_epsilon0": 2275,
+        "epsilon0": 589824,
+        "epsilon0_equals_64_Gamma_3_infty": true,
+        "protected_area_packet": 2949120,
+        "protected_entropy_packet": "32",
+        "raw_entropy_per_epsilon0": "32/5"
+      },
+      "rgba_forcing": {
+        "RGBA_total": 32,
+        "RGB_visible_payload_dim": 24,
+        "alpha_dim": 8,
+        "boundary_count": 12,
+        "boundary_states": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          9,
+          10,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "complete_BVS_count": 8,
+        "complete_BVS_states": [
+          5,
+          6,
+          7,
+          8,
+          11,
+          12,
+          13,
+          14
+        ],
+        "minimality": "3 octets = RGB = 24 fails 32-packet closure; 4 octets = RGBA = 32 is the unique minimal closure.",
+        "spin_packet_dim": 32
+      },
+      "tropical_wall_summary": {
+        "closed_wall_gap": 120,
+        "collision_levels": [
+          72,
+          96
+        ],
+        "collision_locus": [
+          {
+            "count": 3,
+            "mass_mu_over_epsilon0": 72,
+            "states": [
+              1,
+              6,
+              16
+            ]
+          },
+          {
+            "count": 3,
+            "mass_mu_over_epsilon0": 96,
+            "states": [
+              3,
+              13,
+              18
+            ]
+          }
+        ],
+        "face_mass_count": 20,
+        "wall_gap": 24
+      }
+    },
+    "kerr_newman_equations": {
+      "R": "r_plus^2 + a^2",
+      "area": "4*pi*R",
+      "entropy": "area/4",
+      "lambda_L": "2*pi*T",
+      "omega_H": "a/R",
+      "phi_H": "Q*r_plus/R",
+      "r_minus": "M - sqrt(M^2-a^2-Q^2)",
+      "r_plus": "M + sqrt(M^2-a^2-Q^2)",
+      "subextremal_condition": "M^2 > a^2 + Q^2",
+      "temperature": "(r_plus-r_minus)/(4*pi*R)"
+    },
+    "pole_packet": {
+      "definition": "y=(log R, log T, omega_H, phi_H)",
+      "exact_inverse_audit": {
+        "max_abs_err_M": 4.440892098500626e-16,
+        "max_abs_err_Q": 1.1102230246251565e-16,
+        "max_abs_err_a": 1.1102230246251565e-16,
+        "mean_pole_residual_norm": 1.063715419964657e-16
+      },
+      "inverse": [
+        "R=exp(y0), T=exp(y1), omega=y2, phi=y3",
+        "a=omega*R",
+        "r_plus=sqrt(R-a^2)",
+        "Q=phi*R/r_plus",
+        "delta=4*pi*T*R",
+        "M_radial=r_plus-delta/2",
+        "M_constraint=sqrt(a^2+Q^2+(delta/2)^2)",
+        "M=(M_radial+M_constraint)/2 for noisy repair"
+      ]
+    },
+    "reconstruction_metrics": [
+      {
+        "max_scaled_pole_error": 0.04604889872113572,
+        "mean_coverage_count": 3.996007984031936,
+        "mean_optical_cost_from_center": 137964.07185628742,
+        "mean_scaled_pole_error": 0.019342081201043148,
+        "policy": "d20_scheduler",
+        "rmse_M": 0.00035054177299029667,
+        "rmse_Q": 0.00039406748096360635,
+        "rmse_a": 0.0008054127155903208,
+        "rmse_state_norm": 0.0009627348319234938,
+        "rows": 501,
+        "visited_states": 3,
+        "wall_projection_count": 0
+      },
+      {
+        "max_scaled_pole_error": 0.8417290128214796,
+        "mean_coverage_count": 3.2255489021956087,
+        "mean_optical_cost_from_center": 269391.7125748503,
+        "mean_scaled_pole_error": 0.056091922580775125,
+        "policy": "random_legal",
+        "rmse_M": 0.001087531782083963,
+        "rmse_Q": 0.001068913701441735,
+        "rmse_a": 0.009447494496664719,
+        "rmse_state_norm": 0.009569767716234431,
+        "rows": 501,
+        "visited_states": 20,
+        "wall_projection_count": 0
+      },
+      {
+        "max_scaled_pole_error": 4.279392985098672,
+        "mean_coverage_count": 2.0,
+        "mean_optical_cost_from_center": 0.0,
+        "mean_scaled_pole_error": 2.050215743337941,
+        "policy": "unconstrained_greedy",
+        "rmse_M": 0.11146374758163047,
+        "rmse_Q": 0.024848715067030597,
+        "rmse_a": 0.053446039616996004,
+        "rmse_state_norm": 0.12608768701251288,
+        "rows": 501,
+        "visited_states": 1,
+        "wall_projection_count": 0
+      }
+    ],
+    "schema": "d20.black_hole.certified_simulator@3",
+    "simulation_summary": {
+      "final": {
+        "M": 1.1588800701410706,
+        "Q": 0.22831310432305865,
+        "a": 0.25551027560968526,
+        "area": 65.34246201703809,
+        "entropy": 16.335615504259522,
+        "extremality_ratio": 0.2956776116458445,
+        "lambda_L": 0.2129056016722885,
+        "omega_H": 0.049138595638638996,
+        "phi_H": 0.09949342698092818,
+        "r_plus": 2.2659440440930747,
+        "temperature": 0.033884978918098815
+      },
+      "initial": {
+        "M": 1.0,
+        "Q": 0.28,
+        "a": 0.42,
+        "area": 45.84336844990335,
+        "entropy": 11.460842112475838,
+        "extremality_ratio": 0.5047771785649585,
+        "r_plus": 1.8632496741962896,
+        "temperature": 0.03766083092867097
+      },
+      "integrity_projection_count": 0,
+      "visited_states": 20
+    },
+    "status": "D20_BLACK_HOLE_CERTIFIED_SIMULATOR_PASS"
+  },
+  "classical_typing": {
+    "definition": {
+      "I(a)": "sum_b f(a)(b) mu(b)",
+      "f(a)(b)": "1 iff supp(a) subseteq b, else 0",
+      "f_sigma(a)(b)": "sigma(b) f(a)(b)",
+      "support_arrow": "supp(c->d)={c,d}",
+      "support_id_loop": "supp(id_c)=supp(loop_c)={c}"
+    },
+    "deprecated_name": "AreaInc",
+    "invariants": {
+      "A_d20": 1341849600,
+      "S_d20": 14560,
+      "W_D6": 23040,
+      "atom_kernel_dimension": 5,
+      "column_support_counts_unique": [
+        4,
+        10
+      ],
+      "pointwise_trace_sum_a_f(a)(b)": 12,
+      "rank_Q_f_matrix": 15,
+      "role_relation_kernel_dimension": 27,
+      "sum_a_I(a)": 16102195200,
+      "sum_a_I(a)_equals_12_A_d20": true
+    },
+    "primitive_notation": "f(a)(b)",
+    "schema": "d20.fab.classical_typing.v1",
+    "sets": {
+      "A": "A42 roles = identities, loops, directed arrows",
+      "A_size": 42,
+      "B": "d20 atoms = C(H6,3)",
+      "B_size": 20,
+      "H6": [
+        "B-",
+        "B+",
+        "V-",
+        "V+",
+        "S-",
+        "S+"
+      ]
+    },
+    "status": "FAB_CLASSICAL_TYPING_VERIFIER_PASS"
+  },
+  "computability_proof": {
+    "A985_quarter_signature": {
+      "floor_sum": 243,
+      "identity": "985=4*243+13",
+      "mod4_rank_Q": 3,
+      "mod4_sum": 13
+    },
+    "A_d20": 1341849600,
+    "Gamma3_infinity": 9216,
+    "Leech_packet_identities": {
+      "196560=455*2*6^3": true,
+      "98280=455*6^3": true
+    },
+    "S_d20": 14560,
+    "col_sum_all_b": 12,
+    "counts": {
+      "A_roles": 42,
+      "B_atoms": 20,
+      "matrix_shape": [
+        42,
+        20
+      ]
+    },
+    "definitions": {
+      "A": "A_42 roles: 6 identities, 6 loops, 30 directed arrows",
+      "B": "d20 atoms: 3-subsets of H6",
+      "I(a)": "sum_b f(a)(b) mu(b)",
+      "f(a)(b)": "1 iff support(a) subset b, else 0",
+      "mu(b)": "product of six-channel weights over b"
+    },
+    "epsilon0": 589824,
+    "identity_5epsilon0_equals_128kappa": true,
+    "kappa_D6": 23040,
+    "ker_A_dim": 27,
+    "ker_B_dim": 5,
+    "local_entropy_denominator_histogram": {
+      "1": 8,
+      "15": 4,
+      "3": 8,
+      "5": 22
+    },
+    "nu": "5/2",
+    "packet_count": 455,
+    "rank_Q_f": 15,
+    "row_sum_arrow": 4,
+    "row_sum_id_loop": 10,
+    "status": "D20_COMPUTABILITY_PROOF_PASS",
+    "sum_a_Ia": 16102195200,
+    "sum_a_Ia_equals_12_A_d20": true
+  },
+  "integration_policy": {
+    "canonical_storage": "data/invariants/d20/certified_evidence_invariants.json",
+    "main_certificate_reads_raw_drop_paths": false,
+    "raw_drops_are_transient": true
+  },
+  "schema": "d20.certified_evidence_invariants.v1",
+  "source_count": 3,
+  "status": "D20_CERTIFIED_EVIDENCE_INVARIANTS_INTEGRATED",
+  "witness_hashes": {
+    "black_hole_certificate_file_sha256": "80550ca1147846870c4cca1f3c5be26781cd0ff0a6edb92b1705f125e84e1029",
+    "black_hole_certificate_payload_sha256": "f48790265b61f2963d5c1478764ff2011a587b192b12504c49e3b22201b41130",
+    "black_hole_payload_hash_recomputed": "f48790265b61f2963d5c1478764ff2011a587b192b12504c49e3b22201b41130",
+    "classical_typing_certificate_file_sha256": "df4e7e7db625a2ebd009a4d17549d6a45357d7a3717f29d8dd6a44f4a8de24e6",
+    "classical_typing_certificate_self_sha256": "1e7f6becb9990b5ab88fa929293c86e3f69587aa4faeb52ff03927ba97f448ad",
+    "computability_certificate_file_sha256": "22d8f873ab39d244db917b64c2060370f49cd56e865c41e7eef7b0d575a69855",
+    "computability_certificate_self_sha256": "d6c04263385a476c9b4a52309eecea18c40a62dd864318edc8df9ca5d61de572"
+  }
+}

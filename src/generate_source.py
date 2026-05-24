@@ -167,7 +167,7 @@ def source_constructor_certificate() -> dict[str, Any]:
 
     prof = Counter(profile(D) for D in X)
     family_counts = Counter(profile_family(p) for p, n in prof.items() for _ in range(n))
-    # Counter comprehension above expands 2576 only; safe and keeps meaning direct.
+    # The expansion is bounded by the 2576 dodecads.
     # Build profile table without tuple JSON ambiguity.
     profile_table = {str(k): int(v) for k, v in sorted(prof.items())}
 

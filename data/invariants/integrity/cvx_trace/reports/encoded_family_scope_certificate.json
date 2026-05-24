@@ -1,0 +1,79 @@
+{
+  "checklist_item": {
+    "checklist_status": "representative_family_scope_declared_sat_complete_open",
+    "id": "encoded_family_sat_complete",
+    "obligation": "Identify the hidden e33-obstructed family as a SAT-complete or polynomially faithful representative family.",
+    "pass_condition": "The reduction has polynomial overhead and preserves yes/no instances without using hidden-sector advice.",
+    "required_artifact": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation."
+  },
+  "checklist_path": "data/invariants/integrity/p_vs_np_bridge_checklist.json",
+  "claim_level": "representative_current_trace_family_only",
+  "current_trace_surface": {
+    "closed": true,
+    "report_statuses": {
+      "pure_c_no_escape": {
+        "expected_status": "PURE_C_NO_ESCAPE_WITNESS_PASS",
+        "passed": true,
+        "path": "data/invariants/integrity/cvx_trace/reports/pure_c_no_escape_report.json",
+        "status": "PURE_C_NO_ESCAPE_WITNESS_PASS"
+      },
+      "solver_execution_overhead": {
+        "expected_status": "CVX_SOLVER_EXECUTION_TRACE_OVERHEAD_PASS",
+        "passed": true,
+        "path": "data/invariants/integrity/cvx_trace/reports/public_dpll_contradiction_4_overhead.json",
+        "status": "CVX_SOLVER_EXECUTION_TRACE_OVERHEAD_PASS"
+      },
+      "solver_opcode_totality": {
+        "expected_status": "SOLVER_OPCODE_TOTALITY_WITNESS_PASS",
+        "passed": true,
+        "path": "data/invariants/integrity/cvx_trace/reports/solver_opcode_totality_report.json",
+        "status": "SOLVER_OPCODE_TOTALITY_WITNESS_PASS"
+      },
+      "v_wall_crossing_accounting": {
+        "expected_status": "V_WALL_CROSSING_ACCOUNTING_NO_V_EVENTS",
+        "passed": true,
+        "path": "data/invariants/integrity/cvx_trace/reports/v_wall_crossing_accounting_report.json",
+        "status": "V_WALL_CROSSING_ACCOUNTING_NO_V_EVENTS"
+      },
+      "x_extractor_bounded_search": {
+        "expected_status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND",
+        "passed": true,
+        "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json",
+        "status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND"
+      }
+    }
+  },
+  "decision": {
+    "may_claim_encoded_family_sat_complete": false,
+    "may_claim_full_separation": false,
+    "may_claim_polynomially_faithful_representative_family": false,
+    "may_claim_representative_current_trace_no_escape": true,
+    "reason": "The encoded-family bridge is explicitly downgraded to representative/current-trace scope until a real reduction or polynomial-faithfulness certificate is added."
+  },
+  "declared_scope": {
+    "meaning": "The current evidence may be read as a representative/current-trace no-escape certificate for the accepted public proof-log and public DPLL fixtures, not as a SAT-complete family bridge.",
+    "non_claim": "This certificate does not prove SAT-completeness, polynomial faithfulness of the hidden e33-obstructed family, arbitrary solver universality, an X-extractor lower bound, or P != NP.",
+    "representative_current_trace_scope_declared": true
+  },
+  "encoded_family_bridge": {
+    "certified_bridge_present": false,
+    "polynomially_faithful_representative_certified": false,
+    "reason": "No reduction certificate with source problem, target encoding, polynomial size bound, yes/no preservation, and inverse witness interpretation is present in the canonical integrity data.",
+    "sat_complete_reduction_certified": false
+  },
+  "next_highest_yield_item": {
+    "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary.",
+    "id": "pure_c_no_escape"
+  },
+  "promotion_requirements": [
+    "name the source SAT-complete problem or source family",
+    "define the target hidden e33-obstructed encoding",
+    "prove a polynomial size and construction-time bound",
+    "prove yes/no instance preservation",
+    "provide inverse witness interpretation",
+    "prove that the reduction uses no hidden-sector advice",
+    "connect the reduction certificate to the C/V/X trace and no-escape ledger"
+  ],
+  "schema": "d20.integrity.encoded_family_scope_certificate.v1",
+  "status": "ENCODED_FAMILY_SCOPE_DECLARED_REPRESENTATIVE_ONLY"
+}

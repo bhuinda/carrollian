@@ -1,0 +1,82 @@
+{
+  "checklist_item": {
+    "checklist_status": "fixture_scope_declared_universal_compiler_open",
+    "id": "polynomial_trace_compiler",
+    "obligation": "Compile arbitrary polynomial-time solver executions into faithful C/V/X traces with polynomial overhead.",
+    "pass_condition": "For every polynomial-time solver A, the trace length and event verification cost are polynomial in the input size and preserve A's decision result.",
+    "required_artifact": "Compiler theorem or instrumented universal machine with explicit overhead accounting."
+  },
+  "checklist_path": "data/invariants/integrity/p_vs_np_bridge_checklist.json",
+  "claim_level": "public_dpll_fixture_trace_compiler_only",
+  "decision": {
+    "may_claim_arbitrary_polynomial_solver_trace_compiler": false,
+    "may_claim_full_separation": false,
+    "may_claim_public_dpll_fixture_trace_compiler": true,
+    "reason": "Arbitrary solver universality remains open until a universal machine trace compiler and polynomial overhead proof are present."
+  },
+  "declared_scope": {
+    "fixture_scope_declared": true,
+    "meaning": "The current compiler evidence witnesses the trace shape and polynomial overhead accounting for the accepted public DPLL fixture only.",
+    "non_claim": "This certificate does not prove arbitrary solver universality, total typing for a universal machine, a no-escape theorem for all polynomial-time solvers, or P != NP."
+  },
+  "fixture_witness": {
+    "actual_trace_cost": {
+      "assignment_events": 1,
+      "event_count": 4,
+      "max_event_payload_literals": 1,
+      "scan_events": 2
+    },
+    "fixture_passed": true,
+    "input_measures": {
+      "clauses": 5,
+      "literal_occurrences": 8,
+      "variables": 4
+    },
+    "overhead_report": "data/invariants/integrity/cvx_trace/reports/public_dpll_contradiction_4_overhead.json",
+    "overhead_status": "CVX_SOLVER_EXECUTION_TRACE_OVERHEAD_PASS",
+    "polynomial_bound": {
+      "bound_name": "unit_propagation_public_dpll_fixture_bound",
+      "event_count_bound": "(variables + 1) * clauses + variables",
+      "event_count_bound_value": 29,
+      "event_verification_cost_bound": "O(event_count * max_clause_width)",
+      "max_clause_width": 2,
+      "within_bound": true
+    },
+    "result": "UNSAT",
+    "trace_path": "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json",
+    "trace_summary": {
+      "all_events_classified": true,
+      "event_count": 4,
+      "integrity_counts": {
+        "C": 4,
+        "UNCLASSIFIED": 0,
+        "V": 0,
+        "X": 0
+      },
+      "pure_c_trace": true,
+      "verdict": "C_PUBLIC_DPLL_UNSAT"
+    }
+  },
+  "next_highest_yield_item": {
+    "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary.",
+    "id": "pure_c_no_escape"
+  },
+  "promotion_requirements": [
+    "choose the universal execution model to trace, such as RAM, Turing machine, or circuit evaluator",
+    "define the public trace vocabulary for every instruction or gate family",
+    "implement instrumentation from executions into C/V/X trace events",
+    "prove the trace length is polynomial in the original solver runtime and input size",
+    "prove each event is locally checkable with polynomial verification cost",
+    "prove the trace preserves the solver decision result",
+    "connect the universal trace vocabulary to total C/V/X typing with residue fallback"
+  ],
+  "schema": "d20.integrity.polynomial_trace_compiler_scope_certificate.v1",
+  "status": "POLYNOMIAL_TRACE_COMPILER_SCOPE_DECLARED_FIXTURE_ONLY",
+  "universal_compiler_bridge": {
+    "arbitrary_solver_compiler_certified": false,
+    "certified_bridge_present": false,
+    "polynomial_overhead_for_arbitrary_solvers_certified": false,
+    "reason": "The current executable evidence instruments one deterministic public unit-propagation DPLL fixture. It does not define a universal trace vocabulary or prove a polynomial-overhead compiler for arbitrary polynomial-time solvers.",
+    "universal_machine_defined": false
+  }
+}

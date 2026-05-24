@@ -1,0 +1,66 @@
+{
+  "events": [
+    {
+      "checks": {
+        "contains_complement_pair": false,
+        "has_duplicate_literal": false,
+        "locally_checkable": true,
+        "uses_extension_variable": false
+      },
+      "class_code": "C_PUBLIC_LRAT_EMPTY_CLAUSE",
+      "event_id": "contradiction_4.cadical:line-1",
+      "integrity_type": "C",
+      "line": 1,
+      "op": "add",
+      "proof_id": 6,
+      "public_inputs": {
+        "clause_hints": [
+          1,
+          2
+        ],
+        "literals": []
+      },
+      "public_outputs": {
+        "clause_id": 6,
+        "empty_clause": true,
+        "literal_count": 0
+      },
+      "reason": "empty clause is a public unsatisfiability witness in the checked LRAT trace"
+    }
+  ],
+  "integrity_model": {
+    "accepted_public_types": [
+      "C"
+    ],
+    "allowed_types": [
+      "C",
+      "V",
+      "X",
+      "UNCLASSIFIED"
+    ],
+    "unsupported_event_policy": "reject_or_emit_typed_residue"
+  },
+  "schema": "d20.integrity.cvx_trace.v1",
+  "source": {
+    "classifier_source": "data/evidence/ss_sat/audits/cadical_lrat_cvx_rows.csv",
+    "cnf_path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+    "cnf_sha256": "7faffbcb0ea91aefcf41eefea00b42410b78b2e868c7e1d67edd09277b3f2806",
+    "proof_format": "lrat",
+    "proof_path": "data/evidence/ss_sat/proofs/cadical_lrat/contradiction_4.cadical.lrat",
+    "proof_sha256": "05bf7f36d97a77fa1875937a0f47dacce79269cd0a71bff12f53cf1fc4df4c3b"
+  },
+  "status": "CVX_TRACE_REPLAY_WITNESS",
+  "summary": {
+    "all_events_classified": true,
+    "event_count": 1,
+    "integrity_counts": {
+      "C": 1,
+      "UNCLASSIFIED": 0,
+      "V": 0,
+      "X": 0
+    },
+    "pure_c_trace": true,
+    "verdict": "C_PUBLIC_CHECKED_PROOF_TRACE"
+  },
+  "trace_id": "cadical_lrat_contradiction_4"
+}

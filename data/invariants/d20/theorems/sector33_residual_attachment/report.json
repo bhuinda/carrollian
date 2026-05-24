@@ -1,0 +1,322 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1079e0e30cb96ffe276cc783a66ed27592e5464ae286bf796b0d70fbd2c81dcf",
+  "checks": {
+    "accepted_pure_c_traces_do_not_extract_e33": true,
+    "bounded_x_search_finds_no_extractor": true,
+    "cycle_8_edges_are_present": true,
+    "cycle_8_table_matches_nonexact_witness": true,
+    "drinfeld_boundary_certified": true,
+    "first_obstruction_action_is_374784": true,
+    "first_obstruction_is_cycle_8": true,
+    "first_obstruction_mask_is_256": true,
+    "first_residual_is_minus_action": true,
+    "first_residual_nonzero_mod_field": true,
+    "first_residual_nonzero_over_integers": true,
+    "half_braiding_nullity_is_39": true,
+    "hesse_tube_pencil_sees_all_39_sectors": true,
+    "line_surface_trace_separates_all_sectors": true,
+    "nonexact_obstruction_certified": true,
+    "sector33_exists_once": true,
+    "sector33_is_unique_public_zero_sector": true,
+    "sector33_signature_matches_public_zero_obstruction": true,
+    "tube_kernel_descent_audit_certified": true,
+    "tube_projection_section_certified": true,
+    "visible_v_accounting_has_no_current_v_events": true
+  },
+  "claim": "The first non-exact D20 optical closed-return obstruction has a certified A985 sector interface: its forced scalar residual is paired with the unique public-zero Drinfeld/Wedderburn sector 33, which is invisible to A42/A12 public terminal traces but visible to the certified tube/Hesse and line-surface trace data.",
+  "definitions": {
+    "public_zero_sector": "An A985 Drinfeld/Wedderburn sector with q42_nonzero_count=q12_nonzero_count=0.",
+    "sector_attachment": "A pairing of a forced boundary residual with a certified hidden A985 sector witness. The pairing is an interface certificate, not a full internal module projection.",
+    "tube_visible": "The sector survives the 39-sector half-braiding cut and is separated by certified line-surface/full-relation and Hesse-tube character data."
+  },
+  "derived": {
+    "first_boundary_obstruction": {
+      "basis_cycle_ids": [
+        8
+      ],
+      "boundary_channel_support": [
+        "B-",
+        "B+",
+        "V-",
+        "V+",
+        "S-"
+      ],
+      "cycle": {
+        "cycle_id": 8,
+        "edge_ids": [
+          11,
+          1,
+          2,
+          22,
+          21
+        ],
+        "length": 5,
+        "optical_action": 374784,
+        "turn_addresses": [
+          "V+",
+          "V-",
+          "V-",
+          "B+",
+          "B+"
+        ],
+        "vertex_labels": "{B+,V-,V+} -> {B-,V-,V+} -> {B-,B+,V-} -> {B+,V-,S-} -> {B+,V+,S-} -> {B+,V-,V+}",
+        "vertices": [
+          10,
+          4,
+          0,
+          11,
+          13,
+          10
+        ]
+      },
+      "edges": [
+        {
+          "edge_id": 11,
+          "interface_weight": 82944,
+          "selector_choice": 0,
+          "selector_duad": "{V-,V+}",
+          "shared_duad": "{V-,V+}",
+          "swapped_pair": "{B-,B+}",
+          "u": 4,
+          "u_label": "{B-,V-,V+}",
+          "v": 10,
+          "v_label": "{B+,V-,V+}"
+        },
+        {
+          "edge_id": 1,
+          "interface_weight": 55296,
+          "selector_choice": 0,
+          "selector_duad": "{B-,V-}",
+          "shared_duad": "{B-,V-}",
+          "swapped_pair": "{B+,V+}",
+          "u": 0,
+          "u_label": "{B-,B+,V-}",
+          "v": 4,
+          "v_label": "{B-,V-,V+}"
+        },
+        {
+          "edge_id": 2,
+          "interface_weight": 27648,
+          "selector_choice": 1,
+          "selector_duad": "{B+,V-}",
+          "shared_duad": "{B+,V-}",
+          "swapped_pair": "{B-,S-}",
+          "u": 0,
+          "u_label": "{B-,B+,V-}",
+          "v": 11,
+          "v_label": "{B+,V-,S-}"
+        },
+        {
+          "edge_id": 22,
+          "interface_weight": 98304,
+          "selector_choice": 2,
+          "selector_duad": "{B+,S-}",
+          "shared_duad": "{B+,S-}",
+          "swapped_pair": "{V-,V+}",
+          "u": 11,
+          "u_label": "{B+,V-,S-}",
+          "v": 13,
+          "v_label": "{B+,V+,S-}"
+        },
+        {
+          "edge_id": 21,
+          "interface_weight": 110592,
+          "selector_choice": 2,
+          "selector_duad": "{B+,V+}",
+          "shared_duad": "{B+,V+}",
+          "swapped_pair": "{V-,S-}",
+          "u": 10,
+          "u_label": "{B+,V-,V+}",
+          "v": 13,
+          "v_label": "{B+,V+,S-}"
+        }
+      ],
+      "field_prime": 1000003,
+      "forced_res_A985_optical_Z": -374784,
+      "forced_res_A985_optical_mod_prime": 625219,
+      "mask": 256,
+      "optical_action": 374784
+    },
+    "integrity_witness": {
+      "pure_c_antecedent_holds": true,
+      "pure_c_no_escape_status": "PURE_C_NO_ESCAPE_WITNESS_PASS",
+      "v_wall_accounting_status": "V_WALL_CROSSING_ACCOUNTING_NO_V_EVENTS",
+      "visible_v_events_present": false,
+      "x_extractor_present": false,
+      "x_extractor_search_status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND"
+    },
+    "sector33_witness": {
+      "active_cy_sectors": [
+        "B",
+        "S"
+      ],
+      "active_objects": [
+        "B+",
+        "S+"
+      ],
+      "block_dimension": 2,
+      "character_support_size": 56,
+      "identity_coefficients_signed": [
+        0,
+        -31250,
+        0,
+        0,
+        0,
+        492189
+      ],
+      "loop_coordinate_support_total": 56,
+      "object_loop_coordinate_support": [
+        0,
+        12,
+        0,
+        0,
+        0,
+        44
+      ],
+      "object_pre_idempotent_counts": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "permutation_multiplicity": 18,
+      "permutation_rank": 36,
+      "pre_idempotent_support_size": 2,
+      "q12_nonzero_count": 0,
+      "q42_nonzero_count": 0,
+      "regular_trace_block_square": 4,
+      "sector": 33,
+      "spectral_signature": [
+        {
+          "label": "B+",
+          "local_pre_idempotents": [
+            12
+          ],
+          "object": 1,
+          "separator_eigenvalues": [
+            999881
+          ]
+        },
+        {
+          "label": "S+",
+          "local_pre_idempotents": [
+            6
+          ],
+          "object": 5,
+          "separator_eigenvalues": [
+            1746
+          ]
+        }
+      ]
+    },
+    "sector_attachment": {
+      "a985_sector": 33,
+      "a985_sector_name": "Pi_33",
+      "attachment_type": "unique public-zero, tube-visible A985 sector interface",
+      "boundary_cycle_id": 8,
+      "public_terminal_shadow": {
+        "A12": "zero",
+        "A42": "zero",
+        "q12_nonzero_count": 0,
+        "q42_nonzero_count": 0
+      },
+      "residual_integral": -374784,
+      "residual_mod_prime": 625219,
+      "why_this_sector": [
+        "sector 33 is the unique Drinfeld/Wedderburn sector with zero A42 and A12 terminal shadows",
+        "sector 33 remains visible to certified full relation, line-surface, and Hesse-tube traces",
+        "accepted pure-C integrity traces do not recover the hidden e33 obstruction"
+      ]
+    },
+    "tube_visibility_witness": {
+      "Hesse_R_residuals_all_zero": true,
+      "closed_loop_quotient_dimension": 297,
+      "drinfeld_half_braiding_nullity": 39,
+      "drinfeld_sector_count": 39,
+      "full_relation_pairing_separates_all_39_sectors": true,
+      "projection_kernel_dimension": 44224,
+      "projection_section_identity": true,
+      "secondary_surface_splits_all_39_sectors": true,
+      "tube_pair_basis_total": 44521,
+      "unique_Hesse_pencils": 39,
+      "unique_projective_cubic_points": 39
+    }
+  },
+  "inputs": {
+    "d20_edges": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "drinfeld_boundary": {
+      "path": "layers/drinfeld/boundary.json",
+      "sha256": "78ccb52c63d89669c4fb8f99e9de442e81540ee3899804d2a271f619defaf6b7"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "0f0b38642de3a082109613f5411e0b0615501903bd5b233f07bbdd3718c6cbae"
+    },
+    "hesse_tube_pencil": {
+      "path": "layers/modular/hesse_tube_character_pencil.json",
+      "sha256": "fbb5576e18ea4ef078153adfafc743b59d760631ed3b93f76f3aaaadd097ada9"
+    },
+    "integrity_ladder": {
+      "path": "data/invariants/integrity/proof_system_integrity_ladder.csv",
+      "sha256": "3a14bdfec066c9f7add20c701074d33a6f53385680748395f14679528c342aa9"
+    },
+    "line_surface_trace": {
+      "path": "layers/modular/derived_line_surface_trace.json",
+      "sha256": "56ea1e3d16347cef5c86ce3a1d268a93aae8a59489b8860e3c17783ef76ec771"
+    },
+    "nonexact_optical_residue_report": {
+      "path": "data/invariants/d20/theorems/nonexact_optical_residue/report.json",
+      "sha256": "737c76d07641173bc7fb3316feaa9c54b83dc854c06addb601c8c1ca1d91ec9f"
+    },
+    "primitive_cycles": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
+      "sha256": "a6fd82c3cafc0767c6ed7a41a157326d249933a6be62d6aad0f27f989dc7e84c"
+    },
+    "pure_c_no_escape": {
+      "path": "data/invariants/integrity/cvx_trace/reports/pure_c_no_escape_report.json",
+      "sha256": "d35144afb645759ecb1826b7d774e87f9aa0636521d1f2781e5f9d15b857f96e"
+    },
+    "tube_kernel_descent_audit": {
+      "path": "layers/tube/kernel_descent_audit.json",
+      "sha256": "d7d2ce492304d731b6e339472e31f64643c7dba316186d4878fe89e0625b3f43"
+    },
+    "tube_projection_section": {
+      "path": "layers/tube/projection_section.json",
+      "sha256": "b0db5ebce30a8cb43bf367984623d861248a1b89e340265c0b057777b59a3e82"
+    },
+    "v_wall_accounting": {
+      "path": "data/invariants/integrity/cvx_trace/reports/v_wall_crossing_accounting_report.json",
+      "sha256": "9bdc46670a1468b38875b7f17d513d67995a6808f90efb40c352d69aaa4db074"
+    },
+    "x_extractor_search": {
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json",
+      "sha256": "3251e594b5da90061771a4480580a58f6ef28acc93b3147bf821efdacc5fa4a4"
+    }
+  },
+  "next_highest_yield_item": "Compute an explicit Pi_33 projection coefficient for cycle 8 by lifting the five D20 edges through the 297-dimensional closed-loop quotient and the certified tube-pair section.",
+  "object": "d20",
+  "schema": "d20.theorem.sector33_residual_attachment.v1",
+  "status": "D20_SECTOR33_RESIDUAL_ATTACHMENT_CERTIFIED",
+  "theorem": {
+    "not_claimed": [
+      "a full internal module projection coefficient for gamma_8 onto Pi_33",
+      "a completed modular S or T matrix",
+      "a proof that every future residual must be carried only by sector 33",
+      "an arbitrary polynomial-time no-extractor lower bound"
+    ],
+    "proof_outline": [
+      "The non-exact theorem certifies gamma_8 has positive closed optical action 374784.",
+      "Closed-return balance therefore forces Res_A985^opt(gamma_8)=-374784.",
+      "The full A985 lift has exactly one public-zero sector: sector 33.",
+      "The Drinfeld boundary, tube projection section, line-surface trace, and Hesse-tube pencil certify that sector 33 remains a hidden but tube-visible A985 degree of freedom.",
+      "The current accepted pure-C integrity traces do not extract e33, so the packet is not a public-integral cancellation."
+    ],
+    "statement": "The mask-256 / cycle-8 optical obstruction forces the scalar residual Res_A985^opt=-374784. In the certified A985 sector data, sector 33 is the unique q42/q12-public-zero Drinfeld/Wedderburn sector, and it is visible to the certified tube/Hesse and line-surface trace witnesses. Therefore the first obstruction has a canonical hidden-sector interface packet (gamma_8, Pi_33, -374784)."
+  }
+}

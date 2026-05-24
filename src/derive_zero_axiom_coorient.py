@@ -14,10 +14,12 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 try:
+    from src.paths import D20_INVARIANTS
     from src.derive_coorient_marker_from_orbitals import derive as derive_coorient_marker
     from src.derive_coorient_relator_profile_from_a0_a5 import RELATOR_PROFILE_THEOREM_JSON
     from src.derive_pre_a985_relation_body import PRE_A985_THEOREM_JSON
 except ImportError:
+    from .paths import D20_INVARIANTS
     from .derive_coorient_marker_from_orbitals import derive as derive_coorient_marker
     from .derive_coorient_relator_profile_from_a0_a5 import RELATOR_PROFILE_THEOREM_JSON
     from .derive_pre_a985_relation_body import PRE_A985_THEOREM_JSON
@@ -91,7 +93,7 @@ def greedy_separating_base(R: np.ndarray, length: int = 3) -> dict[str, Any]:
 def derive() -> dict[str, Any]:
     co = ROOT / "data" / "coorient"
     word = json.loads((co / "absolute_d20_word_presentation.json").read_text(encoding="utf-8"))
-    d6 = json.loads((ROOT / "data" / "d20" / "d20_d6_selector_derivation.json").read_text(encoding="utf-8"))
+    d6 = json.loads((D20_INVARIANTS / "d20_d6_selector_derivation.json").read_text(encoding="utf-8"))
     marker = derive_coorient_marker()
     relation_path = ROOT / marker["relation_input"]["path"]
 
@@ -167,7 +169,10 @@ def derive() -> dict[str, Any]:
             "relator_profile_theorem": {"path": str(RELATOR_PROFILE_THEOREM_JSON.relative_to(ROOT)), "sha256": sha_file(RELATOR_PROFILE_THEOREM_JSON) if RELATOR_PROFILE_THEOREM_JSON.exists() else None},
             "relation_body": {"path": str(relation_path.relative_to(ROOT)), "sha256": sha_file(relation_path)},
             "relation_body_theorem": {"path": str(PRE_A985_THEOREM_JSON.relative_to(ROOT)), "sha256": sha_file(PRE_A985_THEOREM_JSON)},
-            "d6_selector": {"path": "data/d20/d20_d6_selector_derivation.json", "sha256": sha_file(ROOT / "data" / "d20" / "d20_d6_selector_derivation.json")},
+            "d6_selector": {
+                "path": "data/invariants/d20/d20_d6_selector_derivation.json",
+                "sha256": sha_file(D20_INVARIANTS / "d20_d6_selector_derivation.json"),
+            },
         },
     }
     out["certificate_sha256"] = sha_json({k: v for k, v in out.items() if k != "certificate_sha256"})

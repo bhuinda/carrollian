@@ -7,10 +7,10 @@ from typing import Any
 
 import numpy as np
 
-from src.paths import ROOT
+from src.paths import D20_INVARIANTS, ROOT
 
 
-DEFAULT_OUT_DIR = ROOT / "data" / "d20" / "theorems" / "t985_csdo"
+DEFAULT_OUT_DIR = D20_INVARIANTS / "theorems" / "t985_csdo"
 TENSOR_NPZ = ROOT / "data" / "raw" / "T_985.npz"
 QUOTIENTS_NPZ = ROOT / "data" / "raw" / "quotients.npz"
 CERTIFICATE_JSON = ROOT / "certificate.json"
@@ -154,8 +154,8 @@ def write_theorem(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "six_object_labels": LABELS,
         },
         "outputs": {
-            "report": "data/d20/theorems/t985_csdo/report.json",
-            "manifest": "data/d20/theorems/t985_csdo/manifest.json",
+            "report": "data/invariants/d20/theorems/t985_csdo/report.json",
+            "manifest": "data/invariants/d20/theorems/t985_csdo/manifest.json",
         },
         "certification_tests": [
             "check tensor triples against the d20 certificate digest",
@@ -195,8 +195,8 @@ def write_theorem(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         "theorems": [
             {
                 "id": "t985_csdo",
-                "manifest": "data/d20/theorems/t985_csdo/manifest.json",
-                "report": "data/d20/theorems/t985_csdo/report.json",
+                "manifest": "data/invariants/d20/theorems/t985_csdo/manifest.json",
+                "report": "data/invariants/d20/theorems/t985_csdo/report.json",
                 "status": report["status"],
                 "report_sha256": report["certificate_sha256"],
             }

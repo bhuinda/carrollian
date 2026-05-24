@@ -154,7 +154,7 @@ def compute_tube_center_lift() -> Dict[str, Any]:
     A12_center = quotient_center_dimension(q12t)
     A42_center = quotient_center_dimension(q42t)
     result = {
-        'schema': 'gnatural.c985.tube_center_lift.v2',
+        'schema': 'gnatural.c985.tube_center_lift.v1',
         'scope': 'Closed-loop/tube skeleton computed from the concrete relation table and A985 tensor. This is not a full Drinfeld-center or modular-data certificate.',
         'tube_basis': {
             'reverse_typed_tube_pairs': int(len(tube_pairs)),

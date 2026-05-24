@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 try:
+    from src.paths import D20_INVARIANTS
     from src.derive_absolute_coorient_word_presentation import order_tables
     from src.derive_pre_a985_relation_body import PRE_A985_THEOREM_JSON, ensure_pre_a985_relation_body
     from src.recover_be3_from_orbitals import (
@@ -24,6 +25,7 @@ try:
         reconstruct_action_from_regular_orbital,
     )
 except ImportError:
+    from .paths import D20_INVARIANTS
     from .derive_absolute_coorient_word_presentation import order_tables
     from .derive_pre_a985_relation_body import PRE_A985_THEOREM_JSON, ensure_pre_a985_relation_body
     from .recover_be3_from_orbitals import (
@@ -34,7 +36,7 @@ except ImportError:
     )
 
 
-RELATOR_PROFILE_THEOREM_JSON = ROOT / "data" / "d20" / "coorient_relator_profile_from_a0_a5.json"
+RELATOR_PROFILE_THEOREM_JSON = D20_INVARIANTS / "coorient_relator_profile_from_a0_a5.json"
 EXPECTED_GROUP_ORDER = 9216
 EXPECTED_POINTS = 2576
 EXPECTED_RELATIONS = 985

@@ -1,0 +1,83 @@
+{
+  "antecedents": {
+    "accepted_trace_residue_count": 0,
+    "pure_c_event_count": 5,
+    "pure_c_no_escape_passed": true,
+    "pure_c_trace_count": 2,
+    "totality_passed": true
+  },
+  "detected_extractor_candidates": [],
+  "next_blocker": "v_wall_crossing_accounting",
+  "non_claim": "This is a bounded search over current accepted trace artifacts. It does not prove no polynomial-size X extractor exists for the hidden e33 family.",
+  "positive_controls": {
+    "c_public_class_codes": [
+      "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT",
+      "C_PUBLIC_DPLL_SCAN_CLAUSE",
+      "C_PUBLIC_DPLL_UNIT_ASSIGN",
+      "C_PUBLIC_DPLL_UNIT_CONFLICT",
+      "C_PUBLIC_LRAT_DELETION",
+      "C_PUBLIC_LRAT_EMPTY_CLAUSE",
+      "C_PUBLIC_LRAT_LEMMA"
+    ],
+    "classifier_contains_x_surface": true,
+    "v_visible_class_codes": [
+      "V_VISIBLE_COMMUTATOR_WALL_CROSSING"
+    ],
+    "x_extractor_class_codes": [
+      "X_EXTRACTOR_GF2_GAUSSIAN_ELIMINATION",
+      "X_EXTRACTOR_NATIVE_XOR_ELIMINATION",
+      "X_EXTRACTOR_PARITY_BASIS_RECOVERY"
+    ],
+    "x_positive_control_count": 3
+  },
+  "public_observable_features": {
+    "bounded_hint_pairs_examined": 1,
+    "bounded_literal_pairs_examined": 1,
+    "class_codes": [
+      "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT",
+      "C_PUBLIC_DPLL_SCAN_CLAUSE",
+      "C_PUBLIC_DPLL_UNIT_ASSIGN",
+      "C_PUBLIC_LRAT_EMPTY_CLAUSE"
+    ],
+    "hint_atoms": [
+      1,
+      2
+    ],
+    "literal_atoms": [
+      -1,
+      1
+    ],
+    "ops": [
+      "add",
+      "solver_opcode"
+    ]
+  },
+  "result": {
+    "bounded_search_passed": true,
+    "e33_extraction_present": false,
+    "x_extractor_present": false
+  },
+  "schema": "d20.integrity.x_extractor_bounded_search.v1",
+  "search_scope": {
+    "bounded_candidate_family": "accepted C/V/X trace events, class codes, opcode labels, public literals, public clause hints, and pairwise public atoms",
+    "event_count": 5,
+    "extractor_tokens": [
+      "E33",
+      "EXTRACTOR",
+      "FOURIER",
+      "GAUSSIAN",
+      "GF(2)",
+      "GF2",
+      "HIDDEN",
+      "PARITY",
+      "SPECTRAL",
+      "XOR"
+    ],
+    "trace_count": 2,
+    "trace_paths": [
+      "data/invariants/integrity/cvx_trace/traces/cadical_lrat_contradiction_4.trace.json",
+      "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json"
+    ]
+  },
+  "status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND"
+}

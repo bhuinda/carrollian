@@ -1,0 +1,70 @@
+{
+  "canonical_root": "data/evidence/reproducibility/python_bundle",
+  "invariant_policy": {
+    "preservation": "README, source scripts, output tables, and output certificates are retained under canonical evidence storage",
+    "role": "portable Python/NumPy reproduction bundle"
+  },
+  "output_certificate_count": 3,
+  "output_certificates": [
+    {
+      "keys": [
+        "coefficient_total",
+        "failures",
+        "internal_scatter_words",
+        "max_internal_scatter_l1",
+        "max_internal_scatter_word",
+        "sampled_words",
+        "schema",
+        "status",
+        "tensor_support"
+      ],
+      "path": "out/01_full_pentagon_genome/certificate.json",
+      "schema": "repro.full_pentagon_genome@1",
+      "status": "PASS"
+    },
+    {
+      "keys": [
+        "block_count_matrix_matches_M",
+        "local_units_pass",
+        "noncomposable_violations",
+        "orthogonal_idempotents_pass",
+        "output_block_violations",
+        "schema",
+        "status"
+      ],
+      "path": "out/02_operational_blocks_stage2/certificate.json",
+      "schema": "repro.operational_blocks_stage2@1",
+      "status": "PASS"
+    },
+    {
+      "keys": [
+        "checks",
+        "schema",
+        "status"
+      ],
+      "path": "out/03_central_wedderburn_lift/certificate.json",
+      "schema": "repro.central_wedderburn_lift@1",
+      "status": "PASS"
+    }
+  ],
+  "present": true,
+  "schema": "d20.reproducibility_evidence_report.v1",
+  "source_scripts": [
+    "src/01_full_pentagon_genome.py",
+    "src/01_packet_idempotents_peirce.py",
+    "src/02_operational_blocks_stage2.py",
+    "src/02_wedderburn_from_d20json.py",
+    "src/03_central_wedderburn_lift.py",
+    "src/03_rho20_scalar_representation.py",
+    "src/04_irreducible_character_shadow.py",
+    "src/04_rho20_kernel_quotient.py",
+    "src/05_rho20_residue_intersections.py",
+    "src/05_rho20_scalar_representation.py",
+    "src/06_pentagon_sample.py",
+    "src/06_rho20_kernel_quotient.py",
+    "src/07_rho20_residue_intersections.py",
+    "src/common.py",
+    "src/run_all.py"
+  ],
+  "status": "D20_REPRODUCIBILITY_EVIDENCE_INTEGRATED"
+}

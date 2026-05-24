@@ -1,0 +1,147 @@
+{
+  "events": [
+    {
+      "checks": {
+        "contains_complement_pair": false,
+        "has_duplicate_literal": false,
+        "locally_checkable": true,
+        "uses_extension_variable": false
+      },
+      "class_code": "C_PUBLIC_DPLL_SCAN_CLAUSE",
+      "event_id": "public-dpll-contradiction-4:0001",
+      "integrity_type": "C",
+      "line": 1,
+      "op": "solver_opcode",
+      "proof_id": 1,
+      "public_inputs": {
+        "clause_hints": [
+          1
+        ],
+        "literals": [
+          1
+        ]
+      },
+      "public_outputs": {
+        "clause_id": 1,
+        "empty_clause": false,
+        "literal_count": 1
+      },
+      "reason": "public DPLL scans a public DIMACS clause under the current partial assignment"
+    },
+    {
+      "checks": {
+        "contains_complement_pair": false,
+        "has_duplicate_literal": false,
+        "locally_checkable": true,
+        "uses_extension_variable": false
+      },
+      "class_code": "C_PUBLIC_DPLL_UNIT_ASSIGN",
+      "event_id": "public-dpll-contradiction-4:0002",
+      "integrity_type": "C",
+      "line": 2,
+      "op": "solver_opcode",
+      "proof_id": 2,
+      "public_inputs": {
+        "clause_hints": [
+          1
+        ],
+        "literals": [
+          1
+        ]
+      },
+      "public_outputs": {
+        "clause_id": 2,
+        "empty_clause": false,
+        "literal_count": 1
+      },
+      "reason": "public unit clause assigns a public DIMACS variable"
+    },
+    {
+      "checks": {
+        "contains_complement_pair": false,
+        "has_duplicate_literal": false,
+        "locally_checkable": true,
+        "uses_extension_variable": false
+      },
+      "class_code": "C_PUBLIC_DPLL_SCAN_CLAUSE",
+      "event_id": "public-dpll-contradiction-4:0003",
+      "integrity_type": "C",
+      "line": 3,
+      "op": "solver_opcode",
+      "proof_id": 3,
+      "public_inputs": {
+        "clause_hints": [
+          2
+        ],
+        "literals": [
+          -1
+        ]
+      },
+      "public_outputs": {
+        "clause_id": 3,
+        "empty_clause": false,
+        "literal_count": 1
+      },
+      "reason": "public DPLL scans a public DIMACS clause under the current partial assignment"
+    },
+    {
+      "checks": {
+        "contains_complement_pair": false,
+        "has_duplicate_literal": false,
+        "locally_checkable": true,
+        "uses_extension_variable": false
+      },
+      "class_code": "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT",
+      "event_id": "public-dpll-contradiction-4:0004",
+      "integrity_type": "C",
+      "line": 4,
+      "op": "solver_opcode",
+      "proof_id": 4,
+      "public_inputs": {
+        "clause_hints": [
+          2
+        ],
+        "literals": []
+      },
+      "public_outputs": {
+        "clause_id": 4,
+        "empty_clause": true,
+        "literal_count": 0
+      },
+      "reason": "public unit propagation derives an empty clause conflict"
+    }
+  ],
+  "integrity_model": {
+    "accepted_public_types": [
+      "C"
+    ],
+    "allowed_types": [
+      "C",
+      "V",
+      "X",
+      "UNCLASSIFIED"
+    ],
+    "unsupported_event_policy": "reject_or_emit_typed_residue"
+  },
+  "schema": "d20.integrity.cvx_trace.v1",
+  "source": {
+    "classifier_source": "data/invariants/integrity/cvx_trace/scripts/instrument_public_dpll_trace.py",
+    "cnf_path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+    "cnf_sha256": "7faffbcb0ea91aefcf41eefea00b42410b78b2e868c7e1d67edd09277b3f2806",
+    "proof_format": "solver_opcode"
+  },
+  "status": "CVX_SOLVER_EXECUTION_TRACE_WITNESS",
+  "summary": {
+    "all_events_classified": true,
+    "event_count": 4,
+    "integrity_counts": {
+      "C": 4,
+      "UNCLASSIFIED": 0,
+      "V": 0,
+      "X": 0
+    },
+    "pure_c_trace": true,
+    "verdict": "C_PUBLIC_DPLL_UNSAT"
+  },
+  "trace_id": "public_dpll_contradiction_4"
+}

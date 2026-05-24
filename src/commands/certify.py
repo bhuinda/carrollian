@@ -75,18 +75,21 @@ def require(cond: bool, msg: str, errors: list[str]) -> None:
         errors.append(msg)
 
 
-EVIDENCE_INVARIANTS_REL = "data/d20/certified_evidence_invariants.json"
+EVIDENCE_INVARIANTS_REL = "data/invariants/d20/certified_evidence_invariants.json"
 DATA_REGISTRY_REL = "data/index.json"
 EXPECTED_DATA_DOMAINS = {
     "a236_compute_cache",
     "coorient_lift",
     "d20_invariants",
     "dihedral_formulae",
+    "height_coherence_integrity",
     "hcycle_game_control",
     "integrity_ladders",
     "quotient_selectors",
     "raw_core_seeds",
+    "reproducibility_evidence",
     "ss_sat_evidence",
+    "stack_series_evidence",
     "tensor_chain_evidence",
 }
 ALLOWED_DATA_ROLES = {
@@ -122,7 +125,11 @@ def verify_data_registry(data: dict[str, Any], errors: list[str]) -> dict[str, A
 
     policy = section.get("policy", {})
     require(policy.get("physical_layout") == "domain_grouped_files", "data registry physical layout mismatch", errors)
-    require(policy.get("migration_stage") == "registry_first_before_bulk_move", "data registry migration stage mismatch", errors)
+    require(
+        policy.get("migration_stage") == "canonical_evidence_and_invariants_integrated_after_bulk_move",
+        "data registry migration stage mismatch",
+        errors,
+    )
     ingest_policy = policy.get("ingest_policy", "")
     require(isinstance(ingest_policy, str) and "transient" in ingest_policy, "data registry ingest policy mismatch", errors)
 
@@ -190,6 +197,42 @@ def verify_data_registry(data: dict[str, Any], errors: list[str]) -> dict[str, A
     require(ss_sat.get("path") == "data/evidence/ss_sat", "SS-SAT canonical path mismatch", errors)
     require(ss_sat.get("storage_status") == "canonical_standardized_layout", "SS-SAT storage status should mark standardized layout", errors)
     require(ss_sat.get("target_path") == "data/evidence/ss_sat", "SS-SAT target layout mismatch", errors)
+    stack_series = domains.get("stack_series_evidence", {})
+    require(stack_series.get("path") == "data/evidence/stack_series", "stack-series canonical path mismatch", errors)
+    require(
+        stack_series.get("storage_status") == "canonical_standardized_layout",
+        "stack-series storage status should mark standardized layout",
+        errors,
+    )
+    require(stack_series.get("target_path") == "data/evidence/stack_series", "stack-series target layout mismatch", errors)
+    height = domains.get("height_coherence_integrity", {})
+    require(height.get("path") == "data/integrity/height_coherence", "height-coherence canonical path mismatch", errors)
+    require(
+        height.get("storage_status") == "canonical_standardized_layout",
+        "height-coherence storage status should mark standardized layout",
+        errors,
+    )
+    require(height.get("target_path") == "data/integrity/height_coherence", "height-coherence target layout mismatch", errors)
+    repro = domains.get("reproducibility_evidence", {})
+    require(repro.get("path") == "data/evidence/reproducibility", "reproducibility canonical path mismatch", errors)
+    require(
+        repro.get("storage_status") == "canonical_standardized_layout",
+        "reproducibility storage status should mark standardized layout",
+        errors,
+    )
+    require(repro.get("target_path") == "data/evidence/reproducibility", "reproducibility target layout mismatch", errors)
+    d20 = domains.get("d20_invariants", {})
+    require(d20.get("path") == "data/invariants/d20", "d20 invariant canonical path mismatch", errors)
+    require(d20.get("target_path") == "data/invariants/d20", "d20 invariant target layout mismatch", errors)
+    require(d20.get("storage_status") == "canonical_standardized_layout", "d20 invariant storage status should mark standardized layout", errors)
+    hcycle = domains.get("hcycle_game_control", {})
+    require(hcycle.get("path") == "data/invariants/hcycle", "H-cycle canonical path mismatch", errors)
+    require(hcycle.get("target_path") == "data/invariants/hcycle", "H-cycle target layout mismatch", errors)
+    require(hcycle.get("storage_status") == "canonical_current_layout_flat", "H-cycle storage status should preserve flat layout", errors)
+    ladders = domains.get("integrity_ladders", {})
+    require(ladders.get("path") == "data/invariants/integrity", "integrity ladder canonical path mismatch", errors)
+    require(ladders.get("target_path") == "data/invariants/integrity", "integrity ladder target layout mismatch", errors)
+    require(ladders.get("storage_status") == "canonical_standardized_layout", "integrity ladder storage status should mark standardized layout", errors)
 
     return {
         "domain_count": len(domains),
@@ -344,7 +387,7 @@ def verify_certified_evidence_invariants(data: dict[str, Any], errors: list[str]
 
 def verify_root(errors: list[str]) -> dict[str, Any]:
     cert = load_json("certificate.json")
-    require(cert.get("schema") in {"d20.verifier.v1", "d20.verifier.v2"}, "root schema mismatch", errors)
+    require(cert.get("schema") == "d20.verifier.v1", "root schema mismatch", errors)
     require(cert.get("status") == "D20_CERTIFIED", "root status mismatch", errors)
     h = cert.get("d20_sha256")
     body = {k: v for k, v in cert.items() if k != "d20_sha256"}
@@ -386,7 +429,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     if not p.exists():
         return {}
     data = load_json(p)
-    require(data.get("schema") == "d20.object.v2", "d20.json schema mismatch", errors)
+    require(data.get("schema") == "d20.object.v1", "d20.json schema mismatch", errors)
     require(data.get("status") == "D20_CERTIFIED", "d20.json status mismatch", errors)
     require(data.get("object") == "d20", "d20.json object mismatch", errors)
     h = data.get("d20_sha256")
@@ -404,6 +447,9 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "certified_evidence_invariants",
         "tensor_chain",
         "ss_sat_evidence",
+        "stack_series_evidence",
+        "height_coherence",
+        "reproducibility_evidence",
         "layer_registry",
         "layer_certificates",
         "json_invariants",
@@ -538,6 +584,79 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "SS-SAT full-FRAT replay residue missing",
         errors,
     )
+    stack_series = data.get("stack_series_evidence", {})
+    require(stack_series.get("status") == "STACK_SERIES_EVIDENCE_INTEGRATED", "stack-series status mismatch", errors)
+    require(stack_series.get("present") is True, "stack-series evidence missing", errors)
+    require(stack_series.get("public_name") == "stack_series", "stack-series public name mismatch", errors)
+    require(stack_series.get("path") == "data/evidence/stack_series", "stack-series path mismatch", errors)
+    stack_manifest = stack_series.get("manifest", {})
+    require(stack_manifest.get("present") is True, "stack-series manifest missing", errors)
+    require(stack_manifest.get("schema") == "d20.stack_series_evidence_manifest.v1", "stack-series manifest schema mismatch", errors)
+    require(stack_manifest.get("status") == "STACK_SERIES_EVIDENCE_INTEGRATED", "stack-series manifest status mismatch", errors)
+    stack_report = stack_series.get("summary_report", {})
+    require(stack_report.get("present") is True, "stack-series summary report missing", errors)
+    require(stack_report.get("status") == "STACK_SERIES_EVIDENCE_INTEGRATED", "stack-series summary report status mismatch", errors)
+    require(stack_series.get("stage_count") == 4, "stack-series stage count mismatch", errors)
+    stack_statuses = stack_series.get("stage_statuses", {})
+    expected_stack_statuses = {
+        "v26_q_weighted": "D20_Q_WEIGHTED_STACK_SERIES_CERTIFIED_MOTIVIC_COHA_OPEN",
+        "v27_a985_weighted": "D20_A985_WEIGHTED_STACK_SERIES_CERTIFIED_RAW_TENSOR_SHADOW_MOTIVIC_COHA_OPEN",
+        "v28_relation_level": "D20_A985_RELATION_LEVEL_STACK_SERIES_CERTIFIED_RAW_TENSOR_MOTIVIC_COHA_OPEN",
+        "v29_relation_pair_quotient": "D20_A985_RELATION_PAIR_QUOTIENT_STACK_SERIES_CERTIFIED_MOTIVIC_COHA_OPEN",
+    }
+    require(stack_statuses == expected_stack_statuses, "stack-series stage status mismatch", errors)
+
+    height = data.get("height_coherence", {})
+    require(height.get("status") == "D20_UF_KERNEL_HEIGHT_COHERENCE_CERTIFIED", "height-coherence status mismatch", errors)
+    require(height.get("present") is True, "height-coherence evidence missing", errors)
+    require(height.get("public_name") == "height_coherence", "height-coherence public name mismatch", errors)
+    require(height.get("path") == "data/integrity/height_coherence", "height-coherence path mismatch", errors)
+    height_cert = height.get("certificate", {})
+    require(height_cert.get("present") is True, "height-coherence certificate missing", errors)
+    require(height_cert.get("schema") == "d20.uf_kernel.height_coherence.v4", "height-coherence certificate schema mismatch", errors)
+    height_manifest = height.get("manifest", {})
+    require(height_manifest.get("present") is True, "height-coherence manifest missing", errors)
+    require(height_manifest.get("schema") == "d20.height_coherence_evidence_manifest.v1", "height-coherence manifest schema mismatch", errors)
+    require(
+        height_manifest.get("status") == "D20_UF_KERNEL_HEIGHT_COHERENCE_CERTIFIED",
+        "height-coherence manifest status mismatch",
+        errors,
+    )
+    require(height.get("positive_certificate_count") == 3, "height-coherence positive certificate count mismatch", errors)
+    require(height.get("negative_control_count") == 1, "height-coherence negative control count mismatch", errors)
+    guard = height.get("saturated_resizing_guard", {})
+    require(guard.get("valid_saturated_bridge") is True, "height-coherence saturated bridge guard mismatch", errors)
+    require(
+        guard.get("pointwise_atom_projection_status") == "REJECTED_AS_TOO_STRONG",
+        "height-coherence atom projection guard mismatch",
+        errors,
+    )
+
+    repro = data.get("reproducibility_evidence", {})
+    require(
+        repro.get("status") == "D20_REPRODUCIBILITY_EVIDENCE_INTEGRATED",
+        "reproducibility evidence status mismatch",
+        errors,
+    )
+    require(repro.get("present") is True, "reproducibility evidence missing", errors)
+    require(repro.get("public_name") == "reproducibility", "reproducibility public name mismatch", errors)
+    require(repro.get("path") == "data/evidence/reproducibility/python_bundle", "reproducibility path mismatch", errors)
+    repro_manifest = repro.get("manifest", {})
+    require(repro_manifest.get("present") is True, "reproducibility manifest missing", errors)
+    require(
+        repro_manifest.get("schema") == "d20.reproducibility_evidence_manifest.v1",
+        "reproducibility manifest schema mismatch",
+        errors,
+    )
+    require(
+        repro_manifest.get("status") == "D20_REPRODUCIBILITY_EVIDENCE_INTEGRATED",
+        "reproducibility manifest status mismatch",
+        errors,
+    )
+    require(repro.get("output_certificate_count") == 3, "reproducibility output certificate count mismatch", errors)
+    repro_statuses = repro.get("output_certificate_statuses", {})
+    require(set(repro_statuses.values()) == {"PASS"}, "reproducibility output certificate status mismatch", errors)
+    require(repro.get("source_script_count", 0) > 0, "reproducibility source script count is zero", errors)
     fin = data.get("final_investigation", {})
     require(fin.get("status") == "D20_INVESTIGATION_FINALIZED_WITH_A985_INTEGRAL_UNIQUENESS", "final investigation status mismatch", errors)
     require(fin.get("finite_computational_closure") is True, "final investigation finite closure mismatch", errors)
@@ -571,6 +690,9 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "certified_evidence_source_count": evidence_invariants.get("source_count"),
         "tensor_chain_present": bool(tensor_chain.get("present", False)),
         "ss_sat_evidence_present": bool(ss_sat.get("present", False)),
+        "stack_series_evidence_present": bool(stack_series.get("present", False)),
+        "height_coherence_present": bool(height.get("present", False)),
+        "reproducibility_evidence_present": bool(repro.get("present", False)),
         "hcycle_present": bool(data.get("game_theory", {}).get("present", False)),
         "hcycle_primitive_cycles": data.get("game_theory", {}).get("primitive_H_cycles", {}).get("count"),
         "hcycle_state_space": data.get("game_theory", {}).get("state_space", {}).get("S20_order"),

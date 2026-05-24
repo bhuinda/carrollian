@@ -296,7 +296,7 @@ def canonical_marker_formula(marker: dict[str, Any]) -> dict[str, Any]:
         "expected_closure_order": EXPECTED_GROUP_ORDER,
         "expected_pair_orbitals": EXPECTED_RELATIONS,
         "relation_body_source": relation_path,
-        "derived_from": f"{relation_path} plus data/d20/coorient_relator_profile_from_a0_a5.json",
+        "derived_from": f"{relation_path} plus data/invariants/d20/coorient_relator_profile_from_a0_a5.json",
     }
 
 
@@ -318,7 +318,7 @@ def signature_formula(marker: dict[str, Any]) -> dict[str, Any]:
         "expected_orbit_sizes": [384, 192, 144, 576, 512, 768],
         "expected_pair_orbitals": EXPECTED_RELATIONS,
         "relation_body_source": relation_path,
-        "derived_from": f"{relation_path} plus data/d20/coorient_relator_profile_from_a0_a5.json",
+        "derived_from": f"{relation_path} plus data/invariants/d20/coorient_relator_profile_from_a0_a5.json",
     }
 
 

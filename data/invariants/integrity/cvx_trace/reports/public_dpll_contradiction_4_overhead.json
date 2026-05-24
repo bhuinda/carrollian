@@ -1,0 +1,36 @@
+{
+  "integrity_counts": {
+    "C": 4,
+    "UNCLASSIFIED": 0,
+    "V": 0,
+    "X": 0
+  },
+  "overhead": {
+    "actual_trace_cost": {
+      "assignment_events": 1,
+      "event_count": 4,
+      "max_event_payload_literals": 1,
+      "scan_events": 2
+    },
+    "input_measures": {
+      "clauses": 5,
+      "literal_occurrences": 8,
+      "variables": 4
+    },
+    "polynomial_bound": {
+      "bound_name": "unit_propagation_public_dpll_fixture_bound",
+      "event_count_bound": "(variables + 1) * clauses + variables",
+      "event_count_bound_value": 29,
+      "event_verification_cost_bound": "O(event_count * max_clause_width)",
+      "max_clause_width": 2,
+      "within_bound": true
+    },
+    "scope": "Prototype bound for deterministic public unit-propagation DPLL on this fixture; this is not the arbitrary polynomial-time universality theorem."
+  },
+  "result": "UNSAT",
+  "schema": "d20.integrity.solver_trace_overhead.v1",
+  "schema_path": "data/invariants/integrity/cvx_trace/schemas/cvx_trace.v1.schema.json",
+  "source_cnf": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+  "status": "CVX_SOLVER_EXECUTION_TRACE_OVERHEAD_PASS",
+  "trace_path": "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json"
+}

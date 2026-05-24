@@ -13,6 +13,7 @@ import numpy as np
 
 from src.certify_io import raw_tensor_relpath
 from src.derive_zero_axiom_coorient import derive as derive_zero_axiom_coorient
+from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -178,10 +179,10 @@ def _to_float(x: Any, default: float = 0.0) -> float:
 def hcycle_game_theory() -> dict[str, Any]:
     """Load and summarize the d20 H-cycle/game-theory layer.
 
-    The raw tables are kept under data/hcycle and are also embedded in d20.json
+    The raw tables are kept under data/invariants/hcycle and are also embedded in d20.json
     so the object file lists the game/control invariants directly.
     """
-    base = ROOT / "data" / "hcycle"
+    base = HCYCLE_INVARIANTS
     if not base.exists():
         return {"status": "D20_HCYCLE_LAYER_MISSING", "present": False}
 
@@ -795,15 +796,41 @@ def data_registry() -> dict[str, Any]:
 
 
 def certified_evidence_invariants() -> dict[str, Any]:
-    path = ROOT / "data" / "d20" / "certified_evidence_invariants.json"
+    path = D20_INVARIANTS / "certified_evidence_invariants.json"
     if not path.exists():
         return {"status": "D20_CERTIFIED_EVIDENCE_INVARIANTS_MISSING", "present": False}
     payload = load_json(path)
     return {
-        "path": "data/d20/certified_evidence_invariants.json",
+        "path": "data/invariants/d20/certified_evidence_invariants.json",
         "file_sha256": sha_file(path),
         "present": True,
         **payload,
+    }
+
+
+def data_tree_counts(base: Path) -> tuple[int, dict[str, int]]:
+    suffix_counts: dict[str, int] = {}
+    file_count = 0
+    for path in base.rglob("*"):
+        if not path.is_file():
+            continue
+        if excluded_scan_path(path):
+            continue
+        file_count += 1
+        suffix = path.suffix.lower() or "<none>"
+        suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
+    return file_count, suffix_counts
+
+
+def json_artifact_summary(path: Path, rel_path: str) -> dict[str, Any]:
+    payload = load_json(path) if path.exists() else {}
+    return {
+        "present": path.exists(),
+        "path": rel_path,
+        "schema": payload.get("schema"),
+        "status": payload.get("status"),
+        "sha256": sha_file(path) if path.exists() else None,
+        "file_count": payload.get("file_count"),
     }
 
 
@@ -957,6 +984,112 @@ def ss_sat_evidence() -> dict[str, Any]:
     }
 
 
+def stack_series_evidence() -> dict[str, Any]:
+    rel_base = "data/evidence/stack_series"
+    base = ROOT / "data" / "evidence" / "stack_series"
+    if not base.exists():
+        return {"status": "STACK_SERIES_EVIDENCE_MISSING", "present": False}
+
+    file_count, suffix_counts = data_tree_counts(base)
+    index_path = base / "index.json"
+    manifest_path = base / "manifest.json"
+    report_path = base / "reports" / "stack_series_evidence.json"
+    report = load_json(report_path) if report_path.exists() else {}
+    stages = report.get("stages", []) if isinstance(report.get("stages", []), list) else []
+    return {
+        "status": "STACK_SERIES_EVIDENCE_INTEGRATED",
+        "present": True,
+        "public_name": "stack_series",
+        "path": rel_base,
+        "source_integration": "transient stack-series ingest bundles are canonicalized under data/evidence/stack_series",
+        "source_preservation": "stage CSV/JSON/script artifacts are preserved; generated index, manifest, and reports are additive",
+        "file_count": file_count,
+        "file_counts_by_suffix": suffix_counts,
+        "index": json_artifact_summary(index_path, f"{rel_base}/index.json"),
+        "manifest": json_artifact_summary(manifest_path, f"{rel_base}/manifest.json"),
+        "summary_report": json_artifact_summary(report_path, f"{rel_base}/reports/stack_series_evidence.json"),
+        "stage_count": report.get("stage_count"),
+        "stage_statuses": {
+            stage.get("stage_id"): stage.get("status")
+            for stage in stages
+            if isinstance(stage, dict) and isinstance(stage.get("stage_id"), str)
+        },
+        "stage_bounds": {
+            stage.get("stage_id"): stage.get("bounds")
+            for stage in stages
+            if isinstance(stage, dict) and isinstance(stage.get("stage_id"), str)
+        },
+        "invariant_policy": report.get("invariant_policy", {}),
+    }
+
+
+def height_coherence_evidence() -> dict[str, Any]:
+    rel_base = "data/integrity/height_coherence"
+    base = ROOT / "data" / "integrity" / "height_coherence"
+    if not base.exists():
+        return {"status": "D20_UF_KERNEL_HEIGHT_COHERENCE_MISSING", "present": False}
+
+    file_count, suffix_counts = data_tree_counts(base)
+    cert_path = base / "certificate.json"
+    manifest_path = base / "manifest.json"
+    report_path = base / "reports" / "height_coherence_evidence.json"
+    cert = load_json(cert_path) if cert_path.exists() else {}
+    report = load_json(report_path) if report_path.exists() else {}
+    return {
+        "status": cert.get("status", "D20_UF_KERNEL_HEIGHT_COHERENCE_MISSING"),
+        "present": True,
+        "public_name": "height_coherence",
+        "path": rel_base,
+        "source_integration": "transient UF-kernel height-coherence ingest bundle is canonicalized under data/integrity/height_coherence",
+        "source_preservation": "certificate, arrays, tables, examples, reports, and verifier script are preserved in canonical integrity storage",
+        "file_count": file_count,
+        "file_counts_by_suffix": suffix_counts,
+        "certificate": json_artifact_summary(cert_path, f"{rel_base}/certificate.json"),
+        "manifest": json_artifact_summary(manifest_path, f"{rel_base}/manifest.json"),
+        "summary_report": json_artifact_summary(report_path, f"{rel_base}/reports/height_coherence_evidence.json"),
+        "definition": cert.get("definition"),
+        "certificate_count": report.get("certificate_count"),
+        "positive_certificate_count": report.get("positive_certificate_count"),
+        "negative_control_count": report.get("negative_control_count"),
+        "saturated_resizing_guard": report.get("saturated_resizing_guard"),
+    }
+
+
+def reproducibility_evidence() -> dict[str, Any]:
+    rel_base = "data/evidence/reproducibility/python_bundle"
+    base = ROOT / "data" / "evidence" / "reproducibility" / "python_bundle"
+    if not base.exists():
+        return {"status": "D20_REPRODUCIBILITY_EVIDENCE_MISSING", "present": False}
+
+    file_count, suffix_counts = data_tree_counts(base)
+    index_path = base / "index.json"
+    manifest_path = base / "manifest.json"
+    report_path = base / "reports" / "reproducibility_evidence.json"
+    report = load_json(report_path) if report_path.exists() else {}
+    certs = report.get("output_certificates", [])
+    return {
+        "status": "D20_REPRODUCIBILITY_EVIDENCE_INTEGRATED",
+        "present": True,
+        "public_name": "reproducibility",
+        "path": rel_base,
+        "source_integration": "transient reproducibility ingest bundle is canonicalized under data/evidence/reproducibility/python_bundle",
+        "source_preservation": "README, source scripts, output tables, and output certificates are preserved in canonical evidence storage",
+        "file_count": file_count,
+        "file_counts_by_suffix": suffix_counts,
+        "index": json_artifact_summary(index_path, f"{rel_base}/index.json"),
+        "manifest": json_artifact_summary(manifest_path, f"{rel_base}/manifest.json"),
+        "summary_report": json_artifact_summary(report_path, f"{rel_base}/reports/reproducibility_evidence.json"),
+        "output_certificate_count": report.get("output_certificate_count"),
+        "output_certificate_statuses": {
+            cert.get("path"): cert.get("status")
+            for cert in certs
+            if isinstance(cert, dict) and isinstance(cert.get("path"), str)
+        },
+        "source_script_count": len(report.get("source_scripts", [])) if isinstance(report.get("source_scripts"), list) else None,
+        "invariant_policy": report.get("invariant_policy", {}),
+    }
+
+
 
 def coorient_seed_invariants() -> dict[str, Any]:
     """Expose the coorient constructor boundary explicitly inside d20.json.
@@ -1042,7 +1175,7 @@ def coorient_seed_invariants() -> dict[str, Any]:
 
 
 def universal_integral_uniqueness_payload() -> dict[str, Any]:
-    path = ROOT / "data" / "d20" / "universal_integral_uniqueness.json"
+    path = D20_INVARIANTS / "universal_integral_uniqueness.json"
     if path.exists():
         return load_json(path)
     from src.derive_universal_integral_uniqueness import derive as _derive_universal_integral_uniqueness
@@ -1050,7 +1183,7 @@ def universal_integral_uniqueness_payload() -> dict[str, Any]:
 
 
 def coorient_relator_profile_theorem() -> dict[str, Any]:
-    path = ROOT / "data" / "d20" / "coorient_relator_profile_from_a0_a5.json"
+    path = D20_INVARIANTS / "coorient_relator_profile_from_a0_a5.json"
     if path.exists():
         return load_json(path)
     from src.derive_coorient_relator_profile_from_a0_a5 import derive as _derive_relator_profile
@@ -1126,7 +1259,7 @@ def final_investigation_status(z: dict[str, Any] | None = None, u: dict[str, Any
 
 
 def pre_a985_relation_body_theorem() -> dict[str, Any]:
-    path = ROOT / "data/d20/pre_A985_relation_body_theorem.json"
+    path = D20_INVARIANTS / "pre_A985_relation_body_theorem.json"
     if path.exists():
         return load_json(path)
     from src.derive_pre_a985_relation_body import derive as _derive_pre_a985
@@ -1138,7 +1271,7 @@ def derive() -> dict[str, Any]:
     relator_profile = coorient_relator_profile_theorem()
     registry = layer_registry()
     result: dict[str, Any] = {
-        "schema": "d20.object.v2",
+        "schema": "d20.object.v1",
         "status": "D20_CERTIFIED",
         "object": "d20",
         "definition": {
@@ -1162,6 +1295,9 @@ def derive() -> dict[str, Any]:
         "certified_evidence_invariants": certified_evidence_invariants(),
         "tensor_chain": tensor_chain_evidence(),
         "ss_sat_evidence": ss_sat_evidence(),
+        "stack_series_evidence": stack_series_evidence(),
+        "height_coherence": height_coherence_evidence(),
+        "reproducibility_evidence": reproducibility_evidence(),
         "coorient_seed": coorient_seed_invariants(),
         "final_investigation": final_investigation_status(zero_axiom, universal_uniqueness),
         "layer_registry": registry,

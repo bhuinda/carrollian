@@ -1,0 +1,318 @@
+{
+  "classifier_path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_classifier.json",
+  "current_trace_classification": {
+    "accepted_events": [
+      {
+        "class_code": "C_PUBLIC_LRAT_EMPTY_CLAUSE",
+        "classifier_integrity_type": "C",
+        "event_id": "contradiction_4.cadical:line-1",
+        "status": "classified",
+        "trace_id": "cadical_lrat_contradiction_4",
+        "trace_integrity_type": "C",
+        "trace_path": "data/invariants/integrity/cvx_trace/traces/cadical_lrat_contradiction_4.trace.json"
+      },
+      {
+        "class_code": "C_PUBLIC_DPLL_SCAN_CLAUSE",
+        "classifier_integrity_type": "C",
+        "event_id": "public-dpll-contradiction-4:0001",
+        "status": "classified",
+        "trace_id": "public_dpll_contradiction_4",
+        "trace_integrity_type": "C",
+        "trace_path": "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json"
+      },
+      {
+        "class_code": "C_PUBLIC_DPLL_UNIT_ASSIGN",
+        "classifier_integrity_type": "C",
+        "event_id": "public-dpll-contradiction-4:0002",
+        "status": "classified",
+        "trace_id": "public_dpll_contradiction_4",
+        "trace_integrity_type": "C",
+        "trace_path": "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json"
+      },
+      {
+        "class_code": "C_PUBLIC_DPLL_SCAN_CLAUSE",
+        "classifier_integrity_type": "C",
+        "event_id": "public-dpll-contradiction-4:0003",
+        "status": "classified",
+        "trace_id": "public_dpll_contradiction_4",
+        "trace_integrity_type": "C",
+        "trace_path": "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json"
+      },
+      {
+        "class_code": "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT",
+        "classifier_integrity_type": "C",
+        "event_id": "public-dpll-contradiction-4:0004",
+        "status": "classified",
+        "trace_id": "public_dpll_contradiction_4",
+        "trace_integrity_type": "C",
+        "trace_path": "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json"
+      }
+    ],
+    "classified_counts": {
+      "C": 5,
+      "UNCLASSIFIED": 0,
+      "V": 0,
+      "X": 0
+    },
+    "event_count": 5,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "passed": true,
+    "residue_count": 0,
+    "residues": [],
+    "trace_paths": [
+      "data/invariants/integrity/cvx_trace/traces/cadical_lrat_contradiction_4.trace.json",
+      "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json"
+    ]
+  },
+  "decision": {
+    "may_claim_full_separation": false,
+    "may_claim_totality_for_uncompiled_native_machine_instructions": false,
+    "may_claim_totality_for_universal_trace_vocabulary": true,
+    "reason": "The finite universal trace vocabulary is totally typed with explicit residue fallback. Native instructions are not silently accepted; they must compile into this vocabulary or become residues."
+  },
+  "fallback_fixture": {
+    "class_code": "UNKNOWN_NATIVE_MACHINE_INSTRUCTION",
+    "integrity_type": "UNCLASSIFIED",
+    "passed": true,
+    "residue_path": "data/invariants/integrity/cvx_trace/residues/unsupported_universal_trace_event_residue.json",
+    "status": "residue"
+  },
+  "next_highest_yield_item": {
+    "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary.",
+    "id": "pure_c_no_escape"
+  },
+  "non_claim": "This report does not provide the arbitrary-solver trace compiler, the no-escape theorem over all universal traces, an X-extractor lower bound, or P != NP.",
+  "residue_fallback_path": "data/invariants/integrity/cvx_trace/residues/unsupported_universal_trace_event_residue.json",
+  "schema": "d20.integrity.universal_trace_typing_report.v1",
+  "schema_path": "data/invariants/integrity/cvx_trace/schemas/universal_trace_event.v1.schema.json",
+  "schema_shape_check": {
+    "errors": [],
+    "passed": true
+  },
+  "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS",
+  "vocabulary_totality_check": {
+    "duplicate_codes": [],
+    "failures": [],
+    "passed": true,
+    "rows": [
+      {
+        "class_code": "C_PUBLIC_BIT_AND",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_BIT_NOT",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_BIT_OR",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_BIT_XOR",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_BRANCH",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_COMPARE_ZERO",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_CONST",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_COPY",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_DPLL_SCAN_CLAUSE",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_DPLL_UNIT_ASSIGN",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_DPLL_UNIT_CONFLICT",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_EMIT_DECISION",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_HALT_ACCEPT",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_HALT_REJECT",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_INPUT_READ",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_LOOP_TICK",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_LRAT_DELETION",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_LRAT_EMPTY_CLAUSE",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_LRAT_LEMMA",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_RAM_LOAD",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "C_PUBLIC_RAM_STORE",
+        "classifier_integrity_type": "C",
+        "expected_integrity_type": "C",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "V_VISIBLE_COMMUTATOR_WALL_CROSSING",
+        "classifier_integrity_type": "V",
+        "expected_integrity_type": "V",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "V_VISIBLE_PUBLIC_BOUNDARY_TRANSPORT",
+        "classifier_integrity_type": "V",
+        "expected_integrity_type": "V",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "X_EXTRACTOR_GF2_GAUSSIAN_ELIMINATION",
+        "classifier_integrity_type": "X",
+        "expected_integrity_type": "X",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "X_EXTRACTOR_HIDDEN_ADVICE_READ",
+        "classifier_integrity_type": "X",
+        "expected_integrity_type": "X",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "X_EXTRACTOR_HIDDEN_SECTOR_MAP",
+        "classifier_integrity_type": "X",
+        "expected_integrity_type": "X",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "X_EXTRACTOR_NATIVE_XOR_ELIMINATION",
+        "classifier_integrity_type": "X",
+        "expected_integrity_type": "X",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "X_EXTRACTOR_NONPUBLIC_PARITY_BASIS",
+        "classifier_integrity_type": "X",
+        "expected_integrity_type": "X",
+        "passed": true,
+        "status": "classified"
+      },
+      {
+        "class_code": "X_EXTRACTOR_PARITY_BASIS_RECOVERY",
+        "classifier_integrity_type": "X",
+        "expected_integrity_type": "X",
+        "passed": true,
+        "status": "classified"
+      }
+    ],
+    "type_counts": {
+      "C": 22,
+      "UNCLASSIFIED": 0,
+      "V": 2,
+      "X": 6
+    },
+    "vocabulary_class_code_count": 30
+  }
+}

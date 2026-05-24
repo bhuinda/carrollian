@@ -23,7 +23,7 @@ from src.certify_constructor import (
     sha_json,
 )
 from src.certify_io import raw_tensor_relpath
-from src.paths import GENERATED, ROOT
+from src.paths import D20_INVARIANTS, GENERATED, ROOT
 
 
 def is_full_scratch_constructor(result: dict) -> bool:
@@ -128,7 +128,7 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
     )
     absolute = derive_absolute_word(
         strict_formula_relation,
-        ROOT / "data/d20/d20_d6_selector_derivation.json",
+        D20_INVARIANTS / "d20_d6_selector_derivation.json",
         ROOT / "data/coorient/lifted_coorient_canonical_marker_formula.json",
         GENERATED / "strict_scratch_lifted_coorient_generators.npz",
         GENERATED / "strict_scratch_absolute_d20_word_presentation.json",
@@ -315,7 +315,7 @@ def main() -> None:
 
         result = write_theorem()
         if args.out == "generated/constructed_from_raw_seeds.json":
-            args.out = "data/d20/theorems/t985_csdo/report.json"
+            args.out = "data/invariants/d20/theorems/t985_csdo/report.json"
     elif args.derive_d20:
         from src.derive_d20 import derive as derive_d20
 
@@ -332,7 +332,7 @@ def main() -> None:
 
         result = derive_absolute_coorient_word_presentation(
             ROOT / "generated/relation_memberships_from_canonical_coorient_marker.npz",
-            ROOT / "data/d20/d20_d6_selector_derivation.json",
+            D20_INVARIANTS / "d20_d6_selector_derivation.json",
             ROOT / "data/coorient/lifted_coorient_canonical_marker_formula.json",
             ROOT / "generated/lifted_coorient_generators_from_canonical_marker.npz",
             ROOT / "data/coorient/absolute_d20_word_presentation.json",

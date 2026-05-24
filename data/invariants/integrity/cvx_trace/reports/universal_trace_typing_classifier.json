@@ -1,0 +1,66 @@
+{
+  "accepted_types": [
+    "C",
+    "V",
+    "X"
+  ],
+  "coverage_statement": "Every class code in this finite vocabulary has exactly one C/V/X type. Any event outside the vocabulary is not silently accepted; it is emitted as an UNCLASSIFIED residue.",
+  "extractor_x_class_codes": {
+    "X_EXTRACTOR_GF2_GAUSSIAN_ELIMINATION": "GF(2) Gaussian elimination adjoins a hidden parity extractor",
+    "X_EXTRACTOR_HIDDEN_ADVICE_READ": "solver reads non-public hidden-sector advice",
+    "X_EXTRACTOR_HIDDEN_SECTOR_MAP": "solver constructs a hidden-sector map",
+    "X_EXTRACTOR_NATIVE_XOR_ELIMINATION": "native XOR elimination recovers hidden parity structure",
+    "X_EXTRACTOR_NONPUBLIC_PARITY_BASIS": "solver uses a non-public parity basis",
+    "X_EXTRACTOR_PARITY_BASIS_RECOVERY": "solver recovers hidden-sector parity basis"
+  },
+  "fallback_policy": "emit_explicit_typed_residue",
+  "fallback_type": "UNCLASSIFIED",
+  "public_c_class_codes": {
+    "C_PUBLIC_BIT_AND": "public Boolean AND gate",
+    "C_PUBLIC_BIT_NOT": "public Boolean NOT gate",
+    "C_PUBLIC_BIT_OR": "public Boolean OR gate",
+    "C_PUBLIC_BIT_XOR": "public Boolean XOR gate over public bits only",
+    "C_PUBLIC_BRANCH": "branch on a public control bit",
+    "C_PUBLIC_COMPARE_ZERO": "public zero-test or equality check",
+    "C_PUBLIC_CONST": "introduce a public constant",
+    "C_PUBLIC_COPY": "copy public register or tape content",
+    "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT": "public empty-clause conflict",
+    "C_PUBLIC_DPLL_SCAN_CLAUSE": "public clause scan over DIMACS literals",
+    "C_PUBLIC_DPLL_UNIT_ASSIGN": "public unit propagation assignment",
+    "C_PUBLIC_DPLL_UNIT_CONFLICT": "public contradictory unit conflict",
+    "C_PUBLIC_EMIT_DECISION": "emit a public decision bit",
+    "C_PUBLIC_HALT_ACCEPT": "public accepting halt state",
+    "C_PUBLIC_HALT_REJECT": "public rejecting halt state",
+    "C_PUBLIC_INPUT_READ": "read a public input bit or symbol",
+    "C_PUBLIC_LOOP_TICK": "public bounded execution-step counter",
+    "C_PUBLIC_LRAT_DELETION": "public LRAT proof bookkeeping",
+    "C_PUBLIC_LRAT_EMPTY_CLAUSE": "public checked LRAT empty-clause witness",
+    "C_PUBLIC_LRAT_LEMMA": "public checked LRAT lemma",
+    "C_PUBLIC_RAM_LOAD": "load from public-addressed public memory",
+    "C_PUBLIC_RAM_STORE": "store to public-addressed public memory"
+  },
+  "public_machine_class_codes": {
+    "C_PUBLIC_BIT_AND": "public Boolean AND gate",
+    "C_PUBLIC_BIT_NOT": "public Boolean NOT gate",
+    "C_PUBLIC_BIT_OR": "public Boolean OR gate",
+    "C_PUBLIC_BIT_XOR": "public Boolean XOR gate over public bits only",
+    "C_PUBLIC_BRANCH": "branch on a public control bit",
+    "C_PUBLIC_COMPARE_ZERO": "public zero-test or equality check",
+    "C_PUBLIC_CONST": "introduce a public constant",
+    "C_PUBLIC_COPY": "copy public register or tape content",
+    "C_PUBLIC_EMIT_DECISION": "emit a public decision bit",
+    "C_PUBLIC_HALT_ACCEPT": "public accepting halt state",
+    "C_PUBLIC_HALT_REJECT": "public rejecting halt state",
+    "C_PUBLIC_INPUT_READ": "read a public input bit or symbol",
+    "C_PUBLIC_LOOP_TICK": "public bounded execution-step counter",
+    "C_PUBLIC_RAM_LOAD": "load from public-addressed public memory",
+    "C_PUBLIC_RAM_STORE": "store to public-addressed public memory"
+  },
+  "schema": "d20.integrity.universal_trace_typing_classifier.v1",
+  "status": "UNIVERSAL_TRACE_TYPING_CLASSIFIER_DEFINED",
+  "visible_v_class_codes": {
+    "V_VISIBLE_COMMUTATOR_WALL_CROSSING": "visible commutator wall crossing with replayable public boundary",
+    "V_VISIBLE_PUBLIC_BOUNDARY_TRANSPORT": "visible boundary transport with public replay data"
+  },
+  "vocabulary_model": "finite_public_bit_ram_plus_solver_and_proof_surface"
+}

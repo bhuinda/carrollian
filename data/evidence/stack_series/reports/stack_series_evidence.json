@@ -1,0 +1,171 @@
+{
+  "canonical_root": "data/evidence/stack_series",
+  "invariant_policy": {
+    "certificate_semantics": "certified truncated computations are preserved; motivic/sheafified CoHA completion remains open where stated by certificates",
+    "role": "bounded stack-series evidence archive",
+    "source_log_policy": "source CSV/JSON/script files are copied verbatim from transient ingest bundles; generated manifests and reports are additive"
+  },
+  "present": true,
+  "schema": "d20.stack_series_evidence_report.v1",
+  "stage_count": 4,
+  "stages": [
+    {
+      "bounds": {
+        "NMAX": 40,
+        "QMAX": 512
+      },
+      "certificate_path": "stages/v26_q_weighted/q_weighted_stack_series_certificate.json",
+      "csv_row_counts": {
+        "double_weighted_coefficients.csv": 13001,
+        "gauge_weighted_coefficients.csv": 14038,
+        "half_weighted_coefficients.csv": 14031,
+        "invariant_weighted_hits.csv": 45,
+        "q_weighted_series_tests.csv": 8,
+        "weighted_moments_by_dimension.csv": 615
+      },
+      "derived_row_counts": {},
+      "exact_invariant_hits": {},
+      "open_items": null,
+      "schema": "d20.q_weighted_stack_series.v26",
+      "stage_id": "v26_q_weighted",
+      "status": "D20_Q_WEIGHTED_STACK_SERIES_CERTIFIED_MOTIVIC_COHA_OPEN",
+      "tensor_metadata": null,
+      "verdict": {
+        "doubled_arrow_q_series": "CERTIFIED_TRUNCATED",
+        "gauge_q_series": "CERTIFIED_TRUNCATED",
+        "half_arrow_q_series": "CERTIFIED_TRUNCATED",
+        "invariant_hits": "RECORDED",
+        "motivic_sheafified_CoHA": "OPEN"
+      }
+    },
+    {
+      "bounds": {
+        "NMAX": 40,
+        "QMAX": 512
+      },
+      "certificate_path": "stages/v27_a985_weighted/a985_weighted_stack_series_certificate.json",
+      "csv_row_counts": {
+        "a985_m6_object_pair_matrix.csv": 6,
+        "a985_m6_weighted_coefficients.csv": 34254,
+        "a985_t985_raw_qwindow_coefficients.csv": 161,
+        "a985_weighted_invariant_hits.csv": 271,
+        "a985_weighted_moments_by_dimension.csv": 322,
+        "a985_weighted_series_tests.csv": 14,
+        "t985_output_coefficient_mass_matrix.csv": 6
+      },
+      "derived_row_counts": {},
+      "exact_invariant_hits": {},
+      "open_items": null,
+      "schema": "d20.a985_weighted_stack_series.v27",
+      "stage_id": "v27_a985_weighted",
+      "status": "D20_A985_WEIGHTED_STACK_SERIES_CERTIFIED_RAW_TENSOR_SHADOW_MOTIVIC_COHA_OPEN",
+      "tensor_metadata": {
+        "coefficient_max": 64,
+        "coefficient_min": 1,
+        "coefficient_total": 2537360,
+        "composability_failures": 0,
+        "gamma_collapses_to_point_fiber_m6": true,
+        "point_fiber": 2576,
+        "raw_tensor_min_positive_weight": 10304,
+        "relation_count": 985,
+        "support": 1414965
+      },
+      "verdict": {
+        "invariant_hits": "RECORDED",
+        "m6_relation_count_q_series": "CERTIFIED_TRUNCATED",
+        "motivic_sheafified_CoHA": "OPEN",
+        "raw_t985_tensor_output_mass_collapse": "CERTIFIED",
+        "raw_t985_tensor_output_mass_q_window": "TRIVIAL_FOR_MIXED_TERMS"
+      }
+    },
+    {
+      "bounds": {
+        "NMAX": 40,
+        "QMAX": 512
+      },
+      "certificate_path": "stages/v28_relation_level/relation_level_stack_series_certificate.json",
+      "csv_row_counts": {
+        "relation_level_invariant_hits.csv": 126,
+        "relation_level_object_path_summary.csv": 216,
+        "relation_level_series_tests.csv": 38,
+        "relation_level_weight_distributions.csv": 505,
+        "relation_level_weighted_coefficients.csv": 35557,
+        "relation_level_weighted_moments_by_dimension.csv": 118
+      },
+      "derived_row_counts": {},
+      "exact_invariant_hits": {},
+      "open_items": null,
+      "schema": "d20.a985_relation_level_stack_series.v28",
+      "stage_id": "v28_relation_level",
+      "status": "D20_A985_RELATION_LEVEL_STACK_SERIES_CERTIFIED_RAW_TENSOR_MOTIVIC_COHA_OPEN",
+      "tensor_metadata": {
+        "coefficient_max": 64,
+        "coefficient_min": 1,
+        "coefficient_total": 2537360,
+        "composability_failures": 0,
+        "expected_output_total": 2537360,
+        "output_relation_mass_uniform": true,
+        "output_relation_mass_value": 2576,
+        "relation_count": 985,
+        "support": 1414965
+      },
+      "verdict": {
+        "full_985x985_relation_pair_bilinear_stack": "OPEN",
+        "invariant_hits": "RECORDED",
+        "motivic_sheafified_CoHA": "OPEN",
+        "raw_t985_tensor_loaded": "CERTIFIED",
+        "relation_level_symmetric_stack_series": "CERTIFIED_TRUNCATED"
+      }
+    },
+    {
+      "bounds": {
+        "NMAX": 40,
+        "QMAX": 512
+      },
+      "certificate_path": "stages/v29_relation_pair_quotient/relation_pair_stack_series_certificate.json",
+      "csv_row_counts": {
+        "q12_pair_coefficient_mass_matrix.csv": 12,
+        "q12_pair_output_class_matrix.csv": 12,
+        "q12_pair_row_support_matrix.csv": 12,
+        "q42_pair_coefficient_mass_matrix.csv": 42,
+        "q42_pair_output_class_matrix.csv": 42,
+        "q42_pair_row_support_matrix.csv": 42,
+        "relation_pair_invariant_hits.csv": 180,
+        "relation_pair_series_tests.csv": 48,
+        "relation_pair_weight_distributions.csv": 593,
+        "relation_pair_weighted_coefficients.csv": 137966,
+        "relation_pair_weighted_moments_by_dimension.csv": 410
+      },
+      "derived_row_counts": {},
+      "exact_invariant_hits": {},
+      "open_items": null,
+      "schema": "d20.a985_relation_pair_quotient_stack_series.v29",
+      "stage_id": "v29_relation_pair_quotient",
+      "status": "D20_A985_RELATION_PAIR_QUOTIENT_STACK_SERIES_CERTIFIED_MOTIVIC_COHA_OPEN",
+      "tensor_metadata": {
+        "coefficient_max": 64,
+        "coefficient_min": 1,
+        "coefficient_total": 2537360,
+        "nonzero_relation_pairs": 198029,
+        "q12_tensor_matches_supplied": true,
+        "q12_tensor_nonzero": 62,
+        "q42_tensor_matches_supplied": true,
+        "q42_tensor_nonzero": 340,
+        "q42_to_q12_consistent": true,
+        "relation_count": 985,
+        "relation_pair_cells": 970225,
+        "support": 1414965,
+        "zero_relation_pairs": 772196
+      },
+      "verdict": {
+        "full_985x985_relation_pair_stack": "CERTIFIED_TRUNCATED",
+        "independent_dimension_vector_bilinear_series": "OPEN",
+        "invariant_hits": "RECORDED",
+        "motivic_sheafified_CoHA": "OPEN",
+        "q12_projection": "CERTIFIED",
+        "q42_projection": "CERTIFIED"
+      }
+    }
+  ],
+  "status": "STACK_SERIES_EVIDENCE_INTEGRATED"
+}

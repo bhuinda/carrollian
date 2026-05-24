@@ -1,0 +1,52 @@
+{
+  "accepted_antecedent_holds": true,
+  "antecedent": "All accepted trace events are public C, locally checkable, non-residue, and contain no extension-variable or extractor step.",
+  "conditional_conclusion": "For these accepted traces, the certified No Public Extractor theorem applies: the traces do not recover the hidden e33 obstruction and remain within public-integral consequences.",
+  "event_count": 5,
+  "next_blocker": "x_extractor_lower_bound",
+  "non_claim": "This report does not prove arbitrary polynomial-time no-escape, an X-extractor lower bound, or P != NP. It only checks the current accepted pure-C traces.",
+  "public_class_codes": [
+    "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT",
+    "C_PUBLIC_DPLL_SCAN_CLAUSE",
+    "C_PUBLIC_DPLL_UNIT_ASSIGN",
+    "C_PUBLIC_LRAT_EMPTY_CLAUSE"
+  ],
+  "schema": "d20.integrity.pure_c_no_escape_report.v1",
+  "status": "PURE_C_NO_ESCAPE_WITNESS_PASS",
+  "theorem_replayed": "No Public Extractor Theorem",
+  "totality_check": {
+    "antecedent_holds": true,
+    "errors": [],
+    "path": "data/invariants/integrity/cvx_trace/reports/solver_opcode_totality_report.json",
+    "status": "SOLVER_OPCODE_TOTALITY_WITNESS_PASS"
+  },
+  "trace_checks": [
+    {
+      "antecedent_holds": true,
+      "class_codes": [
+        "C_PUBLIC_LRAT_EMPTY_CLAUSE"
+      ],
+      "errors": [],
+      "event_count": 1,
+      "event_failures": [],
+      "trace_id": "cadical_lrat_contradiction_4",
+      "trace_path": "data/invariants/integrity/cvx_trace/traces/cadical_lrat_contradiction_4.trace.json",
+      "verdict": "C_PUBLIC_CHECKED_PROOF_TRACE"
+    },
+    {
+      "antecedent_holds": true,
+      "class_codes": [
+        "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT",
+        "C_PUBLIC_DPLL_SCAN_CLAUSE",
+        "C_PUBLIC_DPLL_UNIT_ASSIGN"
+      ],
+      "errors": [],
+      "event_count": 4,
+      "event_failures": [],
+      "trace_id": "public_dpll_contradiction_4",
+      "trace_path": "data/invariants/integrity/cvx_trace/traces/public_dpll_contradiction_4.trace.json",
+      "verdict": "C_PUBLIC_DPLL_UNSAT"
+    }
+  ],
+  "trace_count": 2
+}

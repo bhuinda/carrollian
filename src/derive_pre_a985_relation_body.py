@@ -11,6 +11,7 @@ import numpy as np
 
 from .build_be3_from_coorient import construct_be3_from_source_coorient
 from .certify_io import raw_tensor_relpath
+from .paths import D20_INVARIANTS
 
 ROOT = Path(__file__).resolve().parents[1]
 GENERATED = ROOT / "generated"
@@ -19,7 +20,7 @@ PRE_A985_ALIGNED_RELATION_NPZ = GENERATED / "relation_memberships_pre_A985_from_
 PRE_A985_BE3_REPORT = GENERATED / "pre_A985_source_to_relation_body_report.json"
 PRE_A985_TENSOR_NPZ = GENERATED / "tensor_pre_A985_from_source.npz"
 PRE_A985_TENSOR_REPORT = GENERATED / "pre_A985_tensor_report.json"
-PRE_A985_THEOREM_JSON = ROOT / "data" / "d20" / "pre_A985_relation_body_theorem.json"
+PRE_A985_THEOREM_JSON = D20_INVARIANTS / "pre_A985_relation_body_theorem.json"
 
 
 def sha_arr(a: np.ndarray) -> str:
@@ -189,7 +190,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--regenerate", action="store_true", help="Rebuild the relation body before writing the report; can take several minutes.")
     ap.add_argument("--regenerate-tensor", action="store_true", help="Also rebuild the generated T985 tensor witness; requires scipy.")
-    ap.add_argument("--out", default="data/d20/pre_A985_relation_body_theorem.json")
+    ap.add_argument("--out", default="data/invariants/d20/pre_A985_relation_body_theorem.json")
     ap.add_argument("--pretty", action="store_true")
     args = ap.parse_args()
     res = derive(regenerate=args.regenerate, regenerate_tensor=args.regenerate_tensor)

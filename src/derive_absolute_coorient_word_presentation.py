@@ -272,7 +272,7 @@ def derive(
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--relation", default="generated/relation_memberships_from_canonical_coorient_marker.npz")
-    ap.add_argument("--d20", default="data/d20/d20_d6_selector_derivation.json")
+    ap.add_argument("--d20", default="data/invariants/d20/d20_d6_selector_derivation.json")
     ap.add_argument("--formula", default="data/coorient/lifted_coorient_canonical_marker_formula.json")
     ap.add_argument("--compare-generators", default="generated/lifted_coorient_generators_from_canonical_marker.npz")
     ap.add_argument("--out-presentation", default="data/coorient/absolute_d20_word_presentation.json")

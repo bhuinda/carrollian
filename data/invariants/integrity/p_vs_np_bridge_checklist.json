@@ -1,0 +1,119 @@
+{
+  "schema": "d20.integrity.p_vs_np_bridge_checklist.v1",
+  "status": "P_VS_NP_BRIDGE_CHECKLIST_FORMALIZED",
+  "claim_level": "conditional_bridge_obligation",
+  "theorem": {
+    "name": "Algorithmic Universality Bridge Checklist",
+    "statement": "Every polynomial-time SAT solver for the hidden e33-obstructed family must either admit a faithful polynomial-overhead C/V/X sector-interface trace, or exhibit an explicit solver step outside the current integrity interface. If the trace exists and decides the family, then a purely C trace is blocked by the No Public Extractor theorem; a successful trace must therefore contain V or X, and X is an explicit hidden-sector extractor.",
+    "non_claim": "This artifact does not prove P != NP. It states the exact obligations needed to promote the existing conditional no-escape result into a full separation claim."
+  },
+  "current_posture": {
+    "repo_local_confidence": "coherent conditional",
+    "global_p_vs_np_confidence": "not closed",
+    "reason": "The finite C/V/X base and public proof-log classifications are represented as computed or formal consequences, while arbitrary polynomial-time computation remains the open universality tier."
+  },
+  "dependencies": [
+    {
+      "id": "finite_integrity_theorem",
+      "status": "proved_or_computed",
+      "source": "data/invariants/integrity/conditional_theorem_ladder.csv"
+    },
+    {
+      "id": "no_public_extractor_theorem",
+      "status": "proved_or_computed_for_certified_algebra",
+      "source": "data/invariants/integrity/conditional_theorem_ladder.csv"
+    },
+    {
+      "id": "proof_system_integrity_ladder",
+      "status": "built",
+      "source": "layers/integrity/proof_system.json"
+    },
+    {
+      "id": "ss_sat_public_proof_trace_audit",
+      "status": "public_traces_classified_C_for_supplied_logs",
+      "source": "data/evidence/ss_sat/reports/ss_sat_external_solver_evidence.md"
+    }
+  ],
+  "checklist": [
+    {
+      "id": "encoded_family_sat_complete",
+      "obligation": "Identify the hidden e33-obstructed family as a SAT-complete or polynomially faithful representative family.",
+      "required_artifact": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation.",
+      "pass_condition": "The reduction has polynomial overhead and preserves yes/no instances without using hidden-sector advice.",
+      "status": "representative_family_scope_declared_sat_complete_open",
+      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_scope_certificate.json",
+      "scope_warning": "The current evidence is explicitly downgraded to representative/current-trace scope. No SAT-complete or polynomially faithful reduction certificate is present."
+    },
+    {
+      "id": "faithful_trace_schema",
+      "obligation": "Define the canonical trace format for solver steps at the C/V/X sector interface.",
+      "required_artifact": "Versioned JSON schema for opcode, input state, output state, touched public data, and claimed C/V/X type.",
+      "pass_condition": "Every accepted trace event is locally checkable and has deterministic replay semantics.",
+      "status": "witnessed_for_public_lrat_replay",
+      "witness": "data/invariants/integrity/cvx_trace/index.json"
+    },
+    {
+      "id": "polynomial_trace_compiler",
+      "obligation": "Compile arbitrary polynomial-time solver executions into faithful C/V/X traces with polynomial overhead.",
+      "required_artifact": "Compiler theorem or instrumented universal machine with explicit overhead accounting.",
+      "pass_condition": "For every polynomial-time solver A, the trace length and event verification cost are polynomial in the input size and preserve A's decision result.",
+      "status": "fixture_scope_declared_universal_compiler_open",
+      "witness": "data/invariants/integrity/cvx_trace/reports/polynomial_trace_compiler_scope_certificate.json",
+      "scope_warning": "The current executable witness covers one deterministic public unit-propagation DPLL fixture with polynomial overhead accounting. No universal-machine compiler or arbitrary-solver polynomial overhead proof is present."
+    },
+    {
+      "id": "typing_totality",
+      "obligation": "Show every trace event is typed C, V, or X, or record the escaping event as a typed interface defect.",
+      "required_artifact": "Total event classifier with fallback residue class for unsupported operations.",
+      "pass_condition": "No accepted solver step remains unclassified; unsupported steps are explicit counterexamples to the current interface rather than silent assumptions.",
+      "status": "universal_trace_vocabulary_totality_witnessed_residue_guarded",
+      "witness": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "scope_warning": "A finite universal trace vocabulary is totally typed C/V/X with explicit UNCLASSIFIED residue fallback. Native instructions are not silently accepted; they must compile into this vocabulary or become residues."
+    },
+    {
+      "id": "pure_c_no_escape",
+      "obligation": "Replay the No Public Extractor theorem over the accepted trace schema.",
+      "required_artifact": "Checker showing pure C traces cannot recover or decide the hidden e33 obstruction.",
+      "pass_condition": "A trace containing only C events cannot distinguish the obstructed family beyond public-integral consequences.",
+      "status": "witnessed_for_current_accepted_pure_c_traces",
+      "witness": "data/invariants/integrity/cvx_trace/reports/pure_c_no_escape_report.json",
+      "scope_warning": "This replays the no-public-extractor condition over the current accepted pure-C traces only; arbitrary polynomial-time no-escape still depends on the remaining bridge obligations."
+    },
+    {
+      "id": "x_extractor_lower_bound",
+      "obligation": "Rule out polynomial-size X extractors for the hidden e33 family, or precisely isolate the extractor.",
+      "required_artifact": "Lower-bound argument or explicit recovered hidden-sector map.",
+      "pass_condition": "Either no polynomial X extractor exists, or the found extractor becomes the new central object to certify.",
+      "status": "bounded_search_no_extractor_found_current_traces",
+      "witness": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json",
+      "scope_warning": "This is a bounded search over current accepted trace artifacts with positive X-surface controls; it is not a polynomial-size lower bound for the hidden e33 family."
+    },
+    {
+      "id": "v_wall_crossing_accounting",
+      "obligation": "Account for V events as visible commutator wall crossings rather than hidden extraction.",
+      "required_artifact": "Wall-crossing certificates with public boundary, commutator witness, and replay check.",
+      "pass_condition": "V events are visible, replayable, and cannot be silently used as hidden-sector advice.",
+      "status": "no_v_events_current_traces_certificate_schema_defined",
+      "witness": "data/invariants/integrity/cvx_trace/reports/v_wall_crossing_accounting_report.json",
+      "scope_warning": "This defines the visible V certificate shape and proves the current accepted traces have zero V obligations; it does not prove arbitrary solver traces have no V wall crossings."
+    },
+    {
+      "id": "full_no_escape_closure",
+      "obligation": "Combine universality, total typing, pure-C no-escape, V accounting, and X lower bound into the final no-escape theorem.",
+      "required_artifact": "Machine-checkable dependency ledger linking each obligation to a passing certificate.",
+      "pass_condition": "Every polynomial-time deciding solver either violates a closed obligation or yields an explicit X extractor; no silent solver class remains.",
+      "status": "dependency_ledger_built_full_closure_blocked",
+      "witness": "data/invariants/integrity/cvx_trace/reports/full_no_escape_closure_ledger.json",
+      "scope_warning": "The ledger closes the current accepted trace surface but explicitly blocks full separation on encoded-family completeness, arbitrary solver universality, universal pure-C no-escape, polynomial X-extractor lower bound, and arbitrary V accounting."
+    }
+  ],
+  "decision_rule": {
+    "may_claim_prediction": "The repository may say it predicts P != NP while these obligations remain open.",
+    "may_claim_conditional_theorem": "The repository may claim conditional no-escape when the assumptions are named explicitly.",
+    "may_claim_full_separation": "Only after every checklist item is closed with passing artifacts and the encoded family bridge is certified."
+  },
+  "next_highest_yield_item": {
+    "id": "pure_c_no_escape",
+    "action": "Lift pure-C no-escape from current accepted traces to the universal trace vocabulary."
+  }
+}
