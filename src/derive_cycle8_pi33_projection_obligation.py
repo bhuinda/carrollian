@@ -33,6 +33,12 @@ ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT = (
 UNIQUE_PUBLIC_ZERO_CARRIER_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_unique_public_zero_carrier" / "report.json"
 )
+SECTOR_PUBLIC_SHADOW_KERNEL_REPORT = (
+    D20_INVARIANTS / "theorems" / "sector_public_shadow_kernel" / "report.json"
+)
+SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT = (
+    D20_INVARIANTS / "theorems" / "sector_idempotent_carrier_admissibility" / "report.json"
+)
 
 
 def canonical(obj: Any) -> bytes:
@@ -149,6 +155,16 @@ def build_report() -> dict[str, Any]:
         if UNIQUE_PUBLIC_ZERO_CARRIER_REPORT.exists()
         else {}
     )
+    sector_public_shadow_kernel = (
+        load_json(SECTOR_PUBLIC_SHADOW_KERNEL_REPORT)
+        if SECTOR_PUBLIC_SHADOW_KERNEL_REPORT.exists()
+        else {}
+    )
+    sector_idempotent_carrier_admissibility = (
+        load_json(SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT)
+        if SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT.exists()
+        else {}
+    )
 
     cycle = read_cycle8()
     cycle_edges = edge_rows(cycle["edge_ids"])
@@ -173,6 +189,8 @@ def build_report() -> dict[str, Any]:
     height_transport_character = height_transport_derived.get("pi33_tube_character", {})
     all_residue_derived = all_residue_transport.get("derived", {})
     unique_public_zero_derived = unique_public_zero_carrier.get("derived", {})
+    public_shadow_kernel_derived = sector_public_shadow_kernel.get("derived", {})
+    idempotent_admissibility_derived = sector_idempotent_carrier_admissibility.get("derived", {})
 
     character_values_materialized = has_any_key(
         character,
@@ -217,6 +235,15 @@ def build_report() -> dict[str, Any]:
         unique_public_zero_carrier.get("status")
         == "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_CARRIER_CERTIFIED"
         and unique_public_zero_carrier.get("all_checks_pass") is True
+    )
+    sector_public_shadow_kernel_certified = (
+        sector_public_shadow_kernel.get("status") == "D20_SECTOR_PUBLIC_SHADOW_KERNEL_CERTIFIED"
+        and sector_public_shadow_kernel.get("all_checks_pass") is True
+    )
+    sector_idempotent_carrier_admissibility_certified = (
+        sector_idempotent_carrier_admissibility.get("status")
+        == "D20_SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_CLASSIFIED"
+        and sector_idempotent_carrier_admissibility.get("all_checks_pass") is True
     )
 
     checks = {
@@ -285,6 +312,30 @@ def build_report() -> dict[str, Any]:
         )
         == 2047
         and unique_public_zero_derived.get("field_zero_nonzero_residual_count") == 0,
+        "sector_public_shadow_kernel_is_certified": sector_public_shadow_kernel_certified,
+        "full_sector_public_shadow_kernel_dimension_is_27": public_shadow_kernel_derived.get(
+            "kernel_dimension"
+        )
+        == 27
+        and public_shadow_kernel_derived.get("rank_mod_prime") == 12,
+        "pi33_uniqueness_is_coordinate_axis_not_linear_span": public_shadow_kernel_derived.get(
+            "coordinate_axis_public_zero_sectors"
+        )
+        == [33]
+        and public_shadow_kernel_derived.get("non_axis_kernel_basis_count", 0) > 0,
+        "sector_idempotent_carrier_admissibility_is_certified": (
+            sector_idempotent_carrier_admissibility_certified
+        ),
+        "public_zero_idempotent_boundary_null_carriers_are_classified": idempotent_admissibility_derived.get(
+            "nonzero_public_zero_boundary_null_supports"
+        )
+        == [[6, 26], [25, 26], [33], [6, 26, 33], [25, 26, 33]],
+        "pi33_is_unique_primitive_and_height_support_exact_carrier": idempotent_admissibility_derived.get(
+            "primitive_single_sector_public_zero"
+        )
+        == [33]
+        and idempotent_admissibility_derived.get("height_support_exact_carriers_for_certified_transport")
+        == [[33]],
         "character_table_only_hash_materialized": not character_values_materialized
         and character.get("character_table_sha256") is not None
         and character.get("shape") == [39, 985],
@@ -299,7 +350,7 @@ def build_report() -> dict[str, Any]:
     }
     all_checks_pass = all(checks.values())
     status = (
-        "D20_CYCLE8_PI33_UNIQUE_PUBLIC_ZERO_CARRIER_CERTIFIED"
+        "D20_CYCLE8_PI33_IDEMPOTENT_ADMISSIBILITY_CLASSIFIED"
         if all_checks_pass
         else "D20_CYCLE8_PI33_PROJECTION_OBLIGATION_NEEDS_REVIEW"
     )
@@ -309,7 +360,8 @@ def build_report() -> dict[str, Any]:
         "status": status,
         "closure_state": (
             "bare_lambda_zero; height_coherent_transport_recovers_nonzero_residual; "
-            "sector33_unique_single_sector_public_zero_carrier"
+            "sector33_unique_single_sector_public_zero_carrier; public_shadow_kernel_dimension_27; "
+            "public_zero_idempotent_carriers_classified"
         ),
         "object": "d20",
         "target": (
@@ -322,7 +374,12 @@ def build_report() -> dict[str, Any]:
             "c_33(gamma_8)=0. The refined height-coherent transport derives its scalar from the active edge "
             "circuit height action and recovers the sector-33 residual -374784 with zero A42/A12 public shadow. "
             "Materializing all 39 tube-visible sector idempotents proves that sector 33 is the unique "
-            "single-sector public-zero carrier."
+            "single-sector public-zero carrier. The full linear public-zero sector span is also classified: "
+            "the combined A42/A12 shadow matrix has rank 12 and kernel dimension 27, so Pi_33 uniqueness is "
+            "coordinate-axis/single-sector uniqueness, not uniqueness in the unconstrained linear span. The "
+            "idempotent carrier classification shows five nonzero public-zero boundary-null idempotent sector "
+            "sums; Pi_33 is the unique primitive carrier and the unique support-exact carrier for the certified "
+            "sector-33 height transport."
         ),
         "inputs": {
             "sector_attachment_report": {
@@ -375,6 +432,18 @@ def build_report() -> dict[str, Any]:
                 "path": rel(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT),
                 "sha256": sha_file(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT)
                 if UNIQUE_PUBLIC_ZERO_CARRIER_REPORT.exists()
+                else None,
+            },
+            "sector_public_shadow_kernel_report": {
+                "path": rel(SECTOR_PUBLIC_SHADOW_KERNEL_REPORT),
+                "sha256": sha_file(SECTOR_PUBLIC_SHADOW_KERNEL_REPORT)
+                if SECTOR_PUBLIC_SHADOW_KERNEL_REPORT.exists()
+                else None,
+            },
+            "sector_idempotent_carrier_admissibility_report": {
+                "path": rel(SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT),
+                "sha256": sha_file(SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT)
+                if SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT.exists()
                 else None,
             },
         },
@@ -460,6 +529,35 @@ def build_report() -> dict[str, Any]:
                     "unique_public_zero_carrier"
                 ),
             },
+            "sector_public_shadow_kernel": {
+                "status": sector_public_shadow_kernel.get("status"),
+                "definition": sector_public_shadow_kernel.get("definition", {}),
+                "shadow_matrix_shape": public_shadow_kernel_derived.get("shadow_matrix_shape"),
+                "rank_mod_prime": public_shadow_kernel_derived.get("rank_mod_prime"),
+                "kernel_dimension": public_shadow_kernel_derived.get("kernel_dimension"),
+                "coordinate_axis_public_zero_sectors": public_shadow_kernel_derived.get(
+                    "coordinate_axis_public_zero_sectors"
+                ),
+                "non_axis_kernel_basis_count": public_shadow_kernel_derived.get(
+                    "non_axis_kernel_basis_count"
+                ),
+            },
+            "sector_idempotent_carrier_admissibility": {
+                "status": sector_idempotent_carrier_admissibility.get("status"),
+                "definition": sector_idempotent_carrier_admissibility.get("definition", {}),
+                "nonzero_public_zero_idempotent_supports": idempotent_admissibility_derived.get(
+                    "nonzero_public_zero_idempotent_supports"
+                ),
+                "nonzero_public_zero_boundary_null_supports": idempotent_admissibility_derived.get(
+                    "nonzero_public_zero_boundary_null_supports"
+                ),
+                "primitive_single_sector_public_zero": idempotent_admissibility_derived.get(
+                    "primitive_single_sector_public_zero"
+                ),
+                "height_support_exact_carriers_for_certified_transport": idempotent_admissibility_derived.get(
+                    "height_support_exact_carriers_for_certified_transport"
+                ),
+            },
             "character_table_metadata": character,
             "idempotent_matrix_metadata": {
                 "full_lift": idempotent_validation,
@@ -515,6 +613,39 @@ def build_report() -> dict[str, Any]:
                 ),
                 "status": "certified",
             },
+            "sector_public_shadow_kernel": {
+                "needed_type": "kernel of the combined A42/A12 shadow map on the 39 sector idempotents",
+                "needed_for": (
+                    "distinguish single-sector public-zero uniqueness from unconstrained linear public-zero "
+                    "span uniqueness"
+                ),
+                "report": rel(SECTOR_PUBLIC_SHADOW_KERNEL_REPORT),
+                "rank_mod_prime": public_shadow_kernel_derived.get("rank_mod_prime"),
+                "kernel_dimension": public_shadow_kernel_derived.get("kernel_dimension"),
+                "coordinate_axis_public_zero_sectors": public_shadow_kernel_derived.get(
+                    "coordinate_axis_public_zero_sectors"
+                ),
+                "status": "certified",
+            },
+            "sector_idempotent_carrier_admissibility": {
+                "needed_type": (
+                    "Boolean idempotent carrier classification inside the 39-sector orthogonal idempotent algebra"
+                ),
+                "needed_for": (
+                    "separate primitive/support-exact Pi_33 uniqueness from composite public-zero null carriers"
+                ),
+                "report": rel(SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT),
+                "nonzero_public_zero_boundary_null_supports": idempotent_admissibility_derived.get(
+                    "nonzero_public_zero_boundary_null_supports"
+                ),
+                "primitive_single_sector_public_zero": idempotent_admissibility_derived.get(
+                    "primitive_single_sector_public_zero"
+                ),
+                "height_support_exact_carriers_for_certified_transport": idempotent_admissibility_derived.get(
+                    "height_support_exact_carriers_for_certified_transport"
+                ),
+                "status": "certified",
+            },
         },
         "missing_maps": {
             "full_drinfeld_projection_coordinates": {
@@ -524,11 +655,13 @@ def build_report() -> dict[str, Any]:
                 "idempotent_matrix_materialized": idempotent_matrix_materialized,
                 "status": "hash-only in current JSON artifacts",
             },
-            "sector_idempotent_span_kernel": {
-                "needed_type": "linear kernel of the A42/A12 shadow map on the full sector-idempotent span",
+            "physical_status_of_composite_null_carriers": {
+                "needed_type": (
+                    "interpretation of the non-Pi_33 public-zero boundary-null idempotents {6,26} and {25,26}"
+                ),
                 "needed_for": (
-                    "prove whether there are nontrivial public-zero linear combinations of nonzero-public "
-                    "sectors, beyond the certified single-sector uniqueness of e_33"
+                    "decide whether they are gauge redundancy, superselection degeneracy, or additional hidden "
+                    "boundary sectors"
                 ),
                 "status": "not yet certified",
             },
@@ -554,16 +687,23 @@ def build_report() -> dict[str, Any]:
                 "discharged by "
                 "data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json"
             ),
+            "public_shadow_kernel_classification": (
+                "discharged by data/invariants/d20/theorems/sector_public_shadow_kernel/report.json"
+            ),
+            "idempotent_carrier_admissibility": (
+                "discharged by "
+                "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json"
+            ),
             "remaining_recovery_obligation": (
-                "Compute the A42/A12 shadow kernel on the full 39-dimensional sector-idempotent span to decide "
-                "whether public-zero linear combinations exist beyond the certified single-sector carrier e_33."
+                "Classify the physical status of the two non-Pi_33 minimal public-zero composite carriers "
+                "{6,26} and {25,26}."
             ),
         },
         "checks": checks,
         "all_checks_pass": all_checks_pass,
         "next_highest_yield_item": (
-            "Compute the public-shadow kernel on the full sector-idempotent span and prove whether its dimension "
-            "is one, generated by e_33."
+            "Classify whether the non-Pi_33 null composite carriers {6,26} and {25,26} are gauge redundancy, "
+            "superselection degeneracy, or additional hidden boundary sectors."
         ),
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})
@@ -589,6 +729,8 @@ def write_report(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "verify the height-coherent transport recovers the sector-33 residual from edge/circuit data",
             "verify the global height-coherent transport covers all 2047 nonzero residue classes",
             "verify sector 33 is the unique single-sector public-zero carrier among all 39 sectors",
+            "verify the full sector public-shadow kernel has rank 12 and nullity 27",
+            "verify the public-zero idempotent boundary-null carriers are classified",
             "verify the full Drinfeld idempotent matrix remains hash-only in the current JSON artifacts",
         ],
     }

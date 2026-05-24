@@ -439,6 +439,68 @@ def verify_root_layers(root: dict[str, Any], registry: dict[str, Any], errors: l
             require(root_entry.get("certificate_file_sha256") == sha_file(p), f"root layer hash mismatch for {layer_id}", errors)
 
 
+def verify_genome(data: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    genome = data.get("genome", {})
+    require(isinstance(genome, dict), "d20 genome missing", errors)
+    if not isinstance(genome, dict):
+        return {"present": False}
+
+    require_schema(genome.get("schema"), "d20.genome", "d20 genome schema mismatch", errors)
+    require(genome.get("status") == "D20_GENOME_CANONICAL", "d20 genome status mismatch", errors)
+    require(genome.get("object") == "d20", "d20 genome object mismatch", errors)
+    require(genome.get("entrypoint") == "src.derive_d20:derive", "d20 genome entrypoint mismatch", errors)
+    require(genome.get("fixed_point", {}).get("object_hash_key") == "d20_sha256", "d20 genome fixed-point hash key mismatch", errors)
+
+    genome_hash = genome.get("genome_sha256")
+    genome_body = {k: v for k, v in genome.items() if k != "genome_sha256"}
+    require(
+        isinstance(genome_hash, str) and len(genome_hash) == 64 and genome_hash == sha_json(genome_body),
+        "d20 genome self-hash mismatch",
+        errors,
+    )
+
+    source_genes = genome.get("source_genes", [])
+    require(isinstance(source_genes, list) and bool(source_genes), "d20 genome source genes missing", errors)
+    if isinstance(source_genes, list):
+        for gene in source_genes:
+            require(isinstance(gene, dict), "d20 genome source gene is not an object", errors)
+            if not isinstance(gene, dict):
+                continue
+            rel = gene.get("path")
+            require(isinstance(rel, str), "d20 genome source gene path missing", errors)
+            if not isinstance(rel, str):
+                continue
+            path = ROOT / rel
+            require(path.exists(), f"d20 genome source gene missing: {rel}", errors)
+            if path.exists():
+                require(gene.get("sha256") == sha_file(path), f"d20 genome source gene hash mismatch: {rel}", errors)
+
+    try:
+        from src.derive_d20 import derive
+
+        regenerated = derive()
+    except Exception as exc:
+        errors.append(f"d20 genome fixed-point exception: {type(exc).__name__}: {exc}")
+        return {
+            "present": True,
+            "status": genome.get("status"),
+            "source_gene_count": len(source_genes) if isinstance(source_genes, list) else 0,
+        }
+
+    regenerated_hash = regenerated.get("d20_sha256")
+    require(regenerated_hash == data.get("d20_sha256"), "d20 genome fixed-point hash mismatch", errors)
+    regenerated_body = {k: v for k, v in regenerated.items() if k != "d20_sha256"}
+    require(sha_json(regenerated_body) == regenerated_hash, "d20 genome regenerated self-hash mismatch", errors)
+    return {
+        "present": True,
+        "status": genome.get("status"),
+        "genome_sha256": genome_hash,
+        "source_gene_count": len(source_genes) if isinstance(source_genes, list) else 0,
+        "fixed_point_hash": regenerated_hash,
+        "fixed_point_verified": regenerated_hash == data.get("d20_sha256"),
+    }
+
+
 def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     p = ROOT / "d20.json"
     require(p.exists(), "missing d20.json", errors)
@@ -451,7 +513,9 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     h = data.get("d20_sha256")
     body = {k: v for k, v in data.items() if k != "d20_sha256"}
     require(isinstance(h, str) and len(h) == 64 and h == sha_json(body), "d20.json self-hash mismatch", errors)
+    genome = verify_genome(data, errors)
     required_sections = [
+        "genome",
         "core_invariants",
         "optics",
         "game_theory",
@@ -691,6 +755,9 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "status": data.get("status"),
         "file_sha256": sha_file(p),
         "object_sha256": h,
+        "genome_sha256": genome.get("genome_sha256"),
+        "genome_fixed_point_verified": genome.get("fixed_point_verified"),
+        "genome_source_gene_count": genome.get("source_gene_count"),
         "size": p.stat().st_size,
         "section_count": len(data),
         "layer_count": len(data.get("layer_certificates", {})),

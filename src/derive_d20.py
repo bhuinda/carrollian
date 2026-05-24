@@ -71,6 +71,7 @@ EXCLUDED_SCAN_SUFFIXES = {
 }
 
 EXCLUDED_SCAN_FILES = {
+    "README.md",
     "test.zip",
 }
 
@@ -84,6 +85,24 @@ LOW_SIGNAL_JSON_KEYS = {
     "source_preservation",
     "verification_note",
 }
+
+GENOME_SOURCE_PATHS = [
+    "src/derive_d20.py",
+    "src/commands/certify.py",
+    "src/commands/regen.py",
+    "src/commands/construct.py",
+    "src/derive_zero_axiom_coorient.py",
+    "src/derive_pre_a985_relation_body.py",
+    "src/derive_coorient_relator_profile_from_a0_a5.py",
+    "src/derive_universal_integral_uniqueness.py",
+    "src/derive_lifted_coorient_generators_formula.py",
+    "src/derive_absolute_coorient_word_presentation.py",
+    "src/build_orbit_tensor.py",
+    "src/derive_terminal_quotients.py",
+    "src/derive_native_a236_formulae.py",
+    "src/derive_packet20_c20_from_d6_stabilizers.py",
+    "src/derive_d20_selector_from_d6.py",
+]
 
 
 def excluded_scan_path(path: Path) -> bool:
@@ -105,6 +124,17 @@ def versioned_archive_path(path: Path) -> bool:
         "source_versions" in parts
         or "source_archives" in parts
         or any(VERSIONED_PATH_PART_RE.search(part) for part in parts)
+    )
+
+
+def non_identity_path(path: Path) -> bool:
+    parts = path.relative_to(ROOT).parts
+    return (
+        len(parts) >= 4
+        and parts[0] == "data"
+        and parts[1] == "invariants"
+        and parts[2] == "d20"
+        and parts[3] in {"proof_obligations", "theorems"}
     )
 
 
@@ -594,6 +624,8 @@ def json_payloads() -> dict[str, Any]:
             continue
         if versioned_archive_path(path):
             continue
+        if non_identity_path(path):
+            continue
         rel = path.relative_to(ROOT).as_posix()
         if rel in skip:
             continue
@@ -627,26 +659,20 @@ def generated_json_payloads() -> dict[str, Any]:
 
 def source_file_manifest() -> dict[str, Any]:
     entries = []
-    for path in sorted(ROOT.rglob("*")):
+    for rel in GENOME_SOURCE_PATHS:
+        path = ROOT / rel
         if not path.is_file():
-            continue
-        if excluded_scan_path(path):
-            continue
-        if versioned_archive_path(path):
-            continue
-        rel = path.relative_to(ROOT).as_posix()
-        if rel.startswith("generated/"):
-            continue
-        if rel.startswith("manifests/"):
-            continue
-        if rel in {"d20.json", "certificate.json"}:
             continue
         entries.append({
             "path": rel,
             "size": path.stat().st_size,
             "sha256": sha_file(path),
         })
-    return {"entries": entries, "count": len(entries)}
+    return {
+        "policy": "genome source genes only; archives, reports, docs, and mutable witnesses are outside object identity",
+        "entries": entries,
+        "count": len(entries),
+    }
 
 
 def core_invariants() -> dict[str, Any]:
@@ -851,6 +877,8 @@ def csv_payloads() -> dict[str, Any]:
             continue
         if versioned_archive_path(path):
             continue
+        if non_identity_path(path):
+            continue
         rel = path.relative_to(ROOT).as_posix()
         if rel.startswith("generated/"):
             continue
@@ -864,6 +892,8 @@ def npz_manifests() -> dict[str, Any]:
         if excluded_scan_path(path):
             continue
         if versioned_archive_path(path):
+            continue
+        if non_identity_path(path):
             continue
         rel = path.relative_to(ROOT).as_posix()
         # generated NPZ cache is not source; if present it is not part of canonical d20.
@@ -898,6 +928,8 @@ def data_registry() -> dict[str, Any]:
                     if excluded_scan_path(file_path):
                         continue
                     if versioned_archive_path(file_path):
+                        continue
+                    if non_identity_path(file_path):
                         continue
                     file_count += 1
                     suffix = file_path.suffix.lower() or "<none>"
@@ -953,6 +985,8 @@ def data_tree_counts(base: Path) -> tuple[int, dict[str, int]]:
             continue
         if versioned_archive_path(path):
             continue
+        if non_identity_path(path):
+            continue
         file_count += 1
         suffix = path.suffix.lower() or "<none>"
         suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
@@ -982,6 +1016,8 @@ def tensor_chain_evidence() -> dict[str, Any]:
         if not path.is_file():
             continue
         if versioned_archive_path(path):
+            continue
+        if non_identity_path(path):
             continue
         suffix = path.suffix.lower() or "<none>"
         suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
@@ -1055,6 +1091,8 @@ def ss_sat_evidence() -> dict[str, Any]:
         if excluded_scan_path(path):
             continue
         if versioned_archive_path(path):
+            continue
+        if non_identity_path(path):
             continue
         file_count += 1
         suffix = path.suffix.lower() or "<none>"
@@ -1385,6 +1423,87 @@ def pre_a985_relation_body_theorem() -> dict[str, Any]:
     from src.derive_pre_a985_relation_body import derive as _derive_pre_a985
     return _derive_pre_a985(regenerate=False)
 
+
+def d20_genome() -> dict[str, Any]:
+    source_genes = []
+    for rel in GENOME_SOURCE_PATHS:
+        path = ROOT / rel
+        source_genes.append({
+            "id": Path(rel).stem,
+            "path": rel,
+            "present": path.exists(),
+            "sha256": sha_file(path) if path.exists() else None,
+        })
+
+    genome: dict[str, Any] = {
+        "schema": "d20.genome",
+        "status": "D20_GENOME_CANONICAL",
+        "object": "d20",
+        "entrypoint": "src.derive_d20:derive",
+        "normal_form": {
+            "encoding": "utf-8",
+            "json": "strict",
+            "key_order": "sorted",
+            "hash": "sha256(canonical object body without d20_sha256)",
+            "nonfinite_number_policy": "forbidden",
+            "absolute_path_policy": "forbidden in canonical object identity",
+            "archive_policy": "history is opaque witness material, not object identity",
+        },
+        "genes": [
+            {
+                "id": "source_to_orbitals",
+                "entrypoint": "src.derive_pre_a985_relation_body:derive",
+                "role": "construct the ordered-pair relation body from finite source/coorient data",
+                "outputs": ["A985 relation partition", "ordered-pair orbitals"],
+            },
+            {
+                "id": "coorient_lift",
+                "entrypoint": "src.derive_lifted_coorient_generators_formula:derive_formula",
+                "role": "lift the canonical coorient marker to Be3 generator permutations",
+                "outputs": ["Be3 generator action", "coorient orbitals"],
+            },
+            {
+                "id": "tensor_compiler",
+                "entrypoint": "src.build_orbit_tensor:compute_tensor_from_orbitals",
+                "role": "compile the A985 sparse multiplication tensor from orbitals",
+                "outputs": ["T985 sparse tensor"],
+            },
+            {
+                "id": "quotient_tower",
+                "entrypoint": "src.derive_terminal_quotients:derive",
+                "role": "derive A42 and A12 quotient maps from the generated tensor",
+                "outputs": ["A42 quotient", "A12 quotient"],
+            },
+            {
+                "id": "native_a236",
+                "entrypoint": "src.derive_native_a236_formulae:derive",
+                "role": "derive the native d20/D6 representation formulae",
+                "outputs": ["A236 branching", "sector formulae"],
+            },
+            {
+                "id": "packet20_selector",
+                "entrypoint": "src.derive_packet20_c20_from_d6_stabilizers:derive",
+                "role": "derive packet-20 control data from Be3 stabilizers and D6 polarity",
+                "outputs": ["C20 packet data", "terminal selector inputs"],
+            },
+            {
+                "id": "object_assembler",
+                "entrypoint": "src.derive_d20:derive",
+                "role": "assemble, sanitize, hash, and certify the canonical d20 object",
+                "outputs": ["d20.object", "d20_sha256"],
+            },
+        ],
+        "fixed_point": {
+            "rule": "execute entrypoint, canonicalize the object body, and compare the resulting d20_sha256",
+            "object_hash_key": "d20_sha256",
+            "audit_function": "src.commands.certify:verify_genome",
+        },
+        "source_genes": source_genes,
+    }
+    genome["genome_sha256"] = sha_json({k: v for k, v in genome.items() if k != "genome_sha256"})
+    return genome
+
+
 def derive() -> dict[str, Any]:
     zero_axiom = derive_zero_axiom_coorient()
     universal_uniqueness = universal_integral_uniqueness_payload()
@@ -1404,6 +1523,7 @@ def derive() -> dict[str, Any]:
             "Optics(d20)": "etendue, Snell transport, complement conservation, caustic resolvent",
             "Integrity(d20)": "sector-33 integral wall",
         },
+        "genome": d20_genome(),
         "core_invariants": core_invariants(),
         "optics": optics_invariants(),
         "game_theory": hcycle_game_theory(),

@@ -69,6 +69,7 @@ EXCLUDED_SUFFIXES = {
 }
 
 EXCLUDED_FILES = {
+    "README.md",
     "d20.json",
     "test.zip",
 }
@@ -96,6 +97,17 @@ def versioned_archive_path(path: Path) -> bool:
         "source_versions" in parts
         or "source_archives" in parts
         or any(VERSIONED_PATH_PART_RE.search(part) for part in parts)
+    )
+
+
+def non_identity_path(path: Path) -> bool:
+    parts = path.relative_to(ROOT).parts
+    return (
+        len(parts) >= 4
+        and parts[0] == "data"
+        and parts[1] == "invariants"
+        and parts[2] == "d20"
+        and parts[3] in {"proof_obligations", "theorems"}
     )
 
 
@@ -673,6 +685,8 @@ def refresh_manifest() -> int:
         if not path.is_file():
             continue
         if versioned_archive_path(path):
+            continue
+        if non_identity_path(path):
             continue
         rel = path.relative_to(ROOT).as_posix()
         if rel == "manifests/file_hashes.json":

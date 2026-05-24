@@ -1,6 +1,6 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "70e30828f4db8690a5a1dc104608bbfecb34ed896848e78c073665b8a5b92581",
+  "certificate_sha256": "f9e0ae04242d078d4cfb0b6c1ee8194a7f5a3bd7f56022ed49641f0836fd146f",
   "certified_maps": {
     "all_residue_class_height_transport": {
       "carrier_sector": 33,
@@ -36,6 +36,54 @@
       "report": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
       "status": "certified_zero_for_bare_lambda"
     },
+    "sector_idempotent_carrier_admissibility": {
+      "height_support_exact_carriers_for_certified_transport": [
+        [
+          33
+        ]
+      ],
+      "needed_for": "separate primitive/support-exact Pi_33 uniqueness from composite public-zero null carriers",
+      "needed_type": "Boolean idempotent carrier classification inside the 39-sector orthogonal idempotent algebra",
+      "nonzero_public_zero_boundary_null_supports": [
+        [
+          6,
+          26
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          33
+        ],
+        [
+          6,
+          26,
+          33
+        ],
+        [
+          25,
+          26,
+          33
+        ]
+      ],
+      "primitive_single_sector_public_zero": [
+        33
+      ],
+      "report": "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
+      "status": "certified"
+    },
+    "sector_public_shadow_kernel": {
+      "coordinate_axis_public_zero_sectors": [
+        33
+      ],
+      "kernel_dimension": 27,
+      "needed_for": "distinguish single-sector public-zero uniqueness from unconstrained linear public-zero span uniqueness",
+      "needed_type": "kernel of the combined A42/A12 shadow map on the 39 sector idempotents",
+      "rank_mod_prime": 12,
+      "report": "data/invariants/d20/theorems/sector_public_shadow_kernel/report.json",
+      "status": "certified"
+    },
     "unique_single_sector_public_zero_carrier": {
       "local_pre_idempotent_keys_used": 109,
       "needed_for": "prove the selected sector-33 carrier is the only single-sector public-zero carrier",
@@ -63,24 +111,32 @@
     "cycle8_is_the_target": true,
     "edge_mod2_height_caveat_is_witnessed": true,
     "full_drinfeld_idempotent_matrix_still_hash_only": true,
+    "full_sector_public_shadow_kernel_dimension_is_27": true,
     "height_coherent_transport_is_certified": true,
     "height_transport_public_shadows_are_zero": true,
     "height_transport_recovers_sector33_residual": true,
     "idempotent_matrix_only_hash_materialized": true,
+    "pi33_is_unique_primitive_and_height_support_exact_carrier": true,
     "pi33_sector_interface_is_known": true,
     "pi33_tube_functional_is_certified": true,
+    "pi33_uniqueness_is_coordinate_axis_not_linear_span": true,
+    "public_zero_idempotent_boundary_null_carriers_are_classified": true,
     "sector33_is_unique_single_sector_public_zero_carrier": true,
     "sector_attachment_is_certified": true,
+    "sector_idempotent_carrier_admissibility_is_certified": true,
+    "sector_public_shadow_kernel_is_certified": true,
     "tube_section_is_certified": true,
     "unique_public_zero_carrier_is_certified": true
   },
-  "claim": "The boundary-to-Loop_297 lift for gamma_8 is certified, and the tube-visible Pi_33 functional has been reconstructed from the stored local pre-idempotents. For the bare lambda_boundary lift, c_33(gamma_8)=0. The refined height-coherent transport derives its scalar from the active edge circuit height action and recovers the sector-33 residual -374784 with zero A42/A12 public shadow. Materializing all 39 tube-visible sector idempotents proves that sector 33 is the unique single-sector public-zero carrier.",
-  "closure_state": "bare_lambda_zero; height_coherent_transport_recovers_nonzero_residual; sector33_unique_single_sector_public_zero_carrier",
+  "claim": "The boundary-to-Loop_297 lift for gamma_8 is certified, and the tube-visible Pi_33 functional has been reconstructed from the stored local pre-idempotents. For the bare lambda_boundary lift, c_33(gamma_8)=0. The refined height-coherent transport derives its scalar from the active edge circuit height action and recovers the sector-33 residual -374784 with zero A42/A12 public shadow. Materializing all 39 tube-visible sector idempotents proves that sector 33 is the unique single-sector public-zero carrier. The full linear public-zero sector span is also classified: the combined A42/A12 shadow matrix has rank 12 and kernel dimension 27, so Pi_33 uniqueness is coordinate-axis/single-sector uniqueness, not uniqueness in the unconstrained linear span. The idempotent carrier classification shows five nonzero public-zero boundary-null idempotent sector sums; Pi_33 is the unique primitive carrier and the unique support-exact carrier for the certified sector-33 height transport.",
+  "closure_state": "bare_lambda_zero; height_coherent_transport_recovers_nonzero_residual; sector33_unique_single_sector_public_zero_carrier; public_shadow_kernel_dimension_27; public_zero_idempotent_carriers_classified",
   "formal_obligation": {
     "define_boundary_lift": "discharged by data/invariants/d20/boundary_to_loop/report.json",
     "height_coherent_recovery": "discharged for gamma_8 by data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+    "idempotent_carrier_admissibility": "discharged by data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
     "materialize_or_recompute_pi33_functional": "discharged for the tube-visible Loop_297 functional by data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
-    "remaining_recovery_obligation": "Compute the A42/A12 shadow kernel on the full 39-dimensional sector-idempotent span to decide whether public-zero linear combinations exist beyond the certified single-sector carrier e_33.",
+    "public_shadow_kernel_classification": "discharged by data/invariants/d20/theorems/sector_public_shadow_kernel/report.json",
+    "remaining_recovery_obligation": "Classify the physical status of the two non-Pi_33 minimal public-zero composite carriers {6,26} and {25,26}.",
     "then_compute": "c_33(gamma_8) = 0 for the certified bare lambda_boundary lift in F_1000003.",
     "unique_single_sector_carrier": "discharged by data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json"
   },
@@ -120,6 +176,14 @@
     "sector_attachment_report": {
       "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
       "sha256": "6737e82cb63d93a26e1faf2604d8c36e993993fdb27951783566455ae84286bf"
+    },
+    "sector_idempotent_carrier_admissibility_report": {
+      "path": "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
+      "sha256": "8aee680091294e7d318635fefc86d3a0b542ebe638cbac43cbee994125f63b90"
+    },
+    "sector_public_shadow_kernel_report": {
+      "path": "data/invariants/d20/theorems/sector_public_shadow_kernel/report.json",
+      "sha256": "f8beaf93d67a56daaa5febe3395c2583dd352a8dffe9fec93e779786adadd54f"
     },
     "tube_projection_section": {
       "path": "layers/tube/projection_section.json",
@@ -765,6 +829,69 @@
       },
       "status": "D20_SECTOR33_BOUNDARY_TO_LOOP_ANNIHILATION_CERTIFIED"
     },
+    "sector_idempotent_carrier_admissibility": {
+      "definition": {
+        "boolean_sector_idempotent": "Because the 39 sector idempotents are verified pairwise orthogonal, an idempotent in their span with sector-coordinate coefficients restricted by multiplication has 0/1 sector support.",
+        "boundary_null": "The carrier annihilates all 30 directed boundary-to-loop pair projections on both left and right.",
+        "height_support_exact": "The carrier support is exactly the certified carrier sector support {33} used by the all-residue height-coherent transport report.",
+        "public_zero_idempotent_carrier": "A Boolean sector sum whose combined A42/A12 public shadow is zero."
+      },
+      "height_support_exact_carriers_for_certified_transport": [
+        [
+          33
+        ]
+      ],
+      "nonzero_public_zero_boundary_null_supports": [
+        [
+          6,
+          26
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          33
+        ],
+        [
+          6,
+          26,
+          33
+        ],
+        [
+          25,
+          26,
+          33
+        ]
+      ],
+      "nonzero_public_zero_idempotent_supports": [
+        [
+          6,
+          26
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          33
+        ],
+        [
+          6,
+          26,
+          33
+        ],
+        [
+          25,
+          26,
+          33
+        ]
+      ],
+      "primitive_single_sector_public_zero": [
+        33
+      ],
+      "status": "D20_SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_CLASSIFIED"
+    },
     "sector_interface": {
       "a985_sector": 33,
       "a985_sector_name": "Pi_33",
@@ -783,6 +910,24 @@
         "sector 33 remains visible to certified full relation, line-surface, and Hesse-tube traces",
         "accepted pure-C integrity traces do not recover the hidden e33 obstruction"
       ]
+    },
+    "sector_public_shadow_kernel": {
+      "coordinate_axis_public_zero_sectors": [
+        33
+      ],
+      "definition": {
+        "coordinate_axis_public_zero": "A single sector e_s whose combined A42/A12 shadow column is zero.",
+        "linear_public_zero_span": "The kernel of the sector_shadow_matrix over F_1000003.",
+        "sector_shadow_matrix": "The 54 x 39 matrix whose sector column is q42(e_s) concatenated with q12(e_s), where e_s is reconstructed from the local closed-loop pre-idempotents in the sector profile."
+      },
+      "kernel_dimension": 27,
+      "non_axis_kernel_basis_count": 26,
+      "rank_mod_prime": 12,
+      "shadow_matrix_shape": [
+        54,
+        39
+      ],
+      "status": "D20_SECTOR_PUBLIC_SHADOW_KERNEL_CERTIFIED"
     },
     "tube_projection": {
       "closed_loop_quotient_dimension": 297,
@@ -853,15 +998,15 @@
       "needed_type": "full 39 x 985 Drinfeld idempotent/character coordinate matrix",
       "status": "hash-only in current JSON artifacts"
     },
-    "sector_idempotent_span_kernel": {
-      "needed_for": "prove whether there are nontrivial public-zero linear combinations of nonzero-public sectors, beyond the certified single-sector uniqueness of e_33",
-      "needed_type": "linear kernel of the A42/A12 shadow map on the full sector-idempotent span",
+    "physical_status_of_composite_null_carriers": {
+      "needed_for": "decide whether they are gauge redundancy, superselection degeneracy, or additional hidden boundary sectors",
+      "needed_type": "interpretation of the non-Pi_33 public-zero boundary-null idempotents {6,26} and {25,26}",
       "status": "not yet certified"
     }
   },
-  "next_highest_yield_item": "Compute the public-shadow kernel on the full sector-idempotent span and prove whether its dimension is one, generated by e_33.",
+  "next_highest_yield_item": "Classify whether the non-Pi_33 null composite carriers {6,26} and {25,26} are gauge redundancy, superselection degeneracy, or additional hidden boundary sectors.",
   "object": "d20",
   "schema": "d20.proof_obligation.cycle8_pi33_projection_coefficient.v1",
-  "status": "D20_CYCLE8_PI33_UNIQUE_PUBLIC_ZERO_CARRIER_CERTIFIED",
+  "status": "D20_CYCLE8_PI33_IDEMPOTENT_ADMISSIBILITY_CLASSIFIED",
   "target": "Compute c_33(gamma_8)=Pi_33(lambda_boundary(gamma_8)), where lambda_boundary maps D20 closed boundary chains into Loop_297."
 }
