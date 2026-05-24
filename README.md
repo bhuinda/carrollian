@@ -47,3 +47,5 @@ numbering, expected statuses, dependency edges, and certificate paths.
 TO-DO:
 - move the construction harness out of the top-level path
 - add visuals? a notebook?
+- 
+<img width="730" height="721" alt="Image" src="https://github.com/user-attachments/assets/6c701518-37a9-4129-97b2-58e29663a352" />
