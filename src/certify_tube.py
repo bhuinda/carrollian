@@ -32,14 +32,14 @@ except ImportError:  # Supports `python src/certify_tube.py`.
     )
 
 __all__ = [
-    'compute_tube_algebra_lift',
-    'compute_tube_center_algebra_lift',
-    'compute_tube_center_lift',
-    'compute_transpose_map_from_relations',
-    'find_identity_relations',
-    'quotient_center_dimension',
-    'validate_tube_algebra_lift',
-    'validate_tube_center_algebra_lift',
-    'validate_tube_center_lift',
-    'validate_tube_center_primitive_idempotents',
+    "compute_tube_algebra_lift",
+    "compute_tube_center_algebra_lift",
+    "compute_tube_center_lift",
+    "compute_transpose_map_from_relations",
+    "find_identity_relations",
+    "quotient_center_dimension",
+    "validate_tube_algebra_lift",
+    "validate_tube_center_algebra_lift",
+    "validate_tube_center_lift",
+    "validate_tube_center_primitive_idempotents",
 ]

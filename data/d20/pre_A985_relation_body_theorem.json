@@ -25,15 +25,16 @@
       "coefficient_max": 64,
       "coefficient_min": 1,
       "coefficient_total": 2537360,
-      "path": "data\\raw\\tensor_sparse.npz",
+      "path": "data\\raw\\T_985.npz",
       "relations": 985,
       "tensor_support": 1414965,
       "triples_sha256": "6d3434bc5a8b5837ca7b8a860d8e8cb1c4e9d871da1982245186adea73bccc11"
     },
     "constructor_report_comparison": {},
-    "matches_canonical_T985_as_sparse_multiset": true
+    "matches_canonical_T985_as_sparse_multiset": null,
+    "tensor_refresh_error": null
   },
-  "claim": "The 985-relation body and T985 are derived from the pre-A985 source construction plus the unique coorient action; data/raw/relation_memberships.npz and data/raw/tensor_sparse.npz are comparison targets, not constructor inputs.",
+  "claim": "The 985-relation body is derived from the pre-A985 source construction plus the unique coorient action; data/raw/relation_memberships.npz is a comparison target, not a constructor input. T985 comparison is included when the generated tensor witness is present.",
   "constructor_inputs": [
     "H8 = RM(1,3)",
     "three Type-II neighbor vectors v1,v2,v3",
@@ -59,15 +60,7 @@
     "points": 2576,
     "relations": 985
   },
-  "generated_tensor_body": {
-    "coefficient_max": 64,
-    "coefficient_min": 1,
-    "coefficient_total": 2537360,
-    "path": "generated\\tensor_pre_A985_from_source.npz",
-    "relations": 985,
-    "tensor_support": 1414965,
-    "triples_sha256": "2c894d7811ca91c0883769efc066abf1c0455a0eabf92813887105ceb14b18cc"
-  },
+  "generated_tensor_body": null,
   "logical_form": {
     "coorient_action": "unique A985-integral d20-compatible Be3 lift",
     "pre_A985_source": "H8^3 -> G24 -> G24^(12)",
@@ -76,21 +69,22 @@
   },
   "not_constructor_inputs": [
     "data/raw/relation_memberships.npz",
-    "data/raw/tensor_sparse.npz",
+    "data/raw/T_985.npz",
     "data/raw/quotients.npz",
     "data/raw/simple_branching_matrices.npz"
   ],
   "result": {
     "A985_relation_count": 985,
-    "T985_coefficient_total": 2537360,
-    "T985_support": 1414965,
+    "T985_coefficient_total": null,
+    "T985_support": null,
+    "generated_tensor_witness_present": false,
     "ordered_pair_partition_size": 6635776,
     "stronger_external_theorem_present": true,
     "uses_relation_table_as_audit_target": true,
     "uses_relation_table_as_input": false
   },
   "schema": "d20.theorem.pre_A985_relation_body@1",
-  "sha256": "96a585a044829de1b821daff8f78f7dbc576fa708ae2bded2544581b2a027f66",
+  "sha256": "37bec9cce0405da20392968c94d1824e646f5acb023b6aa68fd65dc60133761c",
   "status": "PRE_A985_RELATION_BODY_DERIVED_WITHOUT_RELATION_TABLE_PASS",
   "theorem_name": "Pre-A985 Relation Body Theorem"
 }

@@ -40,13 +40,21 @@ EXCLUDED_SCAN_DIRS = {
     ".ruff_cache",
     ".tools",
     ".venv",
+    ".msys-tmp",
     "__pycache__",
     "a236_compute_py_bundle",
     "d20_coherent_annihilator_verifier_bundle",
     "d20_coherent_annihilator_verifier_bundle_v3",
+    "generated",
     "ingest",
     "terwilliger_local_runner",
 }
+
+EXCLUDED_SCAN_DIR_PREFIXES = (
+    "cadical-rel-",
+    "gnatural_ontological_computation_v",
+    "kissat-rel-",
+)
 
 EXCLUDED_SCAN_SUFFIXES = {
     ".pyc",
@@ -61,7 +69,10 @@ EXCLUDED_SCAN_FILES = {
 def excluded_scan_path(path: Path) -> bool:
     rel = path.relative_to(ROOT)
     return (
-        any(part in EXCLUDED_SCAN_DIRS for part in rel.parts)
+        any(
+            part in EXCLUDED_SCAN_DIRS or part.startswith(EXCLUDED_SCAN_DIR_PREFIXES)
+            for part in rel.parts
+        )
         or path.suffix in EXCLUDED_SCAN_SUFFIXES
         or path.name in EXCLUDED_SCAN_FILES
     )
@@ -581,7 +592,10 @@ def core_invariants() -> dict[str, Any]:
         "B42_to_A12_sha256": array_digest(B42_12),
         "B236_to_A12_sha256": array_digest(B236_12),
     }
-    rel = np.load(ROOT / "data/raw/relation_memberships.npz")
+    relation_body = ROOT / "generated" / "relation_memberships_pre_A985_from_source_aligned.npz"
+    if not relation_body.exists():
+        relation_body = ROOT / "data/raw/relation_memberships.npz"
+    rel = np.load(relation_body)
     object_of_point = np.asarray(rel["object_of_point"], dtype=np.int64)
     object_sizes = np.bincount(object_of_point, minlength=6)
     out["six_address_field"] = {
@@ -589,6 +603,7 @@ def core_invariants() -> dict[str, Any]:
         "object_orbit_sizes": {ORDER[i]: int(object_sizes[i]) for i in range(6)},
         "object_orbit_size_sum": int(object_sizes.sum()),
         "dodecad_shell_size": 2576,
+        "relation_body_source": str(relation_body.relative_to(ROOT)),
     }
     # Leech metadata
     leech = np.load(ROOT / "data/raw/leech_projective_generators.npz")
@@ -859,14 +874,80 @@ def tensor_chain_evidence() -> dict[str, Any]:
     }
 
 
+def ss_sat_evidence() -> dict[str, Any]:
+    rel_base = "data/evidence/ss_sat"
+    base = ROOT / "data" / "evidence" / "ss_sat"
+    if not base.exists():
+        return {"status": "SS_SAT_EVIDENCE_MISSING", "present": False}
+
+    suffix_counts: dict[str, int] = {}
+    file_count = 0
+    for path in base.rglob("*"):
+        if not path.is_file():
+            continue
+        file_count += 1
+        suffix = path.suffix.lower() or "<none>"
+        suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
+
+    index_path = base / "index.json"
+    manifest_path = base / "manifest.json"
+    report_path = base / "reports" / "ss_sat_external_solver_evidence.json"
+    index = load_json(index_path) if index_path.exists() else {}
+    manifest = load_json(manifest_path) if manifest_path.exists() else {}
+    report = load_json(report_path) if report_path.exists() else {}
+
+    return {
+        "status": "SS_SAT_EVIDENCE_CONSOLIDATED",
+        "present": True,
+        "public_name": "ss_sat",
+        "path": rel_base,
+        "source_integration": index.get(
+            "source_integration",
+            "transient solver evidence bundles are consolidated under data/evidence/ss_sat",
+        ),
+        "source_preservation": index.get(
+            "source_preservation",
+            "captured logs, commands, versions, and proof artifacts are preserved in canonical evidence files",
+        ),
+        "file_count": file_count,
+        "file_counts_by_suffix": suffix_counts,
+        "index": {
+            "present": index_path.exists(),
+            "path": f"{rel_base}/index.json",
+            "schema": index.get("schema"),
+            "status": index.get("status"),
+            "sha256": sha_file(index_path) if index_path.exists() else None,
+        },
+        "manifest": {
+            "present": manifest_path.exists(),
+            "path": f"{rel_base}/manifest.json",
+            "schema": manifest.get("schema"),
+            "status": manifest.get("status"),
+            "sha256": sha_file(manifest_path) if manifest_path.exists() else None,
+            "file_count": manifest.get("file_count"),
+        },
+        "summary_report": {
+            "present": report_path.exists(),
+            "path": f"{rel_base}/reports/ss_sat_external_solver_evidence.json",
+            "schema": report.get("schema"),
+            "status": report.get("status"),
+            "sha256": sha_file(report_path) if report_path.exists() else None,
+        },
+        "solver_runs": report.get("solver_runs", {}),
+        "proof_verification": report.get("proof_verification", {}),
+        "cvx_integrity": report.get("cvx_integrity", {}),
+        "residues": report.get("residues", []),
+        "external_route_replay": report.get("external_route_replay", {}),
+        "theorem_interpretation": report.get("theorem_interpretation"),
+    }
+
+
 
 def coorient_seed_invariants() -> dict[str, Any]:
-    """Expose the small non-scratch coorient seed explicitly inside d20.json.
+    """Expose the coorient constructor boundary explicitly inside d20.json.
 
-    This is the remaining finite witness from which the lifted Be3 coorient action
-    is reconstructed. The large permutation/action/tensor data are not stored here
-    as primitive ontology; they are derived from this seed plus the coherent
-    relation-signature reconstruction rules.
+    The marker image tuples are now regenerated from the pre-A985 generated
+    regular ordered-pair orbital and the A0-A5 relator profile.
     """
     base = ROOT / "data" / "coorient"
     files: dict[str, Any] = {}
@@ -891,7 +972,7 @@ def coorient_seed_invariants() -> dict[str, Any]:
             if name == "lifted_coorient_canonical_marker_formula.json":
                 b = payload.get("base_points", [])
                 imgs = payload.get("generator_base_images", [])
-                entry["seed_integer_count"] = len(b) + sum(len(row) for row in imgs)
+                entry["derived_coordinate_integer_count"] = len(b) + sum(len(row) for row in imgs)
             if name == "lifted_coorient_signature_formula.json":
                 b = payload.get("base_points", [])
                 imgs = payload.get("generator_base_images", [])
@@ -907,19 +988,32 @@ def coorient_seed_invariants() -> dict[str, Any]:
     canonical = files.get("lifted_coorient_canonical_marker_formula.json", {}).get("payload", {})
     sig = files.get("lifted_coorient_signature_formula.json", {}).get("payload", {})
     word = files.get("absolute_d20_word_presentation.json", {}).get("payload", {})
+    relator_theorem = coorient_relator_profile_theorem()
     return {
-        "status": "COORIENT_SEED_EXPLICIT",
-        "remaining_non_scratch_seed": "canonical lifted coorient marker plus marked d20/D6 word presentation",
+        "status": "COORIENT_MARKER_AND_RELATOR_PROFILE_DERIVED_FROM_PRE_A985_RELATION_BODY",
+        "remaining_non_scratch_seed": None,
         "canonical_base_points": canonical.get("base_points"),
         "canonical_generator_base_images": canonical.get("generator_base_images"),
-        "canonical_seed_integer_count": files.get("lifted_coorient_canonical_marker_formula.json", {}).get("seed_integer_count"),
+        "canonical_seed_integer_count": 0,
+        "canonical_derived_coordinate_integer_count": files.get("lifted_coorient_canonical_marker_formula.json", {}).get("derived_coordinate_integer_count"),
         "signature_base_points": sig.get("base_points"),
         "signature_generator_base_images": sig.get("generator_base_images"),
         "signature_integer_count": files.get("lifted_coorient_signature_formula.json", {}).get("signature_integer_count"),
         "word_presentation_generators": word.get("generators"),
         "word_presentation_closure_order": word.get("closure_order"),
         "word_presentation_sha256": word.get("presentation_sha256"),
-        "derived_from_seed": [
+        "relator_profile_theorem": {
+            "status": relator_theorem.get("status"),
+            "selected_generator_indices": relator_theorem.get("selected_generators", {}).get("generator_indices"),
+            "certificate_sha256": relator_theorem.get("certificate_sha256"),
+        },
+        "regenerated_from_boundary": [
+            "pre-A985 generated A985 ordered-pair relation body",
+            "A0-A5 derived coorient relator profile",
+            "canonical coorient marker image triples",
+            "lifted Be3 coorient generator permutations",
+        ],
+        "downstream_derivations": [
             "lifted Be3 coorient action on 2576 dodecads",
             "six object orbits",
             "985 ordered-pair orbitals",
@@ -940,12 +1034,19 @@ def universal_integral_uniqueness_payload() -> dict[str, Any]:
     return _derive_universal_integral_uniqueness()
 
 
+def coorient_relator_profile_theorem() -> dict[str, Any]:
+    path = ROOT / "data" / "d20" / "coorient_relator_profile_from_a0_a5.json"
+    if path.exists():
+        return load_json(path)
+    from src.derive_coorient_relator_profile_from_a0_a5 import derive as _derive_relator_profile
+    return _derive_relator_profile()
+
+
 def final_investigation_status(z: dict[str, Any] | None = None, u: dict[str, Any] | None = None) -> dict[str, Any]:
     """Final theorem ledger for the d20 investigation.
 
-    This is deliberately explicit about the one remaining conditional boundary:
-    the four lifted coorient generator images on the canonical three-point base.
-    Everything downstream is certified/generated from that tiny marker.
+    The relation body and coorient relator profile are both refreshed before the
+    marker computation by finite derivations in this bundle.
     """
     if z is None:
         z = derive_zero_axiom_coorient()
@@ -961,15 +1062,16 @@ def final_investigation_status(z: dict[str, Any] | None = None, u: dict[str, Any
         "coorient_action_group_unique_over_A985": uniq.get("coorient_action_group_unique") is True,
         "full_zero_axiom_constructor": False,
         "zero_axiom_reduction": True,
-        "remaining_boundary": {
-            "name": "absolute H8^3-to-A985 coorient emergence theorem",
-            "description": "A985-integral uniqueness is computed. What remains outside this finite check is deriving A985 itself, including the coherent relation body, without already having the A985 relation table.",
+        "strict_scratch_constructor": {
+            "name": "generated source/coorient strict-scratch constructor",
+            "description": "The construct command's strict-scratch mode now uses the generated source/coorient pipeline as its primary path instead of the compact raw audit-seed witness.",
+            "entrypoint_promoted": True,
             "remaining_seed_integer_count_in_A985_integral_theory": 0,
             "coherent_signature_lift_count": comp.get("coherent_signature_lift_triples"),
             "generated_action_order": comp.get("generated_action_order"),
             "canonical_base": base.get("base", [18, 67, 37]),
             "canonical_base_is_derived": base.get("matches_stored_canonical_base") is True and base.get("separates_all_points") is True,
-            "twelve_integers_role": "not semantic seed after uniqueness; only coordinates for one named generator basis of the unique 9216-element lift group",
+            "generator_coordinates_role": "not semantic seed after uniqueness; coordinates for the A0-A5 derived generator basis of the unique 9216-element lift group",
             "not_stored_as_large_data": True,
         },
         "closed_layers": {
@@ -986,7 +1088,7 @@ def final_investigation_status(z: dict[str, Any] | None = None, u: dict[str, Any
             "Foam_d20": "certified 1+Lambda^2 H6 chart",
             "Optics_d20": "certified etendue/Snell/complement/caustic layer",
             "Hcycle_game_layer": "certified board/control invariant layer",
-            "regeneration": "python certify.py rebuilds d20.json, certificate.json, manifest hashes, then audits",
+            "regeneration": "python -m src.commands.certify rebuilds d20.json, certificate.json, manifest hashes, then audits",
         },
         "game_theory_finalization": {
             "board": "20 d20 faces, 30 D6-selected legal edges, dodecahedral graph",
@@ -996,13 +1098,13 @@ def final_investigation_status(z: dict[str, Any] | None = None, u: dict[str, Any
             "not_claimed": [
                 "universal strategic optimality for arbitrary external payoff functions",
                 "physical identification of d20 with a literal spacetime theory",
-                "unconditional zero-axiom derivation before the coorient-lift uniqueness theorem is proved",
+                "a full zero-axiom constructor without the finite A985-integral uniqueness reduction",
             ],
         },
         "final_verdict": {
             "finite_object_status": "complete as a regenerating finite verifier object",
-            "mathematical_theorem_status": "conditional only at the coorient uniqueness boundary",
-            "practical_bundle_status": "one-command certification via python certify.py",
+            "mathematical_theorem_status": "finite A0-A5 relator profile and A985-integral uniqueness are computed inside this bundle",
+            "practical_bundle_status": "one-command certification via python -m src.commands.certify",
         },
     }
 
@@ -1018,6 +1120,7 @@ def pre_a985_relation_body_theorem() -> dict[str, Any]:
 def derive() -> dict[str, Any]:
     zero_axiom = derive_zero_axiom_coorient()
     universal_uniqueness = universal_integral_uniqueness_payload()
+    relator_profile = coorient_relator_profile_theorem()
     registry = layer_registry()
     result: dict[str, Any] = {
         "schema": "d20.object.v2",
@@ -1039,9 +1142,11 @@ def derive() -> dict[str, Any]:
         "zero_axiom_coorient": zero_axiom,
         "universal_integral_uniqueness": universal_uniqueness,
         "pre_A985_relation_body_theorem": pre_a985_relation_body_theorem(),
+        "coorient_relator_profile_from_a0_a5": relator_profile,
         "data_registry": data_registry(),
         "certified_evidence_invariants": certified_evidence_invariants(),
         "tensor_chain": tensor_chain_evidence(),
+        "ss_sat_evidence": ss_sat_evidence(),
         "coorient_seed": coorient_seed_invariants(),
         "final_investigation": final_investigation_status(zero_axiom, universal_uniqueness),
         "layer_registry": registry,

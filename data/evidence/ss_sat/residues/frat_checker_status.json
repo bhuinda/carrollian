@@ -1,0 +1,25 @@
+{
+  "schema": "gnatural.frat_verification_status.v20",
+  "native_frat_generation": {
+    "solver": "CaDiCaL",
+    "version": "3.0.0",
+    "command": "cadical.exe --frat=1 --checkproof=3 --no-binary <benchmark.cnf> <benchmark.cadical.frat>",
+    "runs": 5,
+    "all_exit_code_20": true,
+    "all_stderr_empty": true,
+    "internal_checkproof": "checkproof=3 connects CaDiCaL internal LRAT and DRAT-style proof checkers during proof production"
+  },
+  "standalone_frat_checker": {
+    "found_locally": false,
+    "status": "BLOCKED_NO_STANDALONE_FRAT_CHECKER"
+  },
+  "extracted_lrat_verification": {
+    "method": "Extract every FRAT derived-clause line with antecedent marker 'l' into LRAT form, then check with lrat-trim.",
+    "verifier": "lrat-trim 0.2.1-dev",
+    "proofs_checked": 5,
+    "proofs_verified": 5,
+    "all_exit_code_20": true,
+    "summary_csv": "audit/frat_extracted_lrat_verification_summary.csv"
+  },
+  "status": "FRAT_SURFACE_AND_EMBEDDED_LRAT_VERIFIED_WITH_FULL_FRAT_CHECKER_BLOCKED"
+}

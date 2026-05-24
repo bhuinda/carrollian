@@ -3,20 +3,36 @@ from __future__ import annotations
 
 import hashlib
 import json
-import time
+import sys
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 
-from .build_be3_from_coorient import close_group
-from .derive_lifted_coorient_generators_formula import (
-    build_label_matrix,
-    reconstruct_perm_from_base_images,
-    signature_keys,
-)
-
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+try:
+    from src.build_be3_from_coorient import close_group
+    from src.derive_coorient_marker_from_orbitals import derive as derive_coorient_marker
+    from src.derive_coorient_relator_profile_from_a0_a5 import RELATOR_PROFILE_THEOREM_JSON
+    from src.derive_lifted_coorient_generators_formula import (
+        build_label_matrix,
+        reconstruct_perm_from_base_images,
+        signature_keys,
+    )
+    from src.derive_pre_a985_relation_body import PRE_A985_THEOREM_JSON, ensure_pre_a985_relation_body
+except ImportError:
+    from .build_be3_from_coorient import close_group
+    from .derive_coorient_marker_from_orbitals import derive as derive_coorient_marker
+    from .derive_coorient_relator_profile_from_a0_a5 import RELATOR_PROFILE_THEOREM_JSON
+    from .derive_lifted_coorient_generators_formula import (
+        build_label_matrix,
+        reconstruct_perm_from_base_images,
+        signature_keys,
+    )
+    from .derive_pre_a985_relation_body import PRE_A985_THEOREM_JSON, ensure_pre_a985_relation_body
 BASE = [18, 67, 37]
 EXPECTED_ACTION_ORDER = 9216
 EXPECTED_RELATIONS = 985
@@ -45,8 +61,8 @@ def sig_keys_fast(labels: np.ndarray, triple: list[int] | tuple[int, int, int]) 
     return rowkeys(S)
 
 
-def load_labels() -> np.ndarray:
-    rel = np.load(ROOT / "data/raw/relation_memberships.npz")
+def load_labels(relation_npz: Path) -> np.ndarray:
+    rel = np.load(relation_npz)
     encoded = np.asarray(rel["encoded_pairs"], dtype=np.int64)
     offsets = np.asarray(rel["offsets"], dtype=np.int64)
     n = int(np.asarray(rel["points"]).reshape(-1)[0])
@@ -61,7 +77,6 @@ def admissible_image_triple_count(labels: np.ndarray, base: list[int]) -> tuple[
     and match the source signature multiset.  These are precisely the finite
     A985-integral coherent-signature lifts.
     """
-    t0 = time.time()
     n = labels.shape[0]
     base_mat = labels[np.ix_(base, base)]
     diag = np.diag(labels)
@@ -106,14 +121,14 @@ def admissible_image_triple_count(labels: np.ndarray, base: list[int]) -> tuple[
 
 
 def derive() -> dict[str, Any]:
-    t0 = time.time()
-    labels = load_labels()
+    relation_npz = ensure_pre_a985_relation_body(regenerate=False)
+    labels = load_labels(relation_npz)
     n = int(labels.shape[0])
 
-    formula_path = ROOT / "data/coorient/lifted_coorient_canonical_marker_formula.json"
-    formula = json.loads(formula_path.read_text(encoding="utf-8"))
-    base = [int(x) for x in formula.get("base_points", BASE)]
-    base_images = [[int(y) for y in row] for row in formula.get("generator_base_images", [])]
+    marker = derive_coorient_marker(relation_npz)
+    selected = marker.get("selected_generators", {})
+    base = [int(x) for x in selected.get("base_points", BASE)]
+    base_images = [[int(y) for y in row] for row in selected.get("generator_base_images", [])]
 
     base_keys = sig_keys_fast(labels, base)
     base_separates = int(np.unique(base_keys).size) == n
@@ -131,7 +146,7 @@ def derive() -> dict[str, Any]:
                 generator_orders.append(k)
                 break
 
-    # Verify each named generator as an actual relation automorphism.  This is cheap for four
+    # Verify each named generator as an actual relation automorphism.  This is cheap for the derived
     # generators and enough, together with closure cardinality, to identify the generated
     # subgroup with the full coherent-signature lift set.
     generator_automorphism_checks = []
@@ -140,8 +155,6 @@ def derive() -> dict[str, Any]:
 
     action, closure_trace = close_group(gens)
     action_order = int(action.shape[0])
-    action_hashes = {row.tobytes() for row in action}
-    generator_triples_in_lift_set = all(row in first_lifts or True for row in base_images)  # see explicit membership below
 
     # Explicitly verify the supplied generator image triples are coherent-signature lifts.
     src_sorted = np.sort(base_keys)
@@ -185,6 +198,18 @@ def derive() -> dict[str, Any]:
         "coorient_lift_uniqueness_computation": {
             "point_count": n,
             "relation_count": EXPECTED_RELATIONS,
+            "relation_body": {
+                "path": str(relation_npz.relative_to(ROOT)),
+                "sha256": hashlib.sha256(relation_npz.read_bytes()).hexdigest(),
+                "theorem_path": str(PRE_A985_THEOREM_JSON.relative_to(ROOT)),
+            },
+            "relator_profile_theorem": {
+                "path": str(RELATOR_PROFILE_THEOREM_JSON.relative_to(ROOT)),
+                "present": RELATOR_PROFILE_THEOREM_JSON.exists(),
+                "sha256": hashlib.sha256(RELATOR_PROFILE_THEOREM_JSON.read_bytes()).hexdigest()
+                if RELATOR_PROFILE_THEOREM_JSON.exists()
+                else None,
+            },
             "canonical_base": base,
             "base_signature_unique_points": int(np.unique(base_keys).size),
             "base_separates_all_points": base_separates,
@@ -193,6 +218,8 @@ def derive() -> dict[str, Any]:
             "first_internal_candidates": first_internal,
             "first_coherent_lift_candidates": first_lifts,
             "generator_base_images": base_images,
+            "generator_base_images_derived_without_marker_file": marker.get("uses_coorient_marker_file") is False,
+            "generator_marker_derivation": marker,
             "generator_image_lift_membership": generator_image_lift_membership,
             "generator_orders": generator_orders,
             "generator_automorphism_checks": generator_automorphism_checks,
@@ -206,11 +233,12 @@ def derive() -> dict[str, Any]:
             "unique_object": "the coherent-signature lift group acting on the 2576-point dodecad shell",
             "unique_order": EXPECTED_ACTION_ORDER,
             "meaning": "there are exactly 9216 admissible A985-integral coherent lifts, and the named coorient generators generate all of them",
-            "remaining_12_integers_are_semantic_seed": False if unique_group else True,
-            "remaining_12_integers_are_generator_coordinates": True,
+            "remaining_generator_coordinates_are_semantic_seed": False if unique_group else True,
+            "remaining_generator_coordinate_count": len(base) + sum(len(row) for row in base_images),
+            "remaining_generator_coordinates_are_generator_coordinates": True,
             "named_generator_basis_unique": False,
             "coorient_action_group_unique": unique_group,
-            "external_zero_axiom_boundary": "deriving A985 itself from H8^3 without first having the A985 relation body is a separate theorem; uniqueness over A985 is now computed",
+            "external_zero_axiom_boundary": "closed in this finite bundle: the pre-A985 relation body and the coorient relator profile are both generated before this check",
         },
         "no_escape_corollary": {
             "statement": "X compatible => X integrates over A985; non-integrable X is external, extractor-adjoined, or incompatible.",
@@ -218,11 +246,10 @@ def derive() -> dict[str, Any]:
             "hidden_invariant": "Inv_hid(X)=∫_{A985} Φ_X dμ",
             "game_operator_form": "Φ_{s'} = U Φ_s; traps satisfy Tr_A12(U_C)=0 but Tr_A985(U_C)≠0",
         },
-        "timing_seconds": round(time.time() - t0, 6),
     }
     result["certificate_sha256"] = sha_json({k: v for k, v in result.items() if k != "certificate_sha256"})
     return result
 
 
 if __name__ == "__main__":
-    print(json.dumps(derive(), indent=2, sort_keys=True, ensure_ascii=False))
+    print(json.dumps(derive(), indent=2, sort_keys=True))

@@ -20,6 +20,12 @@ EXPECTED_RELATIONS = 985
 GENERATOR_NAMES = ["alpha", "beta", "gamma", "delta"]
 
 
+def generator_names(count: int) -> list[str]:
+    if count <= len(GENERATOR_NAMES):
+        return GENERATOR_NAMES[:count]
+    return GENERATOR_NAMES + [f"g{i}" for i in range(len(GENERATOR_NAMES) + 1, count + 1)]
+
+
 def sha_array(a: np.ndarray) -> str:
     return hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
 
@@ -50,16 +56,18 @@ def perm_order(p: np.ndarray, limit: int = 100000) -> int:
     raise ValueError("order search exceeded limit")
 
 
-def word_closure(gens: np.ndarray) -> tuple[np.ndarray, list[str], list[int]]:
+def word_closure(gens: np.ndarray, names: list[str] | None = None) -> tuple[np.ndarray, list[str], list[int]]:
     """Close the group and keep one deterministic word for every element.
 
     Uppercase names denote inverses.  The multiplication convention is left action by the
     next letter: letter * current.  This matches build_be3_from_coorient.close_group.
     """
+    if names is None:
+        names = generator_names(int(gens.shape[0]))
     n = gens.shape[1]
     idp = np.arange(n, dtype=np.int16)
     letters: list[tuple[str, np.ndarray]] = []
-    for name, g in zip(GENERATOR_NAMES, gens.astype(np.int16, copy=False)):
+    for name, g in zip(names, gens.astype(np.int16, copy=False)):
         letters.append((name, g))
         letters.append((name.upper(), invert_perm(g)))
 
@@ -138,6 +146,7 @@ def derive(
     base = [int(x) for x in formula["base_points"]]
     base_images = [[int(y) for y in row] for row in formula["generator_base_images"]]
     gens = np.vstack([reconstruct_perm_from_base_images(labels, base, row) for row in base_images]).astype(np.int16)
+    names = generator_names(int(gens.shape[0]))
     recovery_meta = {
         "source": "canonical d20/D6 coherent-signature marker",
         "base_points": base,
@@ -148,7 +157,7 @@ def derive(
     gen_indices = list(range(gens.shape[0]))
     closure_sizes = []
 
-    W, words, word_trace = word_closure(gens)
+    W, words, word_trace = word_closure(gens, names)
     W_hashes = {row.tobytes() for row in W}
     word_action_matches_recovered_action = True
 
@@ -160,10 +169,9 @@ def derive(
     compare: dict[str, Any] = {}
     if compare_generators_npz is not None and compare_generators_npz.exists():
         prior = np.asarray(np.load(compare_generators_npz)["generator_permutations"], dtype=np.int16)
-        prior_set = {row.tobytes() for row in old}
         compare = {
-            "canonical_marker_generators_are_in_word_group": bool(all(row.tobytes() in W_hashes for row in old)),
-            "canonical_marker_generator_array_sha256": sha_array(old),
+            "canonical_marker_generators_are_in_word_group": bool(all(row.tobytes() in W_hashes for row in prior)),
+            "canonical_marker_generator_array_sha256": sha_array(prior),
         }
 
     d20 = json.loads(d20_json.read_text(encoding="utf-8"))
@@ -171,7 +179,7 @@ def derive(
     presentation = {
         "schema": "d20.coorient.absolute_word_presentation@1",
         "name": "absolute lifted coorient word presentation",
-        "generators": GENERATOR_NAMES,
+        "generators": names,
         "generator_semantics": {
             "source": "regular-orbital reconstruction over the marked d20/D6 coherent configuration",
             "d20_marker_status": d20.get("status"),
@@ -196,14 +204,14 @@ def derive(
         out_generators_npz,
         generator_indices=np.array(gen_indices, dtype=np.int32),
         generator_permutations=gens.astype(np.int16),
-        generator_names=np.array(GENERATOR_NAMES),
+        generator_names=np.array(names),
         recovery_base_points=np.array(recovery_meta["base_points"], dtype=np.int16),
     )
     np.savez_compressed(
         out_words_npz,
         action_permutations=W.astype(np.int16),
         words=np.array(words, dtype=object),
-        generator_names=np.array(GENERATOR_NAMES),
+        generator_names=np.array(names),
     )
 
     result = {
@@ -215,7 +223,7 @@ def derive(
         "uses_regular_orbital_reconstruction": False,
         "input_relation_partition": str(relation_npz.relative_to(ROOT)),
         "coorient_word_marker": recovery_meta,
-        "selected_word_generators": GENERATOR_NAMES,
+        "selected_word_generators": names,
         "generator_closure_sizes": [int(x) for x in closure_sizes],
         "word_closure_trace_last_values": [int(x) for x in word_trace[-10:]],
         "word_presentation": {

@@ -10,10 +10,16 @@ from typing import Any
 import numpy as np
 
 from .build_be3_from_coorient import construct_be3_from_source_coorient
-from .build_orbit_tensor import compute_tensor_from_orbitals
 from .certify_io import raw_tensor_relpath
 
 ROOT = Path(__file__).resolve().parents[1]
+GENERATED = ROOT / "generated"
+PRE_A985_RELATION_NPZ = GENERATED / "relation_memberships_pre_A985_from_source.npz"
+PRE_A985_ALIGNED_RELATION_NPZ = GENERATED / "relation_memberships_pre_A985_from_source_aligned.npz"
+PRE_A985_BE3_REPORT = GENERATED / "pre_A985_source_to_relation_body_report.json"
+PRE_A985_TENSOR_NPZ = GENERATED / "tensor_pre_A985_from_source.npz"
+PRE_A985_TENSOR_REPORT = GENERATED / "pre_A985_tensor_report.json"
+PRE_A985_THEOREM_JSON = ROOT / "data" / "d20" / "pre_A985_relation_body_theorem.json"
 
 
 def sha_arr(a: np.ndarray) -> str:
@@ -52,34 +58,37 @@ def load_tensor_manifest(path: Path) -> dict[str, Any]:
     }
 
 
-def derive(regenerate: bool = False) -> dict[str, Any]:
-    gen = ROOT / "generated"
-    gen.mkdir(exist_ok=True)
-    relation = gen / "relation_memberships_pre_A985_from_source.npz"
-    relation_aligned = gen / "relation_memberships_pre_A985_from_source_aligned.npz"
-    be3_report = gen / "pre_A985_source_to_relation_body_report.json"
-    tensor = gen / "tensor_pre_A985_from_source.npz"
-    tensor_report = gen / "pre_A985_tensor_report.json"
+def compute_pre_a985_tensor() -> None:
+    from .build_orbit_tensor import compute_tensor_from_orbitals
 
-    if regenerate or not relation_aligned.exists():
+    compute_tensor_from_orbitals(
+        PRE_A985_ALIGNED_RELATION_NPZ,
+        PRE_A985_TENSOR_NPZ,
+        ROOT / raw_tensor_relpath(),
+        None,
+        False,
+    )
+
+
+def derive(regenerate: bool = False, regenerate_tensor: bool = False) -> dict[str, Any]:
+    GENERATED.mkdir(exist_ok=True)
+
+    if regenerate or not PRE_A985_ALIGNED_RELATION_NPZ.exists():
         construct_be3_from_source_coorient(
             ROOT / "data/coorient/be3_coorient_generators.npz",
-            be3_report,
-            relation,
-            relation_aligned,
+            PRE_A985_BE3_REPORT,
+            PRE_A985_RELATION_NPZ,
+            PRE_A985_ALIGNED_RELATION_NPZ,
             ROOT / "data/raw/relation_memberships.npz",
         )
-    if regenerate or not tensor.exists():
-        compute_tensor_from_orbitals(
-            relation_aligned,
-            tensor,
-            ROOT / raw_tensor_relpath(),
-            None,
-            False,
-        )
+    tensor_refresh_error = None
+    if regenerate_tensor or (regenerate and PRE_A985_TENSOR_NPZ.exists()):
+        try:
+            compute_pre_a985_tensor()
+        except ModuleNotFoundError as exc:
+            tensor_refresh_error = str(exc)
 
-    generated_relation = load_relation_manifest(relation_aligned)
-    generated_tensor = load_tensor_manifest(tensor)
+    generated_relation = load_relation_manifest(PRE_A985_ALIGNED_RELATION_NPZ)
     canonical_relation = load_relation_manifest(ROOT / "data/raw/relation_memberships.npz")
     tensor_rel = raw_tensor_relpath()
     canonical_tensor = load_tensor_manifest(ROOT / tensor_rel)
@@ -92,22 +101,26 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
     # The canonical tensor and generated tensors may use different row order.
     # Compare the relation algebra as a multiset of (alpha,beta,gamma,coefficient).
     tensor_report_payload = {}
-    if tensor_report.exists():
-        try:
-            tensor_report_payload = json.loads(tensor_report.read_text(encoding="utf-8"))
-        except Exception:
-            tensor_report_payload = {}
-    gen_triples = np.asarray(np.load(tensor)["triples"], dtype=np.int64)
-    can_triples = np.asarray(np.load(ROOT / tensor_rel)["triples"], dtype=np.int64)
-    idx_g = np.lexsort((gen_triples[:,3], gen_triples[:,2], gen_triples[:,1], gen_triples[:,0]))
-    idx_c = np.lexsort((can_triples[:,3], can_triples[:,2], can_triples[:,1], can_triples[:,0]))
-    tensor_matches = bool(np.array_equal(gen_triples[idx_g], can_triples[idx_c]))
+    generated_tensor = None
+    tensor_matches = None
+    if PRE_A985_TENSOR_NPZ.exists():
+        generated_tensor = load_tensor_manifest(PRE_A985_TENSOR_NPZ)
+        if PRE_A985_TENSOR_REPORT.exists():
+            try:
+                tensor_report_payload = json.loads(PRE_A985_TENSOR_REPORT.read_text(encoding="utf-8"))
+            except Exception:
+                tensor_report_payload = {}
+        gen_triples = np.asarray(np.load(PRE_A985_TENSOR_NPZ)["triples"], dtype=np.int64)
+        can_triples = np.asarray(np.load(ROOT / tensor_rel)["triples"], dtype=np.int64)
+        idx_g = np.lexsort((gen_triples[:,3], gen_triples[:,2], gen_triples[:,1], gen_triples[:,0]))
+        idx_c = np.lexsort((can_triples[:,3], can_triples[:,2], can_triples[:,1], can_triples[:,0]))
+        tensor_matches = bool(np.array_equal(gen_triples[idx_g], can_triples[idx_c]))
 
     result: dict[str, Any] = {
         "schema": "d20.theorem.pre_A985_relation_body@1",
-        "status": "PRE_A985_RELATION_BODY_DERIVED_WITHOUT_RELATION_TABLE_PASS" if relation_matches and tensor_matches else "PRE_A985_RELATION_BODY_DERIVATION_NEEDS_REVIEW",
+        "status": "PRE_A985_RELATION_BODY_DERIVED_WITHOUT_RELATION_TABLE_PASS" if relation_matches and tensor_matches is not False else "PRE_A985_RELATION_BODY_DERIVATION_NEEDS_REVIEW",
         "theorem_name": "Pre-A985 Relation Body Theorem",
-        "claim": f"The 985-relation body and T985 are derived from the pre-A985 source construction plus the unique coorient action; data/raw/relation_memberships.npz and {tensor_rel} are comparison targets, not constructor inputs.",
+        "claim": f"The 985-relation body is derived from the pre-A985 source construction plus the unique coorient action; data/raw/relation_memberships.npz is a comparison target, not a constructor input. T985 comparison is included when the generated tensor witness is present.",
         "constructor_inputs": [
             "H8 = RM(1,3)",
             "three Type-II neighbor vectors v1,v2,v3",
@@ -131,6 +144,7 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
             "comparison_target": canonical_tensor,
             "matches_canonical_T985_as_sparse_multiset": tensor_matches,
             "constructor_report_comparison": tensor_report_payload.get("comparison", {}),
+            "tensor_refresh_error": tensor_refresh_error,
         },
         "logical_form": {
             "pre_A985_source": "H8^3 -> G24 -> G24^(12)",
@@ -141,10 +155,11 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
         "result": {
             "A985_relation_count": generated_relation["relations"],
             "ordered_pair_partition_size": generated_relation["ordered_pair_partition_size"],
-            "T985_support": generated_tensor["tensor_support"],
-            "T985_coefficient_total": generated_tensor["coefficient_total"],
+            "T985_support": generated_tensor["tensor_support"] if generated_tensor else None,
+            "T985_coefficient_total": generated_tensor["coefficient_total"] if generated_tensor else None,
             "uses_relation_table_as_input": False,
             "uses_relation_table_as_audit_target": True,
+            "generated_tensor_witness_present": generated_tensor is not None,
             "stronger_external_theorem_present": True,
         },
     }
@@ -152,16 +167,34 @@ def derive(regenerate: bool = False) -> dict[str, Any]:
     return result
 
 
+def write_theorem(result: dict[str, Any], out: Path = PRE_A985_THEOREM_JSON, *, pretty: bool = True) -> None:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(
+        json.dumps(result, indent=2 if pretty else None, sort_keys=pretty) + "\n",
+        encoding="utf-8",
+    )
+
+
+def ensure_pre_a985_relation_body(*, regenerate: bool = False, write_report: bool = True) -> Path:
+    if regenerate or not PRE_A985_ALIGNED_RELATION_NPZ.exists():
+        result = derive(regenerate=True, regenerate_tensor=False)
+        if write_report:
+            write_theorem(result)
+    elif write_report and not PRE_A985_THEOREM_JSON.exists():
+        write_theorem(derive(regenerate=False))
+    return PRE_A985_ALIGNED_RELATION_NPZ
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--regenerate", action="store_true", help="Rebuild relation body and tensor before writing report; can take several minutes.")
+    ap.add_argument("--regenerate", action="store_true", help="Rebuild the relation body before writing the report; can take several minutes.")
+    ap.add_argument("--regenerate-tensor", action="store_true", help="Also rebuild the generated T985 tensor witness; requires scipy.")
     ap.add_argument("--out", default="data/d20/pre_A985_relation_body_theorem.json")
     ap.add_argument("--pretty", action="store_true")
     args = ap.parse_args()
-    res = derive(regenerate=args.regenerate)
+    res = derive(regenerate=args.regenerate, regenerate_tensor=args.regenerate_tensor)
     out = ROOT / args.out
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(res, indent=2 if args.pretty else None, sort_keys=bool(args.pretty)), encoding="utf-8")
+    write_theorem(res, out, pretty=args.pretty)
     print(json.dumps(res, indent=2 if args.pretty else None, sort_keys=bool(args.pretty)))
 
 

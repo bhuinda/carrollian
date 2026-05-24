@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Readable verifier entrypoint for d20.
 
-The old `certify.py` entrypoint remains authoritative. This wrapper exposes the
-three practical verification modes without hiding file writes behind a default:
+The `src.commands.certify` entrypoint remains authoritative. This module exposes
+the practical verification modes without hiding file writes behind a default:
 
 * core: validate the mathematical core and layer statuses only;
 * audit: validate core plus constructor witness and the file manifest;
@@ -21,7 +21,11 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import certify  # noqa: E402
+from src.runtime import ensure_numpy_runtime  # noqa: E402
+
+ensure_numpy_runtime(ROOT, __file__)
+
+from src.commands import certify  # noqa: E402
 
 
 MODES = {

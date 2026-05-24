@@ -21,7 +21,10 @@ COMPLETED_FULL_SCRATCH_STEPS = [
     "run the Type-II neighbor chain 42 -> 18 -> 6 -> 0 without importing the Golay endpoint",
     "enumerate the 2576 Golay dodecads from the generated G24 endpoint",
     "compute sextet profile families, vector fibers, spinor fibers, and balanced scheme valencies",
-    "derive lifted coorient generator permutations from a two-sided coherent-signature formula over a canonical three-point separating base",
+    "derive the A985 ordered-pair relation body before the coorient marker derivation via the pre-A985 source/coorient theorem",
+    "derive the coorient relator profile from A0-A5 by reduced greedy full-closure basis extraction",
+    "derive lifted coorient generator image triples from the regular ordered-pair orbital and A0-A5 relator profile",
+    "derive lifted coorient generator permutations from the derived image triples over a canonical three-point separating base",
     "from the formula-derived coorient generators, close Be3 of order 9216",
     "compute the six Be3 point orbits and 985 ordered-pair orbitals without using the supplied orbital partition",
     "rebuild T985 from the generated ordered-pair orbitals by two-step incidence",
@@ -33,8 +36,7 @@ COMPLETED_FULL_SCRATCH_STEPS = [
 ]
 
 MISSING_FULL_SCRATCH_STEPS = [
-    "derive the four lifted coorient generator images on the canonical three-point base from A0-A5 without reading any coorient marker file",
-    "prove uniqueness of the Be3 coorient lift from D6/Spin12/d20 compatibility up to residual Dih6 relabeling",
+    "promote the generated source/coorient pipeline to the default strict-scratch constructor instead of defaulting to compact raw audit seeds",
 ]
 
 
@@ -144,6 +146,17 @@ def construct_from_supplied_raw_seeds() -> dict[str, Any]:
         ],
         "completed_full_scratch_steps": COMPLETED_FULL_SCRATCH_STEPS,
         "missing_full_scratch_steps": MISSING_FULL_SCRATCH_STEPS,
+        "computability": {
+            "regeneration_scope": "checked_bundle_seed_boundary",
+            "whole_object_regenerable_from_checked_bundle": True,
+            "constructs_from_supplied_raw_seeds": True,
+            "full_scratch_object_constructor": False,
+            "large_artifacts_regenerated_from_seed_boundary": True,
+            "seed_boundary_file_count": 4,
+            "completed_full_scratch_step_count": len(COMPLETED_FULL_SCRATCH_STEPS),
+            "missing_full_scratch_step_count": len(MISSING_FULL_SCRATCH_STEPS),
+            "next_high_yield_step": MISSING_FULL_SCRATCH_STEPS[0],
+        },
         "finite_object": {
             "points": points,
             "group_order_from_seed": group_order,

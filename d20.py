@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
-"""One-command d20 regeneration and certification.
-
-Normal use:
-    python d20.py
-
-This rebuilds d20.json, refreshes hashes, and audits the bundle.
-Pass any certify.py arguments after this command if needed.
-"""
 from __future__ import annotations
-import subprocess, sys
+
+import sys
 from pathlib import Path
 
+
 ROOT = Path(__file__).resolve().parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from src.runtime import ensure_numpy_runtime
+
+ensure_numpy_runtime(ROOT, __file__)
+
+from src.commands.certify import main
+
+
 args = sys.argv[1:] or ["--mode", "rebuild"]
-cmd = [sys.executable, str(ROOT / "certify.py"), *args]
-raise SystemExit(subprocess.call(cmd, cwd=ROOT))
+sys.argv = [sys.argv[0], *args]
+main()

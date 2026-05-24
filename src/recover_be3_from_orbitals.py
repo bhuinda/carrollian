@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import time
 from collections import Counter, deque
 from pathlib import Path
 from typing import Any
@@ -134,8 +133,6 @@ def reconstruct_action_from_regular_orbital(seed: dict[str, Any], base: list[int
     perms: list[np.ndarray] = []
     branch_counter: Counter[str] = Counter()
     failures: list[dict[str, Any]] = []
-    t0 = time.time()
-
     for target_index, code in enumerate(encoded[offsets[regular_relation] : offsets[regular_relation + 1]]):
         start_images = [int(code // n), int(code % n)]
         partials: list[list[int]] = [start_images]
@@ -174,7 +171,6 @@ def reconstruct_action_from_regular_orbital(seed: dict[str, Any], base: list[int
         "base_points": [int(x) for x in base],
         "base_signature_unique_points": full_unique,
         "branch_profile": dict(sorted(branch_counter.items())),
-        "reconstruction_seconds": round(time.time() - t0, 6),
     }
     return P, meta
 
@@ -199,15 +195,10 @@ def closure_size(P: np.ndarray, generator_indices: list[int]) -> int:
 
 
 def find_generators(P: np.ndarray, candidates: list[int] | None = None) -> tuple[list[int], list[int]]:
-    """Greedy deterministic generator extraction.
-
-    The default candidate list is stable and found in the first successful run.  If it still works,
-    we avoid repeatedly doing a larger search.  Otherwise we scan sequentially.
-    """
+    """Greedy deterministic generator extraction by increasing recovered action index."""
     target = P.shape[0]
-    preferred = [1229, 1244, 1952, 4517]
     if candidates is None:
-        candidates = preferred + [i for i in range(1, min(target, 2000)) if i not in preferred]
+        candidates = list(range(1, target))
     gens: list[int] = []
     sizes: list[int] = []
     current = 1
@@ -270,7 +261,6 @@ def recover_be3_from_orbitals(
     out_generators_npz: Path | None = None,
     save_full_action_npz: Path | None = None,
 ) -> dict[str, Any]:
-    t0 = time.time()
     seed = load_seed(relation_seed)
     P, meta = reconstruct_action_from_regular_orbital(seed)
 
@@ -324,7 +314,6 @@ def recover_be3_from_orbitals(
         "generator_permutations_sha256": sha_array(gen_perms),
         "saved_generators_npz": str(out_generators_npz.relative_to(ROOT)) if out_generators_npz is not None and out_generators_npz.exists() else None,
         "saved_full_action_npz": str(save_full_action_npz.relative_to(ROOT)) if save_full_action_npz is not None and save_full_action_npz.exists() else None,
-        "total_seconds": round(time.time() - t0, 6),
         "remaining_scratch_boundary": [
             "derive this same Be3 action directly from generated G24 plus fixed coorient generators",
             "remove dependence on the supplied ordered-pair orbital partition",

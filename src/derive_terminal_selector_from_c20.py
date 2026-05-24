@@ -26,9 +26,17 @@ def load_json(path: Path) -> Any:
         return json.load(f)
 
 
+def load_c20(path: Path) -> tuple[np.ndarray, str]:
+    if path.suffix == ".npz":
+        z = np.load(path)
+        return np.asarray(z["C20"], dtype=np.int64), str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+    constants = load_json(path)
+    return np.asarray(constants["packet20"]["C20"], dtype=np.int64), str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+
+
 def derive_selector_from_c20(
     relation_npz: Path,
-    constants_json: Path,
+    c20_source: Path,
     out_selector_json: Path | None = None,
     out_quotient_npz: Path | None = None,
     out_report_json: Path | None = None,
@@ -42,8 +50,7 @@ def derive_selector_from_c20(
     block_i = np.asarray(rel["block_i"], dtype=np.int16)
     block_j = np.asarray(rel["block_j"], dtype=np.int16)
     object_of_point = np.asarray(rel["object_of_point"], dtype=np.int16)
-    constants = load_json(constants_json)
-    c20 = np.asarray(constants["packet20"]["C20"], dtype=np.int64)
+    c20, c20_source_label = load_c20(c20_source)
     object_sizes = np.bincount(object_of_point, minlength=6).astype(np.int64)
     relation_sizes = np.diff(offsets).astype(np.int64)
     hashes = relation_hashes(encoded, offsets)
@@ -110,10 +117,10 @@ def derive_selector_from_c20(
     comparison: dict[str, Any] = {}
     if compare_selector_json is not None and compare_selector_json.exists():
         prior = load_json(compare_selector_json)
-        prior_hashes = [x["relation_hash"] for x in old["diagonal_special_relation_hashes"]]
+        prior_hashes = [x["relation_hash"] for x in prior["diagonal_special_relation_hashes"]]
         new_hashes = [x["relation_hash"] for x in selector["diagonal_special_relation_hashes"]]
         comparison["matches_previous_six_hash_selector"] = bool(prior_hashes == new_hashes)
-        comparison["previous_special_relation_indices"] = [int(x.get("aligned_relation_index_for_reference", -1)) for x in old["diagonal_special_relation_hashes"]]
+        comparison["previous_special_relation_indices"] = [int(x.get("aligned_relation_index_for_reference", -1)) for x in prior["diagonal_special_relation_hashes"]]
 
     quotient_result: dict[str, Any] | None = None
     if tensor_npz is not None and out_selector_json is not None:
@@ -138,11 +145,11 @@ def derive_selector_from_c20(
         "construction_method": "derive the six terminal diagonal selector hashes from packet-20 C20 diagonal valencies plus deterministic source-coorient relation ordering",
         "input_replaced": "six stored diagonal special relation hashes",
         "input_still_used": [
-            "packet20 C20 diagonal from data/raw/constants.json",
+            "packet20 C20 diagonal from a generated packet20 C20 artifact or constants.json",
             "generated source-coorient relation ordering",
         ],
         "relation_npz": str(relation_npz.relative_to(ROOT)) if relation_npz.is_relative_to(ROOT) else str(relation_npz),
-        "constants_json": str(constants_json.relative_to(ROOT)) if constants_json.is_relative_to(ROOT) else str(constants_json),
+        "c20_source": c20_source_label,
         "object_sizes": object_sizes.astype(int).tolist(),
         "c20_diagonal": [int(c20[i, i]) for i in range(6)],
         "selected_relations": rows,

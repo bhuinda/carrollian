@@ -100,7 +100,6 @@ CORE_FILES = [
     'src/certify_linear.py',
     'src/layer_registry.py',
     'src/certify_raw.py',
-    'src/certify_tube.py',
     'src/certify_tube_center.py',
     'src/certify_tube_lift.py',
     'src/certify_tube_projection.py',
@@ -127,8 +126,9 @@ def build_certificate() -> Dict[str, Any]:
         'f_symbol_shape': validate_f_symbol_shape(cached_core_block('f_symbol_shape')),
         'clopen_boundary': validate_clopen(),
         # The derived blocks below are side certificates committed through
-        # file_manifest/data_catalog.  Loading them keeps .\certify.ps1 a fast
-        # directory certificate; certify_tube keeps strict recomputation paths.
+        # file_manifest/data_catalog.  Loading them keeps core certification
+        # fast; certify_tube_lift and certify_tube_center keep strict
+        # recomputation paths.
         'tube_center_lift': block_or_compute('tube_center_lift', validate_tube_center_lift),
         'tube_algebra_lift': block_or_compute('tube_algebra_lift', validate_tube_algebra_lift),
         'tube_center_algebra': block_or_compute('tube_center_algebra', validate_tube_center_algebra_lift),

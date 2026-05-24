@@ -1,0 +1,233 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "650f5834ab62ed1271bf22837528c3ee9af891047c2e89e78a58c7afdf0f294f",
+  "checks": {
+    "a42_to_a12_consistent": true,
+    "a42_to_a12_map_matches_certificate": true,
+    "q12_class_count": 12,
+    "q12_map_sha256": "cb92283ad51abed1089c594d77364bca60b76d1dbedcaf00fbc86014fb8cf4ff",
+    "q12_map_sha256_matches_certificate": true,
+    "q12_map_shape": [
+      985
+    ],
+    "q12_tensor_matches_stored": true,
+    "q12_tensor_nonzero": 62,
+    "q12_tensor_sha256": "ace2de63426c4274f5f2909ec91acb16a498534ce8e1fd98c92f107f53dbf95f",
+    "q12_tensor_sha256_matches_certificate": true,
+    "q12_tensor_total": 2537360,
+    "q42_class_count": 42,
+    "q42_map_sha256": "06fbe1d44b23f7ca9533d83314fb24135523d2677d75401df9dd09a914431066",
+    "q42_map_sha256_matches_certificate": true,
+    "q42_map_shape": [
+      985
+    ],
+    "q42_tensor_matches_stored": true,
+    "q42_tensor_nonzero": 340,
+    "q42_tensor_sha256": "d00e4564df7e273f9e99f695fdd38a9e8cf3d5237b5ab74db6af311c54ae19fd",
+    "q42_tensor_sha256_matches_certificate": true,
+    "q42_tensor_total": 2537360,
+    "relation_matrix_matches_tensor_header": true,
+    "relation_matrix_sum": 985,
+    "triples_canonical_sha256": "f1ee8d848884bb9952e0412977ae37ca1bdf86ee26c60a871c5ec7b3b97367a6",
+    "triples_canonical_sha256_matches_certificate": true,
+    "triples_coefficient_total": 2537360,
+    "triples_coefficient_total_matches_certificate": true,
+    "triples_shape": [
+      1414965,
+      4
+    ],
+    "triples_shape_matches_certificate": true,
+    "triples_storage_sha256": "32b854858ff292cd526a271b81af60aa71b17d7f2fa12697bd7b5bcb5cb01ff6"
+  },
+  "claim": "The T985 structure-constant table and q42 quotient map are present as theorem-grade inputs and reproduce the certified A42/A12 quotient tensors.",
+  "derived": {
+    "A42_to_A12_map": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      3,
+      6,
+      6,
+      7,
+      7,
+      3,
+      6,
+      6,
+      7,
+      7,
+      8,
+      8,
+      4,
+      9,
+      9,
+      8,
+      8,
+      4,
+      9,
+      9,
+      10,
+      10,
+      11,
+      11,
+      5,
+      10,
+      10,
+      11,
+      11,
+      5
+    ],
+    "coefficient_matrix_by_source_target_objects": [
+      [
+        85008,
+        30912,
+        20608,
+        61824,
+        77280,
+        82432
+      ],
+      [
+        30912,
+        41216,
+        10304,
+        30912,
+        30912,
+        51520
+      ],
+      [
+        20608,
+        10304,
+        36064,
+        56672,
+        20608,
+        51520
+      ],
+      [
+        61824,
+        30912,
+        56672,
+        221536,
+        82432,
+        164864
+      ],
+      [
+        77280,
+        30912,
+        20608,
+        82432,
+        113344,
+        113344
+      ],
+      [
+        82432,
+        51520,
+        51520,
+        164864,
+        113344,
+        267904
+      ]
+    ],
+    "relation_matrix": [
+      [
+        33,
+        12,
+        8,
+        24,
+        30,
+        32
+      ],
+      [
+        12,
+        16,
+        4,
+        12,
+        12,
+        20
+      ],
+      [
+        8,
+        4,
+        14,
+        22,
+        8,
+        20
+      ],
+      [
+        24,
+        12,
+        22,
+        86,
+        32,
+        64
+      ],
+      [
+        30,
+        12,
+        8,
+        32,
+        44,
+        44
+      ],
+      [
+        32,
+        20,
+        20,
+        64,
+        44,
+        104
+      ]
+    ]
+  },
+  "file_hashes": {
+    "certificate.json": "97c854a9ffcd273b8d87a84cd1845e3a032173581c951c03dec7f30a6ab7e098",
+    "data/raw/T_985.npz": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d",
+    "data/raw/quotients.npz": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+  },
+  "inputs": {
+    "relation_to_A12_map": {
+      "array": "q12_map",
+      "canonical_dtype": "int64",
+      "path": "data/raw/quotients.npz"
+    },
+    "relation_to_A42_map": {
+      "array": "q42_map",
+      "canonical_dtype": "int64",
+      "path": "data/raw/quotients.npz"
+    },
+    "relation_to_source_object": {
+      "array": "block_i",
+      "canonical_dtype": "int64",
+      "path": "data/raw/quotients.npz"
+    },
+    "relation_to_target_object": {
+      "array": "block_j",
+      "canonical_dtype": "int64",
+      "path": "data/raw/quotients.npz"
+    },
+    "six_object_labels": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
+    ],
+    "tensor_triples": {
+      "array": "triples",
+      "canonical_dtype": "int64",
+      "path": "data/raw/T_985.npz"
+    }
+  },
+  "legacy_stage_replaced": "v22 tensor-chain stage",
+  "object": "d20",
+  "schema": "d20.theorem.t985_csdo.v1",
+  "status": "T985_CSDO_THEOREM_INPUTS_CERTIFIED"
+}

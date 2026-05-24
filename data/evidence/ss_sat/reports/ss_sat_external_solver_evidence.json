@@ -1,0 +1,66 @@
+{
+  "benchmarks": [
+    "contradiction_4.cnf",
+    "horn_chain_8.cnf",
+    "horn_chain_12.cnf",
+    "php_3_2.cnf",
+    "xor_unsat.cnf"
+  ],
+  "canonical_folder": "data/evidence/ss_sat",
+  "cvx_integrity": {
+    "cadical_drat": {
+      "events": 83,
+      "integrity_counts": {
+        "C": 83
+      },
+      "verdict": "C_PUBLIC_PROOF_TRACE"
+    },
+    "cadical_frat_surface": {
+      "events": 214,
+      "integrity_counts": {
+        "C": 214
+      },
+      "verdict": "C_PUBLIC_FRAT_SURFACE_TRACE"
+    },
+    "cadical_lrat": {
+      "events": 62,
+      "integrity_counts": {
+        "C": 62
+      },
+      "verdict": "C_PUBLIC_CHECKED_PROOF_TRACE"
+    }
+  },
+  "external_route_replay": {
+    "frat_extracted_lrat_events": 44,
+    "frat_extracted_lrat_rank_summary_mod_p": {
+      "2": 4,
+      "3": 4,
+      "5": 4
+    },
+    "frat_extracted_lrat_routes": 5,
+    "frat_extracted_lrat_status": "EVIDENCE_PRESENT",
+    "full_frat_legacy_route_rank": "BLOCKED_LEGACY_ANALYZER_ROUTE_EXPLOSION"
+  },
+  "proof_verification": {
+    "cadical_drat_verified": "5/5",
+    "cadical_frat_embedded_lrat_verified": "5/5",
+    "cadical_lrat_verified": "5/5",
+    "standalone_frat_checker": "BLOCKED_NO_STANDALONE_FRAT_CHECKER"
+  },
+  "residues": [
+    "residues/kissat_sigsegv.json",
+    "residues/frat_checker_status.json",
+    "residues/full_frat_legacy_analyzer_blocked.json"
+  ],
+  "schema": "d20.ss_sat.external_solver_evidence_report.v1",
+  "solver_runs": {
+    "cadical_unsat": 5,
+    "kissat_sigsegv": 2,
+    "kissat_unsat": 3,
+    "minisat_unsat": 5,
+    "total": 15
+  },
+  "source_policy": "Former gnatural_ontological_computation version bundles are treated as transient staging sources; canonical evidence lives here.",
+  "status": "SS_SAT_EXTERNAL_SOLVER_EVIDENCE_CONSOLIDATED",
+  "theorem_interpretation": "Public DRAT, checked LRAT, and FRAT surface evidence are typed C under the integrity ladder. No X extractor or e33 extraction is present in the supplied proof logs."
+}

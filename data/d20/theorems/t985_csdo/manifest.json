@@ -1,0 +1,51 @@
+{
+  "certification_tests": [
+    "check tensor triples against the d20 certificate digest",
+    "aggregate T985 through q42 and q12 and compare stored quotient tensors",
+    "derive the A42 to A12 map from q42 and q12",
+    "recover the six-object relation-count matrix from source and target object maps"
+  ],
+  "inputs": {
+    "relation_to_A12_map": {
+      "array": "q12_map",
+      "canonical_dtype": "int64",
+      "path": "data/raw/quotients.npz"
+    },
+    "relation_to_A42_map": {
+      "array": "q42_map",
+      "canonical_dtype": "int64",
+      "path": "data/raw/quotients.npz"
+    },
+    "relation_to_source_object": {
+      "array": "block_i",
+      "canonical_dtype": "int64",
+      "path": "data/raw/quotients.npz"
+    },
+    "relation_to_target_object": {
+      "array": "block_j",
+      "canonical_dtype": "int64",
+      "path": "data/raw/quotients.npz"
+    },
+    "six_object_labels": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
+    ],
+    "tensor_triples": {
+      "array": "triples",
+      "canonical_dtype": "int64",
+      "path": "data/raw/T_985.npz"
+    }
+  },
+  "manifest_sha256": "dbc600aad82d47c056e2a95e3a967d8bea49dbfa8fed701b7b88aeea1b4986d5",
+  "name": "t985_csdo",
+  "outputs": {
+    "manifest": "data/d20/theorems/t985_csdo/manifest.json",
+    "report": "data/d20/theorems/t985_csdo/report.json"
+  },
+  "report_sha256": "650f5834ab62ed1271bf22837528c3ee9af891047c2e89e78a58c7afdf0f294f",
+  "schema": "d20.theorem.t985_csdo_manifest.v1"
+}

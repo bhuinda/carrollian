@@ -29,6 +29,7 @@
     "data/invariants/integrity": "proof-system integrity and boundary ledgers",
     "data/evidence/tensor_chain": "tensor-chain evidence split into reports, tables, arrays, and stages",
     "data/evidence/a236_compute": "A236 computation cache and branching evidence",
+    "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, and manifests",
     "data/reference/dihedral": "general dihedral formula references"
   },
   "domains": {
@@ -206,6 +207,45 @@
         "tables": "CSV evidence tables",
         "arrays": "NPZ array payloads",
         "stages": "versioned experiment stages"
+      }
+    },
+    "ss_sat_evidence": {
+      "path": "data/evidence/ss_sat",
+      "canonical_role": "evidence_archive",
+      "owner": "ss_sat",
+      "storage_status": "canonical_standardized_layout",
+      "target_path": "data/evidence/ss_sat",
+      "migration_policy": "transient gnatural_ontological_computation version bundles consolidated into canonical evidence tree",
+      "file_classes": [
+        "cnf_benchmark",
+        "csv_table",
+        "json_index",
+        "json_manifest",
+        "json_report",
+        "markdown_report",
+        "proof_artifact",
+        "solver_log",
+        "typed_residue"
+      ],
+      "required_files": [
+        "index.json",
+        "manifest.json",
+        "reports/ss_sat_external_solver_evidence.json",
+        "reports/ss_sat_external_solver_evidence.md",
+        "tables/solver_run_summary.csv",
+        "tables/proof_verification_summary.csv",
+        "tables/cvx_integrity_summary.csv",
+        "residues/kissat_sigsegv.json"
+      ],
+      "standardized_subdirectories": {
+        "benchmarks": "DIMACS fixture inputs",
+        "logs": "captured solver stdout and stderr logs",
+        "proofs": "DRAT, LRAT, FRAT, and extracted LRAT proof artifacts",
+        "audits": "proof verification and C/V/X audit outputs",
+        "residues": "typed failed or blocked seams",
+        "reports": "human and machine reports",
+        "tables": "CSV summary tables",
+        "manifests": "source evidence manifests with command lines and hashes"
       }
     }
   }

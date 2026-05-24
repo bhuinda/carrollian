@@ -9,7 +9,11 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from scipy.sparse import csr_matrix
+
+try:
+    from scipy.sparse import csr_matrix
+except ModuleNotFoundError:  # The fast tensor constructor below does not need SciPy.
+    csr_matrix = None
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -45,6 +49,8 @@ def build_label_matrix(encoded: np.ndarray, offsets: np.ndarray, n: int, relatio
 
 
 def build_relation_matrices(encoded: np.ndarray, offsets: np.ndarray, n: int, relation_count: int) -> list[csr_matrix]:
+    if csr_matrix is None:
+        raise ModuleNotFoundError("scipy is required for build_relation_matrices")
     mats: list[csr_matrix] = []
     for a in range(relation_count):
         e = encoded[offsets[a] : offsets[a + 1]]
@@ -148,9 +154,9 @@ def compute_tensor_from_orbitals(
 
     coeff_total = int(triples_arr[:, 3].sum()) if triples_arr.size else 0
     source_name = str(relation_seed)
-    if "source_coorient" in source_name:
+    if any(token in source_name for token in ("source_coorient", "pre_A985", "strict_scratch")):
         method = "representative two-step incidence over source+coorient generated ordered-pair orbitals"
-        boundary = "uses generated relation membership from fixed coorient generators; compare_npz is used only for equality checking when supplied"
+        boundary = "uses generated relation membership from the source/coorient pipeline; compare_npz is used only for equality checking when supplied"
     else:
         method = "representative two-step incidence over supplied ordered-pair orbitals"
         boundary = "uses supplied ordered-pair orbital partition; does not construct Be3 from coorient generators"

@@ -89,8 +89,8 @@ def derive_formula(
     if compare_generators_npz is not None and compare_generators_npz.exists():
         prior = np.asarray(np.load(compare_generators_npz)["generator_permutations"], dtype=np.int16)
         comparison = {
-            "matches_previous_full_generator_permutations": bool(np.array_equal(gens, old)),
-            "previous_generator_sha256": sha_array(old),
+            "matches_previous_full_generator_permutations": bool(np.array_equal(gens, prior)),
+            "previous_generator_sha256": sha_array(prior),
         }
 
     P, closure_trace = close_group(gens)
