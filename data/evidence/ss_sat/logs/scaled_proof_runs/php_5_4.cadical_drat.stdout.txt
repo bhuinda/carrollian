@@ -1,0 +1,120 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2025
+c A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt, T. Faller
+c JKU Linz, University of Freiburg, TU Wien
+c 
+c Version 3.0.0
+c g++-13.1.0
+c May 23 2026 21:06:20
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write 'D:\Projects\carrollian\data\evidence\ss_sat\proofs\scaled_cadical_drat\php_5_4.cadical.drat'
+c writing non-binary proof trace to 'D:\Projects\carrollian\data\evidence\ss_sat\proofs\scaled_cadical_drat\php_5_4.cadical.drat'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from 'D:\Projects\carrollian\data\evidence\ss_sat\benchmarks\scaled\php_5_4.cnf'
+c opening file to read 'D:\Projects\carrollian\data\evidence\ss_sat\benchmarks\scaled\php_5_4.cnf'
+c found 'p cnf 20 45' header
+c parsed 45 clauses in 0.00 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --binary=false                 (different from default 'true')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reduction conflicts       size tier2     variables
+c         MB    restarts   redundant    glue  trail      remaining
+c          level     rate       size/glu tier1 irredundant
+c 
+c *  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   45  20 100%
+c (  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   45  20 100%
+c .  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   45  20 100%
+c f  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   41  24 120%
+c e  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   29  13 65%
+c s  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   28  13 65%
+c P  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   28  13 65%
+c )  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   28  13 65%
+c {  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%   28  13 65%
+c i  0.00  5  5 0   0  2    4    3 2.0 2 1 2 6 71%   28  12 60%
+c i  0.00  5  5 0   0  2    6    4 2.2 2 1 2 6 71%   28  11 55%
+c i  0.00  5  5 0   0  1   11    7 2.3 2 1 2 6 71%   28  10 50%
+c i  0.00  5  5 0   0  1   12    7 2.4 2 1 2 6 71%   28   9 45%
+c }  0.00  5  5 0   0  1   14    7 2.5 2 1 2 6 71%   28   0  0%
+c 0  0.00  5  5 0   0  1   14    7 2.5 2 1 2 6 71%   28   0  0%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c DRAT proof file 'D:\Projects\carrollian\data\evidence\ss_sat\proofs\scaled_cadical_drat\php_5_4.cadical.drat' closed
+c DRAT 82 added clauses 51.25%
+c DRAT 78 deleted clauses 48.75%
+c DRAT 1884 bytes (0.00 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.00    0.00% parse
+c         0.00    0.00% search
+c         0.00    0.00% simplify
+c   =================================
+c         0.00    0.00% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c chronological:                 6        42.86 %  of conflicts
+c conflicts:                    14         0.00    per second
+c backbone:                     84       350.00 %  of vars
+c decisions:                    17         0.00    per second
+c eliminated:                   11        45.83 %  of all variables
+c factored:                      4        16.67 %  of variables
+c fixed:                        13        54.17 %  of all variables
+c learned:                      12        85.71 %  per conflict
+c learned_lits:                 31       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                     11        35.48 %  learned literals
+c minishrunken:                  0         0.00 %  learned literals
+c otfs:                          1         7.14 %  of conflict
+c propagations:                101         0.00 M  per second
+c subsumed:                      2         1.85 %  of all clauses
+c strengthened:                  8         7.41 %  of all clauses
+c ticks:                     13170       130.40    propagation
+c weakened:                     40         3.20    average size
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ glue usage ] ---------------------------------------------------------
+c 
+c focused glue 1 used 6 clauses 100.0% accumulated 100.0% tier1
+c focused glue 2 used 0 clauses 0.000% accumulated 100.0% tier2
+c 
+c stable glue 2 used 0 clauses 0.000% accumulated 0.000% tier1
+c stable glue 3 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 4 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 5 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 6 used 0 clauses 0.000% accumulated 0.000% tier2
+c 
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.00    seconds
+c total real time since initialization:            0.00    seconds
+c maximum resident set size of process:            5.18    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

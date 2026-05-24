@@ -508,6 +508,24 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "SS-SAT standalone FRAT checker residue mismatch",
         errors,
     )
+    scaled_report = ss_sat.get("scaled_report", {})
+    require(scaled_report.get("present") is True, "SS-SAT scaled report missing", errors)
+    require(
+        scaled_report.get("status") == "SS_SAT_SCALED_EVIDENCE_CAPTURED",
+        "SS-SAT scaled report status mismatch",
+        errors,
+    )
+    scaled_solver_runs = ss_sat.get("scaled_solver_runs", {})
+    require(scaled_solver_runs.get("total") == 27, "SS-SAT scaled solver run count mismatch", errors)
+    require(scaled_solver_runs.get("cadical_unsat") == 9, "SS-SAT scaled CaDiCaL UNSAT count mismatch", errors)
+    require(scaled_solver_runs.get("minisat_unsat") == 9, "SS-SAT scaled MiniSat UNSAT count mismatch", errors)
+    require(scaled_solver_runs.get("kissat_unsat") == 4, "SS-SAT scaled Kissat UNSAT count mismatch", errors)
+    require(scaled_solver_runs.get("kissat_sigsegv") == 5, "SS-SAT scaled Kissat SIGSEGV residue count mismatch", errors)
+    scaled_proofs = ss_sat.get("scaled_proof_verification", {})
+    require(scaled_proofs.get("drat", {}).get("total") == 9, "SS-SAT scaled DRAT total mismatch", errors)
+    require(scaled_proofs.get("drat", {}).get("verified") == 9, "SS-SAT scaled DRAT verification mismatch", errors)
+    require(scaled_proofs.get("lrat", {}).get("total") == 9, "SS-SAT scaled LRAT total mismatch", errors)
+    require(scaled_proofs.get("lrat", {}).get("verified") == 9, "SS-SAT scaled LRAT verification mismatch", errors)
     cvx_integrity = ss_sat.get("cvx_integrity", {})
     for family in ["cadical_drat", "cadical_lrat", "cadical_frat_surface"]:
         counts = cvx_integrity.get(family, {}).get("integrity_counts", {})

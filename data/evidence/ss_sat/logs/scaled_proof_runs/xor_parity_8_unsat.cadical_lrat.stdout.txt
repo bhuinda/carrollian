@@ -1,0 +1,106 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2025
+c A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt, T. Faller
+c JKU Linz, University of Freiburg, TU Wien
+c 
+c Version 3.0.0
+c g++-13.1.0
+c May 23 2026 21:06:20
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write 'D:\Projects\carrollian\data\evidence\ss_sat\proofs\scaled_cadical_lrat\xor_parity_8_unsat.cadical.lrat'
+c writing non-binary proof trace to 'D:\Projects\carrollian\data\evidence\ss_sat\proofs\scaled_cadical_lrat\xor_parity_8_unsat.cadical.lrat'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from 'D:\Projects\carrollian\data\evidence\ss_sat\benchmarks\scaled\xor_parity_8_unsat.cnf'
+c opening file to read 'D:\Projects\carrollian\data\evidence\ss_sat\benchmarks\scaled\xor_parity_8_unsat.cnf'
+c found 'p cnf 8 256' header
+c parsed 256 clauses in 0.00 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --binary=false                 (different from default 'true')
+c   --checkproof=2                 (different from default '3')
+c   --lrat=true                    (different from default 'false')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reduction conflicts       size tier2     variables
+c         MB    restarts   redundant    glue  trail      remaining
+c          level     rate       size/glu tier1 irredundant
+c 
+c *  0.02  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  256   8 100%
+c (  0.02  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  256   8 100%
+c .  0.02  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  256   8 100%
+c =  0.02  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  256   0  0%
+c P  0.02  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  256   0  0%
+c )  0.02  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  256   0  0%
+c 0  0.02  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  256   0  0%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c LRAT proof file 'D:\Projects\carrollian\data\evidence\ss_sat\proofs\scaled_cadical_lrat\xor_parity_8_unsat.cadical.lrat' closed
+c LRAT 135 added clauses 51.72%
+c LRAT 126 deleted clauses 48.28%
+c LRAT 4586 bytes (0.00 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.00    0.00% parse
+c         0.00    0.00% search
+c         0.00    0.00% simplify
+c   =================================
+c         0.00    0.00% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c backbone:                     24       300.00 %  of vars
+c fixed:                         8       100.00 %  of all variables
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                      0         0.00 %  learned literals
+c minishrunken:                  0         0.00 %  learned literals
+c propagations:                  0         0.00 M  per second
+c ticks:                     13302         0.00    propagation
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ glue usage ] ---------------------------------------------------------
+c 
+c focused glue 2 used 0 clauses 0.000% accumulated 0.000% tier1
+c focused glue 3 used 0 clauses 0.000% accumulated 0.000%
+c focused glue 4 used 0 clauses 0.000% accumulated 0.000%
+c focused glue 5 used 0 clauses 0.000% accumulated 0.000%
+c focused glue 6 used 0 clauses 0.000% accumulated 0.000% tier2
+c 
+c stable glue 2 used 0 clauses 0.000% accumulated 0.000% tier1
+c stable glue 3 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 4 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 5 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 6 used 0 clauses 0.000% accumulated 0.000% tier2
+c 
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.02    seconds
+c total real time since initialization:            0.00    seconds
+c maximum resident set size of process:            5.17    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

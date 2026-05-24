@@ -148,6 +148,15 @@ def refresh_ss_sat_manifest() -> bool:
         rel = path.relative_to(base).as_posix()
         if rel.startswith("source_archives/legacy_roots/"):
             continue
+        if any(
+            part in EXCLUDED_DIRS or part.startswith(EXCLUDED_DIR_PREFIXES)
+            for part in path.relative_to(ROOT).parts
+        ):
+            continue
+        if path.suffix in EXCLUDED_SUFFIXES:
+            continue
+        if path.name in EXCLUDED_FILES:
+            continue
         files[rel] = {
             "size": path.stat().st_size,
             "sha256": sha_file(path),

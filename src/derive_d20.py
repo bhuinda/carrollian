@@ -761,6 +761,8 @@ def data_registry() -> dict[str, Any]:
                 for file_path in base.rglob("*"):
                     if not file_path.is_file():
                         continue
+                    if excluded_scan_path(file_path):
+                        continue
                     file_count += 1
                     suffix = file_path.suffix.lower() or "<none>"
                     suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
@@ -885,6 +887,8 @@ def ss_sat_evidence() -> dict[str, Any]:
     for path in base.rglob("*"):
         if not path.is_file():
             continue
+        if excluded_scan_path(path):
+            continue
         file_count += 1
         suffix = path.suffix.lower() or "<none>"
         suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
@@ -892,9 +896,11 @@ def ss_sat_evidence() -> dict[str, Any]:
     index_path = base / "index.json"
     manifest_path = base / "manifest.json"
     report_path = base / "reports" / "ss_sat_external_solver_evidence.json"
+    scaled_report_path = base / "reports" / "ss_sat_scaled_evidence.json"
     index = load_json(index_path) if index_path.exists() else {}
     manifest = load_json(manifest_path) if manifest_path.exists() else {}
     report = load_json(report_path) if report_path.exists() else {}
+    scaled_report = load_json(scaled_report_path) if scaled_report_path.exists() else {}
 
     return {
         "status": "SS_SAT_EVIDENCE_CONSOLIDATED",
@@ -933,8 +939,17 @@ def ss_sat_evidence() -> dict[str, Any]:
             "status": report.get("status"),
             "sha256": sha_file(report_path) if report_path.exists() else None,
         },
+        "scaled_report": {
+            "present": scaled_report_path.exists(),
+            "path": f"{rel_base}/reports/ss_sat_scaled_evidence.json",
+            "schema": scaled_report.get("schema"),
+            "status": scaled_report.get("status"),
+            "sha256": sha_file(scaled_report_path) if scaled_report_path.exists() else None,
+        },
         "solver_runs": report.get("solver_runs", {}),
         "proof_verification": report.get("proof_verification", {}),
+        "scaled_solver_runs": scaled_report.get("solver_runs", {}),
+        "scaled_proof_verification": scaled_report.get("proof_verification", {}),
         "cvx_integrity": report.get("cvx_integrity", {}),
         "residues": report.get("residues", []),
         "external_route_replay": report.get("external_route_replay", {}),
