@@ -1,0 +1,193 @@
+{
+  "schema": "G.d20.v12.fano_6j_contraction",
+  "status": "FANO_NULLIFICATION_6J_CONTRACTION_CONSTRUCTED",
+  "nullified_point": "001",
+  "contraction": "Fano plane F7 minus null point gives six tetrahedral edge labels",
+  "edge_order": [
+    "B-",
+    "B+",
+    "V-",
+    "V+",
+    "S-",
+    "S+"
+  ],
+  "edge_dictionary": {
+    "B-": {
+      "fano_point": "010",
+      "tetra_edge": "e12",
+      "vertices": [
+        1,
+        2
+      ]
+    },
+    "B+": {
+      "fano_point": "011",
+      "tetra_edge": "e34",
+      "vertices": [
+        3,
+        4
+      ]
+    },
+    "V-": {
+      "fano_point": "100",
+      "tetra_edge": "e13",
+      "vertices": [
+        1,
+        3
+      ]
+    },
+    "V+": {
+      "fano_point": "101",
+      "tetra_edge": "e24",
+      "vertices": [
+        2,
+        4
+      ]
+    },
+    "S-": {
+      "fano_point": "110",
+      "tetra_edge": "e14",
+      "vertices": [
+        1,
+        4
+      ]
+    },
+    "S+": {
+      "fano_point": "111",
+      "tetra_edge": "e23",
+      "vertices": [
+        2,
+        3
+      ]
+    }
+  },
+  "three_opposite_edge_pairs": [
+    {
+      "through_null_line_id": 1,
+      "fano_line_points": "001 010 011",
+      "remaining_pair": "010 011",
+      "edge_pair": "B- B+",
+      "tetra_edges": "e12 e34",
+      "relation": "opposite tetrahedron edges"
+    },
+    {
+      "through_null_line_id": 2,
+      "fano_line_points": "001 100 101",
+      "remaining_pair": "100 101",
+      "edge_pair": "V- V+",
+      "tetra_edges": "e13 e24",
+      "relation": "opposite tetrahedron edges"
+    },
+    {
+      "through_null_line_id": 3,
+      "fano_line_points": "001 110 111",
+      "remaining_pair": "110 111",
+      "edge_pair": "S- S+",
+      "tetra_edges": "e14 e23",
+      "relation": "opposite tetrahedron edges"
+    }
+  ],
+  "four_nonnull_lines_as_vertex_stars": [
+    {
+      "nonnull_line_id": 1,
+      "fano_line_points": "010 100 110",
+      "edge_labels": "B- V- S-",
+      "tetra_edges": "e12 e13 e14",
+      "tetrahedron_vertex_star": "vertex_star_1",
+      "vertex": 1,
+      "interpretation": "one of the four 3-edge stars / opposite face normals in K4"
+    },
+    {
+      "nonnull_line_id": 2,
+      "fano_line_points": "010 101 111",
+      "edge_labels": "B- V+ S+",
+      "tetra_edges": "e12 e24 e23",
+      "tetrahedron_vertex_star": "vertex_star_2",
+      "vertex": 2,
+      "interpretation": "one of the four 3-edge stars / opposite face normals in K4"
+    },
+    {
+      "nonnull_line_id": 3,
+      "fano_line_points": "011 100 111",
+      "edge_labels": "B+ V- S+",
+      "tetra_edges": "e34 e13 e23",
+      "tetrahedron_vertex_star": "vertex_star_3",
+      "vertex": 3,
+      "interpretation": "one of the four 3-edge stars / opposite face normals in K4"
+    },
+    {
+      "nonnull_line_id": 4,
+      "fano_line_points": "011 101 110",
+      "edge_labels": "B+ V+ S-",
+      "tetra_edges": "e34 e24 e14",
+      "tetrahedron_vertex_star": "vertex_star_4",
+      "vertex": 4,
+      "interpretation": "one of the four 3-edge stars / opposite face normals in K4"
+    }
+  ],
+  "automorphism": {
+    "GL3F2_order": 168,
+    "null_point_stabilizer_order": 24,
+    "null_point_stabilizer_is": "S4 tetrahedral edge symmetry",
+    "signed_D6_preimage_order": 768,
+    "full_W_D6_order": 23040,
+    "index_in_W_D6": 30
+  },
+  "sixj": {
+    "interpretation": "the six contracted Fano channels are the six tetrahedral edge labels of a 6j symbol",
+    "uniform_spin_1_wigner_6j": "1/6"
+  },
+  "Romega_fano6_compression_raw": {
+    "fit_energy_fraction": 0.007529727777430951,
+    "relative_reconstruction_error": 0.9962280222030343,
+    "S4_invariant_energy_fraction": 0.4321246071549539,
+    "S4_breaking_energy_fraction": 0.5678753928450462,
+    "signedD6_invariant_energy_fraction": 0.16561184914698684,
+    "signedD6_breaking_energy_fraction": 0.8343881508530131,
+    "signedD6_error_mean": 1.2657280478414186,
+    "S4_orbit_coefficients": [
+      {
+        "orbit": "same_edge",
+        "count": 6,
+        "coefficient": 142538.61973075368
+      },
+      {
+        "orbit": "adjacent_edges",
+        "count": 24,
+        "coefficient": 55629.40172051511
+      },
+      {
+        "orbit": "opposite_edges",
+        "count": 6,
+        "coefficient": 142538.61973075368
+      }
+    ]
+  },
+  "Romega_fano6_compression_normalized": {
+    "fit_energy_fraction": 0.009561337827212153,
+    "relative_reconstruction_error": 0.9952078487294944,
+    "S4_invariant_energy_fraction": 0.4275399104128381,
+    "S4_breaking_energy_fraction": 0.5724600895871619,
+    "signedD6_invariant_energy_fraction": 0.1648210149767857,
+    "signedD6_breaking_energy_fraction": 0.8351789850232143,
+    "signedD6_error_mean": 1.2668252397925235,
+    "S4_orbit_coefficients": [
+      {
+        "orbit": "same_edge",
+        "count": 6,
+        "coefficient": 3420.3431964576644
+      },
+      {
+        "orbit": "adjacent_edges",
+        "count": 24,
+        "coefficient": 1318.0140567536894
+      },
+      {
+        "orbit": "opposite_edges",
+        "count": 6,
+        "coefficient": 3420.3431964576644
+      }
+    ]
+  },
+  "caveat": "The 16x16 strategy-label signed action is still not present in v8; this construction supplies the canonical Fano->6j contraction and tests the induced six-channel operator."
+}

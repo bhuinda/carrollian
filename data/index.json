@@ -1,0 +1,212 @@
+{
+  "schema": "d20.data_registry.v1",
+  "status": "DATA_REGISTRY_BUILT",
+  "policy": {
+    "physical_layout": "domain_grouped_files",
+    "migration_stage": "registry_first_before_bulk_move",
+    "ingest_policy": "ingest is a transient drop zone and must not be referenced by canonical certificate data",
+    "canonical_top_level_directories": [
+      "a236_compute",
+      "coorient",
+      "d20",
+      "dihedral",
+      "evidence",
+      "hcycle",
+      "integrity",
+      "quotient",
+      "raw"
+    ],
+    "canonical_top_level_files": [
+      "index.json"
+    ]
+  },
+  "planned_layout": {
+    "data/core/raw": "primitive checked seeds and compact comparison arrays",
+    "data/core/coorient": "coorient lift markers, word presentations, and generator arrays",
+    "data/core/quotient": "canonical quotient selectors",
+    "data/invariants/d20": "d20 object invariants and integrated evidence invariants",
+    "data/invariants/hcycle": "H-cycle board, control, and game-theory invariants",
+    "data/invariants/integrity": "proof-system integrity and boundary ledgers",
+    "data/evidence/tensor_chain": "tensor-chain evidence split into reports, tables, arrays, and stages",
+    "data/evidence/a236_compute": "A236 computation cache and branching evidence",
+    "data/reference/dihedral": "general dihedral formula references"
+  },
+  "domains": {
+    "a236_compute_cache": {
+      "path": "data/a236_compute",
+      "canonical_role": "evidence_cache",
+      "owner": "main_certificate_computer",
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/evidence/a236_compute",
+      "migration_policy": "defer_until_path_aliases_exist",
+      "file_classes": [
+        "csv_table",
+        "json_report",
+        "markdown_report",
+        "npz_array"
+      ],
+      "required_files": [
+        "README.md",
+        "cache/a236_rows.csv",
+        "cache/a985_center_idempotents_mod1000003.npz",
+        "cache/B236_to_A42.csv",
+        "cache/B42_to_A12.csv"
+      ]
+    },
+    "coorient_lift": {
+      "path": "data/coorient",
+      "canonical_role": "core_seed",
+      "owner": "coorient_constructor",
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/core/coorient",
+      "migration_policy": "defer_until_path_aliases_exist",
+      "file_classes": [
+        "json_formula",
+        "npz_array"
+      ],
+      "required_files": [
+        "absolute_d20_word_presentation.json",
+        "be3_coorient_generators.npz",
+        "lifted_coorient_canonical_marker_formula.json",
+        "lifted_coorient_signature_formula.json"
+      ]
+    },
+    "d20_invariants": {
+      "path": "data/d20",
+      "canonical_role": "derived_invariant",
+      "owner": "main_certificate_computer",
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/invariants/d20",
+      "migration_policy": "defer_until_path_aliases_exist",
+      "file_classes": [
+        "json_certificate",
+        "json_invariant",
+        "json_report"
+      ],
+      "required_files": [
+        "certified_evidence_invariants.json",
+        "d20_d6_selector_derivation.json",
+        "derived_invariant_reports.json",
+        "pre_A985_relation_body_theorem.json",
+        "universal_integral_uniqueness.json"
+      ]
+    },
+    "dihedral_formulae": {
+      "path": "data/dihedral",
+      "canonical_role": "reference_formula",
+      "owner": "formula_reference",
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/reference/dihedral",
+      "migration_policy": "defer_until_path_aliases_exist",
+      "file_classes": [
+        "json_formula"
+      ],
+      "required_files": [
+        "dn_formulae.json"
+      ]
+    },
+    "hcycle_game_control": {
+      "path": "data/hcycle",
+      "canonical_role": "derived_invariant",
+      "owner": "game_control_layer",
+      "storage_status": "canonical_current_layout_flat",
+      "target_path": "data/invariants/hcycle",
+      "migration_policy": "split_reports_tables_and_sources_after_registry",
+      "file_classes": [
+        "csv_table",
+        "json_manifest",
+        "json_report",
+        "python_source"
+      ],
+      "required_files": [
+        "Hsubcycle_S20_manifest.json",
+        "d20_Hcycle_automorphism_summary.json",
+        "d20_Hcycle_invariant_ledger.csv",
+        "subscript_Hcycle_control_manifest.json",
+        "subscript_Hcycle_primitive_cycles.csv"
+      ]
+    },
+    "integrity_ladders": {
+      "path": "data/integrity",
+      "canonical_role": "derived_invariant",
+      "owner": "integrity_layer",
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/invariants/integrity",
+      "migration_policy": "defer_until_path_aliases_exist",
+      "file_classes": [
+        "csv_table"
+      ],
+      "required_files": [
+        "conditional_theorem_ladder.csv",
+        "next_integrity_tests.csv",
+        "proof_system_integrity_ladder.csv"
+      ]
+    },
+    "quotient_selectors": {
+      "path": "data/quotient",
+      "canonical_role": "derived_selector",
+      "owner": "quotient_constructor",
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/core/quotient",
+      "migration_policy": "defer_until_path_aliases_exist",
+      "file_classes": [
+        "json_selector"
+      ],
+      "required_files": [
+        "terminal_quotient_selector.json"
+      ]
+    },
+    "raw_core_seeds": {
+      "path": "data/raw",
+      "canonical_role": "core_seed",
+      "owner": "main_certificate_computer",
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/core/raw",
+      "migration_policy": "defer_until_path_aliases_exist",
+      "file_classes": [
+        "json_index",
+        "json_seed",
+        "npz_seed"
+      ],
+      "required_files": [
+        "constants.json",
+        "index.json",
+        "leech_projective_generators.npz",
+        "quotients.npz",
+        "relation_memberships.npz",
+        "simple_branching_matrices.npz",
+        "T_985.npz"
+      ]
+    },
+    "tensor_chain_evidence": {
+      "path": "data/evidence/tensor_chain",
+      "canonical_role": "evidence_archive",
+      "owner": "tensor_chain",
+      "storage_status": "canonical_standardized_layout",
+      "target_path": "data/evidence/tensor_chain",
+      "migration_policy": "physically_normalized_into_reports_tables_arrays_stages",
+      "file_classes": [
+        "csv_table",
+        "json_index",
+        "json_report",
+        "markdown_report",
+        "npz_array",
+        "text_note"
+      ],
+      "required_files": [
+        "index.json",
+        "manifest.json",
+        "plain_name_view.json",
+        "reports/Romega_classification_report.json",
+        "arrays/Romega_classification_arrays.npz",
+        "stages/v22_raw_tensor_chain_test/v22_raw_tensor_chain_report.json"
+      ],
+      "standardized_subdirectories": {
+        "reports": "human and machine report files",
+        "tables": "CSV evidence tables",
+        "arrays": "NPZ array payloads",
+        "stages": "versioned experiment stages"
+      }
+    }
+  }
+}

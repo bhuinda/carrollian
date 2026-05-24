@@ -83,19 +83,53 @@ def run(cmd: list[str], *, check: bool = True, capture: bool = False) -> subproc
 
 
 def refresh_tensor_chain_plain_name_view() -> bool:
-    base = ROOT / "data" / "tensor_chain"
+    base = ROOT / "data" / "evidence" / "tensor_chain"
     if not base.exists():
         return False
     from src.derive_tensor_chain_plain_names import OUT, derive
 
     OUT.write_text(json.dumps(derive(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print("refreshed data/tensor_chain/plain_name_view.json", flush=True)
+    print("refreshed data/evidence/tensor_chain/plain_name_view.json", flush=True)
+    return True
+
+
+def refresh_tensor_chain_manifest() -> bool:
+    base = ROOT / "data" / "evidence" / "tensor_chain"
+    if not base.exists():
+        return False
+    manifest_path = base / "manifest.json"
+    files: dict[str, Any] = {}
+    for path in sorted(base.rglob("*")):
+        if not path.is_file() or path == manifest_path:
+            continue
+        rel = path.relative_to(base).as_posix()
+        files[rel] = {
+            "size": path.stat().st_size,
+            "sha256": sha_file(path),
+        }
+    manifest = {
+        "schema": "d20.tensor_chain.manifest.v2",
+        "status": "TENSOR_CHAIN_MANIFEST_REFRESHED",
+        "canonical_folder": "data/evidence/tensor_chain",
+        "layout": {
+            "arrays": "NPZ array payloads",
+            "reports": "machine and human report files",
+            "stages": "versioned and named experiment stages",
+            "tables": "CSV evidence tables",
+        },
+        "file_count": len(files),
+        "files": files,
+    }
+    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print("refreshed data/evidence/tensor_chain/manifest.json", flush=True)
     return True
 
 
 def rebuild_d20(pretty: bool) -> None:
     from src.derive_d20 import derive
+    refresh_tensor_chain_manifest()
     refresh_tensor_chain_plain_name_view()
+    refresh_tensor_chain_manifest()
     print("$ derive d20.json", flush=True)
     obj = derive()
     D20.write_text(json.dumps(obj, indent=2 if pretty else None, sort_keys=bool(pretty)), encoding="utf-8")

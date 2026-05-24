@@ -67,6 +67,268 @@ def require(cond: bool, msg: str, errors: list[str]) -> None:
         errors.append(msg)
 
 
+EVIDENCE_INVARIANTS_REL = "data/d20/certified_evidence_invariants.json"
+DATA_REGISTRY_REL = "data/index.json"
+EXPECTED_DATA_DOMAINS = {
+    "a236_compute_cache",
+    "coorient_lift",
+    "d20_invariants",
+    "dihedral_formulae",
+    "hcycle_game_control",
+    "integrity_ladders",
+    "quotient_selectors",
+    "raw_core_seeds",
+    "tensor_chain_evidence",
+}
+ALLOWED_DATA_ROLES = {
+    "core_seed",
+    "derived_invariant",
+    "derived_selector",
+    "evidence_archive",
+    "evidence_cache",
+    "reference_formula",
+}
+ALLOWED_DATA_STORAGE = {
+    "canonical_current_layout",
+    "canonical_current_layout_flat",
+    "canonical_standardized_layout",
+    "mixed_canonical_archive",
+}
+
+
+def require_sha256(value: Any, expected: str, label: str, errors: list[str]) -> None:
+    require(value == expected, f"{label} sha256 mismatch", errors)
+
+
+def verify_data_registry(data: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    section = data.get("data_registry", {})
+    require(section.get("present") is True, "data registry missing from d20.json", errors)
+    require(section.get("path") == DATA_REGISTRY_REL, "data registry path mismatch", errors)
+    path = ROOT / DATA_REGISTRY_REL
+    require(path.exists(), "missing data registry file", errors)
+    if path.exists():
+        require(section.get("file_sha256") == sha_file(path), "data registry file hash mismatch", errors)
+    require(section.get("schema") == "d20.data_registry.v1", "data registry schema mismatch", errors)
+    require(section.get("status") == "DATA_REGISTRY_BUILT", "data registry status mismatch", errors)
+
+    policy = section.get("policy", {})
+    require(policy.get("physical_layout") == "domain_grouped_files", "data registry physical layout mismatch", errors)
+    require(policy.get("migration_stage") == "registry_first_before_bulk_move", "data registry migration stage mismatch", errors)
+    ingest_policy = policy.get("ingest_policy", "")
+    require(isinstance(ingest_policy, str) and "transient" in ingest_policy, "data registry ingest policy mismatch", errors)
+
+    data_root = ROOT / "data"
+    actual_dirs = sorted(p.name for p in data_root.iterdir() if p.is_dir())
+    actual_files = sorted(p.name for p in data_root.iterdir() if p.is_file())
+    declared_dirs = sorted(policy.get("canonical_top_level_directories", []))
+    declared_files = sorted(policy.get("canonical_top_level_files", []))
+    require(declared_dirs == actual_dirs, f"data top-level directory set mismatch: {sorted(set(declared_dirs) ^ set(actual_dirs))}", errors)
+    require(actual_files == declared_files, f"data top-level file set mismatch: {sorted(set(declared_files) ^ set(actual_files))}", errors)
+    require(section.get("observed_top_level_directories") == actual_dirs, "data registry observed directory list mismatch", errors)
+    require(section.get("observed_top_level_files") == actual_files, "data registry observed file list mismatch", errors)
+
+    domains = section.get("domains", {})
+    require(isinstance(domains, dict), "data registry domains block missing", errors)
+    if not isinstance(domains, dict):
+        return {"domain_count": 0, "top_level_directories": actual_dirs}
+    require(set(domains) == EXPECTED_DATA_DOMAINS, f"data registry domain set mismatch: {sorted(set(domains) ^ EXPECTED_DATA_DOMAINS)}", errors)
+
+    observations = section.get("domain_observations", {})
+    require(isinstance(observations, dict), "data registry observations block missing", errors)
+
+    for domain_id, entry in domains.items():
+        require(isinstance(entry, dict), f"data registry domain {domain_id} is not an object", errors)
+        if not isinstance(entry, dict):
+            continue
+        rel = entry.get("path")
+        require(isinstance(rel, str) and rel.startswith("data/"), f"{domain_id}: path is not under data/", errors)
+        require(isinstance(rel, str) and "ingest" not in rel.split("/"), f"{domain_id}: path points at ingest", errors)
+        if not isinstance(rel, str):
+            continue
+        base = ROOT / rel
+        require(base.is_dir(), f"{domain_id}: data domain directory missing: {rel}", errors)
+        require(entry.get("canonical_role") in ALLOWED_DATA_ROLES, f"{domain_id}: unknown canonical role", errors)
+        require(entry.get("storage_status") in ALLOWED_DATA_STORAGE, f"{domain_id}: unknown storage status", errors)
+        target = entry.get("target_path")
+        require(isinstance(target, str) and target.startswith("data/"), f"{domain_id}: target path is not under data/", errors)
+        require(isinstance(entry.get("migration_policy"), str) and bool(entry.get("migration_policy")), f"{domain_id}: migration policy missing", errors)
+        classes = entry.get("file_classes", [])
+        require(isinstance(classes, list) and bool(classes), f"{domain_id}: file classes missing", errors)
+        if isinstance(classes, list):
+            for file_class in classes:
+                require(isinstance(file_class, str) and bool(file_class), f"{domain_id}: bad file class", errors)
+        required_files = entry.get("required_files", [])
+        require(isinstance(required_files, list) and bool(required_files), f"{domain_id}: required files missing", errors)
+        if isinstance(required_files, list):
+            for name in required_files:
+                require(isinstance(name, str), f"{domain_id}: required file is not a string", errors)
+                if isinstance(name, str):
+                    require((base / name).exists(), f"{domain_id}: missing required data file {name}", errors)
+
+        obs = observations.get(domain_id, {}) if isinstance(observations, dict) else {}
+        require(isinstance(obs, dict), f"{domain_id}: observation missing", errors)
+        if isinstance(obs, dict):
+            require(obs.get("present") is True, f"{domain_id}: observed domain missing", errors)
+            require(obs.get("path") == rel, f"{domain_id}: observed path mismatch", errors)
+            require(obs.get("file_count", 0) > 0, f"{domain_id}: observed file count is zero", errors)
+            require(obs.get("missing_required_files") == [], f"{domain_id}: observed missing required files", errors)
+
+    tensor = domains.get("tensor_chain_evidence", {})
+    require(tensor.get("path") == "data/evidence/tensor_chain", "tensor-chain canonical path mismatch", errors)
+    require(tensor.get("storage_status") == "canonical_standardized_layout", "tensor-chain storage status should mark standardized layout", errors)
+    require(tensor.get("target_path") == "data/evidence/tensor_chain", "tensor-chain target layout mismatch", errors)
+
+    return {
+        "domain_count": len(domains),
+        "top_level_directories": actual_dirs,
+    }
+
+
+def verify_certified_evidence_invariants(data: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    section = data.get("certified_evidence_invariants", {})
+    require(section.get("present") is True, "certified evidence invariants missing", errors)
+    require(section.get("path") == EVIDENCE_INVARIANTS_REL, "certified evidence invariants path mismatch", errors)
+    path = ROOT / EVIDENCE_INVARIANTS_REL
+    require(path.exists(), "missing certified evidence invariants file", errors)
+    if path.exists():
+        require(section.get("file_sha256") == sha_file(path), "certified evidence invariants file hash mismatch", errors)
+    require(section.get("schema") == "d20.certified_evidence_invariants.v1", "certified evidence invariants schema mismatch", errors)
+    require(
+        section.get("status") == "D20_CERTIFIED_EVIDENCE_INVARIANTS_INTEGRATED",
+        "certified evidence invariants status mismatch",
+        errors,
+    )
+    require(section.get("source_count") == 3, "certified evidence invariant source count mismatch", errors)
+
+    policy = section.get("integration_policy", {})
+    require(policy.get("raw_drops_are_transient") is True, "certified evidence raw-drop policy mismatch", errors)
+    require(policy.get("main_certificate_reads_raw_drop_paths") is False, "certified evidence still reads raw drop paths", errors)
+    require(policy.get("canonical_storage") == EVIDENCE_INVARIANTS_REL, "certified evidence canonical storage mismatch", errors)
+
+    hashes = section.get("witness_hashes", {})
+    require_sha256(hashes.get("computability_certificate_file_sha256"), "22d8f873ab39d244db917b64c2060370f49cd56e865c41e7eef7b0d575a69855", "computability witness file", errors)
+    require_sha256(hashes.get("computability_certificate_self_sha256"), "d6c04263385a476c9b4a52309eecea18c40a62dd864318edc8df9ca5d61de572", "computability witness self", errors)
+    require_sha256(hashes.get("classical_typing_certificate_file_sha256"), "df4e7e7db625a2ebd009a4d17549d6a45357d7a3717f29d8dd6a44f4a8de24e6", "classical typing witness file", errors)
+    require_sha256(hashes.get("classical_typing_certificate_self_sha256"), "1e7f6becb9990b5ab88fa929293c86e3f69587aa4faeb52ff03927ba97f448ad", "classical typing witness self", errors)
+    require_sha256(hashes.get("black_hole_certificate_file_sha256"), "80550ca1147846870c4cca1f3c5be26781cd0ff0a6edb92b1705f125e84e1029", "black-hole witness file", errors)
+    require_sha256(hashes.get("black_hole_certificate_payload_sha256"), "f48790265b61f2963d5c1478764ff2011a587b192b12504c49e3b22201b41130", "black-hole witness payload", errors)
+    require(
+        hashes.get("black_hole_payload_hash_recomputed") == hashes.get("black_hole_certificate_payload_sha256"),
+        "black-hole witness recomputed payload hash mismatch",
+        errors,
+    )
+
+    comp = section.get("computability_proof", {})
+    require(comp.get("status") == "D20_COMPUTABILITY_PROOF_PASS", "computability proof status mismatch", errors)
+    counts = comp.get("counts", {})
+    require(counts.get("A_roles") == 42, "computability proof A role count mismatch", errors)
+    require(counts.get("B_atoms") == 20, "computability proof B atom count mismatch", errors)
+    require(counts.get("matrix_shape") == [42, 20], "computability proof matrix shape mismatch", errors)
+    require(comp.get("row_sum_id_loop") == 10, "computability proof id/loop row sum mismatch", errors)
+    require(comp.get("row_sum_arrow") == 4, "computability proof arrow row sum mismatch", errors)
+    require(comp.get("col_sum_all_b") == 12, "computability proof column sum mismatch", errors)
+    require(comp.get("rank_Q_f") == 15, "computability proof f-rank mismatch", errors)
+    require(comp.get("ker_A_dim") == 27, "computability proof A-kernel dimension mismatch", errors)
+    require(comp.get("ker_B_dim") == 5, "computability proof B-kernel dimension mismatch", errors)
+    require(comp.get("A_d20") == 1_341_849_600, "computability proof A_d20 mismatch", errors)
+    require(comp.get("S_d20") == 14_560, "computability proof S_d20 mismatch", errors)
+    require(comp.get("sum_a_Ia") == 16_102_195_200, "computability proof integral sum value mismatch", errors)
+    require(comp.get("sum_a_Ia_equals_12_A_d20") is True, "computability proof integral sum mismatch", errors)
+    require(comp.get("epsilon0") == 589_824, "computability proof epsilon0 mismatch", errors)
+    require(comp.get("Gamma3_infinity") == 9_216, "computability proof Gamma3 infinity mismatch", errors)
+    require(comp.get("kappa_D6") == 23_040, "computability proof D6 kappa mismatch", errors)
+    require(comp.get("nu") == "5/2", "computability proof nu mismatch", errors)
+    require(comp.get("packet_count") == 455, "computability proof packet count mismatch", errors)
+    require(comp.get("identity_5epsilon0_equals_128kappa") is True, "computability proof 5epsilon0 identity mismatch", errors)
+    denom = comp.get("local_entropy_denominator_histogram", {})
+    require(denom == {"1": 8, "3": 8, "5": 22, "15": 4}, "computability proof entropy denominator histogram mismatch", errors)
+    qsig = comp.get("A985_quarter_signature", {})
+    require(qsig.get("floor_sum") == 243, "computability proof A985 quarter floor sum mismatch", errors)
+    require(qsig.get("mod4_sum") == 13, "computability proof A985 mod4 sum mismatch", errors)
+    require(qsig.get("mod4_rank_Q") == 3, "computability proof A985 mod4 rank mismatch", errors)
+    leech = comp.get("Leech_packet_identities", {})
+    require(leech.get("98280=455*6^3") is True, "computability proof Leech 98280 identity mismatch", errors)
+    require(leech.get("196560=455*2*6^3") is True, "computability proof Leech 196560 identity mismatch", errors)
+
+    fab = section.get("classical_typing", {})
+    require(fab.get("schema") == "d20.fab.classical_typing.v1", "f(a)(b) classical typing schema mismatch", errors)
+    require(fab.get("status") == "FAB_CLASSICAL_TYPING_VERIFIER_PASS", "f(a)(b) classical typing status mismatch", errors)
+    require(fab.get("primitive_notation") == "f(a)(b)", "f(a)(b) primitive notation mismatch", errors)
+    require(fab.get("deprecated_name") == "AreaInc", "f(a)(b) deprecated name mismatch", errors)
+    finv = fab.get("invariants", {})
+    require(finv.get("rank_Q_f_matrix") == 15, "f(a)(b) rank mismatch", errors)
+    require(finv.get("atom_kernel_dimension") == 5, "f(a)(b) atom kernel dimension mismatch", errors)
+    require(finv.get("role_relation_kernel_dimension") == 27, "f(a)(b) role kernel dimension mismatch", errors)
+    require(finv.get("pointwise_trace_sum_a_f(a)(b)") == 12, "f(a)(b) pointwise trace mismatch", errors)
+    require(finv.get("column_support_counts_unique") == [4, 10], "f(a)(b) support-count signature mismatch", errors)
+    require(finv.get("sum_a_I(a)") == 16_102_195_200, "f(a)(b) integral sum value mismatch", errors)
+    require(finv.get("sum_a_I(a)_equals_12_A_d20") is True, "f(a)(b) integral sum mismatch", errors)
+    require(finv.get("A_d20") == 1_341_849_600, "f(a)(b) A_d20 mismatch", errors)
+    require(finv.get("S_d20") == 14_560, "f(a)(b) S_d20 mismatch", errors)
+    require(finv.get("W_D6") == 23_040, "f(a)(b) W_D6 mismatch", errors)
+    fab_sets = fab.get("sets", {})
+    require(fab_sets.get("A_size") == 42, "f(a)(b) A size mismatch", errors)
+    require(fab_sets.get("B_size") == 20, "f(a)(b) B size mismatch", errors)
+    require(fab_sets.get("H6") == ["B-", "B+", "V-", "V+", "S-", "S+"], "f(a)(b) H6 order mismatch", errors)
+
+    bh = section.get("black_hole_certified_simulator", {})
+    require(bh.get("schema") == "d20.black_hole.certified_simulator@3", "black-hole simulator schema mismatch", errors)
+    require(bh.get("status") == "D20_BLACK_HOLE_CERTIFIED_SIMULATOR_PASS", "black-hole simulator status mismatch", errors)
+    require(bh.get("all_checks_pass") is True, "black-hole simulator checks not all pass", errors)
+    for key, value in bh.get("checks", {}).items():
+        require(value is True, f"black-hole simulator check failed: {key}", errors)
+    dinv = bh.get("d20_invariants", {})
+    core = dinv.get("core", {})
+    require(core.get("d20_status") == "D20_CERTIFIED", "black-hole simulator d20 status mismatch", errors)
+    require(core.get("relation_count_A985") == 985, "black-hole simulator relation count mismatch", errors)
+    require(core.get("tensor_support_A985") == 1_414_965, "black-hole simulator tensor support mismatch", errors)
+    require(core.get("tensor_coefficient_total_A985") == 2_537_360, "black-hole simulator tensor coefficient mismatch", errors)
+    require(core.get("object_pair_matrix_shape") == [6, 6], "black-hole simulator object-pair shape mismatch", errors)
+    require(core.get("A42_classes") == 42, "black-hole simulator A42 count mismatch", errors)
+    require(core.get("A12_classes") == 12, "black-hole simulator A12 count mismatch", errors)
+    require(core.get("A42_to_A12_consistent") is True, "black-hole simulator A42/A12 consistency mismatch", errors)
+    require(core.get("dodecad_shell_size") == 2576, "black-hole simulator dodecad shell size mismatch", errors)
+    board = dinv.get("board", {})
+    require(board.get("vertices") == 20, "black-hole simulator board vertex count mismatch", errors)
+    require(board.get("edges") == 30, "black-hole simulator board edge count mismatch", errors)
+    require(board.get("degree") == 3, "black-hole simulator board degree mismatch", errors)
+    require(board.get("girth") == 5, "black-hole simulator board girth mismatch", errors)
+    require(board.get("diameter") == 5, "black-hole simulator board diameter mismatch", errors)
+    require(board.get("cycle_rank") == 11, "black-hole simulator board cycle-rank mismatch", errors)
+    require(board.get("automorphism_count") == 120, "black-hole simulator board automorphism mismatch", errors)
+    require(board.get("faces_are_all_C6_3") is True, "black-hole simulator board face mismatch", errors)
+    q = dinv.get("quinticity_area_law", {})
+    require(q.get("epsilon0") == 589_824, "black-hole simulator epsilon0 mismatch", errors)
+    require(q.get("Gamma_3_infty_order") == 9_216, "black-hole simulator Gamma_3_infty order mismatch", errors)
+    require(q.get("W_D6_order") == 23_040, "black-hole simulator W_D6 order mismatch", errors)
+    require(q.get("W_D6_over_Gamma_3_infty") == "5/2", "black-hole simulator W_D6/Gamma ratio mismatch", errors)
+    require(q.get("protected_entropy_packet") == "32", "black-hole simulator protected entropy packet mismatch", errors)
+    require(q.get("closed_packets_in_E_d20") == 455, "black-hole simulator closed packet count mismatch", errors)
+    require(q.get("S_d20") == 14_560, "black-hole simulator S_d20 mismatch", errors)
+    rgba = dinv.get("rgba_forcing", {})
+    require(rgba.get("RGBA_total") == 32, "black-hole simulator RGBA total mismatch", errors)
+    require(rgba.get("RGB_visible_payload_dim") == 24, "black-hole simulator RGB payload dimension mismatch", errors)
+    require(rgba.get("complete_BVS_count") == 8, "black-hole simulator complete BVS count mismatch", errors)
+    require(rgba.get("boundary_count") == 12, "black-hole simulator boundary count mismatch", errors)
+    wall = dinv.get("tropical_wall_summary", {})
+    require(wall.get("collision_levels") == [72, 96], "black-hole simulator wall collision levels mismatch", errors)
+    require(wall.get("wall_gap") == 24, "black-hole simulator wall gap mismatch", errors)
+    require(wall.get("closed_wall_gap") == 120, "black-hole simulator closed wall gap mismatch", errors)
+    require(wall.get("face_mass_count") == 20, "black-hole simulator face mass count mismatch", errors)
+    inverse = bh.get("pole_packet", {}).get("exact_inverse_audit", {})
+    require(inverse.get("max_abs_err_M", 1.0) < 1e-12, "black-hole simulator inverse M precision mismatch", errors)
+    require(inverse.get("max_abs_err_a", 1.0) < 1e-12, "black-hole simulator inverse a precision mismatch", errors)
+    require(inverse.get("max_abs_err_Q", 1.0) < 1e-12, "black-hole simulator inverse Q precision mismatch", errors)
+    sim = bh.get("simulation_summary", {})
+    require(sim.get("visited_states") == 20, "black-hole simulator visited state count mismatch", errors)
+    require(sim.get("integrity_projection_count") == 0, "black-hole simulator integrity projection count mismatch", errors)
+
+    return {
+        "source_count": section.get("source_count"),
+        "path": section.get("path"),
+    }
+
+
 def verify_root(errors: list[str]) -> dict[str, Any]:
     cert = load_json("certificate.json")
     require(cert.get("schema") in {"d20.verifier.v1", "d20.verifier.v2"}, "root schema mismatch", errors)
@@ -124,6 +386,8 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "zero_axiom_coorient",
         "universal_integral_uniqueness",
         "pre_A985_relation_body_theorem",
+        "data_registry",
+        "certified_evidence_invariants",
         "tensor_chain",
         "layer_registry",
         "layer_certificates",
@@ -157,11 +421,13 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     require(pr.get("uses_relation_table_as_input") is False, "pre-A985 theorem uses relation table as input", errors)
     require(pr.get("A985_relation_count") == 985, "pre-A985 relation count mismatch", errors)
     require(pr.get("T985_support") == 1414965, "pre-A985 tensor support mismatch", errors)
+    data_registry = verify_data_registry(data, errors)
+    evidence_invariants = verify_certified_evidence_invariants(data, errors)
     tensor_chain = data.get("tensor_chain", {})
     require(tensor_chain.get("status") == "TENSOR_CHAIN_EVIDENCE_CERTIFIED", "tensor_chain status mismatch", errors)
     require(tensor_chain.get("present") is True, "tensor_chain evidence missing", errors)
     require(tensor_chain.get("public_name") == "tensor_chain", "tensor_chain public name mismatch", errors)
-    require(tensor_chain.get("path") == "data/tensor_chain", "tensor_chain path mismatch", errors)
+    require(tensor_chain.get("path") == "data/evidence/tensor_chain", "tensor_chain path mismatch", errors)
     plain_name_view = tensor_chain.get("plain_name_view", {})
     require(plain_name_view.get("present") is True, "tensor_chain plain-name view missing", errors)
     require(plain_name_view.get("status") == "TENSOR_CHAIN_PLAIN_NAME_VIEW_GENERATED", "tensor_chain plain-name view status mismatch", errors)
@@ -200,6 +466,8 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "layer_registry_entries": len(registry.get("layers", [])),
         "json_invariant_file_count": len(data.get("json_invariants", {})),
         "npz_array_manifest_count": len(data.get("npz_array_manifests", {})),
+        "data_registry_domain_count": data_registry.get("domain_count"),
+        "certified_evidence_source_count": evidence_invariants.get("source_count"),
         "tensor_chain_present": bool(tensor_chain.get("present", False)),
         "hcycle_present": bool(data.get("game_theory", {}).get("present", False)),
         "hcycle_primitive_cycles": data.get("game_theory", {}).get("primitive_H_cycles", {}).get("count"),
@@ -576,7 +844,57 @@ def verify_constructor_witness(errors: list[str]) -> dict[str, Any]:
     }
 
 
+def verify_tamper_resistance() -> dict[str, Any]:
+    data = load_json("d20.json")
+    clean_errors: list[str] = []
+    verify_certified_evidence_invariants(data, clean_errors)
+
+    def cloned() -> dict[str, Any]:
+        return json.loads(json.dumps(data))
+
+    cases: list[dict[str, Any]] = []
+
+    def add_case(name: str, expected_error: str, mutate: Any) -> None:
+        tampered = cloned()
+        mutate(tampered["certified_evidence_invariants"])
+        errors: list[str] = []
+        verify_certified_evidence_invariants(tampered, errors)
+        cases.append({
+            "name": name,
+            "expected_error": expected_error,
+            "detected": expected_error in errors,
+            "errors": errors,
+        })
+
+    add_case(
+        "computability witness hash",
+        "computability witness file sha256 mismatch",
+        lambda section: section["witness_hashes"].__setitem__("computability_certificate_file_sha256", "0" * 64),
+    )
+    add_case(
+        "black-hole epsilon0",
+        "black-hole simulator epsilon0 mismatch",
+        lambda section: section["black_hole_certified_simulator"]["d20_invariants"]["quinticity_area_law"].__setitem__("epsilon0", 0),
+    )
+
+    errors = list(clean_errors)
+    for case in cases:
+        if not case["detected"]:
+            errors.append(f"tamper case did not fail closed: {case['name']}")
+
+    return {
+        "status": "PASS" if not errors else "FAIL",
+        "mode": "tamper",
+        "clean_evidence": "PASS" if not clean_errors else "FAIL",
+        "cases": cases,
+        "errors": errors,
+    }
+
+
 def run(mode: str) -> dict[str, Any]:
+    if mode == "tamper":
+        return verify_tamper_resistance()
+
     errors: list[str] = []
     root = verify_root(errors)
     d20 = verify_d20_json(errors)
@@ -621,7 +939,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(
         description="Verify the d20 bundle. Only --mode rebuild or --regenerate rewrites files."
     )
-    ap.add_argument("--mode", choices=["fast", "audit", "rebuild"], default="audit")
+    ap.add_argument("--mode", choices=["fast", "audit", "rebuild", "tamper"], default="audit")
     ap.add_argument("--pretty", action="store_true")
     ap.add_argument(
         "--regenerate",

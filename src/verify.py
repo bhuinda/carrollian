@@ -6,7 +6,8 @@ three practical verification modes without hiding file writes behind a default:
 
 * core: validate the mathematical core and layer statuses only;
 * audit: validate core plus constructor witness and the file manifest;
-* rebuild: regenerate d20.json, refresh hashes, then audit.
+* rebuild: regenerate d20.json, refresh hashes, then audit;
+* tamper: mutate certified evidence in memory and require verification failure.
 """
 from __future__ import annotations
 
@@ -27,6 +28,7 @@ MODES = {
     "core": "fast",
     "audit": "audit",
     "rebuild": "rebuild",
+    "tamper": "tamper",
 }
 
 
@@ -55,7 +57,7 @@ def finish(result: dict[str, Any], pretty: bool) -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Verify the d20 bundle.")
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("core", "audit", "rebuild"):
+    for name in ("core", "audit", "rebuild", "tamper"):
         p = sub.add_parser(name)
         p.add_argument("--pretty", action="store_true")
     args = parser.parse_args()

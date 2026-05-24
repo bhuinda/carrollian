@@ -1,0 +1,77 @@
+{
+  "schema": "G.d20.v19.chamber_projector_test",
+  "status": "V19_CHAMBER_PROJECTOR_TEST_COMPLETE",
+  "null_point": "011",
+  "core_result": "The (B+S)/V active plane is the symmetry-breaking chamber projector: it explains the six-channel operator far better than invariant averaging and has a small but exact stabilizer under the constructed signed-Fano action.",
+  "active_plane": {
+    "u0": "(B+V+S)/sqrt(3)",
+    "uV": "(B-2V+S)/sqrt(6)",
+    "excluded": "uBS=(B-S)/sqrt(2)"
+  },
+  "energy": {
+    "active_chamber_energy_fraction_vs_A6": 0.9935526370391362,
+    "pair_projection_energy_fraction_vs_A6": 0.993552637039136,
+    "nonpair_residual_energy_fraction_vs_A6": 0.006447362960863471,
+    "WD6_scalar_energy_fraction_vs_A6": 0.16527128063080068,
+    "active_chamber_Rhat_energy_fraction_vs_R": 1912419.1322719075,
+    "full_A6_Rhat_energy_fraction_vs_R": 1912419.1322719003,
+    "active_chamber_share_of_Rhat_energy": 1.0000000000000038,
+    "active_chamber_share_of_six_channel_reconstruction": 1.0000000000000038,
+    "note_on_full_R_scale": "The lifted Rhat matrices are not used as absolute full-R energy certificates here; v19 is a six-channel/chamber-carrier test. Use share vs A6 and share vs full six-channel Rhat."
+  },
+  "stabilizers": {
+    "signed_fano_768_active_plane_stabilizer_size": 32,
+    "signed_fano_768_active_plane_orbit_size": 24,
+    "full_WD6_active_plane_stabilizer_size": 192,
+    "full_WD6_active_plane_orbit_size": 120,
+    "signed_fano_768_active_operator_stabilizer_size": 16,
+    "full_WD6_active_operator_stabilizer_size": 96
+  },
+  "commutant": [
+    {
+      "group": "signed_fano_768",
+      "stabilizer_size": 32,
+      "H6_commutant_dimension": 5,
+      "Foam16_commutant_dimension": 16
+    },
+    {
+      "group": "full_WD6_23040",
+      "stabilizer_size": 192,
+      "H6_commutant_dimension": 4,
+      "Foam16_commutant_dimension": 8
+    }
+  ],
+  "random_control": {
+    "trials": 2000,
+    "observed_active_energy_share_vs_A6": 0.9935526370391362,
+    "random_mean_active_energy_share_vs_A6": 0.1731938983855484,
+    "random_max_active_energy_share_vs_A6": 0.9613846672498797,
+    "observed_percentile_active_energy_share": 1.0,
+    "observed_Rhat_share_vs_Rhat": 1.0000000000000038,
+    "random_mean_Rhat_share_vs_Rhat": 0.22796920855209007,
+    "random_max_Rhat_share_vs_Rhat": 4.2221632255119825,
+    "observed_percentile_Rhat_share": 0.9235
+  },
+  "files": {
+    "v19_chamber_projector/active_basis_component_energy.csv": "d120862b5ecb25793644bd3453a5b175b8c63ec019e12450c724c5d86c0e59be",
+    "v19_chamber_projector/chamber_projector_reconstruction_ablation.csv": "ee1adb8c41b003945df9a93762c352f1bb539bed39f2b518209deb8fc65756f8",
+    "v19_chamber_projector/chamber_projector_stabilizers.csv": "44e627347e75d5b1f4dfc4016e5eff30cb18aa2737745f2fbe493f583f24f6d3",
+    "v19_chamber_projector/chamber_operator_stabilizers.csv": "1aad173a67fd8266e13e3455927e697f8fdc35196b6025f691c3f1d08b07fa07",
+    "v19_chamber_projector/chamber_projector_orbit_summary.csv": "5f4c1d15c4ebd57ad4c4577fe48fe5cac473fb06270712ab55a4abcc8c00cff8",
+    "v19_chamber_projector/active_chamber_stabilizer_commutant_dimensions.csv": "5522915971ac5420cd5cb13ef2f0f46b957ee49e4af0a12c7bb4b0be60b63a42",
+    "v19_chamber_projector/invariant_vs_chamber_projector_averages.csv": "3526549d33a100f316361e63df19fb435834d7edae920564a6a669c1cf2b37c3",
+    "v19_chamber_projector/random_2plane_chamber_projector_controls.csv": "1a4e70ecf4e89439b4c393eb5d4294ae8ba5901ce46f2a8f5d5016c73d86143b",
+    "v19_chamber_projector/random_2plane_chamber_projector_control_summary.json": "e30e773770b442e977392603a28adbc06d5ef2d020a8837009f8dae483bfe98e",
+    "v19_chamber_projector/A6_full_best_normalized_null011.csv": "77931927fce9845310e26c60c313eb60899c9026eadd548715d1fbf30bfd6247",
+    "v19_chamber_projector/A6_active_chamber_projection.csv": "44e399d4ccaa4957bcc2f2b106a32cd97291d0121ed45bc6c88d1a674e864543",
+    "v19_chamber_projector/A6_no_active_chamber.csv": "bf66d72a03fb2480ae981388b84287cb583981e9d777d0fe797243def46e8dbb",
+    "v19_chamber_projector/A6_pair_projection.csv": "3774e1e11a5cd1773dfb1259d829d5b8cc73d0af74ed84ec33d39f8e9e0d2267",
+    "v19_chamber_projector/A6_nonpair_residual.csv": "0178c1545f835b7064aa17b536136545cbead23a7b5f543d6e43e55aab61cc46",
+    "v19_chamber_projector/H6_active_chamber_projector.csv": "11fbc0ca937c6a817b1839fe6b074ac65b32c08c800f091d3ca9d991822af8c8",
+    "v19_chamber_projector/H6_pair_projector.csv": "c0fd2d3523cb9881bbcdbb3f83ac645624cc595f58857e86aefee90625578e87",
+    "v19_chamber_projector/signed_fano_full_average_A6.csv": "831792837f37d7f2d5807ebe1a4e72302ab717503211c9c5a9c8fa0693ad5454",
+    "v19_chamber_projector/signed_fano_active_stabilizer_average_A6.csv": "0b57d755b163d9a8a6af845eb03cacdaa5e9b9d16a92cb6d8548339d940a1789",
+    "v19_chamber_projector/v19_chamber_projector_report.md": "d2ce55718d7b46e9bc895a8fbe57be49779aacc305ec1c9407f0fae77b54ac33",
+    "v19_chamber_projector/v19_chamber_projector_report.json": "94a9f7562f628735fb42e402a8589ade6b484da2364857ee3398c47d563f6885"
+  }
+}

@@ -20,6 +20,12 @@ Rebuild `d20.json`, refresh hashes, and then certify the bundle:
 python src/verify.py rebuild
 ```
 
+Check that the certified-evidence section fails closed under in-memory tampering:
+
+```shell
+python src/verify.py tamper
+```
+
 The object is not represented by stored orbitals/tensors as primitive data. It just... exists. Quietly, and monstrously.
 
 - `2576` dodecads
@@ -27,8 +33,11 @@ The object is not represented by stored orbitals/tensors as primitive data. It j
 - `1,414,965` tensor entries
 - `A985 -> A236 -> A42 -> A12`
 - packet-20, optics, integrity, H-cycles, and game/control invariants
-- `data/tensor_chain` contains the extracted tensor-chain evidence, with a
-  plain-name index at `data/tensor_chain/index.json`
+- `data/index.json` is the canonical data-domain registry. It marks current
+  folders, required files, roles, and the planned normalized layout.
+- `data/evidence/tensor_chain` contains the extracted tensor-chain evidence,
+  split into reports, tables, arrays, and stages with a plain-name index at
+  `data/evidence/tensor_chain/index.json`.
 
 The layer stack is indexed by `layers/index.json` and stored as flat JSON files
 inside semantic group directories such as `layers/tube`, `layers/drinfeld`, and

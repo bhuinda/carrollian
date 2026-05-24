@@ -724,8 +724,75 @@ def npz_manifests() -> dict[str, Any]:
     return out
 
 
+def data_registry() -> dict[str, Any]:
+    path = ROOT / "data" / "index.json"
+    if not path.exists():
+        return {"status": "DATA_REGISTRY_MISSING", "present": False}
+
+    payload = load_json(path)
+    domains = payload.get("domains", {})
+    observations: dict[str, Any] = {}
+    if isinstance(domains, dict):
+        for domain_id, entry in sorted(domains.items()):
+            if not isinstance(entry, dict):
+                continue
+            rel = entry.get("path")
+            if not isinstance(rel, str):
+                continue
+            base = ROOT / rel
+            suffix_counts: dict[str, int] = {}
+            file_count = 0
+            if base.exists():
+                for file_path in base.rglob("*"):
+                    if not file_path.is_file():
+                        continue
+                    file_count += 1
+                    suffix = file_path.suffix.lower() or "<none>"
+                    suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
+            required = entry.get("required_files", [])
+            missing_required = [
+                name
+                for name in required
+                if isinstance(name, str) and not (base / name).exists()
+            ] if isinstance(required, list) else []
+            observations[domain_id] = {
+                "path": rel,
+                "present": base.is_dir(),
+                "file_count": file_count,
+                "suffix_counts": suffix_counts,
+                "missing_required_files": missing_required,
+            }
+
+    data_root = ROOT / "data"
+    top_dirs = sorted(p.name for p in data_root.iterdir() if p.is_dir())
+    top_files = sorted(p.name for p in data_root.iterdir() if p.is_file())
+    return {
+        "path": "data/index.json",
+        "file_sha256": sha_file(path),
+        "present": True,
+        "observed_top_level_directories": top_dirs,
+        "observed_top_level_files": top_files,
+        "domain_observations": observations,
+        **payload,
+    }
+
+
+def certified_evidence_invariants() -> dict[str, Any]:
+    path = ROOT / "data" / "d20" / "certified_evidence_invariants.json"
+    if not path.exists():
+        return {"status": "D20_CERTIFIED_EVIDENCE_INVARIANTS_MISSING", "present": False}
+    payload = load_json(path)
+    return {
+        "path": "data/d20/certified_evidence_invariants.json",
+        "file_sha256": sha_file(path),
+        "present": True,
+        **payload,
+    }
+
+
 def tensor_chain_evidence() -> dict[str, Any]:
-    base = ROOT / "data" / "tensor_chain"
+    rel_base = "data/evidence/tensor_chain"
+    base = ROOT / "data" / "evidence" / "tensor_chain"
     if not base.exists():
         return {"status": "TENSOR_CHAIN_EVIDENCE_MISSING", "present": False}
 
@@ -737,19 +804,19 @@ def tensor_chain_evidence() -> dict[str, Any]:
         suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
 
     key_report_names = [
-        "Romega_classification_report.json",
-        "fano/fano_layer_report.json",
-        "fano_6j/fano_6j_contraction_report.json",
-        "v13_decisive_tests/v13_decisive_tests_report.json",
-        "v14_curvature_descent/v14_curvature_descent_report.json",
-        "v15_chamber_source/v15_chamber_source_report.json",
-        "v16_mechanism_test/v16_mechanism_test_report.json",
-        "v17_signed_fano_global_recovery/v17_signed_fano_global_recovery_report.json",
-        "v18_constructed_signed_fano_action/v18_constructed_signed_fano_action_report.json",
-        "v19_chamber_projector/v19_chamber_projector_report.json",
-        "v20_all_four_lifts/v20_all_four_lifts_report.json",
-        "v21_typeC_csdo_resolution/v21_typeC_csdo_resolution_report.json",
-        "v22_raw_tensor_chain_test/v22_raw_tensor_chain_report.json",
+        "reports/Romega_classification_report.json",
+        "stages/fano/fano_layer_report.json",
+        "stages/fano_6j/fano_6j_contraction_report.json",
+        "stages/v13_decisive_tests/v13_decisive_tests_report.json",
+        "stages/v14_curvature_descent/v14_curvature_descent_report.json",
+        "stages/v15_chamber_source/v15_chamber_source_report.json",
+        "stages/v16_mechanism_test/v16_mechanism_test_report.json",
+        "stages/v17_signed_fano_global_recovery/v17_signed_fano_global_recovery_report.json",
+        "stages/v18_constructed_signed_fano_action/v18_constructed_signed_fano_action_report.json",
+        "stages/v19_chamber_projector/v19_chamber_projector_report.json",
+        "stages/v20_all_four_lifts/v20_all_four_lifts_report.json",
+        "stages/v21_typeC_csdo_resolution/v21_typeC_csdo_resolution_report.json",
+        "stages/v22_raw_tensor_chain_test/v22_raw_tensor_chain_report.json",
     ]
     key_reports: dict[str, Any] = {}
     for rel in key_report_names:
@@ -771,7 +838,7 @@ def tensor_chain_evidence() -> dict[str, Any]:
     plain_name_view = load_json(plain_name_view_path) if plain_name_view_path.exists() else {}
     plain_name_summary = {
         "present": bool(plain_name_view),
-        "path": "data/tensor_chain/plain_name_view.json",
+        "path": f"{rel_base}/plain_name_view.json",
         "schema": plain_name_view.get("schema"),
         "status": plain_name_view.get("status"),
         "sha256": sha_file(plain_name_view_path) if plain_name_view_path.exists() else None,
@@ -781,9 +848,9 @@ def tensor_chain_evidence() -> dict[str, Any]:
         "status": "TENSOR_CHAIN_EVIDENCE_CERTIFIED",
         "present": True,
         "public_name": "tensor_chain",
-        "path": "data/tensor_chain",
-        "source_folder": "ingest/g_v22_Romega_raw_tensor_chain_test",
-        "source_preservation": "original artifact filenames and table headers are retained for traceability",
+        "path": rel_base,
+        "source_integration": "source drops are transient; canonical artifacts live under data/evidence/tensor_chain",
+        "source_preservation": "original artifact filenames and table headers are retained inside the canonical data tree for traceability",
         "file_counts_by_suffix": suffix_counts,
         "plain_names": index.get("plain_names", {}),
         "plain_name_view": plain_name_summary,
@@ -972,6 +1039,8 @@ def derive() -> dict[str, Any]:
         "zero_axiom_coorient": zero_axiom,
         "universal_integral_uniqueness": universal_uniqueness,
         "pre_A985_relation_body_theorem": pre_a985_relation_body_theorem(),
+        "data_registry": data_registry(),
+        "certified_evidence_invariants": certified_evidence_invariants(),
         "tensor_chain": tensor_chain_evidence(),
         "coorient_seed": coorient_seed_invariants(),
         "final_investigation": final_investigation_status(zero_axiom, universal_uniqueness),

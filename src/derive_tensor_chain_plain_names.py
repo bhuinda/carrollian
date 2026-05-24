@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any, Pattern
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = ROOT / "data" / "tensor_chain"
+BASE = ROOT / "data" / "evidence" / "tensor_chain"
 INDEX = BASE / "index.json"
 OUT = BASE / "plain_name_view.json"
 
@@ -190,10 +190,10 @@ def derive() -> dict[str, Any]:
     return {
         "schema": "d20.tensor_chain.plain_name_view.v1",
         "status": "TENSOR_CHAIN_PLAIN_NAME_VIEW_GENERATED",
-        "source_folder": "data/tensor_chain",
-        "generated_file": "data/tensor_chain/plain_name_view.json",
+        "canonical_folder": "data/evidence/tensor_chain",
+        "generated_file": "data/evidence/tensor_chain/plain_name_view.json",
         "source_preservation": "This is an alias view only. It does not rename or edit source evidence files.",
-        "rule_source": "data/tensor_chain/index.json#/plain_names",
+        "rule_source": "data/evidence/tensor_chain/index.json#/plain_names",
         "plain_names": index.get("plain_names", {}),
         "summary": {
             "source_file_count": len(file_aliases),
