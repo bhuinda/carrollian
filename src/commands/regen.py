@@ -146,6 +146,8 @@ def refresh_ss_sat_manifest() -> bool:
         if not path.is_file() or path == manifest_path:
             continue
         rel = path.relative_to(base).as_posix()
+        if rel.startswith("source_archives/legacy_roots/"):
+            continue
         files[rel] = {
             "size": path.stat().st_size,
             "sha256": sha_file(path),
@@ -162,6 +164,10 @@ def refresh_ss_sat_manifest() -> bool:
             "proofs": "DRAT, LRAT, FRAT, and extracted LRAT proof artifacts",
             "reports": "machine and human reports",
             "residues": "typed failed or blocked seams",
+            "schema": "external evidence manifest schema",
+            "scripts": "versioned evidence analysis and extraction scripts",
+            "source_archives": "zip evidence bundles plus local-only archived staging roots",
+            "source_versions": "versioned provenance copied from consolidated gnatural drops",
             "tables": "CSV evidence summaries",
         },
         "file_count": len(files),

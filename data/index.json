@@ -29,7 +29,7 @@
     "data/invariants/integrity": "proof-system integrity and boundary ledgers",
     "data/evidence/tensor_chain": "tensor-chain evidence split into reports, tables, arrays, and stages",
     "data/evidence/a236_compute": "A236 computation cache and branching evidence",
-    "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, and manifests",
+    "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, manifests, and versioned source provenance",
     "data/reference/dihedral": "general dihedral formula references"
   },
   "domains": {
@@ -215,7 +215,7 @@
       "owner": "ss_sat",
       "storage_status": "canonical_standardized_layout",
       "target_path": "data/evidence/ss_sat",
-      "migration_policy": "transient gnatural_ontological_computation version bundles consolidated into canonical evidence tree",
+      "migration_policy": "transient gnatural_ontological_computation version bundles collapsed into canonical evidence tree with top-level drops archived locally",
       "file_classes": [
         "cnf_benchmark",
         "csv_table",
@@ -224,6 +224,8 @@
         "json_report",
         "markdown_report",
         "proof_artifact",
+        "python_source",
+        "schema_json",
         "solver_log",
         "typed_residue"
       ],
@@ -235,7 +237,9 @@
         "tables/solver_run_summary.csv",
         "tables/proof_verification_summary.csv",
         "tables/cvx_integrity_summary.csv",
-        "residues/kissat_sigsegv.json"
+        "residues/kissat_sigsegv.json",
+        "source_versions/index.json",
+        "schema/external_evidence_manifest.schema.json"
       ],
       "standardized_subdirectories": {
         "benchmarks": "DIMACS fixture inputs",
@@ -245,7 +249,11 @@
         "residues": "typed failed or blocked seams",
         "reports": "human and machine reports",
         "tables": "CSV summary tables",
-        "manifests": "source evidence manifests with command lines and hashes"
+        "manifests": "source evidence manifests with command lines and hashes",
+        "source_versions": "versioned provenance copied from consolidated gnatural drops",
+        "source_archives": "zip evidence bundles plus local-only archived staging roots",
+        "scripts": "versioned evidence analysis and extraction scripts",
+        "schema": "external evidence manifest schema"
       }
     }
   }

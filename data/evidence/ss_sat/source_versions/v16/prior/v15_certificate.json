@@ -1,0 +1,213 @@
+{
+  "benchmarks": [
+    {
+      "benchmark": "contradiction_4",
+      "clauses": 5,
+      "nvars": 4,
+      "path": "benchmarks/contradiction_4.cnf",
+      "sha256": "7faffbcb0ea91aefcf41eefea00b42410b78b2e868c7e1d67edd09277b3f2806"
+    },
+    {
+      "benchmark": "horn_chain_8",
+      "clauses": 9,
+      "nvars": 8,
+      "path": "benchmarks/horn_chain_8.cnf",
+      "sha256": "3601cd91d51f57fe4f31a096e0c5f3898978c40a387098bd754c91730e190155"
+    },
+    {
+      "benchmark": "horn_chain_12",
+      "clauses": 13,
+      "nvars": 12,
+      "path": "benchmarks/horn_chain_12.cnf",
+      "sha256": "539ee15e758ab0c82af36cc4649523a4b4598ddada0b807d6e869faaf2f83a8e"
+    },
+    {
+      "benchmark": "php_3_2",
+      "clauses": 12,
+      "nvars": 6,
+      "path": "benchmarks/php_3_2.cnf",
+      "sha256": "91bf2390d8e9a627026bf2f25936b1c8fa7db6dd52823c4a2bfd909d1d2cf9a2"
+    },
+    {
+      "benchmark": "xor_unsat",
+      "clauses": 24,
+      "nvars": 5,
+      "path": "benchmarks/xor_unsat.cnf",
+      "sha256": "1c696ba485b72373822e6e54446d04286eefe53b2efa684e598c88ee68fa1e6e"
+    }
+  ],
+  "canary_ingestion": {
+    "adapter_stderr": "",
+    "adapter_stdout": "{\n  \"out\": \"/mnt/data/gnatural_ontological_computation_v15/fixtures/canary_canonical_events.json\",\n  \"sources\": 4,\n  \"event_counts\": [\n    0,\n    0,\n    3,\n    3\n  ],\n  \"hashes\": [\n    \"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\",\n    \"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\",\n    \"3efa648eb204fea629f3fc1c0d8bc023a92c13c4102af54dfecb92adf4637f9b\",\n    \"3be4fd6c2b0928ef4082c8b5a803baeb17932b67cb25668d32ae36c86dcfca44\"\n  ]\n}\n",
+    "pass": true,
+    "sources": [
+      {
+        "events": 0,
+        "semantic_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source": "/mnt/data/gnatural_ontological_computation_v15/fixtures/minisat_style.stdout.txt"
+      },
+      {
+        "events": 0,
+        "semantic_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source": "/mnt/data/gnatural_ontological_computation_v15/fixtures/cadical_style.stdout.txt"
+      },
+      {
+        "events": 3,
+        "semantic_hash": "3efa648eb204fea629f3fc1c0d8bc023a92c13c4102af54dfecb92adf4637f9b",
+        "source": "/mnt/data/gnatural_ontological_computation_v15/fixtures/drat_like.proof"
+      },
+      {
+        "events": 3,
+        "semantic_hash": "3be4fd6c2b0928ef4082c8b5a803baeb17932b67cb25668d32ae36c86dcfca44",
+        "source": "/mnt/data/gnatural_ontological_computation_v15/fixtures/lrat_like.proof"
+      }
+    ]
+  },
+  "schema": "gnatural.ontological_computation.cert.v15",
+  "scope_warning": "No genuine third-party solver/proof logs are ingested in v15; no common external solver binaries were found in the sandbox probe.",
+  "source_hashes": {
+    "d20.json": "1b5260b1cc9631db799160c9ce48622257fda1f872fecd6a5c5b5bb9bc8fcba5",
+    "v14_zip": "a604c63f78ba14e935096043ef777a754871d84568674f5e28b13d8f1b4c5264"
+  },
+  "status": "GNATURAL_ONTOLOGICAL_COMPUTATION_V15_EXTERNAL_HARNESS_READY_EVIDENCE_PENDING",
+  "tool_probe": {
+    "proof_tools_found": 0,
+    "rows": [
+      {
+        "found": false,
+        "kind": "solver",
+        "path": "",
+        "tool": "minisat",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "solver",
+        "path": "",
+        "tool": "cadical",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "solver",
+        "path": "",
+        "tool": "kissat",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "solver",
+        "path": "",
+        "tool": "glucose",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "solver",
+        "path": "",
+        "tool": "cryptominisat",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "solver",
+        "path": "",
+        "tool": "lingeling",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "proof_tool",
+        "path": "",
+        "tool": "drat-trim",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "proof_tool",
+        "path": "",
+        "tool": "lrat-check",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "proof_tool",
+        "path": "",
+        "tool": "gratgen",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "proof_tool",
+        "path": "",
+        "tool": "gratgen-native",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "proof_tool",
+        "path": "",
+        "tool": "drat2lrat",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      },
+      {
+        "found": false,
+        "kind": "proof_tool",
+        "path": "",
+        "tool": "cake_lpr",
+        "version_probe_head": "",
+        "version_probe_returncode": ""
+      }
+    ],
+    "solver_binaries_found": 0
+  },
+  "v14_carry_forward": {
+    "combined_deg1_rank_F2": 7,
+    "combined_deg1_rank_F3": 7,
+    "combined_deg1_rank_F5": 7,
+    "combined_deg2_rank_F2": 7,
+    "combined_deg2_rank_F3": 7,
+    "combined_deg2_rank_F5": 7,
+    "combined_deg3_rank_F2": 7,
+    "combined_deg3_rank_F3": 7,
+    "combined_deg3_rank_F5": 7,
+    "combined_deg4_rank_F2": 7,
+    "combined_deg4_rank_F3": 7,
+    "combined_deg4_rank_F5": 7,
+    "combined_deg5_rank_F2": 7,
+    "combined_deg5_rank_F3": 7,
+    "combined_deg5_rank_F5": 7,
+    "empty_derived_traces": 7,
+    "group": "ALL_PROOF_LOGS",
+    "traces": 7,
+    "unique_edge_words": 7,
+    "unique_semantic_hashes": 7,
+    "valid_traces": 7,
+    "wedge1_rank_F2": 7,
+    "wedge1_rank_F3": 7,
+    "wedge1_rank_F5": 7,
+    "wedge2_rank_F2": 6,
+    "wedge2_rank_F3": 6,
+    "wedge2_rank_F5": 6,
+    "wedge3_rank_F2": 6,
+    "wedge3_rank_F3": 5,
+    "wedge3_rank_F5": 6,
+    "wedge4_rank_F2": 5,
+    "wedge4_rank_F3": 5,
+    "wedge4_rank_F5": 6,
+    "wedge5_rank_F2": 5,
+    "wedge5_rank_F3": 5,
+    "wedge5_rank_F5": 6
+  }
+}
