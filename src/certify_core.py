@@ -42,12 +42,14 @@ try:
     from .certify_half_braiding import (
         validate_half_braiding_full_solve,
         validate_half_braiding_prime_stability,
+        validate_half_braiding_snf_certificate,
         validate_half_braiding_solver,
     )
 except ImportError:  # Supports `python src/certify_core.py`.
     from certify_half_braiding import (
         validate_half_braiding_full_solve,
         validate_half_braiding_prime_stability,
+        validate_half_braiding_snf_certificate,
         validate_half_braiding_solver,
     )
 
@@ -105,6 +107,9 @@ CORE_FILES = [
     'src/certify_tube_projection.py',
     'src/certify_report.py',
     'src/solve_half_braiding.py',
+    'src/derive_half_braiding_prime_sweep.py',
+    'src/derive_half_braiding_local_snf.py',
+    'src/derive_half_braiding_snf_certificate.py',
 ]
 
 
@@ -139,6 +144,7 @@ def build_certificate() -> Dict[str, Any]:
         'half_braiding_solver': validate_half_braiding_solver(),
         'half_braiding_full_solve': validate_half_braiding_full_solve(),
         'half_braiding_prime_stability': validate_half_braiding_prime_stability(),
+        'half_braiding_snf_certificate': validate_half_braiding_snf_certificate(),
     }
     return assemble_certificate(
         constants=constants,

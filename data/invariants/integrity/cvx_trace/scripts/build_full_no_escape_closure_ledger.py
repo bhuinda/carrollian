@@ -13,7 +13,18 @@ REPORT_PATH = CVX / "reports" / "full_no_escape_closure_ledger.json"
 
 REPORTS = {
     "cvx_trace_index": CVX / "index.json",
+    "assignment_bearing_e33_target_family_obligation": CVX
+    / "reports"
+    / "assignment_bearing_e33_target_family_obligation.json",
     "encoded_family_bridge": CVX / "reports" / "encoded_family_bridge_certificate.json",
+    "encoded_family_sat_frontier": CVX / "reports" / "encoded_family_sat_frontier_certificate.json",
+    "uniform_cnf_to_e33_family_encoding_investigation": CVX
+    / "reports"
+    / "uniform_cnf_to_e33_family_encoding_investigation.json",
+    "formula_to_boundary_cycle_family_candidate": CVX
+    / "reports"
+    / "formula_to_boundary_cycle_family_candidate.json",
+    "parameterized_e33_target_schema": CVX / "reports" / "parameterized_e33_target_schema_certificate.json",
     "encoded_family_scope": CVX / "reports" / "encoded_family_scope_certificate.json",
     "polynomial_trace_compiler_scope": CVX / "reports" / "polynomial_trace_compiler_scope_certificate.json",
     "universal_trace_compiler": CVX / "reports" / "universal_trace_compiler_report.json",
@@ -65,6 +76,10 @@ LEDGER_STATUSES = {
 OPEN_STATUSES = {
     "open",
     "blocked_by_open_obligations",
+    "assignment_bearing_target_obligation_built_reduction_open",
+    "parameterized_e33_target_schema_defined_reduction_open",
+    "sat_complete_frontier_blocked_uniform_reduction_missing",
+    "formula_to_boundary_cycle_candidate_built_sat_preservation_blocked",
 }
 
 
@@ -168,23 +183,31 @@ def main() -> int:
         remaining_gaps.append(
             {
                 "id": "encoded_family_sat_complete",
-                "gap": "The encoded family now has a polynomially faithful representative-family witness for the cycle-8 / Pi_33 packet, but no SAT-complete reduction certificate is present.",
+                "gap": "A public formula-to-boundary-cycle compiler candidate now emits D20 masks and recomputes rho_33 from circuit data, but it is a finite nonzero-residual fingerprint and fails SAT preservation. The finite target is fenced as a lookup testbed, and the parameterized E(phi) schema now names assignment witnesses, clause-local gates, inverse projection, and intrinsic rho_33 transport. Full closure still needs the public DIMACS-to-E(phi) compiler, forall-instance yes/no preservation theorem, inverse witness interpretation, and no-hidden-advice proof for the reduction algorithm.",
                 "needed": items["encoded_family_sat_complete"]["required_artifact"],
+                "assignment_target_obligation_witness": items["encoded_family_sat_complete"].get(
+                    "assignment_target_obligation_witness"
+                ),
+                "parameterized_target_schema_witness": items["encoded_family_sat_complete"].get(
+                    "parameterized_target_schema_witness"
+                ),
+                "candidate_witness": items["encoded_family_sat_complete"].get("candidate_witness"),
+                "investigation_witness": items["encoded_family_sat_complete"].get("investigation_witness"),
             }
         )
     if classified_by_id["x_extractor_lower_bound"]["blocks_full_closure"]:
         remaining_gaps.append(
             {
                 "id": "x_extractor_lower_bound",
-                "gap": "The no-polynomial-X branch is not proved. Instead, a family-scope polynomial X extractor is explicitly promoted from the certified height-coherent transport, so full closure needs a formal policy that excludes, prices, or admits X events.",
+                "gap": "The family-scope polynomial X extractor is promoted from the certified height-coherent transport, so full closure requires the X policy boundary to exclude X from public-P computation or explicitly change models.",
                 "needed": items["x_extractor_lower_bound"]["required_artifact"],
             }
         )
 
     next_item = (
         {
-            "id": "encoded_family_sat_complete",
-            "action": "Build the SAT-complete reduction certificate for the hidden e33-obstructed family, or keep the theorem representative-family scoped.",
+            "id": "cnf_to_parameterized_e33_packet_compiler",
+            "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
         }
         if classified_by_id["encoded_family_sat_complete"]["blocks_full_closure"]
         else {

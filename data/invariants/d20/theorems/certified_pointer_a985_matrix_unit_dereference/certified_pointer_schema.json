@@ -1,0 +1,44 @@
+{
+  "meaning": "A certified pointer is a typed, dereferenceable address for hidden support. It is not merely a hint: it carries a public readout and the checks needed to prove that dereferencing lands in the declared address space.",
+  "object": "d20",
+  "primitive": "certified_pointer",
+  "required_slots": [
+    "source",
+    "address_space",
+    "pointer_map",
+    "dereference",
+    "public_readout",
+    "proxy",
+    "verifier",
+    "defect_ledger"
+  ],
+  "schema": "d20.vocabulary.certified_pointer.source_drop",
+  "schema_sha256": "7c7cc770deb1d0f36ea3d7ef15c92a44fabe31dda8ba90796bdec15410673aa3",
+  "slot_definitions": {
+    "address_space": "The target coordinate system where the source becomes explicit.",
+    "defect_ledger": "Finite defects or declared open boundaries; empty only when verified as empty.",
+    "dereference": "The rule and tables that expand an address into concrete supports or coordinates.",
+    "pointer_map": "A deterministic transport from source labels into address labels.",
+    "proxy": "A certified observable fingerprint used to identify or test the pointer map.",
+    "public_readout": "The externally visible class, support, chamber, or profile reached by dereference.",
+    "source": "Native token, support, or support being addressed.",
+    "verifier": "Machine-checkable evidence that the pointer map and dereference are valid."
+  },
+  "status": "D20_CERTIFIED_POINTER_SCHEMA_BUILT",
+  "typing_rules": [
+    "pointer_map.domain must match the source label type",
+    "pointer_map.codomain must live inside address_space",
+    "dereference.input must be produced by pointer_map",
+    "public_readout must be derived from dereference outputs",
+    "proxy may identify a pointer but may not replace verifier checks",
+    "defect_ledger must separate finite defects from open boundaries"
+  ],
+  "validation_tests": [
+    "all required slots are present",
+    "source labels map uniquely into address labels",
+    "dereference tables have the expected row counts",
+    "proxy fingerprints are unique where uniqueness is claimed",
+    "upstream theorem reports are certified",
+    "output hashes are canonical JSON hashes"
+  ]
+}

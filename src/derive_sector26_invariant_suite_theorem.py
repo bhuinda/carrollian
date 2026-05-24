@@ -11,7 +11,7 @@ import numpy as np
 
 from src.paths import D20_INVARIANTS, LAYERS, ROOT
 from src.derive_sector33_boundary_annihilation_theorem import FIELD_PRIME, signed_mod, vec_digest
-from src.derive_sector33_unique_public_zero_carrier_theorem import (
+from src.derive_sector33_unique_public_zero_support_theorem import (
     CORE_A985,
     FULL_A985_LIFT,
     QUOTIENT_NPZ,
@@ -34,7 +34,7 @@ SUPERSELECTION_FLUX_EXTENSION_REPORT = (
     D20_INVARIANTS / "theorems" / "superselection_flux_balance_extension" / "report.json"
 )
 MINIMAL_COMPOSITE_TRANSPORT_REPORT = (
-    D20_INVARIANTS / "theorems" / "minimal_composite_null_carriers_transport" / "report.json"
+    D20_INVARIANTS / "theorems" / "minimal_composite_null_supports_transport" / "report.json"
 )
 ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_all_residue_height_transport" / "report.json"
@@ -299,7 +299,7 @@ def build_theorem() -> dict[str, Any]:
         == "D20_SUPERSELECTION_FLUX_BALANCE_EXTENSION_CERTIFIED"
         and superselection.get("all_checks_pass") is True,
         "minimal_composite_transport_is_certified": minimal_transport.get("status")
-        == "D20_MINIMAL_COMPOSITE_NULL_CARRIERS_TRANSPORT_CLASSIFIED"
+        == "D20_MINIMAL_COMPOSITE_NULL_SUPPORTS_TRANSPORT_CLASSIFIED"
         and minimal_transport.get("all_checks_pass") is True,
         "all_residue_height_transport_is_certified": all_residue.get("status")
         == "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
@@ -344,7 +344,7 @@ def build_theorem() -> dict[str, Any]:
         "object": "d20",
         "claim": (
             "Sector 26 is certified as the shared public-zero composite seam. It is public-visible alone, "
-            "cancels stably in both minimal composite carriers through A42 and A12, supplies the rank-one "
+            "cancels stably in both minimal composite supports through A42 and A12, supplies the rank-one "
             "cross-transport between the two composite superselection labels, and aligns with a complete "
             "mod-26 optical residue clock after gcd normalization."
         ),
@@ -368,7 +368,7 @@ def build_theorem() -> dict[str, Any]:
                 "path": rel(SUPERSELECTION_FLUX_EXTENSION_REPORT),
                 "sha256": sha_file(SUPERSELECTION_FLUX_EXTENSION_REPORT),
             },
-            "minimal_composite_null_carriers_transport_report": {
+            "minimal_composite_null_supports_transport_report": {
                 "path": rel(MINIMAL_COMPOSITE_TRANSPORT_REPORT),
                 "sha256": sha_file(MINIMAL_COMPOSITE_TRANSPORT_REPORT),
             },

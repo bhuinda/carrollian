@@ -1,0 +1,253 @@
+{
+  "blocked_obligations": [
+    "uniform_cnf_to_hidden_family_map_defined",
+    "target_family_scalable_unbounded",
+    "yes_no_preservation_for_all_instances",
+    "inverse_witness_for_all_instances",
+    "no_hidden_sector_advice_in_reduction"
+  ],
+  "checklist_obligation": {
+    "id": "encoded_family_sat_complete",
+    "pass_condition": "The reduction has polynomial overhead and preserves yes/no instances without using hidden-sector advice.",
+    "required_artifact": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation."
+  },
+  "claim_level": "sat_complete_reduction_frontier_not_certified",
+  "decision": {
+    "may_claim_encoded_family_sat_complete": false,
+    "may_claim_full_separation": false,
+    "may_claim_polynomially_faithful_representative_family": true,
+    "reason": "The repo has a representative hidden e33 packet, public C/V/X policy, and a public finite CNF-to-D20-mask compiler candidate. The candidate fails SAT preservation; the finite target is certified as lookup-only for separation purposes. The assignment-bearing E(phi) schema is defined, but no public compiler or forall preservation theorem is certified."
+  },
+  "next_highest_yield_item": {
+    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    "id": "cnf_to_parameterized_e33_packet_compiler"
+  },
+  "non_claims": [
+    "This does not certify SAT-completeness.",
+    "This does not prove every SAT instance maps to a hidden e33-obstructed packet.",
+    "This does not prove P != NP."
+  ],
+  "reduction_obligations": {
+    "inverse_witness_for_all_instances": {
+      "evidence": "Representative inverse witness fields are certified; no inverse witness interpretation for arbitrary CNF assignments is present.",
+      "passed": false
+    },
+    "no_hidden_sector_advice_in_reduction": {
+      "evidence": {
+        "candidate_does_not_read_solver_outcome": true,
+        "candidate_public_only": true,
+        "reason": "The candidate compiler is public-only, but no SAT-preserving reduction algorithm has been certified."
+      },
+      "passed": false
+    },
+    "public_cnf_fixture_family_present": {
+      "evidence": {
+        "fixture_count": 5,
+        "max_clauses": 24,
+        "max_variables": 12
+      },
+      "passed": true
+    },
+    "public_p_excludes_x_policy_certified": {
+      "evidence": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true
+    },
+    "public_trace_compiler_polynomial": {
+      "evidence": {
+        "event_count_bound": "runtime_steps",
+        "event_count_bound_value": 8,
+        "event_verification_cost_bound": "O(runtime_steps * max_public_payload_width)",
+        "source_runtime_steps": 8,
+        "trace_event_count": 8,
+        "within_bound": true
+      },
+      "passed": true
+    },
+    "representative_hidden_packet_witnessed": {
+      "evidence": {
+        "a985_sector": 33,
+        "boundary_cycle_id": 8,
+        "family_id": "cycle8_sector33_residual_family",
+        "residual_integral": -374784
+      },
+      "passed": true
+    },
+    "source_sat_complete_problem_named": {
+      "evidence": "Candidate source problem is DIMACS CNF-SAT / 3-CNF-SAT over public fixtures.",
+      "passed": true
+    },
+    "target_family_scalable_unbounded": {
+      "evidence": {
+        "assignment_bearing_target_constructed": false,
+        "finite_target_collapse_certified": true,
+        "parameterized_schema_defined": true,
+        "parameterized_target_requirements_defined": true,
+        "public_compiler_implemented": false,
+        "reason": "Current certified targets are the fixed cycle-8 / Pi_33 representative packet and the finite 2048-mask all-residue D20 testbed. The parameterized E(phi) schema is defined, but the public compiler and forall preservation theorem are still open."
+      },
+      "passed": false
+    },
+    "uniform_cnf_to_hidden_family_map_defined": {
+      "evidence": {
+        "candidate_compiler": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "candidate_public_only": true,
+        "candidate_reduction_quality": "A public finite CNF-to-D20-mask compiler candidate exists, but it is not a uniform SAT reduction because it fails SAT preservation and has finite codomain.",
+        "candidate_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+      },
+      "passed": false
+    },
+    "yes_no_preservation_for_all_instances": {
+      "evidence": {
+        "candidate_probe_mismatch_count": 16,
+        "candidate_probe_passed": false,
+        "reason": "Representative yes/yes preservation is certified, but the finite public formula compiler does not preserve SAT on the truth-diverse probe surface."
+      },
+      "passed": false
+    }
+  },
+  "schema": "d20.integrity.encoded_family_sat_frontier_certificate.source_drop",
+  "source_audit": {
+    "assignment_bearing_e33_target_family_obligation": {
+      "expected_status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
+      "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
+    },
+    "encoded_family_bridge": {
+      "expected_status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
+      "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+    },
+    "encoded_family_scope": {
+      "expected_status": "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_scope_certificate.json",
+      "status": "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+    },
+    "formula_to_boundary_cycle_family_candidate": {
+      "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+    },
+    "parameterized_e33_target_schema": {
+      "expected_status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json",
+      "status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN"
+    },
+    "universal_trace_compiler": {
+      "expected_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+    }
+  },
+  "source_problem": {
+    "candidate": "CNF-SAT / 3-CNF-SAT",
+    "fixtures": [
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 5,
+        "parsed_clause_rows": 5,
+        "path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+        "variables": 4,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 13,
+        "parsed_clause_rows": 13,
+        "path": "data/evidence/ss_sat/benchmarks/horn_chain_12.cnf",
+        "variables": 12,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 9,
+        "parsed_clause_rows": 9,
+        "path": "data/evidence/ss_sat/benchmarks/horn_chain_8.cnf",
+        "variables": 8,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 12,
+        "parsed_clause_rows": 12,
+        "path": "data/evidence/ss_sat/benchmarks/php_3_2.cnf",
+        "variables": 6,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 24,
+        "parsed_clause_rows": 24,
+        "path": "data/evidence/ss_sat/benchmarks/xor_unsat.cnf",
+        "variables": 5,
+        "well_formed_header": true
+      }
+    ],
+    "known_external_status": "SAT-complete source problem, but this certificate only audits the repo-local reduction artifacts."
+  },
+  "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+  "target_family": {
+    "assignment_target_obligation": {
+      "assignment_bearing_target_constructed": false,
+      "finite_target_collapse_certified": true,
+      "parameterized_target_requirements_defined": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
+      "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
+    },
+    "current_certified_family": "cycle8_sector33_residual_family",
+    "current_scope": "fixed representative cycle-8 / Pi_33 residual packet",
+    "finite_formula_compiler_candidate": {
+      "finite_codomain_size": 2048,
+      "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "sat_preservation_passed": false,
+      "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+    },
+    "parameterized_target_schema": {
+      "forall_yes_no_preservation": false,
+      "path": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json",
+      "public_compiler_implemented": false,
+      "schema_defined": true,
+      "schema_path": "data/invariants/integrity/cvx_trace/schemas/parameterized_e33_target.schema.json",
+      "status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN"
+    },
+    "representative_instance": {
+      "boundary_cycle_id": 8,
+      "edge_ids": [
+        11,
+        1,
+        2,
+        22,
+        21
+      ],
+      "forced_residual_integral": -374784,
+      "forced_residual_mod_prime": 625219,
+      "mask": 256,
+      "optical_action": 374784
+    },
+    "representative_target_packet": {
+      "a985_sector": 33,
+      "a985_sector_name": "Pi_33",
+      "boundary_cycle_id": 8,
+      "public_terminal_shadow": {
+        "A12": "zero",
+        "A42": "zero",
+        "q12_nonzero_count": 0,
+        "q42_nonzero_count": 0
+      },
+      "residual_integral": -374784,
+      "residual_mod_prime": 625219
+    },
+    "scalable_family_certified": false
+  }
+}

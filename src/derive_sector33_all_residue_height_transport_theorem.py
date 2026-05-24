@@ -142,7 +142,7 @@ def transport_rows(rows: list[dict[str, Any]], dimension: int) -> list[dict[str,
                 "residual_mod_prime": int(row["residual_mod_prime"]),
                 "transport_scalar": int(scalar),
                 "transport_scalar_signed": signed_mod(int(scalar)),
-                "carrier_sector": 33,
+                "support_sector": 33,
                 "pi33_coefficient_mod_prime": int(coefficient),
                 "coefficient_matches_residual_mod_prime": bool(coefficient == row["residual_mod_prime"]),
             }
@@ -257,7 +257,7 @@ def build_theorem() -> dict[str, Any]:
         "all_transport_coefficients_match_height_residuals": all(
             row["coefficient_matches_residual_mod_prime"] for row in transported
         ),
-        "all_transports_carried_by_sector33": all(row["carrier_sector"] == 33 for row in transported),
+        "all_transports_carried_by_sector33": all(row["support_sector"] == 33 for row in transported),
         "chi33_of_e33_equals_dimension": chi_e33["coefficient_mod_prime"] == dimension,
         "e33_has_zero_q42_shadow": e33_q42_shadow["nonzero_count"] == 0,
         "e33_has_zero_q12_shadow": e33_q12_shadow["nonzero_count"] == 0,
@@ -293,7 +293,7 @@ def build_theorem() -> dict[str, Any]:
             "height_coherence": "For every residue row C_gamma, <C_gamma,h_B> equals total_optical_action.",
             "edge_mod2_caveat": "The 2048 x 30 incidence_vector_mod2 matrix records edge symmetric differences, not traversal multiplicity, so it is not globally height-coherent.",
             "global_transport": "Lambda_hc(gamma)=lambda_boundary(gamma)-(<C_gamma,h>/dim(Pi_33))e_33.",
-            "carrier_sector": "Pi_33, because e_33 is public-zero and chi_33(e_33)=dim(Pi_33).",
+            "support_sector": "Pi_33, because e_33 is public-zero and chi_33(e_33)=dim(Pi_33).",
         },
         "inputs": {
             "sector33_boundary_annihilation_report": {
@@ -359,7 +359,7 @@ def build_theorem() -> dict[str, Any]:
             "field_zero_nonzero_residual_count": int(
                 sum(1 for row in nonzero_transports if row["residual_mod_prime"] == 0)
             ),
-            "sector33_carrier": {
+            "sector33_support": {
                 "sector": 33,
                 "dimension": dimension,
                 "chi33_e33": chi_e33,
@@ -377,7 +377,7 @@ def build_theorem() -> dict[str, Any]:
         "all_checks_pass": all_checks_pass,
         "next_highest_yield_item": (
             "Materialize the public-zero sector-idempotent basis and prove whether sector 33 is the unique "
-            "carrier available for all height residuals, or only the canonical carrier selected here."
+            "support available for all height residuals, or only the canonical support selected here."
         ),
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})

@@ -34,6 +34,10 @@ INTEGRITY_REPORTS = {
         CVX / "reports" / "universal_v_wall_crossing_accounting_report.json",
         "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS",
     ),
+    "x_policy_boundary": (
+        CVX / "reports" / "x_policy_boundary_certificate.json",
+        "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+    ),
 }
 
 REQUIRED_SECTOR33_CHECKS = [
@@ -289,19 +293,20 @@ def main() -> int:
         "non_claims": [
             "This is not a SAT-complete reduction certificate.",
             "This does not prove every SAT instance maps to a hidden e33-obstructed packet.",
-            "This does not prove a polynomial-size lower bound against X extractors.",
+            "This does not reclassify X extractors as public-P computation.",
             "This does not prove P != NP.",
         ],
         "decision": {
             "may_claim_polynomially_faithful_representative_family": representative_passed,
             "may_claim_encoded_family_sat_complete": False,
             "may_claim_full_separation": False,
-            "reason": "The cycle-8 / Pi_33 / residual packet is now a polynomially bounded representative-family bridge, while SAT-completeness and the X-extractor lower bound remain open.",
+            "reason": "The cycle-8 / Pi_33 / residual packet is now a polynomially bounded representative-family bridge. The X policy boundary is certified, while SAT-completeness remains open.",
         },
         "next_highest_yield_item": {
-            "id": "x_extractor_lower_bound" if representative_passed else "encoded_family_sat_complete",
+            "id": "cnf_to_parameterized_e33_packet_compiler",
             "action": (
-                "Attack the polynomial-size X-extractor lower bound, because the representative encoded-family bridge is now witnessed but SAT-completeness is still not certified."
+                "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits "
+                "clause-local circuit data and validates SAT/UNSAT canaries against the schema."
                 if representative_passed
                 else "Repair the representative encoded-family bridge inputs before relying on the witness."
             ),

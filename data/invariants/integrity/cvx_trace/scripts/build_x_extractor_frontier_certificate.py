@@ -128,7 +128,7 @@ def build_frontier() -> dict[str, Any]:
             "input": [
                 "closed-return circuit row C_gamma",
                 "certified height cochain h",
-                "certified public-zero sector carrier e_33",
+                "certified public-zero sector support e_33",
                 "dim(Pi_33)",
             ],
             "algorithm": [
@@ -154,7 +154,7 @@ def build_frontier() -> dict[str, Any]:
                 "residue_class_count": all_residue["derived"]["residue_class_count"],
                 "nonzero_residue_class_count": all_residue["derived"]["nonzero_residue_class_count"],
                 "transport_rows_sha256": all_residue["derived"]["transport_rows_sha256"],
-                "carrier_sector": all_residue["derived"]["sector33_carrier"]["sector"],
+                "support_sector": all_residue["derived"]["sector33_support"]["sector"],
             },
         },
         "complexity": {
@@ -165,7 +165,7 @@ def build_frontier() -> dict[str, Any]:
             "family_basis_width": basis_width,
             "e33_support": e33_support,
             "max_family_payload_width": max_family_payload_width,
-            "runtime_bound": "O(active_circuit_support + support(e_33)) for materialized vector output; O(active_circuit_support) for scalar residual output with e_33 as certified carrier handle.",
+            "runtime_bound": "O(active_circuit_support + support(e_33)) for materialized vector output; O(active_circuit_support) for scalar residual output with e_33 as certified support handle.",
             "verification_bound": "one X opcode classification plus height-dot-product replay and q42/q12 zero-shadow checks",
         },
         "checks": checks,

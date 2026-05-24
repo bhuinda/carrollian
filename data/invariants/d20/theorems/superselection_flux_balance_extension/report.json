@@ -6,23 +6,23 @@
     "exact_public_flux_lifts_with_zero_hidden_update": true,
     "extended_charge_has_four_public_plus_three_hidden_components": true,
     "finite_flux_balance_is_certified": true,
-    "hidden_label_map_is_injective_on_admissible_public_zero_carriers": true,
-    "idempotent_carrier_admissibility_is_certified": true,
+    "hidden_label_map_is_injective_on_admissible_public_zero_supports": true,
+    "idempotent_support_admissibility_is_certified": true,
     "minimal_composite_transport_is_certified": true,
     "mixed_and_pure_null_labels_have_cross_transport_rank_one": true,
     "mixed_plus_pure_without_R33_is_not_admissible_public_zero": true,
     "new_superselection_labels_are_isolated_from_R33": true,
     "new_superselection_labels_are_not_gauge_zero": true,
-    "new_superselection_labels_are_public_zero_carriers": true,
+    "new_superselection_labels_are_public_zero_supports": true,
     "sector33_height_transport_has_zero_composite_superselection_flux": true,
     "two_new_superselection_labels_are_added": true
   },
-  "claim": "The finite D20 boundary charge can be extended from the public four-vector (M,J,P,Phi) to an augmented public-plus-hidden ledger (M,J,P,Phi;R33,K_mixed_S,K_pure_Sminus). The two new hidden labels distinguish the minimal public-zero composite superselection carriers from gauge zero while preserving the certified sector-33 height transport.",
+  "claim": "The finite D20 boundary charge can be extended from the public four-vector (M,J,P,Phi) to an augmented public-plus-hidden ledger (M,J,P,Phi;R33,K_mixed_S,K_pure_Sminus). The two new hidden labels distinguish the minimal public-zero composite superselection supports from gauge zero while preserving the certified sector-33 height transport.",
   "definition": {
-    "admissible_hidden_states": "The six certified Boolean public-zero idempotent carriers: zero, R33, K_mixed_S, K_pure_Sminus, K_mixed_S+R33, and K_pure_Sminus+R33. K_mixed_S+K_pure_Sminus is not a certified public-zero carrier because the two labels overlap through sector 26.",
+    "admissible_hidden_states": "The six certified Boolean public-zero idempotent supports: zero, R33, K_mixed_S, K_pure_Sminus, K_mixed_S+R33, and K_pure_Sminus+R33. K_mixed_S+K_pure_Sminus is not a certified public-zero support because the two labels overlap through sector 26.",
     "augmented_boundary_charge": "Q_ext=(M,J,P,Phi;R33,K_mixed_S,K_pure_Sminus), where the first four components are the public exact-flux charges and the last three components track the finite public-zero hidden fiber.",
     "new_superselection_labels": {
-      "K_mixed_S": "{6,26}, the mixed S-/S+ public-zero carrier",
+      "K_mixed_S": "{6,26}, the mixed S-/S+ public-zero support",
       "K_pure_Sminus": "{25,26}, the pure S- public-zero doublet"
     }
   },
@@ -66,7 +66,7 @@
           "K_pure_Sminus": 0,
           "R33": 0
         },
-        "name": "mixed_S_null_carrier",
+        "name": "mixed_S_null_support",
         "public_components": {
           "J": 0,
           "M": 0,
@@ -160,7 +160,7 @@
         "K_pure_Sminus": 0,
         "R33": 0
       },
-      "reason": "The exact finite flux-balance theorem is a coboundary statement on public D20 states. The new hidden superselection components only change when a certified hidden null carrier is inserted."
+      "reason": "The exact finite flux-balance theorem is a coboundary statement on public D20 states. The new hidden superselection components only change when a certified hidden null support is inserted."
     },
     "height_transport_extension": {
       "certified_height_transport_hidden_support": "R33",
@@ -183,7 +183,7 @@
       {
         "component": "K_mixed_S",
         "new_in_this_extension": true,
-        "role": "mixed_S_channel_public_zero_superselection_null_carrier",
+        "role": "mixed_S_channel_public_zero_superselection_null_support",
         "sector_support": [
           6,
           26
@@ -247,17 +247,17 @@
       "path": "layers/drinfeld/full_a985_lift.json",
       "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
     },
-    "minimal_composite_null_carriers_transport_report": {
-      "path": "data/invariants/d20/theorems/minimal_composite_null_carriers_transport/report.json",
+    "minimal_composite_null_supports_transport_report": {
+      "path": "data/invariants/d20/theorems/minimal_composite_null_supports_transport/report.json",
       "sha256": "bbf698f1b4fe439e600e4a588d224fcc475744d56df76c917d1b9f675100933b"
     },
-    "sector_idempotent_carrier_admissibility_report": {
-      "path": "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
+    "sector_idempotent_support_admissibility_report": {
+      "path": "data/invariants/d20/theorems/sector_idempotent_support_admissibility/report.json",
       "sha256": "cc17a32a4d8ff6fea00a192523a75ae22474a3348588dca83402cd93db2367df"
     }
   },
   "interpretation": {
-    "ontological": "Public zero is refined into a finite hidden null fiber. Gauge zero, the primitive residual atom, and the two composite superselection carriers are distinct states of the augmented ledger.",
+    "ontological": "Public zero is refined into a finite hidden null fiber. Gauge zero, the primitive residual atom, and the two composite superselection supports are distinct states of the augmented ledger.",
     "overlap_warning": "The two composite labels are not independent Boolean bits: their sector supports share sector 26, giving cross-transport rank one. The admissible hidden state set has six states, not the full three-bit cube.",
     "technological": "A runtime or protocol may project the hidden labels away for public display, but must retain them in the internal state if it wants flux balance to distinguish gauge zero from hidden null transport."
   },

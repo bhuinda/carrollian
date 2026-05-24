@@ -1,0 +1,53 @@
+{
+  "inputs": {
+    "central_idempotents": {
+      "path": "data/invariants/d20/theorems/nested_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "full_legacy_sector_match": {
+      "path": "data/invariants/d20/theorems/nested_pointer_a985_full_legacy_sector_match/report.json",
+      "sha256": "cff667391bb0368af9b1ff0077754a3192ac700e3f9130b34c8ba8bba548f715"
+    },
+    "support_arrays": {
+      "path": "data/invariants/d20/theorems/nested_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_and_projectors_raw_orbital_arrays.npz",
+      "sha256": "219b08d0754fe9429947a49b9731e79a62c01f1a047d653e6dfaf33cbfe3817b"
+    },
+    "support_full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/nested_pointer_a985_support_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "4fa1edfeb1af0a969dc934b6630e842db37c913c0d1d2796e605cff692100f12"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "manifest_sha256": "fa4ecbcabec2307de28362a1132920f0819a542da1d10b95bed13d22d5664990",
+  "name": "nested_pointer_a985_support_restricted_multiplication_tables",
+  "outputs": {
+    "arrays": "data/invariants/d20/theorems/nested_pointer_a985_support_restricted_multiplication_tables/support_restricted_multiplication_arrays.npz",
+    "basis_manifest": "data/invariants/d20/theorems/nested_pointer_a985_support_restricted_multiplication_tables/support_restricted_basis_manifest.csv",
+    "manifest": "data/invariants/d20/theorems/nested_pointer_a985_support_restricted_multiplication_tables/manifest.json",
+    "matrix_unit_products": "data/invariants/d20/theorems/nested_pointer_a985_support_restricted_multiplication_tables/support_restricted_matrix_unit_products.csv",
+    "projector_products": "data/invariants/d20/theorems/nested_pointer_a985_support_restricted_multiplication_tables/support_projector_multiplication_table.csv",
+    "raw_product_checks": "data/invariants/d20/theorems/nested_pointer_a985_support_restricted_multiplication_tables/support_restricted_raw_product_checks.csv",
+    "report": "data/invariants/d20/theorems/nested_pointer_a985_support_restricted_multiplication_tables/report.json",
+    "summary": "data/invariants/d20/theorems/nested_pointer_a985_support_restricted_multiplication_tables/support_restricted_table_summary.csv"
+  },
+  "report_sha256": "5068b045fe1c9714b90604b2ef0409c16b2d43a5acaa82b045029e3b91529862",
+  "schema": "d20.theorem.nested_pointer_a985_support_restricted_multiplication_tables_manifest.source_drop",
+  "validation_tests": [
+    "support_full_coo_certified",
+    "support_projector_count_is_7",
+    "support_basis_manifest_has_1011_rows",
+    "support_arrays_shape_is_985_by_1011",
+    "summary_has_7_rows",
+    "all_symbolic_tables_complete",
+    "product_rows_match_expected_nonzero_products",
+    "zero_support_has_no_basis_or_products",
+    "top_support_has_985_basis_rows",
+    "direct_raw_product_failures_zero",
+    "direct_raw_products_checked_positive",
+    "projector_product_table_has_49_rows",
+    "projector_raw_product_failures_zero"
+  ]
+}

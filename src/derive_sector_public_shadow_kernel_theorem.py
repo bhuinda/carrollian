@@ -14,7 +14,7 @@ from src.derive_sector33_boundary_annihilation_theorem import (
     signed_mod,
     vec_digest,
 )
-from src.derive_sector33_unique_public_zero_carrier_theorem import (
+from src.derive_sector33_unique_public_zero_support_theorem import (
     CORE_A985,
     FULL_A985_LIFT,
     QUOTIENT_NPZ,
@@ -29,8 +29,8 @@ from src.derive_sector33_unique_public_zero_carrier_theorem import (
 THEOREM_ID = "sector_public_shadow_kernel"
 DEFAULT_OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
-UNIQUE_PUBLIC_ZERO_CARRIER_REPORT = (
-    D20_INVARIANTS / "theorems" / "sector33_unique_public_zero_carrier" / "report.json"
+UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT = (
+    D20_INVARIANTS / "theorems" / "sector33_unique_public_zero_support" / "report.json"
 )
 
 
@@ -112,7 +112,7 @@ def update_theorem_index(report: dict[str, Any], out_dir: Path) -> None:
 
 
 def build_theorem() -> dict[str, Any]:
-    unique_carrier = load_json(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT)
+    unique_support = load_json(UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT)
     full = load_json(FULL_A985_LIFT)
     core = load_json(CORE_A985)["blocks"]["tube_center_primitive_idempotents"]
     relation_npz = np.load(RELATION_NPZ)
@@ -169,9 +169,9 @@ def build_theorem() -> dict[str, Any]:
     kernel_relation_nullspace = rref_nullspace_mod(kernel_basis, FIELD_PRIME)
 
     checks = {
-        "unique_public_zero_carrier_theorem_is_certified": unique_carrier.get("status")
-        == "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_CARRIER_CERTIFIED"
-        and unique_carrier.get("all_checks_pass") is True,
+        "unique_public_zero_support_theorem_is_certified": unique_support.get("status")
+        == "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_SUPPORT_CERTIFIED"
+        and unique_support.get("all_checks_pass") is True,
         "sector_count_is_39": len(sectors) == 39,
         "combined_shadow_matrix_shape_is_54_by_39": list(shadow_matrix.shape) == [54, 39],
         "kernel_basis_annihilates_public_shadow_matrix": int(np.count_nonzero(nullspace_residual)) == 0,
@@ -209,9 +209,9 @@ def build_theorem() -> dict[str, Any]:
             "linear_public_zero_span": "The kernel of the sector_shadow_matrix over F_1000003.",
         },
         "inputs": {
-            "unique_public_zero_carrier_report": {
-                "path": rel(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT),
-                "sha256": sha_file(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT),
+            "unique_public_zero_support_report": {
+                "path": rel(UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT),
+                "sha256": sha_file(UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT),
             },
             "full_a985_lift": {
                 "path": rel(FULL_A985_LIFT),
@@ -251,7 +251,7 @@ def build_theorem() -> dict[str, Any]:
         },
         "interpretation": {
             "single_sector_result": (
-                "The prior unique-carrier theorem remains true: e_33 is the only individual sector "
+                "The prior unique-support theorem remains true: e_33 is the only individual sector "
                 "idempotent with zero A42/A12 shadow."
             ),
             "linear_span_result": (
@@ -259,15 +259,15 @@ def build_theorem() -> dict[str, Any]:
                 "there are 26 additional basis directions in the public-zero kernel."
             ),
             "admissibility_boundary": (
-                "Any statement that Pi_33 is the unique physical carrier must include an admissibility "
+                "Any statement that Pi_33 is the unique physical support must include an admissibility "
                 "condition stronger than linear public invisibility, such as coordinate-axis sector selection, "
-                "idempotent carrier selection, or height-coherent transport compatibility."
+                "idempotent support selection, or height-coherent transport compatibility."
             ),
         },
         "checks": checks,
         "all_checks_pass": all_checks_pass,
         "next_highest_yield_item": (
-            "Classify which of the 27 public-zero kernel directions are admissible carriers under the "
+            "Classify which of the 27 public-zero kernel directions are admissible supports under the "
             "multiplicative idempotent and height-coherent transport constraints."
         ),
     }

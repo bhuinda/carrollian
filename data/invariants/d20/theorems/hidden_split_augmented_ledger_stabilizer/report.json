@@ -1,0 +1,447 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "3a7e03852006cc49455f4d0b861c3a8e41c581f3148850732d8c4cf25e1246ae",
+  "checks": {
+    "finite_exact_flux_balance_is_certified": true,
+    "full_augmented_ledger_stabilizer_is_identity": true,
+    "global_counterterm_lattice_is_certified": true,
+    "hidden_split_stabilizer_candidate_count_is_2": true,
+    "hidden_split_symmetry_is_certified": true,
+    "identity_preserves_full_augmented_ledger": true,
+    "nonidentity_breaks_optical_weights": true,
+    "nonidentity_breaks_public_charge_components": true,
+    "nonidentity_breaks_sector26_counterterm_vector": true,
+    "nonidentity_preserves_hidden_split_and_corrected_clock": true
+  },
+  "claim": "The C2 stabilizer of the global corrected hidden split does not lift to a nontrivial symmetry of the augmented charge/action ledger. The nonidentity split-preserver keeps only the corrected order-two hidden character; it breaks the sector-26 counterterm vector, optical action weights, and public charge components. The full augmented ledger stabilizer is therefore trivial.",
+  "definition": {
+    "augmented_ledger_fields": [
+      "corrected hidden split character",
+      "sector-26 counterterm vector modulo 26",
+      "normalized optical clock modulo 26",
+      "primitive optical action weights",
+      "edge interface weights",
+      "public D20 state charge components (M,J,P,Phi)",
+      "public oriented edge flux components"
+    ],
+    "candidate_group": "The two graph automorphisms certified by global_corrected_hidden_split_symmetry as preserving the corrected hidden closed-return split.",
+    "preservation_test": "A candidate preserves a functional field when the field value on each basis cycle equals the field value on its induced cycle-space image; it preserves public state/edge fields when the labeled (M,J,P,Phi) vectors are unchanged under the vertex-induced action."
+  },
+  "derived": {
+    "candidate_group": {
+      "full_augmented_ledger_preserving_automorphism_ids": [
+        0
+      ],
+      "full_augmented_ledger_stabilizer_order": 1,
+      "hidden_split_stabilizer_order": 2
+    },
+    "candidate_records": [
+      {
+        "automorphism_id": 0,
+        "basis_image_masks": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64,
+          128,
+          256,
+          512,
+          1024
+        ],
+        "edge_cycle_notation": [],
+        "failures": {
+          "corrected_clock_mod26": null,
+          "edge_interface_weights": null,
+          "normalized_optical_clock_mod26": null,
+          "primitive_optical_action_weights": null,
+          "public_oriented_edge_flux_components": null,
+          "public_state_charge_components": null,
+          "sector26_counterterm_vector_mod26": null
+        },
+        "is_identity": true,
+        "preserves": {
+          "corrected_clock_mod26": true,
+          "edge_interface_weights": true,
+          "full_augmented_ledger": true,
+          "hidden_corrected_split": true,
+          "normalized_optical_clock_mod26": true,
+          "primitive_optical_action_weights": true,
+          "public_oriented_edge_flux_components": true,
+          "public_state_charge_components": true,
+          "sector26_counterterm_vector_mod26": true
+        },
+        "vertex_cycle_notation": []
+      },
+      {
+        "automorphism_id": 1,
+        "basis_image_masks": [
+          16,
+          2,
+          512,
+          1034,
+          1,
+          64,
+          32,
+          128,
+          256,
+          4,
+          1024
+        ],
+        "edge_cycle_notation": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            27
+          ],
+          [
+            9,
+            28
+          ],
+          [
+            10,
+            23
+          ],
+          [
+            11,
+            22
+          ],
+          [
+            16,
+            26
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            24,
+            29
+          ]
+        ],
+        "failures": {
+          "corrected_clock_mod26": null,
+          "edge_interface_weights": {
+            "column": "interface_weight",
+            "edge_id": 1,
+            "image_edge_id": 2,
+            "image_value": 27648,
+            "source_value": 55296
+          },
+          "normalized_optical_clock_mod26": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              4
+            ],
+            "image_mask": 16,
+            "image_value": 14,
+            "source_mask": 1,
+            "source_value": 12
+          },
+          "primitive_optical_action_weights": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              4
+            ],
+            "image_mask": 16,
+            "image_value": 1081344,
+            "source_mask": 1,
+            "source_value": 1075200
+          },
+          "public_oriented_edge_flux_components": {
+            "edge_id": 1,
+            "image_flux": {
+              "J": -128,
+              "M": 128,
+              "P": 896,
+              "Phi": -896
+            },
+            "image_oriented_edge": [
+              0,
+              11
+            ],
+            "source_flux": {
+              "J": 384,
+              "M": 384,
+              "P": 192,
+              "Phi": 192
+            },
+            "source_oriented_edge": [
+              0,
+              4
+            ]
+          },
+          "public_state_charge_components": {
+            "image_charge": {
+              "J": 240,
+              "M": 1296,
+              "P": 384,
+              "Phi": 1152
+            },
+            "image_vertex": 6,
+            "source_charge": {
+              "J": -704,
+              "M": 1088,
+              "P": -64,
+              "Phi": -320
+            },
+            "vertex": 2
+          },
+          "sector26_counterterm_vector_mod26": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              4
+            ],
+            "image_mask": 16,
+            "image_value": 1,
+            "source_mask": 1,
+            "source_value": 25
+          }
+        },
+        "is_identity": false,
+        "preserves": {
+          "corrected_clock_mod26": true,
+          "edge_interface_weights": false,
+          "full_augmented_ledger": false,
+          "hidden_corrected_split": true,
+          "normalized_optical_clock_mod26": false,
+          "primitive_optical_action_weights": false,
+          "public_oriented_edge_flux_components": false,
+          "public_state_charge_components": false,
+          "sector26_counterterm_vector_mod26": false
+        },
+        "vertex_cycle_notation": [
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            17
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            12,
+            19
+          ]
+        ]
+      }
+    ],
+    "candidate_records_sha256": "90cc1397f2a23788af7c77dc8ce066b1121c95b35a5bddfc50ddfc73b2f1f8fa",
+    "ledger_vectors": {
+      "basis_weights_mod26": [
+        12,
+        14,
+        18,
+        24,
+        14,
+        17,
+        8,
+        10,
+        18,
+        11,
+        17
+      ],
+      "corrected_basis_clock_mod26": [
+        13,
+        13,
+        13,
+        0,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "counterterm_lifts_mod26": [
+        25,
+        1,
+        5,
+        24,
+        1,
+        4,
+        21,
+        23,
+        5,
+        24,
+        4
+      ],
+      "primitive_optical_actions": [
+        1075200,
+        1320960,
+        774144,
+        1191936,
+        1081344,
+        691200,
+        903168,
+        1069056,
+        374784,
+        992256,
+        1090560
+      ]
+    },
+    "summary": {
+      "identity_preserves_everything": true,
+      "nonidentity_first_failures": {
+        "corrected_clock_mod26": null,
+        "edge_interface_weights": {
+          "column": "interface_weight",
+          "edge_id": 1,
+          "image_edge_id": 2,
+          "image_value": 27648,
+          "source_value": 55296
+        },
+        "normalized_optical_clock_mod26": {
+          "basis_coordinate": 0,
+          "image_basis_cycle_indices": [
+            4
+          ],
+          "image_mask": 16,
+          "image_value": 14,
+          "source_mask": 1,
+          "source_value": 12
+        },
+        "primitive_optical_action_weights": {
+          "basis_coordinate": 0,
+          "image_basis_cycle_indices": [
+            4
+          ],
+          "image_mask": 16,
+          "image_value": 1081344,
+          "source_mask": 1,
+          "source_value": 1075200
+        },
+        "public_oriented_edge_flux_components": {
+          "edge_id": 1,
+          "image_flux": {
+            "J": -128,
+            "M": 128,
+            "P": 896,
+            "Phi": -896
+          },
+          "image_oriented_edge": [
+            0,
+            11
+          ],
+          "source_flux": {
+            "J": 384,
+            "M": 384,
+            "P": 192,
+            "Phi": 192
+          },
+          "source_oriented_edge": [
+            0,
+            4
+          ]
+        },
+        "public_state_charge_components": {
+          "image_charge": {
+            "J": 240,
+            "M": 1296,
+            "P": 384,
+            "Phi": 1152
+          },
+          "image_vertex": 6,
+          "source_charge": {
+            "J": -704,
+            "M": 1088,
+            "P": -64,
+            "Phi": -320
+          },
+          "vertex": 2
+        },
+        "sector26_counterterm_vector_mod26": {
+          "basis_coordinate": 0,
+          "image_basis_cycle_indices": [
+            4
+          ],
+          "image_mask": 16,
+          "image_value": 1,
+          "source_mask": 1,
+          "source_value": 25
+        }
+      },
+      "nonidentity_preserves_only_corrected_hidden_layer": true
+    }
+  },
+  "inputs": {
+    "finite_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_flux_balance/report.json",
+      "sha256": "8d066a8ffbeac843d24862994905b4f497ab7956f333243dcf65053a11088f02"
+    },
+    "global_counterterm_lattice_report": {
+      "path": "data/invariants/d20/theorems/global_counterterm_lattice/report.json",
+      "sha256": "23338d846464d5f0cfb438f2968d4736ea98bbd9bf2bff22f6f64b603215d9c1"
+    },
+    "hcycle_edge_table": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "hidden_split_symmetry_report": {
+      "path": "data/invariants/d20/theorems/global_corrected_hidden_split_symmetry/report.json",
+      "sha256": "d2578b6aee065b11926c42e090d9f7450a9db2b30bd82f21e381dcaa74e098b2"
+    },
+    "primitive_cycle_table": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
+      "sha256": "a6fd82c3cafc0767c6ed7a41a157326d249933a6be62d6aad0f27f989dc7e84c"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not classify A985 automorphisms or continuum symmetry groups; it classifies the finite H-cycle graph action on the certified augmented D20 ledger fields.",
+    "what_this_proves": [
+      "the hidden split alone has a C2 finite symmetry",
+      "adding the sector-26 counterterms and optical/public ledgers breaks that C2",
+      "the full augmented finite boundary ledger is rigid under the tested public graph symmetries"
+    ]
+  },
+  "next_highest_yield_item": "Use the trivial augmented-ledger stabilizer to define a canonical orientation/marking for the finite boundary screen, then test whether that marking gives a unique flux-balance gauge.",
+  "object": "d20",
+  "schema": "d20.theorem.hidden_split_augmented_ledger_stabilizer",
+  "status": "D20_HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_CERTIFIED"
+}

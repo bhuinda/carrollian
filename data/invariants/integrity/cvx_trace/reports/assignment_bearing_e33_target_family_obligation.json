@@ -1,0 +1,207 @@
+{
+  "claim_level": "finite_target_collapse_certified_parameterized_assignment_family_open",
+  "decision": {
+    "may_claim_assignment_bearing_target_constructed": false,
+    "may_claim_finite_d20_mask_target_suffices": false,
+    "may_claim_finite_target_collapse_certified": true,
+    "may_claim_p_not_np": false,
+    "may_claim_parameterized_target_requirements_defined": true,
+    "may_claim_sat_complete_hidden_e33_family": false,
+    "reason": "The finite D20 mask table is now fenced as a testbed and local gadget source, not an asymptotic SAT-complete target. Full bridge closure requires an assignment-bearing parameterized e33 target family with forward and inverse witnesses."
+  },
+  "finite_d20_target": {
+    "basis_cycle_coordinate_count": 11,
+    "support_sector": 33,
+    "checks": {
+      "all_transport_coefficients_match_height_residuals": true,
+      "all_transports_carried_by_sector33": true,
+      "nonzero_residue_class_count_is_2047": true,
+      "residue_masks_are_complete": true,
+      "zero_class_has_zero_transport_scalar": true
+    },
+    "finite_codomain_size": 2048,
+    "height_transport_formula": "Lambda_hc(gamma)=lambda_boundary(gamma)-(<C_gamma,h>/dim(Pi_33))e_33.",
+    "nonzero_residual_class_count": 2047,
+    "source": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+    "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+    "zero_residual_class_count": 1
+  },
+  "finite_target_collapse": {
+    "certified": true,
+    "checks": {
+      "assignment_payload_absent_from_current_target": {
+        "evidence": {
+          "current_target_predicate": "nonzero sector-33 height residual after public CNF fingerprint compilation",
+          "frontier_scalable_family_certified": false,
+          "frontier_scope": "fixed representative cycle-8 / Pi_33 residual packet"
+        },
+        "passed": true
+      },
+      "finite_nonzero_residual_fails_sat_preservation": {
+        "evidence": {
+          "false_negative_sat_as_target_no_count": 0,
+          "false_positive_unsat_as_target_yes_count": 16,
+          "mismatch_count": 16,
+          "truth_diverse_probe_surface_present": true
+        },
+        "passed": true
+      },
+      "fixed_finite_codomain_certified": {
+        "evidence": {
+          "basis_cycle_coordinate_count": 11,
+          "complete_mask_table": true,
+          "finite_codomain_size": 2048
+        },
+        "passed": true
+      },
+      "intrinsic_rho33_transport_available_but_not_semantic_sat_relation": {
+        "evidence": {
+          "derived_from_edge_or_circuit_data": true,
+          "formula": "Lambda_hc(gamma)=lambda_boundary(gamma) - (A_h(gamma)/dim(Pi_33)) e_33.",
+          "meaning": "The height/action-return transport is present; what is missing is the assignment-bearing target relation that makes the transport semantic for SAT."
+        },
+        "passed": true
+      },
+      "nonzero_residual_predicate_is_finite_lookup": {
+        "evidence": {
+          "decider": "mask in certified finite table and residual_integral != 0",
+          "lookup_bound": "O(1) after the 2048-row certificate is loaded",
+          "no_table_size": 1,
+          "yes_table_size": 2047
+        },
+        "passed": true
+      },
+      "public_compiler_lands_inside_finite_table": {
+        "evidence": {
+          "all_probe_masks_in_table": true,
+          "candidate_codomain_size": 2048,
+          "target_codomain_size": 2048
+        },
+        "passed": true
+      }
+    },
+    "summary": "A target predicate depending only on the fixed 11-bit D20 mask is a finite lookup problem. As a separation route, that is the wrong target: a many-one reduction from SAT to this finite language would put SAT in P by running the compiler and table lookup, while the tested nonzero-residual predicate already fails on UNSAT canaries."
+  },
+  "formula_compiler_candidate": {
+    "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+    "does_not_read_hidden_e33_to_choose_mask": true,
+    "does_not_read_solver_outcome": true,
+    "false_negative_sat_as_target_no_count": 0,
+    "false_positive_unsat_as_target_yes_count": 16,
+    "finite_codomain_size": 2048,
+    "known_truth_instances": 18,
+    "mismatch_count": 16,
+    "nonzero_e33_residual_count_on_probe": 18,
+    "output_size_bound": "at most 11 primitive D20 cycles plus one certified finite transport row",
+    "public_only": true,
+    "rho33_recomputed_from_emitted_circuit_data": true,
+    "sat_instances": 2,
+    "sat_preservation_passed": false,
+    "source": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+    "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
+    "truth_diverse_probe_surface_present": true,
+    "unique_mask_count_on_probe": 11,
+    "unsat_instances": 16
+  },
+  "minimum_acceptance_tests_for_next_artifact": [
+    "schema names an unbounded parameter n/m/L rather than a fixed D20 mask table",
+    "compiler emits target packet from DIMACS only and records no solver outcome",
+    "witness relation carries assignment bits and local clause selectors",
+    "rho_33 transport is recomputed from emitted edge or circuit data",
+    "SAT canaries and UNSAT canaries exercise both completeness and soundness",
+    "inverse witness projection recovers a satisfying assignment from every accepting target witness",
+    "all size and replay bounds are polynomial in the source formula size"
+  ],
+  "next_highest_yield_item": {
+    "action": "Implement the machine-checkable schema for E(phi), assignment witnesses, clause-local gates, and intrinsic rho_33 transport over an unbounded target family.",
+    "id": "parameterized_e33_target_schema"
+  },
+  "non_claims": [
+    "This does not construct the parameterized target family.",
+    "This does not certify SAT-completeness.",
+    "This does not prove that every possible finite fingerprint fails unless P != NP is assumed.",
+    "This does not prove P != NP."
+  ],
+  "required_parameterized_target_family": {
+    "assignment_bearing_witness_relation": {
+      "currently_witnessed": false,
+      "requirement_defined": true,
+      "shape": "Witnesses must contain assignment bits a in {0,1}^n plus local clause/literal selectors, so accepting target witnesses project back to satisfying assignments."
+    },
+    "clause_local_soundness_gates": {
+      "currently_witnessed": false,
+      "requirement_defined": true,
+      "shape": "Each clause gadget must expose a public local check that at least one selected literal is true under the carried assignment."
+    },
+    "forall_yes_no_preservation": {
+      "currently_witnessed": false,
+      "requirement_defined": true,
+      "shape": "Completeness: a satisfying assignment for phi builds an accepting target witness. Soundness: any accepting target witness projects to a satisfying assignment for phi."
+    },
+    "intrinsic_height_action_return_transport": {
+      "currently_witnessed": false,
+      "requirement_defined": true,
+      "shape": "rho_33(E(phi), a) must be derived as -A_h(C(phi, a))/dim(Pi_33) e_33 from emitted edge or basis-cycle circuit data; no certified residual scalar may be inserted."
+    },
+    "inverse_witness_projection": {
+      "currently_witnessed": false,
+      "requirement_defined": true,
+      "shape": "The target witness must include enough public support data to recover the CNF assignment, rather than only a hidden-sector residual bit."
+    },
+    "parameterized_unbounded_instance_family": {
+      "currently_witnessed": false,
+      "requirement_defined": true,
+      "shape": "Target instances must be indexed by formula size parameters such as variables n, clauses m, and literal occurrences L; the support cannot be the fixed 2048-mask table."
+    },
+    "polynomial_size_and_replay_bounds": {
+      "currently_witnessed": false,
+      "requirement_defined": true,
+      "shape": "The target packet, witness, local replay checks, and height transport must have size and verification cost polynomial in n + m + L."
+    },
+    "public_cnf_to_target_packet_compiler": {
+      "currently_witnessed": false,
+      "requirement_defined": true,
+      "shape": "A deterministic public compiler maps DIMACS CNF phi to a target packet E(phi) without solver outcome, hidden e33 data, or X-extractor advice."
+    }
+  },
+  "schema": "d20.integrity.assignment_bearing_e33_target_family_obligation.source_drop",
+  "source_audit": {
+    "encoded_family_sat_frontier": {
+      "expected_status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
+      "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
+    },
+    "formula_to_boundary_cycle_family_candidate": {
+      "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+    },
+    "sector33_all_residue_height_transport": {
+      "expected_status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "uniform_cnf_to_e33_family_encoding_investigation": {
+      "expected_status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/uniform_cnf_to_e33_family_encoding_investigation.json",
+      "status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED"
+    },
+    "x_extractor_target": {
+      "expected_status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json",
+      "status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+    }
+  },
+  "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
+}

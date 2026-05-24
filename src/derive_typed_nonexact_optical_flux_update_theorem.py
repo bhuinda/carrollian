@@ -19,7 +19,7 @@ SUPERSELECTION_FLUX_EXTENSION_REPORT = (
     D20_INVARIANTS / "theorems" / "superselection_flux_balance_extension" / "report.json"
 )
 MINIMAL_COMPOSITE_TRANSPORT_REPORT = (
-    D20_INVARIANTS / "theorems" / "minimal_composite_null_carriers_transport" / "report.json"
+    D20_INVARIANTS / "theorems" / "minimal_composite_null_supports_transport" / "report.json"
 )
 FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
 
@@ -91,8 +91,8 @@ def typed_row(row: dict[str, Any]) -> dict[str, Any]:
         "hidden_update_integral": hidden_update(r33=residual),
         "hidden_update_mod_prime": hidden_update(r33=residual_mod),
         "event_type": "gauge_zero" if is_zero else "nonexact_optical_height_residual",
-        "carrier_component": "gauge_zero" if is_zero else "R33",
-        "carrier_sector": int(row["carrier_sector"]),
+        "support_component": "gauge_zero" if is_zero else "R33",
+        "support_sector": int(row["support_sector"]),
         "transport_scalar": int(row["transport_scalar"]),
         "transport_scalar_signed": int(row["transport_scalar_signed"]),
         "pi33_coefficient_mod_prime": int(row["pi33_coefficient_mod_prime"]),
@@ -142,7 +142,7 @@ def build_theorem() -> dict[str, Any]:
     gamma8_update = next(row for row in update_rows if row["mask"] == int(first_forced["mask"]))
 
     transport_components = minimal_composite["derived"]["transport_components"]
-    mixed_support = transport_components["mixed_S_channel_superselection_null_carrier"]
+    mixed_support = transport_components["mixed_S_channel_superselection_null_support"]
     pure_support = transport_components["pure_Sminus_superselection_null_doublet"]
     shared_composite_sector = sorted(set(mixed_support).intersection(pure_support))
     sector26_profile = profiles[26]
@@ -178,7 +178,7 @@ def build_theorem() -> dict[str, Any]:
         {
             "name": "critical_26_marker",
             "description": (
-                "Sector 26 is the shared central sector of the two minimal public-zero composite carriers, "
+                "Sector 26 is the shared central sector of the two minimal public-zero composite supports, "
                 "and 20 public D20 states plus 6 H6 channels also give 26."
             ),
             "next_test": (
@@ -226,14 +226,14 @@ def build_theorem() -> dict[str, Any]:
         == "D20_SUPERSELECTION_FLUX_BALANCE_EXTENSION_CERTIFIED"
         and superselection.get("all_checks_pass") is True,
         "minimal_composite_transport_is_certified": minimal_composite.get("status")
-        == "D20_MINIMAL_COMPOSITE_NULL_CARRIERS_TRANSPORT_CLASSIFIED"
+        == "D20_MINIMAL_COMPOSITE_NULL_SUPPORTS_TRANSPORT_CLASSIFIED"
         and minimal_composite.get("all_checks_pass") is True,
         "typed_update_count_is_2048": len(update_rows) == 2048,
         "typed_update_masks_are_complete": [row["mask"] for row in update_rows] == list(range(2048)),
         "zero_class_has_zero_hidden_update": zero_row["hidden_update_integral"] == hidden_update()
         and zero_row["event_type"] == "gauge_zero",
         "all_nonzero_updates_go_to_R33": all(
-            row["carrier_component"] == "R33"
+            row["support_component"] == "R33"
             and row["hidden_update_integral"]["K_mixed_S"] == 0
             and row["hidden_update_integral"]["K_pure_Sminus"] == 0
             for row in nonzero_rows
@@ -309,7 +309,7 @@ def build_theorem() -> dict[str, Any]:
                 "path": rel(SUPERSELECTION_FLUX_EXTENSION_REPORT),
                 "sha256": sha_file(SUPERSELECTION_FLUX_EXTENSION_REPORT),
             },
-            "minimal_composite_null_carriers_transport_report": {
+            "minimal_composite_null_supports_transport_report": {
                 "path": rel(MINIMAL_COMPOSITE_TRANSPORT_REPORT),
                 "sha256": sha_file(MINIMAL_COMPOSITE_TRANSPORT_REPORT),
             },

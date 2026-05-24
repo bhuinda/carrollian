@@ -18,7 +18,7 @@
     "representative_payload_width": 67,
     "representative_prior_polynomial_bound": 4913,
     "representative_within_prior_polynomial_bound": true,
-    "runtime_bound": "O(active_circuit_support + support(e_33)) for materialized vector output; O(active_circuit_support) for scalar residual output with e_33 as certified carrier handle.",
+    "runtime_bound": "O(active_circuit_support + support(e_33)) for materialized vector output; O(active_circuit_support) for scalar residual output with e_33 as certified support handle.",
     "verification_bound": "one X opcode classification plus height-dot-product replay and q42/q12 zero-shadow checks"
   },
   "decision": {
@@ -37,7 +37,7 @@
     ],
     "all_residue_family_witness": {
       "basis_cycle_width": 11,
-      "carrier_sector": 33,
+      "support_sector": 33,
       "nonzero_residue_class_count": 2047,
       "residue_class_count": 2048,
       "transport_rows_sha256": "376171a169c3c951c08656ae2db6076e272aa4358b51619b4b1c4a39d756b3dd"
@@ -64,7 +64,7 @@
     "input": [
       "closed-return circuit row C_gamma",
       "certified height cochain h",
-      "certified public-zero sector carrier e_33",
+      "certified public-zero sector support e_33",
       "dim(Pi_33)"
     ],
     "scope": "certified d20 closed-return residue family and the cycle-8 / Pi_33 representative packet",

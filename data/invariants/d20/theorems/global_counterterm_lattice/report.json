@@ -1,0 +1,234 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "2cbb8d3e4ae30d312c9be867720930390ea36b7ef696fc06c688b8d52cde33bb",
+  "checks": {
+    "all_11_counterterms_are_active": true,
+    "all_residue_height_transport_is_certified": true,
+    "anomaly_cancelled_flux_balance_recovery_is_certified": true,
+    "corrected_basis_clock_is_order_two_or_zero": true,
+    "corrected_clock_image_is_order_two": true,
+    "corrected_clock_is_additive_on_all_2048_masks": true,
+    "corrected_half_anomaly_form_is_zero": true,
+    "corrected_half_anomaly_vanishes_on_all_pairs": true,
+    "corrected_kernel_has_dimension_10": true,
+    "corrected_r33_image_is_order_two": true,
+    "exact_public_flux_closes_on_full_cycle_space": true,
+    "finite_anomaly_counter_is_certified": true,
+    "finite_exact_flux_balance_is_certified": true,
+    "gamma8_is_included_with_order_two_value": true,
+    "general_obstruction_correction_suite_is_certified": true
+  },
+  "claim": "Activating all 11 certified rank-one sector-26 counterterms annihilates the half-anomaly form on the full closed-return residue group. The corrected normalized optical/R33 clock is an additive order-two character on all 2048 masks, so the full finite closed-return group becomes corrected flux-balanced.",
+  "definition": {
+    "corrected_balance": "Exact public D20 flux closes, and R33_global(mask)=-f_global(mask) is additive modulo 26 on the whole closed-return residue group.",
+    "corrected_clock": "f_global(mask)=f_26(mask)-sum_i k_i mask_i mod 26, where k_i are the signed-lift counterterms reduced modulo 26.",
+    "global_counterterm_lattice": "The 11-coordinate counterterm vector with signed lifts [-1,1,5,-2,1,4,-5,-3,5,-2,4], activated on the corresponding basis cycle coordinates."
+  },
+  "derived": {
+    "basis_weights_mod13": [
+      12,
+      1,
+      5,
+      11,
+      1,
+      4,
+      8,
+      10,
+      5,
+      11,
+      4
+    ],
+    "basis_weights_mod26": [
+      12,
+      14,
+      18,
+      24,
+      14,
+      17,
+      8,
+      10,
+      18,
+      11,
+      17
+    ],
+    "corrected_basis_clock_mod26": [
+      13,
+      13,
+      13,
+      0,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13
+    ],
+    "corrected_basis_half_anomaly_mod13": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "corrected_clock_histogram": {
+      "0": 1024,
+      "13": 1024
+    },
+    "corrected_clock_rows_sha256": "e649d94392413a1e51032e0502cfd9633b8fe0fe494a9bfccd728705390fa186",
+    "corrected_r33_histogram": {
+      "0": 1024,
+      "13": 1024
+    },
+    "corrected_r33_rows_sha256": "e649d94392413a1e51032e0502cfd9633b8fe0fe494a9bfccd728705390fa186",
+    "counterterm_lifts_mod13": [
+      12,
+      1,
+      5,
+      11,
+      1,
+      4,
+      8,
+      10,
+      5,
+      11,
+      4
+    ],
+    "counterterm_lifts_mod26": [
+      25,
+      1,
+      5,
+      24,
+      1,
+      4,
+      21,
+      23,
+      5,
+      24,
+      4
+    ],
+    "counterterm_signed_lifts": [
+      -1,
+      1,
+      5,
+      -2,
+      1,
+      4,
+      -5,
+      -3,
+      5,
+      -2,
+      4
+    ],
+    "gamma8": {
+      "basis_cycle_indices": [
+        8
+      ],
+      "corrected_clock_mod26": 13,
+      "corrected_r33_norm_mod26": 13,
+      "height_action": 374784,
+      "included_in_global_corrected_group": true,
+      "mask": 256
+    },
+    "image_13": {
+      "sample_masks": [
+        1,
+        2,
+        4,
+        7,
+        9,
+        10,
+        12,
+        15,
+        16,
+        19,
+        21,
+        22,
+        24,
+        27,
+        29,
+        30,
+        32,
+        35,
+        37,
+        38,
+        40,
+        43,
+        45,
+        46
+      ],
+      "size": 1024
+    },
+    "kernel": {
+      "dimension": 10,
+      "sample_masks": [
+        0,
+        3,
+        5,
+        6,
+        8,
+        11,
+        13,
+        14,
+        17,
+        18,
+        20,
+        23,
+        25,
+        26,
+        28,
+        31,
+        33,
+        34,
+        36,
+        39,
+        41,
+        42,
+        44,
+        47
+      ],
+      "size": 1024
+    }
+  },
+  "inputs": {
+    "all_residue_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "706a8a3d369f2b0f29f87c60ad3b43781f9c52c4e9a6d276e26c6d1413fd01ed"
+    },
+    "anomaly_cancelled_flux_balance_recovery_report": {
+      "path": "data/invariants/d20/theorems/anomaly_cancelled_flux_balance_recovery/report.json",
+      "sha256": "973fb49612a034ab997313c1528622625e87b4bc567b38a08affff25598985f6"
+    },
+    "finite_anomaly_counter_report": {
+      "path": "data/invariants/d20/theorems/finite_anomaly_counter/report.json",
+      "sha256": "2eab53f4671763737840b8572c67f8889bdc0ad7e5a7768763d5c49b7a35d620"
+    },
+    "finite_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_flux_balance/report.json",
+      "sha256": "8d066a8ffbeac843d24862994905b4f497ab7956f333243dcf65053a11088f02"
+    },
+    "general_obstruction_correction_suite_report": {
+      "path": "data/invariants/d20/theorems/general_obstruction_correction_suite/report.json",
+      "sha256": "f82342debc99f3e3e6e937450fb94fb83b5c080e5fc104a0d19b1187f82193b1"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This is still a finite modular correction theorem. It does not identify a continuum charge algebra or prove a continuum BMS/Carrollian theorem without an additional recovery map.",
+    "what_this_proves": [
+      "the sector-26 correction suite globalizes over the entire closed-return residue group",
+      "all pairwise half-anomaly defects vanish after simultaneous correction",
+      "the corrected hidden R33 ledger reduces to an order-two character",
+      "gamma_8 is included in the globally corrected flux-balance sector"
+    ]
+  },
+  "next_highest_yield_item": "Extract the resulting global corrected charge map as an explicit homomorphism and compare it against the public D20 exact flux charge basis.",
+  "object": "d20",
+  "schema": "d20.theorem.global_counterterm_lattice",
+  "status": "D20_GLOBAL_COUNTERTERM_LATTICE_CERTIFIED"
+}

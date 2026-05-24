@@ -6,7 +6,7 @@ The cadical_frat_surface_lrat_verified anomaly is explained by the Type-C cluste
 
 The computed verdict is:
 
-\[\boxed{\Lambda^2\text{ embeds the chamber into a larger Spin/D6 foam envelope, where it becomes a proper face rather than the whole carrier.}}\]
+\[\boxed{\Lambda^2\text{ embeds the chamber into a larger Spin/D6 foam envelope, where it becomes a proper face rather than the whole support.}}\]
 
 ## Input Type-C construction
 
@@ -74,7 +74,7 @@ The computed verdict is:
 
 ## Layer explanation
 
-| layer                                  |   carrier_dimension | projector                              |   projector_rank |   energy_fraction | interpretation                                                            |
+| layer                                  |   support_dimension | projector                              |   projector_rank |   energy_fraction | interpretation                                                            |
 |:---------------------------------------|--------------------:|:---------------------------------------|-----------------:|------------------:|:--------------------------------------------------------------------------|
 | A6 signed-edge / A42-style six-channel |                   6 | (B+S)/V active two-plane               |                2 |         0.993553  | dominant six-channel mechanism                                            |
 | A12 pair quotient                      |                   3 | same active plane after B/V/S quotient |                2 |         1         | CSDO sign differences folded to terminal A12 image                        |

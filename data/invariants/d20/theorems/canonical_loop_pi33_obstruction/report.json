@@ -1,0 +1,306 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "803c482e1c7dab5fb8a8dd2c9dd75c110878c022f3bb4b7f9dcf6e84cfbacf0d",
+  "checks": {
+    "bare_pi33_coefficients_are_zero_for_all_recorded_variants": true,
+    "boundary_to_loop_is_certified": true,
+    "canonical_flux_balance_gauge_is_certified": true,
+    "canonical_root_and_root_edge_match_cycle8": true,
+    "cycle8_boundary_lift_matches_canonical_obstruction_target": true,
+    "cycle8_root_edge_is_traversed_in_canonical_direction": true,
+    "full_character_table_remains_hash_only": true,
+    "full_drinfeld_idempotent_matrix_remains_hash_only": true,
+    "height_corrected_obstruction_has_zero_public_shadow": true,
+    "height_corrected_pi33_obstruction_is_nonzero_and_canonical": true,
+    "sector33_boundary_annihilation_is_certified": true,
+    "sector33_height_transport_is_certified": true,
+    "tube_section_is_hash_only_right_inverse": true
+  },
+  "claim": "The canonical finite flux-balance gauge pushes through the certified boundary-to-Loop_297 lift for gamma_8. The cycle contains the canonical root and traverses the canonical root edge in the canonical direction. The bare lambda_boundary Loop_297 lift remains Pi_33-annihilated, while the height-coherent correction gives the canonical sector-33 obstruction -374784 with zero public A42/A12 shadow. This certification uses the tube-visible Pi_33 functional and hash-only Drinfeld metadata; it does not materialize the full 39 x 985 idempotent matrix.",
+  "definition": {
+    "bare_loop_obstruction": "The tube-visible Pi_33 character of lambda_boundary(gamma_8); this is zero for the certified unweighted, signed-orientation, and optical-weighted variants.",
+    "canonical_pushforward": "Apply the canonical root/edge orientation from canonical_flux_balance_gauge to the certified gamma_8 boundary cycle, then read its existing lambda_boundary image in Loop_297.",
+    "height_corrected_obstruction": "Lambda_hc(gamma_8)=lambda_boundary(gamma_8)-(A_h(gamma_8)/dim(Pi_33))e_33, whose Pi_33 coefficient is the edge-derived residual -374784."
+  },
+  "derived": {
+    "canonical_boundary_cycle": {
+      "canonical_root_edge": {
+        "edge_id": 2,
+        "flux": {
+          "J": -128,
+          "M": 128,
+          "P": 896,
+          "Phi": -896
+        },
+        "interface_weight": 27648,
+        "selector_choice": 1,
+        "selector_duad_index": 5,
+        "source": 0,
+        "target": 11
+      },
+      "canonical_root_vertex": 0,
+      "cycle8_contains_canonical_root_edge": true,
+      "cycle8_edge_ids": [
+        11,
+        1,
+        2,
+        22,
+        21
+      ],
+      "cycle8_vertices": [
+        10,
+        4,
+        0,
+        11,
+        13,
+        10
+      ],
+      "cycle8_visits_canonical_root": true,
+      "cycle_step_orientation_records": [
+        {
+          "added": "B-",
+          "canonical_orientation_sign": 1,
+          "canonical_source": 10,
+          "canonical_target": 4,
+          "cycle_source": 10,
+          "cycle_target": 4,
+          "edge_id": 11,
+          "is_canonical_root_edge": false,
+          "loop_base_object": "B+",
+          "removed": "B+",
+          "step_index": 0,
+          "step_vector_sha256": "a94e644efe6ecb178c4ad311d2cccded75f312696af314f477ab0126e7b46057"
+        },
+        {
+          "added": "B+",
+          "canonical_orientation_sign": -1,
+          "canonical_source": 0,
+          "canonical_target": 4,
+          "cycle_source": 4,
+          "cycle_target": 0,
+          "edge_id": 1,
+          "is_canonical_root_edge": false,
+          "loop_base_object": "V+",
+          "removed": "V+",
+          "step_index": 1,
+          "step_vector_sha256": "01da396bb80eaf4723edb2cdd62c35472895126381aabaf444df7aa08b8e4340"
+        },
+        {
+          "added": "S-",
+          "canonical_orientation_sign": 1,
+          "canonical_source": 0,
+          "canonical_target": 11,
+          "cycle_source": 0,
+          "cycle_target": 11,
+          "edge_id": 2,
+          "is_canonical_root_edge": true,
+          "loop_base_object": "B-",
+          "removed": "B-",
+          "step_index": 2,
+          "step_vector_sha256": "8a896ea0719a8c643e5f26f6cd677d25f55e0e4c817d6da80955395c3b57db19"
+        },
+        {
+          "added": "V+",
+          "canonical_orientation_sign": 1,
+          "canonical_source": 11,
+          "canonical_target": 13,
+          "cycle_source": 11,
+          "cycle_target": 13,
+          "edge_id": 22,
+          "is_canonical_root_edge": false,
+          "loop_base_object": "V-",
+          "removed": "V-",
+          "step_index": 3,
+          "step_vector_sha256": "f0a40ecfe2ffdb8ac8d535ed93f7b86739d7a08c79b9d78e3c4c681796c301ec"
+        },
+        {
+          "added": "V-",
+          "canonical_orientation_sign": -1,
+          "canonical_source": 10,
+          "canonical_target": 13,
+          "cycle_source": 13,
+          "cycle_target": 10,
+          "edge_id": 21,
+          "is_canonical_root_edge": false,
+          "loop_base_object": "S-",
+          "removed": "S-",
+          "step_index": 4,
+          "step_vector_sha256": "448efdfa0ff04f1254fcfaef7cc4f821c5a10acac0461d0a16fc95d8bf30e4a7"
+        }
+      ]
+    },
+    "hash_only_metadata": {
+      "full_drinfeld_projection": {
+        "character_table_materialized": false,
+        "character_table_sha256": "3751bdba9b90c17c6f5658fe45d1d4d76d1692ed8a84ea5e0cc78338245cab34",
+        "embedded_idempotent_matrix_sha256": "e9066713580845e187b29aaa41b148581e6c43266f993a010b3a192e4d41c8c7",
+        "embedded_idempotent_matrix_shape": [
+          39,
+          985
+        ],
+        "idempotent_matrix_materialized": false
+      },
+      "tube_section": {
+        "complete_section_materialized": false,
+        "projection_section_identity": true,
+        "section_hash_root": "ec0015d605c42f725b501cefd363b07b7e04a93e17abaa80ebae9d36b5d52a69"
+      }
+    },
+    "loop297_lift": {
+      "object_summary": {
+        "B+": {
+          "coefficient_sum": 6144,
+          "mod_prime_sum": 6144,
+          "support": 16
+        },
+        "B-": {
+          "coefficient_sum": 16896,
+          "mod_prime_sum": 16896,
+          "support": 33
+        },
+        "S-": {
+          "coefficient_sum": 6336,
+          "mod_prime_sum": 6336,
+          "support": 44
+        },
+        "V+": {
+          "coefficient_sum": 16512,
+          "mod_prime_sum": 16512,
+          "support": 86
+        },
+        "V-": {
+          "coefficient_sum": 8064,
+          "mod_prime_sum": 8064,
+          "support": 14
+        }
+      },
+      "steps": [
+        {
+          "added": "B-",
+          "direction": "v_to_u",
+          "edge_id": 11,
+          "loop_base_object": "B+",
+          "removed": "B+",
+          "source_vertex": 10,
+          "step_vector_sha256": "a94e644efe6ecb178c4ad311d2cccded75f312696af314f477ab0126e7b46057",
+          "target_vertex": 4
+        },
+        {
+          "added": "B+",
+          "direction": "v_to_u",
+          "edge_id": 1,
+          "loop_base_object": "V+",
+          "removed": "V+",
+          "source_vertex": 4,
+          "step_vector_sha256": "01da396bb80eaf4723edb2cdd62c35472895126381aabaf444df7aa08b8e4340",
+          "target_vertex": 0
+        },
+        {
+          "added": "S-",
+          "direction": "u_to_v",
+          "edge_id": 2,
+          "loop_base_object": "B-",
+          "removed": "B-",
+          "source_vertex": 0,
+          "step_vector_sha256": "8a896ea0719a8c643e5f26f6cd677d25f55e0e4c817d6da80955395c3b57db19",
+          "target_vertex": 11
+        },
+        {
+          "added": "V+",
+          "direction": "u_to_v",
+          "edge_id": 22,
+          "loop_base_object": "V-",
+          "removed": "V-",
+          "source_vertex": 11,
+          "step_vector_sha256": "f0a40ecfe2ffdb8ac8d535ed93f7b86739d7a08c79b9d78e3c4c681796c301ec",
+          "target_vertex": 13
+        },
+        {
+          "added": "V-",
+          "direction": "v_to_u",
+          "edge_id": 21,
+          "loop_base_object": "S-",
+          "removed": "S-",
+          "source_vertex": 13,
+          "step_vector_sha256": "448efdfa0ff04f1254fcfaef7cc4f821c5a10acac0461d0a16fc95d8bf30e4a7",
+          "target_vertex": 10
+        }
+      ],
+      "vector": {
+        "coefficient_abs_sum": 53952,
+        "coefficient_max": 576,
+        "coefficient_min": 144,
+        "coefficient_sum": 53952,
+        "mod_prime_sha256": "c0f0d8b81dd577a8f7f2e0ad652a911131516d42d4651f2a2ad2c0fd0c3c723c",
+        "mod_prime_sum": 53952,
+        "mod_prime_support": 193,
+        "sha256": "c0f0d8b81dd577a8f7f2e0ad652a911131516d42d4651f2a2ad2c0fd0c3c723c",
+        "support": 193
+      },
+      "vector_entries_sha256": "c0f0d8b81dd577a8f7f2e0ad652a911131516d42d4651f2a2ad2c0fd0c3c723c"
+    },
+    "pi33_obstruction": {
+      "bare_lambda_coefficients_by_variant": {
+        "optical_weighted": 0,
+        "signed_orientation": 0,
+        "unweighted": 0
+      },
+      "bare_lambda_left_action_supports_by_variant": {
+        "optical_weighted": 0,
+        "signed_orientation": 0,
+        "unweighted": 0
+      },
+      "height_action": 374784,
+      "height_corrected_coefficient": -374784,
+      "lambda_boundary_gamma8_coefficient": 0,
+      "public_shadow_nonzero_counts": {
+        "q12": 0,
+        "q42": 0
+      },
+      "residual_integral": -374784
+    }
+  },
+  "inputs": {
+    "boundary_to_loop_report": {
+      "path": "data/invariants/d20/boundary_to_loop/report.json",
+      "sha256": "b91701a9b92fad82d35d78445f031250181231a42f0cf8fd15b8cff7c07e8d29"
+    },
+    "canonical_flux_balance_gauge_report": {
+      "path": "data/invariants/d20/theorems/canonical_flux_balance_gauge/report.json",
+      "sha256": "136e5cbbe173a570a78226bd25927a38ac5845048e093ccef45d126fcca4e06c"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "sector33_boundary_annihilation_report": {
+      "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
+      "sha256": "eed2261aa831562de66a5f6c9b2713202f3b4aeb85a9d9d121eba9604be709f4"
+    },
+    "sector33_height_coherent_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "sha256": "a33668aef24f3405c5f7c4caa5f1301d076ac6c778f7e54afcaff1b61e71f708"
+    },
+    "tube_projection_section": {
+      "path": "layers/tube/projection_section.json",
+      "sha256": "cb0c078f42899f786ed7a0f620ce26c1b1b1a69789e8d36bdf126aa3b9968c3d"
+    },
+    "wedderburn_trace": {
+      "path": "layers/drinfeld/wedderburn_trace.json",
+      "sha256": "2bf7c25fd56a6425719cdfeea386b9d06ab8fe4f7c7d6155a1d038d3143fef3d"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not compute the full A985 Drinfeld projection coordinates. It certifies the canonical tube-visible obstruction path using existing hash-only full-Drinfeld metadata.",
+    "what_this_proves": [
+      "the canonical finite gauge fixes the boundary representative used by the gamma_8 lift",
+      "the certified Loop_297 lift remains nonzero and tube-visible Pi_33-annihilated before height correction",
+      "the height-coherent correction recovers the canonical nonzero Pi_33 residual -374784",
+      "the proof avoids materializing the full Drinfeld idempotent matrix and character table"
+    ]
+  },
+  "next_highest_yield_item": "Turn the canonical Loop_297 obstruction into an explicit finite Ward identity: exact public flux gauge term zero, bare Pi_33 term zero, height-corrected R33 term -374784.",
+  "object": "d20",
+  "schema": "d20.theorem.canonical_loop_pi33_obstruction",
+  "status": "D20_CANONICAL_LOOP_PI33_OBSTRUCTION_CERTIFIED"
+}

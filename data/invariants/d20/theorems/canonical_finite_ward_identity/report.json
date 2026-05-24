@@ -1,0 +1,136 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b1fa507bbd17c2c31e1194ca4867180f70922ba54e7b2e63d72683f81cbc967b",
+  "checks": {
+    "bare_pi33_terms_are_zero": true,
+    "canonical_flux_balance_gauge_is_certified": true,
+    "canonical_loop_pi33_obstruction_is_certified": true,
+    "cycle8_is_canonical_gamma8": true,
+    "exact_public_flux_gauge_term_is_zero": true,
+    "finite_exact_flux_balance_is_certified": true,
+    "finite_ward_scalar_sum_is_zero": true,
+    "height_corrected_r33_term_is_negative_height_action": true,
+    "public_shadows_are_zero": true
+  },
+  "claim": "In the canonical finite flux-balance gauge, gamma_8 satisfies an explicit finite Ward identity: the exact public flux gauge term is zero, the bare tube-visible Pi_33 term is zero, and the height-corrected R33/Pi_33 term is -374784, exactly cancelling the height action +374784.",
+  "definition": {
+    "bare_pi33_term": "chi_33^tube(lambda_boundary(gamma_8)).",
+    "finite_ward_identity": "|Delta Q_public^exact-Flux_D20|_1 + chi_33(lambda_boundary) + chi_33(Lambda_hc) + A_h(gamma_8) = 0.",
+    "height_corrected_r33_term": "chi_33^tube(Lambda_hc(gamma_8)), equal to the sector-33/R33 residual.",
+    "public_exact_gauge_term": "Delta Q_public^exact - Flux_D20(gamma_8)."
+  },
+  "derived": {
+    "cycle": {
+      "canonical_root_edge": {
+        "edge_id": 2,
+        "flux": {
+          "J": -128,
+          "M": 128,
+          "P": 896,
+          "Phi": -896
+        },
+        "interface_weight": 27648,
+        "selector_choice": 1,
+        "selector_duad_index": 5,
+        "source": 0,
+        "target": 11
+      },
+      "canonical_root_vertex": 0,
+      "cycle_id": 8,
+      "edge_ids": [
+        11,
+        1,
+        2,
+        22,
+        21
+      ],
+      "vertices": [
+        10,
+        4,
+        0,
+        11,
+        13,
+        10
+      ]
+    },
+    "public_exact_flux": {
+      "flux_D20": {
+        "J": 0,
+        "M": 0,
+        "P": 0,
+        "Phi": 0
+      },
+      "public_exact_gauge_term": {
+        "J": 0,
+        "M": 0,
+        "P": 0,
+        "Phi": 0
+      },
+      "public_scalar_norm": 0,
+      "q_in": {
+        "J": 624,
+        "M": 912,
+        "P": -192,
+        "Phi": -192
+      },
+      "q_out": {
+        "J": 624,
+        "M": 912,
+        "P": -192,
+        "Phi": -192
+      }
+    },
+    "tube_hidden_terms": {
+      "bare_pi33_term_used": 0,
+      "bare_pi33_terms_by_variant": {
+        "optical_weighted": 0,
+        "signed_orientation": 0,
+        "unweighted": 0
+      },
+      "height_action_term": 374784,
+      "height_corrected_r33_term": -374784,
+      "public_shadow_nonzero_counts": {
+        "q12": 0,
+        "q42": 0
+      }
+    },
+    "ward_identity": {
+      "equation": "0 + 0 - 374784 + 374784 = 0",
+      "scalar_sum": 0,
+      "terms": {
+        "bare_pi33": 0,
+        "height_action": 374784,
+        "height_corrected_R33": -374784,
+        "public_exact_gauge_scalar": 0
+      },
+      "total_scalar_balance": 0
+    }
+  },
+  "inputs": {
+    "canonical_flux_balance_gauge_report": {
+      "path": "data/invariants/d20/theorems/canonical_flux_balance_gauge/report.json",
+      "sha256": "136e5cbbe173a570a78226bd25927a38ac5845048e093ccef45d126fcca4e06c"
+    },
+    "canonical_loop_pi33_obstruction_report": {
+      "path": "data/invariants/d20/theorems/canonical_loop_pi33_obstruction/report.json",
+      "sha256": "fd49332d15e769b118a0487e1d2a0b46edcb4f962cd7b9a7d297156551b9144c"
+    },
+    "finite_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_flux_balance/report.json",
+      "sha256": "8d066a8ffbeac843d24862994905b4f497ab7956f333243dcf65053a11088f02"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This is the gamma_8 finite Ward identity. It does not yet prove the same identity for all 2048 closed-return masks or a continuum Ward identity.",
+    "what_this_proves": [
+      "the canonical exact public flux term is closed and gauge-fixed",
+      "the bare boundary-to-Loop_297 Pi_33 term remains zero",
+      "the nonzero physical obstruction is exactly the height-corrected R33/Pi_33 residual",
+      "the residual is balanced by the certified finite height action"
+    ]
+  },
+  "next_highest_yield_item": "Generalize the canonical Ward identity from gamma_8 to all 2048 closed-return masks using the global counterterm lattice and all-residue height-coherent transport.",
+  "object": "d20",
+  "schema": "d20.theorem.canonical_finite_ward_identity",
+  "status": "D20_CANONICAL_FINITE_WARD_IDENTITY_CERTIFIED"
+}

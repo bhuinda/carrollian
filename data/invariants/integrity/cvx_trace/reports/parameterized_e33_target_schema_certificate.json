@@ -1,0 +1,286 @@
+{
+  "claim_level": "assignment_bearing_schema_defined_compiler_and_forall_theorem_open",
+  "decision": {
+    "may_claim_assignment_witness_shape_machine_checkable": true,
+    "may_claim_clause_local_soundness_gate_schema_defined": true,
+    "may_claim_forall_yes_no_preservation": false,
+    "may_claim_intrinsic_transport_schema_excludes_inserted_residual_scalar": true,
+    "may_claim_p_not_np": false,
+    "may_claim_parameterized_e33_target_schema_defined": true,
+    "may_claim_public_cnf_to_parameterized_packet_compiler_implemented": false,
+    "may_claim_sat_complete_hidden_e33_family": false,
+    "reason": "The schema now names the unbounded parameters, assignment witness, inverse projection, clause-local gates, and intrinsic rho_33 transport contract. It still does not implement the public compiler or prove forall-instance preservation."
+  },
+  "example_witness_checks": {
+    "accepting_sat_unit": {
+      "errors": [],
+      "instance": {
+        "acceptance": {
+          "assignment_projects_to_source": true,
+          "clauses_locally_satisfied": true,
+          "target_accepts": true
+        },
+        "assignment_witness": {
+          "assignment_bits": [
+            true
+          ],
+          "clause_witnesses": [
+            {
+              "assignment_value": true,
+              "clause_index": 0,
+              "literal": 1,
+              "literal_satisfied": true,
+              "selected_literal_index": 0,
+              "sign": 1,
+              "variable": 1
+            }
+          ],
+          "inverse_projection": {
+            "assignment_bits": [
+              true
+            ]
+          }
+        },
+        "family_id": "parameterized_assignment_bearing_hidden_e33_v0_schema",
+        "instance_id": "canary_sat_unit",
+        "intrinsic_transport": {
+          "certified_residual_scalar_inserted": false,
+          "dim_pi33": 2,
+          "emitted_circuit_data": {
+            "circuit_kind": "parameterized_clause_local_boundary_circuit",
+            "clause_gadget_count": 1,
+            "gadget_rows": [
+              {
+                "clause_index": 0,
+                "height_action_contribution_symbol": "h_clause_0_0",
+                "selected_literal_index": 0
+              }
+            ],
+            "height_action_symbol": "sum_clause_gadget_height_actions"
+          },
+          "formula": "rho_33(E(phi),a)=-(A_h(C(phi,a))/dim(Pi_33))e_33",
+          "residual_scalar_source": "derived_from_emitted_circuit_data",
+          "support_sector": 33
+        },
+        "parameters": {
+          "L": 1,
+          "m": 1,
+          "n": 1,
+          "unbounded_parameter": "n+m+L"
+        },
+        "schema": "d20.integrity.parameterized_e33_target_instance.source_drop",
+        "source_formula": {
+          "clauses": [
+            [
+              1
+            ]
+          ],
+          "format": "DIMACS_CNF",
+          "literal_occurrences": 1,
+          "sha256": "6642f3ff4fae6f869a53f303bc768802cec0a16af731686c6bf03f342cf0489e",
+          "variables": 1
+        },
+        "target_packet": {
+          "compiler_contract": {
+            "compiler_id": "public_dimacs_to_parameterized_assignment_e33_packet_v0_schema",
+            "input_surface": "DIMACS_CNF",
+            "public_only": true,
+            "uses_hidden_e33_advice": false,
+            "uses_solver_outcome": false
+          },
+          "packet_id": "E(canary_sat_unit)",
+          "polynomial_size_bound": {
+            "bound": "O(n+m+L)",
+            "local_gate_count": 1,
+            "packet_units": 3,
+            "source_size_parameter": "n+m+L",
+            "witness_units": 2
+          },
+          "public_payload": {
+            "clause_rows": [
+              [
+                1
+              ]
+            ],
+            "literal_occurrences": 1,
+            "variable_count": 1
+          }
+        }
+      },
+      "passed": true
+    },
+    "rejected_unsat_unit_pair_bad_witness": {
+      "errors": [
+        "clause 1 selected literal is not satisfied",
+        "target accepts despite an unsatisfied local clause witness",
+        "acceptance clauses_locally_satisfied does not match witness replay"
+      ],
+      "instance": {
+        "acceptance": {
+          "assignment_projects_to_source": true,
+          "clauses_locally_satisfied": true,
+          "target_accepts": true
+        },
+        "assignment_witness": {
+          "assignment_bits": [
+            true
+          ],
+          "clause_witnesses": [
+            {
+              "assignment_value": true,
+              "clause_index": 0,
+              "literal": 1,
+              "literal_satisfied": true,
+              "selected_literal_index": 0,
+              "sign": 1,
+              "variable": 1
+            },
+            {
+              "assignment_value": true,
+              "clause_index": 1,
+              "literal": -1,
+              "literal_satisfied": false,
+              "selected_literal_index": 0,
+              "sign": -1,
+              "variable": 1
+            }
+          ],
+          "inverse_projection": {
+            "assignment_bits": [
+              true
+            ]
+          }
+        },
+        "family_id": "parameterized_assignment_bearing_hidden_e33_v0_schema",
+        "instance_id": "canary_unsat_unit_pair_bad_witness",
+        "intrinsic_transport": {
+          "certified_residual_scalar_inserted": false,
+          "dim_pi33": 2,
+          "emitted_circuit_data": {
+            "circuit_kind": "parameterized_clause_local_boundary_circuit",
+            "clause_gadget_count": 2,
+            "gadget_rows": [
+              {
+                "clause_index": 0,
+                "height_action_contribution_symbol": "h_clause_0_0",
+                "selected_literal_index": 0
+              },
+              {
+                "clause_index": 1,
+                "height_action_contribution_symbol": "h_clause_1_0",
+                "selected_literal_index": 0
+              }
+            ],
+            "height_action_symbol": "sum_clause_gadget_height_actions"
+          },
+          "formula": "rho_33(E(phi),a)=-(A_h(C(phi,a))/dim(Pi_33))e_33",
+          "residual_scalar_source": "derived_from_emitted_circuit_data",
+          "support_sector": 33
+        },
+        "parameters": {
+          "L": 2,
+          "m": 2,
+          "n": 1,
+          "unbounded_parameter": "n+m+L"
+        },
+        "schema": "d20.integrity.parameterized_e33_target_instance.source_drop",
+        "source_formula": {
+          "clauses": [
+            [
+              1
+            ],
+            [
+              -1
+            ]
+          ],
+          "format": "DIMACS_CNF",
+          "literal_occurrences": 2,
+          "sha256": "ac42a371b5a124286c410ed5dfa2e3be7ee7d5b1feac6f08e7e1715f0c3669a8",
+          "variables": 1
+        },
+        "target_packet": {
+          "compiler_contract": {
+            "compiler_id": "public_dimacs_to_parameterized_assignment_e33_packet_v0_schema",
+            "input_surface": "DIMACS_CNF",
+            "public_only": true,
+            "uses_hidden_e33_advice": false,
+            "uses_solver_outcome": false
+          },
+          "packet_id": "E(canary_unsat_unit_pair_bad_witness)",
+          "polynomial_size_bound": {
+            "bound": "O(n+m+L)",
+            "local_gate_count": 2,
+            "packet_units": 5,
+            "source_size_parameter": "n+m+L",
+            "witness_units": 3
+          },
+          "public_payload": {
+            "clause_rows": [
+              [
+                1
+              ],
+              [
+                -1
+              ]
+            ],
+            "literal_occurrences": 2,
+            "variable_count": 1
+          }
+        }
+      },
+      "passed": true
+    }
+  },
+  "family_id": "parameterized_assignment_bearing_hidden_e33_v0_schema",
+  "next_highest_yield_item": {
+    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    "id": "cnf_to_parameterized_e33_packet_compiler"
+  },
+  "non_claims": [
+    "This does not implement the CNF-to-E(phi) compiler.",
+    "This does not prove every satisfiable CNF has an accepting target witness.",
+    "This does not prove every accepting target witness projects to a satisfying assignment for arbitrary CNF.",
+    "This does not certify SAT-completeness.",
+    "This does not prove P != NP."
+  ],
+  "required_surfaces": {
+    "assignment_witness_surface": "assignment bits plus one selected literal witness per clause",
+    "forbidden_surface": "inserted certified residual scalar",
+    "intrinsic_transport_surface": "rho_33(E(phi),a)=-(A_h(C(phi,a))/dim(Pi_33))e_33 from emitted circuit data",
+    "inverse_projection_surface": "assignment bits are recoverable from accepting target witnesses",
+    "source_formula_surface": "DIMACS_CNF with explicit clause rows",
+    "target_packet_surface": "public E(phi) packet with public-only compiler contract",
+    "unbounded_parameters": [
+      "n",
+      "m",
+      "L"
+    ]
+  },
+  "schema": "d20.integrity.parameterized_e33_target_schema_certificate.source_drop",
+  "schema_path": "data/invariants/integrity/cvx_trace/schemas/parameterized_e33_target.schema.json",
+  "schema_shape_check": {
+    "errors": [],
+    "passed": true
+  },
+  "source_audit": {
+    "assignment_bearing_e33_target_family_obligation": {
+      "expected_status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
+      "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
+    },
+    "encoded_family_sat_frontier": {
+      "expected_status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
+      "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
+    },
+    "formula_to_boundary_cycle_family_candidate": {
+      "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+    }
+  },
+  "status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN"
+}

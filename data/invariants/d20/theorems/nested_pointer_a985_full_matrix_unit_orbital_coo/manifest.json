@@ -1,0 +1,50 @@
+{
+  "inputs": {
+    "central_idempotents": {
+      "path": "data/invariants/d20/theorems/nested_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "full_legacy_sector_match": {
+      "path": "data/invariants/d20/theorems/nested_pointer_a985_full_legacy_sector_match/report.json",
+      "sha256": "69341804011de3836292f5baa4a16b335b813e4e930abc49ffb0030aca734047"
+    },
+    "legacy_matrix_unit_transport": {
+      "path": "data/invariants/d20/theorems/nested_pointer_a985_legacy_matrix_unit_transport/report.json",
+      "sha256": "c97ba9903cece22fa172b554099abadb6adf33f773ffe2beb63fe6de08f518ad"
+    },
+    "registered_subset_coo": {
+      "path": "data/invariants/d20/theorems/nested_pointer_a985_registered_support_matrix_units/registered_null_support_matrix_units_orbital_coo.csv",
+      "sha256": "4a08ec0dd4dabc07c74e3351f6d2f1ded5bfd3a7efa37ae22c8deeec1804d0d0"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "manifest_sha256": "3220ab13ed98a31e2940d6cdb384bb0350b56b0438e776a6a1cf1126ab3e263f",
+  "name": "nested_pointer_a985_full_matrix_unit_orbital_coo",
+  "outputs": {
+    "arrays": "data/invariants/d20/theorems/nested_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_raw_orbital_arrays.npz",
+    "coo": "data/invariants/d20/theorems/nested_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_orbital_coo.csv",
+    "manifest": "data/invariants/d20/theorems/nested_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_orbital_manifest.csv",
+    "report": "data/invariants/d20/theorems/nested_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+    "sector_summary": "data/invariants/d20/theorems/nested_pointer_a985_full_matrix_unit_orbital_coo/sector_matrix_unit_source_summary.csv"
+  },
+  "report_sha256": "ab34d230ee5b62458d56a3e6db8d70fce06e9e4806090503ee8d718d5bffccb1",
+  "schema": "d20.theorem.nested_pointer_a985_full_matrix_unit_orbital_coo_manifest.source_drop",
+  "validation_tests": [
+    "full_legacy_sector_match_certified",
+    "legacy_transport_certified",
+    "central_page_count_is_39",
+    "matrix_unit_count_is_985",
+    "manifest_row_count_is_985",
+    "coo_rows_match_nonzero_count",
+    "sector_summary_count_is_39",
+    "registered_blocks_preserved",
+    "registered_duplicate_conflicts_zero",
+    "all_diagonal_sums_equal_central_pages",
+    "constructed_bridge_failures_zero",
+    "registered_direct_product_failures_zero",
+    "sampled_matrix_unit_products_pass"
+  ]
+}

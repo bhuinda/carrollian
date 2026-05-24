@@ -2,7 +2,7 @@
 
 ## Main result
 
-The constructed signed-Fano action from cadical_drat_trace_typed_c gives an exact carrier. In that carrier, the active chamber is the two-plane
+The constructed signed-Fano action from cadical_drat_trace_typed_c gives an exact support. In that support, the active chamber is the two-plane
 
 \[
 \langle u_0,u_V\rangle,
@@ -28,7 +28,7 @@ So the mechanism is not a \(B\) versus \(S\) split. It is the \((B+S)/V\) chambe
 - \(W(D_6)\)-scalar invariant energy inside \(A_6\): `0.165271`
 - active chamber share of the six-channel reconstruction: `1.000000`
 
-The full \(R_\Omega\) e-lock is still a global \(16\times16\) question. cadical_lrat_checked_trace_typed_c certifies the exact chamber projector on the constructed six-channel/foam carrier.
+The full \(R_\Omega\) e-lock is still a global \(16\times16\) question. cadical_lrat_checked_trace_typed_c certifies the exact chamber projector on the constructed six-channel/foam support.
 
 ## Stabilizer
 
@@ -54,7 +54,7 @@ Over `2000` random two-planes in \(H_6\):
 
 ## Interpretation
 
-Invariant averaging kills the object; chamber projection recovers it. Therefore the payoff-forming mechanism is not signed-Fano invariance. It is the choice of an active chamber inside the signed-Fano/6j carrier.
+Invariant averaging kills the object; chamber projection recovers it. Therefore the payoff-forming mechanism is not signed-Fano invariance. It is the choice of an active chamber inside the signed-Fano/6j support.
 
 ## Key files
 

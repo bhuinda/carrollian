@@ -1,0 +1,328 @@
+{
+  "$id": "d20.integrity.parameterized_e33_target_instance.source_drop",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance": {
+      "additionalProperties": false,
+      "properties": {
+        "assignment_projects_to_source": {
+          "type": "boolean"
+        },
+        "clauses_locally_satisfied": {
+          "type": "boolean"
+        },
+        "target_accepts": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "target_accepts",
+        "clauses_locally_satisfied",
+        "assignment_projects_to_source"
+      ],
+      "type": "object"
+    },
+    "assignment_witness": {
+      "additionalProperties": false,
+      "properties": {
+        "assignment_bits": {
+          "items": {
+            "type": "boolean"
+          },
+          "type": "array"
+        },
+        "clause_witnesses": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "assignment_value": {
+                "type": "boolean"
+              },
+              "clause_index": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "literal": {
+                "type": "integer"
+              },
+              "literal_satisfied": {
+                "type": "boolean"
+              },
+              "selected_literal_index": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "sign": {
+                "enum": [
+                  -1,
+                  1
+                ]
+              },
+              "variable": {
+                "minimum": 1,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "clause_index",
+              "selected_literal_index",
+              "literal",
+              "variable",
+              "sign",
+              "assignment_value",
+              "literal_satisfied"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "inverse_projection": {
+          "additionalProperties": false,
+          "properties": {
+            "assignment_bits": {
+              "items": {
+                "type": "boolean"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "assignment_bits"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "assignment_bits",
+        "clause_witnesses",
+        "inverse_projection"
+      ],
+      "type": "object"
+    },
+    "family_id": {
+      "const": "parameterized_assignment_bearing_hidden_e33_v0_schema"
+    },
+    "instance_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "intrinsic_transport": {
+      "additionalProperties": false,
+      "properties": {
+        "certified_residual_scalar_inserted": {
+          "const": false
+        },
+        "dim_pi33": {
+          "const": 2
+        },
+        "emitted_circuit_data": {
+          "additionalProperties": true,
+          "properties": {
+            "circuit_kind": {
+              "const": "parameterized_clause_local_boundary_circuit"
+            },
+            "clause_gadget_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "gadget_rows": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "height_action_symbol": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "circuit_kind",
+            "clause_gadget_count",
+            "gadget_rows",
+            "height_action_symbol"
+          ],
+          "type": "object"
+        },
+        "formula": {
+          "const": "rho_33(E(phi),a)=-(A_h(C(phi,a))/dim(Pi_33))e_33"
+        },
+        "residual_scalar_source": {
+          "const": "derived_from_emitted_circuit_data"
+        },
+        "support_sector": {
+          "const": 33
+        }
+      },
+      "required": [
+        "support_sector",
+        "dim_pi33",
+        "formula",
+        "residual_scalar_source",
+        "certified_residual_scalar_inserted",
+        "emitted_circuit_data"
+      ],
+      "type": "object"
+    },
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "L": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "m": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "n": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "unbounded_parameter": {
+          "const": "n+m+L"
+        }
+      },
+      "required": [
+        "n",
+        "m",
+        "L",
+        "unbounded_parameter"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "d20.integrity.parameterized_e33_target_instance.source_drop"
+    },
+    "source_formula": {
+      "additionalProperties": false,
+      "properties": {
+        "clauses": {
+          "items": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "format": {
+          "const": "DIMACS_CNF"
+        },
+        "literal_occurrences": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "variables": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "format",
+        "variables",
+        "clauses",
+        "literal_occurrences",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "target_packet": {
+      "additionalProperties": true,
+      "properties": {
+        "compiler_contract": {
+          "additionalProperties": false,
+          "properties": {
+            "compiler_id": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "input_surface": {
+              "const": "DIMACS_CNF"
+            },
+            "public_only": {
+              "const": true
+            },
+            "uses_hidden_e33_advice": {
+              "const": false
+            },
+            "uses_solver_outcome": {
+              "const": false
+            }
+          },
+          "required": [
+            "compiler_id",
+            "input_surface",
+            "public_only",
+            "uses_solver_outcome",
+            "uses_hidden_e33_advice"
+          ],
+          "type": "object"
+        },
+        "packet_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "polynomial_size_bound": {
+          "additionalProperties": false,
+          "properties": {
+            "bound": {
+              "const": "O(n+m+L)"
+            },
+            "local_gate_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "packet_units": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "source_size_parameter": {
+              "const": "n+m+L"
+            },
+            "witness_units": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "source_size_parameter",
+            "packet_units",
+            "witness_units",
+            "local_gate_count",
+            "bound"
+          ],
+          "type": "object"
+        },
+        "public_payload": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "packet_id",
+        "compiler_contract",
+        "public_payload",
+        "polynomial_size_bound"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "family_id",
+    "instance_id",
+    "parameters",
+    "source_formula",
+    "target_packet",
+    "assignment_witness",
+    "intrinsic_transport",
+    "acceptance"
+  ],
+  "title": "D20 parameterized assignment-bearing hidden e33 target instance",
+  "type": "object"
+}

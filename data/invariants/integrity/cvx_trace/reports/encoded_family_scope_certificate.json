@@ -1,6 +1,6 @@
 {
   "checklist_item": {
-    "checklist_status": "polynomially_faithful_representative_family_witnessed_sat_complete_open",
+    "checklist_status": "parameterized_e33_target_schema_defined_reduction_open",
     "id": "encoded_family_sat_complete",
     "obligation": "Identify the hidden e33-obstructed family as a SAT-complete or polynomially faithful representative family.",
     "pass_condition": "The reduction has polynomial overhead and preserves yes/no instances without using hidden-sector advice.",
@@ -48,11 +48,11 @@
     "may_claim_full_separation": false,
     "may_claim_polynomially_faithful_representative_family": true,
     "may_claim_representative_current_trace_no_escape": true,
-    "reason": "The encoded-family bridge is witnessed at representative-family scope, but SAT-completeness and the X-extractor lower bound remain open."
+    "reason": "The encoded-family bridge is witnessed at representative-family scope, the X policy boundary is certified, and SAT-completeness remains open."
   },
   "declared_scope": {
     "meaning": "The current evidence now includes a representative-family bridge for the certified sector-33 residual packet, not a SAT-complete family bridge.",
-    "non_claim": "This certificate does not prove SAT-completeness, an X-extractor lower bound, or P != NP.",
+    "non_claim": "This certificate does not prove SAT-completeness or P != NP.",
     "representative_current_trace_scope_declared": true
   },
   "encoded_family_bridge": {
@@ -69,8 +69,8 @@
     "sat_complete_reduction_certified": false
   },
   "next_highest_yield_item": {
-    "action": "Attack the polynomial-size X-extractor lower bound; the encoded-family bridge is now witnessed only at representative-family scope.",
-    "id": "x_extractor_lower_bound"
+    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    "id": "cnf_to_parameterized_e33_packet_compiler"
   },
   "promotion_requirements": [
     "name the source SAT-complete problem or source family",
@@ -81,6 +81,6 @@
     "prove that the reduction uses no hidden-sector advice",
     "connect the reduction certificate to the C/V/X trace and no-escape ledger"
   ],
-  "schema": "d20.integrity.encoded_family_scope_certificate",
+  "schema": "d20.integrity.encoded_family_scope_certificate.source_drop",
   "status": "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
 }

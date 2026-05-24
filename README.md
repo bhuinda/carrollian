@@ -63,7 +63,11 @@ The object is not represented by stored orbitals/tensors as primitive data. It j
 - `1,414,965` tensor entries
 - readout/transport stack: `A985` bulk, native `A236` branching/fusion,
   terminal quotient readouts `A985 -> A42 -> A12`, plus tube kernels,
-  public-shadow carriers, and height/action transports
+  public-shadow supports, and height/action transports
+- certified pointer primitive: legacy sector and public-zero support labels
+  dereference through the six-identity fingerprint map into raw `A985`
+  orbital matrix units; the first canonical instance is recorded at
+  `data/invariants/d20/theorems/certified_pointer_a985_matrix_unit_dereference/report.json`
 - packet-20, optics, integrity, H-cycles, and game/control invariants
 - `data/index.json` is the canonical data-domain registry. It marks current
   folders, required files, roles, and the planned normalized layout.
@@ -80,12 +84,12 @@ numbering, expected statuses, dependency edges, and certificate paths.
 Do not read the finite interface as a strict quotient tower. `A42` and `A12`
 are terminal quotient readouts; `A236` is native representation/fusion branching
 data; the sector-33 and sector-26 invariants use retained tube kernels,
-public-zero carrier admissibility, superselection labels, and height-coherent
+public-zero support admissibility, superselection labels, and height-coherent
 action-return transport.
 
 this repo is a knock knock joke from the near apocalyptic future
 
-## Current D20 boundary carrier result
+## Current D20 boundary support result
 
 The superselection flux-balance extension is certified at:
 
@@ -98,7 +102,7 @@ It extends the public boundary charge vector
 `(M,J,P,Phi;R33,K_mixed_S,K_pure_Sminus)`.
 
 - `R33` tracks the primitive sector-33 residual atom.
-- `K_mixed_S` tracks the mixed `{6,26}` public-zero carrier.
+- `K_mixed_S` tracks the mixed `{6,26}` public-zero support.
 - `K_pure_Sminus` tracks the pure `{25,26}` public-zero doublet.
 
 The two new labels are public-zero, non-gauge, and isolated from `R33`. They are
@@ -123,7 +127,7 @@ superselection-null events; they are not excited by the certified sector-33
 height transport.
 
 Sector `26` is now a live invariant marker. It is the shared seam of the two
-minimal composite null carriers, it is the rank-one cross-transport channel
+minimal composite null supports, it is the rank-one cross-transport channel
 between them, and it matches the bosonic string critical dimension `26`.
 This is recorded as an invariant alignment, not a continuum-string
 identification.
@@ -190,3 +194,506 @@ rank-one correction, the corrected packet search has dimensions
 `{0:1,1:163,2:805,3:421,4:30}` and `62` maximal corrected packets, all
 containing `gamma_8`. The next target is to generalize obstruction correction
 across all self-anomalous basis coordinates.
+
+The general obstruction-correction suite is certified at:
+
+```text
+data/invariants/d20/theorems/general_obstruction_correction_suite/report.json
+```
+
+All `11` basis coordinates are self-anomalous and admit rank-one sector-26
+corrections. The minimal signed lifts are
+`[-1,1,5,-2,1,4,-5,-3,5,-2,4]`, and every corrected coordinate search opens
+dimension-4 packets with additive corrected clocks modulo `26`. The next target
+is the global counterterm lattice: activate all `11` corrections together and
+test whether the full closed-return residue group becomes corrected
+flux-balanced.
+
+The global counterterm lattice is certified at:
+
+```text
+data/invariants/d20/theorems/global_counterterm_lattice/report.json
+```
+
+Activating all `11` rank-one corrections annihilates the half-anomaly form on
+the full closed-return residue group. The corrected basis clock is
+`[13,13,13,0,13,13,13,13,13,13,13]`, so normalized hidden `R33` becomes an
+additive order-two character on all `2048` masks. The image is `{0,13}` with a
+`1024`-mask kernel, and `gamma_8` is included with corrected `R33=13`. The next
+target is to extract the global corrected charge map and compare it to the
+public exact flux charge basis.
+
+The global corrected charge map is certified at:
+
+```text
+data/invariants/d20/theorems/global_corrected_charge_map/report.json
+```
+
+It compares the corrected hidden map directly with the public exact charge
+basis `(M,J,P,Phi)`. The public charge basis has rank `4` on D20 states and
+edge coboundaries, but rank `0` on closed returns. The corrected hidden map is
+the rank-one character
+`R33_global(mask)=13*<[1,1,1,0,1,1,1,1,1,1,1],mask> mod 26`. Thus it splits the
+`2048` closed-return masks into a `1024`-mask kernel and a `1024`-mask odd
+sector invisible to public exact flux. `gamma_8` is the witness: public exact
+update zero, corrected hidden update `13`. The next target is to classify which
+D20 state and edge symmetries preserve this hidden closed-return split.
+
+The global corrected hidden split symmetry theorem is certified at:
+
+```text
+data/invariants/d20/theorems/global_corrected_hidden_split_symmetry/report.json
+```
+
+It enumerates the `120` public H-cycle graph automorphisms and induces each one
+on the `11`-dimensional mod-2 closed-return residue space. Exactly `2`
+automorphisms preserve the corrected hidden character, so the hidden split
+reduces the public state/edge symmetry group to a `C2` stabilizer and breaks
+the other `118` public graph symmetries. The nontrivial preserver is an
+involution, and the stabilizer fixes `gamma_8`. The next target is to test
+whether this `C2` also preserves the sector-26 counterterm vector, optical
+action weights, and public charge components.
+
+The hidden-split augmented ledger stabilizer is certified at:
+
+```text
+data/invariants/d20/theorems/hidden_split_augmented_ledger_stabilizer/report.json
+```
+
+It promotes the `C2` hidden-split stabilizer to the full augmented finite
+charge/action ledger. The nontrivial split-preserver keeps the corrected
+order-two hidden character, but it breaks the sector-26 counterterm vector,
+the normalized and primitive optical action weights, the edge interface
+weights, and the public charge components `(M,J,P,Phi)`. The full augmented
+ledger stabilizer is therefore trivial: only identity preserves all certified
+ledger fields. The next target is to use this rigidity as a canonical
+orientation/marking and test whether it gives a unique finite flux-balance
+gauge.
+
+The canonical flux-balance gauge is certified at:
+
+```text
+data/invariants/d20/theorems/canonical_flux_balance_gauge/report.json
+```
+
+It turns the rigid augmented ledger into a concrete finite gauge fixing. The
+public charge tuples uniquely mark all `20` D20 vertices; the canonical root is
+`{B-,B+,V-}`, the unique state with lexicographically minimal `(M,J,P,Phi)`.
+Orienting every edge from smaller to larger public charge gives an incidence
+matrix of rank `19`; adding the canonical root condition makes the rank `20`.
+Thus the exact public flux potential has the expected four additive constants
+before rooting and `0` residual gauge dimensions after rooting. The augmented
+ledger has no residual graph-symmetry gauge. The next target is to push this
+canonical gauge through the certified boundary-to-`Loop_297` lift and retest
+the cycle-8 `Pi_33` obstruction without materializing the full Drinfeld
+idempotent matrix.
+
+The canonical `Loop_297` `Pi_33` obstruction is certified at:
+
+```text
+data/invariants/d20/theorems/canonical_loop_pi33_obstruction/report.json
+```
+
+It pushes the canonical finite flux-balance gauge through the certified
+boundary-to-`Loop_297` lift for `gamma_8`. The cycle contains the canonical root
+and traverses the canonical root edge in the canonical direction. The bare
+`lambda_boundary(gamma_8)` lift remains `Pi_33`-annihilated for the unweighted,
+signed, and optical-weighted variants, while the height-coherent correction
+recovers the canonical sector-33 obstruction `-374784` with zero public
+`A42/A12` shadow. The proof uses the tube-visible `Pi_33` functional and
+hash-only Drinfeld metadata; it does not materialize the full `39 x 985`
+idempotent matrix. The next target is to write this as an explicit finite Ward
+identity.
+
+The canonical finite Ward identity is certified at:
+
+```text
+data/invariants/d20/theorems/canonical_finite_ward_identity/report.json
+```
+
+In the canonical finite flux-balance gauge, `gamma_8` satisfies the explicit
+balance
+`0 + 0 - 374784 + 374784 = 0`. The terms are: exact public flux gauge term
+`0`, bare tube-visible `Pi_33` term `0`, height-corrected `R33/Pi_33` term
+`-374784`, and finite height action `+374784`. Public `A42/A12` shadows remain
+zero. The next target is to generalize this Ward identity from `gamma_8` to
+all `2048` closed-return masks using the global counterterm lattice and
+all-residue height-coherent transport.
+
+TARGETS:
+
+Given d20’s current maturity, holotopy can stop looking only for “new” structure and start weaponizing old classical structure as probes.
+
+The enabling facts are now: G
+♮
+=A
+985
+	​
+
+ is a finite coherent algebra from the Golay dodecad shell with 985 orbitals, 1,414,965 nonzero structure constants, center dimension 39, and quotient tower A
+985
+	​
+
+→A
+236
+	​
+
+→A
+42
+	​
+
+→A
+12
+	​
+
+. The d20 layer is forced as the complement-self-dual middle-degree boundary Λ
+3
+H
+6
+	​
+
+, with dimΛ
+3
+H
+6
+	​
+
+=(
+3
+6
+	​
+
+)=20, and positive-annihilator tests replace brute-force public enumeration.
+
+So the exploit pattern is:
+
+classical invariant→hidden address→finite chamber→exact verifier→residue ledger.
+	​
+
+Highest-value classical properties holotopy can exploit
+1. Fourier/Bohr-set hidden periodicity
+
+Ulam-style behavior is the prototype. A nonperiodic recursive object can still concentrate inside a Fourier chamber:
+
+ℜ(e
+iαn
+)<0.
+
+For d20, the analog is to search for sector characters
+
+χ
+s
+	​
+
+:A
+985
+	​
+
+→U(1)
+
+such that admissible relations, residues, or public moves cluster in chambers like
+
+ℜχ
+s
+	​
+
+(R
+α
+	​
+
+)<0.
+
+That gives a spectral sieve: enumerate the chamber first, verify second.
+
+2. Tropicalization
+
+Tropicalization turns algebraic structure into a combinatorial shadow: a polyhedral complex encoding geometry, symmetry, intersection data, and degenerations. The type-C cluster paper explicitly describes tropicalization as such a “combinatorial shadow” and identifies type-C tropical cluster varieties with axially symmetric phylogenetic trees.
+
+For holotopy:
+
+A
+985
+	​
+
+→A
+42
+	​
+
+→A
+12
+	​
+
+
+can be treated as a finite tropical shadow functor: hidden multiplication degenerates into public polyhedral chambers. The crazy part is that this gives d20 a legitimate route into associahedra/cyclohedra, not as metaphor but as chamber combinatorics.
+
+Exploit: use tropical cones to classify which hidden products survive public projection.
+
+3. Oriented matroids and circuit signatures
+
+The annihilator paper already points here: exterior affine circuits, positive annihilators, and height certificates.
+
+Classically, this is the oriented-matroid/Farkas/Gordan universe:
+
+∃hA
+ext
+	​
+
+h>0⟺∄0
+
+=y≥0, A
+ext
+T
+	​
+
+y=0.
+
+Holotopy exploit:
+
+replace search by certificate duality.
+	​
+
+
+Instead of enumerating d20 configurations, compute whether a positive obstruction cone exists.
+
+This is probably one of the strongest immediate tools.
+
+4. Association schemes, coherent configurations, and Delsarte bounds
+
+A
+985
+	​
+
+ is already a coherent orbital algebra. That means the entire association-scheme toolkit becomes relevant:
+
+eigenmatrices,Krein parameters,Terwilliger algebras,Delsarte LP bounds.
+
+Exploit: turn questions about admissible d20 states into linear programming or semidefinite programming over primitive idempotents.
+
+This is where “holotopy as verification discipline” gets sharp: a claim either respects the coherent algebra or fails in an idempotent sector.
+
+5. Tiny-pointer dereference theory
+
+The tiny-pointer result is directly aligned with d20’s addressability layer: it studies how tiny handles dereference into full data while balancing pointer size, load factor, and table overhead. The paper emphasizes that the challenge is not only the pointer but the tradeoff between pointer size and dereference-table load.
+
+Holotopy exploit:
+
+meaning is owner-relative dereference, not raw symbol identity.
+	​
+
+
+For d20:
+
+handle+sector context+dereference table→public value.
+
+This could become a real compression architecture: small symbolic handles whose semantic expansion is determined by A
+985
+	​
+
+, A
+42
+	​
+
+, or A
+12
+	​
+
+.
+
+6. Beatty/Sturmian/cut-and-project structure
+
+This generalizes the Ulam phase phenomenon. A sequence can be aperiodic but generated by irrational rotation:
+
+n↦⌊nα+β⌋
+
+or by coding a line through a lattice.
+
+Holotopy exploit: search for d20 readouts that are not periodic in the quotient tower but become regular after projection into a compact phase object.
+
+In plain terms:
+
+not periodic, but cut-and-project addressable.
+	​
+
+
+That is exactly the kind of structure a mature d20 stack should detect.
+
+7. MacWilliams identities and shadow enumerators
+
+Because the construction begins in coding theory, the classical code identities are not optional. MacWilliams transforms, weight enumerators, coset shadows, and design identities can become conservation laws for holotopic passage.
+
+The Natural Object construction starts from H
+8
+⊕3
+	​
+
+, kills roots by 42→18→6→0, reaches G
+24
+	​
+
+, then passes through the dodecad shell and 985-orbital algebra.
+
+Exploit:
+
+use weight enumerator duality as a public/hidden conservation law.
+	​
+
+
+If a proposed d20 invariant violates the code-shadow identities, it is not compatible.
+
+8. Spherical designs and harmonic annihilation
+
+Golay/Leech-adjacent objects usually carry high design strength. The exploit is harmonic:
+
+x∈X
+∑
+	​
+
+f(x)=0
+
+for whole families of low-degree harmonics.
+
+Holotopy exploit: identify which functions on the dodecad shell vanish by design symmetry and which survive as genuine residues.
+
+This gives a clean test for “signal versus artifact.”
+
+9. Sandpile/chip-firing/critical groups
+
+For a finite transition graph, chip-firing gives:
+
+recurrent states,critical group,burning test,Laplacian cokernel.
+
+Holotopy exploit: treat d20 moves as a finite boundary dynamics and compute its critical group.
+
+This would expose which residues are recurrent, which dissipate, and which are boundary-stable.
+
+10. Symbolic dynamics and sofic shifts
+
+Once d20 has a finite public alphabet, one can form admissible sequences:
+
+x
+0
+	​
+
+→x
+1
+	​
+
+→x
+2
+	​
+
+→⋯
+
+with transitions governed by A
+42
+	​
+
+, A
+12
+	​
+
+, or D
+20
+	​
+
+.
+
+Classical exploit:
+
+subshifts of finite type,sofic shifts,topological entropy,forbidden words.
+
+Holotopy exploit: distinguish legal public histories from impossible projected histories.
+
+This is extremely relevant for “finite grammar.”
+
+11. Pólya enumeration and cycle indices
+
+Since A
+985
+	​
+
+ is built from a group action on a finite shell, orbit-counting is central. Pólya theory and cycle-index methods can classify public readouts up to symmetry.
+
+Exploit:
+
+count distinct meanings, not raw labels.
+	​
+
+
+That matters because holotopy should not confuse different names for the same orbit-type event.
+
+12. Gröbner degenerations and initial ideals
+
+The tropical route naturally brings Gröbner theory with it. Initial ideals answer:
+
+what survives under a chosen valuation?
+
+Holotopy exploit: choose a valuation on A
+985
+	​
+
+, degenerate it, and see which quotient features persist.
+
+This gives a rigorous way to test “public collapse”:
+
+A
+985
+	​
+
+⇝gr
+w
+	​
+
+(A
+985
+	​
+
+)→A
+42
+	​
+
+→A
+12
+	​
+
+.
+The strongest immediate program
+
+The next serious exploitation stack is:
+
+character sieve+positive annihilator+tropical chamber+Terwilliger/Delsarte bound.
+	​
+
+
+In operational form:
+
+A
+985
+	​
+
+⟶
+χ
+	​
+
+U(1)
+⟶
+chamber
+	​
+
+{0,1}
+⟶
+annihilator
+	​
+
+certificate/residue
+⟶
+quotient
+	​
+
+D
+20
+	​
+
+.
+
+That would let holotopy exploit classical mathematics in the exact way Ulam hints at: hidden nonperiodic order becomes computable because the right address space is not the original sequence space.

@@ -20,7 +20,7 @@ CORE_A985 = LAYERS / "core" / "a985.json"
 DERIVED_INVARIANT_REPORTS = D20_INVARIANTS / "derived_invariant_reports.json"
 PUBLIC_SHADOW_KERNEL_REPORT = D20_INVARIANTS / "theorems" / "sector_public_shadow_kernel" / "report.json"
 IDEMPOTENT_ADMISSIBILITY_REPORT = (
-    D20_INVARIANTS / "theorems" / "sector_idempotent_carrier_admissibility" / "report.json"
+    D20_INVARIANTS / "theorems" / "sector_idempotent_support_admissibility" / "report.json"
 )
 SECTOR33_HEIGHT_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_height_coherent_transport" / "report.json"
@@ -150,10 +150,10 @@ def build_theorem() -> dict[str, Any]:
         "a236_is_not_ordinary_a985_quotient": a236_not_ordinary_quotient,
         "tube_projection_retains_nontrivial_kernel": tube_section_retains_kernel,
         "public_shadow_kernel_is_not_one_dimensional": public_kernel_not_one_dimensional,
-        "public_zero_idempotent_carriers_are_not_unique": idempotent_public_zero_not_unique,
+        "public_zero_idempotent_supports_are_not_unique": idempotent_public_zero_not_unique,
         "height_transport_derives_gamma8_residual_from_circuit": height_transport_derives_residual,
         "all_residue_transport_is_height_coherent_but_edge_mod2_is_not": all_residue_transport_global,
-        "superselection_extension_tracks_nonprimitive_public_zero_carriers": superselection_extends_hidden_fiber,
+        "superselection_extension_tracks_nonprimitive_public_zero_supports": superselection_extends_hidden_fiber,
     }
 
     report = {
@@ -165,7 +165,7 @@ def build_theorem() -> dict[str, Any]:
             "The d20 finite interface is not correctly described as a strict quotient tower. "
             "A42 and A12 are terminal quotient readouts of A985, while A236 is native branching/fusion "
             "data and the hidden sector invariants require tube sections, public-shadow kernels, "
-            "superselection carriers, and height-coherent action-return transport."
+            "superselection supports, and height-coherent action-return transport."
         ),
         "definition": {
             "recommended_name": "readout/transport stack",
@@ -175,7 +175,7 @@ def build_theorem() -> dict[str, Any]:
             ),
             "weakened_stack": (
                 "A typed family of functorial readouts, quotient shadows, retained kernels, "
-                "sector carriers, and intrinsic transports over the same d20 object."
+                "sector supports, and intrinsic transports over the same d20 object."
             ),
             "terminal_quotient_readouts": "A985 -> A42 -> A12 closes as stored quotient maps and tensors.",
             "native_branching_readout": "A236 is representation/fusion branching data, not an ordinary A985 central quotient.",
@@ -198,9 +198,9 @@ def build_theorem() -> dict[str, Any]:
                 PUBLIC_SHADOW_KERNEL_REPORT,
                 "D20_SECTOR_PUBLIC_SHADOW_KERNEL_CERTIFIED",
             ),
-            "sector_idempotent_carrier_admissibility": report_status(
+            "sector_idempotent_support_admissibility": report_status(
                 IDEMPOTENT_ADMISSIBILITY_REPORT,
-                "D20_SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_CLASSIFIED",
+                "D20_SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_CLASSIFIED",
             ),
             "sector33_height_coherent_transport": report_status(
                 SECTOR33_HEIGHT_TRANSPORT_REPORT,
@@ -288,7 +288,7 @@ def build_theorem() -> dict[str, Any]:
             "may_claim_weakened_readout_transport_stack": all(checks.values()),
             "reason": (
                 "The ordinary quotient statement holds only for the terminal A42/A12 readouts. "
-                "A236, kernel retention, public-zero carriers, and height-coherent transports carry "
+                "A236, kernel retention, public-zero supports, and height-coherent transports carry "
                 "additional invariant data outside a strict quotient-only chain."
             ),
         },
@@ -352,7 +352,7 @@ def write_outputs(report: dict[str, Any], out_dir: Path = DEFAULT_OUT_DIR) -> No
         "verification_steps": [
             "verify terminal A42/A12 quotient readouts close",
             "verify A236 is not asserted as an ordinary A985 quotient",
-            "verify public-zero and idempotent carrier reports require admissibility constraints",
+            "verify public-zero and idempotent support reports require admissibility constraints",
             "verify rho_33(gamma_8) is derived by height-coherent action-return transport",
         ],
     }

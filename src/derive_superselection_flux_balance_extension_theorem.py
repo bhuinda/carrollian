@@ -13,10 +13,10 @@ DEFAULT_OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
 FINITE_FLUX_BALANCE_REPORT = D20_INVARIANTS / "theorems" / "finite_flux_balance" / "report.json"
 MINIMAL_COMPOSITE_TRANSPORT_REPORT = (
-    D20_INVARIANTS / "theorems" / "minimal_composite_null_carriers_transport" / "report.json"
+    D20_INVARIANTS / "theorems" / "minimal_composite_null_supports_transport" / "report.json"
 )
 IDEMPOTENT_ADMISSIBILITY_REPORT = (
-    D20_INVARIANTS / "theorems" / "sector_idempotent_carrier_admissibility" / "report.json"
+    D20_INVARIANTS / "theorems" / "sector_idempotent_support_admissibility" / "report.json"
 )
 ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_all_residue_height_transport" / "report.json"
@@ -126,7 +126,7 @@ def build_theorem() -> dict[str, Any]:
     minimal_derived = minimal_transport["derived"]
     transport_components = minimal_derived["transport_components"]
     primitive = transport_components["primitive_residual_atom"]
-    mixed = transport_components["mixed_S_channel_superselection_null_carrier"]
+    mixed = transport_components["mixed_S_channel_superselection_null_support"]
     pure = transport_components["pure_Sminus_superselection_null_doublet"]
     disallowed_mixed_plus_pure = sorted(set(mixed).union(pure))
 
@@ -141,7 +141,7 @@ def build_theorem() -> dict[str, Any]:
         {
             "component": "K_mixed_S",
             "sector_support": mixed,
-            "role": "mixed_S_channel_public_zero_superselection_null_carrier",
+            "role": "mixed_S_channel_public_zero_superselection_null_support",
             "self_transport_rank": transport_rank(mixed, mixed, profiles),
             "transport_to_R33_rank": transport_rank(mixed, primitive, profiles),
             "transport_from_R33_rank": transport_rank(primitive, mixed, profiles),
@@ -167,7 +167,7 @@ def build_theorem() -> dict[str, Any]:
     admissible_hidden_states = [
         label_state("gauge_zero", [], hidden_zero_vector()),
         label_state("primitive_residual_atom", primitive, hidden_vector(r33=1)),
-        label_state("mixed_S_null_carrier", mixed, hidden_vector(mixed=1)),
+        label_state("mixed_S_null_support", mixed, hidden_vector(mixed=1)),
         label_state("pure_Sminus_null_doublet", pure, hidden_vector(pure=1)),
         label_state("mixed_S_null_plus_R33", sorted(set(mixed).union(primitive)), hidden_vector(r33=1, mixed=1)),
         label_state("pure_Sminus_null_plus_R33", sorted(set(pure).union(primitive)), hidden_vector(r33=1, pure=1)),
@@ -181,7 +181,7 @@ def build_theorem() -> dict[str, Any]:
         "exact_public_flux_hidden_update": hidden_zero_vector(),
         "reason": (
             "The exact finite flux-balance theorem is a coboundary statement on public D20 states. "
-            "The new hidden superselection components only change when a certified hidden null carrier is inserted."
+            "The new hidden superselection components only change when a certified hidden null support is inserted."
         ),
     }
     height_transport_extension = {
@@ -201,10 +201,10 @@ def build_theorem() -> dict[str, Any]:
         == "D20_FINITE_EXACT_FLUX_BALANCE_CERTIFIED"
         and finite_flux.get("all_checks_pass") is True,
         "minimal_composite_transport_is_certified": minimal_transport.get("status")
-        == "D20_MINIMAL_COMPOSITE_NULL_CARRIERS_TRANSPORT_CLASSIFIED"
+        == "D20_MINIMAL_COMPOSITE_NULL_SUPPORTS_TRANSPORT_CLASSIFIED"
         and minimal_transport.get("all_checks_pass") is True,
-        "idempotent_carrier_admissibility_is_certified": admissibility.get("status")
-        == "D20_SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_CLASSIFIED"
+        "idempotent_support_admissibility_is_certified": admissibility.get("status")
+        == "D20_SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_CLASSIFIED"
         and admissibility.get("all_checks_pass") is True,
         "all_residue_height_transport_is_certified": all_residue_transport.get("status")
         == "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
@@ -216,7 +216,7 @@ def build_theorem() -> dict[str, Any]:
             item["component"] for item in hidden_basis if item["new_in_this_extension"]
         ]
         == ["K_mixed_S", "K_pure_Sminus"],
-        "new_superselection_labels_are_public_zero_carriers": mixed in public_zero_supports
+        "new_superselection_labels_are_public_zero_supports": mixed in public_zero_supports
         and pure in public_zero_supports,
         "new_superselection_labels_are_not_gauge_zero": all(
             item["self_transport_rank"] > 0
@@ -234,7 +234,7 @@ def build_theorem() -> dict[str, Any]:
         ]
         == 1
         and hidden_transport_matrix["K_pure_Sminus"]["K_mixed_S"] == 1,
-        "hidden_label_map_is_injective_on_admissible_public_zero_carriers": len(hidden_vectors)
+        "hidden_label_map_is_injective_on_admissible_public_zero_supports": len(hidden_vectors)
         == len(set(hidden_vectors))
         and len(sector_supports) == len({tuple(support) for support in sector_supports}),
         "mixed_plus_pure_without_R33_is_not_admissible_public_zero": disallowed_mixed_plus_pure
@@ -266,7 +266,7 @@ def build_theorem() -> dict[str, Any]:
             "The finite D20 boundary charge can be extended from the public four-vector "
             "(M,J,P,Phi) to an augmented public-plus-hidden ledger "
             "(M,J,P,Phi;R33,K_mixed_S,K_pure_Sminus). The two new hidden labels distinguish the "
-            "minimal public-zero composite superselection carriers from gauge zero while preserving the "
+            "minimal public-zero composite superselection supports from gauge zero while preserving the "
             "certified sector-33 height transport."
         ),
         "definition": {
@@ -275,13 +275,13 @@ def build_theorem() -> dict[str, Any]:
                 "public exact-flux charges and the last three components track the finite public-zero hidden fiber."
             ),
             "new_superselection_labels": {
-                "K_mixed_S": "{6,26}, the mixed S-/S+ public-zero carrier",
+                "K_mixed_S": "{6,26}, the mixed S-/S+ public-zero support",
                 "K_pure_Sminus": "{25,26}, the pure S- public-zero doublet",
             },
             "admissible_hidden_states": (
-                "The six certified Boolean public-zero idempotent carriers: zero, R33, K_mixed_S, "
+                "The six certified Boolean public-zero idempotent supports: zero, R33, K_mixed_S, "
                 "K_pure_Sminus, K_mixed_S+R33, and K_pure_Sminus+R33. K_mixed_S+K_pure_Sminus is not "
-                "a certified public-zero carrier because the two labels overlap through sector 26."
+                "a certified public-zero support because the two labels overlap through sector 26."
             ),
         },
         "inputs": {
@@ -289,11 +289,11 @@ def build_theorem() -> dict[str, Any]:
                 "path": rel(FINITE_FLUX_BALANCE_REPORT),
                 "sha256": sha_file(FINITE_FLUX_BALANCE_REPORT),
             },
-            "minimal_composite_null_carriers_transport_report": {
+            "minimal_composite_null_supports_transport_report": {
                 "path": rel(MINIMAL_COMPOSITE_TRANSPORT_REPORT),
                 "sha256": sha_file(MINIMAL_COMPOSITE_TRANSPORT_REPORT),
             },
-            "sector_idempotent_carrier_admissibility_report": {
+            "sector_idempotent_support_admissibility_report": {
                 "path": rel(IDEMPOTENT_ADMISSIBILITY_REPORT),
                 "sha256": sha_file(IDEMPOTENT_ADMISSIBILITY_REPORT),
             },
@@ -319,7 +319,7 @@ def build_theorem() -> dict[str, Any]:
         "interpretation": {
             "ontological": (
                 "Public zero is refined into a finite hidden null fiber. Gauge zero, the primitive residual atom, "
-                "and the two composite superselection carriers are distinct states of the augmented ledger."
+                "and the two composite superselection supports are distinct states of the augmented ledger."
             ),
             "technological": (
                 "A runtime or protocol may project the hidden labels away for public display, but must retain them "
@@ -354,7 +354,7 @@ def write_theorem(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         },
         "certification_tests": [
             "consume the exact finite flux-balance theorem",
-            "consume the minimal composite null-carrier transport theorem",
+            "consume the minimal composite null-support transport theorem",
             "extend Q_boundary with R33 and two public-zero superselection labels",
             "verify the two new labels are public-zero and not gauge-zero",
             "verify the two new labels are isolated from R33",

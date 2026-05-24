@@ -5,9 +5,13 @@
       "obligation": "Identify the hidden e33-obstructed family as a SAT-complete or polynomially faithful representative family.",
       "pass_condition": "The reduction has polynomial overhead and preserves yes/no instances without using hidden-sector advice.",
       "required_artifact": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation.",
-      "scope_warning": "The cycle-8 / Pi_33 residual packet is witnessed as a polynomially faithful representative family. No SAT-complete reduction certificate is present.",
-      "status": "polynomially_faithful_representative_family_witnessed_sat_complete_open",
-      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json"
+      "assignment_target_obligation_witness": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
+      "candidate_witness": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "investigation_witness": "data/invariants/integrity/cvx_trace/reports/uniform_cnf_to_e33_family_encoding_investigation.json",
+      "parameterized_target_schema_witness": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json",
+      "scope_warning": "The cycle-8 / Pi_33 residual packet is witnessed as a polynomially faithful representative family. A deterministic public CNF-to-D20-mask compiler candidate now exists and recomputes rho_33 from emitted circuit data, but it is a finite fingerprint target and fails the truth-diverse SAT-preservation probe. The finite 2048-mask target is fenced as a lookup testbed, and the parameterized E(phi) schema now names assignment witnesses, clause-local gates, inverse projection, and intrinsic rho_33 transport. The SAT frontier still blocks on the public DIMACS-to-E(phi) compiler and forall-instance yes/no preservation theorem.",
+      "status": "parameterized_e33_target_schema_defined_reduction_open",
+      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json"
     },
     {
       "id": "faithful_trace_schema",
@@ -64,7 +68,7 @@
     },
     {
       "id": "full_no_escape_closure",
-      "obligation": "Combine universality, total typing, pure-C no-escape, V accounting, and X lower bound into the final no-escape theorem.",
+      "obligation": "Combine universality, total typing, pure-C no-escape, V accounting, X policy boundary, and encoded-family completeness into the final no-escape theorem.",
       "pass_condition": "Every polynomial-time deciding solver either violates a closed obligation or yields an explicit X extractor; no silent solver class remains.",
       "required_artifact": "Machine-checkable dependency ledger linking each obligation to a passing certificate.",
       "scope_warning": "The ledger closes the current accepted trace surface and the X policy boundary, but explicitly blocks full separation on encoded-family completeness.",
@@ -106,8 +110,8 @@
     }
   ],
   "next_highest_yield_item": {
-    "action": "Build the SAT-complete reduction certificate for the hidden e33-obstructed family, or keep the theorem representative-family scoped.",
-    "id": "encoded_family_sat_complete"
+    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    "id": "cnf_to_parameterized_e33_packet_compiler"
   },
   "schema": "d20.integrity.p_vs_np_bridge_checklist",
   "status": "P_VS_NP_BRIDGE_CHECKLIST_FORMALIZED",

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from typing import Any, Dict
 
 try:
@@ -145,5 +146,56 @@ def validate_half_braiding_prime_stability() -> Dict[str, Any]:
     tmp = dict(rec); tmp.pop('c985_half_braiding_prime_stability_sha256', None)
     if h_json(tmp) != hfield:
         raise AssertionError('half_braiding_prime_stability self hash mismatch')
+    return rec
+
+
+def validate_half_braiding_snf_certificate() -> Dict[str, Any]:
+    """Validate the Smith-normal-form certificate for the half-braiding matrix.
+
+    The expensive computation is exposed through
+    src/derive_half_braiding_snf_certificate.py.  The core verifier accepts a
+    committed/generated certificate and checks the self hash plus the invariant
+    content needed by the report layer.
+    """
+    candidates = [
+        ROOT / 'data/derived/half_braiding_snf_certificate.json',
+        ROOT / 'generated/derived/half_braiding_snf_certificate.json',
+    ]
+    rec = None
+    for path in candidates:
+        if path.exists():
+            with path.open('r', encoding='utf-8') as f:
+                rec = json.load(f)
+            break
+    if rec is None:
+        cached = cached_core_block('half_braiding_snf_certificate')
+        if cached is not None:
+            rec = cached
+        else:
+            raise FileNotFoundError('missing half-braiding SNF certificate and no layer cache is available')
+    if rec.get('status') != 'HALF_BRAIDING_SNF_CERTIFIED':
+        raise AssertionError('half_braiding_snf_certificate status mismatch')
+    snf = rec.get('smith_normal_form', {})
+    expected_diag = {'0': 39, '1': 231, '2': 23, '4': 4}
+    if snf.get('diagonal_multiplicities') != expected_diag:
+        raise AssertionError('half_braiding_snf_certificate diagonal multiplicities mismatch')
+    if snf.get('rank_bad_primes') != [2]:
+        raise AssertionError('half_braiding_snf_certificate bad-prime list mismatch')
+    if int(snf.get('nonzero_rank')) != 258:
+        raise AssertionError('half_braiding_snf_certificate nonzero rank mismatch')
+    if int(snf.get('zero_invariant_factors')) != 39:
+        raise AssertionError('half_braiding_snf_certificate zero invariant factor mismatch')
+    two = rec.get('two_primary_local_snf', {})
+    if int(two.get('rank_mod_2')) != 231 or int(two.get('rank_drop_mod_2')) != 27:
+        raise AssertionError('half_braiding_snf_certificate mod-2 rank drop mismatch')
+    if int(two.get('rank_determinantal_divisor_v2')) != 31:
+        raise AssertionError('half_braiding_snf_certificate 2-adic divisor valuation mismatch')
+    odd = rec.get('odd_prime_exclusion', {})
+    if int(odd.get('gcd_odd_part')) != 1:
+        raise AssertionError('half_braiding_snf_certificate odd-prime exclusion mismatch')
+    hfield = rec.get('half_braiding_snf_certificate_sha256')
+    tmp = dict(rec); tmp.pop('half_braiding_snf_certificate_sha256', None)
+    if h_json(tmp) != hfield:
+        raise AssertionError('half_braiding_snf_certificate self hash mismatch')
     return rec
 

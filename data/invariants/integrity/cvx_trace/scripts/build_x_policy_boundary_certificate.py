@@ -159,8 +159,8 @@ def build_policy() -> dict[str, Any]:
             "This does not prove P != NP.",
         ],
         "next_highest_yield_item": {
-            "id": "encoded_family_sat_complete",
-            "action": "Build the SAT-complete reduction certificate for the hidden e33-obstructed family, or keep the theorem representative-family scoped.",
+            "id": "cnf_to_parameterized_e33_packet_compiler",
+            "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
         },
     }
 

@@ -1,0 +1,3671 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6e4862de1e0b3b0d96293d4f69858305c908c5f0b975923c1730e4b52629d4a3",
+  "checks": {
+    "all_11_basis_coordinates_are_self_anomalous": true,
+    "all_coordinate_corrections_are_rank_one": true,
+    "anomaly_cancelled_flux_balance_recovery_is_certified": true,
+    "corrected_basis_values_are_order_two_or_zero": true,
+    "corrected_maximal_packet_counts_match_expected_table": true,
+    "every_corrected_maximal_packet_contains_target_coordinate": true,
+    "every_corrected_packet_clock_is_additive": true,
+    "every_corrected_search_opens_dimension_4": true,
+    "finite_anomaly_counter_is_certified": true,
+    "gamma8_obstruction_correction_is_certified": true,
+    "gamma8_row_matches_prior_theorem": true,
+    "minimal_signed_lifts_match_expected_table": true,
+    "no_corrected_search_exceeds_dimension_4": true
+  },
+  "claim": "Every basis coordinate of the closed-return residue space is self-anomalous and admits a unique rank-one sector-26 correction. After the minimal signed lift of each counterterm, the corrected packet geometry opens dimension-4 cancelled packets and all corrected packet clocks are additive modulo 26. The gamma_8 correction is the coordinate-8 row of this general suite.",
+  "definition": {
+    "coordinate_counterterm": "For basis coordinate i with half-anomaly weight w_i mod 13, subtract a rank-one term w_i x_i y_i from the half-anomaly form and lift w_i to the minimal signed mod-26 counterterm in the R33 clock.",
+    "corrected_coordinate_packet": "A maximal xor-closed packet for the corrected half-anomaly form associated to one coordinate."
+  },
+  "derived": {
+    "basis_weights_mod13": [
+      12,
+      1,
+      5,
+      11,
+      1,
+      4,
+      8,
+      10,
+      5,
+      11,
+      4
+    ],
+    "basis_weights_mod26": [
+      12,
+      14,
+      18,
+      24,
+      14,
+      17,
+      8,
+      10,
+      18,
+      11,
+      17
+    ],
+    "coordinate_corrections": [
+      {
+        "all_corrected_maximal_packets_sha256": "aca180909c421fa6d3418261bb149d4d652936141e1ec122f81ce6166889bb05",
+        "chosen_counterterm_mod26": 25,
+        "chosen_counterterm_signed": -1,
+        "coordinate": 0,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 80
+        },
+        "corrected_maximal_packet_count": 80,
+        "corrected_maximal_packet_count_by_dimension": {
+          "3": 68,
+          "4": 12
+        },
+        "corrected_maximal_packets_containing_target": 80,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 157,
+          "2": 590,
+          "3": 224,
+          "4": 12
+        },
+        "counterterm_mod13": 12,
+        "counterterm_mod26_solutions": [
+          12,
+          25
+        ],
+        "counterterm_signed_solutions": [
+          12,
+          -1
+        ],
+        "original_clock_mod26": 12,
+        "original_r33_norm_mod26": 14,
+        "original_weight_mod13": 12,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              1,
+              26,
+              27,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              1,
+              26,
+              27,
+              68,
+              69,
+              94,
+              95,
+              896,
+              897,
+              922,
+              923,
+              964,
+              965,
+              990,
+              991
+            ]
+          },
+          {
+            "basis_masks": [
+              1,
+              26,
+              27,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              1,
+              26,
+              27,
+              68,
+              69,
+              94,
+              95,
+              1312,
+              1313,
+              1338,
+              1339,
+              1380,
+              1381,
+              1406,
+              1407
+            ]
+          },
+          {
+            "basis_masks": [
+              1,
+              26,
+              27,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              1,
+              26,
+              27,
+              320,
+              321,
+              346,
+              347,
+              644,
+              645,
+              670,
+              671,
+              964,
+              965,
+              990,
+              991
+            ]
+          },
+          {
+            "basis_masks": [
+              1,
+              26,
+              27,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              1,
+              26,
+              27,
+              320,
+              321,
+              346,
+              347,
+              1060,
+              1061,
+              1086,
+              1087,
+              1380,
+              1381,
+              1406,
+              1407
+            ]
+          },
+          {
+            "basis_masks": [
+              1,
+              26,
+              27,
+              644
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              1,
+              26,
+              27,
+              644,
+              645,
+              670,
+              671,
+              1312,
+              1313,
+              1338,
+              1339,
+              1956,
+              1957,
+              1982,
+              1983
+            ]
+          },
+          {
+            "basis_masks": [
+              1,
+              26,
+              27,
+              896
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              1,
+              26,
+              27,
+              896,
+              897,
+              922,
+              923,
+              1060,
+              1061,
+              1086,
+              1087,
+              1956,
+              1957,
+              1982,
+              1983
+            ]
+          },
+          {
+            "basis_masks": [
+              1,
+              68,
+              69,
+              392
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              1,
+              68,
+              69,
+              392,
+              393,
+              460,
+              461,
+              530,
+              531,
+              598,
+              599,
+              922,
+              923,
+              990,
+              991
+            ]
+          },
+          {
+            "basis_masks": [
+              1,
+              68,
+              69,
+              530
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              1,
+              68,
+              69,
+              530,
+              531,
+              598,
+              599,
+              1312,
+              1313,
+              1380,
+              1381,
+              1842,
+              1843,
+              1910,
+              1911
+            ]
+          }
+        ],
+        "target_mask": 1
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "5340d2f5239b4d7c07267af173514d7a0e5af526d4050632022f909bbc5cabd9",
+        "chosen_counterterm_mod26": 1,
+        "chosen_counterterm_signed": 1,
+        "coordinate": 1,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 67
+        },
+        "corrected_maximal_packet_count": 67,
+        "corrected_maximal_packet_count_by_dimension": {
+          "3": 49,
+          "4": 18
+        },
+        "corrected_maximal_packets_containing_target": 67,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 157,
+          "2": 654,
+          "3": 288,
+          "4": 18
+        },
+        "counterterm_mod13": 1,
+        "counterterm_mod26_solutions": [
+          1,
+          14
+        ],
+        "counterterm_signed_solutions": [
+          1,
+          -12
+        ],
+        "original_clock_mod26": 14,
+        "original_r33_norm_mod26": 12,
+        "original_weight_mod13": 1,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              2,
+              17,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              2,
+              17,
+              19,
+              68,
+              70,
+              85,
+              87,
+              392,
+              394,
+              409,
+              411,
+              460,
+              462,
+              477,
+              479
+            ]
+          },
+          {
+            "basis_masks": [
+              2,
+              17,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              2,
+              17,
+              19,
+              68,
+              70,
+              85,
+              87,
+              552,
+              554,
+              569,
+              571,
+              620,
+              622,
+              637,
+              639
+            ]
+          },
+          {
+            "basis_masks": [
+              2,
+              17,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              2,
+              17,
+              19,
+              68,
+              70,
+              85,
+              87,
+              896,
+              898,
+              913,
+              915,
+              964,
+              966,
+              981,
+              983
+            ]
+          },
+          {
+            "basis_masks": [
+              2,
+              17,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              2,
+              17,
+              19,
+              68,
+              70,
+              85,
+              87,
+              1312,
+              1314,
+              1329,
+              1331,
+              1380,
+              1382,
+              1397,
+              1399
+            ]
+          },
+          {
+            "basis_masks": [
+              2,
+              17,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              2,
+              17,
+              19,
+              68,
+              70,
+              85,
+              87,
+              1544,
+              1546,
+              1561,
+              1563,
+              1612,
+              1614,
+              1629,
+              1631
+            ]
+          },
+          {
+            "basis_masks": [
+              2,
+              17,
+              19,
+              140
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              2,
+              17,
+              19,
+              140,
+              142,
+              157,
+              159,
+              320,
+              322,
+              337,
+              339,
+              460,
+              462,
+              477,
+              479
+            ]
+          },
+          {
+            "basis_masks": [
+              2,
+              17,
+              19,
+              140
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              2,
+              17,
+              19,
+              140,
+              142,
+              157,
+              159,
+              1312,
+              1314,
+              1329,
+              1331,
+              1452,
+              1454,
+              1469,
+              1471
+            ]
+          },
+          {
+            "basis_masks": [
+              2,
+              17,
+              19,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              2,
+              17,
+              19,
+              320,
+              322,
+              337,
+              339,
+              552,
+              554,
+              569,
+              571,
+              872,
+              874,
+              889,
+              891
+            ]
+          }
+        ],
+        "target_mask": 2
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "76b603cbc7293557280f4251037cec53500311886a066463af28bc96af8ae180",
+        "chosen_counterterm_mod26": 5,
+        "chosen_counterterm_signed": 5,
+        "coordinate": 2,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 62
+        },
+        "corrected_maximal_packet_count": 62,
+        "corrected_maximal_packet_count_by_dimension": {
+          "3": 32,
+          "4": 30
+        },
+        "corrected_maximal_packets_containing_target": 62,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 163,
+          "2": 805,
+          "3": 421,
+          "4": 30
+        },
+        "counterterm_mod13": 5,
+        "counterterm_mod26_solutions": [
+          5,
+          18
+        ],
+        "counterterm_signed_solutions": [
+          5,
+          -8
+        ],
+        "original_clock_mod26": 18,
+        "original_r33_norm_mod26": 8,
+        "original_weight_mod13": 5,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              4,
+              7,
+              112
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              4,
+              7,
+              112,
+              115,
+              116,
+              119,
+              392,
+              395,
+              396,
+              399,
+              504,
+              507,
+              508,
+              511
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              4,
+              7,
+              112
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              4,
+              7,
+              112,
+              115,
+              116,
+              119,
+              896,
+              899,
+              900,
+              903,
+              1008,
+              1011,
+              1012,
+              1015
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              4,
+              7,
+              112
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              4,
+              7,
+              112,
+              115,
+              116,
+              119,
+              1544,
+              1547,
+              1548,
+              1551,
+              1656,
+              1659,
+              1660,
+              1663
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              4,
+              7,
+              184
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              4,
+              7,
+              184,
+              187,
+              188,
+              191,
+              320,
+              323,
+              324,
+              327,
+              504,
+              507,
+              508,
+              511
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              4,
+              7,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              4,
+              7,
+              320,
+              323,
+              324,
+              327,
+              552,
+              555,
+              556,
+              559,
+              872,
+              875,
+              876,
+              879
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              4,
+              7,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              4,
+              7,
+              320,
+              323,
+              324,
+              327,
+              688,
+              691,
+              692,
+              695,
+              1008,
+              1011,
+              1012,
+              1015
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              4,
+              7,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              4,
+              7,
+              320,
+              323,
+              324,
+              327,
+              1176,
+              1179,
+              1180,
+              1183,
+              1496,
+              1499,
+              1500,
+              1503
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              4,
+              7,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              4,
+              7,
+              320,
+              323,
+              324,
+              327,
+              1544,
+              1547,
+              1548,
+              1551,
+              1864,
+              1867,
+              1868,
+              1871
+            ]
+          }
+        ],
+        "target_mask": 4
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "9f809c5127f3c17c39872a3b54ff72580df928cb136ad8e8b8540e70ceea9f30",
+        "chosen_counterterm_mod26": 24,
+        "chosen_counterterm_signed": -2,
+        "coordinate": 3,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 0,
+        "corrected_basis_r33_norm_mod26": 0,
+        "corrected_clock_image_count": {
+          "0": 18,
+          "0,13": 52
+        },
+        "corrected_maximal_packet_count": 70,
+        "corrected_maximal_packet_count_by_dimension": {
+          "2": 3,
+          "3": 33,
+          "4": 34
+        },
+        "corrected_maximal_packets_containing_target": 70,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 161,
+          "2": 856,
+          "3": 466,
+          "4": 34
+        },
+        "counterterm_mod13": 11,
+        "counterterm_mod26_solutions": [
+          11,
+          24
+        ],
+        "counterterm_signed_solutions": [
+          11,
+          -2
+        ],
+        "original_clock_mod26": 24,
+        "original_r33_norm_mod26": 2,
+        "original_weight_mod13": 11,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              8,
+              11,
+              68
+            ],
+            "clock_image_mod26": [
+              0
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              8,
+              11,
+              68,
+              71,
+              76,
+              79,
+              688,
+              691,
+              696,
+              699,
+              756,
+              759,
+              764,
+              767
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              8,
+              11,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              8,
+              11,
+              68,
+              71,
+              76,
+              79,
+              896,
+              899,
+              904,
+              907,
+              964,
+              967,
+              972,
+              975
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              8,
+              11,
+              68
+            ],
+            "clock_image_mod26": [
+              0
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              8,
+              11,
+              68,
+              71,
+              76,
+              79,
+              1312,
+              1315,
+              1320,
+              1323,
+              1380,
+              1383,
+              1388,
+              1391
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              8,
+              11,
+              68
+            ],
+            "clock_image_mod26": [
+              0
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              8,
+              11,
+              68,
+              71,
+              76,
+              79,
+              1680,
+              1683,
+              1688,
+              1691,
+              1748,
+              1751,
+              1756,
+              1759
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              8,
+              11,
+              112
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              8,
+              11,
+              112,
+              115,
+              120,
+              123,
+              644,
+              647,
+              652,
+              655,
+              756,
+              759,
+              764,
+              767
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              8,
+              11,
+              112
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              8,
+              11,
+              112,
+              115,
+              120,
+              123,
+              896,
+              899,
+              904,
+              907,
+              1008,
+              1011,
+              1016,
+              1019
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              8,
+              11,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              8,
+              11,
+              320,
+              323,
+              328,
+              331,
+              644,
+              647,
+              652,
+              655,
+              964,
+              967,
+              972,
+              975
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              8,
+              11,
+              320
+            ],
+            "clock_image_mod26": [
+              0
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              8,
+              11,
+              320,
+              323,
+              328,
+              331,
+              688,
+              691,
+              696,
+              699,
+              1008,
+              1011,
+              1016,
+              1019
+            ]
+          }
+        ],
+        "target_mask": 8
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "15803e39c6607f7694d61fca6d7a72bbd26a7dc10bed268921cf786c075fd9a7",
+        "chosen_counterterm_mod26": 1,
+        "chosen_counterterm_signed": 1,
+        "coordinate": 4,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 67
+        },
+        "corrected_maximal_packet_count": 67,
+        "corrected_maximal_packet_count_by_dimension": {
+          "3": 49,
+          "4": 18
+        },
+        "corrected_maximal_packets_containing_target": 67,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 157,
+          "2": 654,
+          "3": 288,
+          "4": 18
+        },
+        "counterterm_mod13": 1,
+        "counterterm_mod26_solutions": [
+          1,
+          14
+        ],
+        "counterterm_signed_solutions": [
+          1,
+          -12
+        ],
+        "original_clock_mod26": 14,
+        "original_r33_norm_mod26": 12,
+        "original_weight_mod13": 1,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              16,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              16,
+              19,
+              68,
+              71,
+              84,
+              87,
+              392,
+              395,
+              408,
+              411,
+              460,
+              463,
+              476,
+              479
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              16,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              16,
+              19,
+              68,
+              71,
+              84,
+              87,
+              552,
+              555,
+              568,
+              571,
+              620,
+              623,
+              636,
+              639
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              16,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              16,
+              19,
+              68,
+              71,
+              84,
+              87,
+              896,
+              899,
+              912,
+              915,
+              964,
+              967,
+              980,
+              983
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              16,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              16,
+              19,
+              68,
+              71,
+              84,
+              87,
+              1312,
+              1315,
+              1328,
+              1331,
+              1380,
+              1383,
+              1396,
+              1399
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              16,
+              19,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              16,
+              19,
+              68,
+              71,
+              84,
+              87,
+              1544,
+              1547,
+              1560,
+              1563,
+              1612,
+              1615,
+              1628,
+              1631
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              16,
+              19,
+              140
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              16,
+              19,
+              140,
+              143,
+              156,
+              159,
+              320,
+              323,
+              336,
+              339,
+              460,
+              463,
+              476,
+              479
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              16,
+              19,
+              140
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              16,
+              19,
+              140,
+              143,
+              156,
+              159,
+              1312,
+              1315,
+              1328,
+              1331,
+              1452,
+              1455,
+              1468,
+              1471
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              16,
+              19,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              16,
+              19,
+              320,
+              323,
+              336,
+              339,
+              552,
+              555,
+              568,
+              571,
+              872,
+              875,
+              888,
+              891
+            ]
+          }
+        ],
+        "target_mask": 16
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "0127a094c7a03d9f5e755737270095d52a0fcb156e4d59e6ae79e81a65161c74",
+        "chosen_counterterm_mod26": 4,
+        "chosen_counterterm_signed": 4,
+        "coordinate": 5,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 50
+        },
+        "corrected_maximal_packet_count": 50,
+        "corrected_maximal_packet_count_by_dimension": {
+          "2": 2,
+          "3": 12,
+          "4": 36
+        },
+        "corrected_maximal_packets_containing_target": 50,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 161,
+          "2": 808,
+          "3": 470,
+          "4": 36
+        },
+        "counterterm_mod13": 4,
+        "counterterm_mod26_solutions": [
+          4,
+          17
+        ],
+        "counterterm_signed_solutions": [
+          4,
+          -9
+        ],
+        "original_clock_mod26": 17,
+        "original_r33_norm_mod26": 9,
+        "original_weight_mod13": 4,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              32,
+              35,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              32,
+              35,
+              68,
+              71,
+              100,
+              103,
+              392,
+              395,
+              424,
+              427,
+              460,
+              463,
+              492,
+              495
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              32,
+              35,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              32,
+              35,
+              68,
+              71,
+              100,
+              103,
+              896,
+              899,
+              928,
+              931,
+              964,
+              967,
+              996,
+              999
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              32,
+              35,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              32,
+              35,
+              68,
+              71,
+              100,
+              103,
+              1176,
+              1179,
+              1208,
+              1211,
+              1244,
+              1247,
+              1276,
+              1279
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              32,
+              35,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              32,
+              35,
+              68,
+              71,
+              100,
+              103,
+              1544,
+              1547,
+              1576,
+              1579,
+              1612,
+              1615,
+              1644,
+              1647
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              32,
+              35,
+              68
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              32,
+              35,
+              68,
+              71,
+              100,
+              103,
+              1680,
+              1683,
+              1712,
+              1715,
+              1748,
+              1751,
+              1780,
+              1783
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              32,
+              35,
+              140
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              32,
+              35,
+              140,
+              143,
+              172,
+              175,
+              320,
+              323,
+              352,
+              355,
+              460,
+              463,
+              492,
+              495
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              32,
+              35,
+              140
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              32,
+              35,
+              140,
+              143,
+              172,
+              175,
+              1104,
+              1107,
+              1136,
+              1139,
+              1244,
+              1247,
+              1276,
+              1279
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              32,
+              35,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              32,
+              35,
+              320,
+              323,
+              352,
+              355,
+              644,
+              647,
+              676,
+              679,
+              964,
+              967,
+              996,
+              999
+            ]
+          }
+        ],
+        "target_mask": 32
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "26d23a09baedd2874cdcbef3817ee12224e2d9cfdeb0d14aa04ea820885cbdfd",
+        "chosen_counterterm_mod26": 21,
+        "chosen_counterterm_signed": -5,
+        "coordinate": 6,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 72
+        },
+        "corrected_maximal_packet_count": 72,
+        "corrected_maximal_packet_count_by_dimension": {
+          "3": 60,
+          "4": 12
+        },
+        "corrected_maximal_packets_containing_target": 72,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 151,
+          "2": 571,
+          "3": 220,
+          "4": 12
+        },
+        "counterterm_mod13": 8,
+        "counterterm_mod26_solutions": [
+          8,
+          21
+        ],
+        "counterterm_signed_solutions": [
+          8,
+          -5
+        ],
+        "original_clock_mod26": 8,
+        "original_r33_norm_mod26": 18,
+        "original_weight_mod13": 8,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              64,
+              67,
+              140
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              64,
+              67,
+              140,
+              143,
+              204,
+              207,
+              1312,
+              1315,
+              1376,
+              1379,
+              1452,
+              1455,
+              1516,
+              1519
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              64,
+              67,
+              392
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              64,
+              67,
+              392,
+              395,
+              456,
+              459,
+              1060,
+              1063,
+              1124,
+              1127,
+              1452,
+              1455,
+              1516,
+              1519
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              64,
+              67,
+              644
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              64,
+              67,
+              644,
+              647,
+              708,
+              711,
+              1312,
+              1315,
+              1376,
+              1379,
+              1956,
+              1959,
+              2020,
+              2023
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              64,
+              67,
+              896
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              64,
+              67,
+              896,
+              899,
+              960,
+              963,
+              1060,
+              1063,
+              1124,
+              1127,
+              1956,
+              1959,
+              2020,
+              2023
+            ]
+          },
+          {
+            "basis_masks": [
+              17,
+              64,
+              81,
+              140
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              17,
+              64,
+              81,
+              140,
+              157,
+              204,
+              221,
+              1312,
+              1329,
+              1376,
+              1393,
+              1452,
+              1469,
+              1516,
+              1533
+            ]
+          },
+          {
+            "basis_masks": [
+              17,
+              64,
+              81,
+              392
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              17,
+              64,
+              81,
+              392,
+              409,
+              456,
+              473,
+              1060,
+              1077,
+              1124,
+              1141,
+              1452,
+              1469,
+              1516,
+              1533
+            ]
+          },
+          {
+            "basis_masks": [
+              17,
+              64,
+              81,
+              644
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              17,
+              64,
+              81,
+              644,
+              661,
+              708,
+              725,
+              1312,
+              1329,
+              1376,
+              1393,
+              1956,
+              1973,
+              2020,
+              2037
+            ]
+          },
+          {
+            "basis_masks": [
+              17,
+              64,
+              81,
+              896
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              17,
+              64,
+              81,
+              896,
+              913,
+              960,
+              977,
+              1060,
+              1077,
+              1124,
+              1141,
+              1956,
+              1973,
+              2020,
+              2037
+            ]
+          }
+        ],
+        "target_mask": 64
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "b75da7e6e8ae79ce3d9d07692337b80cc251cd16ce6aa90dbaa5db715f0b2b7b",
+        "chosen_counterterm_mod26": 23,
+        "chosen_counterterm_signed": -3,
+        "coordinate": 7,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 60
+        },
+        "corrected_maximal_packet_count": 60,
+        "corrected_maximal_packet_count_by_dimension": {
+          "3": 40,
+          "4": 20
+        },
+        "corrected_maximal_packets_containing_target": 60,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 153,
+          "2": 660,
+          "3": 306,
+          "4": 20
+        },
+        "counterterm_mod13": 10,
+        "counterterm_mod26_solutions": [
+          10,
+          23
+        ],
+        "counterterm_signed_solutions": [
+          10,
+          -3
+        ],
+        "original_clock_mod26": 10,
+        "original_r33_norm_mod26": 16,
+        "original_weight_mod13": 10,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              128
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              128,
+              131,
+              196,
+              199,
+              552,
+              555,
+              620,
+              623,
+              680,
+              683,
+              748,
+              751
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              128
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              128,
+              131,
+              196,
+              199,
+              1312,
+              1315,
+              1380,
+              1383,
+              1440,
+              1443,
+              1508,
+              1511
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              128
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              128,
+              131,
+              196,
+              199,
+              1544,
+              1547,
+              1612,
+              1615,
+              1672,
+              1675,
+              1740,
+              1743
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              128,
+              131
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              128,
+              131,
+              240,
+              243,
+              1544,
+              1547,
+              1656,
+              1659,
+              1672,
+              1675,
+              1784,
+              1787
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              128,
+              131,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              128,
+              131,
+              320,
+              323,
+              448,
+              451,
+              552,
+              555,
+              680,
+              683,
+              872,
+              875,
+              1000,
+              1003
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              128,
+              131,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              128,
+              131,
+              320,
+              323,
+              448,
+              451,
+              1060,
+              1063,
+              1188,
+              1191,
+              1380,
+              1383,
+              1508,
+              1511
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              128,
+              131,
+              320
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              128,
+              131,
+              320,
+              323,
+              448,
+              451,
+              1544,
+              1547,
+              1672,
+              1675,
+              1864,
+              1867,
+              1992,
+              1995
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              128,
+              131,
+              552
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              128,
+              131,
+              552,
+              555,
+              680,
+              683,
+              1104,
+              1107,
+              1232,
+              1235,
+              1656,
+              1659,
+              1784,
+              1787
+            ]
+          }
+        ],
+        "target_mask": 128
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "5aa758b3f392e164b1cb87fa7525ede6fda827b41fa69141213e0d5c6b28a7f0",
+        "chosen_counterterm_mod26": 5,
+        "chosen_counterterm_signed": 5,
+        "coordinate": 8,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 62
+        },
+        "corrected_maximal_packet_count": 62,
+        "corrected_maximal_packet_count_by_dimension": {
+          "3": 32,
+          "4": 30
+        },
+        "corrected_maximal_packets_containing_target": 62,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 163,
+          "2": 805,
+          "3": 421,
+          "4": 30
+        },
+        "counterterm_mod13": 5,
+        "counterterm_mod26_solutions": [
+          5,
+          18
+        ],
+        "counterterm_signed_solutions": [
+          5,
+          -8
+        ],
+        "original_clock_mod26": 18,
+        "original_r33_norm_mod26": 8,
+        "original_weight_mod13": 5,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              184
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              184,
+              187,
+              252,
+              255,
+              256,
+              259,
+              324,
+              327,
+              440,
+              443,
+              508,
+              511
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              552,
+              555,
+              620,
+              623,
+              808,
+              811,
+              876,
+              879
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              688,
+              691,
+              756,
+              759,
+              944,
+              947,
+              1012,
+              1015
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              1176,
+              1179,
+              1244,
+              1247,
+              1432,
+              1435,
+              1500,
+              1503
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              1544,
+              1547,
+              1612,
+              1615,
+              1800,
+              1803,
+              1868,
+              1871
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              1680,
+              1683,
+              1748,
+              1751,
+              1936,
+              1939,
+              2004,
+              2007
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              140,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              140,
+              143,
+              252,
+              255,
+              256,
+              259,
+              368,
+              371,
+              396,
+              399,
+              508,
+              511
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              256,
+              259
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              256,
+              259,
+              368,
+              371,
+              644,
+              647,
+              756,
+              759,
+              900,
+              903,
+              1012,
+              1015
+            ]
+          }
+        ],
+        "target_mask": 256
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "378bb845c81cd2f3ae42fc4fa4c22cd304202f3b0c2817bf5b5ce27700af0a6d",
+        "chosen_counterterm_mod26": 24,
+        "chosen_counterterm_signed": -2,
+        "coordinate": 9,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 70
+        },
+        "corrected_maximal_packet_count": 70,
+        "corrected_maximal_packet_count_by_dimension": {
+          "2": 3,
+          "3": 33,
+          "4": 34
+        },
+        "corrected_maximal_packets_containing_target": 70,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 161,
+          "2": 856,
+          "3": 466,
+          "4": 34
+        },
+        "counterterm_mod13": 11,
+        "counterterm_mod26_solutions": [
+          11,
+          24
+        ],
+        "counterterm_signed_solutions": [
+          11,
+          -2
+        ],
+        "original_clock_mod26": 11,
+        "original_r33_norm_mod26": 15,
+        "original_weight_mod13": 11,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              184
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              184,
+              187,
+              252,
+              255,
+              512,
+              515,
+              580,
+              583,
+              696,
+              699,
+              764,
+              767
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              392
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              392,
+              395,
+              460,
+              463,
+              512,
+              515,
+              580,
+              583,
+              904,
+              907,
+              972,
+              975
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              512
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              512,
+              515,
+              580,
+              583,
+              1176,
+              1179,
+              1244,
+              1247,
+              1688,
+              1691,
+              1756,
+              1759
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              512
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              512,
+              515,
+              580,
+              583,
+              1312,
+              1315,
+              1380,
+              1383,
+              1824,
+              1827,
+              1892,
+              1895
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              140,
+              512
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              140,
+              143,
+              252,
+              255,
+              512,
+              515,
+              624,
+              627,
+              652,
+              655,
+              764,
+              767
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              392,
+              512
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              392,
+              395,
+              504,
+              507,
+              512,
+              515,
+              624,
+              627,
+              904,
+              907,
+              1016,
+              1019
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              140,
+              320,
+              323
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              140,
+              143,
+              320,
+              323,
+              460,
+              463,
+              512,
+              515,
+              652,
+              655,
+              832,
+              835,
+              972,
+              975
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              140,
+              512,
+              515
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              140,
+              143,
+              512,
+              515,
+              652,
+              655,
+              1104,
+              1107,
+              1244,
+              1247,
+              1616,
+              1619,
+              1756,
+              1759
+            ]
+          }
+        ],
+        "target_mask": 512
+      },
+      {
+        "all_corrected_maximal_packets_sha256": "dee0236b6c39372b185cbc090ab5458cc4a1d02cbfd5c9c2b95883a48b55aa01",
+        "chosen_counterterm_mod26": 4,
+        "chosen_counterterm_signed": 4,
+        "coordinate": 10,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 50
+        },
+        "corrected_maximal_packet_count": 50,
+        "corrected_maximal_packet_count_by_dimension": {
+          "2": 2,
+          "3": 12,
+          "4": 36
+        },
+        "corrected_maximal_packets_containing_target": 50,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 161,
+          "2": 808,
+          "3": 470,
+          "4": 36
+        },
+        "counterterm_mod13": 4,
+        "counterterm_mod26_solutions": [
+          4,
+          17
+        ],
+        "counterterm_signed_solutions": [
+          4,
+          -9
+        ],
+        "original_clock_mod26": 17,
+        "original_r33_norm_mod26": 9,
+        "original_weight_mod13": 4,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              184
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              184,
+              187,
+              252,
+              255,
+              1024,
+              1027,
+              1092,
+              1095,
+              1208,
+              1211,
+              1276,
+              1279
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              392
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              392,
+              395,
+              460,
+              463,
+              1024,
+              1027,
+              1092,
+              1095,
+              1416,
+              1419,
+              1484,
+              1487
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              552
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              552,
+              555,
+              620,
+              623,
+              1024,
+              1027,
+              1092,
+              1095,
+              1576,
+              1579,
+              1644,
+              1647
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              688
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              688,
+              691,
+              756,
+              759,
+              1024,
+              1027,
+              1092,
+              1095,
+              1712,
+              1715,
+              1780,
+              1783
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              896
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              896,
+              899,
+              964,
+              967,
+              1024,
+              1027,
+              1092,
+              1095,
+              1920,
+              1923,
+              1988,
+              1991
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              140,
+              1024
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              140,
+              143,
+              252,
+              255,
+              1024,
+              1027,
+              1136,
+              1139,
+              1164,
+              1167,
+              1276,
+              1279
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              392,
+              1024
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              392,
+              395,
+              504,
+              507,
+              1024,
+              1027,
+              1136,
+              1139,
+              1416,
+              1419,
+              1528,
+              1531
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              644,
+              1024
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              644,
+              647,
+              756,
+              759,
+              1024,
+              1027,
+              1136,
+              1139,
+              1668,
+              1671,
+              1780,
+              1783
+            ]
+          }
+        ],
+        "target_mask": 1024
+      }
+    ],
+    "expected_corrected_maximal_packet_counts": {
+      "0": 80,
+      "1": 67,
+      "2": 62,
+      "3": 70,
+      "4": 67,
+      "5": 50,
+      "6": 72,
+      "7": 60,
+      "8": 62,
+      "9": 70,
+      "10": 50
+    },
+    "expected_minimal_signed_lifts": {
+      "0": -1,
+      "1": 1,
+      "2": 5,
+      "3": -2,
+      "4": 1,
+      "5": 4,
+      "6": -5,
+      "7": -3,
+      "8": 5,
+      "9": -2,
+      "10": 4
+    },
+    "gamma8_coordinate": {
+      "all_corrected_maximal_packets_sha256": "5aa758b3f392e164b1cb87fa7525ede6fda827b41fa69141213e0d5c6b28a7f0",
+      "chosen_counterterm_mod26": 5,
+      "chosen_counterterm_signed": 5,
+      "coordinate": 8,
+      "corrected_additive_failure_count": 0,
+      "corrected_basis_clock_mod26": 13,
+      "corrected_basis_r33_norm_mod26": 13,
+      "corrected_clock_image_count": {
+        "0,13": 62
+      },
+      "corrected_maximal_packet_count": 62,
+      "corrected_maximal_packet_count_by_dimension": {
+        "3": 32,
+        "4": 30
+      },
+      "corrected_maximal_packets_containing_target": 62,
+      "corrected_subspace_dimension_counts": {
+        "0": 1,
+        "1": 163,
+        "2": 805,
+        "3": 421,
+        "4": 30
+      },
+      "counterterm_mod13": 5,
+      "counterterm_mod26_solutions": [
+        5,
+        18
+      ],
+      "counterterm_signed_solutions": [
+        5,
+        -8
+      ],
+      "original_clock_mod26": 18,
+      "original_r33_norm_mod26": 8,
+      "original_weight_mod13": 5,
+      "sample_corrected_maximal_packets": [
+        {
+          "basis_masks": [
+            3,
+            68,
+            71,
+            184
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "contains_target": true,
+          "dimension": 4,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            184,
+            187,
+            252,
+            255,
+            256,
+            259,
+            324,
+            327,
+            440,
+            443,
+            508,
+            511
+          ]
+        },
+        {
+          "basis_masks": [
+            3,
+            68,
+            71,
+            256
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "contains_target": true,
+          "dimension": 4,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            552,
+            555,
+            620,
+            623,
+            808,
+            811,
+            876,
+            879
+          ]
+        },
+        {
+          "basis_masks": [
+            3,
+            68,
+            71,
+            256
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "contains_target": true,
+          "dimension": 4,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            688,
+            691,
+            756,
+            759,
+            944,
+            947,
+            1012,
+            1015
+          ]
+        },
+        {
+          "basis_masks": [
+            3,
+            68,
+            71,
+            256
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "contains_target": true,
+          "dimension": 4,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1176,
+            1179,
+            1244,
+            1247,
+            1432,
+            1435,
+            1500,
+            1503
+          ]
+        },
+        {
+          "basis_masks": [
+            3,
+            68,
+            71,
+            256
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "contains_target": true,
+          "dimension": 4,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1544,
+            1547,
+            1612,
+            1615,
+            1800,
+            1803,
+            1868,
+            1871
+          ]
+        },
+        {
+          "basis_masks": [
+            3,
+            68,
+            71,
+            256
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "contains_target": true,
+          "dimension": 4,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1680,
+            1683,
+            1748,
+            1751,
+            1936,
+            1939,
+            2004,
+            2007
+          ]
+        },
+        {
+          "basis_masks": [
+            3,
+            112,
+            140,
+            256
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "contains_target": true,
+          "dimension": 4,
+          "masks": [
+            0,
+            3,
+            112,
+            115,
+            140,
+            143,
+            252,
+            255,
+            256,
+            259,
+            368,
+            371,
+            396,
+            399,
+            508,
+            511
+          ]
+        },
+        {
+          "basis_masks": [
+            3,
+            112,
+            256,
+            259
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "contains_target": true,
+          "dimension": 4,
+          "masks": [
+            0,
+            3,
+            112,
+            115,
+            256,
+            259,
+            368,
+            371,
+            644,
+            647,
+            756,
+            759,
+            900,
+            903,
+            1012,
+            1015
+          ]
+        }
+      ],
+      "target_mask": 256
+    },
+    "geometry_class_count": 8,
+    "geometry_class_histogram": {
+      "0898742d7a086c480805e7181798797d2babf248dcd62fbb948c5c51d1514eab": 1,
+      "2553c65a3cf1f3c58f50bfb3c148d86fc43292b777bd467ef0d99f971ba14993": 1,
+      "3a634e011cfbe5d9d6f0d2fe633e7bd66034fd4bb5f841dda12d14d31a06d891": 2,
+      "51d5275be6ab3e67d284966257197a82ad004bde4e6963f4334dad6362bb3678": 1,
+      "7930d639c7ec08fae0353eeb68186a38315c0701769819f5080dd52a657b0f57": 2,
+      "d39a10d9f724f2e5c012de394fa00a7ccdf11fde5acc3881e8bda09487a38bcc": 1,
+      "ef79bd88d085cc06b0aabf73c8c4709bf2e13beb5a9d6d5b3eef4b8425a407b9": 2,
+      "f8e2dc0e786d61c0b38edc70c9dc58ebc9ff8a03e8ea9680cb1b4be9dc7c2706": 1
+    }
+  },
+  "inputs": {
+    "anomaly_cancelled_flux_balance_recovery_report": {
+      "path": "data/invariants/d20/theorems/anomaly_cancelled_flux_balance_recovery/report.json",
+      "sha256": "973fb49612a034ab997313c1528622625e87b4bc567b38a08affff25598985f6"
+    },
+    "finite_anomaly_counter_report": {
+      "path": "data/invariants/d20/theorems/finite_anomaly_counter/report.json",
+      "sha256": "2eab53f4671763737840b8572c67f8889bdc0ad7e5a7768763d5c49b7a35d620"
+    },
+    "gamma8_obstruction_correction_report": {
+      "path": "data/invariants/d20/theorems/gamma8_obstruction_correction/report.json",
+      "sha256": "da5d4892e98659bd817695a28999353eafc40d086667e6b2a7c6a086eb4f7656"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not yet build the simultaneous global correction where multiple rank-one counterterms are active at once.",
+    "what_this_proves": [
+      "gamma_8 is not exceptional as a correction mechanism; it is one coordinate row",
+      "all 11 basis coordinates require rank-one counterterms to become self-cancelled",
+      "every local correction opens dimension-4 corrected packets",
+      "corrected clock images remain order-two or zero on corrected packets"
+    ]
+  },
+  "next_highest_yield_item": "Build the global counterterm-lattice theorem: activate all 11 rank-one corrections together and test whether the full closed-return residue group becomes corrected flux-balanced.",
+  "object": "d20",
+  "schema": "d20.theorem.general_obstruction_correction_suite",
+  "status": "D20_GENERAL_OBSTRUCTION_CORRECTION_SUITE_CERTIFIED"
+}

@@ -2,11 +2,11 @@
   "checklist_items": [
     {
       "blocks_full_closure": true,
-      "closure_level": "scoped_witness",
+      "closure_level": "open",
       "id": "encoded_family_sat_complete",
-      "scope_warning": "The cycle-8 / Pi_33 residual packet is witnessed as a polynomially faithful representative family. No SAT-complete reduction certificate is present.",
-      "status": "polynomially_faithful_representative_family_witnessed_sat_complete_open",
-      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json"
+      "scope_warning": "The cycle-8 / Pi_33 residual packet is witnessed as a polynomially faithful representative family. A deterministic public CNF-to-D20-mask compiler candidate now exists and recomputes rho_33 from emitted circuit data, but it is a finite fingerprint target and fails the truth-diverse SAT-preservation probe. The finite 2048-mask target is fenced as a lookup testbed, and the parameterized E(phi) schema now names assignment witnesses, clause-local gates, inverse projection, and intrinsic rho_33 transport. The SAT frontier still blocks on the public DIMACS-to-E(phi) compiler and forall-instance yes/no preservation theorem.",
+      "status": "parameterized_e33_target_schema_defined_reduction_open",
+      "witness": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json"
     },
     {
       "blocks_full_closure": false,
@@ -84,35 +84,55 @@
       "encoded_family_sat_complete"
     ],
     "conditional_claim_allowed": true,
-    "hard_open_blockers": [],
-    "scope_declaration_blockers": [],
-    "scoped_witness_blockers": [
+    "hard_open_blockers": [
       "encoded_family_sat_complete"
-    ]
+    ],
+    "scope_declaration_blockers": [],
+    "scoped_witness_blockers": []
   },
   "next_highest_yield_item": {
-    "action": "Build the SAT-complete reduction certificate for the hidden e33-obstructed family, or keep the theorem representative-family scoped.",
-    "id": "encoded_family_sat_complete"
+    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    "id": "cnf_to_parameterized_e33_packet_compiler"
   },
   "remaining_gaps": [
     {
-      "gap": "The encoded family now has a polynomially faithful representative-family witness for the cycle-8 / Pi_33 packet, but no SAT-complete reduction certificate is present.",
+      "assignment_target_obligation_witness": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
+      "candidate_witness": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "gap": "A public formula-to-boundary-cycle compiler candidate now emits D20 masks and recomputes rho_33 from circuit data, but it is a finite nonzero-residual fingerprint and fails SAT preservation. The finite target is fenced as a lookup testbed, and the parameterized E(phi) schema now names assignment witnesses, clause-local gates, inverse projection, and intrinsic rho_33 transport. Full closure still needs the public DIMACS-to-E(phi) compiler, forall-instance yes/no preservation theorem, inverse witness interpretation, and no-hidden-advice proof for the reduction algorithm.",
       "id": "encoded_family_sat_complete",
-      "needed": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation."
+      "investigation_witness": "data/invariants/integrity/cvx_trace/reports/uniform_cnf_to_e33_family_encoding_investigation.json",
+      "needed": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation.",
+      "parameterized_target_schema_witness": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json"
     }
   ],
   "report_statuses": {
+    "assignment_bearing_e33_target_family_obligation": {
+      "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
+      "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
+    },
     "cvx_trace_index": {
       "path": "data/invariants/integrity/cvx_trace/index.json",
-      "status": "CVX_TRACE_BRIDGE_WITNESSES_WITH_X_POLICY_AND_ENCODED_REPRESENTATIVE_FAMILY"
+      "status": "CVX_TRACE_BRIDGE_WITNESSES_WITH_X_POLICY_SAT_FRONTIER_FORMULA_CANDIDATE_TARGET_OBLIGATION_AND_SCHEMA"
     },
     "encoded_family_bridge": {
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
       "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
     },
+    "encoded_family_sat_frontier": {
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
+      "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
+    },
     "encoded_family_scope": {
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_scope_certificate.json",
       "status": "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+    },
+    "formula_to_boundary_cycle_family_candidate": {
+      "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+    },
+    "parameterized_e33_target_schema": {
+      "path": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json",
+      "status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN"
     },
     "polynomial_trace_compiler_scope": {
       "path": "data/invariants/integrity/cvx_trace/reports/polynomial_trace_compiler_scope_certificate.json",
@@ -129,6 +149,10 @@
     "solver_opcode_totality": {
       "path": "data/invariants/integrity/cvx_trace/reports/solver_opcode_totality_report.json",
       "status": "SOLVER_OPCODE_TOTALITY_WITNESS_PASS"
+    },
+    "uniform_cnf_to_e33_family_encoding_investigation": {
+      "path": "data/invariants/integrity/cvx_trace/reports/uniform_cnf_to_e33_family_encoding_investigation.json",
+      "status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED"
     },
     "universal_pure_c_no_escape": {
       "path": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",

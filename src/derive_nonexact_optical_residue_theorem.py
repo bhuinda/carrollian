@@ -247,10 +247,10 @@ def build_theorem() -> dict[str, Any]:
             ),
             "scope": (
                 "This isolates the non-exact optical/action sector. It does not identify the internal A985 "
-                "carrier of the residual beyond the scalar balance obligation."
+                "support of the residual beyond the scalar balance obligation."
             ),
             "not_claimed": [
-                "the hidden A985 residual carrier has been decomposed into relation-algebra sectors",
+                "the hidden A985 residual support has been decomposed into relation-algebra sectors",
                 "continuum BMS balance has been recovered",
                 "positive optical action can be gauged away",
             ],

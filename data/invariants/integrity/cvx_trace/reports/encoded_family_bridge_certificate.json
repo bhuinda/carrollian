@@ -5,7 +5,7 @@
     "may_claim_encoded_family_sat_complete": false,
     "may_claim_full_separation": false,
     "may_claim_polynomially_faithful_representative_family": true,
-    "reason": "The cycle-8 / Pi_33 / residual packet is now a polynomially bounded representative-family bridge, while SAT-completeness and the X-extractor lower bound remain open."
+    "reason": "The cycle-8 / Pi_33 / residual packet is now a polynomially bounded representative-family bridge. The X policy boundary is certified, while SAT-completeness remains open."
   },
   "integrity_report_audit": {
     "universal_pure_c_no_escape": {
@@ -37,27 +37,33 @@
       "passed": true,
       "path": "data/invariants/integrity/cvx_trace/reports/universal_x_extractor_isolation_report.json",
       "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
     }
   },
   "next_highest_yield_item": {
-    "action": "Attack the polynomial-size X-extractor lower bound, because the representative encoded-family bridge is now witnessed but SAT-completeness is still not certified.",
-    "id": "x_extractor_lower_bound"
+    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    "id": "cnf_to_parameterized_e33_packet_compiler"
   },
   "non_claims": [
     "This is not a SAT-complete reduction certificate.",
     "This does not prove every SAT instance maps to a hidden e33-obstructed packet.",
-    "This does not prove a polynomial-size lower bound against X extractors.",
+    "This does not reclassify X extractors as public-P computation.",
     "This does not prove P != NP."
   ],
   "polynomial_faithfulness": {
     "bound_kind": "representative_family_payload_bound",
     "construction_time_bound": "one pass over the public cycle edge list plus fixed certified sector/audit payloads for this representative family witness",
-    "integrity_report_count": 5,
+    "integrity_report_count": 6,
     "polynomial_bound": "source_size_measure^3",
-    "polynomial_bound_value": 4913,
+    "polynomial_bound_value": 5832,
     "source_edge_count": 5,
     "source_public_field_count": 6,
-    "source_size_measure": 17,
+    "source_size_measure": 18,
     "target_payload_leaf_count": 33,
     "within_bound": true
   },
@@ -143,7 +149,7 @@
       }
     }
   },
-  "schema": "d20.integrity.encoded_family_bridge_certificate",
+  "schema": "d20.integrity.encoded_family_bridge_certificate.source_drop",
   "sector33_audit": {
     "passed": true,
     "public_zero_obstruction_visible": true,

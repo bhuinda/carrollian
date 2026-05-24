@@ -1,0 +1,4173 @@
+{
+  "claim_level": "public_compiler_candidate_not_sat_reduction",
+  "compiled_instance_summary": {
+    "all_height_actions_recomputed_from_emitted_basis_cycles": true,
+    "all_masks_in_2048_residue_table": true,
+    "canonical_fixture_count": 5,
+    "generated_truth_diversity_canary_count": 4,
+    "instance_count": 18,
+    "mask_histogram": {
+      "32": 1,
+      "64": 1,
+      "66": 2,
+      "1024": 3,
+      "1025": 1,
+      "1048": 1,
+      "1049": 1,
+      "1090": 5,
+      "1282": 1,
+      "1591": 1,
+      "1602": 1
+    },
+    "nonzero_e33_residual_count": 18,
+    "scaled_fixture_count": 9,
+    "unique_mask_count": 11
+  },
+  "compiled_instances": [
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 4,
+        "basis_cycle_ids": [
+          1,
+          6,
+          9,
+          10
+        ],
+        "height_action_from_basis_cycles": 4306944,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          },
+          {
+            "cycle_id": 9,
+            "edge_ids": [
+              27,
+              23,
+              22,
+              25,
+              28
+            ],
+            "length": 5,
+            "optical_action": 992256,
+            "turn_addresses": [
+              "V+",
+              "V-",
+              "S-",
+              "S-",
+              "V+"
+            ],
+            "vertices": [
+              17,
+              16,
+              11,
+              13,
+              19,
+              17
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 26
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          6,
+          9,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 5
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 8
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 1,
+            "source": "binary_clauses_parity",
+            "value": 3
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 1,
+            "source": "literal_abs_sum_parity",
+            "value": 17
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 1180716297235230373
+          }
+        ],
+        "canonical_formula_sha256": "1062bf3775386ea5c59ba33e98eb9bf4aefb05b151484d4d8bc3f24274ed1449",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 3,
+          "clauses": 5,
+          "distinct_variables_seen": 4,
+          "horn_clauses": 5,
+          "literal_abs_sum": 17,
+          "max_clause_width": 2,
+          "negative_literals": 4,
+          "positive_literals": 4,
+          "signed_literal_sum": 3,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 8,
+          "unit_clauses": 2,
+          "variables": 4,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1602
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 4306944,
+        "pi33_coefficient_mod_prime": 693071,
+        "residual_integral": -4306944,
+        "residual_mod_prime": 693071,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 846537,
+        "transport_scalar_signed": -153466
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "contradiction_4.cnf",
+      "source_kind": "canonical_ss_sat_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 2,
+        "basis_cycle_ids": [
+          1,
+          6
+        ],
+        "height_action_from_basis_cycles": 2224128,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 13
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          6
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 12
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 13
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 24
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 12
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 12
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 1,
+            "source": "binary_clauses_parity",
+            "value": 11
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 156
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 0,
+            "source": "canonical_sha256_low_bit",
+            "value": 12502772835566861542
+          }
+        ],
+        "canonical_formula_sha256": "ad82c5a6c35dbce6738e1688318cad9fa8c186f0fe622a935152e3a7edc45ae6",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 11,
+          "clauses": 13,
+          "distinct_variables_seen": 12,
+          "horn_clauses": 13,
+          "literal_abs_sum": 156,
+          "max_clause_width": 2,
+          "negative_literals": 12,
+          "positive_literals": 12,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 24,
+          "unit_clauses": 2,
+          "variables": 12,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 66
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/horn_chain_12.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 2224128,
+        "pi33_coefficient_mod_prime": 775881,
+        "residual_integral": -2224128,
+        "residual_mod_prime": 775881,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 887942,
+        "transport_scalar_signed": -112061
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "horn_chain_12.cnf",
+      "source_kind": "canonical_ss_sat_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 3,
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "height_action_from_basis_cycles": 3314688,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 21
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 8
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 9
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 16
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 8
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 8
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 1,
+            "source": "binary_clauses_parity",
+            "value": 7
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 72
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 9656246693940278739
+          }
+        ],
+        "canonical_formula_sha256": "8601e13507d9b5d3eb2730b5438fec936c62de58ce5c8d3c19610ac4d5d4dbd6",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 7,
+          "clauses": 9,
+          "distinct_variables_seen": 8,
+          "horn_clauses": 9,
+          "literal_abs_sum": 72,
+          "max_clause_width": 2,
+          "negative_literals": 8,
+          "positive_literals": 8,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 16,
+          "unit_clauses": 2,
+          "variables": 8,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1090
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/horn_chain_8.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 3314688,
+        "pi33_coefficient_mod_prime": 685324,
+        "residual_integral": -3314688,
+        "residual_mod_prime": 685324,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 342662,
+        "transport_scalar_signed": 342662
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "horn_chain_8.cnf",
+      "source_kind": "canonical_ss_sat_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 1,
+        "basis_cycle_ids": [
+          10
+        ],
+        "height_action_from_basis_cycles": 1090560,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 8
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 6
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 0,
+            "source": "clauses_parity",
+            "value": 12
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 24
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 18
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 6
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 12
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 84
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 5214571832582599649
+          }
+        ],
+        "canonical_formula_sha256": "485de17428d7f3e15090ad5781456be2aed6657d233f74e397cabf8a4c338b85",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 12,
+          "clauses": 12,
+          "distinct_variables_seen": 6,
+          "horn_clauses": 9,
+          "literal_abs_sum": 84,
+          "max_clause_width": 2,
+          "negative_literals": 18,
+          "positive_literals": 6,
+          "signed_literal_sum": -42,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 24,
+          "unit_clauses": 0,
+          "variables": 6,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1024
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/php_3_2.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 1090560,
+        "pi33_coefficient_mod_prime": 909446,
+        "residual_integral": -1090560,
+        "residual_mod_prime": 909446,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 454723,
+        "transport_scalar_signed": 454723
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "php_3_2.cnf",
+      "source_kind": "canonical_ss_sat_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 2,
+        "basis_cycle_ids": [
+          0,
+          10
+        ],
+        "height_action_from_basis_cycles": 2165760,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 0,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              0,
+              1,
+              10,
+              8,
+              5
+            ],
+            "length": 8,
+            "optical_action": 1075200,
+            "turn_addresses": [
+              "B+",
+              "B+",
+              "B+",
+              "B+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              0,
+              4,
+              8,
+              3,
+              2
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 16
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          0,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 1,
+            "source": "variables_parity",
+            "value": 5
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 0,
+            "source": "clauses_parity",
+            "value": 24
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 88
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 44
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 44
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 8
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 16
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 264
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 5827022625101127879
+          }
+        ],
+        "canonical_formula_sha256": "50ddbe34635120c7424ef67ed09193299f33617cda1b97f1742a3e9ecc768a83",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 0,
+          "clauses": 24,
+          "distinct_variables_seen": 5,
+          "horn_clauses": 9,
+          "literal_abs_sum": 264,
+          "max_clause_width": 4,
+          "negative_literals": 44,
+          "positive_literals": 44,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 8,
+          "total_literals": 88,
+          "unit_clauses": 0,
+          "variables": 5,
+          "wide_clauses": 16
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1025
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/xor_unsat.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 2165760,
+        "pi33_coefficient_mod_prime": 834249,
+        "residual_integral": -2165760,
+        "residual_mod_prime": 834249,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 917126,
+        "transport_scalar_signed": -82877
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "xor_unsat.cnf",
+      "source_kind": "canonical_ss_sat_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": null,
+      "closed_return_circuit": {
+        "basis_cycle_count": 3,
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "height_action_from_basis_cycles": 3314688,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 21
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 128
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 129
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 256
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 128
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 128
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 1,
+            "source": "binary_clauses_parity",
+            "value": 127
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 16512
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 13488801811964100079
+          }
+        ],
+        "canonical_formula_sha256": "bb31d9c7ffc3fdef746fb7b228f3d64b79e565856ef81b98b5f1faff3ce65ab4",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 127,
+          "clauses": 129,
+          "distinct_variables_seen": 128,
+          "horn_clauses": 129,
+          "literal_abs_sum": 16512,
+          "max_clause_width": 2,
+          "negative_literals": 128,
+          "positive_literals": 128,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 256,
+          "unit_clauses": 2,
+          "variables": 128,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1090
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_128.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 3314688,
+        "pi33_coefficient_mod_prime": 685324,
+        "residual_integral": -3314688,
+        "residual_mod_prime": 685324,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 342662,
+        "transport_scalar_signed": 342662
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/horn_chain_128.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 3,
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "height_action_from_basis_cycles": 3314688,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 21
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 16
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 17
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 32
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 16
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 16
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 1,
+            "source": "binary_clauses_parity",
+            "value": 15
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 272
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 2761824672148646815
+          }
+        ],
+        "canonical_formula_sha256": "2653f8e813546b9f644b486a7ba89c3ed62c674289a9963628dcefd3ce734f93",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 15,
+          "clauses": 17,
+          "distinct_variables_seen": 16,
+          "horn_clauses": 17,
+          "literal_abs_sum": 272,
+          "max_clause_width": 2,
+          "negative_literals": 16,
+          "positive_literals": 16,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 32,
+          "unit_clauses": 2,
+          "variables": 16,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1090
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_16.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 3314688,
+        "pi33_coefficient_mod_prime": 685324,
+        "residual_integral": -3314688,
+        "residual_mod_prime": 685324,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 342662,
+        "transport_scalar_signed": 342662
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/horn_chain_16.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": null,
+      "closed_return_circuit": {
+        "basis_cycle_count": 3,
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "height_action_from_basis_cycles": 3314688,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 21
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 32
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 33
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 64
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 32
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 32
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 1,
+            "source": "binary_clauses_parity",
+            "value": 31
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 1056
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 2368547069599928259
+          }
+        ],
+        "canonical_formula_sha256": "20dec502bd4bcfc32650ee87fe8e32f1cff2ef4e438f104b6ec543293eacb729",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 31,
+          "clauses": 33,
+          "distinct_variables_seen": 32,
+          "horn_clauses": 33,
+          "literal_abs_sum": 1056,
+          "max_clause_width": 2,
+          "negative_literals": 32,
+          "positive_literals": 32,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 64,
+          "unit_clauses": 2,
+          "variables": 32,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1090
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_32.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 3314688,
+        "pi33_coefficient_mod_prime": 685324,
+        "residual_integral": -3314688,
+        "residual_mod_prime": 685324,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 342662,
+        "transport_scalar_signed": 342662
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/horn_chain_32.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": null,
+      "closed_return_circuit": {
+        "basis_cycle_count": 3,
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "height_action_from_basis_cycles": 3314688,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 21
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          6,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 64
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 65
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 128
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 64
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 64
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 1,
+            "source": "binary_clauses_parity",
+            "value": 63
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 4160
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 14702713656460214709
+          }
+        ],
+        "canonical_formula_sha256": "cc0a882c179881b5de5705200fe09f55d490d0b631c7d25492d1089f8d7c7ed4",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 63,
+          "clauses": 65,
+          "distinct_variables_seen": 64,
+          "horn_clauses": 65,
+          "literal_abs_sum": 4160,
+          "max_clause_width": 2,
+          "negative_literals": 64,
+          "positive_literals": 64,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 128,
+          "unit_clauses": 2,
+          "variables": 64,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1090
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_64.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 3314688,
+        "pi33_coefficient_mod_prime": 685324,
+        "residual_integral": -3314688,
+        "residual_mod_prime": 685324,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 342662,
+        "transport_scalar_signed": 342662
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/horn_chain_64.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 1,
+        "basis_cycle_ids": [
+          10
+        ],
+        "height_action_from_basis_cycles": 1090560,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 8
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 12
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 0,
+            "source": "clauses_parity",
+            "value": 22
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 48
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 36
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 12
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 18
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 312
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 13645074585897033065
+          }
+        ],
+        "canonical_formula_sha256": "bd5d0b0a8a1a5d69c02549e2971cec28d6641feb9f5f92725ca35740b6f2164d",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 18,
+          "clauses": 22,
+          "distinct_variables_seen": 12,
+          "horn_clauses": 18,
+          "literal_abs_sum": 312,
+          "max_clause_width": 3,
+          "negative_literals": 36,
+          "positive_literals": 12,
+          "signed_literal_sum": -156,
+          "tautological_clauses": 0,
+          "ternary_clauses": 4,
+          "total_literals": 48,
+          "unit_clauses": 0,
+          "variables": 12,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1024
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/php_4_3.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 1090560,
+        "pi33_coefficient_mod_prime": 909446,
+        "residual_integral": -1090560,
+        "residual_mod_prime": 909446,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 454723,
+        "transport_scalar_signed": 454723
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/php_4_3.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": null,
+      "closed_return_circuit": {
+        "basis_cycle_count": 3,
+        "basis_cycle_ids": [
+          1,
+          8,
+          10
+        ],
+        "height_action_from_basis_cycles": 2786304,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 8,
+            "edge_ids": [
+              11,
+              1,
+              2,
+              22,
+              21
+            ],
+            "length": 5,
+            "optical_action": 374784,
+            "turn_addresses": [
+              "V+",
+              "V-",
+              "V-",
+              "B+",
+              "B+"
+            ],
+            "vertices": [
+              10,
+              4,
+              0,
+              11,
+              13,
+              10
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 21
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          8,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 20
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 45
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 100
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 80
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 20
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 40
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 1,
+            "source": "wide_clauses_parity",
+            "value": 5
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 1050
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 11329280979463500965
+          }
+        ],
+        "canonical_formula_sha256": "9d39b1069582f4a5c1edd375be9616d75fe8133396f43bb0c716f6fa71ff73a7",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 40,
+          "clauses": 45,
+          "distinct_variables_seen": 20,
+          "horn_clauses": 40,
+          "literal_abs_sum": 1050,
+          "max_clause_width": 4,
+          "negative_literals": 80,
+          "positive_literals": 20,
+          "signed_literal_sum": -630,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 100,
+          "unit_clauses": 0,
+          "variables": 20,
+          "wide_clauses": 5
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1282
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/php_5_4.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 2786304,
+        "pi33_coefficient_mod_prime": 213705,
+        "residual_integral": -2786304,
+        "residual_mod_prime": 213705,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 606854,
+        "transport_scalar_signed": -393149
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/php_5_4.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": null,
+      "closed_return_circuit": {
+        "basis_cycle_count": 2,
+        "basis_cycle_ids": [
+          1,
+          6
+        ],
+        "height_action_from_basis_cycles": 2224128,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 13
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          1,
+          6
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 30
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 81
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 180
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 150
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 30
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 1,
+            "source": "binary_clauses_parity",
+            "value": 75
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 6
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 2790
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 0,
+            "source": "canonical_sha256_low_bit",
+            "value": 4475792064291223988
+          }
+        ],
+        "canonical_formula_sha256": "3e1d352b309739b4a57c705397123c62623641b68d5bd6199e620c1b98eeda8e",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 75,
+          "clauses": 81,
+          "distinct_variables_seen": 30,
+          "horn_clauses": 75,
+          "literal_abs_sum": 2790,
+          "max_clause_width": 5,
+          "negative_literals": 150,
+          "positive_literals": 30,
+          "signed_literal_sum": -1860,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 180,
+          "unit_clauses": 0,
+          "variables": 30,
+          "wide_clauses": 6
+        },
+        "forced_nonzero_bit": null,
+        "mask": 66
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/php_6_5.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 2224128,
+        "pi33_coefficient_mod_prime": 775881,
+        "residual_integral": -2224128,
+        "residual_mod_prime": 775881,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 887942,
+        "transport_scalar_signed": -112061
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/php_6_5.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 1,
+        "basis_cycle_ids": [
+          6
+        ],
+        "height_action_from_basis_cycles": 903168,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 6,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "length": 5,
+            "optical_action": 903168,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B-",
+              "B+",
+              "V+"
+            ],
+            "vertices": [
+              8,
+              4,
+              0,
+              1,
+              14,
+              8
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 5
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          6
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 6
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 0,
+            "source": "clauses_parity",
+            "value": 64
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 384
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 192
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 192
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 64
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 1344
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 0,
+            "source": "canonical_sha256_low_bit",
+            "value": 7850133559673236040
+          }
+        ],
+        "canonical_formula_sha256": "6cf146e177b22a483578f0f76a73d5be5d8aa21010ee2b692d9d88c60b4f5339",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 0,
+          "clauses": 64,
+          "distinct_variables_seen": 6,
+          "horn_clauses": 7,
+          "literal_abs_sum": 1344,
+          "max_clause_width": 6,
+          "negative_literals": 192,
+          "positive_literals": 192,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 384,
+          "unit_clauses": 0,
+          "variables": 6,
+          "wide_clauses": 64
+        },
+        "forced_nonzero_bit": 6,
+        "mask": 64
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/xor_parity_6_unsat.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 903168,
+        "pi33_coefficient_mod_prime": 96835,
+        "residual_integral": -903168,
+        "residual_mod_prime": 96835,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 548419,
+        "transport_scalar_signed": -451584
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/xor_parity_6_unsat.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 1,
+        "basis_cycle_ids": [
+          5
+        ],
+        "height_action_from_basis_cycles": 691200,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 5,
+            "edge_ids": [
+              3,
+              0,
+              2,
+              23,
+              17
+            ],
+            "length": 5,
+            "optical_action": 691200,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B+",
+              "V-",
+              "S-"
+            ],
+            "vertices": [
+              7,
+              1,
+              0,
+              11,
+              16,
+              7
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 5
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          5
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 8
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 0,
+            "source": "clauses_parity",
+            "value": 256
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 2048
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 1024
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 1024
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 256
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 9216
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 0,
+            "source": "canonical_sha256_low_bit",
+            "value": 200246430148121290
+          }
+        ],
+        "canonical_formula_sha256": "02c76b113884d2ca46e25d38e0c2a01d36c1e6ec1aa3cb606ba14abebdb3075c",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 0,
+          "clauses": 256,
+          "distinct_variables_seen": 8,
+          "horn_clauses": 9,
+          "literal_abs_sum": 9216,
+          "max_clause_width": 8,
+          "negative_literals": 1024,
+          "positive_literals": 1024,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 2048,
+          "unit_clauses": 0,
+          "variables": 8,
+          "wide_clauses": 256
+        },
+        "forced_nonzero_bit": 5,
+        "mask": 32
+      },
+      "known_truth": "UNSAT",
+      "path": "data/evidence/ss_sat/benchmarks/scaled/xor_parity_8_unsat.cnf",
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 691200,
+        "pi33_coefficient_mod_prime": 308803,
+        "residual_integral": -691200,
+        "residual_mod_prime": 308803,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 654403,
+        "transport_scalar_signed": -345600
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "scaled/xor_parity_8_unsat.cnf",
+      "source_kind": "canonical_ss_sat_scaled_fixture",
+      "truth_source": "solver_logs"
+    },
+    {
+      "bruteforce_truth_if_bounded": "SAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 7,
+        "basis_cycle_ids": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          9,
+          10
+        ],
+        "height_action_from_basis_cycles": 7025664,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 0,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              0,
+              1,
+              10,
+              8,
+              5
+            ],
+            "length": 8,
+            "optical_action": 1075200,
+            "turn_addresses": [
+              "B+",
+              "B+",
+              "B+",
+              "B+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              0,
+              4,
+              8,
+              3,
+              2
+            ]
+          },
+          {
+            "cycle_id": 1,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "length": 8,
+            "optical_action": 1320960,
+            "turn_addresses": [
+              "S-",
+              "B+",
+              "B+",
+              "V+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              7,
+              9,
+              6,
+              5,
+              2
+            ]
+          },
+          {
+            "cycle_id": 2,
+            "edge_ids": [
+              8,
+              10,
+              11,
+              20,
+              9
+            ],
+            "length": 5,
+            "optical_action": 774144,
+            "turn_addresses": [
+              "S+",
+              "B-",
+              "V+",
+              "V-",
+              "B+"
+            ],
+            "vertices": [
+              3,
+              8,
+              4,
+              10,
+              12,
+              3
+            ]
+          },
+          {
+            "cycle_id": 4,
+            "edge_ids": [
+              14,
+              16,
+              3,
+              0,
+              2,
+              23,
+              27,
+              15
+            ],
+            "length": 8,
+            "optical_action": 1081344,
+            "turn_addresses": [
+              "S+",
+              "B-",
+              "B-",
+              "B-",
+              "B+",
+              "V-",
+              "V-",
+              "V-"
+            ],
+            "vertices": [
+              6,
+              9,
+              7,
+              1,
+              0,
+              11,
+              16,
+              17,
+              6
+            ]
+          },
+          {
+            "cycle_id": 5,
+            "edge_ids": [
+              3,
+              0,
+              2,
+              23,
+              17
+            ],
+            "length": 5,
+            "optical_action": 691200,
+            "turn_addresses": [
+              "V+",
+              "B-",
+              "B+",
+              "V-",
+              "S-"
+            ],
+            "vertices": [
+              7,
+              1,
+              0,
+              11,
+              16,
+              7
+            ]
+          },
+          {
+            "cycle_id": 9,
+            "edge_ids": [
+              27,
+              23,
+              22,
+              25,
+              28
+            ],
+            "length": 5,
+            "optical_action": 992256,
+            "turn_addresses": [
+              "V+",
+              "V-",
+              "S-",
+              "S-",
+              "V+"
+            ],
+            "vertices": [
+              17,
+              16,
+              11,
+              13,
+              19,
+              17
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 47
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          9,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 1,
+            "source": "variables_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 1,
+            "source": "clauses_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 1,
+            "source": "total_literals_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 1,
+            "source": "positive_literals_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 1,
+            "source": "unit_clauses_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 1,
+            "source": "literal_abs_sum_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 14686898017722497731
+          }
+        ],
+        "canonical_formula_sha256": "cbd257eebebcfac3cddea3d0aadf9dbccbc7514a45abb38b536131dffba6b420",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 0,
+          "clauses": 1,
+          "distinct_variables_seen": 1,
+          "horn_clauses": 1,
+          "literal_abs_sum": 1,
+          "max_clause_width": 1,
+          "negative_literals": 0,
+          "positive_literals": 1,
+          "signed_literal_sum": 1,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 1,
+          "unit_clauses": 1,
+          "variables": 1,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1591
+      },
+      "known_truth": "SAT",
+      "path": null,
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 7025664,
+        "pi33_coefficient_mod_prime": 974360,
+        "residual_integral": -7025664,
+        "residual_mod_prime": 974360,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 487180,
+        "transport_scalar_signed": 487180
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": true,
+        "target_predicate": true
+      },
+      "source_id": "canary_sat_unit",
+      "source_kind": "generated_truth_diversity_canary",
+      "truth_source": "bounded_bruteforce_canary"
+    },
+    {
+      "bruteforce_truth_if_bounded": "SAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 3,
+        "basis_cycle_ids": [
+          3,
+          4,
+          10
+        ],
+        "height_action_from_basis_cycles": 3363840,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 3,
+            "edge_ids": [
+              12,
+              14,
+              16,
+              3,
+              0,
+              1,
+              11,
+              20,
+              24,
+              13
+            ],
+            "length": 10,
+            "optical_action": 1191936,
+            "turn_addresses": [
+              "V-",
+              "B-",
+              "B-",
+              "B-",
+              "B-",
+              "B-",
+              "V-",
+              "V-",
+              "V-",
+              "V-"
+            ],
+            "vertices": [
+              5,
+              6,
+              9,
+              7,
+              1,
+              0,
+              4,
+              10,
+              12,
+              18,
+              5
+            ]
+          },
+          {
+            "cycle_id": 4,
+            "edge_ids": [
+              14,
+              16,
+              3,
+              0,
+              2,
+              23,
+              27,
+              15
+            ],
+            "length": 8,
+            "optical_action": 1081344,
+            "turn_addresses": [
+              "S+",
+              "B-",
+              "B-",
+              "B-",
+              "B+",
+              "V-",
+              "V-",
+              "V-"
+            ],
+            "vertices": [
+              6,
+              9,
+              7,
+              1,
+              0,
+              11,
+              16,
+              17,
+              6
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 26
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          3,
+          4,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 0,
+            "source": "clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 1,
+            "source": "negative_literals_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 1,
+            "source": "positive_literals_parity",
+            "value": 3
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 6
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 11277490107599539391
+          }
+        ],
+        "canonical_formula_sha256": "9c81b1808d73ccbffb58412eb1b2d35bc8bfcf6f2b43bdb7aff3aa452d05ee47",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 2,
+          "clauses": 2,
+          "distinct_variables_seen": 2,
+          "horn_clauses": 1,
+          "literal_abs_sum": 6,
+          "max_clause_width": 2,
+          "negative_literals": 1,
+          "positive_literals": 3,
+          "signed_literal_sum": 4,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 4,
+          "unit_clauses": 0,
+          "variables": 2,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1048
+      },
+      "known_truth": "SAT",
+      "path": null,
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 3363840,
+        "pi33_coefficient_mod_prime": 636172,
+        "residual_integral": -3363840,
+        "residual_mod_prime": 636172,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 318086,
+        "transport_scalar_signed": 318086
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": true,
+        "target_predicate": true
+      },
+      "source_id": "canary_sat_binary_choice",
+      "source_kind": "generated_truth_diversity_canary",
+      "truth_source": "bounded_bruteforce_canary"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 4,
+        "basis_cycle_ids": [
+          0,
+          3,
+          4,
+          10
+        ],
+        "height_action_from_basis_cycles": 4439040,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 0,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              0,
+              1,
+              10,
+              8,
+              5
+            ],
+            "length": 8,
+            "optical_action": 1075200,
+            "turn_addresses": [
+              "B+",
+              "B+",
+              "B+",
+              "B+",
+              "B-",
+              "B-",
+              "B-",
+              "B-"
+            ],
+            "vertices": [
+              2,
+              15,
+              14,
+              1,
+              0,
+              4,
+              8,
+              3,
+              2
+            ]
+          },
+          {
+            "cycle_id": 3,
+            "edge_ids": [
+              12,
+              14,
+              16,
+              3,
+              0,
+              1,
+              11,
+              20,
+              24,
+              13
+            ],
+            "length": 10,
+            "optical_action": 1191936,
+            "turn_addresses": [
+              "V-",
+              "B-",
+              "B-",
+              "B-",
+              "B-",
+              "B-",
+              "V-",
+              "V-",
+              "V-",
+              "V-"
+            ],
+            "vertices": [
+              5,
+              6,
+              9,
+              7,
+              1,
+              0,
+              4,
+              10,
+              12,
+              18,
+              5
+            ]
+          },
+          {
+            "cycle_id": 4,
+            "edge_ids": [
+              14,
+              16,
+              3,
+              0,
+              2,
+              23,
+              27,
+              15
+            ],
+            "length": 8,
+            "optical_action": 1081344,
+            "turn_addresses": [
+              "S+",
+              "B-",
+              "B-",
+              "B-",
+              "B+",
+              "V-",
+              "V-",
+              "V-"
+            ],
+            "vertices": [
+              6,
+              9,
+              7,
+              1,
+              0,
+              11,
+              16,
+              17,
+              6
+            ]
+          },
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 34
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          0,
+          3,
+          4,
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 1,
+            "source": "variables_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 0,
+            "source": "clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 1,
+            "source": "negative_literals_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 1,
+            "source": "positive_literals_parity",
+            "value": 1
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 1,
+            "source": "canonical_sha256_low_bit",
+            "value": 6102006503801775615
+          }
+        ],
+        "canonical_formula_sha256": "54aeae95dc3a65ffa88531287f87c74c50676aa664c8b526abf3f6ac420e22ca",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 0,
+          "clauses": 2,
+          "distinct_variables_seen": 1,
+          "horn_clauses": 2,
+          "literal_abs_sum": 2,
+          "max_clause_width": 1,
+          "negative_literals": 1,
+          "positive_literals": 1,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 2,
+          "unit_clauses": 2,
+          "variables": 1,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": null,
+        "mask": 1049
+      },
+      "known_truth": "UNSAT",
+      "path": null,
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 4439040,
+        "pi33_coefficient_mod_prime": 560975,
+        "residual_integral": -4439040,
+        "residual_mod_prime": 560975,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 780489,
+        "transport_scalar_signed": -219514
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "canary_unsat_unit_pair",
+      "source_kind": "generated_truth_diversity_canary",
+      "truth_source": "bounded_bruteforce_canary"
+    },
+    {
+      "bruteforce_truth_if_bounded": "UNSAT",
+      "closed_return_circuit": {
+        "basis_cycle_count": 1,
+        "basis_cycle_ids": [
+          10
+        ],
+        "height_action_from_basis_cycles": 1090560,
+        "height_action_matches_transport_row": true,
+        "kind": "formal_sum_of_d20_primitive_closed_cycles",
+        "primitive_cycles": [
+          {
+            "cycle_id": 10,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "length": 8,
+            "optical_action": 1090560,
+            "turn_addresses": [
+              "S+",
+              "V-",
+              "V-",
+              "V-",
+              "V-",
+              "B+",
+              "S-",
+              "S-"
+            ],
+            "vertices": [
+              18,
+              12,
+              10,
+              4,
+              0,
+              11,
+              13,
+              19,
+              18
+            ]
+          }
+        ],
+        "total_primitive_edge_steps": 8
+      },
+      "compiler_output": {
+        "basis_cycle_ids": [
+          10
+        ],
+        "bit_sources": [
+          {
+            "basis_cycle_id": 0,
+            "bit": 0,
+            "source": "variables_parity",
+            "value": 2
+          },
+          {
+            "basis_cycle_id": 1,
+            "bit": 0,
+            "source": "clauses_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 2,
+            "bit": 0,
+            "source": "total_literals_parity",
+            "value": 8
+          },
+          {
+            "basis_cycle_id": 3,
+            "bit": 0,
+            "source": "negative_literals_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 4,
+            "bit": 0,
+            "source": "positive_literals_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 5,
+            "bit": 0,
+            "source": "unit_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 6,
+            "bit": 0,
+            "source": "binary_clauses_parity",
+            "value": 4
+          },
+          {
+            "basis_cycle_id": 7,
+            "bit": 0,
+            "source": "ternary_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 8,
+            "bit": 0,
+            "source": "wide_clauses_parity",
+            "value": 0
+          },
+          {
+            "basis_cycle_id": 9,
+            "bit": 0,
+            "source": "literal_abs_sum_parity",
+            "value": 12
+          },
+          {
+            "basis_cycle_id": 10,
+            "bit": 0,
+            "source": "canonical_sha256_low_bit",
+            "value": 12719864967685219796
+          }
+        ],
+        "canonical_formula_sha256": "b08609cb9dd025d43c6c67febdb11914638fb74bed9f2c11fa88559bd0df0a57",
+        "compiler_id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "compiler_kind": "finite_public_fingerprint_candidate_not_semantic_reduction",
+        "features": {
+          "binary_clauses": 4,
+          "clauses": 4,
+          "distinct_variables_seen": 2,
+          "horn_clauses": 3,
+          "literal_abs_sum": 12,
+          "max_clause_width": 2,
+          "negative_literals": 4,
+          "positive_literals": 4,
+          "signed_literal_sum": 0,
+          "tautological_clauses": 0,
+          "ternary_clauses": 0,
+          "total_literals": 8,
+          "unit_clauses": 0,
+          "variables": 2,
+          "wide_clauses": 0
+        },
+        "forced_nonzero_bit": 10,
+        "mask": 1024
+      },
+      "known_truth": "UNSAT",
+      "path": null,
+      "rho33_transport_from_emitted_circuit": {
+        "formula": "rho_33(phi) = -(A_h(C(phi))/dim(Pi_33)) e_33, using the emitted D20 basis-cycle mask C(phi).",
+        "height_action": 1090560,
+        "pi33_coefficient_mod_prime": 909446,
+        "residual_integral": -1090560,
+        "residual_mod_prime": 909446,
+        "support_sector": 33,
+        "target_predicate_nonzero_e33_residual": true,
+        "transport_scalar": 454723,
+        "transport_scalar_signed": 454723
+      },
+      "sat_preservation_probe": {
+        "matches_sat_truth": false,
+        "target_predicate": true
+      },
+      "source_id": "canary_unsat_two_var_box",
+      "source_kind": "generated_truth_diversity_canary",
+      "truth_source": "bounded_bruteforce_canary"
+    }
+  ],
+  "compiler": {
+    "algorithm": [
+      "parse DIMACS CNF",
+      "canonicalize clauses by sorted unique literals and sorted clause rows",
+      "compute public parity/hash feature bits",
+      "emit an 11-bit D20 basis-cycle mask",
+      "look up the certified finite sector-33 all-residue transport row for that mask"
+    ],
+    "does_not_read_hidden_e33_to_choose_mask": true,
+    "does_not_read_solver_outcome": true,
+    "finite_codomain_size": 2048,
+    "finite_codomain_warning": "This finite 2048-mask compiler cannot be a SAT-complete reduction for unbounded CNF without a parameterized target-family extension.",
+    "id": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+    "input_surface": "DIMACS CNF text only",
+    "output_size_bound": "at most 11 primitive D20 cycles plus one certified finite transport row",
+    "output_surface": "11-bit D20 primitive basis-cycle activation mask plus finite sector-33 transport annotation",
+    "polynomial_time_bound": "O(input_bytes + literal_count + 11)",
+    "public_only": true
+  },
+  "construction_checks": {
+    "compiler_polynomial_output_bound": true,
+    "compiler_public_only": true,
+    "compiler_total_on_test_surface": true,
+    "rho33_transport_recomputed_from_emitted_circuit_data": true,
+    "sat_yes_no_preservation_on_probe_surface": false,
+    "truth_diverse_probe_surface_present": true
+  },
+  "decision": {
+    "may_claim_p_not_np": false,
+    "may_claim_polynomial_output_bound_for_candidate": true,
+    "may_claim_public_formula_to_boundary_cycle_compiler_candidate": true,
+    "may_claim_rho33_recomputed_from_emitted_circuit_data": true,
+    "may_claim_sat_complete_hidden_e33_family": false,
+    "may_claim_sat_yes_no_preservation": false,
+    "may_claim_uniform_cnf_to_e33_family_encoding": false,
+    "reason": "A deterministic public CNF-to-D20-mask compiler candidate now exists and recomputes sector-33 transport from emitted circuit data. It is a finite public fingerprint and fails the truth-diverse SAT-preservation probe, so it is not a SAT reduction."
+  },
+  "next_highest_yield_item": {
+    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    "id": "cnf_to_parameterized_e33_packet_compiler"
+  },
+  "non_claims": [
+    "This is not a SAT-complete reduction.",
+    "This finite 2048-mask target cannot carry an unbounded asymptotic separation by itself.",
+    "The nonzero e33 residual predicate is not equivalent to CNF satisfiability on the probe surface.",
+    "This does not prove P != NP."
+  ],
+  "sat_preservation_probe": {
+    "false_negative_sat_as_target_no_count": 0,
+    "false_positive_unsat_as_target_yes_count": 16,
+    "known_truth_instances": 18,
+    "mismatch_count": 16,
+    "mismatches": [
+      {
+        "known_truth": "UNSAT",
+        "mask": 1602,
+        "source_id": "contradiction_4.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 66,
+        "source_id": "horn_chain_12.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1090,
+        "source_id": "horn_chain_8.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1024,
+        "source_id": "php_3_2.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1025,
+        "source_id": "xor_unsat.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1090,
+        "source_id": "scaled/horn_chain_128.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1090,
+        "source_id": "scaled/horn_chain_16.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1090,
+        "source_id": "scaled/horn_chain_32.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1090,
+        "source_id": "scaled/horn_chain_64.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1024,
+        "source_id": "scaled/php_4_3.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1282,
+        "source_id": "scaled/php_5_4.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 66,
+        "source_id": "scaled/php_6_5.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 64,
+        "source_id": "scaled/xor_parity_6_unsat.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 32,
+        "source_id": "scaled/xor_parity_8_unsat.cnf",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1049,
+        "source_id": "canary_unsat_unit_pair",
+        "target_predicate": true
+      },
+      {
+        "known_truth": "UNSAT",
+        "mask": 1024,
+        "source_id": "canary_unsat_two_var_box",
+        "target_predicate": true
+      }
+    ],
+    "passed": false,
+    "sat_instances": 2,
+    "target_predicate": "nonzero sector-33 height residual after public CNF fingerprint compilation",
+    "truth_diverse": true,
+    "unsat_instances": 16
+  },
+  "schema": "d20.integrity.formula_to_boundary_cycle_family_candidate.source_drop",
+  "source_audit": {
+    "sector33_all_residue_height_transport": {
+      "expected_status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "uniform_cnf_to_e33_family_encoding_investigation": {
+      "expected_status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/uniform_cnf_to_e33_family_encoding_investigation.json",
+      "status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED"
+    },
+    "x_extractor_target": {
+      "expected_status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json",
+      "status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN"
+    }
+  },
+  "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+}

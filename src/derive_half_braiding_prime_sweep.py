@@ -385,7 +385,7 @@ def build_report(primes: list[int], factor_bound: int, *, exact_determinant: boo
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="data/derived/half_braiding_prime_sweep.json")
+    ap.add_argument("--out", default="generated/derived/half_braiding_prime_sweep.json")
     ap.add_argument("--prime-count", type=int, default=50)
     ap.add_argument("--primes")
     ap.add_argument("--factor-bound", type=int, default=5000)

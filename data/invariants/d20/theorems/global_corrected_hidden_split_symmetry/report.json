@@ -1,0 +1,1054 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8e1c61e294a4a66e690220a81cc2b40051de23c87946ed2ce0e19ec70dfd9bfa",
+  "checks": {
+    "automorphism_summary_exists": true,
+    "edge_table_exists": true,
+    "enumerated_automorphism_count_matches_summary": true,
+    "every_automorphism_acts_on_cycle_space": true,
+    "gamma8_mask_is_fixed_by_hidden_split_stabilizer": true,
+    "global_corrected_charge_map_is_certified": true,
+    "graph_has_20_vertices_and_30_edges": true,
+    "graph_is_cubic": true,
+    "hidden_split_breaks_118_public_graph_symmetries": true,
+    "hidden_split_stabilizer_has_order_2": true,
+    "nonidentity_preserver_is_involution": true,
+    "preservers_form_subgroup": true,
+    "residue_spectrum_exists": true,
+    "residue_spectrum_has_2048_masks": true
+  },
+  "claim": "Among the 120 public D20 H-cycle graph automorphisms, exactly two preserve the rank-one global corrected hidden R33 split. The hidden split reduces the public state/edge symmetry group to a C2 stabilizer and breaks the other 118 graph symmetries.",
+  "definition": {
+    "hidden_split_preservation": "An automorphism preserves the split iff chi(Ae_i)=chi(e_i) for all 11 basis cycles, where chi(mask)=<[1,1,1,0,1,1,1,1,1,1,1],mask> over F2.",
+    "induced_cycle_space_action": "Each state automorphism permutes the 30 edges, hence the mod-2 edge-incidence rows of closed returns; the residue spectrum converts each image row back to an 11-bit mask.",
+    "public_state_edge_symmetry": "A graph automorphism of the 20-state, 30-edge D20 H-cycle boundary graph."
+  },
+  "derived": {
+    "all_automorphism_records_sha256": "fdb19b3818b63afbdc458821521cf5ae4d3bf39bb2c7dabe929e89397317bbd7",
+    "graph": {
+      "degree_histogram": {
+        "3": 20
+      },
+      "edges": 30,
+      "public_automorphism_count": 120,
+      "public_pair_orbit_count": 5,
+      "public_vertex_orbits": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      ],
+      "vertices": 20
+    },
+    "hidden_split": {
+      "coefficient_vector_over_f2": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gamma8_mask": 256,
+      "kernel_size": 1024,
+      "odd_sector_size": 1024
+    },
+    "symmetry_classification": {
+      "breaking_automorphism_count": 118,
+      "edge_orbits_under_hidden_split_stabilizer": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          8,
+          27
+        ],
+        [
+          9,
+          28
+        ],
+        [
+          10,
+          23
+        ],
+        [
+          11,
+          22
+        ],
+        [
+          13
+        ],
+        [
+          16,
+          26
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          19
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          21
+        ],
+        [
+          24,
+          29
+        ]
+      ],
+      "first_breaking_witnesses": [
+        {
+          "automorphism_id": 2,
+          "first_breaking_witness": {
+            "basis_coordinate": 1,
+            "image_basis_cycle_indices": [
+              0,
+              1,
+              3
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 11,
+            "source_hidden_z2": 1,
+            "source_mask": 2
+          },
+          "vertex_cycle_notation": [
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              9,
+              12
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              17,
+              19
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 3,
+          "first_breaking_witness": {
+            "basis_coordinate": 1,
+            "image_basis_cycle_indices": [
+              0,
+              1,
+              3
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 11,
+            "source_hidden_z2": 1,
+            "source_mask": 2
+          },
+          "vertex_cycle_notation": [
+            [
+              1,
+              4,
+              11
+            ],
+            [
+              2,
+              18,
+              6
+            ],
+            [
+              3,
+              19,
+              9
+            ],
+            [
+              7,
+              8,
+              13
+            ],
+            [
+              10,
+              16,
+              14
+            ],
+            [
+              12,
+              17,
+              15
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 4,
+          "first_breaking_witness": {
+            "basis_coordinate": 1,
+            "image_basis_cycle_indices": [
+              3,
+              4,
+              10
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 1048,
+            "source_hidden_z2": 1,
+            "source_mask": 2
+          },
+          "vertex_cycle_notation": [
+            [
+              1,
+              11,
+              4
+            ],
+            [
+              2,
+              6,
+              18
+            ],
+            [
+              3,
+              9,
+              19
+            ],
+            [
+              7,
+              13,
+              8
+            ],
+            [
+              10,
+              14,
+              16
+            ],
+            [
+              12,
+              15,
+              17
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 5,
+          "first_breaking_witness": {
+            "basis_coordinate": 1,
+            "image_basis_cycle_indices": [
+              3,
+              4,
+              10
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 1048,
+            "source_hidden_z2": 1,
+            "source_mask": 2
+          },
+          "vertex_cycle_notation": [
+            [
+              1,
+              11
+            ],
+            [
+              2,
+              18
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              15,
+              19
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 6,
+          "first_breaking_witness": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              2,
+              6
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 68,
+            "source_hidden_z2": 1,
+            "source_mask": 1
+          },
+          "vertex_cycle_notation": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              6,
+              19
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              10,
+              15
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 7,
+          "first_breaking_witness": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              5,
+              9
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 544,
+            "source_hidden_z2": 1,
+            "source_mask": 1
+          },
+          "vertex_cycle_notation": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              19
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              13,
+              15
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 8,
+          "first_breaking_witness": {
+            "basis_coordinate": 2,
+            "image_basis_cycle_indices": [
+              0,
+              6
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 65,
+            "source_hidden_z2": 1,
+            "source_mask": 4
+          },
+          "vertex_cycle_notation": [
+            [
+              0,
+              1,
+              7,
+              16,
+              11
+            ],
+            [
+              2,
+              5,
+              18,
+              12,
+              3
+            ],
+            [
+              4,
+              14,
+              9,
+              17,
+              13
+            ],
+            [
+              6,
+              19,
+              10,
+              8,
+              15
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 9,
+          "first_breaking_witness": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              5,
+              9
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 544,
+            "source_hidden_z2": 1,
+            "source_mask": 1
+          },
+          "vertex_cycle_notation": [
+            [
+              0,
+              1,
+              7,
+              9,
+              6,
+              5,
+              18,
+              12,
+              10,
+              4
+            ],
+            [
+              2,
+              19,
+              3,
+              13,
+              8,
+              11,
+              14,
+              16,
+              15,
+              17
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 10,
+          "first_breaking_witness": {
+            "basis_coordinate": 2,
+            "image_basis_cycle_indices": [
+              4,
+              5
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 48,
+            "source_hidden_z2": 1,
+            "source_mask": 4
+          },
+          "vertex_cycle_notation": [
+            [
+              0,
+              1,
+              14,
+              15,
+              2,
+              5,
+              18,
+              19,
+              13,
+              11
+            ],
+            [
+              3,
+              6,
+              12,
+              17,
+              10,
+              16,
+              4,
+              7,
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 11,
+          "first_breaking_witness": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              2,
+              6
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 68,
+            "source_hidden_z2": 1,
+            "source_mask": 1
+          },
+          "vertex_cycle_notation": [
+            [
+              0,
+              1,
+              14,
+              8,
+              4
+            ],
+            [
+              2,
+              12,
+              13,
+              16,
+              9
+            ],
+            [
+              3,
+              10,
+              11,
+              7,
+              15
+            ],
+            [
+              5,
+              18,
+              19,
+              17,
+              6
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 12,
+          "first_breaking_witness": {
+            "basis_coordinate": 1,
+            "image_basis_cycle_indices": [
+              2,
+              8
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 260,
+            "source_hidden_z2": 1,
+            "source_mask": 2
+          },
+          "vertex_cycle_notation": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              16,
+              18
+            ],
+            [
+              17,
+              19
+            ]
+          ]
+        },
+        {
+          "automorphism_id": 13,
+          "first_breaking_witness": {
+            "basis_coordinate": 1,
+            "image_basis_cycle_indices": [
+              2,
+              8
+            ],
+            "image_hidden_z2": 0,
+            "image_mask": 260,
+            "source_hidden_z2": 1,
+            "source_mask": 2
+          },
+          "vertex_cycle_notation": [
+            [
+              0,
+              2,
+              13,
+              9,
+              4,
+              5,
+              11,
+              15,
+              10,
+              6
+            ],
+            [
+              1,
+              3,
+              19,
+              7,
+              8,
+              18,
+              16,
+              14,
+              12,
+              17
+            ]
+          ]
+        }
+      ],
+      "gamma8_images_under_hidden_split_stabilizer": [
+        256,
+        256
+      ],
+      "preserving_automorphism_count": 2,
+      "preserving_automorphisms": [
+        {
+          "automorphism_id": 0,
+          "basis_image_hidden_z2": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "basis_image_masks": [
+            1,
+            2,
+            4,
+            8,
+            16,
+            32,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ],
+          "edge_cycle_notation": [],
+          "edge_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "preserves_hidden_split": true,
+          "vertex_cycle_notation": [],
+          "vertex_permutation": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "automorphism_id": 1,
+          "basis_image_hidden_z2": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "basis_image_masks": [
+            16,
+            2,
+            512,
+            1034,
+            1,
+            64,
+            32,
+            128,
+            256,
+            4,
+            1024
+          ],
+          "edge_cycle_notation": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              8,
+              27
+            ],
+            [
+              9,
+              28
+            ],
+            [
+              10,
+              23
+            ],
+            [
+              11,
+              22
+            ],
+            [
+              16,
+              26
+            ],
+            [
+              17,
+              18
+            ],
+            [
+              20,
+              25
+            ],
+            [
+              24,
+              29
+            ]
+          ],
+          "edge_permutation": [
+            0,
+            2,
+            1,
+            4,
+            3,
+            15,
+            12,
+            14,
+            27,
+            28,
+            23,
+            22,
+            6,
+            13,
+            7,
+            5,
+            26,
+            18,
+            17,
+            19,
+            25,
+            21,
+            11,
+            10,
+            29,
+            20,
+            16,
+            8,
+            9,
+            24
+          ],
+          "preserves_hidden_split": true,
+          "vertex_cycle_notation": [
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              12,
+              19
+            ]
+          ],
+          "vertex_permutation": [
+            0,
+            1,
+            6,
+            17,
+            11,
+            5,
+            2,
+            14,
+            16,
+            15,
+            13,
+            4,
+            19,
+            10,
+            7,
+            9,
+            8,
+            3,
+            18,
+            12
+          ]
+        }
+      ],
+      "stabilizer_is_c2": true,
+      "vertex_orbits_under_hidden_split_stabilizer": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          18
+        ]
+      ]
+    }
+  },
+  "inputs": {
+    "automorphism_summary": {
+      "path": "data/invariants/hcycle/d20_Hcycle_automorphism_summary.json",
+      "sha256": "67a8df4a30eaa42d925fe2d3f760a666d856131d3a748952e7573f44e2d6f925"
+    },
+    "global_corrected_charge_map_report": {
+      "path": "data/invariants/d20/theorems/global_corrected_charge_map/report.json",
+      "sha256": "07b3639e036195d87c6e3b6704a38fbcebd7291d4c8b3fa486a8d3cbe3c1e2f6"
+    },
+    "hcycle_edge_table": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "residue_spectrum": {
+      "path": "data/invariants/hcycle/d20_Hcycle_mod2_residue_spectrum_all_subsets.csv",
+      "sha256": "47b3b16d797dd2105805c2a49db4ce303eac44cd5d8164856ede2567c423b81b"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This classifies finite D20 H-cycle graph symmetries. It does not classify all automorphisms of A985 or any continuum symmetry recovery.",
+    "what_this_proves": [
+      "the public H-cycle graph remains vertex-transitive with 120 automorphisms before the hidden split",
+      "the corrected hidden character is not invariant under the public graph symmetry group",
+      "only identity and one involution preserve the hidden kernel/odd-sector partition",
+      "gamma_8 is fixed by the hidden split stabilizer"
+    ]
+  },
+  "next_highest_yield_item": "Promote the C2 hidden-split stabilizer to the augmented charge ledger and test whether it also preserves the sector-26 counterterm vector, the optical action weights, and the public charge components.",
+  "object": "d20",
+  "schema": "d20.theorem.global_corrected_hidden_split_symmetry",
+  "status": "D20_GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_CERTIFIED"
+}

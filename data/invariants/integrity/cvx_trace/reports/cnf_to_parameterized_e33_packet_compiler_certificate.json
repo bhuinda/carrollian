@@ -1,0 +1,750 @@
+{
+  "canary_replay": {
+    "bounded_assignment_enumeration_limit": "only the generated canaries in this certificate",
+    "sat_canaries_accept": true,
+    "sat_canary_count": 2,
+    "sat_checks": [
+      {
+        "accepted": true,
+        "compiled_packet": {
+          "compiler_contract": {
+            "compiler_id": "public_dimacs_to_parameterized_assignment_e33_packet_v0",
+            "input_surface": "DIMACS_CNF",
+            "public_only": true,
+            "uses_hidden_e33_advice": false,
+            "uses_solver_outcome": false
+          },
+          "packet_id": "E(canary_sat_unit)",
+          "polynomial_size_bound": {
+            "bound": "O(n+m+L)",
+            "local_gate_count": 1,
+            "packet_units": 3,
+            "source_size_parameter": "n+m+L",
+            "witness_units": 2
+          },
+          "public_payload": {
+            "clause_gate_rows": [
+              {
+                "clause_index": 0,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 1
+              }
+            ],
+            "clause_rows": [
+              [
+                1
+              ]
+            ],
+            "literal_occurrences": 1,
+            "literal_slots": [
+              {
+                "clause_index": 0,
+                "literal": 1,
+                "literal_index": 0,
+                "sign": 1,
+                "variable": 1
+              }
+            ],
+            "variable_count": 1
+          }
+        },
+        "errors": [],
+        "known_truth": "SAT",
+        "source_id": "canary_sat_unit",
+        "witness_assignment": [
+          true
+        ]
+      },
+      {
+        "accepted": true,
+        "compiled_packet": {
+          "compiler_contract": {
+            "compiler_id": "public_dimacs_to_parameterized_assignment_e33_packet_v0",
+            "input_surface": "DIMACS_CNF",
+            "public_only": true,
+            "uses_hidden_e33_advice": false,
+            "uses_solver_outcome": false
+          },
+          "packet_id": "E(canary_sat_binary_choice)",
+          "polynomial_size_bound": {
+            "bound": "O(n+m+L)",
+            "local_gate_count": 2,
+            "packet_units": 8,
+            "source_size_parameter": "n+m+L",
+            "witness_units": 4
+          },
+          "public_payload": {
+            "clause_gate_rows": [
+              {
+                "clause_index": 0,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 2
+              },
+              {
+                "clause_index": 1,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 2
+              }
+            ],
+            "clause_rows": [
+              [
+                1,
+                2
+              ],
+              [
+                -1,
+                2
+              ]
+            ],
+            "literal_occurrences": 4,
+            "literal_slots": [
+              {
+                "clause_index": 0,
+                "literal": 1,
+                "literal_index": 0,
+                "sign": 1,
+                "variable": 1
+              },
+              {
+                "clause_index": 0,
+                "literal": 2,
+                "literal_index": 1,
+                "sign": 1,
+                "variable": 2
+              },
+              {
+                "clause_index": 1,
+                "literal": -1,
+                "literal_index": 0,
+                "sign": -1,
+                "variable": 1
+              },
+              {
+                "clause_index": 1,
+                "literal": 2,
+                "literal_index": 1,
+                "sign": 1,
+                "variable": 2
+              }
+            ],
+            "variable_count": 2
+          }
+        },
+        "errors": [],
+        "known_truth": "SAT",
+        "source_id": "canary_sat_binary_choice",
+        "witness_assignment": [
+          false,
+          true
+        ]
+      }
+    ],
+    "unsat_canaries_reject_all_bounded_assignments": true,
+    "unsat_canary_count": 2,
+    "unsat_checks": [
+      {
+        "all_claimed_accepting_witnesses_rejected": true,
+        "assignment_rows": [
+          {
+            "accepted": false,
+            "assignment_bits": [
+              false
+            ],
+            "errors": [
+              "clause 0 selected literal is not satisfied",
+              "target accepts despite an unsatisfied local clause witness",
+              "acceptance clauses_locally_satisfied does not match witness replay"
+            ]
+          },
+          {
+            "accepted": false,
+            "assignment_bits": [
+              true
+            ],
+            "errors": [
+              "clause 1 selected literal is not satisfied",
+              "target accepts despite an unsatisfied local clause witness",
+              "acceptance clauses_locally_satisfied does not match witness replay"
+            ]
+          }
+        ],
+        "assignments_checked": 2,
+        "compiled_packet": {
+          "compiler_contract": {
+            "compiler_id": "public_dimacs_to_parameterized_assignment_e33_packet_v0",
+            "input_surface": "DIMACS_CNF",
+            "public_only": true,
+            "uses_hidden_e33_advice": false,
+            "uses_solver_outcome": false
+          },
+          "packet_id": "E(canary_unsat_unit_pair)",
+          "polynomial_size_bound": {
+            "bound": "O(n+m+L)",
+            "local_gate_count": 2,
+            "packet_units": 5,
+            "source_size_parameter": "n+m+L",
+            "witness_units": 3
+          },
+          "public_payload": {
+            "clause_gate_rows": [
+              {
+                "clause_index": 0,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 1
+              },
+              {
+                "clause_index": 1,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 1
+              }
+            ],
+            "clause_rows": [
+              [
+                1
+              ],
+              [
+                -1
+              ]
+            ],
+            "literal_occurrences": 2,
+            "literal_slots": [
+              {
+                "clause_index": 0,
+                "literal": 1,
+                "literal_index": 0,
+                "sign": 1,
+                "variable": 1
+              },
+              {
+                "clause_index": 1,
+                "literal": -1,
+                "literal_index": 0,
+                "sign": -1,
+                "variable": 1
+              }
+            ],
+            "variable_count": 1
+          }
+        },
+        "known_truth": "UNSAT",
+        "source_id": "canary_unsat_unit_pair"
+      },
+      {
+        "all_claimed_accepting_witnesses_rejected": true,
+        "assignment_rows": [
+          {
+            "accepted": false,
+            "assignment_bits": [
+              false,
+              false
+            ],
+            "errors": [
+              "clause 0 selected literal is not satisfied",
+              "target accepts despite an unsatisfied local clause witness",
+              "acceptance clauses_locally_satisfied does not match witness replay"
+            ]
+          },
+          {
+            "accepted": false,
+            "assignment_bits": [
+              false,
+              true
+            ],
+            "errors": [
+              "clause 1 selected literal is not satisfied",
+              "target accepts despite an unsatisfied local clause witness",
+              "acceptance clauses_locally_satisfied does not match witness replay"
+            ]
+          },
+          {
+            "accepted": false,
+            "assignment_bits": [
+              true,
+              false
+            ],
+            "errors": [
+              "clause 2 selected literal is not satisfied",
+              "target accepts despite an unsatisfied local clause witness",
+              "acceptance clauses_locally_satisfied does not match witness replay"
+            ]
+          },
+          {
+            "accepted": false,
+            "assignment_bits": [
+              true,
+              true
+            ],
+            "errors": [
+              "clause 3 selected literal is not satisfied",
+              "target accepts despite an unsatisfied local clause witness",
+              "acceptance clauses_locally_satisfied does not match witness replay"
+            ]
+          }
+        ],
+        "assignments_checked": 4,
+        "compiled_packet": {
+          "compiler_contract": {
+            "compiler_id": "public_dimacs_to_parameterized_assignment_e33_packet_v0",
+            "input_surface": "DIMACS_CNF",
+            "public_only": true,
+            "uses_hidden_e33_advice": false,
+            "uses_solver_outcome": false
+          },
+          "packet_id": "E(canary_unsat_two_var_box)",
+          "polynomial_size_bound": {
+            "bound": "O(n+m+L)",
+            "local_gate_count": 4,
+            "packet_units": 14,
+            "source_size_parameter": "n+m+L",
+            "witness_units": 6
+          },
+          "public_payload": {
+            "clause_gate_rows": [
+              {
+                "clause_index": 0,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 2
+              },
+              {
+                "clause_index": 1,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 2
+              },
+              {
+                "clause_index": 2,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 2
+              },
+              {
+                "clause_index": 3,
+                "gate": "OR(selected literal truth values)",
+                "literal_slot_count": 2
+              }
+            ],
+            "clause_rows": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                -2
+              ],
+              [
+                -1,
+                2
+              ],
+              [
+                -1,
+                -2
+              ]
+            ],
+            "literal_occurrences": 8,
+            "literal_slots": [
+              {
+                "clause_index": 0,
+                "literal": 1,
+                "literal_index": 0,
+                "sign": 1,
+                "variable": 1
+              },
+              {
+                "clause_index": 0,
+                "literal": 2,
+                "literal_index": 1,
+                "sign": 1,
+                "variable": 2
+              },
+              {
+                "clause_index": 1,
+                "literal": 1,
+                "literal_index": 0,
+                "sign": 1,
+                "variable": 1
+              },
+              {
+                "clause_index": 1,
+                "literal": -2,
+                "literal_index": 1,
+                "sign": -1,
+                "variable": 2
+              },
+              {
+                "clause_index": 2,
+                "literal": -1,
+                "literal_index": 0,
+                "sign": -1,
+                "variable": 1
+              },
+              {
+                "clause_index": 2,
+                "literal": 2,
+                "literal_index": 1,
+                "sign": 1,
+                "variable": 2
+              },
+              {
+                "clause_index": 3,
+                "literal": -1,
+                "literal_index": 0,
+                "sign": -1,
+                "variable": 1
+              },
+              {
+                "clause_index": 3,
+                "literal": -2,
+                "literal_index": 1,
+                "sign": -1,
+                "variable": 2
+              }
+            ],
+            "variable_count": 2
+          }
+        },
+        "known_truth": "UNSAT",
+        "source_id": "canary_unsat_two_var_box"
+      }
+    ]
+  },
+  "claim_level": "public_compiler_and_bounded_canary_replay_witnessed_forall_theorem_open",
+  "compile_surface": {
+    "all_linear_size_bounds": true,
+    "all_public_only": true,
+    "compile_error_count": 0,
+    "compiled_instance_count": 18,
+    "errors": [],
+    "max_clauses": 256,
+    "max_literal_occurrences": 2048,
+    "max_variables": 128,
+    "no_hidden_e33_advice_reads": true,
+    "no_solver_outcome_reads": true,
+    "rows": [
+      {
+        "clauses": 5,
+        "literal_occurrences": 8,
+        "local_gate_count": 5,
+        "packet_id": "E(contradiction_4.cnf)",
+        "packet_units": 17,
+        "path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+        "public_only": true,
+        "source_id": "contradiction_4.cnf",
+        "source_kind": "canonical_ss_sat_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 4
+      },
+      {
+        "clauses": 13,
+        "literal_occurrences": 24,
+        "local_gate_count": 13,
+        "packet_id": "E(horn_chain_12.cnf)",
+        "packet_units": 49,
+        "path": "data/evidence/ss_sat/benchmarks/horn_chain_12.cnf",
+        "public_only": true,
+        "source_id": "horn_chain_12.cnf",
+        "source_kind": "canonical_ss_sat_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 12
+      },
+      {
+        "clauses": 9,
+        "literal_occurrences": 16,
+        "local_gate_count": 9,
+        "packet_id": "E(horn_chain_8.cnf)",
+        "packet_units": 33,
+        "path": "data/evidence/ss_sat/benchmarks/horn_chain_8.cnf",
+        "public_only": true,
+        "source_id": "horn_chain_8.cnf",
+        "source_kind": "canonical_ss_sat_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 8
+      },
+      {
+        "clauses": 12,
+        "literal_occurrences": 24,
+        "local_gate_count": 12,
+        "packet_id": "E(php_3_2.cnf)",
+        "packet_units": 42,
+        "path": "data/evidence/ss_sat/benchmarks/php_3_2.cnf",
+        "public_only": true,
+        "source_id": "php_3_2.cnf",
+        "source_kind": "canonical_ss_sat_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 6
+      },
+      {
+        "clauses": 24,
+        "literal_occurrences": 88,
+        "local_gate_count": 24,
+        "packet_id": "E(xor_unsat.cnf)",
+        "packet_units": 117,
+        "path": "data/evidence/ss_sat/benchmarks/xor_unsat.cnf",
+        "public_only": true,
+        "source_id": "xor_unsat.cnf",
+        "source_kind": "canonical_ss_sat_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 5
+      },
+      {
+        "clauses": 129,
+        "literal_occurrences": 256,
+        "local_gate_count": 129,
+        "packet_id": "E(scaled/horn_chain_128.cnf)",
+        "packet_units": 513,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_128.cnf",
+        "public_only": true,
+        "source_id": "scaled/horn_chain_128.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 128
+      },
+      {
+        "clauses": 17,
+        "literal_occurrences": 32,
+        "local_gate_count": 17,
+        "packet_id": "E(scaled/horn_chain_16.cnf)",
+        "packet_units": 65,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_16.cnf",
+        "public_only": true,
+        "source_id": "scaled/horn_chain_16.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 16
+      },
+      {
+        "clauses": 33,
+        "literal_occurrences": 64,
+        "local_gate_count": 33,
+        "packet_id": "E(scaled/horn_chain_32.cnf)",
+        "packet_units": 129,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_32.cnf",
+        "public_only": true,
+        "source_id": "scaled/horn_chain_32.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 32
+      },
+      {
+        "clauses": 65,
+        "literal_occurrences": 128,
+        "local_gate_count": 65,
+        "packet_id": "E(scaled/horn_chain_64.cnf)",
+        "packet_units": 257,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_64.cnf",
+        "public_only": true,
+        "source_id": "scaled/horn_chain_64.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 64
+      },
+      {
+        "clauses": 22,
+        "literal_occurrences": 48,
+        "local_gate_count": 22,
+        "packet_id": "E(scaled/php_4_3.cnf)",
+        "packet_units": 82,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/php_4_3.cnf",
+        "public_only": true,
+        "source_id": "scaled/php_4_3.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 12
+      },
+      {
+        "clauses": 45,
+        "literal_occurrences": 100,
+        "local_gate_count": 45,
+        "packet_id": "E(scaled/php_5_4.cnf)",
+        "packet_units": 165,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/php_5_4.cnf",
+        "public_only": true,
+        "source_id": "scaled/php_5_4.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 20
+      },
+      {
+        "clauses": 81,
+        "literal_occurrences": 180,
+        "local_gate_count": 81,
+        "packet_id": "E(scaled/php_6_5.cnf)",
+        "packet_units": 291,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/php_6_5.cnf",
+        "public_only": true,
+        "source_id": "scaled/php_6_5.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 30
+      },
+      {
+        "clauses": 64,
+        "literal_occurrences": 384,
+        "local_gate_count": 64,
+        "packet_id": "E(scaled/xor_parity_6_unsat.cnf)",
+        "packet_units": 454,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/xor_parity_6_unsat.cnf",
+        "public_only": true,
+        "source_id": "scaled/xor_parity_6_unsat.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 6
+      },
+      {
+        "clauses": 256,
+        "literal_occurrences": 2048,
+        "local_gate_count": 256,
+        "packet_id": "E(scaled/xor_parity_8_unsat.cnf)",
+        "packet_units": 2312,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/xor_parity_8_unsat.cnf",
+        "public_only": true,
+        "source_id": "scaled/xor_parity_8_unsat.cnf",
+        "source_kind": "canonical_ss_sat_scaled_fixture",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 8
+      },
+      {
+        "clauses": 1,
+        "literal_occurrences": 1,
+        "local_gate_count": 1,
+        "packet_id": "E(canary_sat_unit)",
+        "packet_units": 3,
+        "path": null,
+        "public_only": true,
+        "source_id": "canary_sat_unit",
+        "source_kind": "generated_truth_diversity_canary",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 1
+      },
+      {
+        "clauses": 2,
+        "literal_occurrences": 4,
+        "local_gate_count": 2,
+        "packet_id": "E(canary_sat_binary_choice)",
+        "packet_units": 8,
+        "path": null,
+        "public_only": true,
+        "source_id": "canary_sat_binary_choice",
+        "source_kind": "generated_truth_diversity_canary",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 2
+      },
+      {
+        "clauses": 2,
+        "literal_occurrences": 2,
+        "local_gate_count": 2,
+        "packet_id": "E(canary_unsat_unit_pair)",
+        "packet_units": 5,
+        "path": null,
+        "public_only": true,
+        "source_id": "canary_unsat_unit_pair",
+        "source_kind": "generated_truth_diversity_canary",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 1
+      },
+      {
+        "clauses": 4,
+        "literal_occurrences": 8,
+        "local_gate_count": 4,
+        "packet_id": "E(canary_unsat_two_var_box)",
+        "packet_units": 14,
+        "path": null,
+        "public_only": true,
+        "source_id": "canary_unsat_two_var_box",
+        "source_kind": "generated_truth_diversity_canary",
+        "uses_hidden_e33_advice": false,
+        "uses_solver_outcome": false,
+        "variables": 2
+      }
+    ]
+  },
+  "compiler": {
+    "algorithm": [
+      "parse DIMACS CNF",
+      "copy public clause rows into the E(phi) payload",
+      "emit one public literal slot per literal occurrence",
+      "emit one clause-local OR gate row per clause",
+      "emit the intrinsic rho_33 transport contract without a residual scalar"
+    ],
+    "emits_assignment_witness": false,
+    "id": "public_dimacs_to_parameterized_assignment_e33_packet_v0",
+    "input_surface": "DIMACS CNF text only",
+    "output_size_bound": "O(n+m+L)",
+    "output_surface": "parameterized E(phi) target packet skeleton with public clause-local gates",
+    "polynomial_time_bound": "O(input_bytes + literal_occurrences)",
+    "public_only": true,
+    "uses_hidden_e33_advice": false,
+    "uses_solver_outcome": false
+  },
+  "decision": {
+    "may_claim_canary_yes_no_preservation": true,
+    "may_claim_forall_yes_no_preservation": false,
+    "may_claim_p_not_np": false,
+    "may_claim_public_cnf_to_parameterized_packet_compiler_implemented": true,
+    "may_claim_replay_checker_for_supplied_assignment_witnesses": true,
+    "may_claim_sat_complete_hidden_e33_family": false,
+    "reason": "The public compiler now emits parameterized E(phi) packets without hidden advice or solver-outcome reads, and the replay checker accepts SAT canary witnesses while rejecting all claimed accepting witnesses for the bounded UNSAT canaries. The forall CNF theorem is still open."
+  },
+  "next_highest_yield_item": {
+    "action": "Promote the compiler/replay construction to a theorem: for every CNF phi, phi is satisfiable iff there exists an accepting E(phi) assignment witness, with inverse projection.",
+    "id": "forall_yes_no_preservation_theorem"
+  },
+  "non_claims": [
+    "This does not find satisfying assignments for arbitrary formulas.",
+    "This does not prove every satisfiable CNF has an accepting target witness.",
+    "This does not prove every accepting target witness projects to a satisfying assignment for arbitrary CNF.",
+    "This does not certify SAT-completeness.",
+    "This does not prove P != NP."
+  ],
+  "replay_checker": {
+    "checks": [
+      "assignment length equals n",
+      "one selected literal witness exists for each clause",
+      "selected literal belongs to the source clause",
+      "selected literal evaluates true under the assignment",
+      "inverse projection returns the supplied assignment bits",
+      "intrinsic transport is derived from emitted clause-local circuit data",
+      "claimed accepting witness is rejected if any selected literal is false"
+    ],
+    "does_not_read_hidden_e33_advice": true,
+    "does_not_search_for_assignment": true,
+    "input_surface": "compiled E(phi) packet plus supplied assignment witness"
+  },
+  "schema": "d20.integrity.cnf_to_parameterized_e33_packet_compiler_certificate.source_drop",
+  "source_audit": {
+    "assignment_bearing_e33_target_family_obligation": {
+      "expected_status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
+      "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
+    },
+    "formula_to_boundary_cycle_family_candidate": {
+      "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+    },
+    "parameterized_e33_target_schema": {
+      "expected_status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json",
+      "status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN"
+    }
+  },
+  "status": "CNF_TO_PARAMETERIZED_E33_PACKET_COMPILER_BUILT_REPLAY_CHECKED_FOR_CANARIES_REDUCTION_OPEN"
+}

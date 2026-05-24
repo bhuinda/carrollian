@@ -1,0 +1,265 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "03c275f767b5c3ab2c78378cdc758710decb82b9493b28239addd693fda12796",
+  "checks": {
+    "augmented_ledger_has_no_residual_public_graph_symmetry": true,
+    "augmented_ledger_stabilizer_is_certified": true,
+    "canonical_edge_markers_are_unique": true,
+    "canonical_edge_orientation_has_no_charge_ties": true,
+    "canonical_root_is_unique": true,
+    "canonical_rooted_flux_reconstruction_is_path_independent": true,
+    "canonical_rooted_flux_reconstruction_matches_public_charges": true,
+    "finite_exact_flux_balance_is_certified": true,
+    "graph_has_20_vertices_and_30_edges": true,
+    "incidence_rank_is_connected_graph_rank_19": true,
+    "public_charges_uniquely_mark_all_vertices": true,
+    "rooted_four_component_flux_potential_gauge_dimension_is_0": true,
+    "rooted_incidence_rank_is_full_20": true,
+    "unrooted_four_component_flux_potential_gauge_dimension_is_4": true
+  },
+  "claim": "The certified augmented D20 ledger defines a canonical finite boundary marking and a unique root-fixed exact flux-balance gauge. Public charge tuples uniquely mark all 20 D20 vertices; canonical charge-order orientation gives an incidence matrix of rank 19, and adding the canonical root makes the rank 20. Therefore the four-component exact boundary charge potential has only the expected four additive constants before rooting and no residual gauge freedom after rooting. The augmented ledger has no remaining graph-symmetry gauge.",
+  "definition": {
+    "canonical_edge_orientation": "Each edge is oriented from the endpoint with smaller public charge tuple to the endpoint with larger public charge tuple.",
+    "canonical_root": "The unique D20 state with lexicographically minimal public charge tuple (M,J,P,Phi).",
+    "root_fixed_flux_gauge": "The exact boundary flux equation Flux(u,v)=Q(v)-Q(u), with Q at the canonical root fixed."
+  },
+  "derived": {
+    "canonical_marking": {
+      "canonical_oriented_edges_sha256": "821d8cd24688443397312f4a94a3a871271eaa213f055329ed9f3ea62649ff7d",
+      "canonical_root_charge": {
+        "J": -336,
+        "M": 720,
+        "P": -576,
+        "Phi": 192
+      },
+      "canonical_root_edge": {
+        "edge_id": 2,
+        "flux": {
+          "J": -128,
+          "M": 128,
+          "P": 896,
+          "Phi": -896
+        },
+        "interface_weight": 27648,
+        "selector_choice": 1,
+        "selector_duad_index": 5,
+        "source": 0,
+        "target": 11
+      },
+      "canonical_root_label": "{B-,B+,V-}",
+      "canonical_root_vertex": 0,
+      "canonical_vertex_order_by_public_charge": [
+        0,
+        11,
+        10,
+        5,
+        2,
+        4,
+        12,
+        1,
+        16,
+        13,
+        6,
+        3,
+        18,
+        7,
+        15,
+        17,
+        14,
+        9,
+        8,
+        19
+      ],
+      "unique_canonical_edge_marker_count": 30,
+      "unique_public_charge_vertex_count": 20
+    },
+    "exact_flux_gauge": {
+      "four_component_rooted_gauge_dimension": 0,
+      "four_component_unrooted_gauge_dimension": 4,
+      "incidence_rank_over_q": 19,
+      "root_fixed_reconstruction_inconsistencies": [],
+      "root_fixed_reconstruction_matches_public_charges": {
+        "0": true,
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true,
+        "9": true,
+        "10": true,
+        "11": true,
+        "12": true,
+        "13": true,
+        "14": true,
+        "15": true,
+        "16": true,
+        "17": true,
+        "18": true,
+        "19": true
+      },
+      "root_zero_potential": {
+        "0": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "1": {
+          "J": 720,
+          "M": 432,
+          "P": 0,
+          "Phi": 0
+        },
+        "10": {
+          "J": 960,
+          "M": 192,
+          "P": 384,
+          "Phi": -384
+        },
+        "11": {
+          "J": -128,
+          "M": 128,
+          "P": 896,
+          "Phi": -896
+        },
+        "12": {
+          "J": 1152,
+          "M": 384,
+          "P": 1152,
+          "Phi": 384
+        },
+        "13": {
+          "J": 592,
+          "M": 560,
+          "P": 896,
+          "Phi": -896
+        },
+        "14": {
+          "J": 1872,
+          "M": 816,
+          "P": 1152,
+          "Phi": 384
+        },
+        "15": {
+          "J": 784,
+          "M": 752,
+          "P": 1664,
+          "Phi": -128
+        },
+        "16": {
+          "J": 256,
+          "M": 512,
+          "P": 1088,
+          "Phi": -704
+        },
+        "17": {
+          "J": 1536,
+          "M": 768,
+          "P": 1344,
+          "Phi": 576
+        },
+        "18": {
+          "J": 448,
+          "M": 704,
+          "P": 1856,
+          "Phi": 64
+        },
+        "19": {
+          "J": 1168,
+          "M": 1136,
+          "P": 1856,
+          "Phi": 64
+        },
+        "2": {
+          "J": -368,
+          "M": 368,
+          "P": 512,
+          "Phi": -512
+        },
+        "3": {
+          "J": 912,
+          "M": 624,
+          "P": 768,
+          "Phi": 768
+        },
+        "4": {
+          "J": 384,
+          "M": 384,
+          "P": 192,
+          "Phi": 192
+        },
+        "5": {
+          "J": -704,
+          "M": 320,
+          "P": 704,
+          "Phi": -320
+        },
+        "6": {
+          "J": 576,
+          "M": 576,
+          "P": 960,
+          "Phi": 960
+        },
+        "7": {
+          "J": 16,
+          "M": 752,
+          "P": 704,
+          "Phi": -320
+        },
+        "8": {
+          "J": 1296,
+          "M": 1008,
+          "P": 960,
+          "Phi": 960
+        },
+        "9": {
+          "J": 208,
+          "M": 944,
+          "P": 1472,
+          "Phi": 448
+        }
+      },
+      "root_zero_potential_sha256": "3d8df9516db4ba108450ed6a5cc2d1770488f23e8c1979af2b1ee735bece1153",
+      "rooted_incidence_rank_over_q": 20,
+      "scalar_rooted_gauge_dimension": 0,
+      "scalar_unrooted_gauge_dimension": 1
+    },
+    "residual_symmetry_gauge": {
+      "full_augmented_ledger_preserving_automorphism_ids": [
+        0
+      ],
+      "full_augmented_ledger_stabilizer_order": 1,
+      "hidden_split_stabilizer_order": 2
+    }
+  },
+  "inputs": {
+    "finite_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_flux_balance/report.json",
+      "sha256": "8d066a8ffbeac843d24862994905b4f497ab7956f333243dcf65053a11088f02"
+    },
+    "hcycle_edge_table": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "hidden_split_augmented_ledger_stabilizer_report": {
+      "path": "data/invariants/d20/theorems/hidden_split_augmented_ledger_stabilizer/report.json",
+      "sha256": "c1ef9505a252c54fa1dbd4dfed796f8e2477410087aaa88d61b7f753dd74222f"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This is a finite exact-flux gauge theorem. It does not prove a continuum BMS gauge choice or materialize the full Drinfeld idempotent coordinate matrix.",
+    "what_this_proves": [
+      "the finite boundary screen has a canonical ledger-derived root and orientation",
+      "exact public D20 flux has the standard connected-graph additive gauge before rooting",
+      "fixing the canonical root removes that gauge completely",
+      "the augmented ledger contributes no additional residual graph-symmetry gauge"
+    ]
+  },
+  "next_highest_yield_item": "Push the canonical flux-balance gauge through the certified boundary-to-Loop_297 lift and test whether the cycle-8 Pi_33 obstruction remains canonical without materializing the full Drinfeld idempotent matrix.",
+  "object": "d20",
+  "schema": "d20.theorem.canonical_flux_balance_gauge",
+  "status": "D20_CANONICAL_FLUX_BALANCE_GAUGE_CERTIFIED"
+}

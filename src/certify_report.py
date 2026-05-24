@@ -143,6 +143,9 @@ def object_summary(constants: Dict[str, Any], blocks: Dict[str, Any]) -> Dict[st
         'half_braiding_prime_stability_primes': blocks['half_braiding_prime_stability']['field_primes'],
         'half_braiding_prime_stable_rank': blocks['half_braiding_prime_stability']['stable']['rank'],
         'half_braiding_prime_stable_nullity': blocks['half_braiding_prime_stability']['stable']['nullity'],
+        'half_braiding_snf_diagonal_multiplicities': blocks['half_braiding_snf_certificate']['smith_normal_form']['diagonal_multiplicities'],
+        'half_braiding_snf_rank_bad_primes': blocks['half_braiding_snf_certificate']['smith_normal_form']['rank_bad_primes'],
+        'half_braiding_rank_determinantal_divisor': blocks['half_braiding_snf_certificate']['smith_normal_form']['rank_determinantal_divisor'],
     }
 
 
@@ -376,6 +379,21 @@ def verified_claims(blocks: Dict[str, Any]) -> list[Dict[str, Any]]:
                 'nullity': blocks.get('half_braiding_prime_stability', {}).get('stable', {}).get('nullity'),
                 'raw_rows_seen': blocks.get('half_braiding_prime_stability', {}).get('stable', {}).get('raw_rows_seen'),
                 'unknown_count': blocks.get('half_braiding_prime_stability', {}).get('stable', {}).get('unknown_count'),
+            },
+        },
+
+        {
+            'id': 'half_braiding_snf_certificate',
+            'name': 'Smith normal form of the half-braiding system',
+            'status': 'rank-bad-prime certificate',
+            'statement': 'The integer half-braiding matrix has Smith diagonal multiplicities 1^231, 2^23, 4^4, 0^39; therefore rank drops only in characteristic 2.',
+            'evidence': {
+                'diagonal_multiplicities': blocks.get('half_braiding_snf_certificate', {}).get('smith_normal_form', {}).get('diagonal_multiplicities'),
+                'rank_bad_primes': blocks.get('half_braiding_snf_certificate', {}).get('smith_normal_form', {}).get('rank_bad_primes'),
+                'rank_determinantal_divisor': blocks.get('half_braiding_snf_certificate', {}).get('smith_normal_form', {}).get('rank_determinantal_divisor'),
+                'rank_mod_2': blocks.get('half_braiding_snf_certificate', {}).get('two_primary_local_snf', {}).get('rank_mod_2'),
+                'rank_drop_mod_2': blocks.get('half_braiding_snf_certificate', {}).get('two_primary_local_snf', {}).get('rank_drop_mod_2'),
+                'odd_prime_gcd_exclusion': blocks.get('half_braiding_snf_certificate', {}).get('odd_prime_exclusion', {}).get('gcd_odd_part'),
             },
         },
 

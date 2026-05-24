@@ -1,0 +1,568 @@
+{
+  "blocked_obligations": [
+    "formula_to_boundary_cycle_compiler_defined",
+    "target_predicate_formalized_for_sat_instances",
+    "unbounded_target_family_certified",
+    "forall_yes_no_preservation_theorem_present",
+    "inverse_witness_interpretation_present",
+    "reduction_no_hidden_advice_proof_present"
+  ],
+  "claim_level": "candidate_seams_found_reduction_not_defined",
+  "cnf_fixture_surface": {
+    "all_clause_counts_match_rows": true,
+    "all_headers_well_formed": true,
+    "base_fixture_count": 5,
+    "fixtures": [
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 5,
+        "max_clause_width": 2,
+        "parsed_clause_rows": 5,
+        "path": "data/evidence/ss_sat/benchmarks/contradiction_4.cnf",
+        "variables": 4,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 13,
+        "max_clause_width": 2,
+        "parsed_clause_rows": 13,
+        "path": "data/evidence/ss_sat/benchmarks/horn_chain_12.cnf",
+        "variables": 12,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 9,
+        "max_clause_width": 2,
+        "parsed_clause_rows": 9,
+        "path": "data/evidence/ss_sat/benchmarks/horn_chain_8.cnf",
+        "variables": 8,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 12,
+        "max_clause_width": 2,
+        "parsed_clause_rows": 12,
+        "path": "data/evidence/ss_sat/benchmarks/php_3_2.cnf",
+        "variables": 6,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 24,
+        "max_clause_width": 4,
+        "parsed_clause_rows": 24,
+        "path": "data/evidence/ss_sat/benchmarks/xor_unsat.cnf",
+        "variables": 5,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 129,
+        "max_clause_width": 2,
+        "parsed_clause_rows": 129,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_128.cnf",
+        "variables": 128,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 17,
+        "max_clause_width": 2,
+        "parsed_clause_rows": 17,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_16.cnf",
+        "variables": 16,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 33,
+        "max_clause_width": 2,
+        "parsed_clause_rows": 33,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_32.cnf",
+        "variables": 32,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 65,
+        "max_clause_width": 2,
+        "parsed_clause_rows": 65,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/horn_chain_64.cnf",
+        "variables": 64,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 22,
+        "max_clause_width": 3,
+        "parsed_clause_rows": 22,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/php_4_3.cnf",
+        "variables": 12,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 45,
+        "max_clause_width": 4,
+        "parsed_clause_rows": 45,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/php_5_4.cnf",
+        "variables": 20,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 81,
+        "max_clause_width": 5,
+        "parsed_clause_rows": 81,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/php_6_5.cnf",
+        "variables": 30,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 64,
+        "max_clause_width": 6,
+        "parsed_clause_rows": 64,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/xor_parity_6_unsat.cnf",
+        "variables": 6,
+        "well_formed_header": true
+      },
+      {
+        "clause_count_matches_rows": true,
+        "declared_clauses": 256,
+        "max_clause_width": 8,
+        "parsed_clause_rows": 256,
+        "path": "data/evidence/ss_sat/benchmarks/scaled/xor_parity_8_unsat.cnf",
+        "variables": 8,
+        "well_formed_header": true
+      }
+    ],
+    "max_clause_width": 8,
+    "max_clauses": 256,
+    "max_variables": 128,
+    "scaled_fixture_count": 9,
+    "total_fixture_count": 14
+  },
+  "decision": {
+    "candidate_seams_found": true,
+    "may_claim_p_not_np": false,
+    "may_claim_sat_complete_hidden_e33_family": false,
+    "may_claim_scalable_hidden_e33_family": false,
+    "may_claim_uniform_cnf_to_e33_family_encoding": false,
+    "may_promote_legacy_clause_quotient_to_e33_reduction": false,
+    "may_use_d20_all_residue_family_as_finite_target_testbed": true,
+    "reason": "The repo contains useful seams: public CNF fixtures/proofs, legacy finite Boolean quotient rows, a certified 2048-class finite D20 e33 transport testbed, intrinsic height-return rho_33 transport, a public CNF-to-D20-mask compiler candidate, an obligation certificate that fences the finite target as a lookup testbed, and a parameterized E(phi) schema. It still has no public DIMACS-to-E(phi) compiler and no forall-instance yes/no preservation theorem."
+  },
+  "existing_frontier_decision": {
+    "may_claim_encoded_family_sat_complete": false,
+    "may_claim_full_separation": false,
+    "may_claim_polynomially_faithful_representative_family": true,
+    "reason": "The repo has a representative hidden e33 packet, public C/V/X policy, and a public finite CNF-to-D20-mask compiler candidate. The candidate fails SAT preservation; the finite target is certified as lookup-only for separation purposes. The assignment-bearing E(phi) schema is defined, but no public compiler or forall preservation theorem is certified."
+  },
+  "finite_e33_target_testbed": {
+    "all_checks_pass": true,
+    "all_nonzero_integral_residuals_are_nonzero": true,
+    "all_transports_carried_by_sector33": true,
+    "basis_active_circuit_columns": 11,
+    "finite_target_testbed": true,
+    "nonzero_residue_class_count": 2047,
+    "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+    "residue_class_count": 2048,
+    "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+    "support_sector": 33
+  },
+  "legacy_boolean_family_seams": {
+    "has_a985_frame_field_rows": {
+      "image_size": true,
+      "quotient": true
+    },
+    "has_clause_3sat_mod2_quotient": true,
+    "has_residual_snf_mod2_coordinate": true,
+    "path": "data/evidence/ss_sat/source_drops/external_evidence_gate/running_ledger.csv",
+    "selected_row_count": 14,
+    "selected_rows": [
+      {
+        "invariant": "Clauses_all_CNF_arity_1_to_3_quotient",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/2"
+      },
+      {
+        "invariant": "Clauses_all_CNF_arity_1_to_3_image_size",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "2592000"
+      },
+      {
+        "invariant": "Clauses_3SAT_quotient",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/2"
+      },
+      {
+        "invariant": "Clauses_3SAT_image_size",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "2592000"
+      },
+      {
+        "invariant": "Proof_implication_resolution_xor_threshold_quotient",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/2"
+      },
+      {
+        "invariant": "Proof_implication_resolution_xor_threshold_image_size",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "2592000"
+      },
+      {
+        "invariant": "A985_frame_fields_quotient",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/2 x Z/20 x Z/60"
+      },
+      {
+        "invariant": "A985_frame_fields_image_size",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "2160"
+      },
+      {
+        "invariant": "weighted_clause_satisfied_sum_image_size",
+        "layer": "proof_trace",
+        "source": "proof_trace_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "864"
+      },
+      {
+        "invariant": "weighted_clause_satisfied_sum_quotient",
+        "layer": "proof_trace",
+        "source": "proof_trace_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/10^2 x Z/60"
+      },
+      {
+        "invariant": "weighted_clause_unsatisfied_sum_image_size",
+        "layer": "proof_trace",
+        "source": "proof_trace_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "864"
+      },
+      {
+        "invariant": "weighted_clause_unsatisfied_sum_quotient",
+        "layer": "proof_trace",
+        "source": "proof_trace_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/10^2 x Z/60"
+      },
+      {
+        "invariant": "residual graph orbit size",
+        "layer": "canonicality",
+        "source": "automorphism_canonicality_audit.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "15"
+      },
+      {
+        "invariant": "SNF mod2 coordinate",
+        "layer": "residual",
+        "source": "residual_bit_vertex_table.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "[0,0,1,0,0]"
+      }
+    ]
+  },
+  "next_highest_yield_item": {
+    "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
+    "id": "cnf_to_parameterized_e33_packet_compiler",
+    "minimum_acceptance_tests": [
+      "compiler emits basis-cycle mask or edge circuit without reading solver outcome or hidden e33 data",
+      "compiler output size is polynomial in variables plus clauses",
+      "compiled target predicate is explicit and assignment-bearing",
+      "SAT and UNSAT fixture pairs exercise both directions of the predicate",
+      "rho_33 transport is recomputed from emitted circuit data"
+    ]
+  },
+  "non_claims": [
+    "This does not define a reduction from CNF-SAT or 3SAT.",
+    "This does not turn the legacy Clause_3SAT quotient row into a sector-33 obstruction theorem.",
+    "This does not make the finite 2048-mask D20 residue family asymptotic.",
+    "This does not prove P != NP."
+  ],
+  "proof_surface": {
+    "base_rows": [
+      {
+        "format": "DRAT",
+        "proof_family": "cadical_drat",
+        "proofs": "5",
+        "verification_status": "VERIFIED",
+        "verified": "5",
+        "verifier": "drat-trim"
+      },
+      {
+        "format": "LRAT",
+        "proof_family": "cadical_lrat",
+        "proofs": "5",
+        "verification_status": "VERIFIED",
+        "verified": "5",
+        "verifier": "lrat-trim"
+      },
+      {
+        "format": "FRAT embedded LRAT extraction",
+        "proof_family": "cadical_frat_extracted_lrat",
+        "proofs": "5",
+        "verification_status": "VERIFIED_EMBEDDED_DERIVATION",
+        "verified": "5",
+        "verifier": "lrat-trim over extracted antecedent LRAT"
+      },
+      {
+        "format": "FRAT",
+        "proof_family": "cadical_frat_full_format",
+        "proofs": "5",
+        "verification_status": "BLOCKED_NO_STANDALONE_FRAT_CHECKER",
+        "verified": "0",
+        "verifier": "standalone FRAT checker"
+      }
+    ],
+    "scaled_format_counts": {
+      "DRAT": 9,
+      "LRAT": 9
+    },
+    "scaled_proof_count": 18,
+    "scaled_verified_counts": {
+      "True": 18
+    },
+    "source_tables": [
+      "data/evidence/ss_sat/tables/proof_verification_summary.csv",
+      "data/evidence/ss_sat/tables/scaled_proof_verification_summary.csv"
+    ]
+  },
+  "reduction_obligations": {
+    "forall_yes_no_preservation_theorem_present": {
+      "evidence": "No theorem proves phi is satisfiable iff the compiled hidden e33-family instance has the target property.",
+      "passed": false
+    },
+    "formula_to_boundary_cycle_compiler_defined": {
+      "evidence": {
+        "candidate_compiler": "public_cnf_parity_hash_to_d20_basis_mask_v0",
+        "candidate_public_only": true,
+        "candidate_sat_preservation_passed": false,
+        "candidate_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
+        "reason": "A deterministic public CNF-to-D20-mask compiler candidate exists, but it is a finite fingerprint and fails SAT preservation, so no reduction-quality formula-to-boundary-cycle compiler is certified."
+      },
+      "passed": false
+    },
+    "inverse_witness_interpretation_present": {
+      "evidence": "No artifact recovers a CNF assignment or refutation witness from a hidden e33 target witness.",
+      "passed": false
+    },
+    "reduction_no_hidden_advice_proof_present": {
+      "evidence": "X is excluded from public-P by policy, but the reduction algorithm itself has not been defined and audited as public-only.",
+      "passed": false
+    },
+    "target_predicate_formalized_for_sat_instances": {
+      "evidence": {
+        "assignment_bearing_target_constructed": false,
+        "obligation_status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED",
+        "parameterized_schema_defined": true,
+        "parameterized_target_requirements_defined": true,
+        "reason": "The current target predicate is still a representative nonzero sector-33 residual. The assignment-bearing target obligations and parameterized schema are now defined, but the public compiler and forall target relation are not constructed."
+      },
+      "passed": false
+    },
+    "unbounded_target_family_certified": {
+      "evidence": "The all-residue target has 2048 D20 masks with 11 basis-cycle coordinates. The A985 weighted stack series is truncated and keeps relation-level/motivic lifts open.",
+      "passed": false
+    }
+  },
+  "schema": "d20.integrity.uniform_cnf_to_e33_family_encoding_investigation.source_drop",
+  "seam_checks": {
+    "finite_all_residue_e33_transport_family_present": {
+      "evidence": {
+        "basis_active_circuit_columns": 11,
+        "nonzero_residue_class_count": 2047,
+        "residue_class_count": 2048,
+        "support_sector": 33
+      },
+      "passed": true
+    },
+    "intrinsic_rho33_transport_formula_present": {
+      "evidence": {
+        "derived_from_edge_or_circuit_data": true,
+        "formula": "Lambda_hc(gamma)=lambda_boundary(gamma) - (A_h(gamma)/dim(Pi_33)) e_33."
+      },
+      "passed": true
+    },
+    "legacy_clause_family_mod2_seam_present": {
+      "evidence": {
+        "has_a985_frame_field_rows": {
+          "image_size": true,
+          "quotient": true
+        },
+        "has_residual_snf_mod2_coordinate": true,
+        "selected_row_count": 14
+      },
+      "passed": true
+    },
+    "public_cnf_fixture_surface_present": {
+      "evidence": {
+        "max_clause_width": 8,
+        "max_clauses": 256,
+        "max_variables": 128,
+        "total_fixture_count": 14
+      },
+      "passed": true
+    },
+    "scaled_unsat_proof_surface_present": {
+      "evidence": {
+        "scaled_format_counts": {
+          "DRAT": 9,
+          "LRAT": 9
+        },
+        "scaled_proof_count": 18,
+        "scaled_verified_counts": {
+          "True": 18
+        }
+      },
+      "passed": true
+    },
+    "truth_diverse_fixture_surface_present": {
+      "evidence": {
+        "benchmarks_with_sat_witness": [],
+        "benchmarks_with_unsat_witness_count": 14,
+        "status_counts": {
+          "SIGSEGV": 7,
+          "UNSAT": 35
+        }
+      },
+      "passed": false
+    }
+  },
+  "solver_status_surface": {
+    "benchmark_count": 14,
+    "benchmarks_with_sat_witness": [],
+    "benchmarks_with_unsat_witness": [
+      "contradiction_4.cnf",
+      "horn_chain_12.cnf",
+      "horn_chain_8.cnf",
+      "php_3_2.cnf",
+      "scaled/horn_chain_128.cnf",
+      "scaled/horn_chain_16.cnf",
+      "scaled/horn_chain_32.cnf",
+      "scaled/horn_chain_64.cnf",
+      "scaled/php_4_3.cnf",
+      "scaled/php_5_4.cnf",
+      "scaled/php_6_5.cnf",
+      "scaled/xor_parity_6_unsat.cnf",
+      "scaled/xor_parity_8_unsat.cnf",
+      "xor_unsat.cnf"
+    ],
+    "run_count": 42,
+    "source_tables": [
+      "data/evidence/ss_sat/tables/solver_run_summary.csv",
+      "data/evidence/ss_sat/tables/scaled_solver_run_summary.csv"
+    ],
+    "status_counts": {
+      "SIGSEGV": 7,
+      "UNSAT": 35
+    },
+    "truth_diverse_fixture_surface": false
+  },
+  "source_audit": {
+    "a985_weighted_stack_series": {
+      "expected_status": "D20_A985_WEIGHTED_STACK_SERIES_CERTIFIED_RAW_TENSOR_SHADOW_MOTIVIC_COHA_OPEN",
+      "passed": true,
+      "path": "data/evidence/stack_series/stages/a985_weighted/a985_weighted_stack_series_certificate.json",
+      "status": "D20_A985_WEIGHTED_STACK_SERIES_CERTIFIED_RAW_TENSOR_SHADOW_MOTIVIC_COHA_OPEN"
+    },
+    "assignment_bearing_e33_target_family_obligation": {
+      "expected_status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/assignment_bearing_e33_target_family_obligation.json",
+      "status": "ASSIGNMENT_BEARING_E33_TARGET_FAMILY_OBLIGATION_BUILT_FINITE_TARGET_COLLAPSE_CERTIFIED"
+    },
+    "encoded_family_bridge": {
+      "expected_status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
+      "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+    },
+    "encoded_family_sat_frontier": {
+      "expected_status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
+      "status": "ENCODED_FAMILY_SAT_FRONTIER_BLOCKED_UNIFORM_REDUCTION_MISSING"
+    },
+    "formula_to_boundary_cycle_family_candidate": {
+      "expected_status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
+      "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
+    },
+    "legacy_external_evidence_gate": {
+      "expected_status": "GNATURAL_ONTOLOGICAL_COMPUTATION_EXTERNAL_EVIDENCE_GATE_READY_EVIDENCE_PENDING",
+      "passed": true,
+      "path": "data/evidence/ss_sat/source_drops/external_evidence_gate/certificate.json",
+      "status": "GNATURAL_ONTOLOGICAL_COMPUTATION_EXTERNAL_EVIDENCE_GATE_READY_EVIDENCE_PENDING"
+    },
+    "parameterized_e33_target_schema": {
+      "expected_status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/parameterized_e33_target_schema_certificate.json",
+      "status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN"
+    },
+    "sector33_all_residue_height_transport": {
+      "expected_status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "ss_sat_scaled_evidence": {
+      "expected_status": "SS_SAT_SCALED_EVIDENCE_CAPTURED",
+      "passed": true,
+      "path": "data/evidence/ss_sat/reports/ss_sat_scaled_evidence.json",
+      "status": "SS_SAT_SCALED_EVIDENCE_CAPTURED"
+    },
+    "x_extractor_target": {
+      "expected_status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json",
+      "status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+    }
+  },
+  "stack_series_scaling_seam": {
+    "bounds": {
+      "NMAX": 40,
+      "QMAX": 512
+    },
+    "motivic_or_cohomological_lift_open": true,
+    "open_tasks": [
+      "lift the A985-weighted stack counts to motivic or cohomological weights",
+      "construct a relation-level stack series before collapsing to the six-object shadow",
+      "extend the q-window or derive closed product identities for the M6-weighted budget",
+      "test whether Terwilliger diagnostics stabilize after relation-level quotient maps are available"
+    ],
+    "path": "data/evidence/stack_series/stages/a985_weighted/a985_weighted_stack_series_certificate.json",
+    "relation_level_stack_series_certified": false,
+    "status": "D20_A985_WEIGHTED_STACK_SERIES_CERTIFIED_RAW_TENSOR_SHADOW_MOTIVIC_COHA_OPEN"
+  },
+  "status": "UNIFORM_CNF_TO_E33_ENCODING_INVESTIGATION_BLOCKED"
+}

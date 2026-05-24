@@ -31,10 +31,10 @@ The direct chain is certified at the decategorified `T985` metadata / object-pai
 
 | source                   | map                                |   rank |   energy_fraction |   relative_error | comment                                                                    |
 |:-------------------------|:-----------------------------------|-------:|------------------:|-----------------:|:---------------------------------------------------------------------------|
-| relation_count_wedge15   | wedge15 -> CSDO_support_6coords    |      6 |          0.388928 |         0.781711 | energy of six Type-C CSDO coordinates inside full 15-edge D6 wedge carrier |
+| relation_count_wedge15   | wedge15 -> CSDO_support_6coords    |      6 |          0.388928 |         0.781711 | energy of six Type-C CSDO coordinates inside full 15-edge D6 wedge support |
 | relation_count_wedge15   | wedge15 -> CSDO_signspan_4chambers |      4 |          0.341976 |         0.811187 | projection onto span of the four A42 CSDO sign chambers                    |
 | relation_count_wedge15   | CSDO_signspan / CSDO_support       |      4 |          0.879279 |       nan        | how much of the Type-C support is explained by the four sign chambers      |
-| orbit_normalized_wedge15 | wedge15 -> CSDO_support_6coords    |      6 |          0.491873 |         0.71283  | energy of six Type-C CSDO coordinates inside full 15-edge D6 wedge carrier |
+| orbit_normalized_wedge15 | wedge15 -> CSDO_support_6coords    |      6 |          0.491873 |         0.71283  | energy of six Type-C CSDO coordinates inside full 15-edge D6 wedge support |
 | orbit_normalized_wedge15 | wedge15 -> CSDO_signspan_4chambers |      4 |          0.47967  |         0.721339 | projection onto span of the four A42 CSDO sign chambers                    |
 | orbit_normalized_wedge15 | CSDO_signspan / CSDO_support       |      4 |          0.975191 |       nan        | how much of the Type-C support is explained by the four sign chambers      |
 | relation_count_pair3     | pair3 -> active_(B+S)/V_plane      |      2 |          0.83144  |         0.410561 | A985 object-pair shadow projected through B/V/S quotient                   |

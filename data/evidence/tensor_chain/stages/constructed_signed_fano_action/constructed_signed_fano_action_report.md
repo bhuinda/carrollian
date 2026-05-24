@@ -13,7 +13,7 @@ global_Romega_equivariance          = false
 
 I constructed the action directly instead of trying to recover it from the source_drop/cadical_drat_evidence zone aggregates.
 
-The canonical carrier is
+The canonical support is
 
 ```text
 Foam16 = 1 + Lambda^2 H6
@@ -37,7 +37,7 @@ where `H6` is obtained by nullifying the Fano point `011` and taking the remaini
 - S4 edge permutations from `Stab_F7(011)`: `24`
 - even D6 sign flips: `32`
 - signed-Fano group constructed: `768`
-- full W(D6) group constructed on the same Foam16 carrier: `23040`
+- full W(D6) group constructed on the same Foam16 support: `23040`
 - generators exported: `9`
 
 Each signed channel action sends

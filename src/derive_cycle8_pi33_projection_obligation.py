@@ -30,17 +30,17 @@ HEIGHT_TRANSPORT_REPORT = (
 ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_all_residue_height_transport" / "report.json"
 )
-UNIQUE_PUBLIC_ZERO_CARRIER_REPORT = (
-    D20_INVARIANTS / "theorems" / "sector33_unique_public_zero_carrier" / "report.json"
+UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT = (
+    D20_INVARIANTS / "theorems" / "sector33_unique_public_zero_support" / "report.json"
 )
 SECTOR_PUBLIC_SHADOW_KERNEL_REPORT = (
     D20_INVARIANTS / "theorems" / "sector_public_shadow_kernel" / "report.json"
 )
-SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT = (
-    D20_INVARIANTS / "theorems" / "sector_idempotent_carrier_admissibility" / "report.json"
+SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_REPORT = (
+    D20_INVARIANTS / "theorems" / "sector_idempotent_support_admissibility" / "report.json"
 )
 MINIMAL_COMPOSITE_TRANSPORT_REPORT = (
-    D20_INVARIANTS / "theorems" / "minimal_composite_null_carriers_transport" / "report.json"
+    D20_INVARIANTS / "theorems" / "minimal_composite_null_supports_transport" / "report.json"
 )
 SUPERSELECTION_FLUX_EXTENSION_REPORT = (
     D20_INVARIANTS / "theorems" / "superselection_flux_balance_extension" / "report.json"
@@ -62,6 +62,30 @@ ANOMALY_CANCELLED_FLUX_BALANCE_RECOVERY_REPORT = (
 )
 GAMMA8_OBSTRUCTION_CORRECTION_REPORT = (
     D20_INVARIANTS / "theorems" / "gamma8_obstruction_correction" / "report.json"
+)
+GENERAL_OBSTRUCTION_CORRECTION_SUITE_REPORT = (
+    D20_INVARIANTS / "theorems" / "general_obstruction_correction_suite" / "report.json"
+)
+GLOBAL_COUNTERTERM_LATTICE_REPORT = (
+    D20_INVARIANTS / "theorems" / "global_counterterm_lattice" / "report.json"
+)
+GLOBAL_CORRECTED_CHARGE_MAP_REPORT = (
+    D20_INVARIANTS / "theorems" / "global_corrected_charge_map" / "report.json"
+)
+GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_REPORT = (
+    D20_INVARIANTS / "theorems" / "global_corrected_hidden_split_symmetry" / "report.json"
+)
+HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_REPORT = (
+    D20_INVARIANTS / "theorems" / "hidden_split_augmented_ledger_stabilizer" / "report.json"
+)
+CANONICAL_FLUX_BALANCE_GAUGE_REPORT = (
+    D20_INVARIANTS / "theorems" / "canonical_flux_balance_gauge" / "report.json"
+)
+CANONICAL_LOOP_PI33_OBSTRUCTION_REPORT = (
+    D20_INVARIANTS / "theorems" / "canonical_loop_pi33_obstruction" / "report.json"
+)
+CANONICAL_FINITE_WARD_IDENTITY_REPORT = (
+    D20_INVARIANTS / "theorems" / "canonical_finite_ward_identity" / "report.json"
 )
 
 
@@ -174,9 +198,9 @@ def build_report() -> dict[str, Any]:
         if ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT.exists()
         else {}
     )
-    unique_public_zero_carrier = (
-        load_json(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT)
-        if UNIQUE_PUBLIC_ZERO_CARRIER_REPORT.exists()
+    unique_public_zero_support = (
+        load_json(UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT)
+        if UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT.exists()
         else {}
     )
     sector_public_shadow_kernel = (
@@ -184,9 +208,9 @@ def build_report() -> dict[str, Any]:
         if SECTOR_PUBLIC_SHADOW_KERNEL_REPORT.exists()
         else {}
     )
-    sector_idempotent_carrier_admissibility = (
-        load_json(SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT)
-        if SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT.exists()
+    sector_idempotent_support_admissibility = (
+        load_json(SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_REPORT)
+        if SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_REPORT.exists()
         else {}
     )
     minimal_composite_transport = (
@@ -229,6 +253,46 @@ def build_report() -> dict[str, Any]:
         if GAMMA8_OBSTRUCTION_CORRECTION_REPORT.exists()
         else {}
     )
+    general_obstruction_correction_suite = (
+        load_json(GENERAL_OBSTRUCTION_CORRECTION_SUITE_REPORT)
+        if GENERAL_OBSTRUCTION_CORRECTION_SUITE_REPORT.exists()
+        else {}
+    )
+    global_counterterm_lattice = (
+        load_json(GLOBAL_COUNTERTERM_LATTICE_REPORT)
+        if GLOBAL_COUNTERTERM_LATTICE_REPORT.exists()
+        else {}
+    )
+    global_corrected_charge_map = (
+        load_json(GLOBAL_CORRECTED_CHARGE_MAP_REPORT)
+        if GLOBAL_CORRECTED_CHARGE_MAP_REPORT.exists()
+        else {}
+    )
+    global_corrected_hidden_split_symmetry = (
+        load_json(GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_REPORT)
+        if GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_REPORT.exists()
+        else {}
+    )
+    hidden_split_augmented_ledger_stabilizer = (
+        load_json(HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_REPORT)
+        if HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_REPORT.exists()
+        else {}
+    )
+    canonical_flux_balance_gauge = (
+        load_json(CANONICAL_FLUX_BALANCE_GAUGE_REPORT)
+        if CANONICAL_FLUX_BALANCE_GAUGE_REPORT.exists()
+        else {}
+    )
+    canonical_loop_pi33_obstruction = (
+        load_json(CANONICAL_LOOP_PI33_OBSTRUCTION_REPORT)
+        if CANONICAL_LOOP_PI33_OBSTRUCTION_REPORT.exists()
+        else {}
+    )
+    canonical_finite_ward_identity = (
+        load_json(CANONICAL_FINITE_WARD_IDENTITY_REPORT)
+        if CANONICAL_FINITE_WARD_IDENTITY_REPORT.exists()
+        else {}
+    )
 
     cycle = read_cycle8()
     cycle_edges = edge_rows(cycle["edge_ids"])
@@ -252,9 +316,9 @@ def build_report() -> dict[str, Any]:
     height_transport_derived = height_transport.get("derived", {})
     height_transport_character = height_transport_derived.get("pi33_tube_character", {})
     all_residue_derived = all_residue_transport.get("derived", {})
-    unique_public_zero_derived = unique_public_zero_carrier.get("derived", {})
+    unique_public_zero_derived = unique_public_zero_support.get("derived", {})
     public_shadow_kernel_derived = sector_public_shadow_kernel.get("derived", {})
-    idempotent_admissibility_derived = sector_idempotent_carrier_admissibility.get("derived", {})
+    idempotent_admissibility_derived = sector_idempotent_support_admissibility.get("derived", {})
     minimal_composite_transport_derived = minimal_composite_transport.get("derived", {})
     superselection_flux_extension_derived = superselection_flux_extension.get("derived", {})
     typed_nonexact_optical_flux_derived = typed_nonexact_optical_flux.get("derived", {})
@@ -265,6 +329,20 @@ def build_report() -> dict[str, Any]:
         "derived", {}
     )
     gamma8_obstruction_correction_derived = gamma8_obstruction_correction.get("derived", {})
+    general_obstruction_correction_suite_derived = general_obstruction_correction_suite.get(
+        "derived", {}
+    )
+    global_counterterm_lattice_derived = global_counterterm_lattice.get("derived", {})
+    global_corrected_charge_map_derived = global_corrected_charge_map.get("derived", {})
+    global_corrected_hidden_split_symmetry_derived = global_corrected_hidden_split_symmetry.get(
+        "derived", {}
+    )
+    hidden_split_augmented_ledger_stabilizer_derived = hidden_split_augmented_ledger_stabilizer.get(
+        "derived", {}
+    )
+    canonical_flux_balance_gauge_derived = canonical_flux_balance_gauge.get("derived", {})
+    canonical_loop_pi33_obstruction_derived = canonical_loop_pi33_obstruction.get("derived", {})
+    canonical_finite_ward_identity_derived = canonical_finite_ward_identity.get("derived", {})
 
     character_values_materialized = has_any_key(
         character,
@@ -305,23 +383,23 @@ def build_report() -> dict[str, Any]:
         all_residue_transport.get("status") == "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
         and all_residue_transport.get("all_checks_pass") is True
     )
-    unique_public_zero_carrier_certified = (
-        unique_public_zero_carrier.get("status")
-        == "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_CARRIER_CERTIFIED"
-        and unique_public_zero_carrier.get("all_checks_pass") is True
+    unique_public_zero_support_certified = (
+        unique_public_zero_support.get("status")
+        == "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_SUPPORT_CERTIFIED"
+        and unique_public_zero_support.get("all_checks_pass") is True
     )
     sector_public_shadow_kernel_certified = (
         sector_public_shadow_kernel.get("status") == "D20_SECTOR_PUBLIC_SHADOW_KERNEL_CERTIFIED"
         and sector_public_shadow_kernel.get("all_checks_pass") is True
     )
-    sector_idempotent_carrier_admissibility_certified = (
-        sector_idempotent_carrier_admissibility.get("status")
-        == "D20_SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_CLASSIFIED"
-        and sector_idempotent_carrier_admissibility.get("all_checks_pass") is True
+    sector_idempotent_support_admissibility_certified = (
+        sector_idempotent_support_admissibility.get("status")
+        == "D20_SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_CLASSIFIED"
+        and sector_idempotent_support_admissibility.get("all_checks_pass") is True
     )
     minimal_composite_transport_certified = (
         minimal_composite_transport.get("status")
-        == "D20_MINIMAL_COMPOSITE_NULL_CARRIERS_TRANSPORT_CLASSIFIED"
+        == "D20_MINIMAL_COMPOSITE_NULL_SUPPORTS_TRANSPORT_CLASSIFIED"
         and minimal_composite_transport.get("all_checks_pass") is True
     )
     superselection_flux_extension_certified = (
@@ -357,6 +435,43 @@ def build_report() -> dict[str, Any]:
         gamma8_obstruction_correction.get("status")
         == "D20_GAMMA8_OBSTRUCTION_CORRECTION_CERTIFIED"
         and gamma8_obstruction_correction.get("all_checks_pass") is True
+    )
+    general_obstruction_correction_suite_certified = (
+        general_obstruction_correction_suite.get("status")
+        == "D20_GENERAL_OBSTRUCTION_CORRECTION_SUITE_CERTIFIED"
+        and general_obstruction_correction_suite.get("all_checks_pass") is True
+    )
+    global_counterterm_lattice_certified = (
+        global_counterterm_lattice.get("status") == "D20_GLOBAL_COUNTERTERM_LATTICE_CERTIFIED"
+        and global_counterterm_lattice.get("all_checks_pass") is True
+    )
+    global_corrected_charge_map_certified = (
+        global_corrected_charge_map.get("status") == "D20_GLOBAL_CORRECTED_CHARGE_MAP_CERTIFIED"
+        and global_corrected_charge_map.get("all_checks_pass") is True
+    )
+    global_corrected_hidden_split_symmetry_certified = (
+        global_corrected_hidden_split_symmetry.get("status")
+        == "D20_GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_CERTIFIED"
+        and global_corrected_hidden_split_symmetry.get("all_checks_pass") is True
+    )
+    hidden_split_augmented_ledger_stabilizer_certified = (
+        hidden_split_augmented_ledger_stabilizer.get("status")
+        == "D20_HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_CERTIFIED"
+        and hidden_split_augmented_ledger_stabilizer.get("all_checks_pass") is True
+    )
+    canonical_flux_balance_gauge_certified = (
+        canonical_flux_balance_gauge.get("status") == "D20_CANONICAL_FLUX_BALANCE_GAUGE_CERTIFIED"
+        and canonical_flux_balance_gauge.get("all_checks_pass") is True
+    )
+    canonical_loop_pi33_obstruction_certified = (
+        canonical_loop_pi33_obstruction.get("status")
+        == "D20_CANONICAL_LOOP_PI33_OBSTRUCTION_CERTIFIED"
+        and canonical_loop_pi33_obstruction.get("all_checks_pass") is True
+    )
+    canonical_finite_ward_identity_certified = (
+        canonical_finite_ward_identity.get("status")
+        == "D20_CANONICAL_FINITE_WARD_IDENTITY_CERTIFIED"
+        and canonical_finite_ward_identity.get("all_checks_pass") is True
     )
 
     checks = {
@@ -411,16 +526,16 @@ def build_report() -> dict[str, Any]:
             "mismatch_count", 0
         )
         > 0,
-        "unique_public_zero_carrier_is_certified": unique_public_zero_carrier_certified,
-        "sector33_is_unique_single_sector_public_zero_carrier": unique_public_zero_derived.get(
+        "unique_public_zero_support_is_certified": unique_public_zero_support_certified,
+        "sector33_is_unique_single_sector_public_zero_support": unique_public_zero_derived.get(
             "public_zero_sectors"
         )
         == [33]
-        and unique_public_zero_carrier.get("checks", {}).get(
-            "sector33_is_unique_single_sector_public_zero_carrier"
+        and unique_public_zero_support.get("checks", {}).get(
+            "sector33_is_unique_single_sector_public_zero_support"
         )
         is True,
-        "all_nonzero_height_residuals_are_field_nonzero_for_unique_carrier": unique_public_zero_derived.get(
+        "all_nonzero_height_residuals_are_field_nonzero_for_unique_support": unique_public_zero_derived.get(
             "nonzero_height_residual_count"
         )
         == 2047
@@ -436,18 +551,18 @@ def build_report() -> dict[str, Any]:
         )
         == [33]
         and public_shadow_kernel_derived.get("non_axis_kernel_basis_count", 0) > 0,
-        "sector_idempotent_carrier_admissibility_is_certified": (
-            sector_idempotent_carrier_admissibility_certified
+        "sector_idempotent_support_admissibility_is_certified": (
+            sector_idempotent_support_admissibility_certified
         ),
-        "public_zero_idempotent_boundary_null_carriers_are_classified": idempotent_admissibility_derived.get(
+        "public_zero_idempotent_boundary_null_supports_are_classified": idempotent_admissibility_derived.get(
             "nonzero_public_zero_boundary_null_supports"
         )
         == [[6, 26], [25, 26], [33], [6, 26, 33], [25, 26, 33]],
-        "pi33_is_unique_primitive_and_height_support_exact_carrier": idempotent_admissibility_derived.get(
+        "pi33_is_unique_primitive_and_height_support_exact_support": idempotent_admissibility_derived.get(
             "primitive_single_sector_public_zero"
         )
         == [33]
-        and idempotent_admissibility_derived.get("height_support_exact_carriers_for_certified_transport")
+        and idempotent_admissibility_derived.get("height_support_exact_supports_for_certified_transport")
         == [[33]],
         "minimal_composite_transport_is_certified": minimal_composite_transport_certified,
         "minimal_composites_are_superselection_not_gauge": minimal_composite_transport.get("checks", {}).get(
@@ -554,6 +669,160 @@ def build_report() -> dict[str, Any]:
             "checks", {}
         ).get("all_corrected_maximal_packets_contain_gamma8")
         is True,
+        "general_obstruction_correction_suite_is_certified": (
+            general_obstruction_correction_suite_certified
+        ),
+        "all_basis_coordinates_have_rank_one_corrections": general_obstruction_correction_suite.get(
+            "checks", {}
+        ).get("all_coordinate_corrections_are_rank_one")
+        is True
+        and general_obstruction_correction_suite.get("checks", {}).get(
+            "all_11_basis_coordinates_are_self_anomalous"
+        )
+        is True,
+        "general_suite_opens_dimension4_for_every_coordinate": general_obstruction_correction_suite.get(
+            "checks", {}
+        ).get("every_corrected_search_opens_dimension_4")
+        is True
+        and general_obstruction_correction_suite.get("checks", {}).get(
+            "every_corrected_packet_clock_is_additive"
+        )
+        is True,
+        "global_counterterm_lattice_is_certified": global_counterterm_lattice_certified,
+        "global_counterterm_lattice_balances_full_residue_group": global_counterterm_lattice.get(
+            "checks", {}
+        ).get("corrected_clock_is_additive_on_all_2048_masks")
+        is True
+        and global_counterterm_lattice.get("checks", {}).get(
+            "corrected_half_anomaly_vanishes_on_all_pairs"
+        )
+        is True,
+        "global_counterterm_lattice_includes_gamma8": global_counterterm_lattice.get("checks", {}).get(
+            "gamma8_is_included_with_order_two_value"
+        )
+        is True,
+        "global_corrected_charge_map_is_certified": global_corrected_charge_map_certified,
+        "global_corrected_charge_map_compares_to_public_exact_basis": global_corrected_charge_map.get(
+            "checks", {}
+        ).get("public_closed_return_rank_is_zero")
+        is True
+        and global_corrected_charge_map.get("checks", {}).get("corrected_hidden_rank_is_one")
+        is True
+        and global_corrected_charge_map.get("checks", {}).get(
+            "hidden_character_not_in_public_closed_span"
+        )
+        is True,
+        "global_corrected_charge_map_detects_gamma8": global_corrected_charge_map.get(
+            "checks", {}
+        ).get("gamma8_is_public_exact_zero_but_hidden_nonzero")
+        is True,
+        "global_corrected_hidden_split_symmetry_is_certified": (
+            global_corrected_hidden_split_symmetry_certified
+        ),
+        "global_corrected_hidden_split_symmetry_reduces_public_symmetry_to_c2": (
+            global_corrected_hidden_split_symmetry.get("checks", {}).get(
+                "hidden_split_stabilizer_has_order_2"
+            )
+            is True
+            and global_corrected_hidden_split_symmetry.get("checks", {}).get(
+                "hidden_split_breaks_118_public_graph_symmetries"
+            )
+            is True
+        ),
+        "global_corrected_hidden_split_symmetry_fixes_gamma8": (
+            global_corrected_hidden_split_symmetry.get("checks", {}).get(
+                "gamma8_mask_is_fixed_by_hidden_split_stabilizer"
+            )
+            is True
+        ),
+        "hidden_split_augmented_ledger_stabilizer_is_certified": (
+            hidden_split_augmented_ledger_stabilizer_certified
+        ),
+        "hidden_split_augmented_ledger_stabilizer_is_identity": (
+            hidden_split_augmented_ledger_stabilizer.get("checks", {}).get(
+                "full_augmented_ledger_stabilizer_is_identity"
+            )
+            is True
+        ),
+        "hidden_split_nonidentity_breaks_augmented_ledger_fields": (
+            hidden_split_augmented_ledger_stabilizer.get("checks", {}).get(
+                "nonidentity_breaks_sector26_counterterm_vector"
+            )
+            is True
+            and hidden_split_augmented_ledger_stabilizer.get("checks", {}).get(
+                "nonidentity_breaks_optical_weights"
+            )
+            is True
+            and hidden_split_augmented_ledger_stabilizer.get("checks", {}).get(
+                "nonidentity_breaks_public_charge_components"
+            )
+            is True
+        ),
+        "canonical_flux_balance_gauge_is_certified": canonical_flux_balance_gauge_certified,
+        "canonical_flux_balance_gauge_has_unique_root_and_orientation": (
+            canonical_flux_balance_gauge.get("checks", {}).get(
+                "public_charges_uniquely_mark_all_vertices"
+            )
+            is True
+            and canonical_flux_balance_gauge.get("checks", {}).get("canonical_root_is_unique")
+            is True
+            and canonical_flux_balance_gauge.get("checks", {}).get(
+                "canonical_edge_orientation_has_no_charge_ties"
+            )
+            is True
+        ),
+        "canonical_flux_balance_gauge_is_root_fixed_unique": (
+            canonical_flux_balance_gauge.get("checks", {}).get("incidence_rank_is_connected_graph_rank_19")
+            is True
+            and canonical_flux_balance_gauge.get("checks", {}).get("rooted_incidence_rank_is_full_20")
+            is True
+            and canonical_flux_balance_gauge.get("checks", {}).get(
+                "rooted_four_component_flux_potential_gauge_dimension_is_0"
+            )
+            is True
+        ),
+        "canonical_loop_pi33_obstruction_is_certified": canonical_loop_pi33_obstruction_certified,
+        "canonical_loop_pi33_obstruction_uses_canonical_root_edge": (
+            canonical_loop_pi33_obstruction.get("checks", {}).get(
+                "canonical_root_and_root_edge_match_cycle8"
+            )
+            is True
+            and canonical_loop_pi33_obstruction.get("checks", {}).get(
+                "cycle8_root_edge_is_traversed_in_canonical_direction"
+            )
+            is True
+        ),
+        "canonical_loop_pi33_obstruction_keeps_bare_zero_and_height_residual": (
+            canonical_loop_pi33_obstruction.get("checks", {}).get(
+                "bare_pi33_coefficients_are_zero_for_all_recorded_variants"
+            )
+            is True
+            and canonical_loop_pi33_obstruction.get("checks", {}).get(
+                "height_corrected_pi33_obstruction_is_nonzero_and_canonical"
+            )
+            is True
+            and canonical_loop_pi33_obstruction.get("checks", {}).get(
+                "height_corrected_obstruction_has_zero_public_shadow"
+            )
+            is True
+        ),
+        "canonical_finite_ward_identity_is_certified": canonical_finite_ward_identity_certified,
+        "canonical_finite_ward_identity_has_zero_public_and_bare_terms": (
+            canonical_finite_ward_identity.get("checks", {}).get(
+                "exact_public_flux_gauge_term_is_zero"
+            )
+            is True
+            and canonical_finite_ward_identity.get("checks", {}).get("bare_pi33_terms_are_zero")
+            is True
+        ),
+        "canonical_finite_ward_identity_balances_height_corrected_r33": (
+            canonical_finite_ward_identity.get("checks", {}).get(
+                "height_corrected_r33_term_is_negative_height_action"
+            )
+            is True
+            and canonical_finite_ward_identity.get("checks", {}).get("finite_ward_scalar_sum_is_zero")
+            is True
+        ),
         "character_table_only_hash_materialized": not character_values_materialized
         and character.get("character_table_sha256") is not None
         and character.get("shape") == [39, 985],
@@ -568,7 +837,7 @@ def build_report() -> dict[str, Any]:
     }
     all_checks_pass = all(checks.values())
     status = (
-        "D20_CYCLE8_PI33_GAMMA8_OBSTRUCTION_CORRECTION_CERTIFIED"
+        "D20_CYCLE8_PI33_CANONICAL_WARD_IDENTITY_CERTIFIED"
         if all_checks_pass
         else "D20_CYCLE8_PI33_PROJECTION_OBLIGATION_NEEDS_REVIEW"
     )
@@ -578,12 +847,16 @@ def build_report() -> dict[str, Any]:
         "status": status,
         "closure_state": (
             "bare_lambda_zero; height_coherent_transport_recovers_nonzero_residual; "
-            "sector33_unique_single_sector_public_zero_carrier; public_shadow_kernel_dimension_27; "
-            "public_zero_idempotent_carriers_classified; minimal_composite_superselection_transport_classified; "
+            "sector33_unique_single_sector_public_zero_support; public_shadow_kernel_dimension_27; "
+            "public_zero_idempotent_supports_classified; minimal_composite_superselection_transport_classified; "
             "augmented_flux_ledger_certified; typed_nonexact_optical_flux_update_certified; "
             "sector26_invariant_suite_certified; finite_anomaly_counter_certified; "
             "sector26_anomaly_cancellation_certified; anomaly_cancelled_flux_balance_recovery_certified; "
-            "gamma8_obstruction_correction_certified"
+            "gamma8_obstruction_correction_certified; general_obstruction_correction_suite_certified"
+            "; global_counterterm_lattice_certified; global_corrected_charge_map_certified; "
+            "global_corrected_hidden_split_symmetry_certified; "
+            "hidden_split_augmented_ledger_stabilizer_certified; canonical_flux_balance_gauge_certified; "
+            "canonical_loop_pi33_obstruction_certified; canonical_finite_ward_identity_certified"
         ),
         "object": "d20",
         "target": (
@@ -596,14 +869,14 @@ def build_report() -> dict[str, Any]:
             "c_33(gamma_8)=0. The refined height-coherent transport derives its scalar from the active edge "
             "circuit height action and recovers the sector-33 residual -374784 with zero A42/A12 public shadow. "
             "Materializing all 39 tube-visible sector idempotents proves that sector 33 is the unique "
-            "single-sector public-zero carrier. The full linear public-zero sector span is also classified: "
+            "single-sector public-zero support. The full linear public-zero sector span is also classified: "
             "the combined A42/A12 shadow matrix has rank 12 and kernel dimension 27, so Pi_33 uniqueness is "
             "coordinate-axis/single-sector uniqueness, not uniqueness in the unconstrained linear span. The "
-            "idempotent carrier classification shows five nonzero public-zero boundary-null idempotent sector "
-            "sums; Pi_33 is the unique primitive carrier and the unique support-exact carrier for the certified "
+            "idempotent support classification shows five nonzero public-zero boundary-null idempotent sector "
+            "sums; Pi_33 is the unique primitive support and the unique support-exact support for the certified "
             "sector-33 height transport. The two minimal non-Pi_33 null composites are not gauge zero: "
             "{6,26} and {25,26} have positive self-transport and zero transport to/from Pi_33, so they are "
-            "isolated public-zero superselection carriers. The finite flux-balance ledger is extended with "
+            "isolated public-zero superselection supports. The finite flux-balance ledger is extended with "
             "hidden components R33, K_mixed_S, and K_pure_Sminus so public-zero hidden transport is not "
             "collapsed into gauge zero. The non-exact optical/action update sends all certified nonzero "
             "height residuals to R33 while reserving K_mixed_S and K_pure_Sminus for separately certified "
@@ -618,7 +891,11 @@ def build_report() -> dict[str, Any]:
             "anomaly-cancelled flux-balance recovery theorem then restricts the typed non-exact ledger to "
             "those packets: exact public flux closes and normalized R33 transport becomes additive modulo 26. "
             "The gamma_8 obstruction correction theorem identifies the unique local sector-26 counterterm: "
-            "add +5 to normalized R33 on basis coordinate 8, sending gamma_8 to the order-two value 13."
+            "add +5 to normalized R33 on basis coordinate 8, sending gamma_8 to the order-two value 13. "
+            "The general obstruction-correction suite proves this is one row of a full 11-coordinate table: "
+            "every basis coordinate is self-anomalous and admits a rank-one correction. The global "
+            "counterterm-lattice theorem activates all 11 corrections together, annihilates the full "
+            "half-anomaly form, and makes normalized R33 an additive order-two character on all 2048 masks."
         ),
         "inputs": {
             "sector_attachment_report": {
@@ -667,10 +944,10 @@ def build_report() -> dict[str, Any]:
                 if ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT.exists()
                 else None,
             },
-            "sector33_unique_public_zero_carrier_report": {
-                "path": rel(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT),
-                "sha256": sha_file(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT)
-                if UNIQUE_PUBLIC_ZERO_CARRIER_REPORT.exists()
+            "sector33_unique_public_zero_support_report": {
+                "path": rel(UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT),
+                "sha256": sha_file(UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT)
+                if UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT.exists()
                 else None,
             },
             "sector_public_shadow_kernel_report": {
@@ -679,13 +956,13 @@ def build_report() -> dict[str, Any]:
                 if SECTOR_PUBLIC_SHADOW_KERNEL_REPORT.exists()
                 else None,
             },
-            "sector_idempotent_carrier_admissibility_report": {
-                "path": rel(SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT),
-                "sha256": sha_file(SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT)
-                if SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT.exists()
+            "sector_idempotent_support_admissibility_report": {
+                "path": rel(SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_REPORT),
+                "sha256": sha_file(SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_REPORT)
+                if SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_REPORT.exists()
                 else None,
             },
-            "minimal_composite_null_carriers_transport_report": {
+            "minimal_composite_null_supports_transport_report": {
                 "path": rel(MINIMAL_COMPOSITE_TRANSPORT_REPORT),
                 "sha256": sha_file(MINIMAL_COMPOSITE_TRANSPORT_REPORT)
                 if MINIMAL_COMPOSITE_TRANSPORT_REPORT.exists()
@@ -731,6 +1008,18 @@ def build_report() -> dict[str, Any]:
                 "path": rel(GAMMA8_OBSTRUCTION_CORRECTION_REPORT),
                 "sha256": sha_file(GAMMA8_OBSTRUCTION_CORRECTION_REPORT)
                 if GAMMA8_OBSTRUCTION_CORRECTION_REPORT.exists()
+                else None,
+            },
+            "general_obstruction_correction_suite_report": {
+                "path": rel(GENERAL_OBSTRUCTION_CORRECTION_SUITE_REPORT),
+                "sha256": sha_file(GENERAL_OBSTRUCTION_CORRECTION_SUITE_REPORT)
+                if GENERAL_OBSTRUCTION_CORRECTION_SUITE_REPORT.exists()
+                else None,
+            },
+            "global_counterterm_lattice_report": {
+                "path": rel(GLOBAL_COUNTERTERM_LATTICE_REPORT),
+                "sha256": sha_file(GLOBAL_COUNTERTERM_LATTICE_REPORT)
+                if GLOBAL_COUNTERTERM_LATTICE_REPORT.exists()
                 else None,
             },
         },
@@ -798,9 +1087,9 @@ def build_report() -> dict[str, Any]:
                 ),
                 "edge_mod2_height_incoherence": all_residue_derived.get("edge_mod2_height_incoherence"),
             },
-            "unique_public_zero_carrier": {
-                "status": unique_public_zero_carrier.get("status"),
-                "definition": unique_public_zero_carrier.get("definition", {}),
+            "unique_public_zero_support": {
+                "status": unique_public_zero_support.get("status"),
+                "definition": unique_public_zero_support.get("definition", {}),
                 "sector_count": unique_public_zero_derived.get("sector_count"),
                 "local_pre_idempotent_keys_used": unique_public_zero_derived.get(
                     "local_pre_idempotent_keys_used"
@@ -812,8 +1101,8 @@ def build_report() -> dict[str, Any]:
                 "field_zero_nonzero_residual_count": unique_public_zero_derived.get(
                     "field_zero_nonzero_residual_count"
                 ),
-                "unique_public_zero_carrier": unique_public_zero_derived.get(
-                    "unique_public_zero_carrier"
+                "unique_public_zero_support": unique_public_zero_derived.get(
+                    "unique_public_zero_support"
                 ),
             },
             "sector_public_shadow_kernel": {
@@ -829,9 +1118,9 @@ def build_report() -> dict[str, Any]:
                     "non_axis_kernel_basis_count"
                 ),
             },
-            "sector_idempotent_carrier_admissibility": {
-                "status": sector_idempotent_carrier_admissibility.get("status"),
-                "definition": sector_idempotent_carrier_admissibility.get("definition", {}),
+            "sector_idempotent_support_admissibility": {
+                "status": sector_idempotent_support_admissibility.get("status"),
+                "definition": sector_idempotent_support_admissibility.get("definition", {}),
                 "nonzero_public_zero_idempotent_supports": idempotent_admissibility_derived.get(
                     "nonzero_public_zero_idempotent_supports"
                 ),
@@ -841,11 +1130,11 @@ def build_report() -> dict[str, Any]:
                 "primitive_single_sector_public_zero": idempotent_admissibility_derived.get(
                     "primitive_single_sector_public_zero"
                 ),
-                "height_support_exact_carriers_for_certified_transport": idempotent_admissibility_derived.get(
-                    "height_support_exact_carriers_for_certified_transport"
+                "height_support_exact_supports_for_certified_transport": idempotent_admissibility_derived.get(
+                    "height_support_exact_supports_for_certified_transport"
                 ),
             },
-            "minimal_composite_null_carriers_transport": {
+            "minimal_composite_null_supports_transport": {
                 "status": minimal_composite_transport.get("status"),
                 "definition": minimal_composite_transport.get("definition", {}),
                 "transport_components": minimal_composite_transport_derived.get("transport_components"),
@@ -933,6 +1222,33 @@ def build_report() -> dict[str, Any]:
                     "corrected_packet_search", {}
                 ),
             },
+            "general_obstruction_correction_suite": {
+                "status": general_obstruction_correction_suite.get("status"),
+                "definition": general_obstruction_correction_suite.get("definition", {}),
+                "expected_minimal_signed_lifts": general_obstruction_correction_suite_derived.get(
+                    "expected_minimal_signed_lifts"
+                ),
+                "expected_corrected_maximal_packet_counts": general_obstruction_correction_suite_derived.get(
+                    "expected_corrected_maximal_packet_counts"
+                ),
+                "gamma8_coordinate": general_obstruction_correction_suite_derived.get(
+                    "gamma8_coordinate"
+                ),
+            },
+            "global_counterterm_lattice": {
+                "status": global_counterterm_lattice.get("status"),
+                "definition": global_counterterm_lattice.get("definition", {}),
+                "counterterm_signed_lifts": global_counterterm_lattice_derived.get(
+                    "counterterm_signed_lifts"
+                ),
+                "corrected_basis_clock_mod26": global_counterterm_lattice_derived.get(
+                    "corrected_basis_clock_mod26"
+                ),
+                "corrected_clock_histogram": global_counterterm_lattice_derived.get(
+                    "corrected_clock_histogram"
+                ),
+                "gamma8": global_counterterm_lattice_derived.get("gamma8"),
+            },
             "character_table_metadata": character,
             "idempotent_matrix_metadata": {
                 "full_lift": idempotent_validation,
@@ -972,16 +1288,16 @@ def build_report() -> dict[str, Any]:
             },
             "all_residue_class_height_transport": {
                 "needed_type": "global Lambda_hc over all 2047 nonzero D20 closed-return classes",
-                "needed_for": "classify height-derived residuals under the selected sector-33 carrier",
+                "needed_for": "classify height-derived residuals under the selected sector-33 support",
                 "report": rel(ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT),
                 "nonzero_residue_class_count": all_residue_derived.get("nonzero_residue_class_count"),
-                "carrier_sector": 33,
+                "support_sector": 33,
                 "status": "certified",
             },
-            "unique_single_sector_public_zero_carrier": {
+            "unique_single_sector_public_zero_support": {
                 "needed_type": "materialized comparison of all 39 tube-visible sector idempotents",
-                "needed_for": "prove the selected sector-33 carrier is the only single-sector public-zero carrier",
-                "report": rel(UNIQUE_PUBLIC_ZERO_CARRIER_REPORT),
+                "needed_for": "prove the selected sector-33 support is the only single-sector public-zero support",
+                "report": rel(UNIQUE_PUBLIC_ZERO_SUPPORT_REPORT),
                 "public_zero_sectors": unique_public_zero_derived.get("public_zero_sectors"),
                 "local_pre_idempotent_keys_used": unique_public_zero_derived.get(
                     "local_pre_idempotent_keys_used"
@@ -1002,28 +1318,28 @@ def build_report() -> dict[str, Any]:
                 ),
                 "status": "certified",
             },
-            "sector_idempotent_carrier_admissibility": {
+            "sector_idempotent_support_admissibility": {
                 "needed_type": (
-                    "Boolean idempotent carrier classification inside the 39-sector orthogonal idempotent algebra"
+                    "Boolean idempotent support classification inside the 39-sector orthogonal idempotent algebra"
                 ),
                 "needed_for": (
-                    "separate primitive/support-exact Pi_33 uniqueness from composite public-zero null carriers"
+                    "separate primitive/support-exact Pi_33 uniqueness from composite public-zero null supports"
                 ),
-                "report": rel(SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_REPORT),
+                "report": rel(SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_REPORT),
                 "nonzero_public_zero_boundary_null_supports": idempotent_admissibility_derived.get(
                     "nonzero_public_zero_boundary_null_supports"
                 ),
                 "primitive_single_sector_public_zero": idempotent_admissibility_derived.get(
                     "primitive_single_sector_public_zero"
                 ),
-                "height_support_exact_carriers_for_certified_transport": idempotent_admissibility_derived.get(
-                    "height_support_exact_carriers_for_certified_transport"
+                "height_support_exact_supports_for_certified_transport": idempotent_admissibility_derived.get(
+                    "height_support_exact_supports_for_certified_transport"
                 ),
                 "status": "certified",
             },
-            "minimal_composite_null_carriers_transport": {
+            "minimal_composite_null_supports_transport": {
                 "needed_type": (
-                    "transport-rank classification of the minimal non-Pi_33 public-zero composite carriers"
+                    "transport-rank classification of the minimal non-Pi_33 public-zero composite supports"
                 ),
                 "needed_for": (
                     "decide whether {6,26} and {25,26} are gauge zero, superselection degeneracy, or "
@@ -1145,6 +1461,149 @@ def build_report() -> dict[str, Any]:
                 ),
                 "status": "certified",
             },
+            "general_obstruction_correction_suite": {
+                "needed_type": "minimal rank-one counterterms for every self-anomalous basis coordinate",
+                "needed_for": (
+                    "decide whether gamma_8 is exceptional or part of a full basis-level correction table"
+                ),
+                "report": rel(GENERAL_OBSTRUCTION_CORRECTION_SUITE_REPORT),
+                "expected_minimal_signed_lifts": general_obstruction_correction_suite_derived.get(
+                    "expected_minimal_signed_lifts"
+                ),
+                "expected_corrected_maximal_packet_counts": general_obstruction_correction_suite_derived.get(
+                    "expected_corrected_maximal_packet_counts"
+                ),
+                "status": "certified",
+            },
+            "global_counterterm_lattice": {
+                "needed_type": "simultaneous activation law for the 11 rank-one sector-26 counterterms",
+                "needed_for": (
+                    "decide whether the whole closed-return residue group becomes corrected flux-balanced "
+                    "when all counterterms are active together"
+                ),
+                "report": rel(GLOBAL_COUNTERTERM_LATTICE_REPORT),
+                "counterterm_signed_lifts": global_counterterm_lattice_derived.get(
+                    "counterterm_signed_lifts"
+                ),
+                "corrected_clock_histogram": global_counterterm_lattice_derived.get(
+                    "corrected_clock_histogram"
+                ),
+                "gamma8": global_counterterm_lattice_derived.get("gamma8"),
+                "status": "certified",
+            },
+            "global_corrected_charge_map": {
+                "needed_type": (
+                    "explicit homomorphism comparing global corrected R33 to the public D20 exact charge basis"
+                ),
+                "needed_for": (
+                    "turn the corrected order-two hidden character into a recoverable finite charge map"
+                ),
+                "report": rel(GLOBAL_CORRECTED_CHARGE_MAP_REPORT),
+                "public_exact_flux_charge_basis": global_corrected_charge_map_derived.get(
+                    "public_exact_flux_charge_basis"
+                ),
+                "global_corrected_hidden_charge": {
+                    key: value
+                    for key, value in global_corrected_charge_map_derived.get(
+                        "global_corrected_hidden_charge", {}
+                    ).items()
+                    if key != "all_mask_rows"
+                },
+                "comparison": global_corrected_charge_map_derived.get("comparison"),
+                "status": "certified",
+            },
+            "global_corrected_hidden_split_symmetry": {
+                "needed_type": (
+                    "classification of public D20 state/edge symmetries preserving the corrected hidden split"
+                ),
+                "needed_for": (
+                    "decide which public boundary symmetries survive after the rank-one hidden closed-return "
+                    "character is imposed"
+                ),
+                "report": rel(GLOBAL_CORRECTED_HIDDEN_SPLIT_SYMMETRY_REPORT),
+                "graph": global_corrected_hidden_split_symmetry_derived.get("graph"),
+                "symmetry_classification": {
+                    key: value
+                    for key, value in global_corrected_hidden_split_symmetry_derived.get(
+                        "symmetry_classification", {}
+                    ).items()
+                    if key not in {"preserving_automorphisms", "first_breaking_witnesses"}
+                },
+                "status": "certified",
+            },
+            "hidden_split_augmented_ledger_stabilizer": {
+                "needed_type": (
+                    "test whether the C2 hidden-split stabilizer preserves the augmented finite charge/action ledger"
+                ),
+                "needed_for": (
+                    "decide whether the corrected hidden split supplies a nontrivial symmetry of the full "
+                    "sector-26/public/optical ledger, or only of the order-two hidden character"
+                ),
+                "report": rel(HIDDEN_SPLIT_AUGMENTED_LEDGER_STABILIZER_REPORT),
+                "candidate_group": hidden_split_augmented_ledger_stabilizer_derived.get(
+                    "candidate_group"
+                ),
+                "summary": hidden_split_augmented_ledger_stabilizer_derived.get("summary"),
+                "status": "certified",
+            },
+            "canonical_flux_balance_gauge": {
+                "needed_type": (
+                    "canonical finite boundary marking and root-fixed exact flux-balance gauge"
+                ),
+                "needed_for": (
+                    "remove the remaining additive exact-flux gauge and graph-symmetry gauge from the "
+                    "certified finite boundary screen"
+                ),
+                "report": rel(CANONICAL_FLUX_BALANCE_GAUGE_REPORT),
+                "canonical_marking": canonical_flux_balance_gauge_derived.get("canonical_marking"),
+                "exact_flux_gauge": {
+                    key: value
+                    for key, value in canonical_flux_balance_gauge_derived.get(
+                        "exact_flux_gauge", {}
+                    ).items()
+                    if key not in {"root_zero_potential"}
+                },
+                "residual_symmetry_gauge": canonical_flux_balance_gauge_derived.get(
+                    "residual_symmetry_gauge"
+                ),
+                "status": "certified",
+            },
+            "canonical_loop_pi33_obstruction": {
+                "needed_type": (
+                    "canonical-gauge pushforward through boundary-to-Loop_297 and tube-visible Pi_33 test"
+                ),
+                "needed_for": (
+                    "prove that the cycle-8 Pi_33 obstruction statement survives the canonical finite "
+                    "flux-balance gauge without materializing the full Drinfeld idempotent matrix"
+                ),
+                "report": rel(CANONICAL_LOOP_PI33_OBSTRUCTION_REPORT),
+                "canonical_boundary_cycle": canonical_loop_pi33_obstruction_derived.get(
+                    "canonical_boundary_cycle"
+                ),
+                "pi33_obstruction": canonical_loop_pi33_obstruction_derived.get("pi33_obstruction"),
+                "hash_only_metadata": canonical_loop_pi33_obstruction_derived.get(
+                    "hash_only_metadata"
+                ),
+                "status": "certified",
+            },
+            "canonical_finite_ward_identity": {
+                "needed_type": (
+                    "explicit finite Ward identity for gamma_8 in the canonical flux-balance gauge"
+                ),
+                "needed_for": (
+                    "state the certified balance terms: exact public flux gauge zero, bare Pi_33 zero, "
+                    "height-corrected R33 term -374784, height action +374784"
+                ),
+                "report": rel(CANONICAL_FINITE_WARD_IDENTITY_REPORT),
+                "ward_identity": canonical_finite_ward_identity_derived.get("ward_identity"),
+                "public_exact_flux": canonical_finite_ward_identity_derived.get(
+                    "public_exact_flux"
+                ),
+                "tube_hidden_terms": canonical_finite_ward_identity_derived.get(
+                    "tube_hidden_terms"
+                ),
+                "status": "certified",
+            },
         },
         "missing_maps": {
             "full_drinfeld_projection_coordinates": {
@@ -1153,16 +1612,6 @@ def build_report() -> dict[str, Any]:
                 "character_table_materialized": character_values_materialized,
                 "idempotent_matrix_materialized": idempotent_matrix_materialized,
                 "status": "hash-only in current JSON artifacts",
-            },
-            "general_obstruction_correction_suite": {
-                "needed_type": (
-                    "minimal rank-one counterterms for all self-anomalous basis coordinates"
-                ),
-                "needed_for": (
-                    "compare corrected packet geometries across the full closed-return basis and determine "
-                    "whether gamma_8 is exceptional or representative"
-                ),
-                "status": "not yet certified",
             },
             "complete_section_entries": {
                 "needed_type": "full S: Loop_297 -> TubePair_44521 coefficient table, or deterministic recomputation",
@@ -1182,20 +1631,20 @@ def build_report() -> dict[str, Any]:
                 "discharged for gamma_8 by "
                 "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json"
             ),
-            "unique_single_sector_carrier": (
+            "unique_single_sector_support": (
                 "discharged by "
-                "data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json"
+                "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json"
             ),
             "public_shadow_kernel_classification": (
                 "discharged by data/invariants/d20/theorems/sector_public_shadow_kernel/report.json"
             ),
-            "idempotent_carrier_admissibility": (
+            "idempotent_support_admissibility": (
                 "discharged by "
-                "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json"
+                "data/invariants/d20/theorems/sector_idempotent_support_admissibility/report.json"
             ),
             "minimal_composite_transport_classification": (
                 "discharged by "
-                "data/invariants/d20/theorems/minimal_composite_null_carriers_transport/report.json"
+                "data/invariants/d20/theorems/minimal_composite_null_supports_transport/report.json"
             ),
             "superselection_flux_balance_extension": (
                 "discharged by "
@@ -1221,15 +1670,42 @@ def build_report() -> dict[str, Any]:
             "gamma8_obstruction_correction": (
                 "discharged by data/invariants/d20/theorems/gamma8_obstruction_correction/report.json"
             ),
+            "general_obstruction_correction_suite": (
+                "discharged by data/invariants/d20/theorems/general_obstruction_correction_suite/report.json"
+            ),
+            "global_counterterm_lattice": (
+                "discharged by data/invariants/d20/theorems/global_counterterm_lattice/report.json"
+            ),
+            "global_corrected_charge_map": (
+                "discharged by data/invariants/d20/theorems/global_corrected_charge_map/report.json"
+            ),
+            "global_corrected_hidden_split_symmetry": (
+                "discharged by "
+                "data/invariants/d20/theorems/global_corrected_hidden_split_symmetry/report.json"
+            ),
+            "hidden_split_augmented_ledger_stabilizer": (
+                "discharged by "
+                "data/invariants/d20/theorems/hidden_split_augmented_ledger_stabilizer/report.json"
+            ),
+            "canonical_flux_balance_gauge": (
+                "discharged by data/invariants/d20/theorems/canonical_flux_balance_gauge/report.json"
+            ),
+            "canonical_loop_pi33_obstruction": (
+                "discharged by data/invariants/d20/theorems/canonical_loop_pi33_obstruction/report.json"
+            ),
+            "canonical_finite_ward_identity": (
+                "discharged by data/invariants/d20/theorems/canonical_finite_ward_identity/report.json"
+            ),
             "remaining_recovery_obligation": (
-                "Generalize obstruction correction: classify minimal rank-one counterterms for every "
-                "self-anomalous basis coordinate and compare their corrected packet geometries."
+                "Generalize the canonical Ward identity from gamma_8 to all 2048 closed-return masks using "
+                "the global counterterm lattice and all-residue height-coherent transport."
             ),
         },
         "checks": checks,
         "all_checks_pass": all_checks_pass,
         "next_highest_yield_item": (
-            "Generalize obstruction correction across all self-anomalous basis coordinates."
+            "Generalize the canonical Ward identity from gamma_8 to all 2048 closed-return masks using the "
+            "global counterterm lattice and all-residue height-coherent transport."
         ),
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})
@@ -1254,10 +1730,10 @@ def write_report(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "verify the tube-visible Pi_33 functional evaluates the bare gamma_8 lift to zero",
             "verify the height-coherent transport recovers the sector-33 residual from edge/circuit data",
             "verify the global height-coherent transport covers all 2047 nonzero residue classes",
-            "verify sector 33 is the unique single-sector public-zero carrier among all 39 sectors",
+            "verify sector 33 is the unique single-sector public-zero support among all 39 sectors",
             "verify the full sector public-shadow kernel has rank 12 and nullity 27",
-            "verify the public-zero idempotent boundary-null carriers are classified",
-            "verify minimal composite null carriers have positive self-transport and zero transport to Pi_33",
+            "verify the public-zero idempotent boundary-null supports are classified",
+            "verify minimal composite null supports have positive self-transport and zero transport to Pi_33",
             "verify the superselection flux-balance extension tracks hidden public-zero labels",
             "verify the typed non-exact optical flux update sends height residuals to R33",
             "verify the sector-26 invariant suite certifies quotient stability and the complete mod-26 clock",
@@ -1265,6 +1741,14 @@ def write_report(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "verify the sector-26 anomaly-cancellation theorem classifies maximal cancelled packets",
             "verify anomaly-cancelled flux-balance recovery on the certified packets",
             "verify the gamma_8 obstruction correction and corrected packet geometry",
+            "verify the general obstruction-correction suite over all basis coordinates",
+            "verify the global counterterm lattice balances the full closed-return residue group",
+            "verify the global corrected charge map is rank-one beyond public exact closed-return flux",
+            "verify the corrected hidden split reduces public graph symmetry to a C2 stabilizer",
+            "verify the full augmented ledger stabilizer is identity after imposing counterterms/actions/charges",
+            "verify the canonical root-fixed exact flux-balance gauge is unique",
+            "verify the canonical gauge pushforward preserves the cycle-8 Loop_297/Pi_33 obstruction statement",
+            "verify the canonical finite Ward identity balances public zero, bare Pi_33 zero, and R33 residual",
             "verify the full Drinfeld idempotent matrix remains hash-only in the current JSON artifacts",
         ],
     }

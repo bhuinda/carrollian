@@ -143,7 +143,7 @@ def main() -> int:
                 if polynomially_faithful_representative_certified
                 else "The current evidence may be read as a representative/current-trace no-escape certificate for the accepted public proof-log and public DPLL fixtures, not as a SAT-complete family bridge."
             ),
-            "non_claim": "This certificate does not prove SAT-completeness, an X-extractor lower bound, or P != NP.",
+            "non_claim": "This certificate does not prove SAT-completeness or P != NP.",
         },
         "current_trace_surface": {
             "closed": trace_surface_closed,
@@ -155,7 +155,7 @@ def main() -> int:
             "may_claim_polynomially_faithful_representative_family": polynomially_faithful_representative_certified,
             "may_claim_full_separation": False,
             "reason": (
-                "The encoded-family bridge is witnessed at representative-family scope, but SAT-completeness and the X-extractor lower bound remain open."
+                "The encoded-family bridge is witnessed at representative-family scope, the X policy boundary is certified, and SAT-completeness remains open."
                 if polynomially_faithful_representative_certified
                 else "The encoded-family bridge is explicitly downgraded to representative/current-trace scope until a real reduction or polynomial-faithfulness certificate is added."
             ),
@@ -170,12 +170,8 @@ def main() -> int:
             "connect the reduction certificate to the C/V/X trace and no-escape ledger",
         ],
         "next_highest_yield_item": {
-            "id": "x_extractor_lower_bound" if polynomially_faithful_representative_certified else "encoded_family_sat_complete",
-            "action": (
-                "Attack the polynomial-size X-extractor lower bound; the encoded-family bridge is now witnessed only at representative-family scope."
-                if polynomially_faithful_representative_certified
-                else "Build the reduction certificate for the hidden e33-obstructed family, or keep the claim representative/current-trace scoped."
-            ),
+            "id": "cnf_to_parameterized_e33_packet_compiler",
+            "action": "Implement the public DIMACS-to-E(phi) packet compiler and replay checker that emits clause-local circuit data and validates SAT/UNSAT canaries against the schema.",
         },
     }
 

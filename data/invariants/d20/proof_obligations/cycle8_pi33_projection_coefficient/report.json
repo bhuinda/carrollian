@@ -1,14 +1,14 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "3f72161f9a24ea7e0d75de7f2029d3895bf04709db84288c47e55b49c5247c56",
+  "certificate_sha256": "360dff1af4d0c0f9a1a44d3fee27ae6a9dbbe15b4930c4d7f723b7df2def7348",
   "certified_maps": {
     "all_residue_class_height_transport": {
-      "carrier_sector": 33,
-      "needed_for": "classify height-derived residuals under the selected sector-33 carrier",
+      "needed_for": "classify height-derived residuals under the selected sector-33 support",
       "needed_type": "global Lambda_hc over all 2047 nonzero D20 closed-return classes",
       "nonzero_residue_class_count": 2047,
       "report": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
-      "status": "certified"
+      "status": "certified",
+      "support_sector": 33
     },
     "anomaly_cancelled_flux_balance_recovery": {
       "gamma8": {
@@ -36,6 +36,307 @@
       "needed_for": "convert the five D20 edges of gamma_8 into a closed-loop vector",
       "needed_type": "lambda_boundary: C_1(D20; F_1000003) -> Loop_297",
       "report": "data/invariants/d20/boundary_to_loop/report.json",
+      "status": "certified"
+    },
+    "canonical_finite_ward_identity": {
+      "needed_for": "state the certified balance terms: exact public flux gauge zero, bare Pi_33 zero, height-corrected R33 term -374784, height action +374784",
+      "needed_type": "explicit finite Ward identity for gamma_8 in the canonical flux-balance gauge",
+      "public_exact_flux": {
+        "flux_D20": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "public_exact_gauge_term": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "public_scalar_norm": 0,
+        "q_in": {
+          "J": 624,
+          "M": 912,
+          "P": -192,
+          "Phi": -192
+        },
+        "q_out": {
+          "J": 624,
+          "M": 912,
+          "P": -192,
+          "Phi": -192
+        }
+      },
+      "report": "data/invariants/d20/theorems/canonical_finite_ward_identity/report.json",
+      "status": "certified",
+      "tube_hidden_terms": {
+        "bare_pi33_term_used": 0,
+        "bare_pi33_terms_by_variant": {
+          "optical_weighted": 0,
+          "signed_orientation": 0,
+          "unweighted": 0
+        },
+        "height_action_term": 374784,
+        "height_corrected_r33_term": -374784,
+        "public_shadow_nonzero_counts": {
+          "q12": 0,
+          "q42": 0
+        }
+      },
+      "ward_identity": {
+        "equation": "0 + 0 - 374784 + 374784 = 0",
+        "scalar_sum": 0,
+        "terms": {
+          "bare_pi33": 0,
+          "height_action": 374784,
+          "height_corrected_R33": -374784,
+          "public_exact_gauge_scalar": 0
+        },
+        "total_scalar_balance": 0
+      }
+    },
+    "canonical_flux_balance_gauge": {
+      "canonical_marking": {
+        "canonical_oriented_edges_sha256": "821d8cd24688443397312f4a94a3a871271eaa213f055329ed9f3ea62649ff7d",
+        "canonical_root_charge": {
+          "J": -336,
+          "M": 720,
+          "P": -576,
+          "Phi": 192
+        },
+        "canonical_root_edge": {
+          "edge_id": 2,
+          "flux": {
+            "J": -128,
+            "M": 128,
+            "P": 896,
+            "Phi": -896
+          },
+          "interface_weight": 27648,
+          "selector_choice": 1,
+          "selector_duad_index": 5,
+          "source": 0,
+          "target": 11
+        },
+        "canonical_root_label": "{B-,B+,V-}",
+        "canonical_root_vertex": 0,
+        "canonical_vertex_order_by_public_charge": [
+          0,
+          11,
+          10,
+          5,
+          2,
+          4,
+          12,
+          1,
+          16,
+          13,
+          6,
+          3,
+          18,
+          7,
+          15,
+          17,
+          14,
+          9,
+          8,
+          19
+        ],
+        "unique_canonical_edge_marker_count": 30,
+        "unique_public_charge_vertex_count": 20
+      },
+      "exact_flux_gauge": {
+        "four_component_rooted_gauge_dimension": 0,
+        "four_component_unrooted_gauge_dimension": 4,
+        "incidence_rank_over_q": 19,
+        "root_fixed_reconstruction_inconsistencies": [],
+        "root_fixed_reconstruction_matches_public_charges": {
+          "0": true,
+          "1": true,
+          "10": true,
+          "11": true,
+          "12": true,
+          "13": true,
+          "14": true,
+          "15": true,
+          "16": true,
+          "17": true,
+          "18": true,
+          "19": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true,
+          "7": true,
+          "8": true,
+          "9": true
+        },
+        "root_zero_potential_sha256": "3d8df9516db4ba108450ed6a5cc2d1770488f23e8c1979af2b1ee735bece1153",
+        "rooted_incidence_rank_over_q": 20,
+        "scalar_rooted_gauge_dimension": 0,
+        "scalar_unrooted_gauge_dimension": 1
+      },
+      "needed_for": "remove the remaining additive exact-flux gauge and graph-symmetry gauge from the certified finite boundary screen",
+      "needed_type": "canonical finite boundary marking and root-fixed exact flux-balance gauge",
+      "report": "data/invariants/d20/theorems/canonical_flux_balance_gauge/report.json",
+      "residual_symmetry_gauge": {
+        "full_augmented_ledger_preserving_automorphism_ids": [
+          0
+        ],
+        "full_augmented_ledger_stabilizer_order": 1,
+        "hidden_split_stabilizer_order": 2
+      },
+      "status": "certified"
+    },
+    "canonical_loop_pi33_obstruction": {
+      "canonical_boundary_cycle": {
+        "canonical_root_edge": {
+          "edge_id": 2,
+          "flux": {
+            "J": -128,
+            "M": 128,
+            "P": 896,
+            "Phi": -896
+          },
+          "interface_weight": 27648,
+          "selector_choice": 1,
+          "selector_duad_index": 5,
+          "source": 0,
+          "target": 11
+        },
+        "canonical_root_vertex": 0,
+        "cycle8_contains_canonical_root_edge": true,
+        "cycle8_edge_ids": [
+          11,
+          1,
+          2,
+          22,
+          21
+        ],
+        "cycle8_vertices": [
+          10,
+          4,
+          0,
+          11,
+          13,
+          10
+        ],
+        "cycle8_visits_canonical_root": true,
+        "cycle_step_orientation_records": [
+          {
+            "added": "B-",
+            "canonical_orientation_sign": 1,
+            "canonical_source": 10,
+            "canonical_target": 4,
+            "cycle_source": 10,
+            "cycle_target": 4,
+            "edge_id": 11,
+            "is_canonical_root_edge": false,
+            "loop_base_object": "B+",
+            "removed": "B+",
+            "step_index": 0,
+            "step_vector_sha256": "a94e644efe6ecb178c4ad311d2cccded75f312696af314f477ab0126e7b46057"
+          },
+          {
+            "added": "B+",
+            "canonical_orientation_sign": -1,
+            "canonical_source": 0,
+            "canonical_target": 4,
+            "cycle_source": 4,
+            "cycle_target": 0,
+            "edge_id": 1,
+            "is_canonical_root_edge": false,
+            "loop_base_object": "V+",
+            "removed": "V+",
+            "step_index": 1,
+            "step_vector_sha256": "01da396bb80eaf4723edb2cdd62c35472895126381aabaf444df7aa08b8e4340"
+          },
+          {
+            "added": "S-",
+            "canonical_orientation_sign": 1,
+            "canonical_source": 0,
+            "canonical_target": 11,
+            "cycle_source": 0,
+            "cycle_target": 11,
+            "edge_id": 2,
+            "is_canonical_root_edge": true,
+            "loop_base_object": "B-",
+            "removed": "B-",
+            "step_index": 2,
+            "step_vector_sha256": "8a896ea0719a8c643e5f26f6cd677d25f55e0e4c817d6da80955395c3b57db19"
+          },
+          {
+            "added": "V+",
+            "canonical_orientation_sign": 1,
+            "canonical_source": 11,
+            "canonical_target": 13,
+            "cycle_source": 11,
+            "cycle_target": 13,
+            "edge_id": 22,
+            "is_canonical_root_edge": false,
+            "loop_base_object": "V-",
+            "removed": "V-",
+            "step_index": 3,
+            "step_vector_sha256": "f0a40ecfe2ffdb8ac8d535ed93f7b86739d7a08c79b9d78e3c4c681796c301ec"
+          },
+          {
+            "added": "V-",
+            "canonical_orientation_sign": -1,
+            "canonical_source": 10,
+            "canonical_target": 13,
+            "cycle_source": 13,
+            "cycle_target": 10,
+            "edge_id": 21,
+            "is_canonical_root_edge": false,
+            "loop_base_object": "S-",
+            "removed": "S-",
+            "step_index": 4,
+            "step_vector_sha256": "448efdfa0ff04f1254fcfaef7cc4f821c5a10acac0461d0a16fc95d8bf30e4a7"
+          }
+        ]
+      },
+      "hash_only_metadata": {
+        "full_drinfeld_projection": {
+          "character_table_materialized": false,
+          "character_table_sha256": "3751bdba9b90c17c6f5658fe45d1d4d76d1692ed8a84ea5e0cc78338245cab34",
+          "embedded_idempotent_matrix_sha256": "e9066713580845e187b29aaa41b148581e6c43266f993a010b3a192e4d41c8c7",
+          "embedded_idempotent_matrix_shape": [
+            39,
+            985
+          ],
+          "idempotent_matrix_materialized": false
+        },
+        "tube_section": {
+          "complete_section_materialized": false,
+          "projection_section_identity": true,
+          "section_hash_root": "ec0015d605c42f725b501cefd363b07b7e04a93e17abaa80ebae9d36b5d52a69"
+        }
+      },
+      "needed_for": "prove that the cycle-8 Pi_33 obstruction statement survives the canonical finite flux-balance gauge without materializing the full Drinfeld idempotent matrix",
+      "needed_type": "canonical-gauge pushforward through boundary-to-Loop_297 and tube-visible Pi_33 test",
+      "pi33_obstruction": {
+        "bare_lambda_coefficients_by_variant": {
+          "optical_weighted": 0,
+          "signed_orientation": 0,
+          "unweighted": 0
+        },
+        "bare_lambda_left_action_supports_by_variant": {
+          "optical_weighted": 0,
+          "signed_orientation": 0,
+          "unweighted": 0
+        },
+        "height_action": 374784,
+        "height_corrected_coefficient": -374784,
+        "lambda_boundary_gamma8_coefficient": 0,
+        "public_shadow_nonzero_counts": {
+          "q12": 0,
+          "q42": 0
+        },
+        "residual_integral": -374784
+      },
+      "report": "data/invariants/d20/theorems/canonical_loop_pi33_obstruction/report.json",
       "status": "certified"
     },
     "finite_anomaly_counter": {
@@ -5656,6 +5957,646 @@
       "report": "data/invariants/d20/theorems/gamma8_obstruction_correction/report.json",
       "status": "certified"
     },
+    "general_obstruction_correction_suite": {
+      "expected_corrected_maximal_packet_counts": {
+        "0": 80,
+        "1": 67,
+        "10": 50,
+        "2": 62,
+        "3": 70,
+        "4": 67,
+        "5": 50,
+        "6": 72,
+        "7": 60,
+        "8": 62,
+        "9": 70
+      },
+      "expected_minimal_signed_lifts": {
+        "0": -1,
+        "1": 1,
+        "10": 4,
+        "2": 5,
+        "3": -2,
+        "4": 1,
+        "5": 4,
+        "6": -5,
+        "7": -3,
+        "8": 5,
+        "9": -2
+      },
+      "needed_for": "decide whether gamma_8 is exceptional or part of a full basis-level correction table",
+      "needed_type": "minimal rank-one counterterms for every self-anomalous basis coordinate",
+      "report": "data/invariants/d20/theorems/general_obstruction_correction_suite/report.json",
+      "status": "certified"
+    },
+    "global_corrected_charge_map": {
+      "comparison": {
+        "augmented_closed_return_rank_over_f2": 1,
+        "gamma8": {
+          "basis_cycle_indices": [
+            8
+          ],
+          "corrected_R33_mod26": 13,
+          "hidden_corrected_z2": 1,
+          "in_hidden_kernel": false,
+          "mask": 256,
+          "public_exact_closed_update": {
+            "J": 0,
+            "M": 0,
+            "P": 0,
+            "Phi": 0
+          }
+        },
+        "hidden_corrected_rank_over_f2": 1,
+        "hidden_resolves_public_blind_masks": 1024,
+        "public_closed_return_rank_over_f2": 0,
+        "public_exact_blind_mask_count": 2048,
+        "rank_increment_from_hidden_R33": 1
+      },
+      "global_corrected_hidden_charge": {
+        "all_mask_rows_sha256": "0481e4d7acff8523679190a0518a7d69de7a09535f2e5a7ba3f56dcab6ddd871",
+        "basis_rows": [
+          {
+            "basis_cycle_id": 0,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              0,
+              1,
+              10,
+              8,
+              5
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 1,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              7,
+              26,
+              4,
+              3,
+              16,
+              14,
+              12,
+              6
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 2,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              8,
+              10,
+              11,
+              20,
+              9
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 3,
+            "corrected_R33_mod26": 0,
+            "edge_ids": [
+              12,
+              14,
+              16,
+              3,
+              0,
+              1,
+              11,
+              20,
+              24,
+              13
+            ],
+            "hidden_corrected_z2": 0,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 4,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              14,
+              16,
+              3,
+              0,
+              2,
+              23,
+              27,
+              15
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 5,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              3,
+              0,
+              2,
+              23,
+              17
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 6,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              10,
+              1,
+              0,
+              4,
+              18
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 7,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              16,
+              3,
+              4,
+              26,
+              19
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 8,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              11,
+              1,
+              2,
+              22,
+              21
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 9,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              27,
+              23,
+              22,
+              25,
+              28
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          },
+          {
+            "basis_cycle_id": 10,
+            "corrected_R33_mod26": 13,
+            "edge_ids": [
+              24,
+              20,
+              11,
+              1,
+              2,
+              22,
+              25,
+              29
+            ],
+            "hidden_corrected_z2": 1,
+            "public_exact_closed_update": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            },
+            "res_A985": {
+              "J": 0,
+              "M": 0,
+              "P": 0,
+              "Phi": 0
+            }
+          }
+        ],
+        "basis_values_mod26": [
+          13,
+          13,
+          13,
+          0,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13
+        ],
+        "coefficient_vector_over_f2": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "image_13_size": 1024,
+        "image_histogram": {
+          "0": 1024,
+          "13": 1024
+        },
+        "kernel_dimension": 10,
+        "kernel_size": 1024
+      },
+      "needed_for": "turn the corrected order-two hidden character into a recoverable finite charge map",
+      "needed_type": "explicit homomorphism comparing global corrected R33 to the public D20 exact charge basis",
+      "public_exact_flux_charge_basis": {
+        "closed_return_basis_vectors_mod2": {
+          "J": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "M": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "P": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Phi": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "closed_return_span_rank_over_f2": 0,
+        "components": [
+          "M",
+          "J",
+          "P",
+          "Phi"
+        ],
+        "edge_coboundary_rank_over_q": 4,
+        "edge_flux_component_rows_sha256": "de23ae17099bc455a59af54a1de80c788b2d3b40e88e8ba68ae80ff0a4c61d0f",
+        "state_charge_rank_over_q": 4,
+        "state_charge_rows_sha256": "11fc8f7b3d41322a8e35e4a54f16c933d659de4cc9b7a888285c04cc0f62ba1d"
+      },
+      "report": "data/invariants/d20/theorems/global_corrected_charge_map/report.json",
+      "status": "certified"
+    },
+    "global_corrected_hidden_split_symmetry": {
+      "graph": {
+        "degree_histogram": {
+          "3": 20
+        },
+        "edges": 30,
+        "public_automorphism_count": 120,
+        "public_pair_orbit_count": 5,
+        "public_vertex_orbits": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        ],
+        "vertices": 20
+      },
+      "needed_for": "decide which public boundary symmetries survive after the rank-one hidden closed-return character is imposed",
+      "needed_type": "classification of public D20 state/edge symmetries preserving the corrected hidden split",
+      "report": "data/invariants/d20/theorems/global_corrected_hidden_split_symmetry/report.json",
+      "status": "certified",
+      "symmetry_classification": {
+        "breaking_automorphism_count": 118,
+        "edge_orbits_under_hidden_split_stabilizer": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            27
+          ],
+          [
+            9,
+            28
+          ],
+          [
+            10,
+            23
+          ],
+          [
+            11,
+            22
+          ],
+          [
+            13
+          ],
+          [
+            16,
+            26
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            19
+          ],
+          [
+            20,
+            25
+          ],
+          [
+            21
+          ],
+          [
+            24,
+            29
+          ]
+        ],
+        "gamma8_images_under_hidden_split_stabilizer": [
+          256,
+          256
+        ],
+        "preserving_automorphism_count": 2,
+        "stabilizer_is_c2": true,
+        "vertex_orbits_under_hidden_split_stabilizer": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            17
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            5
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            18
+          ]
+        ]
+      }
+    },
+    "global_counterterm_lattice": {
+      "corrected_clock_histogram": {
+        "0": 1024,
+        "13": 1024
+      },
+      "counterterm_signed_lifts": [
+        -1,
+        1,
+        5,
+        -2,
+        1,
+        4,
+        -5,
+        -3,
+        5,
+        -2,
+        4
+      ],
+      "gamma8": {
+        "basis_cycle_indices": [
+          8
+        ],
+        "corrected_clock_mod26": 13,
+        "corrected_r33_norm_mod26": 13,
+        "height_action": 374784,
+        "included_in_global_corrected_group": true,
+        "mask": 256
+      },
+      "needed_for": "decide whether the whole closed-return residue group becomes corrected flux-balanced when all counterterms are active together",
+      "needed_type": "simultaneous activation law for the 11 rank-one sector-26 counterterms",
+      "report": "data/invariants/d20/theorems/global_counterterm_lattice/report.json",
+      "status": "certified"
+    },
     "height_coherent_transport": {
       "coefficient_signed": -374784,
       "height_action": 374784,
@@ -5664,17 +6605,113 @@
       "report": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
       "status": "certified"
     },
-    "minimal_composite_null_carriers_transport": {
+    "hidden_split_augmented_ledger_stabilizer": {
+      "candidate_group": {
+        "full_augmented_ledger_preserving_automorphism_ids": [
+          0
+        ],
+        "full_augmented_ledger_stabilizer_order": 1,
+        "hidden_split_stabilizer_order": 2
+      },
+      "needed_for": "decide whether the corrected hidden split supplies a nontrivial symmetry of the full sector-26/public/optical ledger, or only of the order-two hidden character",
+      "needed_type": "test whether the C2 hidden-split stabilizer preserves the augmented finite charge/action ledger",
+      "report": "data/invariants/d20/theorems/hidden_split_augmented_ledger_stabilizer/report.json",
+      "status": "certified",
+      "summary": {
+        "identity_preserves_everything": true,
+        "nonidentity_first_failures": {
+          "corrected_clock_mod26": null,
+          "edge_interface_weights": {
+            "column": "interface_weight",
+            "edge_id": 1,
+            "image_edge_id": 2,
+            "image_value": 27648,
+            "source_value": 55296
+          },
+          "normalized_optical_clock_mod26": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              4
+            ],
+            "image_mask": 16,
+            "image_value": 14,
+            "source_mask": 1,
+            "source_value": 12
+          },
+          "primitive_optical_action_weights": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              4
+            ],
+            "image_mask": 16,
+            "image_value": 1081344,
+            "source_mask": 1,
+            "source_value": 1075200
+          },
+          "public_oriented_edge_flux_components": {
+            "edge_id": 1,
+            "image_flux": {
+              "J": -128,
+              "M": 128,
+              "P": 896,
+              "Phi": -896
+            },
+            "image_oriented_edge": [
+              0,
+              11
+            ],
+            "source_flux": {
+              "J": 384,
+              "M": 384,
+              "P": 192,
+              "Phi": 192
+            },
+            "source_oriented_edge": [
+              0,
+              4
+            ]
+          },
+          "public_state_charge_components": {
+            "image_charge": {
+              "J": 240,
+              "M": 1296,
+              "P": 384,
+              "Phi": 1152
+            },
+            "image_vertex": 6,
+            "source_charge": {
+              "J": -704,
+              "M": 1088,
+              "P": -64,
+              "Phi": -320
+            },
+            "vertex": 2
+          },
+          "sector26_counterterm_vector_mod26": {
+            "basis_coordinate": 0,
+            "image_basis_cycle_indices": [
+              4
+            ],
+            "image_mask": 16,
+            "image_value": 1,
+            "source_mask": 1,
+            "source_value": 25
+          }
+        },
+        "nonidentity_preserves_only_corrected_hidden_layer": true
+      }
+    },
+    "minimal_composite_null_supports_transport": {
       "needed_for": "decide whether {6,26} and {25,26} are gauge zero, superselection degeneracy, or additional hidden boundary sectors",
-      "needed_type": "transport-rank classification of the minimal non-Pi_33 public-zero composite carriers",
-      "report": "data/invariants/d20/theorems/minimal_composite_null_carriers_transport/report.json",
+      "needed_type": "transport-rank classification of the minimal non-Pi_33 public-zero composite supports",
+      "report": "data/invariants/d20/theorems/minimal_composite_null_supports_transport/report.json",
       "self_transport_ranks": {
         "25,26": 2,
         "6,26": 5
       },
       "status": "certified_superselection_not_gauge",
       "transport_components": {
-        "mixed_S_channel_superselection_null_carrier": [
+        "mixed_S_channel_superselection_null_support": [
           6,
           26
         ],
@@ -5810,14 +6847,14 @@
       ],
       "status": "certified"
     },
-    "sector_idempotent_carrier_admissibility": {
-      "height_support_exact_carriers_for_certified_transport": [
+    "sector_idempotent_support_admissibility": {
+      "height_support_exact_supports_for_certified_transport": [
         [
           33
         ]
       ],
-      "needed_for": "separate primitive/support-exact Pi_33 uniqueness from composite public-zero null carriers",
-      "needed_type": "Boolean idempotent carrier classification inside the 39-sector orthogonal idempotent algebra",
+      "needed_for": "separate primitive/support-exact Pi_33 uniqueness from composite public-zero null supports",
+      "needed_type": "Boolean idempotent support classification inside the 39-sector orthogonal idempotent algebra",
       "nonzero_public_zero_boundary_null_supports": [
         [
           6,
@@ -5844,7 +6881,7 @@
       "primitive_single_sector_public_zero": [
         33
       ],
-      "report": "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
+      "report": "data/invariants/d20/theorems/sector_idempotent_support_admissibility/report.json",
       "status": "certified"
     },
     "sector_public_shadow_kernel": {
@@ -5883,20 +6920,21 @@
       "status": "certified",
       "typed_update_count": 2048
     },
-    "unique_single_sector_public_zero_carrier": {
+    "unique_single_sector_public_zero_support": {
       "local_pre_idempotent_keys_used": 109,
-      "needed_for": "prove the selected sector-33 carrier is the only single-sector public-zero carrier",
+      "needed_for": "prove the selected sector-33 support is the only single-sector public-zero support",
       "needed_type": "materialized comparison of all 39 tube-visible sector idempotents",
       "public_zero_sectors": [
         33
       ],
-      "report": "data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json",
+      "report": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
       "status": "certified"
     }
   },
   "checks": {
     "all_2047_nonzero_residue_classes_are_carried_by_sector33": true,
-    "all_nonzero_height_residuals_are_field_nonzero_for_unique_carrier": true,
+    "all_basis_coordinates_have_rank_one_corrections": true,
+    "all_nonzero_height_residuals_are_field_nonzero_for_unique_support": true,
     "all_residue_height_transport_is_certified": true,
     "anomaly_cancelled_flux_balance_recovery_is_certified": true,
     "augmented_boundary_charge_tracks_three_hidden_components": true,
@@ -5907,6 +6945,15 @@
     "boundary_cycle8_matches_target": true,
     "boundary_to_loop_map_is_certified": true,
     "boundary_to_loop_report_exists": true,
+    "canonical_finite_ward_identity_balances_height_corrected_r33": true,
+    "canonical_finite_ward_identity_has_zero_public_and_bare_terms": true,
+    "canonical_finite_ward_identity_is_certified": true,
+    "canonical_flux_balance_gauge_has_unique_root_and_orientation": true,
+    "canonical_flux_balance_gauge_is_certified": true,
+    "canonical_flux_balance_gauge_is_root_fixed_unique": true,
+    "canonical_loop_pi33_obstruction_is_certified": true,
+    "canonical_loop_pi33_obstruction_keeps_bare_zero_and_height_residual": true,
+    "canonical_loop_pi33_obstruction_uses_canonical_root_edge": true,
     "character_table_only_hash_materialized": true,
     "complete_tube_section_coefficients_not_materialized": true,
     "cycle8_is_the_target": true,
@@ -5921,18 +6968,32 @@
     "gamma8_is_not_in_recovered_flux_balance_sector": true,
     "gamma8_minimal_counterterm_is_5": true,
     "gamma8_obstruction_correction_is_certified": true,
+    "general_obstruction_correction_suite_is_certified": true,
+    "general_suite_opens_dimension4_for_every_coordinate": true,
+    "global_corrected_charge_map_compares_to_public_exact_basis": true,
+    "global_corrected_charge_map_detects_gamma8": true,
+    "global_corrected_charge_map_is_certified": true,
+    "global_corrected_hidden_split_symmetry_fixes_gamma8": true,
+    "global_corrected_hidden_split_symmetry_is_certified": true,
+    "global_corrected_hidden_split_symmetry_reduces_public_symmetry_to_c2": true,
+    "global_counterterm_lattice_balances_full_residue_group": true,
+    "global_counterterm_lattice_includes_gamma8": true,
+    "global_counterterm_lattice_is_certified": true,
     "height_coherent_transport_is_certified": true,
     "height_transport_public_shadows_are_zero": true,
     "height_transport_recovers_sector33_residual": true,
+    "hidden_split_augmented_ledger_stabilizer_is_certified": true,
+    "hidden_split_augmented_ledger_stabilizer_is_identity": true,
+    "hidden_split_nonidentity_breaks_augmented_ledger_fields": true,
     "idempotent_matrix_only_hash_materialized": true,
     "minimal_composite_transport_is_certified": true,
     "minimal_composites_are_isolated_from_pi33": true,
     "minimal_composites_are_superselection_not_gauge": true,
-    "pi33_is_unique_primitive_and_height_support_exact_carrier": true,
+    "pi33_is_unique_primitive_and_height_support_exact_support": true,
     "pi33_sector_interface_is_known": true,
     "pi33_tube_functional_is_certified": true,
     "pi33_uniqueness_is_coordinate_axis_not_linear_span": true,
-    "public_zero_idempotent_boundary_null_carriers_are_classified": true,
+    "public_zero_idempotent_boundary_null_supports_are_classified": true,
     "recovered_flux_balance_has_additive_R33_mod26": true,
     "sector26_alignment_is_recorded": true,
     "sector26_anomaly_cancellation_is_certified": true,
@@ -5940,36 +7001,44 @@
     "sector26_maximal_cancelled_packet_dimension_is_3": true,
     "sector26_mod26_optical_clock_is_complete": true,
     "sector26_quotient_cancellation_is_stable": true,
-    "sector33_is_unique_single_sector_public_zero_carrier": true,
+    "sector33_is_unique_single_sector_public_zero_support": true,
     "sector_attachment_is_certified": true,
-    "sector_idempotent_carrier_admissibility_is_certified": true,
+    "sector_idempotent_support_admissibility_is_certified": true,
     "sector_public_shadow_kernel_is_certified": true,
     "superselection_flux_extension_is_certified": true,
     "tube_section_is_certified": true,
     "two_composite_labels_are_non_gauge_and_R33_isolated_in_flux_extension": true,
     "typed_nonexact_optical_flux_update_is_certified": true,
     "typed_nonexact_optical_flux_updates_R33_only": true,
-    "unique_public_zero_carrier_is_certified": true
+    "unique_public_zero_support_is_certified": true
   },
-  "claim": "The boundary-to-Loop_297 lift for gamma_8 is certified, and the tube-visible Pi_33 functional has been reconstructed from the stored local pre-idempotents. For the bare lambda_boundary lift, c_33(gamma_8)=0. The refined height-coherent transport derives its scalar from the active edge circuit height action and recovers the sector-33 residual -374784 with zero A42/A12 public shadow. Materializing all 39 tube-visible sector idempotents proves that sector 33 is the unique single-sector public-zero carrier. The full linear public-zero sector span is also classified: the combined A42/A12 shadow matrix has rank 12 and kernel dimension 27, so Pi_33 uniqueness is coordinate-axis/single-sector uniqueness, not uniqueness in the unconstrained linear span. The idempotent carrier classification shows five nonzero public-zero boundary-null idempotent sector sums; Pi_33 is the unique primitive carrier and the unique support-exact carrier for the certified sector-33 height transport. The two minimal non-Pi_33 null composites are not gauge zero: {6,26} and {25,26} have positive self-transport and zero transport to/from Pi_33, so they are isolated public-zero superselection carriers. The finite flux-balance ledger is extended with hidden components R33, K_mixed_S, and K_pure_Sminus so public-zero hidden transport is not collapsed into gauge zero. The non-exact optical/action update sends all certified nonzero height residuals to R33 while reserving K_mixed_S and K_pure_Sminus for separately certified superselection-null events. The sector-26 invariant suite now certifies the shared composite seam, stable A42/A12 quotient cancellation, hidden transport form diag-Smith data, and the complete mod-26 normalized optical residue clock. The finite anomaly-counter theorem proves that this mod-26 clock is not a linear xor character; its exact additivity defect is an even-valued sector-26 anomaly counter whose half hits all mod-13 classes while the mod-2 parity shadow remains the additive character. The anomaly-cancellation theorem classifies the cancelled closed-return packets: the maximal dimension is 3, there are 88 strongest size-8 packets and 90 terminal size-4 packets, and gamma_8 is excluded by nonzero self half-anomaly. The anomaly-cancelled flux-balance recovery theorem then restricts the typed non-exact ledger to those packets: exact public flux closes and normalized R33 transport becomes additive modulo 26. The gamma_8 obstruction correction theorem identifies the unique local sector-26 counterterm: add +5 to normalized R33 on basis coordinate 8, sending gamma_8 to the order-two value 13.",
-  "closure_state": "bare_lambda_zero; height_coherent_transport_recovers_nonzero_residual; sector33_unique_single_sector_public_zero_carrier; public_shadow_kernel_dimension_27; public_zero_idempotent_carriers_classified; minimal_composite_superselection_transport_classified; augmented_flux_ledger_certified; typed_nonexact_optical_flux_update_certified; sector26_invariant_suite_certified; finite_anomaly_counter_certified; sector26_anomaly_cancellation_certified; anomaly_cancelled_flux_balance_recovery_certified; gamma8_obstruction_correction_certified",
+  "claim": "The boundary-to-Loop_297 lift for gamma_8 is certified, and the tube-visible Pi_33 functional has been reconstructed from the stored local pre-idempotents. For the bare lambda_boundary lift, c_33(gamma_8)=0. The refined height-coherent transport derives its scalar from the active edge circuit height action and recovers the sector-33 residual -374784 with zero A42/A12 public shadow. Materializing all 39 tube-visible sector idempotents proves that sector 33 is the unique single-sector public-zero support. The full linear public-zero sector span is also classified: the combined A42/A12 shadow matrix has rank 12 and kernel dimension 27, so Pi_33 uniqueness is coordinate-axis/single-sector uniqueness, not uniqueness in the unconstrained linear span. The idempotent support classification shows five nonzero public-zero boundary-null idempotent sector sums; Pi_33 is the unique primitive support and the unique support-exact support for the certified sector-33 height transport. The two minimal non-Pi_33 null composites are not gauge zero: {6,26} and {25,26} have positive self-transport and zero transport to/from Pi_33, so they are isolated public-zero superselection supports. The finite flux-balance ledger is extended with hidden components R33, K_mixed_S, and K_pure_Sminus so public-zero hidden transport is not collapsed into gauge zero. The non-exact optical/action update sends all certified nonzero height residuals to R33 while reserving K_mixed_S and K_pure_Sminus for separately certified superselection-null events. The sector-26 invariant suite now certifies the shared composite seam, stable A42/A12 quotient cancellation, hidden transport form diag-Smith data, and the complete mod-26 normalized optical residue clock. The finite anomaly-counter theorem proves that this mod-26 clock is not a linear xor character; its exact additivity defect is an even-valued sector-26 anomaly counter whose half hits all mod-13 classes while the mod-2 parity shadow remains the additive character. The anomaly-cancellation theorem classifies the cancelled closed-return packets: the maximal dimension is 3, there are 88 strongest size-8 packets and 90 terminal size-4 packets, and gamma_8 is excluded by nonzero self half-anomaly. The anomaly-cancelled flux-balance recovery theorem then restricts the typed non-exact ledger to those packets: exact public flux closes and normalized R33 transport becomes additive modulo 26. The gamma_8 obstruction correction theorem identifies the unique local sector-26 counterterm: add +5 to normalized R33 on basis coordinate 8, sending gamma_8 to the order-two value 13. The general obstruction-correction suite proves this is one row of a full 11-coordinate table: every basis coordinate is self-anomalous and admits a rank-one correction. The global counterterm-lattice theorem activates all 11 corrections together, annihilates the full half-anomaly form, and makes normalized R33 an additive order-two character on all 2048 masks.",
+  "closure_state": "bare_lambda_zero; height_coherent_transport_recovers_nonzero_residual; sector33_unique_single_sector_public_zero_support; public_shadow_kernel_dimension_27; public_zero_idempotent_supports_classified; minimal_composite_superselection_transport_classified; augmented_flux_ledger_certified; typed_nonexact_optical_flux_update_certified; sector26_invariant_suite_certified; finite_anomaly_counter_certified; sector26_anomaly_cancellation_certified; anomaly_cancelled_flux_balance_recovery_certified; gamma8_obstruction_correction_certified; general_obstruction_correction_suite_certified; global_counterterm_lattice_certified; global_corrected_charge_map_certified; global_corrected_hidden_split_symmetry_certified; hidden_split_augmented_ledger_stabilizer_certified; canonical_flux_balance_gauge_certified; canonical_loop_pi33_obstruction_certified; canonical_finite_ward_identity_certified",
   "formal_obligation": {
     "anomaly_cancelled_flux_balance_recovery": "discharged by data/invariants/d20/theorems/anomaly_cancelled_flux_balance_recovery/report.json",
+    "canonical_finite_ward_identity": "discharged by data/invariants/d20/theorems/canonical_finite_ward_identity/report.json",
+    "canonical_flux_balance_gauge": "discharged by data/invariants/d20/theorems/canonical_flux_balance_gauge/report.json",
+    "canonical_loop_pi33_obstruction": "discharged by data/invariants/d20/theorems/canonical_loop_pi33_obstruction/report.json",
     "define_boundary_lift": "discharged by data/invariants/d20/boundary_to_loop/report.json",
     "finite_anomaly_counter": "discharged by data/invariants/d20/theorems/finite_anomaly_counter/report.json",
     "gamma8_obstruction_correction": "discharged by data/invariants/d20/theorems/gamma8_obstruction_correction/report.json",
+    "general_obstruction_correction_suite": "discharged by data/invariants/d20/theorems/general_obstruction_correction_suite/report.json",
+    "global_corrected_charge_map": "discharged by data/invariants/d20/theorems/global_corrected_charge_map/report.json",
+    "global_corrected_hidden_split_symmetry": "discharged by data/invariants/d20/theorems/global_corrected_hidden_split_symmetry/report.json",
+    "global_counterterm_lattice": "discharged by data/invariants/d20/theorems/global_counterterm_lattice/report.json",
     "height_coherent_recovery": "discharged for gamma_8 by data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
-    "idempotent_carrier_admissibility": "discharged by data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
+    "hidden_split_augmented_ledger_stabilizer": "discharged by data/invariants/d20/theorems/hidden_split_augmented_ledger_stabilizer/report.json",
+    "idempotent_support_admissibility": "discharged by data/invariants/d20/theorems/sector_idempotent_support_admissibility/report.json",
     "materialize_or_recompute_pi33_functional": "discharged for the tube-visible Loop_297 functional by data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
-    "minimal_composite_transport_classification": "discharged by data/invariants/d20/theorems/minimal_composite_null_carriers_transport/report.json",
+    "minimal_composite_transport_classification": "discharged by data/invariants/d20/theorems/minimal_composite_null_supports_transport/report.json",
     "public_shadow_kernel_classification": "discharged by data/invariants/d20/theorems/sector_public_shadow_kernel/report.json",
-    "remaining_recovery_obligation": "Generalize obstruction correction: classify minimal rank-one counterterms for every self-anomalous basis coordinate and compare their corrected packet geometries.",
+    "remaining_recovery_obligation": "Generalize the canonical Ward identity from gamma_8 to all 2048 closed-return masks using the global counterterm lattice and all-residue height-coherent transport.",
     "sector26_anomaly_cancellation": "discharged by data/invariants/d20/theorems/sector26_anomaly_cancellation/report.json",
     "sector26_invariant_suite": "discharged by data/invariants/d20/theorems/sector26_invariant_suite/report.json",
     "superselection_flux_balance_extension": "discharged by data/invariants/d20/theorems/superselection_flux_balance_extension/report.json",
     "then_compute": "c_33(gamma_8) = 0 for the certified bare lambda_boundary lift in F_1000003.",
     "typed_nonexact_optical_flux_update": "discharged by data/invariants/d20/theorems/typed_nonexact_optical_flux_update/report.json",
-    "unique_single_sector_carrier": "discharged by data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json"
+    "unique_single_sector_support": "discharged by data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json"
   },
   "inputs": {
     "anomaly_cancelled_flux_balance_recovery_report": {
@@ -5996,9 +7065,17 @@
       "path": "data/invariants/d20/theorems/gamma8_obstruction_correction/report.json",
       "sha256": "da5d4892e98659bd817695a28999353eafc40d086667e6b2a7c6a086eb4f7656"
     },
-    "minimal_composite_null_carriers_transport_report": {
-      "path": "data/invariants/d20/theorems/minimal_composite_null_carriers_transport/report.json",
-      "sha256": "bbf698f1b4fe439e600e4a588d224fcc475744d56df76c917d1b9f675100933b"
+    "general_obstruction_correction_suite_report": {
+      "path": "data/invariants/d20/theorems/general_obstruction_correction_suite/report.json",
+      "sha256": "f82342debc99f3e3e6e937450fb94fb83b5c080e5fc104a0d19b1187f82193b1"
+    },
+    "global_counterterm_lattice_report": {
+      "path": "data/invariants/d20/theorems/global_counterterm_lattice/report.json",
+      "sha256": "23338d846464d5f0cfb438f2968d4736ea98bbd9bf2bff22f6f64b603215d9c1"
+    },
+    "minimal_composite_null_supports_transport_report": {
+      "path": "data/invariants/d20/theorems/minimal_composite_null_supports_transport/report.json",
+      "sha256": "940820ed0e1cc822d0a663eac05c688c7e652698a162de2c4b2fcf0a4bb08601"
     },
     "primitive_cycles": {
       "path": "data/invariants/hcycle/subscript_Hcycle_primitive_cycles.csv",
@@ -6010,11 +7087,11 @@
     },
     "sector26_invariant_suite_report": {
       "path": "data/invariants/d20/theorems/sector26_invariant_suite/report.json",
-      "sha256": "fae8fbb0293b786922d2ce6e5912a60053b47ad0cb5145ae2d9ac4f32de24783"
+      "sha256": "e8dcb12e8eb4ca2b31d880100dd128547d5ee1ab5a72bf0e3ebf217f0b966a0e"
     },
     "sector33_all_residue_height_transport_report": {
       "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
-      "sha256": "706a8a3d369f2b0f29f87c60ad3b43781f9c52c4e9a6d276e26c6d1413fd01ed"
+      "sha256": "a9e98422d6c185e3408f3f54c620970c270ce87b2734333c4e070f746dffd07f"
     },
     "sector33_boundary_annihilation_report": {
       "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
@@ -6024,25 +7101,25 @@
       "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
       "sha256": "a33668aef24f3405c5f7c4caa5f1301d076ac6c778f7e54afcaff1b61e71f708"
     },
-    "sector33_unique_public_zero_carrier_report": {
-      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_carrier/report.json",
-      "sha256": "07999ea95f16fffa8a1007b13692434765995a57a8d6a6e5ce6b80f7ebbe4d62"
+    "sector33_unique_public_zero_support_report": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
+      "sha256": "72d94a621f2dc84f7407673a676ba1cf46651f4284e91332b82a14bd0788f1c8"
     },
     "sector_attachment_report": {
       "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
       "sha256": "1f45285b55ce8cc9564e98acb0700b30c395dfff44c052780a224fa0c291b2fb"
     },
-    "sector_idempotent_carrier_admissibility_report": {
-      "path": "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
-      "sha256": "cc17a32a4d8ff6fea00a192523a75ae22474a3348588dca83402cd93db2367df"
+    "sector_idempotent_support_admissibility_report": {
+      "path": "data/invariants/d20/theorems/sector_idempotent_support_admissibility/report.json",
+      "sha256": "66a377f73fd896b9dcd762c5c0dad678f2e30b42f36c764716856a6fa8bfc16d"
     },
     "sector_public_shadow_kernel_report": {
       "path": "data/invariants/d20/theorems/sector_public_shadow_kernel/report.json",
-      "sha256": "3b50eb329960eefb7217d0bca83b54aade5331347fda7176740fb03345a57ccd"
+      "sha256": "aa3dfc05f6557b02bd49c4510b0c9ba96906c50d136b72b702657968343d2497"
     },
     "superselection_flux_balance_extension_report": {
       "path": "data/invariants/d20/theorems/superselection_flux_balance_extension/report.json",
-      "sha256": "1243aa0d50221a119262dfccddfbab1215eebef0e6fe96c7fb6d2979f30df9b2"
+      "sha256": "2beed073a40a15e4c22b87552a2bcad571dfb1304b2277049741f36e7579feaa"
     },
     "tube_projection_section": {
       "path": "layers/tube/projection_section.json",
@@ -6050,7 +7127,7 @@
     },
     "typed_nonexact_optical_flux_update_report": {
       "path": "data/invariants/d20/theorems/typed_nonexact_optical_flux_update/report.json",
-      "sha256": "41e36fdd44053f3d57468971ec9d527392f8093e50aaac2c9ca7747d2d86b34e"
+      "sha256": "c1d607de72519b49b5b5fcf5526ae3e55bbd60ff03a0f2ec0acd71d0f9147c52"
     },
     "wedderburn_trace": {
       "path": "layers/drinfeld/wedderburn_trace.json",
@@ -6062,10 +7139,10 @@
       "definition": {
         "basis_active_circuit_matrix": "The 2048 x 11 matrix whose rows are basis-cycle activation masks in the residue spectrum.",
         "basis_height_cochain": "h_B(c_i)=optical_action(c_i) for each primitive basis cycle.",
-        "carrier_sector": "Pi_33, because e_33 is public-zero and chi_33(e_33)=dim(Pi_33).",
         "edge_mod2_caveat": "The 2048 x 30 incidence_vector_mod2 matrix records edge symmetric differences, not traversal multiplicity, so it is not globally height-coherent.",
         "global_transport": "Lambda_hc(gamma)=lambda_boundary(gamma)-(<C_gamma,h>/dim(Pi_33))e_33.",
-        "height_coherence": "For every residue row C_gamma, <C_gamma,h_B> equals total_optical_action."
+        "height_coherence": "For every residue row C_gamma, <C_gamma,h_B> equals total_optical_action.",
+        "support_sector": "Pi_33, because e_33 is public-zero and chi_33(e_33)=dim(Pi_33)."
       },
       "edge_mod2_height_incoherence": {
         "first_mismatch": {
@@ -12282,6 +13359,383 @@
       },
       "status": "D20_GAMMA8_OBSTRUCTION_CORRECTION_CERTIFIED"
     },
+    "general_obstruction_correction_suite": {
+      "definition": {
+        "coordinate_counterterm": "For basis coordinate i with half-anomaly weight w_i mod 13, subtract a rank-one term w_i x_i y_i from the half-anomaly form and lift w_i to the minimal signed mod-26 counterterm in the R33 clock.",
+        "corrected_coordinate_packet": "A maximal xor-closed packet for the corrected half-anomaly form associated to one coordinate."
+      },
+      "expected_corrected_maximal_packet_counts": {
+        "0": 80,
+        "1": 67,
+        "10": 50,
+        "2": 62,
+        "3": 70,
+        "4": 67,
+        "5": 50,
+        "6": 72,
+        "7": 60,
+        "8": 62,
+        "9": 70
+      },
+      "expected_minimal_signed_lifts": {
+        "0": -1,
+        "1": 1,
+        "10": 4,
+        "2": 5,
+        "3": -2,
+        "4": 1,
+        "5": 4,
+        "6": -5,
+        "7": -3,
+        "8": 5,
+        "9": -2
+      },
+      "gamma8_coordinate": {
+        "all_corrected_maximal_packets_sha256": "5aa758b3f392e164b1cb87fa7525ede6fda827b41fa69141213e0d5c6b28a7f0",
+        "chosen_counterterm_mod26": 5,
+        "chosen_counterterm_signed": 5,
+        "coordinate": 8,
+        "corrected_additive_failure_count": 0,
+        "corrected_basis_clock_mod26": 13,
+        "corrected_basis_r33_norm_mod26": 13,
+        "corrected_clock_image_count": {
+          "0,13": 62
+        },
+        "corrected_maximal_packet_count": 62,
+        "corrected_maximal_packet_count_by_dimension": {
+          "3": 32,
+          "4": 30
+        },
+        "corrected_maximal_packets_containing_target": 62,
+        "corrected_subspace_dimension_counts": {
+          "0": 1,
+          "1": 163,
+          "2": 805,
+          "3": 421,
+          "4": 30
+        },
+        "counterterm_mod13": 5,
+        "counterterm_mod26_solutions": [
+          5,
+          18
+        ],
+        "counterterm_signed_solutions": [
+          5,
+          -8
+        ],
+        "original_clock_mod26": 18,
+        "original_r33_norm_mod26": 8,
+        "original_weight_mod13": 5,
+        "sample_corrected_maximal_packets": [
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              184
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              184,
+              187,
+              252,
+              255,
+              256,
+              259,
+              324,
+              327,
+              440,
+              443,
+              508,
+              511
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              552,
+              555,
+              620,
+              623,
+              808,
+              811,
+              876,
+              879
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              688,
+              691,
+              756,
+              759,
+              944,
+              947,
+              1012,
+              1015
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              1176,
+              1179,
+              1244,
+              1247,
+              1432,
+              1435,
+              1500,
+              1503
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              1544,
+              1547,
+              1612,
+              1615,
+              1800,
+              1803,
+              1868,
+              1871
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              68,
+              71,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              68,
+              71,
+              256,
+              259,
+              324,
+              327,
+              1680,
+              1683,
+              1748,
+              1751,
+              1936,
+              1939,
+              2004,
+              2007
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              140,
+              256
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              140,
+              143,
+              252,
+              255,
+              256,
+              259,
+              368,
+              371,
+              396,
+              399,
+              508,
+              511
+            ]
+          },
+          {
+            "basis_masks": [
+              3,
+              112,
+              256,
+              259
+            ],
+            "clock_image_mod26": [
+              0,
+              13
+            ],
+            "contains_target": true,
+            "dimension": 4,
+            "masks": [
+              0,
+              3,
+              112,
+              115,
+              256,
+              259,
+              368,
+              371,
+              644,
+              647,
+              756,
+              759,
+              900,
+              903,
+              1012,
+              1015
+            ]
+          }
+        ],
+        "target_mask": 256
+      },
+      "status": "D20_GENERAL_OBSTRUCTION_CORRECTION_SUITE_CERTIFIED"
+    },
+    "global_counterterm_lattice": {
+      "corrected_basis_clock_mod26": [
+        13,
+        13,
+        13,
+        0,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "corrected_clock_histogram": {
+        "0": 1024,
+        "13": 1024
+      },
+      "counterterm_signed_lifts": [
+        -1,
+        1,
+        5,
+        -2,
+        1,
+        4,
+        -5,
+        -3,
+        5,
+        -2,
+        4
+      ],
+      "definition": {
+        "corrected_balance": "Exact public D20 flux closes, and R33_global(mask)=-f_global(mask) is additive modulo 26 on the whole closed-return residue group.",
+        "corrected_clock": "f_global(mask)=f_26(mask)-sum_i k_i mask_i mod 26, where k_i are the signed-lift counterterms reduced modulo 26.",
+        "global_counterterm_lattice": "The 11-coordinate counterterm vector with signed lifts [-1,1,5,-2,1,4,-5,-3,5,-2,4], activated on the corresponding basis cycle coordinates."
+      },
+      "gamma8": {
+        "basis_cycle_indices": [
+          8
+        ],
+        "corrected_clock_mod26": 13,
+        "corrected_r33_norm_mod26": 13,
+        "height_action": 374784,
+        "included_in_global_corrected_group": true,
+        "mask": 256
+      },
+      "status": "D20_GLOBAL_COUNTERTERM_LATTICE_CERTIFIED"
+    },
     "height_coherent_transport": {
       "active_circuit": {
         "active_matrix_row": [
@@ -12453,20 +13907,20 @@
         "primitive_idempotents_loop_sha256": "6c85edf3515e8e78f20c7e01c131691e581806138f225f59e95a8c9fc067b193"
       }
     },
-    "minimal_composite_null_carriers_transport": {
+    "minimal_composite_null_supports_transport": {
       "definition": {
         "isolated_from_pi33": "Both E_C A985 e_33 and e_33 A985 E_C have rank zero.",
-        "not_gauge_zero": "A public-zero carrier with positive self-transport rank and positive permutation rank.",
-        "superselection_null_carrier": "A public-zero carrier with nonzero internal transport that is isolated from the primitive height-residual carrier.",
+        "not_gauge_zero": "A public-zero support with positive self-transport rank and positive permutation rank.",
+        "superselection_null_support": "A public-zero support with nonzero internal transport that is isolated from the primitive height-residual support.",
         "transport_rank_formula": "For Boolean sums E_C=sum_{s in C} e_s of certified pairwise orthogonal central sector idempotents, dim(E_C A985 E_D)=sum_{s in C intersection D} dim(s)^2."
       },
       "self_transport_ranks": {
         "25,26": 2,
         "6,26": 5
       },
-      "status": "D20_MINIMAL_COMPOSITE_NULL_CARRIERS_TRANSPORT_CLASSIFIED",
+      "status": "D20_MINIMAL_COMPOSITE_NULL_SUPPORTS_TRANSPORT_CLASSIFIED",
       "transport_components": {
-        "mixed_S_channel_superselection_null_carrier": [
+        "mixed_S_channel_superselection_null_support": [
           6,
           26
         ],
@@ -13062,14 +14516,14 @@
       },
       "status": "D20_SECTOR26_INVARIANT_SUITE_CERTIFIED"
     },
-    "sector_idempotent_carrier_admissibility": {
+    "sector_idempotent_support_admissibility": {
       "definition": {
         "boolean_sector_idempotent": "Because the 39 sector idempotents are verified pairwise orthogonal, an idempotent in their span with sector-coordinate coefficients restricted by multiplication has 0/1 sector support.",
-        "boundary_null": "The carrier annihilates all 30 directed boundary-to-loop pair projections on both left and right.",
-        "height_support_exact": "The carrier support is exactly the certified carrier sector support {33} used by the all-residue height-coherent transport report.",
-        "public_zero_idempotent_carrier": "A Boolean sector sum whose combined A42/A12 public shadow is zero."
+        "boundary_null": "The support annihilates all 30 directed boundary-to-loop pair projections on both left and right.",
+        "height_support_exact": "The support support is exactly the certified support sector support {33} used by the all-residue height-coherent transport report.",
+        "public_zero_idempotent_support": "A Boolean sector sum whose combined A42/A12 public shadow is zero."
       },
-      "height_support_exact_carriers_for_certified_transport": [
+      "height_support_exact_supports_for_certified_transport": [
         [
           33
         ]
@@ -13123,7 +14577,7 @@
       "primitive_single_sector_public_zero": [
         33
       ],
-      "status": "D20_SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_CLASSIFIED"
+      "status": "D20_SECTOR_IDEMPOTENT_SUPPORT_ADMISSIBILITY_CLASSIFIED"
     },
     "sector_interface": {
       "a985_sector": 33,
@@ -13202,7 +14656,7 @@
             "K_pure_Sminus": 0,
             "R33": 0
           },
-          "name": "mixed_S_null_carrier",
+          "name": "mixed_S_null_support",
           "public_components": {
             "J": 0,
             "M": 0,
@@ -13272,10 +14726,10 @@
         }
       ],
       "definition": {
-        "admissible_hidden_states": "The six certified Boolean public-zero idempotent carriers: zero, R33, K_mixed_S, K_pure_Sminus, K_mixed_S+R33, and K_pure_Sminus+R33. K_mixed_S+K_pure_Sminus is not a certified public-zero carrier because the two labels overlap through sector 26.",
+        "admissible_hidden_states": "The six certified Boolean public-zero idempotent supports: zero, R33, K_mixed_S, K_pure_Sminus, K_mixed_S+R33, and K_pure_Sminus+R33. K_mixed_S+K_pure_Sminus is not a certified public-zero support because the two labels overlap through sector 26.",
         "augmented_boundary_charge": "Q_ext=(M,J,P,Phi;R33,K_mixed_S,K_pure_Sminus), where the first four components are the public exact-flux charges and the last three components track the finite public-zero hidden fiber.",
         "new_superselection_labels": {
-          "K_mixed_S": "{6,26}, the mixed S-/S+ public-zero carrier",
+          "K_mixed_S": "{6,26}, the mixed S-/S+ public-zero support",
           "K_pure_Sminus": "{25,26}, the pure S- public-zero doublet"
         }
       },
@@ -13376,8 +14830,6 @@
         "basis_cycle_ids": [
           8
         ],
-        "carrier_component": "R33",
-        "carrier_sector": 33,
         "event_type": "nonexact_optical_height_residual",
         "height_action": 374784,
         "hidden_update_integral": {
@@ -13399,6 +14851,8 @@
           "Phi": 0
         },
         "residual_matches_negative_height_action": true,
+        "support_component": "R33",
+        "support_sector": 33,
         "transport_scalar": 812611,
         "transport_scalar_signed": -187392
       },
@@ -13406,9 +14860,9 @@
       "status": "D20_TYPED_NONEXACT_OPTICAL_FLUX_UPDATE_CERTIFIED",
       "typed_update_count": 2048
     },
-    "unique_public_zero_carrier": {
+    "unique_public_zero_support": {
       "definition": {
-        "public_zero_carrier": "A sector idempotent e_s with q42(e_s)=0 and q12(e_s)=0.",
+        "public_zero_support": "A sector idempotent e_s with q42(e_s)=0 and q12(e_s)=0.",
         "single_sector_uniqueness": "Among the 39 materialized tube-visible sector idempotents, exactly one has zero public A42/A12 shadow: e_33.",
         "tube_visible_sector_idempotent": "For each sector profile, sum the local closed-loop pre-idempotents named in its spectral_signature."
       },
@@ -13419,8 +14873,8 @@
         33
       ],
       "sector_count": 39,
-      "status": "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_CARRIER_CERTIFIED",
-      "unique_public_zero_carrier": {
+      "status": "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_SUPPORT_CERTIFIED",
+      "unique_public_zero_support": {
         "active_objects": [
           "B+",
           "S+"
@@ -13462,16 +14916,11 @@
       "needed_for": "compare the tube-visible zero coefficient against the full A985 projection model",
       "needed_type": "full 39 x 985 Drinfeld idempotent/character coordinate matrix",
       "status": "hash-only in current JSON artifacts"
-    },
-    "general_obstruction_correction_suite": {
-      "needed_for": "compare corrected packet geometries across the full closed-return basis and determine whether gamma_8 is exceptional or representative",
-      "needed_type": "minimal rank-one counterterms for all self-anomalous basis coordinates",
-      "status": "not yet certified"
     }
   },
-  "next_highest_yield_item": "Generalize obstruction correction across all self-anomalous basis coordinates.",
+  "next_highest_yield_item": "Generalize the canonical Ward identity from gamma_8 to all 2048 closed-return masks using the global counterterm lattice and all-residue height-coherent transport.",
   "object": "d20",
   "schema": "d20.proof_obligation.cycle8_pi33_projection_coefficient.source_drop",
-  "status": "D20_CYCLE8_PI33_GAMMA8_OBSTRUCTION_CORRECTION_CERTIFIED",
+  "status": "D20_CYCLE8_PI33_CANONICAL_WARD_IDENTITY_CERTIFIED",
   "target": "Compute c_33(gamma_8)=Pi_33(lambda_boundary(gamma_8)), where lambda_boundary maps D20 closed boundary chains into Loop_297."
 }
