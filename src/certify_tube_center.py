@@ -153,7 +153,7 @@ def compute_tube_center_algebra_lift() -> Dict[str, Any]:
             'sampled_center_associativity_failures': int(failures),
         })
     result = {
-        'schema': 'gnatural.c985.tube_center_algebra_lift.v1',
+        'schema': 'gnatural.c985.tube_center_algebra_lift.source_drop',
         'scope': 'Finite-field center-subalgebra basis and multiplication certificate for the six closed-loop tube blocks. This is still not primitive idempotents or full Drinfeld-center modular data.',
         'field': {'prime': p0, 'note': 'large finite field used for exact modular linear algebra'},
         'center_algebra': {

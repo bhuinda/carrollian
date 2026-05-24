@@ -1,0 +1,46 @@
+{
+  "required_fields": {
+    "builder_point_distribution_7": {
+      "description": "point-resolved distribution or incidence of each builder label over the seven Fano points, not just P1/L3/F7 zone aggregates",
+      "shape": [
+        "16",
+        "7"
+      ]
+    },
+    "builder_signed_edge_action": {
+      "description": "permutation or signed monomial action of signed-Fano/D6 generators on builder labels",
+      "shape": [
+        "group_size",
+        "16"
+      ]
+    },
+    "jabber_point_distribution_7": {
+      "description": "point-resolved distribution or incidence of each jabber label over the seven Fano points",
+      "shape": [
+        "16",
+        "7"
+      ]
+    },
+    "jabber_signed_edge_action": {
+      "description": "permutation or signed monomial action of signed-Fano/D6 generators on jabber labels",
+      "shape": [
+        "group_size",
+        "16"
+      ]
+    },
+    "quotient_maps_to_A42_A12": {
+      "description": "map connecting strategy labels to A42/A12 classes if global tower descent is to be certified",
+      "shape": "implementation-dependent"
+    },
+    "six_channel_signed_coordinates": {
+      "description": "coordinates resolving B-,B+,V-,V+,S-,S+ including sign/orientation if signed-D6 is to be tested",
+      "shape": [
+        "16",
+        "6",
+        "optional_sign"
+      ]
+    }
+  },
+  "schema": "required_data_for_global_signed_fano_certification",
+  "why_current_data_fails": "source_drop supplies only zone aggregates P1, L3_minus_P1, F7_minus_L3. This recovers the 8-element incident flag stabilizer exactly but cannot recover the 24-element point stabilizer S4 or signed-D6 actions on the 16 labels."
+}

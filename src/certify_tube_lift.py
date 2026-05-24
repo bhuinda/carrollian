@@ -154,7 +154,7 @@ def compute_tube_center_lift() -> Dict[str, Any]:
     A12_center = quotient_center_dimension(q12t)
     A42_center = quotient_center_dimension(q42t)
     result = {
-        'schema': 'gnatural.c985.tube_center_lift.v1',
+        'schema': 'gnatural.c985.tube_center_lift.source_drop',
         'scope': 'Closed-loop/tube skeleton computed from the concrete relation table and A985 tensor. This is not a full Drinfeld-center or modular-data certificate.',
         'tube_basis': {
             'reverse_typed_tube_pairs': int(len(tube_pairs)),
@@ -331,7 +331,7 @@ def compute_tube_algebra_lift() -> Dict[str, Any]:
     center_dims_stable = all(dims_by_prime[str(p)] == dims_by_prime[str(primes[0])] for p in primes)
 
     result = {
-        'schema': 'gnatural.c985.tube_algebra_lift.v1',
+        'schema': 'gnatural.c985.tube_algebra_lift.source_drop',
         'scope': 'Closed-loop diagonal tube algebra skeleton. It computes multiplication support and center ranks for the i->i blocks of T_985. It does not claim full Drinfeld-center modular data.',
         'closed_loop_algebra': {
             'basis_count_total': int(sum(len(x) for x in ids_by_obj)),

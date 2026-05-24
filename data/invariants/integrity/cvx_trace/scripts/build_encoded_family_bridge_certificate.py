@@ -269,7 +269,7 @@ def main() -> int:
     representative_passed = sector_audit["passed"] and integrity_passed and bound["within_bound"] and preservation["passed"]
 
     certificate = {
-        "schema": "d20.integrity.encoded_family_bridge_certificate.v1",
+        "schema": "d20.integrity.encoded_family_bridge_certificate.source_drop",
         "status": (
             "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
             if representative_passed

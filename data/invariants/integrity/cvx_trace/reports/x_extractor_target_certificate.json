@@ -6,42 +6,46 @@
       "may_claim_polynomially_faithful_representative_family": true,
       "reason": "The cycle-8 / Pi_33 / residual packet is now a polynomially bounded representative-family bridge, while SAT-completeness and the X-extractor lower bound remain open."
     },
-    "projection_obligation_closure_state": "discharged_for_bare_lambda; refined_transport_required_for_nonzero_residual_recovery",
-    "projection_obligation_remaining_recovery_obligation": "Define a refined height-coherent/action-return transport if the target is a nonzero sector-33 residual recovery rather than the bare structural coefficient."
+    "projection_obligation_closure_state": "bare_lambda_zero; height_coherent_transport_recovers_nonzero_residual; sector33_unique_single_sector_public_zero_carrier; public_shadow_kernel_dimension_27; public_zero_idempotent_carriers_classified; minimal_composite_superselection_transport_classified; augmented_flux_ledger_certified; typed_nonexact_optical_flux_update_certified; sector26_invariant_suite_certified; finite_anomaly_counter_certified; sector26_anomaly_cancellation_certified; anomaly_cancelled_flux_balance_recovery_certified",
+    "projection_obligation_remaining_recovery_obligation": "Classify the gamma_8 obstruction correction: determine the minimal counterterm or extension needed to include the first non-exact event in a flux-balance law.",
+    "projection_obligation_resolution": "The bare transport remains zero on Pi_33; the certified height-coherent action-return transport derives the nonzero rho_33(gamma_8) target from the active edge circuit."
   },
-  "claim_level": "explicit_hidden_sector_target_not_polynomial_lower_bound",
+  "claim_level": "explicit_hidden_sector_target_with_intrinsic_height_transport_not_polynomial_lower_bound",
   "decision": {
     "may_claim_explicit_hidden_sector_map_certified": true,
     "may_claim_full_separation": false,
+    "may_claim_intrinsic_height_transport_derives_rho33_gamma8": true,
     "may_claim_no_polynomial_size_x_extractor": false,
     "may_claim_x_extractor_target_certified": true,
-    "reason": "The concrete hidden-sector target is certified, and the bare public transport span is ruled out for recovering it. This is not a polynomial-size X-extractor lower bound."
+    "reason": "The concrete hidden-sector target is certified, the bare public transport span is ruled out for recovering it, and the nonzero rho_33(gamma_8) target is derived by the certified height-coherent transport. This is still not a polynomial-size X-extractor lower bound."
   },
   "lower_bound_state": {
+    "all_residue_height_transport_certified": true,
     "bare_public_transport_lower_bound_certified": true,
     "explicit_hidden_sector_map_certified": true,
+    "intrinsic_height_coherent_transport_certified": true,
     "must_leave_bare_public_transport_span_to_recover_residual": true,
     "must_use_x_or_a_refined_non_bare_transport_for_hidden_residual_recovery": true,
     "no_polynomial_size_x_extractor_proved": false
   },
   "next_highest_yield_item": {
-    "action": "Define and certify a height-coherent/action-return transport that derives rho_33(gamma_8) from edge or circuit data instead of inserting the certified residual scalar.",
-    "id": "intrinsic_height_coherent_transport"
+    "action": "Promote the certified height-coherent hidden-sector map as an explicit family-scope X extractor, or keep the no-polynomial-X lower-bound branch open.",
+    "id": "x_extractor_frontier_certificate"
   },
   "non_claims": [
     "This does not prove that polynomial-size X extractors are impossible.",
-    "This does not derive rho_33(gamma_8) from an intrinsic height-coherent transport rule.",
+    "This does not prove that the intrinsic transport is the unique possible non-bare transport.",
     "This does not certify SAT-completeness of the encoded family.",
     "This does not prove P != NP."
   ],
-  "schema": "d20.integrity.x_extractor_target_certificate.v1",
+  "schema": "d20.integrity.x_extractor_target_certificate.source_drop",
   "source_audit": {
     "cycle8_pi33_projection_obligation": {
       "all_checks_pass": true,
-      "expected_status": "D20_CYCLE8_PI33_BARE_LAMBDA_COEFFICIENT_ZERO_CERTIFIED",
+      "expected_status": "D20_CYCLE8_PI33_ANOMALY_CANCELLED_FLUX_BALANCE_RECOVERY_CERTIFIED",
       "passed": true,
       "path": "data/invariants/d20/proof_obligations/cycle8_pi33_projection_coefficient/report.json",
-      "status": "D20_CYCLE8_PI33_BARE_LAMBDA_COEFFICIENT_ZERO_CERTIFIED"
+      "status": "D20_CYCLE8_PI33_ANOMALY_CANCELLED_FLUX_BALANCE_RECOVERY_CERTIFIED"
     },
     "encoded_family_bridge": {
       "all_checks_pass": null,
@@ -50,12 +54,26 @@
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
       "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
     },
+    "sector33_all_residue_height_transport": {
+      "all_checks_pass": true,
+      "expected_status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
     "sector33_boundary_annihilation": {
       "all_checks_pass": true,
       "expected_status": "D20_SECTOR33_BOUNDARY_TO_LOOP_ANNIHILATION_CERTIFIED",
       "passed": true,
       "path": "data/invariants/d20/theorems/sector33_boundary_annihilation/report.json",
       "status": "D20_SECTOR33_BOUNDARY_TO_LOOP_ANNIHILATION_CERTIFIED"
+    },
+    "sector33_height_coherent_transport": {
+      "all_checks_pass": true,
+      "expected_status": "D20_SECTOR33_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "status": "D20_SECTOR33_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
     },
     "sector33_residual_lift": {
       "all_checks_pass": true,
@@ -72,7 +90,7 @@
       "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
     }
   },
-  "status": "X_EXTRACTOR_TARGET_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",
+  "status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",
   "target": {
     "cycle_id": 8,
     "field_prime": 1000003,
@@ -103,6 +121,132 @@
         "support": 56
       }
     },
+    "intrinsic_height_coherent_transport": {
+      "active_circuit": {
+        "active_matrix_row": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            21,
+            1
+          ],
+          [
+            22,
+            1
+          ]
+        ],
+        "cycle_id": 8,
+        "edge_ids": [
+          11,
+          1,
+          2,
+          22,
+          21
+        ],
+        "height_action": 374784,
+        "signed_circuit_row": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            11,
+            -1
+          ],
+          [
+            21,
+            -1
+          ],
+          [
+            22,
+            1
+          ]
+        ],
+        "vertex_boundary": {}
+      },
+      "derived_from_edge_or_circuit_data": true,
+      "edge_derived_residual": {
+        "dimension": 2,
+        "height_action": 374784,
+        "inverse_dimension": 500002,
+        "residual_integral": -374784,
+        "residual_mod_prime": 625219,
+        "transport_scalar": 812611,
+        "transport_scalar_signed": -187392
+      },
+      "formula": "Lambda_hc(gamma)=lambda_boundary(gamma) - (A_h(gamma)/dim(Pi_33)) e_33.",
+      "matches_residual_lift_target": true,
+      "meaning": "rho_33(gamma_8) is derived by pairing the closed active edge circuit with the certified height cochain, not by inserting the residual scalar as an external constant.",
+      "pi33_character": {
+        "corrected_transport": {
+          "action": {
+            "coefficient_abs_sum_signed_lift": 181536,
+            "coefficient_sum": 0,
+            "coefficient_sum_signed": 0,
+            "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+            "support": 56
+          },
+          "coefficient_mod_prime": 625219,
+          "coefficient_signed": -374784,
+          "regular_trace": 250435
+        },
+        "height_transport": {
+          "action": {
+            "coefficient_abs_sum_signed_lift": 181536,
+            "coefficient_sum": 0,
+            "coefficient_sum_signed": 0,
+            "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+            "support": 56
+          },
+          "coefficient_mod_prime": 625219,
+          "coefficient_signed": -374784,
+          "regular_trace": 250435
+        }
+      },
+      "public_shadows": {
+        "q12_nonzero_count": 0,
+        "q12_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "q42_nonzero_count": 0,
+        "q42_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "vectors": {
+        "corrected_transport": {
+          "coefficient_abs_sum_signed_lift": 230880,
+          "coefficient_sum": 53952,
+          "coefficient_sum_signed": 53952,
+          "sha256": "08c5f8dd0ee29a3bdaf61dc4b0d70c30169550579a4aaad8ecaccb0a4d828859",
+          "support": 237
+        },
+        "e33": {
+          "coefficient_abs_sum_signed_lift": 13343790,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "80f86fd6281302c6bafc6bc4176923dfa41aa4dbe1d58e8a9a64f9cac1a5a348",
+          "support": 56
+        },
+        "height_transport": {
+          "coefficient_abs_sum_signed_lift": 181536,
+          "coefficient_sum": 0,
+          "coefficient_sum_signed": 0,
+          "sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+          "support": 56
+        }
+      }
+    },
     "object_id": "rho33_cycle8_hidden_residual_lift",
     "public_transport_floor": {
       "all_30_directed_pair_lifts_annihilated": true,
@@ -129,10 +273,16 @@
   },
   "target_audit": {
     "checks": {
+      "active_circuit_derives_residual": true,
+      "all_residue_height_transport_certified": true,
       "bare_public_transport_pi33_zero": true,
       "corrected_lift_recovers_target_residual": true,
+      "corrected_transport_matches_corrected_lift_vector_sha": true,
       "directed_pair_public_span_annihilated": true,
+      "height_transport_matches_residual_lift_vector_sha": true,
+      "height_transport_public_shadows_zero": true,
       "hidden_lift_public_shadows_zero": true,
+      "intrinsic_height_transport_certified": true,
       "residual_lift_recovers_target_residual": true,
       "zero_x_trace_cannot_contain_extractor_opcode": true
     },

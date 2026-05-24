@@ -9,8 +9,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[5]
 BASE = ROOT / "data" / "invariants" / "integrity" / "cvx_trace"
 CNF_PATH = ROOT / "data" / "evidence" / "ss_sat" / "benchmarks" / "contradiction_4.cnf"
-EVENT_SCHEMA_PATH = BASE / "schemas" / "universal_trace_event.v1.schema.json"
-PROGRAM_SCHEMA_PATH = BASE / "schemas" / "universal_public_bit_machine_program.v1.schema.json"
+EVENT_SCHEMA_PATH = BASE / "schemas" / "universal_trace_event.schema.json"
+PROGRAM_SCHEMA_PATH = BASE / "schemas" / "universal_public_bit_machine_program.schema.json"
 CLASSIFIER_PATH = BASE / "reports" / "universal_trace_typing_classifier.json"
 PROGRAM_PATH = BASE / "traces" / "universal_bit_machine_contradiction_4.program.json"
 TRACE_PATH = BASE / "traces" / "universal_bit_machine_contradiction_4.trace.json"
@@ -86,12 +86,12 @@ def find_unit_contradiction(clauses: list[list[int]]) -> tuple[int, int, int]:
 def program_schema() -> dict[str, Any]:
     return {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "d20.integrity.universal_public_bit_machine_program.v1",
+        "$id": "d20.integrity.universal_public_bit_machine_program.source_drop",
         "title": "D20 universal public bit-machine program",
         "type": "object",
         "required": ["schema", "program_id", "machine_model", "source", "instructions", "expected_result"],
         "properties": {
-            "schema": {"const": "d20.integrity.universal_public_bit_machine_program.v1"},
+            "schema": {"const": "d20.integrity.universal_public_bit_machine_program.source_drop"},
             "program_id": {"type": "string", "minLength": 1},
             "machine_model": {"const": "finite_public_bit_ram"},
             "source": {"type": "object"},
@@ -183,7 +183,7 @@ def build_fixture_program(variables: int, clauses: list[list[int]]) -> dict[str,
         },
     ]
     return {
-        "schema": "d20.integrity.universal_public_bit_machine_program.v1",
+        "schema": "d20.integrity.universal_public_bit_machine_program.source_drop",
         "program_id": "universal_bit_machine_contradiction_4",
         "machine_model": "finite_public_bit_ram",
         "source": {
@@ -205,7 +205,7 @@ def build_fixture_program(variables: int, clauses: list[list[int]]) -> dict[str,
 
 def validate_program(program: dict[str, Any]) -> list[str]:
     errors: list[str] = []
-    if program.get("schema") != "d20.integrity.universal_public_bit_machine_program.v1":
+    if program.get("schema") != "d20.integrity.universal_public_bit_machine_program.source_drop":
         errors.append("program schema mismatch")
     if program.get("machine_model") != "finite_public_bit_ram":
         errors.append("machine model mismatch")
@@ -236,7 +236,7 @@ def compile_program(program: dict[str, Any], classifier: dict[str, Any]) -> tupl
         if class_code not in c_codes:
             errors.append(f"classifier does not accept compiler output class code: {class_code}")
         event = {
-            "schema": "d20.integrity.universal_trace_event.v1",
+            "schema": "d20.integrity.universal_trace_event.source_drop",
             "event_id": f"{program['program_id']}:{instruction['pc']:04d}",
             "step": instruction["pc"],
             "op": "universal_machine_opcode",
@@ -262,7 +262,7 @@ def validate_event(event: dict[str, Any], classifier: dict[str, Any]) -> list[st
     for key in required:
         if key not in event:
             errors.append(f"missing event field: {key}")
-    if event.get("schema") != "d20.integrity.universal_trace_event.v1":
+    if event.get("schema") != "d20.integrity.universal_trace_event.source_drop":
         errors.append("event schema mismatch")
     if event.get("op") != "universal_machine_opcode":
         errors.append("event op mismatch")
@@ -301,7 +301,7 @@ def main() -> int:
     ]
 
     trace = {
-        "schema": "d20.integrity.universal_trace.v1",
+        "schema": "d20.integrity.universal_trace.source_drop",
         "status": "UNIVERSAL_TRACE_COMPILER_WITNESS",
         "trace_id": "universal_bit_machine_contradiction_4",
         "program_path": rel(PROGRAM_PATH),
@@ -338,7 +338,7 @@ def main() -> int:
         and trace["summary"]["pure_c_trace"]
     )
     report = {
-        "schema": "d20.integrity.universal_trace_compiler_report.v1",
+        "schema": "d20.integrity.universal_trace_compiler_report.source_drop",
         "status": (
             "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
             if pass_condition

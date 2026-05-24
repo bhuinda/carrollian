@@ -10,9 +10,9 @@ import numpy as np
 
 Vector = tuple[int, ...]
 
-V1_SET = {2, 4, 9, 10, 12, 13, 14, 16, 17, 18, 20, 22}
-V2_SET = {3, 4, 9, 13, 15, 16, 19, 20}
-V3_SET = {2, 5, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 19, 21, 22, 23}
+TYPE_II_NEIGHBOR_ALPHA = {2, 4, 9, 10, 12, 13, 14, 16, 17, 18, 20, 22}
+TYPE_II_NEIGHBOR_BETA = {3, 4, 9, 13, 15, 16, 19, 20}
+TYPE_II_NEIGHBOR_GAMMA = {2, 5, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 19, 21, 22, 23}
 
 SEXTET: list[set[int]] = [
     {0, 1, 2, 3},
@@ -108,7 +108,11 @@ def profile_family(p: tuple[int, ...]) -> str:
 def build_source_code() -> dict[str, Any]:
     H8 = make_H8()
     C = make_C0(H8)
-    v1, v2, v3 = (vec_from_one_based(V1_SET), vec_from_one_based(V2_SET), vec_from_one_based(V3_SET))
+    v1, v2, v3 = (
+        vec_from_one_based(TYPE_II_NEIGHBOR_ALPHA),
+        vec_from_one_based(TYPE_II_NEIGHBOR_BETA),
+        vec_from_one_based(TYPE_II_NEIGHBOR_GAMMA),
+    )
 
     root_sequence: list[int] = []
     code_sizes: list[int] = [len(C)]
@@ -222,9 +226,9 @@ def source_constructor_certificate() -> dict[str, Any]:
             "weight_enumerator": weight_enumerator(C0),
         },
         "neighbors": {
-            "v1_one_based_support": sorted(V1_SET),
-            "v2_one_based_support": sorted(V2_SET),
-            "v3_one_based_support": sorted(V3_SET),
+            "alpha_one_based_support": sorted(TYPE_II_NEIGHBOR_ALPHA),
+            "beta_one_based_support": sorted(TYPE_II_NEIGHBOR_BETA),
+            "gamma_one_based_support": sorted(TYPE_II_NEIGHBOR_GAMMA),
             "root_sequence": data["root_sequence"],
             "root_sequence_expected": EXPECTED_ROOT_SEQUENCE,
             "root_sequence_pass": data["root_sequence"] == EXPECTED_ROOT_SEQUENCE,

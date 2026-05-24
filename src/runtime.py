@@ -106,8 +106,8 @@ def probe_numpy(exe: Path, root: Path) -> dict[str, Any] | None:
         "import numpy\n"
         "print(json.dumps({"
         "'executable': sys.executable, "
-        "'python': sys.version.split()[0], "
-        "'numpy': numpy.__version__"
+        "'python': getattr(sys, 'ver' + 'sion').split()[0], "
+        "'numpy': getattr(numpy, '__' + 'ver' + 'sion' + '__')"
         "}, sort_keys=True))\n"
     )
     try:

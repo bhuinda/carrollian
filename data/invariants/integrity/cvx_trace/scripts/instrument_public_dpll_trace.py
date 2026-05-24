@@ -11,7 +11,7 @@ BASE = ROOT / "data" / "invariants" / "integrity" / "cvx_trace"
 CNF_PATH = ROOT / "data" / "evidence" / "ss_sat" / "benchmarks" / "contradiction_4.cnf"
 TRACE_PATH = BASE / "traces" / "public_dpll_contradiction_4.trace.json"
 REPORT_PATH = BASE / "reports" / "public_dpll_contradiction_4_overhead.json"
-SCHEMA_PATH = BASE / "schemas" / "cvx_trace.v1.schema.json"
+SCHEMA_PATH = BASE / "schemas" / "cvx_trace.schema.json"
 VALIDATOR = BASE / "scripts" / "validate_cvx_trace.py"
 
 
@@ -203,7 +203,7 @@ def main() -> int:
     events = [visible_event(e) for e in raw_events]
     counts = {"C": len(events), "V": 0, "X": 0, "UNCLASSIFIED": 0}
     trace = {
-        "schema": "d20.integrity.cvx_trace.v1",
+        "schema": "d20.integrity.cvx_trace.source_drop",
         "status": "CVX_SOLVER_EXECUTION_TRACE_WITNESS",
         "trace_id": "public_dpll_contradiction_4",
         "source": {
@@ -227,7 +227,7 @@ def main() -> int:
         },
     }
     overhead_report = {
-        "schema": "d20.integrity.solver_trace_overhead.v1",
+        "schema": "d20.integrity.solver_trace_overhead.source_drop",
         "status": "CVX_SOLVER_EXECUTION_TRACE_OVERHEAD_PASS",
         "trace_path": rel(TRACE_PATH),
         "schema_path": rel(SCHEMA_PATH),

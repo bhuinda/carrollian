@@ -41,12 +41,12 @@
       "witness": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json"
     },
     {
-      "blocks_full_closure": true,
-      "closure_level": "scoped_witness",
+      "blocks_full_closure": false,
+      "closure_level": "witnessed",
       "id": "x_extractor_lower_bound",
-      "scope_warning": "The rho_33(gamma_8) hidden-sector target is certified and bare public transport is ruled out, but no polynomial-size X-extractor lower bound is present.",
-      "status": "explicit_hidden_sector_map_certified_polynomial_lower_bound_open",
-      "witness": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json"
+      "scope_warning": "The rho_33(gamma_8) hidden-sector target is certified by intrinsic height-coherent action-return transport, and that transport promotes a family-scope polynomial X extractor. The policy boundary certifies that X is explicit hidden-sector extractor/oracle/advice surface, not public-P computation.",
+      "status": "formal_x_policy_boundary_certified_x_not_public_p",
+      "witness": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json"
     },
     {
       "blocks_full_closure": false,
@@ -60,7 +60,7 @@
       "blocks_full_closure": true,
       "closure_level": "dependency_ledger",
       "id": "full_no_escape_closure",
-      "scope_warning": "The ledger closes the current accepted trace surface but explicitly blocks full separation on encoded-family completeness and polynomial X-extractor lower bound.",
+      "scope_warning": "The ledger closes the current accepted trace surface and the X policy boundary, but explicitly blocks full separation on encoded-family completeness.",
       "status": "dependency_ledger_built_full_closure_blocked",
       "witness": "data/invariants/integrity/cvx_trace/reports/full_no_escape_closure_ledger.json"
     }
@@ -81,37 +81,30 @@
   "full_no_escape_claim": {
     "allowed": false,
     "blocked_by": [
-      "encoded_family_sat_complete",
-      "x_extractor_lower_bound"
+      "encoded_family_sat_complete"
     ],
     "conditional_claim_allowed": true,
     "hard_open_blockers": [],
     "scope_declaration_blockers": [],
     "scoped_witness_blockers": [
-      "encoded_family_sat_complete",
-      "x_extractor_lower_bound"
+      "encoded_family_sat_complete"
     ]
   },
   "next_highest_yield_item": {
-    "action": "Define and certify a height-coherent/action-return transport that derives rho_33(gamma_8) from edge or circuit data instead of inserting the certified residual scalar.",
-    "id": "intrinsic_height_coherent_transport"
+    "action": "Build the SAT-complete reduction certificate for the hidden e33-obstructed family, or keep the theorem representative-family scoped.",
+    "id": "encoded_family_sat_complete"
   },
   "remaining_gaps": [
     {
       "gap": "The encoded family now has a polynomially faithful representative-family witness for the cycle-8 / Pi_33 packet, but no SAT-complete reduction certificate is present.",
       "id": "encoded_family_sat_complete",
       "needed": "Reduction certificate with source problem, target encoding, size bound, and inverse witness interpretation."
-    },
-    {
-      "gap": "The concrete hidden-sector target is now certified and the bare public transport span is ruled out, but no polynomial-size lower bound rules out X extractors or derives the residual through an intrinsic transport.",
-      "id": "x_extractor_lower_bound",
-      "needed": "Lower-bound argument or explicit recovered hidden-sector map."
     }
   ],
   "report_statuses": {
     "cvx_trace_index": {
       "path": "data/invariants/integrity/cvx_trace/index.json",
-      "status": "CVX_TRACE_BRIDGE_WITNESSES_WITH_ENCODED_REPRESENTATIVE_FAMILY"
+      "status": "CVX_TRACE_BRIDGE_WITNESSES_WITH_X_POLICY_AND_ENCODED_REPRESENTATIVE_FAMILY"
     },
     "encoded_family_bridge": {
       "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
@@ -165,11 +158,19 @@
       "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json",
       "status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND"
     },
+    "x_extractor_frontier": {
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_frontier_certificate.json",
+      "status": "X_EXTRACTOR_FRONTIER_EXPLICIT_POLYNOMIAL_FAMILY_EXTRACTOR_PROMOTED"
+    },
     "x_extractor_target": {
       "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json",
-      "status": "X_EXTRACTOR_TARGET_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN"
+      "status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN"
+    },
+    "x_policy_boundary": {
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
     }
   },
-  "schema": "d20.integrity.full_no_escape_closure_ledger.v1",
+  "schema": "d20.integrity.full_no_escape_closure_ledger.source_drop",
   "status": "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_BLOCKED"
 }

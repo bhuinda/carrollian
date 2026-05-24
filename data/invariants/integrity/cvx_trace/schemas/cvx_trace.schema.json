@@ -1,0 +1,285 @@
+{
+  "$id": "d20.integrity.cvx_trace",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "events": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "checks": {
+            "additionalProperties": false,
+            "properties": {
+              "contains_complement_pair": {
+                "type": "boolean"
+              },
+              "has_duplicate_literal": {
+                "type": "boolean"
+              },
+              "locally_checkable": {
+                "type": "boolean"
+              },
+              "uses_extension_variable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "uses_extension_variable",
+              "has_duplicate_literal",
+              "contains_complement_pair",
+              "locally_checkable"
+            ],
+            "type": "object"
+          },
+          "class_code": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "event_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "integrity_type": {
+            "enum": [
+              "C",
+              "V",
+              "X",
+              "UNCLASSIFIED"
+            ]
+          },
+          "line": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "op": {
+            "enum": [
+              "add",
+              "delete",
+              "solver_opcode",
+              "residue"
+            ]
+          },
+          "proof_id": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "public_inputs": {
+            "additionalProperties": false,
+            "properties": {
+              "clause_hints": {
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              "literals": {
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "clause_hints",
+              "literals"
+            ],
+            "type": "object"
+          },
+          "public_outputs": {
+            "additionalProperties": false,
+            "properties": {
+              "clause_id": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "empty_clause": {
+                "type": "boolean"
+              },
+              "literal_count": {
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "clause_id",
+              "literal_count",
+              "empty_clause"
+            ],
+            "type": "object"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_id",
+          "line",
+          "op",
+          "integrity_type",
+          "class_code",
+          "public_inputs",
+          "public_outputs",
+          "checks"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "integrity_model": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_public_types": {
+          "items": {
+            "const": "C"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "allowed_types": {
+          "items": {
+            "enum": [
+              "C",
+              "V",
+              "X",
+              "UNCLASSIFIED"
+            ]
+          },
+          "minItems": 4,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "unsupported_event_policy": {
+          "const": "reject_or_emit_typed_residue"
+        }
+      },
+      "required": [
+        "allowed_types",
+        "accepted_public_types",
+        "unsupported_event_policy"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "d20.integrity.cvx_trace"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "classifier_source": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "cnf_path": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "cnf_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "proof_format": {
+          "enum": [
+            "lrat",
+            "drat",
+            "frat",
+            "solver_opcode"
+          ]
+        },
+        "proof_path": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "proof_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proof_format",
+        "cnf_path",
+        "cnf_sha256",
+        "classifier_source"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "CVX_TRACE_REPLAY_WITNESS",
+        "CVX_TRACE_SCHEMA_FIXTURE",
+        "CVX_SOLVER_EXECUTION_TRACE_WITNESS"
+      ]
+    },
+    "summary": {
+      "additionalProperties": false,
+      "properties": {
+        "all_events_classified": {
+          "type": "boolean"
+        },
+        "event_count": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "integrity_counts": {
+          "additionalProperties": false,
+          "properties": {
+            "C": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "UNCLASSIFIED": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "V": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "X": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "C",
+            "V",
+            "X",
+            "UNCLASSIFIED"
+          ],
+          "type": "object"
+        },
+        "pure_c_trace": {
+          "type": "boolean"
+        },
+        "verdict": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_count",
+        "integrity_counts",
+        "verdict",
+        "all_events_classified",
+        "pure_c_trace"
+      ],
+      "type": "object"
+    },
+    "trace_id": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "status",
+    "trace_id",
+    "source",
+    "integrity_model",
+    "events",
+    "summary"
+  ],
+  "title": "D20 C/V/X sector-interface trace",
+  "type": "object"
+}

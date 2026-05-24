@@ -132,9 +132,9 @@ def compute_tube_pair_product_oracle() -> Dict[str, Any]:
     for _ in range(512):
         n = int(rng.integers(0, max(1, product_total)))
         base,left,right,p1,p2 = decode_product_row(n)
-        v1 = projection[p1]
-        v2 = projection[p2]
-        prod = loop_vec_mul(v1, v2)
+        source_drop = projection[p1]
+        source_drop = projection[p2]
+        prod = loop_vec_mul(source_drop, source_drop)
         closed_ok = all((g in closed_ids and int(block_i[g]) == base and int(block_j[g]) == base) for g in prod)
         if not closed_ok:
             product_projection_ok = False
@@ -156,9 +156,9 @@ def compute_tube_pair_product_oracle() -> Dict[str, Any]:
         c = int(counts_by_base[base])
         i1 = int(rng.integers(0, c)); i2 = int(rng.integers(0, c)); i3 = int(rng.integers(0, c))
         p1 = tube_by_base[base][i1]; p2 = tube_by_base[base][i2]; p3 = tube_by_base[base][i3]
-        v1 = projection[p1]; v2 = projection[p2]; v3 = projection[p3]
-        left = loop_vec_mul(loop_vec_mul(v1,v2), v3)
-        right = loop_vec_mul(v1, loop_vec_mul(v2,v3))
+        source_drop = projection[p1]; source_drop = projection[p2]; source_drop = projection[p3]
+        left = loop_vec_mul(loop_vec_mul(source_drop,source_drop), source_drop)
+        right = loop_vec_mul(source_drop, loop_vec_mul(source_drop,source_drop))
         ok = left == right
         if not ok:
             assoc_failures += 1
@@ -166,7 +166,7 @@ def compute_tube_pair_product_oracle() -> Dict[str, Any]:
             assoc_records.append({'base': base, 'pair_indices': [i1,i2,i3], 'ok': bool(ok), 'left_support': len(left), 'right_support': len(right)})
 
     result = {
-        'schema': 'gnatural.c985.tube_pair_product_oracle.v1',
+        'schema': 'gnatural.c985.tube_pair_product_oracle.source_drop',
         'scope': 'Full reverse-pair tube basis, deterministic product-row address space, projection to closed-loop multiplication, and sampled projected-product associativity. This is still not full Drinfeld-center modular data.',
         'tube_pair_basis': {
             'basis_count_total': int(len(tube_pairs)),
@@ -331,7 +331,7 @@ def compute_full_tube_algebra_solver() -> Dict[str, Any]:
     chunk_size = 1_000_000
     chunk_count = int((same_base_product_rows + chunk_size - 1) // chunk_size)
     result = {
-        'schema': 'gnatural.c985.full_tube_algebra_solver_scaffold.v1',
+        'schema': 'gnatural.c985.full_tube_algebra_solver_scaffold.source_drop',
         'scope': 'Full tube-pair projection-rank solver and quotient boundary. This is the first full-tube solver scaffold: it proves the tube-pair basis surjects onto closed-loop blocks and quantifies the projection kernels. It does not claim full tube modules, full Drinfeld center, or modular data.',
         'field': {'prime': p0},
         'tube_pair_basis': {
@@ -517,7 +517,7 @@ def compute_tube_projection_section() -> Dict[str, Any]:
     pivot_hash_root = hashlib.sha256(pivot_entries.tobytes()).hexdigest()
 
     result = {
-        'schema': 'gnatural.c985.tube_projection_section.v1',
+        'schema': 'gnatural.c985.tube_projection_section.source_drop',
         'scope': 'Canonical finite-field right inverse of the tube-pair projection P:TubePair->Loop. This quotient representative lift proves PÃ¢Ë†ËœS=I on the 297-dimensional closed-loop quotient; it is not full Drinfeld-center modular data.',
         'field': {'prime': p0},
         'projection': {

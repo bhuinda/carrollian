@@ -149,7 +149,7 @@ def main() -> int:
         and controls["classifier_contains_x_surface"]
     )
     report = {
-        "schema": "d20.integrity.x_extractor_bounded_search.v1",
+        "schema": "d20.integrity.x_extractor_bounded_search.source_drop",
         "status": (
             "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND"
             if pass_condition

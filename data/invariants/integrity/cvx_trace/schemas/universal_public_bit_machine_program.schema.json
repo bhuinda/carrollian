@@ -1,0 +1,82 @@
+{
+  "$id": "d20.integrity.universal_public_bit_machine_program",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "expected_result": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "instructions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "opcode": {
+            "enum": [
+              "bit_and",
+              "bit_not",
+              "bit_or",
+              "bit_xor",
+              "branch",
+              "compare_zero",
+              "const",
+              "copy",
+              "emit_decision",
+              "halt_accept",
+              "halt_reject",
+              "input_read",
+              "loop_tick",
+              "ram_load",
+              "ram_store"
+            ]
+          },
+          "pc": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "public_inputs": {
+            "type": "object"
+          },
+          "public_outputs": {
+            "type": "object"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pc",
+          "opcode",
+          "public_inputs",
+          "public_outputs"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "machine_model": {
+      "const": "finite_public_bit_ram"
+    },
+    "program_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema": {
+      "const": "d20.integrity.universal_public_bit_machine_program"
+    },
+    "source": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "program_id",
+    "machine_model",
+    "source",
+    "instructions",
+    "expected_result"
+  ],
+  "title": "D20 universal public bit-machine program",
+  "type": "object"
+}

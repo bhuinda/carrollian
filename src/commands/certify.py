@@ -17,7 +17,7 @@ from src.layer_registry import LAYER_INDEX, layer_relpath, load_layer_registry
 from src.paths import ROOT
 
 MUTABLE = {"certificate.json", "manifests/file_hashes.json", "manifests/canonical.json"}
-SCHEMA_VERSION_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
+SCHEMA_LINEAGE_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
 
 EXPECTED = {
     "00_core": "PASS",
@@ -55,7 +55,7 @@ def canonical(obj: Any) -> bytes:
 
 def schema_name(value: Any) -> Any:
     if isinstance(value, str):
-        return SCHEMA_VERSION_SUFFIX_RE.sub("", value)
+        return SCHEMA_LINEAGE_SUFFIX_RE.sub("", value)
     return value
 
 
@@ -88,6 +88,17 @@ def load_json(rel: str | Path) -> Any:
 def require(cond: bool, msg: str, errors: list[str]) -> None:
     if not cond:
         errors.append(msg)
+
+
+def certified_evidence_base_sha256(payload: dict[str, Any]) -> str:
+    base = json.loads(json.dumps(payload))
+    pole_packet = (
+        base.get("black_hole_certified_simulator", {})
+        .get("pole_packet", {})
+    )
+    if isinstance(pole_packet, dict):
+        pole_packet.pop("conditioning_certificate", None)
+    return sha_json(base)
 
 
 EVIDENCE_INVARIANTS_REL = "data/invariants/d20/certified_evidence_invariants.json"
@@ -391,6 +402,49 @@ def verify_certified_evidence_invariants(data: dict[str, Any], errors: list[str]
     require(inverse.get("max_abs_err_M", 1.0) < 1e-12, "black-hole simulator inverse M precision mismatch", errors)
     require(inverse.get("max_abs_err_a", 1.0) < 1e-12, "black-hole simulator inverse a precision mismatch", errors)
     require(inverse.get("max_abs_err_Q", 1.0) < 1e-12, "black-hole simulator inverse Q precision mismatch", errors)
+    conditioning = bh.get("pole_packet", {}).get("conditioning_certificate", {})
+    conditioning_path = conditioning.get("path")
+    expected_conditioning_path = "data/invariants/d20/theorems/black_hole_inverse_conditioning/report.json"
+    require(conditioning_path == expected_conditioning_path, "black-hole conditioning certificate path mismatch", errors)
+    conditioning_report: dict[str, Any] = {}
+    if isinstance(conditioning_path, str):
+        report_path = ROOT / conditioning_path
+        require(report_path.exists(), "black-hole conditioning report missing", errors)
+        if report_path.exists():
+            require(conditioning.get("sha256") == sha_file(report_path), "black-hole conditioning report hash mismatch", errors)
+            conditioning_report = load_json(report_path)
+    require_schema(conditioning_report.get("schema"), "d20.black_hole.inverse_conditioning", "black-hole conditioning schema mismatch", errors)
+    require(
+        conditioning_report.get("status") == "D20_BLACK_HOLE_INVERSE_CONDITIONING_CERTIFIED",
+        "black-hole conditioning status mismatch",
+        errors,
+    )
+    require(conditioning_report.get("all_checks_pass") is True, "black-hole conditioning checks did not pass", errors)
+    conditioning_checks = conditioning_report.get("checks", {})
+    require(isinstance(conditioning_checks, dict) and bool(conditioning_checks), "black-hole conditioning checks missing", errors)
+    for key, value in conditioning_checks.items():
+        require(value is True, f"black-hole conditioning check failed: {key}", errors)
+    source_payload = load_json(EVIDENCE_INVARIANTS_REL)
+    source_base_hash = certified_evidence_base_sha256(source_payload)
+    input_witness = conditioning_report.get("input_witness", {})
+    require(
+        input_witness.get("base_payload_sha256_without_conditioning_certificate") == source_base_hash,
+        "black-hole conditioning base witness hash mismatch",
+        errors,
+    )
+    require(conditioning.get("sample_count", 0) >= 300, "black-hole conditioning sample count too small", errors)
+    require(conditioning.get("interior_max_abs_state_error", 1.0) < 1e-12, "black-hole conditioning interior precision mismatch", errors)
+    require(conditioning.get("near_extremal_max_abs_state_error", 1.0) < 1e-7, "black-hole conditioning near-boundary precision mismatch", errors)
+    require(
+        conditioning.get("near_over_interior_forward_condition_ratio", 0.0) > 1000.0,
+        "black-hole conditioning near-boundary condition ratio missing",
+        errors,
+    )
+    require(
+        conditioning.get("noise_projection_residual_over_noise_max", 0.0) > 0.01,
+        "black-hole conditioning projection residual signal missing",
+        errors,
+    )
     sim = bh.get("simulation_summary", {})
     require(sim.get("visited_states") == 20, "black-hole simulator visited state count mismatch", errors)
     require(sim.get("integrity_projection_count") == 0, "black-hole simulator integrity projection count mismatch", errors)

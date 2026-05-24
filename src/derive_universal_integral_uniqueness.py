@@ -189,7 +189,8 @@ def derive() -> dict[str, Any]:
             "primitive_data": "(Φ_X, μ, A985)",
         },
         "pushforward_integration": {
-            "tower": "A985 -> A236 -> A42 -> A12",
+            "readout_stack": "A985 bulk; A236 native branching/fusion readout; A42/A12 terminal quotient readouts",
+            "strict_quotient_tower": False,
             "measure_pushforward": "(q_* μ)(j)=Σ_{α:q(α)=j} μ_α",
             "observable_pushforward": "∫_{A985} Φ dμ = ∫_{A42} q_*Φ d(q_*μ)",
             "public_loss": "ker(q_*)",

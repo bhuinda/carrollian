@@ -124,7 +124,7 @@ def derive(regenerate: bool = False, regenerate_tensor: bool = False) -> dict[st
         "claim": f"The 985-relation body is derived from the pre-A985 source construction plus the unique coorient action; data/raw/relation_memberships.npz is a comparison target, not a constructor input. T985 comparison is included when the generated tensor witness is present.",
         "constructor_inputs": [
             "H8 = RM(1,3)",
-            "three Type-II neighbor vectors v1,v2,v3",
+            "three explicit Type-II neighbor vectors v1,v2,v3",
             "generated G24 endpoint",
             "generated 2576 dodecad shell",
             "unique d20/A985-integral coorient action represented by data/coorient/be3_coorient_generators.npz",

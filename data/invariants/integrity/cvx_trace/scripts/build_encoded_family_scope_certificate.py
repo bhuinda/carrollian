@@ -106,7 +106,7 @@ def main() -> int:
     )
 
     certificate = {
-        "schema": "d20.integrity.encoded_family_scope_certificate.v1",
+        "schema": "d20.integrity.encoded_family_scope_certificate.source_drop",
         "status": (
             "ENCODED_FAMILY_SCOPE_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
             if polynomially_faithful_representative_certified

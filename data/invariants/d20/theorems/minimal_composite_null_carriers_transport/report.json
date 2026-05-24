@@ -1,0 +1,380 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d48582ba112537f7cd05d713aa1b6142ff244dd722ac304611253e9451883139",
+  "checks": {
+    "admissibility_report_is_certified": true,
+    "boolean_public_zero_carriers_match_upstream": true,
+    "minimal_composite_self_transport_ranks_are_nonzero": true,
+    "minimal_composites_are_not_gauge_zero": true,
+    "minimal_composites_classified_as_superselection_not_gauge": true,
+    "minimal_composites_have_zero_transport_to_and_from_pi33": true,
+    "minimal_non_pi33_composites_match_targets": true,
+    "mixed_s_channel_overlap_does_not_imply_pi33_transport": true,
+    "primitive_pi33_self_transport_rank_is_4": true,
+    "upstream_pairwise_orthogonal_sector_idempotents": true
+  },
+  "claim": "The two minimal non-Pi_33 public-zero composite idempotent carriers have nonzero self-transport and zero mixed transport to Pi_33. Thus neither is gauge zero; both are public-zero superselection carriers isolated from the primitive residual carrier Pi_33.",
+  "definition": {
+    "isolated_from_pi33": "Both E_C A985 e_33 and e_33 A985 E_C have rank zero.",
+    "not_gauge_zero": "A public-zero carrier with positive self-transport rank and positive permutation rank.",
+    "superselection_null_carrier": "A public-zero carrier with nonzero internal transport that is isolated from the primitive height-residual carrier.",
+    "transport_rank_formula": "For Boolean sums E_C=sum_{s in C} e_s of certified pairwise orthogonal central sector idempotents, dim(E_C A985 E_D)=sum_{s in C intersection D} dim(s)^2."
+  },
+  "derived": {
+    "minimal_non_pi33_composite_carriers": [
+      [
+        6,
+        26
+      ],
+      [
+        25,
+        26
+      ]
+    ],
+    "minimal_non_pi33_composite_transport_classification": [
+      {
+        "active_cy_sectors": [
+          "S"
+        ],
+        "active_objects": [
+          "S+",
+          "S-"
+        ],
+        "block_dimensions": [
+          2,
+          1
+        ],
+        "carrier": [
+          6,
+          26
+        ],
+        "classification": "mixed_S_channel_public_zero_superselection_carrier_isolated_from_pi33",
+        "classification_reason": "active objects S- and S+, one M2 block and one scalar block, nonzero self transport rank 5, zero mixed transport to Pi_33 despite object-level S+ overlap",
+        "couples_to_pi33": false,
+        "identity_coefficients_signed_by_sector": {
+          "26": [
+            0,
+            0,
+            0,
+            0,
+            373048,
+            0
+          ],
+          "6": [
+            0,
+            0,
+            0,
+            0,
+            119141,
+            -253907
+          ]
+        },
+        "individual_public_nonzero_count_sum_before_cancellation": 8,
+        "internal_dimension_sum_d_squared": 5,
+        "loop_coordinate_support_total": 132,
+        "not_gauge": true,
+        "object_channel_overlap_with_pi33": [
+          "S+"
+        ],
+        "permutation_multiplicity_sum": 12,
+        "permutation_rank_sum": 21,
+        "pre_idempotent_support_total": 3,
+        "self_transport": {
+          "intersection": [
+            6,
+            26
+          ],
+          "left": [
+            6,
+            26
+          ],
+          "rank": 5,
+          "right": [
+            6,
+            26
+          ]
+        },
+        "spectral_signature_by_sector": {
+          "26": [
+            {
+              "label": "S-",
+              "local_pre_idempotents": [
+                10
+              ],
+              "object": 4,
+              "separator_eigenvalues": [
+                986365
+              ]
+            }
+          ],
+          "6": [
+            {
+              "label": "S-",
+              "local_pre_idempotents": [
+                2
+              ],
+              "object": 4,
+              "separator_eigenvalues": [
+                1178
+              ]
+            },
+            {
+              "label": "S+",
+              "local_pre_idempotents": [
+                15
+              ],
+              "object": 5,
+              "separator_eigenvalues": [
+                994165
+              ]
+            }
+          ]
+        },
+        "transport_from_pi33": {
+          "intersection": [],
+          "left": [
+            33
+          ],
+          "rank": 0,
+          "right": [
+            6,
+            26
+          ]
+        },
+        "transport_to_pi33": {
+          "intersection": [],
+          "left": [
+            6,
+            26
+          ],
+          "rank": 0,
+          "right": [
+            33
+          ]
+        }
+      },
+      {
+        "active_cy_sectors": [
+          "S"
+        ],
+        "active_objects": [
+          "S-"
+        ],
+        "block_dimensions": [
+          1,
+          1
+        ],
+        "carrier": [
+          25,
+          26
+        ],
+        "classification": "pure_Sminus_public_zero_superselection_doublet_isolated_from_pi33",
+        "classification_reason": "same active object S-, two scalar central blocks, nonzero self transport rank 2, zero mixed transport to Pi_33",
+        "couples_to_pi33": false,
+        "identity_coefficients_signed_by_sector": {
+          "25": [
+            0,
+            0,
+            0,
+            0,
+            -208985,
+            0
+          ],
+          "26": [
+            0,
+            0,
+            0,
+            0,
+            373048,
+            0
+          ]
+        },
+        "individual_public_nonzero_count_sum_before_cancellation": 8,
+        "internal_dimension_sum_d_squared": 2,
+        "loop_coordinate_support_total": 88,
+        "not_gauge": true,
+        "object_channel_overlap_with_pi33": [],
+        "permutation_multiplicity_sum": 4,
+        "permutation_rank_sum": 4,
+        "pre_idempotent_support_total": 2,
+        "self_transport": {
+          "intersection": [
+            25,
+            26
+          ],
+          "left": [
+            25,
+            26
+          ],
+          "rank": 2,
+          "right": [
+            25,
+            26
+          ]
+        },
+        "spectral_signature_by_sector": {
+          "25": [
+            {
+              "label": "S-",
+              "local_pre_idempotents": [
+                3
+              ],
+              "object": 4,
+              "separator_eigenvalues": [
+                1610
+              ]
+            }
+          ],
+          "26": [
+            {
+              "label": "S-",
+              "local_pre_idempotents": [
+                10
+              ],
+              "object": 4,
+              "separator_eigenvalues": [
+                986365
+              ]
+            }
+          ]
+        },
+        "transport_from_pi33": {
+          "intersection": [],
+          "left": [
+            33
+          ],
+          "rank": 0,
+          "right": [
+            25,
+            26
+          ]
+        },
+        "transport_to_pi33": {
+          "intersection": [],
+          "left": [
+            25,
+            26
+          ],
+          "rank": 0,
+          "right": [
+            33
+          ]
+        }
+      }
+    ],
+    "primitive_carrier_pi33": {
+      "active_cy_sectors": [
+        "B",
+        "S"
+      ],
+      "active_objects": [
+        "B+",
+        "S+"
+      ],
+      "block_dimensions": [
+        2
+      ],
+      "carrier": [
+        33
+      ],
+      "classification": "primitive_support_exact_residual_carrier",
+      "classification_reason": "unique primitive public-zero carrier selected by the certified sector-33 height transport",
+      "identity_coefficients_signed_by_sector": {
+        "33": [
+          0,
+          -31250,
+          0,
+          0,
+          0,
+          492189
+        ]
+      },
+      "individual_public_nonzero_count_sum_before_cancellation": 0,
+      "internal_dimension_sum_d_squared": 4,
+      "loop_coordinate_support_total": 56,
+      "permutation_multiplicity_sum": 18,
+      "permutation_rank_sum": 36,
+      "pre_idempotent_support_total": 2,
+      "self_transport": {
+        "intersection": [
+          33
+        ],
+        "left": [
+          33
+        ],
+        "rank": 4,
+        "right": [
+          33
+        ]
+      },
+      "spectral_signature_by_sector": {
+        "33": [
+          {
+            "label": "B+",
+            "local_pre_idempotents": [
+              12
+            ],
+            "object": 1,
+            "separator_eigenvalues": [
+              999881
+            ]
+          },
+          {
+            "label": "S+",
+            "local_pre_idempotents": [
+              6
+            ],
+            "object": 5,
+            "separator_eigenvalues": [
+              1746
+            ]
+          }
+        ]
+      }
+    },
+    "self_transport_ranks": {
+      "25,26": 2,
+      "6,26": 5
+    },
+    "transport_components": {
+      "mixed_S_channel_superselection_null_carrier": [
+        6,
+        26
+      ],
+      "primitive_residual_atom": [
+        33
+      ],
+      "pure_Sminus_superselection_null_doublet": [
+        25,
+        26
+      ]
+    },
+    "transport_from_pi33_ranks": {
+      "25,26": 0,
+      "6,26": 0
+    },
+    "transport_to_pi33_ranks": {
+      "25,26": 0,
+      "6,26": 0
+    }
+  },
+  "inputs": {
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "0f0b38642de3a082109613f5411e0b0615501903bd5b233f07bbdd3718c6cbae"
+    },
+    "sector_idempotent_carrier_admissibility_report": {
+      "path": "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
+      "sha256": "8aee680091294e7d318635fefc86d3a0b542ebe638cbac43cbee994125f63b90"
+    }
+  },
+  "interpretation": {
+    "mixed_S_channel_carrier": "{6,26} is a mixed S-/S+ public-zero superselection carrier: one M2 block plus one scalar block, self-rank 5, and zero transport to/from Pi_33 despite object-level S+ overlap.",
+    "public_zero_fiber": "The public-zero fiber splits into one primitive residual atom Pi_33 and two minimal composite superselection carriers.",
+    "pure_Sminus_doublet": "{25,26} is a pure S- public-zero superselection doublet: two scalar blocks, self-rank 2, and zero transport to/from Pi_33."
+  },
+  "next_highest_yield_item": "Promote the two composite superselection labels into the finite boundary charge/flux balance state so hidden null sectors cannot be mistaken for public zero.",
+  "object": "d20",
+  "schema": "d20.theorem.minimal_composite_null_carriers_transport",
+  "status": "D20_MINIMAL_COMPOSITE_NULL_CARRIERS_TRANSPORT_CLASSIFIED"
+}

@@ -1,8 +1,8 @@
-# G(d20) v10 — classification of `R_Omega`
+# G(d20) source_drop — classification of `R_Omega`
 
 ## Result
 
-`R_Omega` is now classified, at the level certified by the v8/v9 data, as a **two-mode curvature band plus monodromy correction plus stabilizer-breaking tail**.
+`R_Omega` is now classified, at the level certified by the source_drop/source_drop data, as a **two-mode curvature band plus monodromy correction plus stabilizer-breaking tail**.
 
 The dominant singular energy is:
 
@@ -84,9 +84,9 @@ Interpretation: the factorization is strong but not exact. The joint `Omega_J + 
 
 ## Equivariance under the signed-Fano flag stabilizer
 
-The exact signed-Fano permutation representation on the 16 builder and 16 jabber strategy labels is not present in the v8/v9 bundle. Therefore the full signed-Fano equivariance claim is **not certified** from the available files.
+The exact signed-Fano permutation representation on the 16 builder and 16 jabber strategy labels is not present in the source_drop/source_drop bundle. Therefore the full signed-Fano equivariance claim is **not certified** from the available files.
 
-What can be certified is the maximal row/column permutation subgroup that preserves the v8 Fano-coordinate flag tensor exactly. Under that visible flag stabilizer, `R_Omega` is not equivariant.
+What can be certified is the maximal row/column permutation subgroup that preserves the source_drop Fano-coordinate flag tensor exactly. Under that visible flag stabilizer, `R_Omega` is not equivariant.
 
 - row pattern class sizes: `[8, 1, 1, 1, 1, 1, 1, 1, 1]`
 - column pattern class sizes: `[12, 1, 1, 1, 1]`
@@ -121,7 +121,7 @@ The package now includes `fano_6j/`, which nullifies the clean Fano point `001`,
 
 ## Fano layer supplement
 
-The package now includes `fano/`, containing the canonical Fano plane over `F_2^3`, the incident flag stabilizer of order `8`, the original v8 Fano-zone input tables, and Fano-zone projections of `P_G`, `Pi_flag`, and `R_Omega`. See `fano/fano_layer_report.md`.
+The package now includes `fano/`, containing the canonical Fano plane over `F_2^3`, the incident flag stabilizer of order `8`, the original source_drop Fano-zone input tables, and Fano-zone projections of `P_G`, `Pi_flag`, and `R_Omega`. See `fano/fano_layer_report.md`.
 
 ## Files
 
@@ -142,12 +142,12 @@ The package now includes `fano/`, containing the canonical Fano plane over `F_2^
 - `Romega_svd_mode_cards.csv`
 - `Romega_svd_row_loadings.csv`
 
-## v13 decisive tests supplement
+## source_drop decisive tests supplement
 
-The package now includes `v13_decisive_tests/`, running the seven-null-point sweep, compound Spin12 foam lift on `1 ⊕ Λ²H6`, mode-by-mode 6j typing of the original `R_Omega` singular modes, rank-lock truncation, and shuffle controls. See `v13_decisive_tests/v13_decisive_tests_report.md`.
+The package now includes `decisive_tests/`, running the seven-null-point sweep, compound Spin12 foam lift on `1 ⊕ Λ²H6`, mode-by-mode 6j typing of the original `R_Omega` singular modes, rank-lock truncation, and shuffle controls. See `decisive_tests/decisive_tests_report.md`.
 
 
-## v14 curvature/descent supplement
+## source_drop curvature/descent supplement
 
-The package now includes `v14_curvature_descent/`, adding full `W(D6)` invariant projection, pair3 quotient descent `H6 -> {B,V,S}`, and finite skew/exact/curl tests on the six-edge residual operator. See `v14_curvature_descent/v14_curvature_descent_report.md`.
+The package now includes `curvature_descent/`, adding full `W(D6)` invariant projection, pair3 quotient descent `H6 -> {B,V,S}`, and finite skew/exact/curl tests on the six-edge residual operator. See `curvature_descent/curvature_descent_report.md`.
 

@@ -1,0 +1,158 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8c57f309218bdd91b6ce536867a95e0f7e94c89ca506fb0805e39fd46ba291e0",
+  "checks": {
+    "a236_is_not_ordinary_a985_quotient": true,
+    "all_residue_transport_is_height_coherent_but_edge_mod2_is_not": true,
+    "height_transport_derives_gamma8_residual_from_circuit": true,
+    "public_shadow_kernel_is_not_one_dimensional": true,
+    "public_zero_idempotent_carriers_are_not_unique": true,
+    "superselection_extension_tracks_nonprimitive_public_zero_carriers": true,
+    "terminal_quotient_readouts_close": true,
+    "tube_projection_retains_nontrivial_kernel": true
+  },
+  "claim": "The d20 finite interface is not correctly described as a strict quotient tower. A42 and A12 are terminal quotient readouts of A985, while A236 is native branching/fusion data and the hidden sector invariants require tube sections, public-shadow kernels, superselection carriers, and height-coherent action-return transport.",
+  "decision": {
+    "may_claim_strict_quotient_tower": false,
+    "may_claim_terminal_quotient_readouts": true,
+    "may_claim_weakened_readout_transport_stack": true,
+    "reason": "The ordinary quotient statement holds only for the terminal A42/A12 readouts. A236, kernel retention, public-zero carriers, and height-coherent transports carry additional invariant data outside a strict quotient-only chain."
+  },
+  "definition": {
+    "intrinsic_transport": "Lambda_hc(gamma)=lambda_boundary(gamma) - (A_h(gamma)/dim(Pi_33)) e_33.",
+    "native_branching_readout": "A236 is representation/fusion branching data, not an ordinary A985 central quotient.",
+    "recommended_name": "readout/transport stack",
+    "strict_quotient_tower": "A chain in which each level is obtained only as an ordinary algebra quotient of the previous level.",
+    "terminal_quotient_readouts": "A985 -> A42 -> A12 closes as stored quotient maps and tensors.",
+    "weakened_stack": "A typed family of functorial readouts, quotient shadows, retained kernels, sector carriers, and intrinsic transports over the same d20 object."
+  },
+  "next_highest_yield_item": "Propagate the readout/transport-stack terminology through the canonical generated artifacts during the next targeted rebuild, after formatting/layout decisions are fixed.",
+  "non_claims": [
+    "This does not rewrite the current generated core layer wording; it scopes and supersedes it until the next canonical rebuild.",
+    "This does not claim that every public-zero kernel vector is physically admissible.",
+    "This does not prove P != NP."
+  ],
+  "object": "d20",
+  "readout_stack": {
+    "bulk": {
+      "object": "A985",
+      "ordinary_quotient_parent": null,
+      "role": "finite generated multiplication body"
+    },
+    "height_action_return_transport": {
+      "corrected_transport_vector_sha256": "08c5f8dd0ee29a3bdaf61dc4b0d70c30169550579a4aaad8ecaccb0a4d828859",
+      "formula": "Lambda_hc(gamma)=lambda_boundary(gamma) - (A_h(gamma)/dim(Pi_33)) e_33.",
+      "gamma8_height_action": 374784,
+      "gamma8_residual_integral": -374784,
+      "gamma8_transport_scalar": 812611,
+      "height_transport_vector_sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+      "q12_nonzero_count": 0,
+      "q42_nonzero_count": 0
+    },
+    "idempotent_admissibility": {
+      "boolean_public_zero_solution_count_including_zero": 6,
+      "interpretation": {
+        "admissibility_boundary": "Future physics statements must specify whether carriers are primitive, support-exact, or allowed to include null composite sectors. Without that seam, public invisibility has gauge-like degeneracy.",
+        "what_fails": "The stronger claim that Pi_33 is the only public-zero idempotent carrier is false: two non-Pi_33 composites, {6,26} and {25,26}, are also public-zero boundary-null idempotents.",
+        "what_survives": "Pi_33 remains the unique primitive/single-sector public-zero carrier and the unique support-exact carrier for the certified height transport."
+      }
+    },
+    "native_a236": {
+      "object": "A236",
+      "ordinary_quotient_of_A985": false,
+      "role": "native representation/fusion branching readout"
+    },
+    "public_zero_kernel": {
+      "coordinate_axis_public_zero_sectors": [
+        33
+      ],
+      "kernel_dimension": 27,
+      "rank_mod_prime": 12
+    },
+    "retained_kernel_data": {
+      "closed_loop_quotient_dimension": 297,
+      "projection_kernel_dimension": 44224
+    },
+    "superselection_extension": {
+      "ontological": "Public zero is refined into a finite hidden null fiber. Gauge zero, the primitive residual atom, and the two composite superselection carriers are distinct states of the augmented ledger.",
+      "overlap_warning": "The two composite labels are not independent Boolean bits: their sector supports share sector 26, giving cross-transport rank one. The admissible hidden state set has six states, not the full three-bit cube.",
+      "technological": "A runtime or protocol may project the hidden labels away for public display, but must retain them in the internal state if it wants flux balance to distinguish gauge zero from hidden null transport."
+    },
+    "terminal_quotients": [
+      {
+        "object": "A42",
+        "ordinary_quotient_of_A985": true,
+        "role": "terminal quotient readout"
+      },
+      {
+        "object": "A12",
+        "ordinary_quotient_of_A42": true,
+        "role": "terminal quotient readout"
+      }
+    ]
+  },
+  "schema": "d20.theorem.readout_stack_scope",
+  "source_audit": {
+    "core_a985": {
+      "path": "layers/core/a985.json",
+      "q12_classes": 12,
+      "q42_classes": 42,
+      "q42_to_q12_consistent": true,
+      "sha256": "b2caee558395078c39d984fcd3d8c9d9a625d81924aa122aa3c10b36daddfc5d"
+    },
+    "derived_invariant_reports": {
+      "contains_a236_obstruction": true,
+      "path": "data/invariants/d20/derived_invariant_reports.json",
+      "sha256": "fc47e94d0bf141dc0cf9e50e9e8644ae27636a39783baf977cd23deeaf783421"
+    },
+    "sector33_all_residue_height_transport": {
+      "all_checks_pass": true,
+      "expected_status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "706a8a3d369f2b0f29f87c60ad3b43781f9c52c4e9a6d276e26c6d1413fd01ed",
+      "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "sector33_height_coherent_transport": {
+      "all_checks_pass": true,
+      "expected_status": "D20_SECTOR33_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "sha256": "a33668aef24f3405c5f7c4caa5f1301d076ac6c778f7e54afcaff1b61e71f708",
+      "status": "D20_SECTOR33_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "sector_idempotent_carrier_admissibility": {
+      "all_checks_pass": true,
+      "expected_status": "D20_SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_CLASSIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
+      "sha256": "cc17a32a4d8ff6fea00a192523a75ae22474a3348588dca83402cd93db2367df",
+      "status": "D20_SECTOR_IDEMPOTENT_CARRIER_ADMISSIBILITY_CLASSIFIED"
+    },
+    "sector_public_shadow_kernel": {
+      "all_checks_pass": true,
+      "expected_status": "D20_SECTOR_PUBLIC_SHADOW_KERNEL_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector_public_shadow_kernel/report.json",
+      "sha256": "3b50eb329960eefb7217d0bca83b54aade5331347fda7176740fb03345a57ccd",
+      "status": "D20_SECTOR_PUBLIC_SHADOW_KERNEL_CERTIFIED"
+    },
+    "superselection_flux_balance_extension": {
+      "all_checks_pass": true,
+      "expected_status": "D20_SUPERSELECTION_FLUX_BALANCE_EXTENSION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/superselection_flux_balance_extension/report.json",
+      "sha256": "1243aa0d50221a119262dfccddfbab1215eebef0e6fe96c7fb6d2979f30df9b2",
+      "status": "D20_SUPERSELECTION_FLUX_BALANCE_EXTENSION_CERTIFIED"
+    },
+    "tube_projection_section": {
+      "passed": true,
+      "path": "layers/tube/projection_section.json",
+      "projection_kernel_dimension": 44224,
+      "projection_section_identity": true,
+      "schema": "gnatural.c985.tube_projection_section",
+      "sha256": "cb0c078f42899f786ed7a0f620ce26c1b1b1a69789e8d36bdf126aa3b9968c3d"
+    }
+  },
+  "status": "D20_READOUT_TRANSPORT_STACK_SCOPE_CERTIFIED"
+}

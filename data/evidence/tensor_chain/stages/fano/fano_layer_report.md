@@ -1,8 +1,8 @@
-# Fano layer supplement for v10 `R_Omega` classification
+# Fano layer supplement for source_drop `R_Omega` classification
 
 ## What was missing
 
-The previous v10 package classified `R_Omega`, but it did not include the explicit Fano-plane data or the original v8 Fano-zone tables. This supplement adds both.
+The previous source_drop package classified `R_Omega`, but it did not include the explicit Fano-plane data or the original source_drop Fano-zone tables. This supplement adds both.
 
 ## Canonical Fano plane
 
@@ -40,9 +40,9 @@ For `P_G`, these are the Fano-zone payoff coefficients. For `R_Omega`, the coeff
 
 ## Equivariance caveat
 
-This package now includes the unsigned Fano flag stabilizer explicitly. However, the available v8/v9 data still do not contain a signed-Fano permutation representation on the 16 builder labels and 16 jabber labels. Therefore the full signed-Fano equivariance test on `R_Omega` remains uncertified.
+This package now includes the unsigned Fano flag stabilizer explicitly. However, the available source_drop/source_drop data still do not contain a signed-Fano permutation representation on the 16 builder labels and 16 jabber labels. Therefore the full signed-Fano equivariance test on `R_Omega` remains uncertified.
 
-What is now certified is the canonical Fano flag object and the exact v8/v9 Fano-zone projection data.
+What is now certified is the canonical Fano flag object and the exact source_drop/source_drop Fano-zone projection data.
 
 ## Added files
 
@@ -61,7 +61,7 @@ What is now certified is the canonical Fano flag object and the exact v8/v9 Fano
 - `fano/fano_zone_projection_R_Omega.csv`
 - `fano/fano_zone_projection_arrays.npz`
 - `fano/fano_zone_weighted_operator_summary.csv`
-- `fano/input_v8/g_v8_builder_flag_simplex.csv`
-- `fano/input_v8/g_v8_fano_zone_summary.csv`
-- `fano/input_v8/g_v8_jabber_flag_simplex.csv`
-- `fano/input_v8/g_v8_pair_flag_features.csv`
+- `fano/input/g_builder_flag_simplex.csv`
+- `fano/input/g_fano_zone_summary.csv`
+- `fano/input/g_jabber_flag_simplex.csv`
+- `fano/input/g_pair_flag_features.csv`

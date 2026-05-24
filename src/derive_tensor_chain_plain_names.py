@@ -188,7 +188,7 @@ def derive() -> dict[str, Any]:
     )
 
     return {
-        "schema": "d20.tensor_chain.plain_name_view.v1",
+        "schema": "d20.tensor_chain.plain_name_view.source_drop",
         "status": "TENSOR_CHAIN_PLAIN_NAME_VIEW_GENERATED",
         "canonical_folder": "data/evidence/tensor_chain",
         "generated_file": "data/evidence/tensor_chain/plain_name_view.json",

@@ -1,0 +1,5672 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9d3d97033fd8d8d0b54c3b6d1af35d339049e633b9ae8b1aed634f7421ac99d8",
+  "checks": {
+    "all_corrected_maximal_packet_clocks_are_additive": true,
+    "all_corrected_maximal_packets_contain_gamma8": true,
+    "anomaly_cancelled_flux_balance_recovery_is_certified": true,
+    "corrected_gamma8_half_anomaly_is_zero": true,
+    "corrected_gamma8_r33_is_order_two": true,
+    "corrected_gamma8_recovery_extends_prior_exclusion": true,
+    "corrected_maximal_packet_count_is_62": true,
+    "corrected_maximal_packet_counts_are_32_and_30": true,
+    "corrected_subspace_dimension_counts_match_search": true,
+    "finite_anomaly_counter_is_certified": true,
+    "gamma8_is_basis_coordinate_8": true,
+    "gamma8_original_half_anomaly_is_5": true,
+    "minimal_signed_mod26_lift_is_5": true,
+    "rank_one_counterterm_is_unique_mod13": true,
+    "sector26_anomaly_cancellation_is_certified": true,
+    "zero_counterterm_cannot_include_gamma8": true
+  },
+  "claim": "The first non-exact event gamma_8 can enter a finite flux-balance law only after a rank-one sector-26 counterterm. The unique half-anomaly counterterm is 5 mod 13 on basis coordinate 8; it sends the normalized R33 value of gamma_8 from 8 to 13, making gamma_8 order-two and opening 62 corrected maximal packets.",
+  "definition": {
+    "corrected_balance": "R33'_norm(mask)=R33_norm(mask)+kappa_8(mask) is additive modulo 26 on corrected packets.",
+    "corrected_half_anomaly": "h'_13(a,b)=h_13(a,b)-5*a_8*b_8, so gamma_8 becomes a radical generator.",
+    "gamma8_counterterm": "kappa_8(mask)=5 if basis coordinate 8 is active and 0 otherwise; it is subtracted from the mod-26 optical clock and added to normalized R33."
+  },
+  "derived": {
+    "corrected_packet_search": {
+      "all_corrected_maximal_packets": [
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              4,
+              5,
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            184,
+            256
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            184,
+            187,
+            252,
+            255,
+            256,
+            259,
+            324,
+            327,
+            440,
+            443,
+            508,
+            511
+          ],
+          "sha256": "ac730125c7813e52f87333c49fa8e8ef71e46343cb03629536a9c71e5ffb808c",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              5,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            552
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            552,
+            555,
+            620,
+            623,
+            808,
+            811,
+            876,
+            879
+          ],
+          "sha256": "c85768111522349c539c65ec1e7c563179f4796dbd8f823b9f215e6c7238d504",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              5,
+              7,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            688
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            688,
+            691,
+            756,
+            759,
+            944,
+            947,
+            1012,
+            1015
+          ],
+          "sha256": "55287752d32695bf719edcbbe5453477c3962487e070e77e3bfb861ec874d88a",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              4,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            1176
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1176,
+            1179,
+            1244,
+            1247,
+            1432,
+            1435,
+            1500,
+            1503
+          ],
+          "sha256": "9f4104b2e523d6a158d23edac66d61f21ceee36ba318c45e7eabc28f14a71ce9",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            1544
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1544,
+            1547,
+            1612,
+            1615,
+            1800,
+            1803,
+            1868,
+            1871
+          ],
+          "sha256": "530bafbdcea95007bd4c3491c75587b776a386219cd80edceb98900d3cd9d2b5",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              7,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            1680
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1680,
+            1683,
+            1748,
+            1751,
+            1936,
+            1939,
+            2004,
+            2007
+          ],
+          "sha256": "49bf0d9ecc6335f5fef313f8c8e9e627a3b81b096a9e64ed6c0eae1ac9fb99a2",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "basis_masks": [
+            3,
+            112,
+            140,
+            256
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            112,
+            115,
+            140,
+            143,
+            252,
+            255,
+            256,
+            259,
+            368,
+            371,
+            396,
+            399,
+            508,
+            511
+          ],
+          "sha256": "387c141127b8915a125211eb91d400e5092a18c7cf488b3b81319a6ecc19fb2b",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              7,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            112,
+            256,
+            644
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            112,
+            115,
+            256,
+            259,
+            368,
+            371,
+            644,
+            647,
+            756,
+            759,
+            900,
+            903,
+            1012,
+            1015
+          ],
+          "sha256": "b1ea6a8c58c330fb9ebf1090e1173f61c185230fcdc5d6dd546f07f8967acb8f",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            112,
+            256,
+            1544
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            112,
+            115,
+            256,
+            259,
+            368,
+            371,
+            1544,
+            1547,
+            1656,
+            1659,
+            1800,
+            1803,
+            1912,
+            1915
+          ],
+          "sha256": "f2fdba3d67cd70082088e44d16959521f4d2d576da12aabec2b3dbcb804c094b",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            140,
+            256,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            140,
+            143,
+            256,
+            259,
+            396,
+            399,
+            1104,
+            1107,
+            1244,
+            1247,
+            1360,
+            1363,
+            1500,
+            1503
+          ],
+          "sha256": "af6c7abf7934e2410c1acdf7673de7dcca100e86fa654c0d3c0542dc9d0d450a",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              5,
+              9
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            256,
+            552,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            256,
+            259,
+            552,
+            555,
+            808,
+            811,
+            1104,
+            1107,
+            1360,
+            1363,
+            1656,
+            1659,
+            1912,
+            1915
+          ],
+          "sha256": "40a91afffd8df7d526a735828a7af64fb133b39d41f081eecd7c6d4dfb056b82",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              7,
+              9
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            256,
+            644,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            256,
+            259,
+            644,
+            647,
+            900,
+            903,
+            1104,
+            1107,
+            1360,
+            1363,
+            1748,
+            1751,
+            2004,
+            2007
+          ],
+          "sha256": "acc874474d9f29b6ffb6764656c091e86c923aeff34d988b26178ffa1b81f8b2",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              1,
+              3,
+              5,
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "basis_masks": [
+            17,
+            68,
+            170,
+            256
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            68,
+            85,
+            170,
+            187,
+            238,
+            255,
+            256,
+            273,
+            324,
+            341,
+            426,
+            443,
+            494,
+            511
+          ],
+          "sha256": "7cc23c66fb9bd94a00d210d361fff133ef8f1c737a9a3e2ee87528c74e0ac191",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              5,
+              9
+            ]
+          ],
+          "basis_masks": [
+            17,
+            68,
+            256,
+            552
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            68,
+            85,
+            256,
+            273,
+            324,
+            341,
+            552,
+            569,
+            620,
+            637,
+            808,
+            825,
+            876,
+            893
+          ],
+          "sha256": "7729df87220a3bf7a418804d1de1b148df70cb957d00d3164eb54504377ff92a",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              5,
+              7,
+              9
+            ]
+          ],
+          "basis_masks": [
+            17,
+            68,
+            256,
+            674
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            68,
+            85,
+            256,
+            273,
+            324,
+            341,
+            674,
+            691,
+            742,
+            759,
+            930,
+            947,
+            998,
+            1015
+          ],
+          "sha256": "38e2569979db2e95dbb60572e077f51fd7bd4ad05c298b4717f5cc619b6d864e",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              3,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            68,
+            256,
+            1162
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            68,
+            85,
+            256,
+            273,
+            324,
+            341,
+            1162,
+            1179,
+            1230,
+            1247,
+            1418,
+            1435,
+            1486,
+            1503
+          ],
+          "sha256": "be2dd980c6e72591cca95fd3d693fefe7dcd67def9f8f24d54dd4e5f970d90f8",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            68,
+            256,
+            1544
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            68,
+            85,
+            256,
+            273,
+            324,
+            341,
+            1544,
+            1561,
+            1612,
+            1629,
+            1800,
+            1817,
+            1868,
+            1885
+          ],
+          "sha256": "a59f3ef42e3ee6d69e7acd67abe2ddcc164eaff5a27a5ff6634d8ece3e88ab01",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              7,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            68,
+            256,
+            1666
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            68,
+            85,
+            256,
+            273,
+            324,
+            341,
+            1666,
+            1683,
+            1734,
+            1751,
+            1922,
+            1939,
+            1990,
+            2007
+          ],
+          "sha256": "b02e8dca655e17bdc1131d279d157a2754f62f4a9247104a6f394e48b64dee3f",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5,
+              6
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "basis_masks": [
+            17,
+            98,
+            140,
+            256
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            98,
+            115,
+            140,
+            157,
+            238,
+            255,
+            256,
+            273,
+            354,
+            371,
+            396,
+            413,
+            494,
+            511
+          ],
+          "sha256": "d024875e8a3201ae71c6909702333371e1aec946d7cfe1eb8ae38c5fd5bfeb51",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              7,
+              9
+            ]
+          ],
+          "basis_masks": [
+            17,
+            98,
+            256,
+            644
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            98,
+            115,
+            256,
+            273,
+            354,
+            371,
+            644,
+            661,
+            742,
+            759,
+            900,
+            917,
+            998,
+            1015
+          ],
+          "sha256": "2c316b63e1cbf94534f10248e038769f89f02b46733cf108685816b4fdde6179",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            98,
+            256,
+            1544
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            98,
+            115,
+            256,
+            273,
+            354,
+            371,
+            1544,
+            1561,
+            1642,
+            1659,
+            1800,
+            1817,
+            1898,
+            1915
+          ],
+          "sha256": "dc2f486bd6c739b7395e3808e43c1c660aac17585029937b395c209003ef8664",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            140,
+            256,
+            1090
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            140,
+            157,
+            256,
+            273,
+            396,
+            413,
+            1090,
+            1107,
+            1230,
+            1247,
+            1346,
+            1363,
+            1486,
+            1503
+          ],
+          "sha256": "d93f77bc00b57a1bedbedb4409644d2ce4ed84ece57e92698ff9c54bdf57340f",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              5,
+              9
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            256,
+            552,
+            1090
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            256,
+            273,
+            552,
+            569,
+            808,
+            825,
+            1090,
+            1107,
+            1346,
+            1363,
+            1642,
+            1659,
+            1898,
+            1915
+          ],
+          "sha256": "b37d01ccfde5c7d5a6f8798e05bf6240b3b196c0cafecd7d437430c52394d872",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              7,
+              9
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            256,
+            644,
+            1090
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            256,
+            273,
+            644,
+            661,
+            900,
+            917,
+            1090,
+            1107,
+            1346,
+            1363,
+            1734,
+            1751,
+            1990,
+            2007
+          ],
+          "sha256": "6a5106bbe6924aa4105e91575b099eb11220888df5b4af674ef59817d8183038",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              5,
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "basis_masks": [
+            26,
+            68,
+            161,
+            256
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            26,
+            68,
+            94,
+            161,
+            187,
+            229,
+            255,
+            256,
+            282,
+            324,
+            350,
+            417,
+            443,
+            485,
+            511
+          ],
+          "sha256": "c119cb1ff24198b6b143176fbd4565acd5fc10de998257a8125c9cfff976d9ed",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              0,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            26,
+            68,
+            256,
+            1153
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            26,
+            68,
+            94,
+            256,
+            282,
+            324,
+            350,
+            1153,
+            1179,
+            1221,
+            1247,
+            1409,
+            1435,
+            1477,
+            1503
+          ],
+          "sha256": "e28248ca824d5a3df0b940922bd3754877577949799891b8d649375d19bb39c8",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              5,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              4,
+              9
+            ]
+          ],
+          "basis_masks": [
+            68,
+            161,
+            256,
+            530
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            68,
+            161,
+            229,
+            256,
+            324,
+            417,
+            485,
+            530,
+            598,
+            691,
+            759,
+            786,
+            854,
+            947,
+            1015
+          ],
+          "sha256": "28214c3cf403a35852e9affa324d2d34895bb91584a492583632908a0f18ebb7",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              5,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            68,
+            161,
+            256,
+            1544
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            68,
+            161,
+            229,
+            256,
+            324,
+            417,
+            485,
+            1544,
+            1612,
+            1705,
+            1773,
+            1800,
+            1868,
+            1961,
+            2029
+          ],
+          "sha256": "5790749d15b2f7da33df5cb06d7830571294d51476ee35e45236026d21022981",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              4,
+              9
+            ],
+            [
+              0,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            68,
+            256,
+            530,
+            1153
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            68,
+            256,
+            324,
+            530,
+            598,
+            786,
+            854,
+            1153,
+            1221,
+            1409,
+            1477,
+            1683,
+            1751,
+            1939,
+            2007
+          ],
+          "sha256": "ea84002f945044862a633d58bbfb1d1d6b292f098586f4fc49b3d0e102e1d3d5",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              5,
+              9
+            ],
+            [
+              0,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            68,
+            256,
+            552,
+            1153
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            68,
+            256,
+            324,
+            552,
+            620,
+            808,
+            876,
+            1153,
+            1221,
+            1409,
+            1477,
+            1705,
+            1773,
+            1961,
+            2029
+          ],
+          "sha256": "288130522dd3bb63e9f5e6c7f669ee02f497f9c7a47670e1cc726b8e82a9b460",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              5,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            256,
+            1060
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            256,
+            259,
+            1060,
+            1063,
+            1316,
+            1319
+          ],
+          "sha256": "90a738317f2282a9cb34dac5d67a6c69e402b354b7c9d4011f304d63e00c8f85",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              8
+            ],
+            [
+              5,
+              6,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            256,
+            1248
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            256,
+            259,
+            1248,
+            1251,
+            1504,
+            1507
+          ],
+          "sha256": "5378f7d43c0df5ff1ed3b623f210f945555175bfe4aee18e6c49b191d7e0aeca",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              5,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            256,
+            1060
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            256,
+            273,
+            1060,
+            1077,
+            1316,
+            1333
+          ],
+          "sha256": "bb29cacefc40d73aa707f63fa36160d6478175aef32e76c3ba4f592ecd3ee2fc",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              8
+            ],
+            [
+              5,
+              6,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            256,
+            1248
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            17,
+            256,
+            273,
+            1248,
+            1265,
+            1504,
+            1521
+          ],
+          "sha256": "95860b353b76fa68cfd2c0f8afce9b6511e079f2136a244d49a04ec797cb7a14",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              7,
+              9
+            ]
+          ],
+          "basis_masks": [
+            26,
+            256,
+            644
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            26,
+            256,
+            282,
+            644,
+            670,
+            900,
+            926
+          ],
+          "sha256": "14a21942bc45de4a41af919b5e45f7f92b0b4025d40015bbb44761dce43f1fd1",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              5,
+              10
+            ]
+          ],
+          "basis_masks": [
+            26,
+            256,
+            1060
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            26,
+            256,
+            282,
+            1060,
+            1086,
+            1316,
+            1342
+          ],
+          "sha256": "876b9f268bd71340e74eb84baa1ccd49631653945b4e9b9a58f517a783c5188e",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              8
+            ],
+            [
+              5,
+              6,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            26,
+            256,
+            1248
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            26,
+            256,
+            282,
+            1248,
+            1274,
+            1504,
+            1530
+          ],
+          "sha256": "27819aa77d25dedaaefd186f03f215e795632fcddb8f1fc263efb037f3b58b95",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              8
+            ],
+            [
+              0,
+              5,
+              6,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            26,
+            256,
+            1633
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            26,
+            256,
+            282,
+            1633,
+            1659,
+            1889,
+            1915
+          ],
+          "sha256": "97b62716225b9dc3a36eb9c420dfef1f3226531cf4f48b4fce2a6b3eaefc8082",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              0,
+              2,
+              3,
+              9
+            ]
+          ],
+          "basis_masks": [
+            98,
+            256,
+            525
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            98,
+            256,
+            354,
+            525,
+            623,
+            781,
+            879
+          ],
+          "sha256": "84499c8c814056bec93a87898e79d9a08152c7573119e8d84a2bdbe618115e83",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              0,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            98,
+            256,
+            1153
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            98,
+            256,
+            354,
+            1153,
+            1251,
+            1409,
+            1507
+          ],
+          "sha256": "a136f84efb8177a1e547090a96d71542c479da7fae1bd912e301f9a04856b0de",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              4,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            98,
+            256,
+            1176
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            98,
+            256,
+            354,
+            1176,
+            1274,
+            1432,
+            1530
+          ],
+          "sha256": "e5cb7f76edaf7ade059de80da7efa02ac7aa8004c829f860e3a26e8199e845b0",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              7,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            98,
+            256,
+            1680
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            98,
+            256,
+            354,
+            1680,
+            1778,
+            1936,
+            2034
+          ],
+          "sha256": "e68e117f5a2ed6fe5bae8c1b9f40e98994f4e1e83273bb463ab2ff2cff4397a7",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              0,
+              2,
+              3,
+              9
+            ]
+          ],
+          "basis_masks": [
+            112,
+            256,
+            525
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            112,
+            256,
+            368,
+            525,
+            637,
+            781,
+            893
+          ],
+          "sha256": "128e023582f0e52b5315672e0b85fb90f30a38cb3a1bc90a7e53c38ca05a0c26",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              0,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            112,
+            256,
+            1153
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            112,
+            256,
+            368,
+            1153,
+            1265,
+            1409,
+            1521
+          ],
+          "sha256": "a7db20e7339abe25a62787d7c8683af219fbc6789c1d2339dfb0cf34ceb9af57",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              3,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            112,
+            256,
+            1162
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            112,
+            256,
+            368,
+            1162,
+            1274,
+            1418,
+            1530
+          ],
+          "sha256": "5591e3ac2eafa76d555b4f75ccfbd9947e2491577aab08bbd3f97a51949adff0",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              7,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            112,
+            256,
+            1666
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            112,
+            256,
+            368,
+            1666,
+            1778,
+            1922,
+            2034
+          ],
+          "sha256": "0be513186f9a8871f26f3870bf5577208d70ac022fe54d7e8665be51970a45fb",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              4,
+              9
+            ]
+          ],
+          "basis_masks": [
+            140,
+            256,
+            530
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            140,
+            256,
+            396,
+            530,
+            670,
+            786,
+            926
+          ],
+          "sha256": "b478ce71f22f336e20fe917cb44edd7902cc3c85a7cba2ee39c5bc69194015a7",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              0,
+              5,
+              6,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            140,
+            256,
+            1633
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            140,
+            256,
+            396,
+            1633,
+            1773,
+            1889,
+            2029
+          ],
+          "sha256": "99a00763754289df1b1637af4dbf4547ebd7318920898121b0efaf6b26ca1d9e",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              5,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            161,
+            256,
+            1090
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            161,
+            256,
+            417,
+            1090,
+            1251,
+            1346,
+            1507
+          ],
+          "sha256": "debefa6cb466ebfcb49e5b0f66f20b13810a8fade59bdf28922f06c01a91dad4",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              5,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            161,
+            256,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            161,
+            256,
+            417,
+            1104,
+            1265,
+            1360,
+            1521
+          ],
+          "sha256": "9b59a24dd3debf6090ab142f3f460115504bdd0ce614f925e2a74596b912627e",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              1,
+              3,
+              5,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            170,
+            256,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            170,
+            256,
+            426,
+            1104,
+            1274,
+            1360,
+            1530
+          ],
+          "sha256": "d33d8c4cb11b44904ed259196996cea26b9d989282dc433c8a386cbefda2f5ed",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              3,
+              4,
+              5,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            184,
+            256,
+            1090
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            184,
+            256,
+            440,
+            1090,
+            1274,
+            1346,
+            1530
+          ],
+          "sha256": "47ff17dd9c9779fc94dc540be3a311399b2de0d1075cae15455aced896982e65",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              0,
+              2,
+              3,
+              9
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            525,
+            1090
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            525,
+            781,
+            1090,
+            1346,
+            1615,
+            1871
+          ],
+          "sha256": "d2ddd2204ece53dbdd5f7915ab0a637590ceb387e0e91416c3362e899213241e",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              0,
+              2,
+              3,
+              9
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            525,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            525,
+            781,
+            1104,
+            1360,
+            1629,
+            1885
+          ],
+          "sha256": "ccc0f83a21d23a7c37f39eaa54f55a8d91faa7b1e62aa9a67fd17f3daa0e8ce9",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              0,
+              2,
+              3,
+              9
+            ],
+            [
+              5,
+              6,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            525,
+            1248
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            525,
+            781,
+            1248,
+            1504,
+            1773,
+            2029
+          ],
+          "sha256": "5ff92cc8b5e6d5b4262048b48c5694cc17096aa3d93a979c2d550403ce5c2d89",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              1,
+              4,
+              9
+            ],
+            [
+              2,
+              5,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            530,
+            1060
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            530,
+            786,
+            1060,
+            1316,
+            1590,
+            1846
+          ],
+          "sha256": "3747d8d145d0b0dc07a758c6ce328472debbc81cf068207caa3d8e46b94c14a7",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              1,
+              4,
+              9
+            ],
+            [
+              0,
+              3,
+              5,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            530,
+            1129
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            530,
+            786,
+            1129,
+            1385,
+            1659,
+            1915
+          ],
+          "sha256": "13c46eef1349c3280346be96a2c6ea9302930c61e37b6bce8a049dd91accff18",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              1,
+              4,
+              9
+            ],
+            [
+              5,
+              6,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            530,
+            1248
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            530,
+            786,
+            1248,
+            1504,
+            1778,
+            2034
+          ],
+          "sha256": "f1fd345a0e1e0c9ce5b72294877a9e42f4771a92d19c28a0eade2f50ae0b4b2a",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              2,
+              7,
+              9
+            ],
+            [
+              0,
+              3,
+              5,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            644,
+            1129
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            644,
+            900,
+            1129,
+            1385,
+            1773,
+            2029
+          ],
+          "sha256": "65057f06dacc05a2f747f583341094c834dfdfe4f0950988d629bdc98a7ed738",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              1,
+              5,
+              7,
+              9
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            674,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            674,
+            930,
+            1104,
+            1360,
+            1778,
+            2034
+          ],
+          "sha256": "5b46a9e56deafd958981355cf0487f8982027925833df747e64bb69a7ae0311b",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              4,
+              5,
+              7,
+              9
+            ],
+            [
+              1,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            688,
+            1090
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            688,
+            944,
+            1090,
+            1346,
+            1778,
+            2034
+          ],
+          "sha256": "dfcf2cbf95559b3ed9be5f473a239139203615a91e9e956bebe99cdae090b9b0",
+          "size": 8
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              8
+            ],
+            [
+              0,
+              3,
+              6,
+              7,
+              9
+            ],
+            [
+              2,
+              5,
+              10
+            ]
+          ],
+          "basis_masks": [
+            256,
+            713,
+            1060
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 3,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            256,
+            713,
+            969,
+            1060,
+            1316,
+            1773,
+            2029
+          ],
+          "sha256": "492094499909dd71033a270e4a007b7c45c060344237e039684b1f1ea562d222",
+          "size": 8
+        }
+      ],
+      "all_corrected_maximal_packets_sha256": "89261a69099154f480b0b9931a82162e2f452b9ebc5745e9f6ccab77fd7053bc",
+      "clock_image_count": {
+        "0,13": 62
+      },
+      "maximal_packet_count": 62,
+      "maximal_packet_count_by_dimension": {
+        "3": 32,
+        "4": 30
+      },
+      "sample_corrected_maximal_packets": [
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              4,
+              5,
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            184,
+            256
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            184,
+            187,
+            252,
+            255,
+            256,
+            259,
+            324,
+            327,
+            440,
+            443,
+            508,
+            511
+          ],
+          "sha256": "ac730125c7813e52f87333c49fa8e8ef71e46343cb03629536a9c71e5ffb808c",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              5,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            552
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            552,
+            555,
+            620,
+            623,
+            808,
+            811,
+            876,
+            879
+          ],
+          "sha256": "c85768111522349c539c65ec1e7c563179f4796dbd8f823b9f215e6c7238d504",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              5,
+              7,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            688
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            688,
+            691,
+            756,
+            759,
+            944,
+            947,
+            1012,
+            1015
+          ],
+          "sha256": "55287752d32695bf719edcbbe5453477c3962487e070e77e3bfb861ec874d88a",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              4,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            1176
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1176,
+            1179,
+            1244,
+            1247,
+            1432,
+            1435,
+            1500,
+            1503
+          ],
+          "sha256": "9f4104b2e523d6a158d23edac66d61f21ceee36ba318c45e7eabc28f14a71ce9",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            1544
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1544,
+            1547,
+            1612,
+            1615,
+            1800,
+            1803,
+            1868,
+            1871
+          ],
+          "sha256": "530bafbdcea95007bd4c3491c75587b776a386219cd80edceb98900d3cd9d2b5",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              7,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            256,
+            1680
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            256,
+            259,
+            324,
+            327,
+            1680,
+            1683,
+            1748,
+            1751,
+            1936,
+            1939,
+            2004,
+            2007
+          ],
+          "sha256": "49bf0d9ecc6335f5fef313f8c8e9e627a3b81b096a9e64ed6c0eae1ac9fb99a2",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              8
+            ]
+          ],
+          "basis_masks": [
+            3,
+            112,
+            140,
+            256
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            112,
+            115,
+            140,
+            143,
+            252,
+            255,
+            256,
+            259,
+            368,
+            371,
+            396,
+            399,
+            508,
+            511
+          ],
+          "sha256": "387c141127b8915a125211eb91d400e5092a18c7cf488b3b81319a6ecc19fb2b",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              7,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            112,
+            256,
+            644
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            112,
+            115,
+            256,
+            259,
+            368,
+            371,
+            644,
+            647,
+            756,
+            759,
+            900,
+            903,
+            1012,
+            1015
+          ],
+          "sha256": "b1ea6a8c58c330fb9ebf1090e1173f61c185230fcdc5d6dd546f07f8967acb8f",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            112,
+            256,
+            1544
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            112,
+            115,
+            256,
+            259,
+            368,
+            371,
+            1544,
+            1547,
+            1656,
+            1659,
+            1800,
+            1803,
+            1912,
+            1915
+          ],
+          "sha256": "f2fdba3d67cd70082088e44d16959521f4d2d576da12aabec2b3dbcb804c094b",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              8
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            140,
+            256,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            140,
+            143,
+            256,
+            259,
+            396,
+            399,
+            1104,
+            1107,
+            1244,
+            1247,
+            1360,
+            1363,
+            1500,
+            1503
+          ],
+          "sha256": "af6c7abf7934e2410c1acdf7673de7dcca100e86fa654c0d3c0542dc9d0d450a",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              8
+            ],
+            [
+              3,
+              5,
+              9
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            256,
+            552,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            256,
+            259,
+            552,
+            555,
+            808,
+            811,
+            1104,
+            1107,
+            1360,
+            1363,
+            1656,
+            1659,
+            1912,
+            1915
+          ],
+          "sha256": "40a91afffd8df7d526a735828a7af64fb133b39d41f081eecd7c6d4dfb056b82",
+          "size": 16
+        },
+        {
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              8
+            ],
+            [
+              2,
+              7,
+              9
+            ],
+            [
+              4,
+              6,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            256,
+            644,
+            1104
+          ],
+          "contains_gamma8": true,
+          "corrected_clock_image_mod26": [
+            0,
+            13
+          ],
+          "corrected_clock_is_additive": true,
+          "corrected_r33_image_mod26": [
+            0,
+            13
+          ],
+          "dimension": 4,
+          "half_anomaly_matrix_mod13_on_basis": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "masks": [
+            0,
+            3,
+            256,
+            259,
+            644,
+            647,
+            900,
+            903,
+            1104,
+            1107,
+            1360,
+            1363,
+            1748,
+            1751,
+            2004,
+            2007
+          ],
+          "sha256": "acc874474d9f29b6ffb6764656c091e86c923aeff34d988b26178ffa1b81f8b2",
+          "size": 16
+        }
+      ],
+      "subspace_dimension_counts": {
+        "0": 1,
+        "1": 163,
+        "2": 805,
+        "3": 421,
+        "4": 30
+      }
+    },
+    "forms": {
+      "corrected_weights_mod13": [
+        12,
+        1,
+        5,
+        11,
+        1,
+        4,
+        8,
+        10,
+        0,
+        11,
+        4
+      ],
+      "original_weights_mod13": [
+        12,
+        1,
+        5,
+        11,
+        1,
+        4,
+        8,
+        10,
+        5,
+        11,
+        4
+      ],
+      "weights_mod26": [
+        12,
+        14,
+        18,
+        24,
+        14,
+        17,
+        8,
+        10,
+        18,
+        11,
+        17
+      ]
+    },
+    "gamma8": {
+      "basis_cycle_indices": [
+        8
+      ],
+      "basis_index": 8,
+      "chosen_minimal_signed_counterterm": 5,
+      "corrected_clock_mod26": 13,
+      "corrected_r33_norm_mod26": 13,
+      "counterterm_mod13": 5,
+      "counterterm_mod26_solutions": [
+        5,
+        18
+      ],
+      "counterterm_signed_solutions": [
+        5,
+        -8
+      ],
+      "mask": 256,
+      "original_clock_mod26": 18,
+      "original_r33_norm_mod26": 8,
+      "original_self_half_anomaly_mod13": 5
+    }
+  },
+  "inputs": {
+    "anomaly_cancelled_flux_balance_recovery_report": {
+      "path": "data/invariants/d20/theorems/anomaly_cancelled_flux_balance_recovery/report.json",
+      "sha256": "973fb49612a034ab997313c1528622625e87b4bc567b38a08affff25598985f6"
+    },
+    "finite_anomaly_counter_report": {
+      "path": "data/invariants/d20/theorems/finite_anomaly_counter/report.json",
+      "sha256": "2eab53f4671763737840b8572c67f8889bdc0ad7e5a7768763d5c49b7a35d620"
+    },
+    "sector26_anomaly_cancellation_report": {
+      "path": "data/invariants/d20/theorems/sector26_anomaly_cancellation/report.json",
+      "sha256": "b50fdc56d7d3fd3ff9d743d895005251357d0f635609e085ab98c4f405065672"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not make every closed-return mask anomaly-free. It certifies the minimal local correction for the first obstruction and the corrected packets that follow from it.",
+    "what_this_proves": [
+      "gamma_8 is not recovered by the uncorrected anomaly-cancelled flux-balance sector",
+      "a rank-one sector-26 counterterm on coordinate 8 is enough to include gamma_8",
+      "the corrected gamma_8 R33 value is 13, the order-two additive value modulo 26",
+      "the corrected maximal packets all contain gamma_8 and have dimensions 3 or 4"
+    ]
+  },
+  "next_highest_yield_item": "Generalize obstruction correction: classify the minimal rank-one counterterms for every self-anomalous basis coordinate and compare their corrected packet geometries.",
+  "object": "d20",
+  "schema": "d20.theorem.gamma8_obstruction_correction",
+  "status": "D20_GAMMA8_OBSTRUCTION_CORRECTION_CERTIFIED"
+}

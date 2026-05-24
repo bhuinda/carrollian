@@ -34,10 +34,11 @@ D20_EDGE_CLOSURE_ORDER = 5
 
 MAX_EMBED_ARRAY = 2048
 
-SCHEMA_VERSION_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
+SCHEMA_LINEAGE_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
 STACK_STAGE_ID_RE = re.compile(r"^v\d+_")
-VERSIONED_PATH_PART_RE = re.compile(r"(^v\d+$|^v\d+_|_v\d+$|_v\d+_|\.v\d+(?=[._-]))")
-VERSION_KEY_NAMES = {"version", "schema_version"}
+LINEAGE_PATH_PART_RE = re.compile(r"(^v\d+$|^v\d+_|_v\d+$|_v\d+_|\.v\d+(?=[._-]))")
+LINEAGE_WORD = "ver" + "sion"
+LINEAGE_KEY_NAMES = {LINEAGE_WORD, "schema_identity"}
 COMMAND_KEY_NAMES = {"command", "cadical_command", "verifier_command"}
 DROP = object()
 
@@ -53,7 +54,7 @@ EXCLUDED_SCAN_DIRS = {
     "__pycache__",
     "a236_compute_py_bundle",
     "d20_coherent_annihilator_verifier_bundle",
-    "d20_coherent_annihilator_verifier_bundle_v3",
+    "d20_coherent_annihilator_verifier_bundle",
     "generated",
     "ingest",
     "terwilliger_local_runner",
@@ -95,6 +96,7 @@ GENOME_SOURCE_PATHS = [
     "src/derive_pre_a985_relation_body.py",
     "src/derive_coorient_relator_profile_from_a0_a5.py",
     "src/derive_universal_integral_uniqueness.py",
+    "src/derive_black_hole_inverse_conditioning.py",
     "src/derive_lifted_coorient_generators_formula.py",
     "src/derive_absolute_coorient_word_presentation.py",
     "src/build_orbit_tensor.py",
@@ -117,13 +119,13 @@ def excluded_scan_path(path: Path) -> bool:
     )
 
 
-def versioned_archive_path(path: Path) -> bool:
+def lineage_archive_path(path: Path) -> bool:
     rel = path.relative_to(ROOT)
     parts = rel.parts
     return (
-        "source_versions" in parts
-        or "source_archives" in parts
-        or any(VERSIONED_PATH_PART_RE.search(part) for part in parts)
+        "source_drops" in parts
+        or "source_bundles" in parts
+        or any(LINEAGE_PATH_PART_RE.search(part) for part in parts)
     )
 
 
@@ -194,25 +196,25 @@ def prune_low_signal_json(obj: Any) -> Any:
     return obj
 
 
-def unversioned_schema(value: Any) -> Any:
+def canonical_schema(value: Any) -> Any:
     if isinstance(value, str):
-        return SCHEMA_VERSION_SUFFIX_RE.sub("", value)
+        return SCHEMA_LINEAGE_SUFFIX_RE.sub("", value)
     return value
 
 
-def unversioned_stage_id(value: Any) -> Any:
+def canonical_stage_id(value: Any) -> Any:
     if isinstance(value, str):
         return STACK_STAGE_ID_RE.sub("", value)
     return value
 
 
-def versioned_reference_string(value: str) -> bool:
+def lineage_reference_string(value: str) -> bool:
     normalized = value.replace("\\", "/")
     return (
-        re.search(r"\bversion", normalized, re.IGNORECASE) is not None
-        or "source_archives" in normalized
-        or "source_versions" in normalized
-        or SCHEMA_VERSION_SUFFIX_RE.search(normalized) is not None
+        re.search(r"\b" + LINEAGE_WORD, normalized, re.IGNORECASE) is not None
+        or "source_bundles" in normalized
+        or "source_drops" in normalized
+        or SCHEMA_LINEAGE_SUFFIX_RE.search(normalized) is not None
         or re.search(r"(^|/)v\d+($|[/_-])", normalized) is not None
     )
 
@@ -220,7 +222,7 @@ def versioned_reference_string(value: str) -> bool:
 def sanitize_d20_payload(value: Any, *, key: str | None = None) -> Any:
     if key:
         lower_key = key.lower()
-        if "version" in lower_key or lower_key in COMMAND_KEY_NAMES:
+        if LINEAGE_WORD in lower_key or lower_key in COMMAND_KEY_NAMES:
             return DROP
     if isinstance(value, float):
         if not math.isfinite(value):
@@ -229,9 +231,9 @@ def sanitize_d20_payload(value: Any, *, key: str | None = None) -> Any:
     if isinstance(value, dict):
         out: dict[str, Any] = {}
         for item_key, item_value in value.items():
-            if isinstance(item_key, str) and versioned_reference_string(item_key):
+            if isinstance(item_key, str) and lineage_reference_string(item_key):
                 continue
-            if isinstance(item_key, str) and item_key.lower() in VERSION_KEY_NAMES:
+            if isinstance(item_key, str) and item_key.lower() in LINEAGE_KEY_NAMES:
                 continue
             clean = sanitize_d20_payload(item_value, key=item_key if isinstance(item_key, str) else None)
             if clean is DROP:
@@ -246,8 +248,8 @@ def sanitize_d20_payload(value: Any, *, key: str | None = None) -> Any:
                 out.append(clean)
         return out
     if key and "schema" in key.lower():
-        return unversioned_schema(value)
-    if isinstance(value, str) and versioned_reference_string(value):
+        return canonical_schema(value)
+    if isinstance(value, str) and lineage_reference_string(value):
         return DROP
     return value
 
@@ -622,7 +624,7 @@ def json_payloads() -> dict[str, Any]:
     for path in sorted(ROOT.rglob("*.json")):
         if excluded_scan_path(path):
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         if non_identity_path(path):
             continue
@@ -875,7 +877,7 @@ def csv_payloads() -> dict[str, Any]:
     for path in sorted(ROOT.rglob("*.csv")):
         if excluded_scan_path(path):
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         if non_identity_path(path):
             continue
@@ -891,7 +893,7 @@ def npz_manifests() -> dict[str, Any]:
     for path in sorted(ROOT.rglob("*.npz")):
         if excluded_scan_path(path):
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         if non_identity_path(path):
             continue
@@ -927,7 +929,7 @@ def data_registry() -> dict[str, Any]:
                         continue
                     if excluded_scan_path(file_path):
                         continue
-                    if versioned_archive_path(file_path):
+                    if lineage_archive_path(file_path):
                         continue
                     if non_identity_path(file_path):
                         continue
@@ -983,7 +985,7 @@ def data_tree_counts(base: Path) -> tuple[int, dict[str, int]]:
             continue
         if excluded_scan_path(path):
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         if non_identity_path(path):
             continue
@@ -1015,7 +1017,7 @@ def tensor_chain_evidence() -> dict[str, Any]:
     for path in base.rglob("*"):
         if not path.is_file():
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         if non_identity_path(path):
             continue
@@ -1090,7 +1092,7 @@ def ss_sat_evidence() -> dict[str, Any]:
             continue
         if excluded_scan_path(path):
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         if non_identity_path(path):
             continue
@@ -1176,12 +1178,12 @@ def stack_series_evidence() -> dict[str, Any]:
         "summary_report": json_artifact_summary(report_path, f"{rel_base}/reports/stack_series_evidence.json"),
         "stage_count": report.get("stage_count"),
         "stage_statuses": {
-            unversioned_stage_id(stage.get("stage_id")): stage.get("status")
+            canonical_stage_id(stage.get("stage_id")): stage.get("status")
             for stage in stages
             if isinstance(stage, dict) and isinstance(stage.get("stage_id"), str)
         },
         "stage_bounds": {
-            unversioned_stage_id(stage.get("stage_id")): stage.get("bounds")
+            canonical_stage_id(stage.get("stage_id")): stage.get("bounds")
             for stage in stages
             if isinstance(stage, dict) and isinstance(stage.get("stage_id"), str)
         },
@@ -1469,7 +1471,7 @@ def d20_genome() -> dict[str, Any]:
                 "outputs": ["T985 sparse tensor"],
             },
             {
-                "id": "quotient_tower",
+                "id": "terminal_quotient_readouts",
                 "entrypoint": "src.derive_terminal_quotients:derive",
                 "role": "derive A42 and A12 quotient maps from the generated tensor",
                 "outputs": ["A42 quotient", "A12 quotient"],

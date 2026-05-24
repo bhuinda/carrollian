@@ -11,7 +11,7 @@ BASE = ROOT / "data" / "invariants" / "integrity" / "cvx_trace"
 CLASSIFIER_PATH = BASE / "reports" / "universal_trace_typing_classifier.json"
 TYPING_REPORT_PATH = BASE / "reports" / "universal_trace_typing_report.json"
 CURRENT_V_REPORT_PATH = BASE / "reports" / "v_wall_crossing_accounting_report.json"
-SCHEMA_PATH = BASE / "schemas" / "universal_v_wall_crossing_certificate.v1.schema.json"
+SCHEMA_PATH = BASE / "schemas" / "universal_v_wall_crossing_certificate.schema.json"
 CERT_DIR = BASE / "certificates"
 REPORT_PATH = BASE / "reports" / "universal_v_wall_crossing_accounting_report.json"
 
@@ -50,7 +50,7 @@ def certificate_path(class_code: str) -> Path:
 def universal_v_certificate_schema() -> dict[str, Any]:
     return {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "d20.integrity.universal_v_wall_crossing_certificate.v1",
+        "$id": "d20.integrity.universal_v_wall_crossing_certificate.source_drop",
         "title": "D20 universal visible V wall-crossing surface certificate",
         "type": "object",
         "required": [
@@ -64,7 +64,7 @@ def universal_v_certificate_schema() -> dict[str, Any]:
             "checks",
         ],
         "properties": {
-            "schema": {"const": "d20.integrity.universal_v_wall_crossing_certificate.v1"},
+            "schema": {"const": "d20.integrity.universal_v_wall_crossing_certificate.source_drop"},
             "status": {"const": "UNIVERSAL_V_WALL_CROSSING_SURFACE_CERTIFICATE"},
             "class_code": {"type": "string", "minLength": 1},
             "integrity_type": {"const": "V"},
@@ -135,7 +135,7 @@ def make_certificate(class_code: str, description: str) -> dict[str, Any]:
         "replay": "finite_surface_certificate",
     }
     return {
-        "schema": "d20.integrity.universal_v_wall_crossing_certificate.v1",
+        "schema": "d20.integrity.universal_v_wall_crossing_certificate.source_drop",
         "status": "UNIVERSAL_V_WALL_CROSSING_SURFACE_CERTIFICATE",
         "class_code": class_code,
         "integrity_type": "V",
@@ -173,7 +173,7 @@ def forbidden_hits(value: str) -> list[str]:
 
 def validate_certificate(cert: dict[str, Any], class_code: str, description: str) -> list[str]:
     errors: list[str] = []
-    if cert.get("schema") != "d20.integrity.universal_v_wall_crossing_certificate.v1":
+    if cert.get("schema") != "d20.integrity.universal_v_wall_crossing_certificate.source_drop":
         errors.append("schema mismatch")
     if cert.get("status") != "UNIVERSAL_V_WALL_CROSSING_SURFACE_CERTIFICATE":
         errors.append("status mismatch")
@@ -284,7 +284,7 @@ def main() -> int:
     )
 
     report = {
-        "schema": "d20.integrity.universal_v_wall_crossing_accounting.v1",
+        "schema": "d20.integrity.universal_v_wall_crossing_accounting.source_drop",
         "status": (
             "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS"
             if pass_condition

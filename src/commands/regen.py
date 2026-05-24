@@ -35,9 +35,9 @@ from src.paths import D20_INVARIANTS, MANIFESTS, ROOT
 MANIFEST = MANIFESTS / "file_hashes.json"
 D20 = ROOT / "d20.json"
 CERTIFICATE = ROOT / "certificate.json"
-SCHEMA_VERSION_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
+SCHEMA_LINEAGE_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
 STACK_STAGE_ID_RE = re.compile(r"^v\d+_")
-VERSIONED_PATH_PART_RE = re.compile(r"(^v\d+$|^v\d+_|_v\d+$|_v\d+_|\.v\d+(?=[._-]))")
+LINEAGE_PATH_PART_RE = re.compile(r"(^v\d+$|^v\d+_|_v\d+$|_v\d+_|\.v\d+(?=[._-]))")
 
 EXCLUDED_DIRS = {
     ".git",
@@ -51,7 +51,7 @@ EXCLUDED_DIRS = {
     "__pycache__",
     "a236_compute_py_bundle",
     "d20_coherent_annihilator_verifier_bundle",
-    "d20_coherent_annihilator_verifier_bundle_v3",
+    "d20_coherent_annihilator_verifier_bundle",
     "ingest",
     "terwilliger_local_runner",
     "generated",
@@ -79,24 +79,24 @@ def canonical(obj: Any) -> bytes:
     return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode("utf-8")
 
 
-def unversioned_schema(value: Any) -> Any:
+def canonical_schema(value: Any) -> Any:
     if isinstance(value, str):
-        return SCHEMA_VERSION_SUFFIX_RE.sub("", value)
+        return SCHEMA_LINEAGE_SUFFIX_RE.sub("", value)
     return value
 
 
-def unversioned_stage_id(value: Any) -> Any:
+def canonical_stage_id(value: Any) -> Any:
     if isinstance(value, str):
         return STACK_STAGE_ID_RE.sub("", value)
     return value
 
 
-def versioned_archive_path(path: Path) -> bool:
+def lineage_archive_path(path: Path) -> bool:
     parts = path.relative_to(ROOT).parts
     return (
-        "source_versions" in parts
-        or "source_archives" in parts
-        or any(VERSIONED_PATH_PART_RE.search(part) for part in parts)
+        "source_drops" in parts
+        or "source_bundles" in parts
+        or any(LINEAGE_PATH_PART_RE.search(part) for part in parts)
     )
 
 
@@ -160,7 +160,7 @@ def refresh_standard_manifest(
     for path in sorted(base.rglob("*")):
         if not path.is_file() or path == manifest_path:
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         if any(
             part in EXCLUDED_DIRS or part.startswith(EXCLUDED_DIR_PREFIXES)
@@ -209,7 +209,7 @@ def refresh_tensor_chain_manifest() -> bool:
     for path in sorted(base.rglob("*")):
         if not path.is_file() or path == manifest_path:
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         rel = path.relative_to(base).as_posix()
         files[rel] = {
@@ -243,10 +243,10 @@ def refresh_ss_sat_manifest() -> bool:
     for path in sorted(base.rglob("*")):
         if not path.is_file() or path == manifest_path:
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         rel = path.relative_to(base).as_posix()
-        if rel.startswith("source_archives/legacy_roots/"):
+        if rel.startswith("source_bundles/legacy_roots/"):
             continue
         if any(
             part in EXCLUDED_DIRS or part.startswith(EXCLUDED_DIR_PREFIXES)
@@ -295,10 +295,10 @@ def stack_series_stage_summary(stage_id: str, cert_name: str) -> dict[str, Any]:
         for path in sorted(stage_dir.rglob("*.csv"))
     } if stage_dir.exists() else {}
     return {
-        "stage_id": unversioned_stage_id(stage_id),
+        "stage_id": canonical_stage_id(stage_id),
         "certificate_file": cert_name,
         "certificate_sha256": sha_file(cert_path) if cert_path.exists() else None,
-        "schema": unversioned_schema(certificate.get("schema")),
+        "schema": canonical_schema(certificate.get("schema")),
         "status": certificate.get("status"),
         "bounds": certificate.get("bounds"),
         "derived_row_counts": certificate.get("derived_row_counts") or certificate.get("coefficient_rows") or {},
@@ -590,6 +590,14 @@ def refresh_universal_integral_uniqueness() -> bool:
     return result.get("status") == "UNIVERSAL_A985_INTEGRAL_UNIQUENESS_PASS"
 
 
+def refresh_black_hole_inverse_conditioning() -> bool:
+    from src.derive_black_hole_inverse_conditioning import write_theorem
+
+    report = write_theorem()
+    print("refreshed data/invariants/d20/theorems/black_hole_inverse_conditioning", flush=True)
+    return report.get("status") == "D20_BLACK_HOLE_INVERSE_CONDITIONING_CERTIFIED"
+
+
 def rebuild_d20(pretty: bool) -> None:
     from src.derive_d20 import derive
     if not refresh_pre_a985_relation_body(regenerate=True):
@@ -619,6 +627,8 @@ def rebuild_d20(pretty: bool) -> None:
     refresh_stack_series_evidence()
     refresh_height_coherence_evidence()
     refresh_reproducibility_evidence()
+    if not refresh_black_hole_inverse_conditioning():
+        raise SystemExit("black-hole inverse conditioning refresh failed")
     print("$ derive d20.json", flush=True)
     obj = derive()
     D20.write_text(json.dumps(obj, indent=2 if pretty else None, sort_keys=bool(pretty), allow_nan=False), encoding="utf-8")
@@ -654,13 +664,13 @@ def refresh_certificate() -> None:
         raise SystemExit("d20.json missing valid d20_sha256")
 
     cert["object"] = "d20"
-    cert["schema"] = unversioned_schema(cert.get("schema")) or "d20.verifier"
+    cert["schema"] = canonical_schema(cert.get("schema")) or "d20.verifier"
     cert["status"] = "D20_CERTIFIED"
     cert["headline"] = "D20_CERTIFIED"
     cert["d20_status"] = "D20_PASS"
     cert["d20_json"] = {
         "path": "d20.json",
-        "schema": unversioned_schema(d20.get("schema")),
+        "schema": canonical_schema(d20.get("schema")),
         "size": D20.stat().st_size,
         "sha256_file": sha_file(D20),
         "sha256_object": d20_object_hash,
@@ -684,7 +694,7 @@ def refresh_manifest() -> int:
     for path in sorted(ROOT.rglob("*")):
         if not path.is_file():
             continue
-        if versioned_archive_path(path):
+        if lineage_archive_path(path):
             continue
         if non_identity_path(path):
             continue

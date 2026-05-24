@@ -9,7 +9,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[5]
 BASE = ROOT / "data" / "invariants" / "integrity" / "cvx_trace"
-SCHEMA_PATH = BASE / "schemas" / "cvx_trace.v1.schema.json"
+SCHEMA_PATH = BASE / "schemas" / "cvx_trace.schema.json"
 TRACE_PATH = BASE / "traces" / "cadical_lrat_contradiction_4.trace.json"
 REPORT_PATH = BASE / "reports" / "cadical_lrat_contradiction_4_validation.json"
 PROOF_PATH = ROOT / "data" / "evidence" / "ss_sat" / "proofs" / "cadical_lrat" / "contradiction_4.cadical.lrat"
@@ -85,7 +85,7 @@ def build_trace() -> dict[str, Any]:
     integrity_counts = {"C": 0, "V": 0, "X": 0, "UNCLASSIFIED": 0}
     integrity_counts[event["integrity_type"]] += 1
     return {
-        "schema": "d20.integrity.cvx_trace.v1",
+        "schema": "d20.integrity.cvx_trace",
         "status": "CVX_TRACE_REPLAY_WITNESS",
         "trace_id": "cadical_lrat_contradiction_4",
         "source": {
@@ -163,7 +163,7 @@ def main() -> int:
     errors = validate_trace(trace, schema)
     TRACE_PATH.write_text(json.dumps(trace, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     report = {
-        "schema": "d20.integrity.cvx_trace_validation.v1",
+        "schema": "d20.integrity.cvx_trace_validation.source_drop",
         "status": "CVX_TRACE_SCHEMA_VALIDATION_PASS" if not errors else "CVX_TRACE_SCHEMA_VALIDATION_FAIL",
         "schema_path": rel(SCHEMA_PATH),
         "trace_path": rel(TRACE_PATH),

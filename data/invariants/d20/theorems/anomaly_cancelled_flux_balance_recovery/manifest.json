@@ -1,0 +1,40 @@
+{
+  "certification_tests": [
+    "verify exact finite flux balance is certified",
+    "verify typed non-exact optical updates are R33-only",
+    "verify sector-26 anomaly cancellation is certified",
+    "verify normalized R33 update is additive mod 26 on every maximal cancelled packet",
+    "verify gamma_8 is excluded from the recovered packets",
+    "verify recovered packet image types are {0} and {0,13}"
+  ],
+  "inputs": {
+    "all_residue_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "706a8a3d369f2b0f29f87c60ad3b43781f9c52c4e9a6d276e26c6d1413fd01ed"
+    },
+    "finite_anomaly_counter_report": {
+      "path": "data/invariants/d20/theorems/finite_anomaly_counter/report.json",
+      "sha256": "2eab53f4671763737840b8572c67f8889bdc0ad7e5a7768763d5c49b7a35d620"
+    },
+    "finite_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_flux_balance/report.json",
+      "sha256": "8d066a8ffbeac843d24862994905b4f497ab7956f333243dcf65053a11088f02"
+    },
+    "sector26_anomaly_cancellation_report": {
+      "path": "data/invariants/d20/theorems/sector26_anomaly_cancellation/report.json",
+      "sha256": "b50fdc56d7d3fd3ff9d743d895005251357d0f635609e085ab98c4f405065672"
+    },
+    "typed_nonexact_optical_flux_update_report": {
+      "path": "data/invariants/d20/theorems/typed_nonexact_optical_flux_update/report.json",
+      "sha256": "41e36fdd44053f3d57468971ec9d527392f8093e50aaac2c9ca7747d2d86b34e"
+    }
+  },
+  "manifest_sha256": "1b03f13dc355215f2223245c0579f2bf42441c974a377fa20149b9440b3ccae7",
+  "name": "anomaly_cancelled_flux_balance_recovery",
+  "outputs": {
+    "manifest": "data/invariants/d20/theorems/anomaly_cancelled_flux_balance_recovery/manifest.json",
+    "report": "data/invariants/d20/theorems/anomaly_cancelled_flux_balance_recovery/report.json"
+  },
+  "report_sha256": "d5ad5e79e916ab638b7e8f1047ee6555acb4c1f151b9b2fbd25d83d4dcd72ef3",
+  "schema": "d20.theorem.anomaly_cancelled_flux_balance_recovery_manifest"
+}

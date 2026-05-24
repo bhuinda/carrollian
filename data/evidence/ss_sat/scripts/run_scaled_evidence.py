@@ -22,7 +22,7 @@ def find_repo_root() -> Path:
 
 ROOT = find_repo_root()
 BASE = ROOT / "data" / "evidence" / "ss_sat"
-LEGACY_ROOT = BASE / "source_archives" / "legacy_roots" / "gnatural_ontological_computation_v16"
+LEGACY_ROOT = BASE / "source_bundles" / "legacy_roots" / "external_evidence_gate_root"
 
 CADICAL = LEGACY_ROOT / "cadical-rel-3.0.0" / "build" / "cadical.exe"
 DRAT_TRIM = LEGACY_ROOT / "cadical-rel-3.0.0" / "build" / "drat-trim.exe"
@@ -183,7 +183,7 @@ def solver_runs(benchmarks: dict[str, Path], *, force: bool) -> list[dict[str, A
         ("minisat", "2.0 beta", [MINISAT], 120),
     ]
     for base, cnf in benchmarks.items():
-        for solver, version, prefix, timeout in solvers:
+        for solver, solver_identity, prefix, timeout in solvers:
             model_path = SOLVER_LOG_DIR / f"{base}.minisat.model.txt"
             cmd = [*prefix, cnf]
             if solver == "minisat":
@@ -198,7 +198,7 @@ def solver_runs(benchmarks: dict[str, Path], *, force: bool) -> list[dict[str, A
             row = {
                 "benchmark": f"scaled/{base}.cnf",
                 "solver": solver,
-                "solver_version": version,
+                "solver_identity": solver_identity,
                 "status": status,
                 **info,
             }
@@ -358,7 +358,7 @@ def rewrite_scaled_derivatives(
     write_json(
         residue_path,
         {
-            "schema": "d20.ss_sat.scaled_solver_residues.v1",
+            "schema": "d20.ss_sat.scaled_solver_residues.source_drop",
             "status": "SS_SAT_SCALED_RESIDUES_RECORDED" if residue_rows else "SS_SAT_SCALED_NO_SOLVER_RESIDUES",
             "residues": residue_rows,
         },
@@ -366,7 +366,7 @@ def rewrite_scaled_derivatives(
     )
 
     report = {
-        "schema": "d20.ss_sat.scaled_evidence_report.v1",
+        "schema": "d20.ss_sat.scaled_evidence_report.source_drop",
         "status": "SS_SAT_SCALED_EVIDENCE_CAPTURED",
         "canonical_folder": "data/evidence/ss_sat",
         "benchmark_count": len(benchmark_rows),
@@ -406,10 +406,10 @@ def rewrite_scaled_derivatives(
         artifacts.append(artifact_entry(path, "derived_summary"))
 
     manifest = {
-        "schema": "d20.ss_sat.scaled_external_evidence_manifest.v1",
+        "schema": "d20.ss_sat.scaled_external_evidence_manifest.source_drop",
         "status": "SS_SAT_SCALED_EXTERNAL_EVIDENCE_MANIFEST_BUILT",
         "created_by": "data/evidence/ss_sat/scripts/run_scaled_evidence.py",
-        "solver_versions": {
+        "solver_identitys": {
             "cadical": "3.0.0",
             "kissat": "4.0.4 local-manual-build",
             "minisat": "2.0 beta",

@@ -283,7 +283,7 @@ def build_report() -> dict[str, Any]:
     status = "D20_BOUNDARY_TO_LOOP_MAP_CERTIFIED" if all_checks_pass else "D20_BOUNDARY_TO_LOOP_MAP_NEEDS_REVIEW"
 
     report = {
-        "schema": "d20.boundary_to_loop_map.v1",
+        "schema": "d20.boundary_to_loop_map.source_drop",
         "status": status,
         "object": "d20",
         "definition": {
@@ -326,7 +326,7 @@ def build_report() -> dict[str, Any]:
 def write_outputs(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
     report = build_report()
     manifest = {
-        "schema": "d20.boundary_to_loop_map_manifest.v1",
+        "schema": "d20.boundary_to_loop_map_manifest.source_drop",
         "name": MAP_ID,
         "inputs": report["inputs"],
         "outputs": {

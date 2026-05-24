@@ -12,7 +12,7 @@ TRACE_PATHS = [
     BASE / "traces" / "public_dpll_contradiction_4.trace.json",
 ]
 CLASSIFIER_PATH = BASE / "reports" / "solver_opcode_totality_classifier.json"
-CERT_SCHEMA_PATH = BASE / "schemas" / "v_wall_crossing_certificate.v1.schema.json"
+CERT_SCHEMA_PATH = BASE / "schemas" / "v_wall_crossing_certificate.schema.json"
 CERT_DIR = BASE / "certificates"
 REPORT_PATH = BASE / "reports" / "v_wall_crossing_accounting_report.json"
 RESIDUE_PATH = BASE / "residues" / "uncertified_v_wall_crossing_residue.json"
@@ -33,7 +33,7 @@ def certificate_name(event_id: str) -> str:
 
 def validate_certificate(cert: dict[str, Any], *, event: dict[str, Any], trace_path: Path) -> list[str]:
     errors: list[str] = []
-    if cert.get("schema") != "d20.integrity.v_wall_crossing_certificate.v1":
+    if cert.get("schema") != "d20.integrity.v_wall_crossing_certificate.source_drop":
         errors.append("certificate schema mismatch")
     if cert.get("status") != "V_WALL_CROSSING_CERTIFICATE":
         errors.append("certificate status mismatch")
@@ -65,7 +65,7 @@ def validate_certificate(cert: dict[str, Any], *, event: dict[str, Any], trace_p
 
 def residue_for(event: dict[str, Any], trace_path: Path, reason: str) -> dict[str, Any]:
     return {
-        "schema": "d20.integrity.v_wall_crossing_residue.v1",
+        "schema": "d20.integrity.v_wall_crossing_residue.source_drop",
         "status": "V_WALL_CROSSING_UNCERTIFIED_TYPED_RESIDUE",
         "residue_type": "UNCERTIFIED_VISIBLE_WALL_CROSSING",
         "source_trace": rel(trace_path),
@@ -153,7 +153,7 @@ def main() -> int:
         and "V_VISIBLE_COMMUTATOR_WALL_CROSSING" in visible_v_codes
     )
     report = {
-        "schema": "d20.integrity.v_wall_crossing_accounting.v1",
+        "schema": "d20.integrity.v_wall_crossing_accounting.source_drop",
         "status": (
             "V_WALL_CROSSING_ACCOUNTING_NO_V_EVENTS"
             if pass_condition

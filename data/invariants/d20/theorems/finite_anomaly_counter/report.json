@@ -1,0 +1,419 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e4074f0ddcc31aaaf7f23e7d84c1254b9f3befc2714a37ef724f63a0d2e5d3d9",
+  "checks": {
+    "all_residue_height_transport_is_certified": true,
+    "anomaly_defect_formula_matches_all_pairs": true,
+    "anomaly_defect_hits_all_even_mod26_classes": true,
+    "anomaly_defect_is_even_valued": true,
+    "basis_local_cocycle_identity_holds": true,
+    "gamma8_self_anomaly_is_10_mod26": true,
+    "half_anomaly_hits_all_mod13_classes": true,
+    "half_anomaly_radical_is_zero": true,
+    "height_action_gcd_is_3072": true,
+    "normalized_clock_hits_all_26_residues": true,
+    "residue_masks_are_complete": true,
+    "sector26_cross_transport_rank_is_one": true,
+    "sector26_invariant_suite_is_certified": true,
+    "typed_nonexact_optical_flux_update_is_certified": true,
+    "z13_clock_is_not_linear_character": true,
+    "z26_clock_is_not_linear_character": true,
+    "z2_parity_kernel_has_dimension_10": true,
+    "z2_parity_shadow_is_linear_character": true
+  },
+  "claim": "The normalized mod-26 optical clock is not a linear character on the closed-return xor residue group. Its failure is exactly the finite anomaly counter Anom_26(a,b), an even-valued normalized 2-cocycle/coboundary defect that halves to a complete mod-13 overlap counter and is typed into the certified sector-26 seam.",
+  "definition": {
+    "clock": "f_26(mask) = normalized_height_action(mask) mod 26",
+    "closed_form": "Anom_26(a,b) = 2 * sum_i basis_mod26[i] * a_i * b_i mod 26",
+    "counter": "Anom_26(a,b) = f_26(a) + f_26(b) - f_26(a xor b) mod 26",
+    "domain": "H_return = (F2)^11 closed-return residue masks under xor",
+    "scope_note": "This certifies a finite additivity-defect counter. It is not a continuum Virasoro or central-charge theorem.",
+    "target_channel": "sector-26 seam K_mixed_S <-> K_pure_Sminus"
+  },
+  "derived": {
+    "anomaly_defect": {
+      "basis_local_cocycle_identity": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "defect_classes_mod26": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "defect_histogram_mod26": {
+        "0": 441054,
+        "10": 371907,
+        "12": 276882,
+        "14": 222490,
+        "16": 287715,
+        "18": 310659,
+        "2": 352134,
+        "20": 317820,
+        "22": 332577,
+        "24": 321033,
+        "4": 298833,
+        "6": 301020,
+        "8": 360180
+      },
+      "formula_matches_all_pairs": true,
+      "gamma8_self_anomaly_mod26": 10,
+      "gamma8_self_half_anomaly_mod13": 5,
+      "half_defect_classes_mod13": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "half_defect_histogram_mod13": {
+        "0": 441054,
+        "1": 352134,
+        "10": 317820,
+        "11": 332577,
+        "12": 321033,
+        "2": 298833,
+        "3": 301020,
+        "4": 360180,
+        "5": 371907,
+        "6": 276882,
+        "7": 222490,
+        "8": 287715,
+        "9": 310659
+      },
+      "pair_count": 4194304,
+      "radical_masks": [
+        0
+      ],
+      "self_anomaly_histogram_mod26": {
+        "0": 158,
+        "10": 159,
+        "12": 158,
+        "14": 158,
+        "16": 157,
+        "18": 155,
+        "2": 158,
+        "20": 154,
+        "22": 155,
+        "24": 157,
+        "4": 159,
+        "6": 160,
+        "8": 160
+      },
+      "self_half_anomaly_zero_count": 158,
+      "self_half_anomaly_zero_sample_masks": [
+        0,
+        3,
+        17,
+        26,
+        68,
+        71,
+        85,
+        94,
+        98,
+        112,
+        115,
+        140
+      ]
+    },
+    "clock_character_test": {
+      "first_z13_character_failure": {
+        "clock13_a": 12,
+        "clock13_b": 12,
+        "clock13_xor": 0,
+        "mask_a": 1,
+        "mask_b": 1
+      },
+      "first_z26_character_failure": {
+        "anomaly_defect_mod26": 24,
+        "clock_a": 12,
+        "clock_b": 12,
+        "clock_xor": 0,
+        "mask_a": 1,
+        "mask_b": 1
+      },
+      "z13_clock_is_linear_character": false,
+      "z26_clock_is_linear_character": false,
+      "z2_parity_basis_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "z2_parity_kernel_dimension": 10,
+      "z2_parity_kernel_sample_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "z2_parity_kernel_size": 1024,
+      "z2_parity_shadow_is_linear_character": true
+    },
+    "normalization": {
+      "basis_cycle_normalized_actions": [
+        350,
+        430,
+        252,
+        388,
+        352,
+        225,
+        294,
+        348,
+        122,
+        323,
+        355
+      ],
+      "basis_cycle_normalized_mod13": [
+        12,
+        1,
+        5,
+        11,
+        1,
+        4,
+        8,
+        10,
+        5,
+        11,
+        4
+      ],
+      "basis_cycle_normalized_mod26": [
+        12,
+        14,
+        18,
+        24,
+        14,
+        17,
+        8,
+        10,
+        18,
+        11,
+        17
+      ],
+      "basis_cycle_twice_mod26": [
+        24,
+        2,
+        10,
+        22,
+        2,
+        8,
+        16,
+        20,
+        10,
+        22,
+        8
+      ],
+      "height_action_gcd": 3072
+    },
+    "sector26_coupling": {
+      "composite_seam_block": [
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "critical_26_marker": {
+        "bosonic_string_critical_dimension": 26,
+        "d20_public_state_count_plus_h6_channel_count": 26,
+        "scope_note": "This is a finite invariant alignment and a test target. It is not a claim that the D20 certificate already recovers continuum bosonic string theory.",
+        "sector": 26,
+        "sector26_profile": {
+          "active_cy_sectors": [
+            "S"
+          ],
+          "active_objects": [
+            "S-"
+          ],
+          "block_dimension": 1,
+          "object_loop_coordinate_support": [
+            0,
+            0,
+            0,
+            0,
+            44,
+            0
+          ],
+          "permutation_multiplicity": 3,
+          "permutation_rank": 3,
+          "spectral_signature": [
+            {
+              "label": "S-",
+              "local_pre_idempotents": [
+                10
+              ],
+              "object": 4,
+              "separator_eigenvalues": [
+                986365
+              ]
+            }
+          ],
+          "vector": {
+            "coefficient_abs_sum_signed_lift": 11492222,
+            "coefficient_sum": 0,
+            "coefficient_sum_signed": 0,
+            "sha256": "dc6fda48d1f7051e5ff4b8f847f1ae3a4e386218837e48f0745ed28257b60575",
+            "support": 44
+          }
+        }
+      },
+      "cross_transport_rank_through_sector26": 1,
+      "hidden_transport_form": {
+        "basis_order": [
+          "R33",
+          "K_mixed_S",
+          "K_pure_Sminus"
+        ],
+        "characteristic_polynomial": "lambda^3 - 11 lambda^2 + 37 lambda - 36",
+        "composite_block": {
+          "basis_order": [
+            "K_mixed_S",
+            "K_pure_Sminus"
+          ],
+          "determinant": 9,
+          "discriminant": 13,
+          "eigenvalues": "(7 +/- sqrt(13))/2",
+          "matrix": [
+            [
+              5,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "trace": 7
+        },
+        "determinant": 36,
+        "interpretation": "R33 is transport-isolated. The composite null pair has a rank-one off-diagonal seam through sector 26 and an irreducible quadratic discriminant 13 over the rationals.",
+        "matrix": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "r33_eigenvalue": 4,
+        "smith_normal_form_diagonal": [
+          1,
+          1,
+          36
+        ],
+        "trace": 11
+      },
+      "mod26_clock_residue_classes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "sector26_suite_status": "D20_SECTOR26_INVARIANT_SUITE_CERTIFIED"
+    }
+  },
+  "inputs": {
+    "sector26_invariant_suite_report": {
+      "path": "data/invariants/d20/theorems/sector26_invariant_suite/report.json",
+      "sha256": "fae8fbb0293b786922d2ce6e5912a60053b47ad0cb5145ae2d9ac4f32de24783"
+    },
+    "sector33_all_residue_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "706a8a3d369f2b0f29f87c60ad3b43781f9c52c4e9a6d276e26c6d1413fd01ed"
+    },
+    "typed_nonexact_optical_flux_update_report": {
+      "path": "data/invariants/d20/theorems/typed_nonexact_optical_flux_update/report.json",
+      "sha256": "41e36fdd44053f3d57468971ec9d527392f8093e50aaac2c9ca7747d2d86b34e"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not yet identify a continuum central charge, Virasoro representation, or string worldsheet. It certifies the finite counter that such a recovery would have to factor through.",
+    "what_this_proves": [
+      "the mod-26 optical clock is complete but not additive under closed-return xor",
+      "the additivity failure is controlled by an explicit overlap formula",
+      "the defect lands in 2*Z/26 and therefore halves to all of Z/13",
+      "the mod-2 parity shadow is the only additive character certified at this stage",
+      "the half-anomaly has zero radical, so every nonzero residue mask is detected by some partner"
+    ]
+  },
+  "next_highest_yield_item": "Classify anomaly-cancelled closed-return sectors: compute maximal subspaces or admissible cycle packets where the sector-26 half-anomaly vanishes under the required pairings.",
+  "object": "d20",
+  "schema": "d20.theorem.finite_anomaly_counter",
+  "status": "D20_FINITE_ANOMALY_COUNTER_CERTIFIED"
+}

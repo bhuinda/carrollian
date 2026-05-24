@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""D20 UF kernel v4: height-coherence certificates.
+"""D20 UF kernel source_drop: height-coherence certificates.
 
 A height certificate for a finite exterior system is a scalar potential h such
 that every realized exterior side is strictly oriented:

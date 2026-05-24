@@ -11,7 +11,7 @@ TRACE_PATHS = [
     BASE / "traces" / "cadical_lrat_contradiction_4.trace.json",
     BASE / "traces" / "public_dpll_contradiction_4.trace.json",
 ]
-SCHEMA_PATH = BASE / "schemas" / "universal_trace_event.v1.schema.json"
+SCHEMA_PATH = BASE / "schemas" / "universal_trace_event.schema.json"
 CLASSIFIER_PATH = BASE / "reports" / "universal_trace_typing_classifier.json"
 REPORT_PATH = BASE / "reports" / "universal_trace_typing_report.json"
 RESIDUE_PATH = BASE / "residues" / "unsupported_universal_trace_event_residue.json"
@@ -72,7 +72,7 @@ def load_json(path: Path) -> dict[str, Any]:
 def universal_event_schema() -> dict[str, Any]:
     return {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "d20.integrity.universal_trace_event.v1",
+        "$id": "d20.integrity.universal_trace_event.source_drop",
         "title": "D20 universal C/V/X trace event",
         "type": "object",
         "required": [
@@ -87,7 +87,7 @@ def universal_event_schema() -> dict[str, Any]:
             "checks",
         ],
         "properties": {
-            "schema": {"const": "d20.integrity.universal_trace_event.v1"},
+            "schema": {"const": "d20.integrity.universal_trace_event.source_drop"},
             "event_id": {"type": "string", "minLength": 1},
             "step": {"type": "integer", "minimum": 1},
             "op": {
@@ -122,7 +122,7 @@ def universal_event_schema() -> dict[str, Any]:
 
 def classifier_document() -> dict[str, Any]:
     return {
-        "schema": "d20.integrity.universal_trace_typing_classifier.v1",
+        "schema": "d20.integrity.universal_trace_typing_classifier.source_drop",
         "status": "UNIVERSAL_TRACE_TYPING_CLASSIFIER_DEFINED",
         "vocabulary_model": "finite_public_bit_ram_plus_solver_and_proof_surface",
         "accepted_types": ["C", "V", "X"],
@@ -176,7 +176,7 @@ def classify_event(event: dict[str, Any]) -> dict[str, Any]:
 
 def residue_for(event: dict[str, Any], classification: dict[str, Any]) -> dict[str, Any]:
     return {
-        "schema": "d20.integrity.universal_trace.unsupported_event_residue.v1",
+        "schema": "d20.integrity.universal_trace.unsupported_event_residue.source_drop",
         "status": "UNIVERSAL_TRACE_UNSUPPORTED_EVENT_TYPED_RESIDUE",
         "residue_type": "UNCLASSIFIED_UNIVERSAL_TRACE_EVENT",
         "event_id": event.get("event_id", "unknown"),
@@ -280,7 +280,7 @@ def current_trace_classification() -> dict[str, Any]:
 
 def unsupported_fixture() -> dict[str, Any]:
     return {
-        "schema": "d20.integrity.universal_trace_event.v1",
+        "schema": "d20.integrity.universal_trace_event.source_drop",
         "event_id": "unsupported-universal-opcode-fixture:0001",
         "step": 1,
         "op": "universal_machine_opcode",
@@ -317,7 +317,7 @@ def main() -> int:
     )
 
     report = {
-        "schema": "d20.integrity.universal_trace_typing_report.v1",
+        "schema": "d20.integrity.universal_trace_typing_report.source_drop",
         "status": (
             "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
             if pass_condition

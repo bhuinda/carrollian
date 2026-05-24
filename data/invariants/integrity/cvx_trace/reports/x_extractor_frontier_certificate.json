@@ -1,0 +1,129 @@
+{
+  "checks": {
+    "all_residue_transport_certified": true,
+    "bounded_current_traces_have_no_x": true,
+    "gamma8_extractor_matches_target_residual": true,
+    "gamma8_public_shadow_zero": true,
+    "representative_payload_within_prior_polynomial_bound": true,
+    "required_hidden_sector_opcode_available": true,
+    "target_transport_certified": true,
+    "universal_public_compiler_polynomial": true,
+    "x_surface_isolated": true
+  },
+  "claim_level": "explicit_polynomial_x_extractor_family_scope_not_lower_bound",
+  "complexity": {
+    "e33_support": 56,
+    "family_basis_width": 11,
+    "max_family_payload_width": 73,
+    "representative_payload_width": 67,
+    "representative_prior_polynomial_bound": 4913,
+    "representative_within_prior_polynomial_bound": true,
+    "runtime_bound": "O(active_circuit_support + support(e_33)) for materialized vector output; O(active_circuit_support) for scalar residual output with e_33 as certified carrier handle.",
+    "verification_bound": "one X opcode classification plus height-dot-product replay and q42/q12 zero-shadow checks"
+  },
+  "decision": {
+    "may_claim_explicit_polynomial_family_x_extractor": true,
+    "may_claim_full_separation": false,
+    "may_claim_no_polynomial_size_x_extractor": false,
+    "may_claim_x_extractor_lower_bound": false,
+    "reason": "The certified height-coherent transport gives an explicit polynomial family-scope X extractor for the sector-33 residual. Therefore the no-polynomial-X lower-bound branch is not proved; the extractor branch is promoted as the central object."
+  },
+  "extractor": {
+    "algorithm": [
+      "compute A_h(gamma)=<C_gamma,h>",
+      "compute scalar -A_h(gamma)/dim(Pi_33) in F_1000003",
+      "return rho_33(gamma)=(-A_h(gamma)/dim(Pi_33)) e_33",
+      "optionally return Lambda_hc(gamma)=lambda_boundary(gamma)+rho_33(gamma)"
+    ],
+    "all_residue_family_witness": {
+      "basis_cycle_width": 11,
+      "carrier_sector": 33,
+      "nonzero_residue_class_count": 2047,
+      "residue_class_count": 2048,
+      "transport_rows_sha256": "376171a169c3c951c08656ae2db6076e272aa4358b51619b4b1c4a39d756b3dd"
+    },
+    "gamma8_witness": {
+      "corrected_transport_sha256": "08c5f8dd0ee29a3bdaf61dc4b0d70c30169550579a4aaad8ecaccb0a4d828859",
+      "edge_count": 5,
+      "edge_ids": [
+        11,
+        1,
+        2,
+        22,
+        21
+      ],
+      "height_action": 374784,
+      "height_transport_sha256": "0c2914362e0970108231f0b4da072f77f723c25f195f44fe91261f8239d37d60",
+      "q12_nonzero_count": 0,
+      "q42_nonzero_count": 0,
+      "residual_integral": -374784,
+      "residual_mod_prime": 625219,
+      "transport_scalar": 812611
+    },
+    "id": "E_hc_sector33",
+    "input": [
+      "closed-return circuit row C_gamma",
+      "certified height cochain h",
+      "certified public-zero sector carrier e_33",
+      "dim(Pi_33)"
+    ],
+    "scope": "certified d20 closed-return residue family and the cycle-8 / Pi_33 representative packet",
+    "x_opcode": "X_EXTRACTOR_HIDDEN_SECTOR_MAP"
+  },
+  "next_highest_yield_item": {
+    "action": "Define whether X events are excluded public computation, oracle/advice events, or admitted hidden-sector extractor steps in the final no-escape theorem.",
+    "id": "formal_x_policy_boundary"
+  },
+  "non_claims": [
+    "This does not prove that polynomial-size X extractors are impossible.",
+    "This does not make the X extractor a public-C operation; it remains on the X surface.",
+    "This does not certify SAT-completeness of the encoded family.",
+    "This does not prove P != NP."
+  ],
+  "schema": "d20.integrity.x_extractor_frontier_certificate.source_drop",
+  "source_audit": {
+    "encoded_family_bridge": {
+      "expected_status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_bridge_certificate.json",
+      "status": "ENCODED_FAMILY_REPRESENTATIVE_BRIDGE_WITNESSED_SAT_COMPLETE_OPEN"
+    },
+    "sector33_all_residue_height_transport": {
+      "expected_status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "universal_trace_compiler": {
+      "expected_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
+    "universal_trace_typing_classifier": {
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_classifier.json",
+      "required_hidden_sector_opcode": "X_EXTRACTOR_HIDDEN_SECTOR_MAP",
+      "required_opcode_present": true,
+      "x_opcode_count": 6
+    },
+    "universal_x_extractor_isolation": {
+      "expected_status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_x_extractor_isolation_report.json",
+      "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
+    },
+    "x_extractor_bounded_search": {
+      "expected_status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_bounded_search_report.json",
+      "status": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND"
+    },
+    "x_extractor_target": {
+      "expected_status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_target_certificate.json",
+      "status": "X_EXTRACTOR_TARGET_AND_INTRINSIC_TRANSPORT_CERTIFIED_POLYNOMIAL_LOWER_BOUND_OPEN"
+    }
+  },
+  "status": "X_EXTRACTOR_FRONTIER_EXPLICIT_POLYNOMIAL_FAMILY_EXTRACTOR_PROMOTED"
+}

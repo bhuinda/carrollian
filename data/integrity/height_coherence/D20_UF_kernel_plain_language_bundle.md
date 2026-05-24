@@ -1,6 +1,6 @@
 # The D20 proof-kernel bundle in plain language
 
-## One-sentence version
+## One-sentence summary
 
 D20 is a finite proof-kernel prototype: it composes relations, compresses them safely, and accepts a comparison only when a global height certificate proves that no positive circular obstruction remains.
 

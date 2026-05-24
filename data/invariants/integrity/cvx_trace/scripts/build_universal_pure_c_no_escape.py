@@ -148,7 +148,7 @@ def main() -> int:
     )
 
     report = {
-        "schema": "d20.integrity.universal_pure_c_no_escape_report.v1",
+        "schema": "d20.integrity.universal_pure_c_no_escape_report.source_drop",
         "status": (
             "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
             if pass_condition

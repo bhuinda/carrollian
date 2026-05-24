@@ -1,0 +1,113 @@
+{
+  "$id": "d20.integrity.v_wall_crossing_certificate",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "locally_checkable": {
+          "type": "boolean"
+        },
+        "no_hidden_advice": {
+          "type": "boolean"
+        },
+        "no_x_extractor": {
+          "type": "boolean"
+        },
+        "replayable": {
+          "type": "boolean"
+        },
+        "visible": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "visible",
+        "replayable",
+        "locally_checkable",
+        "no_hidden_advice",
+        "no_x_extractor"
+      ],
+      "type": "object"
+    },
+    "class_code": {
+      "const": "V_VISIBLE_COMMUTATOR_WALL_CROSSING"
+    },
+    "commutator_witness": {
+      "additionalProperties": false,
+      "properties": {
+        "replay_status": {
+          "const": "REPLAYED"
+        },
+        "witness_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "witness_type": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "witness_type",
+        "witness_hash",
+        "replay_status"
+      ],
+      "type": "object"
+    },
+    "event_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "integrity_type": {
+      "const": "V"
+    },
+    "public_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "boundary_description": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "public_input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "public_output_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "public_input_hash",
+        "public_output_hash",
+        "boundary_description"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "d20.integrity.v_wall_crossing_certificate"
+    },
+    "status": {
+      "const": "V_WALL_CROSSING_CERTIFICATE"
+    },
+    "trace_path": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "status",
+    "event_id",
+    "trace_path",
+    "integrity_type",
+    "class_code",
+    "public_boundary",
+    "commutator_witness",
+    "checks"
+  ],
+  "title": "D20 visible V wall-crossing certificate",
+  "type": "object"
+}

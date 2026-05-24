@@ -1,141 +1,136 @@
 {
-  "schema": "d20.data_registry",
-  "status": "DATA_REGISTRY_BUILT",
-  "policy": {
-    "physical_layout": "domain_grouped_files",
-    "migration_stage": "canonical_evidence_and_invariants_integrated_after_bulk_move",
-    "ingest_policy": "ingest is a transient drop zone and must not be referenced by canonical certificate data",
-    "canonical_top_level_directories": [
-      "a236_compute",
-      "coorient",
-      "dihedral",
-      "evidence",
-      "integrity",
-      "invariants",
-      "quotient",
-      "raw"
-    ],
-    "canonical_top_level_files": [
-      "index.json"
-    ]
-  },
-  "planned_layout": {
-    "data/core/raw": "primitive checked seeds and compact comparison arrays",
-    "data/core/coorient": "coorient lift markers, word presentations, and generator arrays",
-    "data/core/quotient": "canonical quotient selectors",
-    "data/invariants/d20": "d20 object invariants and integrated evidence invariants",
-    "data/invariants/hcycle": "H-cycle board, control, and game-theory invariants",
-    "data/invariants/integrity": "proof-system integrity and boundary ledgers",
-    "data/evidence/tensor_chain": "tensor-chain evidence split into reports, tables, arrays, and stages",
-    "data/evidence/a236_compute": "A236 computation cache and branching evidence",
-    "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, manifests, and source provenance",
-    "data/reference/dihedral": "general dihedral formula references",
-    "data/evidence/stack_series": "bounded stack-series evidence split into named stages, reports, and manifests",
-    "data/evidence/reproducibility": "portable reproduction bundles retained under canonical evidence storage",
-    "data/integrity/height_coherence": "height-coherence integrity certificates, guards, arrays, tables, and verification scripts"
-  },
   "domains": {
     "a236_compute_cache": {
-      "path": "data/a236_compute",
       "canonical_role": "evidence_cache",
-      "owner": "main_certificate_computer",
-      "storage_status": "canonical_current_layout",
-      "target_path": "data/evidence/a236_compute",
-      "migration_policy": "defer_until_path_aliases_exist",
       "file_classes": [
         "csv_table",
         "json_report",
         "markdown_report",
         "npz_array"
       ],
+      "migration_policy": "defer_until_path_aliases_exist",
+      "owner": "main_certificate_computer",
+      "path": "data/a236_compute",
       "required_files": [
         "README.md",
         "cache/a236_rows.csv",
         "cache/a985_center_idempotents_mod1000003.npz",
         "cache/B236_to_A42.csv",
         "cache/B42_to_A12.csv"
-      ]
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/evidence/a236_compute"
     },
     "coorient_lift": {
-      "path": "data/coorient",
       "canonical_role": "core_seed",
-      "owner": "coorient_constructor",
-      "storage_status": "canonical_current_layout",
-      "target_path": "data/core/coorient",
-      "migration_policy": "defer_until_path_aliases_exist",
       "file_classes": [
         "json_formula",
         "npz_array"
       ],
+      "migration_policy": "defer_until_path_aliases_exist",
+      "owner": "coorient_constructor",
+      "path": "data/coorient",
       "required_files": [
         "absolute_d20_word_presentation.json",
         "be3_coorient_generators.npz",
         "lifted_coorient_canonical_marker_formula.json",
         "lifted_coorient_signature_formula.json"
-      ]
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/core/coorient"
     },
     "d20_invariants": {
-      "path": "data/invariants/d20",
       "canonical_role": "derived_invariant",
-      "owner": "main_certificate_computer",
-      "storage_status": "canonical_standardized_layout",
-      "target_path": "data/invariants/d20",
-      "migration_policy": "physically_normalized_into_invariants_tree",
       "file_classes": [
         "json_certificate",
         "json_invariant",
         "json_report"
       ],
+      "migration_policy": "physically_normalized_into_invariants_tree",
+      "owner": "main_certificate_computer",
+      "path": "data/invariants/d20",
       "required_files": [
         "certified_evidence_invariants.json",
         "d20_d6_selector_derivation.json",
         "derived_invariant_reports.json",
         "pre_A985_relation_body_theorem.json",
         "universal_integral_uniqueness.json"
-      ]
+      ],
+      "storage_status": "canonical_standardized_layout",
+      "target_path": "data/invariants/d20"
     },
     "dihedral_formulae": {
-      "path": "data/dihedral",
       "canonical_role": "reference_formula",
-      "owner": "formula_reference",
-      "storage_status": "canonical_current_layout",
-      "target_path": "data/reference/dihedral",
-      "migration_policy": "defer_until_path_aliases_exist",
       "file_classes": [
         "json_formula"
       ],
+      "migration_policy": "defer_until_path_aliases_exist",
+      "owner": "formula_reference",
+      "path": "data/dihedral",
       "required_files": [
         "dn_formulae.json"
-      ]
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/reference/dihedral"
     },
     "hcycle_game_control": {
-      "path": "data/invariants/hcycle",
       "canonical_role": "derived_invariant",
-      "owner": "game_control_layer",
-      "storage_status": "canonical_current_layout_flat",
-      "target_path": "data/invariants/hcycle",
-      "migration_policy": "physically_normalized_into_invariants_tree; split_reports_tables_and_sources_after_registry",
       "file_classes": [
         "csv_table",
         "json_manifest",
         "json_report",
         "python_source"
       ],
+      "migration_policy": "physically_normalized_into_invariants_tree; split_reports_tables_and_sources_after_registry",
+      "owner": "game_control_layer",
+      "path": "data/invariants/hcycle",
       "required_files": [
         "Hsubcycle_S20_manifest.json",
         "d20_Hcycle_automorphism_summary.json",
         "d20_Hcycle_invariant_ledger.csv",
         "subscript_Hcycle_control_manifest.json",
         "subscript_Hcycle_primitive_cycles.csv"
-      ]
+      ],
+      "storage_status": "canonical_current_layout_flat",
+      "target_path": "data/invariants/hcycle"
+    },
+    "height_coherence_integrity": {
+      "canonical_role": "derived_invariant",
+      "file_classes": [
+        "csv_table",
+        "json_certificate",
+        "json_examples",
+        "json_manifest",
+        "json_report",
+        "markdown_report",
+        "npz_array",
+        "python_source"
+      ],
+      "migration_policy": "transient ingest UF-kernel bundle migrated into canonical integrity evidence tree",
+      "owner": "height_coherence",
+      "path": "data/integrity/height_coherence",
+      "required_files": [
+        "README.md",
+        "certificate.json",
+        "manifest.json",
+        "reports/height_coherence_evidence.json",
+        "reports/height_coherence_evidence.md",
+        "arrays/d20_uf_kernel_arrays.npz",
+        "tables/height_coherence_certificates.csv",
+        "scripts/verify_d20_uf_kernel.py"
+      ],
+      "standardized_subdirectories": {
+        "arrays": "UF-kernel and resizing arrays",
+        "examples": "height-coherence examples and guards",
+        "reports": "human and machine integrity reports",
+        "scripts": "portable verification scripts",
+        "tables": "height-coherence certificate and edge tables"
+      },
+      "storage_status": "canonical_standardized_layout",
+      "target_path": "data/integrity/height_coherence"
     },
     "integrity_ladders": {
-      "path": "data/invariants/integrity",
       "canonical_role": "derived_invariant",
-      "owner": "integrity_layer",
-      "storage_status": "canonical_standardized_layout",
-      "target_path": "data/invariants/integrity",
-      "migration_policy": "physically_normalized_into_invariants_tree",
       "file_classes": [
         "csv_table",
         "json_checklist",
@@ -146,6 +141,9 @@
         "json_trace",
         "python_source"
       ],
+      "migration_policy": "physically_normalized_into_invariants_tree",
+      "owner": "integrity_layer",
+      "path": "data/invariants/integrity",
       "required_files": [
         "conditional_theorem_ladder.csv",
         "cvx_trace/certificates/V_VISIBLE_COMMUTATOR_WALL_CROSSING.universal_v_wall_certificate.json",
@@ -172,11 +170,11 @@
         "cvx_trace/residues/unsupported_universal_trace_event_residue.json",
         "cvx_trace/residues/uncertified_v_wall_crossing_residue.json",
         "cvx_trace/residues/unsupported_solver_opcode_residue.json",
-        "cvx_trace/schemas/cvx_trace.v1.schema.json",
-        "cvx_trace/schemas/universal_public_bit_machine_program.v1.schema.json",
-        "cvx_trace/schemas/universal_trace_event.v1.schema.json",
-        "cvx_trace/schemas/universal_v_wall_crossing_certificate.v1.schema.json",
-        "cvx_trace/schemas/v_wall_crossing_certificate.v1.schema.json",
+        "cvx_trace/schemas/cvx_trace.schema.json",
+        "cvx_trace/schemas/universal_public_bit_machine_program.schema.json",
+        "cvx_trace/schemas/universal_trace_event.schema.json",
+        "cvx_trace/schemas/universal_v_wall_crossing_certificate.schema.json",
+        "cvx_trace/schemas/v_wall_crossing_certificate.schema.json",
         "cvx_trace/scripts/account_v_wall_crossing.py",
         "cvx_trace/scripts/build_encoded_family_bridge_certificate.py",
         "cvx_trace/scripts/build_encoded_family_scope_certificate.py",
@@ -200,34 +198,34 @@
         "next_integrity_tests.csv",
         "p_vs_np_bridge_checklist.json",
         "proof_system_integrity_ladder.csv"
-      ]
+      ],
+      "storage_status": "canonical_standardized_layout",
+      "target_path": "data/invariants/integrity"
     },
     "quotient_selectors": {
-      "path": "data/quotient",
       "canonical_role": "derived_selector",
-      "owner": "quotient_constructor",
-      "storage_status": "canonical_current_layout",
-      "target_path": "data/core/quotient",
-      "migration_policy": "defer_until_path_aliases_exist",
       "file_classes": [
         "json_selector"
       ],
+      "migration_policy": "defer_until_path_aliases_exist",
+      "owner": "quotient_constructor",
+      "path": "data/quotient",
       "required_files": [
         "terminal_quotient_selector.json"
-      ]
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/core/quotient"
     },
     "raw_core_seeds": {
-      "path": "data/raw",
       "canonical_role": "core_seed",
-      "owner": "main_certificate_computer",
-      "storage_status": "canonical_current_layout",
-      "target_path": "data/core/raw",
-      "migration_policy": "defer_until_path_aliases_exist",
       "file_classes": [
         "json_index",
         "json_seed",
         "npz_seed"
       ],
+      "migration_policy": "defer_until_path_aliases_exist",
+      "owner": "main_certificate_computer",
+      "path": "data/raw",
       "required_files": [
         "constants.json",
         "index.json",
@@ -236,45 +234,42 @@
         "relation_memberships.npz",
         "simple_branching_matrices.npz",
         "T_985.npz"
-      ]
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/core/raw"
     },
-    "tensor_chain_evidence": {
-      "path": "data/evidence/tensor_chain",
+    "reproducibility_evidence": {
       "canonical_role": "evidence_archive",
-      "owner": "tensor_chain",
-      "storage_status": "canonical_standardized_layout",
-      "target_path": "data/evidence/tensor_chain",
-      "migration_policy": "physically_normalized_into_reports_tables_arrays_stages",
       "file_classes": [
         "csv_table",
+        "json_certificate",
         "json_index",
+        "json_manifest",
         "json_report",
         "markdown_report",
-        "npz_array",
-        "text_note"
+        "python_source"
       ],
+      "migration_policy": "transient ingest reproducibility bundle migrated into canonical evidence tree",
+      "owner": "reproducibility_bundle",
+      "path": "data/evidence/reproducibility",
       "required_files": [
-        "index.json",
-        "manifest.json",
-        "plain_name_view.json",
-        "reports/Romega_classification_report.json",
-        "arrays/Romega_classification_arrays.npz",
-        "stages/v22_raw_tensor_chain_test/v22_raw_tensor_chain_report.json"
+        "python_bundle/README.md",
+        "python_bundle/index.json",
+        "python_bundle/manifest.json",
+        "python_bundle/reports/reproducibility_evidence.json",
+        "python_bundle/reports/reproducibility_evidence.md",
+        "python_bundle/out/01_full_pentagon_genome/certificate.json",
+        "python_bundle/out/02_operational_blocks_stage2/certificate.json",
+        "python_bundle/out/03_central_wedderburn_lift/certificate.json"
       ],
       "standardized_subdirectories": {
-        "reports": "human and machine report files",
-        "tables": "CSV evidence tables",
-        "arrays": "NPZ array payloads",
-        "stages": "named experiment stages"
-      }
+        "python_bundle": "portable Python/NumPy reproduction package with source and output certificates"
+      },
+      "storage_status": "canonical_standardized_layout",
+      "target_path": "data/evidence/reproducibility"
     },
     "ss_sat_evidence": {
-      "path": "data/evidence/ss_sat",
       "canonical_role": "evidence_archive",
-      "owner": "ss_sat",
-      "storage_status": "canonical_standardized_layout",
-      "target_path": "data/evidence/ss_sat",
-      "migration_policy": "transient gnatural_ontological_computation bundles collapsed into canonical evidence tree with top-level drops archived locally",
       "file_classes": [
         "cnf_benchmark",
         "csv_table",
@@ -288,6 +283,9 @@
         "solver_log",
         "typed_residue"
       ],
+      "migration_policy": "transient gnatural_ontological_computation bundles collapsed into canonical evidence tree with top-level drops archived locally",
+      "owner": "ss_sat",
+      "path": "data/evidence/ss_sat",
       "required_files": [
         "index.json",
         "manifest.json",
@@ -302,31 +300,28 @@
         "tables/scaled_proof_verification_summary.csv",
         "residues/kissat_sigsegv.json",
         "residues/scaled_solver_residues.json",
-        "source_versions/index.json",
+        "source_drops/index.json",
         "schema/external_evidence_manifest.schema.json"
       ],
       "standardized_subdirectories": {
+        "audits": "proof verification and C/V/X audit outputs",
         "benchmarks": "DIMACS fixture inputs",
         "logs": "captured solver stdout and stderr logs",
-        "proofs": "DRAT, LRAT, FRAT, and extracted LRAT proof artifacts",
-        "audits": "proof verification and C/V/X audit outputs",
-        "residues": "typed failed or blocked seams",
-        "reports": "human and machine reports",
-        "tables": "CSV summary tables",
         "manifests": "source evidence manifests with command lines and hashes",
-        "source_versions": "source provenance copied from consolidated gnatural drops",
-        "source_archives": "zip evidence bundles plus local-only archived staging roots",
+        "proofs": "DRAT, LRAT, FRAT, and extracted LRAT proof artifacts",
+        "reports": "human and machine reports",
+        "residues": "typed failed or blocked seams",
+        "schema": "external evidence manifest schema",
         "scripts": "evidence analysis and extraction scripts",
-        "schema": "external evidence manifest schema"
-      }
+        "source_bundles": "zip evidence bundles plus local-only archived staging roots",
+        "source_drops": "source provenance copied from consolidated gnatural drops",
+        "tables": "CSV summary tables"
+      },
+      "storage_status": "canonical_standardized_layout",
+      "target_path": "data/evidence/ss_sat"
     },
     "stack_series_evidence": {
-      "path": "data/evidence/stack_series",
       "canonical_role": "evidence_archive",
-      "owner": "stack_series",
-      "storage_status": "canonical_standardized_layout",
-      "target_path": "data/evidence/stack_series",
-      "migration_policy": "transient ingest stack-series drops migrated into canonical staged evidence tree",
       "file_classes": [
         "csv_table",
         "json_certificate",
@@ -336,85 +331,90 @@
         "markdown_report",
         "python_source"
       ],
+      "migration_policy": "transient ingest stack-series drops migrated into canonical staged evidence tree",
+      "owner": "stack_series",
+      "path": "data/evidence/stack_series",
       "required_files": [
         "index.json",
         "manifest.json",
         "reports/stack_series_evidence.json",
         "reports/stack_series_evidence.md",
-        "stages/v26_q_weighted/q_weighted_stack_series_certificate.json",
-        "stages/v27_a985_weighted/a985_weighted_stack_series_certificate.json",
-        "stages/v28_relation_level/relation_level_stack_series_certificate.json",
-        "stages/v29_relation_pair_quotient/relation_pair_stack_series_certificate.json"
+        "stages/q_weighted/q_weighted_stack_series_certificate.json",
+        "stages/a985_weighted/a985_weighted_stack_series_certificate.json",
+        "stages/relation_level/relation_level_stack_series_certificate.json",
+        "stages/relation_pair_quotient/relation_pair_stack_series_certificate.json"
       ],
       "standardized_subdirectories": {
         "reports": "human and machine evidence reports",
         "stages": "named stack-series computation stages"
-      }
-    },
-    "height_coherence_integrity": {
-      "path": "data/integrity/height_coherence",
-      "canonical_role": "derived_invariant",
-      "owner": "height_coherence",
+      },
       "storage_status": "canonical_standardized_layout",
-      "target_path": "data/integrity/height_coherence",
-      "migration_policy": "transient ingest UF-kernel bundle migrated into canonical integrity evidence tree",
+      "target_path": "data/evidence/stack_series"
+    },
+    "tensor_chain_evidence": {
+      "canonical_role": "evidence_archive",
       "file_classes": [
         "csv_table",
-        "json_certificate",
-        "json_examples",
-        "json_manifest",
+        "json_index",
         "json_report",
         "markdown_report",
         "npz_array",
-        "python_source"
+        "text_note"
       ],
+      "migration_policy": "physically_normalized_into_reports_tables_arrays_stages",
+      "owner": "tensor_chain",
+      "path": "data/evidence/tensor_chain",
       "required_files": [
-        "README.md",
-        "certificate.json",
+        "index.json",
         "manifest.json",
-        "reports/height_coherence_evidence.json",
-        "reports/height_coherence_evidence.md",
-        "arrays/d20_uf_kernel_arrays.npz",
-        "tables/height_coherence_certificates.csv",
-        "scripts/verify_d20_uf_kernel_v4.py"
+        "plain_name_view.json",
+        "reports/Romega_classification_report.json",
+        "arrays/Romega_classification_arrays.npz",
+        "stages/raw_tensor_chain_test/raw_tensor_chain_report.json"
       ],
       "standardized_subdirectories": {
-        "arrays": "UF-kernel and resizing arrays",
-        "examples": "height-coherence examples and guards",
-        "reports": "human and machine integrity reports",
-        "scripts": "portable verification scripts",
-        "tables": "height-coherence certificate and edge tables"
-      }
-    },
-    "reproducibility_evidence": {
-      "path": "data/evidence/reproducibility",
-      "canonical_role": "evidence_archive",
-      "owner": "reproducibility_bundle",
+        "arrays": "NPZ array payloads",
+        "reports": "human and machine report files",
+        "stages": "named experiment stages",
+        "tables": "CSV evidence tables"
+      },
       "storage_status": "canonical_standardized_layout",
-      "target_path": "data/evidence/reproducibility",
-      "migration_policy": "transient ingest reproducibility bundle migrated into canonical evidence tree",
-      "file_classes": [
-        "csv_table",
-        "json_certificate",
-        "json_index",
-        "json_manifest",
-        "json_report",
-        "markdown_report",
-        "python_source"
-      ],
-      "required_files": [
-        "python_bundle/README.md",
-        "python_bundle/index.json",
-        "python_bundle/manifest.json",
-        "python_bundle/reports/reproducibility_evidence.json",
-        "python_bundle/reports/reproducibility_evidence.md",
-        "python_bundle/out/01_full_pentagon_genome/certificate.json",
-        "python_bundle/out/02_operational_blocks_stage2/certificate.json",
-        "python_bundle/out/03_central_wedderburn_lift/certificate.json"
-      ],
-      "standardized_subdirectories": {
-        "python_bundle": "portable Python/NumPy reproduction package with source and output certificates"
-      }
+      "target_path": "data/evidence/tensor_chain"
     }
-  }
+  },
+  "planned_layout": {
+    "data/core/coorient": "coorient lift markers, word presentations, and generator arrays",
+    "data/core/quotient": "canonical quotient selectors",
+    "data/core/raw": "primitive checked seeds and compact comparison arrays",
+    "data/evidence/a236_compute": "A236 computation cache and branching evidence",
+    "data/evidence/reproducibility": "portable reproduction bundles retained under canonical evidence storage",
+    "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, manifests, and source provenance",
+    "data/evidence/stack_series": "bounded stack-series evidence split into named stages, reports, and manifests",
+    "data/evidence/tensor_chain": "tensor-chain evidence split into reports, tables, arrays, and stages",
+    "data/integrity/height_coherence": "height-coherence integrity certificates, guards, arrays, tables, and verification scripts",
+    "data/invariants/d20": "d20 object invariants and integrated evidence invariants",
+    "data/invariants/hcycle": "H-cycle board, control, and game-theory invariants",
+    "data/invariants/integrity": "proof-system integrity and boundary ledgers",
+    "data/reference/dihedral": "general dihedral formula references"
+  },
+  "policy": {
+    "canonical_top_level_directories": [
+      "a236_compute",
+      "coorient",
+      "dihedral",
+      "evidence",
+      "integrity",
+      "invariants",
+      "quotient",
+      "raw"
+    ],
+    "canonical_top_level_files": [
+      "index.json"
+    ],
+    "ingest_policy": "ingest is a transient drop zone and must not be referenced by canonical certificate data",
+    "migration_stage": "canonical_evidence_and_invariants_integrated_after_bulk_move",
+    "physical_layout": "domain_grouped_files"
+  },
+  "schema": "d20.data_registry",
+  "status": "DATA_REGISTRY_BUILT"
 }

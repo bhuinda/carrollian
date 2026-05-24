@@ -57,7 +57,7 @@ The contracted six channels also carry the thirty projective `D6` transition roo
 
 ## Induced six-channel operator for R_Omega
 
-Using the v8 Fano-zone weights, I nullified the `P1` mass and split the surviving mass over the six channels:
+Using the source_drop Fano-zone weights, I nullified the `P1` mass and split the surviving mass over the six channels:
 
 ```text
 L3\P1 -> B-, B+

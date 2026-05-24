@@ -1,0 +1,268 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "889b31777ef2703715940c0a66e72c90e37396a5ca713e9b206b50a676eb0816",
+  "checks": {
+    "all_residue_height_transport_is_certified": true,
+    "exact_public_flux_lifts_with_zero_hidden_update": true,
+    "extended_charge_has_four_public_plus_three_hidden_components": true,
+    "finite_flux_balance_is_certified": true,
+    "hidden_label_map_is_injective_on_admissible_public_zero_carriers": true,
+    "idempotent_carrier_admissibility_is_certified": true,
+    "minimal_composite_transport_is_certified": true,
+    "mixed_and_pure_null_labels_have_cross_transport_rank_one": true,
+    "mixed_plus_pure_without_R33_is_not_admissible_public_zero": true,
+    "new_superselection_labels_are_isolated_from_R33": true,
+    "new_superselection_labels_are_not_gauge_zero": true,
+    "new_superselection_labels_are_public_zero_carriers": true,
+    "sector33_height_transport_has_zero_composite_superselection_flux": true,
+    "two_new_superselection_labels_are_added": true
+  },
+  "claim": "The finite D20 boundary charge can be extended from the public four-vector (M,J,P,Phi) to an augmented public-plus-hidden ledger (M,J,P,Phi;R33,K_mixed_S,K_pure_Sminus). The two new hidden labels distinguish the minimal public-zero composite superselection carriers from gauge zero while preserving the certified sector-33 height transport.",
+  "definition": {
+    "admissible_hidden_states": "The six certified Boolean public-zero idempotent carriers: zero, R33, K_mixed_S, K_pure_Sminus, K_mixed_S+R33, and K_pure_Sminus+R33. K_mixed_S+K_pure_Sminus is not a certified public-zero carrier because the two labels overlap through sector 26.",
+    "augmented_boundary_charge": "Q_ext=(M,J,P,Phi;R33,K_mixed_S,K_pure_Sminus), where the first four components are the public exact-flux charges and the last three components track the finite public-zero hidden fiber.",
+    "new_superselection_labels": {
+      "K_mixed_S": "{6,26}, the mixed S-/S+ public-zero carrier",
+      "K_pure_Sminus": "{25,26}, the pure S- public-zero doublet"
+    }
+  },
+  "derived": {
+    "admissible_hidden_states": [
+      {
+        "hidden_components": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 0,
+          "R33": 0
+        },
+        "name": "gauge_zero",
+        "public_components": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "sector_support": []
+      },
+      {
+        "hidden_components": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 0,
+          "R33": 1
+        },
+        "name": "primitive_residual_atom",
+        "public_components": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "sector_support": [
+          33
+        ]
+      },
+      {
+        "hidden_components": {
+          "K_mixed_S": 1,
+          "K_pure_Sminus": 0,
+          "R33": 0
+        },
+        "name": "mixed_S_null_carrier",
+        "public_components": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "sector_support": [
+          6,
+          26
+        ]
+      },
+      {
+        "hidden_components": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 1,
+          "R33": 0
+        },
+        "name": "pure_Sminus_null_doublet",
+        "public_components": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "sector_support": [
+          25,
+          26
+        ]
+      },
+      {
+        "hidden_components": {
+          "K_mixed_S": 1,
+          "K_pure_Sminus": 0,
+          "R33": 1
+        },
+        "name": "mixed_S_null_plus_R33",
+        "public_components": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "sector_support": [
+          6,
+          26,
+          33
+        ]
+      },
+      {
+        "hidden_components": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 1,
+          "R33": 1
+        },
+        "name": "pure_Sminus_null_plus_R33",
+        "public_components": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "sector_support": [
+          25,
+          26,
+          33
+        ]
+      }
+    ],
+    "disallowed_mixed_plus_pure_sector_support": [
+      6,
+      25,
+      26
+    ],
+    "exact_balance_extension": {
+      "Q_boundary_extended": [
+        "M",
+        "J",
+        "P",
+        "Phi",
+        "R33",
+        "K_mixed_S",
+        "K_pure_Sminus"
+      ],
+      "exact_public_flux_hidden_update": {
+        "K_mixed_S": 0,
+        "K_pure_Sminus": 0,
+        "R33": 0
+      },
+      "public_state_hidden_charge": {
+        "K_mixed_S": 0,
+        "K_pure_Sminus": 0,
+        "R33": 0
+      },
+      "reason": "The exact finite flux-balance theorem is a coboundary statement on public D20 states. The new hidden superselection components only change when a certified hidden null carrier is inserted."
+    },
+    "height_transport_extension": {
+      "certified_height_transport_hidden_support": "R33",
+      "composite_superselection_flux_for_certified_sector33_height_transport": {
+        "K_mixed_S": 0,
+        "K_pure_Sminus": 0
+      },
+      "reason": "The all-residue height-coherent transport report carries every nonzero height residual by sector 33; the two composite null labels are tracked but not excited by that certified transport."
+    },
+    "hidden_basis": [
+      {
+        "component": "R33",
+        "new_in_this_extension": false,
+        "role": "primitive_support_exact_residual_atom",
+        "sector_support": [
+          33
+        ],
+        "self_transport_rank": 4
+      },
+      {
+        "component": "K_mixed_S",
+        "new_in_this_extension": true,
+        "role": "mixed_S_channel_public_zero_superselection_null_carrier",
+        "sector_support": [
+          6,
+          26
+        ],
+        "self_transport_rank": 5,
+        "transport_from_R33_rank": 0,
+        "transport_to_R33_rank": 0
+      },
+      {
+        "component": "K_pure_Sminus",
+        "new_in_this_extension": true,
+        "role": "pure_Sminus_public_zero_superselection_null_doublet",
+        "sector_support": [
+          25,
+          26
+        ],
+        "self_transport_rank": 2,
+        "transport_from_R33_rank": 0,
+        "transport_to_R33_rank": 0
+      }
+    ],
+    "hidden_components": [
+      "R33",
+      "K_mixed_S",
+      "K_pure_Sminus"
+    ],
+    "hidden_transport_rank_matrix": {
+      "K_mixed_S": {
+        "K_mixed_S": 5,
+        "K_pure_Sminus": 1,
+        "R33": 0
+      },
+      "K_pure_Sminus": {
+        "K_mixed_S": 1,
+        "K_pure_Sminus": 2,
+        "R33": 0
+      },
+      "R33": {
+        "K_mixed_S": 0,
+        "K_pure_Sminus": 0,
+        "R33": 4
+      }
+    },
+    "public_components": [
+      "M",
+      "J",
+      "P",
+      "Phi"
+    ]
+  },
+  "inputs": {
+    "all_residue_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "706a8a3d369f2b0f29f87c60ad3b43781f9c52c4e9a6d276e26c6d1413fd01ed"
+    },
+    "finite_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_flux_balance/report.json",
+      "sha256": "8d066a8ffbeac843d24862994905b4f497ab7956f333243dcf65053a11088f02"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "minimal_composite_null_carriers_transport_report": {
+      "path": "data/invariants/d20/theorems/minimal_composite_null_carriers_transport/report.json",
+      "sha256": "bbf698f1b4fe439e600e4a588d224fcc475744d56df76c917d1b9f675100933b"
+    },
+    "sector_idempotent_carrier_admissibility_report": {
+      "path": "data/invariants/d20/theorems/sector_idempotent_carrier_admissibility/report.json",
+      "sha256": "cc17a32a4d8ff6fea00a192523a75ae22474a3348588dca83402cd93db2367df"
+    }
+  },
+  "interpretation": {
+    "ontological": "Public zero is refined into a finite hidden null fiber. Gauge zero, the primitive residual atom, and the two composite superselection carriers are distinct states of the augmented ledger.",
+    "overlap_warning": "The two composite labels are not independent Boolean bits: their sector supports share sector 26, giving cross-transport rank one. The admissible hidden state set has six states, not the full three-bit cube.",
+    "technological": "A runtime or protocol may project the hidden labels away for public display, but must retain them in the internal state if it wants flux balance to distinguish gauge zero from hidden null transport."
+  },
+  "next_highest_yield_item": "Define the non-exact optical/action flux update as a typed transition in the augmented hidden ledger, with R33 carrying height residuals and K_mixed_S/K_pure_Sminus reserved for superselection-null events.",
+  "object": "d20",
+  "schema": "d20.theorem.superselection_flux_balance_extension.source_drop",
+  "status": "D20_SUPERSELECTION_FLUX_BALANCE_EXTENSION_CERTIFIED"
+}

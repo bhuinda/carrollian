@@ -26,7 +26,7 @@
         "variable": 1
       },
       "reason": "read the first public unit clause literal",
-      "schema": "d20.integrity.universal_trace_event.v1",
+      "schema": "d20.integrity.universal_trace_event",
       "step": 1
     },
     {
@@ -50,7 +50,7 @@
         "variable": 1
       },
       "reason": "read the complementary public unit clause literal",
-      "schema": "d20.integrity.universal_trace_event.v1",
+      "schema": "d20.integrity.universal_trace_event",
       "step": 2
     },
     {
@@ -73,7 +73,7 @@
         "same_variable": true
       },
       "reason": "check that both unit clauses mention the same public variable",
-      "schema": "d20.integrity.universal_trace_event.v1",
+      "schema": "d20.integrity.universal_trace_event",
       "step": 3
     },
     {
@@ -95,7 +95,7 @@
         "opposite_sign": true
       },
       "reason": "check that the two public unit literals have opposite signs",
-      "schema": "d20.integrity.universal_trace_event.v1",
+      "schema": "d20.integrity.universal_trace_event",
       "step": 4
     },
     {
@@ -117,7 +117,7 @@
         "contradiction": true
       },
       "reason": "derive the public contradiction flag",
-      "schema": "d20.integrity.universal_trace_event.v1",
+      "schema": "d20.integrity.universal_trace_event",
       "step": 5
     },
     {
@@ -138,7 +138,7 @@
         "target": "emit_unsat"
       },
       "reason": "branch on the public contradiction flag",
-      "schema": "d20.integrity.universal_trace_event.v1",
+      "schema": "d20.integrity.universal_trace_event",
       "step": 6
     },
     {
@@ -159,7 +159,7 @@
         "decision": "UNSAT"
       },
       "reason": "emit the public SAT decision for the fixture",
-      "schema": "d20.integrity.universal_trace_event.v1",
+      "schema": "d20.integrity.universal_trace_event",
       "step": 7
     },
     {
@@ -180,13 +180,13 @@
         "halted": true
       },
       "reason": "halt in the rejecting SAT state, meaning the input CNF is unsatisfiable",
-      "schema": "d20.integrity.universal_trace_event.v1",
+      "schema": "d20.integrity.universal_trace_event",
       "step": 8
     }
   ],
   "machine_model": "finite_public_bit_ram",
   "program_path": "data/invariants/integrity/cvx_trace/traces/universal_bit_machine_contradiction_4.program.json",
-  "schema": "d20.integrity.universal_trace.v1",
+  "schema": "d20.integrity.universal_trace",
   "status": "UNIVERSAL_TRACE_COMPILER_WITNESS",
   "summary": {
     "all_events_classified": true,

@@ -1,14 +1,16 @@
 {
-  "schema": "G.d20.v10.Romega_classification",
-  "status": "G_V14_ROMega_CURVATURE_DESCENT_COMPLETE",
-  "source_v8_sha256": "10341087c3e04976124d0977b4fa683878d11186419b61f738cf7b123dd6335a",
-  "source_v9_sha256": "91be63b0a253d9ab84d13e53d0c665acf2a496b5500a9628d682e1afbcea7af0",
   "R_Omega_metrics": {
+    "frobenius_norm": 2251.533688388933,
+    "participation_rank": 3.8425557756503115,
+    "rank_1_energy": 0.5432918859568265,
+    "rank_2_energy": 0.9276629793327739,
+    "rank_3_energy": 0.9800779626588477,
+    "rank_4_energy": 0.987835204749612,
+    "rank_6_energy": 0.9956743847699382,
     "shape": [
       16,
       16
     ],
-    "frobenius_norm": 2251.533688388933,
     "singular_values": [
       1659.5680259168257,
       1395.8983985257423,
@@ -26,329 +28,924 @@
       7.925771060860818,
       2.5313531419988564,
       0.6368302827312005
-    ],
-    "participation_rank": 3.8425557756503115,
-    "rank_1_energy": 0.5432918859568265,
-    "rank_2_energy": 0.9276629793327739,
-    "rank_3_energy": 0.9800779626588477,
-    "rank_4_energy": 0.987835204749612,
-    "rank_6_energy": 0.9956743847699382
+    ]
   },
-  "mode_cards": [
-    {
-      "mode": 1,
-      "mode_name": "completion/J-pressure polarity",
-      "singular_value": 1659.5680259168257,
-      "energy_fraction": 0.5432918859568264,
-      "cumulative_energy": 0.5432918859568265,
-      "top_positive_builder": "CURVATURE_ZERO",
-      "top_negative_builder": "EMERGENCE_SEEKER",
-      "top_positive_jabber": "KERNEL_DRIP",
-      "top_negative_jabber": "RANDOM_JABBER",
-      "top_abs_builders": "EMERGENCE_SEEKER:-0.8133 ; CURVATURE_ZERO:+0.3451 ; ROBUST_REVEAL:+0.3316 ; H2047_PURIST:+0.1771 ; MONODROME_PURIST:+0.1703",
-      "top_abs_jabbers": "KERNEL_DRIP:+0.3397 ; CURVATURE_INJECTOR:+0.3127 ; BLUFF_ENGINE:+0.2726 ; NONE:+0.2673 ; H_MASK_SPLIT:+0.2618",
-      "top_feature_correlations": "S_score:+0.8505 ; J_pressure:-0.8443 ; divergence:-0.8120 ; C:+0.7897 ; sealed:+0.7897 ; R_Omega:+0.7375"
-    },
-    {
-      "mode": 2,
-      "mode_name": "kernel-spike q4-loss polarity",
-      "singular_value": 1395.8983985257423,
-      "energy_fraction": 0.38437109337594716,
-      "cumulative_energy": 0.9276629793327739,
-      "top_positive_builder": "ROBUST_REVEAL",
-      "top_negative_builder": "H2047_PURIST",
-      "top_positive_jabber": "KERNEL_SPIKE",
-      "top_negative_jabber": "NONE",
-      "top_abs_builders": "H2047_PURIST:-0.3404 ; FACE12_ANCHOR:-0.2997 ; SIGMA_MIN:-0.2990 ; STOCHASTIC_CONTROL:-0.2966 ; H954_CORRIDOR:-0.2840",
-      "top_abs_jabbers": "KERNEL_SPIKE:+0.6177 ; RANK4_TAX:+0.3791 ; RANDOM_JABBER:+0.2846 ; MONODROME_CONTAMINATOR:+0.2616 ; NONE:-0.2450",
-      "top_feature_correlations": "q4:-0.6929 ; payoff:+0.6320 ; R_Omega:+0.6206 ; loss:-0.6148 ; curved:+0.4540 ; win:+0.4438"
-    },
-    {
-      "mode": 3,
-      "mode_name": "monodromy-contamination correction",
-      "singular_value": 515.473300481971,
-      "energy_fraction": 0.052414983326073826,
-      "cumulative_energy": 0.9800779626588477,
-      "top_positive_builder": "MONODROME_PURIST",
-      "top_negative_builder": "CURVATURE_ZERO",
-      "top_positive_jabber": "MONODROME_CONTAMINATOR",
-      "top_negative_jabber": "KERNEL_SPIKE",
-      "top_abs_builders": "CURVATURE_ZERO:-0.8024 ; MONODROME_PURIST:+0.4522 ; BLUFF_REVEAL:-0.2294 ; EMERGENCE_SEEKER:-0.2252 ; ROBUST_REVEAL:+0.1368",
-      "top_abs_jabbers": "MONODROME_CONTAMINATOR:+0.4831 ; KERNEL_SPIKE:-0.4033 ; BLUFF_ENGINE:+0.3845 ; RANK4_TAX:-0.3670 ; EXTRACTOR_LURE:+0.3369",
-      "top_feature_correlations": "loss:-0.3598 ; payoff:+0.2458 ; win:+0.2382 ; R_Omega:+0.2289 ; pure:+0.2211 ; P1_point:+0.2191"
-    },
-    {
-      "mode": 4,
-      "mode_name": "homology/bluff stabilizer-breaking micro-mode",
-      "singular_value": 198.3042957064743,
-      "energy_fraction": 0.007757242090764249,
-      "cumulative_energy": 0.987835204749612,
-      "top_positive_builder": "STOCHASTIC_CONTROL",
-      "top_negative_builder": "MONODROME_PURIST",
-      "top_positive_jabber": "BLUFF_ENGINE",
-      "top_negative_jabber": "HOMOLOGY_PUNCTURE",
-      "top_abs_builders": "MONODROME_PURIST:-0.5973 ; EMERGENCE_SEEKER:-0.4548 ; ROBUST_REVEAL:-0.3667 ; STOCHASTIC_CONTROL:+0.2754 ; CURVATURE_ZERO:-0.2651",
-      "top_abs_jabbers": "HOMOLOGY_PUNCTURE:-0.6303 ; MONODROME_CONTAMINATOR:-0.4653 ; BLUFF_ENGINE:+0.3429 ; FACE15_DENIAL:+0.3017 ; KERNEL_DRIP:+0.2280",
-      "top_feature_correlations": "R_Omega:+0.0881 ; payoff:+0.0814 ; omega:-0.0787 ; loss:-0.0784 ; Pi_flag:-0.0759 ; F7_minus_L3:+0.0747"
-    },
-    {
-      "mode": 5,
-      "mode_name": "q4/monodromy micro-mode",
-      "singular_value": 150.90564032172816,
-      "energy_fraction": 0.004492147894652222,
-      "cumulative_energy": 0.9923273526442643,
-      "top_positive_builder": "Q4_BALANCER",
-      "top_negative_builder": "DIVERGENCE_MIN",
-      "top_positive_jabber": "MONODROME_CONTAMINATOR",
-      "top_negative_jabber": "RANDOM_JABBER",
-      "top_abs_builders": "Q4_BALANCER:+0.4763 ; DIVERGENCE_MIN:-0.4039 ; ROBUST_REVEAL:-0.3058 ; SIGMA_MIN:+0.2942 ; BLUFF_REVEAL:-0.2935",
-      "top_abs_jabbers": "RANDOM_JABBER:-0.6897 ; HOMOLOGY_PUNCTURE:-0.4712 ; MONODROME_CONTAMINATOR:+0.3602 ; KERNEL_SPIKE:+0.1884 ; DIVERGENCE_TAX:-0.1711",
-      "top_feature_correlations": "loss:-0.0978 ; win:+0.0806 ; monodrome:+0.0725 ; R_Omega:+0.0670 ; payoff:+0.0661 ; bluff:-0.0512"
-    },
-    {
-      "mode": 6,
-      "mode_name": "kernel-drip face-denial micro-mode",
-      "singular_value": 130.25919498638805,
-      "energy_fraction": 0.0033470321256739263,
-      "cumulative_energy": 0.9956743847699382,
-      "top_positive_builder": "MONODROME_PURIST",
-      "top_negative_builder": "SIGMA_MIN",
-      "top_positive_jabber": "KERNEL_DRIP",
-      "top_negative_jabber": "FACE15_DENIAL",
-      "top_abs_builders": "SIGMA_MIN:-0.4278 ; MONODROME_PURIST:+0.3948 ; BASIN_SWITCHER:+0.3791 ; ROBUST_REVEAL:-0.3556 ; H2047_PURIST:-0.3508",
-      "top_abs_jabbers": "FACE15_DENIAL:-0.5374 ; KERNEL_DRIP:+0.5100 ; NONE:-0.3067 ; RANK4_TAX:-0.3066 ; DIVERGENCE_TAX:-0.2534",
-      "top_feature_correlations": "loss:-0.0814 ; pure:+0.0645 ; R_Omega:+0.0579 ; payoff:+0.0561 ; hpop:+0.0348 ; sigma_H:-0.0348"
-    },
-    {
-      "mode": 7,
-      "mode_name": "tail micro-mode",
-      "singular_value": 89.09425265627488,
-      "energy_fraction": 0.0015658223204836547,
-      "cumulative_energy": 0.9972402070904218,
-      "top_positive_builder": "BLUFF_REVEAL",
-      "top_negative_builder": "FACE12_ANCHOR",
-      "top_positive_jabber": "FACE12_DENIAL",
-      "top_negative_jabber": "FACE15_DENIAL",
-      "top_abs_builders": "BLUFF_REVEAL:+0.5570 ; BASIN_SWITCHER:+0.4606 ; FACE12_ANCHOR:-0.3978 ; DIVERGENCE_MIN:-0.3269 ; H954_CORRIDOR:-0.2313",
-      "top_abs_jabbers": "FACE15_DENIAL:-0.5347 ; FACE12_DENIAL:+0.3833 ; RANK4_TAX:+0.3419 ; MONODROME_CONTAMINATOR:-0.3262 ; NONE:+0.3218",
-      "top_feature_correlations": "F7_minus_L3:+0.0841 ; q4:-0.0541 ; loss:-0.0529 ; win:+0.0488 ; omega:-0.0418 ; R_Omega:+0.0396"
-    },
-    {
-      "mode": 8,
-      "mode_name": "tail micro-mode",
-      "singular_value": 79.6054660396199,
-      "energy_fraction": 0.0012500543034151454,
-      "cumulative_energy": 0.9984902613938369,
-      "top_positive_builder": "H2047_PURIST",
-      "top_negative_builder": "SPREAD_CONTROL",
-      "top_positive_jabber": "FACE17_DENIAL",
-      "top_negative_jabber": "OMEGA_LOCK",
-      "top_abs_builders": "SPREAD_CONTROL:-0.8489 ; H2047_PURIST:+0.3115 ; SIGMA_MIN:+0.2083 ; MONODROME_PURIST:-0.1910 ; Q4_BALANCER:+0.1633",
-      "top_abs_jabbers": "OMEGA_LOCK:-0.5465 ; FACE17_DENIAL:+0.4432 ; H_MASK_SPLIT:+0.4153 ; EXTRACTOR_LURE:+0.2972 ; DIVERGENCE_TAX:+0.2777",
-      "top_feature_correlations": "flat:+0.0759 ; omega:-0.0641 ; R_Omega:+0.0354 ; pure:+0.0352 ; win:+0.0349 ; payoff:+0.0348"
-    }
-  ],
-  "factor_block_lattice": [
-    {
-      "subset": "mean_only",
-      "atomic_blocks": "",
-      "feature_count": 0,
-      "r2_centered": 0.0,
-      "explained_frobenius_fraction": 2.220446049250313e-16,
-      "rmse": 140.72085552430835,
-      "leftover_participation_rank": 3.842555775650312,
-      "predicted_participation_rank": 1.0
-    },
-    {
-      "subset": "Omega_J",
-      "atomic_blocks": "Omega_J",
-      "feature_count": 2,
-      "r2_centered": 0.784385649140753,
-      "explained_frobenius_fraction": 0.7843856491407531,
-      "rmse": 65.34273349017539,
-      "leftover_participation_rank": 5.418127758949579,
-      "predicted_participation_rank": 3.025969460974814
-    },
-    {
-      "subset": "M_CVX",
-      "atomic_blocks": "M_CVX",
-      "feature_count": 3,
-      "r2_centered": 0.6965119217549196,
-      "explained_frobenius_fraction": 0.6965119217549197,
-      "rmse": 77.52277041039773,
-      "leftover_participation_rank": 5.260820537675098,
-      "predicted_participation_rank": 2.913638387655946
-    },
-    {
-      "subset": "D_J",
-      "atomic_blocks": "D_J",
-      "feature_count": 4,
-      "r2_centered": 0.7159092216009406,
-      "explained_frobenius_fraction": 0.7159092216009407,
-      "rmse": 75.00445075753836,
-      "leftover_participation_rank": 4.327508236237283,
-      "predicted_participation_rank": 3.8478501724901157
-    },
-    {
-      "subset": "Omega_J+M_CVX",
-      "atomic_blocks": "Omega_J,M_CVX",
-      "feature_count": 5,
-      "r2_centered": 0.8144164523006509,
-      "explained_frobenius_fraction": 0.8144164523006509,
-      "rmse": 60.621712853953014,
-      "leftover_participation_rank": 5.829409760860519,
-      "predicted_participation_rank": 3.343868230632895
-    },
-    {
-      "subset": "Omega_J+D_J",
-      "atomic_blocks": "Omega_J,D_J",
-      "feature_count": 6,
-      "r2_centered": 0.9375725054004637,
-      "explained_frobenius_fraction": 0.9375725054004637,
-      "rmse": 35.15980191548146,
-      "leftover_participation_rank": 6.416094565537268,
-      "predicted_participation_rank": 3.985396617276645
-    },
-    {
-      "subset": "D_J+M_CVX",
-      "atomic_blocks": "D_J,M_CVX",
-      "feature_count": 7,
-      "r2_centered": 0.8554213507754929,
-      "explained_frobenius_fraction": 0.8554213507754929,
-      "rmse": 53.506993389926656,
-      "leftover_participation_rank": 5.729622803902125,
-      "predicted_participation_rank": 3.9639789333241344
-    },
-    {
-      "subset": "Omega_J+D_J+M_CVX",
-      "atomic_blocks": "Omega_J,D_J,M_CVX",
-      "feature_count": 9,
-      "r2_centered": 0.9628981487450725,
-      "explained_frobenius_fraction": 0.9628981487450725,
-      "rmse": 27.105427219916827,
-      "leftover_participation_rank": 6.829451105751141,
-      "predicted_participation_rank": 3.762899638332127
-    }
-  ],
-  "factor_shapley": [
-    {
-      "block": "Omega_J",
-      "shapley_r2": 0.3538821180943199,
-      "shapley_frobenius": 0.3538821180943199
-    },
-    {
-      "block": "D_J",
-      "shapley_r2": 0.3401463535618347,
-      "shapley_frobenius": 0.34014635356183465
-    },
-    {
-      "block": "M_CVX",
-      "shapley_r2": 0.2688696770889178,
-      "shapley_frobenius": 0.26886967708891774
-    }
-  ],
   "best_factor_tests": [
     {
       "block": "full_nonflag",
-      "features": "sigma_H,omega,divergence,hpop,C,V,X,bluff,q4,sealed,J_pressure,loss,curved,monodrome,pure,flat,win",
-      "feature_count": 17,
-      "r2_centered": 0.9910021379412819,
       "explained_frobenius_fraction": 0.9910021379412819,
-      "rmse": 13.348366804005328,
-      "predicted_participation_rank": 3.903486549586486,
+      "feature_count": 17,
+      "features": "sigma_H,omega,divergence,hpop,C,V,X,bluff,q4,sealed,J_pressure,loss,curved,monodrome,pure,flat,win",
       "leftover_participation_rank": 6.684039641977448,
       "leftover_rank3_energy": 0.8682854175648624,
-      "predicted_rank3_energy": 0.9797711365227946
+      "predicted_participation_rank": 3.903486549586486,
+      "predicted_rank3_energy": 0.9797711365227946,
+      "r2_centered": 0.9910021379412819,
+      "rmse": 13.348366804005328
     },
     {
       "block": "Omega_J+D_J+M_CVX",
-      "features": "omega,J_pressure,loss,curved,monodrome,divergence,C,V,X",
-      "feature_count": 9,
-      "r2_centered": 0.9628981487450725,
       "explained_frobenius_fraction": 0.9628981487450725,
-      "rmse": 27.105427219916827,
-      "predicted_participation_rank": 3.762899638332127,
+      "feature_count": 9,
+      "features": "omega,J_pressure,loss,curved,monodrome,divergence,C,V,X",
       "leftover_participation_rank": 6.829451105751141,
       "leftover_rank3_energy": 0.8566161392641263,
-      "predicted_rank3_energy": 0.9813535023770098
+      "predicted_participation_rank": 3.762899638332127,
+      "predicted_rank3_energy": 0.9813535023770098,
+      "r2_centered": 0.9628981487450725,
+      "rmse": 27.105427219916827
     },
     {
       "block": "quoted_band",
-      "features": "loss,curved,monodrome,divergence,omega,J_pressure,X,q4",
-      "feature_count": 8,
-      "r2_centered": 0.9413284998028778,
       "explained_frobenius_fraction": 0.9413284998028779,
-      "rmse": 34.0856879130101,
-      "predicted_participation_rank": 3.913514904879041,
+      "feature_count": 8,
+      "features": "loss,curved,monodrome,divergence,omega,J_pressure,X,q4",
       "leftover_participation_rank": 6.328658252551379,
       "leftover_rank3_energy": 0.8734379385145792,
-      "predicted_rank3_energy": 0.9764280935833959
+      "predicted_participation_rank": 3.913514904879041,
+      "predicted_rank3_energy": 0.9764280935833959,
+      "r2_centered": 0.9413284998028778,
+      "rmse": 34.0856879130101
     },
     {
       "block": "Omega_J+D_J",
-      "features": "omega,J_pressure,loss,curved,monodrome,divergence",
-      "feature_count": 6,
-      "r2_centered": 0.9375725054004637,
       "explained_frobenius_fraction": 0.9375725054004637,
-      "rmse": 35.15980191548146,
-      "predicted_participation_rank": 3.985396617276645,
+      "feature_count": 6,
+      "features": "omega,J_pressure,loss,curved,monodrome,divergence",
       "leftover_participation_rank": 6.416094565537268,
       "leftover_rank3_energy": 0.8818176617664115,
-      "predicted_rank3_energy": 0.9742124565679166
+      "predicted_participation_rank": 3.985396617276645,
+      "predicted_rank3_energy": 0.9742124565679166,
+      "r2_centered": 0.9375725054004637,
+      "rmse": 35.15980191548146
     },
     {
       "block": "D_J+M_CVX",
-      "features": "loss,curved,monodrome,divergence,C,V,X",
-      "feature_count": 7,
-      "r2_centered": 0.8554213507754929,
       "explained_frobenius_fraction": 0.8554213507754929,
-      "rmse": 53.506993389926656,
-      "predicted_participation_rank": 3.9639789333241344,
+      "feature_count": 7,
+      "features": "loss,curved,monodrome,divergence,C,V,X",
       "leftover_participation_rank": 5.729622803902125,
       "leftover_rank3_energy": 0.9015308172310568,
-      "predicted_rank3_energy": 0.9749016523250861
+      "predicted_participation_rank": 3.9639789333241344,
+      "predicted_rank3_energy": 0.9749016523250861,
+      "r2_centered": 0.8554213507754929,
+      "rmse": 53.506993389926656
     },
     {
       "block": "Omega_J+M_CVX",
-      "features": "omega,J_pressure,C,V,X",
-      "feature_count": 5,
-      "r2_centered": 0.8144164523006509,
       "explained_frobenius_fraction": 0.8144164523006509,
-      "rmse": 60.621712853953014,
-      "predicted_participation_rank": 3.343868230632895,
+      "feature_count": 5,
+      "features": "omega,J_pressure,C,V,X",
       "leftover_participation_rank": 5.829409760860519,
       "leftover_rank3_energy": 0.8951619767592648,
-      "predicted_rank3_energy": 0.9827400485640814
+      "predicted_participation_rank": 3.343868230632895,
+      "predicted_rank3_energy": 0.9827400485640814,
+      "r2_centered": 0.8144164523006509,
+      "rmse": 60.621712853953014
     },
     {
       "block": "Omega_J",
-      "features": "omega,J_pressure",
-      "feature_count": 2,
-      "r2_centered": 0.784385649140753,
       "explained_frobenius_fraction": 0.7843856491407531,
-      "rmse": 65.34273349017539,
-      "predicted_participation_rank": 3.025969460974814,
+      "feature_count": 2,
+      "features": "omega,J_pressure",
       "leftover_participation_rank": 5.418127758949579,
       "leftover_rank3_energy": 0.9227153594895946,
-      "predicted_rank3_energy": 0.983964450948995
+      "predicted_participation_rank": 3.025969460974814,
+      "predicted_rank3_energy": 0.983964450948995,
+      "r2_centered": 0.784385649140753,
+      "rmse": 65.34273349017539
     },
     {
       "block": "D_J",
-      "features": "loss,curved,monodrome,divergence",
-      "feature_count": 4,
-      "r2_centered": 0.7159092216009406,
       "explained_frobenius_fraction": 0.7159092216009407,
-      "rmse": 75.00445075753836,
-      "predicted_participation_rank": 3.8478501724901157,
+      "feature_count": 4,
+      "features": "loss,curved,monodrome,divergence",
       "leftover_participation_rank": 4.327508236237283,
       "leftover_rank3_energy": 0.959314765688203,
-      "predicted_rank3_energy": 0.980493637060065
+      "predicted_participation_rank": 3.8478501724901157,
+      "predicted_rank3_energy": 0.980493637060065,
+      "r2_centered": 0.7159092216009406,
+      "rmse": 75.00445075753836
     }
   ],
+  "classification": {
+    "equivariance": "The residual is not invariant under the source_drop-visible flag stabilizer; 64.12% of its energy lies in the stabilizer-breaking component. Full signed-Fano equivariance remains uncertified without explicit generators.",
+    "factorization": "It factors strongly but not exactly through Omega_J, D_J, and M_CVX; the combined block explains 96.29% of residual Frobenius energy.",
+    "short": "R_Omega is a low-dimensional curvature band: two dominant singular modes, a monodromy correction, and a stabilizer-breaking tail."
+  },
+  "curvature_descent": {
+    "basis": "source_drop seven-null Fano-to-6j operators plus source_drop R_Omega matrix",
+    "best_normalized_operator": {
+      "antisymmetric_energy_fraction": 0.003389620791626813,
+      "fano_star_curl_rms": 1.679545462579454e-09,
+      "fit_energy_fraction": 0.2825132194610569,
+      "full_WD6_breaking_energy_fraction": 0.8347287193691992,
+      "full_WD6_invariant_energy_fraction": 0.1652712806308008,
+      "null_point": "011",
+      "pair3_breaking_energy_fraction": 0.0064473629608642335,
+      "pair3_descent_energy_fraction": 0.9935526370391358,
+      "skew_nonexact_energy_fraction": 0.1777932051799689,
+      "tetra_face_curl_rms": 1.679545462579454e-09,
+      "top_curl_triangle": "B-,V-,V+",
+      "top_curl_type": "other_triangle"
+    },
+    "caveat": "Seven-point Fano distributions are reconstructed from source_drop three-zone data by uniform splitting inside L3\\P1 and F7\\L3; all seven-point/null-point claims are relative to that reconstruction.",
+    "clean_null_operator": {
+      "antisymmetric_energy_fraction": 0.005477977682729811,
+      "fano_star_curl_rms": 1.7183127126015678e-11,
+      "fit_energy_fraction": 0.009561337827212121,
+      "full_WD6_invariant_energy_fraction": 0.16482101497678858,
+      "null_point": "001",
+      "pair3_descent_energy_fraction": 0.9999999999999989,
+      "skew_nonexact_energy_fraction": 5.068756466098048e-28,
+      "tetra_face_curl_rms": 1.7183127126015678e-11
+    },
+    "files": {
+      "cycle_curls": "Romega_A6_fano_star_and_tetra_face_curls.csv",
+      "cycle_ledger": "best_normalized_curvature_cycle_ledger.csv",
+      "exactness": "Romega_A6_curvature_exactness.csv",
+      "mode_typing": "singular_mode_curvature_descent_typing.csv",
+      "operator_summary": "Romega_A6_curvature_descent_summary.csv",
+      "pair3_descent": "Romega_A6_pair3_quotient_descent.csv",
+      "rank_tail": "rank_truncation_curvature_obstruction.csv",
+      "relation_coefficients": "Romega_A6_tetrahedral_relation_coefficients.csv"
+    },
+    "full_WD6_projection_theorem": "For conjugation on 6x6 edge operators, full W(D6) invariants are exactly scalar diagonal matrices (trace(A)/6)I. Thus WD6-invariant energy is trace(A)^2/(6||A||_F^2).",
+    "group_orders": {
+      "S4_nullpoint_stabilizer": 24,
+      "W_D6_formula": "2^5 * 6!",
+      "W_D6_full": 23040,
+      "even_signs_D6": 32,
+      "signed_S4_D6_preimage": 768
+    },
+    "interpretation": {
+      "WD6": "The six-channel residual is almost entirely outside full W(D6)-invariant scalar-diagonal form; it selects a chamber rather than a Regge-invariant scalar.",
+      "curvature": "Nonzero triangle curl and non-exact skew component turn the curvature language into an actual finite 1-form obstruction test.",
+      "quotient_descent": "Pair3 descent measures whether the six signed channels collapse to B,V,S. Low descent means Pin/signed level curvature; high descent means CY/pair quotient curvature.",
+      "rank_tail": "The rank-4 e-lock tail can be audited by curvature/descent metrics in rank_truncation_curvature_obstruction.csv."
+    },
+    "mode_curvature_descent_typing": [
+      {
+        "A6_participation_rank": 1.0000000000000002,
+        "antisymmetric_energy_fraction": 0.499875049005097,
+        "fano_star_curl_rms": 4.732772779376308e-11,
+        "fit_energy_fraction": 0.36520266393792317,
+        "full_WD6_breaking_energy_fraction": 0.9999583496683656,
+        "full_WD6_invariant_energy_fraction": 4.165033163437251e-05,
+        "mode_singular_value": 1659.5680259168257,
+        "null_point": "011",
+        "opposite_pair_skew_rms": 556.21714227678,
+        "original_Romega_mode": 1,
+        "pair3_breaking_energy_fraction": 0.5266837346970887,
+        "pair3_descent_energy_fraction": 0.47331626530291127,
+        "relative_reconstruction_error": 0.796741699713324,
+        "skew_exact_energy_fraction": 0.796112844871241,
+        "skew_nonexact_energy_fraction": 0.20388715512875918,
+        "tetra_face_curl_rms": 4.732772779376308e-11,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "top_relation_mean": -3989.253803392758,
+        "top_relation_orbit_by_mean": "adjacent_edges"
+      },
+      {
+        "A6_participation_rank": 1.0000000000000004,
+        "antisymmetric_energy_fraction": 0.003257603120749887,
+        "fano_star_curl_rms": 3.938549067441325e-10,
+        "fit_energy_fraction": 0.18815782763566472,
+        "full_WD6_breaking_energy_fraction": 0.8344192010402499,
+        "full_WD6_invariant_energy_fraction": 0.16558079895975006,
+        "mode_singular_value": 1395.8983985257423,
+        "null_point": "010",
+        "opposite_pair_skew_rms": 134.8970564682073,
+        "original_Romega_mode": 2,
+        "pair3_breaking_energy_fraction": 0.005581806716454918,
+        "pair3_descent_energy_fraction": 0.9944181932835451,
+        "relative_reconstruction_error": 0.9010228478592189,
+        "skew_exact_energy_fraction": 0.8797965766657789,
+        "skew_nonexact_energy_fraction": 0.12020342333422086,
+        "tetra_face_curl_rms": 3.938549067441325e-10,
+        "top_curl_triangle": "B+,V-,V+",
+        "top_curl_type": "other_triangle",
+        "top_relation_mean": 46592.671642083376,
+        "top_relation_orbit_by_mean": "same_edge"
+      },
+      {
+        "A6_participation_rank": 1.0000000000000009,
+        "antisymmetric_energy_fraction": 0.29983044649917756,
+        "fano_star_curl_rms": 9.65975801304292e-11,
+        "fit_energy_fraction": 0.10982760595284051,
+        "full_WD6_breaking_energy_fraction": 0.9332768154997259,
+        "full_WD6_invariant_energy_fraction": 0.06672318450027416,
+        "mode_singular_value": 515.473300481971,
+        "null_point": "011",
+        "opposite_pair_skew_rms": 2.0825784802168448,
+        "original_Romega_mode": 3,
+        "pair3_breaking_energy_fraction": 0.24543469142277186,
+        "pair3_descent_energy_fraction": 0.7545653085772281,
+        "relative_reconstruction_error": 0.943489477443792,
+        "skew_exact_energy_fraction": 0.8232698084979072,
+        "skew_nonexact_energy_fraction": 0.1767301915020925,
+        "tetra_face_curl_rms": 9.65975801304292e-11,
+        "top_curl_triangle": "B+,V-,V+",
+        "top_curl_type": "other_triangle",
+        "top_relation_mean": 5089.058386600664,
+        "top_relation_orbit_by_mean": "opposite_edges"
+      },
+      {
+        "A6_participation_rank": 1.0,
+        "antisymmetric_energy_fraction": 0.008355300503569663,
+        "fano_star_curl_rms": 1.9382780693616414e-10,
+        "fit_energy_fraction": 0.03802891156324555,
+        "full_WD6_breaking_energy_fraction": 0.8361184335011899,
+        "full_WD6_invariant_energy_fraction": 0.1638815664988101,
+        "mode_singular_value": 198.3042957064743,
+        "null_point": "010",
+        "opposite_pair_skew_rms": 11.246546914882444,
+        "original_Romega_mode": 4,
+        "pair3_breaking_energy_fraction": 0.020745442125537084,
+        "pair3_descent_energy_fraction": 0.9792545578744629,
+        "relative_reconstruction_error": 0.9808012481827061,
+        "skew_exact_energy_fraction": 0.8230646147286124,
+        "skew_nonexact_energy_fraction": 0.17693538527138752,
+        "tetra_face_curl_rms": 1.9382780693616414e-10,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "top_relation_mean": 20211.15322820834,
+        "top_relation_orbit_by_mean": "same_edge"
+      },
+      {
+        "A6_participation_rank": 1.0,
+        "antisymmetric_energy_fraction": 0.0005306946315608617,
+        "fano_star_curl_rms": 1.026797236921239e-10,
+        "fit_energy_fraction": 0.10242704256762727,
+        "full_WD6_breaking_energy_fraction": 0.8335102315438536,
+        "full_WD6_invariant_energy_fraction": 0.16648976845614644,
+        "mode_singular_value": 150.90564032172816,
+        "null_point": "100",
+        "opposite_pair_skew_rms": 2246.758990907239,
+        "original_Romega_mode": 5,
+        "pair3_breaking_energy_fraction": 0.7845121403885847,
+        "pair3_descent_energy_fraction": 0.21548785961141526,
+        "relative_reconstruction_error": 0.9474032707524155,
+        "skew_exact_energy_fraction": 0.8009289594667556,
+        "skew_nonexact_energy_fraction": 0.19907104053324443,
+        "tetra_face_curl_rms": 2126.509651231591,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "top_relation_mean": 68926.95814314544,
+        "top_relation_orbit_by_mean": "same_edge"
+      },
+      {
+        "A6_participation_rank": 1.0000000000000027,
+        "antisymmetric_energy_fraction": 0.07646141920309636,
+        "fano_star_curl_rms": 2.4959192691501367e-15,
+        "fit_energy_fraction": 0.0005830676064047381,
+        "full_WD6_breaking_energy_fraction": 0.858820473067699,
+        "full_WD6_invariant_energy_fraction": 0.14117952693230093,
+        "mode_singular_value": 130.25919498638805,
+        "null_point": "001",
+        "opposite_pair_skew_rms": 1.3654878164326829e-15,
+        "original_Romega_mode": 6,
+        "pair3_breaking_energy_fraction": 1.5543122344752192e-15,
+        "pair3_descent_energy_fraction": 0.9999999999999984,
+        "relative_reconstruction_error": 0.9997084236884249,
+        "skew_exact_energy_fraction": 0.9999999999999997,
+        "skew_nonexact_energy_fraction": 4.6561671291945606e-29,
+        "tetra_face_curl_rms": 2.4959192691501367e-15,
+        "top_curl_triangle": "B-,B+,V+",
+        "top_curl_type": "other_triangle",
+        "top_relation_mean": 0.46901528403473286,
+        "top_relation_orbit_by_mean": "opposite_edges"
+      }
+    ],
+    "rank_truncation_curvature": [
+      {
+        "A6_participation_rank": 1.0000000000000004,
+        "antisymmetric_energy_fraction": 0.4998750490050969,
+        "fano_star_curl_rms": 4.5036294969865856e-11,
+        "fit_energy_fraction": 0.36520266393792317,
+        "full_WD6_invariant_energy_fraction": 4.165033163437276e-05,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.47331626530291127,
+        "relative_reconstruction_error": 0.7967416997133241,
+        "skew_nonexact_energy_fraction": 0.20388715512875918,
+        "tetra_face_curl_rms": 4.5036294969865856e-11,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 1
+      },
+      {
+        "A6_participation_rank": 1.0552431334608354,
+        "antisymmetric_energy_fraction": 0.030631389599929983,
+        "fano_star_curl_rms": 5.764247943325751e-10,
+        "fit_energy_fraction": 0.2931672810763993,
+        "full_WD6_invariant_energy_fraction": 0.1653965359869856,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.9854243782022911,
+        "relative_reconstruction_error": 0.8407334410641706,
+        "skew_nonexact_energy_fraction": 0.17599782627356222,
+        "tetra_face_curl_rms": 5.764247943325751e-10,
+        "top_curl_triangle": "B+,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 2
+      },
+      {
+        "A6_participation_rank": 1.0159321357123707,
+        "antisymmetric_energy_fraction": 0.007526462456895937,
+        "fano_star_curl_rms": 6.5491005041627e-10,
+        "fit_energy_fraction": 0.28274101259371764,
+        "full_WD6_invariant_energy_fraction": 0.16338961787984171,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.9939708927091636,
+        "relative_reconstruction_error": 0.8469114401200887,
+        "skew_nonexact_energy_fraction": 0.1737619225565848,
+        "tetra_face_curl_rms": 6.5491005041627e-10,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 3
+      },
+      {
+        "A6_participation_rank": 1.0114030571920594,
+        "antisymmetric_energy_fraction": 0.007740907082673905,
+        "fano_star_curl_rms": 9.273059542533468e-10,
+        "fit_energy_fraction": 0.286103109568407,
+        "full_WD6_invariant_energy_fraction": 0.16383790243977547,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.9909370135362525,
+        "relative_reconstruction_error": 0.8449241921211589,
+        "skew_nonexact_energy_fraction": 0.17538301566315892,
+        "tetra_face_curl_rms": 9.273059542533468e-10,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 4
+      },
+      {
+        "A6_participation_rank": 1.0073087348242815,
+        "antisymmetric_energy_fraction": 0.004677201416082456,
+        "fano_star_curl_rms": 1.4760290750756625e-09,
+        "fit_energy_fraction": 0.28390641839383074,
+        "full_WD6_invariant_energy_fraction": 0.1648563683391055,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.9922560320589467,
+        "relative_reconstruction_error": 0.8462231275533475,
+        "skew_nonexact_energy_fraction": 0.17754008248060169,
+        "tetra_face_curl_rms": 1.4760290750756625e-09,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 5
+      },
+      {
+        "A6_participation_rank": 1.0072948788476606,
+        "antisymmetric_energy_fraction": 0.0046963801366107375,
+        "fano_star_curl_rms": 1.496437544420462e-09,
+        "fit_energy_fraction": 0.28381040271478647,
+        "full_WD6_invariant_energy_fraction": 0.16487230104383446,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.992245371540145,
+        "relative_reconstruction_error": 0.8462798575443076,
+        "skew_nonexact_energy_fraction": 0.17754185001420503,
+        "tetra_face_curl_rms": 1.496437544420462e-09,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 6
+      },
+      {
+        "A6_participation_rank": 1.0067793389996857,
+        "antisymmetric_energy_fraction": 0.003335398746902941,
+        "fano_star_curl_rms": 1.659832366522751e-09,
+        "fit_energy_fraction": 0.2832333393806474,
+        "full_WD6_invariant_energy_fraction": 0.16523012879981297,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.9934160214411056,
+        "relative_reconstruction_error": 0.8466207300907252,
+        "skew_nonexact_energy_fraction": 0.177740210930759,
+        "tetra_face_curl_rms": 1.659832366522751e-09,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 8
+      },
+      {
+        "A6_participation_rank": 1.006647098972297,
+        "antisymmetric_energy_fraction": 0.003477552134751026,
+        "fano_star_curl_rms": 1.6718089433001298e-09,
+        "fit_energy_fraction": 0.28252031468127864,
+        "full_WD6_invariant_energy_fraction": 0.16524346660184316,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.993455047075297,
+        "relative_reconstruction_error": 0.8470417258427838,
+        "skew_nonexact_energy_fraction": 0.17778045222178646,
+        "tetra_face_curl_rms": 1.6718089433001298e-09,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 12
+      },
+      {
+        "A6_participation_rank": 1.006592571792518,
+        "antisymmetric_energy_fraction": 0.003389620791626951,
+        "fano_star_curl_rms": 1.6783333782437534e-09,
+        "fit_energy_fraction": 0.2825132194610591,
+        "full_WD6_invariant_energy_fraction": 0.1652712806308007,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "pair3_descent_energy_fraction": 0.9935526370391355,
+        "relative_reconstruction_error": 0.8470459140677917,
+        "skew_nonexact_energy_fraction": 0.17779320517996908,
+        "tetra_face_curl_rms": 1.6783333782437534e-09,
+        "top_curl_triangle": "B-,V-,V+",
+        "top_curl_type": "other_triangle",
+        "truncation_rank": 16
+      }
+    ],
+    "schema": "G.d20.Romega_curvature_descent",
+    "status": "ROMega_CURVATURE_DESCENT_WD6_TESTS_COMPLETE"
+  },
+  "decisive_tests": {
+    "caveat": "The source_drop bundle resolves Fano weights only at three-zone level; seven-point distributions are reconstructed by uniform splitting inside L3\\P1 and F7\\L3. Results depending on all seven points are therefore certified relative to that source_drop reconstruction.",
+    "foam_lift": {
+      "best_by_wedge2_norm": {
+        "cross_energy_fraction": 0.0,
+        "foam_participation_rank": 1.5540313625381503,
+        "foam_rank1_energy": 0.9168643390221908,
+        "foam_rank2_energy": 0.9999995433646945,
+        "foam_rank3_energy": 0.9999999944965928,
+        "null_point": "010",
+        "operator_kind": "raw",
+        "scalar_block": 152953.21857150216,
+        "scalar_energy_fraction": 5.503407223331534e-09,
+        "wedge2_energy_fraction": 0.9999999944965928,
+        "wedge2_frobenius_norm": 2061782239.635779
+      },
+      "definition": "Foam(A6)=diag(trace(A6)/6, compound_2(A6)) on 1 \u2295 Lambda^2 H6.",
+      "summary_file": "spin12_foam16_lift_summary.csv"
+    },
+    "input_basis": "source_drop flag-simplex data, source_drop R_Omega, source_drop Fano-to-6j contraction",
+    "mode_by_mode_best_normalized": [
+      {
+        "A6_mode_participation_rank": 1.0000000000000002,
+        "S4_invariant_energy_fraction": 0.17056485400911617,
+        "adjacent_edge_coeff": -3989.253803392758,
+        "mode_fit_energy_fraction": 0.36520266393792317,
+        "mode_relative_error": 0.796741699713324,
+        "mode_singular_value": 1659.5680259168257,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "opposite_edge_coeff": -91.93663390551582,
+        "original_Romega_mode": 1,
+        "same_edge_coeff": 124.70043964922534,
+        "signedD6_invariant_energy_fraction": 4.1650331634370955e-05,
+        "top_tetrahedral_orbit": "adjacent_edges",
+        "top_tetrahedral_orbit_coefficient": -3989.253803392758
+      },
+      {
+        "A6_mode_participation_rank": 1.0000000000000004,
+        "S4_invariant_energy_fraction": 0.5266951243704133,
+        "adjacent_edge_coeff": 25390.21740560602,
+        "mode_fit_energy_fraction": 0.18815782763566472,
+        "mode_relative_error": 0.9010228478592189,
+        "mode_singular_value": 1395.8983985257423,
+        "null_point": "010",
+        "operator_kind": "normalized",
+        "opposite_edge_coeff": 46430.61705344778,
+        "original_Romega_mode": 2,
+        "same_edge_coeff": 46592.671642083376,
+        "signedD6_invariant_energy_fraction": 0.1655807989597529,
+        "top_tetrahedral_orbit": "same_edge",
+        "top_tetrahedral_orbit_coefficient": 46592.671642083376
+      },
+      {
+        "A6_mode_participation_rank": 1.0000000000000009,
+        "S4_invariant_energy_fraction": 0.16571989600637865,
+        "adjacent_edge_coeff": 712.7572413915741,
+        "mode_fit_energy_fraction": 0.10982760595284051,
+        "mode_relative_error": 0.943489477443792,
+        "mode_singular_value": 515.473300481971,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "opposite_edge_coeff": 5089.058386600664,
+        "original_Romega_mode": 3,
+        "same_edge_coeff": 4338.785540881298,
+        "signedD6_invariant_energy_fraction": 0.06672318450027345,
+        "top_tetrahedral_orbit": "opposite_edges",
+        "top_tetrahedral_orbit_coefficient": 5089.058386600664
+      },
+      {
+        "A6_mode_participation_rank": 1.0,
+        "S4_invariant_energy_fraction": 0.4121198611647719,
+        "adjacent_edge_coeff": 7419.130883879302,
+        "mode_fit_energy_fraction": 0.03802891156324555,
+        "mode_relative_error": 0.9808012481827061,
+        "mode_singular_value": 198.3042957064743,
+        "null_point": "010",
+        "operator_kind": "normalized",
+        "opposite_edge_coeff": 19964.569546831837,
+        "original_Romega_mode": 4,
+        "same_edge_coeff": 20211.15322820834,
+        "signedD6_invariant_energy_fraction": 0.1638815664988095,
+        "top_tetrahedral_orbit": "same_edge",
+        "top_tetrahedral_orbit_coefficient": 20211.15322820834
+      },
+      {
+        "A6_mode_participation_rank": 1.0,
+        "S4_invariant_energy_fraction": 0.3106407821529162,
+        "adjacent_edge_coeff": 31973.838379813988,
+        "mode_fit_energy_fraction": 0.10242704256762727,
+        "mode_relative_error": 0.9474032707524155,
+        "mode_singular_value": 150.90564032172816,
+        "null_point": "100",
+        "operator_kind": "normalized",
+        "opposite_edge_coeff": -4915.795176745442,
+        "original_Romega_mode": 5,
+        "same_edge_coeff": 68926.95814314544,
+        "signedD6_invariant_energy_fraction": 0.1664897684561463,
+        "top_tetrahedral_orbit": "same_edge",
+        "top_tetrahedral_orbit_coefficient": 68926.95814314544
+      },
+      {
+        "A6_mode_participation_rank": 1.0000000000000027,
+        "S4_invariant_energy_fraction": 0.4227573879591076,
+        "adjacent_edge_coeff": -0.2338579379900525,
+        "mode_fit_energy_fraction": 0.0005830676064047381,
+        "mode_relative_error": 0.9997084236884249,
+        "mode_singular_value": 130.25919498638805,
+        "null_point": "001",
+        "operator_kind": "normalized",
+        "opposite_edge_coeff": 0.46901528403473286,
+        "original_Romega_mode": 6,
+        "same_edge_coeff": 0.4690152840347326,
+        "signedD6_invariant_energy_fraction": 0.14117952693229824,
+        "top_tetrahedral_orbit": "opposite_edges",
+        "top_tetrahedral_orbit_coefficient": 0.46901528403473286
+      }
+    ],
+    "rank_lock_truncation": {
+      "minimal_rank_reaching_e_in_alpha_0_5": 4,
+      "rank_rows_file": "rank_lock_truncation_test.csv",
+      "rows": [
+        {
+          "Rk_energy_fraction": 0.5432918859568264,
+          "alpha_at_max_participation_rank": 1.22,
+          "alpha_closest_grid": 1.22,
+          "alpha_selected": 1.22,
+          "closest_grid_participation_rank": 1.2984052863070061,
+          "e_reachable_in_alpha_0_5": false,
+          "gap_to_e_at_selected": 1.419876542152039,
+          "max_participation_rank_in_scan": 1.2984052863070061,
+          "participation_rank_at_alpha_1": 1.2948321448723965,
+          "participation_rank_at_alpha_1112819": 1.2975927575727826,
+          "participation_rank_at_alpha_selected": 1.2984052863070061,
+          "truncation_rank": 1
+        },
+        {
+          "Rk_energy_fraction": 0.9276629793327738,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 5.0,
+          "alpha_selected": 5.0,
+          "closest_grid_participation_rank": 2.0167074391086035,
+          "e_reachable_in_alpha_0_5": false,
+          "gap_to_e_at_selected": 0.7015743893504416,
+          "max_participation_rank_in_scan": 2.0167074391086035,
+          "participation_rank_at_alpha_1": 1.6634680505585215,
+          "participation_rank_at_alpha_1112819": 1.7072351395581218,
+          "participation_rank_at_alpha_selected": 2.0167074391086035,
+          "truncation_rank": 2
+        },
+        {
+          "Rk_energy_fraction": 0.9800779626588476,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 5.0,
+          "alpha_selected": 5.0,
+          "closest_grid_participation_rank": 2.57482383776245,
+          "e_reachable_in_alpha_0_5": false,
+          "gap_to_e_at_selected": 0.14345799069659515,
+          "max_participation_rank_in_scan": 2.57482383776245,
+          "participation_rank_at_alpha_1": 1.996587929821751,
+          "participation_rank_at_alpha_1112819": 2.065737560141617,
+          "participation_rank_at_alpha_selected": 2.57482383776245,
+          "truncation_rank": 3
+        },
+        {
+          "Rk_energy_fraction": 0.9878352047496117,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 2.775,
+          "alpha_selected": 2.7735849491074944,
+          "closest_grid_participation_rank": 2.7184392848216827,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 0.0,
+          "max_participation_rank_in_scan": 2.825994722361592,
+          "participation_rank_at_alpha_1": 2.1185232701029766,
+          "participation_rank_at_alpha_1112819": 2.200498087371873,
+          "participation_rank_at_alpha_selected": 2.718281828459045,
+          "truncation_rank": 4
+        },
+        {
+          "Rk_energy_fraction": 0.9923273526442641,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.895,
+          "alpha_selected": 1.8947979423008383,
+          "closest_grid_participation_rank": 2.718347143510752,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 4.440892098500626e-16,
+          "max_participation_rank_in_scan": 3.029977553973932,
+          "participation_rank_at_alpha_1": 2.220882964012142,
+          "participation_rank_at_alpha_1112819": 2.31316075483075,
+          "participation_rank_at_alpha_selected": 2.7182818284590455,
+          "truncation_rank": 5
+        },
+        {
+          "Rk_energy_fraction": 0.9956743847699381,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.565,
+          "alpha_selected": 1.5660137394697613,
+          "closest_grid_participation_rank": 2.7177574881961446,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 8.881784197001252e-16,
+          "max_participation_rank_in_scan": 3.2115451452933694,
+          "participation_rank_at_alpha_1": 2.313058881667836,
+          "participation_rank_at_alpha_1112819": 2.41419856492347,
+          "participation_rank_at_alpha_selected": 2.718281828459044,
+          "truncation_rank": 6
+        },
+        {
+          "Rk_energy_fraction": 0.9972402070904217,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.415,
+          "alpha_selected": 1.413593954169702,
+          "closest_grid_participation_rank": 2.7192004060658252,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 4.440892098500626e-16,
+          "max_participation_rank_in_scan": 3.3414879745646635,
+          "participation_rank_at_alpha_1": 2.378352952869087,
+          "participation_rank_at_alpha_1112819": 2.485897101477205,
+          "participation_rank_at_alpha_selected": 2.7182818284590455,
+          "truncation_rank": 7
+        },
+        {
+          "Rk_energy_fraction": 0.9984902613938367,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.3,
+          "alpha_selected": 1.298559840042302,
+          "closest_grid_participation_rank": 2.719406923015186,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 4.440892098500626e-16,
+          "max_participation_rank_in_scan": 3.4626305351010043,
+          "participation_rank_at_alpha_1": 2.444460036068845,
+          "participation_rank_at_alpha_1112819": 2.5577995880760493,
+          "participation_rank_at_alpha_selected": 2.7182818284590446,
+          "truncation_rank": 8
+        },
+        {
+          "Rk_energy_fraction": 0.9991884225201948,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.235,
+          "alpha_selected": 1.233454550771147,
+          "closest_grid_participation_rank": 2.719628068653881,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 0.0,
+          "max_participation_rank_in_scan": 3.5523881276754525,
+          "participation_rank_at_alpha_1": 2.488483342016962,
+          "participation_rank_at_alpha_1112819": 2.6062418251342296,
+          "participation_rank_at_alpha_selected": 2.718281828459045,
+          "truncation_rank": 9
+        },
+        {
+          "Rk_energy_fraction": 0.9995133979546958,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.19,
+          "alpha_selected": 1.1892457504964615,
+          "closest_grid_participation_rank": 2.7189888989918285,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 8.881784197001252e-16,
+          "max_participation_rank_in_scan": 3.6170170327241835,
+          "participation_rank_at_alpha_1": 2.522804143856457,
+          "participation_rank_at_alpha_1112819": 2.6437271922604504,
+          "participation_rank_at_alpha_selected": 2.718281828459046,
+          "truncation_rank": 10
+        },
+        {
+          "Rk_energy_fraction": 0.9997498372856056,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.16,
+          "alpha_selected": 1.15778330258135,
+          "closest_grid_participation_rank": 2.7204763046386033,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 0.0,
+          "max_participation_rank_in_scan": 3.6713394717864207,
+          "participation_rank_at_alpha_1": 2.5490120859744074,
+          "participation_rank_at_alpha_1112819": 2.6726892152957724,
+          "participation_rank_at_alpha_selected": 2.718281828459045,
+          "truncation_rank": 11
+        },
+        {
+          "Rk_energy_fraction": 0.9998943954840503,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.135,
+          "alpha_selected": 1.135254244528797,
+          "closest_grid_participation_rank": 2.718019551954119,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 1.3322676295501878e-15,
+          "max_participation_rank_in_scan": 3.7136360083340034,
+          "participation_rank_at_alpha_1": 2.5691050861529674,
+          "participation_rank_at_alpha_1112819": 2.6948794271224576,
+          "participation_rank_at_alpha_selected": 2.7182818284590438,
+          "truncation_rank": 12
+        },
+        {
+          "Rk_energy_fraction": 0.9999862644308609,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.115,
+          "alpha_selected": 1.1158752524067412,
+          "closest_grid_participation_rank": 2.7173484816312166,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 4.440892098500626e-16,
+          "max_participation_rank_in_scan": 3.7487343408111626,
+          "participation_rank_at_alpha_1": 2.587549065974345,
+          "participation_rank_at_alpha_1112819": 2.715019715447183,
+          "participation_rank_at_alpha_selected": 2.7182818284590446,
+          "truncation_rank": 13
+        },
+        {
+          "Rk_energy_fraction": 0.999998655995536,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.11,
+          "alpha_selected": 1.112148731153341,
+          "closest_grid_participation_rank": 2.7159726676157936,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 0.0,
+          "max_participation_rank_in_scan": 3.759558487272016,
+          "participation_rank_at_alpha_1": 2.5911096851947333,
+          "participation_rank_at_alpha_1112819": 2.719001668582426,
+          "participation_rank_at_alpha_selected": 2.718281828459045,
+          "truncation_rank": 14
+        },
+        {
+          "Rk_energy_fraction": 0.9999999199999027,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.115,
+          "alpha_selected": 1.1131224870060192,
+          "closest_grid_participation_rank": 2.7202936339384585,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 0.0,
+          "max_participation_rank_in_scan": 3.7575663226165754,
+          "participation_rank_at_alpha_1": 2.590058601496617,
+          "participation_rank_at_alpha_1112819": 2.717956813997631,
+          "participation_rank_at_alpha_selected": 2.718281828459045,
+          "truncation_rank": 15
+        },
+        {
+          "Rk_energy_fraction": 1.0,
+          "alpha_at_max_participation_rank": 5.0,
+          "alpha_closest_grid": 1.115,
+          "alpha_selected": 1.1128194954895245,
+          "closest_grid_participation_rank": 2.7206192749346942,
+          "e_reachable_in_alpha_0_5": true,
+          "gap_to_e_at_selected": 4.440892098500626e-16,
+          "max_participation_rank_in_scan": 3.757859743322585,
+          "participation_rank_at_alpha_1": 2.590349123058277,
+          "participation_rank_at_alpha_1112819": 2.718281828459555,
+          "participation_rank_at_alpha_selected": 2.7182818284590455,
+          "truncation_rank": 16
+        }
+      ]
+    },
+    "schema": "G.d20.Romega_decisive_tests",
+    "seven_null_point_sweep": {
+      "best_normalized": {
+        "A6_participation_rank": 1.0065925717925184,
+        "S4_breaking_energy_fraction": 0.5504846450498238,
+        "S4_invariant_energy_fraction": 0.44951535495017625,
+        "fit_energy_fraction": 0.2825132194610569,
+        "mean_builder_null_mass": 0.026977539062499997,
+        "mean_builder_surviving_mass": 0.9730224609375,
+        "mean_jabber_null_mass": 0.026977539062499997,
+        "mean_jabber_surviving_mass": 0.9730224609375,
+        "null_point": "011",
+        "operator_kind": "normalized",
+        "relative_reconstruction_error": 0.8470459140677932,
+        "signedD6_breaking_energy_fraction": 0.8347287193692019,
+        "signedD6_invariant_energy_fraction": 0.16527128063079807
+      },
+      "best_raw": {
+        "A6_participation_rank": 1.003200420633263,
+        "S4_breaking_energy_fraction": 0.6912094544681018,
+        "S4_invariant_energy_fraction": 0.3087905455318982,
+        "fit_energy_fraction": 0.28151175177346055,
+        "mean_builder_null_mass": 0.0006917317708333297,
+        "mean_builder_surviving_mass": 0.9993082682291666,
+        "mean_jabber_null_mass": 0.0006917317708333312,
+        "mean_jabber_surviving_mass": 0.9993082682291666,
+        "null_point": "110",
+        "operator_kind": "raw",
+        "relative_reconstruction_error": 0.8476368610593458,
+        "signedD6_breaking_energy_fraction": 0.8337327380751904,
+        "signedD6_invariant_energy_fraction": 0.1662672619248096
+      },
+      "interpretation": "Nullifying a non-clean point preserves the large P1 mass as an edge channel; nullifying the clean point erases the dominant clean corridor and leaves only the small non-null curvature shadow."
+    },
+    "shuffle_controls": {
+      "interpretation": "Controls compare the observed 6j-fit against same-spectrum random orientations, row/column label scrambles, and Fano-weight strategy shuffles.",
+      "original_best_normalized_6j_fit_energy": 0.2825132194610569,
+      "summary": [
+        {
+          "control": "random_orthogonal_same_singular_values",
+          "max": 0.09845801809984932,
+          "mean": 0.03208531476575044,
+          "min": 0.00409391440504231,
+          "original_percentile": 1.0,
+          "std": 0.02137563003697735,
+          "trials": 50
+        },
+        {
+          "control": "random_row_col_permutation",
+          "max": 0.5357772566922008,
+          "mean": 0.11267115399654702,
+          "min": 0.009037742498721987,
+          "original_percentile": 0.92,
+          "std": 0.1158855821833044,
+          "trials": 50
+        },
+        {
+          "control": "random_strategy_fano_weight_shuffle",
+          "max": 0.4927608700872316,
+          "mean": 0.1177252430342643,
+          "min": 0.0014716549373463082,
+          "original_percentile": 0.9,
+          "std": 0.10926592447357428,
+          "trials": 50
+        }
+      ]
+    },
+    "status": "Romega_SEVEN_NULL_FOAM_MODE_RANKLOCK_TESTS_COMPLETE"
+  },
   "equivariance": {
-    "status": "NOT_EQUIVARIANT_UNDER_V8_VISIBLE_FLAG_STABILIZER",
-    "full_signed_fano_group_status": "not certified: v8/v9 bundles do not include explicit signed-Fano permutation generators on the 16 builder and 16 jabber strategy sets",
-    "tested_group": "maximal row/column permutation subgroup preserving the v8 Fano-coordinate flag tensor exactly",
+    "R_norm": 2251.533688388933,
+    "breaking_energy_fraction": 0.6412028921845921,
+    "breaking_norm": 1802.9188762559759,
+    "breaking_participation_rank": 3.333152925351606,
+    "breaking_rank": 16,
+    "column_pattern_class_sizes": [
+      12,
+      1,
+      1,
+      1,
+      1
+    ],
+    "column_pattern_classes": [
+      [
+        "BLUFF_ENGINE"
+      ],
+      [
+        "CURVATURE_INJECTOR",
+        "DIVERGENCE_TAX",
+        "FACE12_DENIAL",
+        "FACE15_DENIAL",
+        "FACE17_DENIAL",
+        "HOMOLOGY_PUNCTURE",
+        "H_MASK_SPLIT",
+        "KERNEL_DRIP",
+        "KERNEL_SPIKE",
+        "NONE",
+        "OMEGA_LOCK",
+        "RANK4_TAX"
+      ],
+      [
+        "EXTRACTOR_LURE"
+      ],
+      [
+        "MONODROME_CONTAMINATOR"
+      ],
+      [
+        "RANDOM_JABBER"
+      ]
+    ],
+    "exact_swap_count": 0,
+    "full_signed_fano_group_status": "not certified: source_drop/source_drop bundles do not include explicit signed-Fano permutation generators on the 16 builder and 16 jabber strategy sets",
+    "generator_swap_count": 94,
+    "invariant_energy_fraction": 0.3587971078154081,
+    "invariant_participation_rank": 2.5341579390517173,
+    "invariant_projection_norm": 1348.6613643128373,
+    "invariant_rank": 5,
+    "max_swap_relative_error": 0.9394737007493053,
+    "mean_swap_relative_error": 0.27690188332891164,
+    "min_swap_relative_error": 0.02945753597556975,
+    "row_pattern_class_sizes": [
+      8,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
     "row_pattern_classes": [
       [
         "BASIN_SWITCHER",
@@ -385,117 +982,172 @@
         "SPREAD_CONTROL"
       ]
     ],
-    "column_pattern_classes": [
-      [
-        "BLUFF_ENGINE"
-      ],
-      [
-        "CURVATURE_INJECTOR",
-        "DIVERGENCE_TAX",
-        "FACE12_DENIAL",
-        "FACE15_DENIAL",
-        "FACE17_DENIAL",
-        "HOMOLOGY_PUNCTURE",
-        "H_MASK_SPLIT",
-        "KERNEL_DRIP",
-        "KERNEL_SPIKE",
-        "NONE",
-        "OMEGA_LOCK",
-        "RANK4_TAX"
-      ],
-      [
-        "EXTRACTOR_LURE"
-      ],
-      [
-        "MONODROME_CONTAMINATOR"
-      ],
-      [
-        "RANDOM_JABBER"
-      ]
-    ],
-    "row_pattern_class_sizes": [
-      8,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "column_pattern_class_sizes": [
-      12,
-      1,
-      1,
-      1,
-      1
-    ],
-    "generator_swap_count": 94,
-    "exact_swap_count": 0,
-    "min_swap_relative_error": 0.02945753597556975,
-    "max_swap_relative_error": 0.9394737007493053,
-    "mean_swap_relative_error": 0.27690188332891164,
-    "R_norm": 2251.533688388933,
-    "invariant_projection_norm": 1348.6613643128373,
-    "breaking_norm": 1802.9188762559759,
-    "invariant_energy_fraction": 0.3587971078154081,
-    "breaking_energy_fraction": 0.6412028921845921,
-    "invariant_participation_rank": 2.5341579390517173,
-    "breaking_participation_rank": 3.333152925351606,
-    "invariant_rank": 5,
-    "breaking_rank": 16
+    "status": "NOT_EQUIVARIANT_UNDER_VISIBLE_FLAG_STABILIZER",
+    "tested_group": "maximal row/column permutation subgroup preserving the source_drop Fano-coordinate flag tensor exactly"
   },
-  "classification": {
-    "short": "R_Omega is a low-dimensional curvature band: two dominant singular modes, a monodromy correction, and a stabilizer-breaking tail.",
-    "factorization": "It factors strongly but not exactly through Omega_J, D_J, and M_CVX; the combined block explains 96.29% of residual Frobenius energy.",
-    "equivariance": "The residual is not invariant under the v8-visible flag stabilizer; 64.12% of its energy lies in the stabilizer-breaking component. Full signed-Fano equivariance remains uncertified without explicit generators."
-  },
-  "fano_layer": {
-    "status": "FANO_LAYER_ADDED_WITH_EXPLICIT_CANONICAL_FLAG_STABILIZER",
-    "canonical_fano_plane": "points are nonzero vectors in F2^3; lines are triples {a,b,a+b}",
-    "canonical_flag": {
-      "P1_point": "001",
-      "L3_line": [
-        "001",
-        "010",
-        "011"
-      ],
-      "F7_minus_L3": [
-        "100",
-        "101",
-        "110",
-        "111"
-      ]
+  "factor_block_lattice": [
+    {
+      "atomic_blocks": "",
+      "explained_frobenius_fraction": 2.220446049250313e-16,
+      "feature_count": 0,
+      "leftover_participation_rank": 3.842555775650312,
+      "predicted_participation_rank": 1.0,
+      "r2_centered": 0.0,
+      "rmse": 140.72085552430835,
+      "subset": "mean_only"
     },
-    "GL3F2_order": 168,
-    "incident_flag_stabilizer_order": 8,
-    "ordered_point_pair_orbit_count_under_flag_stabilizer": 12,
-    "strategy_label_action_status": "not derivable from v8/v9: the bundles provide Fano-zone weights on the 16x16 strategy pairs, but not a signed-Fano permutation representation on the 16 builder and 16 jabber labels",
-    "equivariance_status": "canonical Fano flag stabilizer is included; full signed-Fano equivariance on R_Omega remains uncertified until label permutations are supplied"
-  },
+    {
+      "atomic_blocks": "Omega_J",
+      "explained_frobenius_fraction": 0.7843856491407531,
+      "feature_count": 2,
+      "leftover_participation_rank": 5.418127758949579,
+      "predicted_participation_rank": 3.025969460974814,
+      "r2_centered": 0.784385649140753,
+      "rmse": 65.34273349017539,
+      "subset": "Omega_J"
+    },
+    {
+      "atomic_blocks": "M_CVX",
+      "explained_frobenius_fraction": 0.6965119217549197,
+      "feature_count": 3,
+      "leftover_participation_rank": 5.260820537675098,
+      "predicted_participation_rank": 2.913638387655946,
+      "r2_centered": 0.6965119217549196,
+      "rmse": 77.52277041039773,
+      "subset": "M_CVX"
+    },
+    {
+      "atomic_blocks": "D_J",
+      "explained_frobenius_fraction": 0.7159092216009407,
+      "feature_count": 4,
+      "leftover_participation_rank": 4.327508236237283,
+      "predicted_participation_rank": 3.8478501724901157,
+      "r2_centered": 0.7159092216009406,
+      "rmse": 75.00445075753836,
+      "subset": "D_J"
+    },
+    {
+      "atomic_blocks": "Omega_J,M_CVX",
+      "explained_frobenius_fraction": 0.8144164523006509,
+      "feature_count": 5,
+      "leftover_participation_rank": 5.829409760860519,
+      "predicted_participation_rank": 3.343868230632895,
+      "r2_centered": 0.8144164523006509,
+      "rmse": 60.621712853953014,
+      "subset": "Omega_J+M_CVX"
+    },
+    {
+      "atomic_blocks": "Omega_J,D_J",
+      "explained_frobenius_fraction": 0.9375725054004637,
+      "feature_count": 6,
+      "leftover_participation_rank": 6.416094565537268,
+      "predicted_participation_rank": 3.985396617276645,
+      "r2_centered": 0.9375725054004637,
+      "rmse": 35.15980191548146,
+      "subset": "Omega_J+D_J"
+    },
+    {
+      "atomic_blocks": "D_J,M_CVX",
+      "explained_frobenius_fraction": 0.8554213507754929,
+      "feature_count": 7,
+      "leftover_participation_rank": 5.729622803902125,
+      "predicted_participation_rank": 3.9639789333241344,
+      "r2_centered": 0.8554213507754929,
+      "rmse": 53.506993389926656,
+      "subset": "D_J+M_CVX"
+    },
+    {
+      "atomic_blocks": "Omega_J,D_J,M_CVX",
+      "explained_frobenius_fraction": 0.9628981487450725,
+      "feature_count": 9,
+      "leftover_participation_rank": 6.829451105751141,
+      "predicted_participation_rank": 3.762899638332127,
+      "r2_centered": 0.9628981487450725,
+      "rmse": 27.105427219916827,
+      "subset": "Omega_J+D_J+M_CVX"
+    }
+  ],
+  "factor_shapley": [
+    {
+      "block": "Omega_J",
+      "shapley_frobenius": 0.3538821180943199,
+      "shapley_r2": 0.3538821180943199
+    },
+    {
+      "block": "D_J",
+      "shapley_frobenius": 0.34014635356183465,
+      "shapley_r2": 0.3401463535618347
+    },
+    {
+      "block": "M_CVX",
+      "shapley_frobenius": 0.26886967708891774,
+      "shapley_r2": 0.2688696770889178
+    }
+  ],
   "fano_6j_contraction": {
-    "schema": "G.d20.v12.fano_6j_contraction",
-    "status": "FANO_NULLIFICATION_6J_CONTRACTION_CONSTRUCTED",
-    "nullified_point": "001",
+    "Romega_fano6_compression_normalized": {
+      "S4_breaking_energy_fraction": 0.5724600895871619,
+      "S4_invariant_energy_fraction": 0.4275399104128381,
+      "S4_orbit_coefficients": [
+        {
+          "coefficient": 3420.3431964576644,
+          "count": 6,
+          "orbit": "same_edge"
+        },
+        {
+          "coefficient": 1318.0140567536894,
+          "count": 24,
+          "orbit": "adjacent_edges"
+        },
+        {
+          "coefficient": 3420.3431964576644,
+          "count": 6,
+          "orbit": "opposite_edges"
+        }
+      ],
+      "fit_energy_fraction": 0.009561337827212153,
+      "relative_reconstruction_error": 0.9952078487294944,
+      "signedD6_breaking_energy_fraction": 0.8351789850232143,
+      "signedD6_error_mean": 1.2668252397925235,
+      "signedD6_invariant_energy_fraction": 0.1648210149767857
+    },
+    "Romega_fano6_compression_raw": {
+      "S4_breaking_energy_fraction": 0.5678753928450462,
+      "S4_invariant_energy_fraction": 0.4321246071549539,
+      "S4_orbit_coefficients": [
+        {
+          "coefficient": 142538.61973075368,
+          "count": 6,
+          "orbit": "same_edge"
+        },
+        {
+          "coefficient": 55629.40172051511,
+          "count": 24,
+          "orbit": "adjacent_edges"
+        },
+        {
+          "coefficient": 142538.61973075368,
+          "count": 6,
+          "orbit": "opposite_edges"
+        }
+      ],
+      "fit_energy_fraction": 0.007529727777430951,
+      "relative_reconstruction_error": 0.9962280222030343,
+      "signedD6_breaking_energy_fraction": 0.8343881508530131,
+      "signedD6_error_mean": 1.2657280478414186,
+      "signedD6_invariant_energy_fraction": 0.16561184914698684
+    },
+    "automorphism": {
+      "GL3F2_order": 168,
+      "full_W_D6_order": 23040,
+      "index_in_W_D6": 30,
+      "null_point_stabilizer_is": "S4 tetrahedral edge symmetry",
+      "null_point_stabilizer_order": 24,
+      "signed_D6_preimage_order": 768
+    },
+    "caveat": "The 16x16 strategy-label signed action is still not present in source_drop; this construction supplies the canonical Fano->6j contraction and tests the induced six-channel operator.",
     "contraction": "Fano plane F7 minus null point gives six tetrahedral edge labels",
-    "edge_order": [
-      "B-",
-      "B+",
-      "V-",
-      "V+",
-      "S-",
-      "S+"
-    ],
     "edge_dictionary": {
-      "B-": {
-        "fano_point": "010",
-        "tetra_edge": "e12",
-        "vertices": [
-          1,
-          2
-        ]
-      },
       "B+": {
         "fano_point": "011",
         "tetra_edge": "e34",
@@ -504,20 +1156,20 @@
           4
         ]
       },
-      "V-": {
-        "fano_point": "100",
-        "tetra_edge": "e13",
+      "B-": {
+        "fano_point": "010",
+        "tetra_edge": "e12",
         "vertices": [
           1,
-          3
+          2
         ]
       },
-      "V+": {
-        "fano_point": "101",
-        "tetra_edge": "e24",
+      "S+": {
+        "fano_point": "111",
+        "tetra_edge": "e23",
         "vertices": [
           2,
-          4
+          3
         ]
       },
       "S-": {
@@ -528,894 +1180,241 @@
           4
         ]
       },
-      "S+": {
-        "fano_point": "111",
-        "tetra_edge": "e23",
+      "V+": {
+        "fano_point": "101",
+        "tetra_edge": "e24",
         "vertices": [
           2,
+          4
+        ]
+      },
+      "V-": {
+        "fano_point": "100",
+        "tetra_edge": "e13",
+        "vertices": [
+          1,
           3
         ]
       }
     },
-    "three_opposite_edge_pairs": [
-      {
-        "through_null_line_id": 1,
-        "fano_line_points": "001 010 011",
-        "remaining_pair": "010 011",
-        "edge_pair": "B- B+",
-        "tetra_edges": "e12 e34",
-        "relation": "opposite tetrahedron edges"
-      },
-      {
-        "through_null_line_id": 2,
-        "fano_line_points": "001 100 101",
-        "remaining_pair": "100 101",
-        "edge_pair": "V- V+",
-        "tetra_edges": "e13 e24",
-        "relation": "opposite tetrahedron edges"
-      },
-      {
-        "through_null_line_id": 3,
-        "fano_line_points": "001 110 111",
-        "remaining_pair": "110 111",
-        "edge_pair": "S- S+",
-        "tetra_edges": "e14 e23",
-        "relation": "opposite tetrahedron edges"
-      }
+    "edge_order": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
     ],
     "four_nonnull_lines_as_vertex_stars": [
       {
-        "nonnull_line_id": 1,
-        "fano_line_points": "010 100 110",
         "edge_labels": "B- V- S-",
+        "fano_line_points": "010 100 110",
+        "interpretation": "one of the four 3-edge stars / opposite face normals in K4",
+        "nonnull_line_id": 1,
         "tetra_edges": "e12 e13 e14",
         "tetrahedron_vertex_star": "vertex_star_1",
-        "vertex": 1,
-        "interpretation": "one of the four 3-edge stars / opposite face normals in K4"
+        "vertex": 1
       },
       {
-        "nonnull_line_id": 2,
-        "fano_line_points": "010 101 111",
         "edge_labels": "B- V+ S+",
+        "fano_line_points": "010 101 111",
+        "interpretation": "one of the four 3-edge stars / opposite face normals in K4",
+        "nonnull_line_id": 2,
         "tetra_edges": "e12 e24 e23",
         "tetrahedron_vertex_star": "vertex_star_2",
-        "vertex": 2,
-        "interpretation": "one of the four 3-edge stars / opposite face normals in K4"
+        "vertex": 2
       },
       {
-        "nonnull_line_id": 3,
-        "fano_line_points": "011 100 111",
         "edge_labels": "B+ V- S+",
+        "fano_line_points": "011 100 111",
+        "interpretation": "one of the four 3-edge stars / opposite face normals in K4",
+        "nonnull_line_id": 3,
         "tetra_edges": "e34 e13 e23",
         "tetrahedron_vertex_star": "vertex_star_3",
-        "vertex": 3,
-        "interpretation": "one of the four 3-edge stars / opposite face normals in K4"
+        "vertex": 3
       },
       {
-        "nonnull_line_id": 4,
-        "fano_line_points": "011 101 110",
         "edge_labels": "B+ V+ S-",
+        "fano_line_points": "011 101 110",
+        "interpretation": "one of the four 3-edge stars / opposite face normals in K4",
+        "nonnull_line_id": 4,
         "tetra_edges": "e34 e24 e14",
         "tetrahedron_vertex_star": "vertex_star_4",
-        "vertex": 4,
-        "interpretation": "one of the four 3-edge stars / opposite face normals in K4"
+        "vertex": 4
       }
     ],
-    "automorphism": {
-      "GL3F2_order": 168,
-      "null_point_stabilizer_order": 24,
-      "null_point_stabilizer_is": "S4 tetrahedral edge symmetry",
-      "signed_D6_preimage_order": 768,
-      "full_W_D6_order": 23040,
-      "index_in_W_D6": 30
-    },
+    "nullified_point": "001",
+    "schema": "G.d20.fano_6j_contraction",
     "sixj": {
       "interpretation": "the six contracted Fano channels are the six tetrahedral edge labels of a 6j symbol",
       "uniform_spin_1_wigner_6j": "1/6"
     },
-    "Romega_fano6_compression_raw": {
-      "fit_energy_fraction": 0.007529727777430951,
-      "relative_reconstruction_error": 0.9962280222030343,
-      "S4_invariant_energy_fraction": 0.4321246071549539,
-      "S4_breaking_energy_fraction": 0.5678753928450462,
-      "signedD6_invariant_energy_fraction": 0.16561184914698684,
-      "signedD6_breaking_energy_fraction": 0.8343881508530131,
-      "signedD6_error_mean": 1.2657280478414186,
-      "S4_orbit_coefficients": [
-        {
-          "orbit": "same_edge",
-          "count": 6,
-          "coefficient": 142538.61973075368
-        },
-        {
-          "orbit": "adjacent_edges",
-          "count": 24,
-          "coefficient": 55629.40172051511
-        },
-        {
-          "orbit": "opposite_edges",
-          "count": 6,
-          "coefficient": 142538.61973075368
-        }
-      ]
-    },
-    "Romega_fano6_compression_normalized": {
-      "fit_energy_fraction": 0.009561337827212153,
-      "relative_reconstruction_error": 0.9952078487294944,
-      "S4_invariant_energy_fraction": 0.4275399104128381,
-      "S4_breaking_energy_fraction": 0.5724600895871619,
-      "signedD6_invariant_energy_fraction": 0.1648210149767857,
-      "signedD6_breaking_energy_fraction": 0.8351789850232143,
-      "signedD6_error_mean": 1.2668252397925235,
-      "S4_orbit_coefficients": [
-        {
-          "orbit": "same_edge",
-          "count": 6,
-          "coefficient": 3420.3431964576644
-        },
-        {
-          "orbit": "adjacent_edges",
-          "count": 24,
-          "coefficient": 1318.0140567536894
-        },
-        {
-          "orbit": "opposite_edges",
-          "count": 6,
-          "coefficient": 3420.3431964576644
-        }
-      ]
-    },
-    "caveat": "The 16x16 strategy-label signed action is still not present in v8; this construction supplies the canonical Fano->6j contraction and tests the induced six-channel operator."
-  },
-  "v13_decisive_tests": {
-    "schema": "G.d20.v13.Romega_decisive_tests",
-    "status": "V13_Romega_SEVEN_NULL_FOAM_MODE_RANKLOCK_TESTS_COMPLETE",
-    "input_basis": "v8 flag-simplex data, v9 R_Omega, v12 Fano-to-6j contraction",
-    "caveat": "The v8 bundle resolves Fano weights only at three-zone level; seven-point distributions are reconstructed by uniform splitting inside L3\\P1 and F7\\L3. Results depending on all seven points are therefore certified relative to that v8 reconstruction.",
-    "seven_null_point_sweep": {
-      "best_raw": {
-        "null_point": "110",
-        "operator_kind": "raw",
-        "fit_energy_fraction": 0.28151175177346055,
-        "relative_reconstruction_error": 0.8476368610593458,
-        "A6_participation_rank": 1.003200420633263,
-        "S4_invariant_energy_fraction": 0.3087905455318982,
-        "S4_breaking_energy_fraction": 0.6912094544681018,
-        "signedD6_invariant_energy_fraction": 0.1662672619248096,
-        "signedD6_breaking_energy_fraction": 0.8337327380751904,
-        "mean_builder_null_mass": 0.0006917317708333297,
-        "mean_jabber_null_mass": 0.0006917317708333312,
-        "mean_builder_surviving_mass": 0.9993082682291666,
-        "mean_jabber_surviving_mass": 0.9993082682291666
-      },
-      "best_normalized": {
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.2825132194610569,
-        "relative_reconstruction_error": 0.8470459140677932,
-        "A6_participation_rank": 1.0065925717925184,
-        "S4_invariant_energy_fraction": 0.44951535495017625,
-        "S4_breaking_energy_fraction": 0.5504846450498238,
-        "signedD6_invariant_energy_fraction": 0.16527128063079807,
-        "signedD6_breaking_energy_fraction": 0.8347287193692019,
-        "mean_builder_null_mass": 0.026977539062499997,
-        "mean_jabber_null_mass": 0.026977539062499997,
-        "mean_builder_surviving_mass": 0.9730224609375,
-        "mean_jabber_surviving_mass": 0.9730224609375
-      },
-      "interpretation": "Nullifying a non-clean point preserves the large P1 mass as an edge channel; nullifying the clean point erases the dominant clean corridor and leaves only the small non-null curvature shadow."
-    },
-    "mode_by_mode_best_normalized": [
+    "status": "FANO_NULLIFICATION_6J_CONTRACTION_CONSTRUCTED",
+    "three_opposite_edge_pairs": [
       {
-        "original_Romega_mode": 1,
-        "mode_singular_value": 1659.5680259168257,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "mode_fit_energy_fraction": 0.36520266393792317,
-        "mode_relative_error": 0.796741699713324,
-        "A6_mode_participation_rank": 1.0000000000000002,
-        "S4_invariant_energy_fraction": 0.17056485400911617,
-        "signedD6_invariant_energy_fraction": 4.1650331634370955e-05,
-        "top_tetrahedral_orbit": "adjacent_edges",
-        "top_tetrahedral_orbit_coefficient": -3989.253803392758,
-        "same_edge_coeff": 124.70043964922534,
-        "adjacent_edge_coeff": -3989.253803392758,
-        "opposite_edge_coeff": -91.93663390551582
+        "edge_pair": "B- B+",
+        "fano_line_points": "001 010 011",
+        "relation": "opposite tetrahedron edges",
+        "remaining_pair": "010 011",
+        "tetra_edges": "e12 e34",
+        "through_null_line_id": 1
       },
       {
-        "original_Romega_mode": 2,
-        "mode_singular_value": 1395.8983985257423,
-        "null_point": "010",
-        "operator_kind": "normalized",
-        "mode_fit_energy_fraction": 0.18815782763566472,
-        "mode_relative_error": 0.9010228478592189,
-        "A6_mode_participation_rank": 1.0000000000000004,
-        "S4_invariant_energy_fraction": 0.5266951243704133,
-        "signedD6_invariant_energy_fraction": 0.1655807989597529,
-        "top_tetrahedral_orbit": "same_edge",
-        "top_tetrahedral_orbit_coefficient": 46592.671642083376,
-        "same_edge_coeff": 46592.671642083376,
-        "adjacent_edge_coeff": 25390.21740560602,
-        "opposite_edge_coeff": 46430.61705344778
+        "edge_pair": "V- V+",
+        "fano_line_points": "001 100 101",
+        "relation": "opposite tetrahedron edges",
+        "remaining_pair": "100 101",
+        "tetra_edges": "e13 e24",
+        "through_null_line_id": 2
       },
       {
-        "original_Romega_mode": 3,
-        "mode_singular_value": 515.473300481971,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "mode_fit_energy_fraction": 0.10982760595284051,
-        "mode_relative_error": 0.943489477443792,
-        "A6_mode_participation_rank": 1.0000000000000009,
-        "S4_invariant_energy_fraction": 0.16571989600637865,
-        "signedD6_invariant_energy_fraction": 0.06672318450027345,
-        "top_tetrahedral_orbit": "opposite_edges",
-        "top_tetrahedral_orbit_coefficient": 5089.058386600664,
-        "same_edge_coeff": 4338.785540881298,
-        "adjacent_edge_coeff": 712.7572413915741,
-        "opposite_edge_coeff": 5089.058386600664
-      },
-      {
-        "original_Romega_mode": 4,
-        "mode_singular_value": 198.3042957064743,
-        "null_point": "010",
-        "operator_kind": "normalized",
-        "mode_fit_energy_fraction": 0.03802891156324555,
-        "mode_relative_error": 0.9808012481827061,
-        "A6_mode_participation_rank": 1.0,
-        "S4_invariant_energy_fraction": 0.4121198611647719,
-        "signedD6_invariant_energy_fraction": 0.1638815664988095,
-        "top_tetrahedral_orbit": "same_edge",
-        "top_tetrahedral_orbit_coefficient": 20211.15322820834,
-        "same_edge_coeff": 20211.15322820834,
-        "adjacent_edge_coeff": 7419.130883879302,
-        "opposite_edge_coeff": 19964.569546831837
-      },
-      {
-        "original_Romega_mode": 5,
-        "mode_singular_value": 150.90564032172816,
-        "null_point": "100",
-        "operator_kind": "normalized",
-        "mode_fit_energy_fraction": 0.10242704256762727,
-        "mode_relative_error": 0.9474032707524155,
-        "A6_mode_participation_rank": 1.0,
-        "S4_invariant_energy_fraction": 0.3106407821529162,
-        "signedD6_invariant_energy_fraction": 0.1664897684561463,
-        "top_tetrahedral_orbit": "same_edge",
-        "top_tetrahedral_orbit_coefficient": 68926.95814314544,
-        "same_edge_coeff": 68926.95814314544,
-        "adjacent_edge_coeff": 31973.838379813988,
-        "opposite_edge_coeff": -4915.795176745442
-      },
-      {
-        "original_Romega_mode": 6,
-        "mode_singular_value": 130.25919498638805,
-        "null_point": "001",
-        "operator_kind": "normalized",
-        "mode_fit_energy_fraction": 0.0005830676064047381,
-        "mode_relative_error": 0.9997084236884249,
-        "A6_mode_participation_rank": 1.0000000000000027,
-        "S4_invariant_energy_fraction": 0.4227573879591076,
-        "signedD6_invariant_energy_fraction": 0.14117952693229824,
-        "top_tetrahedral_orbit": "opposite_edges",
-        "top_tetrahedral_orbit_coefficient": 0.46901528403473286,
-        "same_edge_coeff": 0.4690152840347326,
-        "adjacent_edge_coeff": -0.2338579379900525,
-        "opposite_edge_coeff": 0.46901528403473286
+        "edge_pair": "S- S+",
+        "fano_line_points": "001 110 111",
+        "relation": "opposite tetrahedron edges",
+        "remaining_pair": "110 111",
+        "tetra_edges": "e14 e23",
+        "through_null_line_id": 3
       }
-    ],
-    "foam_lift": {
-      "definition": "Foam(A6)=diag(trace(A6)/6, compound_2(A6)) on 1 \u2295 Lambda^2 H6.",
-      "best_by_wedge2_norm": {
-        "null_point": "010",
-        "operator_kind": "raw",
-        "foam_participation_rank": 1.5540313625381503,
-        "foam_rank1_energy": 0.9168643390221908,
-        "foam_rank2_energy": 0.9999995433646945,
-        "foam_rank3_energy": 0.9999999944965928,
-        "scalar_energy_fraction": 5.503407223331534e-09,
-        "wedge2_energy_fraction": 0.9999999944965928,
-        "cross_energy_fraction": 0.0,
-        "scalar_block": 152953.21857150216,
-        "wedge2_frobenius_norm": 2061782239.635779
-      },
-      "summary_file": "spin12_foam16_lift_summary.csv"
-    },
-    "rank_lock_truncation": {
-      "minimal_rank_reaching_e_in_alpha_0_5": 4,
-      "rank_rows_file": "rank_lock_truncation_test.csv",
-      "rows": [
-        {
-          "truncation_rank": 1,
-          "Rk_energy_fraction": 0.5432918859568264,
-          "e_reachable_in_alpha_0_5": false,
-          "alpha_selected": 1.22,
-          "participation_rank_at_alpha_selected": 1.2984052863070061,
-          "gap_to_e_at_selected": 1.419876542152039,
-          "alpha_closest_grid": 1.22,
-          "closest_grid_participation_rank": 1.2984052863070061,
-          "max_participation_rank_in_scan": 1.2984052863070061,
-          "alpha_at_max_participation_rank": 1.22,
-          "participation_rank_at_alpha_1": 1.2948321448723965,
-          "participation_rank_at_alpha_1112819": 1.2975927575727826
-        },
-        {
-          "truncation_rank": 2,
-          "Rk_energy_fraction": 0.9276629793327738,
-          "e_reachable_in_alpha_0_5": false,
-          "alpha_selected": 5.0,
-          "participation_rank_at_alpha_selected": 2.0167074391086035,
-          "gap_to_e_at_selected": 0.7015743893504416,
-          "alpha_closest_grid": 5.0,
-          "closest_grid_participation_rank": 2.0167074391086035,
-          "max_participation_rank_in_scan": 2.0167074391086035,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 1.6634680505585215,
-          "participation_rank_at_alpha_1112819": 1.7072351395581218
-        },
-        {
-          "truncation_rank": 3,
-          "Rk_energy_fraction": 0.9800779626588476,
-          "e_reachable_in_alpha_0_5": false,
-          "alpha_selected": 5.0,
-          "participation_rank_at_alpha_selected": 2.57482383776245,
-          "gap_to_e_at_selected": 0.14345799069659515,
-          "alpha_closest_grid": 5.0,
-          "closest_grid_participation_rank": 2.57482383776245,
-          "max_participation_rank_in_scan": 2.57482383776245,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 1.996587929821751,
-          "participation_rank_at_alpha_1112819": 2.065737560141617
-        },
-        {
-          "truncation_rank": 4,
-          "Rk_energy_fraction": 0.9878352047496117,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 2.7735849491074944,
-          "participation_rank_at_alpha_selected": 2.718281828459045,
-          "gap_to_e_at_selected": 0.0,
-          "alpha_closest_grid": 2.775,
-          "closest_grid_participation_rank": 2.7184392848216827,
-          "max_participation_rank_in_scan": 2.825994722361592,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.1185232701029766,
-          "participation_rank_at_alpha_1112819": 2.200498087371873
-        },
-        {
-          "truncation_rank": 5,
-          "Rk_energy_fraction": 0.9923273526442641,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.8947979423008383,
-          "participation_rank_at_alpha_selected": 2.7182818284590455,
-          "gap_to_e_at_selected": 4.440892098500626e-16,
-          "alpha_closest_grid": 1.895,
-          "closest_grid_participation_rank": 2.718347143510752,
-          "max_participation_rank_in_scan": 3.029977553973932,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.220882964012142,
-          "participation_rank_at_alpha_1112819": 2.31316075483075
-        },
-        {
-          "truncation_rank": 6,
-          "Rk_energy_fraction": 0.9956743847699381,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.5660137394697613,
-          "participation_rank_at_alpha_selected": 2.718281828459044,
-          "gap_to_e_at_selected": 8.881784197001252e-16,
-          "alpha_closest_grid": 1.565,
-          "closest_grid_participation_rank": 2.7177574881961446,
-          "max_participation_rank_in_scan": 3.2115451452933694,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.313058881667836,
-          "participation_rank_at_alpha_1112819": 2.41419856492347
-        },
-        {
-          "truncation_rank": 7,
-          "Rk_energy_fraction": 0.9972402070904217,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.413593954169702,
-          "participation_rank_at_alpha_selected": 2.7182818284590455,
-          "gap_to_e_at_selected": 4.440892098500626e-16,
-          "alpha_closest_grid": 1.415,
-          "closest_grid_participation_rank": 2.7192004060658252,
-          "max_participation_rank_in_scan": 3.3414879745646635,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.378352952869087,
-          "participation_rank_at_alpha_1112819": 2.485897101477205
-        },
-        {
-          "truncation_rank": 8,
-          "Rk_energy_fraction": 0.9984902613938367,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.298559840042302,
-          "participation_rank_at_alpha_selected": 2.7182818284590446,
-          "gap_to_e_at_selected": 4.440892098500626e-16,
-          "alpha_closest_grid": 1.3,
-          "closest_grid_participation_rank": 2.719406923015186,
-          "max_participation_rank_in_scan": 3.4626305351010043,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.444460036068845,
-          "participation_rank_at_alpha_1112819": 2.5577995880760493
-        },
-        {
-          "truncation_rank": 9,
-          "Rk_energy_fraction": 0.9991884225201948,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.233454550771147,
-          "participation_rank_at_alpha_selected": 2.718281828459045,
-          "gap_to_e_at_selected": 0.0,
-          "alpha_closest_grid": 1.235,
-          "closest_grid_participation_rank": 2.719628068653881,
-          "max_participation_rank_in_scan": 3.5523881276754525,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.488483342016962,
-          "participation_rank_at_alpha_1112819": 2.6062418251342296
-        },
-        {
-          "truncation_rank": 10,
-          "Rk_energy_fraction": 0.9995133979546958,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.1892457504964615,
-          "participation_rank_at_alpha_selected": 2.718281828459046,
-          "gap_to_e_at_selected": 8.881784197001252e-16,
-          "alpha_closest_grid": 1.19,
-          "closest_grid_participation_rank": 2.7189888989918285,
-          "max_participation_rank_in_scan": 3.6170170327241835,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.522804143856457,
-          "participation_rank_at_alpha_1112819": 2.6437271922604504
-        },
-        {
-          "truncation_rank": 11,
-          "Rk_energy_fraction": 0.9997498372856056,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.15778330258135,
-          "participation_rank_at_alpha_selected": 2.718281828459045,
-          "gap_to_e_at_selected": 0.0,
-          "alpha_closest_grid": 1.16,
-          "closest_grid_participation_rank": 2.7204763046386033,
-          "max_participation_rank_in_scan": 3.6713394717864207,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.5490120859744074,
-          "participation_rank_at_alpha_1112819": 2.6726892152957724
-        },
-        {
-          "truncation_rank": 12,
-          "Rk_energy_fraction": 0.9998943954840503,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.135254244528797,
-          "participation_rank_at_alpha_selected": 2.7182818284590438,
-          "gap_to_e_at_selected": 1.3322676295501878e-15,
-          "alpha_closest_grid": 1.135,
-          "closest_grid_participation_rank": 2.718019551954119,
-          "max_participation_rank_in_scan": 3.7136360083340034,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.5691050861529674,
-          "participation_rank_at_alpha_1112819": 2.6948794271224576
-        },
-        {
-          "truncation_rank": 13,
-          "Rk_energy_fraction": 0.9999862644308609,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.1158752524067412,
-          "participation_rank_at_alpha_selected": 2.7182818284590446,
-          "gap_to_e_at_selected": 4.440892098500626e-16,
-          "alpha_closest_grid": 1.115,
-          "closest_grid_participation_rank": 2.7173484816312166,
-          "max_participation_rank_in_scan": 3.7487343408111626,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.587549065974345,
-          "participation_rank_at_alpha_1112819": 2.715019715447183
-        },
-        {
-          "truncation_rank": 14,
-          "Rk_energy_fraction": 0.999998655995536,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.112148731153341,
-          "participation_rank_at_alpha_selected": 2.718281828459045,
-          "gap_to_e_at_selected": 0.0,
-          "alpha_closest_grid": 1.11,
-          "closest_grid_participation_rank": 2.7159726676157936,
-          "max_participation_rank_in_scan": 3.759558487272016,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.5911096851947333,
-          "participation_rank_at_alpha_1112819": 2.719001668582426
-        },
-        {
-          "truncation_rank": 15,
-          "Rk_energy_fraction": 0.9999999199999027,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.1131224870060192,
-          "participation_rank_at_alpha_selected": 2.718281828459045,
-          "gap_to_e_at_selected": 0.0,
-          "alpha_closest_grid": 1.115,
-          "closest_grid_participation_rank": 2.7202936339384585,
-          "max_participation_rank_in_scan": 3.7575663226165754,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.590058601496617,
-          "participation_rank_at_alpha_1112819": 2.717956813997631
-        },
-        {
-          "truncation_rank": 16,
-          "Rk_energy_fraction": 1.0,
-          "e_reachable_in_alpha_0_5": true,
-          "alpha_selected": 1.1128194954895245,
-          "participation_rank_at_alpha_selected": 2.7182818284590455,
-          "gap_to_e_at_selected": 4.440892098500626e-16,
-          "alpha_closest_grid": 1.115,
-          "closest_grid_participation_rank": 2.7206192749346942,
-          "max_participation_rank_in_scan": 3.757859743322585,
-          "alpha_at_max_participation_rank": 5.0,
-          "participation_rank_at_alpha_1": 2.590349123058277,
-          "participation_rank_at_alpha_1112819": 2.718281828459555
-        }
-      ]
-    },
-    "shuffle_controls": {
-      "original_best_normalized_6j_fit_energy": 0.2825132194610569,
-      "summary": [
-        {
-          "control": "random_orthogonal_same_singular_values",
-          "trials": 50,
-          "mean": 0.03208531476575044,
-          "std": 0.02137563003697735,
-          "min": 0.00409391440504231,
-          "max": 0.09845801809984932,
-          "original_percentile": 1.0
-        },
-        {
-          "control": "random_row_col_permutation",
-          "trials": 50,
-          "mean": 0.11267115399654702,
-          "std": 0.1158855821833044,
-          "min": 0.009037742498721987,
-          "max": 0.5357772566922008,
-          "original_percentile": 0.92
-        },
-        {
-          "control": "random_strategy_fano_weight_shuffle",
-          "trials": 50,
-          "mean": 0.1177252430342643,
-          "std": 0.10926592447357428,
-          "min": 0.0014716549373463082,
-          "max": 0.4927608700872316,
-          "original_percentile": 0.9
-        }
+    ]
+  },
+  "fano_layer": {
+    "GL3F2_order": 168,
+    "canonical_fano_plane": "points are nonzero vectors in F2^3; lines are triples {a,b,a+b}",
+    "canonical_flag": {
+      "F7_minus_L3": [
+        "100",
+        "101",
+        "110",
+        "111"
       ],
-      "interpretation": "Controls compare the observed 6j-fit against same-spectrum random orientations, row/column label scrambles, and Fano-weight strategy shuffles."
-    }
+      "L3_line": [
+        "001",
+        "010",
+        "011"
+      ],
+      "P1_point": "001"
+    },
+    "equivariance_status": "canonical Fano flag stabilizer is included; full signed-Fano equivariance on R_Omega remains uncertified until label permutations are supplied",
+    "incident_flag_stabilizer_order": 8,
+    "ordered_point_pair_orbit_count_under_flag_stabilizer": 12,
+    "status": "FANO_LAYER_ADDED_WITH_EXPLICIT_CANONICAL_FLAG_STABILIZER",
+    "strategy_label_action_status": "not derivable from source_drop/source_drop: the bundles provide Fano-zone weights on the 16x16 strategy pairs, but not a signed-Fano permutation representation on the 16 builder and 16 jabber labels"
   },
-  "v14_curvature_descent": {
-    "schema": "G.d20.v14.Romega_curvature_descent",
-    "status": "V14_ROMega_CURVATURE_DESCENT_WD6_TESTS_COMPLETE",
-    "basis": "v13 seven-null Fano-to-6j operators plus v9 R_Omega matrix",
-    "caveat": "Seven-point Fano distributions are reconstructed from v8 three-zone data by uniform splitting inside L3\\P1 and F7\\L3; all seven-point/null-point claims are relative to that reconstruction.",
-    "group_orders": {
-      "S4_nullpoint_stabilizer": 24,
-      "even_signs_D6": 32,
-      "signed_S4_D6_preimage": 768,
-      "W_D6_full": 23040,
-      "W_D6_formula": "2^5 * 6!"
+  "mode_cards": [
+    {
+      "cumulative_energy": 0.5432918859568265,
+      "energy_fraction": 0.5432918859568264,
+      "mode": 1,
+      "mode_name": "completion/J-pressure polarity",
+      "singular_value": 1659.5680259168257,
+      "top_abs_builders": "EMERGENCE_SEEKER:-0.8133 ; CURVATURE_ZERO:+0.3451 ; ROBUST_REVEAL:+0.3316 ; H2047_PURIST:+0.1771 ; MONODROME_PURIST:+0.1703",
+      "top_abs_jabbers": "KERNEL_DRIP:+0.3397 ; CURVATURE_INJECTOR:+0.3127 ; BLUFF_ENGINE:+0.2726 ; NONE:+0.2673 ; H_MASK_SPLIT:+0.2618",
+      "top_feature_correlations": "S_score:+0.8505 ; J_pressure:-0.8443 ; divergence:-0.8120 ; C:+0.7897 ; sealed:+0.7897 ; R_Omega:+0.7375",
+      "top_negative_builder": "EMERGENCE_SEEKER",
+      "top_negative_jabber": "RANDOM_JABBER",
+      "top_positive_builder": "CURVATURE_ZERO",
+      "top_positive_jabber": "KERNEL_DRIP"
     },
-    "full_WD6_projection_theorem": "For conjugation on 6x6 edge operators, full W(D6) invariants are exactly scalar diagonal matrices (trace(A)/6)I. Thus WD6-invariant energy is trace(A)^2/(6||A||_F^2).",
-    "best_normalized_operator": {
-      "null_point": "011",
-      "fit_energy_fraction": 0.2825132194610569,
-      "full_WD6_invariant_energy_fraction": 0.1652712806308008,
-      "full_WD6_breaking_energy_fraction": 0.8347287193691992,
-      "pair3_descent_energy_fraction": 0.9935526370391358,
-      "pair3_breaking_energy_fraction": 0.0064473629608642335,
-      "antisymmetric_energy_fraction": 0.003389620791626813,
-      "skew_nonexact_energy_fraction": 0.1777932051799689,
-      "fano_star_curl_rms": 1.679545462579454e-09,
-      "tetra_face_curl_rms": 1.679545462579454e-09,
-      "top_curl_triangle": "B-,V-,V+",
-      "top_curl_type": "other_triangle"
+    {
+      "cumulative_energy": 0.9276629793327739,
+      "energy_fraction": 0.38437109337594716,
+      "mode": 2,
+      "mode_name": "kernel-spike q4-loss polarity",
+      "singular_value": 1395.8983985257423,
+      "top_abs_builders": "H2047_PURIST:-0.3404 ; FACE12_ANCHOR:-0.2997 ; SIGMA_MIN:-0.2990 ; STOCHASTIC_CONTROL:-0.2966 ; H954_CORRIDOR:-0.2840",
+      "top_abs_jabbers": "KERNEL_SPIKE:+0.6177 ; RANK4_TAX:+0.3791 ; RANDOM_JABBER:+0.2846 ; MONODROME_CONTAMINATOR:+0.2616 ; NONE:-0.2450",
+      "top_feature_correlations": "q4:-0.6929 ; payoff:+0.6320 ; R_Omega:+0.6206 ; loss:-0.6148 ; curved:+0.4540 ; win:+0.4438",
+      "top_negative_builder": "H2047_PURIST",
+      "top_negative_jabber": "NONE",
+      "top_positive_builder": "ROBUST_REVEAL",
+      "top_positive_jabber": "KERNEL_SPIKE"
     },
-    "clean_null_operator": {
-      "null_point": "001",
-      "fit_energy_fraction": 0.009561337827212121,
-      "full_WD6_invariant_energy_fraction": 0.16482101497678858,
-      "pair3_descent_energy_fraction": 0.9999999999999989,
-      "antisymmetric_energy_fraction": 0.005477977682729811,
-      "skew_nonexact_energy_fraction": 5.068756466098048e-28,
-      "fano_star_curl_rms": 1.7183127126015678e-11,
-      "tetra_face_curl_rms": 1.7183127126015678e-11
+    {
+      "cumulative_energy": 0.9800779626588477,
+      "energy_fraction": 0.052414983326073826,
+      "mode": 3,
+      "mode_name": "monodromy-contamination correction",
+      "singular_value": 515.473300481971,
+      "top_abs_builders": "CURVATURE_ZERO:-0.8024 ; MONODROME_PURIST:+0.4522 ; BLUFF_REVEAL:-0.2294 ; EMERGENCE_SEEKER:-0.2252 ; ROBUST_REVEAL:+0.1368",
+      "top_abs_jabbers": "MONODROME_CONTAMINATOR:+0.4831 ; KERNEL_SPIKE:-0.4033 ; BLUFF_ENGINE:+0.3845 ; RANK4_TAX:-0.3670 ; EXTRACTOR_LURE:+0.3369",
+      "top_feature_correlations": "loss:-0.3598 ; payoff:+0.2458 ; win:+0.2382 ; R_Omega:+0.2289 ; pure:+0.2211 ; P1_point:+0.2191",
+      "top_negative_builder": "CURVATURE_ZERO",
+      "top_negative_jabber": "KERNEL_SPIKE",
+      "top_positive_builder": "MONODROME_PURIST",
+      "top_positive_jabber": "MONODROME_CONTAMINATOR"
     },
-    "rank_truncation_curvature": [
-      {
-        "truncation_rank": 1,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.36520266393792317,
-        "relative_reconstruction_error": 0.7967416997133241,
-        "A6_participation_rank": 1.0000000000000004,
-        "full_WD6_invariant_energy_fraction": 4.165033163437276e-05,
-        "pair3_descent_energy_fraction": 0.47331626530291127,
-        "antisymmetric_energy_fraction": 0.4998750490050969,
-        "skew_nonexact_energy_fraction": 0.20388715512875918,
-        "fano_star_curl_rms": 4.5036294969865856e-11,
-        "tetra_face_curl_rms": 4.5036294969865856e-11,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle"
-      },
-      {
-        "truncation_rank": 2,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.2931672810763993,
-        "relative_reconstruction_error": 0.8407334410641706,
-        "A6_participation_rank": 1.0552431334608354,
-        "full_WD6_invariant_energy_fraction": 0.1653965359869856,
-        "pair3_descent_energy_fraction": 0.9854243782022911,
-        "antisymmetric_energy_fraction": 0.030631389599929983,
-        "skew_nonexact_energy_fraction": 0.17599782627356222,
-        "fano_star_curl_rms": 5.764247943325751e-10,
-        "tetra_face_curl_rms": 5.764247943325751e-10,
-        "top_curl_triangle": "B+,V-,V+",
-        "top_curl_type": "other_triangle"
-      },
-      {
-        "truncation_rank": 3,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.28274101259371764,
-        "relative_reconstruction_error": 0.8469114401200887,
-        "A6_participation_rank": 1.0159321357123707,
-        "full_WD6_invariant_energy_fraction": 0.16338961787984171,
-        "pair3_descent_energy_fraction": 0.9939708927091636,
-        "antisymmetric_energy_fraction": 0.007526462456895937,
-        "skew_nonexact_energy_fraction": 0.1737619225565848,
-        "fano_star_curl_rms": 6.5491005041627e-10,
-        "tetra_face_curl_rms": 6.5491005041627e-10,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle"
-      },
-      {
-        "truncation_rank": 4,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.286103109568407,
-        "relative_reconstruction_error": 0.8449241921211589,
-        "A6_participation_rank": 1.0114030571920594,
-        "full_WD6_invariant_energy_fraction": 0.16383790243977547,
-        "pair3_descent_energy_fraction": 0.9909370135362525,
-        "antisymmetric_energy_fraction": 0.007740907082673905,
-        "skew_nonexact_energy_fraction": 0.17538301566315892,
-        "fano_star_curl_rms": 9.273059542533468e-10,
-        "tetra_face_curl_rms": 9.273059542533468e-10,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle"
-      },
-      {
-        "truncation_rank": 5,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.28390641839383074,
-        "relative_reconstruction_error": 0.8462231275533475,
-        "A6_participation_rank": 1.0073087348242815,
-        "full_WD6_invariant_energy_fraction": 0.1648563683391055,
-        "pair3_descent_energy_fraction": 0.9922560320589467,
-        "antisymmetric_energy_fraction": 0.004677201416082456,
-        "skew_nonexact_energy_fraction": 0.17754008248060169,
-        "fano_star_curl_rms": 1.4760290750756625e-09,
-        "tetra_face_curl_rms": 1.4760290750756625e-09,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle"
-      },
-      {
-        "truncation_rank": 6,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.28381040271478647,
-        "relative_reconstruction_error": 0.8462798575443076,
-        "A6_participation_rank": 1.0072948788476606,
-        "full_WD6_invariant_energy_fraction": 0.16487230104383446,
-        "pair3_descent_energy_fraction": 0.992245371540145,
-        "antisymmetric_energy_fraction": 0.0046963801366107375,
-        "skew_nonexact_energy_fraction": 0.17754185001420503,
-        "fano_star_curl_rms": 1.496437544420462e-09,
-        "tetra_face_curl_rms": 1.496437544420462e-09,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle"
-      },
-      {
-        "truncation_rank": 8,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.2832333393806474,
-        "relative_reconstruction_error": 0.8466207300907252,
-        "A6_participation_rank": 1.0067793389996857,
-        "full_WD6_invariant_energy_fraction": 0.16523012879981297,
-        "pair3_descent_energy_fraction": 0.9934160214411056,
-        "antisymmetric_energy_fraction": 0.003335398746902941,
-        "skew_nonexact_energy_fraction": 0.177740210930759,
-        "fano_star_curl_rms": 1.659832366522751e-09,
-        "tetra_face_curl_rms": 1.659832366522751e-09,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle"
-      },
-      {
-        "truncation_rank": 12,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.28252031468127864,
-        "relative_reconstruction_error": 0.8470417258427838,
-        "A6_participation_rank": 1.006647098972297,
-        "full_WD6_invariant_energy_fraction": 0.16524346660184316,
-        "pair3_descent_energy_fraction": 0.993455047075297,
-        "antisymmetric_energy_fraction": 0.003477552134751026,
-        "skew_nonexact_energy_fraction": 0.17778045222178646,
-        "fano_star_curl_rms": 1.6718089433001298e-09,
-        "tetra_face_curl_rms": 1.6718089433001298e-09,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle"
-      },
-      {
-        "truncation_rank": 16,
-        "null_point": "011",
-        "operator_kind": "normalized",
-        "fit_energy_fraction": 0.2825132194610591,
-        "relative_reconstruction_error": 0.8470459140677917,
-        "A6_participation_rank": 1.006592571792518,
-        "full_WD6_invariant_energy_fraction": 0.1652712806308007,
-        "pair3_descent_energy_fraction": 0.9935526370391355,
-        "antisymmetric_energy_fraction": 0.003389620791626951,
-        "skew_nonexact_energy_fraction": 0.17779320517996908,
-        "fano_star_curl_rms": 1.6783333782437534e-09,
-        "tetra_face_curl_rms": 1.6783333782437534e-09,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle"
-      }
-    ],
-    "mode_curvature_descent_typing": [
-      {
-        "original_Romega_mode": 1,
-        "mode_singular_value": 1659.5680259168257,
-        "null_point": "011",
-        "fit_energy_fraction": 0.36520266393792317,
-        "relative_reconstruction_error": 0.796741699713324,
-        "A6_participation_rank": 1.0000000000000002,
-        "full_WD6_invariant_energy_fraction": 4.165033163437251e-05,
-        "full_WD6_breaking_energy_fraction": 0.9999583496683656,
-        "pair3_descent_energy_fraction": 0.47331626530291127,
-        "pair3_breaking_energy_fraction": 0.5266837346970887,
-        "antisymmetric_energy_fraction": 0.499875049005097,
-        "skew_exact_energy_fraction": 0.796112844871241,
-        "skew_nonexact_energy_fraction": 0.20388715512875918,
-        "fano_star_curl_rms": 4.732772779376308e-11,
-        "tetra_face_curl_rms": 4.732772779376308e-11,
-        "opposite_pair_skew_rms": 556.21714227678,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle",
-        "top_relation_orbit_by_mean": "adjacent_edges",
-        "top_relation_mean": -3989.253803392758
-      },
-      {
-        "original_Romega_mode": 2,
-        "mode_singular_value": 1395.8983985257423,
-        "null_point": "010",
-        "fit_energy_fraction": 0.18815782763566472,
-        "relative_reconstruction_error": 0.9010228478592189,
-        "A6_participation_rank": 1.0000000000000004,
-        "full_WD6_invariant_energy_fraction": 0.16558079895975006,
-        "full_WD6_breaking_energy_fraction": 0.8344192010402499,
-        "pair3_descent_energy_fraction": 0.9944181932835451,
-        "pair3_breaking_energy_fraction": 0.005581806716454918,
-        "antisymmetric_energy_fraction": 0.003257603120749887,
-        "skew_exact_energy_fraction": 0.8797965766657789,
-        "skew_nonexact_energy_fraction": 0.12020342333422086,
-        "fano_star_curl_rms": 3.938549067441325e-10,
-        "tetra_face_curl_rms": 3.938549067441325e-10,
-        "opposite_pair_skew_rms": 134.8970564682073,
-        "top_curl_triangle": "B+,V-,V+",
-        "top_curl_type": "other_triangle",
-        "top_relation_orbit_by_mean": "same_edge",
-        "top_relation_mean": 46592.671642083376
-      },
-      {
-        "original_Romega_mode": 3,
-        "mode_singular_value": 515.473300481971,
-        "null_point": "011",
-        "fit_energy_fraction": 0.10982760595284051,
-        "relative_reconstruction_error": 0.943489477443792,
-        "A6_participation_rank": 1.0000000000000009,
-        "full_WD6_invariant_energy_fraction": 0.06672318450027416,
-        "full_WD6_breaking_energy_fraction": 0.9332768154997259,
-        "pair3_descent_energy_fraction": 0.7545653085772281,
-        "pair3_breaking_energy_fraction": 0.24543469142277186,
-        "antisymmetric_energy_fraction": 0.29983044649917756,
-        "skew_exact_energy_fraction": 0.8232698084979072,
-        "skew_nonexact_energy_fraction": 0.1767301915020925,
-        "fano_star_curl_rms": 9.65975801304292e-11,
-        "tetra_face_curl_rms": 9.65975801304292e-11,
-        "opposite_pair_skew_rms": 2.0825784802168448,
-        "top_curl_triangle": "B+,V-,V+",
-        "top_curl_type": "other_triangle",
-        "top_relation_orbit_by_mean": "opposite_edges",
-        "top_relation_mean": 5089.058386600664
-      },
-      {
-        "original_Romega_mode": 4,
-        "mode_singular_value": 198.3042957064743,
-        "null_point": "010",
-        "fit_energy_fraction": 0.03802891156324555,
-        "relative_reconstruction_error": 0.9808012481827061,
-        "A6_participation_rank": 1.0,
-        "full_WD6_invariant_energy_fraction": 0.1638815664988101,
-        "full_WD6_breaking_energy_fraction": 0.8361184335011899,
-        "pair3_descent_energy_fraction": 0.9792545578744629,
-        "pair3_breaking_energy_fraction": 0.020745442125537084,
-        "antisymmetric_energy_fraction": 0.008355300503569663,
-        "skew_exact_energy_fraction": 0.8230646147286124,
-        "skew_nonexact_energy_fraction": 0.17693538527138752,
-        "fano_star_curl_rms": 1.9382780693616414e-10,
-        "tetra_face_curl_rms": 1.9382780693616414e-10,
-        "opposite_pair_skew_rms": 11.246546914882444,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle",
-        "top_relation_orbit_by_mean": "same_edge",
-        "top_relation_mean": 20211.15322820834
-      },
-      {
-        "original_Romega_mode": 5,
-        "mode_singular_value": 150.90564032172816,
-        "null_point": "100",
-        "fit_energy_fraction": 0.10242704256762727,
-        "relative_reconstruction_error": 0.9474032707524155,
-        "A6_participation_rank": 1.0,
-        "full_WD6_invariant_energy_fraction": 0.16648976845614644,
-        "full_WD6_breaking_energy_fraction": 0.8335102315438536,
-        "pair3_descent_energy_fraction": 0.21548785961141526,
-        "pair3_breaking_energy_fraction": 0.7845121403885847,
-        "antisymmetric_energy_fraction": 0.0005306946315608617,
-        "skew_exact_energy_fraction": 0.8009289594667556,
-        "skew_nonexact_energy_fraction": 0.19907104053324443,
-        "fano_star_curl_rms": 1.026797236921239e-10,
-        "tetra_face_curl_rms": 2126.509651231591,
-        "opposite_pair_skew_rms": 2246.758990907239,
-        "top_curl_triangle": "B-,V-,V+",
-        "top_curl_type": "other_triangle",
-        "top_relation_orbit_by_mean": "same_edge",
-        "top_relation_mean": 68926.95814314544
-      },
-      {
-        "original_Romega_mode": 6,
-        "mode_singular_value": 130.25919498638805,
-        "null_point": "001",
-        "fit_energy_fraction": 0.0005830676064047381,
-        "relative_reconstruction_error": 0.9997084236884249,
-        "A6_participation_rank": 1.0000000000000027,
-        "full_WD6_invariant_energy_fraction": 0.14117952693230093,
-        "full_WD6_breaking_energy_fraction": 0.858820473067699,
-        "pair3_descent_energy_fraction": 0.9999999999999984,
-        "pair3_breaking_energy_fraction": 1.5543122344752192e-15,
-        "antisymmetric_energy_fraction": 0.07646141920309636,
-        "skew_exact_energy_fraction": 0.9999999999999997,
-        "skew_nonexact_energy_fraction": 4.6561671291945606e-29,
-        "fano_star_curl_rms": 2.4959192691501367e-15,
-        "tetra_face_curl_rms": 2.4959192691501367e-15,
-        "opposite_pair_skew_rms": 1.3654878164326829e-15,
-        "top_curl_triangle": "B-,B+,V+",
-        "top_curl_type": "other_triangle",
-        "top_relation_orbit_by_mean": "opposite_edges",
-        "top_relation_mean": 0.46901528403473286
-      }
-    ],
-    "interpretation": {
-      "WD6": "The six-channel residual is almost entirely outside full W(D6)-invariant scalar-diagonal form; it selects a chamber rather than a Regge-invariant scalar.",
-      "quotient_descent": "Pair3 descent measures whether the six signed channels collapse to B,V,S. Low descent means Pin/signed level curvature; high descent means CY/pair quotient curvature.",
-      "curvature": "Nonzero triangle curl and non-exact skew component turn the curvature language into an actual finite 1-form obstruction test.",
-      "rank_tail": "The rank-4 e-lock tail can be audited by curvature/descent metrics in rank_truncation_curvature_obstruction.csv."
+    {
+      "cumulative_energy": 0.987835204749612,
+      "energy_fraction": 0.007757242090764249,
+      "mode": 4,
+      "mode_name": "homology/bluff stabilizer-breaking micro-mode",
+      "singular_value": 198.3042957064743,
+      "top_abs_builders": "MONODROME_PURIST:-0.5973 ; EMERGENCE_SEEKER:-0.4548 ; ROBUST_REVEAL:-0.3667 ; STOCHASTIC_CONTROL:+0.2754 ; CURVATURE_ZERO:-0.2651",
+      "top_abs_jabbers": "HOMOLOGY_PUNCTURE:-0.6303 ; MONODROME_CONTAMINATOR:-0.4653 ; BLUFF_ENGINE:+0.3429 ; FACE15_DENIAL:+0.3017 ; KERNEL_DRIP:+0.2280",
+      "top_feature_correlations": "R_Omega:+0.0881 ; payoff:+0.0814 ; omega:-0.0787 ; loss:-0.0784 ; Pi_flag:-0.0759 ; F7_minus_L3:+0.0747",
+      "top_negative_builder": "MONODROME_PURIST",
+      "top_negative_jabber": "HOMOLOGY_PUNCTURE",
+      "top_positive_builder": "STOCHASTIC_CONTROL",
+      "top_positive_jabber": "BLUFF_ENGINE"
     },
-    "files": {
-      "operator_summary": "Romega_A6_curvature_descent_summary.csv",
-      "exactness": "Romega_A6_curvature_exactness.csv",
-      "cycle_curls": "Romega_A6_fano_star_and_tetra_face_curls.csv",
-      "pair3_descent": "Romega_A6_pair3_quotient_descent.csv",
-      "relation_coefficients": "Romega_A6_tetrahedral_relation_coefficients.csv",
-      "rank_tail": "rank_truncation_curvature_obstruction.csv",
-      "mode_typing": "singular_mode_curvature_descent_typing.csv",
-      "cycle_ledger": "best_normalized_curvature_cycle_ledger.csv"
+    {
+      "cumulative_energy": 0.9923273526442643,
+      "energy_fraction": 0.004492147894652222,
+      "mode": 5,
+      "mode_name": "q4/monodromy micro-mode",
+      "singular_value": 150.90564032172816,
+      "top_abs_builders": "Q4_BALANCER:+0.4763 ; DIVERGENCE_MIN:-0.4039 ; ROBUST_REVEAL:-0.3058 ; SIGMA_MIN:+0.2942 ; BLUFF_REVEAL:-0.2935",
+      "top_abs_jabbers": "RANDOM_JABBER:-0.6897 ; HOMOLOGY_PUNCTURE:-0.4712 ; MONODROME_CONTAMINATOR:+0.3602 ; KERNEL_SPIKE:+0.1884 ; DIVERGENCE_TAX:-0.1711",
+      "top_feature_correlations": "loss:-0.0978 ; win:+0.0806 ; monodrome:+0.0725 ; R_Omega:+0.0670 ; payoff:+0.0661 ; bluff:-0.0512",
+      "top_negative_builder": "DIVERGENCE_MIN",
+      "top_negative_jabber": "RANDOM_JABBER",
+      "top_positive_builder": "Q4_BALANCER",
+      "top_positive_jabber": "MONODROME_CONTAMINATOR"
+    },
+    {
+      "cumulative_energy": 0.9956743847699382,
+      "energy_fraction": 0.0033470321256739263,
+      "mode": 6,
+      "mode_name": "kernel-drip face-denial micro-mode",
+      "singular_value": 130.25919498638805,
+      "top_abs_builders": "SIGMA_MIN:-0.4278 ; MONODROME_PURIST:+0.3948 ; BASIN_SWITCHER:+0.3791 ; ROBUST_REVEAL:-0.3556 ; H2047_PURIST:-0.3508",
+      "top_abs_jabbers": "FACE15_DENIAL:-0.5374 ; KERNEL_DRIP:+0.5100 ; NONE:-0.3067 ; RANK4_TAX:-0.3066 ; DIVERGENCE_TAX:-0.2534",
+      "top_feature_correlations": "loss:-0.0814 ; pure:+0.0645 ; R_Omega:+0.0579 ; payoff:+0.0561 ; hpop:+0.0348 ; sigma_H:-0.0348",
+      "top_negative_builder": "SIGMA_MIN",
+      "top_negative_jabber": "FACE15_DENIAL",
+      "top_positive_builder": "MONODROME_PURIST",
+      "top_positive_jabber": "KERNEL_DRIP"
+    },
+    {
+      "cumulative_energy": 0.9972402070904218,
+      "energy_fraction": 0.0015658223204836547,
+      "mode": 7,
+      "mode_name": "tail micro-mode",
+      "singular_value": 89.09425265627488,
+      "top_abs_builders": "BLUFF_REVEAL:+0.5570 ; BASIN_SWITCHER:+0.4606 ; FACE12_ANCHOR:-0.3978 ; DIVERGENCE_MIN:-0.3269 ; H954_CORRIDOR:-0.2313",
+      "top_abs_jabbers": "FACE15_DENIAL:-0.5347 ; FACE12_DENIAL:+0.3833 ; RANK4_TAX:+0.3419 ; MONODROME_CONTAMINATOR:-0.3262 ; NONE:+0.3218",
+      "top_feature_correlations": "F7_minus_L3:+0.0841 ; q4:-0.0541 ; loss:-0.0529 ; win:+0.0488 ; omega:-0.0418 ; R_Omega:+0.0396",
+      "top_negative_builder": "FACE12_ANCHOR",
+      "top_negative_jabber": "FACE15_DENIAL",
+      "top_positive_builder": "BLUFF_REVEAL",
+      "top_positive_jabber": "FACE12_DENIAL"
+    },
+    {
+      "cumulative_energy": 0.9984902613938369,
+      "energy_fraction": 0.0012500543034151454,
+      "mode": 8,
+      "mode_name": "tail micro-mode",
+      "singular_value": 79.6054660396199,
+      "top_abs_builders": "SPREAD_CONTROL:-0.8489 ; H2047_PURIST:+0.3115 ; SIGMA_MIN:+0.2083 ; MONODROME_PURIST:-0.1910 ; Q4_BALANCER:+0.1633",
+      "top_abs_jabbers": "OMEGA_LOCK:-0.5465 ; FACE17_DENIAL:+0.4432 ; H_MASK_SPLIT:+0.4153 ; EXTRACTOR_LURE:+0.2972 ; DIVERGENCE_TAX:+0.2777",
+      "top_feature_correlations": "flat:+0.0759 ; omega:-0.0641 ; R_Omega:+0.0354 ; pure:+0.0352 ; win:+0.0349 ; payoff:+0.0348",
+      "top_negative_builder": "SPREAD_CONTROL",
+      "top_negative_jabber": "OMEGA_LOCK",
+      "top_positive_builder": "H2047_PURIST",
+      "top_positive_jabber": "FACE17_DENIAL"
     }
-  }
+  ],
+  "schema": "G.d20.Romega_classification",
+  "source_sha256": "91be63b0a253d9ab84d13e53d0c665acf2a496b5500a9628d682e1afbcea7af0",
+  "status": "G_ROMega_CURVATURE_DESCENT_COMPLETE"
 }

@@ -1,0 +1,216 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "26d909b1202eb3a4dacd85bf63d001533d8d50659a88807b5074204bdd11627e",
+  "checks": {
+    "all_values_finite": true,
+    "interior_roundtrip_machine_precision": true,
+    "near_extremal_conditioning_detected": true,
+    "near_extremal_roundtrip_bounded": true,
+    "noise_projection_detects_inconsistent_poles": true,
+    "source_inverse_precision_is_certified": true
+  },
+  "claim": "The Kerr-Newman pole packet y=(log R, log T, omega_H, phi_H) is a machine-precision inverse coordinate witness for ordinary subextremal states, and its repair residual is exploitable as a conditioning and inconsistent-pole detector.",
+  "definition": {
+    "forward": "x=(M,a,Q) -> y=(log(r_+^2+a^2), log T, a/R, Q r_+/R)",
+    "inverse": "R=exp(y0), T=exp(y1), a=omega R, r_+=sqrt(R-a^2), Q=phi R/r_+, M repaired from radial and constraint equations",
+    "projection_residual": "||forward(inverse(y_noisy))-y_noisy||_2",
+    "scope": "double-precision conditioning certificate for the certified simulator, not a numerical-relativity PDE theorem"
+  },
+  "derived": {
+    "interior": {
+      "forward_condition_number_case": "interior_025",
+      "forward_condition_number_max": 20.211742450929716,
+      "inverse_condition_number_case": "interior_056",
+      "inverse_condition_number_max": 20.222508222924308,
+      "inverse_operator_norm_case": "interior_035",
+      "inverse_operator_norm_max": 22.095095755233142,
+      "max_abs_state_error": 4.440892098500626e-16,
+      "max_abs_state_error_case": "interior_000",
+      "max_pole_residual_case": "interior_014",
+      "max_pole_residual_norm": 1.0007415106216803e-15,
+      "sample_count": 64
+    },
+    "near_extremal": {
+      "forward_condition_number_case": "near_M1_theta0.2_gap1e-10",
+      "forward_condition_number_max": 74510969984.18523,
+      "inverse_condition_number_case": "near_M1.4_theta1.25_gap1e-02",
+      "inverse_condition_number_max": 10.303384012282264,
+      "inverse_operator_norm_case": "near_M1.4_theta0.2_gap1e-02",
+      "inverse_operator_norm_max": 4.712889211225314,
+      "max_abs_state_error": 3.3306690738754696e-16,
+      "max_abs_state_error_case": "near_M1_theta0.9_gap1e-10",
+      "max_pole_residual_case": "near_M1_theta0.9_gap1e-10",
+      "max_pole_residual_norm": 1.1101926847347618e-06,
+      "sample_count": 30
+    },
+    "near_over_interior_forward_condition_ratio": 3686518872.1399827,
+    "near_over_interior_inverse_operator_norm_ratio": 0.21330023926730815,
+    "noise_projection": {
+      "by_level": {
+        "1e-06": {
+          "invalid_projection_count": 6,
+          "max_amplification": 13.199376004578765,
+          "max_projection_residual_norm": 4.705293843702603,
+          "max_projection_residual_over_noise": 4705293.843702603,
+          "sample_count": 60
+        },
+        "1e-08": {
+          "invalid_projection_count": 5,
+          "max_amplification": 13.0788952078821,
+          "max_projection_residual_norm": 2.4127006259037174,
+          "max_projection_residual_over_noise": 241270062.59037173,
+          "sample_count": 60
+        },
+        "1e-10": {
+          "invalid_projection_count": 0,
+          "max_amplification": 13.478076812090235,
+          "max_projection_residual_norm": 0.9776292719334885,
+          "max_projection_residual_over_noise": 9776292719.334885,
+          "sample_count": 60
+        },
+        "1e-12": {
+          "invalid_projection_count": 0,
+          "max_amplification": 10.479137577019674,
+          "max_projection_residual_norm": 0.0055139681252635055,
+          "max_projection_residual_over_noise": 5513968125.263506,
+          "sample_count": 60
+        }
+      },
+      "invalid_projection_count": 11,
+      "max_amplification": 13.478076812090235,
+      "max_projection_residual_norm": 4.705293843702603,
+      "max_projection_residual_over_noise": 9776292719.334885,
+      "sample_count": 240
+    },
+    "worst_cases": {
+      "interior_by_inverse_norm": {
+        "case_id": "interior_035",
+        "family": "interior",
+        "forward_jacobian": {
+          "condition_number": 13.19394710623239,
+          "operator_norm": 0.9625716058209303,
+          "smallest_singular_value": 0.0729555453020001
+        },
+        "inverse_jacobian": {
+          "condition_number": 19.610127438726355,
+          "operator_norm": 22.095095755233142,
+          "smallest_singular_value": 1.1267186215016347
+        },
+        "pole": {
+          "log_R": 3.093902349238337,
+          "log_T": -4.102334020788972,
+          "omega_H": 0.020556766959092195,
+          "phi_H": 0.0994216736086978
+        },
+        "roundtrip": {
+          "M_abs_error": 0.0,
+          "Q_abs_error": 5.551115123125783e-17,
+          "a_abs_error": 5.551115123125783e-17,
+          "max_abs_state_error": 5.551115123125783e-17,
+          "pole_residual_norm": 1.4304896245381992e-17
+        },
+        "state": {
+          "M": 2.383132523211259,
+          "Q": 0.4691886266546858,
+          "a": 0.4535441090260839,
+          "discriminant": 5.253480396972888,
+          "extremality_ratio": 0.2738262937796948
+        }
+      },
+      "near_extremal_by_inverse_norm": {
+        "case_id": "near_M1.4_theta0.2_gap1e-02",
+        "family": "near_extremal",
+        "forward_jacobian": {
+          "condition_number": 119.85149900483758,
+          "operator_norm": 43.86316531471757,
+          "smallest_singular_value": 0.3659792800167407
+        },
+        "inverse_jacobian": {
+          "condition_number": 8.171464697727549,
+          "operator_norm": 4.712889211225314,
+          "smallest_singular_value": 0.5767496263596353
+        },
+        "pole": {
+          "log_R": 1.480959626880189,
+          "log_T": -4.940882230294163,
+          "omega_H": 0.3089201347250421,
+          "phi_H": 0.10003702863018546
+        },
+        "roundtrip": {
+          "M_abs_error": 0.0,
+          "Q_abs_error": 0.0,
+          "a_abs_error": 2.220446049250313e-16,
+          "max_abs_state_error": 2.220446049250313e-16,
+          "pole_residual_norm": 8.077206327196705e-15
+        },
+        "state": {
+          "M": 1.4,
+          "Q": 0.27535569248195485,
+          "a": 1.3583722768879607,
+          "discriminant": 0.039004000000000316,
+          "extremality_ratio": 0.99
+        }
+      },
+      "noise_by_projection_residual": {
+        "amplification": 2.1058389730183005,
+        "anchor_case_id": "near_M1.4_theta0.9_gap1e-10",
+        "anchor_family": "near_extremal",
+        "level": 1e-06,
+        "noise_norm": 1e-06,
+        "projection_residual_norm": 4.705293843702603,
+        "projection_residual_over_noise": 4705293.843702603,
+        "projection_valid": true,
+        "sample_index": 1,
+        "state_delta_norm": 2.1058389730183e-06
+      }
+    }
+  },
+  "exploitability": [
+    "coordinate witness: reconstruct (M,a,Q) directly from y without an optimizer",
+    "roundtrip gate: reject or quarantine pole packets with residual above tolerance",
+    "conditioning alarm: near-extremal states show much larger inverse sensitivity",
+    "repair map: noisy four-coordinate packets project back to the three-parameter Kerr-Newman surface"
+  ],
+  "input_witness": {
+    "base_payload_sha256_without_conditioning_certificate": "7f649e679d40e7f5ce4a602e9778c7b49b3e8b52c017a86bdeae974ff1ed9b28",
+    "black_hole_status": "D20_BLACK_HOLE_CERTIFIED_SIMULATOR_PASS",
+    "path": "data/invariants/d20/certified_evidence_invariants.json",
+    "source_exact_inverse_audit": {
+      "max_abs_err_M": 4.440892098500626e-16,
+      "max_abs_err_Q": 1.1102230246251565e-16,
+      "max_abs_err_a": 1.1102230246251565e-16,
+      "mean_pole_residual_norm": 1.063715419964657e-16
+    }
+  },
+  "next_highest_yield_item": "Use the projection residual as a score in generated pole-packet searches and record which perturbation directions are tangent versus normal to the Kerr-Newman surface.",
+  "non_claims": [
+    "does not identify the simulator with a physical black-hole PDE solver",
+    "does not remove near-extremal conditioning risk",
+    "does not prove a theorem about arbitrary external coordinates"
+  ],
+  "object": "d20",
+  "sample_design": {
+    "interior_samples": 64,
+    "near_extremal_gaps": [
+      "1e-2",
+      "1e-4",
+      "1e-6",
+      "1e-8",
+      "1e-10"
+    ],
+    "near_extremal_samples": 30,
+    "noise_levels": [
+      "1e-12",
+      "1e-10",
+      "1e-8",
+      "1e-6"
+    ],
+    "noise_projection_samples": 240,
+    "rng_seeds": {
+      "interior": 20260524,
+      "noise_projection": 20260525
+    }
+  },
+  "schema": "d20.black_hole.inverse_conditioning",
+  "status": "D20_BLACK_HOLE_INVERSE_CONDITIONING_CERTIFIED"
+}

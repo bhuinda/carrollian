@@ -151,7 +151,7 @@ def solve(sample_relations: int | None, full: bool, p: int, keep_basis: bool) ->
         relation_count_matrix[int(i), int(j)] += 1
     mode = 'full' if full else 'prefix_sample'
     result = {
-        'schema': 'gnatural.c985.half_braiding_solver.v1',
+        'schema': 'gnatural.c985.half_braiding_solver.source_drop',
         'status': 'HALF_BRAIDING_SOLVER_FULL_SOLVED' if full else 'HALF_BRAIDING_SOLVER_REGISTERED_PREFIX_SAMPLE',
         'field': {'prime': int(p)},
         'equation': 'For every simple relation alpha:i->j, solve z_i * alpha = alpha * z_j with z_i in Hom(i,i).',

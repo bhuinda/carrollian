@@ -1,1 +1,0 @@
-See `v17_signed_fano_global_recovery/v17_signed_fano_global_recovery_report.md`.

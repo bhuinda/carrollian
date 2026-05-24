@@ -143,7 +143,7 @@ def write_theorem(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
     )
 
     manifest = {
-        "schema": "d20.theorem.t985_csdo_manifest.v1",
+        "schema": "d20.theorem.t985_csdo_manifest.source_drop",
         "name": "t985_csdo",
         "inputs": {
             "tensor_triples": {"path": rel(TENSOR_NPZ), "array": "triples", "canonical_dtype": "int64"},
@@ -166,7 +166,7 @@ def write_theorem(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
     }
 
     report = {
-        "schema": "d20.theorem.t985_csdo.v1",
+        "schema": "d20.theorem.t985_csdo.source_drop",
         "status": "T985_CSDO_THEOREM_INPUTS_CERTIFIED",
         "object": "d20",
         "claim": "The T985 structure-constant table and q42 quotient map are present as theorem-grade inputs and reproduce the certified A42/A12 quotient tensors.",
@@ -182,14 +182,14 @@ def write_theorem(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "relation_matrix": relation_matrix.astype(int).tolist(),
             "coefficient_matrix_by_source_target_objects": coefficient_matrix.astype(int).tolist(),
         },
-        "legacy_stage_replaced": "v22 tensor-chain stage",
+        "legacy_stage_replaced": "source_drop tensor-chain stage",
         "all_checks_pass": bool(all_checks_pass),
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})
     manifest["report_sha256"] = report["certificate_sha256"]
     manifest["manifest_sha256"] = sha_json({k: v for k, v in manifest.items() if k != "manifest_sha256"})
     registry = {
-        "schema": "d20.theorem_registry.v1",
+        "schema": "d20.theorem_registry.source_drop",
         "status": "D20_THEOREM_REGISTRY_BUILT",
         "theorem_count": 1,
         "theorems": [

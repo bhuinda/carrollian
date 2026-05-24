@@ -170,7 +170,7 @@ def main() -> int:
     pass_condition = surface_audit["passed"] and upstream_audit["passed"]
 
     report = {
-        "schema": "d20.integrity.universal_x_extractor_isolation.v1",
+        "schema": "d20.integrity.universal_x_extractor_isolation.source_drop",
         "status": (
             "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
             if pass_condition

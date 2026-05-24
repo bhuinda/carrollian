@@ -1,0 +1,8576 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d5ad5e79e916ab638b7e8f1047ee6555acb4c1f151b9b2fbd25d83d4dcd72ef3",
+  "checks": {
+    "all_packet_clock_images_are_0_or_13": true,
+    "all_packet_clocks_are_additive_mod26": true,
+    "all_residue_height_transport_is_certified": true,
+    "exact_public_flux_closes_on_certified_cycle_space": true,
+    "finite_anomaly_counter_is_certified": true,
+    "finite_exact_flux_balance_is_certified": true,
+    "gamma8_is_not_recovered": true,
+    "maximal_cancelled_packet_count_is_178": true,
+    "normalization_gcd_is_3072": true,
+    "recovery_covers_all_self_cancelled_masks": true,
+    "sector26_anomaly_cancellation_is_certified": true,
+    "strongest_dimension3_packet_count_is_88": true,
+    "terminal_dimension2_packet_count_is_90": true,
+    "typed_hidden_flux_is_R33_only_on_recovery_packets": true,
+    "typed_nonexact_optical_flux_update_is_certified": true,
+    "zero_and_z2_packet_types_are_both_present": true
+  },
+  "claim": "On each certified sector-26 anomaly-cancelled closed-return packet, exact public D20 flux closes and the normalized non-exact R33 update becomes additive modulo 26. The recovered finite flux-balance sector is therefore the union of the 178 maximal cancelled packets; gamma_8 is not part of that recovered sector.",
+  "definition": {
+    "normalization": "R33_norm(mask)=(-height_action(mask)/3072) mod 26.",
+    "recovered_packet_balance": "For a maximal cancelled packet P, Delta Q_public^exact=0 on closed returns and Delta R33_norm(a xor b)=Delta R33_norm(a)+Delta R33_norm(b) mod 26 for all a,b in P.",
+    "scope": "This is a finite modular flux-balance recovery on anomaly-cancelled packets, not a claim of unrestricted continuum BMS/Carrollian flux balance."
+  },
+  "derived": {
+    "all_packet_balance_records": [
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            4,
+            5,
+            7
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          184
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          184,
+          187,
+          252,
+          255
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "88875a39b72398d5872dc7acbd034bfc29b71418f06659f7ad636e52574f9230",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7,
+            8
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          392
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          392,
+          395,
+          460,
+          463
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "f66f12b1edd590e6dc6bbbd8a22cafd60c1736bb84097e99e0dd8d1fedfd1fa9",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            5,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          552
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          552,
+          555,
+          620,
+          623
+        ],
+        "max_integral_height_action_abs": 6948864,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "f562940868ff5c4d261a480ee8eff684f2651b1238f8765419e3efb8fe974b7d",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            5,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          688
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          688,
+          691,
+          756,
+          759
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "96c098a03bde9da2ce179e016dc008e72ab7b5bd10bb311bb58fa16e21ddf374",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          896
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          896,
+          899,
+          964,
+          967
+        ],
+        "max_integral_height_action_abs": 6509568,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "1ea2a6b80692a16fafd9eb46273b8721eec2e306bf4abc8adb6a8c528b777501",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            4,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          1176
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          1176,
+          1179,
+          1244,
+          1247
+        ],
+        "max_integral_height_action_abs": 8506368,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "237fb026b930fc006a2c4f9e7893faa615d0c8dc441068ec42b7f52dce9cad0d",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          1312
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          1312,
+          1315,
+          1380,
+          1383
+        ],
+        "max_integral_height_action_abs": 6230016,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "effa6f51a5909f9838f152f2235fc500e60ae7e88b80dac9053b87f7ccdab519",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          1544
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          1544,
+          1547,
+          1612,
+          1615
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "dc5f429cf833b4a0906541507ae17177ec9e82cd0a9ce6f3e7add585131d765c",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          68,
+          1680
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          68,
+          71,
+          1680,
+          1683,
+          1748,
+          1751
+        ],
+        "max_integral_height_action_abs": 8306688,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "75035c54e4edcd5ff965407a15a8461238df08271b6a788b9fbd45e3a3321f7d",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            7
+          ]
+        ],
+        "basis_masks": [
+          3,
+          112,
+          140
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          112,
+          115,
+          140,
+          143,
+          252,
+          255
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "877e1c8a836bd9b788df6024706eb065000c74c1a4e1bdd56aee45274b2ee2bb",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            3,
+            7,
+            8
+          ]
+        ],
+        "basis_masks": [
+          3,
+          112,
+          392
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          112,
+          115,
+          392,
+          395,
+          504,
+          507
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "e5d15d0066ea972c2a40f5a8be0b20dbc56e31f70d0eb425fd49c91c1f0a01cc",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            2,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          112,
+          644
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          112,
+          115,
+          644,
+          647,
+          756,
+          759
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "8cb150f01fdbf635cf3055668921acbdf616090234e5fc422a4274367a0be4c4",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          112,
+          896
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          112,
+          115,
+          896,
+          899,
+          1008,
+          1011
+        ],
+        "max_integral_height_action_abs": 7507968,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "734c7fd0b87654148cc36b356265666621e2b0a36fb4ee825af011b795f872e5",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          112,
+          1544
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          112,
+          115,
+          1544,
+          1547,
+          1656,
+          1659
+        ],
+        "max_integral_height_action_abs": 8346624,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "0529adda3e5572e25f8cf0a64d3a2626cf9cac3dd90d6ef566e28a479c71e67f",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "basis_masks": [
+          3,
+          140,
+          320
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          140,
+          143,
+          320,
+          323,
+          460,
+          463
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "df5b84a72849eee2706fc94a9b91714cfaac5b5e8476d43d48ee82fc5940af2f",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          140,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          140,
+          143,
+          1104,
+          1107,
+          1244,
+          1247
+        ],
+        "max_integral_height_action_abs": 8506368,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "32da0e41dd2befd908222e17401bccd92031f4725d4892f08d0d38207dcdee49",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          140,
+          1312
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          140,
+          143,
+          1312,
+          1315,
+          1452,
+          1455
+        ],
+        "max_integral_height_action_abs": 7587840,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "ecae6185ea2650d093cd1c789bb88407a851d95a8f5efef4e15380eb0170b548",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            4,
+            5,
+            7
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "basis_masks": [
+          3,
+          184,
+          320
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          184,
+          187,
+          320,
+          323,
+          504,
+          507
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "6af0378cd5e1a1928b1c83f15691df645ded435e8b2ccb1cc0148d8fc568711a",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            3,
+            5,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          320,
+          552
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          320,
+          323,
+          552,
+          555,
+          872,
+          875
+        ],
+        "max_integral_height_action_abs": 6549504,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "f6edced3c28c33e2e2ec91787ec15a5314f7bf4ec9c4d917faeb3524bf0e4014",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            2,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          320,
+          644
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          320,
+          323,
+          644,
+          647,
+          964,
+          967
+        ],
+        "max_integral_height_action_abs": 6509568,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "49eb0d6bb75d698743bc18e4c6ba2b71a881b92eaefb6af4cce26d6ab1b0afd2",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            4,
+            5,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          320,
+          688
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          320,
+          323,
+          688,
+          691,
+          1008,
+          1011
+        ],
+        "max_integral_height_action_abs": 7507968,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "687cf1fbe9d0ba178825616120455aaeafc4e8d0e66cc2ac3cae58d636d420b0",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          320,
+          1060
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          320,
+          323,
+          1060,
+          1063,
+          1380,
+          1383
+        ],
+        "max_integral_height_action_abs": 6230016,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "ba947e81b5644077975b04b5d589b33767628b43e28bbc3901040afb4262c1ac",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            3,
+            4,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          320,
+          1176
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          320,
+          323,
+          1176,
+          1179,
+          1496,
+          1499
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "67550da1f5ae3d1f0b45596358af0cf4f3c552b8c138e367f44d80209af3a9ff",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          320,
+          1544
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          320,
+          323,
+          1544,
+          1547,
+          1864,
+          1867
+        ],
+        "max_integral_height_action_abs": 6948864,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "bc9d483cc832b9b33aeec3f0ca54fc53bb55a4d0012f5b54231faedbf89c7477",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            4,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          320,
+          1680
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          320,
+          323,
+          1680,
+          1683,
+          2000,
+          2003
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "fdbf12577607fa49df7d517b13a7e88037cea0274d80b25dd18247562fea0f1f",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            7,
+            8
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          392,
+          1060
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          392,
+          395,
+          1060,
+          1063,
+          1452,
+          1455
+        ],
+        "max_integral_height_action_abs": 7587840,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "ae5b937e97b510d51c60103478b2cf5b642300227682864333269a7b5c111a64",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            7,
+            8
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          392,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          392,
+          395,
+          1104,
+          1107,
+          1496,
+          1499
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "7c8f0be199537e6081238e3cc54a4bc46f6954eacacc52bc992159439b859bfc",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            5,
+            9
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          552,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          552,
+          555,
+          1104,
+          1107,
+          1656,
+          1659
+        ],
+        "max_integral_height_action_abs": 8346624,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "94b7c4f9d8de8df3db43ed5d1d2614f832878c92bca6034b3f813068cd9bb2f9",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          644,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          644,
+          647,
+          1104,
+          1107,
+          1748,
+          1751
+        ],
+        "max_integral_height_action_abs": 8306688,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3195b98e999dd897a0afc00ce038d8d2bfb4d40d62c4a2910476b2b4c392a838",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          644,
+          1312
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          644,
+          647,
+          1312,
+          1315,
+          1956,
+          1959
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "07e7529ac7649c9867b41b608fd1cd957fef3766f92ec2267c9e7f441c0c1a7f",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          896,
+          1060
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          896,
+          899,
+          1060,
+          1063,
+          1956,
+          1959
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "21c681c27cd42faa7f8cd2f4753c854534c08a7d6a1a052d7497f8422f796830",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          896,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          3,
+          896,
+          899,
+          1104,
+          1107,
+          2000,
+          2003
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "a0236c6f7e2da4d7fa8bb9787a25b33fde138abaa7db0b862f196a2e15ff2a79",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            3,
+            5,
+            7
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          170
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          170,
+          187,
+          238,
+          255
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "e5861296ff00bcb71219d81db5ddd260f2e1de903106d3a966307ddcd474b86f",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7,
+            8
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          392
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          392,
+          409,
+          460,
+          477
+        ],
+        "max_integral_height_action_abs": 6469632,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "ed98549819d912800ed7292f27405468b31f921448e628b6c5536330da7ed8d1",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            5,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          552
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          552,
+          569,
+          620,
+          637
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "65dc76a10bda3e48941d65d02d57e92023b74c6fdf73fdde4ecd252f67c5eac2",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            5,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          674
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          674,
+          691,
+          742,
+          759
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "cfa2dbcfb968e2d7bef3abbe03e523a380ba15ecb8f1696462df7bf6af986a71",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          896
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          896,
+          913,
+          964,
+          981
+        ],
+        "max_integral_height_action_abs": 6269952,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "113f7524ddc6b155b4cc95f4c73eb7623076ed7526fb8f49efc5f08684ddc3cd",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            3,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          1162
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          1162,
+          1179,
+          1230,
+          1247
+        ],
+        "max_integral_height_action_abs": 8506368,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "e59bfcfb9848ecde65c54034f288e46d42ba41125f82040a6935880ce930c00f",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          1312
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          1312,
+          1329,
+          1380,
+          1397
+        ],
+        "max_integral_height_action_abs": 5990400,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "8354fe5fe450fe63637640f8561c5449dc609870c5889508bf943d8a65cabdb0",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          1544
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          1544,
+          1561,
+          1612,
+          1629
+        ],
+        "max_integral_height_action_abs": 7108608,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "e3048e6ce0c5c9d58636a1289301aef0ca987922de6b19c0b038ea9ea80677b2",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          68,
+          1666
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          68,
+          85,
+          1666,
+          1683,
+          1734,
+          1751
+        ],
+        "max_integral_height_action_abs": 8306688,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "a6047d49a41010bc02cc862ca3058eb73c78f2386d8fdc4283244d7f5c452bdd",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            7
+          ]
+        ],
+        "basis_masks": [
+          17,
+          98,
+          140
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          98,
+          115,
+          140,
+          157,
+          238,
+          255
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "249b7386d0e0c6fd1cdeed2889f31cd76a7b696b2776096748ef39073b2c2314",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            3,
+            7,
+            8
+          ]
+        ],
+        "basis_masks": [
+          17,
+          98,
+          392
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          98,
+          115,
+          392,
+          409,
+          490,
+          507
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "aa843043e4d70ed2ce5a01fb84d8d0939308b0cb891d8b5fa42dc610f308f382",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          98,
+          644
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          98,
+          115,
+          644,
+          661,
+          742,
+          759
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "615d3f3b5496cdfc99598a1f102d9edb3c1ae2df9f6815da3be0f57e03faa189",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          98,
+          896
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          98,
+          115,
+          896,
+          913,
+          994,
+          1011
+        ],
+        "max_integral_height_action_abs": 7507968,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "170e3e273166a6a904429bf32e0180bc0899baf7d369122c6d46adc3148f2cae",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          98,
+          1544
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          98,
+          115,
+          1544,
+          1561,
+          1642,
+          1659
+        ],
+        "max_integral_height_action_abs": 8346624,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3b5fa2966c4864cc8c282d310dffa602943fad9f463a694994483814a0634a18",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "basis_masks": [
+          17,
+          140,
+          320
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          140,
+          157,
+          320,
+          337,
+          460,
+          477
+        ],
+        "max_integral_height_action_abs": 6469632,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "68b00391b7e10afdd9dada7e6559ff3d18b63456360aa12584959c6bb6682373",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          140,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          140,
+          157,
+          1090,
+          1107,
+          1230,
+          1247
+        ],
+        "max_integral_height_action_abs": 8506368,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "decf7b22ec151773dc16ef4f6ae6c1060134de62acf56e835684f6da355438c6",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          140,
+          1312
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          140,
+          157,
+          1312,
+          1329,
+          1452,
+          1469
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "6ad96582d9a34f891a8b060f63f0e7f84af2dbbdfe4b374c8dc758cbf764eccf",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "basis_masks": [
+          17,
+          170,
+          320
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          170,
+          187,
+          320,
+          337,
+          490,
+          507
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "2362fb3d03066a71879a0bb2e264504d33df90b91f3039bd629dc0e1ab60eab2",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            3,
+            5,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          320,
+          552
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          320,
+          337,
+          552,
+          569,
+          872,
+          889
+        ],
+        "max_integral_height_action_abs": 6309888,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "509539110398d8dd4aa15306dd79889584a5272212e5f790c0ac4a9abb138133",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            2,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          320,
+          644
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          320,
+          337,
+          644,
+          661,
+          964,
+          981
+        ],
+        "max_integral_height_action_abs": 6269952,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "62c25f3b6b0a7c702325d7d52bfe1ee6dce9b7ab2921f17d1a8b0dcd128c1886",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            5,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          320,
+          674
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          320,
+          337,
+          674,
+          691,
+          994,
+          1011
+        ],
+        "max_integral_height_action_abs": 7507968,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "e21e27305840e5ae8f52c65161ae5d84ed93e73d9bbb17584ca67ee943d96400",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          320,
+          1060
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          320,
+          337,
+          1060,
+          1077,
+          1380,
+          1397
+        ],
+        "max_integral_height_action_abs": 5990400,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "697ea19248b4c2f7a66cff464676f57cabf9a54de4df4e0e2d7e1238812edc59",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            3,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          320,
+          1162
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          320,
+          337,
+          1162,
+          1179,
+          1482,
+          1499
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "68077af646cf06af796f833d30ad0c1ad8614ef5516abcaef8020bc7cb43cbee",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          320,
+          1544
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          320,
+          337,
+          1544,
+          1561,
+          1864,
+          1881
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "34f243786c3d66d2117222d7e8f9439b7a85b1566c54ca90f1e688c682ff1d81",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          320,
+          1666
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          320,
+          337,
+          1666,
+          1683,
+          1986,
+          2003
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "b4926a322de38bde488540a25f92e1228b3615c3082360f658d7f76603d4a8ab",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            7,
+            8
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          392,
+          1060
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          392,
+          409,
+          1060,
+          1077,
+          1452,
+          1469
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "e8d3e80b5671076c78f86dba1e3a1deaa0341277def3349e149a8acb0e1014cb",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            7,
+            8
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          392,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          392,
+          409,
+          1090,
+          1107,
+          1482,
+          1499
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "fa0667b46085e841422c7961f525acb5f548e50013d9125e72e0cdcdbc0e307f",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            5,
+            9
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          552,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          552,
+          569,
+          1090,
+          1107,
+          1642,
+          1659
+        ],
+        "max_integral_height_action_abs": 8346624,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "fd4a121e81934bde8d1bd98ad5fa0c4a4c3be7d15c5fe7aff6160861fb10e2c6",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          644,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          644,
+          661,
+          1090,
+          1107,
+          1734,
+          1751
+        ],
+        "max_integral_height_action_abs": 8306688,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "198c64c45f2c124f2c81a3e1242d039c448f73055ccbbacb0838469247988a38",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          644,
+          1312
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          644,
+          661,
+          1312,
+          1329,
+          1956,
+          1973
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "55884b0fd67840edc0d72c51063db33f4ee2bee6aff4f39251c92a9f3a5c0303",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          896,
+          1060
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          896,
+          913,
+          1060,
+          1077,
+          1956,
+          1973
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "d63de167e73ec209a70df88e1dce7e2ca2579ed58e2d888a0f8dd4441e1489a7",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          896,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          17,
+          896,
+          913,
+          1090,
+          1107,
+          1986,
+          2003
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "b5bc9e9288595c0d2c0a192017cf6930c6407f1fbbbcf649eeb2dfbc4e2e8eb2",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ]
+        ],
+        "basis_masks": [
+          26,
+          68,
+          161
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          68,
+          94,
+          161,
+          187,
+          229,
+          255
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "c06849b0ea7948a0468df94794532f3285157ee22319da45624e4dd00d8ff12c",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          26,
+          68,
+          896
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          68,
+          94,
+          896,
+          922,
+          964,
+          990
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "1cf976207ab259f11afc7d73300c25fcd53eafa029dd96609db2626a322df097",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          68,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          68,
+          94,
+          1153,
+          1179,
+          1221,
+          1247
+        ],
+        "max_integral_height_action_abs": 8506368,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "6d6d729ce1da8bcb83af6f58b5ce5da0d0d629a17d195850a2a9f9f907eb9ccf",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          68,
+          1312
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          68,
+          94,
+          1312,
+          1338,
+          1380,
+          1406
+        ],
+        "max_integral_height_action_abs": 7428096,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "c5e279e93aa5a5135537e3d411740f2b3878e198d47b0fff0046b20160f4021e",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "basis_masks": [
+          26,
+          161,
+          320
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          161,
+          187,
+          320,
+          346,
+          481,
+          507
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3ce57eb11a407ed7443684572eef37f495d8ced59e42c699d3639dd138440529",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            2,
+            7,
+            9
+          ]
+        ],
+        "basis_masks": [
+          26,
+          320,
+          644
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          320,
+          346,
+          644,
+          670,
+          964,
+          990
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "40a018be6b79bec6bee1a560ef67b642cca3a35b9d6ca427c18bb84663f644fa",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          320,
+          1060
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          320,
+          346,
+          1060,
+          1086,
+          1380,
+          1406
+        ],
+        "max_integral_height_action_abs": 7428096,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "e53d8091d1b6dd5f74ee911b835b899acb82c1572239557894f683f901b8cc75",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          320,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          320,
+          346,
+          1153,
+          1179,
+          1473,
+          1499
+        ],
+        "max_integral_height_action_abs": 8107008,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3d52fcece4f9af1025c32de87f40a880bffbce1a54169003e2969556e9485b39",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          644,
+          1312
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          644,
+          670,
+          1312,
+          1338,
+          1956,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "66e32c98473a4aebecaf0562ef5b9df35402bed11d08f8a92412fdacbcbb1eb2",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          896,
+          1060
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          26,
+          896,
+          922,
+          1060,
+          1086,
+          1956,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "358bc54a33c4a4cbf70443ba2a54fd75924b7fe445713419f9c79f6261dca8a8",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            1,
+            4,
+            9
+          ]
+        ],
+        "basis_masks": [
+          68,
+          161,
+          530
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          68,
+          161,
+          229,
+          530,
+          598,
+          691,
+          759
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "382a137de736da5732955b1ab105f349033590ed42c6db2d0da8af161b490760",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          68,
+          161,
+          1544
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          68,
+          161,
+          229,
+          1544,
+          1612,
+          1705,
+          1773
+        ],
+        "max_integral_height_action_abs": 7787520,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "a759094264140c2412ed17612474fb71df494be8fca0cb4b43d01e7ab77719bf",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7,
+            8
+          ],
+          [
+            1,
+            4,
+            9
+          ]
+        ],
+        "basis_masks": [
+          68,
+          392,
+          530
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          68,
+          392,
+          460,
+          530,
+          598,
+          922,
+          990
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "c81e2f62ae6b84139a7717ccf33aa3a5714b66b07f827f0e44c0c8138476f227",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          68,
+          530,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          68,
+          530,
+          598,
+          1153,
+          1221,
+          1683,
+          1751
+        ],
+        "max_integral_height_action_abs": 8306688,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "b3f1f0583e10f27563810d359befcea7f4f5471100af38c44c3b581307fcd1b4",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          68,
+          530,
+          1312
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          68,
+          530,
+          598,
+          1312,
+          1380,
+          1842,
+          1910
+        ],
+        "max_integral_height_action_abs": 7228416,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "054387b713514837fa2d7680770ab2e40123024005dccbb9c69cd2279e0192dd",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            5,
+            9
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          68,
+          552,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          68,
+          552,
+          620,
+          1153,
+          1221,
+          1705,
+          1773
+        ],
+        "max_integral_height_action_abs": 7787520,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "7fdc5d28e70d528bff810661c8b805db9758baec95999fba4e19f6eb47b63897",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            4,
+            9
+          ]
+        ],
+        "basis_masks": [
+          140,
+          320,
+          530
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          140,
+          320,
+          460,
+          530,
+          670,
+          850,
+          990
+        ],
+        "max_integral_height_action_abs": 7707648,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "dce8d148d34006559eacef08295e29fdf506620806cb23ffdcdfe32f19a4e108",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          140,
+          530,
+          1312
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          140,
+          530,
+          670,
+          1312,
+          1452,
+          1842,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "81e34f71d4c9dfd29fe2e8b1e5bc8b4b61b94290d005b3197401086896a46236",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            4,
+            9
+          ]
+        ],
+        "basis_masks": [
+          161,
+          320,
+          530
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          161,
+          320,
+          481,
+          530,
+          691,
+          850,
+          1011
+        ],
+        "max_integral_height_action_abs": 7507968,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "eea7e88e71721e13c4dd2f0a83cc8d91292122215faa54814b42830a28d3b3b7",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          161,
+          320,
+          1544
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          161,
+          320,
+          481,
+          1544,
+          1705,
+          1864,
+          2025
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "703903cb2fa563566c5ff28b80acf312c8fda088941c3c6587627494dd6518c6",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          320,
+          530,
+          1060
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          320,
+          530,
+          850,
+          1060,
+          1380,
+          1590,
+          1910
+        ],
+        "max_integral_height_action_abs": 7228416,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "1f693017b947e20086cc13e05ec74f17e5e0454197219bbefc60358320db5358",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            6,
+            8
+          ],
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          320,
+          530,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          320,
+          530,
+          850,
+          1153,
+          1473,
+          1683,
+          2003
+        ],
+        "max_integral_height_action_abs": 7907328,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "026eae8636b8e7ef343d3cf5bc9f804aab044d50ca191186705fe215b0a49d1b",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            6,
+            8
+          ],
+          [
+            3,
+            5,
+            9
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          320,
+          552,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          320,
+          552,
+          872,
+          1153,
+          1473,
+          1705,
+          2025
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "12b71ba8300623d97a4bd7193e215f194cbbeb5fb866f7eecd947be490cd516b",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            3,
+            7,
+            8
+          ],
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          392,
+          530,
+          1060
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 3,
+        "masks": [
+          0,
+          392,
+          530,
+          922,
+          1060,
+          1452,
+          1590,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 7,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "9b700b2197c42f91dcbf5ad0d64bf244236df7d22bd600ad4cee3cdc73f6fd01",
+        "size": 8
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            8
+          ]
+        ],
+        "basis_masks": [
+          3,
+          316
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          3,
+          316,
+          319
+        ],
+        "max_integral_height_action_abs": 6509568,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "365e52685d70815830d550adf05e9e513199e27866624b10ffa70e40ba7a42fa",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4,
+            5,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          3,
+          820
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          3,
+          820,
+          823
+        ],
+        "max_integral_height_action_abs": 6309888,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "6e5c738e07dd23e5dd459f231b622d9b1a4895338b41816ca399cfb606c56232",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            5,
+            6,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          1248
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          3,
+          1248,
+          1251
+        ],
+        "max_integral_height_action_abs": 6150144,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "a88a3659c0b4c96d8ddbe43a93f7c8763bc810a6864e22e2216dd9cb053fe155",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          1308
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          3,
+          1308,
+          1311
+        ],
+        "max_integral_height_action_abs": 6908928,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "788c08fc5869f46e39d40c118bfd4a87fc9d2310f195b13697d3b6d8f9de438e",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4,
+            8,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          3,
+          1812
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          3,
+          1812,
+          1815
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "72af4b2a8717a591f523dad30615eab1566124871244fd567a8d0ac14df177e5",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2,
+            3,
+            5,
+            8
+          ]
+        ],
+        "basis_masks": [
+          17,
+          302
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          17,
+          302,
+          319
+        ],
+        "max_integral_height_action_abs": 6509568,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "91116bc36f229bdaf5c2dc4f25e8d7103e34df5256d0759a076d9e55aaa6cc41",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2,
+            5,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          17,
+          806
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          17,
+          806,
+          823
+        ],
+        "max_integral_height_action_abs": 6309888,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "24ba8056b8b9a44169508fe60f6d4f1807ffb54ed7ab1ae029f68b79dffddc52",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            6,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          1248
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          17,
+          1248,
+          1265
+        ],
+        "max_integral_height_action_abs": 5910528,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "0c5fdee68274797a758ea1f71dd27e722683ce191e9a9e3f59576a8d5b8e9f9e",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2,
+            3,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          1294
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          17,
+          1294,
+          1311
+        ],
+        "max_integral_height_action_abs": 6908928,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "69eeeecc5eb77097182b4bb1da6d6291ee64234fb44d2e0a054110190614de35",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2,
+            8,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          17,
+          1798
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          17,
+          1798,
+          1815
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "8a40360ad0bd803a42351e55e0c95774098ab05442790d4f5cdd7cf79d428f7c",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            0,
+            2,
+            5,
+            8
+          ]
+        ],
+        "basis_masks": [
+          26,
+          293
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          26,
+          293,
+          319
+        ],
+        "max_integral_height_action_abs": 6509568,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "58124794be940753d3a55260dd9227d89f707c17f61d67fccbc0d0834535d935",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            5,
+            6,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          1248
+        ],
+        "clock_image_mod26": [
+          0
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          26,
+          1248,
+          1274
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0
+        ],
+        "sha256": "69e1d169756b763bbc907936b600e55032fee7edf37e6002e05e3b606f3a0510",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          26,
+          1285,
+          1311
+        ],
+        "max_integral_height_action_abs": 6908928,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "1f28a0016452ac95eb3fe4a9bb0ce21dcde498d66dd08ea95f1f84ee409f81a6",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            0,
+            5,
+            6,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          26,
+          1633
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          26,
+          1633,
+          1659
+        ],
+        "max_integral_height_action_abs": 8346624,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "b224fc00b4c0ad4c2e6a3ef71ee3f6a500687f8dbf6ba006b31db09219bd8fa0",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            3,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          68,
+          777
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          68,
+          777,
+          845
+        ],
+        "max_integral_height_action_abs": 5311488,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "d2f96417a6488181baa5162e076f0d26dd03db4c2e2ec46cfaa456177e4afd44",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            0,
+            2,
+            3,
+            9
+          ]
+        ],
+        "basis_masks": [
+          98,
+          525
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          98,
+          525,
+          623
+        ],
+        "max_integral_height_action_abs": 6948864,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "846d401848b73c7867720d2d04f458f141aeb635de9b046205200e37737d10ef",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            0,
+            3,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          98,
+          777
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          98,
+          777,
+          875
+        ],
+        "max_integral_height_action_abs": 6549504,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "ffb1b1601c9f14c1ca215080e4be6f86ca9310ff31df913252851b522996dd91",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          98,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          98,
+          1153,
+          1251
+        ],
+        "max_integral_height_action_abs": 6150144,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "d31060088e4cb960ce5d54a7f52d837ff8fdc7b22b39d2af7b067db15ceffdf6",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            3,
+            4,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          98,
+          1176
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          98,
+          1176,
+          1274
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "6403a5fec6ba7c3b66964a483711beaad2873cda756850d525e95f63a3b40c33",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          98,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          98,
+          1285,
+          1383
+        ],
+        "max_integral_height_action_abs": 6230016,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "db11696a222aa4049534a5e86f1f4d868e1275b62698efa98b4efa6e246fc2a6",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            4,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          98,
+          1308
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          98,
+          1308,
+          1406
+        ],
+        "max_integral_height_action_abs": 7428096,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "f8dc9a1fa11d9d6e112e9c064b903d7963bdd6d92ac480b4e9adb079ad41068f",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            4,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          98,
+          1680
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          98,
+          1680,
+          1778
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "5c4138c3f8e50c51bb1e079bbbee21ce4658631ee3607df08b6d42ac4dab9814",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            4,
+            8,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          98,
+          1812
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          98,
+          1812,
+          1910
+        ],
+        "max_integral_height_action_abs": 7228416,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "eefe5f4a978a5a30c698f5cdadfa10e8fcbcb89b407f929cdca41dbaeffe19c2",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            0,
+            2,
+            3,
+            9
+          ]
+        ],
+        "basis_masks": [
+          112,
+          525
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          112,
+          525,
+          637
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "c8970c8d4158bd3b6015d9c907a6d2db9307cfadf089457a97328a0ee4c48be1",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            0,
+            3,
+            8,
+            9
+          ]
+        ],
+        "basis_masks": [
+          112,
+          777
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          112,
+          777,
+          889
+        ],
+        "max_integral_height_action_abs": 6309888,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3fd8e4a5b9288052f86913763a87884cff055c70501f2d946dcc55a1603c2d1e",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          112,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          112,
+          1153,
+          1265
+        ],
+        "max_integral_height_action_abs": 5910528,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "de92da6c93cc584a7d9cee999513b012b832795cdeb17a84ea0bf95c4c1869fd",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            3,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          112,
+          1162
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          112,
+          1162,
+          1274
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "d5c5da59908a4b2237666410b831ce9ded112d398628c7dc902f3afc995ee6f0",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          112,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          112,
+          1285,
+          1397
+        ],
+        "max_integral_height_action_abs": 5990400,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "ee759b1c49d1026872c33caa2abf1a4be622856ae93c284e7761df896f23d390",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            2,
+            3,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          112,
+          1294
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          112,
+          1294,
+          1406
+        ],
+        "max_integral_height_action_abs": 7428096,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "5c7a2c980dc4f7d9e6a6a5ad8fb3c6095200e20b2cda86b899669689ad17be8f",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          112,
+          1666
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          112,
+          1666,
+          1778
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "4bcd56da47b7e4604da88476592b4727d215b6cd3df0afbcc95f1123b3d8fa0c",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            2,
+            8,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          112,
+          1798
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          112,
+          1798,
+          1910
+        ],
+        "max_integral_height_action_abs": 7228416,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "1eb71dd27ce82dfcb92f876277ae296db7db46ba518c8612c5e61bbf400d478c",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            0,
+            5,
+            6,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          140,
+          1633
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          140,
+          1633,
+          1773
+        ],
+        "max_integral_height_action_abs": 7787520,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "d09babc2de1b145ab2ed6dc60f08214702a51fc7043f0a9eea1fb13500a8ebb1",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          161,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          161,
+          1090,
+          1251
+        ],
+        "max_integral_height_action_abs": 6150144,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "810ed6be47d7ce47e3f95343fe7d478b3e475a5a31de07ad13e834c4fded6543",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          161,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          161,
+          1104,
+          1265
+        ],
+        "max_integral_height_action_abs": 5910528,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3c04de2f09194b45683df84cf476d39b73f7fc86e7edb570be19ef5a74ad9b68",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            1,
+            2,
+            3,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          161,
+          1294
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          161,
+          1294,
+          1455
+        ],
+        "max_integral_height_action_abs": 7587840,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "9fbe8d68e29ed89b896548de707ffefb4cb0e05fa316420d13e219cb70d4bdaa",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            2,
+            3,
+            4,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          161,
+          1308
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          161,
+          1308,
+          1469
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "5cdfd221c3b1140b1eb6460553f717f285c5bca76c1e5cae6e054ce36cf65b46",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            1,
+            2,
+            8,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          161,
+          1798
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          161,
+          1798,
+          1959
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "823e40077f532bd4bc64186559b0cf13bd238ecccb5483e0b6341856e9cfe4a8",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            2,
+            4,
+            8,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          161,
+          1812
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          161,
+          1812,
+          1973
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "562bbf96b2598919a3b8ee9e640416cff76c1344393bfa5254e20c415affdbca",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          170,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          170,
+          1104,
+          1274
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "9ad90bb0bf71dffedce6f44f21a842c11a9e18c2d6d1aeb783987f02114cebee",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          170,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          170,
+          1285,
+          1455
+        ],
+        "max_integral_height_action_abs": 7587840,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "a939aecb687b0138d7cc087cbc16cc04d8e1997a037d9a9b4fb0997f0081e555",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          [
+            2,
+            4,
+            8,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          170,
+          1812
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          170,
+          1812,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "49ad1c45b8c55542be15cdf199bccf1c305024392c896b9bfd4bd9d3caceda38",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            3,
+            4,
+            5,
+            7
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          184,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          184,
+          1090,
+          1274
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "448ebbd3d4cc3dbc3d0ad4cf6d7ba1943be8796044b192eb65c333f13f4f9579",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            3,
+            4,
+            5,
+            7
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          184,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          184,
+          1285,
+          1469
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "e13d87763592a4416a78979e5aadc389cd572f5411d7006d28f2aac236c1f67f",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            3,
+            4,
+            5,
+            7
+          ],
+          [
+            1,
+            2,
+            8,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          184,
+          1798
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          184,
+          1798,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "a684069eee0e865847146583ee1a37ccd8466ee36ed32c748c55695f4f805b57",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            5,
+            8
+          ],
+          [
+            1,
+            4,
+            9
+          ]
+        ],
+        "basis_masks": [
+          293,
+          530
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          293,
+          530,
+          823
+        ],
+        "max_integral_height_action_abs": 6309888,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "db12d678527239676ce54f91c94d4b5a7a71f8debed5bf86cbc819386f2d7366",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            5,
+            8
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          293,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          293,
+          1090,
+          1383
+        ],
+        "max_integral_height_action_abs": 6230016,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "2687e262125950e5bcd2928c3763e77367cc9eb0b0c92ce5b9d7b5d8e7207a51",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            5,
+            8
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          293,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          293,
+          1104,
+          1397
+        ],
+        "max_integral_height_action_abs": 5990400,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "a2bb64bec1636ee3d6756ef105ddf4a26fb42c6fbe269491840f9963a70eafd1",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            5,
+            8
+          ],
+          [
+            1,
+            3,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          293,
+          1162
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          293,
+          1162,
+          1455
+        ],
+        "max_integral_height_action_abs": 7587840,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "0b4df82f04839b7ee5841da170760190f44a81402edeb3c14af117966f916acb",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            5,
+            8
+          ],
+          [
+            3,
+            4,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          293,
+          1176
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          293,
+          1176,
+          1469
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "87951e936bfb93470e942b1a79b067710ba979ab51008b531fe37f68b9db6fd6",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            5,
+            8
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          293,
+          1544
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          293,
+          1544,
+          1837
+        ],
+        "max_integral_height_action_abs": 6190080,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "a6f643c59314acab51f7c1a2724462e8d8492ce6029f70c0326e7c9fca57ce21",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            5,
+            8
+          ],
+          [
+            1,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          293,
+          1666
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          293,
+          1666,
+          1959
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "531c636ce6739e652acb03a2d49474e92ef339cee27a73d173b1d72c8b603ae9",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            5,
+            8
+          ],
+          [
+            4,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          293,
+          1680
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          293,
+          1680,
+          1973
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "2c5e68656201a3b293480492450f8c65a51e778033ea7b6bc9bc04d807229d23",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            2,
+            3,
+            5,
+            8
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          302,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          302,
+          1104,
+          1406
+        ],
+        "max_integral_height_action_abs": 7428096,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "497ffbddc17041304bb7ee7e92b22c3dbd82f2b1ea0f1d45b12ca136f9cfed16",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            2,
+            3,
+            5,
+            8
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          302,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          302,
+          1153,
+          1455
+        ],
+        "max_integral_height_action_abs": 7587840,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "89bca8f4e3bdb35be96c432897e0ef99afd0907359d2c272cb021ea746ebf679",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            2,
+            3,
+            5,
+            8
+          ],
+          [
+            4,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          302,
+          1680
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          302,
+          1680,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "f816952db434c917354e7e64b8efd25de6687f63ae94d0112870e04e7b482744",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            3,
+            4,
+            5,
+            8
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          316,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          316,
+          1090,
+          1406
+        ],
+        "max_integral_height_action_abs": 7428096,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "390d92b0e4ff7bce2d356d4002ecf46fb12cf0471b6288c64403ec43acd18c1e",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            3,
+            4,
+            5,
+            8
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          316,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          316,
+          1153,
+          1469
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "97fa9c2e5e9fb7064cd7fd1d10ee88d11f35a4c25b5d7ef0e6335d1adb300cb2",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            3,
+            4,
+            5,
+            8
+          ],
+          [
+            1,
+            7,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          316,
+          1666
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          316,
+          1666,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "b5cb06daae6f11f8d95bfadc02d7b6689cb27f72f97a3ca721d5e532677d8a30",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            6,
+            8
+          ],
+          [
+            0,
+            2,
+            3,
+            9
+          ]
+        ],
+        "basis_masks": [
+          320,
+          525
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          320,
+          525,
+          845
+        ],
+        "max_integral_height_action_abs": 5311488,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "ec302baceba184204784b8638fbe6a442913b9e47e175f9ba2bf760501539b4b",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            3,
+            7,
+            8
+          ],
+          [
+            0,
+            5,
+            6,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          392,
+          1633
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          392,
+          1633,
+          2025
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "7ff7e4427a2c4ee33f945fa133ece8abcb2e528f2f7706ac39e42afe6660bfde",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            2,
+            4,
+            5,
+            7,
+            8
+          ],
+          [
+            3,
+            9,
+            10
+          ]
+        ],
+        "basis_masks": [
+          438,
+          1544
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          438,
+          1544,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "4a7b6d558af2789a01d4462efb51efc29f69bcc416260c4a01e0cf15ebbad50e",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            3,
+            9
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          525,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          525,
+          1090,
+          1615
+        ],
+        "max_integral_height_action_abs": 7348224,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "6bf60a94172966796ca57957461c37ad99445c2b4eb5e21b5ef05dad44c3b006",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            3,
+            9
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          525,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          525,
+          1104,
+          1629
+        ],
+        "max_integral_height_action_abs": 7108608,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "6af674327414bfa3963a331dfe97c4bd71ae5489819ed7dd7148e1967d81e9b1",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            3,
+            9
+          ],
+          [
+            5,
+            6,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          525,
+          1248
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          525,
+          1248,
+          1773
+        ],
+        "max_integral_height_action_abs": 7787520,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "7ed399315384e92d226bad4f84bc3b51a27dffa62f3cd67a9f3a47e88359c784",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            2,
+            3,
+            9
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          525,
+          1312
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          525,
+          1312,
+          1837
+        ],
+        "max_integral_height_action_abs": 6190080,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3ba6a126ab284e8309de45cd02dc3a6bea8d764995fb64785e3c8ef20e35fcad",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            0,
+            3,
+            5,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          530,
+          1129
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          530,
+          1129,
+          1659
+        ],
+        "max_integral_height_action_abs": 8346624,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "1a9605f0c51cbec8226924c57e9ed4a43087d4ef0062971d846d50ebca9adb00",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            5,
+            6,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          530,
+          1248
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          530,
+          1248,
+          1778
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3a02fc326852eb4dbdc77c3f0880c4de584fa69289db55693518986b7bcc2a40",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            4,
+            9
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          530,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          530,
+          1285,
+          1815
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "206f049546801b371b884649cbaaa7b6cc61c12588c216b61c0269a3f6d74791",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            3,
+            5,
+            9
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          552,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          552,
+          1285,
+          1837
+        ],
+        "max_integral_height_action_abs": 6190080,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "04339880914e895e61f86b66a851e61b24f8054bc11970d1ff5c832bf2bae54e",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            3,
+            5,
+            9
+          ],
+          [
+            1,
+            2,
+            4,
+            7,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          552,
+          1430
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          552,
+          1430,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "3262fbb45348ba0b77a98be101b36f70b93508aca43af8ef2796b0a7084318fe",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            7,
+            9
+          ],
+          [
+            0,
+            3,
+            5,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          644,
+          1129
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          644,
+          1129,
+          1773
+        ],
+        "max_integral_height_action_abs": 7787520,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "8422575288d2f32687bd362e2748f7626399fff69e8fe4dfc5611b9144b265ee",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            7,
+            9
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          674,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          674,
+          1104,
+          1778
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "c307bdd2ad0b08c5f597c67b01c6a6a3d10f4cb502b849af266ac6a7539fb692",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            7,
+            9
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          674,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          674,
+          1285,
+          1959
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "be5005f67bdfa262f3c5d72b773cc2439e9cf4af7f115db69336c81c93c0c563",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            5,
+            7,
+            9
+          ],
+          [
+            2,
+            3,
+            4,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          674,
+          1308
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          674,
+          1308,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "caa3ec55fb411edc44780e101aecd2b4d11885f48ddb880e48e8acd75aea59ad",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            7,
+            9
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          688,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          688,
+          1090,
+          1778
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "60857bd25cac11f6780c7824bad3ad3a445eec19c2756b6f9a06b0f82fb27a92",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            7,
+            9
+          ],
+          [
+            0,
+            2,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          688,
+          1285
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          688,
+          1285,
+          1973
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "0bf53b28caad978209605e5c7ecbcd7266557dcf814c786d5625517e4faeda0e",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            4,
+            5,
+            7,
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          688,
+          1294
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          688,
+          1294,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "e71a88d0c58ec4f526198fdd90c9f309d2f5b1608135988487a70a69955cc7f5",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            3,
+            6,
+            7,
+            9
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          713,
+          1060
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          713,
+          1060,
+          1773
+        ],
+        "max_integral_height_action_abs": 7787520,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "65994154e0dfcc77dbe7758fc2acaee6fa39a8e9de95d125f61818014c5b9538",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            3,
+            6,
+            7,
+            9
+          ],
+          [
+            5,
+            8,
+            10
+          ]
+        ],
+        "basis_masks": [
+          713,
+          1312
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          713,
+          1312,
+          2025
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "e7b865138b69f31df069a4f1d84bfbdb8691a966d33ee746ecb5a1b42cd88547",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            3,
+            8,
+            9
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "basis_masks": [
+          777,
+          1060
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          777,
+          1060,
+          1837
+        ],
+        "max_integral_height_action_abs": 6190080,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "0a836cca9d03cc849aec5aa4aa80e445de882f9a268b95f616deac61027eb6f6",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            3,
+            8,
+            9
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          777,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          777,
+          1090,
+          1867
+        ],
+        "max_integral_height_action_abs": 6948864,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "cf81793f4a1cc4701975353332e02cd87f5ddbbaa8e39fb86435aa848953995d",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            3,
+            8,
+            9
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          777,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          777,
+          1104,
+          1881
+        ],
+        "max_integral_height_action_abs": 6709248,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "2e3b50d5a44ca6a8d2c9cfd7bc381467903498212c8a470b7c883e4b4532d117",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            0,
+            3,
+            8,
+            9
+          ],
+          [
+            5,
+            6,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          777,
+          1248
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          777,
+          1248,
+          2025
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "7b28009722d988ac164f811d1a901a117bfaa17131f4050595fb3bb6af07ef18",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            2,
+            5,
+            8,
+            9
+          ],
+          [
+            4,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          806,
+          1104
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          806,
+          1104,
+          1910
+        ],
+        "max_integral_height_action_abs": 7228416,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "68fd6336022a67d768f40bbc07dc90c60f9d8278185407bd7d37ef2ebf503a16",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            2,
+            5,
+            8,
+            9
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          806,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          806,
+          1153,
+          1959
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "4f31e89e5b20f0253f500951b5733f006336ea240536c620f88a81592e3cc59e",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            1,
+            2,
+            5,
+            8,
+            9
+          ],
+          [
+            3,
+            4,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          806,
+          1176
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          806,
+          1176,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "5496745be492344987c296511d472cd16d30cdc11215f666158636c3628d4724",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            4,
+            5,
+            8,
+            9
+          ],
+          [
+            1,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          820,
+          1090
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          820,
+          1090,
+          1910
+        ],
+        "max_integral_height_action_abs": 7228416,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "84dea86bc2f514868c3a36aa20a5ecaaccdae56643b5a33ce03f2bb84faf5082",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            4,
+            5,
+            8,
+            9
+          ],
+          [
+            0,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          820,
+          1153
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          820,
+          1153,
+          1973
+        ],
+        "max_integral_height_action_abs": 7148544,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "5ad33a56f30aff8a25697e1ee4575617cc9219abc6531ae8ad16df2ff8d9a919",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            2,
+            4,
+            5,
+            8,
+            9
+          ],
+          [
+            1,
+            3,
+            7,
+            10
+          ]
+        ],
+        "basis_masks": [
+          820,
+          1162
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          820,
+          1162,
+          1982
+        ],
+        "max_integral_height_action_abs": 8586240,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "8865a8a091f710490983ba5a05368fc9c3202a9636932dcaf3a0fd9beb69c7b5",
+        "size": 4
+      },
+      {
+        "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+        "basis_cycle_indices": [
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            0,
+            3,
+            5,
+            6,
+            10
+          ]
+        ],
+        "basis_masks": [
+          896,
+          1129
+        ],
+        "clock_image_mod26": [
+          0,
+          13
+        ],
+        "clock_is_additive_on_packet": true,
+        "dimension": 2,
+        "masks": [
+          0,
+          896,
+          1129,
+          2025
+        ],
+        "max_integral_height_action_abs": 7388160,
+        "nonzero_mask_count": 3,
+        "r33_normalized_image_mod26": [
+          0,
+          13
+        ],
+        "sha256": "06277409c43a6e0883d1926fc3b8b27d0f9ebe439e13ad5b2f2920106b0ab739",
+        "size": 4
+      }
+    ],
+    "all_packet_balance_records_sha256": "4296cad53426e931ea366aa53f25199283c80b09be8fd7ee7b73ef63fa82a6a8",
+    "gamma8": {
+      "mask": 256,
+      "reason_excluded": "gamma_8 has nonzero sector-26 self half-anomaly.",
+      "recovered": false,
+      "self_half_anomaly_mod13": 5
+    },
+    "normalization_gcd": 3072,
+    "packet_clock_image_histogram": {
+      "0": 37,
+      "0,13": 141
+    },
+    "packet_dimension_histogram": {
+      "2": 90,
+      "3": 88
+    },
+    "packet_samples": {
+      "dimension2": [
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              4,
+              5,
+              8
+            ]
+          ],
+          "basis_masks": [
+            3,
+            316
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 2,
+          "masks": [
+            0,
+            3,
+            316,
+            319
+          ],
+          "max_integral_height_action_abs": 6509568,
+          "nonzero_mask_count": 3,
+          "r33_normalized_image_mod26": [
+            0,
+            13
+          ],
+          "sha256": "365e52685d70815830d550adf05e9e513199e27866624b10ffa70e40ba7a42fa",
+          "size": 4
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              4,
+              5,
+              8,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            820
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 2,
+          "masks": [
+            0,
+            3,
+            820,
+            823
+          ],
+          "max_integral_height_action_abs": 6309888,
+          "nonzero_mask_count": 3,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "6e5c738e07dd23e5dd459f231b622d9b1a4895338b41816ca399cfb606c56232",
+          "size": 4
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              5,
+              6,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            1248
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 2,
+          "masks": [
+            0,
+            3,
+            1248,
+            1251
+          ],
+          "max_integral_height_action_abs": 6150144,
+          "nonzero_mask_count": 3,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "a88a3659c0b4c96d8ddbe43a93f7c8763bc810a6864e22e2216dd9cb053fe155",
+          "size": 4
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              4,
+              8,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            1308
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 2,
+          "masks": [
+            0,
+            3,
+            1308,
+            1311
+          ],
+          "max_integral_height_action_abs": 6908928,
+          "nonzero_mask_count": 3,
+          "r33_normalized_image_mod26": [
+            0,
+            13
+          ],
+          "sha256": "788c08fc5869f46e39d40c118bfd4a87fc9d2310f195b13697d3b6d8f9de438e",
+          "size": 4
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              4,
+              8,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            1812
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 2,
+          "masks": [
+            0,
+            3,
+            1812,
+            1815
+          ],
+          "max_integral_height_action_abs": 6709248,
+          "nonzero_mask_count": 3,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "72af4b2a8717a591f523dad30615eab1566124871244fd567a8d0ac14df177e5",
+          "size": 4
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2,
+              3,
+              5,
+              8
+            ]
+          ],
+          "basis_masks": [
+            17,
+            302
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 2,
+          "masks": [
+            0,
+            17,
+            302,
+            319
+          ],
+          "max_integral_height_action_abs": 6509568,
+          "nonzero_mask_count": 3,
+          "r33_normalized_image_mod26": [
+            0,
+            13
+          ],
+          "sha256": "91116bc36f229bdaf5c2dc4f25e8d7103e34df5256d0759a076d9e55aaa6cc41",
+          "size": 4
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2,
+              5,
+              8,
+              9
+            ]
+          ],
+          "basis_masks": [
+            17,
+            806
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 2,
+          "masks": [
+            0,
+            17,
+            806,
+            823
+          ],
+          "max_integral_height_action_abs": 6309888,
+          "nonzero_mask_count": 3,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "24ba8056b8b9a44169508fe60f6d4f1807ffb54ed7ab1ae029f68b79dffddc52",
+          "size": 4
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              6,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            17,
+            1248
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 2,
+          "masks": [
+            0,
+            17,
+            1248,
+            1265
+          ],
+          "max_integral_height_action_abs": 5910528,
+          "nonzero_mask_count": 3,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "0c5fdee68274797a758ea1f71dd27e722683ce191e9a9e3f59576a8d5b8e9f9e",
+          "size": 4
+        }
+      ],
+      "dimension3": [
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              4,
+              5,
+              7
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            184
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 3,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            184,
+            187,
+            252,
+            255
+          ],
+          "max_integral_height_action_abs": 8107008,
+          "nonzero_mask_count": 7,
+          "r33_normalized_image_mod26": [
+            0,
+            13
+          ],
+          "sha256": "88875a39b72398d5872dc7acbd034bfc29b71418f06659f7ad636e52574f9230",
+          "size": 8
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              7,
+              8
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            392
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 3,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            392,
+            395,
+            460,
+            463
+          ],
+          "max_integral_height_action_abs": 6709248,
+          "nonzero_mask_count": 7,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "f66f12b1edd590e6dc6bbbd8a22cafd60c1736bb84097e99e0dd8d1fedfd1fa9",
+          "size": 8
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              5,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            552
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 3,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            552,
+            555,
+            620,
+            623
+          ],
+          "max_integral_height_action_abs": 6948864,
+          "nonzero_mask_count": 7,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "f562940868ff5c4d261a480ee8eff684f2651b1238f8765419e3efb8fe974b7d",
+          "size": 8
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              4,
+              5,
+              7,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            688
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 3,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            688,
+            691,
+            756,
+            759
+          ],
+          "max_integral_height_action_abs": 7907328,
+          "nonzero_mask_count": 7,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "96c098a03bde9da2ce179e016dc008e72ab7b5bd10bb311bb58fa16e21ddf374",
+          "size": 8
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              7,
+              8,
+              9
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            896
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 3,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            896,
+            899,
+            964,
+            967
+          ],
+          "max_integral_height_action_abs": 6509568,
+          "nonzero_mask_count": 7,
+          "r33_normalized_image_mod26": [
+            0,
+            13
+          ],
+          "sha256": "1ea2a6b80692a16fafd9eb46273b8721eec2e306bf4abc8adb6a8c528b777501",
+          "size": 8
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              4,
+              7,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            1176
+          ],
+          "clock_image_mod26": [
+            0,
+            13
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 3,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            1176,
+            1179,
+            1244,
+            1247
+          ],
+          "max_integral_height_action_abs": 8506368,
+          "nonzero_mask_count": 7,
+          "r33_normalized_image_mod26": [
+            0,
+            13
+          ],
+          "sha256": "237fb026b930fc006a2c4f9e7893faa615d0c8dc441068ec42b7f52dce9cad0d",
+          "size": 8
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              5,
+              8,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            1312
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 3,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            1312,
+            1315,
+            1380,
+            1383
+          ],
+          "max_integral_height_action_abs": 6230016,
+          "nonzero_mask_count": 7,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "effa6f51a5909f9838f152f2235fc500e60ae7e88b80dac9053b87f7ccdab519",
+          "size": 8
+        },
+        {
+          "balance_statement": "On this packet, exact public flux closes and normalized hidden R33 update is additive modulo 26.",
+          "basis_cycle_indices": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              9,
+              10
+            ]
+          ],
+          "basis_masks": [
+            3,
+            68,
+            1544
+          ],
+          "clock_image_mod26": [
+            0
+          ],
+          "clock_is_additive_on_packet": true,
+          "dimension": 3,
+          "masks": [
+            0,
+            3,
+            68,
+            71,
+            1544,
+            1547,
+            1612,
+            1615
+          ],
+          "max_integral_height_action_abs": 7348224,
+          "nonzero_mask_count": 7,
+          "r33_normalized_image_mod26": [
+            0
+          ],
+          "sha256": "dc5f429cf833b4a0906541507ae17177ec9e82cd0a9ce6f3e7add585131d765c",
+          "size": 8
+        }
+      ]
+    },
+    "recovered_mask_count": 158,
+    "recovered_mask_sample": [
+      0,
+      3,
+      17,
+      26,
+      68,
+      71,
+      85,
+      94,
+      98,
+      112,
+      115,
+      140,
+      143,
+      157,
+      161,
+      170,
+      184,
+      187,
+      229,
+      238,
+      252,
+      255,
+      293,
+      302
+    ],
+    "recovered_packet_count": 178,
+    "z2_image_packet_count": 141,
+    "zero_image_packet_count": 37
+  },
+  "inputs": {
+    "all_residue_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "706a8a3d369f2b0f29f87c60ad3b43781f9c52c4e9a6d276e26c6d1413fd01ed"
+    },
+    "finite_anomaly_counter_report": {
+      "path": "data/invariants/d20/theorems/finite_anomaly_counter/report.json",
+      "sha256": "2eab53f4671763737840b8572c67f8889bdc0ad7e5a7768763d5c49b7a35d620"
+    },
+    "finite_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_flux_balance/report.json",
+      "sha256": "8d066a8ffbeac843d24862994905b4f497ab7956f333243dcf65053a11088f02"
+    },
+    "sector26_anomaly_cancellation_report": {
+      "path": "data/invariants/d20/theorems/sector26_anomaly_cancellation/report.json",
+      "sha256": "b50fdc56d7d3fd3ff9d743d895005251357d0f635609e085ab98c4f405065672"
+    },
+    "typed_nonexact_optical_flux_update_report": {
+      "path": "data/invariants/d20/theorems/typed_nonexact_optical_flux_update/report.json",
+      "sha256": "41e36fdd44053f3d57468971ec9d527392f8093e50aaac2c9ca7747d2d86b34e"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "It does not remove the non-exact optical residual on all 2048 masks. It identifies the finite subsector where the residual composes without the sector-26 anomaly.",
+    "what_this_proves": [
+      "the exact public D20 flux sector remains closed on all recovered packets",
+      "the normalized hidden R33 update is additive mod 26 on every recovered packet",
+      "the only recovered hidden images are trivial {0} and order-two {0,13}",
+      "gamma_8 remains a genuine anomaly-obstructed first non-exact event"
+    ]
+  },
+  "next_highest_yield_item": "Classify the anomaly-obstructed complement: determine the minimal correction or extension needed to include gamma_8 in a flux-balance law.",
+  "object": "d20",
+  "schema": "d20.theorem.anomaly_cancelled_flux_balance_recovery",
+  "status": "D20_ANOMALY_CANCELLED_FLUX_BALANCE_RECOVERY_CERTIFIED"
+}

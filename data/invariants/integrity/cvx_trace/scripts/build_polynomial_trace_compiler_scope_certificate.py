@@ -97,7 +97,7 @@ def main() -> int:
     )
 
     certificate = {
-        "schema": "d20.integrity.polynomial_trace_compiler_scope_certificate.v1",
+        "schema": "d20.integrity.polynomial_trace_compiler_scope_certificate.source_drop",
         "status": (
             "POLYNOMIAL_TRACE_COMPILER_UNIVERSAL_MACHINE_WITNESSED"
             if universal_compiler_witnessed

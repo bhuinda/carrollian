@@ -1,0 +1,120 @@
+{
+  "checks": {
+    "classifier_surfaces_disjoint": true,
+    "current_accepted_traces_have_zero_unclassified": true,
+    "current_accepted_traces_have_zero_x": true,
+    "explicit_x_extractor_promoted": true,
+    "public_machine_compiles_to_c_only": true,
+    "pure_c_no_escape_passed": true,
+    "typing_totality_passed": true,
+    "v_surface_publicly_accounted": true,
+    "x_surface_isolated": true
+  },
+  "claim_level": "formal_x_policy_boundary_not_x_lower_bound",
+  "decision": {
+    "may_claim_full_separation": false,
+    "may_claim_no_polynomial_size_x_extractor": false,
+    "may_claim_public_p_excludes_x": true,
+    "may_claim_x_obligation_closed_by_explicit_extractor_policy": true,
+    "may_claim_x_policy_boundary_certified": true,
+    "reason": "The explicit sector-33 extractor exists at family scope, but the formal policy keeps it on the X surface. Public-P executions compile to C-only traces; V is public-certificate surface; X is oracle/advice/extractor surface."
+  },
+  "next_highest_yield_item": {
+    "action": "Build the SAT-complete reduction certificate for the hidden e33-obstructed family, or keep the theorem representative-family scoped.",
+    "id": "encoded_family_sat_complete"
+  },
+  "non_claims": [
+    "This does not prove that polynomial-size X extractors are impossible.",
+    "This does not prove SAT-completeness of the encoded family.",
+    "This does not prove P != NP."
+  ],
+  "policy": {
+    "hidden_extractor_surface": {
+      "admission_rule": "X events are explicit hidden-sector extractor/oracle/advice steps, not public-P operations.",
+      "allowed_integrity_types": [
+        "X"
+      ],
+      "meaning": "A trace containing X is an extractor trace or oracle/advice trace. It cannot be used as a public-P solver witness unless the theorem deliberately changes models."
+    },
+    "ordinary_public_p_execution": {
+      "allowed_integrity_types": [
+        "C"
+      ],
+      "meaning": "A compiled public finite-bit-machine execution uses only C_PUBLIC_* operations."
+    },
+    "public_certificate_surface": {
+      "admission_rule": "V events require replayable public-boundary certificates; uncertified V events become residues.",
+      "allowed_integrity_types": [
+        "V"
+      ],
+      "meaning": "V can extend an auditable public transcript but does not provide hidden-sector advice."
+    },
+    "residue_surface": {
+      "admission_rule": "unsupported or untyped events are explicit residues and do not silently enter closure.",
+      "allowed_integrity_types": [
+        "UNCLASSIFIED"
+      ]
+    }
+  },
+  "schema": "d20.integrity.x_policy_boundary_certificate.source_drop",
+  "source_audit": {
+    "universal_pure_c_no_escape": {
+      "expected_status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",
+      "status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
+    },
+    "universal_trace_compiler": {
+      "expected_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
+    "universal_trace_typing": {
+      "expected_status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    },
+    "universal_v_wall_crossing_accounting": {
+      "expected_status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_v_wall_crossing_accounting_report.json",
+      "status": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS"
+    },
+    "universal_x_extractor_isolation": {
+      "expected_status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_x_extractor_isolation_report.json",
+      "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
+    },
+    "x_extractor_frontier": {
+      "expected_status": "X_EXTRACTOR_FRONTIER_EXPLICIT_POLYNOMIAL_FAMILY_EXTRACTOR_PROMOTED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_frontier_certificate.json",
+      "status": "X_EXTRACTOR_FRONTIER_EXPLICIT_POLYNOMIAL_FAMILY_EXTRACTOR_PROMOTED"
+    }
+  },
+  "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+  "surface_summary": {
+    "c_class_code_count": 22,
+    "current_trace_classified_counts": {
+      "C": 5,
+      "UNCLASSIFIED": 0,
+      "V": 0,
+      "X": 0
+    },
+    "public_machine_compiles_to_c_only": true,
+    "public_machine_opcode_count": 15,
+    "surfaces_are_disjoint": true,
+    "v_class_code_count": 2,
+    "x_class_code_count": 6
+  },
+  "x_frontier_resolution": {
+    "explicit_extractor_id": "E_hc_sector33",
+    "explicit_extractor_opcode": "X_EXTRACTOR_HIDDEN_SECTOR_MAP",
+    "may_claim_explicit_polynomial_family_x_extractor": true,
+    "may_claim_no_polynomial_size_x_extractor": false,
+    "policy_resolution": "The explicit extractor is admitted only as X; it is not reclassified as C or V."
+  }
+}

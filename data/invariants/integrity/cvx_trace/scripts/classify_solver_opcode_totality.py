@@ -67,7 +67,7 @@ def classify_event(event: dict[str, Any]) -> dict[str, Any]:
 
 def residue_for(event: dict[str, Any], classification: dict[str, Any]) -> dict[str, Any]:
     return {
-        "schema": "d20.integrity.cvx_trace.unsupported_opcode_residue.v1",
+        "schema": "d20.integrity.cvx_trace.unsupported_opcode_residue.source_drop",
         "status": "CVX_TRACE_UNSUPPORTED_OPCODE_TYPED_RESIDUE",
         "residue_type": "UNCLASSIFIED_SOLVER_OPCODE",
         "source_trace": rel(TRACE_PATH),
@@ -82,7 +82,7 @@ def residue_for(event: dict[str, Any], classification: dict[str, Any]) -> dict[s
 
 def classifier_document() -> dict[str, Any]:
     return {
-        "schema": "d20.integrity.solver_opcode_totality_classifier.v1",
+        "schema": "d20.integrity.solver_opcode_totality_classifier.source_drop",
         "status": "SOLVER_OPCODE_TOTALITY_CLASSIFIER_DEFINED",
         "accepted_types": ["C", "V", "X"],
         "fallback_type": "UNCLASSIFIED",
@@ -144,7 +144,7 @@ def main() -> int:
         counts[row["classifier_integrity_type"]] += 1
 
     report = {
-        "schema": "d20.integrity.solver_opcode_totality_report.v1",
+        "schema": "d20.integrity.solver_opcode_totality_report.source_drop",
         "status": (
             "SOLVER_OPCODE_TOTALITY_WITNESS_PASS"
             if not residues and not mismatches and fallback["status"] == "residue"

@@ -114,7 +114,7 @@ def main() -> int:
     event_count = sum(item["event_count"] for item in trace_checks)
     class_codes = sorted({code for item in trace_checks for code in item["class_codes"]})
     report = {
-        "schema": "d20.integrity.pure_c_no_escape_report.v1",
+        "schema": "d20.integrity.pure_c_no_escape_report.source_drop",
         "status": "PURE_C_NO_ESCAPE_WITNESS_PASS" if antecedent_holds else "PURE_C_NO_ESCAPE_WITNESS_FAIL",
         "theorem_replayed": "No Public Extractor Theorem",
         "antecedent": "All accepted trace events are public C, locally checkable, non-residue, and contain no extension-variable or extractor step.",

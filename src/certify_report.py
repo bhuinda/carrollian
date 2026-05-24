@@ -179,10 +179,10 @@ def verified_claims(blocks: Dict[str, Any]) -> list[Dict[str, Any]]:
         },
         {
             'id': 'quotient_tower',
-            'name': 'quotient tower A985 -> A42 -> A12',
+            'name': 'terminal quotient readouts A985 -> A42 -> A12',
             'status': 'verified',
-            'statement': 'The stored quotient maps and quotient tensors close, and the A42-to-A12 projection is consistent.',
-            'evidence': {'q42_classes': quot['q42_classes'], 'q12_classes': quot['q12_classes'], 'q42_to_q12_consistent': quot['q42_to_q12_consistent']},
+            'statement': 'The stored A985-to-A42 and A42-to-A12 quotient maps/tensors close. This is a terminal quotient-readout claim, not a claim that the full d20 stack is strictly a quotient tower or that A236 is an ordinary A985 quotient.',
+            'evidence': {'q42_classes': quot['q42_classes'], 'q12_classes': quot['q12_classes'], 'q42_to_q12_consistent': quot['q42_to_q12_consistent'], 'scope': 'A236 is covered by native simple-branching/fusion data, outside this terminal quotient-readout claim.'},
         },
         {
             'id': 'simple_branching_square',
@@ -404,7 +404,7 @@ def assemble_certificate(
     hash_json: Callable[[Any], str],
 ) -> Dict[str, Any]:
     cert = {
-        'schema': 'gnatural.core_directory_certificate.v12_tube_projection_section',
+        'schema': 'gnatural.core_directory_certificate_tube_projection_section',
         'status': 'PASS',
         'object': object_summary(constants, blocks),
         'policy': {'core_only': True},

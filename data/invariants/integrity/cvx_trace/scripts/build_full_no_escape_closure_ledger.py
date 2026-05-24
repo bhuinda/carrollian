@@ -25,6 +25,8 @@ REPORTS = {
     "x_extractor_bounded_search": CVX / "reports" / "x_extractor_bounded_search_report.json",
     "universal_x_extractor_isolation": CVX / "reports" / "universal_x_extractor_isolation_report.json",
     "x_extractor_target": CVX / "reports" / "x_extractor_target_certificate.json",
+    "x_extractor_frontier": CVX / "reports" / "x_extractor_frontier_certificate.json",
+    "x_policy_boundary": CVX / "reports" / "x_policy_boundary_certificate.json",
     "v_wall_crossing_accounting": CVX / "reports" / "v_wall_crossing_accounting_report.json",
     "universal_v_wall_crossing_accounting": CVX / "reports" / "universal_v_wall_crossing_accounting_report.json",
 }
@@ -35,10 +37,13 @@ FULLY_WITNESSED_STATUSES = {
     "universal_trace_pure_c_no_escape_witnessed",
     "universal_v_surface_accounted_certificate_guarded",
     "universal_public_bit_machine_trace_compiler_witnessed",
+    "formal_x_policy_boundary_certified_x_not_public_p",
 }
 
 SCOPED_WITNESSED_STATUSES = {
     "explicit_hidden_sector_map_certified_polynomial_lower_bound_open",
+    "intrinsic_height_transport_certified_polynomial_lower_bound_open",
+    "explicit_polynomial_x_extractor_promoted_family_scope",
     "polynomially_faithful_representative_family_witnessed_sat_complete_open",
     "prototype_witnessed_for_public_dpll_fixture",
     "witnessed_for_public_dpll_opcode_surface",
@@ -126,6 +131,7 @@ def current_trace_surface_closed(statuses: dict[str, Any]) -> bool:
         "universal_pure_c_no_escape": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS",
         "x_extractor_bounded_search": "X_EXTRACTOR_BOUNDED_SEARCH_NO_EXTRACTOR_FOUND",
         "universal_x_extractor_isolation": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS",
+        "x_policy_boundary": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
         "v_wall_crossing_accounting": "V_WALL_CROSSING_ACCOUNTING_NO_V_EVENTS",
         "universal_v_wall_crossing_accounting": "UNIVERSAL_V_WALL_CROSSING_ACCOUNTING_PASS",
     }
@@ -156,8 +162,39 @@ def main() -> int:
     full_claim_allowed = not blocker_ids and current_surface_closed
     conditional_claim_allowed = current_surface_closed
 
+    classified_by_id = {item["id"]: item for item in classified}
+    remaining_gaps = []
+    if classified_by_id["encoded_family_sat_complete"]["blocks_full_closure"]:
+        remaining_gaps.append(
+            {
+                "id": "encoded_family_sat_complete",
+                "gap": "The encoded family now has a polynomially faithful representative-family witness for the cycle-8 / Pi_33 packet, but no SAT-complete reduction certificate is present.",
+                "needed": items["encoded_family_sat_complete"]["required_artifact"],
+            }
+        )
+    if classified_by_id["x_extractor_lower_bound"]["blocks_full_closure"]:
+        remaining_gaps.append(
+            {
+                "id": "x_extractor_lower_bound",
+                "gap": "The no-polynomial-X branch is not proved. Instead, a family-scope polynomial X extractor is explicitly promoted from the certified height-coherent transport, so full closure needs a formal policy that excludes, prices, or admits X events.",
+                "needed": items["x_extractor_lower_bound"]["required_artifact"],
+            }
+        )
+
+    next_item = (
+        {
+            "id": "encoded_family_sat_complete",
+            "action": "Build the SAT-complete reduction certificate for the hidden e33-obstructed family, or keep the theorem representative-family scoped.",
+        }
+        if classified_by_id["encoded_family_sat_complete"]["blocks_full_closure"]
+        else {
+            "id": "full_no_escape_closure",
+            "action": "Promote the dependency ledger to a closed no-escape theorem after all bridge obligations are witnessed.",
+        }
+    )
+
     ledger = {
-        "schema": "d20.integrity.full_no_escape_closure_ledger.v1",
+        "schema": "d20.integrity.full_no_escape_closure_ledger.source_drop",
         "status": (
             "FULL_NO_ESCAPE_CLOSURE_LEDGER_BUILT_CLOSED"
             if full_claim_allowed
@@ -180,28 +217,14 @@ def main() -> int:
             "scope_declaration_blockers": [item["id"] for item in scope_declaration_blockers],
             "scoped_witness_blockers": [item["id"] for item in scoped_blockers],
         },
-        "remaining_gaps": [
-            {
-                "id": "encoded_family_sat_complete",
-                "gap": "The encoded family now has a polynomially faithful representative-family witness for the cycle-8 / Pi_33 packet, but no SAT-complete reduction certificate is present.",
-                "needed": items["encoded_family_sat_complete"]["required_artifact"],
-            },
-            {
-                "id": "x_extractor_lower_bound",
-                "gap": "The concrete hidden-sector target is now certified and the bare public transport span is ruled out, but no polynomial-size lower bound rules out X extractors or derives the residual through an intrinsic transport.",
-                "needed": items["x_extractor_lower_bound"]["required_artifact"],
-            },
-        ],
+        "remaining_gaps": remaining_gaps,
         "decision": {
             "may_claim_current_trace_no_escape": current_surface_closed,
             "may_claim_conditional_no_escape": conditional_claim_allowed,
             "may_claim_full_separation": full_claim_allowed,
             "reason": "Full separation remains blocked by unresolved bridge obligations." if not full_claim_allowed else "All bridge obligations are closed.",
         },
-        "next_highest_yield_item": {
-            "id": "intrinsic_height_coherent_transport",
-            "action": "Define and certify a height-coherent/action-return transport that derives rho_33(gamma_8) from edge or circuit data instead of inserting the certified residual scalar."
-        },
+        "next_highest_yield_item": next_item,
     }
     REPORT_PATH.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(ledger["status"])

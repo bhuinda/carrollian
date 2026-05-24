@@ -1,9 +1,9 @@
-# D20 UF Kernel v4 Height Coherence Fixed
+# D20 UF Kernel source_drop Height Coherence Fixed
 
 Run:
 
 ```bash
-python scripts/verify_d20_uf_kernel_v4.py --arrays arrays/d20_uf_kernel_arrays.npz --outdir .
+python scripts/verify_d20_uf_kernel.py --arrays arrays/d20_uf_kernel_arrays.npz --outdir .
 ```
 
 This package replaces the formal wording `height monism` / `BoxMonism` with `height coherence` / `BoxHeight`.

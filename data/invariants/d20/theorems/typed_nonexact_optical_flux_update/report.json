@@ -1,0 +1,296 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d06a6537237b3084530531426c447388a4ffc70b15ae7b60a8564ad953254417",
+  "checks": {
+    "all_nonzero_R33_updates_match_negative_height_action": true,
+    "all_nonzero_mod_prime_updates_match_pi33_coefficients": true,
+    "all_nonzero_updates_go_to_R33": true,
+    "all_residue_height_transport_is_certified": true,
+    "composite_superselection_labels_are_reserved_not_optically_excited": true,
+    "d20_plus_h6_also_gives_26": true,
+    "gamma8_typed_update_matches_first_forced_obstruction": true,
+    "minimal_composite_transport_is_certified": true,
+    "nonexact_optical_residue_is_certified": true,
+    "sector26_aligns_with_bosonic_critical_dimension": true,
+    "sector26_cross_transport_rank_is_one": true,
+    "sector26_is_shared_minimal_composite_seam": true,
+    "superselection_flux_extension_is_certified": true,
+    "typed_update_count_is_2048": true,
+    "typed_update_masks_are_complete": true,
+    "zero_class_has_zero_hidden_update": true
+  },
+  "claim": "The non-exact optical/action flux on every certified closed-return residue class has a typed hidden update in the augmented ledger: nonzero height residuals update R33, while the two minimal composite public-zero superselection labels are retained as distinct null labels but are not excited by the certified sector-33 height transport.",
+  "definition": {
+    "reserved_superselection_null_event": "An event that changes K_mixed_S or K_pure_Sminus must be certified separately; it is not the same as optical height residual transport.",
+    "sector26_alignment": "Sector 26 is the shared seam between {6,26} and {25,26}; it also matches the bosonic string critical dimension 26 and the finite count 20 D20 states + 6 H6 channels.",
+    "typed_update": "For each closed-return residue gamma, Delta Q_ext^nonexact(gamma) has zero public components, R33=-A_opt(gamma), and K_mixed_S=K_pure_Sminus=0 for the certified height transport."
+  },
+  "derived": {
+    "bosonic_string_26_alignment": {
+      "bosonic_string_critical_dimension": 26,
+      "cross_transport_rank_through_sector26": 1,
+      "d20_plus_h6": 26,
+      "d20_public_state_count": 20,
+      "h6_channel_count": 6,
+      "sector26_profile": {
+        "active_cy_sectors": [
+          "S"
+        ],
+        "active_objects": [
+          "S-"
+        ],
+        "block_dimension": 1,
+        "object_loop_coordinate_support": [
+          0,
+          0,
+          0,
+          0,
+          44,
+          0
+        ],
+        "permutation_multiplicity": 3,
+        "permutation_rank": 3,
+        "q12_nonzero_count": 2,
+        "q42_nonzero_count": 2,
+        "sector": 26,
+        "spectral_signature": [
+          {
+            "label": "S-",
+            "local_pre_idempotents": [
+              10
+            ],
+            "object": 4,
+            "separator_eigenvalues": [
+              986365
+            ]
+          }
+        ]
+      },
+      "shared_composite_sector": [
+        26
+      ],
+      "statement": "Sector 26 is the shared finite public-zero composite seam. Its label matches the critical dimension 26 of bosonic string theory. This certificate records the numerical/invariant alignment only; it does not identify the D20 finite algebra with continuum bosonic string theory."
+    },
+    "field_prime": 1000003,
+    "first_obstruction_update": {
+      "basis_cycle_ids": [
+        8
+      ],
+      "carrier_component": "R33",
+      "carrier_sector": 33,
+      "event_type": "nonexact_optical_height_residual",
+      "height_action": 374784,
+      "hidden_update_integral": {
+        "K_mixed_S": 0,
+        "K_pure_Sminus": 0,
+        "R33": -374784
+      },
+      "hidden_update_mod_prime": {
+        "K_mixed_S": 0,
+        "K_pure_Sminus": 0,
+        "R33": 625219
+      },
+      "mask": 256,
+      "pi33_coefficient_mod_prime": 625219,
+      "public_update": {
+        "J": 0,
+        "M": 0,
+        "P": 0,
+        "Phi": 0
+      },
+      "residual_matches_negative_height_action": true,
+      "transport_scalar": 812611,
+      "transport_scalar_signed": -187392
+    },
+    "hidden_components": [
+      "R33",
+      "K_mixed_S",
+      "K_pure_Sminus"
+    ],
+    "invariant_openings": [
+      {
+        "description": "Sector 26 is the shared central sector of the two minimal public-zero composite carriers, and 20 public D20 states plus 6 H6 channels also give 26.",
+        "name": "critical_26_marker",
+        "next_test": "Build a 26-marker invariant that distinguishes public state count + channel count from sector-index coincidence and checks stability under quotient maps A985->A42->A12."
+      },
+      {
+        "description": "The hidden public-zero fiber now has a transport matrix with R33 isolated and a rank-one coupling between K_mixed_S and K_pure_Sminus through sector 26.",
+        "name": "null_fiber_superselection_form",
+        "next_test": "Diagonalize/classify this 3-component hidden transport form over integers and over F_1000003."
+      },
+      {
+        "description": "Because optical/action flux is non-exact and typed into a hidden ledger, sector 26 becomes a candidate finite anomaly-counter marker rather than a public charge.",
+        "name": "worldsheet_like_anomaly_counter",
+        "next_test": "Check whether primitive-cycle optical actions admit a modular or central-charge-like normalization with the sector-26 seam."
+      },
+      {
+        "description": "The typed update separates true gauge zero from public-zero hidden transport. This is the finite invariant needed before any BRST-like or constraint-cohomology analogy is defensible.",
+        "name": "gauge_vs_superselection_separation",
+        "next_test": "Construct the cohomological quotient that kills gauge zero but retains the two composite labels."
+      }
+    ],
+    "nonzero_typed_update_count": 2047,
+    "public_components": [
+      "M",
+      "J",
+      "P",
+      "Phi"
+    ],
+    "typed_update_count": 2048,
+    "update_row_samples": [
+      {
+        "basis_cycle_ids": [],
+        "carrier_component": "gauge_zero",
+        "carrier_sector": 33,
+        "event_type": "gauge_zero",
+        "height_action": 0,
+        "hidden_update_integral": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 0,
+          "R33": 0
+        },
+        "hidden_update_mod_prime": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 0,
+          "R33": 0
+        },
+        "mask": 0,
+        "pi33_coefficient_mod_prime": 0,
+        "public_update": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "residual_matches_negative_height_action": true,
+        "transport_scalar": 0,
+        "transport_scalar_signed": 0
+      },
+      {
+        "basis_cycle_ids": [
+          8
+        ],
+        "carrier_component": "R33",
+        "carrier_sector": 33,
+        "event_type": "nonexact_optical_height_residual",
+        "height_action": 374784,
+        "hidden_update_integral": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 0,
+          "R33": -374784
+        },
+        "hidden_update_mod_prime": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 0,
+          "R33": 625219
+        },
+        "mask": 256,
+        "pi33_coefficient_mod_prime": 625219,
+        "public_update": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "residual_matches_negative_height_action": true,
+        "transport_scalar": 812611,
+        "transport_scalar_signed": -187392
+      },
+      {
+        "basis_cycle_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "carrier_component": "R33",
+        "carrier_sector": 33,
+        "event_type": "nonexact_optical_height_residual",
+        "height_action": 10564608,
+        "hidden_update_integral": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 0,
+          "R33": -10564608
+        },
+        "hidden_update_mod_prime": {
+          "K_mixed_S": 0,
+          "K_pure_Sminus": 0,
+          "R33": 435425
+        },
+        "mask": 2047,
+        "pi33_coefficient_mod_prime": 435425,
+        "public_update": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "residual_matches_negative_height_action": true,
+        "transport_scalar": 717714,
+        "transport_scalar_signed": -282289
+      }
+    ],
+    "update_rows_sha256": "13076c82a9e1134e16a8a0f037643f6f6c294598c8ec7b5a471c3982737b364e",
+    "zero_update": {
+      "basis_cycle_ids": [],
+      "carrier_component": "gauge_zero",
+      "carrier_sector": 33,
+      "event_type": "gauge_zero",
+      "height_action": 0,
+      "hidden_update_integral": {
+        "K_mixed_S": 0,
+        "K_pure_Sminus": 0,
+        "R33": 0
+      },
+      "hidden_update_mod_prime": {
+        "K_mixed_S": 0,
+        "K_pure_Sminus": 0,
+        "R33": 0
+      },
+      "mask": 0,
+      "pi33_coefficient_mod_prime": 0,
+      "public_update": {
+        "J": 0,
+        "M": 0,
+        "P": 0,
+        "Phi": 0
+      },
+      "residual_matches_negative_height_action": true,
+      "transport_scalar": 0,
+      "transport_scalar_signed": 0
+    }
+  },
+  "inputs": {
+    "all_residue_height_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "706a8a3d369f2b0f29f87c60ad3b43781f9c52c4e9a6d276e26c6d1413fd01ed"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "minimal_composite_null_carriers_transport_report": {
+      "path": "data/invariants/d20/theorems/minimal_composite_null_carriers_transport/report.json",
+      "sha256": "bbf698f1b4fe439e600e4a588d224fcc475744d56df76c917d1b9f675100933b"
+    },
+    "nonexact_optical_residue_report": {
+      "path": "data/invariants/d20/theorems/nonexact_optical_residue/report.json",
+      "sha256": "e8a8daa480512a42bf530bc3121d47689b20eeb8b241a0a4eafa13cbf4315a63"
+    },
+    "superselection_flux_balance_extension_report": {
+      "path": "data/invariants/d20/theorems/superselection_flux_balance_extension/report.json",
+      "sha256": "1243aa0d50221a119262dfccddfbab1215eebef0e6fe96c7fb6d2979f30df9b2"
+    }
+  },
+  "next_highest_yield_item": "Build the sector-26 invariant suite: 26-marker stability under A985->A42->A12, hidden transport form diagonalization, and a finite anomaly-counter normalization for optical action.",
+  "object": "d20",
+  "schema": "d20.theorem.typed_nonexact_optical_flux_update",
+  "status": "D20_TYPED_NONEXACT_OPTICAL_FLUX_UPDATE_CERTIFIED"
+}

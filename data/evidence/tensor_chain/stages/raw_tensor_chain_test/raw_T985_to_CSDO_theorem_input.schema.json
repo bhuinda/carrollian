@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "certification_tests": [
+    "verify SHA-256 equals d20 core invariant tensor_triples_sha256",
+    "aggregate tensor by (source,target) to recover M6 and coefficient masses",
+    "project q42 classes onto the four CSDO sign chambers",
+    "verify all CSDO chambers fold to a single A12 image",
+    "compare two-sided energy in A42/CSDO/A12/Foam16 projections"
+  ],
+  "properties": {
+    "A42_to_A12_map": {
+      "description": "Length-42 quotient map q12(I).",
+      "type": "string"
+    },
+    "relation_to_A42_map": {
+      "description": "Length-985 quotient map q42(alpha).",
+      "type": "string"
+    },
+    "relation_to_source_object": {
+      "description": "Length-985 map s(alpha) in {0,...,5}.",
+      "type": "string"
+    },
+    "relation_to_target_object": {
+      "description": "Length-985 map t(alpha) in {0,...,5}.",
+      "type": "string"
+    },
+    "six_object_labels": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 6,
+      "minItems": 6,
+      "type": "array"
+    },
+    "tensor_triples": {
+      "description": "Rows [alpha,beta,gamma,p_alpha_beta_gamma] for all nonzero A985 structure constants; expected shape [1414965,4].",
+      "type": "string"
+    }
+  },
+  "required": [
+    "tensor_triples",
+    "relation_to_source_object",
+    "relation_to_target_object",
+    "relation_to_A42_map",
+    "A42_to_A12_map",
+    "six_object_labels"
+  ],
+  "title": "Raw T985 -> CSDO theorem-grade input schema",
+  "type": "object"
+}

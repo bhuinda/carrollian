@@ -156,7 +156,7 @@ def update_theorem_index(report: dict[str, Any], out_dir: Path) -> None:
     theorems.append(entry)
     theorems = sorted(theorems, key=lambda item: item["id"])
     index = {
-        "schema": "d20.theorem_registry.v1",
+        "schema": "d20.theorem_registry.source_drop",
         "status": "D20_THEOREM_REGISTRY_BUILT",
         "theorem_count": len(theorems),
         "theorems": theorems,
@@ -251,7 +251,7 @@ def build_theorem() -> dict[str, Any]:
     )
 
     report = {
-        "schema": "d20.theorem.sector33_residual_attachment.v1",
+        "schema": "d20.theorem.sector33_residual_attachment.source_drop",
         "status": status,
         "object": "d20",
         "claim": (
@@ -431,7 +431,7 @@ def build_theorem() -> dict[str, Any]:
 def write_theorem(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
     report = build_theorem()
     manifest = {
-        "schema": "d20.theorem.sector33_residual_attachment_manifest.v1",
+        "schema": "d20.theorem.sector33_residual_attachment_manifest.source_drop",
         "name": THEOREM_ID,
         "inputs": report["inputs"],
         "outputs": {
