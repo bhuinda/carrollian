@@ -1,0 +1,39 @@
+{
+  "inputs": {
+    "central_idempotent_stage": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/orbital_central_idempotents_certificate.json",
+      "sha256": "fd222e043fd8c8540b81ee4598764767bf4be1841c0a412a71c76ef94a89c183"
+    },
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "registered_support_stage": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/registered_support_matrix_units_certificate.json",
+      "sha256": "75b6ad72a5c7941eadf58def4d83583248b92efa28bf802be7d422eb69a9218b"
+    }
+  },
+  "manifest_sha256": "d2a8b1a40bb9a119b8e764bc957c0955cd9ea0583c120ad9989e942b4a43ed4e",
+  "name": "tiny_pointer_a985_full_sector_match",
+  "outputs": {
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/manifest.json",
+    "raw_fingerprints": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/raw_sector_identity_fingerprints.csv",
+    "raw_to_source": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/raw_to_source_sector_full_match.csv",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+    "source_fingerprints": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/source_sector_identity_fingerprints.csv",
+    "source_to_raw": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/source_to_raw_sector_full_match.csv"
+  },
+  "report_sha256": "fcf66aabdc81efbf0f979137aac3a5ffc9cc2781e876240e33484eb5e148f8a7",
+  "schema": "d20.theorem.tiny_pointer_a985_full_sector_match_manifest.source_drop",
+  "validation_tests": [
+    "source_sector_count_is_39",
+    "raw_sector_count_is_39",
+    "all_source_sectors_matched",
+    "source_match_is_bijective",
+    "identity_fingerprints_unique_on_raw_sectors",
+    "identity_fingerprints_unique_on_source_sectors",
+    "block_dimensions_match",
+    "registered_subset_agrees_with_registered_support_stage",
+    "perennial_join_key_emitted_when_available"
+  ]
+}

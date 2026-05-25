@@ -1,7 +1,7 @@
 {
   "all_checks_pass": true,
-  "boundary": "No independent legacy off-diagonal matrix-unit basis is supplied by this fixture atlas.",
-  "certificate_sha256": "fe4a98f112ed7982962a6d6f080c52eea2a33b32aa59d6feee7a0fb4634e7607",
+  "boundary": "No independent source-sector off-diagonal matrix-unit basis is supplied by this fixture atlas.",
+  "certificate_sha256": "e36e7140df439625e39e36f061269a1954aba9d61a1b6f8fbb77f84f152c483e",
   "checks": {
     "all_diagonal_sums_preserved": true,
     "all_formula_residuals_zero": true,
@@ -17,7 +17,7 @@
     "sampled_raw_candidate_products_pass": true,
     "sector5_nontrivial_fixture_certified": true
   },
-  "claim": "Every open A985 legacy sector now has a verifier fixture for the sector-local GL_d normalization equation. The fixtures are generated from the certified raw-orbital matrix units by non-identity invertible GL_d changes, solved back from raw coordinates, and checked with zero reconstruction residuals. This is a verifier atlas, not an independent legacy off-diagonal source.",
+  "claim": "Every open A985 source sector now has a verifier fixture for the sector-local GL_d normalization equation. The fixtures are generated from the certified raw-orbital matrix units by non-identity invertible GL_d changes, solved back from raw coordinates, and checked with zero reconstruction residuals. This is a verifier atlas, not an independent source-sector off-diagonal source.",
   "derived": {
     "dimension_histogram": {
       "10": 2,
@@ -51,26 +51,26 @@
   "inputs": {
     "full_matrix_unit_orbital_coo": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
-      "sha256": "bf9cc74c497d68309ff288d39b4c64ee56ba70fc09766925ebd267ec933d0259"
+      "sha256": "8645a89f78a74c23010c26cd7b5f464732335a0d358274a3c36d191f4b895e8c"
     },
     "matrix_unit_arrays": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_raw_orbital_arrays.npz",
-      "sha256": "2a23eb5de3d8408bb0b1963549bbb654d0e623f705e0db10b5f7e39989321ab9"
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_raw_orbital_arrays.npz",
+      "sha256": "1e57a9d6f17b377ef1fbf4716be4589ec032b25efeefea1e0d68018e31e2e779"
     },
     "sector5_nontrivial_fixture": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture/report.json",
-      "sha256": "fa4d2a41e2d0299e36789407cebe3045df95541bc541d6a4e25092c04e58cb50"
+      "sha256": "cbd7d59d0f99ef63551813f5f41d6d6e812a0555b2c5f4d2784ce570579a5af0"
     },
     "sector_normalization_obligations": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/report.json",
-      "sha256": "54bca1f8f7f4d279e997a670f457ba9ab9955384df3d138386b78e82d5e2fe54"
+      "sha256": "dec652045a369dcff20f29d954c94d0b0565551bc37f6e6fd19c5716b82229b6"
     },
     "t985_tensor": {
       "path": "data/raw/T_985.npz",
       "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
     }
   },
-  "next_highest_yield_item": "Wire the same all-sector verifier to accept an external legacy candidate COO file, then run it as soon as a genuine legacy off-diagonal source exists.",
+  "next_highest_yield_item": "Wire the same all-sector verifier to accept an external source-sector candidate COO file, then run it as soon as a genuine source-sector off-diagonal source exists.",
   "object": "d20",
   "schema": "d20.theorem.tiny_pointer_a985_all_open_sector_normalization_fixture_atlas.source_drop",
   "status": "D20_TINY_POINTER_A985_ALL_OPEN_SECTOR_NORMALIZATION_FIXTURE_ATLAS_CERTIFIED"

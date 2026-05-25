@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from src.paths import D20_INVARIANTS, LAYERS, ROOT
+from src.paths import D20_INVARIANTS, DATA, ROOT
 
 
 THEOREM_ID = "superselection_flux_balance_extension"
@@ -21,7 +21,7 @@ IDEMPOTENT_ADMISSIBILITY_REPORT = (
 ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_all_residue_height_transport" / "report.json"
 )
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
 
 HIDDEN_COMPONENTS = ["R33", "K_mixed_S", "K_pure_Sminus"]
 PUBLIC_COMPONENTS = ["M", "J", "P", "Phi"]

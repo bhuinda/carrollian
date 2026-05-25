@@ -1,0 +1,1410 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "739eef15adc81aabca9230c2e0154e1e21ef953b6039fcf1076a33ca5240bc49",
+  "checks": {
+    "a985_tube_q42_q12_packet_projection_is_absent": true,
+    "automaton_blocks_match_full_packet_graph": true,
+    "constructed_restriction_matches_previous_probe": true,
+    "full_exposure_frame_is_certified": true,
+    "full_packet_projection_has_40_modes_and_20_packets": true,
+    "negative_restriction_boundary_is_explicit": true,
+    "one_step_crossing_leaves_kernel_packet_space": true,
+    "packet_cells_and_graph_are_certified": true,
+    "raw_quotient_and_relation_shapes_match_a985": true,
+    "reduced_scattering_automaton_is_certified": true,
+    "scattering_transition_map_has_all_crossing_entries": true,
+    "source_return_pairs_match_5_10_and_10_5": true,
+    "spectral_packet_table_is_certified": true,
+    "tube_and_packet_probe_inputs_are_certified": true,
+    "two_step_restriction_matches_certified_packet_cells": true
+  },
+  "claim": "An explicit restriction map exists from the reduced scattering automaton to the 20 full-exposure packets: project each kernel mode mask to its packet, then compose ordered crossing generators 5, 9, and 10 twice. This recovers the certified 2I+4S packet block in Mat_2(Q)^10. No corresponding raw A985, screen-0 tube, or q42/q12 quotient-to-packet restriction map is present in the current certificates.",
+  "definition": {
+    "blocked_restriction_maps": "The A985 relation basis, screen-0 tube element, and q42/q12 quotient tensors currently have no certified relation/object/quotient-class to packet-mode projection.",
+    "constructed_restriction_map": "mode_mask -> projective packet id, restricted to the 40 kernel modes belonging to the 20 full-exposure packets.",
+    "two_step_packet_action": "The ordered distinct crossing pairs from {5,9,10}, composed in the reduced scattering automaton and projected back to full-exposure packets."
+  },
+  "derived": {
+    "automaton_block_rows": [
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          174,
+          175
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          190,
+          191
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          238,
+          239
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          246,
+          247
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          254,
+          255
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          430,
+          431
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          446,
+          447
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          494,
+          495
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          502,
+          503
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "packet_pair": [
+          510,
+          511
+        ]
+      }
+    ],
+    "automaton_block_rows_sha256": "3d18d75aed8b9d304027a4ff0dd5cd360881944d0fe1e9b88edfea2f17934d57",
+    "automaton_restricted_source_rows": [
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 175,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          151,
+          1207
+        ],
+        "source_packet_id": 174,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "174": 2,
+          "175": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 174,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          695,
+          1687
+        ],
+        "source_packet_id": 175,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "174": 4,
+          "175": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 191,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          159,
+          1215
+        ],
+        "source_packet_id": 190,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "190": 2,
+          "191": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 190,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          703,
+          1695
+        ],
+        "source_packet_id": 191,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "190": 4,
+          "191": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 239,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          215,
+          1271
+        ],
+        "source_packet_id": 238,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "238": 2,
+          "239": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 238,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          759,
+          1751
+        ],
+        "source_packet_id": 239,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "238": 4,
+          "239": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 247,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          219,
+          1275
+        ],
+        "source_packet_id": 246,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "246": 2,
+          "247": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 246,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          763,
+          1755
+        ],
+        "source_packet_id": 247,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "246": 4,
+          "247": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 255,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          223,
+          1279
+        ],
+        "source_packet_id": 254,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "254": 2,
+          "255": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 254,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          767,
+          1759
+        ],
+        "source_packet_id": 255,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "254": 4,
+          "255": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 431,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          407,
+          1463
+        ],
+        "source_packet_id": 430,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "430": 2,
+          "431": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 430,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          951,
+          1943
+        ],
+        "source_packet_id": 431,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "430": 4,
+          "431": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 447,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          415,
+          1471
+        ],
+        "source_packet_id": 446,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "446": 2,
+          "447": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 446,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          959,
+          1951
+        ],
+        "source_packet_id": 447,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "446": 4,
+          "447": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 495,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          471,
+          1527
+        ],
+        "source_packet_id": 494,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "494": 2,
+          "495": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 494,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          1015,
+          2007
+        ],
+        "source_packet_id": 495,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "494": 4,
+          "495": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 503,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          475,
+          1531
+        ],
+        "source_packet_id": 502,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "502": 2,
+          "503": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 502,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          1019,
+          2011
+        ],
+        "source_packet_id": 503,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "502": 4,
+          "503": 2
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 511,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          479,
+          1535
+        ],
+        "source_packet_id": 510,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "510": 2,
+          "511": 4
+        }
+      },
+      {
+        "active_partner_ordered_crossings": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "active_partner_packet_id": 510,
+        "one_step_target_kind_histogram": {
+          "odd": 3
+        },
+        "source_modes": [
+          1023,
+          2015
+        ],
+        "source_packet_id": 511,
+        "source_return_ordered_crossings": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "two_step_target_histogram": {
+          "510": 4,
+          "511": 2
+        }
+      }
+    ],
+    "automaton_restricted_source_rows_sha256": "d5add0d69c37f977cb508db236ebd84284bdeb918d94a3d44f7d00380a4bf14d",
+    "domain_inventory": {
+      "a985_relation_count": 985,
+      "automaton_mask_state_count": 2048,
+      "full_exposure_mode_count": 40,
+      "full_exposure_packet_count": 20,
+      "kernel_mode_count": 1024,
+      "packet_count": 512,
+      "q12_class_count": 12,
+      "q42_class_count": 42,
+      "quotient_shapes": {
+        "block_i": [
+          985
+        ],
+        "block_j": [
+          985
+        ],
+        "q12_map": [
+          985
+        ],
+        "q12_tensor": [
+          12,
+          12,
+          12
+        ],
+        "q42_map": [
+          985
+        ],
+        "q42_tensor": [
+          42,
+          42,
+          42
+        ]
+      },
+      "relation_membership_shapes": {
+        "block_i": [
+          985
+        ],
+        "block_j": [
+          985
+        ],
+        "encoded_pairs": [
+          6635776
+        ],
+        "object_of_point": [
+          2576
+        ],
+        "offsets": [
+          986
+        ],
+        "reps": [
+          985,
+          5
+        ]
+      },
+      "tube_closed_loop_basis_count": 297,
+      "tube_identity_relation_count": 6
+    },
+    "full_packet_mode_projection_rows": [
+      {
+        "mode_mask": 151,
+        "packet_id": 174
+      },
+      {
+        "mode_mask": 159,
+        "packet_id": 190
+      },
+      {
+        "mode_mask": 215,
+        "packet_id": 238
+      },
+      {
+        "mode_mask": 219,
+        "packet_id": 246
+      },
+      {
+        "mode_mask": 223,
+        "packet_id": 254
+      },
+      {
+        "mode_mask": 407,
+        "packet_id": 430
+      },
+      {
+        "mode_mask": 415,
+        "packet_id": 446
+      },
+      {
+        "mode_mask": 471,
+        "packet_id": 494
+      },
+      {
+        "mode_mask": 475,
+        "packet_id": 502
+      },
+      {
+        "mode_mask": 479,
+        "packet_id": 510
+      },
+      {
+        "mode_mask": 695,
+        "packet_id": 175
+      },
+      {
+        "mode_mask": 703,
+        "packet_id": 191
+      },
+      {
+        "mode_mask": 759,
+        "packet_id": 239
+      },
+      {
+        "mode_mask": 763,
+        "packet_id": 247
+      },
+      {
+        "mode_mask": 767,
+        "packet_id": 255
+      },
+      {
+        "mode_mask": 951,
+        "packet_id": 431
+      },
+      {
+        "mode_mask": 959,
+        "packet_id": 447
+      },
+      {
+        "mode_mask": 1015,
+        "packet_id": 495
+      },
+      {
+        "mode_mask": 1019,
+        "packet_id": 503
+      },
+      {
+        "mode_mask": 1023,
+        "packet_id": 511
+      },
+      {
+        "mode_mask": 1207,
+        "packet_id": 174
+      },
+      {
+        "mode_mask": 1215,
+        "packet_id": 190
+      },
+      {
+        "mode_mask": 1271,
+        "packet_id": 238
+      },
+      {
+        "mode_mask": 1275,
+        "packet_id": 246
+      },
+      {
+        "mode_mask": 1279,
+        "packet_id": 254
+      },
+      {
+        "mode_mask": 1463,
+        "packet_id": 430
+      },
+      {
+        "mode_mask": 1471,
+        "packet_id": 446
+      },
+      {
+        "mode_mask": 1527,
+        "packet_id": 494
+      },
+      {
+        "mode_mask": 1531,
+        "packet_id": 502
+      },
+      {
+        "mode_mask": 1535,
+        "packet_id": 510
+      },
+      {
+        "mode_mask": 1687,
+        "packet_id": 175
+      },
+      {
+        "mode_mask": 1695,
+        "packet_id": 191
+      },
+      {
+        "mode_mask": 1751,
+        "packet_id": 239
+      },
+      {
+        "mode_mask": 1755,
+        "packet_id": 247
+      },
+      {
+        "mode_mask": 1759,
+        "packet_id": 255
+      },
+      {
+        "mode_mask": 1943,
+        "packet_id": 431
+      },
+      {
+        "mode_mask": 1951,
+        "packet_id": 447
+      },
+      {
+        "mode_mask": 2007,
+        "packet_id": 495
+      },
+      {
+        "mode_mask": 2011,
+        "packet_id": 503
+      },
+      {
+        "mode_mask": 2015,
+        "packet_id": 511
+      }
+    ],
+    "full_packet_mode_projection_rows_sha256": "54787414119171e768a1131633f69cdf083dc733e4c92bb15e6c24356a7b3bb1",
+    "missing_bridge_inventory": [
+      {
+        "available_source_keys": [
+          "block_i",
+          "block_j",
+          "encoded_pairs",
+          "group_order",
+          "object_of_point",
+          "offsets",
+          "points",
+          "reps"
+        ],
+        "candidate": "A985_relation_basis_to_full_packets",
+        "source_domain": "relation_id[0..984]",
+        "status": "blocked_missing_relation_to_packet_projection",
+        "target_domain": "20 full-exposure packet ids and 40 packet modes"
+      },
+      {
+        "available_source_keys": [
+          "closed_loop_basis_count",
+          "closed_loop_commutator",
+          "closed_loop_unit",
+          "field_prime",
+          "full_a985_commutator_boundary",
+          "full_relation_count",
+          "identity_relations_by_object",
+          "local_primitive_piece_count",
+          "object_phase_assignment",
+          "primitive_piece_phase_counts",
+          "primitive_piece_rows_sha256",
+          "public_zero_support_action",
+          "reconstructed_from_local_primitives",
+          "screen_id",
+          "screen_square",
+          "signed_object_unit"
+        ],
+        "candidate": "screen0_tube_element_to_full_packets",
+        "source_domain": "six signed object identity relations inside the closed-loop tube",
+        "status": "blocked_missing_object_or_relation_to_packet_projection",
+        "target_domain": "20 full-exposure packet ids and 40 packet modes"
+      },
+      {
+        "available_source_keys": [
+          "block_i",
+          "block_j",
+          "q12_map",
+          "q12_tensor",
+          "q42_map",
+          "q42_tensor"
+        ],
+        "candidate": "q42_q12_tensor_to_full_packets",
+        "source_domain": "q42/q12 quotient classes of A985 relations",
+        "status": "blocked_missing_quotient_class_to_packet_projection",
+        "target_domain": "20 full-exposure packet ids and 40 packet modes"
+      }
+    ],
+    "missing_bridge_inventory_sha256": "7e5570538cb5a6a7b3b44dfb623b435ae7ccd79c3a404a161db7cf09ee054e3f",
+    "restriction_summary": {
+      "a985_relation_restriction_constructed": false,
+      "block_algebra": "Mat_2(Q)^10",
+      "constructed_projection_mode_count": 40,
+      "constructed_projection_packet_count": 20,
+      "constructed_restriction": "reduced_scattering_automaton_mask_to_full_packet_projection",
+      "crossing_generators_tested": [
+        5,
+        9,
+        10
+      ],
+      "missing_bridge_count": 3,
+      "one_step_kernel_packet_action_exists": false,
+      "q42_q12_restriction_constructed": false,
+      "tube_screen0_restriction_constructed": false,
+      "two_step_block": "2I+4S",
+      "two_step_packet_action_exists": true
+    }
+  },
+  "inputs": {
+    "constants": {
+      "path": "data/raw/constants.json",
+      "sha256": "f6f8d910c62188971545fb7de5d4bcd16f52a8880872c4230fe0e0420696def0"
+    },
+    "d20_packet_quotient_action_probe_report": {
+      "path": "data/invariants/d20/theorems/d20_packet_quotient_action_probe/report.json",
+      "sha256": "0178b57fbf154fdac7383928d9c752abb9f3152ed6fb1ea609cb0043133431d5"
+    },
+    "fourier_screen0_tube_central_element_report": {
+      "path": "data/invariants/d20/theorems/fourier_screen0_tube_central_element/report.json",
+      "sha256": "366ef6d4a81743163b80e6025923b256432dc7b6f0768c927c7a81721e23e278"
+    },
+    "full_exposure_canonical_labelled_frame_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_canonical_labelled_frame/report.json",
+      "sha256": "7a08d667b81a7df1e28cc5564c2e7dc5de6273104e02afc20bcb609ce9726cc1"
+    },
+    "full_exposure_packet_propagation_cells_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_cells/report.json",
+      "sha256": "0cea64975c4b45cfa152fee8a51d70bf23da4788ff561895f81580bd86e7c963"
+    },
+    "full_exposure_packet_propagation_graph_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json",
+      "sha256": "c115c85c7125e3b89ec5120c55cc6c4db5364bd8a026e20d78fac42af2371b82"
+    },
+    "projective_packet_spectral_charge_table_report": {
+      "path": "data/invariants/d20/theorems/projective_packet_spectral_charge_table/report.json",
+      "sha256": "fc02aab1cb58fe2473cb8c7997ed094c893ce3f0b6979d5f695b8150de610875"
+    },
+    "quotients_npz": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    },
+    "reduced_amplitude_quotient_scattering_automaton_report": {
+      "path": "data/invariants/d20/theorems/reduced_amplitude_quotient_scattering_automaton/report.json",
+      "sha256": "8588e1c5576b86f5aab13d11260c1242a632dbd38fe6ac0d7293c882f1f1058f"
+    },
+    "relation_memberships_npz": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    }
+  },
+  "interpretation": {
+    "what_this_certifies": [
+      "the reduced scattering automaton has an explicit 40-mode to 20-packet projection",
+      "one crossing step leaves the kernel packet space, so the packet action is two-step",
+      "the two-step restricted action exactly matches the certified 2I+4S full-packet graph",
+      "the current A985, tube, and q42/q12 data still lack a certified projection to packet modes"
+    ],
+    "what_this_does_not_certify": [
+      "an A985 relation acting on the 20 packet basis",
+      "the screen-0 tube central element acting on the 20 packet basis",
+      "a q42/q12 tensor action on the 20 packet basis",
+      "a Matrix/M-theory promotion"
+    ]
+  },
+  "next_highest_yield_item": "Build the missing bridge explicitly: attach relation/object/q42/q12 labels to kernel mode masks, or prove that no such label-compatible projection can intertwine the scattering 2I+4S packet action.",
+  "object": "d20",
+  "schema": "d20.theorem.d20_explicit_packet_restriction_map_test",
+  "status": "D20_EXPLICIT_PACKET_RESTRICTION_MAP_TEST_CERTIFIED"
+}

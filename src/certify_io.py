@@ -6,15 +6,19 @@ from pathlib import Path
 from typing import Any, Dict, Iterable
 
 try:
-    from .layer_registry import layer_relpath
+    from .certificate_registry import certificate_relpath
 except ImportError:  # Supports `python src/certify_core.py`.
-    from layer_registry import layer_relpath
+    from certificate_registry import certificate_relpath
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CORE_LAYER_CERTIFICATE = layer_relpath('core.a985')
+CORE_CERTIFICATE = certificate_relpath('core.a985')
 RAW_DATA_INDEX = 'data/raw/index.json'
-RAW_TENSOR_FALLBACKS = ('data/raw/T_985.npz', 'data/raw/tensor_sparse.npz')
+RAW_TENSOR_FALLBACKS = (
+    'data/raw/Halloween.npz',
+    'data/raw/T_985.npz',
+    'data/raw/tensor_sparse.npz',
+)
 
 
 def canonical(obj: Any) -> bytes:
@@ -73,10 +77,10 @@ def raw_tensor_relpath() -> str:
 
 
 def cached_core_block(name: str) -> Dict[str, Any] | None:
-    p = ROOT / CORE_LAYER_CERTIFICATE
+    p = ROOT / CORE_CERTIFICATE
     if not p.exists():
         return None
-    cert = load_json(CORE_LAYER_CERTIFICATE)
+    cert = load_json(CORE_CERTIFICATE)
     block = cert.get('blocks', {}).get(name)
     return block if isinstance(block, dict) else None
 

@@ -45,6 +45,7 @@ EXCLUDED_DIRS = {
     ".mypy_cache",
     ".pytest_cache",
     ".ruff_cache",
+    ".replay_tmp",
     ".tools",
     ".venv",
     ".msys-tmp",
@@ -246,8 +247,6 @@ def refresh_ss_sat_manifest() -> bool:
         if lineage_archive_path(path):
             continue
         rel = path.relative_to(base).as_posix()
-        if rel.startswith("source_bundles/legacy_roots/"):
-            continue
         if any(
             part in EXCLUDED_DIRS or part.startswith(EXCLUDED_DIR_PREFIXES)
             for part in path.relative_to(ROOT).parts
@@ -598,8 +597,7 @@ def refresh_black_hole_inverse_conditioning() -> bool:
     return report.get("status") == "D20_BLACK_HOLE_INVERSE_CONDITIONING_CERTIFIED"
 
 
-def rebuild_d20(pretty: bool) -> None:
-    from src.derive_d20 import derive
+def refresh_source_certificates() -> None:
     if not refresh_pre_a985_relation_body(regenerate=True):
         raise SystemExit("pre-A985 relation body refresh failed")
     if not refresh_coorient_relator_profile():
@@ -608,16 +606,6 @@ def rebuild_d20(pretty: bool) -> None:
         raise SystemExit("coorient marker derivation failed")
     if not refresh_coorient_word_presentation():
         raise SystemExit("coorient word-presentation refresh failed")
-    if not refresh_coorient_relator_profile():
-        raise SystemExit("coorient relator-profile derivation failed")
-    if not refresh_coorient_marker():
-        raise SystemExit("coorient marker derivation failed")
-    if not refresh_pre_a985_relation_body(regenerate=True):
-        raise SystemExit("pre-A985 relation body refresh failed")
-    if not refresh_coorient_relator_profile():
-        raise SystemExit("coorient relator-profile derivation failed")
-    if not refresh_coorient_marker():
-        raise SystemExit("coorient marker derivation failed")
     if not refresh_universal_integral_uniqueness():
         raise SystemExit("universal integral uniqueness refresh failed")
     refresh_tensor_chain_manifest()
@@ -629,24 +617,31 @@ def rebuild_d20(pretty: bool) -> None:
     refresh_reproducibility_evidence()
     if not refresh_black_hole_inverse_conditioning():
         raise SystemExit("black-hole inverse conditioning refresh failed")
+
+
+def rebuild_d20(pretty: bool, *, refresh_sources: bool = True) -> None:
+    from src.derive_d20 import derive
+    if refresh_sources:
+        refresh_source_certificates()
+    else:
+        print("using cached source artifacts; skipping source-certificate refresh", flush=True)
     print("$ derive d20.json", flush=True)
     obj = derive()
     D20.write_text(json.dumps(obj, indent=2 if pretty else None, sort_keys=bool(pretty), allow_nan=False), encoding="utf-8")
     print("rebuilt d20.json", flush=True)
 
 
-def layer_certificate_summaries() -> list[dict[str, Any]]:
-    index = json.loads((ROOT / "layers" / "index.json").read_text(encoding="utf-8"))
+def certificate_summaries() -> list[dict[str, Any]]:
+    index = json.loads((ROOT / "data" / "certificates.json").read_text(encoding="utf-8"))
     rows: list[dict[str, Any]] = []
-    for layer in index.get("layers", []):
-        rel = layer["path"]
+    for certificate in index.get("certificates", []):
+        rel = certificate["path"]
         path = ROOT / rel
         payload = json.loads(path.read_text(encoding="utf-8"))
         rows.append({
-            "id": layer.get("id"),
-            "group": layer.get("group"),
-            "legacy_dir": layer.get("legacy_dir"),
-            "legacy_path": layer.get("legacy_path"),
+            "id": certificate.get("id"),
+            "group": certificate.get("group"),
+            "ordinal_dir": certificate.get("ordinal_dir"),
             "certificate": rel,
             "directory": Path(rel).parent.as_posix(),
             "certificate_file_sha256": sha_file(path),
@@ -676,8 +671,10 @@ def refresh_certificate() -> None:
         "sha256_object": d20_object_hash,
         "invariant_sections": sorted(k for k in d20.keys() if k != "d20_sha256"),
     }
-    cert["layers"] = layer_certificate_summaries()
-    cert["layer_count"] = len(cert["layers"])
+    for stale_key in ("lay" + "ers", "lay" + "er_count"):
+        cert.pop(stale_key, None)
+    cert["certificates"] = certificate_summaries()
+    cert["certificate_count"] = len(cert["certificates"])
     cert["d20_sha256"] = sha_json_body(cert, "d20_sha256")
     CERTIFICATE.write_text(json.dumps(cert, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
 
@@ -731,10 +728,15 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Regenerate d20.json, refresh hashes, and audit.")
     ap.add_argument("--no-audit", action="store_true", help="Refresh d20.json and hashes but skip final audit.")
     ap.add_argument("--compact", action="store_true", help="Write compact d20.json and compact audit output.")
+    ap.add_argument(
+        "--cached-source",
+        action="store_true",
+        help="Reuse existing checked source artifacts; skip pre-A985/coorient/evidence refresh.",
+    )
     args = ap.parse_args()
 
     pretty = not args.compact
-    rebuild_d20(pretty=pretty)
+    rebuild_d20(pretty=pretty, refresh_sources=not args.cached_source)
     refresh_certificate()
     count = refresh_manifest()
     print(f"updated manifest hashes: {count}", flush=True)

@@ -164,6 +164,124 @@ def object_summary(constants: Dict[str, Any], blocks: Dict[str, Any]) -> Dict[st
         'tube_sandpile_class_count_in_mask_image': blocks['tube_sandpile_divisor_map']['derived']['sandpile_class_count_in_mask_image'],
         'tube_sandpile_mixed_class_count': blocks['tube_sandpile_divisor_map']['derived']['tube_grade_vs_sandpile_class']['mixed_class_count'],
         'tube_sandpile_mixed_class_mask_count': blocks['tube_sandpile_divisor_map']['derived']['tube_grade_vs_sandpile_class']['mixed_class_mask_count'],
+        'tube_sandpile_exact_divisor_fiber_count': blocks['tube_sandpile_kernel_flips']['derived']['exact_divisor_fiber_count'],
+        'tube_sandpile_grade_flip_pair_count': blocks['tube_sandpile_kernel_flips']['derived']['grade_flip_pair_count'],
+        'tube_sandpile_flip_delta_count': blocks['tube_sandpile_kernel_flips']['derived']['unique_grade_flip_delta_count'],
+        'tube_sandpile_flip_delta_rank': blocks['tube_sandpile_kernel_flips']['derived']['grade_flip_delta_rank_over_f2'],
+        'tube_sandpile_flip_presentation_relation_count': blocks['tube_sandpile_flip_move_presentation']['derived']['presentation']['relation_count'],
+        'tube_sandpile_flip_presentation_basis_deltas': blocks['tube_sandpile_flip_move_presentation']['derived']['presentation']['basis_delta_masks'],
+        'tube_sandpile_five_cover_rank': blocks['tube_sandpile_flip_move_presentation']['derived']['five_cover']['rank_over_f2'],
+        'tube_sandpile_five_cover_relation_count': blocks['tube_sandpile_flip_move_presentation']['derived']['five_cover']['relation_count'],
+        'tube_sandpile_five_cover_quotient_dimension': blocks['tube_sandpile_flip_move_presentation']['derived']['five_cover']['quotient_dimension'],
+        'tube_sandpile_flip_coset_count': blocks['tube_sandpile_flip_coset_classifier']['derived']['coset_count'],
+        'tube_sandpile_flip_coset_pair_mass': blocks['tube_sandpile_flip_coset_classifier']['derived']['grade_flip_pair_mass'],
+        'tube_sandpile_flip_coset_cover_summary': blocks['tube_sandpile_flip_coset_classifier']['derived']['cover_span_coset_summary'],
+        'tube_sandpile_flip_profile_public_automorphism_compression_trivial': blocks['tube_sandpile_flip_profile_compression']['derived']['automorphism_compression']['public_automorphism_compression_is_trivial'],
+        'tube_sandpile_flip_combined_order_profile_class_count': blocks['tube_sandpile_flip_profile_compression']['derived']['combined_order_profile']['class_count'],
+        'tube_sandpile_flip_combined_order_profile_size_histogram': blocks['tube_sandpile_flip_profile_compression']['derived']['combined_order_profile']['class_size_histogram'],
+        'tube_sandpile_flip_screen12_refinement_class_count': blocks['tube_sandpile_flip_sector_refinement']['derived']['screen12_pair_transition_profile']['class_count'],
+        'tube_sandpile_flip_screen12_refinement_size_histogram': blocks['tube_sandpile_flip_sector_refinement']['derived']['screen12_pair_transition_profile']['class_size_histogram'],
+        'tube_sandpile_flip_sector_support_pullback_class_count': blocks['tube_sandpile_flip_sector_support_pullback']['derived']['support_pullback_profile']['class_count'],
+        'tube_sandpile_flip_sector_support_pullback_missing_states': blocks['tube_sandpile_flip_sector_support_pullback']['derived']['missing_screen12_states'],
+        'tube_sandpile_flip_unsupported_state': blocks['tube_sandpile_flip_unsupported_state_classification']['derived']['classification']['unsupported_state'],
+        'tube_sandpile_flip_unsupported_state_residue_count': blocks['tube_sandpile_flip_unsupported_state_classification']['derived']['residue_screen12_counts']['screen12_counts']['11'],
+        'tube_sandpile_flip_formal_11_extension_status': blocks['tube_sandpile_flip_formal_11_extension_test']['status'],
+        'tube_sandpile_flip_formal_11_extension_valid_nonempty_count': len(blocks['tube_sandpile_flip_formal_11_extension_test']['derived']['valid_nonempty_extension_scenarios']),
+        'd20_matrix_lift_conjecture_status': blocks['d20_matrix_lift_conjecture']['status'],
+        'd20_matrix_lift_shadow_strength': blocks['d20_matrix_lift_conjecture']['derived']['classification']['strength'],
+        'd20_matrix_lift_missing_bridge_count': blocks['d20_matrix_lift_conjecture']['derived']['missing_bridge_count'],
+        'd20_minimal_matrix_charge_lift_status': blocks['d20_minimal_matrix_charge_lift']['status'],
+        'd20_minimal_matrix_charge_lift_algebra': blocks['d20_minimal_matrix_charge_lift']['derived']['minimal_matrix_charge_lift']['algebra'],
+        'd20_minimal_matrix_charge_lift_status_detail': blocks['d20_minimal_matrix_charge_lift']['derived']['minimal_matrix_charge_lift']['lift_status'],
+        'd20_full_packet_matrix_lift_status': blocks['d20_full_packet_matrix_lift']['status'],
+        'd20_full_packet_matrix_lift_algebra': blocks['d20_full_packet_matrix_lift']['derived']['acting_summary']['block_algebra'],
+        'd20_full_packet_matrix_lift_a985_kernel_bound': blocks['d20_full_packet_matrix_lift']['derived']['a985_action_probe']['minimum_kernel_dimension_for_any_a985_map_into_this_block_lift'],
+        'd20_packet_quotient_action_probe_status': blocks['d20_packet_quotient_action_probe']['status'],
+        'd20_packet_quotient_action_probe_operator': blocks['d20_packet_quotient_action_probe']['derived']['operator_probe_summary']['strongest_certified_packet_action'],
+        'd20_packet_quotient_action_probe_a985_tube_found': blocks['d20_packet_quotient_action_probe']['derived']['operator_probe_summary']['a985_or_tube_packet_operator_found'],
+        'd20_explicit_packet_restriction_map_test_status': blocks['d20_explicit_packet_restriction_map_test']['status'],
+        'd20_explicit_packet_restriction_map_constructed': blocks['d20_explicit_packet_restriction_map_test']['derived']['restriction_summary']['constructed_restriction'],
+        'd20_explicit_packet_restriction_missing_bridge_count': blocks['d20_explicit_packet_restriction_map_test']['derived']['restriction_summary']['missing_bridge_count'],
+        'd20_packet_bridge_snf_obstruction_status': blocks['d20_packet_bridge_snf_obstruction']['status'],
+        'd20_packet_bridge_snf_diagonal_multiplicities': blocks['d20_packet_bridge_snf_obstruction']['derived']['obstruction_summary']['smith_diagonal_multiplicities'],
+        'd20_packet_bridge_snf_cokernel': blocks['d20_packet_bridge_snf_obstruction']['derived']['obstruction_summary']['cokernel'],
+        'd20_packet_bridge_snf_torsion_primes': blocks['d20_packet_bridge_snf_obstruction']['derived']['obstruction_summary']['torsion_primes'],
+        'd20_finite_contour_integration_status': blocks['d20_finite_contour_integration']['status'],
+        'd20_finite_contour_cycle_rank': blocks['d20_finite_contour_integration']['derived']['contour_summary']['cycle_rank_expected'],
+        'd20_finite_contour_signed_gcd': blocks['d20_finite_contour_integration']['derived']['signed_contour_residue']['gcd_signed_integrals'],
+        'd20_finite_contour_mod26_residue': blocks['d20_finite_contour_integration']['derived']['signed_contour_residue']['mod26_residue_vector'],
+        'd20_contour_sector_packet_prime_alignment_status': blocks['d20_contour_sector_packet_prime_alignment']['status'],
+        'd20_contour_sector_packet_prime_split': blocks['d20_contour_sector_packet_prime_alignment']['derived']['alignment_summary']['union_prime_split'],
+        'd20_contour_sector_packet_common_prime': blocks['d20_contour_sector_packet_prime_alignment']['derived']['alignment_summary']['common_prime_all_layers'],
+        'd20_contour_sector_packet_alignment_strength': blocks['d20_contour_sector_packet_prime_alignment']['derived']['alignment_summary']['alignment_strength'],
+        'd20_contour_charge_pairing_snf_status': blocks['d20_contour_charge_pairing_snf']['status'],
+        'd20_contour_charge_pairing_row_subgroup_order': blocks['d20_contour_charge_pairing_snf']['derived']['pairing_summary']['finite_row_subgroup_order'],
+        'd20_contour_charge_pairing_quotient_smith_diagonal': blocks['d20_contour_charge_pairing_snf']['derived']['pairing_summary']['finite_quotient_smith_diagonal'],
+        'd20_contour_charge_pairing_quotient_order': blocks['d20_contour_charge_pairing_snf']['derived']['pairing_summary']['finite_quotient_order'],
+        'd20_contour_charge_pairing_strict_weak_order_count': blocks['d20_contour_charge_pairing_snf']['derived']['weak_order_summary']['strict_weak_order_count'],
+        'd20_oriented_matroid_contour_status': blocks['d20_oriented_matroid_contour']['status'],
+        'd20_oriented_matroid_circuit_count': blocks['d20_oriented_matroid_contour']['derived']['contour_oriented_matroid_summary']['signed_circuit_count'],
+        'd20_oriented_matroid_cocircuit_count': blocks['d20_oriented_matroid_contour']['derived']['contour_oriented_matroid_summary']['signed_cocircuit_count'],
+        'd20_oriented_matroid_gamma8_tope_extends': blocks['d20_oriented_matroid_contour']['derived']['gamma8_tests']['active_positive_extends_to_acyclic_tope'],
+        'd20_oriented_matroid_gamma8_stabilizer_order': blocks['d20_oriented_matroid_contour']['derived']['pure_contour_symmetry_tests']['active_positive_signed_row_stabilizer_order'],
+        'd20_oriented_matroid_public_automorphism_order': blocks['d20_oriented_matroid_contour']['derived']['pure_contour_symmetry_tests']['public_graph_automorphism_order'],
+        'd20_oriented_matroid_sector33_extension_status': blocks['d20_oriented_matroid_sector33_extension']['status'],
+        'd20_oriented_matroid_sector33_positive_circuit': blocks['d20_oriented_matroid_sector33_extension']['derived']['sector33_height_attachment']['is_positive_circuit'],
+        'd20_oriented_matroid_sector33_cocircuit_verdict': blocks['d20_oriented_matroid_sector33_extension']['derived']['sector33_cocircuit_summary']['verdict'],
+        'd20_oriented_matroid_sector33_transport_scalar': blocks['d20_oriented_matroid_sector33_extension']['derived']['sector33_height_attachment']['new_column']['height_coordinate'],
+        'd20_oriented_matroid_sector33_dual_status': blocks['d20_oriented_matroid_sector33_dual']['status'],
+        'd20_oriented_matroid_sector33_dual_rank': blocks['d20_oriented_matroid_sector33_dual']['derived']['dual_summary']['dual_rank'],
+        'd20_oriented_matroid_sector33_dual_cocircuit': blocks['d20_oriented_matroid_sector33_dual']['derived']['dual_positive_cocircuit']['support_is_dual_cocircuit'],
+        'd20_oriented_matroid_sector33_dual_hyperplane_rank': blocks['d20_oriented_matroid_sector33_dual']['derived']['dual_positive_cocircuit']['dual_hyperplane_rank'],
+        'd20_oriented_matroid_tutte_os_status': blocks['d20_oriented_matroid_tutte_os']['status'],
+        'd20_oriented_matroid_tutte_os_field_prime': blocks['d20_oriented_matroid_tutte_os']['derived']['field_matroid']['field_prime'],
+        'd20_oriented_matroid_tutte_os_rank': blocks['d20_oriented_matroid_tutte_os']['derived']['field_matroid']['rank'],
+        'd20_oriented_matroid_tutte_os_term_count': blocks['d20_oriented_matroid_tutte_os']['derived']['tutte_polynomial']['term_count'],
+        'd20_oriented_matroid_tutte_os_basis_count': blocks['d20_oriented_matroid_tutte_os']['derived']['tutte_polynomial']['specializations']['T_1_1_basis_count'],
+        'd20_oriented_matroid_tutte_os_total_nbc_monomials': blocks['d20_oriented_matroid_tutte_os']['derived']['orlik_solomon_algebra']['total_nbc_monomials'],
+        'd20_oriented_matroid_prime_lift_audit_status': blocks['d20_oriented_matroid_prime_lift_audit']['status'],
+        'd20_oriented_matroid_prime_lift_audit_primes': blocks['d20_oriented_matroid_prime_lift_audit']['derived']['audit_primes'],
+        'd20_oriented_matroid_prime_lift_audit_exact_q_rank': blocks['d20_oriented_matroid_prime_lift_audit']['derived']['exact_rational_audit']['matrix_rank_over_q'],
+        'd20_oriented_matroid_prime_lift_audit_exact_q_circuit': blocks['d20_oriented_matroid_prime_lift_audit']['derived']['exact_rational_audit']['positive_support_is_exact_q_circuit'],
+        'd20_oriented_matroid_prime_lift_audit_full_q_promotion': blocks['d20_oriented_matroid_prime_lift_audit']['derived']['promotion_boundary']['full_rational_promotion_certified'],
+        'd20_oriented_matroid_rational_tutte_promotion_status': blocks['d20_oriented_matroid_rational_tutte_promotion']['status'],
+        'd20_oriented_matroid_rational_tutte_promotion_rank': blocks['d20_oriented_matroid_rational_tutte_promotion']['derived']['rational_matrix']['rank'],
+        'd20_oriented_matroid_rational_tutte_promotion_cache_entries': blocks['d20_oriented_matroid_rational_tutte_promotion']['derived']['exact_deletion_contraction_replay']['cache_entries'],
+        'd20_oriented_matroid_rational_tutte_promotion_term_count': blocks['d20_oriented_matroid_rational_tutte_promotion']['derived']['rational_tutte_polynomial']['term_count'],
+        'd20_oriented_matroid_rational_tutte_promotion_promoted': blocks['d20_oriented_matroid_rational_tutte_promotion']['derived']['promotion_boundary']['rational_tutte_os_promoted'],
+        'd20_oriented_matroid_rational_signed_circuits_status': blocks['d20_oriented_matroid_rational_signed_circuits']['status'],
+        'd20_oriented_matroid_rational_circuit_support_count': blocks['d20_oriented_matroid_rational_signed_circuits']['derived']['generation_summary']['rational_circuit_support_count'],
+        'd20_oriented_matroid_rational_signed_circuit_count': blocks['d20_oriented_matroid_rational_signed_circuits']['derived']['generation_summary']['signed_rational_circuit_count'],
+        'd20_oriented_matroid_rational_signed_circuits_positive_gamma8': blocks['d20_oriented_matroid_rational_signed_circuits']['derived']['positive_gamma8_e33_circuit'],
+        'd20_oriented_matroid_rational_signed_cocircuit_full_set': blocks['d20_oriented_matroid_rational_signed_circuits']['derived']['promotion_boundary']['full_rational_signed_cocircuit_set_certified'],
+        'd20_strict_weak_order_sector26_clock_status': blocks['d20_strict_weak_order_sector26_clock']['status'],
+        'd20_strict_weak_order_sector26_clock_count': blocks['d20_strict_weak_order_sector26_clock']['derived']['weak_order_summary']['strict_weak_order_count'],
+        'd20_strict_weak_order_sector26_clock_matches_pairing_line': blocks['d20_strict_weak_order_sector26_clock']['derived']['weak_order_summary']['matches_contour_charge_pairing_order13_line'],
+        'd20_strict_weak_order_sector26_clock_doubled_count': len(blocks['d20_strict_weak_order_sector26_clock']['derived']['weak_order_summary']['polarity_doubled_sector26_image']),
+        'd20_strict_weak_order_sector26_clock_full_ledger_stabilizer': blocks['d20_strict_weak_order_sector26_clock']['derived']['d20_symmetry_test']['full_augmented_ledger_stabilizer_order'],
+        'd20_intrinsic_triple_ordering_clock_status': blocks['d20_intrinsic_triple_ordering_clock']['status'],
+        'd20_intrinsic_triple_ordering_clock_basis': blocks['d20_intrinsic_triple_ordering_clock']['derived']['intrinsic_triple_summary']['basis_order'],
+        'd20_intrinsic_triple_ordering_clock_discriminant': blocks['d20_intrinsic_triple_ordering_clock']['derived']['intrinsic_triple_summary']['composite_block_discriminant'],
+        'd20_intrinsic_triple_ordering_clock_permutation_stabilizer': blocks['d20_intrinsic_triple_ordering_clock']['derived']['intrinsic_triple_summary']['transport_preserving_permutation_count'],
+        'd20_intrinsic_triple_ordering_clock_matches_prior_line': blocks['d20_intrinsic_triple_ordering_clock']['derived']['clock_summary']['matches_prior_weak_order_clock_line'],
+        'd20_triple_13_signature_uniqueness_status': blocks['d20_triple_13_signature_uniqueness']['status'],
+        'd20_triple_13_signature_unique_count': blocks['d20_triple_13_signature_uniqueness']['derived']['summary']['triple_13_signature_count'],
+        'd20_triple_13_signature_unique_basis': blocks['d20_triple_13_signature_uniqueness']['derived']['unique_certified_triple_signatures'][0]['basis_order'],
+        'd20_triple_13_signature_corpus_count': blocks['d20_triple_13_signature_uniqueness']['derived']['summary']['corpus_report_count'],
+        'd20_triple_13_signature_uniqueness_scope': blocks['d20_triple_13_signature_uniqueness']['derived']['summary']['classification_scope'],
+        'd20_raw_transport_3x3_search_status': blocks['d20_raw_transport_3x3_discriminant13_search']['status'],
+        'd20_raw_transport_3x3_search_principal_subforms': blocks['d20_raw_transport_3x3_discriminant13_search']['derived']['summary']['principal_3x3_subform_count'],
+        'd20_raw_transport_3x3_search_raw_certificate_hits': blocks['d20_raw_transport_3x3_discriminant13_search']['derived']['summary']['raw_or_certificate_discriminant13_hit_count'],
+        'd20_raw_transport_3x3_search_unreported_hits': blocks['d20_raw_transport_3x3_discriminant13_search']['derived']['summary']['unreported_discriminant13_hit_count'],
+        'raw543_repo_c2_kernel_action_status': blocks['raw543_repo_c2_kernel_action']['status'],
+        'raw543_repo_c2_kernel_basis_image_masks': blocks['raw543_repo_c2_kernel_action']['derived']['actual_nontrivial_c2_preserver']['basis_image_masks'],
+        'raw543_repo_c2_kernel_nonzero_orbits': blocks['raw543_repo_c2_kernel_action']['derived']['raw543_kernel']['nonzero_kernel_orbit_count'],
+        'raw543_repo_c2_kernel_fixed_nonzero_orbits': blocks['raw543_repo_c2_kernel_action']['derived']['raw543_kernel']['fixed_nonzero_orbits'],
+        'raw543_repo_c2_kernel_two_cycle_orbits': blocks['raw543_repo_c2_kernel_action']['derived']['raw543_kernel']['two_cycle_orbits'],
+        'zero_axiom_coorient_cache_base': blocks['zero_axiom_coorient_cache']['derived']['canonical_base'],
+        'zero_axiom_coorient_cache_closure_order': blocks['zero_axiom_coorient_cache']['derived']['closed_action']['group_order'],
+        'zero_axiom_coorient_strict_replay_byte_length': blocks['zero_axiom_coorient_strict_replay']['derived']['cache_byte_length'],
+        'zero_axiom_coorient_strict_replay_newline': blocks['zero_axiom_coorient_strict_replay']['derived']['cache_newline'],
     }
 
 
@@ -534,6 +652,506 @@ def verified_claims(blocks: Dict[str, Any]) -> list[Dict[str, Any]]:
                 'adjugate_certificate': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('adjugate_certificate'),
                 'mask_divisor_rows_sha256': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('mask_divisor_rows_sha256'),
                 'sandpile_class_rows_sha256': blocks.get('tube_sandpile_divisor_map', {}).get('derived', {}).get('sandpile_class_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_kernel_flips',
+            'name': 'D20 exact-divisor tube-grade flip moves',
+            'status': 'certified exact-divisor move census',
+            'statement': 'The 154 mixed sandpile classes are already mixed inside exact oriented-divisor fibers. There are 1285 same-divisor grade-flip mask pairs, 392 distinct XOR flip moves, and these flip moves span rank 11 over F2. A deterministic five-move cover hits every mixed fiber.',
+            'evidence': {
+                'exact_divisor_fiber_count': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('exact_divisor_fiber_count'),
+                'sandpile_class_exact_divisor_count_histogram': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('sandpile_class_exact_divisor_count_histogram'),
+                'mixed_exact_divisor_fiber_count': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('mixed_exact_divisor_fiber_count'),
+                'mixed_exact_divisor_mask_count': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('mixed_exact_divisor_mask_count'),
+                'same_divisor_pair_count': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('same_divisor_pair_count'),
+                'grade_flip_pair_count': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('grade_flip_pair_count'),
+                'grade_preserving_pair_count': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('grade_preserving_pair_count'),
+                'unique_grade_flip_delta_count': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('unique_grade_flip_delta_count'),
+                'single_bit_flip_deltas': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('single_bit_flip_deltas'),
+                'grade_flip_delta_rank_over_f2': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('grade_flip_delta_rank_over_f2'),
+                'grade_flip_pair_delta_weight_histogram': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('grade_flip_pair_delta_weight_histogram'),
+                'small_flip_cover_rows': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('small_flip_cover_rows'),
+                'canonical_flip_witness_rows_sha256': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('canonical_flip_witness_rows_sha256'),
+                'grade_flip_pair_rows_sha256': blocks.get('tube_sandpile_kernel_flips', {}).get('derived', {}).get('grade_flip_pair_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_flip_move_presentation',
+            'name': 'D20 finite F2 flip-move presentation',
+            'status': 'certified finite presentation',
+            'statement': 'The 392 exact-divisor tube-grade flip moves present the full 11-dimensional F2 residue move space. A canonical 11-move basis gives 381 linear relations. The five cover moves are independent, so there is no nonzero F2 relation among them.',
+            'evidence': {
+                'generator_count': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('presentation', {}).get('generator_count'),
+                'basis_count': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('presentation', {}).get('basis_count'),
+                'basis_delta_masks': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('presentation', {}).get('basis_delta_masks'),
+                'relation_count': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('presentation', {}).get('relation_count'),
+                'relation_weight_histogram': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('presentation', {}).get('relation_weight_histogram'),
+                'quotient_order': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('presentation', {}).get('quotient_order'),
+                'five_cover': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('five_cover'),
+                'relation_rows_sha256': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('relation_rows_sha256'),
+                'cover_nonzero_sum_rows_sha256': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('cover_nonzero_sum_rows_sha256'),
+                'cover_coset_rows_sha256': blocks.get('tube_sandpile_flip_move_presentation', {}).get('derived', {}).get('cover_coset_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_flip_coset_classifier',
+            'name': 'D20 flip-move quotient coset classifier',
+            'status': 'certified 64-coset observable classifier',
+            'statement': 'The quotient of the 392 exact-divisor grade-flip moves by the five-cover span has 64 observable cosets. The cover-span coset is the unique coset containing the five cover moves and it touches all 154 mixed exact-divisor fibers.',
+            'evidence': {
+                'quotient_dimension': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('quotient_dimension'),
+                'coset_count': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('coset_count'),
+                'generator_delta_mass': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('generator_delta_mass'),
+                'grade_flip_pair_mass': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('grade_flip_pair_mass'),
+                'exact_divisor_fiber_union_count': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('exact_divisor_fiber_union_count'),
+                'sandpile_class_union_count': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('sandpile_class_union_count'),
+                'cover_span_coset_summary': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('cover_span_coset_summary'),
+                'generator_delta_count_histogram': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('generator_delta_count_histogram'),
+                'grade_flip_pair_count_histogram': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('grade_flip_pair_count_histogram'),
+                'pair_sandpile_class_order_histogram': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('pair_sandpile_class_order_histogram'),
+                'coset_rows_sha256': blocks.get('tube_sandpile_flip_coset_classifier', {}).get('derived', {}).get('coset_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_flip_profile_compression',
+            'name': 'D20 flip-coset profile compression',
+            'status': 'certified profile compression',
+            'statement': 'The full public automorphism group does not nontrivially compress the 64 flip-coset quotient: only the identity preserves the flip-generator set and five-cover span. Sandpile-order observables compress the 64 cosets into 48 combined-order classes.',
+            'evidence': {
+                'automorphism_compression': blocks.get('tube_sandpile_flip_profile_compression', {}).get('derived', {}).get('automorphism_compression'),
+                'pair_order_profile': {
+                    key: value
+                    for key, value in blocks.get('tube_sandpile_flip_profile_compression', {})
+                    .get('derived', {})
+                    .get('pair_order_profile', {})
+                    .items()
+                    if key != 'class_rows'
+                },
+                'fiber_order_profile': {
+                    key: value
+                    for key, value in blocks.get('tube_sandpile_flip_profile_compression', {})
+                    .get('derived', {})
+                    .get('fiber_order_profile', {})
+                    .items()
+                    if key != 'class_rows'
+                },
+                'combined_order_profile': {
+                    key: value
+                    for key, value in blocks.get('tube_sandpile_flip_profile_compression', {})
+                    .get('derived', {})
+                    .get('combined_order_profile', {})
+                    .items()
+                    if key != 'class_rows'
+                },
+                'measured_profile': {
+                    key: value
+                    for key, value in blocks.get('tube_sandpile_flip_profile_compression', {})
+                    .get('derived', {})
+                    .get('measured_profile', {})
+                    .items()
+                    if key != 'class_rows'
+                },
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_flip_sector_refinement',
+            'name': 'D20 flip-coset screen refinement',
+            'status': 'certified singleton screen refinement',
+            'statement': 'The three signed-turn residue screens refine the 48 combined-order flip-coset profile classes to all 64 cosets. The 12 non-singleton combined-order classes split into singleton classes using only the screen1/screen2 transition profile on grade-flip pairs.',
+            'evidence': {
+                'screen_summary': blocks.get('tube_sandpile_flip_sector_refinement', {}).get('derived', {}).get('screen_summary'),
+                'combined_order_profile': {
+                    key: value
+                    for key, value in blocks.get('tube_sandpile_flip_sector_refinement', {})
+                    .get('derived', {})
+                    .get('combined_order_profile', {})
+                    .items()
+                    if key != 'non_singleton_rows'
+                },
+                'screen12_pair_transition_profile': {
+                    key: value
+                    for key, value in blocks.get('tube_sandpile_flip_sector_refinement', {})
+                    .get('derived', {})
+                    .get('screen12_pair_transition_profile', {})
+                    .items()
+                    if key != 'class_rows'
+                },
+                'combined_order_split_rows_sha256': blocks.get('tube_sandpile_flip_sector_refinement', {}).get('derived', {}).get('combined_order_split_rows_sha256'),
+                'coset_screen_refinement_rows_sha256': blocks.get('tube_sandpile_flip_sector_refinement', {}).get('derived', {}).get('coset_screen_refinement_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_flip_sector_support_pullback',
+            'name': 'D20 flip-coset sector-support pullback',
+            'status': 'certified support pullback with explicit obstruction',
+            'statement': 'The screen1/screen2 residue split pulls back to explicit 39-sector support cells for states 00, 01, and 10. State 11 has no local primitive sector support, but the support-admissible transition profile still splits all 64 cosets.',
+            'evidence': {
+                'supported_screen12_states': blocks.get('tube_sandpile_flip_sector_support_pullback', {}).get('derived', {}).get('supported_screen12_states'),
+                'missing_screen12_states': blocks.get('tube_sandpile_flip_sector_support_pullback', {}).get('derived', {}).get('missing_screen12_states'),
+                'transition_obstruction_summary': blocks.get('tube_sandpile_flip_sector_support_pullback', {}).get('derived', {}).get('transition_obstruction_summary'),
+                'support_pullback_profile': {
+                    key: value
+                    for key, value in blocks.get('tube_sandpile_flip_sector_support_pullback', {})
+                    .get('derived', {})
+                    .get('support_pullback_profile', {})
+                    .items()
+                    if key != 'class_rows'
+                },
+                'state_cell_rows_sha256': blocks.get('tube_sandpile_flip_sector_support_pullback', {}).get('derived', {}).get('state_cell_rows_sha256'),
+                'coset_support_pullback_rows_sha256': blocks.get('tube_sandpile_flip_sector_support_pullback', {}).get('derived', {}).get('coset_support_pullback_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_flip_unsupported_state_classification',
+            'name': 'D20 flip-coset unsupported-state classification',
+            'status': 'certified object-phase boundary',
+            'statement': 'The unsupported screen12=11 state is residue-visible but outside the current A985/tube six-object phase image. The residue cube has 512 masks in that state and grade-flip data uses it, but no signed object label or local primitive sector piece realizes it.',
+            'evidence': {
+                'classification': blocks.get('tube_sandpile_flip_unsupported_state_classification', {}).get('derived', {}).get('classification'),
+                'object_state_counts': blocks.get('tube_sandpile_flip_unsupported_state_classification', {}).get('derived', {}).get('object_state_counts'),
+                'object_labels_by_state': blocks.get('tube_sandpile_flip_unsupported_state_classification', {}).get('derived', {}).get('object_labels_by_state'),
+                'residue_screen12_counts': blocks.get('tube_sandpile_flip_unsupported_state_classification', {}).get('derived', {}).get('residue_screen12_counts'),
+                'transition_obstruction_summary': blocks.get('tube_sandpile_flip_unsupported_state_classification', {}).get('derived', {}).get('transition_obstruction_summary'),
+                'sector_support_state_rows_sha256': blocks.get('tube_sandpile_flip_unsupported_state_classification', {}).get('derived', {}).get('sector_support_state_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'tube_sandpile_flip_formal_11_extension_test',
+            'name': 'D20 flip-coset formal 11 extension test',
+            'status': 'certified obstruction',
+            'statement': 'A nonempty formal support-level realization of screen12=11 is obstructed by the current finite A985/tube support constraints. The empty cell is compatible but explains no residue transitions; every nonempty option breaks an existing finite boundary.',
+            'evidence': {
+                'object_full_signature_counts': blocks.get('tube_sandpile_flip_formal_11_extension_test', {}).get('derived', {}).get('object_full_signature_counts'),
+                'residue_state11_screen0_lifts': blocks.get('tube_sandpile_flip_formal_11_extension_test', {}).get('derived', {}).get('residue_state11_screen0_lifts'),
+                'state11_transition_obstruction': blocks.get('tube_sandpile_flip_formal_11_extension_test', {}).get('derived', {}).get('state11_transition_obstruction'),
+                'constraint_preserving_scenarios': blocks.get('tube_sandpile_flip_formal_11_extension_test', {}).get('derived', {}).get('constraint_preserving_scenarios'),
+                'valid_nonempty_extension_scenarios': blocks.get('tube_sandpile_flip_formal_11_extension_test', {}).get('derived', {}).get('valid_nonempty_extension_scenarios'),
+                'formal_extension_scenarios_sha256': blocks.get('tube_sandpile_flip_formal_11_extension_test', {}).get('derived', {}).get('formal_extension_scenarios_sha256'),
+            },
+        },
+
+        {
+            'id': 'd20_matrix_lift_conjecture',
+            'name': 'D20 Matrix Lift Conjecture',
+            'status': 'registered finite-shadow conjecture',
+            'statement': 'D20 exhibits a finite Matrix-theoretic charge-wall shadow: a finite matrix/algebraic bulk, a Lambda^3 H6 public boundary, a half-integral zero-pair propagator residue that descends to a denominator-cleared sector-26 charge ledger, and primitive public-zero wall sector 33. The certificate registers the conjecture and explicitly does not prove M-theory or a DLCQ matrix model.',
+            'evidence': {
+                'classification': blocks.get('d20_matrix_lift_conjecture', {}).get('derived', {}).get('classification'),
+                'half_integral_descent': blocks.get('d20_matrix_lift_conjecture', {}).get('derived', {}).get('half_integral_descent'),
+                'wall_sector': blocks.get('d20_matrix_lift_conjecture', {}).get('derived', {}).get('wall_sector'),
+                'missing_bridge_count': blocks.get('d20_matrix_lift_conjecture', {}).get('derived', {}).get('missing_bridge_count'),
+                'matrix_lift_conjecture': blocks.get('d20_matrix_lift_conjecture', {}).get('derived', {}).get('matrix_lift_conjecture'),
+            },
+        },
+
+        {
+            'id': 'd20_minimal_matrix_charge_lift',
+            'name': 'D20 minimal matrix charge-lift',
+            'status': 'certified local charge-kernel lift',
+            'statement': 'The denominator-cleared zero-pair propagator charge kernel has an explicit Mat_2(Q) lift on packet basis [239,238]. The swap projectors (I+S)/2 and (I-S)/2 reproduce the half-integral residue directions, and their cleared packet vectors recover the certified sector-26 plus/minus ledger images. This remains a local charge-kernel lift, not a full A985-to-DLCQ matrix model.',
+            'evidence': {
+                'minimal_matrix_charge_lift': blocks.get('d20_minimal_matrix_charge_lift', {}).get('derived', {}).get('minimal_matrix_charge_lift'),
+                'mode_direction_checks': blocks.get('d20_minimal_matrix_charge_lift', {}).get('derived', {}).get('mode_direction_checks'),
+                'remaining_promotion_bridge': blocks.get('d20_minimal_matrix_charge_lift', {}).get('derived', {}).get('remaining_promotion_bridge'),
+            },
+        },
+
+        {
+            'id': 'd20_full_packet_matrix_lift',
+            'name': 'D20 full-packet matrix lift',
+            'status': 'certified full-exposure propagation lift',
+            'statement': 'The local Mat_2(Q) charge-kernel lift extends to the full 20-packet full-exposure propagation operator as Mat_2(Q)^10. Each active-partner doublet has transition block 2I+4S with the same plus/minus projectors, and the zero-pair block embeds the [239,238] minimal lift. This realizes the certified propagation operator but not a faithful full A985 action.',
+            'evidence': {
+                'acting_summary': blocks.get('d20_full_packet_matrix_lift', {}).get('derived', {}).get('acting_summary'),
+                'a985_action_probe': blocks.get('d20_full_packet_matrix_lift', {}).get('derived', {}).get('a985_action_probe'),
+                'component_lift_rows_sha256': blocks.get('d20_full_packet_matrix_lift', {}).get('derived', {}).get('component_lift_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'd20_packet_quotient_action_probe',
+            'name': 'D20 packet quotient-action probe',
+            'status': 'certified packet-level scattering action',
+            'statement': 'The quotient-action probe finds certified packet-level scattering actions that preserve the 20 full-exposure packets and land in Mat_2(Q)^10: [5,10]+[10,5] acts as 2I, the remaining ordered crossing pairs act as 4S, and their sum is the 2I+4S block. It does not certify an A985, tube, or terminal-quotient packet operator map.',
+            'evidence': {
+                'operator_probe_summary': blocks.get('d20_packet_quotient_action_probe', {}).get('derived', {}).get('operator_probe_summary'),
+                'certified_packet_actions': blocks.get('d20_packet_quotient_action_probe', {}).get('derived', {}).get('certified_packet_actions'),
+                'negative_boundary': blocks.get('d20_packet_quotient_action_probe', {}).get('derived', {}).get('negative_boundary'),
+            },
+        },
+
+        {
+            'id': 'd20_explicit_packet_restriction_map_test',
+            'name': 'D20 explicit packet restriction map test',
+            'status': 'certified scattering restriction with missing raw bridges',
+            'statement': 'The reduced scattering automaton has an explicit restriction to the 20 full-exposure packets by projecting 40 kernel mode masks to packet ids. One crossing step leaves the kernel packet space, while two ordered crossing steps recover the certified 2I+4S block in Mat_2(Q)^10. The current A985 relation basis, screen-0 tube element, and q42/q12 quotient tensors still have no certified projection to packet modes.',
+            'evidence': {
+                'domain_inventory': blocks.get('d20_explicit_packet_restriction_map_test', {}).get('derived', {}).get('domain_inventory'),
+                'restriction_summary': blocks.get('d20_explicit_packet_restriction_map_test', {}).get('derived', {}).get('restriction_summary'),
+                'automaton_block_rows_sha256': blocks.get('d20_explicit_packet_restriction_map_test', {}).get('derived', {}).get('automaton_block_rows_sha256'),
+                'missing_bridge_inventory': blocks.get('d20_explicit_packet_restriction_map_test', {}).get('derived', {}).get('missing_bridge_inventory'),
+            },
+        },
+
+        {
+            'id': 'd20_packet_bridge_snf_obstruction',
+            'name': 'D20 packet bridge SNF obstruction',
+            'status': 'certified packet Smith obstruction',
+            'statement': 'The certified 20-packet operator has exact Smith factors 2^10 and 6^10, so its cokernel is Z/2^10 x Z/6^10. On each packet doublet, an integer target pair (u,v) lies in the packet image only if u-v is 0 mod 2 and u+v is 0 mod 6. This gives the integral obstruction template for future A985, tube, and q42/q12 packet bridges, but does not construct those raw bridges.',
+            'evidence': {
+                'obstruction_summary': blocks.get('d20_packet_bridge_snf_obstruction', {}).get('derived', {}).get('obstruction_summary'),
+                'smith_normal_form': blocks.get('d20_packet_bridge_snf_obstruction', {}).get('derived', {}).get('smith_normal_form'),
+                'packet_image_congruence_rows_sha256': blocks.get('d20_packet_bridge_snf_obstruction', {}).get('derived', {}).get('packet_image_congruence_rows_sha256'),
+                'raw_bridge_snf_tasks': blocks.get('d20_packet_bridge_snf_obstruction', {}).get('derived', {}).get('raw_bridge_snf_tasks'),
+            },
+        },
+
+        {
+            'id': 'd20_finite_contour_integration',
+            'name': 'D20 finite contour integration',
+            'status': 'certified finite contour calculus',
+            'statement': 'The D20 H-cycle table is a finite contour-action table: the 11 primitive cycles form a full F2 cycle basis, have zero boundary defects, and their positive contour integrals reproduce the stored optical actions. The signed contour residues are not exact; after division by 3072 they form the primitive residue vector (-106,-94,12,20,-40,-159,-174,-180,-40,-67,-81), whose mod-26 reduction is (24,10,12,20,12,23,8,2,12,11,23).',
+            'evidence': {
+                'contour_summary': blocks.get('d20_finite_contour_integration', {}).get('derived', {}).get('contour_summary'),
+                'positive_contour_action': blocks.get('d20_finite_contour_integration', {}).get('derived', {}).get('positive_contour_action'),
+                'signed_contour_residue': blocks.get('d20_finite_contour_integration', {}).get('derived', {}).get('signed_contour_residue'),
+                'exactness_obstruction': blocks.get('d20_finite_contour_integration', {}).get('derived', {}).get('exactness_obstruction'),
+            },
+        },
+
+        {
+            'id': 'd20_contour_sector_packet_prime_alignment',
+            'name': 'D20 contour-sector-packet prime alignment',
+            'status': 'certified prime-support alignment',
+            'statement': 'The contour, packet-SNF, and sector-26 charge certificates exhibit a stratified 2/3/13 split. Prime 2 is common to all three layers. Prime 3 occurs in raw contour/action quantization and packet SNF torsion. Prime 13 appears only after sector-26 ledger reduction. This is prime-support alignment, not an isomorphism of the three structures.',
+            'evidence': {
+                'alignment_summary': blocks.get('d20_contour_sector_packet_prime_alignment', {}).get('derived', {}).get('alignment_summary'),
+                'factorizations': blocks.get('d20_contour_sector_packet_prime_alignment', {}).get('derived', {}).get('factorizations'),
+                'sector26_charge_summary': blocks.get('d20_contour_sector_packet_prime_alignment', {}).get('derived', {}).get('sector26_charge_summary'),
+                'comparison_rows_sha256': blocks.get('d20_contour_sector_packet_prime_alignment', {}).get('derived', {}).get('comparison_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'd20_contour_charge_pairing_snf',
+            'name': 'D20 contour-charge pairing Smith form',
+            'status': 'certified finite quotient Smith form',
+            'statement': 'The 11-entry primitive contour residue line pairs with the sector-26 plus/minus charge doublet to generate one order-13 anti-diagonal line in (Z/26)^2. The finite quotient has Smith factors [2,26], hence order 52. The 13 strict weak orderings of three labelled elements are recorded as a compatible comparison only, not as a certified source theorem.',
+            'evidence': {
+                'pairing_summary': blocks.get('d20_contour_charge_pairing_snf', {}).get('derived', {}).get('pairing_summary'),
+                'raw_pairing_smith_forms': blocks.get('d20_contour_charge_pairing_snf', {}).get('derived', {}).get('raw_pairing_smith_forms'),
+                'finite_quotient_smith_forms': blocks.get('d20_contour_charge_pairing_snf', {}).get('derived', {}).get('finite_quotient_smith_forms'),
+                'weak_order_summary': blocks.get('d20_contour_charge_pairing_snf', {}).get('derived', {}).get('weak_order_summary'),
+            },
+        },
+
+        {
+            'id': 'd20_oriented_matroid_contour',
+            'name': 'D20 oriented-matroid contour spine',
+            'status': 'certified graphic oriented matroid witness',
+            'statement': 'The D20 public contour incidence matrix defines a graphic oriented matroid with 1168 signed circuits and 12878 signed cocircuits. The gamma8 active height row extends to an acyclic tope and has trivial signed stabilizer, while the pure contour matroid does not by itself certify sector 33 as a cocircuit/hyperplane or produce the hidden C2 relaxation.',
+            'evidence': {
+                'contour_oriented_matroid_summary': blocks.get('d20_oriented_matroid_contour', {}).get('derived', {}).get('contour_oriented_matroid_summary'),
+                'gamma8_tests': blocks.get('d20_oriented_matroid_contour', {}).get('derived', {}).get('gamma8_tests'),
+                'pure_contour_symmetry_tests': blocks.get('d20_oriented_matroid_contour', {}).get('derived', {}).get('pure_contour_symmetry_tests'),
+                'blocked_or_deferred': blocks.get('d20_oriented_matroid_contour', {}).get('derived', {}).get('blocked_or_deferred'),
+            },
+        },
+
+        {
+            'id': 'd20_oriented_matroid_sector33_extension',
+            'name': 'D20 sector-33 oriented-matroid extension',
+            'status': 'certified positive-circuit extension test',
+            'statement': 'The natural sector-33 one-element extensions of the D20 contour matroid do not make sector 33 a cocircuit or hyperplane. The height-derived sector-33 attachment instead makes gamma8+e33 a positive circuit obstruction: the five active gamma8 edges plus two copies of the sector-33 unit close the certified -374784 residual.',
+            'evidence': {
+                'signed_residue_extension': blocks.get('d20_oriented_matroid_sector33_extension', {}).get('derived', {}).get('signed_residue_extension'),
+                'hidden_sector_scalar_extension': blocks.get('d20_oriented_matroid_sector33_extension', {}).get('derived', {}).get('hidden_sector_scalar_extension'),
+                'sector33_height_attachment': blocks.get('d20_oriented_matroid_sector33_extension', {}).get('derived', {}).get('sector33_height_attachment'),
+                'sector33_cocircuit_summary': blocks.get('d20_oriented_matroid_sector33_extension', {}).get('derived', {}).get('sector33_cocircuit_summary'),
+            },
+        },
+
+        {
+            'id': 'd20_oriented_matroid_sector33_dual',
+            'name': 'D20 sector-33 dual oriented-matroid witness',
+            'status': 'certified positive dual cocircuit',
+            'statement': 'An explicit integer nullspace basis for the sector-33 height attachment represents the dual oriented matroid. In that dual, gamma8+e33 is a positive cocircuit: its complement is a rank-10 hyperplane and adding any one of the six cocircuit elements restores dual rank 11.',
+            'evidence': {
+                'dual_summary': blocks.get('d20_oriented_matroid_sector33_dual', {}).get('derived', {}).get('dual_summary'),
+                'dual_positive_cocircuit': blocks.get('d20_oriented_matroid_sector33_dual', {}).get('derived', {}).get('dual_positive_cocircuit'),
+                'element_tests': blocks.get('d20_oriented_matroid_sector33_dual', {}).get('derived', {}).get('element_tests'),
+            },
+        },
+
+        {
+            'id': 'd20_oriented_matroid_tutte_os',
+            'name': 'D20 sector-33 Tutte/Orlik-Solomon package',
+            'status': 'certified finite-field Tutte/OS witness',
+            'statement': 'Over F_1000003, the 31-element sector-33 height attachment has rank 20, a 93-term Tutte polynomial, 18,356,358 bases, and a nonnegative NBC/Orlik-Solomon Hilbert vector beginning [1,31]. This is explicitly a finite-field witness pending a rational prime-good audit.',
+            'evidence': {
+                'field_matroid': blocks.get('d20_oriented_matroid_tutte_os', {}).get('derived', {}).get('field_matroid'),
+                'deletion_contraction_cache': blocks.get('d20_oriented_matroid_tutte_os', {}).get('derived', {}).get('deletion_contraction_cache'),
+                'tutte_polynomial': blocks.get('d20_oriented_matroid_tutte_os', {}).get('derived', {}).get('tutte_polynomial'),
+                'characteristic_polynomial': blocks.get('d20_oriented_matroid_tutte_os', {}).get('derived', {}).get('characteristic_polynomial'),
+                'orlik_solomon_algebra': blocks.get('d20_oriented_matroid_tutte_os', {}).get('derived', {}).get('orlik_solomon_algebra'),
+            },
+        },
+
+        {
+            'id': 'd20_oriented_matroid_prime_lift_audit',
+            'name': 'D20 oriented-matroid prime-lift audit',
+            'status': 'certified multi-prime stability audit',
+            'statement': 'The sector-33 Tutte/OS package is stable over five audited primes 1000003, 1000033, 1000037, 1000039, and 1000081: all give rank 20, 93 Tutte terms, the same polynomial hash, and 18,356,358 bases. The integer matrix has exact rational rank 20 and gamma8+e33 is an exact primitive rational circuit; full rational matroid promotion remains explicitly unclaimed.',
+            'evidence': {
+                'baseline': blocks.get('d20_oriented_matroid_prime_lift_audit', {}).get('derived', {}).get('baseline'),
+                'prime_field_records': blocks.get('d20_oriented_matroid_prime_lift_audit', {}).get('derived', {}).get('prime_field_records'),
+                'prime_stability_summary': blocks.get('d20_oriented_matroid_prime_lift_audit', {}).get('derived', {}).get('prime_stability_summary'),
+                'exact_rational_audit': blocks.get('d20_oriented_matroid_prime_lift_audit', {}).get('derived', {}).get('exact_rational_audit'),
+                'promotion_boundary': blocks.get('d20_oriented_matroid_prime_lift_audit', {}).get('derived', {}).get('promotion_boundary'),
+            },
+        },
+
+        {
+            'id': 'd20_oriented_matroid_rational_tutte_promotion',
+            'name': 'D20 rational Tutte/Orlik-Solomon promotion',
+            'status': 'certified exact rational Tutte/OS replay',
+            'statement': 'The sector-33 height-attachment matrix has an exact rational deletion-contraction replay with rank 20, 307218 cached states, 93 Tutte terms, and the same Tutte hash as the audited finite-field package. The Tutte polynomial, characteristic polynomial, and NBC/Orlik-Solomon Hilbert vector are therefore promoted to the rational matroid represented by the integer sector-33 matrix.',
+            'evidence': {
+                'rational_matrix': blocks.get('d20_oriented_matroid_rational_tutte_promotion', {}).get('derived', {}).get('rational_matrix'),
+                'exact_deletion_contraction_replay': blocks.get('d20_oriented_matroid_rational_tutte_promotion', {}).get('derived', {}).get('exact_deletion_contraction_replay'),
+                'rational_tutte_polynomial': blocks.get('d20_oriented_matroid_rational_tutte_promotion', {}).get('derived', {}).get('rational_tutte_polynomial'),
+                'rational_characteristic_polynomial': blocks.get('d20_oriented_matroid_rational_tutte_promotion', {}).get('derived', {}).get('rational_characteristic_polynomial'),
+                'rational_orlik_solomon_algebra': blocks.get('d20_oriented_matroid_rational_tutte_promotion', {}).get('derived', {}).get('rational_orlik_solomon_algebra'),
+                'promotion_boundary': blocks.get('d20_oriented_matroid_rational_tutte_promotion', {}).get('derived', {}).get('promotion_boundary'),
+            },
+        },
+
+        {
+            'id': 'd20_oriented_matroid_rational_signed_circuits',
+            'name': 'D20 rational signed-circuit system',
+            'status': 'certified rational signed circuits',
+            'statement': 'The sector-33 rational lift matroid has 24,946 circuit supports and 49,892 signed circuits up to global sign. The full signed-circuit list is generated from balanced simple cycles and height-zero pairs of unbalanced cycles; gamma8+e33 appears with primitive coefficients [1,1,1,1,1,2]. The distinguished positive dual cocircuit is retained, while full signed-cocircuit enumeration remains open.',
+            'evidence': {
+                'rational_matrix': blocks.get('d20_oriented_matroid_rational_signed_circuits', {}).get('derived', {}).get('rational_matrix'),
+                'generation_summary': blocks.get('d20_oriented_matroid_rational_signed_circuits', {}).get('derived', {}).get('generation_summary'),
+                'positive_gamma8_e33_circuit': blocks.get('d20_oriented_matroid_rational_signed_circuits', {}).get('derived', {}).get('positive_gamma8_e33_circuit'),
+                'distinguished_dual_cocircuit': blocks.get('d20_oriented_matroid_rational_signed_circuits', {}).get('derived', {}).get('distinguished_dual_cocircuit'),
+                'circuit_rows_sha256': blocks.get('d20_oriented_matroid_rational_signed_circuits', {}).get('derived', {}).get('circuit_rows_sha256'),
+                'promotion_boundary': blocks.get('d20_oriented_matroid_rational_signed_circuits', {}).get('derived', {}).get('promotion_boundary'),
+            },
+        },
+
+        {
+            'id': 'd20_strict_weak_order_sector26_clock',
+            'name': 'D20 strict weak order sector-26 clock',
+            'status': 'certified 13-ordering clock map',
+            'statement': 'The 13 strict weak orderings on {a,b,c} map by k -> 2k mod 26 onto the order-13 anti-diagonal line certified by the contour-charge pairing. Polarity doubling covers all 26 sector residues. The full augmented D20 ledger preserves this clock only trivially because its stabilizer is identity; the hidden C2 quotient requires forgetting sector-26 clock refinements.',
+            'evidence': {
+                'weak_order_summary': blocks.get('d20_strict_weak_order_sector26_clock', {}).get('derived', {}).get('weak_order_summary'),
+                'd20_symmetry_test': blocks.get('d20_strict_weak_order_sector26_clock', {}).get('derived', {}).get('d20_symmetry_test'),
+                'anti_diagonal_pairs_sha256': blocks.get('d20_strict_weak_order_sector26_clock', {}).get('derived', {}).get('anti_diagonal_pairs_sha256'),
+                'relabel_records_sha256': blocks.get('d20_strict_weak_order_sector26_clock', {}).get('derived', {}).get('relabel_records_sha256'),
+            },
+        },
+
+        {
+            'id': 'd20_intrinsic_triple_ordering_clock',
+            'name': 'D20 intrinsic triple ordering clock',
+            'status': 'certified intrinsic 13-ordering clock',
+            'statement': 'The sector-26 hidden transport form supplies the intrinsic, permutation-rigid triple (R33, K_mixed_S, K_pure_Sminus). Its strict weak orderings reproduce the same order-13 anti-diagonal line and 26-state polarity-doubled clock as the placeholder weak-order theorem. The composite block has discriminant 13, and only the identity preserves the full 3x3 transport matrix.',
+            'evidence': {
+                'intrinsic_triple_summary': blocks.get('d20_intrinsic_triple_ordering_clock', {}).get('derived', {}).get('intrinsic_triple_summary'),
+                'clock_summary': blocks.get('d20_intrinsic_triple_ordering_clock', {}).get('derived', {}).get('clock_summary'),
+                'transport_permutation_records_sha256': blocks.get('d20_intrinsic_triple_ordering_clock', {}).get('derived', {}).get('transport_permutation_records_sha256'),
+                'intrinsic_order_records_sha256': blocks.get('d20_intrinsic_triple_ordering_clock', {}).get('derived', {}).get('intrinsic_order_records_sha256'),
+            },
+        },
+
+        {
+            'id': 'd20_triple_13_signature_uniqueness',
+            'name': 'D20 triple 13-signature uniqueness',
+            'status': 'certified corpus uniqueness',
+            'statement': 'Across the certified D20 theorem-report corpus, every explicit 3-object matrix triple with a discriminant-13 or order-13 clock signature has the same signature: basis (R33, K_mixed_S, K_pure_Sminus) and matrix [[4,0,0],[0,5,1],[0,1,2]]. This proves uniqueness in the current explicit theorem-report corpus, not in every conceivable raw D20 subform.',
+            'evidence': {
+                'summary': blocks.get('d20_triple_13_signature_uniqueness', {}).get('derived', {}).get('summary'),
+                'unique_certified_triple_signatures': blocks.get('d20_triple_13_signature_uniqueness', {}).get('derived', {}).get('unique_certified_triple_signatures'),
+                'certified_discriminant13_records_sha256': blocks.get('d20_triple_13_signature_uniqueness', {}).get('derived', {}).get('certified_discriminant13_records_sha256'),
+                'certified_order13_records_sha256': blocks.get('d20_triple_13_signature_uniqueness', {}).get('derived', {}).get('certified_order13_records_sha256'),
+            },
+        },
+
+        {
+            'id': 'd20_raw_transport_3x3_discriminant13_search',
+            'name': 'D20 raw/transport 3x3 discriminant-13 search',
+            'status': 'certified bounded JSON survey',
+            'statement': 'A bounded survey of d20.json, every layer JSON file, and transport/sector/anomaly theorem reports checked 42,185 principal 3x3 subforms. Raw d20/layer JSON has zero discriminant-13 hits; the only transport-sector hits are the known hidden transport matrix in sector26_invariant_suite and finite_anomaly_counter. No determinant-13 principal 3x3 subform appears.',
+            'evidence': {
+                'summary': blocks.get('d20_raw_transport_3x3_discriminant13_search', {}).get('derived', {}).get('summary'),
+                'known_hidden_transport_hits_sha256': blocks.get('d20_raw_transport_3x3_discriminant13_search', {}).get('derived', {}).get('known_hidden_transport_hits_sha256'),
+                'unreported_discriminant13_hits_sha256': blocks.get('d20_raw_transport_3x3_discriminant13_search', {}).get('derived', {}).get('unreported_discriminant13_hits_sha256'),
+                'determinant13_hits_sha256': blocks.get('d20_raw_transport_3x3_discriminant13_search', {}).get('derived', {}).get('determinant13_hits_sha256'),
+            },
+        },
+
+        {
+            'id': 'raw543_repo_c2_kernel_action',
+            'name': 'Raw543 actual D20 C2-kernel action',
+            'status': 'certified actual hidden-split orbit theorem',
+            'statement': 'The nonidentity C2 preserver recorded in the public D20 hidden-split theorem acts on F2^11 by basis-image masks [16,2,512,1034,1,64,32,128,256,4,1024]. On the nonzero hidden-character kernel it has 543 orbits: 63 fixed nonzero vectors and 480 two-cycles.',
+            'evidence': {
+                'actual_nontrivial_c2_preserver': blocks.get('raw543_repo_c2_kernel_action', {}).get('derived', {}).get('actual_nontrivial_c2_preserver'),
+                'nilpotent_part': blocks.get('raw543_repo_c2_kernel_action', {}).get('derived', {}).get('nilpotent_part'),
+                'raw543_kernel': blocks.get('raw543_repo_c2_kernel_action', {}).get('derived', {}).get('raw543_kernel'),
+                'identities': blocks.get('raw543_repo_c2_kernel_action', {}).get('derived', {}).get('identities'),
+            },
+        },
+
+        {
+            'id': 'zero_axiom_coorient_cache',
+            'name': 'D20 zero-axiom coorient cache boundary',
+            'status': 'certified cache boundary',
+            'statement': 'The zero-axiom coorient cache has a valid self hash and current source-file hashes. It records the canonical base [18,67,37], separation of all 2576 points, nine derived marker integers, and closure order 9216.',
+            'evidence': {
+                'cache_path': blocks.get('zero_axiom_coorient_cache', {}).get('definition', {}).get('cache_path'),
+                'cache_certificate_sha256': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('cache_certificate_sha256'),
+                'canonical_base': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('canonical_base'),
+                'final_signature_count': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('final_signature_count'),
+                'marker_integer_count': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('marker_integer_count'),
+                'selected_generator_indices': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('selected_generator_indices'),
+                'selected_generator_orders': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('selected_generator_orders'),
+                'closed_action': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('closed_action'),
+                'word_presentation': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('word_presentation'),
+                'source_file_rows_sha256': blocks.get('zero_axiom_coorient_cache', {}).get('derived', {}).get('source_file_rows_sha256'),
+            },
+        },
+
+        {
+            'id': 'zero_axiom_coorient_strict_replay',
+            'name': 'D20 zero-axiom coorient strict replay',
+            'status': 'certified strict replay witness',
+            'statement': 'A fresh strict replay of the zero-axiom coorient reduction reproduces the stored cache byte-for-byte under the cache file newline convention, including the same certificate hash, base [18,67,37], 2576 separated points, and closure order 9216.',
+            'evidence': {
+                'cache_certificate_sha256': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('cache_certificate_sha256'),
+                'fresh_certificate_sha256': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('fresh_certificate_sha256'),
+                'cache_file_sha256': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('cache_file_sha256'),
+                'fresh_pretty_sha256': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('fresh_pretty_sha256'),
+                'cache_newline': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('cache_newline'),
+                'cache_byte_length': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('cache_byte_length'),
+                'fresh_pretty_byte_length': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('fresh_pretty_byte_length'),
+                'canonical_base': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('canonical_base'),
+                'final_signature_count': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('final_signature_count'),
+                'marker_integer_count': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('marker_integer_count'),
+                'closed_action_order': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('closed_action_order'),
+                'word_presentation_closure_order': blocks.get('zero_axiom_coorient_strict_replay', {}).get('derived', {}).get('word_presentation_closure_order'),
             },
         },
 

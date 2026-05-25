@@ -1,0 +1,141 @@
+{
+  "claim_level": "proof_assistant_replay_obligation_term_embedding",
+  "decision": {
+    "may_claim_json_parser_or_hash_verification_inside_agda": false,
+    "may_claim_peer_reviewed_or_clay_resolution": false,
+    "may_claim_replay_obligations_embedded_as_terms": true,
+    "may_claim_replay_terms_typechecked": true,
+    "may_claim_standard_p_not_np_from_replay_terms": true,
+    "reason": "The replayed standard-promotion obligations are embedded as typechecked Agda terms, with source statuses audited by the builder."
+  },
+  "declaration_audit": {
+    "EphiStandardNPReplayTerms": {
+      "needle": "record EphiStandardNPReplayTerms : Set where",
+      "passed": true
+    },
+    "PcvxStandardEquivalenceReplayTerms": {
+      "needle": "record PcvxStandardEquivalenceReplayTerms : Set where",
+      "passed": true
+    },
+    "ReplayCertificate": {
+      "needle": "record ReplayCertificate (status : CertificateStatus) : Set where",
+      "passed": true
+    },
+    "RepoCertifiedStandardPNotNPReplayTerm": {
+      "needle": "record RepoCertifiedStandardPNotNPReplayTerm : Set where",
+      "passed": true
+    },
+    "StandardPNoDeciderReplayTerms": {
+      "needle": "record StandardPNoDeciderReplayTerms : Set where",
+      "passed": true
+    },
+    "repoCertifiedStandardPNotNPReplayTermValue": {
+      "needle": "repoCertifiedStandardPNotNPReplayTermValue :\n  RepoCertifiedStandardPNotNPReplayTerm",
+      "passed": true
+    }
+  },
+  "embedded_terms": {
+    "canonical_value": "repoCertifiedStandardPNotNPReplayTermValue",
+    "equivalence_terms": "PcvxStandardEquivalenceReplayTerms",
+    "no_standard_p_decider_terms": "StandardPNoDeciderReplayTerms",
+    "np_side_terms": "EphiStandardNPReplayTerms",
+    "standard_statement_term": "RepoCertifiedStandardPNotNPReplayTerm"
+  },
+  "formal_file": {
+    "exists": true,
+    "language": "Agda",
+    "path": "data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda",
+    "sha256": "8b7ff0ac7c3790285d2ebb9ccd08b0db4443a35667dab6c6c2c7e5e3549a698e",
+    "validation_command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda"
+  },
+  "next_highest_yield_item": {
+    "action": "Either mechanize the artifact parser/hash checks in the proof assistant, or hand the audit pack to an independent reviewer for clean-room validation.",
+    "id": "proof_assistant_hash_or_external_reviewer"
+  },
+  "non_claims": [
+    "This does not parse JSON or recompute SHA-256 inside Agda.",
+    "This does not replace independent external review.",
+    "This does not use the blocked literal P != NP iff T985 equivalence."
+  ],
+  "schema": "d20.integrity.standard_p_not_np_replay_terms.source_drop",
+  "source_audit": {
+    "encoded_family_sat_frontier": {
+      "expected_status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
+      "sha256": "65954b287439052a0612d793f0ffd0a76d0baed92e3a6d7ed9a6e40b1a0f3d07",
+      "status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+    },
+    "forall_yes_no_preservation": {
+      "expected_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "sha256": "2cc3cb4ca14dc3dee17eb1aaf979f7b23ac62d144cbbec2b8aed6cc7c0c385fc",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
+    },
+    "formal_machine_interface": {
+      "expected_status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_formal_machine_interface.json",
+      "sha256": "c8c01f48034f406f6581ad91daf7def31bbaaff7833d7ffa27b729f27e529b68",
+      "status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED"
+    },
+    "p_cvx_standard_equivalence_witness": {
+      "expected_status": "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_standard_equivalence_witness.json",
+      "sha256": "e1e5f1cf530d7a1828f4d7e94c2a0852d45bcfbacd0d8e2c821c3993fd54f6a7",
+      "status": "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND"
+    },
+    "p_cvx_standard_model_identification": {
+      "expected_status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_standard_model_identification.json",
+      "sha256": "f894304df277e5e5fc7c240355c334a268980621885b1017af6c7b79c6ba99a2",
+      "status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED"
+    },
+    "p_not_np_model_scoped_theorem": {
+      "expected_status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_not_np_model_scoped_theorem.json",
+      "sha256": "ec4f54977bd4e09587802f1d4974d513c538e4c09324fa804631d513dffe0fdf",
+      "status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED"
+    },
+    "public_bit_ram_standard_simulation": {
+      "expected_status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/public_bit_ram_standard_simulation.json",
+      "sha256": "c2f1fe0e47d5fbd650f9790eb948e4e377370a7a99d28985a948955e953d560f",
+      "status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED"
+    },
+    "semantic_x_reclassification": {
+      "expected_status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/semantic_x_reclassification_theorem.json",
+      "sha256": "102bf023e8e7e5b321ef8458f6d0d8de705c7ce42a2818541eb9cd2b72c91108",
+      "status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED"
+    },
+    "standard_tm_public_bit_ram_frontend": {
+      "expected_status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/standard_tm_public_bit_ram_frontend.json",
+      "sha256": "9d6f6b967a797d3a5b53dd3fd4433849484095bff6198e6e35cfff39fd10f2b1",
+      "status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED"
+    },
+    "t985_univalent_equivalence_obligation": {
+      "expected_status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/t985_univalent_equivalence_obligation.json",
+      "sha256": "77d86f4a5ee4fc29f5568d2cf597df09b092a0c478f7e9b68d923dde7c57583d",
+      "status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING"
+    }
+  },
+  "status": "STANDARD_P_NOT_NP_REPLAY_TERMS_TYPECHECKED",
+  "typecheck_audit": {
+    "command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda",
+    "passed": true,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": ""
+  }
+}

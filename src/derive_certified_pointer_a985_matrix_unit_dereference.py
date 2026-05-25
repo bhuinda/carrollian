@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -20,9 +20,9 @@ VERIFY_STATUS = "D20_CERTIFIED_POINTER_A985_MATRIX_UNIT_DEREFERENCE_VERIFIED"
 THEOREM_ID = "certified_pointer_a985_matrix_unit_dereference"
 OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
-FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_legacy_sector_match"
+FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_sector_match"
 REGISTERED_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_registered_support_matrix_units"
-TRANSPORT_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_legacy_matrix_unit_transport"
+TRANSPORT_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_sector_matrix_unit_transport"
 
 IDENTITY_RELATIONS = [6, 163, 227, 349, 618, 893]
 REQUIRED_POINTER_SLOTS = [
@@ -118,11 +118,11 @@ def pointer_schema() -> dict[str, Any]:
     }
 
 
-def load_legacy_to_raw_rows() -> list[dict[str, Any]]:
-    rows = read_csv_rows(FULL_MATCH_DIR / "legacy_to_raw_sector_full_match.csv")
+def load_source_to_raw_rows() -> list[dict[str, Any]]:
+    rows = read_csv_rows(FULL_MATCH_DIR / "source_to_raw_sector_full_match.csv")
     return [
         {
-            "legacy_sector": int(row["legacy_sector"]),
+            "source_sector": int(row["source_sector"]),
             "raw_sector": int(row["raw_sector"]),
             "block_dimension": int(row["block_dimension"]),
             "match_status": row["match_status"],
@@ -136,14 +136,14 @@ def build_pointer_instance(
     full_match: dict[str, Any],
     registered: dict[str, Any],
     transport: dict[str, Any],
-    legacy_to_raw: list[dict[str, Any]],
+    source_to_raw: list[dict[str, Any]],
     manifest_rows: list[dict[str, str]],
     support_rows: list[dict[str, str]],
 ) -> dict[str, Any]:
     registered_supports = sorted({row["support_name"] for row in support_rows})
     top_rows = [row for row in manifest_rows if row["support_name"] == "unit_top_all_39"]
-    preserved = transport.get("derived", {}).get("legacy_sector_rows_preserved_and_confirmed")
-    filled = transport.get("derived", {}).get("legacy_sector_rows_filled_from_full_match")
+    preserved = transport.get("derived", {}).get("source_sector_rows_preserved_and_confirmed")
+    filled = transport.get("derived", {}).get("source_sector_rows_filled_from_full_match")
     return {
         "schema": "d20.certified_pointer.a985_matrix_unit_dereference.source_drop",
         "status": STATUS,
@@ -151,7 +151,7 @@ def build_pointer_instance(
         "source": {
             "native_support": "A985",
             "source_labels": [
-                "legacy sector label",
+                "source sector label",
                 "registered public-zero support label",
                 "top all-39 sector support label",
             ],
@@ -167,41 +167,41 @@ def build_pointer_instance(
             "central_idempotent_report": rel(FULL_MATCH_DIR.parent / "tiny_pointer_a985_orbital_central_idempotents" / "report.json"),
         },
         "pointer_map": {
-            "domain": "legacy_sector",
+            "domain": "source_sector",
             "codomain": "raw_sector",
-            "map_table": rel(FULL_MATCH_DIR / "legacy_to_raw_sector_full_match.csv"),
-            "map_rows": legacy_to_raw,
+            "map_table": rel(FULL_MATCH_DIR / "source_to_raw_sector_full_match.csv"),
+            "map_rows": source_to_raw,
             "matching_rule": "unique six-identity coefficient fingerprint match",
             "fingerprint_identity_relations": IDENTITY_RELATIONS,
         },
         "dereference": {
-            "input": ["legacy_sector", "matrix_unit_i", "matrix_unit_j"],
+            "input": ["source_sector", "matrix_unit_i", "matrix_unit_j"],
             "output": "raw orbital matrix unit u[s;i,j] expressed in the A985 orbital basis",
-            "rule": "legacy_sector maps to raw_sector; matrix indices select the corresponding raw block matrix unit",
-            "manifest": rel(TRANSPORT_DIR / "legacy_labeled_matrix_unit_manifest.csv"),
+            "rule": "source_sector maps to raw_sector; matrix indices select the corresponding raw block matrix unit",
+            "manifest": rel(TRANSPORT_DIR / "source_sector_matrix_unit_manifest.csv"),
             "manifest_rows": len(manifest_rows),
             "unit_top_all_39_rows": len(top_rows),
-            "legacy_rows_preserved_and_confirmed": preserved,
-            "legacy_rows_filled_from_full_match": filled,
+            "source_rows_preserved_and_confirmed": preserved,
+            "source_rows_filled_from_full_match": filled,
         },
         "public_readout": {
             "readout_classes": [
                 "public-zero registered support",
-                "legacy-labeled Wedderburn sector profile",
+                "source-sector-labeled Wedderburn sector profile",
                 "all-39 top support matrix-unit chart",
             ],
-            "registered_support_transport": rel(TRANSPORT_DIR / "registered_support_legacy_transport.csv"),
-            "legacy_sector_profiles": rel(TRANSPORT_DIR / "legacy_sector_matrix_unit_profiles.csv"),
+            "registered_support_transport": rel(TRANSPORT_DIR / "registered_support_source_transport.csv"),
+            "source_sector_profiles": rel(TRANSPORT_DIR / "source_sector_matrix_unit_profiles.csv"),
         },
         "proxy": {
             "kind": "six_identity_coefficient_fingerprint",
             "identity_relations": IDENTITY_RELATIONS,
-            "claim": "the fingerprint uniquely matches every legacy sector to a raw separating-center sector",
+            "claim": "the fingerprint uniquely matches every source sector to a raw separating-center sector",
             "boundary": "proxy identifies the pointer map; centrality and matrix-unit checks remain the verifier",
         },
         "verifier": {
             "upstream_reports": {
-                "full_legacy_sector_match": {
+                "full_source_sector_match": {
                     "path": rel(FULL_MATCH_DIR / "report.json"),
                     "status": full_match.get("status"),
                     "sha256": sha_file(FULL_MATCH_DIR / "report.json"),
@@ -211,7 +211,7 @@ def build_pointer_instance(
                     "status": registered.get("status"),
                     "sha256": sha_file(REGISTERED_DIR / "report.json"),
                 },
-                "legacy_matrix_unit_transport": {
+                "sector_matrix_unit_transport": {
                     "path": rel(TRANSPORT_DIR / "report.json"),
                     "status": transport.get("status"),
                     "sha256": sha_file(TRANSPORT_DIR / "report.json"),
@@ -221,19 +221,19 @@ def build_pointer_instance(
                 "central idempotent checks",
                 "unique fingerprint match checks",
                 "registered raw matrix-unit checks",
-                "all-39 legacy matrix-unit transport checks",
+                "all-39 source-sector matrix-unit transport checks",
             ],
         },
         "defect_ledger": {
             "finite_defects": [],
             "open_boundaries": [
                 (
-                    "all-39 legacy matrix units are label-transported; raw orbital COO coefficients are "
+                    "all-39 source-sector matrix units are label-transported; raw orbital COO coefficients are "
                     "attached only for the registered public-zero support subset"
                 )
             ],
             "next_highest_yield_item": (
-                "Attach raw orbital COO coefficients to the all-39 legacy-labeled matrix-unit manifest."
+                "Attach raw orbital COO coefficients to the all-39 source-sector-labeled matrix-unit manifest."
             ),
         },
     }
@@ -245,7 +245,7 @@ def markdown_report(report: dict[str, Any]) -> str:
         "# Certified Pointer: A985 Matrix-Unit Dereference\n\n"
         f"Status: `{report['status']}`\n\n"
         "This promotes the nested-pointer evidence into an explicit certified-pointer primitive. "
-        "The source labels are legacy sectors and registered public-zero supports; the address "
+        "The source labels are source sectors and registered public-zero supports; the address "
         "space is the raw A985 orbital matrix-unit chart. The six-identity fingerprint is the "
         "proxy, while the central-idempotent and matrix-unit reports are the verifier.\n\n"
         "## Checks\n\n"
@@ -283,16 +283,16 @@ def build_pointer() -> dict[str, Any]:
     full_match = load_json(FULL_MATCH_DIR / "report.json")
     registered = load_json(REGISTERED_DIR / "report.json")
     transport = load_json(TRANSPORT_DIR / "report.json")
-    legacy_to_raw = load_legacy_to_raw_rows()
-    manifest_rows = read_csv_rows(TRANSPORT_DIR / "legacy_labeled_matrix_unit_manifest.csv")
-    profile_rows = read_csv_rows(TRANSPORT_DIR / "legacy_sector_matrix_unit_profiles.csv")
-    support_rows = read_csv_rows(TRANSPORT_DIR / "registered_support_legacy_transport.csv")
+    source_to_raw = load_source_to_raw_rows()
+    manifest_rows = read_csv_rows(TRANSPORT_DIR / "source_sector_matrix_unit_manifest.csv")
+    profile_rows = read_csv_rows(TRANSPORT_DIR / "source_sector_matrix_unit_profiles.csv")
+    support_rows = read_csv_rows(TRANSPORT_DIR / "registered_support_source_transport.csv")
     schema_doc = pointer_schema()
     pointer = build_pointer_instance(
         full_match=full_match,
         registered=registered,
         transport=transport,
-        legacy_to_raw=legacy_to_raw,
+        source_to_raw=source_to_raw,
         manifest_rows=manifest_rows,
         support_rows=support_rows,
     )
@@ -301,14 +301,14 @@ def build_pointer() -> dict[str, Any]:
     checks = {
         "schema_required_slots_present": pointer_slots == REQUIRED_POINTER_SLOTS,
         "full_match_is_certified": full_match.get("all_checks_pass") is True
-        and full_match.get("status") == "D20_TINY_POINTER_A985_FULL_LEGACY_SECTOR_MATCH_CERTIFIED",
+        and full_match.get("status") == "D20_TINY_POINTER_A985_FULL_SECTOR_MATCH_CERTIFIED",
         "registered_matrix_units_are_certified": registered.get("all_checks_pass") is True
         and registered.get("status") == "D20_TINY_POINTER_A985_REGISTERED_SUPPORT_MATRIX_UNITS_CERTIFIED",
-        "legacy_matrix_unit_transport_is_certified": transport.get("all_checks_pass") is True
-        and transport.get("status") == "D20_TINY_POINTER_A985_LEGACY_MATRIX_UNIT_TRANSPORT_CERTIFIED",
-        "legacy_to_raw_map_has_39_rows": len(legacy_to_raw) == 39,
-        "legacy_to_raw_map_is_bijective": len({row["legacy_sector"] for row in legacy_to_raw}) == 39
-        and len({row["raw_sector"] for row in legacy_to_raw}) == 39,
+        "sector_matrix_unit_transport_is_certified": transport.get("all_checks_pass") is True
+        and transport.get("status") == "D20_TINY_POINTER_A985_SECTOR_MATRIX_UNIT_TRANSPORT_CERTIFIED",
+        "source_to_raw_map_has_39_rows": len(source_to_raw) == 39,
+        "source_to_raw_map_is_bijective": len({row["source_sector"] for row in source_to_raw}) == 39
+        and len({row["raw_sector"] for row in source_to_raw}) == 39,
         "dereference_manifest_has_1011_rows": len(manifest_rows) == 1011,
         "sector_profile_table_has_39_rows": len(profile_rows) == 39,
         "registered_support_transport_has_7_rows": len(support_rows) == 7,
@@ -320,7 +320,7 @@ def build_pointer() -> dict[str, Any]:
         "status": STATUS if all(checks.values()) else "D20_CERTIFIED_POINTER_A985_MATRIX_UNIT_DEREFERENCE_NEEDS_REVIEW",
         "object": "d20",
         "claim": (
-            "The A985 nested-pointer evidence is a certified pointer: legacy sector and public-zero support "
+            "The A985 nested-pointer evidence is a certified pointer: source sector and public-zero support "
             "labels dereference through a unique six-identity fingerprint map into the raw orbital "
             "matrix-unit address space."
         ),
@@ -330,7 +330,7 @@ def build_pointer() -> dict[str, Any]:
         "checks": checks,
         "derived": {
             "pointer_slots": pointer_slots,
-            "legacy_to_raw_map_rows": len(legacy_to_raw),
+            "source_to_raw_map_rows": len(source_to_raw),
             "dereference_manifest_rows": len(manifest_rows),
             "sector_profile_rows": len(profile_rows),
             "registered_support_transport_rows": len(support_rows),
@@ -372,7 +372,7 @@ def verify_pointer() -> dict[str, Any]:
     manifest = load_json(OUT_DIR / "manifest.json")
     schema_doc = load_json(OUT_DIR / "certified_pointer_schema.json")
     pointer = load_json(OUT_DIR / "certified_pointer_instance.json")
-    manifest_rows = read_csv_rows(TRANSPORT_DIR / "legacy_labeled_matrix_unit_manifest.csv")
+    manifest_rows = read_csv_rows(TRANSPORT_DIR / "source_sector_matrix_unit_manifest.csv")
     checks = {
         "report_status_certified": report.get("status") == STATUS,
         "report_checks_pass": report.get("all_checks_pass") is True,
@@ -409,3 +409,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

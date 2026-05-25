@@ -10,9 +10,9 @@ from typing import Any
 import numpy as np
 
 try:
-    from .layer_registry import layer_relpath
+    from .certificate_registry import certificate_relpath
 except ImportError:  # Supports `python src/derive_representation_integral_wall.py`.
-    from layer_registry import layer_relpath
+    from certificate_registry import certificate_relpath
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -263,8 +263,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--simple-branching", default="data/raw/simple_branching_matrices.npz")
     ap.add_argument("--terminal", default="generated/terminal_quotients_from_source_coorient.npz")
-    ap.add_argument("--center-cert", default=layer_relpath("drinfeld.full_a985_lift"))
-    ap.add_argument("--integrity-cert", default=layer_relpath("integrity.proof_system"))
+    ap.add_argument("--center-cert", default=certificate_relpath("drinfeld.full_a985_lift"))
+    ap.add_argument("--integrity-cert", default=certificate_relpath("integrity.proof_system"))
     ap.add_argument("--out-npz", default="generated/a236_representation_fusion_from_center.npz")
     ap.add_argument("--out-json", default="generated/remaining_representation_integral_chain_report.json")
     ap.add_argument("--pretty", action="store_true")

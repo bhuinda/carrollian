@@ -1,0 +1,97 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5fba9e9b9fd4ce8ff49d350f470ff701225e1c7b4dfd5a410fd9fa59c0162d61",
+  "checks": {
+    "agda_artifact_hashes_are_stable": "1b0e15cc46dc967a960028e0430d0214ba7b497df3dd8fb88b6bce3df18b5015",
+    "agda_interface_artifact_present_after_typecheck": true,
+    "agda_source_embeds_bridge_counts": true,
+    "agda_source_embeds_certified_selected_dynamics": true,
+    "agda_source_embeds_selector_constructors": true,
+    "agda_source_exists_and_is_cubical_safe": true,
+    "agda_source_imports_cubical_library": true,
+    "agda_source_names_core_hit_and_universe_records": true,
+    "agda_source_proves_contractible_singleton_fibers": true,
+    "univalent_foundation_bridge_is_certified": true
+  },
+  "claim": "The C2 univalent-foundation bridge has been emitted as a Cubical Agda target skeleton. The module defines the C2 quotient HIT, Ward-balanced dynamics structure, selector fibers, contractible singleton selector witnesses, and finite skeletal identity/equivalence record.",
+  "derived": {
+    "expected_contractible_terms": [
+      "primitiveFiberIsContr",
+      "leastActionFiberIsContr",
+      "pairedLeastActionFiberIsContr",
+      "lazyGapActionTiebreakFiberIsContr",
+      "pairedLazyGapActionTiebreakFiberIsContr"
+    ],
+    "expected_selected_dynamics": {
+      "least_action": "dynamicsCode 173 1 1443840 543 0",
+      "paired_least_action": "dynamicsCode 130 2 2343936 288 255",
+      "primitive_seeded": "dynamicsCode 3 2 4795392 288 255"
+    },
+    "expected_selector_constructors": [
+      "primitiveSeeded",
+      "globalActionMinimal",
+      "pairedActionMinimal",
+      "rawComponentwiseAbsoluteSpectralGap",
+      "lazyComponentwiseSpectralGap",
+      "lazyComponentwiseSpectralGapActionTiebreak",
+      "pairedLazyComponentwiseSpectralGap",
+      "pairedLazyComponentwiseSpectralGapActionTiebreak"
+    ],
+    "source_summary": {
+      "expected_count_literals": {
+        "contractible_selector_fibers": "5",
+        "dynamics_count": "543",
+        "fixed_c2_paths": "63",
+        "noncontractible_selector_fibers": "3",
+        "nontrivial_c2_path_pairs": "480",
+        "quotient_state_count": "543",
+        "raw_mask_count": "1023",
+        "selector_count": "8"
+      },
+      "imports_cubical_nat": true,
+      "imports_cubical_prelude": true,
+      "interface": {
+        "byte_size": 76594,
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundation.agdai",
+        "sha256": "1b0e15cc46dc967a960028e0430d0214ba7b497df3dd8fb88b6bce3df18b5015"
+      },
+      "line_count": 154,
+      "module": "C2SelectorFoundation",
+      "options": "--cubical --safe --guardedness",
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundation.agda",
+      "sha256": "4d14084aaab384ae0cb30af355042d27803d48d5faa7ef3effa5575317d5d78e",
+      "typecheck_command": "C:/Users/Admin/Documents/agda-toolchain/agda.exe --transliterate -v0 -i data/invariants/d20/formal/cubical -i C:/Users/Admin/Documents/agda-toolchain/cubical-0.9 data/invariants/d20/formal/cubical/C2SelectorFoundation.agda"
+    }
+  },
+  "inputs": {
+    "c2_univalent_foundation_bridge_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_univalent_foundation_bridge/report.json",
+      "sha256": "32dd1e7862ab91f8740ff77916fff7e0c8da6722f90b833443ccf85dfb49fb9d"
+    },
+    "cubical_agda_interface": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundation.agdai",
+      "sha256": "1b0e15cc46dc967a960028e0430d0214ba7b497df3dd8fb88b6bce3df18b5015"
+    },
+    "cubical_agda_source": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundation.agda",
+      "sha256": "4d14084aaab384ae0cb30af355042d27803d48d5faa7ef3effa5575317d5d78e"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": [
+      "the hash-extensional identity rule is not yet connected to a full structure identity principle proof",
+      "the full 543 dynamics rows are not expanded as individual Agda constructors",
+      "this does not decide which physical selector axiom is correct"
+    ],
+    "what_this_proves": [
+      "the current C2 UF bridge has a concrete Cubical Agda module target",
+      "the module parses and typechecks under the local Agda/Cubical toolchain when the interface artifact is present",
+      "singleton selector fibers are represented by Cubical isContr witnesses",
+      "the C2 target quotient is represented as a set-truncated HIT skeleton"
+    ]
+  },
+  "next_highest_yield_item": "Expand the Cubical Agda skeleton from a compact certified interface into generated finite enumerations for all 543 quotient states, 543 dynamics codes, and selector fiber membership.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_CERTIFIED"
+}

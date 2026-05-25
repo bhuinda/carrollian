@@ -24,4 +24,4 @@ Projector products: `49`
 - `projector_product_table_has_49_rows`: `True`
 - `projector_raw_product_failures_zero`: `True`
 
-Next: Use these support-restricted tables to isolate the remaining sector-local change-of-basis problem: legacy matrix-unit normalization within each primitive block.
+Next: Use these support-restricted tables to isolate the remaining sector-local change-of-basis problem: source-sector matrix-unit normalization within each primitive block.

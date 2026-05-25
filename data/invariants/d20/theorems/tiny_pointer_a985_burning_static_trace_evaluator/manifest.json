@@ -1,0 +1,48 @@
+{
+  "inputs": {
+    "burning_static_representative_intake": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_representative_intake/report.json",
+      "sha256": "1bd2edeb689e8087de2843421635bb66e24badf06150716403549f94ec0b0aac",
+      "status": "D20_TINY_POINTER_A985_BURNING_STATIC_REPRESENTATIVE_SOURCE_ABSENT"
+    },
+    "canonical_sector_character_table": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_character_table.npz",
+      "sha256": "6904d931dac1e6202818aa5ccd510f90661de19a164749fb42fab749fc356be5"
+    },
+    "canonical_sector_characters": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/report.json",
+      "sha256": "248852ae8f8c80250bd9ec1d1a5d4c257a7b621ffffbeebd79007618ba6dd291",
+      "status": "D20_TINY_POINTER_A985_CANONICAL_SECTOR_CHARACTERS_CERTIFIED"
+    },
+    "representative_input": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_representative_intake/burning_static_representative_input.csv",
+      "present": false
+    }
+  },
+  "manifest_sha256": "04dae29eecf13669b3786ca9860bd3c20599ebc28616783c7725a1d13879af8e",
+  "name": "tiny_pointer_a985_burning_static_trace_evaluator",
+  "outputs": {
+    "contract": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/burning_static_trace_evaluator_contract.json",
+    "identity_selftest": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/burning_static_trace_evaluator_identity_selftest.csv",
+    "input_validation": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/burning_static_trace_input_validation.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/manifest.json",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/report.json",
+    "support_summary": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/burning_static_trace_support_summary.csv",
+    "trace_profile": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/burning_static_trace_profile.csv"
+  },
+  "report_sha256": "87b385c38408bacc0f9ca83d9b281e06774cfc514cf09418d18970c7f761e8fa",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_static_trace_evaluator_manifest.source_drop",
+  "validation_tests": [
+    "burning_intake_report_passed",
+    "canonical_sector_characters_certified",
+    "character_table_shape_is_39_by_985",
+    "input_schema_matches_required_columns",
+    "identity_selftest_passed",
+    "contract_emitted",
+    "no_profile_rows_without_input",
+    "perennial_join_key_emitted_when_available",
+    "input_absent_recorded",
+    "input_validation_rows_empty",
+    "support_summary_rows_empty"
+  ]
+}

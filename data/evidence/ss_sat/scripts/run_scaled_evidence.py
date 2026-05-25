@@ -22,13 +22,13 @@ def find_repo_root() -> Path:
 
 ROOT = find_repo_root()
 BASE = ROOT / "data" / "evidence" / "ss_sat"
-LEGACY_ROOT = BASE / "source_bundles" / "legacy_roots" / "external_evidence_gate_root"
+SOURCE_ARCHIVE_ROOT = BASE / "source_bundles" / "archived_roots" / "external_evidence_gate_root"
 
-CADICAL = LEGACY_ROOT / "cadical-rel-3.0.0" / "build" / "cadical.exe"
-DRAT_TRIM = LEGACY_ROOT / "cadical-rel-3.0.0" / "build" / "drat-trim.exe"
-LRAT_TRIM = LEGACY_ROOT / "cadical-rel-3.0.0" / "build" / "lrat-trim.exe"
-KISSAT = LEGACY_ROOT / "kissat-rel-4.0.4" / "build" / "kissat.exe"
-MINISAT = LEGACY_ROOT / "minisat" / "simp" / "minisat.exe"
+CADICAL = SOURCE_ARCHIVE_ROOT / "cadical-rel-3.0.0" / "build" / "cadical.exe"
+DRAT_TRIM = SOURCE_ARCHIVE_ROOT / "cadical-rel-3.0.0" / "build" / "drat-trim.exe"
+LRAT_TRIM = SOURCE_ARCHIVE_ROOT / "cadical-rel-3.0.0" / "build" / "lrat-trim.exe"
+KISSAT = SOURCE_ARCHIVE_ROOT / "kissat-rel-4.0.4" / "build" / "kissat.exe"
+MINISAT = SOURCE_ARCHIVE_ROOT / "minisat" / "simp" / "minisat.exe"
 
 BENCH_DIR = BASE / "benchmarks" / "scaled"
 SOLVER_LOG_DIR = BASE / "logs" / "scaled_solver_runs"

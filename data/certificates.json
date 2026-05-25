@@ -1,0 +1,355 @@
+{
+  "certificates": [
+    {
+      "claim_level": "core_directory_certificate",
+      "depends_on": [],
+      "expected_status": "PASS",
+      "group": "core",
+      "id": "core.a985",
+      "ordinal": 0,
+      "ordinal_dir": "00_core",
+      "path": "data/core/a985.json"
+    },
+    {
+      "claim_level": "verified_right_inverse",
+      "depends_on": [
+        "core.a985"
+      ],
+      "expected_status": null,
+      "group": "tube",
+      "id": "tube.projection_section",
+      "ordinal": 1,
+      "ordinal_dir": "01_tube_projection_section",
+      "path": "data/tube/projection_section.json"
+    },
+    {
+      "claim_level": "boundary_certificate",
+      "depends_on": [
+        "tube.projection_section"
+      ],
+      "expected_status": "DRINFELD_GROTHENDIECK_BOUNDARY_CERTIFIED",
+      "group": "drinfeld",
+      "id": "drinfeld.boundary",
+      "ordinal": 2,
+      "ordinal_dir": "02_drinfeld_boundary",
+      "path": "data/drinfeld/boundary.json"
+    },
+    {
+      "claim_level": "center_certificate",
+      "depends_on": [
+        "drinfeld.boundary"
+      ],
+      "expected_status": "DRINFELD_GROTHENDIECK_CENTER_CERTIFIED",
+      "group": "drinfeld",
+      "id": "drinfeld.grothendieck_center",
+      "ordinal": 3,
+      "ordinal_dir": "03_drinfeld_grothendieck_center",
+      "path": "data/drinfeld/grothendieck_center.json"
+    },
+    {
+      "claim_level": "gluing_certificate",
+      "depends_on": [
+        "drinfeld.grothendieck_center"
+      ],
+      "expected_status": "DRINFELD_IDEMPOTENT_GLUING_CERTIFIED",
+      "group": "drinfeld",
+      "id": "drinfeld.idempotent_gluing",
+      "ordinal": 4,
+      "ordinal_dir": "04_drinfeld_idempotent_gluing",
+      "path": "data/drinfeld/idempotent_gluing.json"
+    },
+    {
+      "claim_level": "trace_certificate",
+      "depends_on": [
+        "drinfeld.idempotent_gluing"
+      ],
+      "expected_status": "DRINFELD_WEDDERBURN_TRACE_CERTIFIED",
+      "group": "drinfeld",
+      "id": "drinfeld.wedderburn_trace",
+      "ordinal": 5,
+      "ordinal_dir": "05_drinfeld_wedderburn_trace",
+      "path": "data/drinfeld/wedderburn_trace.json"
+    },
+    {
+      "claim_level": "full_lift_certificate",
+      "depends_on": [
+        "drinfeld.wedderburn_trace"
+      ],
+      "expected_status": "DRINFELD_FULL_A985_LIFT_CERTIFIED",
+      "group": "drinfeld",
+      "id": "drinfeld.full_a985_lift",
+      "ordinal": 6,
+      "ordinal_dir": "06_drinfeld_full_A985_lift",
+      "path": "data/drinfeld/full_a985_lift.json"
+    },
+    {
+      "claim_level": "ribbon_boundary_certificate",
+      "depends_on": [
+        "drinfeld.full_a985_lift"
+      ],
+      "expected_status": "RIBBON_TWIST_TRIVIAL_AND_MODULAR_S_OBSTRUCTED",
+      "group": "modular",
+      "id": "modular.ribbon_boundary",
+      "ordinal": 7,
+      "ordinal_dir": "07_ribbon_modular_boundary",
+      "path": "data/modular/ribbon_boundary.json"
+    },
+    {
+      "claim_level": "modular_obstruction_certificate",
+      "depends_on": [
+        "modular.ribbon_boundary"
+      ],
+      "expected_status": "MODULAR_COMPLETION_OBSTRUCTION_CERTIFIED",
+      "group": "modular",
+      "id": "modular.completion_obstruction",
+      "ordinal": 8,
+      "ordinal_dir": "08_modular_completion_obstruction",
+      "path": "data/modular/completion_obstruction.json"
+    },
+    {
+      "claim_level": "kernel_descent_audit",
+      "depends_on": [
+        "tube.projection_section",
+        "modular.completion_obstruction"
+      ],
+      "expected_status": "TUBE_KERNEL_DESCENT_AUDIT_CERTIFIED",
+      "group": "tube",
+      "id": "tube.kernel_descent_audit",
+      "ordinal": 9,
+      "ordinal_dir": "09_tube_kernel_descent_audit",
+      "path": "data/tube/kernel_descent_audit.json"
+    },
+    {
+      "claim_level": "operator_construction_certificate",
+      "depends_on": [
+        "modular.completion_obstruction"
+      ],
+      "expected_status": "ADJOINED_HOPF_OPERATOR_CONSTRUCTED",
+      "group": "modular",
+      "id": "modular.adjoined_hopf_operator",
+      "ordinal": 10,
+      "ordinal_dir": "10_adjoined_hopf_operator",
+      "path": "data/modular/adjoined_hopf_operator.json"
+    },
+    {
+      "claim_level": "twist_completion_test",
+      "depends_on": [
+        "modular.adjoined_hopf_operator"
+      ],
+      "expected_status": "TWIST_COMPLETION_OBSTRUCTED_FOR_ADJOINED_HOPF_OPERATOR",
+      "group": "modular",
+      "id": "modular.twist_completion_test",
+      "ordinal": 11,
+      "ordinal_dir": "11_twist_completion_test",
+      "path": "data/modular/twist_completion_test.json"
+    },
+    {
+      "claim_level": "trace_operator_certificate",
+      "depends_on": [
+        "modular.twist_completion_test"
+      ],
+      "expected_status": "DERIVED_LINE_SURFACE_TRACE_OPERATOR_CERTIFIED",
+      "group": "modular",
+      "id": "modular.derived_line_surface_trace",
+      "ordinal": 12,
+      "ordinal_dir": "12_derived_line_surface_trace",
+      "path": "data/modular/derived_line_surface_trace.json"
+    },
+    {
+      "claim_level": "character_pencil_certificate",
+      "depends_on": [
+        "modular.derived_line_surface_trace"
+      ],
+      "expected_status": "HESSE_TUBE_CHARACTER_PENCIL_CERTIFIED",
+      "group": "modular",
+      "id": "modular.hesse_tube_character_pencil",
+      "ordinal": 13,
+      "ordinal_dir": "13_hesse_tube_character_pencil",
+      "path": "data/modular/hesse_tube_character_pencil.json"
+    },
+    {
+      "claim_level": "pseudomodular_audit",
+      "depends_on": [
+        "modular.hesse_tube_character_pencil"
+      ],
+      "expected_status": "LASSO_UNIQUENESS_AND_PSEUDOMODULAR_INVARIANT_AUDIT_CERTIFIED",
+      "group": "modular",
+      "id": "modular.lasso_uniqueness_pseudomodular_audit",
+      "ordinal": 14,
+      "ordinal_dir": "14_lasso_uniqueness_pseudomodular_audit",
+      "path": "data/modular/lasso_uniqueness_pseudomodular_audit.json"
+    },
+    {
+      "claim_level": "geometry_dependency_certificate",
+      "depends_on": [
+        "modular.lasso_uniqueness_pseudomodular_audit"
+      ],
+      "expected_status": "INTRINSIC_SUPPORT_DEPENDENCY_GEOMETRY_CERTIFIED",
+      "group": "geometry",
+      "id": "geometry.intrinsic_support_dependency",
+      "ordinal": 15,
+      "ordinal_dir": "15_intrinsic_support_dependency_geometry",
+      "path": "data/geometry/intrinsic_support_dependency.json"
+    },
+    {
+      "claim_level": "hilbert_geometry_certificate",
+      "depends_on": [
+        "geometry.intrinsic_support_dependency"
+      ],
+      "expected_status": "MDS_ARC_HILBERT_AND_QUINTIC_WALL_CERTIFIED",
+      "group": "geometry",
+      "id": "geometry.mds_arc_hilbert",
+      "ordinal": 16,
+      "ordinal_dir": "16_mds_arc_hilbert_geometry",
+      "path": "data/geometry/mds_arc_hilbert.json"
+    },
+    {
+      "claim_level": "resolvent_certificate",
+      "depends_on": [
+        "geometry.mds_arc_hilbert"
+      ],
+      "expected_status": "WU_GOLAY_QUINTIC_RESOLVENT_CERTIFIED_WITH_GOLAY_EXTENSION_UNRESOLVED",
+      "group": "geometry",
+      "id": "geometry.wu_golay_quintic_resolvent",
+      "ordinal": 17,
+      "ordinal_dir": "17_wu_golay_quintic_resolvent",
+      "path": "data/geometry/wu_golay_quintic_resolvent.json"
+    },
+    {
+      "claim_level": "syzygy_frame_certificate",
+      "depends_on": [
+        "geometry.wu_golay_quintic_resolvent"
+      ],
+      "expected_status": "CANONICAL_24_COORDINATE_SYZYGY_FRAME_CERTIFIED_GOLAY_SELECTION_STILL_OPEN",
+      "group": "geometry",
+      "id": "geometry.canonical_24_syzygy_frame",
+      "ordinal": 18,
+      "ordinal_dir": "18_canonical_24_syzygy_frame",
+      "path": "data/geometry/canonical_24_syzygy_frame.json"
+    },
+    {
+      "claim_level": "selector_obstruction_certificate",
+      "depends_on": [
+        "geometry.canonical_24_syzygy_frame"
+      ],
+      "expected_status": "QUADRATIC_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED",
+      "group": "selectors",
+      "id": "selectors.quadratic_golay_obstruction",
+      "ordinal": 19,
+      "ordinal_dir": "19_quadratic_golay_selector_obstruction",
+      "path": "data/selectors/quadratic_golay_obstruction.json"
+    },
+    {
+      "claim_level": "marking_certificate",
+      "depends_on": [
+        "selectors.quadratic_golay_obstruction"
+      ],
+      "expected_status": "WU_SPINH_OCTAD_SPIN12_6J_MARKING_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "group": "selectors",
+      "id": "selectors.wu_spinh_6j_marking",
+      "ordinal": 20,
+      "ordinal_dir": "20_wu_spinh_6j_marking",
+      "path": "data/selectors/wu_spinh_6j_marking.json"
+    },
+    {
+      "claim_level": "mog_resolvent_certificate",
+      "depends_on": [
+        "selectors.wu_spinh_6j_marking"
+      ],
+      "expected_status": "MOG_RESOLVENT_SEXTET_AND_WU_6J_TETRAHEDRON_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "group": "selectors",
+      "id": "selectors.mog_resolvent_invariant",
+      "ordinal": 21,
+      "ordinal_dir": "21_mog_resolvent_invariant",
+      "path": "data/selectors/mog_resolvent_invariant.json"
+    },
+    {
+      "claim_level": "mog_canonicity_boundary",
+      "depends_on": [
+        "selectors.mog_resolvent_invariant"
+      ],
+      "expected_status": "MOG_COLUMN_SEXTET_CANONICITY_CERTIFIED_FULL_ROW_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "group": "selectors",
+      "id": "selectors.mog_canonicity_boundary",
+      "ordinal": 22,
+      "ordinal_dir": "22_mog_canonicity_boundary",
+      "path": "data/selectors/mog_canonicity_boundary.json"
+    },
+    {
+      "claim_level": "row_refined_obstruction",
+      "depends_on": [
+        "selectors.mog_canonicity_boundary"
+      ],
+      "expected_status": "FULL_ROW_REFINED_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED_HEXACODE_REQUIRED",
+      "group": "selectors",
+      "id": "selectors.full_row_refined_obstruction",
+      "ordinal": 23,
+      "ordinal_dir": "23_full_row_refined_selector_obstruction",
+      "path": "data/selectors/full_row_refined_obstruction.json"
+    },
+    {
+      "claim_level": "hexacode_selector_certificate",
+      "depends_on": [
+        "selectors.full_row_refined_obstruction"
+      ],
+      "expected_status": "HEXACODE_ROW_SELECTOR_CONSTRUCTED_GOLAY_CERTIFIED_CANONICALITY_EXTERNAL",
+      "group": "selectors",
+      "id": "selectors.hexacode_row_selector",
+      "ordinal": 24,
+      "ordinal_dir": "24_hexacode_row_selector",
+      "path": "data/selectors/hexacode_row_selector.json"
+    },
+    {
+      "claim_level": "integrity_ladder_certificate",
+      "depends_on": [
+        "selectors.hexacode_row_selector",
+        "tube.kernel_descent_audit"
+      ],
+      "expected_status": "PROOF_SYSTEM_INTEGRITY_LADDER_BUILT",
+      "group": "integrity",
+      "id": "integrity.proof_system",
+      "ordinal": 25,
+      "ordinal_dir": "25_proof_system_integrity",
+      "path": "data/integrity/proof_system.json"
+    }
+  ],
+  "groups": {
+    "core": {
+      "description": "The base A985 certificate and its primary directory witness.",
+      "title": "Core algebra"
+    },
+    "drinfeld": {
+      "description": "Boundary, center, gluing, trace, and full lift certificates.",
+      "title": "Drinfeld center boundary"
+    },
+    "geometry": {
+      "description": "Support dependency, MDS/Hilbert geometry, resolvent, and coordinate-frame witnesses.",
+      "title": "Geometry and syzygy frame"
+    },
+    "integrity": {
+      "description": "End-to-end proof-ladder integrity certificate.",
+      "title": "Proof-system integrity"
+    },
+    "modular": {
+      "description": "Twist, modular completion, Hopf, trace, character, and lasso audits.",
+      "title": "Ribbon and modular obstructions"
+    },
+    "selectors": {
+      "description": "Selector obstruction, marking, MOG, row-refinement, and hexacode witnesses.",
+      "title": "Golay and selector obstructions"
+    },
+    "tube": {
+      "description": "Tube-basis projection, lift, and kernel-descent witnesses.",
+      "title": "Tube algebra and lift checks"
+    }
+  },
+  "policy": {
+    "certificate_registry_is_source_of_truth": true,
+    "path_migration": "consolidated_into_data",
+    "physical_layout": "data_subject_files",
+    "registry_path": "data/certificates.json",
+    "top_level_directory_removed": true
+  },
+  "schema": "d20.certificate_registry",
+  "status": "CERTIFICATE_REGISTRY_BUILT"
+}

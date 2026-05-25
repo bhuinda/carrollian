@@ -1,0 +1,24 @@
+{
+  "a985_interpretation": "The constructed representative is the 2-primary shadow of the certified A985 terminal frame fields. It is built from q12/q42 quotient readouts and raw source/target object indices, then evaluated on the 39 source sectors by the canonical character table.",
+  "boundary": "This is a repo-native A985-side construction. It does not assert that an external Burning_static_fields artifact uses the same generator names or basis.",
+  "generator_formulas": [
+    {
+      "abstract_order": 2,
+      "quotient_generator": "z2_a12_parity",
+      "raw_formula": "q12_map(relation_alpha) mod 2"
+    },
+    {
+      "abstract_order": 4,
+      "quotient_generator": "z4_a42_clock",
+      "raw_formula": "q42_map(relation_alpha) mod 4"
+    },
+    {
+      "abstract_order": 4,
+      "quotient_generator": "z4_a12_frame_clock",
+      "raw_formula": "(q12_map(relation_alpha) + source_object + target_object) mod 4"
+    }
+  ],
+  "plain_language": "A burning-static field is a finite quotient-valued coordinate system on the D20 evidence. In this A985 package it is represented by three raw orbital vectors whose quotient orders are Z/2 x Z/4 x Z/4.",
+  "schema": "d20.tiny_pointer_a985.burning_static_constructed_representative.semantics@1",
+  "term": "Burning_static_fields"
+}

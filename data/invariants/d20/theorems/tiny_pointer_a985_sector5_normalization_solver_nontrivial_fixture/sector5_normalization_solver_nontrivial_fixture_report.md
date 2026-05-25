@@ -2,7 +2,7 @@
 
 Status: `D20_TINY_POINTER_A985_SECTOR5_NORMALIZATION_SOLVER_NONTRIVIAL_FIXTURE_CERTIFIED`
 
-This verifies the sector-5 GL2 solver on a non-identity fixture generated from the certified raw matrix-unit chart. It proves the solver handles nontrivial basis changes, but remains a fixture rather than an independent legacy basis.
+This verifies the sector-5 GL2 solver on a non-identity fixture generated from the certified raw matrix-unit chart. It proves the solver handles nontrivial basis changes, but remains a fixture rather than an independent source-sector basis.
 
 ## Checks
 

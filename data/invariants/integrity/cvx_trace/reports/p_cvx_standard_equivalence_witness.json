@@ -1,0 +1,94 @@
+{
+  "claim_level": "formal_interface_field_binding_to_replayed_certificates",
+  "decision": {
+    "may_claim_equivalence_witness_bound": true,
+    "may_claim_p_cvx_equals_standard_p": true,
+    "may_claim_standard_global_p_not_np": false,
+    "reason": "The typechecked Agda package fields are bound to the replayed simulation and semantic-X certificates."
+  },
+  "field_bindings": {
+    "extensionalEquivalence": {
+      "bound_by": "data/invariants/integrity/cvx_trace/reports/p_cvx_standard_model_identification.json",
+      "formal_field": "PCVXStandardPIdentificationPackage.extensionalEquivalence",
+      "meaning": "The two simulation directions plus semantic X boundary package P_CVX = standard P as public machine classes.",
+      "passed": true,
+      "status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED"
+    },
+    "pcvxToStandardP": {
+      "bound": "For runtime T, public word width W, and program size P, a RAM simulation costs O(T*(W+log P)); a multitape Turing simulation costs O(T*(W+log P)^2).",
+      "bound_by": "data/invariants/integrity/cvx_trace/reports/public_bit_ram_standard_simulation.json",
+      "formal_field": "PCVXStandardPIdentificationPackage.pcvxToStandardP",
+      "meaning": "Every represented finite public bit-RAM/C-only P_CVX computation has a polynomial standard machine simulation.",
+      "passed": true,
+      "status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED"
+    },
+    "semanticXBoundary": {
+      "bound_by": "data/invariants/integrity/cvx_trace/reports/semantic_x_reclassification_theorem.json",
+      "formal_field": "PCVXStandardPIdentificationPackage.semanticXBoundary",
+      "meaning": "Hidden recovery is either impossible in pure C or is reclassified as X rather than public P.",
+      "passed": true,
+      "status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED"
+    },
+    "standardPToPCVX": {
+      "bound": "For source runtime T, input length n, k tapes, alphabet bit-width a, state bit-width q, and transition table size |delta|, the compiled execution has O(T*(k*(a+log(T+n+1)) + q + |delta|)) public bit-RAM steps.",
+      "bound_by": "data/invariants/integrity/cvx_trace/reports/standard_tm_public_bit_ram_frontend.json",
+      "formal_field": "PCVXStandardPIdentificationPackage.standardPToPCVX",
+      "meaning": "Every ordinary deterministic public standard machine execution has a polynomial C-only finite public bit-RAM frontend.",
+      "passed": true,
+      "status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED"
+    }
+  },
+  "formal_target": {
+    "file": "data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+    "package_type": "PCVXStandardPIdentificationPackage",
+    "typechecked": true
+  },
+  "next_highest_yield_item": {
+    "action": "Use the bound P_CVX/standard-P equivalence, model separation, SAT-complete E(phi), and standard-NP witness interface to emit the standard-statement promotion certificate.",
+    "id": "standard_p_not_np_promotion_certificate"
+  },
+  "non_claims": [
+    "This does not prove standard global P != NP by itself.",
+    "This does not embed the JSON replay proofs into Agda terms.",
+    "This does not include oracle/advice/X extraction inside public P."
+  ],
+  "schema": "d20.integrity.p_cvx_standard_equivalence_witness.source_drop",
+  "source_audit": {
+    "formal_machine_interface": {
+      "expected_status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_formal_machine_interface.json",
+      "sha256": "c8c01f48034f406f6581ad91daf7def31bbaaff7833d7ffa27b729f27e529b68",
+      "status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED"
+    },
+    "public_bit_ram_standard_simulation": {
+      "expected_status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/public_bit_ram_standard_simulation.json",
+      "sha256": "c2f1fe0e47d5fbd650f9790eb948e4e377370a7a99d28985a948955e953d560f",
+      "status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED"
+    },
+    "semantic_x_reclassification": {
+      "expected_status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/semantic_x_reclassification_theorem.json",
+      "sha256": "102bf023e8e7e5b321ef8458f6d0d8de705c7ce42a2818541eb9cd2b72c91108",
+      "status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED"
+    },
+    "standard_model_identification": {
+      "expected_status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_standard_model_identification.json",
+      "sha256": "f894304df277e5e5fc7c240355c334a268980621885b1017af6c7b79c6ba99a2",
+      "status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED"
+    },
+    "standard_tm_public_bit_ram_frontend": {
+      "expected_status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/standard_tm_public_bit_ram_frontend.json",
+      "sha256": "9d6f6b967a797d3a5b53dd3fd4433849484095bff6198e6e35cfff39fd10f2b1",
+      "status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED"
+    }
+  },
+  "status": "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND"
+}

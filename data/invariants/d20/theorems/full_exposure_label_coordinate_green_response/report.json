@@ -1,0 +1,1749 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b08505f7a6facad77dad03dfaa58171348e0b3d3ac3d97ea258e0505ac2de2d2",
+  "checks": {
+    "adjacency_resolvent_identity_holds_exactly": true,
+    "all_source_rows_are_present": true,
+    "all_sources_have_same_analytic_response_profile": true,
+    "markov_resolvent_identity_holds_exactly": true,
+    "massive_laplacian_green_identity_holds_exactly": true,
+    "pole_sets_match_certified_spectra": true,
+    "spectral_boundary_input_is_certified": true,
+    "transition_operator_input_is_certified": true,
+    "zero_pair_response_has_two_coordinate_support": true,
+    "zero_pair_response_profile_is_not_operator_unique": true,
+    "zero_pair_source_is_unique_and_targets_packet238": true
+  },
+  "claim": "A zero-pair labelled source insertion has an exact rational Green/resolvent response on the intrinsic full-exposure label-coordinate operator. The response is supported only on the zero-pair coordinate and its active partner, with poles fixed by the certified plus/minus doublet spectrum.",
+  "definition": {
+    "adjacency_resolvent": "R_A(lambda)=(lambda I-A)^-1 for lambda not in {-2,6}.",
+    "labelled_source_insertion": "The coordinate delta at a canonical labelled-frame coordinate, with packet ids retained only as witness fields.",
+    "markov_resolvent": "R_P(lambda)=(lambda I-P)^-1 for P=A/6 and lambda not in {-1/3,1}.",
+    "massive_laplacian_green": "G_L(m)=(mI+L)^-1 for m not in {-8,0}."
+  },
+  "derived": {
+    "exact_identity_witnesses": {
+      "adjacency_resolvent": {
+        "block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "identity": "(lambda I-A)R_A(lambda)e_source=e_source",
+        "verified_over": "Q[lambda]"
+      },
+      "markov_resolvent": {
+        "block": [
+          [
+            "1/3",
+            "2/3"
+          ],
+          [
+            "2/3",
+            "1/3"
+          ]
+        ],
+        "identity": "(lambda I-P)R_P(lambda)e_source=e_source",
+        "verified_over": "Q[lambda]"
+      },
+      "massive_laplacian_green": {
+        "block": [
+          [
+            4,
+            -4
+          ],
+          [
+            -4,
+            4
+          ]
+        ],
+        "identity": "(mI+L)G_L(m)e_source=e_source",
+        "verified_over": "Q[m]"
+      }
+    },
+    "green_response_summary": {
+      "source_count": 20,
+      "source_response_profile_histogram": {
+        "adj=self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0|markov=self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0|laplacian=self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0": 20
+      },
+      "support_size_histogram": {
+        "2": 20
+      },
+      "verdict": "The zero-pair labelled source has an exact two-coordinate Green response on its active doublet. Its pole residues are plus/minus doublet residues, but the analytic response profile is shared by every labelled coordinate.",
+      "zero_pair_active_partner_frame_index": 2,
+      "zero_pair_active_partner_packet_id": 238,
+      "zero_pair_source_count": 1,
+      "zero_pair_source_frame_index": 0,
+      "zero_pair_witness_packet_id": 239
+    },
+    "source_response_rows": [
+      {
+        "active_partner_frame_index": 2,
+        "active_partner_witness_packet_id": 238,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 0,
+        "source_is_zero_pair_coordinate": true,
+        "source_labels": {
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            0,
+            0
+          ],
+          "sector26_clock_sum_mod26": 0
+        },
+        "source_witness_packet_id": 239,
+        "support_frame_indices": [
+          0,
+          2
+        ],
+        "support_witness_packet_ids": [
+          239,
+          238
+        ]
+      },
+      {
+        "active_partner_frame_index": 9,
+        "active_partner_witness_packet_id": 255,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 1,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            22,
+            4
+          ],
+          "sector26_clock_sum_mod26": 0
+        },
+        "source_witness_packet_id": 254,
+        "support_frame_indices": [
+          1,
+          9
+        ],
+        "support_witness_packet_ids": [
+          254,
+          255
+        ]
+      },
+      {
+        "active_partner_frame_index": 0,
+        "active_partner_witness_packet_id": 239,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 2,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            24,
+            6
+          ],
+          "sector26_clock_sum_mod26": 4
+        },
+        "source_witness_packet_id": 238,
+        "support_frame_indices": [
+          2,
+          0
+        ],
+        "support_witness_packet_ids": [
+          238,
+          239
+        ]
+      },
+      {
+        "active_partner_frame_index": 5,
+        "active_partner_witness_packet_id": 190,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 3,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            16,
+            16
+          ],
+          "sector26_clock_sum_mod26": 6
+        },
+        "source_witness_packet_id": 191,
+        "support_frame_indices": [
+          3,
+          5
+        ],
+        "support_witness_packet_ids": [
+          191,
+          190
+        ]
+      },
+      {
+        "active_partner_frame_index": 7,
+        "active_partner_witness_packet_id": 174,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 4,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            18,
+            18
+          ],
+          "sector26_clock_sum_mod26": 10
+        },
+        "source_witness_packet_id": 175,
+        "support_frame_indices": [
+          4,
+          7
+        ],
+        "support_witness_packet_ids": [
+          175,
+          174
+        ]
+      },
+      {
+        "active_partner_frame_index": 3,
+        "active_partner_witness_packet_id": 191,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 5,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            14,
+            22
+          ],
+          "sector26_clock_sum_mod26": 10
+        },
+        "source_witness_packet_id": 190,
+        "support_frame_indices": [
+          5,
+          3
+        ],
+        "support_witness_packet_ids": [
+          190,
+          191
+        ]
+      },
+      {
+        "active_partner_frame_index": 8,
+        "active_partner_witness_packet_id": 246,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 6,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            6,
+            6
+          ],
+          "sector26_clock_sum_mod26": 12
+        },
+        "source_witness_packet_id": 247,
+        "support_frame_indices": [
+          6,
+          8
+        ],
+        "support_witness_packet_ids": [
+          247,
+          246
+        ]
+      },
+      {
+        "active_partner_frame_index": 4,
+        "active_partner_witness_packet_id": 175,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 7,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            16,
+            24
+          ],
+          "sector26_clock_sum_mod26": 14
+        },
+        "source_witness_packet_id": 174,
+        "support_frame_indices": [
+          7,
+          4
+        ],
+        "support_witness_packet_ids": [
+          174,
+          175
+        ]
+      },
+      {
+        "active_partner_frame_index": 6,
+        "active_partner_witness_packet_id": 247,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 8,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            4,
+            12
+          ],
+          "sector26_clock_sum_mod26": 16
+        },
+        "source_witness_packet_id": 246,
+        "support_frame_indices": [
+          8,
+          6
+        ],
+        "support_witness_packet_ids": [
+          246,
+          247
+        ]
+      },
+      {
+        "active_partner_frame_index": 1,
+        "active_partner_witness_packet_id": 254,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 9,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            24,
+            24
+          ],
+          "sector26_clock_sum_mod26": 22
+        },
+        "source_witness_packet_id": 255,
+        "support_frame_indices": [
+          9,
+          1
+        ],
+        "support_witness_packet_ids": [
+          255,
+          254
+        ]
+      },
+      {
+        "active_partner_frame_index": 18,
+        "active_partner_witness_packet_id": 503,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 10,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            22,
+            4
+          ],
+          "sector26_clock_sum_mod26": 0
+        },
+        "source_witness_packet_id": 502,
+        "support_frame_indices": [
+          10,
+          18
+        ],
+        "support_witness_packet_ids": [
+          502,
+          503
+        ]
+      },
+      {
+        "active_partner_frame_index": 13,
+        "active_partner_witness_packet_id": 510,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 11,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            16,
+            16
+          ],
+          "sector26_clock_sum_mod26": 6
+        },
+        "source_witness_packet_id": 511,
+        "support_frame_indices": [
+          11,
+          13
+        ],
+        "support_witness_packet_ids": [
+          511,
+          510
+        ]
+      },
+      {
+        "active_partner_frame_index": 14,
+        "active_partner_witness_packet_id": 494,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 12,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            18,
+            18
+          ],
+          "sector26_clock_sum_mod26": 10
+        },
+        "source_witness_packet_id": 495,
+        "support_frame_indices": [
+          12,
+          14
+        ],
+        "support_witness_packet_ids": [
+          495,
+          494
+        ]
+      },
+      {
+        "active_partner_frame_index": 11,
+        "active_partner_witness_packet_id": 511,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 13,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            14,
+            22
+          ],
+          "sector26_clock_sum_mod26": 10
+        },
+        "source_witness_packet_id": 510,
+        "support_frame_indices": [
+          13,
+          11
+        ],
+        "support_witness_packet_ids": [
+          510,
+          511
+        ]
+      },
+      {
+        "active_partner_frame_index": 12,
+        "active_partner_witness_packet_id": 495,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 14,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            16,
+            24
+          ],
+          "sector26_clock_sum_mod26": 14
+        },
+        "source_witness_packet_id": 494,
+        "support_frame_indices": [
+          14,
+          12
+        ],
+        "support_witness_packet_ids": [
+          494,
+          495
+        ]
+      },
+      {
+        "active_partner_frame_index": 17,
+        "active_partner_witness_packet_id": 446,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 15,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            8,
+            8
+          ],
+          "sector26_clock_sum_mod26": 16
+        },
+        "source_witness_packet_id": 447,
+        "support_frame_indices": [
+          15,
+          17
+        ],
+        "support_witness_packet_ids": [
+          447,
+          446
+        ]
+      },
+      {
+        "active_partner_frame_index": 19,
+        "active_partner_witness_packet_id": 430,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 16,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            10,
+            10
+          ],
+          "sector26_clock_sum_mod26": 20
+        },
+        "source_witness_packet_id": 431,
+        "support_frame_indices": [
+          16,
+          19
+        ],
+        "support_witness_packet_ids": [
+          431,
+          430
+        ]
+      },
+      {
+        "active_partner_frame_index": 15,
+        "active_partner_witness_packet_id": 447,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 17,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            6,
+            14
+          ],
+          "sector26_clock_sum_mod26": 20
+        },
+        "source_witness_packet_id": 446,
+        "support_frame_indices": [
+          17,
+          15
+        ],
+        "support_witness_packet_ids": [
+          446,
+          447
+        ]
+      },
+      {
+        "active_partner_frame_index": 10,
+        "active_partner_witness_packet_id": 502,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 18,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            24,
+            24
+          ],
+          "sector26_clock_sum_mod26": 22
+        },
+        "source_witness_packet_id": 503,
+        "support_frame_indices": [
+          18,
+          10
+        ],
+        "support_witness_packet_ids": [
+          503,
+          502
+        ]
+      },
+      {
+        "active_partner_frame_index": 16,
+        "active_partner_witness_packet_id": 431,
+        "adjacency_resolvent": {
+          "active_partner_response": "4/((lambda-6)(lambda+2))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+          "excluded_lambda_values": [
+            -2,
+            6
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+          "operator": "R_A(lambda)=(lambda I-A)^-1",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+          "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+        },
+        "local_adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "local_basis_order": [
+          "source_coordinate",
+          "active_partner_coordinate"
+        ],
+        "markov_resolvent": {
+          "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+          "excluded_lambda_values": [
+            "-1/3",
+            "1"
+          ],
+          "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+          "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+          "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+          "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+        },
+        "massive_laplacian_green": {
+          "active_partner_response": "4/(m(m+8))",
+          "all_other_coordinate_response": "0",
+          "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+          "excluded_m_values": [
+            -8,
+            0
+          ],
+          "operator": "G_L(m)=(mI+L)^-1",
+          "renormalized_dipole_limit": "(1/16)*[1,-1]",
+          "self_response": "(m+4)/(m(m+8))",
+          "zero_mode_divergence": "(1/(2m))*[1,1]"
+        },
+        "source_frame_index": 19,
+        "source_is_zero_pair_coordinate": false,
+        "source_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            8,
+            16
+          ],
+          "sector26_clock_sum_mod26": 24
+        },
+        "source_witness_packet_id": 430,
+        "support_frame_indices": [
+          19,
+          16
+        ],
+        "support_witness_packet_ids": [
+          430,
+          431
+        ]
+      }
+    ],
+    "source_response_rows_sha256": "a0caa25dbbd8773555428d94a0fba084c9257d01f207709a8fd0e8e0980bb1e5",
+    "zero_pair_source_response": {
+      "active_partner_frame_index": 2,
+      "active_partner_witness_packet_id": 238,
+      "adjacency_resolvent": {
+        "active_partner_response": "4/((lambda-6)(lambda+2))",
+        "all_other_coordinate_response": "0",
+        "coordinate_response_signature": "self=(lambda-2)/((lambda-6)(lambda+2));partner=4/((lambda-6)(lambda+2));other=0",
+        "excluded_lambda_values": [
+          -2,
+          6
+        ],
+        "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-2",
+        "operator": "R_A(lambda)=(lambda I-A)^-1",
+        "plus_pole_residue_vector": "1/2*[1,1] at lambda=6",
+        "self_response": "(lambda-2)/((lambda-6)(lambda+2))"
+      },
+      "local_adjacency_block": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "local_basis_order": [
+        "source_coordinate",
+        "active_partner_coordinate"
+      ],
+      "markov_resolvent": {
+        "active_partner_response": "(2/3)/((lambda-1)(lambda+1/3))",
+        "all_other_coordinate_response": "0",
+        "coordinate_response_signature": "self=(lambda-1/3)/((lambda-1)(lambda+1/3));partner=(2/3)/((lambda-1)(lambda+1/3));other=0",
+        "excluded_lambda_values": [
+          "-1/3",
+          "1"
+        ],
+        "minus_pole_residue_vector": "1/2*[1,-1] at lambda=-1/3",
+        "operator": "R_P(lambda)=(lambda I-P)^-1, P=A/6",
+        "plus_pole_residue_vector": "1/2*[1,1] at lambda=1",
+        "self_response": "(lambda-1/3)/((lambda-1)(lambda+1/3))"
+      },
+      "massive_laplacian_green": {
+        "active_partner_response": "4/(m(m+8))",
+        "all_other_coordinate_response": "0",
+        "coordinate_response_signature": "self=(m+4)/(m(m+8));partner=4/(m(m+8));other=0",
+        "excluded_m_values": [
+          -8,
+          0
+        ],
+        "operator": "G_L(m)=(mI+L)^-1",
+        "renormalized_dipole_limit": "(1/16)*[1,-1]",
+        "self_response": "(m+4)/(m(m+8))",
+        "zero_mode_divergence": "(1/(2m))*[1,1]"
+      },
+      "source_frame_index": 0,
+      "source_is_zero_pair_coordinate": true,
+      "source_labels": {
+        "clock_frame": "zero_pair",
+        "fine_spectral_charge_key": "32|0|0|0|25",
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          0,
+          0
+        ],
+        "sector26_clock_sum_mod26": 0
+      },
+      "source_witness_packet_id": 239,
+      "support_frame_indices": [
+        0,
+        2
+      ],
+      "support_witness_packet_ids": [
+        239,
+        238
+      ]
+    }
+  },
+  "inputs": {
+    "full_exposure_label_coordinate_spectral_boundary_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_label_coordinate_spectral_boundary/report.json",
+      "sha256": "e4e03dc634d92d9669b1b022fdbc4e55f0d8627842e95203fc9b3669e12046fd"
+    },
+    "full_exposure_label_coordinate_transition_operator_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_label_coordinate_transition_operator/report.json",
+      "sha256": "70cd9f1687843c0c2440cdb95ad388e20d91859735c7caca76fbc3eb0760eb32"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "The response profile is not unique to the zero-pair source. Zero-pair uniqueness is still carried by labels; this theorem supplies the exact response kernel for that labelled source.",
+    "what_this_proves": [
+      "the zero-pair source response is exactly two-supported: packet 239 and active partner packet 238",
+      "the adjacency response has poles at the certified doublet eigenvalues 6 and -2",
+      "the Markov response has poles at 1 and -1/3",
+      "the massive Laplacian response splits into a divergent zero-mode term and a finite dipole limit"
+    ]
+  },
+  "next_highest_yield_item": "Push the zero-pair Green-response pole residues through the packet charge-frame and sector-26 ledger to test whether they define a finite propagator charge kernel.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_label_coordinate_green_response",
+  "status": "D20_FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_CERTIFIED"
+}

@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -111,12 +111,12 @@ def det_mod(matrix: np.ndarray) -> int:
     return int(det % FIELD_PRIME)
 
 
-def fixture_gl(legacy_sector: int, dimension: int) -> tuple[np.ndarray, np.ndarray]:
-    rng = np.random.default_rng(20_260_524 + legacy_sector * 101 + dimension)
+def fixture_gl(source_sector: int, dimension: int) -> tuple[np.ndarray, np.ndarray]:
+    rng = np.random.default_rng(20_260_524 + source_sector * 101 + dimension)
     for _ in range(256):
         g = rng.integers(0, 37, size=(dimension, dimension), dtype=np.int64) % FIELD_PRIME
         for idx in range(dimension):
-            g[idx, idx] = (g[idx, idx] + idx + legacy_sector + 1) % FIELD_PRIME
+            g[idx, idx] = (g[idx, idx] + idx + source_sector + 1) % FIELD_PRIME
             if int(g[idx, idx]) == 0:
                 g[idx, idx] = 1
         try:
@@ -125,7 +125,7 @@ def fixture_gl(legacy_sector: int, dimension: int) -> tuple[np.ndarray, np.ndarr
             continue
         if det_mod(g) and not np.array_equal(g % FIELD_PRIME, np.eye(dimension, dtype=np.int64)):
             return g % FIELD_PRIME, ginv % FIELD_PRIME
-    raise RuntimeError(f"failed to find invertible fixture GL matrix for sector {legacy_sector}")
+    raise RuntimeError(f"failed to find invertible fixture GL matrix for sector {source_sector}")
 
 
 def formula_coords(g: np.ndarray, ginv: np.ndarray) -> np.ndarray:
@@ -192,7 +192,7 @@ def load_open_obligations() -> list[dict[str, Any]]:
     rows = read_csv_rows(OBLIGATIONS_DIR / "sector_local_normalization_obligations.csv")
     open_rows = [
         {
-            "legacy_sector": int(row["legacy_sector"]),
+            "source_sector": int(row["source_sector"]),
             "raw_sector": int(row["raw_sector"]),
             "block_dimension": int(row["block_dimension"]),
             "matrix_unit_count": int(row["matrix_unit_count"]),
@@ -202,27 +202,27 @@ def load_open_obligations() -> list[dict[str, Any]]:
         for row in rows
         if row["normalization_status"] == "OPEN_GL_BLOCK_NORMALIZATION"
     ]
-    return sorted(open_rows, key=lambda row: row["legacy_sector"])
+    return sorted(open_rows, key=lambda row: row["source_sector"])
 
 
-def load_sector_block(arrays: np.lib.npyio.NpzFile, legacy_sector: int, dimension: int) -> np.ndarray:
+def load_sector_block(arrays: np.lib.npyio.NpzFile, source_sector: int, dimension: int) -> np.ndarray:
     matrix_units = np.asarray(arrays["matrix_units"], dtype=np.int64) % FIELD_PRIME
-    sectors = np.asarray(arrays["legacy_sector"], dtype=np.int64)
+    sectors = np.asarray(arrays["source_sector"], dtype=np.int64)
     local_i = np.asarray(arrays["i"], dtype=np.int64)
     local_j = np.asarray(arrays["j"], dtype=np.int64)
     block = np.zeros((RELATION_COUNT, dimension * dimension), dtype=np.int64)
     found = 0
-    for idx in np.where(sectors == legacy_sector)[0]:
+    for idx in np.where(sectors == source_sector)[0]:
         i = int(local_i[idx])
         j = int(local_j[idx])
         block[:, i * dimension + j] = matrix_units[:, int(idx)]
         found += 1
     if found != dimension * dimension:
-        raise ValueError(f"sector {legacy_sector} has {found} matrix-unit columns, expected {dimension * dimension}")
+        raise ValueError(f"sector {source_sector} has {found} matrix-unit columns, expected {dimension * dimension}")
     return block % FIELD_PRIME
 
 
-def coordinate_rows(legacy_sector: int, raw_sector: int, dimension: int, coords: np.ndarray) -> list[dict[str, Any]]:
+def coordinate_rows(source_sector: int, raw_sector: int, dimension: int, coords: np.ndarray) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for target_i in range(dimension):
         for target_j in range(dimension):
@@ -235,7 +235,7 @@ def coordinate_rows(legacy_sector: int, raw_sector: int, dimension: int, coords:
                         continue
                     rows.append(
                         {
-                            "legacy_sector": legacy_sector,
+                            "source_sector": source_sector,
                             "raw_sector": raw_sector,
                             "block_dimension": dimension,
                             "target_i": target_i,
@@ -249,7 +249,7 @@ def coordinate_rows(legacy_sector: int, raw_sector: int, dimension: int, coords:
 
 
 def gl_rows(
-    legacy_sector: int,
+    source_sector: int,
     raw_sector: int,
     dimension: int,
     name: str,
@@ -261,7 +261,7 @@ def gl_rows(
         for j in range(dimension):
             rows.append(
                 {
-                    "legacy_sector": legacy_sector,
+                    "source_sector": source_sector,
                     "raw_sector": raw_sector,
                     "block_dimension": dimension,
                     "solution_name": name,
@@ -273,7 +273,7 @@ def gl_rows(
         for j in range(dimension):
             rows.append(
                 {
-                    "legacy_sector": legacy_sector,
+                    "source_sector": source_sector,
                     "raw_sector": raw_sector,
                     "block_dimension": dimension,
                     "solution_name": name,
@@ -283,7 +283,7 @@ def gl_rows(
             )
     rows.append(
         {
-            "legacy_sector": legacy_sector,
+            "source_sector": source_sector,
             "raw_sector": raw_sector,
             "block_dimension": dimension,
             "solution_name": name,
@@ -294,7 +294,7 @@ def gl_rows(
     return rows
 
 
-def residual_rows(legacy_sector: int, raw_sector: int, dimension: int, residual: np.ndarray) -> list[dict[str, Any]]:
+def residual_rows(source_sector: int, raw_sector: int, dimension: int, residual: np.ndarray) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for target_i in range(dimension):
         for target_j in range(dimension):
@@ -302,7 +302,7 @@ def residual_rows(legacy_sector: int, raw_sector: int, dimension: int, residual:
             col_residual = residual[:, col] % FIELD_PRIME
             rows.append(
                 {
-                    "legacy_sector": legacy_sector,
+                    "source_sector": source_sector,
                     "raw_sector": raw_sector,
                     "block_dimension": dimension,
                     "target_i": target_i,
@@ -329,19 +329,19 @@ def raw_product_samples(
     zero = np.zeros(RELATION_COUNT, dtype=np.int64)
     failures: list[dict[str, int]] = []
     for _ in range(sample_size):
-        legacy_sector = int(sectors[int(rng.integers(0, len(sectors)))])
-        d = dimensions[legacy_sector]
+        source_sector = int(sectors[int(rng.integers(0, len(sectors)))])
+        d = dimensions[source_sector]
         i = int(rng.integers(0, d))
         j = int(rng.integers(0, d))
         k = int(rng.integers(0, d))
         ell = int(rng.integers(0, d))
-        block = candidate_blocks[legacy_sector]
+        block = candidate_blocks[source_sector]
         product = oracle.product(block[:, i * d + j], block[:, k * d + ell])
         target = block[:, i * d + ell] if j == k else zero
         if not np.array_equal(product % FIELD_PRIME, target % FIELD_PRIME):
             failures.append(
                 {
-                    "legacy_sector": legacy_sector,
+                    "source_sector": source_sector,
                     "left_i": i,
                     "left_j": j,
                     "right_i": k,
@@ -363,7 +363,7 @@ def write_outputs(
     write_csv_rows(
         OUT_DIR / "open_sector_fixture_summary.csv",
         [
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "matrix_unit_count",
@@ -391,7 +391,7 @@ def write_outputs(
     write_csv_rows(
         OUT_DIR / "open_sector_fixture_coordinate_nonzeros.csv",
         [
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "target_i",
@@ -405,7 +405,7 @@ def write_outputs(
     write_csv_rows(
         OUT_DIR / "open_sector_fixture_gl_source_and_solution.csv",
         [
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "solution_name",
@@ -417,7 +417,7 @@ def write_outputs(
     write_csv_rows(
         OUT_DIR / "open_sector_fixture_solver_residuals.csv",
         [
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "target_i",
@@ -434,7 +434,7 @@ def build_atlas(raw_product_sample_size: int, seed: int) -> dict[str, Any]:
     obligations_report = load_json(OBLIGATIONS_DIR / "report.json")
     sector5_fixture_report = load_json(NONTRIVIAL_FIXTURE_DIR / "report.json")
     open_obligations = load_open_obligations()
-    arrays = np.load(FULL_COO_DIR / "legacy_matrix_units_raw_orbital_arrays.npz")
+    arrays = np.load(FULL_COO_DIR / "source_sector_matrix_units_raw_orbital_arrays.npz")
 
     summary_rows: list[dict[str, Any]] = []
     coordinate_nonzeros: list[dict[str, Any]] = []
@@ -444,13 +444,13 @@ def build_atlas(raw_product_sample_size: int, seed: int) -> dict[str, Any]:
     dimensions: dict[int, int] = {}
 
     for obligation in open_obligations:
-        legacy_sector = int(obligation["legacy_sector"])
+        source_sector = int(obligation["source_sector"])
         raw_sector = int(obligation["raw_sector"])
         d = int(obligation["block_dimension"])
-        source_block = load_sector_block(arrays, legacy_sector, d)
+        source_block = load_sector_block(arrays, source_sector, d)
         chart_rows = coordinate_columns(source_block, source_block)[0]
 
-        source_g, source_ginv = fixture_gl(legacy_sector, d)
+        source_g, source_ginv = fixture_gl(source_sector, d)
         source_coords = formula_coords(source_g, source_ginv)
         candidate = (source_block @ source_coords) % FIELD_PRIME
         solved_chart_rows, candidate_coords = coordinate_columns(source_block, candidate)
@@ -466,19 +466,19 @@ def build_atlas(raw_product_sample_size: int, seed: int) -> dict[str, Any]:
         identity = np.eye(d, dtype=np.int64) % FIELD_PRIME
 
         if chart_rows != solved_chart_rows:
-            raise RuntimeError(f"sector {legacy_sector} selected inconsistent coordinate charts")
+            raise RuntimeError(f"sector {source_sector} selected inconsistent coordinate charts")
 
-        candidate_blocks[legacy_sector] = candidate
-        dimensions[legacy_sector] = d
+        candidate_blocks[source_sector] = candidate
+        dimensions[source_sector] = d
         coord_nonzero_count = int(np.count_nonzero(candidate_coords))
         residual_nonzeros = int(np.count_nonzero(residual))
-        coordinate_nonzeros.extend(coordinate_rows(legacy_sector, raw_sector, d, candidate_coords))
-        gl_table.extend(gl_rows(legacy_sector, raw_sector, d, "source_fixture", source_g, source_ginv))
-        gl_table.extend(gl_rows(legacy_sector, raw_sector, d, "solved_from_candidate", solved_g, solved_ginv))
-        residual_table.extend(residual_rows(legacy_sector, raw_sector, d, residual))
+        coordinate_nonzeros.extend(coordinate_rows(source_sector, raw_sector, d, candidate_coords))
+        gl_table.extend(gl_rows(source_sector, raw_sector, d, "source_fixture", source_g, source_ginv))
+        gl_table.extend(gl_rows(source_sector, raw_sector, d, "solved_from_candidate", solved_g, solved_ginv))
+        residual_table.extend(residual_rows(source_sector, raw_sector, d, residual))
         summary_rows.append(
             {
-                "legacy_sector": legacy_sector,
+                "source_sector": source_sector,
                 "raw_sector": raw_sector,
                 "block_dimension": d,
                 "matrix_unit_count": d * d,
@@ -535,21 +535,21 @@ def build_atlas(raw_product_sample_size: int, seed: int) -> dict[str, Any]:
         "object": "d20",
         "field_prime": FIELD_PRIME,
         "claim": (
-            "Every open A985 legacy sector now has a verifier fixture for the sector-local GL_d "
+            "Every open A985 source sector now has a verifier fixture for the sector-local GL_d "
             "normalization equation. The fixtures are generated from the certified raw-orbital matrix "
             "units by non-identity invertible GL_d changes, solved back from raw coordinates, and "
             "checked with zero reconstruction residuals. This is a verifier atlas, not an independent "
-            "legacy off-diagonal source."
+            "source-sector off-diagonal source."
         ),
-        "boundary": "No independent legacy off-diagonal matrix-unit basis is supplied by this fixture atlas.",
+        "boundary": "No independent source-sector off-diagonal matrix-unit basis is supplied by this fixture atlas.",
         "inputs": {
             "full_matrix_unit_orbital_coo": {
                 "path": rel(FULL_COO_DIR / "report.json"),
                 "sha256": sha_file(FULL_COO_DIR / "report.json"),
             },
             "matrix_unit_arrays": {
-                "path": rel(FULL_COO_DIR / "legacy_matrix_units_raw_orbital_arrays.npz"),
-                "sha256": sha_file(FULL_COO_DIR / "legacy_matrix_units_raw_orbital_arrays.npz"),
+                "path": rel(FULL_COO_DIR / "source_sector_matrix_units_raw_orbital_arrays.npz"),
+                "sha256": sha_file(FULL_COO_DIR / "source_sector_matrix_units_raw_orbital_arrays.npz"),
             },
             "sector_normalization_obligations": {
                 "path": rel(OBLIGATIONS_DIR / "report.json"),
@@ -577,8 +577,8 @@ def build_atlas(raw_product_sample_size: int, seed: int) -> dict[str, Any]:
             },
         },
         "next_highest_yield_item": (
-            "Wire the same all-sector verifier to accept an external legacy candidate COO file, then "
-            "run it as soon as a genuine legacy off-diagonal source exists."
+            "Wire the same all-sector verifier to accept an external source-sector candidate COO file, then "
+            "run it as soon as a genuine source-sector off-diagonal source exists."
         ),
         "all_checks_pass": all(checks.values()),
     }
@@ -691,3 +691,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

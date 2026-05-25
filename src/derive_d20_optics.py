@@ -7,7 +7,7 @@ from .derive_d20_complement_pairs import derive as derive_complement
 from .derive_d20_snell import derive as derive_snell
 from .derive_d20_caustic_resolvent import derive as derive_caustic
 from .d20_optics_common import sha_json, write_json
-from .layer_registry import layer_path
+from .certificate_registry import certificate_path
 
 
 def derive(root: Path, out_json: Path) -> dict:
@@ -15,8 +15,8 @@ def derive(root: Path, out_json: Path) -> dict:
     complement = derive_complement(root / "generated/d20_complement_pairs.npz", root / "generated/d20_complement_pairs_report.json")
     snell = derive_snell(root / "generated/d20_snell.npz", root / "generated/d20_snell_report.json")
     caustic = derive_caustic(
-        layer_path("geometry.wu_golay_quintic_resolvent", root=root),
-        layer_path("geometry.canonical_24_syzygy_frame", root=root),
+        certificate_path("geometry.wu_golay_quintic_resolvent", root=root),
+        certificate_path("geometry.canonical_24_syzygy_frame", root=root),
         root / "generated/generated_sector_alignment_report.json",
         root / "generated/d20_caustic_resolvent_report.json",
     )

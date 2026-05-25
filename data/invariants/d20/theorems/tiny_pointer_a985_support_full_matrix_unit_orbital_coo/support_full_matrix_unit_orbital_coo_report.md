@@ -11,7 +11,7 @@ Support projectors: `7`
 ## Checks
 
 - `registered_stage_certified`: `True`
-- `legacy_transport_certified`: `True`
+- `sector_transport_certified`: `True`
 - `full_matrix_unit_coo_certified`: `True`
 - `support_manifest_has_1011_rows`: `True`
 - `top_support_replaced_with_full_coo_985_rows`: `True`
@@ -20,6 +20,7 @@ Support projectors: `7`
 - `top_rows_follow_full_coo_order`: `True`
 - `support_coo_rows_match_nonzero_count`: `True`
 - `registered_subsupport_rows_use_registered_source`: `True`
+- `perennial_join_key_emitted_when_available`: `True`
 - `projector_count_is_7`: `True`
 - `zero_projector_is_zero`: `True`
 - `top_projector_is_unit`: `True`

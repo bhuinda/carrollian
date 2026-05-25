@@ -1,0 +1,2129 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "daa3255cbb145738d80d9a460e47ca855b1af3b00c953e12d43e0385b26062da",
+  "checks": {
+    "augmented_ledger_stabilizer_is_certified": true,
+    "fourier_mode_classifier_is_certified": true,
+    "full_public_quotient_requires_forgetting_source_anchor": true,
+    "global_hidden_split_symmetry_is_certified": true,
+    "hidden_split_c2_forgets_target_support_step_action_height_and_fourier_refinements": true,
+    "hidden_split_c2_quotient_has_543_kernel_target_orbits": true,
+    "hidden_split_c2_retains_hidden_packet_and_corrected_clock_labels": true,
+    "nonidentity_c2_requires_forgetting_six_augmented_ledger_axes": true,
+    "reconstructed_public_automorphism_records_match_hidden_split_report": true,
+    "shortest_paths_is_certified": true,
+    "source_and_kernel_target_preserving_group_is_hidden_split_c2": true,
+    "source_fixed_public_quotient_requires_enlarged_domain": true,
+    "transport_families_is_certified": true
+  },
+  "claim": "A nontrivial gamma8-sourced transport quotient exists exactly at the label-relaxed hidden-split C2 level. It keeps the corrected hidden packet/R33 split and gamma8 source anchor, but must forget target identity, exact generator support, step/action/height data, Fourier and sector-26 clock refinements, and the full public action/charge/counterterm ledger. Larger public quotients exist only after enlarging the target domain and eventually forgetting the gamma8 source anchor itself.",
+  "definition": {
+    "label_relaxed_transport_quotient": "An orbit quotient of the gamma8-sourced nonzero Ward-kernel target atlas by a certified D20 automorphism subgroup after retaining only labels that are constant on every orbit.",
+    "must_forget_label": "A label that takes at least two values on some orbit of the proposed nontrivial quotient.",
+    "source_fixed_public_closure": "The closure of the nonzero Ward-kernel target set under public graph automorphisms that fix gamma8 in the 11-bit closed-return residue action."
+  },
+  "derived": {
+    "full_public_orbits_sha256": "f5a73dab69866ddc204e472d485ae3f62ec4e2efc62bfc254325fa83d1228749",
+    "hidden_split_c2_label_coherence": [
+      {
+        "breaking_orbit_count": 480,
+        "coherent_orbit_count": 63,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              3,
+              18
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              5,
+              528
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              6,
+              514
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              8,
+              1034
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              11,
+              1048
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              13,
+              1562
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              14,
+              1544
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              20,
+              513
+            ]
+          }
+        ],
+        "label": "target_identity",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 480,
+        "coherent_orbit_count": 63,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              [
+                0,
+                1,
+                8
+              ],
+              [
+                1,
+                4,
+                8
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              [
+                0,
+                2,
+                8
+              ],
+              [
+                4,
+                8,
+                9
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              [
+                1,
+                2,
+                8
+              ],
+              [
+                1,
+                8,
+                9
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              [
+                3,
+                8
+              ],
+              [
+                1,
+                3,
+                8,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              [
+                0,
+                1,
+                3,
+                8
+              ],
+              [
+                3,
+                4,
+                8,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              [
+                0,
+                2,
+                3,
+                8
+              ],
+              [
+                1,
+                3,
+                4,
+                8,
+                9,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              [
+                1,
+                2,
+                3,
+                8
+              ],
+              [
+                3,
+                8,
+                9,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              [
+                2,
+                4,
+                8
+              ],
+              [
+                0,
+                8,
+                9
+              ]
+            ]
+          }
+        ],
+        "label": "exact_generator_support",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 128,
+        "coherent_orbit_count": 415,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              2,
+              4
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              4,
+              6
+            ]
+          },
+          {
+            "target_masks": [
+              25,
+              1051
+            ],
+            "values": [
+              4,
+              6
+            ]
+          },
+          {
+            "target_masks": [
+              28,
+              1547
+            ],
+            "values": [
+              4,
+              6
+            ]
+          },
+          {
+            "target_masks": [
+              41,
+              1114
+            ],
+            "values": [
+              4,
+              6
+            ]
+          },
+          {
+            "target_masks": [
+              44,
+              1610
+            ],
+            "values": [
+              4,
+              6
+            ]
+          },
+          {
+            "target_masks": [
+              56,
+              1099
+            ],
+            "values": [
+              4,
+              6
+            ]
+          },
+          {
+            "target_masks": [
+              61,
+              1627
+            ],
+            "values": [
+              6,
+              8
+            ]
+          }
+        ],
+        "label": "shortest_step_count",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 128,
+        "coherent_orbit_count": 415,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              1,
+              3
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              3,
+              5
+            ]
+          },
+          {
+            "target_masks": [
+              25,
+              1051
+            ],
+            "values": [
+              3,
+              5
+            ]
+          },
+          {
+            "target_masks": [
+              28,
+              1547
+            ],
+            "values": [
+              3,
+              5
+            ]
+          },
+          {
+            "target_masks": [
+              41,
+              1114
+            ],
+            "values": [
+              3,
+              5
+            ]
+          },
+          {
+            "target_masks": [
+              44,
+              1610
+            ],
+            "values": [
+              3,
+              5
+            ]
+          },
+          {
+            "target_masks": [
+              56,
+              1099
+            ],
+            "values": [
+              3,
+              5
+            ]
+          },
+          {
+            "target_masks": [
+              61,
+              1627
+            ],
+            "values": [
+              5,
+              7
+            ]
+          }
+        ],
+        "label": "support_weight",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 128,
+        "coherent_orbit_count": 415,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              9,
+              5
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              5,
+              1
+            ]
+          },
+          {
+            "target_masks": [
+              25,
+              1051
+            ],
+            "values": [
+              5,
+              1
+            ]
+          },
+          {
+            "target_masks": [
+              28,
+              1547
+            ],
+            "values": [
+              5,
+              1
+            ]
+          },
+          {
+            "target_masks": [
+              41,
+              1114
+            ],
+            "values": [
+              5,
+              1
+            ]
+          },
+          {
+            "target_masks": [
+              44,
+              1610
+            ],
+            "values": [
+              5,
+              1
+            ]
+          },
+          {
+            "target_masks": [
+              56,
+              1099
+            ],
+            "values": [
+              5,
+              1
+            ]
+          },
+          {
+            "target_masks": [
+              61,
+              1627
+            ],
+            "values": [
+              1,
+              -3
+            ]
+          }
+        ],
+        "label": "adjacency_eigenvalue",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 128,
+        "coherent_orbit_count": 415,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              2,
+              6
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              6,
+              10
+            ]
+          },
+          {
+            "target_masks": [
+              25,
+              1051
+            ],
+            "values": [
+              6,
+              10
+            ]
+          },
+          {
+            "target_masks": [
+              28,
+              1547
+            ],
+            "values": [
+              6,
+              10
+            ]
+          },
+          {
+            "target_masks": [
+              41,
+              1114
+            ],
+            "values": [
+              6,
+              10
+            ]
+          },
+          {
+            "target_masks": [
+              44,
+              1610
+            ],
+            "values": [
+              6,
+              10
+            ]
+          },
+          {
+            "target_masks": [
+              56,
+              1099
+            ],
+            "values": [
+              6,
+              10
+            ]
+          },
+          {
+            "target_masks": [
+              61,
+              1627
+            ],
+            "values": [
+              10,
+              14
+            ]
+          }
+        ],
+        "label": "laplacian_eigenvalue",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 472,
+        "coherent_orbit_count": 71,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              2770944,
+              2777088
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              2224128,
+              2448384
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              2469888,
+              2688000
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              1566720,
+              3978240
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              3962880,
+              3738624
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              3416064,
+              6051840
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              3661824,
+              3649536
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              2230272,
+              2442240
+            ]
+          }
+        ],
+        "label": "shortest_path_action",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 472,
+        "coherent_orbit_count": 71,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              2396160,
+              2402304
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              1849344,
+              2073600
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              2095104,
+              2313216
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              1191936,
+              3603456
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              3588096,
+              3363840
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              3041280,
+              5677056
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              3287040,
+              3274752
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              1855488,
+              2067456
+            ]
+          }
+        ],
+        "label": "target_height_action",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 399,
+        "coherent_orbit_count": 144,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              12,
+              16
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              12,
+              13
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              12,
+              11
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              10,
+              20
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              17,
+              16
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              17,
+              21
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              12,
+              11
+            ]
+          },
+          {
+            "target_masks": [
+              23,
+              531
+            ],
+            "values": [
+              21,
+              20
+            ]
+          }
+        ],
+        "label": "active_step_atom_count",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 468,
+        "coherent_orbit_count": 75,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              0,
+              2
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              4,
+              25
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              6,
+              25
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              24,
+              3
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              24,
+              3
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              4,
+              0
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              6,
+              23
+            ]
+          },
+          {
+            "target_masks": [
+              23,
+              531
+            ],
+            "values": [
+              6,
+              25
+            ]
+          }
+        ],
+        "label": "sector26_optical_clock_mod26",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 480,
+        "coherent_orbit_count": 63,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                4
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              [
+                0,
+                2
+              ],
+              [
+                4,
+                9
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                9
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              [
+                3
+              ],
+              [
+                1,
+                3,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              [
+                0,
+                1,
+                3
+              ],
+              [
+                3,
+                4,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              [
+                0,
+                2,
+                3
+              ],
+              [
+                1,
+                3,
+                4,
+                9,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                3,
+                9,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              [
+                2,
+                4
+              ],
+              [
+                0,
+                9
+              ]
+            ]
+          }
+        ],
+        "label": "support_generator_ids",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 470,
+        "coherent_orbit_count": 73,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                4,
+                5,
+                9,
+                10,
+                12,
+                19,
+                20,
+                21,
+                22
+              ],
+              [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                9,
+                11,
+                12,
+                14,
+                18,
+                19,
+                20,
+                21,
+                22,
+                24
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                3,
+                8,
+                9,
+                10,
+                17,
+                19,
+                20,
+                21,
+                22
+              ],
+              [
+                0,
+                2,
+                4,
+                6,
+                7,
+                9,
+                11,
+                14,
+                16,
+                18,
+                21,
+                23,
+                24
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                8,
+                12,
+                17,
+                19,
+                20,
+                21,
+                22
+              ],
+              [
+                0,
+                1,
+                4,
+                5,
+                12,
+                16,
+                19,
+                20,
+                21,
+                22,
+                23
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              [
+                2,
+                5,
+                7,
+                8,
+                9,
+                14,
+                18,
+                19,
+                20,
+                24
+              ],
+              [
+                0,
+                1,
+                2,
+                4,
+                5,
+                7,
+                8,
+                9,
+                11,
+                12,
+                13,
+                14,
+                16,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                18,
+                19,
+                20,
+                21,
+                22,
+                24
+              ],
+              [
+                0,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                13,
+                14,
+                16,
+                18,
+                19,
+                20,
+                23,
+                24
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                3,
+                5,
+                7,
+                8,
+                9,
+                10,
+                14,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                24
+              ],
+              [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                12,
+                13,
+                14,
+                16,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                12,
+                14,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                24
+              ],
+              [
+                0,
+                2,
+                4,
+                5,
+                7,
+                8,
+                9,
+                11,
+                13,
+                14,
+                16,
+                18,
+                19,
+                20,
+                21,
+                23,
+                24
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              [
+                2,
+                3,
+                6,
+                7,
+                8,
+                9,
+                11,
+                14,
+                17,
+                18,
+                20,
+                24
+              ],
+              [
+                0,
+                1,
+                2,
+                4,
+                9,
+                10,
+                16,
+                19,
+                21,
+                22,
+                23
+              ]
+            ]
+          }
+        ],
+        "label": "active_step_atom_ids",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 480,
+        "coherent_orbit_count": 63,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                4
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              [
+                0,
+                2
+              ],
+              [
+                4,
+                9
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                9
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              [
+                3
+              ],
+              [
+                1,
+                3,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              [
+                0,
+                1,
+                3
+              ],
+              [
+                3,
+                4,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              [
+                0,
+                2,
+                3
+              ],
+              [
+                1,
+                3,
+                4,
+                9,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                3,
+                9,
+                10
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              [
+                2,
+                4
+              ],
+              [
+                0,
+                9
+              ]
+            ]
+          }
+        ],
+        "label": "negative_ordered_step_chain_class_ids",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 479,
+        "coherent_orbit_count": 64,
+        "first_breaking_examples": [
+          {
+            "target_masks": [
+              3,
+              18
+            ],
+            "values": [
+              [
+                2,
+                12,
+                0,
+                7,
+                4,
+                false,
+                1,
+                "sector_orthogonal"
+              ],
+              [
+                2,
+                16,
+                2,
+                7,
+                4,
+                false,
+                1,
+                "sector_orthogonal"
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              5,
+              528
+            ],
+            "values": [
+              [
+                2,
+                12,
+                4,
+                7,
+                4,
+                false,
+                1,
+                "sector_orthogonal"
+              ],
+              [
+                2,
+                13,
+                25,
+                7,
+                4,
+                false,
+                1,
+                "sector_orthogonal"
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              6,
+              514
+            ],
+            "values": [
+              [
+                2,
+                12,
+                6,
+                7,
+                4,
+                false,
+                1,
+                "sector_orthogonal"
+              ],
+              [
+                2,
+                11,
+                25,
+                7,
+                4,
+                false,
+                1,
+                "sector_orthogonal"
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              8,
+              1034
+            ],
+            "values": [
+              [
+                1,
+                10,
+                24,
+                9,
+                2,
+                false,
+                1,
+                "sector_orthogonal"
+              ],
+              [
+                3,
+                20,
+                3,
+                5,
+                6,
+                false,
+                1,
+                "sector_orthogonal"
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              11,
+              1048
+            ],
+            "values": [
+              [
+                3,
+                17,
+                24,
+                5,
+                6,
+                false,
+                1,
+                "sector_orthogonal"
+              ],
+              [
+                3,
+                16,
+                3,
+                5,
+                6,
+                false,
+                1,
+                "sector_orthogonal"
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              13,
+              1562
+            ],
+            "values": [
+              [
+                3,
+                17,
+                2,
+                5,
+                6,
+                false,
+                1,
+                "sector_orthogonal"
+              ],
+              [
+                5,
+                21,
+                2,
+                1,
+                10,
+                false,
+                1,
+                "sector_orthogonal"
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              14,
+              1544
+            ],
+            "values": [
+              [
+                3,
+                17,
+                4,
+                5,
+                6,
+                false,
+                1,
+                "sector_orthogonal"
+              ],
+              [
+                3,
+                17,
+                0,
+                5,
+                6,
+                false,
+                1,
+                "sector_orthogonal"
+              ]
+            ]
+          },
+          {
+            "target_masks": [
+              20,
+              513
+            ],
+            "values": [
+              [
+                2,
+                12,
+                6,
+                7,
+                4,
+                false,
+                1,
+                "sector_orthogonal"
+              ],
+              [
+                2,
+                11,
+                23,
+                7,
+                4,
+                false,
+                1,
+                "sector_orthogonal"
+              ]
+            ]
+          }
+        ],
+        "label": "fourier_signature",
+        "verdict": "must_be_forgotten_or_restricted_for_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 0,
+        "coherent_orbit_count": 543,
+        "first_breaking_examples": [],
+        "label": "target_hidden_packet",
+        "verdict": "retained_by_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 0,
+        "coherent_orbit_count": 543,
+        "first_breaking_examples": [],
+        "label": "target_corrected_R33_mod26",
+        "verdict": "retained_by_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 0,
+        "coherent_orbit_count": 543,
+        "first_breaking_examples": [],
+        "label": "corrected_hidden_clock_mod26",
+        "verdict": "retained_by_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 0,
+        "coherent_orbit_count": 543,
+        "first_breaking_examples": [],
+        "label": "gamma8_support",
+        "verdict": "retained_by_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 0,
+        "coherent_orbit_count": 543,
+        "first_breaking_examples": [],
+        "label": "gamma8_translation_eigenvalue",
+        "verdict": "retained_by_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 0,
+        "coherent_orbit_count": 543,
+        "first_breaking_examples": [],
+        "label": "hidden_projection_type",
+        "verdict": "retained_by_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 0,
+        "coherent_orbit_count": 543,
+        "first_breaking_examples": [],
+        "label": "public_balance_error",
+        "verdict": "retained_by_full_c2_quotient"
+      },
+      {
+        "breaking_orbit_count": 0,
+        "coherent_orbit_count": 543,
+        "first_breaking_examples": [],
+        "label": "hidden_balance_error",
+        "verdict": "retained_by_full_c2_quotient"
+      }
+    ],
+    "hidden_split_c2_orbits_sha256": "dbe9c64ac3c001c7021dc4100590c94cb1a5a9bc880db579b87298e7f9117cf9",
+    "label_relaxation_summary": {
+      "hidden_split_c2_orbit_count": 543,
+      "hidden_split_c2_orbit_size_histogram": {
+        "1": 63,
+        "2": 480
+      },
+      "ledger_must_forget_for_nonidentity_c2": [
+        "edge_interface_weights",
+        "normalized_optical_clock_mod26",
+        "primitive_optical_action_weights",
+        "public_oriented_edge_flux_components",
+        "public_state_charge_components",
+        "sector26_counterterm_vector_mod26"
+      ],
+      "ledger_retained_by_nonidentity_c2": [
+        "corrected_clock_mod26"
+      ],
+      "minimal_nontrivial_transport_quotient": "Keep gamma8 source anchoring plus the corrected hidden split/R33 packet labels, and forget target identity, exact support, step/action/height, Fourier/sector-26 clock refinements, public charge/flux labels, counterterms, and interface/action weights.",
+      "must_forget_for_full_c2_quotient": [
+        "active_step_atom_count",
+        "active_step_atom_ids",
+        "adjacency_eigenvalue",
+        "exact_generator_support",
+        "fourier_signature",
+        "laplacian_eigenvalue",
+        "negative_ordered_step_chain_class_ids",
+        "sector26_optical_clock_mod26",
+        "shortest_path_action",
+        "shortest_step_count",
+        "support_generator_ids",
+        "support_weight",
+        "target_height_action",
+        "target_identity"
+      ],
+      "nonzero_kernel_target_count": 1023,
+      "retained_by_full_c2_quotient": [
+        "corrected_hidden_clock_mod26",
+        "gamma8_support",
+        "gamma8_translation_eigenvalue",
+        "hidden_balance_error",
+        "hidden_projection_type",
+        "public_balance_error",
+        "target_corrected_R33_mod26",
+        "target_hidden_packet"
+      ]
+    },
+    "public_level_summary": {
+      "full_public_closure_size": 2047,
+      "full_public_orbit_count": 45,
+      "full_public_orbit_size_histogram": {
+        "10": 3,
+        "12": 2,
+        "120": 2,
+        "15": 1,
+        "20": 2,
+        "30": 8,
+        "6": 3,
+        "60": 24
+      },
+      "kernel_target_preserving_public_count": 2,
+      "public_automorphism_count": 120,
+      "source_and_kernel_target_preserving_count": 2,
+      "source_fixed_public_closure_missing_nonzero_mask_count": 64,
+      "source_fixed_public_closure_size": 1983,
+      "source_fixed_public_orbit_count": 255,
+      "source_fixed_public_orbit_size_histogram": {
+        "1": 3,
+        "10": 144,
+        "5": 108
+      },
+      "source_kernel_preserving_automorphism_ids": [
+        0,
+        1
+      ],
+      "source_stabilizer_automorphism_ids": [
+        0,
+        1,
+        26,
+        27,
+        62,
+        63,
+        70,
+        71,
+        82,
+        83
+      ],
+      "source_stabilizer_count": 10
+    },
+    "quotient_ladder": [
+      {
+        "domain": "nonzero Ward-kernel gamma8 targets",
+        "domain_size": 1023,
+        "group_order": 1,
+        "level": "full_augmented_ledger",
+        "must_forget": [],
+        "nontrivial": false,
+        "orbit_count": 1023,
+        "retained_labels": "all certified action/charge/counterterm/transport labels"
+      },
+      {
+        "domain": "nonzero Ward-kernel gamma8 targets",
+        "domain_size": 1023,
+        "group_order": 2,
+        "level": "hidden_split_c2_transport_topology",
+        "must_forget": [
+          "active_step_atom_count",
+          "active_step_atom_ids",
+          "adjacency_eigenvalue",
+          "exact_generator_support",
+          "fourier_signature",
+          "laplacian_eigenvalue",
+          "negative_ordered_step_chain_class_ids",
+          "sector26_optical_clock_mod26",
+          "shortest_path_action",
+          "shortest_step_count",
+          "support_generator_ids",
+          "support_weight",
+          "target_height_action",
+          "target_identity",
+          "edge_interface_weights",
+          "normalized_optical_clock_mod26",
+          "primitive_optical_action_weights",
+          "public_oriented_edge_flux_components",
+          "public_state_charge_components",
+          "sector26_counterterm_vector_mod26"
+        ],
+        "nontrivial": true,
+        "orbit_count": 543,
+        "orbit_size_histogram": {
+          "1": 63,
+          "2": 480
+        },
+        "retained_labels": [
+          "corrected_hidden_clock_mod26",
+          "gamma8_support",
+          "gamma8_translation_eigenvalue",
+          "hidden_balance_error",
+          "hidden_projection_type",
+          "public_balance_error",
+          "target_corrected_R33_mod26",
+          "target_hidden_packet"
+        ]
+      },
+      {
+        "domain": "public source-fixed closure of the nonzero Ward-kernel targets",
+        "domain_size": 1983,
+        "group_order": 10,
+        "level": "source_fixed_public_mask_closure",
+        "must_forget": [
+          "Ward-kernel target-domain restriction",
+          "hidden packet split",
+          "corrected R33 kernel clock",
+          "sourced-balance action-height labels on the original kernel atlas"
+        ],
+        "nontrivial": true,
+        "orbit_count": 255,
+        "orbit_size_histogram": {
+          "1": 3,
+          "10": 144,
+          "5": 108
+        },
+        "retained_labels": [
+          "gamma8 source anchor",
+          "public residue-mask action"
+        ]
+      },
+      {
+        "domain": "all nonzero closed-return residue masks",
+        "domain_size": 2047,
+        "group_order": 120,
+        "level": "full_public_residue_mask_action",
+        "must_forget": [
+          "gamma8 source anchor",
+          "Ward-kernel target-domain restriction",
+          "hidden packet split",
+          "corrected R33 kernel clock",
+          "full action/charge/counterterm ledger"
+        ],
+        "nontrivial": true,
+        "orbit_count": 45,
+        "orbit_size_histogram": {
+          "10": 3,
+          "12": 2,
+          "120": 2,
+          "15": 1,
+          "20": 2,
+          "30": 8,
+          "6": 3,
+          "60": 24
+        },
+        "retained_labels": [
+          "public graph/residue-mask action"
+        ]
+      }
+    ],
+    "source_fixed_public_orbits_sha256": "6478e98e69c4a6c95e1a8fa3e70596bc120fd6a64cd78a6733a8fa9a20e6816c"
+  },
+  "inputs": {
+    "amplitude_quotient_fourier_mode_classifier_report": {
+      "path": "data/invariants/d20/theorems/amplitude_quotient_fourier_mode_classifier/report.json",
+      "sha256": "cc4b2b3cd08f45339f5d72e66ff7acb6e75b7ddad51672756736a23ecd24599a"
+    },
+    "global_corrected_hidden_split_symmetry_report": {
+      "path": "data/invariants/d20/theorems/global_corrected_hidden_split_symmetry/report.json",
+      "sha256": "d2578b6aee065b11926c42e090d9f7450a9db2b30bd82f21e381dcaa74e098b2"
+    },
+    "hidden_split_augmented_ledger_stabilizer_report": {
+      "path": "data/invariants/d20/theorems/hidden_split_augmented_ledger_stabilizer/report.json",
+      "sha256": "c1ef9505a252c54fa1dbd4dfed796f8e2477410087aaa88d61b7f753dd74222f"
+    },
+    "sourced_balance_shortest_paths_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_shortest_paths/report.json",
+      "sha256": "8a33713fb915f9b0d34b835443510ac7e5814023cef944e5225a7ca08eef72f7"
+    },
+    "sourced_balance_transport_families_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_transport_families/report.json",
+      "sha256": "aea8ef5d7ba3013c460ee46aee3baf9b38d6e37cd705c161c5f353aeacf73d80"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not make action or height descend to the C2 quotient. Their failures are now classified as label-breaking data; turning them into a quotient cocycle is a separate theorem.",
+    "what_this_proves": [
+      "the full action/charge ledger has no nontrivial quotient symmetry",
+      "the smallest nontrivial gamma8-sourced transport quotient is the hidden-split C2 quotient",
+      "that C2 quotient is not action-, height-, step-, support-, or Fourier-coherent on the full target set",
+      "public source-fixed symmetry is larger only after dropping the Ward-kernel target-domain restriction",
+      "the full public 120-action is recovered only after dropping the gamma8 source anchor too"
+    ]
+  },
+  "next_highest_yield_item": "Promote the C2 action/height label-breaking table to a quotient anomaly or cocycle and test whether sourced Ward/BMS balance descends after adding that cocycle.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_CERTIFIED"
+}

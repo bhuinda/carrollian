@@ -8,7 +8,7 @@ Nonzero character values: `3660`
 
 ## Checks
 
-- `canonical_legacy_matrix_units_certified`: `True`
+- `canonical_source_sector_matrix_units_certified`: `True`
 - `full_matrix_unit_coo_certified`: `True`
 - `central_page_count_is_39`: `True`
 - `sector_count_is_39`: `True`
@@ -20,5 +20,6 @@ Nonzero character values: `3660`
 - `central_page_trace_matches_block_dimensions`: `True`
 - `canonical_matrix_unit_traces_match_delta`: `True`
 - `central_projection_sample_commutes`: `True`
+- `perennial_join_key_emitted_when_available`: `True`
 
 Next: Use this character table to test Fourier/residue candidates against the actual canonical A985 block traces instead of only the upstream object-phase sector profiles.

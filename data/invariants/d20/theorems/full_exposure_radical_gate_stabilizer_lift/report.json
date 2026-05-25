@@ -1,0 +1,6035 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bd9a0318470ae433be33076b83541e74cf6f46aaeaebbd2be5629751d30a6c46",
+  "checks": {
+    "active_flip_extension_has_expected_order": true,
+    "all_384_affine_stabilizers_lift_to_canonical_graph_action": true,
+    "charge_frame_and_fine_spectral_labels_reduce_to_identity": true,
+    "charge_frame_classifier_is_certified": true,
+    "combined_gamma_marker_reduces_canonical_lift_to_six": true,
+    "local_gate_and_packet_vertices_match_inputs": true,
+    "packet239_is_the_unique_zero_pair_touched_packet": true,
+    "packet_cells_are_certified": true,
+    "packet_graph_is_certified": true,
+    "radical_gate_stabilizer_is_certified": true,
+    "rank10_alignment_is_certified": true,
+    "source_action_signature_is_uniform": true,
+    "tenfold_hidden_central_exposure_labels_do_not_break_lift": true
+  },
+  "claim": "Every one of the 384 affine stabilizers of the full-exposure radical gate lifts to the unlabelled weighted packet propagation graph and preserves the uniform action labels. With the independent active-partner flips on the ten graph doublets, the graph/action lift order is 384*2^10=393216. The physical packet labels break this symmetry sharply: the combined gamma marker leaves only 6 canonical affine lifts, while the full charge-frame and fine spectral labels leave only the identity lift.",
+  "definition": {
+    "action_label": "The ordered generator pair, source-loop/active-partner relation, signed height flux, total optical action, and hidden R33 transfer label on a two-step cross-return row.",
+    "active_flip_lift": "A graph lift may also independently flip sigma on each active-partner doublet because every doublet has the symmetric block [[2,4],[4,2]].",
+    "canonical_lift": "The lift that sends packet 2r+sigma to 2g(r)+sigma for a radical-gate affine stabilizer g.",
+    "charge_frame_label": "The certified packet charge_frame_key from the projective packet charge-frame classifier."
+  },
+  "derived": {
+    "affine_lift_rows_sha256": "dc2ce6638e7d9ea4ea2d8c7405516a6cf06b2d8afc19d35b47446bd951f59883",
+    "affine_lift_sample_rows": [
+      {
+        "affine_stabilizer_id": 0,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            174,
+            175
+          ],
+          "190,191": [
+            190,
+            191
+          ],
+          "238,239": [
+            238,
+            239
+          ],
+          "246,247": [
+            246,
+            247
+          ],
+          "254,255": [
+            254,
+            255
+          ],
+          "430,431": [
+            430,
+            431
+          ],
+          "446,447": [
+            446,
+            447
+          ],
+          "494,495": [
+            494,
+            495
+          ],
+          "502,503": [
+            502,
+            503
+          ],
+          "510,511": [
+            510,
+            511
+          ]
+        },
+        "linear_columns": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "translation_pattern": "0000"
+      },
+      {
+        "affine_stabilizer_id": 1,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            430,
+            431
+          ],
+          "190,191": [
+            446,
+            447
+          ],
+          "238,239": [
+            494,
+            495
+          ],
+          "246,247": [
+            502,
+            503
+          ],
+          "254,255": [
+            510,
+            511
+          ],
+          "430,431": [
+            174,
+            175
+          ],
+          "446,447": [
+            190,
+            191
+          ],
+          "494,495": [
+            238,
+            239
+          ],
+          "502,503": [
+            246,
+            247
+          ],
+          "510,511": [
+            254,
+            255
+          ]
+        },
+        "linear_columns": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "translation_pattern": "0001"
+      },
+      {
+        "affine_stabilizer_id": 2,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            190,
+            191
+          ],
+          "190,191": [
+            174,
+            175
+          ],
+          "238,239": [
+            238,
+            239
+          ],
+          "246,247": [
+            246,
+            247
+          ],
+          "254,255": [
+            254,
+            255
+          ],
+          "430,431": [
+            446,
+            447
+          ],
+          "446,447": [
+            430,
+            431
+          ],
+          "494,495": [
+            494,
+            495
+          ],
+          "502,503": [
+            502,
+            503
+          ],
+          "510,511": [
+            510,
+            511
+          ]
+        },
+        "linear_columns": [
+          1,
+          2,
+          6,
+          8
+        ],
+        "translation_pattern": "0100"
+      },
+      {
+        "affine_stabilizer_id": 3,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            446,
+            447
+          ],
+          "190,191": [
+            430,
+            431
+          ],
+          "238,239": [
+            494,
+            495
+          ],
+          "246,247": [
+            502,
+            503
+          ],
+          "254,255": [
+            510,
+            511
+          ],
+          "430,431": [
+            190,
+            191
+          ],
+          "446,447": [
+            174,
+            175
+          ],
+          "494,495": [
+            238,
+            239
+          ],
+          "502,503": [
+            246,
+            247
+          ],
+          "510,511": [
+            254,
+            255
+          ]
+        },
+        "linear_columns": [
+          1,
+          2,
+          6,
+          8
+        ],
+        "translation_pattern": "0101"
+      },
+      {
+        "affine_stabilizer_id": 4,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            174,
+            175
+          ],
+          "190,191": [
+            190,
+            191
+          ],
+          "238,239": [
+            494,
+            495
+          ],
+          "246,247": [
+            502,
+            503
+          ],
+          "254,255": [
+            510,
+            511
+          ],
+          "430,431": [
+            430,
+            431
+          ],
+          "446,447": [
+            446,
+            447
+          ],
+          "494,495": [
+            238,
+            239
+          ],
+          "502,503": [
+            246,
+            247
+          ],
+          "510,511": [
+            254,
+            255
+          ]
+        },
+        "linear_columns": [
+          1,
+          2,
+          12,
+          8
+        ],
+        "translation_pattern": "0000"
+      },
+      {
+        "affine_stabilizer_id": 5,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            430,
+            431
+          ],
+          "190,191": [
+            446,
+            447
+          ],
+          "238,239": [
+            238,
+            239
+          ],
+          "246,247": [
+            246,
+            247
+          ],
+          "254,255": [
+            254,
+            255
+          ],
+          "430,431": [
+            174,
+            175
+          ],
+          "446,447": [
+            190,
+            191
+          ],
+          "494,495": [
+            494,
+            495
+          ],
+          "502,503": [
+            502,
+            503
+          ],
+          "510,511": [
+            510,
+            511
+          ]
+        },
+        "linear_columns": [
+          1,
+          2,
+          12,
+          8
+        ],
+        "translation_pattern": "0001"
+      },
+      {
+        "affine_stabilizer_id": 6,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            190,
+            191
+          ],
+          "190,191": [
+            174,
+            175
+          ],
+          "238,239": [
+            494,
+            495
+          ],
+          "246,247": [
+            502,
+            503
+          ],
+          "254,255": [
+            510,
+            511
+          ],
+          "430,431": [
+            446,
+            447
+          ],
+          "446,447": [
+            430,
+            431
+          ],
+          "494,495": [
+            238,
+            239
+          ],
+          "502,503": [
+            246,
+            247
+          ],
+          "510,511": [
+            254,
+            255
+          ]
+        },
+        "linear_columns": [
+          1,
+          2,
+          14,
+          8
+        ],
+        "translation_pattern": "0100"
+      },
+      {
+        "affine_stabilizer_id": 7,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            446,
+            447
+          ],
+          "190,191": [
+            430,
+            431
+          ],
+          "238,239": [
+            238,
+            239
+          ],
+          "246,247": [
+            246,
+            247
+          ],
+          "254,255": [
+            254,
+            255
+          ],
+          "430,431": [
+            190,
+            191
+          ],
+          "446,447": [
+            174,
+            175
+          ],
+          "494,495": [
+            494,
+            495
+          ],
+          "502,503": [
+            502,
+            503
+          ],
+          "510,511": [
+            510,
+            511
+          ]
+        },
+        "linear_columns": [
+          1,
+          2,
+          14,
+          8
+        ],
+        "translation_pattern": "0101"
+      },
+      {
+        "affine_stabilizer_id": 8,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            174,
+            175
+          ],
+          "190,191": [
+            238,
+            239
+          ],
+          "238,239": [
+            190,
+            191
+          ],
+          "246,247": [
+            246,
+            247
+          ],
+          "254,255": [
+            254,
+            255
+          ],
+          "430,431": [
+            430,
+            431
+          ],
+          "446,447": [
+            494,
+            495
+          ],
+          "494,495": [
+            446,
+            447
+          ],
+          "502,503": [
+            502,
+            503
+          ],
+          "510,511": [
+            510,
+            511
+          ]
+        },
+        "linear_columns": [
+          1,
+          4,
+          2,
+          8
+        ],
+        "translation_pattern": "0000"
+      },
+      {
+        "affine_stabilizer_id": 9,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            430,
+            431
+          ],
+          "190,191": [
+            494,
+            495
+          ],
+          "238,239": [
+            446,
+            447
+          ],
+          "246,247": [
+            502,
+            503
+          ],
+          "254,255": [
+            510,
+            511
+          ],
+          "430,431": [
+            174,
+            175
+          ],
+          "446,447": [
+            238,
+            239
+          ],
+          "494,495": [
+            190,
+            191
+          ],
+          "502,503": [
+            246,
+            247
+          ],
+          "510,511": [
+            254,
+            255
+          ]
+        },
+        "linear_columns": [
+          1,
+          4,
+          2,
+          8
+        ],
+        "translation_pattern": "0001"
+      },
+      {
+        "affine_stabilizer_id": 10,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            238,
+            239
+          ],
+          "190,191": [
+            174,
+            175
+          ],
+          "238,239": [
+            190,
+            191
+          ],
+          "246,247": [
+            246,
+            247
+          ],
+          "254,255": [
+            254,
+            255
+          ],
+          "430,431": [
+            494,
+            495
+          ],
+          "446,447": [
+            430,
+            431
+          ],
+          "494,495": [
+            446,
+            447
+          ],
+          "502,503": [
+            502,
+            503
+          ],
+          "510,511": [
+            510,
+            511
+          ]
+        },
+        "linear_columns": [
+          1,
+          4,
+          6,
+          8
+        ],
+        "translation_pattern": "0010"
+      },
+      {
+        "affine_stabilizer_id": 11,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            494,
+            495
+          ],
+          "190,191": [
+            430,
+            431
+          ],
+          "238,239": [
+            446,
+            447
+          ],
+          "246,247": [
+            502,
+            503
+          ],
+          "254,255": [
+            510,
+            511
+          ],
+          "430,431": [
+            238,
+            239
+          ],
+          "446,447": [
+            174,
+            175
+          ],
+          "494,495": [
+            190,
+            191
+          ],
+          "502,503": [
+            246,
+            247
+          ],
+          "510,511": [
+            254,
+            255
+          ]
+        },
+        "linear_columns": [
+          1,
+          4,
+          6,
+          8
+        ],
+        "translation_pattern": "0011"
+      },
+      {
+        "affine_stabilizer_id": 12,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            174,
+            175
+          ],
+          "190,191": [
+            238,
+            239
+          ],
+          "238,239": [
+            446,
+            447
+          ],
+          "246,247": [
+            502,
+            503
+          ],
+          "254,255": [
+            510,
+            511
+          ],
+          "430,431": [
+            430,
+            431
+          ],
+          "446,447": [
+            494,
+            495
+          ],
+          "494,495": [
+            190,
+            191
+          ],
+          "502,503": [
+            246,
+            247
+          ],
+          "510,511": [
+            254,
+            255
+          ]
+        },
+        "linear_columns": [
+          1,
+          4,
+          10,
+          8
+        ],
+        "translation_pattern": "0000"
+      },
+      {
+        "affine_stabilizer_id": 13,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            430,
+            431
+          ],
+          "190,191": [
+            494,
+            495
+          ],
+          "238,239": [
+            190,
+            191
+          ],
+          "246,247": [
+            246,
+            247
+          ],
+          "254,255": [
+            254,
+            255
+          ],
+          "430,431": [
+            174,
+            175
+          ],
+          "446,447": [
+            238,
+            239
+          ],
+          "494,495": [
+            446,
+            447
+          ],
+          "502,503": [
+            502,
+            503
+          ],
+          "510,511": [
+            510,
+            511
+          ]
+        },
+        "linear_columns": [
+          1,
+          4,
+          10,
+          8
+        ],
+        "translation_pattern": "0001"
+      },
+      {
+        "affine_stabilizer_id": 14,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            238,
+            239
+          ],
+          "190,191": [
+            174,
+            175
+          ],
+          "238,239": [
+            446,
+            447
+          ],
+          "246,247": [
+            502,
+            503
+          ],
+          "254,255": [
+            510,
+            511
+          ],
+          "430,431": [
+            494,
+            495
+          ],
+          "446,447": [
+            430,
+            431
+          ],
+          "494,495": [
+            190,
+            191
+          ],
+          "502,503": [
+            246,
+            247
+          ],
+          "510,511": [
+            254,
+            255
+          ]
+        },
+        "linear_columns": [
+          1,
+          4,
+          14,
+          8
+        ],
+        "translation_pattern": "0010"
+      },
+      {
+        "affine_stabilizer_id": 15,
+        "component_permutation_by_packet_pair": {
+          "174,175": [
+            494,
+            495
+          ],
+          "190,191": [
+            430,
+            431
+          ],
+          "238,239": [
+            190,
+            191
+          ],
+          "246,247": [
+            246,
+            247
+          ],
+          "254,255": [
+            254,
+            255
+          ],
+          "430,431": [
+            238,
+            239
+          ],
+          "446,447": [
+            174,
+            175
+          ],
+          "494,495": [
+            446,
+            447
+          ],
+          "502,503": [
+            502,
+            503
+          ],
+          "510,511": [
+            510,
+            511
+          ]
+        },
+        "linear_columns": [
+          1,
+          4,
+          14,
+          8
+        ],
+        "translation_pattern": "0011"
+      }
+    ],
+    "full_exposure_label_witness": {
+      "charge_frame_histogram": {
+        "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 3,
+        "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI": 4,
+        "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 1,
+        "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI": 4,
+        "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 1,
+        "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI": 1,
+        "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 1,
+        "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 4,
+        "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI": 1
+      },
+      "gamma8_touched_packets": [
+        430,
+        431,
+        446,
+        447,
+        494,
+        495,
+        502,
+        503,
+        510,
+        511
+      ],
+      "local_patterns": [
+        "1000",
+        "1100",
+        "1010",
+        "0110",
+        "1110",
+        "1001",
+        "1101",
+        "1011",
+        "0111",
+        "1111"
+      ],
+      "mass_clock_gamma_histogram": {
+        "('high', 'balanced_nonzero', 'gamma8')": 4,
+        "('high', 'balanced_nonzero', 'gamma8_silent')": 3,
+        "('high', 'delta8_nonzero', 'gamma8')": 4,
+        "('high', 'delta8_nonzero', 'gamma8_silent')": 1,
+        "('high', 'zero_pair', 'gamma8_silent')": 1,
+        "('mass_ceiling', 'balanced_nonzero', 'gamma8')": 1,
+        "('middle', 'balanced_nonzero', 'gamma8_silent')": 1,
+        "('middle', 'delta8_nonzero', 'gamma8')": 1,
+        "('middle', 'delta8_nonzero', 'gamma8_silent')": 4
+      },
+      "packet_ids": [
+        174,
+        175,
+        190,
+        191,
+        238,
+        239,
+        246,
+        247,
+        254,
+        255,
+        430,
+        431,
+        446,
+        447,
+        494,
+        495,
+        502,
+        503,
+        510,
+        511
+      ],
+      "radicals": [
+        87,
+        95,
+        119,
+        123,
+        127,
+        215,
+        223,
+        247,
+        251,
+        255
+      ],
+      "zero_pair_touched_packets": [
+        239
+      ]
+    },
+    "graph_action_lift_summary": {
+      "active_flip_extension_order": 1024,
+      "active_partner_flip_freedom_per_component": 2,
+      "canonical_graph_action_lift_order": 384,
+      "component_count": 10,
+      "graph_action_lift_order": 393216,
+      "radical_affine_stabilizer_order": 384,
+      "source_action_signature_is_uniform": true,
+      "source_action_signature_sample": [
+        {
+          "hidden_R33_transfer_mod26_total": 0,
+          "net_height_flux_delta": -301056,
+          "ordered_generators": [
+            5,
+            9
+          ],
+          "target_relation": "active_partner",
+          "total_optical_action": 1683456
+        },
+        {
+          "hidden_R33_transfer_mod26_total": 0,
+          "net_height_flux_delta": -399360,
+          "ordered_generators": [
+            5,
+            10
+          ],
+          "target_relation": "source_loop",
+          "total_optical_action": 1781760
+        },
+        {
+          "hidden_R33_transfer_mod26_total": 0,
+          "net_height_flux_delta": 301056,
+          "ordered_generators": [
+            9,
+            5
+          ],
+          "target_relation": "active_partner",
+          "total_optical_action": 1683456
+        },
+        {
+          "hidden_R33_transfer_mod26_total": 0,
+          "net_height_flux_delta": -98304,
+          "ordered_generators": [
+            9,
+            10
+          ],
+          "target_relation": "active_partner",
+          "total_optical_action": 2082816
+        },
+        {
+          "hidden_R33_transfer_mod26_total": 0,
+          "net_height_flux_delta": 399360,
+          "ordered_generators": [
+            10,
+            5
+          ],
+          "target_relation": "source_loop",
+          "total_optical_action": 1781760
+        },
+        {
+          "hidden_R33_transfer_mod26_total": 0,
+          "net_height_flux_delta": 98304,
+          "ordered_generators": [
+            10,
+            9
+          ],
+          "target_relation": "active_partner",
+          "total_optical_action": 2082816
+        }
+      ],
+      "source_action_signature_sha256": "a84ac90577f05d60e2a3dbcf308751088bcac6ec05dffcd48dec22ffdc43684c"
+    },
+    "label_preservation_summaries": [
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "1024": 384
+        },
+        "active_flip_lift_survivor_count": 393216,
+        "affine_elements_with_active_flip_lift": 384,
+        "canonical_affine_survivor_count": 384,
+        "canonical_survivor_affine_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 1,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                446,
+                447
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                190,
+                191
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 2,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 3,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                446,
+                447
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                190,
+                191
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 4,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 5,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                446,
+                447
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                190,
+                191
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 6,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 7,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                446,
+                447
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                190,
+                191
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 8,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                238,
+                239
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                494,
+                495
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 9,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                494,
+                495
+              ],
+              "238,239": [
+                446,
+                447
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                238,
+                239
+              ],
+              "494,495": [
+                190,
+                191
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 10,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                238,
+                239
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                494,
+                495
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0010"
+          },
+          {
+            "affine_stabilizer_id": 11,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                494,
+                495
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                446,
+                447
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                238,
+                239
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                190,
+                191
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0011"
+          }
+        ],
+        "keys": [],
+        "name": "graph_action_unlabelled"
+      },
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "1024": 384
+        },
+        "active_flip_lift_survivor_count": 393216,
+        "affine_elements_with_active_flip_lift": 384,
+        "canonical_affine_survivor_count": 384,
+        "canonical_survivor_affine_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 1,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                446,
+                447
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                190,
+                191
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 2,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 3,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                446,
+                447
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                190,
+                191
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 4,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 5,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                446,
+                447
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                190,
+                191
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 6,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 7,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                446,
+                447
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                190,
+                191
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 8,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                238,
+                239
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                494,
+                495
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 9,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                494,
+                495
+              ],
+              "238,239": [
+                446,
+                447
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                238,
+                239
+              ],
+              "494,495": [
+                190,
+                191
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 10,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                238,
+                239
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                494,
+                495
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0010"
+          },
+          {
+            "affine_stabilizer_id": 11,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                494,
+                495
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                446,
+                447
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                238,
+                239
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                190,
+                191
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0011"
+          }
+        ],
+        "keys": [
+          "tenfold_frame",
+          "hidden_frame",
+          "central_frame",
+          "exposure_frame"
+        ],
+        "name": "tenfold_hidden_central_exposure"
+      },
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "1": 384
+        },
+        "active_flip_lift_survivor_count": 384,
+        "affine_elements_with_active_flip_lift": 384,
+        "canonical_affine_survivor_count": 384,
+        "canonical_survivor_affine_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 1,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                446,
+                447
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                190,
+                191
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 2,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 3,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                446,
+                447
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                190,
+                191
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 4,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 5,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                446,
+                447
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                190,
+                191
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 6,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                494,
+                495
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                238,
+                239
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 7,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                446,
+                447
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                190,
+                191
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 8,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                238,
+                239
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                494,
+                495
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 9,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                494,
+                495
+              ],
+              "238,239": [
+                446,
+                447
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                238,
+                239
+              ],
+              "494,495": [
+                190,
+                191
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 10,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                238,
+                239
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                494,
+                495
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0010"
+          },
+          {
+            "affine_stabilizer_id": 11,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                494,
+                495
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                446,
+                447
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                238,
+                239
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                190,
+                191
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0011"
+          }
+        ],
+        "keys": [
+          "sector26_clock_delta_mod26"
+        ],
+        "name": "sector26_delta"
+      },
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "0": 360,
+          "1024": 24
+        },
+        "active_flip_lift_survivor_count": 24576,
+        "affine_elements_with_active_flip_lift": 24,
+        "canonical_affine_survivor_count": 24,
+        "canonical_survivor_affine_ids": [
+          0,
+          2,
+          8,
+          10,
+          16,
+          18,
+          48,
+          50,
+          56,
+          58,
+          64,
+          66,
+          96,
+          98,
+          104,
+          106,
+          112,
+          114,
+          144,
+          146,
+          152,
+          154,
+          160,
+          162
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 2,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 8,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                238,
+                239
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                494,
+                495
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 10,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                238,
+                239
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                494,
+                495
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0010"
+          },
+          {
+            "affine_stabilizer_id": 16,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                238,
+                239
+              ],
+              "238,239": [
+                174,
+                175
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                494,
+                495
+              ],
+              "494,495": [
+                430,
+                431
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              6,
+              2,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 18,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                238,
+                239
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                174,
+                175
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                494,
+                495
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                430,
+                431
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              6,
+              4,
+              8
+            ],
+            "translation_pattern": "0010"
+          },
+          {
+            "affine_stabilizer_id": 48,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                254,
+                255
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                238,
+                239
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                510,
+                511
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                494,
+                495
+              ]
+            },
+            "linear_columns": [
+              3,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 50,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                254,
+                255
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                238,
+                239
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                510,
+                511
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                494,
+                495
+              ]
+            },
+            "linear_columns": [
+              3,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 56,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                254,
+                255
+              ],
+              "238,239": [
+                174,
+                175
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                238,
+                239
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                510,
+                511
+              ],
+              "494,495": [
+                430,
+                431
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                494,
+                495
+              ]
+            },
+            "linear_columns": [
+              3,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 58,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                254,
+                255
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                174,
+                175
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                238,
+                239
+              ],
+              "430,431": [
+                510,
+                511
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                430,
+                431
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                494,
+                495
+              ]
+            },
+            "linear_columns": [
+              3,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0010"
+          },
+          {
+            "affine_stabilizer_id": 64,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                254,
+                255
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                238,
+                239
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                510,
+                511
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                494,
+                495
+              ]
+            },
+            "linear_columns": [
+              3,
+              6,
+              2,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 66,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                254,
+                255
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                190,
+                191
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                238,
+                239
+              ],
+              "430,431": [
+                510,
+                511
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                446,
+                447
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                494,
+                495
+              ]
+            },
+            "linear_columns": [
+              3,
+              6,
+              4,
+              8
+            ],
+            "translation_pattern": "0010"
+          }
+        ],
+        "keys": [
+          "gamma8_touched",
+          "gamma8_mode_count"
+        ],
+        "name": "gamma8_touched"
+      },
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "0": 336,
+          "512": 48
+        },
+        "active_flip_lift_survivor_count": 24576,
+        "affine_elements_with_active_flip_lift": 48,
+        "canonical_affine_survivor_count": 48,
+        "canonical_survivor_affine_ids": [
+          0,
+          2,
+          5,
+          7,
+          24,
+          26,
+          29,
+          31,
+          112,
+          114,
+          117,
+          119,
+          136,
+          138,
+          141,
+          143,
+          152,
+          154,
+          157,
+          159,
+          176,
+          178,
+          181,
+          183,
+          193,
+          195,
+          196,
+          198,
+          217,
+          219,
+          220,
+          222,
+          305,
+          307,
+          308,
+          310,
+          329,
+          331,
+          332,
+          334,
+          345,
+          347,
+          348,
+          350,
+          369,
+          371,
+          372,
+          374
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 2,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 5,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                446,
+                447
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                190,
+                191
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              12,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 7,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                446,
+                447
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                190,
+                191
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              14,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 24,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                446,
+                447
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                190,
+                191
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              10,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 26,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              10,
+              6,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 29,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              10,
+              12,
+              8
+            ],
+            "translation_pattern": "0001"
+          },
+          {
+            "affine_stabilizer_id": 31,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                446,
+                447
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                502,
+                503
+              ],
+              "254,255": [
+                510,
+                511
+              ],
+              "430,431": [
+                190,
+                191
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                246,
+                247
+              ],
+              "510,511": [
+                254,
+                255
+              ]
+            },
+            "linear_columns": [
+              1,
+              10,
+              14,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 112,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                254,
+                255
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                190,
+                191
+              ],
+              "430,431": [
+                510,
+                511
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                446,
+                447
+              ]
+            },
+            "linear_columns": [
+              5,
+              6,
+              2,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 114,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                254,
+                255
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                190,
+                191
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                510,
+                511
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                446,
+                447
+              ]
+            },
+            "linear_columns": [
+              5,
+              6,
+              4,
+              8
+            ],
+            "translation_pattern": "0010"
+          },
+          {
+            "affine_stabilizer_id": 117,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                510,
+                511
+              ],
+              "190,191": [
+                430,
+                431
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                190,
+                191
+              ],
+              "430,431": [
+                254,
+                255
+              ],
+              "446,447": [
+                174,
+                175
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                446,
+                447
+              ]
+            },
+            "linear_columns": [
+              5,
+              6,
+              10,
+              8
+            ],
+            "translation_pattern": "0101"
+          },
+          {
+            "affine_stabilizer_id": 119,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                430,
+                431
+              ],
+              "190,191": [
+                510,
+                511
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                190,
+                191
+              ],
+              "430,431": [
+                174,
+                175
+              ],
+              "446,447": [
+                254,
+                255
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                446,
+                447
+              ]
+            },
+            "linear_columns": [
+              5,
+              6,
+              12,
+              8
+            ],
+            "translation_pattern": "0011"
+          }
+        ],
+        "keys": [
+          "sector26_clock_zero_touched"
+        ],
+        "name": "zero_pair_touched"
+      },
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "0": 378,
+          "512": 6
+        },
+        "active_flip_lift_survivor_count": 3072,
+        "affine_elements_with_active_flip_lift": 6,
+        "canonical_affine_survivor_count": 6,
+        "canonical_survivor_affine_ids": [
+          0,
+          2,
+          112,
+          114,
+          152,
+          154
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 2,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 112,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                254,
+                255
+              ],
+              "190,191": [
+                174,
+                175
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                190,
+                191
+              ],
+              "430,431": [
+                510,
+                511
+              ],
+              "446,447": [
+                430,
+                431
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                446,
+                447
+              ]
+            },
+            "linear_columns": [
+              5,
+              6,
+              2,
+              8
+            ],
+            "translation_pattern": "0100"
+          },
+          {
+            "affine_stabilizer_id": 114,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                254,
+                255
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                190,
+                191
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                510,
+                511
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                446,
+                447
+              ]
+            },
+            "linear_columns": [
+              5,
+              6,
+              4,
+              8
+            ],
+            "translation_pattern": "0010"
+          },
+          {
+            "affine_stabilizer_id": 152,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                254,
+                255
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                174,
+                175
+              ],
+              "430,431": [
+                510,
+                511
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                430,
+                431
+              ]
+            },
+            "linear_columns": [
+              7,
+              4,
+              2,
+              8
+            ],
+            "translation_pattern": "0000"
+          },
+          {
+            "affine_stabilizer_id": 154,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                190,
+                191
+              ],
+              "190,191": [
+                254,
+                255
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                174,
+                175
+              ],
+              "430,431": [
+                446,
+                447
+              ],
+              "446,447": [
+                510,
+                511
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                430,
+                431
+              ]
+            },
+            "linear_columns": [
+              7,
+              4,
+              6,
+              8
+            ],
+            "translation_pattern": "0010"
+          }
+        ],
+        "keys": [
+          "gamma8_touched",
+          "gamma8_mode_count",
+          "sector26_clock_zero_touched"
+        ],
+        "name": "combined_gamma_marker"
+      },
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "0": 383,
+          "1": 1
+        },
+        "active_flip_lift_survivor_count": 1,
+        "affine_elements_with_active_flip_lift": 1,
+        "canonical_affine_survivor_count": 1,
+        "canonical_survivor_affine_ids": [
+          0
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          }
+        ],
+        "keys": [
+          "mass_frame",
+          "clock_frame",
+          "gamma_frame"
+        ],
+        "name": "mass_clock_gamma_frame"
+      },
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "0": 383,
+          "1": 1
+        },
+        "active_flip_lift_survivor_count": 1,
+        "affine_elements_with_active_flip_lift": 1,
+        "canonical_affine_survivor_count": 1,
+        "canonical_survivor_affine_ids": [
+          0
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          }
+        ],
+        "keys": [
+          "charge_frame_key"
+        ],
+        "name": "charge_frame_key"
+      },
+      {
+        "active_flip_lift_count_by_affine_histogram": {
+          "0": 383,
+          "1": 1
+        },
+        "active_flip_lift_survivor_count": 1,
+        "affine_elements_with_active_flip_lift": 1,
+        "canonical_affine_survivor_count": 1,
+        "canonical_survivor_affine_ids": [
+          0
+        ],
+        "canonical_survivor_sample_rows": [
+          {
+            "affine_stabilizer_id": 0,
+            "component_permutation_by_packet_pair": {
+              "174,175": [
+                174,
+                175
+              ],
+              "190,191": [
+                190,
+                191
+              ],
+              "238,239": [
+                238,
+                239
+              ],
+              "246,247": [
+                246,
+                247
+              ],
+              "254,255": [
+                254,
+                255
+              ],
+              "430,431": [
+                430,
+                431
+              ],
+              "446,447": [
+                446,
+                447
+              ],
+              "494,495": [
+                494,
+                495
+              ],
+              "502,503": [
+                502,
+                503
+              ],
+              "510,511": [
+                510,
+                511
+              ]
+            },
+            "linear_columns": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "translation_pattern": "0000"
+          }
+        ],
+        "keys": [
+          "fine_spectral_charge_key"
+        ],
+        "name": "fine_spectral_charge_key"
+      }
+    ]
+  },
+  "inputs": {
+    "full_exposure_packet_propagation_cells_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_cells/report.json",
+      "sha256": "0cea64975c4b45cfa152fee8a51d70bf23da4788ff561895f81580bd86e7c963"
+    },
+    "full_exposure_packet_propagation_graph_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json",
+      "sha256": "c115c85c7125e3b89ec5120c55cc6c4db5364bd8a026e20d78fac42af2371b82"
+    },
+    "full_exposure_radical_gate_stabilizer_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_radical_gate_stabilizer/report.json",
+      "sha256": "fb23c59e421630380a150f4fdabac385009b6ce01d298a5b1296c2e83f465ff6"
+    },
+    "full_exposure_rank10_tenfold_alignment_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_rank10_tenfold_alignment/report.json",
+      "sha256": "d9b605479f5c8e0f788f8c4def28040f34acb08a20729f920401f8d1854d4e8f"
+    },
+    "projective_packet_charge_frame_classifier_report": {
+      "path": "data/invariants/d20/theorems/projective_packet_charge_frame_classifier/report.json",
+      "sha256": "106c90259b9d253a335ddc9c07110e5ba350d16c9ca6782b415752b9d5d364ef"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not classify arbitrary automorphisms outside the radical-gate lift ansatz. It classifies the 384 certified radical-gate affine stabilizers and their active-flip graph lifts.",
+    "what_this_proves": [
+      "the unlabelled full-exposure propagation graph is a large graph/action symmetry object",
+      "the action weights do not break the radical-gate affine stabilizer because the source action signature is uniform",
+      "the tenfold, hidden, central, and exposure labels are constant on this stratum",
+      "gamma data is a real symmetry breaker but still leaves a six-element canonical subgroup",
+      "the full charge-frame and fine spectral labels kill every nonidentity radical-gate lift"
+    ]
+  },
+  "next_highest_yield_item": "Factor the charge-frame symmetry breaking into minimal invariant axes: identify exactly which mass, clock, gamma, sector-26, and spectral labels kill each nonidentity radical-gate lift.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_radical_gate_stabilizer_lift",
+  "status": "D20_FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_CERTIFIED"
+}

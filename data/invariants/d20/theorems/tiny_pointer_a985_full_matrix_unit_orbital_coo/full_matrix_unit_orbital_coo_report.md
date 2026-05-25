@@ -8,8 +8,8 @@ COO coefficient rows: `76703`
 
 ## Checks
 
-- `full_legacy_sector_match_certified`: `True`
-- `legacy_transport_certified`: `True`
+- `full_sector_match_certified`: `True`
+- `sector_transport_certified`: `True`
 - `central_page_count_is_39`: `True`
 - `matrix_unit_count_is_985`: `True`
 - `manifest_row_count_is_985`: `True`
@@ -21,5 +21,6 @@ COO coefficient rows: `76703`
 - `constructed_bridge_failures_zero`: `True`
 - `registered_direct_product_failures_zero`: `True`
 - `sampled_matrix_unit_products_pass`: `True`
+- `perennial_join_key_emitted_when_available`: `True`
 
-Next: Replace the registered support manifest's top-support rows with this all-39 COO-backed legacy matrix-unit table, or derive support-level projectors directly from the full COO table.
+Next: Replace the registered support manifest's top-support rows with this all-39 COO-backed source-sector matrix-unit table, or derive support-level projectors directly from the full COO table.

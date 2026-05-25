@@ -7,7 +7,7 @@ from typing import Any
 
 import numpy as np
 
-from src.paths import D20_INVARIANTS, LAYERS, ROOT
+from src.paths import D20_INVARIANTS, DATA, ROOT
 from src.derive_sector33_boundary_annihilation_theorem import (
     FIELD_PRIME,
     rref_nullspace_mod,

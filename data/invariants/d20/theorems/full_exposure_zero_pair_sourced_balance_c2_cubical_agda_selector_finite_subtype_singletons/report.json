@@ -1,0 +1,115 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "a13447ac2ab579072274cece98453320e281c93056e7483f325960331339a276",
+  "checks": {
+    "large_finite_subtype_attempt_is_recorded_as_review_item": true,
+    "selector_membership_theorem_is_certified": true,
+    "singleton_agda_interface_artifact_present_after_typecheck": true,
+    "singleton_artifact_hashes_are_stable": "6ae6af9868c2a65fb2818107fb93806895995992db2ec02382e197012cce9bbc",
+    "singleton_source_defines_sigma_subtype": true,
+    "singleton_source_has_all_five_iso_witnesses": true,
+    "singleton_source_restricts_total_map_to_singleton_selector_index": true,
+    "univalent_foundation_bridge_is_certified": true
+  },
+  "claim": "The five singleton selector fibers are packaged as Cubical Agda Sigma subtypes and equipped with typechecked equivalences to Fin 1.",
+  "derived": {
+    "singleton_selectors": [
+      {
+        "selected_count": 1,
+        "selected_move_orbit_ids": [
+          3
+        ],
+        "selector": "primitive_seeded"
+      },
+      {
+        "selected_count": 1,
+        "selected_move_orbit_ids": [
+          173
+        ],
+        "selector": "global_action_minimal"
+      },
+      {
+        "selected_count": 1,
+        "selected_move_orbit_ids": [
+          130
+        ],
+        "selector": "paired_action_minimal"
+      },
+      {
+        "selected_count": 1,
+        "selected_move_orbit_ids": [
+          173
+        ],
+        "selector": "lazy_componentwise_spectral_gap_action_tiebreak"
+      },
+      {
+        "selected_count": 1,
+        "selected_move_orbit_ids": [
+          130
+        ],
+        "selector": "paired_lazy_componentwise_spectral_gap_action_tiebreak"
+      }
+    ],
+    "source_summary": {
+      "byte_size": 331902,
+      "interface": {
+        "byte_size": 624408,
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeSingletons.agdai",
+        "sha256": "6ae6af9868c2a65fb2818107fb93806895995992db2ec02382e197012cce9bbc"
+      },
+      "line_count": 5576,
+      "module": "C2SelectorFoundationSelectorFiniteSubtypeSingletons",
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeSingletons.agda",
+      "proof_counts": {
+        "fin_equivalence_count": 5,
+        "from_fin_data_clause_count": 5,
+        "left_inverse_clause_count": 5,
+        "right_inverse_clause_count": 5,
+        "singleton_constructor_count": 5,
+        "singleton_selector_count": 5,
+        "singleton_selector_map_clause_count": 5,
+        "to_fin_data_clause_count": 5
+      },
+      "sha256": "d6507b69c3f3283a2fae29d0f109ae419d1687acbda547cff01dca9c21606820",
+      "typecheck_command": "C:/Users/Admin/Documents/agda-toolchain/agda.exe --warning=noUnsupportedIndexedMatch --transliterate -v0 -i data/invariants/d20/formal/cubical -i C:/Users/Admin/Documents/agda-toolchain/cubical-0.9 data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeSingletons.agda"
+    }
+  },
+  "inputs": {
+    "c2_cubical_agda_selector_finite_subtype_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype/report.json",
+      "sha256": "069b045bc7103236887bb92a4f4cb8be247349c3a774b71cb8aba5a2bb81e3e2"
+    },
+    "c2_cubical_agda_selector_membership_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership/report.json",
+      "sha256": "7594c4cf35005ccc21aa1bf8daea1792628c3f694a44859db962d93748b3510c"
+    },
+    "c2_univalent_foundation_bridge_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_univalent_foundation_bridge/report.json",
+      "sha256": "32dd1e7862ab91f8740ff77916fff7e0c8da6722f90b833443ccf85dfb49fb9d"
+    },
+    "cubical_agda_selector_finite_subtype_singletons_interface": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeSingletons.agdai",
+      "sha256": "6ae6af9868c2a65fb2818107fb93806895995992db2ec02382e197012cce9bbc"
+    },
+    "cubical_agda_selector_finite_subtype_singletons_source": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeSingletons.agda",
+      "sha256": "d6507b69c3f3283a2fae29d0f109ae419d1687acbda547cff01dca9c21606820"
+    }
+  },
+  "interpretation": {
+    "significance_if_extended": [
+      "the selector layer can be internalized one fiber class at a time",
+      "singleton physical criteria can be transported as canonical points rather than external ids",
+      "the remaining obstruction is proof engineering scale for the non-singleton fibers, not a missing selector count"
+    ],
+    "what_this_proves": [
+      "the five contractible selector choices are finite subtypes equivalent to Fin 1",
+      "primitive, global-action, paired-action, lazy-gap action tiebreak, and paired-lazy action tiebreak selectors now have typechecked finite cardinality witnesses",
+      "the large raw/lazy/paired non-singleton fibers remain split-out work"
+    ]
+  },
+  "next_highest_yield_item": "Generate and typecheck the 63-element lazy selector finite-subtype module before attempting the 480- and 543-element fibers.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_CERTIFIED"
+}

@@ -650,7 +650,7 @@ def build_package(
             ),
             "sector_order_boundary": (
                 "The raw sector order is inherited from the separating central-element cache and is not "
-                "matched here to legacy sector labels 0..38."
+                "matched here to source-sector labels 0..38."
             ),
         },
         "checks": checks,
@@ -672,7 +672,7 @@ def build_package(
             "sector_rows": sector_rows,
         },
         "next_highest_yield_item": (
-            "Match this raw-sector order to the legacy sector labels, then transport legacy sector-local "
+            "Match this raw-sector order to the source-sector labels, then transport source sector-local "
             "statements onto the emitted u[s;i,j] coordinates."
         ),
         "all_checks_pass": bool(all_checks_pass),

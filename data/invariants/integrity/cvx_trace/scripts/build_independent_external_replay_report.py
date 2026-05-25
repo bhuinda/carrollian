@@ -31,7 +31,7 @@ def copy_replay_surface() -> Path:
     shutil.copytree(
         ROOT / "data",
         snapshot / "data",
-        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+        ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "*.agdai"),
     )
     shutil.copytree(
         ROOT / "layers",
@@ -151,7 +151,7 @@ def build_report() -> dict[str, Any]:
         },
         "non_claims": [
             "This is not peer review.",
-            "This is not a proof-assistant formalization.",
+            "This is not theorem-level proof-assistant verification beyond the typechecked interface definitions.",
             "This is not a different-machine or different-implementation replay.",
         ],
         "next_highest_yield_item": {

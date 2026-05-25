@@ -182,7 +182,6 @@ def write_theorem(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "relation_matrix": relation_matrix.astype(int).tolist(),
             "coefficient_matrix_by_source_target_objects": coefficient_matrix.astype(int).tolist(),
         },
-        "legacy_stage_replaced": "source_drop tensor-chain stage",
         "all_checks_pass": bool(all_checks_pass),
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})

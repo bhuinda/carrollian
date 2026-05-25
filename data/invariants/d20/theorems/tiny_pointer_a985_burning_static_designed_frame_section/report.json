@@ -1,0 +1,93 @@
+{
+  "all_checks_pass": true,
+  "boundary": "This is a designed Burning_static_fields candidate. It is not an imported source witness and does not prove that the external Burning_static_fields generators choose this section.",
+  "certificate_sha256": "f38c4c9070ee5f50d8ce773abeec3232f974c8d3d4e4b290fd842f273afe703c",
+  "checks": {
+    "a985_frame_two_primary_matches_burning": true,
+    "block_maps_match_relation_reps": true,
+    "burning_a985_bridge_certified": true,
+    "canonical_sector_characters_certified": true,
+    "designed_generator_count_is_3": true,
+    "each_generator_has_nonzero_trace_support": true,
+    "input_schema_columns_match_trace_evaluator": true,
+    "mod2_reductions_are_independent": true,
+    "perennial_join_key_emitted_when_available": true,
+    "relation_count_is_985": true,
+    "representative_rows_nonempty": true,
+    "trace_profile_has_3_by_39_rows": true,
+    "z2_generator_uses_only_0_1": true,
+    "z4_generators_use_all_0_1_2_3": true
+  },
+  "claim": "A canonical designed A985 frame section has been materialized as three raw 985-orbital vectors with abstract two-primary shape Z/2 x Z/4^2, and its all-39 source-sector trace profile has been computed through the canonical A985 character table.",
+  "derived": {
+    "abstract_orders": {
+      "z2_a12_parity": 2,
+      "z4_a12_frame_clock": 4,
+      "z4_a42_clock": 4
+    },
+    "mod2_reduction_rank": 3,
+    "perennial_join_key": {
+      "map_available": true,
+      "support_summary_set_columns_added": [
+        "trace_support_source_sectors_perennial_ids",
+        "trace_support_raw_sectors_perennial_ids"
+      ],
+      "trace_profile_rows_resolved": 117
+    },
+    "representative_row_count": 2201,
+    "residue_sets": {
+      "z2_a12_parity": [
+        0,
+        1
+      ],
+      "z4_a12_frame_clock": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "z4_a42_clock": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "support_summary_rows": 3,
+    "tables": {
+      "generator_summary": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_designed_frame_section/burning_static_designed_generator_summary.csv",
+      "representative_input": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_designed_frame_section/burning_static_designed_representative_input.csv",
+      "rules": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_designed_frame_section/burning_static_designed_frame_section_rules.json",
+      "trace_profile": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_designed_frame_section/burning_static_designed_trace_profile.csv",
+      "trace_support_summary": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_designed_frame_section/burning_static_designed_trace_support_summary.csv"
+    },
+    "trace_profile_rows": 117
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "burning_ship_algebraicity_bridge": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/report.json",
+      "sha256": "d647563196e0acdf3e7d677f9bd7f7237f8803d8676c8fcf2e99cd11bbe32b47"
+    },
+    "canonical_sector_character_table": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_character_table.npz",
+      "sha256": "6904d931dac1e6202818aa5ccd510f90661de19a164749fb42fab749fc356be5"
+    },
+    "canonical_sector_characters": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/report.json",
+      "sha256": "248852ae8f8c80250bd9ec1d1a5d4c257a7b621ffffbeebd79007618ba6dd291"
+    },
+    "quotients_npz": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    },
+    "t985_tensor": {
+      "path": "data/raw/T_985.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    }
+  },
+  "next_highest_yield_item": "Use the generic Burning static trace evaluator on the designed representative input, then compare any future imported Burning generator rows against this designed section.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_static_designed_frame_section.source_drop",
+  "status": "D20_TINY_POINTER_A985_BURNING_STATIC_DESIGNED_FRAME_SECTION_CANDIDATE_CERTIFIED"
+}

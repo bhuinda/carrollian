@@ -1,0 +1,50 @@
+{
+  "all_checks_pass": true,
+  "boundary": "Do not construct a Burning_static_fields A985 trace profile from only quotient invariant factors. A representative requires raw orbital coordinates or an explicit generator map.",
+  "certificate_sha256": "417ef0dc6e04e3243233167d27e02347e9b1b35daebb68bfcea47cbeb07cd0e3",
+  "checks": {
+    "burning_ledger_rows_found": true,
+    "burning_ship_algebraicity_bridge_certified": true,
+    "canonical_a985_sector_characters_certified": true,
+    "input_schema_emitted": true,
+    "no_raw_projection_emitted_without_source": true,
+    "raw_representative_absent": true,
+    "summary_artifacts_found": true,
+    "zip_archives_scanned": true
+  },
+  "claim": "The local evidence is sufficient for the Burning/A985 finite quotient bridge, but it does not contain a raw Burning_static_fields representative in the 985-orbital basis. The required intake schema is now explicit.",
+  "derived": {
+    "artifact_rows_scanned": 25,
+    "burning_ledger_rows": 140,
+    "raw_representative_present": false,
+    "required_schema": "d20.tiny_pointer_a985.burning_static_representative_input@1",
+    "tables": {
+      "artifact_audit": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_representative_intake/burning_static_representative_artifact_audit.csv",
+      "input_schema": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_representative_intake/burning_static_representative_input_schema.json",
+      "ledger_rows": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_representative_intake/burning_static_ledger_rows.csv",
+      "pending_inputs": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_representative_intake/burning_static_representative_pending_inputs.csv"
+    },
+    "zip_artifact_rows": 5
+  },
+  "inputs": {
+    "burning_ship_algebraicity_bridge": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/report.json",
+      "sha256": "d647563196e0acdf3e7d677f9bd7f7237f8803d8676c8fcf2e99cd11bbe32b47"
+    },
+    "canonical_sector_character_table": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_character_table.npz",
+      "sha256": "6904d931dac1e6202818aa5ccd510f90661de19a164749fb42fab749fc356be5"
+    },
+    "canonical_sector_characters": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/report.json",
+      "sha256": "248852ae8f8c80250bd9ec1d1a5d4c257a7b621ffffbeebd79007618ba6dd291"
+    },
+    "evidence_root": {
+      "path": "data/evidence/ss_sat"
+    }
+  },
+  "next_highest_yield_item": "Supply or derive the Burning_static_fields quotient-generator rows in the emitted input schema; then the canonical A985 character table can compute the sector support and trace profile.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_static_representative_intake.source_drop",
+  "status": "D20_TINY_POINTER_A985_BURNING_STATIC_REPRESENTATIVE_SOURCE_ABSENT"
+}

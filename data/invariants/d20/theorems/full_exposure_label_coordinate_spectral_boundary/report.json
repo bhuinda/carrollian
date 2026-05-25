@@ -1,0 +1,1257 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8ad33af93fa3878b082ad624cd5e2f6a56d5b69abd23f9a1500216a1e1ee9428",
+  "checks": {
+    "all_coordinate_deltas_have_same_operator_local_profile": true,
+    "canonical_labelled_frame_is_certified": true,
+    "component_blocks_are_uniform": true,
+    "label_coordinate_transition_operator_is_certified": true,
+    "spectra_match_ten_uniform_doublets": true,
+    "zero_pair_component_dirichlet_spectrum_is_not_unique": true,
+    "zero_pair_coordinate_is_unique_by_label": true,
+    "zero_pair_delta_is_not_an_eigenvector_or_left_eigenfunctional": true,
+    "zero_pair_singleton_dirichlet_spectrum_is_not_unique": true,
+    "zero_pair_spectral_decomposition_is_balanced_plus_minus": true
+  },
+  "claim": "The label-coordinate transition operator diagonalizes into ten identical plus/minus doublets. The zero-pair coordinate is selected by labels, but it is not an eigenvector or a unique Dirichlet spectral boundary for this operator.",
+  "definition": {
+    "component_dirichlet_spectrum": "The exact adjacency spectrum after deleting both coordinates in one active-partner doublet.",
+    "minus_mode": "The within-doublet vector [1,-1] with adjacency eigenvalue -2.",
+    "plus_mode": "The within-doublet vector [1,1] with adjacency eigenvalue 6.",
+    "singleton_dirichlet_spectrum": "The exact adjacency spectrum after deleting one labelled coordinate from the 20-coordinate transition operator."
+  },
+  "derived": {
+    "component_dirichlet_rows": [
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 0,
+        "deleted_frame_indices": [
+          7,
+          4
+        ],
+        "deleted_witness_packet_pair": [
+          174,
+          175
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 1,
+        "deleted_frame_indices": [
+          5,
+          3
+        ],
+        "deleted_witness_packet_pair": [
+          190,
+          191
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": true,
+        "deleted_component_id": 2,
+        "deleted_frame_indices": [
+          2,
+          0
+        ],
+        "deleted_witness_packet_pair": [
+          238,
+          239
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 3,
+        "deleted_frame_indices": [
+          8,
+          6
+        ],
+        "deleted_witness_packet_pair": [
+          246,
+          247
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 4,
+        "deleted_frame_indices": [
+          1,
+          9
+        ],
+        "deleted_witness_packet_pair": [
+          254,
+          255
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 5,
+        "deleted_frame_indices": [
+          19,
+          16
+        ],
+        "deleted_witness_packet_pair": [
+          430,
+          431
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 6,
+        "deleted_frame_indices": [
+          17,
+          15
+        ],
+        "deleted_witness_packet_pair": [
+          446,
+          447
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 7,
+        "deleted_frame_indices": [
+          14,
+          12
+        ],
+        "deleted_witness_packet_pair": [
+          494,
+          495
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 8,
+        "deleted_frame_indices": [
+          10,
+          18
+        ],
+        "deleted_witness_packet_pair": [
+          502,
+          503
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      },
+      {
+        "contains_zero_pair_coordinate": false,
+        "deleted_component_id": 9,
+        "deleted_frame_indices": [
+          13,
+          11
+        ],
+        "deleted_witness_packet_pair": [
+          510,
+          511
+        ],
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "6": 9
+        },
+        "signature": "-2^9|6^9"
+      }
+    ],
+    "component_dirichlet_rows_sha256": "0c9bb5f475cee1e66c1049c326c388cd2fc61918d095c38a8c92d0fabcbb7308",
+    "coordinate_spectral_rows": [
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 2,
+        "coordinate_labels": {
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            0,
+            0
+          ],
+          "sector26_clock_sum_mod26": 0
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 0,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": true,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 2,
+        "witness_packet_id": 239,
+        "witness_partner_packet_id": 238
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 4,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            22,
+            4
+          ],
+          "sector26_clock_sum_mod26": 0
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 1,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 9,
+        "witness_packet_id": 254,
+        "witness_partner_packet_id": 255
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 2,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            24,
+            6
+          ],
+          "sector26_clock_sum_mod26": 4
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 2,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 0,
+        "witness_packet_id": 238,
+        "witness_partner_packet_id": 239
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 1,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            16,
+            16
+          ],
+          "sector26_clock_sum_mod26": 6
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 3,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 5,
+        "witness_packet_id": 191,
+        "witness_partner_packet_id": 190
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 0,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            18,
+            18
+          ],
+          "sector26_clock_sum_mod26": 10
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 4,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 7,
+        "witness_packet_id": 175,
+        "witness_partner_packet_id": 174
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 1,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            14,
+            22
+          ],
+          "sector26_clock_sum_mod26": 10
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 5,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 3,
+        "witness_packet_id": 190,
+        "witness_partner_packet_id": 191
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 3,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            6,
+            6
+          ],
+          "sector26_clock_sum_mod26": 12
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 6,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 8,
+        "witness_packet_id": 247,
+        "witness_partner_packet_id": 246
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 0,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            16,
+            24
+          ],
+          "sector26_clock_sum_mod26": 14
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 7,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 4,
+        "witness_packet_id": 174,
+        "witness_partner_packet_id": 175
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 3,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            4,
+            12
+          ],
+          "sector26_clock_sum_mod26": 16
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 8,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 6,
+        "witness_packet_id": 246,
+        "witness_partner_packet_id": 247
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 4,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            24,
+            24
+          ],
+          "sector26_clock_sum_mod26": 22
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 9,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 1,
+        "witness_packet_id": 255,
+        "witness_partner_packet_id": 254
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 8,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            22,
+            4
+          ],
+          "sector26_clock_sum_mod26": 0
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 10,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 18,
+        "witness_packet_id": 502,
+        "witness_partner_packet_id": 503
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 9,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            16,
+            16
+          ],
+          "sector26_clock_sum_mod26": 6
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 11,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 13,
+        "witness_packet_id": 511,
+        "witness_partner_packet_id": 510
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 7,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            18,
+            18
+          ],
+          "sector26_clock_sum_mod26": 10
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 12,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 14,
+        "witness_packet_id": 495,
+        "witness_partner_packet_id": 494
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 9,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            14,
+            22
+          ],
+          "sector26_clock_sum_mod26": 10
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 13,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 11,
+        "witness_packet_id": 510,
+        "witness_partner_packet_id": 511
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 7,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            16,
+            24
+          ],
+          "sector26_clock_sum_mod26": 14
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 14,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 12,
+        "witness_packet_id": 494,
+        "witness_partner_packet_id": 495
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 6,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            8,
+            8
+          ],
+          "sector26_clock_sum_mod26": 16
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 15,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 17,
+        "witness_packet_id": 447,
+        "witness_partner_packet_id": 446
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 5,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            10,
+            10
+          ],
+          "sector26_clock_sum_mod26": 20
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 16,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 19,
+        "witness_packet_id": 431,
+        "witness_partner_packet_id": 430
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 6,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            6,
+            14
+          ],
+          "sector26_clock_sum_mod26": 20
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 17,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 15,
+        "witness_packet_id": 446,
+        "witness_partner_packet_id": 447
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 8,
+        "coordinate_labels": {
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            24,
+            24
+          ],
+          "sector26_clock_sum_mod26": 22
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "-1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 18,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 10,
+        "witness_packet_id": 503,
+        "witness_partner_packet_id": 502
+      },
+      {
+        "adjacency_image_of_delta": {
+          "partner_weight": 4,
+          "self_weight": 2,
+          "support_size": 2
+        },
+        "component_id": 5,
+        "coordinate_labels": {
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            8,
+            16
+          ],
+          "sector26_clock_sum_mod26": 24
+        },
+        "delta_decomposition": {
+          "basis_order": "component coordinate order",
+          "minus_vector_coefficient": "1/2",
+          "plus_vector_coefficient": "1/2"
+        },
+        "frame_index": 19,
+        "is_adjacency_eigenvector": false,
+        "is_left_eigenfunctional": false,
+        "is_zero_pair_coordinate": false,
+        "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+        "partner_frame_index": 16,
+        "witness_packet_id": 430,
+        "witness_partner_packet_id": 431
+      }
+    ],
+    "coordinate_spectral_rows_sha256": "6ca0b3dbbeccaf702a7634465d3088f41b44d34b740dd2ec1fd7ffb80677832b",
+    "global_spectrum": {
+      "adjacency_eigenvalue_histogram": {
+        "-2": 10,
+        "6": 10
+      },
+      "laplacian_eigenvalue_histogram": {
+        "0": 10,
+        "8": 10
+      },
+      "normalized_markov_eigenvalue_histogram": {
+        "-1/3": 10,
+        "1": 10
+      },
+      "per_component": {
+        "adjacency_block": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "adjacency_eigenvectors": {
+          "minus": {
+            "eigenvalue": -2,
+            "vector": [
+              1,
+              -1
+            ]
+          },
+          "plus": {
+            "eigenvalue": 6,
+            "vector": [
+              1,
+              1
+            ]
+          }
+        },
+        "laplacian_block": [
+          [
+            4,
+            -4
+          ],
+          [
+            -4,
+            4
+          ]
+        ],
+        "laplacian_eigenvalues": [
+          0,
+          8
+        ],
+        "normalized_markov_block": [
+          [
+            "1/3",
+            "2/3"
+          ],
+          [
+            "2/3",
+            "1/3"
+          ]
+        ],
+        "normalized_markov_eigenvalues": [
+          "1",
+          "-1/3"
+        ]
+      }
+    },
+    "singleton_dirichlet_rows": [
+      {
+        "deleted_frame_index": 0,
+        "deleted_is_zero_pair_coordinate": true,
+        "deleted_witness_packet_id": 239,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 2,
+        "remaining_partner_packet_id": 238,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 1,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 254,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 9,
+        "remaining_partner_packet_id": 255,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 2,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 238,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 0,
+        "remaining_partner_packet_id": 239,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 3,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 191,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 5,
+        "remaining_partner_packet_id": 190,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 4,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 175,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 7,
+        "remaining_partner_packet_id": 174,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 5,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 190,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 3,
+        "remaining_partner_packet_id": 191,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 6,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 247,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 8,
+        "remaining_partner_packet_id": 246,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 7,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 174,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 4,
+        "remaining_partner_packet_id": 175,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 8,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 246,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 6,
+        "remaining_partner_packet_id": 247,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 9,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 255,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 1,
+        "remaining_partner_packet_id": 254,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 10,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 502,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 18,
+        "remaining_partner_packet_id": 503,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 11,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 511,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 13,
+        "remaining_partner_packet_id": 510,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 12,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 495,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 14,
+        "remaining_partner_packet_id": 494,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 13,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 510,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 11,
+        "remaining_partner_packet_id": 511,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 14,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 494,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 12,
+        "remaining_partner_packet_id": 495,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 15,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 447,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 17,
+        "remaining_partner_packet_id": 446,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 16,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 431,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 19,
+        "remaining_partner_packet_id": 430,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 17,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 446,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 15,
+        "remaining_partner_packet_id": 447,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 18,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 503,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 10,
+        "remaining_partner_packet_id": 502,
+        "signature": "-2^9|2^1|6^9"
+      },
+      {
+        "deleted_frame_index": 19,
+        "deleted_is_zero_pair_coordinate": false,
+        "deleted_witness_packet_id": 430,
+        "dirichlet_adjacency_eigenvalue_histogram": {
+          "-2": 9,
+          "2": 1,
+          "6": 9
+        },
+        "remaining_partner_frame_index": 16,
+        "remaining_partner_packet_id": 431,
+        "signature": "-2^9|2^1|6^9"
+      }
+    ],
+    "singleton_dirichlet_rows_sha256": "853e7a23281453ceb320b23af45f993d02f8fb71460ce5ac1b028b5afc2216c3",
+    "spectral_boundary_summary": {
+      "component_count": 10,
+      "component_dirichlet_signature_histogram": {
+        "-2^9|6^9": 10
+      },
+      "coordinate_count": 20,
+      "operator_profile_histogram": {
+        "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9": 20
+      },
+      "singleton_dirichlet_signature_histogram": {
+        "-2^9|2^1|6^9": 20
+      },
+      "verdict": "The zero-pair coordinate is label-distinguished but not a distinguished eigenvector, left eigenfunctional, singleton Dirichlet spectrum, or component Dirichlet spectrum of the uniform label-coordinate transition operator.",
+      "zero_pair_coordinate_count": 1,
+      "zero_pair_frame_index": 0,
+      "zero_pair_partner_frame_index": 2,
+      "zero_pair_partner_packet_id": 238,
+      "zero_pair_witness_packet_id": 239
+    },
+    "zero_pair_component_dirichlet_row": {
+      "contains_zero_pair_coordinate": true,
+      "deleted_component_id": 2,
+      "deleted_frame_indices": [
+        2,
+        0
+      ],
+      "deleted_witness_packet_pair": [
+        238,
+        239
+      ],
+      "dirichlet_adjacency_eigenvalue_histogram": {
+        "-2": 9,
+        "6": 9
+      },
+      "signature": "-2^9|6^9"
+    },
+    "zero_pair_coordinate_spectral_row": {
+      "adjacency_image_of_delta": {
+        "partner_weight": 4,
+        "self_weight": 2,
+        "support_size": 2
+      },
+      "component_id": 2,
+      "coordinate_labels": {
+        "clock_frame": "zero_pair",
+        "fine_spectral_charge_key": "32|0|0|0|25",
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          0,
+          0
+        ],
+        "sector26_clock_sum_mod26": 0
+      },
+      "delta_decomposition": {
+        "basis_order": "component coordinate order",
+        "minus_vector_coefficient": "-1/2",
+        "plus_vector_coefficient": "1/2"
+      },
+      "frame_index": 0,
+      "is_adjacency_eigenvector": false,
+      "is_left_eigenfunctional": false,
+      "is_zero_pair_coordinate": true,
+      "operator_local_profile": "self_loop=2|partner=4|image_support=2|not_eigen|singleton_dirichlet_spectrum=-2^9,2,6^9",
+      "partner_frame_index": 2,
+      "witness_packet_id": 239,
+      "witness_partner_packet_id": 238
+    },
+    "zero_pair_singleton_dirichlet_row": {
+      "deleted_frame_index": 0,
+      "deleted_is_zero_pair_coordinate": true,
+      "deleted_witness_packet_id": 239,
+      "dirichlet_adjacency_eigenvalue_histogram": {
+        "-2": 9,
+        "2": 1,
+        "6": 9
+      },
+      "remaining_partner_frame_index": 2,
+      "remaining_partner_packet_id": 238,
+      "signature": "-2^9|2^1|6^9"
+    }
+  },
+  "inputs": {
+    "full_exposure_canonical_labelled_frame_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_canonical_labelled_frame/report.json",
+      "sha256": "7a08d667b81a7df1e28cc5564c2e7dc5de6273104e02afc20bcb609ce9726cc1"
+    },
+    "full_exposure_label_coordinate_transition_operator_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_label_coordinate_transition_operator/report.json",
+      "sha256": "70cd9f1687843c0c2440cdb95ad388e20d91859735c7caca76fbc3eb0760eb32"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not remove the label-theoretic uniqueness of packet 239. It proves only that the current uniform two-step transition operator does not add a separate spectral uniqueness.",
+    "what_this_proves": [
+      "the full-exposure labelled transition spectrum is exactly 6^10 plus (-2)^10",
+      "the normalized Markov spectrum is 1^10 plus (-1/3)^10, so every doublet has the same contraction",
+      "the zero-pair coordinate decomposes half into the plus mode and half into the minus mode of its doublet",
+      "deleting the zero-pair coordinate or its whole doublet gives the same Dirichlet spectral signature as deleting any other coordinate or doublet"
+    ]
+  },
+  "next_highest_yield_item": "Use the zero-pair coordinate as a labelled source insertion and compute the exact Green/resolvent response on the full-exposure label-coordinate operator.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_label_coordinate_spectral_boundary",
+  "status": "D20_FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_CERTIFIED"
+}

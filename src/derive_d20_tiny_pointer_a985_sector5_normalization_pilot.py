@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -27,11 +27,11 @@ STATUS = "D20_TINY_POINTER_A985_SECTOR5_NORMALIZATION_PILOT_CERTIFIED"
 THEOREM_ID = "tiny_pointer_a985_sector5_normalization_pilot"
 OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
-TARGET_LEGACY_SECTOR = 5
+TARGET_SOURCE_SECTOR = 5
 FULL_COO_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_matrix_unit_orbital_coo"
 NORMALIZATION_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_sector_normalization_obligations"
 CENTRAL_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_orbital_central_idempotents"
-FULL_A985_LIFT = ROOT / "layers" / "drinfeld" / "full_a985_lift.json"
+FULL_A985_LIFT = ROOT / "data" / "drinfeld" / "full_a985_lift.json"
 TENSOR_NPZ = ROOT / "data" / "raw" / "T_985.npz"
 
 
@@ -81,27 +81,27 @@ def write_csv_rows(path: Path, fieldnames: list[str], rows: list[dict[str, Any]]
 def load_target_obligation() -> dict[str, str]:
     rows = read_csv_rows(NORMALIZATION_DIR / "sector_local_normalization_obligations.csv")
     for row in rows:
-        if int(row["legacy_sector"]) == TARGET_LEGACY_SECTOR:
+        if int(row["source_sector"]) == TARGET_SOURCE_SECTOR:
             return row
-    raise RuntimeError(f"missing sector {TARGET_LEGACY_SECTOR} normalization row")
+    raise RuntimeError(f"missing sector {TARGET_SOURCE_SECTOR} normalization row")
 
 
-def legacy_lift_has_matrix_unit_basis() -> bool:
+def source_lift_has_matrix_unit_basis() -> bool:
     text = FULL_A985_LIFT.read_text(encoding="utf-8").lower()
     return "matrix_unit" in text or "matrix-unit" in text
 
 
 def extract_sector_rows() -> tuple[list[dict[str, Any]], list[dict[str, Any]], np.ndarray]:
-    manifest = read_csv_rows(FULL_COO_DIR / "legacy_matrix_units_orbital_manifest.csv")
-    coo = read_csv_rows(FULL_COO_DIR / "legacy_matrix_units_orbital_coo.csv")
+    manifest = read_csv_rows(FULL_COO_DIR / "source_sector_matrix_units_orbital_manifest.csv")
+    coo = read_csv_rows(FULL_COO_DIR / "source_sector_matrix_units_orbital_coo.csv")
     sector_manifest = [
-        row for row in manifest if int(row["legacy_sector"]) == TARGET_LEGACY_SECTOR
+        row for row in manifest if int(row["source_sector"]) == TARGET_SOURCE_SECTOR
     ]
     sector_manifest.sort(key=lambda row: (int(row["i"]), int(row["j"])))
     unit_columns = {int(row["unit_column"]) for row in sector_manifest}
     sector_coo = [row for row in coo if int(row["unit_column"]) in unit_columns]
 
-    arrays = np.load(FULL_COO_DIR / "legacy_matrix_units_raw_orbital_arrays.npz")
+    arrays = np.load(FULL_COO_DIR / "source_sector_matrix_units_raw_orbital_arrays.npz")
     matrix_units = np.asarray(arrays["matrix_units"], dtype=np.int64) % FIELD_PRIME
     sector_matrix_units = matrix_units[:, [int(row["unit_column"]) for row in sector_manifest]]
     manifest_rows: list[dict[str, Any]] = []
@@ -110,12 +110,12 @@ def extract_sector_rows() -> tuple[list[dict[str, Any]], list[dict[str, Any]], n
             {
                 "local_unit_column": local_column,
                 "full_unit_column": int(row["unit_column"]),
-                "legacy_sector": int(row["legacy_sector"]),
+                "source_sector": int(row["source_sector"]),
                 "raw_sector": int(row["raw_sector"]),
                 "block_dimension": int(row["block_dimension"]),
                 "i": int(row["i"]),
                 "j": int(row["j"]),
-                "legacy_matrix_unit_label": row["legacy_matrix_unit_label"],
+                "source_matrix_unit_label": row["source_matrix_unit_label"],
                 "raw_matrix_unit_label": row["raw_matrix_unit_label"],
                 "coefficient_source": row["coefficient_source"],
                 "nonzero_coefficients": int(row["nonzero_coefficients"]),
@@ -128,7 +128,7 @@ def extract_sector_rows() -> tuple[list[dict[str, Any]], list[dict[str, Any]], n
             {
                 "local_unit_column": full_to_local[int(row["unit_column"])],
                 "full_unit_column": int(row["unit_column"]),
-                "legacy_sector": int(row["legacy_sector"]),
+                "source_sector": int(row["source_sector"]),
                 "raw_sector": int(row["raw_sector"]),
                 "i": int(row["i"]),
                 "j": int(row["j"]),
@@ -184,14 +184,14 @@ def gl2_terms() -> list[dict[str, Any]]:
                 for source_b in range(2):
                     rows.append(
                         {
-                            "legacy_sector": TARGET_LEGACY_SECTOR,
+                            "source_sector": TARGET_SOURCE_SECTOR,
                             "target_i": target_i,
                             "target_j": target_j,
                             "source_a": source_a,
                             "source_b": source_b,
                             "coefficient_symbol": f"g[{source_a},{target_i}]*ginv[{target_j},{source_b}]",
-                            "source_matrix_unit_label": f"u_legacy[{TARGET_LEGACY_SECTOR};{source_a},{source_b}]",
-                            "target_matrix_unit_label": f"v_legacy[{TARGET_LEGACY_SECTOR};{target_i},{target_j}]",
+                            "source_matrix_unit_label": f"u_sector[{TARGET_SOURCE_SECTOR};{source_a},{source_b}]",
+                            "target_matrix_unit_label": f"v_sector[{TARGET_SOURCE_SECTOR};{target_i},{target_j}]",
                         }
                     )
     return rows
@@ -211,7 +211,7 @@ def gl2_constraints() -> list[dict[str, Any]]:
     ]
     return [
         {
-            "legacy_sector": TARGET_LEGACY_SECTOR,
+            "source_sector": TARGET_SOURCE_SECTOR,
             "constraint_name": name,
             "constraint": formula,
         }
@@ -221,15 +221,15 @@ def gl2_constraints() -> list[dict[str, Any]]:
 
 def candidate_schema() -> dict[str, Any]:
     return {
-        "schema": "d20.tiny_pointer.a985.sector5_legacy_matrix_unit_candidate@1",
+        "schema": "d20.tiny_pointer.a985.sector5_source_matrix_unit_candidate@1",
         "required_field_prime": FIELD_PRIME,
-        "legacy_sector": TARGET_LEGACY_SECTOR,
+        "source_sector": TARGET_SOURCE_SECTOR,
         "block_dimension": 2,
         "required_candidate_units": [
-            "v_legacy[5;0,0]",
-            "v_legacy[5;0,1]",
-            "v_legacy[5;1,0]",
-            "v_legacy[5;1,1]",
+            "v_sector[5;0,0]",
+            "v_sector[5;0,1]",
+            "v_sector[5;1,0]",
+            "v_sector[5;1,1]",
         ],
         "accepted_format": (
             "CSV rows with columns candidate_unit_label, relation_alpha, coefficient_mod_1000003"
@@ -238,7 +238,7 @@ def candidate_schema() -> dict[str, Any]:
             "candidate v[i,j] must equal sum_{a,b} g[a,i] * ginv[j,b] * u[a,b] "
             "for an invertible 2x2 matrix g over F_1000003"
         ),
-        "current_raw_unit_source": rel(FULL_COO_DIR / "legacy_matrix_units_orbital_coo.csv"),
+        "current_raw_unit_source": rel(FULL_COO_DIR / "source_sector_matrix_units_orbital_coo.csv"),
     }
 
 
@@ -255,12 +255,12 @@ def write_outputs(
         [
             "local_unit_column",
             "full_unit_column",
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "i",
             "j",
-            "legacy_matrix_unit_label",
+            "source_matrix_unit_label",
             "raw_matrix_unit_label",
             "coefficient_source",
             "nonzero_coefficients",
@@ -272,7 +272,7 @@ def write_outputs(
         [
             "local_unit_column",
             "full_unit_column",
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "i",
             "j",
@@ -285,7 +285,7 @@ def write_outputs(
     write_csv_rows(
         OUT_DIR / "sector5_gl2_change_of_basis_terms.csv",
         [
-            "legacy_sector",
+            "source_sector",
             "target_i",
             "target_j",
             "source_a",
@@ -298,7 +298,7 @@ def write_outputs(
     )
     write_csv_rows(
         OUT_DIR / "sector5_gl2_constraints.csv",
-        ["legacy_sector", "constraint_name", "constraint"],
+        ["source_sector", "constraint_name", "constraint"],
         constraints,
     )
     write_json(OUT_DIR / "sector5_candidate_input_schema.json", schema)
@@ -310,8 +310,8 @@ def markdown_report(report: dict[str, Any]) -> str:
         "# Sector 5 Normalization Pilot\n\n"
         f"Status: `{report['status']}`\n\n"
         "This isolates the first minimum-dimension open sector. It certifies the current raw-orbital "
-        "matrix units and emits the GL2 normalization equation needed to compare a genuine legacy "
-        "off-diagonal basis when one is supplied.\n\n"
+        "matrix units and emits the GL2 normalization equation needed to compare a genuine "
+        "source-sector off-diagonal basis when one is supplied.\n\n"
         "## Checks\n\n"
         f"{checks}\n\n"
         f"Next: {report['next_highest_yield_item']}\n"
@@ -362,10 +362,10 @@ def build_sector5_pilot() -> dict[str, Any]:
         "full_matrix_unit_coo_certified": full_coo_report.get("status")
         == "D20_TINY_POINTER_A985_FULL_MATRIX_UNIT_ORBITAL_COO_CERTIFIED"
         and full_coo_report.get("all_checks_pass") is True,
-        "target_sector_is_5": int(obligation["legacy_sector"]) == TARGET_LEGACY_SECTOR,
+        "target_sector_is_5": int(obligation["source_sector"]) == TARGET_SOURCE_SECTOR,
         "target_sector_is_open": obligation["normalization_status"] == "OPEN_GL_BLOCK_NORMALIZATION",
         "target_sector_has_min_open_dimension_two": int(obligation["block_dimension"]) == 2,
-        "legacy_lift_has_no_matrix_unit_basis": not legacy_lift_has_matrix_unit_basis(),
+        "source_lift_has_no_matrix_unit_basis": not source_lift_has_matrix_unit_basis(),
         "current_manifest_has_4_units": len(manifest_rows) == 4,
         "current_coo_rows_match_manifest_nonzeros": len(coo_rows)
         == sum(int(row["nonzero_coefficients"]) for row in manifest_rows),
@@ -382,9 +382,9 @@ def build_sector5_pilot() -> dict[str, Any]:
         "object": "d20",
         "field_prime": FIELD_PRIME,
         "claim": (
-            "Legacy sector 5 is isolated as the first minimum-dimension open block. Its current "
+            "Source sector 5 is isolated as the first minimum-dimension open block. Its current "
             "raw-orbital matrix units are exhaustively certified, and the exact GL2/scalar "
-            "normalization interface is emitted. This does not claim a legacy off-diagonal basis "
+            "normalization interface is emitted. This does not claim a source-sector off-diagonal basis "
             "has been supplied; it defines the verifier-ready equation for one."
         ),
         "inputs": {
@@ -408,7 +408,7 @@ def build_sector5_pilot() -> dict[str, Any]:
         },
         "checks": checks,
         "derived": {
-            "target_legacy_sector": TARGET_LEGACY_SECTOR,
+            "target_source_sector": TARGET_SOURCE_SECTOR,
             "target_raw_sector": raw_sector,
             "block_dimension": int(obligation["block_dimension"]),
             "current_matrix_unit_rows": len(manifest_rows),
@@ -427,7 +427,7 @@ def build_sector5_pilot() -> dict[str, Any]:
             },
         },
         "next_highest_yield_item": (
-            "Supply four candidate legacy sector-5 matrix units in the candidate schema, then solve "
+            "Supply four candidate source sector-5 matrix units in the candidate schema, then solve "
             "for the GL2 variables and verify equality in raw-orbital coordinates."
         ),
         "all_checks_pass": all(checks.values()),
@@ -468,7 +468,7 @@ def verify_sector5_pilot() -> dict[str, Any]:
         "coo_rows_match_report": len(coo_rows) == report.get("derived", {}).get("current_matrix_unit_coo_rows"),
         "gl2_terms_have_16_rows": len(terms) == 16,
         "gl2_constraints_have_9_rows": len(constraints) == 9,
-        "candidate_schema_targets_sector5": schema.get("legacy_sector") == TARGET_LEGACY_SECTOR,
+        "candidate_schema_targets_sector5": schema.get("source_sector") == TARGET_SOURCE_SECTOR,
         "candidate_schema_requires_4_units": len(schema.get("required_candidate_units", [])) == 4,
     }
     return {
@@ -494,3 +494,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

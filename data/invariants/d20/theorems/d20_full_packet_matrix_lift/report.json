@@ -1,0 +1,684 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "72b2083eed8af464ab660e42a069ca16e3b081ff88e72968f29efdce2b91c004",
+  "checks": {
+    "all_blocks_are_uniform_2_4_4_2": true,
+    "block_diagonal_matrix_matches_graph_adjacency": true,
+    "each_block_has_swap_projector_decomposition": true,
+    "full_a985_action_is_not_faithfully_realized_at_this_level": true,
+    "full_exposure_packet_graph_is_certified": true,
+    "hidden_and_height_flux_remain_zero_on_all_blocks": true,
+    "label_coordinate_operator_is_certified": true,
+    "minimal_charge_lift_is_certified": true,
+    "no_certified_a985_to_packet_operator_map_is_present": true,
+    "spectral_histogram_matches_full_packet_graph": true,
+    "ten_components_are_present": true,
+    "transition_operator_is_2I_plus_4S_on_each_block": true,
+    "zero_pair_block_embeds_minimal_charge_lift": true
+  },
+  "claim": "The local Mat_2(Q) charge-kernel lift extends to the whole 20-packet full-exposure propagation algebra as ten independent 2x2 blocks. In the certified active-partner decomposition, the transition operator is the direct sum of ten copies of 2I+4S, with plus/minus projectors on every block. The zero-pair component recovers the minimal [239,238] charge lift. This realizes the full-exposure propagation operator, but it does not faithfully realize the full 985-dimensional A985 algebra.",
+  "definition": {
+    "a985_action_probe": "A dimension and input-boundary test: this 40-dimensional block image can only support a quotient-level A985 action, and no A985-to-packet operator homomorphism is currently certified.",
+    "acting_operator": "The certified two-step full-exposure transition operator, not the full A985 multiplication tensor.",
+    "full_packet_matrix_lift": "The block algebra Mat_2(Q)^10 on the ten certified active-partner packet doublets of the full-exposure propagation graph."
+  },
+  "derived": {
+    "a985_action_probe": {
+      "a985_center_dimension": 39,
+      "a985_dimension": 985,
+      "block_lift_image_dimension_bound": 40,
+      "certified_a985_to_packet_operator_map_present": false,
+      "faithful_full_a985_action_possible_in_this_block_lift": false,
+      "minimum_kernel_dimension_for_any_a985_map_into_this_block_lift": 945,
+      "scope_note": "The certified transition operator acts through the block matrix lift. A full A985 action would need a separate homomorphism from the 985-dimensional algebra to packet operators; no such map is supplied by the current certificates.",
+      "tested_action": "full_exposure_two_step_transition_operator",
+      "tested_action_lands_in_block_lift": true
+    },
+    "acting_summary": {
+      "block_algebra": "Mat_2(Q)^10",
+      "block_algebra_dimension_over_Q": 40,
+      "component_count": 10,
+      "full_exposure_transition_operator": "direct_sum_10_copies_of_2I_plus_4S",
+      "minimal_charge_lift_component_id": 2,
+      "minimal_charge_lift_oriented_basis": [
+        239,
+        238
+      ],
+      "packet_vector_space_dimension": 20,
+      "transition_operator_integer_eigenvalue_histogram": {
+        "-2": 10,
+        "6": 10
+      },
+      "transition_operator_row_sum": 6,
+      "transition_operator_trace": 40
+    },
+    "component_lift_rows": [
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 0,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          174,
+          175
+        ],
+        "packet_pair": [
+          174,
+          175
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 1,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          190,
+          191
+        ],
+        "packet_pair": [
+          190,
+          191
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 2,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": true,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          239,
+          238
+        ],
+        "packet_pair": [
+          238,
+          239
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 3,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          246,
+          247
+        ],
+        "packet_pair": [
+          246,
+          247
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 4,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          254,
+          255
+        ],
+        "packet_pair": [
+          254,
+          255
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 5,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          430,
+          431
+        ],
+        "packet_pair": [
+          430,
+          431
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 6,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          446,
+          447
+        ],
+        "packet_pair": [
+          446,
+          447
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 7,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          494,
+          495
+        ],
+        "packet_pair": [
+          494,
+          495
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 8,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          502,
+          503
+        ],
+        "packet_pair": [
+          502,
+          503
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      },
+      {
+        "block_decomposition": "2*I + 4*S",
+        "block_is_uniform": true,
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 9,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "is_zero_pair_component": false,
+        "minus_eigenvalue": -2,
+        "minus_projector": [
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ]
+        ],
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "oriented_basis": [
+          510,
+          511
+        ],
+        "packet_pair": [
+          510,
+          511
+        ],
+        "plus_eigenvalue": 6,
+        "plus_projector": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1/2"
+          ]
+        ],
+        "swap_involution": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "component_lift_rows_sha256": "41ca02b15aeb8cfbf629b1a64fb6e29ae3164afd9dc1b4188b77d48ec0662b8b"
+  },
+  "inputs": {
+    "constants": {
+      "path": "data/raw/constants.json",
+      "sha256": "f6f8d910c62188971545fb7de5d4bcd16f52a8880872c4230fe0e0420696def0"
+    },
+    "d20_minimal_matrix_charge_lift_report": {
+      "path": "data/invariants/d20/theorems/d20_minimal_matrix_charge_lift/report.json",
+      "sha256": "af8b44a646dea9d6675549ab7a9a74cc1182c9bbe0aed450acaa5b0f30af8556"
+    },
+    "full_exposure_label_coordinate_transition_operator_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_label_coordinate_transition_operator/report.json",
+      "sha256": "70cd9f1687843c0c2440cdb95ad388e20d91859735c7caca76fbc3eb0760eb32"
+    },
+    "full_exposure_packet_propagation_graph_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json",
+      "sha256": "c115c85c7125e3b89ec5120c55cc6c4db5364bd8a026e20d78fac42af2371b82"
+    }
+  },
+  "interpretation": {
+    "what_this_certifies": [
+      "the certified full-exposure transition operator acts through Mat_2(Q)^10",
+      "each active-partner packet pair has the same plus/minus projector decomposition",
+      "the [239,238] zero-pair component embeds the previously certified minimal matrix charge lift",
+      "a faithful full A985 action is impossible inside this 40-dimensional block image"
+    ],
+    "what_this_does_not_certify": [
+      "a homomorphism from A985 to the 20-packet operator algebra",
+      "a quotient A985 action on full-exposure packets",
+      "a DLCQ matrix model"
+    ]
+  },
+  "next_highest_yield_item": "Search for an actual quotient-level A985-to-packet operator map: identify which certified A985, tube, or quotient elements preserve the 20-packet full-exposure subspace and test whether their images land in Mat_2(Q)^10.",
+  "object": "d20",
+  "schema": "d20.theorem.d20_full_packet_matrix_lift",
+  "status": "D20_FULL_PACKET_MATRIX_LIFT_CERTIFIED"
+}

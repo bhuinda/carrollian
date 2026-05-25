@@ -1,0 +1,138 @@
+{
+  "claim_level": "semantic_interface_classification_theorem",
+  "decision": {
+    "may_claim_hidden_recovery_is_public_c": false,
+    "may_claim_oracle_or_advice_inside_public_p": false,
+    "may_claim_semantic_x_reclassification": true,
+    "may_claim_standard_global_p_not_np": false,
+    "reason": "Within the repository interface semantics, ordinary standard public executions are C-only after frontend translation, and hidden recovery is either impossible in pure C or is typed X. This still leaves formal proof-assistant definitions of P and P_CVX as the remaining standard promotion gap."
+  },
+  "next_highest_yield_item": {
+    "action": "Define standard P and P_CVX as proof-assistant machine classes, then package the two simulation directions plus semantic X theorem as an extensional equivalence.",
+    "id": "formal_p_and_p_cvx_definitions"
+  },
+  "non_claims": [
+    "This does not provide proof-assistant definitions of standard P or P_CVX.",
+    "This does not put oracle/advice machines inside public P.",
+    "This does not reclassify the explicit X extractor as C.",
+    "This does not by itself claim a peer-reviewed standard P != NP theorem."
+  ],
+  "obligations": {
+    "explicit_hidden_sector_extractor_is_x_not_c": {
+      "evidence": {
+        "extractor_id": "E_hc_sector33",
+        "x_frontier_status": "X_EXTRACTOR_FRONTIER_EXPLICIT_POLYNOMIAL_FAMILY_EXTRACTOR_PROMOTED",
+        "x_opcode": "X_EXTRACTOR_HIDDEN_SECTOR_MAP",
+        "x_policy_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+      },
+      "needed": "The known polynomial hidden-sector extractor must remain X, not be reclassified as public C.",
+      "passed": true
+    },
+    "extractor_capability_is_isolated_on_x_surface": {
+      "evidence": {
+        "isolation_witness": {
+          "current_accepted_trace_extractor_found": false,
+          "current_accepted_trace_x_event_count": 0,
+          "meaning": "Within the finite universal trace vocabulary, every extractor-capable operation is on the X surface. Pure C/V traces and residue-free zero-X traces do not contain extractor opcodes.",
+          "minimum_x_event_count_for_extractor_opcode": 1,
+          "zero_x_trace_can_contain_extractor_opcode": false
+        },
+        "x_isolation_status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
+      },
+      "needed": "Extractor-capable operations must be isolated to X surface codes in the finite universal vocabulary.",
+      "passed": true
+    },
+    "ordinary_public_standard_machines_compile_to_c_only": {
+      "evidence": {
+        "frontend_decision": {
+          "may_claim_frontend_opcodes_total_in_cvx_vocab": true,
+          "may_claim_oracle_or_advice_algorithms_covered": false,
+          "may_claim_semantic_x_reclassification": false,
+          "may_claim_standard_p_to_p_cvx_for_public_deterministic_tm": true,
+          "may_claim_standard_tm_to_public_bit_ram_frontend": true,
+          "reason": "The frontend covers ordinary deterministic public Turing-machine executions and emits only finite_public_bit_ram C opcodes. It does not by itself prove that a standard algorithm which recovers hidden-sector data is semantically reclassified as X."
+        },
+        "frontend_status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED"
+      },
+      "needed": "Ordinary deterministic public machines must translate into C-only finite_public_bit_ram traces.",
+      "passed": true
+    },
+    "pure_c_traces_cannot_recover_hidden_sector": {
+      "evidence": {
+        "antecedent": "A trace contains only C_PUBLIC_* events from the finite universal vocabulary, uses no hidden advice, contains no V/X/UNCLASSIFIED events, and emits no residues.",
+        "conclusion": "Under this antecedent, a pure-C universal trace has no operation capable of reading hidden advice, reconstructing the hidden e33 map, or recovering a non-public parity basis. Those operations are typed X or rejected as residues.",
+        "pure_c_status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
+      },
+      "needed": "A pure C trace must be unable to recover hidden advice, hidden e33 maps, or non-public parity bases.",
+      "passed": true
+    },
+    "repo_model_theorem_uses_x_policy_boundary": {
+      "evidence": {
+        "model_theorem_decision": {
+          "may_claim_literal_p_not_np_iff_t985": false,
+          "may_claim_repo_model_p_not_np": true,
+          "may_claim_standard_global_p_not_np": false,
+          "may_claim_standard_p_not_np_conditional_on_model_equivalence": true,
+          "reason": "The dependency chain closes inside the repository C/V/X model. Standard global P != NP still requires an external formal identification of P_CVX with standard polynomial-time Turing computation."
+        },
+        "model_theorem_status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED"
+      },
+      "needed": "The semantic theorem must support the model-scoped theorem without silently claiming global standard P != NP.",
+      "passed": true
+    }
+  },
+  "schema": "d20.integrity.semantic_x_reclassification.source_drop",
+  "source_audit": {
+    "p_not_np_model_scoped_theorem": {
+      "expected_status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_not_np_model_scoped_theorem.json",
+      "sha256": "ec4f54977bd4e09587802f1d4974d513c538e4c09324fa804631d513dffe0fdf",
+      "status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED"
+    },
+    "standard_tm_public_bit_ram_frontend": {
+      "expected_status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/standard_tm_public_bit_ram_frontend.json",
+      "sha256": "9d6f6b967a797d3a5b53dd3fd4433849484095bff6198e6e35cfff39fd10f2b1",
+      "status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED"
+    },
+    "universal_pure_c_no_escape": {
+      "expected_status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_pure_c_no_escape_report.json",
+      "sha256": "e9cde6be365744fd673ef1516393feeda019c2022441a335c1c85a00ad17ae5d",
+      "status": "UNIVERSAL_PURE_C_NO_ESCAPE_WITNESS_PASS"
+    },
+    "universal_x_extractor_isolation": {
+      "expected_status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_x_extractor_isolation_report.json",
+      "sha256": "9b94cf1ed0fbedef0b06eafcf69826c3a9ddebbaabc5658075a6b6c37a5a7f93",
+      "status": "UNIVERSAL_X_EXTRACTOR_SURFACE_ISOLATION_PASS"
+    },
+    "x_extractor_frontier": {
+      "expected_status": "X_EXTRACTOR_FRONTIER_EXPLICIT_POLYNOMIAL_FAMILY_EXTRACTOR_PROMOTED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_extractor_frontier_certificate.json",
+      "sha256": "3aae2c58ce12a121c8af341f2e2d7a17718f764384db2a7412893b11e58b17e7",
+      "status": "X_EXTRACTOR_FRONTIER_EXPLICIT_POLYNOMIAL_FAMILY_EXTRACTOR_PROMOTED"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "sha256": "42fb3a22481cdde0b942b2bd26fa06acbd47f6ec86e0ece1ba49ac46def0e04f",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+    }
+  },
+  "status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+  "theorem": {
+    "case_split": [
+      "ordinary public deterministic execution -> C-only frontend trace -> no hidden recovery",
+      "hidden recovery channel present -> extractor/oracle/advice/parity-basis access -> X surface"
+    ],
+    "name": "Semantic X Reclassification",
+    "statement": "For ordinary deterministic public standard-machine executions, the certified frontend produces C-only finite_public_bit_ram traces. If such an execution is claimed to recover the hidden e33/sector-33 extractor target, then either the claim contradicts the pure-C no-escape theorem, or the execution uses a hidden-sector extractor, oracle, advice, or non-public parity-basis operation and is reclassified as X rather than public P."
+  }
+}

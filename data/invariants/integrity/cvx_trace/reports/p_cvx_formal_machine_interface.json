@@ -1,0 +1,92 @@
+{
+  "claim_level": "proof_assistant_definition_interface",
+  "decision": {
+    "may_claim_agda_typechecked": true,
+    "may_claim_equivalence_package_type_defined": true,
+    "may_claim_np_interfaces_formally_defined": true,
+    "may_claim_p_cvx_formally_defined": true,
+    "may_claim_standard_global_p_not_np": false,
+    "may_claim_standard_p_formally_defined": true,
+    "reason": "The proof-assistant interface now defines the machine classes and the equivalence package type. The file is an interface layer; theorem-level standard P != NP promotion still depends on replayed certificates and external/proof-assistant review."
+  },
+  "declaration_audit": {
+    "COnlyTrace": {
+      "needle": "data COnlyTrace : List CvxEventKind -> Set where",
+      "passed": true
+    },
+    "CvxProgram": {
+      "needle": "record CvxProgram : Set where",
+      "passed": true
+    },
+    "Language": {
+      "needle": "Language : Set",
+      "passed": true
+    },
+    "NP_CVX": {
+      "needle": "NP_CVX : Language -> Set1",
+      "passed": true
+    },
+    "NoXTrace": {
+      "needle": "data NoXTrace : List CvxEventKind -> Set where",
+      "passed": true
+    },
+    "PCVXStandardPEquivalence": {
+      "needle": "PCVXStandardPEquivalence : Set1",
+      "passed": true
+    },
+    "PCVXStandardPIdentificationPackage": {
+      "needle": "record PCVXStandardPIdentificationPackage : Set1 where",
+      "passed": true
+    },
+    "P_CVX": {
+      "needle": "P_CVX : Language -> Set",
+      "passed": true
+    },
+    "SemanticXBoundary": {
+      "needle": "record SemanticXBoundary : Set1 where",
+      "passed": true
+    },
+    "StandardMachine": {
+      "needle": "record StandardMachine : Set1 where",
+      "passed": true
+    },
+    "StandardNP": {
+      "needle": "StandardNP : Language -> Set1",
+      "passed": true
+    },
+    "StandardP": {
+      "needle": "StandardP : Language -> Set1",
+      "passed": true
+    }
+  },
+  "definitions": {
+    "equivalence_package": "PCVXStandardPIdentificationPackage names the two class maps plus the semantic X boundary needed to package an extensional equivalence.",
+    "p_cvx": "P_CVX is a language-indexed proof-assistant machine class witnessed by a finite public C/V/X program whose traces are C-only/no-X and decide the language.",
+    "standard_p": "StandardP is a language-indexed proof-assistant machine class witnessed by a public standard machine, a polynomial time bound, and a decision proof."
+  },
+  "formal_file": {
+    "exists": true,
+    "language": "Agda",
+    "path": "data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+    "sha256": "b27d2dd07281dfd7f5790c11ff7682c79297627becadd91defd240d2e0dbbb06",
+    "validation_command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda"
+  },
+  "next_highest_yield_item": {
+    "action": "Bind the certified P_CVX-to-standard and standard-to-P_CVX simulation reports to the PCVXStandardPIdentificationPackage fields.",
+    "id": "formal_equivalence_witness_binding"
+  },
+  "non_claims": [
+    "This interface does not by itself prove standard global P != NP.",
+    "This interface does not certify the replayed JSON artifacts inside Agda.",
+    "This interface does not postulate oracle, advice, or hidden extractor access as public P."
+  ],
+  "schema": "d20.integrity.p_cvx_formal_machine_interface.source_drop",
+  "status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+  "typecheck_audit": {
+    "command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+    "passed": true,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": ""
+  }
+}

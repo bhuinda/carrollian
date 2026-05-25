@@ -8,7 +8,7 @@ from typing import Any
 
 import numpy as np
 
-from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS, LAYERS, ROOT
+from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS, DATA, ROOT
 
 
 THEOREM_ID = "sector33_boundary_annihilation"
@@ -16,8 +16,8 @@ DEFAULT_OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
 BOUNDARY_TO_LOOP_REPORT = D20_INVARIANTS / "boundary_to_loop" / "report.json"
 D20_EDGES_CSV = HCYCLE_INVARIANTS / "subscript_Hcycle_d20_edges.csv"
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
-CORE_A985 = LAYERS / "core" / "a985.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
+CORE_A985 = DATA / "core" / "a985.json"
 RELATION_NPZ = ROOT / "data" / "raw" / "relation_memberships.npz"
 TENSOR_NPZ = ROOT / "data" / "raw" / "T_985.npz"
 

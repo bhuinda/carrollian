@@ -1,0 +1,234 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "94377edc93ac6df0adc2e9b2663d97c090f855a486cf16e38d9ecda2c654f2be",
+  "checks": {
+    "charge_kernel_input_is_certified": true,
+    "contour_edge_gcd_has_2_3_support": true,
+    "contour_input_is_certified": true,
+    "contour_mod26_has_2_13_support": true,
+    "contour_signed_gcd_has_2_3_support": true,
+    "packet_snf_has_2_3_support": true,
+    "packet_snf_input_is_certified": true,
+    "plus_minus_sector26_pair_is_neutral": true,
+    "prime_13_is_sector_ledger_only": true,
+    "prime_2_is_common_to_all_layers": true,
+    "prime_3_is_contour_packet_only": true,
+    "raw_half_residue_obstruction_is_at_2": true,
+    "sector26_charge_has_2_13_support": true,
+    "sector26_input_is_certified": true
+  },
+  "claim": "The contour, packet-SNF, and sector-26 charge certificates exhibit the same stratified 2/3/13 split. Prime 2 is common to all three layers. Prime 3 occurs in the raw contour/action quantization and packet SNF obstruction. Prime 13 appears only after sector-26 ledger reduction. This proves a certified prime-support alignment, not an isomorphism of the three structures.",
+  "definition": {
+    "prime_alignment": "comparison of prime support across finite contour residues, packet Smith obstructions, and denominator-cleared sector-26 charge classes",
+    "scope": "prime-support alignment only; no group isomorphism or physical field theory is claimed"
+  },
+  "derived": {
+    "alignment_summary": {
+      "alignment_strength": "certified_prime_support_alignment_not_group_isomorphism",
+      "common_prime_all_layers": [
+        2
+      ],
+      "contour_mod26_primes": [
+        2,
+        13
+      ],
+      "contour_packet_shared_primes": [
+        2,
+        3
+      ],
+      "contour_raw_primes": [
+        2,
+        3
+      ],
+      "contour_sector26_shared_primes": [
+        2,
+        13
+      ],
+      "packet_sector26_shared_primes": [
+        2
+      ],
+      "packet_snf_primes": [
+        2,
+        3
+      ],
+      "sector26_primes": [
+        2,
+        13
+      ],
+      "stratified_prime_roles": {
+        "13": "sector-26 ledger modulus only",
+        "2": "common denominator/integrality hinge across contour, packet SNF, and sector-26 charge",
+        "3": "optical/action and packet-SNF torsion only"
+      },
+      "union_prime_split": [
+        2,
+        3,
+        13
+      ]
+    },
+    "comparison_rows": [
+      {
+        "factorization": {
+          "2": 10,
+          "3": 1
+        },
+        "integer": 3072,
+        "layer": "finite_contour_raw_integrals",
+        "object": "signed contour residue gcd",
+        "prime_support": [
+          2,
+          3
+        ],
+        "role": "optical/action quantization before mod-26 reduction"
+      },
+      {
+        "factorization": {
+          "13": 1,
+          "2": 1
+        },
+        "integer": 26,
+        "layer": "finite_contour_sector26_reduction",
+        "object": "mod-26 primitive residue line",
+        "prime_support": [
+          2,
+          13
+        ],
+        "role": "ledger reduction of the primitive signed contour line"
+      },
+      {
+        "factorization": {
+          "2": 20,
+          "3": 10
+        },
+        "integer": 61917364224,
+        "layer": "packet_snf_obstruction",
+        "object": "packet operator cokernel",
+        "prime_support": [
+          2,
+          3
+        ],
+        "role": "integral image obstruction for the 20-packet operator"
+      },
+      {
+        "factorization": {
+          "13": 1,
+          "2": 1
+        },
+        "integer": 26,
+        "layer": "sector26_charge_kernel",
+        "object": "denominator-cleared sector-26 ledger",
+        "prime_support": [
+          2,
+          13
+        ],
+        "role": "cleared plus/minus propagator charge classes"
+      }
+    ],
+    "comparison_rows_sha256": "3d6775923aa8542cc9c9b9804f59554f08711977db4baf897bcb30488d3ce373",
+    "contour_residue_summary": {
+      "mod26_residue_vector": [
+        24,
+        10,
+        12,
+        20,
+        12,
+        23,
+        8,
+        2,
+        12,
+        11,
+        23
+      ],
+      "primitive_residue_vector": [
+        -106,
+        -94,
+        12,
+        20,
+        -40,
+        -159,
+        -174,
+        -180,
+        -40,
+        -67,
+        -81
+      ],
+      "primitive_residue_vector_gcd": 1
+    },
+    "factorizations": {
+      "contour_edge_weight_gcd": {
+        "2": 10,
+        "3": 1
+      },
+      "contour_mod26_modulus": {
+        "13": 1,
+        "2": 1
+      },
+      "contour_signed_gcd": {
+        "2": 10,
+        "3": 1
+      },
+      "packet_snf": {
+        "cokernel_order": {
+          "2": 20,
+          "3": 10
+        },
+        "local_block_2": {
+          "2": 1
+        },
+        "local_block_6": {
+          "2": 1,
+          "3": 1
+        }
+      },
+      "sector26_charge": {
+        "half_denominator": {
+          "2": 1
+        },
+        "ledger_modulus": {
+          "13": 1,
+          "2": 1
+        }
+      }
+    },
+    "sector26_charge_summary": {
+      "minus_sum_delta_mod26": [
+        22,
+        18
+      ],
+      "paired_delta_is_neutral_mod26": true,
+      "paired_sum_is_neutral_mod26": true,
+      "plus_sum_delta_mod26": [
+        4,
+        8
+      ],
+      "raw_half_residues_are_not_native_z26_classes": true,
+      "sector26_first_obstruction_normalized_mod26": 18
+    }
+  },
+  "inputs": {
+    "d20_finite_contour_integration_report": {
+      "path": "data/invariants/d20/theorems/d20_finite_contour_integration/report.json",
+      "sha256": "966c5f3d7793096d8748dc47a15c6d2a20a9cd1537c5889553e2330667d35ec3"
+    },
+    "d20_packet_bridge_snf_obstruction_report": {
+      "path": "data/invariants/d20/theorems/d20_packet_bridge_snf_obstruction/report.json",
+      "sha256": "cad750a22dd5fc8b5fecea043ce2263180b2d5df3a405aea5a4d349ec7f28554"
+    },
+    "full_exposure_zero_pair_propagator_charge_kernel_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_propagator_charge_kernel/report.json",
+      "sha256": "2eecf6fba47633a4ca17dd940f5db9554cb9eac5a96f25c1bba83521c864d439"
+    },
+    "sector26_invariant_suite_report": {
+      "path": "data/invariants/d20/theorems/sector26_invariant_suite/report.json",
+      "sha256": "e8dcb12e8eb4ca2b31d880100dd128547d5ee1ab5a72bf0e3ebf217f0b966a0e"
+    }
+  },
+  "interpretation": {
+    "not_claimed": "This does not prove a prime-distribution law, M-theory, or a canonical Bhargava-cube object.",
+    "strongest_safe_reading": "The D20 boundary has a certified arithmetic alignment: integral contour/action quantization meets packet-SNF torsion at primes 2 and 3, while the public charge ledger introduces the 13-part through mod 26."
+  },
+  "next_highest_yield_item": "Build a residue-line pairing matrix between the 11 contour residues and the sector-26 charge-kernel doublet, then compute its Smith form.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_contour_sector_packet_prime_alignment",
+  "status": "D20_CONTOUR_SECTOR_PACKET_PRIME_ALIGNMENT_CERTIFIED"
+}

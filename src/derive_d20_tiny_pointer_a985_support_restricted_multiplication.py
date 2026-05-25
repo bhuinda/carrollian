@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -27,7 +27,7 @@ STATUS = "D20_TINY_POINTER_A985_SUPPORT_RESTRICTED_MULTIPLICATION_TABLES_CERTIFI
 THEOREM_ID = "tiny_pointer_a985_support_restricted_multiplication_tables"
 OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
-FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_legacy_sector_match"
+FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_sector_match"
 SUPPORT_COO_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_support_full_matrix_unit_orbital_coo"
 CENTRAL_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_orbital_central_idempotents"
 TENSOR_NPZ = ROOT / "data" / "raw" / "T_985.npz"
@@ -101,11 +101,11 @@ def array_digest(array: np.ndarray) -> str:
     return h.hexdigest()
 
 
-def load_legacy_maps() -> tuple[dict[int, int], dict[int, int]]:
-    rows = read_csv_rows(FULL_MATCH_DIR / "legacy_to_raw_sector_full_match.csv")
-    legacy_to_raw = {int(row["legacy_sector"]): int(row["raw_sector"]) for row in rows}
-    dimensions = {int(row["legacy_sector"]): int(row["block_dimension"]) for row in rows}
-    return legacy_to_raw, dimensions
+def load_source_maps() -> tuple[dict[int, int], dict[int, int]]:
+    rows = read_csv_rows(FULL_MATCH_DIR / "source_to_raw_sector_full_match.csv")
+    source_to_raw = {int(row["source_sector"]): int(row["raw_sector"]) for row in rows}
+    dimensions = {int(row["source_sector"]): int(row["block_dimension"]) for row in rows}
+    return source_to_raw, dimensions
 
 
 def load_central_pages() -> tuple[np.ndarray, np.ndarray]:
@@ -115,10 +115,10 @@ def load_central_pages() -> tuple[np.ndarray, np.ndarray]:
     return pages, identity_indices
 
 
-def central_sum(legacy_set: set[int], central_pages: np.ndarray, legacy_to_raw: dict[int, int]) -> np.ndarray:
+def central_sum(source_set: set[int], central_pages: np.ndarray, source_to_raw: dict[int, int]) -> np.ndarray:
     out = np.zeros(RELATION_COUNT, dtype=np.int64)
-    for legacy_sector in sorted(legacy_set):
-        out += central_pages[legacy_to_raw[legacy_sector]]
+    for source_sector in sorted(source_set):
+        out += central_pages[source_to_raw[source_sector]]
     return out % FIELD_PRIME
 
 
@@ -146,15 +146,15 @@ def build_basis_manifest(
                     "projector_column": int(projector["projector_column"]),
                     "support_basis_index": support_basis_index,
                     "support_unit_row": int(row["support_unit_row"]),
-                    "legacy_support": projector_by_name[support_name]["legacy_support"],
-                    "transported_legacy_support": projector_by_name[support_name]["transported_legacy_support"],
-                    "legacy_sector": int(row["legacy_sector"]),
+                    "source_support": projector_by_name[support_name]["source_support"],
+                    "transported_source_support": projector_by_name[support_name]["transported_source_support"],
+                    "source_sector": int(row["source_sector"]),
                     "raw_sector": int(row["raw_sector"]),
                     "block_dimension": int(row["block_dimension"]),
                     "i": int(row["i"]),
                     "j": int(row["j"]),
                     "full_unit_column": int(row["full_unit_column"]),
-                    "legacy_matrix_unit_label": row["legacy_matrix_unit_label"],
+                    "source_matrix_unit_label": row["source_matrix_unit_label"],
                     "raw_matrix_unit_label": row["raw_matrix_unit_label"],
                     "coefficient_source": row["coefficient_source"],
                 }
@@ -174,30 +174,30 @@ def build_matrix_unit_tables(
         support_name = projector["support_name"]
         support_rows = support_rows_by_name.get(support_name, [])
         local_by_key = {
-            (int(row["legacy_sector"]), int(row["i"]), int(row["j"])): idx
+            (int(row["source_sector"]), int(row["i"]), int(row["j"])): idx
             for idx, row in enumerate(support_rows)
         }
         rows_by_sector: dict[int, list[dict[str, str]]] = defaultdict(list)
         for row in support_rows:
-            rows_by_sector[int(row["legacy_sector"])].append(row)
+            rows_by_sector[int(row["source_sector"])].append(row)
 
         nonzero_start = len(product_rows)
-        for legacy_sector in sorted(rows_by_sector):
-            dimension = dimensions[legacy_sector]
+        for source_sector in sorted(rows_by_sector):
+            dimension = dimensions[source_sector]
             for i in range(dimension):
                 for j in range(dimension):
-                    left_idx = local_by_key[(legacy_sector, i, j)]
+                    left_idx = local_by_key[(source_sector, i, j)]
                     left_row = support_rows[left_idx]
                     for ell in range(dimension):
-                        right_idx = local_by_key[(legacy_sector, j, ell)]
-                        result_idx = local_by_key[(legacy_sector, i, ell)]
+                        right_idx = local_by_key[(source_sector, j, ell)]
+                        result_idx = local_by_key[(source_sector, i, ell)]
                         right_row = support_rows[right_idx]
                         result_row = support_rows[result_idx]
                         product_rows.append(
                             {
                                 "support_name": support_name,
                                 "projector_column": int(projector["projector_column"]),
-                                "legacy_sector": legacy_sector,
+                                "source_sector": source_sector,
                                 "raw_sector": int(left_row["raw_sector"]),
                                 "left_support_basis_index": left_idx,
                                 "right_support_basis_index": right_idx,
@@ -212,21 +212,21 @@ def build_matrix_unit_tables(
                                 "result_i": i,
                                 "result_j": ell,
                                 "coefficient_mod_1000003": 1,
-                                "left_label": left_row["legacy_matrix_unit_label"],
-                                "right_label": right_row["legacy_matrix_unit_label"],
-                                "result_label": result_row["legacy_matrix_unit_label"],
+                                "left_label": left_row["source_matrix_unit_label"],
+                                "right_label": right_row["source_matrix_unit_label"],
+                                "result_label": result_row["source_matrix_unit_label"],
                             }
                         )
 
-        legacy_set = parse_set(projector["transported_legacy_support"])
-        expected_basis = sum(dimensions[sector] ** 2 for sector in legacy_set)
-        expected_products = sum(dimensions[sector] ** 3 for sector in legacy_set)
+        source_set = parse_set(projector["transported_source_support"])
+        expected_basis = sum(dimensions[sector] ** 2 for sector in source_set)
+        expected_products = sum(dimensions[sector] ** 3 for sector in source_set)
         nonzero_count = len(product_rows) - nonzero_start
         summary_rows.append(
             {
                 "support_name": support_name,
                 "projector_column": int(projector["projector_column"]),
-                "transported_legacy_support": projector["transported_legacy_support"],
+                "transported_source_support": projector["transported_source_support"],
                 "basis_rows": len(support_rows),
                 "expected_basis_rows": expected_basis,
                 "nonzero_products": nonzero_count,
@@ -243,8 +243,8 @@ def matrix_unit_target(
     right: dict[str, str],
     local_by_key: dict[tuple[int, int, int], int],
 ) -> int | None:
-    left_sector = int(left["legacy_sector"])
-    right_sector = int(right["legacy_sector"])
+    left_sector = int(left["source_sector"])
+    right_sector = int(right["source_sector"])
     if left_sector != right_sector or int(left["j"]) != int(right["i"]):
         return None
     return local_by_key[(left_sector, int(left["i"]), int(right["j"]))]
@@ -269,7 +269,7 @@ def verify_direct_products(
     for support_name in support_names:
         support_rows = support_rows_by_name.get(support_name, [])
         local_by_key = {
-            (int(row["legacy_sector"]), int(row["i"]), int(row["j"])): idx
+            (int(row["source_sector"]), int(row["i"]), int(row["j"])): idx
             for idx, row in enumerate(support_rows)
         }
         pairs: list[tuple[int, int]] = []
@@ -332,11 +332,11 @@ def build_projector_multiplication_table(
     projector_rows: list[dict[str, str]],
     projectors: np.ndarray,
     central_pages: np.ndarray,
-    legacy_to_raw: dict[int, int],
+    source_to_raw: dict[int, int],
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     triples = np.asarray(np.load(TENSOR_NPZ)["triples"], dtype=np.int64)
     oracle = MultiplicationOracle(triples)
-    sets_by_name = {row["support_name"]: parse_set(row["transported_legacy_support"]) for row in projector_rows}
+    sets_by_name = {row["support_name"]: parse_set(row["transported_source_support"]) for row in projector_rows}
     exact_name_by_set = {frozenset(value): name for name, value in sets_by_name.items()}
     rows: list[dict[str, Any]] = []
     failures: list[dict[str, str]] = []
@@ -346,7 +346,7 @@ def build_projector_multiplication_table(
         for right_idx, right_row in enumerate(projector_rows):
             right_name = right_row["support_name"]
             intersection = sets_by_name[left_name] & sets_by_name[right_name]
-            target = central_sum(intersection, central_pages, legacy_to_raw)
+            target = central_sum(intersection, central_pages, source_to_raw)
             product = oracle.product(projectors[:, left_idx], projectors[:, right_idx])
             verified = bool(np.array_equal(product % FIELD_PRIME, target % FIELD_PRIME))
             if not verified:
@@ -358,7 +358,7 @@ def build_projector_multiplication_table(
                     "left_support_name": left_name,
                     "right_support_name": right_name,
                     "result_named_support": exact_name_by_set.get(frozenset(intersection), ""),
-                    "result_transport_legacy_support": set_literal(intersection),
+                    "result_transport_source_support": set_literal(intersection),
                     "result_nonzero_coefficients": int(np.count_nonzero(target)),
                     "raw_product_verified": verified,
                 }
@@ -381,15 +381,15 @@ def write_outputs(
             "projector_column",
             "support_basis_index",
             "support_unit_row",
-            "legacy_support",
-            "transported_legacy_support",
-            "legacy_sector",
+            "source_support",
+            "transported_source_support",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "i",
             "j",
             "full_unit_column",
-            "legacy_matrix_unit_label",
+            "source_matrix_unit_label",
             "raw_matrix_unit_label",
             "coefficient_source",
         ],
@@ -400,7 +400,7 @@ def write_outputs(
         [
             "support_name",
             "projector_column",
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "left_support_basis_index",
             "right_support_basis_index",
@@ -426,7 +426,7 @@ def write_outputs(
         [
             "support_name",
             "projector_column",
-            "transported_legacy_support",
+            "transported_source_support",
             "basis_rows",
             "expected_basis_rows",
             "nonzero_products",
@@ -455,7 +455,7 @@ def write_outputs(
             "left_support_name",
             "right_support_name",
             "result_named_support",
-            "result_transport_legacy_support",
+            "result_transport_source_support",
             "result_nonzero_coefficients",
             "raw_product_verified",
         ],
@@ -524,7 +524,7 @@ def update_theorem_index(report: dict[str, Any]) -> None:
 
 def build_support_multiplication(max_exhaustive_basis: int, top_sample_products: int, seed: int) -> dict[str, Any]:
     support_report = load_json(SUPPORT_COO_DIR / "report.json")
-    legacy_to_raw, dimensions = load_legacy_maps()
+    source_to_raw, dimensions = load_source_maps()
     central_pages, _identity_indices = load_central_pages()
 
     support_rows = read_csv_rows(SUPPORT_COO_DIR / "support_matrix_units_orbital_manifest.csv")
@@ -549,7 +549,7 @@ def build_support_multiplication(max_exhaustive_basis: int, top_sample_products:
         projector_rows,
         projectors,
         central_pages,
-        legacy_to_raw,
+        source_to_raw,
     )
     write_outputs(basis_rows, product_rows, summary_rows, direct["rows"], projector_product_rows)
 
@@ -584,7 +584,7 @@ def build_support_multiplication(max_exhaustive_basis: int, top_sample_products:
         "field_prime": FIELD_PRIME,
         "claim": (
             "Each named A985 support now has an explicit sparse multiplication table in its "
-            "legacy-labeled matrix-unit basis, and the seven support projectors have an explicit "
+            "source-sector-labeled matrix-unit basis, and the seven support projectors have an explicit "
             "projector-intersection multiplication table."
         ),
         "inputs": {
@@ -596,7 +596,7 @@ def build_support_multiplication(max_exhaustive_basis: int, top_sample_products:
                 "path": rel(SUPPORT_COO_DIR / "support_matrix_units_and_projectors_raw_orbital_arrays.npz"),
                 "sha256": sha_file(SUPPORT_COO_DIR / "support_matrix_units_and_projectors_raw_orbital_arrays.npz"),
             },
-            "full_legacy_sector_match": {
+            "full_source_sector_match": {
                 "path": rel(FULL_MATCH_DIR / "report.json"),
                 "sha256": sha_file(FULL_MATCH_DIR / "report.json"),
             },
@@ -632,7 +632,7 @@ def build_support_multiplication(max_exhaustive_basis: int, top_sample_products:
         },
         "next_highest_yield_item": (
             "Use these support-restricted tables to isolate the remaining sector-local "
-            "change-of-basis problem: legacy matrix-unit normalization within each primitive block."
+            "change-of-basis problem: source-sector matrix-unit normalization within each primitive block."
         ),
         "all_checks_pass": all(checks.values()),
     }
@@ -704,3 +704,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

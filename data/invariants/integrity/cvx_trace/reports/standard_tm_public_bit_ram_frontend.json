@@ -1,0 +1,220 @@
+{
+  "claim_level": "one_way_standard_frontend_theorem",
+  "decision": {
+    "may_claim_frontend_opcodes_total_in_cvx_vocab": true,
+    "may_claim_oracle_or_advice_algorithms_covered": false,
+    "may_claim_semantic_x_reclassification": false,
+    "may_claim_standard_p_to_p_cvx_for_public_deterministic_tm": true,
+    "may_claim_standard_tm_to_public_bit_ram_frontend": true,
+    "reason": "The frontend covers ordinary deterministic public Turing-machine executions and emits only finite_public_bit_ram C opcodes. It does not by itself prove that a standard algorithm which recovers hidden-sector data is semantically reclassified as X."
+  },
+  "frontend_phases": [
+    {
+      "phase": "encode_public_input",
+      "source": "Copy the public input tape into public bit-RAM memory.",
+      "target_opcodes": [
+        "input_read",
+        "ram_store",
+        "loop_tick"
+      ]
+    },
+    {
+      "phase": "encode_transition_table",
+      "source": "Store the finite transition table as public constants and branch targets.",
+      "target_opcodes": [
+        "const",
+        "copy",
+        "ram_store"
+      ]
+    },
+    {
+      "phase": "fetch_current_configuration",
+      "source": "Read public state, head positions, and scanned tape symbols.",
+      "target_opcodes": [
+        "ram_load",
+        "copy",
+        "compare_zero"
+      ]
+    },
+    {
+      "phase": "select_transition",
+      "source": "Compare the public finite-control row and branch to the matching transition block.",
+      "target_opcodes": [
+        "bit_and",
+        "bit_not",
+        "bit_or",
+        "bit_xor",
+        "compare_zero",
+        "branch"
+      ]
+    },
+    {
+      "phase": "write_next_configuration",
+      "source": "Write the next state, tape symbols, and head positions into public memory.",
+      "target_opcodes": [
+        "const",
+        "copy",
+        "bit_xor",
+        "ram_store"
+      ]
+    },
+    {
+      "phase": "halt_or_continue",
+      "source": "Emit the public decision or advance to the next simulated step.",
+      "target_opcodes": [
+        "branch",
+        "emit_decision",
+        "halt_accept",
+        "halt_reject",
+        "loop_tick"
+      ]
+    }
+  ],
+  "next_highest_yield_item": {
+    "action": "Prove that any standard public algorithm implementing hidden-sector recovery is either impossible as a pure C trace or is formally retyped as X.",
+    "id": "semantic_x_reclassification_theorem"
+  },
+  "non_claims": [
+    "This does not cover oracle, advice, hidden-extractor, or non-public randomized machines.",
+    "This does not prove the semantic X reclassification theorem.",
+    "This does not provide proof-assistant definitions of P or P_CVX.",
+    "This does not use native uncompiled machine instructions."
+  ],
+  "obligations": {
+    "decision_preservation": {
+      "evidence": {
+        "accepting_tm_halt": "compiled block emits halt_accept and the same public decision",
+        "nonhalting_prefix": "compiled loop_tick advances exactly one simulated TM step",
+        "rejecting_tm_halt": "compiled block emits halt_reject and the same public decision"
+      },
+      "needed": "The target program must preserve the source machine's accept/reject decision.",
+      "passed": true
+    },
+    "frontend_opcodes_are_total_c_vocabulary": {
+      "evidence": {
+        "generated_class_codes": [
+          "C_PUBLIC_BIT_AND",
+          "C_PUBLIC_BIT_NOT",
+          "C_PUBLIC_BIT_OR",
+          "C_PUBLIC_BIT_XOR",
+          "C_PUBLIC_BRANCH",
+          "C_PUBLIC_COMPARE_ZERO",
+          "C_PUBLIC_CONST",
+          "C_PUBLIC_COPY",
+          "C_PUBLIC_EMIT_DECISION",
+          "C_PUBLIC_HALT_ACCEPT",
+          "C_PUBLIC_HALT_REJECT",
+          "C_PUBLIC_INPUT_READ",
+          "C_PUBLIC_LOOP_TICK",
+          "C_PUBLIC_RAM_LOAD",
+          "C_PUBLIC_RAM_STORE"
+        ],
+        "typing_status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+      },
+      "needed": "Every generated opcode must already be classified as public C, not V, X, or residue.",
+      "passed": true
+    },
+    "frontend_uses_only_schema_opcodes": {
+      "evidence": {
+        "generated_opcodes": [
+          "bit_and",
+          "bit_not",
+          "bit_or",
+          "bit_xor",
+          "branch",
+          "compare_zero",
+          "const",
+          "copy",
+          "emit_decision",
+          "halt_accept",
+          "halt_reject",
+          "input_read",
+          "loop_tick",
+          "ram_load",
+          "ram_store"
+        ],
+        "schema_opcode_count": 15
+      },
+      "needed": "The frontend must emit only opcodes accepted by the existing public bit-RAM schema.",
+      "passed": true
+    },
+    "no_x_or_v_introduced_by_frontend": {
+      "evidence": {
+        "frontend_integrity_type": "C-only",
+        "x_policy_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+      },
+      "needed": "The frontend itself must not use hidden extractor, oracle, advice, or V wall-crossing events.",
+      "passed": true
+    },
+    "polynomial_overhead": {
+      "evidence": {
+        "alphabet_bits": "a = ceil(log2 |Gamma|)",
+        "compiled_execution_bound": "O(T*(k*(a+h) + q + |delta|))",
+        "compiled_step_bound": "O(k*(a+h) + q + |delta|)",
+        "source_runtime": "T",
+        "state_bits": "q = ceil(log2 |Q|)",
+        "tape_address_bits": "h = ceil(log2(T+n+1))",
+        "tapes": "k"
+      },
+      "needed": "The frontend must increase runtime and trace length by at most a polynomial factor.",
+      "passed": true
+    },
+    "source_standard_model_is_public_deterministic_tm": {
+      "evidence": {
+        "excluded_channels": [
+          "oracle",
+          "advice",
+          "hidden-sector extractor",
+          "non-public randomness"
+        ],
+        "source_model": "deterministic public multi-tape Turing machine with finite public transition table"
+      },
+      "needed": "The frontend must target ordinary public deterministic computation, not an oracle/advice model.",
+      "passed": true
+    },
+    "target_machine_schema_is_finite_public_bit_ram": {
+      "evidence": {
+        "machine_model": "finite_public_bit_ram",
+        "program_schema": "data/invariants/integrity/cvx_trace/schemas/universal_public_bit_machine_program.schema.json"
+      },
+      "needed": "The translation target must be the existing finite_public_bit_ram schema.",
+      "passed": true
+    }
+  },
+  "schema": "d20.integrity.standard_tm_public_bit_ram_frontend.source_drop",
+  "source_audit": {
+    "program_schema": {
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/schemas/universal_public_bit_machine_program.schema.json",
+      "sha256": "b4c7bbf580485e1354b24b0beb6ed512a385449f8cdc1993f1b67001608af3dd",
+      "status": null
+    },
+    "universal_trace_compiler": {
+      "expected_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "sha256": "86fd22cd03d89ff72614b88266c307a4f94d1d414e65c6fec2da10b942a34d33",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
+    "universal_trace_typing": {
+      "expected_status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "sha256": "aac294c9355a2226dfb08ea34874e354a05f904a767e9655e413c5d229d07a52",
+      "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "sha256": "42fb3a22481cdde0b942b2bd26fa06acbd47f6ec86e0ece1ba49ac46def0e04f",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+    }
+  },
+  "status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+  "theorem": {
+    "bound": "For source runtime T, input length n, k tapes, alphabet bit-width a, state bit-width q, and transition table size |delta|, the compiled execution has O(T*(k*(a+log(T+n+1)) + q + |delta|)) public bit-RAM steps.",
+    "name": "Standard Public TM to finite_public_bit_ram Frontend",
+    "statement": "Every deterministic public multi-tape Turing-machine execution with finite public transition table, no oracle/advice channel, and no hidden extractor primitive translates uniformly into a finite_public_bit_ram program/trace using only public C opcodes, preserving accept/reject decisions with polynomial overhead."
+  }
+}

@@ -6,22 +6,22 @@
     },
     "full_matrix_unit_orbital_coo": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
-      "sha256": "a343d6f592e7183e784cad7902458540576005646d6e28f32611f6ef7727f2d4"
-    },
-    "legacy_matrix_unit_transport": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/report.json",
-      "sha256": "b44fceb659ac57a889852d66daa08d92e1c17e6c9b1a41d8f3c3159e0b17624b"
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
     },
     "registered_support_matrix_units": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/report.json",
-      "sha256": "c760241ccdc80d2977c718dae6385c33d99687d32adaac3add6fef732a114d3c"
+      "sha256": "4f193acca172ec17b1e57574cab0178ea8a61676b0070d83c99c6fc881042bcd"
+    },
+    "sector_matrix_unit_transport": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_matrix_unit_transport/report.json",
+      "sha256": "5d0a5eda4dfcba00373c0045292c37b99ca6a7a654f2c27fb6372706ac076ff3"
     },
     "t985_tensor": {
       "path": "data/raw/T_985.npz",
       "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
     }
   },
-  "manifest_sha256": "6a9a9efddc6b1ad2b71b2e3cca3e544ccd8500dbb9ee405e9a34d8cc40eb932f",
+  "manifest_sha256": "dab80aff29cde1a9e960eb239e4dfd9efe69daf9cc638ca9d9cccda983520b83",
   "name": "tiny_pointer_a985_support_full_matrix_unit_orbital_coo",
   "outputs": {
     "arrays": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_and_projectors_raw_orbital_arrays.npz",
@@ -32,11 +32,11 @@
     "support_coo": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_orbital_coo.csv",
     "support_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_support_full_matrix_unit_orbital_coo/support_matrix_units_orbital_manifest.csv"
   },
-  "report_sha256": "8912593c42931e7f5ad2a7eb60639d7de077222ad128f23e062041c784305b59",
+  "report_sha256": "8c93e89b1d9a7b6e673fc47ef9d54cd0d4727fdec2088b432ee1bc8f94481ff4",
   "schema": "d20.theorem.tiny_pointer_a985_support_full_matrix_unit_orbital_coo_manifest.source_drop",
   "validation_tests": [
     "registered_stage_certified",
-    "legacy_transport_certified",
+    "sector_transport_certified",
     "full_matrix_unit_coo_certified",
     "support_manifest_has_1011_rows",
     "top_support_replaced_with_full_coo_985_rows",
@@ -45,6 +45,7 @@
     "top_rows_follow_full_coo_order",
     "support_coo_rows_match_nonzero_count",
     "registered_subsupport_rows_use_registered_source",
+    "perennial_join_key_emitted_when_available",
     "projector_count_is_7",
     "zero_projector_is_zero",
     "top_projector_is_unit",

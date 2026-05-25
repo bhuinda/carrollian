@@ -139,7 +139,7 @@ def main() -> None:
         'official_terms': {
             'box_judgment': 'BoxHeight(A_ext,h)',
             'formal_name': 'height coherence',
-            'legacy_terms': {
+            'source_terms': {
                 'BoxMonism': 'BoxHeight(A_ext,h)',
                 'height monism': 'height coherence',
             },
@@ -275,9 +275,9 @@ Constructive univalence gate:
 equivalence witness + zero transport residue + height coherence
 ```
 
-## Legacy term mapping
+## Source term mapping
 
-| legacy term | formal term | verifier meaning |
+| source term | formal term | verifier meaning |
 |---|---|---|
 | `BoxMonism` | `BoxHeight` | checked global-height certificate |
 | positive annihilator | positive circular obstruction | local constraints form a loop and no global height exists |

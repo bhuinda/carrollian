@@ -1,0 +1,340 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "0197a9786611b4c9f2b85237ab22948c811f3b7df021dec1cc84a0f6c655f648",
+  "checks": {
+    "canonical_finite_scattering_table_is_certified": true,
+    "cycle5_and_gamma8_both_reach_selected_by_the_other_generator": true,
+    "finite_bms_carrollian_flux_balance_is_certified": true,
+    "gamma8_to_selected_scattering_step_is_generator5": true,
+    "selected_balance_decomposes_as_gamma8_plus_cycle5": true,
+    "selected_balance_is_first_nontrivial_sourced_target": true,
+    "selected_bms_row_closes_hidden_balance": true,
+    "selected_bms_row_closes_public_balance": true,
+    "selected_to_gamma8_reverse_scattering_step_is_generator5": true,
+    "selector_selects_mask288": true,
+    "ward_kernel_height_selector_is_certified": true
+  },
+  "claim": "The height-selected nontrivial zero-pair source lift mask 288 satisfies the first selected sourced finite Ward/BMS balance. It is reached from gamma8 by the generator-5 scattering step, has zero public charge update, zero public flux, zero public A985 residual, and closes the hidden balance 0 - 1065984 + 1065984 = 0.",
+  "definition": {
+    "first_nontrivial": "First by the certified height selector: mask 288 is the unique nonzero Ward-kernel mask with minimum positive height action.",
+    "selected_sourced_ward_balance": "The finite BMS/Carrollian balance evaluated on the nonzero Ward-kernel mask selected by the zero-pair height selector.",
+    "source_scattering_witness": "The canonical scattering transition from gamma8 to the selected mask by toggling generator 5."
+  },
+  "derived": {
+    "scattering_witness": {
+      "cycle5_to_selected": {
+        "generator_cycle_id": 8,
+        "generator_height_action": 374784,
+        "height_flux_delta": 374784,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "c311e607e40eabd496b2d97826cf12281adaebea86bf921c55acee136a0c332d",
+        "outgoing_signature_sha256": "510547315a1bd7625f284099bc4d979e498382a29d9764b9073512cffe8be0b2",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 691200,
+        "source_hidden_packet": "odd",
+        "source_mask": 32,
+        "target_R33_mod26": 0,
+        "target_height_action": 1065984,
+        "target_hidden_packet": "kernel",
+        "target_mask": 288,
+        "toggle": "add",
+        "transition_id": 360
+      },
+      "gamma8_to_selected": {
+        "generator_cycle_id": 5,
+        "generator_height_action": 691200,
+        "height_flux_delta": 691200,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "510547315a1bd7625f284099bc4d979e498382a29d9764b9073512cffe8be0b2",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1065984,
+        "target_hidden_packet": "kernel",
+        "target_mask": 288,
+        "toggle": "add",
+        "transition_id": 2821
+      },
+      "selected_to_cycle5": {
+        "generator_cycle_id": 8,
+        "generator_height_action": 374784,
+        "height_flux_delta": -374784,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "510547315a1bd7625f284099bc4d979e498382a29d9764b9073512cffe8be0b2",
+        "outgoing_signature_sha256": "c311e607e40eabd496b2d97826cf12281adaebea86bf921c55acee136a0c332d",
+        "packet_transfer": "kernel_to_odd",
+        "source_R33_mod26": 0,
+        "source_height_action": 1065984,
+        "source_hidden_packet": "kernel",
+        "source_mask": 288,
+        "target_R33_mod26": 13,
+        "target_height_action": 691200,
+        "target_hidden_packet": "odd",
+        "target_mask": 32,
+        "toggle": "remove",
+        "transition_id": 3176
+      },
+      "selected_to_gamma8": {
+        "generator_cycle_id": 5,
+        "generator_height_action": 691200,
+        "height_flux_delta": -691200,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "510547315a1bd7625f284099bc4d979e498382a29d9764b9073512cffe8be0b2",
+        "outgoing_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "packet_transfer": "kernel_to_odd",
+        "source_R33_mod26": 0,
+        "source_height_action": 1065984,
+        "source_hidden_packet": "kernel",
+        "source_mask": 288,
+        "target_R33_mod26": 13,
+        "target_height_action": 374784,
+        "target_hidden_packet": "odd",
+        "target_mask": 256,
+        "toggle": "remove",
+        "transition_id": 3173
+      }
+    },
+    "source_decomposition_rows": {
+      "cycle5": {
+        "Flux_D20_public_exact": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "R33_height_residual": -691200,
+        "Res_A985_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "bare_pi33": 0,
+        "basis_cycle_indices": [
+          5
+        ],
+        "corrected_R33_mod26": 13,
+        "delta_Q_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "finite_height_flux": 691200,
+        "hidden_balance_error": 0,
+        "hidden_packet": "odd",
+        "mask": 32,
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        }
+      },
+      "gamma8": {
+        "Flux_D20_public_exact": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "R33_height_residual": -374784,
+        "Res_A985_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "bare_pi33": 0,
+        "basis_cycle_indices": [
+          8
+        ],
+        "corrected_R33_mod26": 13,
+        "delta_Q_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "finite_height_flux": 374784,
+        "hidden_balance_error": 0,
+        "hidden_packet": "odd",
+        "mask": 256,
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        }
+      },
+      "selected_288": {
+        "Flux_D20_public_exact": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "R33_height_residual": -1065984,
+        "Res_A985_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "bare_pi33": 0,
+        "basis_cycle_indices": [
+          5,
+          8
+        ],
+        "corrected_R33_mod26": 0,
+        "delta_Q_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "finite_height_flux": 1065984,
+        "hidden_balance_error": 0,
+        "hidden_packet": "kernel",
+        "mask": 288,
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        }
+      },
+      "zero": {
+        "Flux_D20_public_exact": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "R33_height_residual": 0,
+        "Res_A985_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "bare_pi33": 0,
+        "basis_cycle_indices": [],
+        "corrected_R33_mod26": 0,
+        "delta_Q_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "finite_height_flux": 0,
+        "hidden_balance_error": 0,
+        "hidden_packet": "kernel",
+        "mask": 0,
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        }
+      }
+    },
+    "sourced_balance_summary": {
+      "balance_identity": "Delta Q_public(288)=0=Flux_public(288)+Res_public(288), and bare_pi33(288)+R33(288)+A_h(288)=0-1065984+1065984=0.",
+      "scattering_step": {
+        "generator_cycle_id": 5,
+        "height_flux_delta": 691200,
+        "hidden_R33_transfer_mod26": 13,
+        "packet_transfer": "odd_to_kernel",
+        "source_mask": 256,
+        "target_mask": 288,
+        "toggle": "add",
+        "transition_id": 2821
+      },
+      "selected_basis_cycle_ids": [
+        5,
+        8
+      ],
+      "selected_hidden_terms": {
+        "R33_height_residual": -1065984,
+        "bare_pi33": 0,
+        "corrected_R33_mod26": 0,
+        "finite_height_flux": 1065984,
+        "hidden_balance_error": 0,
+        "hidden_packet": "kernel"
+      },
+      "selected_mask": 288,
+      "selected_public_terms": {
+        "Flux_D20_public_exact": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "Res_A985_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "delta_Q_public": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        }
+      },
+      "source_decomposition": {
+        "corrected_R33_sum_mod26": 0,
+        "generator_corrected_R33_mod26": 13,
+        "generator_height": 691200,
+        "generator_mask": 32,
+        "height_sum": 1065984,
+        "source_corrected_R33_mod26": 13,
+        "source_height": 374784,
+        "source_mask": 256,
+        "target_corrected_R33_mod26": 0,
+        "target_height": 1065984,
+        "target_mask": 288
+      }
+    }
+  },
+  "inputs": {
+    "canonical_finite_scattering_table_report": {
+      "path": "data/invariants/d20/theorems/canonical_finite_scattering_table/report.json",
+      "sha256": "3b0cea41366d6972213ad43dd1052a86256a4cfd27249d98072f35c1d804362f"
+    },
+    "finite_bms_carrollian_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_bms_carrollian_flux_balance/report.json",
+      "sha256": "b8755b6cc80e36cff5930114f45fc7dc6eec9d5a5a604437d71b43373822955d"
+    },
+    "zero_pair_ward_kernel_height_selector_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_ward_kernel_height_selector/report.json",
+      "sha256": "e7e312b6502751d2b8496f60239a7528631153d4697799f330bd66fc4e1b4330"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This is the first selected sourced balance, not yet a classification of every nontrivial sourced Ward lift in the Ward kernel.",
+    "what_this_proves": [
+      "the selected nonzero source lift is an actual finite BMS/Ward balance row",
+      "the public charge balance is completely closed on mask 288",
+      "the hidden R33/action balance closes exactly on mask 288",
+      "the scattering automaton realizes the source lift as gamma8 plus generator 5"
+    ]
+  },
+  "next_highest_yield_item": "Classify all Ward-kernel sourced balance targets reachable from gamma8 by height order and identify whether mask 288 generates a minimal sourced-balance cone.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_selected_sourced_ward_balance",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_CERTIFIED"
+}

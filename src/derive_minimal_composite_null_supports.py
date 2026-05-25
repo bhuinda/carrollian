@@ -5,7 +5,7 @@ Classify D20 minimal composite public-zero sector idempotent supports.
 Inputs
 ------
 --d20-json: the normalized d20.json certificate bundle containing
-            json_invariants['layers/drinfeld/wedderburn_trace.json'].
+            json_invariants['data/drinfeld/wedderburn_trace.json'].
 --admissibility-report: optional report.json from
             sector_idempotent_support_admissibility theorem.
 
@@ -99,7 +99,7 @@ def load_public_zero_supports(path: str | None) -> Tuple[List[List[int]], Dict[s
 
 
 def get_sector_profiles(d20: Dict[str, Any]) -> List[Dict[str, Any]]:
-    wt = d20["json_invariants"]["layers/drinfeld/wedderburn_trace.json"]
+    wt = d20["json_invariants"]["data/drinfeld/wedderburn_trace.json"]
     return wt["sector_profiles"]
 
 

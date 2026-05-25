@@ -15,6 +15,11 @@ import numpy as np
 from src.certify_io import raw_tensor_relpath
 from src.derive_zero_axiom_coorient import derive as derive_zero_axiom_coorient
 from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS
+from src.verify_c2_selector_lookup_witness_source_package import (
+    PACKAGE_CERTIFICATE as HALLOWEEN_LOOKUP_SOURCE_PACKAGE_CERTIFICATE,
+    PACKAGE_VERIFIED_STATUS as HALLOWEEN_LOOKUP_SOURCE_PACKAGE_VERIFIED_STATUS,
+    source_registry_binding as halloween_lookup_source_registry_binding,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -33,6 +38,7 @@ FOAM_DIM = 16
 D20_EDGE_CLOSURE_ORDER = 5
 
 MAX_EMBED_ARRAY = 2048
+ZERO_AXIOM_COORIENT_JSON = D20_INVARIANTS / "zero_axiom_coorient.json"
 
 SCHEMA_LINEAGE_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
 STACK_STAGE_ID_RE = re.compile(r"^v\d+_")
@@ -47,6 +53,7 @@ EXCLUDED_SCAN_DIRS = {
     ".codex_deps",
     ".mypy_cache",
     ".pytest_cache",
+    ".replay_tmp",
     ".ruff_cache",
     ".tools",
     ".venv",
@@ -76,10 +83,14 @@ EXCLUDED_SCAN_FILES = {
     "test.zip",
 }
 
+JSON_SCAN_ROOTS = ("data",)
+CSV_SCAN_ROOTS = ("data",)
+NPZ_SCAN_ROOTS = ("data",)
+
 LOW_SIGNAL_JSON_KEYS = {
     "all_checks_pass",
     "all_checks_passed",
-    "legacy_alias_policy",
+    "source_alias_policy",
     "plain_name_policy",
     "public_name",
     "source_integration",
@@ -104,6 +115,7 @@ GENOME_SOURCE_PATHS = [
     "src/derive_native_a236_formulae.py",
     "src/derive_packet20_c20_from_d6_stabilizers.py",
     "src/derive_d20_selector_from_d6.py",
+    "src/verify_c2_selector_lookup_witness_source_package.py",
 ]
 
 
@@ -117,6 +129,16 @@ def excluded_scan_path(path: Path) -> bool:
         or path.suffix in EXCLUDED_SCAN_SUFFIXES
         or path.name in EXCLUDED_SCAN_FILES
     )
+
+
+def scanned_files(relative_roots: tuple[str, ...], pattern: str) -> list[Path]:
+    files: list[Path] = []
+    for relative_root in relative_roots:
+        base = ROOT / relative_root
+        if not base.exists():
+            continue
+        files.extend(path for path in base.rglob(pattern) if path.is_file())
+    return sorted(files)
 
 
 def lineage_archive_path(path: Path) -> bool:
@@ -160,16 +182,45 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"), parse_constant=lambda _token: None)
 
 
-def legacy_red_flags_to_hints(flags: Any) -> list[dict[str, Any]]:
+def source_file_hashes_match(payload: dict[str, Any]) -> bool:
+    source_files = payload.get("source_files", {})
+    if not isinstance(source_files, dict):
+        return False
+    for entry in source_files.values():
+        if not isinstance(entry, dict):
+            continue
+        rel = entry.get("path")
+        expected = entry.get("sha256")
+        if not isinstance(rel, str) or not isinstance(expected, str):
+            continue
+        path = ROOT / rel
+        if not path.exists() or sha_file(path) != expected:
+            return False
+    return True
+
+
+def zero_axiom_coorient_payload() -> dict[str, Any]:
+    if ZERO_AXIOM_COORIENT_JSON.exists():
+        payload = load_json(ZERO_AXIOM_COORIENT_JSON)
+        if (
+            isinstance(payload, dict)
+            and payload.get("status") == "D20_ZERO_AXIOM_COORIENT_REDUCTION_PASS"
+            and source_file_hashes_match(payload)
+        ):
+            return payload
+    return derive_zero_axiom_coorient()
+
+
+def route_red_flags_to_hints(flags: Any) -> list[dict[str, Any]]:
     if not flags:
         return []
     if not isinstance(flags, list):
         flags = [flags]
     return [
         {
-            "kind": "legacy_red_flag",
+            "kind": "route_red_flag",
             "level": "blocking_for_route_classification",
-            "target": "legacy_route_audit",
+            "target": "route_audit",
             "message": str(flag),
         }
         for flag in flags
@@ -183,7 +234,7 @@ def prune_low_signal_json(obj: Any) -> Any:
             if key in LOW_SIGNAL_JSON_KEYS:
                 continue
             if key == "red_flags":
-                hints = legacy_red_flags_to_hints(value)
+                hints = route_red_flags_to_hints(value)
                 if hints:
                     out["hints"] = prune_low_signal_json(hints)
                     out["hint_count"] = len(hints)
@@ -306,14 +357,35 @@ def npz_manifest(path: Path) -> dict[str, Any]:
     }
 
 
-def csv_payload(path: Path) -> dict[str, Any]:
-    text = path.read_text(encoding="utf-8")
-    rows = list(csv.DictReader(text.splitlines()))
+def csv_payload(path: Path, *, embed_rows: bool = True, sample_rows: int = 3) -> dict[str, Any]:
+    with path.open("r", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        columns = list(reader.fieldnames or [])
+        if embed_rows:
+            rows = list(reader)
+            return {
+                "path": str(path.relative_to(ROOT)),
+                "file_size": path.stat().st_size,
+                "file_sha256": sha_file(path),
+                "columns": columns,
+                "row_count": len(rows),
+                "rows": rows,
+            }
+
+        samples = []
+        row_count = 0
+        for row in reader:
+            row_count += 1
+            if len(samples) < sample_rows:
+                samples.append(row)
     return {
         "path": str(path.relative_to(ROOT)),
         "file_size": path.stat().st_size,
         "file_sha256": sha_file(path),
-        "rows": rows,
+        "columns": columns,
+        "row_count": row_count,
+        "rows_embedded": False,
+        "sample_rows": samples,
     }
 
 
@@ -619,9 +691,9 @@ def hcycle_game_theory() -> dict[str, Any]:
 
 
 def json_payloads() -> dict[str, Any]:
-    skip = {"d20.json", "certificate.json", "layers/index.json"}
+    skip = {"d20.json", "certificate.json", "data/certificates.json"}
     payloads: dict[str, Any] = {}
-    for path in sorted(ROOT.rglob("*.json")):
+    for path in scanned_files(JSON_SCAN_ROOTS, "*.json"):
         if excluded_scan_path(path):
             continue
         if lineage_archive_path(path):
@@ -847,26 +919,26 @@ def optics_invariants() -> dict[str, Any]:
     }
 
 
-def layer_payloads(registry: dict[str, Any]) -> dict[str, Any]:
+def certificate_payloads(registry: dict[str, Any]) -> dict[str, Any]:
     out = {}
-    for entry in registry.get("layers", []):
+    for entry in registry.get("certificates", []):
         if not isinstance(entry, dict):
             continue
-        layer_id = entry.get("id")
+        certificate_id = entry.get("id")
         rel = entry.get("path")
-        if not isinstance(layer_id, str) or not isinstance(rel, str):
+        if not isinstance(certificate_id, str) or not isinstance(rel, str):
             continue
-        out[layer_id] = prune_low_signal_json(load_json(ROOT / rel))
+        out[certificate_id] = prune_low_signal_json(load_json(ROOT / rel))
     return out
 
 
-def layer_registry() -> dict[str, Any]:
-    path = ROOT / "layers" / "index.json"
+def certificate_registry() -> dict[str, Any]:
+    path = ROOT / "data" / "certificates.json"
     if not path.exists():
-        return {"path": "layers/index.json", "status": "LAYER_REGISTRY_MISSING"}
+        return {"path": "data/certificates.json", "status": "CERTIFICATE_REGISTRY_MISSING"}
     payload = load_json(path)
     return {
-        "path": "layers/index.json",
+        "path": "data/certificates.json",
         "file_sha256": sha_file(path),
         **payload,
     }
@@ -874,7 +946,7 @@ def layer_registry() -> dict[str, Any]:
 
 def csv_payloads() -> dict[str, Any]:
     out = {}
-    for path in sorted(ROOT.rglob("*.csv")):
+    for path in scanned_files(CSV_SCAN_ROOTS, "*.csv"):
         if excluded_scan_path(path):
             continue
         if lineage_archive_path(path):
@@ -884,13 +956,13 @@ def csv_payloads() -> dict[str, Any]:
         rel = path.relative_to(ROOT).as_posix()
         if rel.startswith("generated/"):
             continue
-        out[rel] = csv_payload(path)
+        out[rel] = csv_payload(path, embed_rows=False)
     return out
 
 
 def npz_manifests() -> dict[str, Any]:
     out = {}
-    for path in sorted(ROOT.rglob("*.npz")):
+    for path in scanned_files(NPZ_SCAN_ROOTS, "*.npz"):
         if excluded_scan_path(path):
             continue
         if lineage_archive_path(path):
@@ -903,6 +975,121 @@ def npz_manifests() -> dict[str, Any]:
             continue
         out[rel] = npz_manifest(path)
     return out
+
+
+def halloween_lookup_source_package_registry() -> dict[str, Any]:
+    path = HALLOWEEN_LOOKUP_SOURCE_PACKAGE_CERTIFICATE
+    rel_path = path.relative_to(ROOT).as_posix()
+    if not path.exists():
+        return {
+            "schema": "d20.source_registry.package.v1",
+            "registry_id": "halloween_c2_selector_lookup_witness_source_package",
+            "path": rel_path,
+            "present": False,
+            "status": "D20_SOURCE_PACKAGE_CERTIFICATE_MISSING",
+        }
+
+    certificate = load_json(path)
+    registry_binding = halloween_lookup_source_registry_binding()
+    certificate_payload_sha256 = sha_json(
+        {
+            key: value
+            for key, value in certificate.items()
+            if key != "certificate_sha256"
+        }
+    )
+    checks = certificate.get("checks", {})
+    derived = certificate.get("derived", {})
+    source = certificate.get("source", {})
+    artifacts = certificate.get("artifacts", {})
+    selector_counts = derived.get("selector_counts", {})
+    halloween_split = derived.get("halloween_orbit_split", {})
+    registry_checks = {
+        "certificate_status_is_verified": certificate.get("status")
+        == HALLOWEEN_LOOKUP_SOURCE_PACKAGE_VERIFIED_STATUS,
+        "certificate_file_exists": path.is_file(),
+        "certificate_hash_matches_payload": certificate.get("certificate_sha256")
+        == certificate_payload_sha256,
+        "certificate_reports_all_package_checks_pass": certificate.get("all_checks_pass")
+        is True,
+        "package_uses_only_halloween_source_and_lookup_artifacts": checks.get(
+            "package_uses_only_halloween_source_and_lookup_artifacts"
+        )
+        is True,
+        "selector_counts_are_543_63_480": selector_counts
+        == {"lazy63": 63, "paired_lazy480": 480, "raw543": 543},
+        "halloween_source_split_is_543_63_480": halloween_split
+        == {
+            "fixed63_orbit_count": 63,
+            "paired480_two_cycle_orbit_count": 480,
+            "raw543_orbit_count": 543,
+        },
+        "source_key_is_halloween_orbits_csv": sorted(source.keys())
+        == ["halloween_actual_c2_kernel_orbits_csv"],
+        "artifact_keys_are_lookup_tables_and_manifest": sorted(artifacts.keys())
+        == [
+            "manifest",
+            "selector_lookup_witness_table_csv",
+            "selector_lookup_witness_table_json",
+        ],
+        "source_registry_binding_checks_pass": registry_binding.get(
+            "all_checks_pass"
+        )
+        is True,
+    }
+    return {
+        "schema": "d20.source_registry.package.v1",
+        "registry_id": "halloween_c2_selector_lookup_witness_source_package",
+        "present": True,
+        "status": "D20_SOURCE_PACKAGE_REGISTERED"
+        if all(registry_checks.values())
+        else "D20_SOURCE_PACKAGE_NEEDS_REVIEW",
+        "role": "selected_witness_source_for_c2_selector_lookup",
+        "package_name": certificate.get("package_name"),
+        "package_dir": certificate.get("package_dir"),
+        "certificate": {
+            "path": rel_path,
+            "file_sha256": sha_file(path),
+            "payload_sha256": certificate_payload_sha256,
+            "embedded_certificate_sha256": certificate.get("certificate_sha256"),
+            "status": certificate.get("status"),
+            "package_checks_pass": certificate.get("all_checks_pass") is True,
+        },
+        "source_registry_binding": registry_binding,
+        "source": source,
+        "artifacts": artifacts,
+        "derived": {
+            "row_count": derived.get("row_count"),
+            "selector_count": derived.get("selector_count"),
+            "selector_counts": selector_counts,
+            "selector_order": derived.get("selector_order"),
+            "halloween_orbit_split": halloween_split,
+        },
+        "checks": registry_checks,
+    }
+
+
+def source_registry() -> dict[str, Any]:
+    packages = {
+        "halloween_c2_selector_lookup_witness_source_package": (
+            halloween_lookup_source_package_registry()
+        )
+    }
+    registry_checks = {
+        "halloween_lookup_source_package_registered": packages[
+            "halloween_c2_selector_lookup_witness_source_package"
+        ].get("status")
+        == "D20_SOURCE_PACKAGE_REGISTERED",
+    }
+    return {
+        "schema": "d20.source_registry.v1",
+        "status": "D20_SOURCE_REGISTRY_BUILT"
+        if all(registry_checks.values())
+        else "D20_SOURCE_REGISTRY_NEEDS_REVIEW",
+        "package_count": len(packages),
+        "packages": packages,
+        "checks": registry_checks,
+    }
 
 
 def data_registry() -> dict[str, Any]:
@@ -937,11 +1124,21 @@ def data_registry() -> dict[str, Any]:
                     suffix = file_path.suffix.lower() or "<none>"
                     suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
             required = entry.get("required_files", [])
-            missing_required = [
-                name
-                for name in required
-                if isinstance(name, str) and not (base / name).exists()
-            ] if isinstance(required, list) else []
+            missing_required = []
+            if isinstance(required, list):
+                for name in required:
+                    if not isinstance(name, str):
+                        continue
+                    exists = (base / name).exists()
+                    if not exists and domain_id == "raw_core_seeds" and name in {
+                        "Halloween.npz",
+                        "T_985.npz",
+                        "tensor_sparse.npz",
+                    }:
+                        resolved = ROOT / raw_tensor_relpath()
+                        exists = resolved.exists() and resolved.parent == base
+                    if not exists:
+                        missing_required.append(name)
             observations[domain_id] = {
                 "path": rel,
                 "present": base.is_dir(),
@@ -953,7 +1150,7 @@ def data_registry() -> dict[str, Any]:
     data_root = ROOT / "data"
     top_dirs = sorted(p.name for p in data_root.iterdir() if p.is_dir())
     top_files = sorted(p.name for p in data_root.iterdir() if p.is_file())
-    return {
+    registry = {
         "path": "data/index.json",
         "file_sha256": sha_file(path),
         "present": True,
@@ -962,6 +1159,8 @@ def data_registry() -> dict[str, Any]:
         "domain_observations": observations,
         **payload,
     }
+    registry["source_registry"] = source_registry()
+    return registry
 
 
 def certified_evidence_invariants() -> dict[str, Any]:
@@ -1507,10 +1706,10 @@ def d20_genome() -> dict[str, Any]:
 
 
 def derive() -> dict[str, Any]:
-    zero_axiom = derive_zero_axiom_coorient()
+    zero_axiom = zero_axiom_coorient_payload()
     universal_uniqueness = universal_integral_uniqueness_payload()
     relator_profile = coorient_relator_profile_theorem()
-    registry = layer_registry()
+    registry = certificate_registry()
     result: dict[str, Any] = {
         "schema": "d20.object",
         "status": "D20_CERTIFIED",
@@ -1542,8 +1741,8 @@ def derive() -> dict[str, Any]:
         "reproducibility_evidence": reproducibility_evidence(),
         "coorient_seed": coorient_seed_invariants(),
         "final_investigation": final_investigation_status(zero_axiom, universal_uniqueness),
-        "layer_registry": registry,
-        "layer_certificates": layer_payloads(registry),
+        "certificate_registry": registry,
+        "certificates": certificate_payloads(registry),
         "json_invariants": json_payloads(),
         "csv_invariants": csv_payloads(),
         "npz_array_manifests": npz_manifests(),

@@ -1,0 +1,1670 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "3a7f76d0a62370c43e6bd4e946a78f18ce2b60ac680353e8888efe76d7acdf05",
+  "checks": {
+    "affine_stabilizer_order_is_384": true,
+    "all_affine_translation_parts_are_complement_patterns": true,
+    "gate_complement_is_six_point_prism": true,
+    "gate_support_matches_alignment_radicals": true,
+    "group_decomposition_orders_match": true,
+    "linear_stabilizer_order_is_64": true,
+    "orbit_structure_matches_prism_gate": true,
+    "pure_translation_stabilizer_is_x7_flip": true,
+    "rank10_tenfold_alignment_is_certified": true,
+    "support_is_full_affine_rank_but_not_affine_subspace": true
+  },
+  "claim": "The full-exposure radical gate with fixed core 83 and condition x2 or (x3 and x5) has affine stabilizer order 384 and linear stabilizer order 64 on the four moving radical axes. Its six-point complement is a prism {0,x3,x5} x F2_x7 in the hyperplane x2=0; the stabilizer is the corresponding complement-prism stabilizer, extended by transverse x2 shears.",
+  "definition": {
+    "affine_stabilizer": "All invertible affine transformations of F2^4 preserving the ten gate-support points.",
+    "complement_prism": "The six excluded points {x2=0, not(x3 and x5)} = {0,x3,x5} x F2_x7.",
+    "linear_stabilizer": "The zero-translation subgroup of the affine stabilizer.",
+    "local_gate": "A point in F2^4 with coordinates [x2,x3,x5,x7] is full-exposure iff x2 or (x3 and x5)."
+  },
+  "derived": {
+    "affine_stabilizer_rows_sha256": "efd85ca56708f6c01afa24243279c1da2ccb00bc7fe0f87ce58a5ac1e11f6d8a",
+    "affine_stabilizer_sample_rows": [
+      {
+        "linear_columns": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "translation": 0,
+        "translation_pattern": "0000"
+      },
+      {
+        "linear_columns": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "translation": 8,
+        "translation_pattern": "0001"
+      },
+      {
+        "linear_columns": [
+          1,
+          2,
+          6,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          0,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          8,
+          9
+        ],
+        "translation": 2,
+        "translation_pattern": "0100"
+      },
+      {
+        "linear_columns": [
+          1,
+          2,
+          6,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          6,
+          5,
+          7,
+          8,
+          9,
+          1,
+          0,
+          2,
+          3,
+          4
+        ],
+        "translation": 10,
+        "translation_pattern": "0101"
+      },
+      {
+        "linear_columns": [
+          1,
+          2,
+          12,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          1,
+          7,
+          8,
+          9,
+          5,
+          6,
+          2,
+          3,
+          4
+        ],
+        "translation": 0,
+        "translation_pattern": "0000"
+      },
+      {
+        "linear_columns": [
+          1,
+          2,
+          12,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          5,
+          6,
+          2,
+          3,
+          4,
+          0,
+          1,
+          7,
+          8,
+          9
+        ],
+        "translation": 8,
+        "translation_pattern": "0001"
+      },
+      {
+        "linear_columns": [
+          1,
+          2,
+          14,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          0,
+          7,
+          8,
+          9,
+          6,
+          5,
+          2,
+          3,
+          4
+        ],
+        "translation": 2,
+        "translation_pattern": "0100"
+      },
+      {
+        "linear_columns": [
+          1,
+          2,
+          14,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          6,
+          5,
+          2,
+          3,
+          4,
+          1,
+          0,
+          7,
+          8,
+          9
+        ],
+        "translation": 10,
+        "translation_pattern": "0101"
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          2,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          9
+        ],
+        "translation": 0,
+        "translation_pattern": "0000"
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          2,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          5,
+          7,
+          6,
+          8,
+          9,
+          0,
+          2,
+          1,
+          3,
+          4
+        ],
+        "translation": 8,
+        "translation_pattern": "0001"
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          6,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          2,
+          0,
+          1,
+          3,
+          4,
+          7,
+          5,
+          6,
+          8,
+          9
+        ],
+        "translation": 4,
+        "translation_pattern": "0010"
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          6,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          7,
+          5,
+          6,
+          8,
+          9,
+          2,
+          0,
+          1,
+          3,
+          4
+        ],
+        "translation": 12,
+        "translation_pattern": "0011"
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          10,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          2,
+          6,
+          8,
+          9,
+          5,
+          7,
+          1,
+          3,
+          4
+        ],
+        "translation": 0,
+        "translation_pattern": "0000"
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          10,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          5,
+          7,
+          1,
+          3,
+          4,
+          0,
+          2,
+          6,
+          8,
+          9
+        ],
+        "translation": 8,
+        "translation_pattern": "0001"
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          14,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          2,
+          0,
+          6,
+          8,
+          9,
+          7,
+          5,
+          1,
+          3,
+          4
+        ],
+        "translation": 4,
+        "translation_pattern": "0010"
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          14,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          7,
+          5,
+          1,
+          3,
+          4,
+          2,
+          0,
+          6,
+          8,
+          9
+        ],
+        "translation": 12,
+        "translation_pattern": "0011"
+      }
+    ],
+    "complement_prism_witness": {
+      "affine_hull_dimension": 3,
+      "affine_hull_equation": "x2 = 0",
+      "base_point_count": 3,
+      "base_triangle_patterns_x3x5": [
+        "00",
+        "10",
+        "01"
+      ],
+      "description": "The excluded six-point set is {x2=0} cap not(x3 and x5), equivalently {0,x3,x5} x F2_x7.",
+      "fiber_axis": "x7",
+      "fiber_point_count": 2,
+      "product_point_count": 6
+    },
+    "group_decomposition": {
+      "affine_order_factorization": "384 = 8 transverse shears * 48 complement-prism affine stabilizers",
+      "complement_orbits": [
+        {
+          "orbit_patterns": [
+            "0000",
+            "0100",
+            "0010",
+            "0001",
+            "0101",
+            "0011"
+          ],
+          "orbit_size": 6,
+          "start_pattern": "0000"
+        }
+      ],
+      "hyperplane_affine_prism_stabilizer": "order 48 = 8 affine x7-shears over the base triangle times S3 on {0,x3,x5}",
+      "hyperplane_linear_prism_stabilizer": "order 8 = 4 linear x7-shears over span{x3,x5} times S2 swapping x3 and x5",
+      "linear_order_factorization": "64 = 8 transverse shears * 8 complement-prism linear stabilizers",
+      "support_orbits": [
+        {
+          "orbit_patterns": [
+            "1000",
+            "1100",
+            "1010",
+            "1110",
+            "1001",
+            "1101",
+            "1011",
+            "1111"
+          ],
+          "orbit_size": 8,
+          "start_pattern": "1000"
+        },
+        {
+          "orbit_patterns": [
+            "0110",
+            "0111"
+          ],
+          "orbit_size": 2,
+          "start_pattern": "0110"
+        }
+      ],
+      "transverse_shear_group": "C2^3, sending x2-axis representatives to x2 plus any vector in the complement hyperplane"
+    },
+    "linear_stabilizer_rows_sha256": "884ec66450b495577f72ae0b9e5c868551a889ca64f65eb9d62b05637b41c44d",
+    "linear_stabilizer_sample_rows": [
+      {
+        "linear_columns": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "linear_columns": [
+          1,
+          2,
+          12,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          1,
+          7,
+          8,
+          9,
+          5,
+          6,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          2,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          9
+        ]
+      },
+      {
+        "linear_columns": [
+          1,
+          4,
+          10,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          2,
+          6,
+          8,
+          9,
+          5,
+          7,
+          1,
+          3,
+          4
+        ]
+      },
+      {
+        "linear_columns": [
+          1,
+          10,
+          4,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          6,
+          2,
+          8,
+          9,
+          5,
+          1,
+          7,
+          3,
+          4
+        ]
+      },
+      {
+        "linear_columns": [
+          1,
+          10,
+          12,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          6,
+          7,
+          3,
+          4,
+          5,
+          1,
+          2,
+          8,
+          9
+        ]
+      },
+      {
+        "linear_columns": [
+          1,
+          12,
+          2,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          7,
+          1,
+          8,
+          9,
+          5,
+          2,
+          6,
+          3,
+          4
+        ]
+      },
+      {
+        "linear_columns": [
+          1,
+          12,
+          10,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          0,
+          7,
+          6,
+          3,
+          4,
+          5,
+          2,
+          1,
+          8,
+          9
+        ]
+      },
+      {
+        "linear_columns": [
+          3,
+          2,
+          4,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          0,
+          4,
+          3,
+          2,
+          6,
+          5,
+          9,
+          8,
+          7
+        ]
+      },
+      {
+        "linear_columns": [
+          3,
+          2,
+          12,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          0,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "linear_columns": [
+          3,
+          4,
+          2,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          4,
+          0,
+          3,
+          2,
+          6,
+          9,
+          5,
+          8,
+          7
+        ]
+      },
+      {
+        "linear_columns": [
+          3,
+          4,
+          10,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          4,
+          5,
+          8,
+          7,
+          6,
+          9,
+          0,
+          3,
+          2
+        ]
+      },
+      {
+        "linear_columns": [
+          3,
+          10,
+          4,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          5,
+          4,
+          8,
+          7,
+          6,
+          0,
+          9,
+          3,
+          2
+        ]
+      },
+      {
+        "linear_columns": [
+          3,
+          10,
+          12,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          5,
+          9,
+          3,
+          2,
+          6,
+          0,
+          4,
+          8,
+          7
+        ]
+      },
+      {
+        "linear_columns": [
+          3,
+          12,
+          2,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          9,
+          0,
+          8,
+          7,
+          6,
+          4,
+          5,
+          3,
+          2
+        ]
+      },
+      {
+        "linear_columns": [
+          3,
+          12,
+          10,
+          8
+        ],
+        "linear_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_permutation": [
+          1,
+          9,
+          5,
+          3,
+          2,
+          6,
+          4,
+          0,
+          8,
+          7
+        ]
+      }
+    ],
+    "stabilizer_summary": {
+      "affine_stabilizer_order": 384,
+      "all_affine_translation_patterns": [
+        "0000",
+        "0100",
+        "0010",
+        "0001",
+        "0101",
+        "0011"
+      ],
+      "complement_affine_rank": 3,
+      "complement_orbit_sizes": [
+        6
+      ],
+      "complement_patterns": [
+        "0000",
+        "0100",
+        "0010",
+        "0001",
+        "0101",
+        "0011"
+      ],
+      "complement_size": 6,
+      "hyperplane_affine_prism_stabilizer_order": 48,
+      "hyperplane_linear_prism_stabilizer_order": 8,
+      "linear_stabilizer_order": 64,
+      "local_coordinate_order": [
+        "x2",
+        "x3",
+        "x5",
+        "x7"
+      ],
+      "pure_translation_patterns": [
+        "0000",
+        "0001"
+      ],
+      "pure_translation_stabilizer_order": 2,
+      "support_affine_rank": 4,
+      "support_orbit_sizes": [
+        8,
+        2
+      ],
+      "support_patterns": [
+        "1000",
+        "1100",
+        "1010",
+        "0110",
+        "1110",
+        "1001",
+        "1101",
+        "1011",
+        "0111",
+        "1111"
+      ],
+      "support_size": 10,
+      "transverse_shear_order": 8
+    }
+  },
+  "inputs": {
+    "full_exposure_rank10_tenfold_alignment_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_rank10_tenfold_alignment/report.json",
+      "sha256": "d9b605479f5c8e0f788f8c4def28040f34acb08a20729f920401f8d1854d4e8f"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This classifies the four-moving-axis radical gate only. It does not yet lift every gate stabilizer element to a symmetry of the full packet propagation graph with charge-frame labels.",
+    "what_this_proves": [
+      "the ten full-exposure radical anchors have a nontrivial 384-element affine symmetry group",
+      "the hidden organizing object is the six-point complement prism, not a ten-axis coordinate basis",
+      "the gate splits the ten support points into two stabilizer orbits of sizes 8 and 2",
+      "the x7 flip is the only pure translation symmetry of the gate"
+    ]
+  },
+  "next_highest_yield_item": "Lift the 384 radical-gate affine stabilizers to the full packet propagation graph and test which ones preserve charge-frame, gamma8, and action labels.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_radical_gate_stabilizer",
+  "status": "D20_FULL_EXPOSURE_RADICAL_GATE_STABILIZER_CERTIFIED"
+}

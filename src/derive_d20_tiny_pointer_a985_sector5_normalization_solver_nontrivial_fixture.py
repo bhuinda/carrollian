@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -91,7 +91,7 @@ def candidate_rows_from_vectors(vectors: np.ndarray) -> list[dict[str, Any]]:
         for relation in support:
             rows.append(
                 {
-                    "candidate_unit_label": f"v_legacy[5;{target_i},{target_j}]",
+                    "candidate_unit_label": f"v_sector[5;{target_i},{target_j}]",
                     "local_unit_column": col,
                     "relation_alpha": int(relation),
                     "coefficient_mod_1000003": int(vectors[int(relation), col] % FIELD_PRIME),
@@ -112,7 +112,7 @@ def coordinate_rows(coords: np.ndarray) -> list[dict[str, Any]]:
             source_i, source_j = divmod(source_col, 2)
             rows.append(
                 {
-                    "candidate_unit_label": f"v_legacy[5;{target_i},{target_j}]",
+                    "candidate_unit_label": f"v_sector[5;{target_i},{target_j}]",
                     "target_i": target_i,
                     "target_j": target_j,
                     "source_i": source_i,
@@ -147,7 +147,7 @@ def residual_rows(candidates: np.ndarray, reconstructed: np.ndarray) -> list[dic
         col_residual = residual[:, col]
         rows.append(
             {
-                "candidate_unit_label": f"v_legacy[5;{target_i},{target_j}]",
+                "candidate_unit_label": f"v_sector[5;{target_i},{target_j}]",
                 "target_i": target_i,
                 "target_j": target_j,
                 "max_residual_mod_1000003": int(np.max(col_residual)),
@@ -224,7 +224,7 @@ def markdown_report(report: dict[str, Any]) -> str:
         f"Status: `{report['status']}`\n\n"
         "This verifies the sector-5 GL2 solver on a non-identity fixture generated from the "
         "certified raw matrix-unit chart. It proves the solver handles nontrivial basis changes, "
-        "but remains a fixture rather than an independent legacy basis.\n\n"
+        "but remains a fixture rather than an independent source-sector basis.\n\n"
         "## Checks\n\n"
         f"{checks}\n\n"
         f"Next: {report['next_highest_yield_item']}\n"
@@ -309,7 +309,7 @@ def build_nontrivial_fixture() -> dict[str, Any]:
             "with zero raw-coordinate residuals."
         ),
         "boundary": (
-            "This remains a generated fixture, not an independent legacy off-diagonal matrix-unit source."
+            "This remains a generated fixture, not an independent source-sector off-diagonal matrix-unit source."
         ),
         "inputs": {
             "sector5_normalization_pilot": {
@@ -420,3 +420,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

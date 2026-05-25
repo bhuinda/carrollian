@@ -1,0 +1,74 @@
+{
+  "all_checks_pass": true,
+  "boundary": "This is a repo-native constructed A985-side detector. It does not assert that an external Burning_static_fields artifact uses the same generator names.",
+  "certificate_sha256": "064ad34cf1c26e5830eab6112dae51e4d40b8d7ab371b82c537a311930911c7b",
+  "checks": {
+    "alignment_certified": true,
+    "all_zero_detector_is_unique_sector33": true,
+    "any_zero_detector_is_unique_sector33": true,
+    "constructed_representative_certified": true,
+    "detector_generators_are_expected": true,
+    "detector_generators_have_exact_sector33_kernel": true,
+    "detector_table_has_all_39_source_sectors": true,
+    "full_sector_match_certified": true,
+    "perennial_join_key_emitted_when_available": true,
+    "sector33_block_dimension_is_two": true,
+    "sector33_source_to_raw_match_recorded": true,
+    "sector33_unique_public_zero_certified": true
+  },
+  "claim": "The constructed Burning/A985 frame-section traces provide a reusable detector for source sector 33: the selected constructed quotient generators vanish exactly on source sector 33, so either their individual vanishing or their joint vanishing selects that sector.",
+  "derived": {
+    "detected_by_all_zero": [
+      33
+    ],
+    "detected_by_any_zero": [
+      33
+    ],
+    "detector_generators": [
+      "z2_a12_parity",
+      "z4_a42_clock"
+    ],
+    "perennial_join_key": {
+      "detector_table_rows_resolved": 39,
+      "generator_set_columns_added": [
+        "zero_sectors_perennial_ids"
+      ],
+      "map_available": true
+    },
+    "sector33": {
+      "block_dimension": 2,
+      "raw_sector": 19,
+      "sector_label": 33,
+      "source_sector": 33,
+      "z2_a12_parity_trace_mod": 0,
+      "z4_a42_clock_trace_mod": 0
+    },
+    "tables": {
+      "detector_generators": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_sector33_detector/burning_static_sector33_detector_generators.csv",
+      "detector_table": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_sector33_detector/burning_static_sector33_detector_table.csv"
+    }
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "constructed_representative": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_constructed_representative/report.json",
+      "sha256": "8d4cbdb50ad9f314438a0a4d4b216542d30d66b931dc13baadd1e698f1ecabba"
+    },
+    "full_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+      "sha256": "e9a92a1e259cd6aca8c588a7284d30a8752d345678df293cb5f9ad81dde87459"
+    },
+    "public_zero_alignment": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/report.json",
+      "sha256": "897e0f52c6b913a4562ea9b99a402346922d38f559b01f6933ae30e8b9801a0e"
+    },
+    "sector33_unique_public_zero": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
+      "sha256": "72d94a621f2dc84f7407673a676ba1cf46651f4284e91332b82a14bd0788f1c8"
+    }
+  },
+  "next_highest_yield_item": "Use this sector-33 detector as the acceptance test for any future imported Burning_static_fields representative rows, then attach accepted rows to the source-sector matching ledger.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_static_sector33_detector.source_drop",
+  "status": "D20_TINY_POINTER_A985_BURNING_STATIC_SECTOR33_DETECTOR_CERTIFIED"
+}

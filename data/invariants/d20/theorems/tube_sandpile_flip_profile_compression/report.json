@@ -1,0 +1,3831 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bd4dc73144c7d327cbd9bc53432797806c08acf7b05dba16f0c44f0c9bd12283",
+  "checks": {
+    "automorphism_count_is_120": true,
+    "combined_order_partition_covers_64_cosets": true,
+    "combined_order_profile_class_count_is_48": true,
+    "combined_order_size_histogram_matches": true,
+    "cover_span_coset_is_singleton_under_combined_order_profile": true,
+    "fiber_order_partition_covers_64_cosets": true,
+    "fiber_order_profile_class_count_is_15": true,
+    "measured_profile_class_count_is_58": true,
+    "only_identity_preserves_five_cover_set": true,
+    "only_identity_preserves_five_cover_span": true,
+    "only_identity_preserves_flip_generator_set": true,
+    "only_identity_preserves_flip_quotient": true,
+    "pair_order_partition_covers_64_cosets": true,
+    "pair_order_profile_class_count_is_30": true,
+    "public_automorphism_compression_is_trivial": true,
+    "public_boundary_source_is_certified": true,
+    "source_coset_classifier_is_certified": true
+  },
+  "claim": "The full public automorphism group does not nontrivially compress the 64 flip-coset quotient: only the identity preserves the flip-generator set and the five-cover span. Sandpile-order observables give a canonical finite compression: pair-order profiles give 30 classes, fiber-order profiles give 15 classes, and the combined order profile gives 48 classes.",
+  "definition": {
+    "combined_order_profile": "The canonical sandpile-order profile keeps grade-flip pair count, exact fiber count, pair-level sandpile class-order histogram, and fiber-level sandpile class-order histogram. It ignores concrete coset, fiber, class, and delta labels.",
+    "public_automorphism_test": "Enumerate the 120 public graph automorphisms, induce each action on the 11-dimensional residue space, and test whether it preserves the 392 flip generators and the rank-5 five-cover span."
+  },
+  "derived": {
+    "automorphism_compression": {
+      "action_rows_sha256": "4b2c0ef69e66a90e01fa032c4aa83a9055986188e474cb626dad62b951df827c",
+      "automorphism_count": 120,
+      "first_flip_set_failure": {
+        "automorphism_id": 1,
+        "basis_image_masks": [
+          16,
+          2,
+          512,
+          1034,
+          1,
+          64,
+          32,
+          128,
+          256,
+          4,
+          1024
+        ],
+        "image_delta": 642,
+        "image_delta_bits": [
+          1,
+          7,
+          9
+        ],
+        "source_delta": 134,
+        "source_delta_bits": [
+          1,
+          2,
+          7
+        ],
+        "vertex_permutation": [
+          0,
+          1,
+          6,
+          17,
+          11,
+          5,
+          2,
+          14,
+          16,
+          15,
+          13,
+          4,
+          19,
+          10,
+          7,
+          9,
+          8,
+          3,
+          18,
+          12
+        ]
+      },
+      "five_cover_set_preserver_ids": [
+        0
+      ],
+      "five_cover_span_preserver_ids": [
+        0
+      ],
+      "flip_generator_preserver_ids": [
+        0
+      ],
+      "flip_quotient_preserver_ids": [
+        0
+      ],
+      "public_automorphism_compression_class_count": 64,
+      "public_automorphism_compression_is_trivial": true
+    },
+    "combined_order_profile": {
+      "class_count": 48,
+      "class_rows": [
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": true,
+          "coset_indices": [
+            0
+          ],
+          "profile_class_index": 0,
+          "profile_key": {
+            "exact_divisor_fiber_count": 154,
+            "fiber_sandpile_class_order_histogram": {
+              "10": 1,
+              "15": 8,
+              "2": 1,
+              "30": 140,
+              "6": 4
+            },
+            "grade_flip_pair_count": 271,
+            "pair_sandpile_class_order_histogram": {
+              "10": 1,
+              "15": 18,
+              "2": 1,
+              "30": 246,
+              "6": 5
+            }
+          },
+          "profile_key_sha256": "00c373960ad3ffbf735e1c93ef58c5ee625412d1ce2c877a31aa46061f32728d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            1
+          ],
+          "profile_class_index": 1,
+          "profile_key": {
+            "exact_divisor_fiber_count": 6,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 6
+            },
+            "grade_flip_pair_count": 10,
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "096bcba46d4de5159b88b611c46ad01b17301dd5cb02b91cfca4f6dd8a7c96e8"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            2
+          ],
+          "profile_class_index": 2,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 17,
+            "pair_sandpile_class_order_histogram": {
+              "30": 17
+            }
+          },
+          "profile_key_sha256": "d8de6f07bd57845f73440ff05515e00ae9836f54f564aa8c17156cea74ec2c98"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            3,
+            10,
+            13
+          ],
+          "profile_class_index": 3,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 8,
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "00a1f39044e2ffc5a370f7e0b1cf5cbd79ace7d6ae63f68020ee570d379358e9"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            4,
+            55
+          ],
+          "profile_class_index": 4,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 12,
+            "pair_sandpile_class_order_histogram": {
+              "30": 12
+            }
+          },
+          "profile_key_sha256": "79b7a86959953a3dc732613e0d39c21832bb9255ce24c6ca54b3b1194019566d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            5
+          ],
+          "profile_class_index": 5,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 16,
+            "pair_sandpile_class_order_histogram": {
+              "30": 16
+            }
+          },
+          "profile_key_sha256": "1e3045affa073e118b0890db4b5b74b2ea6e856891d30bc8f773dd222cd90865"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            6,
+            44
+          ],
+          "profile_class_index": 6,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 6,
+            "pair_sandpile_class_order_histogram": {
+              "30": 6
+            }
+          },
+          "profile_key_sha256": "68f3dc1077d96ed76cc315c11e60a674439aeb57263124fa4cf9098f7b5d8875"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            7
+          ],
+          "profile_class_index": 7,
+          "profile_key": {
+            "exact_divisor_fiber_count": 18,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 18
+            },
+            "grade_flip_pair_count": 66,
+            "pair_sandpile_class_order_histogram": {
+              "30": 66
+            }
+          },
+          "profile_key_sha256": "8730d58fe479badd47ddb7e72baee256a4882f0819658fa4a0c48d455a6b9eee"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            8
+          ],
+          "profile_class_index": 8,
+          "profile_key": {
+            "exact_divisor_fiber_count": 10,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 10
+            },
+            "grade_flip_pair_count": 24,
+            "pair_sandpile_class_order_histogram": {
+              "30": 24
+            }
+          },
+          "profile_key_sha256": "c0ddb8e3e07f1642edf0125c874a20bd34ce616e272b3f10353b8e81d3ab81be"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            9
+          ],
+          "profile_class_index": 9,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 1,
+            "pair_sandpile_class_order_histogram": {
+              "30": 1
+            }
+          },
+          "profile_key_sha256": "351a2f477cdb1684263f92931d19c2067b8a61a4ea3c07e360fff230b427765b"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            11
+          ],
+          "profile_class_index": 10,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 18,
+            "pair_sandpile_class_order_histogram": {
+              "30": 18
+            }
+          },
+          "profile_key_sha256": "bd11147ad687e097aaa81e80567e3f889d547d211dcd6147d3ee1bc6616b40f8"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            12
+          ],
+          "profile_class_index": 11,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 15,
+            "pair_sandpile_class_order_histogram": {
+              "30": 15
+            }
+          },
+          "profile_key_sha256": "6b7d9f20335c6bf39492bbb6bd2b178e3ec69e493ea336e9f1a8dd25f7fe0559"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            14,
+            24
+          ],
+          "profile_class_index": 12,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 4,
+            "pair_sandpile_class_order_histogram": {
+              "30": 4
+            }
+          },
+          "profile_key_sha256": "7afd749df080d73e664eba7db4ecac08b75c46d7dea536bc6606ae21bc9596d3"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            15
+          ],
+          "profile_class_index": 13,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 12,
+            "pair_sandpile_class_order_histogram": {
+              "30": 12
+            }
+          },
+          "profile_key_sha256": "5ab9c7aa64544e63755c0d2509c66ac54c3f0b6e12d68327805fe571b5308666"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            16,
+            57
+          ],
+          "profile_class_index": 14,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 5,
+            "pair_sandpile_class_order_histogram": {
+              "30": 5
+            }
+          },
+          "profile_key_sha256": "3519ea7bfdf9a743d1183ccb27932a9ea23e1b5f1bbb3cca527932a9b909ed54"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            17
+          ],
+          "profile_class_index": 15,
+          "profile_key": {
+            "exact_divisor_fiber_count": 12,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 11,
+              "6": 1
+            },
+            "grade_flip_pair_count": 27,
+            "pair_sandpile_class_order_histogram": {
+              "30": 26,
+              "6": 1
+            }
+          },
+          "profile_key_sha256": "bbf09515d750f981e1b500cef85faee57344eb724e62c82b57f9926dae708a9a"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            18
+          ],
+          "profile_class_index": 16,
+          "profile_key": {
+            "exact_divisor_fiber_count": 12,
+            "fiber_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 9,
+              "6": 1
+            },
+            "grade_flip_pair_count": 43,
+            "pair_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 40,
+              "6": 1
+            }
+          },
+          "profile_key_sha256": "6474a2dfe0715710745a073d0fb85dde3bfee5dbb697695ffd8dd45a87b2631b"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            19
+          ],
+          "profile_class_index": 17,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 11,
+            "pair_sandpile_class_order_histogram": {
+              "30": 11
+            }
+          },
+          "profile_key_sha256": "84f3b5fd640c8bbe66ee72af7bffbb9a1ff4ab49e8a4a8cc25bd3682cb0c75a8"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            20
+          ],
+          "profile_class_index": 18,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 10,
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "7599cdf06019f428a97c6add0590855a2bc26b899a28a381f4f4e31eb50be4d4"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            21
+          ],
+          "profile_class_index": 19,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 29,
+            "pair_sandpile_class_order_histogram": {
+              "30": 29
+            }
+          },
+          "profile_key_sha256": "43b68b749d2f25eba093432b66b440144c1e77edd7c7db8cb581dbcebd363d4d"
+        },
+        {
+          "class_size": 4,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            22,
+            37,
+            42,
+            53
+          ],
+          "profile_class_index": 20,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 15,
+            "pair_sandpile_class_order_histogram": {
+              "30": 15
+            }
+          },
+          "profile_key_sha256": "c3113ed940f1bfd4aa034d9251052820d216564cd14e6f1141334e22a5f2bcb3"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            23,
+            31,
+            47
+          ],
+          "profile_class_index": 21,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 4,
+            "pair_sandpile_class_order_histogram": {
+              "30": 4
+            }
+          },
+          "profile_key_sha256": "e7662a60effec419ff08c1d1e565d762bfa7ad387d138256f4e8f22df13283d1"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            25
+          ],
+          "profile_class_index": 22,
+          "profile_key": {
+            "exact_divisor_fiber_count": 32,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 32
+            },
+            "grade_flip_pair_count": 63,
+            "pair_sandpile_class_order_histogram": {
+              "30": 63
+            }
+          },
+          "profile_key_sha256": "9181d40ce28800ed00456ef81837bb078ae3bc4ea92def78b6a0d9e9b073070f"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            26,
+            40
+          ],
+          "profile_class_index": 23,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 8,
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "c46fd3c59cec6e2780741dc09f33ea521f33aac3e467f7f2965bdc4c938915c4"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            27,
+            61
+          ],
+          "profile_class_index": 24,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 7,
+            "pair_sandpile_class_order_histogram": {
+              "30": 7
+            }
+          },
+          "profile_key_sha256": "b8723b0a71ee6122a183ec79c63fd1e23485d7a69f1f37a2684eca89dc36d9da"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            28
+          ],
+          "profile_class_index": 25,
+          "profile_key": {
+            "exact_divisor_fiber_count": 6,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 6
+            },
+            "grade_flip_pair_count": 14,
+            "pair_sandpile_class_order_histogram": {
+              "30": 14
+            }
+          },
+          "profile_key_sha256": "b0d93aa86992b1570a643b77eb226b8a4c23f0f5e939d21dfbaa2041f948677e"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            29
+          ],
+          "profile_class_index": 26,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 10,
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "b92f328ac90cda22254e05499202fdbbedc7bae1de0f5331564407434fe24acb"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            30
+          ],
+          "profile_class_index": 27,
+          "profile_key": {
+            "exact_divisor_fiber_count": 27,
+            "fiber_sandpile_class_order_histogram": {
+              "15": 1,
+              "2": 1,
+              "30": 25
+            },
+            "grade_flip_pair_count": 57,
+            "pair_sandpile_class_order_histogram": {
+              "15": 9,
+              "2": 1,
+              "30": 47
+            }
+          },
+          "profile_key_sha256": "03e22e8d87532df7e5f8232921a2b794515ba75319bb8ab613eef9408583da55"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            32
+          ],
+          "profile_class_index": 28,
+          "profile_key": {
+            "exact_divisor_fiber_count": 14,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 14
+            },
+            "grade_flip_pair_count": 40,
+            "pair_sandpile_class_order_histogram": {
+              "30": 40
+            }
+          },
+          "profile_key_sha256": "80d37151997a293229eaed3c87a6c06b4f1a3c3ea4de583313d13623f357333d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            33
+          ],
+          "profile_class_index": 29,
+          "profile_key": {
+            "exact_divisor_fiber_count": 22,
+            "fiber_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 20
+            },
+            "grade_flip_pair_count": 49,
+            "pair_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 47
+            }
+          },
+          "profile_key_sha256": "c8e5deba628ffbeec707030535662fce019191a7d8bbe1706aa5a136cb1f3ddf"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            34
+          ],
+          "profile_class_index": 30,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 16,
+            "pair_sandpile_class_order_histogram": {
+              "30": 16
+            }
+          },
+          "profile_key_sha256": "223419ceca8f0243c1329ef44108c25165900a0f80f7a9968b580c55b2bc7a17"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            35
+          ],
+          "profile_class_index": 31,
+          "profile_key": {
+            "exact_divisor_fiber_count": 6,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 6
+            },
+            "grade_flip_pair_count": 16,
+            "pair_sandpile_class_order_histogram": {
+              "30": 16
+            }
+          },
+          "profile_key_sha256": "0e89ef0b1b03ca78b9106898896a767a21bf572013505607c91c5e2fb26c50c7"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            36
+          ],
+          "profile_class_index": 32,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 10,
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "350d5b08d728fbf6a3ff0dfe71896c737225cdfb006503beb17641f68b4697d2"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            38
+          ],
+          "profile_class_index": 33,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 22,
+            "pair_sandpile_class_order_histogram": {
+              "30": 22
+            }
+          },
+          "profile_key_sha256": "9f9214bf25e80ca267df75e1d67770e0892feb2ba52def25971363680d4ada61"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            39
+          ],
+          "profile_class_index": 34,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 21,
+            "pair_sandpile_class_order_histogram": {
+              "30": 21
+            }
+          },
+          "profile_key_sha256": "79466fd1745a47bbc58886604cac68deb940ab682fd336284eb1d3928ab89f21"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            41,
+            60
+          ],
+          "profile_class_index": 35,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 11,
+            "pair_sandpile_class_order_histogram": {
+              "30": 11
+            }
+          },
+          "profile_key_sha256": "6e76206a57997525d02ec3289d5678f1f5e1caf722c4c5bd14f824dcb46d3d70"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            43
+          ],
+          "profile_class_index": 36,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 9,
+            "pair_sandpile_class_order_histogram": {
+              "30": 9
+            }
+          },
+          "profile_key_sha256": "8a0e48c83948e95efe29b7f7ab0d20386745a603974cf1f422d002f406d83c71"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            45
+          ],
+          "profile_class_index": 37,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 17,
+            "pair_sandpile_class_order_histogram": {
+              "30": 17
+            }
+          },
+          "profile_key_sha256": "274cde154fe2ac3246aa72cfc8971de263e61309f8cb8285ccc24b0a872c589b"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            46,
+            54
+          ],
+          "profile_class_index": 38,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 9,
+            "pair_sandpile_class_order_histogram": {
+              "30": 9
+            }
+          },
+          "profile_key_sha256": "1d523812cbf858b022f2379270301dc2aef9893cb514d0d5a8228df5c5f77a37"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            48
+          ],
+          "profile_class_index": 39,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 13,
+            "pair_sandpile_class_order_histogram": {
+              "30": 13
+            }
+          },
+          "profile_key_sha256": "e2a6f4140620c8110228bbde2d356c6355fc2c30cfd6b6b9bfd8d6c0c3227c63"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            49
+          ],
+          "profile_class_index": 40,
+          "profile_key": {
+            "exact_divisor_fiber_count": 8,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 8
+            },
+            "grade_flip_pair_count": 18,
+            "pair_sandpile_class_order_histogram": {
+              "30": 18
+            }
+          },
+          "profile_key_sha256": "cbe354eb768d4cbd7787f4bdc671c3551bc91a58657ba03a65a7dd47ceda2fe1"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            50
+          ],
+          "profile_class_index": 41,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 18,
+            "pair_sandpile_class_order_histogram": {
+              "30": 18
+            }
+          },
+          "profile_key_sha256": "b26ac15206b6656a6fe059c6419799ed61cb54ee3c262dfc0acf5b9c9ef79b31"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            51,
+            63
+          ],
+          "profile_class_index": 42,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 21,
+            "pair_sandpile_class_order_histogram": {
+              "30": 21
+            }
+          },
+          "profile_key_sha256": "ae8d44a2a242faed01fcc8312e04f38cf40e8b17339a944d601c3d56d4db75eb"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            52
+          ],
+          "profile_class_index": 43,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 20,
+            "pair_sandpile_class_order_histogram": {
+              "30": 20
+            }
+          },
+          "profile_key_sha256": "d1386d2b9de3144cd18b587876280030fc52c51b7f106cf2c14e412d3a60db1c"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            56
+          ],
+          "profile_class_index": 44,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 20,
+            "pair_sandpile_class_order_histogram": {
+              "30": 20
+            }
+          },
+          "profile_key_sha256": "5109ad0ac22a2d55a641a16c076c771a9c6cda7cfbaa5899807057ae5a6787de"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            58
+          ],
+          "profile_class_index": 45,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 10,
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "f8e5d9e7d6e0323301ffb2ecf8214975a0df71851c7367a9da2fb33bc6abd6f2"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            59
+          ],
+          "profile_class_index": 46,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 8,
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "cebd3823425ec833e4f99375eb29d31879f72b883fd882b7792f3eaa4337bf11"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            62
+          ],
+          "profile_class_index": 47,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 2,
+            "pair_sandpile_class_order_histogram": {
+              "30": 2
+            }
+          },
+          "profile_key_sha256": "ade1703afb816c80b580bb4674ad25fb72a9e78a36626024855d632e7e87258b"
+        }
+      ],
+      "class_rows_sha256": "9f7ff0948f73562ddce0c5be7e8e15f9784ceb9d34d7c1ce71c685eebea04c20",
+      "class_size_histogram": {
+        "1": 36,
+        "2": 9,
+        "3": 2,
+        "4": 1
+      },
+      "fields": [
+        "grade_flip_pair_count",
+        "exact_divisor_fiber_count",
+        "pair_sandpile_class_order_histogram",
+        "fiber_sandpile_class_order_histogram"
+      ]
+    },
+    "fiber_order_profile": {
+      "class_count": 15,
+      "class_rows": [
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": true,
+          "coset_indices": [
+            0
+          ],
+          "profile_class_index": 0,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "10": 1,
+              "15": 8,
+              "2": 1,
+              "30": 140,
+              "6": 4
+            }
+          },
+          "profile_key_sha256": "4936e1a7bde5b433d9770baa3cc9ba16c5168d4e741acc1bc276afe14450a94f"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            1,
+            28,
+            35
+          ],
+          "profile_class_index": 1,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 6
+            }
+          },
+          "profile_key_sha256": "476bc25fb0bce4f1c5b818c3f7f1e0855b168555177eeacaa6474acc7ff4cb19"
+        },
+        {
+          "class_size": 7,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            2,
+            5,
+            16,
+            38,
+            56,
+            57,
+            58
+          ],
+          "profile_class_index": 2,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            }
+          },
+          "profile_key_sha256": "5be459021d9300d0ab5205ec26bb47c46df08a67a72f083fdc9f52c9ec346ce7"
+        },
+        {
+          "class_size": 24,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            3,
+            4,
+            6,
+            9,
+            10,
+            13,
+            19,
+            20,
+            21,
+            22,
+            23,
+            31,
+            37,
+            39,
+            42,
+            44,
+            45,
+            46,
+            47,
+            52,
+            53,
+            54,
+            55,
+            62
+          ],
+          "profile_class_index": 3,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            }
+          },
+          "profile_key_sha256": "d1959f9847a5afced1d31f6a71a0670babf19129ac3872f591b269b02d2820e8"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            7
+          ],
+          "profile_class_index": 4,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 18
+            }
+          },
+          "profile_key_sha256": "0b709579926cc97efe020d8adff927b3ac30d2c6759623b64989511769f67fdc"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            8
+          ],
+          "profile_class_index": 5,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "1df555277195b0e634631e6481dca4b15dfbc5ef5efa80e0f888cf29734a1e89"
+        },
+        {
+          "class_size": 15,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            11,
+            12,
+            14,
+            15,
+            24,
+            27,
+            36,
+            41,
+            43,
+            48,
+            51,
+            59,
+            60,
+            61,
+            63
+          ],
+          "profile_class_index": 6,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            }
+          },
+          "profile_key_sha256": "191940674dd5fe01b4c0eb7c2ff36db9c341eb4e8c7feb7895432da788ca568d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            17
+          ],
+          "profile_class_index": 7,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 11,
+              "6": 1
+            }
+          },
+          "profile_key_sha256": "f122b7507d436502776abf1242f3728170c1fdcdcfe0767bb8d335b8e6a8d28d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            18
+          ],
+          "profile_class_index": 8,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 9,
+              "6": 1
+            }
+          },
+          "profile_key_sha256": "cc65cc2da1d45b54fadb28c9cdb8ca4668e160a51d048b48126f8eb45889a3f6"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            25
+          ],
+          "profile_class_index": 9,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 32
+            }
+          },
+          "profile_key_sha256": "a38e54f736799f902feb0489466b22a316f57ff63b222305b7c8d9c40ecfd196"
+        },
+        {
+          "class_size": 5,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            26,
+            29,
+            34,
+            40,
+            50
+          ],
+          "profile_class_index": 10,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            }
+          },
+          "profile_key_sha256": "16d3f3f30015a37009f4f3f05e29cd8fcc7c16354c5cc77c9b0f95fa4b52e757"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            30
+          ],
+          "profile_class_index": 11,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "15": 1,
+              "2": 1,
+              "30": 25
+            }
+          },
+          "profile_key_sha256": "e9db2bb31d595eb7ff6e77907d749f89f84bdb2eede3257c350c7ba3f029b5e5"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            32
+          ],
+          "profile_class_index": 12,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 14
+            }
+          },
+          "profile_key_sha256": "687e1e3124cdffe3b8c95586018ec3ef0e32d4ceeb393820401dfec372399fd0"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            33
+          ],
+          "profile_class_index": 13,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 20
+            }
+          },
+          "profile_key_sha256": "0f101d2b2e00b142923ecccc9b391c86ddf5ee765f7b3aaf5954ba3ef44248a3"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            49
+          ],
+          "profile_class_index": 14,
+          "profile_key": {
+            "fiber_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "5ed0319670e78f4b0b7c43ca5c98b6989323a46f86c9bddcc4d7ab094099bb6f"
+        }
+      ],
+      "class_rows_sha256": "37f0262005ea178af832891cffa7132f2f6eff51d0be20b0594adf49269dac92",
+      "class_size_histogram": {
+        "1": 10,
+        "15": 1,
+        "24": 1,
+        "3": 1,
+        "5": 1,
+        "7": 1
+      },
+      "fields": [
+        "fiber_sandpile_class_order_histogram"
+      ]
+    },
+    "measured_profile": {
+      "class_count": 58,
+      "class_rows": [
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": true,
+          "coset_indices": [
+            0
+          ],
+          "profile_class_index": 0,
+          "profile_key": {
+            "exact_divisor_fiber_count": 154,
+            "exact_divisor_fiber_size_histogram": {
+              "2": 59,
+              "3": 42,
+              "4": 21,
+              "5": 15,
+              "56": 1,
+              "6": 5,
+              "7": 6,
+              "9": 5
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "10": 1,
+              "15": 8,
+              "2": 1,
+              "30": 140,
+              "6": 4
+            },
+            "grade_flip_pair_count": 271,
+            "mixed_fiber_grade_split_histogram": {
+              "1:1": 59,
+              "1:2": 23,
+              "1:3": 7,
+              "1:5": 1,
+              "2:1": 19,
+              "2:2": 9,
+              "2:3": 7,
+              "2:5": 1,
+              "30:26": 1,
+              "3:1": 5,
+              "3:2": 8,
+              "3:4": 1,
+              "4:2": 3,
+              "4:3": 4,
+              "5:1": 1,
+              "5:4": 3,
+              "6:3": 2
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 139,
+              "1->-1": 132
+            },
+            "pair_sandpile_class_order_histogram": {
+              "10": 1,
+              "15": 18,
+              "2": 1,
+              "30": 246,
+              "6": 5
+            }
+          },
+          "profile_key_sha256": "1f51611b2f13277944aa874c439b8726e211690ed98c48dae1594a0245dbd13b"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            1
+          ],
+          "profile_class_index": 1,
+          "profile_key": {
+            "exact_divisor_fiber_count": 6,
+            "exact_divisor_fiber_size_histogram": {
+              "4": 1,
+              "5": 3,
+              "56": 1,
+              "7": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 6
+            },
+            "grade_flip_pair_count": 10,
+            "mixed_fiber_grade_split_histogram": {
+              "2:2": 1,
+              "2:3": 1,
+              "30:26": 1,
+              "3:2": 2,
+              "4:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 5,
+              "1->-1": 5
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "30a2d3c8035918e2958af4f2df8faf97fcd4183975d4da27f281801e29241839"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            2
+          ],
+          "profile_class_index": 2,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "exact_divisor_fiber_size_histogram": {
+              "5": 1,
+              "56": 1,
+              "7": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 17,
+            "mixed_fiber_grade_split_histogram": {
+              "2:3": 1,
+              "30:26": 1,
+              "3:4": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 8,
+              "1->-1": 9
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 17
+            }
+          },
+          "profile_key_sha256": "0a3e0b15f88053ba1c232875111e7845da45ef962ae13163987cc547ae6fa0ab"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            3,
+            10
+          ],
+          "profile_class_index": 3,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 8,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 6,
+              "1->-1": 2
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "f77c2108d1f6aa92476f17be7276fea5891f3ad76ef4557b3f80056aa97ca357"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            4
+          ],
+          "profile_class_index": 4,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 12,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 7,
+              "1->-1": 5
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 12
+            }
+          },
+          "profile_key_sha256": "4f2f536226bd0ae96d1b111e05dc44e67b57539a2395891d7443ee05956dc77e"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            5
+          ],
+          "profile_class_index": 5,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "exact_divisor_fiber_size_histogram": {
+              "4": 1,
+              "56": 1,
+              "7": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 16,
+            "mixed_fiber_grade_split_histogram": {
+              "1:3": 1,
+              "30:26": 1,
+              "3:4": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 9,
+              "1->-1": 7
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 16
+            }
+          },
+          "profile_key_sha256": "b51720d97a53943c11c6a70459efc18ee689197ec0c7f814406c36af6513b94d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            6
+          ],
+          "profile_class_index": 6,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 6,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 3,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 6
+            }
+          },
+          "profile_key_sha256": "a9606b89b1b73001e6f679cad56c0abacae42ea77902a4a2088c97de63f95428"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            7
+          ],
+          "profile_class_index": 7,
+          "profile_key": {
+            "exact_divisor_fiber_count": 18,
+            "exact_divisor_fiber_size_histogram": {
+              "3": 1,
+              "4": 6,
+              "5": 4,
+              "56": 1,
+              "6": 2,
+              "7": 2,
+              "9": 2
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 18
+            },
+            "grade_flip_pair_count": 66,
+            "mixed_fiber_grade_split_histogram": {
+              "1:2": 1,
+              "1:3": 1,
+              "2:2": 5,
+              "2:3": 4,
+              "30:26": 1,
+              "3:4": 1,
+              "4:2": 2,
+              "4:3": 1,
+              "6:3": 2
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 36,
+              "1->-1": 30
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 66
+            }
+          },
+          "profile_key_sha256": "2e8889521bdd9598b2970341fe0a387e5438375ae1e96fb396fb3acf17ca0eb7"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            8
+          ],
+          "profile_class_index": 8,
+          "profile_key": {
+            "exact_divisor_fiber_count": 10,
+            "exact_divisor_fiber_size_histogram": {
+              "4": 2,
+              "5": 3,
+              "56": 1,
+              "6": 1,
+              "7": 1,
+              "9": 2
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 10
+            },
+            "grade_flip_pair_count": 24,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "3:1": 2,
+              "3:2": 3,
+              "4:2": 1,
+              "4:3": 1,
+              "5:4": 2
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 20,
+              "1->-1": 4
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 24
+            }
+          },
+          "profile_key_sha256": "0828bd77dfd755ac556096a1a4db3132d01b2e6aba9d7839086a0a634529e915"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            9
+          ],
+          "profile_class_index": 9,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 1,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "1->-1": 1
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 1
+            }
+          },
+          "profile_key_sha256": "5df1567030eb160443cf083f4d5b9b37bd2f1f6e1e0e788b940a17f93b1c97f4"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            11
+          ],
+          "profile_class_index": 10,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 18,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 9,
+              "1->-1": 9
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 18
+            }
+          },
+          "profile_key_sha256": "1480bd5b692f94c11e848db24012d3dcdae7a25d1956cc0430d3107cc67c89f5"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            12
+          ],
+          "profile_class_index": 11,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "7": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 15,
+            "mixed_fiber_grade_split_histogram": {
+              "2:5": 1,
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 6,
+              "1->-1": 9
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 15
+            }
+          },
+          "profile_key_sha256": "cce55899b8ac221e4230d33ca251e2d3a223c285cb3bfd9b16b7048cdffd2c1d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            13
+          ],
+          "profile_class_index": 12,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 8,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 5,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "a3819d76255ee2b609d4a9b9c10c93a60b2f5ed8803269c60a002af8107b0ac4"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            14
+          ],
+          "profile_class_index": 13,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "7": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 4,
+            "mixed_fiber_grade_split_histogram": {
+              "2:5": 1,
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 2,
+              "1->-1": 2
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 4
+            }
+          },
+          "profile_key_sha256": "b8c184dc44e505114e842956989ecc3d22cbac0ef1521be28839a3687345faaa"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            15
+          ],
+          "profile_class_index": 14,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "6": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 12,
+            "mixed_fiber_grade_split_histogram": {
+              "1:5": 1,
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 6,
+              "1->-1": 6
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 12
+            }
+          },
+          "profile_key_sha256": "eb5143572e68991e7b4a6c094eabb68a3168978f3d84f33157d68c40005c072f"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            16
+          ],
+          "profile_class_index": 15,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "exact_divisor_fiber_size_histogram": {
+              "5": 3,
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 5,
+            "mixed_fiber_grade_split_histogram": {
+              "2:3": 1,
+              "30:26": 1,
+              "3:2": 2
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 2,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 5
+            }
+          },
+          "profile_key_sha256": "424e632ceb1022b457b998de593131e67623c03c53461a2ad78b76ae2b6b1d47"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            17
+          ],
+          "profile_class_index": 16,
+          "profile_key": {
+            "exact_divisor_fiber_count": 12,
+            "exact_divisor_fiber_size_histogram": {
+              "3": 1,
+              "4": 4,
+              "5": 3,
+              "56": 1,
+              "6": 1,
+              "7": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 11,
+              "6": 1
+            },
+            "grade_flip_pair_count": 27,
+            "mixed_fiber_grade_split_histogram": {
+              "1:2": 1,
+              "1:3": 3,
+              "1:5": 1,
+              "30:26": 1,
+              "3:1": 1,
+              "3:2": 3,
+              "4:3": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 19,
+              "1->-1": 8
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 26,
+              "6": 1
+            }
+          },
+          "profile_key_sha256": "6644f483a45e87a327974ec5d75e748f2759609947866f90e0ee722022c8cfc3"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            18
+          ],
+          "profile_class_index": 17,
+          "profile_key": {
+            "exact_divisor_fiber_count": 12,
+            "exact_divisor_fiber_size_histogram": {
+              "3": 8,
+              "56": 1,
+              "7": 2,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 9,
+              "6": 1
+            },
+            "grade_flip_pair_count": 43,
+            "mixed_fiber_grade_split_histogram": {
+              "1:2": 3,
+              "2:1": 5,
+              "2:5": 1,
+              "30:26": 1,
+              "4:3": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 24,
+              "1->-1": 19
+            },
+            "pair_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 40,
+              "6": 1
+            }
+          },
+          "profile_key_sha256": "8e3981361731e068b2b6de8995374203b824e423ae544da5ffd0a7df05a9d296"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            19
+          ],
+          "profile_class_index": 18,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 11,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 7,
+              "1->-1": 4
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 11
+            }
+          },
+          "profile_key_sha256": "551bf85f3eb3747b21ebebbbcf699f021f7de99eaf12baf4702ab696e9f5191c"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            20
+          ],
+          "profile_class_index": 19,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 10,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 5,
+              "1->-1": 5
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "204f54462cd3f26fe1ab991de00527ced245676ae5e9738e198733f7c469e5c2"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            21
+          ],
+          "profile_class_index": 20,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 29,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 17,
+              "1->-1": 12
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 29
+            }
+          },
+          "profile_key_sha256": "d7031eda719668c7597027b21de16e920b1ed3fc46d2be37e4ee9c01a13446d4"
+        },
+        {
+          "class_size": 4,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            22,
+            37,
+            42,
+            53
+          ],
+          "profile_class_index": 21,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 15,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 8,
+              "1->-1": 7
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 15
+            }
+          },
+          "profile_key_sha256": "14072779a15dec52f11f62a404128c52be04f55e93b658f99eba05b1c9e3bada"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            23,
+            47
+          ],
+          "profile_class_index": 22,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 4,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 3,
+              "1->-1": 1
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 4
+            }
+          },
+          "profile_key_sha256": "84c0ac3e49fb18bd61c8d7b4d4fb3bcc4293fbd8d703430a53bdb8c1d8b946d4"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            24
+          ],
+          "profile_class_index": 23,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "7": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 4,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "4:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 3,
+              "1->-1": 1
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 4
+            }
+          },
+          "profile_key_sha256": "32a16e09c5004f7a7acc750d1e1fc5e784dc0aaeac2514add51cfe91e85daadc"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            25
+          ],
+          "profile_class_index": 24,
+          "profile_key": {
+            "exact_divisor_fiber_count": 32,
+            "exact_divisor_fiber_size_histogram": {
+              "3": 5,
+              "4": 8,
+              "5": 9,
+              "56": 1,
+              "6": 2,
+              "7": 3,
+              "9": 4
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 32
+            },
+            "grade_flip_pair_count": 63,
+            "mixed_fiber_grade_split_histogram": {
+              "2:1": 5,
+              "2:2": 6,
+              "2:3": 3,
+              "30:26": 1,
+              "3:1": 2,
+              "3:2": 6,
+              "4:2": 2,
+              "4:3": 3,
+              "5:4": 2,
+              "6:3": 2
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 41,
+              "1->-1": 22
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 63
+            }
+          },
+          "profile_key_sha256": "20079c4ad11d76d407a4273597aedfa3b6a774629ee263dd83e8d97ae69f3279"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            26
+          ],
+          "profile_class_index": 25,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 2
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 8,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "5:4": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 4,
+              "1->-1": 4
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "29d7cf6c83b9aff0daa4c156c4d15d77acaf8a62944b0d2a0c9a6505599b5adf"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            27,
+            61
+          ],
+          "profile_class_index": 26,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 7,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 4,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 7
+            }
+          },
+          "profile_key_sha256": "d4c1b0d422fd87c0809cb8ac69e06180a1d685ffa8f7b39eb5311f9365766b28"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            28
+          ],
+          "profile_class_index": 27,
+          "profile_key": {
+            "exact_divisor_fiber_count": 6,
+            "exact_divisor_fiber_size_histogram": {
+              "4": 1,
+              "5": 1,
+              "56": 1,
+              "7": 1,
+              "9": 2
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 6
+            },
+            "grade_flip_pair_count": 14,
+            "mixed_fiber_grade_split_histogram": {
+              "1:3": 1,
+              "2:3": 1,
+              "2:5": 1,
+              "30:26": 1,
+              "6:3": 2
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 7,
+              "1->-1": 7
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 14
+            }
+          },
+          "profile_key_sha256": "247e2f88c3a3aad466ae014923cca003f9dcce043cb1c53710f500b18f943331"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            29
+          ],
+          "profile_class_index": 28,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "6": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 10,
+            "mixed_fiber_grade_split_histogram": {
+              "1:5": 1,
+              "30:26": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 4,
+              "1->-1": 6
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "6118c671f232ad5e24beaa110a3842d52b1678fb5161e186a5152c544aa8e426"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            30
+          ],
+          "profile_class_index": 29,
+          "profile_key": {
+            "exact_divisor_fiber_count": 27,
+            "exact_divisor_fiber_size_histogram": {
+              "3": 10,
+              "4": 5,
+              "5": 4,
+              "56": 1,
+              "6": 2,
+              "7": 2,
+              "9": 3
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "15": 1,
+              "2": 1,
+              "30": 25
+            },
+            "grade_flip_pair_count": 57,
+            "mixed_fiber_grade_split_histogram": {
+              "1:2": 6,
+              "1:3": 1,
+              "1:5": 1,
+              "2:1": 4,
+              "2:2": 4,
+              "2:3": 4,
+              "2:5": 1,
+              "30:26": 1,
+              "4:2": 1,
+              "4:3": 1,
+              "5:4": 1,
+              "6:3": 2
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 26,
+              "1->-1": 31
+            },
+            "pair_sandpile_class_order_histogram": {
+              "15": 9,
+              "2": 1,
+              "30": 47
+            }
+          },
+          "profile_key_sha256": "82ee974968bf658b11361ef25ad21da8bd2847694bb92455799f2b0f3a5f1aa2"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            31
+          ],
+          "profile_class_index": 30,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 4,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 2,
+              "1->-1": 2
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 4
+            }
+          },
+          "profile_key_sha256": "919c70c64882a7278f4da939c9b63cdaa4c5cf0311653aa3e59a6705c5524bd8"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            32
+          ],
+          "profile_class_index": 31,
+          "profile_key": {
+            "exact_divisor_fiber_count": 14,
+            "exact_divisor_fiber_size_histogram": {
+              "4": 4,
+              "5": 4,
+              "56": 1,
+              "6": 1,
+              "7": 2,
+              "9": 2
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 14
+            },
+            "grade_flip_pair_count": 40,
+            "mixed_fiber_grade_split_histogram": {
+              "2:2": 3,
+              "2:3": 2,
+              "30:26": 1,
+              "3:1": 1,
+              "3:2": 2,
+              "4:3": 2,
+              "5:1": 1,
+              "5:4": 2
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 21,
+              "1->-1": 19
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 40
+            }
+          },
+          "profile_key_sha256": "4cbf532610366be781d3996499307a3a92c0ba9b4c6a0c92a838f13b676f9ce8"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            33
+          ],
+          "profile_class_index": 32,
+          "profile_key": {
+            "exact_divisor_fiber_count": 22,
+            "exact_divisor_fiber_size_histogram": {
+              "3": 9,
+              "4": 4,
+              "5": 4,
+              "56": 1,
+              "6": 1,
+              "7": 2,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 20
+            },
+            "grade_flip_pair_count": 49,
+            "mixed_fiber_grade_split_histogram": {
+              "1:2": 7,
+              "1:3": 2,
+              "2:1": 2,
+              "2:2": 1,
+              "2:3": 2,
+              "30:26": 1,
+              "3:1": 1,
+              "3:2": 2,
+              "3:4": 1,
+              "4:2": 1,
+              "4:3": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 23,
+              "1->-1": 26
+            },
+            "pair_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 47
+            }
+          },
+          "profile_key_sha256": "5cd911c00cb7580b9be5aceff5cbedb636bfd06691e805db55f9d12e5235f8ea"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            34
+          ],
+          "profile_class_index": 33,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "6": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 16,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "5:1": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 9,
+              "1->-1": 7
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 16
+            }
+          },
+          "profile_key_sha256": "8ab09896d6ef9f95e0c98de73e7b627c18bbfdc749b2f81970e23266c1932ffb"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            35
+          ],
+          "profile_class_index": 34,
+          "profile_key": {
+            "exact_divisor_fiber_count": 6,
+            "exact_divisor_fiber_size_histogram": {
+              "4": 3,
+              "56": 1,
+              "7": 2
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 6
+            },
+            "grade_flip_pair_count": 16,
+            "mixed_fiber_grade_split_histogram": {
+              "1:3": 2,
+              "30:26": 1,
+              "3:1": 1,
+              "3:4": 1,
+              "4:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 9,
+              "1->-1": 7
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 16
+            }
+          },
+          "profile_key_sha256": "62c179134633fd34f306b0ec4f647f42ed715598a338e208de594b4b23bd7aa4"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            36
+          ],
+          "profile_class_index": 35,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "7": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 10,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "3:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 5,
+              "1->-1": 5
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "1af5edad4637c8074751408ad64249f58cb30a0d911230956ecf3d107f7e055d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            38
+          ],
+          "profile_class_index": 36,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "exact_divisor_fiber_size_histogram": {
+              "5": 1,
+              "56": 1,
+              "6": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 22,
+            "mixed_fiber_grade_split_histogram": {
+              "2:3": 1,
+              "30:26": 1,
+              "4:2": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 10,
+              "1->-1": 12
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 22
+            }
+          },
+          "profile_key_sha256": "8426b41a5636722cd39d91311491d686777726dd51839c51ee0da79d53cb1638"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            39
+          ],
+          "profile_class_index": 37,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 21,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 11,
+              "1->-1": 10
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 21
+            }
+          },
+          "profile_key_sha256": "b45b4fceb1891612503798960ed1164b3e4d8bcd23832d6eab7cdf039f87463e"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            40
+          ],
+          "profile_class_index": 38,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "7": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 8,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "4:3": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 5,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "5e915cf382dbe41c9e827bbf3b7a9c9f84f8bd0a562f820cdc3f1ae8668709a2"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            41
+          ],
+          "profile_class_index": 39,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 11,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 8,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 11
+            }
+          },
+          "profile_key_sha256": "cbabfef01e016072473c19cac8713e5448e47a6f39d241f47fc36adf4d25adfb"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            43
+          ],
+          "profile_class_index": 40,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 9,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 6,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 9
+            }
+          },
+          "profile_key_sha256": "df0cef4f9034b777a1f5215cb393eb52dc5838e8138512782275055c57c11370"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            44
+          ],
+          "profile_class_index": 41,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 6,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 2,
+              "1->-1": 4
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 6
+            }
+          },
+          "profile_key_sha256": "ca19368d34c2086d5ae0653e5880d06a1e4ccf898255285d9c257f8bbb8e053c"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            45
+          ],
+          "profile_class_index": 42,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 17,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 10,
+              "1->-1": 7
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 17
+            }
+          },
+          "profile_key_sha256": "b29d22c3f13717a2bbb6752152ac0a5e9467c56262e6d8aa6664ed5d9da62156"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            46
+          ],
+          "profile_class_index": 43,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 9,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 3,
+              "1->-1": 6
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 9
+            }
+          },
+          "profile_key_sha256": "1cc1434a94683caf52b03d21a3464aa77a3b22567ee9a7751f57a2647de0aaea"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            48
+          ],
+          "profile_class_index": 44,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 13,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 10,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 13
+            }
+          },
+          "profile_key_sha256": "ebfefa90a721b0b50194ea44a04f718e505d2c4ea67908af95b72b7ba0e4c74c"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            49
+          ],
+          "profile_class_index": 45,
+          "profile_key": {
+            "exact_divisor_fiber_count": 8,
+            "exact_divisor_fiber_size_histogram": {
+              "4": 1,
+              "5": 3,
+              "56": 1,
+              "6": 1,
+              "7": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 8
+            },
+            "grade_flip_pair_count": 18,
+            "mixed_fiber_grade_split_histogram": {
+              "2:3": 1,
+              "30:26": 1,
+              "3:1": 1,
+              "3:2": 2,
+              "4:3": 1,
+              "5:1": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 11,
+              "1->-1": 7
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 18
+            }
+          },
+          "profile_key_sha256": "dde3e8374c8109f2f6062f04bd0193132bf17829515b701b72cc89edfdf62fe0"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            50
+          ],
+          "profile_class_index": 46,
+          "profile_key": {
+            "exact_divisor_fiber_count": 3,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "7": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 3
+            },
+            "grade_flip_pair_count": 18,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "4:3": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 12,
+              "1->-1": 6
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 18
+            }
+          },
+          "profile_key_sha256": "204291c2dd827ca26f3f7f0ee3e9f0c0723e42e64101e5565b14ceb87693149c"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            51
+          ],
+          "profile_class_index": 47,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "6": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 21,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "5:1": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 11,
+              "1->-1": 10
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 21
+            }
+          },
+          "profile_key_sha256": "04b067b2ac55a653ff9105494db64f690c6857381571c72bf05851a7df00de76"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            52
+          ],
+          "profile_class_index": 48,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 20,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 11,
+              "1->-1": 9
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 20
+            }
+          },
+          "profile_key_sha256": "a5cb5649a9e84dcb429633b9914636e3c98896a6a0ee4ad47cc1767aa6bfef20"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            54
+          ],
+          "profile_class_index": 49,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 9,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 6,
+              "1->-1": 3
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 9
+            }
+          },
+          "profile_key_sha256": "2d13dae52d5744cd5dcecf2671580359e4a94f510f2ceafaee3a2f575d0f96c2"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            55
+          ],
+          "profile_class_index": 50,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 12,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 6,
+              "1->-1": 6
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 12
+            }
+          },
+          "profile_key_sha256": "60750f51035f640f51a4ffc2e18ba28764ccceaa55df028df3e2e65c75de7931"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            56
+          ],
+          "profile_class_index": 51,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "7": 1,
+              "9": 2
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 20,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "4:3": 1,
+              "5:4": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 15,
+              "1->-1": 5
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 20
+            }
+          },
+          "profile_key_sha256": "a86daafc43a2f65771c3bb4978a2100732867e0cebf02180e4be61c9e0952353"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            57
+          ],
+          "profile_class_index": 52,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "exact_divisor_fiber_size_histogram": {
+              "4": 1,
+              "56": 1,
+              "7": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 5,
+            "mixed_fiber_grade_split_histogram": {
+              "2:2": 1,
+              "30:26": 1,
+              "4:3": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 4,
+              "1->-1": 1
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 5
+            }
+          },
+          "profile_key_sha256": "9f6ee65b2adacd909d4ffe0a53058ebee304c54399af492aa3e7a6d94f93cda5"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            58
+          ],
+          "profile_class_index": 53,
+          "profile_key": {
+            "exact_divisor_fiber_count": 4,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "7": 1,
+              "9": 2
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 4
+            },
+            "grade_flip_pair_count": 10,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "4:3": 1,
+              "5:4": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 8,
+              "1->-1": 2
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "53a143f5c5ee55f7ff4792a0c5e132a88368fdab8d9d0d23eae081fc9375ace5"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            59
+          ],
+          "profile_class_index": 54,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 8,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "5:4": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 4,
+              "1->-1": 4
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "286f2734b72ab185eeda08d50e1a078144dd1f78c66bb88aa106fee645dbe45f"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            60
+          ],
+          "profile_class_index": 55,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 11,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 5,
+              "1->-1": 6
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 11
+            }
+          },
+          "profile_key_sha256": "48fc6999f19d3db1ba71ae7ab8c3bd3e27a6166e40eae3533389abe45765c5c4"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            62
+          ],
+          "profile_class_index": 56,
+          "profile_key": {
+            "exact_divisor_fiber_count": 1,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 1
+            },
+            "grade_flip_pair_count": 2,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "1->-1": 2
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 2
+            }
+          },
+          "profile_key_sha256": "b03013b13d2b9859ee4e8694118e66b723a253eb90cb498fde3fee087b155672"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            63
+          ],
+          "profile_class_index": 57,
+          "profile_key": {
+            "exact_divisor_fiber_count": 2,
+            "exact_divisor_fiber_size_histogram": {
+              "56": 1,
+              "9": 1
+            },
+            "fiber_sandpile_class_order_histogram": {
+              "30": 2
+            },
+            "grade_flip_pair_count": 21,
+            "mixed_fiber_grade_split_histogram": {
+              "30:26": 1,
+              "6:3": 1
+            },
+            "pair_grade_orientation_histogram": {
+              "-1->1": 11,
+              "1->-1": 10
+            },
+            "pair_sandpile_class_order_histogram": {
+              "30": 21
+            }
+          },
+          "profile_key_sha256": "7e4f9802cd9fe2904d469e1f1a08b0345df98e8c78b31be934fe04e6dd71a0f4"
+        }
+      ],
+      "class_rows_sha256": "4874b9d4908da2cc4bc4866a32e7c6a6fca58616a362362fdb1e3200b0efe2e2",
+      "class_size_histogram": {
+        "1": 54,
+        "2": 3,
+        "4": 1
+      },
+      "fields": [
+        "grade_flip_pair_count",
+        "exact_divisor_fiber_count",
+        "pair_sandpile_class_order_histogram",
+        "fiber_sandpile_class_order_histogram",
+        "exact_divisor_fiber_size_histogram",
+        "mixed_fiber_grade_split_histogram",
+        "pair_grade_orientation_histogram"
+      ]
+    },
+    "pair_order_profile": {
+      "class_count": 30,
+      "class_rows": [
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": true,
+          "coset_indices": [
+            0
+          ],
+          "profile_class_index": 0,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "10": 1,
+              "15": 18,
+              "2": 1,
+              "30": 246,
+              "6": 5
+            }
+          },
+          "profile_key_sha256": "bac04d4375fcf3b891706219f48001f3594f5703f71a69f9be3fa4d8936daa0d"
+        },
+        {
+          "class_size": 5,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            1,
+            20,
+            29,
+            36,
+            58
+          ],
+          "profile_class_index": 1,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 10
+            }
+          },
+          "profile_key_sha256": "bab61c824583540f7e2e4538f447304478cd0625f08ee45bbe8d5b74a90b88a8"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            2,
+            45
+          ],
+          "profile_class_index": 2,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 17
+            }
+          },
+          "profile_key_sha256": "d6984d5a381f6832965dce6c6134d751c63537c26ba6e574972f90c67eb4696e"
+        },
+        {
+          "class_size": 6,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            3,
+            10,
+            13,
+            26,
+            40,
+            59
+          ],
+          "profile_class_index": 3,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 8
+            }
+          },
+          "profile_key_sha256": "554dbd9459f414c057bccbb9b7e0d2e93a53f441772ad718de5da13ebd0118eb"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            4,
+            15,
+            55
+          ],
+          "profile_class_index": 4,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 12
+            }
+          },
+          "profile_key_sha256": "804a86da327a6e1a2f46e3985931a4507c2b717df5e4e31a0662a0812d8bf7a4"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            5,
+            34,
+            35
+          ],
+          "profile_class_index": 5,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 16
+            }
+          },
+          "profile_key_sha256": "b77e53d72c59643f05991dc269b4f451868952a768946d004ccf3710e118efd4"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            6,
+            44
+          ],
+          "profile_class_index": 6,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 6
+            }
+          },
+          "profile_key_sha256": "f81e281c8e3407381f623bc6af54a67d0c31ec33112b711e9a63e80ec5928c9c"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            7
+          ],
+          "profile_class_index": 7,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 66
+            }
+          },
+          "profile_key_sha256": "88f2faa35f04c835c0ffd0408089807f31b2522f742d6798f297fb34ee9e1b4d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            8
+          ],
+          "profile_class_index": 8,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 24
+            }
+          },
+          "profile_key_sha256": "9bd4782015267bca5621ef07050e3fdd65ebe9e5f328c9a5a1c6d8fa935b9dcc"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            9
+          ],
+          "profile_class_index": 9,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 1
+            }
+          },
+          "profile_key_sha256": "36d9dcd9508d8c1e5a1926bda276446448e45d3e2aab9a75b212a851517f3b70"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            11,
+            49,
+            50
+          ],
+          "profile_class_index": 10,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 18
+            }
+          },
+          "profile_key_sha256": "34136f5ed93d9d9f1943c46c49fe273b1ed91169642c3a28b0382cbc1fad05f8"
+        },
+        {
+          "class_size": 5,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            12,
+            22,
+            37,
+            42,
+            53
+          ],
+          "profile_class_index": 11,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 15
+            }
+          },
+          "profile_key_sha256": "96c07c5aa035d1ee6535e26abc4b7c1db26c0c7fa651cc8ce65127e040fa001a"
+        },
+        {
+          "class_size": 5,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            14,
+            23,
+            24,
+            31,
+            47
+          ],
+          "profile_class_index": 12,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 4
+            }
+          },
+          "profile_key_sha256": "90101fac619f898a2aa7270fa70e9a335254ed47c464fabca7afcc0b4d2987fc"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            16,
+            57
+          ],
+          "profile_class_index": 13,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 5
+            }
+          },
+          "profile_key_sha256": "1b40a51f29987957b75dbb1f3fc1b12f77e0830b04b6e5a8aac2f08b3efbc71b"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            17
+          ],
+          "profile_class_index": 14,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 26,
+              "6": 1
+            }
+          },
+          "profile_key_sha256": "782eeb91510882af7b02fb68766b6aad9ba575b943b4c322c4886790b4da1122"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            18
+          ],
+          "profile_class_index": 15,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 40,
+              "6": 1
+            }
+          },
+          "profile_key_sha256": "243320d73d0300d14cb8d9236f912352e721cabdd01314759ed5b9253efbd6fe"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            19,
+            41,
+            60
+          ],
+          "profile_class_index": 16,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 11
+            }
+          },
+          "profile_key_sha256": "d37a00db6b9bab401d26b1715b644cad7cc96d78ef1b80ee5b30574022d301a9"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            21
+          ],
+          "profile_class_index": 17,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 29
+            }
+          },
+          "profile_key_sha256": "8c01063ceee4faf5e4e73d5c13d6cc38bad2bf4100d73e03cfba7a74d43b7941"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            25
+          ],
+          "profile_class_index": 18,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 63
+            }
+          },
+          "profile_key_sha256": "db41eb24e71d60618a9f6cd8cb41981ecde20cba83c4703e9ad9fee25f319109"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            27,
+            61
+          ],
+          "profile_class_index": 19,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 7
+            }
+          },
+          "profile_key_sha256": "639d52885c7c55e3e7516d1f01e497224653235f7ed6a2722be7b6f30d52f5a0"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            28
+          ],
+          "profile_class_index": 20,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 14
+            }
+          },
+          "profile_key_sha256": "dddc8c2f319d4a24f82b5ce0386625bcb613d91073655770eed397373dd037c3"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            30
+          ],
+          "profile_class_index": 21,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "15": 9,
+              "2": 1,
+              "30": 47
+            }
+          },
+          "profile_key_sha256": "4defd4a497f65dd2238c0f49cf0c676d1b87d563562acfeca9b7ea88afb40e26"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            32
+          ],
+          "profile_class_index": 22,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 40
+            }
+          },
+          "profile_key_sha256": "d4b21350a759bee784beea991c2d42fa26dad100cf86da6cc6235af010f9d1d7"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            33
+          ],
+          "profile_class_index": 23,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "15": 2,
+              "30": 47
+            }
+          },
+          "profile_key_sha256": "555cf499dff85a66025cf1b18201df42693876a50ee127d477a129e6bd1835ea"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            38
+          ],
+          "profile_class_index": 24,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 22
+            }
+          },
+          "profile_key_sha256": "b5c4f31e828e3dc28ed2c186af4321733914476a326573f834d61f8d29612034"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            39,
+            51,
+            63
+          ],
+          "profile_class_index": 25,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 21
+            }
+          },
+          "profile_key_sha256": "8e70d2b6b414f0f19d1ec972f33d331ce510606b0decc9a2ce49132a816e4ce5"
+        },
+        {
+          "class_size": 3,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            43,
+            46,
+            54
+          ],
+          "profile_class_index": 26,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 9
+            }
+          },
+          "profile_key_sha256": "30a669308eeb675a1687c869fc649d6b827962f71c85e4f6505bdec23d87cd5a"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            48
+          ],
+          "profile_class_index": 27,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 13
+            }
+          },
+          "profile_key_sha256": "e2c2d39a9aeaac59c7da1efe9deedb69f2144737404f2b56125b08bfd15c849a"
+        },
+        {
+          "class_size": 2,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            52,
+            56
+          ],
+          "profile_class_index": 28,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 20
+            }
+          },
+          "profile_key_sha256": "5d5ca8198dfd1d3624731af19477581ebe9154d601ee9ff70109725478b5ad4d"
+        },
+        {
+          "class_size": 1,
+          "contains_cover_span_coset": false,
+          "coset_indices": [
+            62
+          ],
+          "profile_class_index": 29,
+          "profile_key": {
+            "pair_sandpile_class_order_histogram": {
+              "30": 2
+            }
+          },
+          "profile_key_sha256": "42c38223f9ab8449a42ec7113c17b788ba716be8c409b637d2ed14239d588561"
+        }
+      ],
+      "class_rows_sha256": "55533ab1303d51a1810a41d20fcb2f737e6cbaa4da2ac6e5d553391f3551b4ef",
+      "class_size_histogram": {
+        "1": 15,
+        "2": 5,
+        "3": 6,
+        "5": 3,
+        "6": 1
+      },
+      "fields": [
+        "pair_sandpile_class_order_histogram"
+      ]
+    }
+  },
+  "inputs": {
+    "hcycle_automorphism_summary": {
+      "path": "data/invariants/hcycle/d20_Hcycle_automorphism_summary.json",
+      "sha256": "67a8df4a30eaa42d925fe2d3f760a666d856131d3a748952e7573f44e2d6f925"
+    },
+    "hcycle_edges_csv": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "hcycle_residue_spectrum_csv": {
+      "path": "data/invariants/hcycle/d20_Hcycle_mod2_residue_spectrum_all_subsets.csv",
+      "sha256": "47b3b16d797dd2105805c2a49db4ce303eac44cd5d8164856ede2567c423b81b"
+    },
+    "public_boundary_graph_invariants_report": {
+      "path": "data/invariants/d20/theorems/public_boundary_graph_invariants/report.json",
+      "sha256": "c6ac264c96d5f8874016013df50234f5dfbc21c7fcfa0c24fb7e1de4c94004a8"
+    },
+    "tube_sandpile_flip_coset_classifier_report": {
+      "path": "data/invariants/d20/theorems/tube_sandpile_flip_coset_classifier/report.json",
+      "sha256": "821a73da3b145912e17bba86980ca231839c221c1f9343e2ee107dd45d710129"
+    }
+  },
+  "interpretation": {
+    "what_is_certified": "There is no nontrivial public-automorphism quotient compatible with the current exact flip generators and five-cover span. The certified compression is therefore a sandpile-order profile quotient.",
+    "what_this_does_not_prove": "The 48 combined-order classes are canonical for the stated profile, but this does not prove they are minimal or complete invariants of the hidden tube data."
+  },
+  "next_highest_yield_item": "Refine the 48 combined-order classes with tube-sector data to test whether the four non-singleton class sizes 2, 3, and 4 split canonically.",
+  "object": "d20",
+  "schema": "d20.theorem.tube_sandpile_flip_profile_compression",
+  "status": "D20_TUBE_SANDPILE_FLIP_PROFILE_COMPRESSION_CERTIFIED"
+}

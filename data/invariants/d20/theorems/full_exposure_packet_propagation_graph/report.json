@@ -1,0 +1,2477 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4c88153aa69c8f14cb06a62785e7e7b551d23652404e7e9beb187b285bf63482",
+  "checks": {
+    "action_budget_is_uniform": true,
+    "full_exposure_packet_propagation_cells_is_certified": true,
+    "generator_pair_table_matches_crossing_law": true,
+    "graph_decomposes_into_ten_active_partner_doublets": true,
+    "graph_has_20_vertices_and_120_raw_returns": true,
+    "graph_has_only_source_and_active_partner_targets": true,
+    "graph_has_uniform_self_and_partner_weights": true,
+    "graph_has_uniform_weighted_degrees": true,
+    "hidden_transfer_cancels_everywhere": true,
+    "packet239_lies_in_238_239_component": true,
+    "signed_flux_balances_per_source_and_component": true,
+    "spectral_readout_matches_ten_doublet_blocks": true
+  },
+  "claim": "The 20 full Loop_297-exposure packets form a weighted two-step propagation graph that decomposes into ten active-partner doublets. Each source has exactly two ordered self returns and four ordered active-partner returns, so the integer transition block on every doublet is [[2,4],[4,2]]. The signed height flux cancels on every source, hidden transfer is zero, and the graph transition spectrum is 6^10 plus (-2)^10.",
+  "definition": {
+    "active_partner_doublet": "The pair {p, p xor 1}, equivalently the two active-sigma choices for one radical character.",
+    "raw_ordered_cross_return": "An ordered two-step crossing row using distinct generators from {5,9,10}.",
+    "vertex": "A full Loop_297-exposure projective packet from the certified propagation-cell theorem.",
+    "weighted_directed_edge": "The multiplicity of raw ordered cross-returns from one packet to another."
+  },
+  "derived": {
+    "adjacency": {
+      "matrix": [
+        [
+          2,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          2
+        ]
+      ],
+      "matrix_sha256": "efe2747374fd916798c933b936ea5c30f592b9ce675ff6cc3738157f22edba55",
+      "vertex_order": [
+        174,
+        175,
+        190,
+        191,
+        238,
+        239,
+        246,
+        247,
+        254,
+        255,
+        430,
+        431,
+        446,
+        447,
+        494,
+        495,
+        502,
+        503,
+        510,
+        511
+      ]
+    },
+    "component_rows": [
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          174,
+          175
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          190,
+          191
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          238,
+          239
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          246,
+          247
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          254,
+          255
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          430,
+          431
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          446,
+          447
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          494,
+          495
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          502,
+          503
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          510,
+          511
+        ],
+        "total_optical_action_sum": 22192128
+      }
+    ],
+    "forbidden_nonzero_edges": [],
+    "generator_pair_table": [
+      {
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 20
+        },
+        "net_height_flux_delta_values": [
+          -301056
+        ],
+        "ordered_generators": [
+          5,
+          9
+        ],
+        "row_count": 20,
+        "target_kind": "active_partner",
+        "target_kind_values": [
+          "active_partner"
+        ],
+        "total_optical_action_values": [
+          1683456
+        ]
+      },
+      {
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 20
+        },
+        "net_height_flux_delta_values": [
+          -399360
+        ],
+        "ordered_generators": [
+          5,
+          10
+        ],
+        "row_count": 20,
+        "target_kind": "source_loop",
+        "target_kind_values": [
+          "source_loop"
+        ],
+        "total_optical_action_values": [
+          1781760
+        ]
+      },
+      {
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 20
+        },
+        "net_height_flux_delta_values": [
+          301056
+        ],
+        "ordered_generators": [
+          9,
+          5
+        ],
+        "row_count": 20,
+        "target_kind": "active_partner",
+        "target_kind_values": [
+          "active_partner"
+        ],
+        "total_optical_action_values": [
+          1683456
+        ]
+      },
+      {
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 20
+        },
+        "net_height_flux_delta_values": [
+          -98304
+        ],
+        "ordered_generators": [
+          9,
+          10
+        ],
+        "row_count": 20,
+        "target_kind": "active_partner",
+        "target_kind_values": [
+          "active_partner"
+        ],
+        "total_optical_action_values": [
+          2082816
+        ]
+      },
+      {
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 20
+        },
+        "net_height_flux_delta_values": [
+          399360
+        ],
+        "ordered_generators": [
+          10,
+          5
+        ],
+        "row_count": 20,
+        "target_kind": "source_loop",
+        "target_kind_values": [
+          "source_loop"
+        ],
+        "total_optical_action_values": [
+          1781760
+        ]
+      },
+      {
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 20
+        },
+        "net_height_flux_delta_values": [
+          98304
+        ],
+        "ordered_generators": [
+          10,
+          9
+        ],
+        "row_count": 20,
+        "target_kind": "active_partner",
+        "target_kind_values": [
+          "active_partner"
+        ],
+        "total_optical_action_values": [
+          2082816
+        ]
+      }
+    ],
+    "graph_summary": {
+      "active_partner_pairs": [
+        [
+          174,
+          175
+        ],
+        [
+          190,
+          191
+        ],
+        [
+          238,
+          239
+        ],
+        [
+          246,
+          247
+        ],
+        [
+          254,
+          255
+        ],
+        [
+          430,
+          431
+        ],
+        [
+          446,
+          447
+        ],
+        [
+          494,
+          495
+        ],
+        [
+          502,
+          503
+        ],
+        [
+          510,
+          511
+        ]
+      ],
+      "active_partner_weight_histogram": {
+        "4": 20
+      },
+      "column_sum_histogram": {
+        "6": 20
+      },
+      "component_count": 10,
+      "component_size_histogram": {
+        "2": 10
+      },
+      "component_total_optical_action_sum_histogram": {
+        "22192128": 10
+      },
+      "diagonal_self_loop_weight_histogram": {
+        "2": 20
+      },
+      "nonzero_target_count_histogram": {
+        "2": 20
+      },
+      "packet239_component": {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 12,
+        "packet_pair": [
+          238,
+          239
+        ],
+        "total_optical_action_sum": 22192128
+      },
+      "raw_ordered_cross_return_count": 120,
+      "row_sum_histogram": {
+        "6": 20
+      },
+      "source_net_flux_sum_histogram": {
+        "0": 20
+      },
+      "source_total_optical_action_sum_histogram": {
+        "11096064": 20
+      },
+      "vertex_count": 20,
+      "weighted_directed_edge_count_including_loops": 40
+    },
+    "source_balance_rows": [
+      {
+        "active_partner_packet_id": 175,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 174,
+        "target_packet_histogram": {
+          "174": 2,
+          "175": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 174,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 175,
+        "target_packet_histogram": {
+          "174": 4,
+          "175": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 191,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 190,
+        "target_packet_histogram": {
+          "190": 2,
+          "191": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 190,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 191,
+        "target_packet_histogram": {
+          "190": 4,
+          "191": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 239,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 238,
+        "target_packet_histogram": {
+          "238": 2,
+          "239": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 238,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 239,
+        "target_packet_histogram": {
+          "238": 4,
+          "239": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 247,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 246,
+        "target_packet_histogram": {
+          "246": 2,
+          "247": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 246,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 247,
+        "target_packet_histogram": {
+          "246": 4,
+          "247": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 255,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 254,
+        "target_packet_histogram": {
+          "254": 2,
+          "255": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 254,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 255,
+        "target_packet_histogram": {
+          "254": 4,
+          "255": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 431,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 430,
+        "target_packet_histogram": {
+          "430": 2,
+          "431": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 430,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 431,
+        "target_packet_histogram": {
+          "430": 4,
+          "431": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 447,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 446,
+        "target_packet_histogram": {
+          "446": 2,
+          "447": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 446,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 447,
+        "target_packet_histogram": {
+          "446": 4,
+          "447": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 495,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 494,
+        "target_packet_histogram": {
+          "494": 2,
+          "495": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 494,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 495,
+        "target_packet_histogram": {
+          "494": 4,
+          "495": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 503,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 502,
+        "target_packet_histogram": {
+          "502": 2,
+          "503": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 502,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 503,
+        "target_packet_histogram": {
+          "502": 4,
+          "503": 2
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 511,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 510,
+        "target_packet_histogram": {
+          "510": 2,
+          "511": 4
+        },
+        "total_optical_action_sum": 11096064
+      },
+      {
+        "active_partner_packet_id": 510,
+        "hidden_R33_transfer_mod26_sum": 0,
+        "net_height_flux_delta_sum": 0,
+        "ordered_cross_return_count": 6,
+        "source_packet_id": 511,
+        "target_packet_histogram": {
+          "510": 4,
+          "511": 2
+        },
+        "total_optical_action_sum": 11096064
+      }
+    ],
+    "spectral_summary": {
+      "integer_adjacency_block": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "integer_adjacency_eigenvalues": [
+        {
+          "eigenspace": "active-partner antisymmetric",
+          "multiplicity": 10,
+          "value": -2
+        },
+        {
+          "eigenspace": "active-partner symmetric",
+          "multiplicity": 10,
+          "value": 6
+        }
+      ],
+      "integer_adjacency_rank_over_Q": 20,
+      "integer_adjacency_trace": 40,
+      "normalized_markov_eigenvalues": [
+        {
+          "eigenspace": "active-partner antisymmetric",
+          "multiplicity": 10,
+          "value": "-1/3"
+        },
+        {
+          "eigenspace": "active-partner symmetric",
+          "multiplicity": 10,
+          "value": "1"
+        }
+      ],
+      "stationary_simplex_dimension": 10,
+      "within_component_contraction_absolute_eigenvalue": "1/3"
+    },
+    "weighted_directed_edges": [
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 174,
+        "target_packet_id": 174,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 174,
+        "target_packet_id": 175,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 175,
+        "target_packet_id": 174,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 175,
+        "target_packet_id": 175,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 190,
+        "target_packet_id": 190,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 190,
+        "target_packet_id": 191,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 191,
+        "target_packet_id": 190,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 191,
+        "target_packet_id": 191,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 238,
+        "target_packet_id": 238,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 238,
+        "target_packet_id": 239,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 239,
+        "target_packet_id": 238,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 239,
+        "target_packet_id": 239,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 246,
+        "target_packet_id": 246,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 246,
+        "target_packet_id": 247,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 247,
+        "target_packet_id": 246,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 247,
+        "target_packet_id": 247,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 254,
+        "target_packet_id": 254,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 254,
+        "target_packet_id": 255,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 255,
+        "target_packet_id": 254,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 255,
+        "target_packet_id": 255,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 430,
+        "target_packet_id": 430,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 430,
+        "target_packet_id": 431,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 431,
+        "target_packet_id": 430,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 431,
+        "target_packet_id": 431,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 446,
+        "target_packet_id": 446,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 446,
+        "target_packet_id": 447,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 447,
+        "target_packet_id": 446,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 447,
+        "target_packet_id": 447,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 494,
+        "target_packet_id": 494,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 494,
+        "target_packet_id": 495,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 495,
+        "target_packet_id": 494,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 495,
+        "target_packet_id": 495,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 502,
+        "target_packet_id": 502,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 502,
+        "target_packet_id": 503,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 503,
+        "target_packet_id": 502,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 503,
+        "target_packet_id": 503,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 510,
+        "target_packet_id": 510,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 510,
+        "target_packet_id": 511,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "active_partner",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 4
+        },
+        "net_height_flux_delta_histogram": {
+          "-301056": 1,
+          "-98304": 1,
+          "301056": 1,
+          "98304": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            9
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "source_packet_id": 511,
+        "target_packet_id": 510,
+        "total_optical_action_histogram": {
+          "1683456": 2,
+          "2082816": 2
+        },
+        "weight": 4
+      },
+      {
+        "edge_kind": "source_loop",
+        "hidden_R33_transfer_mod26_total_histogram": {
+          "0": 2
+        },
+        "net_height_flux_delta_histogram": {
+          "-399360": 1,
+          "399360": 1
+        },
+        "ordered_generator_pairs": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "source_packet_id": 511,
+        "target_packet_id": 511,
+        "total_optical_action_histogram": {
+          "1781760": 2
+        },
+        "weight": 2
+      }
+    ]
+  },
+  "inputs": {
+    "full_exposure_packet_propagation_cells_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_cells/report.json",
+      "sha256": "0cea64975c4b45cfa152fee8a51d70bf23da4788ff561895f81580bd86e7c963"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This theorem classifies the two-step paired cross-return graph only. It does not yet identify the ten doublets with a canonical rank-10 kernel basis or tenfold-way axis labeling.",
+    "what_this_proves": [
+      "the full-exposure stratum is not a connected 20-state mixer; it splits into ten closed two-state cells",
+      "packet 239 belongs to the closed active-partner doublet {238,239}",
+      "the two-step transition operator has a ten-dimensional stationary simplex",
+      "signed height flux cancels locally on every source before any longer-walk quotient is imposed"
+    ]
+  },
+  "next_highest_yield_item": "Build the rank-10/tenfold component-alignment witness: map the ten active-partner doublets to kernel coordinates and test whether they form a canonical ten-axis basis.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_packet_propagation_graph",
+  "status": "D20_FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_CERTIFIED"
+}

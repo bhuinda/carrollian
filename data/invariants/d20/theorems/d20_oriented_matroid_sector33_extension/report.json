@@ -1,0 +1,349 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "0052f321973afa727c2c0472179c19fc6dededf747ff76272242387154be34a0",
+  "checks": {
+    "d20_input_is_certified": true,
+    "finite_contour_is_certified": true,
+    "gamma8_signed_residue_is_minus_40_quanta": true,
+    "hidden_sector_scalar_lift_makes_gamma8_plus_e33_a_circuit": true,
+    "no_tested_extension_makes_e33_a_singleton_cocircuit": true,
+    "no_tested_extension_makes_gamma8_plus_e33_a_cocircuit": true,
+    "no_tested_extension_makes_old_ground_a_hyperplane": true,
+    "oriented_matroid_contour_is_certified": true,
+    "sector33_dimension_is_2": true,
+    "sector33_height_action_is_374784": true,
+    "sector33_height_attachment_closure_equations_vanish": true,
+    "sector33_height_attachment_makes_gamma8_plus_e33_a_positive_circuit": true,
+    "sector33_inputs_are_certified": true,
+    "sector33_transport_scalar_is_minus_187392": true,
+    "sector33_unique_public_zero_sector_is_cross_linked": true,
+    "signed_residue_lift_makes_gamma8_plus_residue_a_circuit": true,
+    "signed_residue_quantum_is_3072": true
+  },
+  "claim": "The natural sector-33 single-element extensions of the D20 contour system do not make sector 33 a cocircuit or hyperplane. Instead, the height-derived sector-33 attachment makes gamma8+e33 a positive circuit obstruction: the all-positive gamma8 active row is closed by two copies of the sector-33 unit, exactly matching the certified -374784 residual and dim(Pi_33)=2.",
+  "definition": {
+    "cocircuit_test": "a subset is a cocircuit when its complement is a hyperplane in the represented matroid",
+    "hidden_sector_scalar_lift": "a public-zero sector scalar extension using the sector-33 transport scalar",
+    "sector33_height_attachment": "a decorated sector unit whose doubled column closes the all-positive gamma8 active height row",
+    "signed_residue_lift": "a one-element extension of the contour incidence matrix by the non-exact signed 1-form residue quantum"
+  },
+  "derived": {
+    "base_lift_summary": {
+      "active_support": [
+        1,
+        2,
+        11,
+        21,
+        22
+      ],
+      "base_contour_rank": 19,
+      "cyclic_signed_support": [
+        1,
+        2,
+        11,
+        21,
+        22
+      ],
+      "edge_count": 30,
+      "height_lift_rank": 20
+    },
+    "hidden_sector_scalar_extension": {
+      "circuit_coefficients": [
+        {
+          "coefficient": 61,
+          "element": "edge_1",
+          "element_id": 1,
+          "sign": 1
+        },
+        {
+          "coefficient": -61,
+          "element": "edge_2",
+          "element_id": 2,
+          "sign": -1
+        },
+        {
+          "coefficient": 61,
+          "element": "edge_11",
+          "element_id": 11,
+          "sign": 1
+        },
+        {
+          "coefficient": 61,
+          "element": "edge_21",
+          "element_id": 21,
+          "sign": 1
+        },
+        {
+          "coefficient": -61,
+          "element": "edge_22",
+          "element_id": 22,
+          "sign": -1
+        },
+        {
+          "coefficient": 40,
+          "element": "e33_hidden_scalar",
+          "element_id": 30,
+          "sign": 1
+        }
+      ],
+      "circuit_support": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "interpretation": "A public-zero sector scalar can close the cyclic signed contour circuit, but it does not realize the all-positive height certificate.",
+      "name": "hidden_sector_scalar_lift",
+      "new_column": {
+        "height_coordinate": -187392,
+        "public_incidence": {},
+        "sector33_dimension": 2,
+        "sector33_residual_integral": -374784
+      },
+      "new_element": "e33_hidden_scalar",
+      "representation": "[partial_D20; height row] plus public-zero e33 scalar column",
+      "tests": {
+        "gamma_plus_new_is_circuit": true,
+        "gamma_plus_new_is_cocircuit": false,
+        "gamma_plus_new_rank": 5,
+        "gamma_support_is_circuit": false,
+        "gamma_support_is_cocircuit": false,
+        "gamma_support_rank": 5,
+        "new_element_in_old_closure": true,
+        "new_singleton_is_cocircuit": false,
+        "old_ground_is_hyperplane": false,
+        "old_ground_rank": 20,
+        "rank": 20
+      }
+    },
+    "sector33_cocircuit_summary": {
+      "e33_singleton_cocircuit_in_any_tested_extension": false,
+      "gamma8_plus_e33_cocircuit_in_any_tested_extension": false,
+      "old_ground_hyperplane_in_any_tested_extension": false,
+      "positive_circuit_extension": "sector33_height_attachment",
+      "tested_extensions": [
+        "signed_residue_lift",
+        "hidden_sector_scalar_lift",
+        "sector33_height_attachment"
+      ],
+      "verdict": "sector33 is certified as a positive circuit obstruction in the height attachment, not as a cocircuit/hyperplane in these natural primal extensions"
+    },
+    "sector33_height_attachment": {
+      "circuit_coefficients": [
+        {
+          "coefficient": 1,
+          "element": "edge_1",
+          "element_id": 1,
+          "sign": 1
+        },
+        {
+          "coefficient": 1,
+          "element": "edge_2",
+          "element_id": 2,
+          "sign": 1
+        },
+        {
+          "coefficient": 1,
+          "element": "edge_11",
+          "element_id": 11,
+          "sign": 1
+        },
+        {
+          "coefficient": 1,
+          "element": "edge_21",
+          "element_id": 21,
+          "sign": 1
+        },
+        {
+          "coefficient": 1,
+          "element": "edge_22",
+          "element_id": 22,
+          "sign": 1
+        },
+        {
+          "coefficient": 2,
+          "element": "e33",
+          "element_id": 30,
+          "sign": 1
+        }
+      ],
+      "circuit_support": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "closure_equations": {
+        "height_sum_active_plus_dim_e33": 0,
+        "public_boundary_sum_active_plus_dim_e33": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "interpretation": "The natural sector-33 height attachment makes gamma8+e33 a positive circuit obstruction. It still does not make e33 a cocircuit or make the old contour ground set a hyperplane.",
+      "is_positive_circuit": true,
+      "name": "sector33_height_attachment",
+      "new_column": {
+        "height_coordinate": -187392,
+        "public_incidence": {
+          "0": 1,
+          "13": -1
+        },
+        "sector33_dimension": 2,
+        "source_vertex": 13,
+        "target_vertex": 0
+      },
+      "new_element": "e33",
+      "representation": "[partial_D20; height row] plus one sector-33 unit whose doubled column closes the all-positive gamma8 active row",
+      "tests": {
+        "gamma_plus_new_is_circuit": true,
+        "gamma_plus_new_is_cocircuit": false,
+        "gamma_plus_new_rank": 5,
+        "gamma_support_is_circuit": false,
+        "gamma_support_is_cocircuit": false,
+        "gamma_support_rank": 5,
+        "new_element_in_old_closure": true,
+        "new_singleton_is_cocircuit": false,
+        "old_ground_is_hyperplane": false,
+        "old_ground_rank": 20,
+        "rank": 20
+      }
+    },
+    "signed_residue_extension": {
+      "circuit_coefficients": [
+        {
+          "coefficient": 1,
+          "element": "edge_1",
+          "element_id": 1,
+          "sign": 1
+        },
+        {
+          "coefficient": -1,
+          "element": "edge_2",
+          "element_id": 2,
+          "sign": -1
+        },
+        {
+          "coefficient": 1,
+          "element": "edge_11",
+          "element_id": 11,
+          "sign": 1
+        },
+        {
+          "coefficient": 1,
+          "element": "edge_21",
+          "element_id": 21,
+          "sign": 1
+        },
+        {
+          "coefficient": -1,
+          "element": "edge_22",
+          "element_id": 22,
+          "sign": -1
+        },
+        {
+          "coefficient": -40,
+          "element": "rho_primitive",
+          "element_id": 30,
+          "sign": -1
+        }
+      ],
+      "circuit_support": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "gamma8_primitive_residue": -40,
+      "gamma8_signed_integral": -122880,
+      "interpretation": "This lift turns the non-exact signed contour residue into a circuit with one residue element. The residue element is not a cocircuit or hyperplane.",
+      "name": "signed_residue_lift",
+      "new_column": {
+        "public_incidence": {},
+        "residue_coordinate": 3072
+      },
+      "new_element": "rho_primitive",
+      "representation": "[partial_D20; signed interface-weight row] plus rho with residue quantum 3072",
+      "tests": {
+        "gamma_plus_new_is_circuit": true,
+        "gamma_plus_new_is_cocircuit": false,
+        "gamma_plus_new_rank": 5,
+        "gamma_support_is_circuit": false,
+        "gamma_support_is_cocircuit": false,
+        "gamma_support_rank": 5,
+        "new_element_in_old_closure": true,
+        "new_singleton_is_cocircuit": false,
+        "old_ground_is_hyperplane": false,
+        "old_ground_rank": 20,
+        "rank": 20
+      }
+    }
+  },
+  "inputs": {
+    "d20_finite_contour_integration_report": {
+      "path": "data/invariants/d20/theorems/d20_finite_contour_integration/report.json",
+      "sha256": "966c5f3d7793096d8748dc47a15c6d2a20a9cd1537c5889553e2330667d35ec3"
+    },
+    "d20_json": {
+      "path": "d20.json",
+      "sha256": "6de54862ed25ce2709e235af40ae86662f60c97ad7038903a63f2c7ca71ef919"
+    },
+    "d20_oriented_matroid_contour_report": {
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_contour/report.json",
+      "sha256": "fec50dfb15f6e06e48baf845826d779821eef8c0cb6820cb90ce61046c6ae4cb"
+    },
+    "sector33_height_coherent_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "sha256": "a33668aef24f3405c5f7c4caa5f1301d076ac6c778f7e54afcaff1b61e71f708"
+    },
+    "sector33_residual_attachment_report": {
+      "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
+      "sha256": "1f45285b55ce8cc9564e98acb0700b30c395dfff44c052780a224fa0c291b2fb"
+    },
+    "sector33_unique_public_zero_support_report": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
+      "sha256": "72d94a621f2dc84f7407673a676ba1cf46651f4284e91332b82a14bd0788f1c8"
+    }
+  },
+  "interpretation": {
+    "confirmed": [
+      "the signed contour residue has a classical one-element circuit closure",
+      "the sector-33 height attachment realizes the positive-circuit obstruction",
+      "the sector-33 scalar remains tied to the unique public-zero sector 33"
+    ],
+    "overclaim_guard": "A sector-33 cocircuit theorem would need a dual coextension or a different decorated ground set. The certified primal extensions point to positive circuit obstruction instead.",
+    "rejected": [
+      "sector 33 as singleton cocircuit in the tested primal extensions",
+      "old public contour ground set as the sector-33 hyperplane",
+      "gamma8+e33 as cocircuit rather than circuit"
+    ]
+  },
+  "next_highest_yield_item": "Build the dual/coextension version of the sector-33 attachment and test whether the positive circuit obstruction becomes a cocircuit in the dual oriented matroid.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_oriented_matroid_sector33_extension",
+  "status": "D20_ORIENTED_MATROID_SECTOR33_EXTENSION_CERTIFIED"
+}

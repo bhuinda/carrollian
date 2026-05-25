@@ -10,13 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from src.paths import D20_INVARIANTS, LAYERS
+from src.paths import D20_INVARIANTS, DATA
 
 
 THEOREM_ID = "readout_stack_scope"
 DEFAULT_OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
-CORE_A985 = LAYERS / "core" / "a985.json"
+CORE_A985 = DATA / "core" / "a985.json"
 DERIVED_INVARIANT_REPORTS = D20_INVARIANTS / "derived_invariant_reports.json"
 PUBLIC_SHADOW_KERNEL_REPORT = D20_INVARIANTS / "theorems" / "sector_public_shadow_kernel" / "report.json"
 IDEMPOTENT_ADMISSIBILITY_REPORT = (
@@ -29,7 +29,7 @@ ALL_RESIDUE_HEIGHT_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_all_residue_height_transport" / "report.json"
 )
 SUPERSELECTION_REPORT = D20_INVARIANTS / "theorems" / "superselection_flux_balance_extension" / "report.json"
-TUBE_PROJECTION_SECTION = LAYERS / "tube" / "projection_section.json"
+TUBE_PROJECTION_SECTION = DATA / "tube" / "projection_section.json"
 
 
 def canonical(obj: Any) -> bytes:

@@ -1,0 +1,517 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b6d031365cdc052166277d7aa5e0a0beaa0cc55bae408bb3b03cd8d6f6a0c6fa",
+  "checks": {
+    "canonical_finite_scattering_table_is_certified": true,
+    "finite_bms_carrollian_flux_balance_is_certified": true,
+    "gamma8_star_has_expected_kernel_and_odd_targets": true,
+    "height_order_matches_certified_gamma8_star": true,
+    "height_ordered_kernel_targets_are_all_balanced": true,
+    "mask288_does_not_generate_target_set_as_f2_span": true,
+    "mask288_has_only_generator3_one_step_kernel_preserving_exit": true,
+    "mask288_is_unique_nonzero_height_apex": true,
+    "selected_balance_remains_first_nontrivial_sourced_balance": true,
+    "selected_sourced_ward_balance_is_certified": true,
+    "ward_kernel_height_selector_is_certified": true
+  },
+  "claim": "The gamma8 one-step sourced Ward-kernel target cone has nine nonzero balanced targets. Mask 288 is the unique nonzero height-minimal apex, separated from the next target by height gap 82944. It is a height-cone apex, not an algebraic generator of the full target set: its F2 span is only {0,288}, and its only one-step kernel-preserving exit is generator 3 to mask 296.",
+  "definition": {
+    "algebraic_generation_test": "Whether the apex alone generates every nonzero one-step target as an F2 subspace element or by one-step kernel-preserving scattering.",
+    "gamma8_sourced_balance_cone": "The one-step scattering targets from gamma8 that land in the all-mask Ward kernel, ordered by finite height action and filtered to nonzero targets when testing nontriviality.",
+    "height_apex": "The unique nonzero target in that set with minimum positive finite height action."
+  },
+  "derived": {
+    "cone_summary": {
+      "algebraic_generation_statement": "mask 288 does not generate the whole one-step target set as an F2 subspace or by one-step kernel-preserving scattering",
+      "apex_f2_span": [
+        0,
+        288
+      ],
+      "apex_one_step_kernel_preserving_targets": [
+        {
+          "generator_cycle_id": 3,
+          "height_flux_delta": 1191936,
+          "target_height_action": 2257920,
+          "target_mask": 296
+        }
+      ],
+      "height_apex": {
+        "generator_cycle_id": 5,
+        "height_action": 1065984,
+        "height_gap_to_next": 82944,
+        "mask": 288
+      },
+      "height_cone_statement": "mask 288 is the unique nonzero height-minimal apex of the gamma8 one-step Ward-kernel sourced-balance cone",
+      "kernel_target_count_including_zero": 10,
+      "nonzero_kernel_target_count": 9,
+      "odd_self_target": {
+        "generator_cycle_id": 3,
+        "height_flux_delta": 1191936,
+        "target_hidden_packet": "odd",
+        "target_mask": 264
+      },
+      "odd_target_count": 1,
+      "source_mask": 256,
+      "target_definition": "one-step scattering targets from gamma8 that land in the all-mask Ward kernel",
+      "target_masks_missing_from_apex_f2_span": [
+        257,
+        258,
+        260,
+        272,
+        320,
+        384,
+        768,
+        1280
+      ],
+      "trivial_zero_target": {
+        "generator_cycle_id": 8,
+        "height_flux_delta": -374784,
+        "target_mask": 0
+      }
+    },
+    "gamma8_star_kernel_target_rows": [
+      {
+        "generator_cycle_id": 0,
+        "generator_height_action": 1075200,
+        "height_flux_delta": 1075200,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "bf0cac1c68c47dd6d9d05a54faa59b72e70e49cb91e20d71976f27d760c87d6e",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1449984,
+        "target_hidden_packet": "kernel",
+        "target_mask": 257,
+        "toggle": "add",
+        "transition_id": 2816
+      },
+      {
+        "generator_cycle_id": 1,
+        "generator_height_action": 1320960,
+        "height_flux_delta": 1320960,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "84343c7c3ba4b4b32b7e46e8b69df2152ef98a21e23a92b806fc1241626ff74a",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1695744,
+        "target_hidden_packet": "kernel",
+        "target_mask": 258,
+        "toggle": "add",
+        "transition_id": 2817
+      },
+      {
+        "generator_cycle_id": 2,
+        "generator_height_action": 774144,
+        "height_flux_delta": 774144,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "feb4b35c70a2b384d56e703a92bbae51da4690bbdc2560ad1f63af9a8f1038ff",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1148928,
+        "target_hidden_packet": "kernel",
+        "target_mask": 260,
+        "toggle": "add",
+        "transition_id": 2818
+      },
+      {
+        "generator_cycle_id": 4,
+        "generator_height_action": 1081344,
+        "height_flux_delta": 1081344,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "ae340e03b1f4f664c8ef32d4a1c1ba87b3f8bc0f050560db1ef23ac368541f22",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1456128,
+        "target_hidden_packet": "kernel",
+        "target_mask": 272,
+        "toggle": "add",
+        "transition_id": 2820
+      },
+      {
+        "generator_cycle_id": 5,
+        "generator_height_action": 691200,
+        "height_flux_delta": 691200,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "510547315a1bd7625f284099bc4d979e498382a29d9764b9073512cffe8be0b2",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1065984,
+        "target_hidden_packet": "kernel",
+        "target_mask": 288,
+        "toggle": "add",
+        "transition_id": 2821
+      },
+      {
+        "generator_cycle_id": 6,
+        "generator_height_action": 903168,
+        "height_flux_delta": 903168,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "edd41879d5158e1b302729b0254feb918b9663eb48f3932c72c1123893b6e842",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1277952,
+        "target_hidden_packet": "kernel",
+        "target_mask": 320,
+        "toggle": "add",
+        "transition_id": 2822
+      },
+      {
+        "generator_cycle_id": 7,
+        "generator_height_action": 1069056,
+        "height_flux_delta": 1069056,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "7e1f28b63f2f987b7fd9c54609894443f47b5e7dd493389f5e2cbb44c5273115",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1443840,
+        "target_hidden_packet": "kernel",
+        "target_mask": 384,
+        "toggle": "add",
+        "transition_id": 2823
+      },
+      {
+        "generator_cycle_id": 8,
+        "generator_height_action": 374784,
+        "height_flux_delta": -374784,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "fdc9e62b89a29c4b326babe8f82f232f63e80489330c9a1bdb71d6f39174a5d3",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 0,
+        "target_hidden_packet": "kernel",
+        "target_mask": 0,
+        "toggle": "remove",
+        "transition_id": 2824
+      },
+      {
+        "generator_cycle_id": 9,
+        "generator_height_action": 992256,
+        "height_flux_delta": 992256,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "7a009319d18d1f9f7c7a2fdb6f98fdb7ae3fd4ae26a31e6ee3b99a852d24ad34",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1367040,
+        "target_hidden_packet": "kernel",
+        "target_mask": 768,
+        "toggle": "add",
+        "transition_id": 2825
+      },
+      {
+        "generator_cycle_id": 10,
+        "generator_height_action": 1090560,
+        "height_flux_delta": 1090560,
+        "hidden_R33_transfer_mod26": 13,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "caf5d41872ba34a76fd4fbed70b6a7af192445e51ea5475148fd6be34a778ff5",
+        "packet_transfer": "odd_to_kernel",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 0,
+        "target_height_action": 1465344,
+        "target_hidden_packet": "kernel",
+        "target_mask": 1280,
+        "toggle": "add",
+        "transition_id": 2826
+      }
+    ],
+    "gamma8_star_odd_target_rows": [
+      {
+        "generator_cycle_id": 3,
+        "generator_height_action": 1191936,
+        "height_flux_delta": 1191936,
+        "hidden_R33_transfer_mod26": 0,
+        "incoming_signature_sha256": "d96709bc5673e59243a7abe16535d793cc92b125e7c8d048aec850d7d4a5e5bf",
+        "outgoing_signature_sha256": "bddb610d1347e3c1f922ed4dc71cc9c918939e00b05aad544c502b83449c105e",
+        "packet_transfer": "odd_to_odd",
+        "source_R33_mod26": 13,
+        "source_height_action": 374784,
+        "source_hidden_packet": "odd",
+        "source_mask": 256,
+        "target_R33_mod26": 13,
+        "target_height_action": 1566720,
+        "target_hidden_packet": "odd",
+        "target_mask": 264,
+        "toggle": "add",
+        "transition_id": 2819
+      }
+    ],
+    "height_ordered_nonzero_kernel_targets": [
+      {
+        "generator_cycle_id": 5,
+        "height_flux_delta": 691200,
+        "height_rank": 1,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          5,
+          8
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1065984,
+        "target_hidden_packet": "kernel",
+        "target_mask": 288,
+        "transition_id": 2821
+      },
+      {
+        "generator_cycle_id": 2,
+        "height_flux_delta": 774144,
+        "height_rank": 2,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          2,
+          8
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1148928,
+        "target_hidden_packet": "kernel",
+        "target_mask": 260,
+        "transition_id": 2818
+      },
+      {
+        "generator_cycle_id": 6,
+        "height_flux_delta": 903168,
+        "height_rank": 3,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          6,
+          8
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1277952,
+        "target_hidden_packet": "kernel",
+        "target_mask": 320,
+        "transition_id": 2822
+      },
+      {
+        "generator_cycle_id": 9,
+        "height_flux_delta": 992256,
+        "height_rank": 4,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          8,
+          9
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1367040,
+        "target_hidden_packet": "kernel",
+        "target_mask": 768,
+        "transition_id": 2825
+      },
+      {
+        "generator_cycle_id": 7,
+        "height_flux_delta": 1069056,
+        "height_rank": 5,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          7,
+          8
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1443840,
+        "target_hidden_packet": "kernel",
+        "target_mask": 384,
+        "transition_id": 2823
+      },
+      {
+        "generator_cycle_id": 0,
+        "height_flux_delta": 1075200,
+        "height_rank": 6,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          0,
+          8
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1449984,
+        "target_hidden_packet": "kernel",
+        "target_mask": 257,
+        "transition_id": 2816
+      },
+      {
+        "generator_cycle_id": 4,
+        "height_flux_delta": 1081344,
+        "height_rank": 7,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          4,
+          8
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1456128,
+        "target_hidden_packet": "kernel",
+        "target_mask": 272,
+        "transition_id": 2820
+      },
+      {
+        "generator_cycle_id": 10,
+        "height_flux_delta": 1090560,
+        "height_rank": 8,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          8,
+          10
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1465344,
+        "target_hidden_packet": "kernel",
+        "target_mask": 1280,
+        "transition_id": 2826
+      },
+      {
+        "generator_cycle_id": 1,
+        "height_flux_delta": 1320960,
+        "height_rank": 9,
+        "hidden_balance_error": 0,
+        "packet_transfer": "odd_to_kernel",
+        "public_balance_error": {
+          "J": 0,
+          "M": 0,
+          "P": 0,
+          "Phi": 0
+        },
+        "target_basis_cycle_indices": [
+          1,
+          8
+        ],
+        "target_corrected_R33_mod26": 0,
+        "target_height_action": 1695744,
+        "target_hidden_packet": "kernel",
+        "target_mask": 258,
+        "transition_id": 2817
+      }
+    ]
+  },
+  "inputs": {
+    "canonical_finite_scattering_table_report": {
+      "path": "data/invariants/d20/theorems/canonical_finite_scattering_table/report.json",
+      "sha256": "3b0cea41366d6972213ad43dd1052a86256a4cfd27249d98072f35c1d804362f"
+    },
+    "finite_bms_carrollian_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_bms_carrollian_flux_balance/report.json",
+      "sha256": "b8755b6cc80e36cff5930114f45fc7dc6eec9d5a5a604437d71b43373822955d"
+    },
+    "selected_sourced_ward_balance_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_selected_sourced_ward_balance/report.json",
+      "sha256": "259468357a8356ef269cb73fd7d123bd5f4bfe35e93ea427530da16f95f2cf42"
+    },
+    "zero_pair_ward_kernel_height_selector_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_ward_kernel_height_selector/report.json",
+      "sha256": "e7e312b6502751d2b8496f60239a7528631153d4697799f330bd66fc4e1b4330"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This is a one-step cone classification. It does not yet classify all higher-depth paths through the 1024-mask Ward kernel.",
+    "what_this_proves": [
+      "all nonzero one-step Ward-kernel targets from gamma8 are balanced sourced Ward rows",
+      "mask 288 is the unique height-minimal nonzero target",
+      "mask 288 is the apex of the height-ordered sourced-balance cone",
+      "mask 288 does not algebraically generate the whole one-step target set by itself"
+    ]
+  },
+  "next_highest_yield_item": "Extend the sourced-balance cone from the one-step gamma8 star to shortest height paths through all 1023 nonzero Ward-kernel masks.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_cone",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_CERTIFIED"
+}

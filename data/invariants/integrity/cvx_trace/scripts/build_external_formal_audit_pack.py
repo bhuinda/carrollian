@@ -92,6 +92,38 @@ CORE_REPORTS: dict[str, tuple[Path, str]] = {
         CVX / "reports" / "p_not_np_model_scoped_theorem.json",
         "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
     ),
+    "public_bit_ram_standard_simulation": (
+        CVX / "reports" / "public_bit_ram_standard_simulation.json",
+        "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+    ),
+    "standard_tm_public_bit_ram_frontend": (
+        CVX / "reports" / "standard_tm_public_bit_ram_frontend.json",
+        "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+    ),
+    "semantic_x_reclassification": (
+        CVX / "reports" / "semantic_x_reclassification_theorem.json",
+        "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+    ),
+    "p_cvx_formal_machine_interface": (
+        CVX / "reports" / "p_cvx_formal_machine_interface.json",
+        "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+    ),
+    "p_cvx_standard_model_identification": (
+        CVX / "reports" / "p_cvx_standard_model_identification.json",
+        "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED",
+    ),
+    "p_cvx_standard_equivalence_witness": (
+        CVX / "reports" / "p_cvx_standard_equivalence_witness.json",
+        "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND",
+    ),
+    "standard_p_not_np_replay_terms": (
+        CVX / "reports" / "standard_p_not_np_replay_terms.json",
+        "STANDARD_P_NOT_NP_REPLAY_TERMS_TYPECHECKED",
+    ),
+    "standard_p_not_np_promotion_certificate": (
+        CVX / "reports" / "standard_p_not_np_promotion_certificate.json",
+        "STANDARD_P_NOT_NP_PROMOTION_CERTIFIED_REPO_LOCAL",
+    ),
     "t985_univalent_equivalence_obligation": (
         CVX / "reports" / "t985_univalent_equivalence_obligation.json",
         "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING",
@@ -102,6 +134,11 @@ CHECKLIST = BASE / "p_vs_np_bridge_checklist.json"
 CVX_INDEX = CVX / "index.json"
 DATA_INDEX = ROOT / "data" / "index.json"
 TRACE_VALIDATION_REPORT = CVX / "reports" / "cadical_lrat_contradiction_4_validation.json"
+SELF_CONTAINED_BUNDLE_BUILDER = CVX / "scripts" / "build_self_contained_external_audit_bundle.py"
+SELF_CONTAINED_BUNDLE_REPLAY_BUILDER = CVX / "scripts" / "build_self_contained_audit_bundle_replay_report.py"
+SELF_CONTAINED_BUNDLE_REPORT = CVX / "reports" / "self_contained_external_audit_bundle.json"
+SELF_CONTAINED_BUNDLE_REPLAY_REPORT = CVX / "reports" / "self_contained_audit_bundle_replay_report.json"
+BUNDLE_ROOT = ROOT / "generated" / "external_audit_bundle" / "carrollian_external_audit_bundle"
 LAYER_INPUTS = [
     ROOT / "layers" / "tube" / "projection_section.json",
     ROOT / "layers" / "tube" / "kernel_descent_audit.json",
@@ -180,6 +217,56 @@ REPLAY_COMMANDS = [
         "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
     ),
     (
+        "public_bit_ram_standard_simulation",
+        "python data/invariants/integrity/cvx_trace/scripts/build_public_bit_ram_standard_simulation.py",
+        "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+    ),
+    (
+        "standard_tm_public_bit_ram_frontend",
+        "python data/invariants/integrity/cvx_trace/scripts/build_standard_tm_public_bit_ram_frontend.py",
+        "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+    ),
+    (
+        "semantic_x_reclassification",
+        "python data/invariants/integrity/cvx_trace/scripts/build_semantic_x_reclassification_theorem.py",
+        "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+    ),
+    (
+        "p_cvx_formal_machine_interface_agda",
+        "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+        "",
+    ),
+    (
+        "p_cvx_formal_machine_interface",
+        "python data/invariants/integrity/cvx_trace/scripts/build_p_cvx_formal_machine_interface.py",
+        "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+    ),
+    (
+        "p_cvx_standard_model_identification",
+        "python data/invariants/integrity/cvx_trace/scripts/build_p_cvx_standard_model_identification.py",
+        "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED",
+    ),
+    (
+        "p_cvx_standard_equivalence_witness",
+        "python data/invariants/integrity/cvx_trace/scripts/build_p_cvx_standard_equivalence_witness.py",
+        "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND",
+    ),
+    (
+        "standard_p_not_np_replay_terms_agda",
+        "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda",
+        "",
+    ),
+    (
+        "standard_p_not_np_replay_terms",
+        "python data/invariants/integrity/cvx_trace/scripts/build_standard_p_not_np_replay_terms.py",
+        "STANDARD_P_NOT_NP_REPLAY_TERMS_TYPECHECKED",
+    ),
+    (
+        "standard_p_not_np_promotion_certificate",
+        "python data/invariants/integrity/cvx_trace/scripts/build_standard_p_not_np_promotion_certificate.py",
+        "STANDARD_P_NOT_NP_PROMOTION_CERTIFIED_REPO_LOCAL",
+    ),
+    (
         "external_formal_audit_pack",
         "python data/invariants/integrity/cvx_trace/scripts/build_external_formal_audit_pack.py",
         "EXTERNAL_FORMAL_AUDIT_PACK_READY",
@@ -222,9 +309,12 @@ def report_status(path: Path, expected_status: str) -> dict[str, Any]:
 
 def script_path_from_command(command: str) -> Path:
     parts = command.split()
-    if len(parts) < 2 or parts[0] != "python":
+    if len(parts) >= 2 and parts[0] == "python":
+        return ROOT / parts[1]
+    if len(parts) >= 2 and parts[0] == "agda":
+        return ROOT / parts[-1]
+    else:
         raise ValueError(f"unsupported replay command shape: {command}")
-    return ROOT / parts[1]
 
 
 def replay_plan() -> list[dict[str, Any]]:
@@ -283,6 +373,18 @@ def build_report() -> dict[str, Any]:
         CVX / "schemas" / "parameterized_e33_target.schema.json",
         CVX / "schemas" / "cvx_trace.schema.json",
         CVX / "reports" / "p_not_np_model_scoped_theorem.md",
+        CVX / "reports" / "public_bit_ram_standard_simulation.md",
+        CVX / "reports" / "standard_tm_public_bit_ram_frontend.md",
+        CVX / "reports" / "semantic_x_reclassification_theorem.md",
+        CVX / "reports" / "p_cvx_formal_machine_interface.md",
+        CVX / "reports" / "p_cvx_standard_model_identification.md",
+        CVX / "reports" / "p_cvx_standard_equivalence_witness.md",
+        CVX / "reports" / "standard_p_not_np_replay_terms.md",
+        CVX / "reports" / "standard_p_not_np_promotion_certificate.md",
+        CVX / "formal" / "PcvxStandardMachineInterface.agda",
+        CVX / "formal" / "StandardPNotNPReplayTerms.agda",
+        SELF_CONTAINED_BUNDLE_BUILDER,
+        SELF_CONTAINED_BUNDLE_REPLAY_BUILDER,
     ] + LAYER_INPUTS
     manifest = hash_manifest(required_artifacts)
 
@@ -329,13 +431,27 @@ def build_report() -> dict[str, Any]:
         },
         "claim_boundary": {
             "repo_model": "Claims are scoped to the repository's stated C/V/X interface model and certificate semantics.",
+            "standard_promotion": (
+                "The pack includes a repo-local standard-statement promotion certificate; this is still not "
+                "peer review or proof-assistant parsing/hash verification of every replay artifact."
+            ),
+            "self_contained_distribution": {
+                "builder": rel(SELF_CONTAINED_BUNDLE_BUILDER),
+                "report": rel(SELF_CONTAINED_BUNDLE_REPORT),
+                "replay_report": rel(SELF_CONTAINED_BUNDLE_REPLAY_REPORT),
+                "bundle_root": rel(BUNDLE_ROOT),
+                "meaning": (
+                    "Use this builder to materialize a portable replay surface instead of relying on files "
+                    "scattered through a checkout."
+                ),
+            },
             "finite_target_boundary": (
                 "The fixed 2048-mask D20 target remains fenced as a finite lookup testbed; "
                 "SAT-completeness is carried by the parameterized assignment-witness E(phi) target."
             ),
             "external_status": "This pack is prepared for external audit; it is not itself independent external validation.",
             "non_claims": [
-                "This does not claim a proof-assistant formalization has been completed.",
+                "This includes typechecked proof-assistant definitions and replay-obligation terms, not proof-assistant JSON/hash verification.",
                 "This does not claim peer review or independent clean-room replay has already occurred.",
                 "This does not make the finite D20 mask fingerprint SAT-preserving.",
             ],

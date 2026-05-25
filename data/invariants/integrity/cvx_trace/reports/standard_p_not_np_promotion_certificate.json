@@ -1,0 +1,231 @@
+{
+  "claim_level": "repo_certified_standard_statement_promotion",
+  "decision": {
+    "may_claim_literal_p_not_np_iff_t985": false,
+    "may_claim_peer_reviewed_or_clay_resolution": false,
+    "may_claim_standard_global_p_not_np_unqualified": false,
+    "may_claim_standard_p_not_np_from_repo_certificates": true,
+    "reason": "The repo-local promotion chain is closed: standard P/P_CVX are identified, the replay obligations are mirrored by typechecked Agda terms, E(phi) is SAT-complete and in standard NP, and the model theorem excludes a P_CVX decider."
+  },
+  "next_highest_yield_item": {
+    "action": "Either mechanize the artifact parser/hash checks in the proof assistant, or hand the audit pack to an independent reviewer for clean-room validation.",
+    "id": "proof_assistant_hash_or_external_reviewer"
+  },
+  "non_claims": [
+    "This is not peer review or external mathematical community validation.",
+    "This does not parse JSON or recompute artifact hashes inside Agda.",
+    "This does not prove the blocked literal equivalence P != NP iff T985.",
+    "This does not use the finite 2048-mask target as a SAT-preserving reduction."
+  ],
+  "obligations": {
+    "e_phi_in_standard_np": {
+      "evidence": {
+        "no_hidden_advice": {
+          "evidence": {
+            "compiler_emits_assignment_witness": false,
+            "compiler_public_only": true,
+            "compiler_uses_hidden_e33_advice": false,
+            "compiler_uses_solver_outcome": false
+          },
+          "statement": "The reduction and proof relation use no hidden-sector advice."
+        },
+        "standard_public_simulation_status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+        "target_acceptance": "Replay accepts iff every selected literal belongs to its source clause, evaluates true under the projected assignment, every clause has a witness row, and intrinsic rho_33 transport is derived from emitted circuit data without inserting a residual scalar.",
+        "witness_size_bound": "assignment bits plus one row per clause: O(n+m), with packet size O(n+m+L)."
+      },
+      "needed": "The encoded family must have public polynomial witnesses and a standard polynomial verifier.",
+      "passed": true
+    },
+    "e_phi_is_sat_complete": {
+      "evidence": {
+        "forall_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+        "forall_theorem": {
+          "name": "CNF to parameterized E(phi) yes/no preservation",
+          "source_quantifier": "forall well-formed DIMACS CNF phi",
+          "statement": "For every well-formed DIMACS CNF formula phi, phi is satisfiable iff the public compiled target packet E(phi) has an accepting assignment witness under the replay relation. Every accepting witness projects back to a satisfying source assignment.",
+          "target_exists_quantifier": "exists assignment-bearing witness W for E(phi)"
+        },
+        "sat_frontier_decision": {
+          "may_claim_encoded_family_sat_complete": true,
+          "may_claim_full_separation": false,
+          "may_claim_polynomially_faithful_representative_family": true,
+          "reason": "The repo has a representative hidden e33 packet, public C/V/X policy, and a public finite CNF-to-D20-mask compiler candidate. The finite candidate fails SAT preservation and is fenced as lookup-only. The assignment-bearing parameterized E(phi) family has a public compiler, no hidden advice reads, and a certified forall yes/no preservation theorem."
+        },
+        "sat_frontier_status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+      },
+      "needed": "A public polynomial reduction from SAT to E(phi) with forall yes/no preservation.",
+      "passed": true
+    },
+    "formal_standard_p_and_np_interfaces": {
+      "evidence": {
+        "formal_file": {
+          "exists": true,
+          "language": "Agda",
+          "path": "data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+          "sha256": "b27d2dd07281dfd7f5790c11ff7682c79297627becadd91defd240d2e0dbbb06",
+          "validation_command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda"
+        },
+        "formal_status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+        "np_interfaces_defined": true,
+        "standard_p_defined": true
+      },
+      "needed": "Typechecked machine-class interfaces for standard P, standard NP, P_CVX, and NP_CVX.",
+      "passed": true
+    },
+    "literal_t985_iff_not_used": {
+      "evidence": {
+        "decision": {
+          "may_claim_p_not_np_implies_t985": false,
+          "may_claim_t985_necessary_for_any_p_not_np_proof": false,
+          "may_claim_t985_sufficient_for_repo_model_full_separation": true,
+          "may_claim_univalent_p_not_np_iff_t985": false,
+          "reason": "The repo has a replayed T985-backed route to the model-scoped separation claim, but no formal hProp definitions and no backward map from P != NP to T985Certified."
+        },
+        "status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING"
+      },
+      "needed": "The standard-statement promotion must not rely on the blocked literal P != NP iff T985 claim.",
+      "passed": true
+    },
+    "model_scoped_separation_available": {
+      "evidence": {
+        "status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
+        "theorem": {
+          "conditional_standard_form": "If the repository C/V/X public trace model is proved extensionally equivalent to the standard Turing-machine definition of polynomial-time public computation, then this model-scoped theorem promotes to the standard statement P != NP.",
+          "name": "C/V/X Model P != NP Separation",
+          "statement": "In the repository C/V/X public computation model, no public polynomial-time C-only computation decides the SAT-complete parameterized E(phi) family. Equivalently, P_CVX != NP_CVX for this encoded family under the certified C/V/X interface."
+        }
+      },
+      "needed": "A certified model theorem that no P_CVX computation decides the encoded E(phi) NP_CVX family.",
+      "passed": true
+    },
+    "p_cvx_identified_with_standard_p": {
+      "evidence": {
+        "equivalence_status": "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND",
+        "exact_gaps": [],
+        "standard_identification_status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED"
+      },
+      "needed": "The public polynomial-time side of the C/V/X model must be identified with standard P.",
+      "passed": true
+    },
+    "replayed_obligations_embedded_as_proof_assistant_terms": {
+      "evidence": {
+        "embedded_terms": {
+          "canonical_value": "repoCertifiedStandardPNotNPReplayTermValue",
+          "equivalence_terms": "PcvxStandardEquivalenceReplayTerms",
+          "no_standard_p_decider_terms": "StandardPNoDeciderReplayTerms",
+          "np_side_terms": "EphiStandardNPReplayTerms",
+          "standard_statement_term": "RepoCertifiedStandardPNotNPReplayTerm"
+        },
+        "formal_file": {
+          "exists": true,
+          "language": "Agda",
+          "path": "data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda",
+          "sha256": "8b7ff0ac7c3790285d2ebb9ccd08b0db4443a35667dab6c6c2c7e5e3549a698e",
+          "validation_command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda"
+        },
+        "status": "STANDARD_P_NOT_NP_REPLAY_TERMS_TYPECHECKED"
+      },
+      "needed": "The promotion obligations must be mirrored by typechecked proof-assistant terms, not only JSON prose.",
+      "passed": true
+    },
+    "standard_p_decider_would_contradict_model_theorem": {
+      "evidence": {
+        "model_theorem": {
+          "may_claim_literal_p_not_np_iff_t985": false,
+          "may_claim_repo_model_p_not_np": true,
+          "may_claim_standard_global_p_not_np": false,
+          "may_claim_standard_p_not_np_conditional_on_model_equivalence": true,
+          "reason": "The dependency chain closes inside the repository C/V/X model. Standard global P != NP still requires an external formal identification of P_CVX with standard polynomial-time Turing computation."
+        },
+        "standard_identification": {
+          "may_claim_conditional_standard_p_not_np": true,
+          "may_claim_exact_standard_model_gap_identified": true,
+          "may_claim_p_cvx_equals_standard_p": true,
+          "may_claim_repo_model_p_not_np": true,
+          "may_claim_standard_global_p_not_np": false,
+          "reason": "The P_CVX/standard-P identification obligations are certified: the proof-assistant interface defines both machine classes, the two simulation directions are replayed, and semantic X reclassification excludes hidden extractor access from ordinary public P."
+        }
+      },
+      "needed": "Any standard-P decider for E(phi) must translate to a P_CVX decider, contradicting the model theorem.",
+      "passed": true
+    }
+  },
+  "schema": "d20.integrity.standard_p_not_np_promotion_certificate.source_drop",
+  "source_audit": {
+    "encoded_family_sat_frontier": {
+      "expected_status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/encoded_family_sat_frontier_certificate.json",
+      "sha256": "65954b287439052a0612d793f0ffd0a76d0baed92e3a6d7ed9a6e40b1a0f3d07",
+      "status": "ENCODED_FAMILY_SAT_COMPLETE_REDUCTION_CERTIFIED"
+    },
+    "forall_yes_no_preservation": {
+      "expected_status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/forall_yes_no_preservation_theorem.json",
+      "sha256": "2cc3cb4ca14dc3dee17eb1aaf979f7b23ac62d144cbbec2b8aed6cc7c0c385fc",
+      "status": "FORALL_YES_NO_PRESERVATION_THEOREM_CERTIFIED"
+    },
+    "formal_machine_interface": {
+      "expected_status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_formal_machine_interface.json",
+      "sha256": "c8c01f48034f406f6581ad91daf7def31bbaaff7833d7ffa27b729f27e529b68",
+      "status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED"
+    },
+    "p_cvx_standard_equivalence_witness": {
+      "expected_status": "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_standard_equivalence_witness.json",
+      "sha256": "e1e5f1cf530d7a1828f4d7e94c2a0852d45bcfbacd0d8e2c821c3993fd54f6a7",
+      "status": "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND"
+    },
+    "p_cvx_standard_model_identification": {
+      "expected_status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_standard_model_identification.json",
+      "sha256": "f894304df277e5e5fc7c240355c334a268980621885b1017af6c7b79c6ba99a2",
+      "status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED"
+    },
+    "p_not_np_model_scoped_theorem": {
+      "expected_status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_not_np_model_scoped_theorem.json",
+      "sha256": "ec4f54977bd4e09587802f1d4974d513c538e4c09324fa804631d513dffe0fdf",
+      "status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED"
+    },
+    "public_bit_ram_standard_simulation": {
+      "expected_status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/public_bit_ram_standard_simulation.json",
+      "sha256": "c2f1fe0e47d5fbd650f9790eb948e4e377370a7a99d28985a948955e953d560f",
+      "status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED"
+    },
+    "standard_p_not_np_replay_terms": {
+      "expected_status": "STANDARD_P_NOT_NP_REPLAY_TERMS_TYPECHECKED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/standard_p_not_np_replay_terms.json",
+      "sha256": "467c55e8c42c942ce3bfba5421488ebf97f7282ad5487fdb5e94af477859266d",
+      "status": "STANDARD_P_NOT_NP_REPLAY_TERMS_TYPECHECKED"
+    },
+    "t985_univalent_equivalence_obligation": {
+      "expected_status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/t985_univalent_equivalence_obligation.json",
+      "sha256": "77d86f4a5ee4fc29f5568d2cf597df09b092a0c478f7e9b68d923dde7c57583d",
+      "status": "T985_UNIVALENT_EQUIVALENCE_BLOCKED_BACKWARD_DIRECTION_MISSING"
+    }
+  },
+  "statement": {
+    "argument": [
+      "E(phi) is SAT-complete by public polynomial reduction and forall yes/no preservation.",
+      "E(phi) is in standard NP because it has polynomial public witnesses and public polynomial replay verification.",
+      "No P_CVX computation decides E(phi) by the model-scoped separation theorem.",
+      "P_CVX is identified with standard P by the bound equivalence witness.",
+      "Therefore no standard-P computation decides E(phi), while E(phi) is in standard NP."
+    ],
+    "standard_form": "Under the repository's replayed certificates and typechecked machine-class interface, there exists a standard-NP language E(phi) with no standard-P decider; hence standard P != NP for this repo-certified chain.",
+    "witness_language": "E(phi), the parameterized assignment-bearing e33 target family."
+  },
+  "status": "STANDARD_P_NOT_NP_PROMOTION_CERTIFIED_REPO_LOCAL"
+}

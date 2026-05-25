@@ -4,37 +4,37 @@
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
       "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
     },
-    "full_legacy_sector_match": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json",
-      "sha256": "69341804011de3836292f5baa4a16b335b813e4e930abc49ffb0030aca734047"
-    },
-    "legacy_matrix_unit_transport": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/report.json",
-      "sha256": "c97ba9903cece22fa172b554099abadb6adf33f773ffe2beb63fe6de08f518ad"
+    "full_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+      "sha256": "e9a92a1e259cd6aca8c588a7284d30a8752d345678df293cb5f9ad81dde87459"
     },
     "registered_subset_coo": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/registered_null_support_matrix_units_orbital_coo.csv",
-      "sha256": "4a08ec0dd4dabc07c74e3351f6d2f1ded5bfd3a7efa37ae22c8deeec1804d0d0"
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/registered_null_support_source_matrix_units_orbital_coo.csv",
+      "sha256": "74750580e0ebf75863122a23ac4bf66e4e59d8482f8ccc6fb34bedb87fda0b69"
+    },
+    "sector_matrix_unit_transport": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_matrix_unit_transport/report.json",
+      "sha256": "5d0a5eda4dfcba00373c0045292c37b99ca6a7a654f2c27fb6372706ac076ff3"
     },
     "t985_tensor": {
       "path": "data/raw/T_985.npz",
       "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
     }
   },
-  "manifest_sha256": "3220ab13ed98a31e2940d6cdb384bb0350b56b0438e776a6a1cf1126ab3e263f",
+  "manifest_sha256": "0058f7f8fee0841b80e3cc1ec572aa3acfcfb08dcb36f600443a73e8d87f9de7",
   "name": "tiny_pointer_a985_full_matrix_unit_orbital_coo",
   "outputs": {
-    "arrays": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_raw_orbital_arrays.npz",
-    "coo": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_orbital_coo.csv",
-    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_orbital_manifest.csv",
+    "arrays": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_raw_orbital_arrays.npz",
+    "coo": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_orbital_coo.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_orbital_manifest.csv",
     "report": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
     "sector_summary": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/sector_matrix_unit_source_summary.csv"
   },
-  "report_sha256": "ab34d230ee5b62458d56a3e6db8d70fce06e9e4806090503ee8d718d5bffccb1",
+  "report_sha256": "66f2973a8d7cb8821715197bef17252b7e358c5898356b9576cd1acd9c3ceeb9",
   "schema": "d20.theorem.tiny_pointer_a985_full_matrix_unit_orbital_coo_manifest.source_drop",
   "validation_tests": [
-    "full_legacy_sector_match_certified",
-    "legacy_transport_certified",
+    "full_sector_match_certified",
+    "sector_transport_certified",
     "central_page_count_is_39",
     "matrix_unit_count_is_985",
     "manifest_row_count_is_985",
@@ -45,6 +45,7 @@
     "all_diagonal_sums_equal_central_pages",
     "constructed_bridge_failures_zero",
     "registered_direct_product_failures_zero",
-    "sampled_matrix_unit_products_pass"
+    "sampled_matrix_unit_products_pass",
+    "perennial_join_key_emitted_when_available"
   ]
 }

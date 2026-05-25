@@ -113,16 +113,16 @@ def build_evaluation() -> dict[str, Any]:
     character_report = load_json(CHARACTER_DIR / "report.json")
     arrays = np.load(CHARACTER_DIR / "canonical_sector_character_table.npz")
     character_table = np.asarray(arrays["character_table"], dtype=np.int64) % FIELD_PRIME
-    legacy_sectors = np.asarray(arrays["legacy_sector"], dtype=np.int64)
+    source_sectors = np.asarray(arrays["source_sector"], dtype=np.int64)
     block_dimensions = np.asarray(arrays["block_dimension"], dtype=np.int64)
     identity_indices = np.asarray(arrays["identity_indices"], dtype=np.int64)
     table_by_sector = {
         int(sector): character_table[idx, :]
-        for idx, sector in enumerate(legacy_sectors.tolist())
+        for idx, sector in enumerate(source_sectors.tolist())
     }
     dimension_by_sector = {
         int(sector): int(block_dimensions[idx])
-        for idx, sector in enumerate(legacy_sectors.tolist())
+        for idx, sector in enumerate(source_sectors.tolist())
     }
     candidates = candidate_by_id(fourier_report)
 

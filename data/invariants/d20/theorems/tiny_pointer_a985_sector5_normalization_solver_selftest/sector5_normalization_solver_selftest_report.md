@@ -2,7 +2,7 @@
 
 Status: `D20_TINY_POINTER_A985_SECTOR5_NORMALIZATION_SOLVER_SELFTEST_CERTIFIED`
 
-This proves the GL2 solver and raw-coordinate verifier on a controlled self-candidate. The candidate is the already certified sector-5 raw matrix-unit chart, so this is an executable normalization path, not an independent legacy-basis solution.
+This proves the GL2 solver and raw-coordinate verifier on a controlled self-candidate. The candidate is the already certified sector-5 raw matrix-unit chart, so this is an executable normalization path, not an independent source-sector-basis solution.
 
 ## Checks
 
@@ -18,4 +18,4 @@ This proves the GL2 solver and raw-coordinate verifier on a controlled self-cand
 - `solver_residuals_zero`: `True`
 - `candidate_raw_matrix_unit_law_exhaustive`: `True`
 
-Next: Run this solver against a non-self sector-5 candidate source, or derive such a candidate from an upstream legacy off-diagonal construction.
+Next: Run this solver against a non-self sector-5 candidate source, or derive such a candidate from an upstream source-sector off-diagonal construction.

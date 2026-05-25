@@ -145,9 +145,9 @@
     "may_claim_sat_complete_hidden_e33_family": true,
     "may_claim_scalable_hidden_e33_family": true,
     "may_claim_uniform_cnf_to_e33_family_encoding": true,
-    "may_promote_legacy_clause_quotient_to_e33_reduction": false,
+    "may_promote_source_clause_quotient_to_e33_reduction": false,
     "may_use_d20_all_residue_family_as_finite_target_testbed": true,
-    "reason": "The repo contains useful seams: public CNF fixtures/proofs, legacy finite Boolean quotient rows, a certified 2048-class finite D20 e33 transport testbed, intrinsic height-return rho_33 transport, a public CNF-to-D20-mask compiler candidate, an obligation certificate that fences the finite target as a lookup testbed, a parameterized E(phi) schema, a public DIMACS-to-E(phi) packet compiler with bounded canary replay, and a certified forall-instance yes/no preservation theorem."
+    "reason": "The repo contains useful seams: public CNF fixtures/proofs, source finite Boolean quotient rows, a certified 2048-class finite D20 e33 transport testbed, intrinsic height-return rho_33 transport, a public CNF-to-D20-mask compiler candidate, an obligation certificate that fences the finite target as a lookup testbed, a parameterized E(phi) schema, a public DIMACS-to-E(phi) packet compiler with bounded canary replay, and a certified forall-instance yes/no preservation theorem."
   },
   "existing_frontier_decision": {
     "may_claim_encoded_family_sat_complete": true,
@@ -166,116 +166,6 @@
     "residue_class_count": 2048,
     "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
     "support_sector": 33
-  },
-  "legacy_boolean_family_seams": {
-    "has_a985_frame_field_rows": {
-      "image_size": true,
-      "quotient": true
-    },
-    "has_clause_3sat_mod2_quotient": true,
-    "has_residual_snf_mod2_coordinate": true,
-    "path": "data/evidence/ss_sat/source_drops/external_evidence_gate/running_ledger.csv",
-    "selected_row_count": 14,
-    "selected_rows": [
-      {
-        "invariant": "Clauses_all_CNF_arity_1_to_3_quotient",
-        "layer": "family",
-        "source": "all_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "Z/2"
-      },
-      {
-        "invariant": "Clauses_all_CNF_arity_1_to_3_image_size",
-        "layer": "family",
-        "source": "all_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "2592000"
-      },
-      {
-        "invariant": "Clauses_3SAT_quotient",
-        "layer": "family",
-        "source": "all_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "Z/2"
-      },
-      {
-        "invariant": "Clauses_3SAT_image_size",
-        "layer": "family",
-        "source": "all_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "2592000"
-      },
-      {
-        "invariant": "Proof_implication_resolution_xor_threshold_quotient",
-        "layer": "family",
-        "source": "all_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "Z/2"
-      },
-      {
-        "invariant": "Proof_implication_resolution_xor_threshold_image_size",
-        "layer": "family",
-        "source": "all_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "2592000"
-      },
-      {
-        "invariant": "A985_frame_fields_quotient",
-        "layer": "family",
-        "source": "all_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "Z/2 x Z/20 x Z/60"
-      },
-      {
-        "invariant": "A985_frame_fields_image_size",
-        "layer": "family",
-        "source": "all_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "2160"
-      },
-      {
-        "invariant": "weighted_clause_satisfied_sum_image_size",
-        "layer": "proof_trace",
-        "source": "proof_trace_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "864"
-      },
-      {
-        "invariant": "weighted_clause_satisfied_sum_quotient",
-        "layer": "proof_trace",
-        "source": "proof_trace_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "Z/10^2 x Z/60"
-      },
-      {
-        "invariant": "weighted_clause_unsatisfied_sum_image_size",
-        "layer": "proof_trace",
-        "source": "proof_trace_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "864"
-      },
-      {
-        "invariant": "weighted_clause_unsatisfied_sum_quotient",
-        "layer": "proof_trace",
-        "source": "proof_trace_family_summary.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "Z/10^2 x Z/60"
-      },
-      {
-        "invariant": "residual graph orbit size",
-        "layer": "canonicality",
-        "source": "automorphism_canonicality_audit.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "15"
-      },
-      {
-        "invariant": "SNF mod2 coordinate",
-        "layer": "residual",
-        "source": "residual_bit_vertex_table.csv",
-        "status": "CERTIFIED_BY_RECOMPUTATION",
-        "value": "[0,0,1,0,0]"
-      }
-    ]
   },
   "next_highest_yield_item": {
     "action": "Refresh the full no-escape closure ledger against the certified encoded-family reduction.",
@@ -409,17 +299,6 @@
       },
       "passed": true
     },
-    "legacy_clause_family_mod2_seam_present": {
-      "evidence": {
-        "has_a985_frame_field_rows": {
-          "image_size": true,
-          "quotient": true
-        },
-        "has_residual_snf_mod2_coordinate": true,
-        "selected_row_count": 14
-      },
-      "passed": true
-    },
     "public_cnf_fixture_surface_present": {
       "evidence": {
         "max_clause_width": 8,
@@ -442,10 +321,21 @@
       },
       "passed": true
     },
+    "source_clause_family_mod2_seam_present": {
+      "evidence": {
+        "has_a985_frame_field_rows": {
+          "image_size": true,
+          "quotient": true
+        },
+        "has_residual_snf_mod2_coordinate": true,
+        "selected_row_count": 14
+      },
+      "passed": true
+    },
     "truth_diverse_fixture_surface_present": {
       "evidence": {
         "benchmarks_with_sat_witness": [],
-        "benchmarks_with_unsat_witness_count": 14,
+        "benchmarks_with_unsat_witness_count": 6,
         "status_counts": {
           "SIGSEGV": 7,
           "UNSAT": 35
@@ -455,22 +345,14 @@
     }
   },
   "solver_status_surface": {
-    "benchmark_count": 14,
+    "benchmark_count": 6,
     "benchmarks_with_sat_witness": [],
     "benchmarks_with_unsat_witness": [
+      "",
       "contradiction_4.cnf",
       "horn_chain_12.cnf",
       "horn_chain_8.cnf",
       "php_3_2.cnf",
-      "scaled/horn_chain_128.cnf",
-      "scaled/horn_chain_16.cnf",
-      "scaled/horn_chain_32.cnf",
-      "scaled/horn_chain_64.cnf",
-      "scaled/php_4_3.cnf",
-      "scaled/php_5_4.cnf",
-      "scaled/php_6_5.cnf",
-      "scaled/xor_parity_6_unsat.cnf",
-      "scaled/xor_parity_8_unsat.cnf",
       "xor_unsat.cnf"
     ],
     "run_count": 42,
@@ -527,12 +409,6 @@
       "path": "data/invariants/integrity/cvx_trace/reports/formula_to_boundary_cycle_family_candidate.json",
       "status": "FORMULA_TO_BOUNDARY_CYCLE_FAMILY_CANDIDATE_BUILT_SAT_PRESERVATION_BLOCKED"
     },
-    "legacy_external_evidence_gate": {
-      "expected_status": "GNATURAL_ONTOLOGICAL_COMPUTATION_EXTERNAL_EVIDENCE_GATE_READY_EVIDENCE_PENDING",
-      "passed": true,
-      "path": "data/evidence/ss_sat/source_drops/external_evidence_gate/certificate.json",
-      "status": "GNATURAL_ONTOLOGICAL_COMPUTATION_EXTERNAL_EVIDENCE_GATE_READY_EVIDENCE_PENDING"
-    },
     "parameterized_e33_target_schema": {
       "expected_status": "PARAMETERIZED_E33_TARGET_SCHEMA_DEFINED_REDUCTION_OPEN",
       "passed": true,
@@ -544,6 +420,12 @@
       "passed": true,
       "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
       "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "source_external_evidence_gate": {
+      "expected_status": "GNATURAL_ONTOLOGICAL_COMPUTATION_EXTERNAL_EVIDENCE_GATE_READY_EVIDENCE_PENDING",
+      "passed": true,
+      "path": "data/evidence/ss_sat/source_drops/external_evidence_gate/certificate.json",
+      "status": "GNATURAL_ONTOLOGICAL_COMPUTATION_EXTERNAL_EVIDENCE_GATE_READY_EVIDENCE_PENDING"
     },
     "ss_sat_scaled_evidence": {
       "expected_status": "SS_SAT_SCALED_EVIDENCE_CAPTURED",
@@ -563,6 +445,116 @@
       "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
       "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
     }
+  },
+  "source_boolean_family_seams": {
+    "has_a985_frame_field_rows": {
+      "image_size": true,
+      "quotient": true
+    },
+    "has_clause_3sat_mod2_quotient": true,
+    "has_residual_snf_mod2_coordinate": true,
+    "path": "data/evidence/ss_sat/source_drops/external_evidence_gate/running_ledger.csv",
+    "selected_row_count": 14,
+    "selected_rows": [
+      {
+        "invariant": "Clauses_all_CNF_arity_1_to_3_quotient",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/2"
+      },
+      {
+        "invariant": "Clauses_all_CNF_arity_1_to_3_image_size",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "2592000"
+      },
+      {
+        "invariant": "Clauses_3SAT_quotient",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/2"
+      },
+      {
+        "invariant": "Clauses_3SAT_image_size",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "2592000"
+      },
+      {
+        "invariant": "Proof_implication_resolution_xor_threshold_quotient",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/2"
+      },
+      {
+        "invariant": "Proof_implication_resolution_xor_threshold_image_size",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "2592000"
+      },
+      {
+        "invariant": "A985_frame_fields_quotient",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/2 x Z/20 x Z/60"
+      },
+      {
+        "invariant": "A985_frame_fields_image_size",
+        "layer": "family",
+        "source": "all_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "2160"
+      },
+      {
+        "invariant": "weighted_clause_satisfied_sum_image_size",
+        "layer": "proof_trace",
+        "source": "proof_trace_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "864"
+      },
+      {
+        "invariant": "weighted_clause_satisfied_sum_quotient",
+        "layer": "proof_trace",
+        "source": "proof_trace_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/10^2 x Z/60"
+      },
+      {
+        "invariant": "weighted_clause_unsatisfied_sum_image_size",
+        "layer": "proof_trace",
+        "source": "proof_trace_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "864"
+      },
+      {
+        "invariant": "weighted_clause_unsatisfied_sum_quotient",
+        "layer": "proof_trace",
+        "source": "proof_trace_family_summary.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "Z/10^2 x Z/60"
+      },
+      {
+        "invariant": "residual graph orbit size",
+        "layer": "canonicality",
+        "source": "automorphism_canonicality_audit.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "15"
+      },
+      {
+        "invariant": "SNF mod2 coordinate",
+        "layer": "residual",
+        "source": "residual_bit_vertex_table.csv",
+        "status": "CERTIFIED_BY_RECOMPUTATION",
+        "value": "[0,0,1,0,0]"
+      }
+    ]
   },
   "stack_series_scaling_seam": {
     "bounds": {

@@ -13,11 +13,15 @@ from src.runtime import ensure_numpy_runtime
 ensure_numpy_runtime(ROOT, __file__)
 
 from src.certify_io import raw_tensor_relpath
-from src.layer_registry import LAYER_INDEX, layer_relpath, load_layer_registry
+from src.certificate_registry import CERTIFICATE_INDEX, certificate_relpath, load_certificate_registry
 from src.paths import ROOT
+from src.verify_c2_selector_lookup_witness_source_package import (
+    PACKAGE_CERTIFICATE as HALLOWEEN_LOOKUP_SOURCE_PACKAGE_CERTIFICATE,
+    PACKAGE_VERIFIED_STATUS as HALLOWEEN_LOOKUP_SOURCE_PACKAGE_VERIFIED_STATUS,
+)
 
 MUTABLE = {"certificate.json", "manifests/file_hashes.json", "manifests/canonical.json"}
-SCHEMA_LINEAGE_SUFFIX_RE = re.compile(r"\.v\d+(?=$|[._-])")
+SCHEMA_LINEAGE_SUFFIX_RE = re.compile(r"\.(?:v\d+|source_drop)(?=$|[._-])")
 
 EXPECTED = {
     "00_core": "PASS",
@@ -106,17 +110,24 @@ DATA_REGISTRY_REL = "data/index.json"
 EXPECTED_DATA_DOMAINS = {
     "a236_compute_cache",
     "coorient_lift",
+    "core_certificates",
     "d20_invariants",
     "dihedral_formulae",
+    "drinfeld_certificates",
+    "geometry_certificates",
     "height_coherence_integrity",
     "hcycle_game_control",
+    "integrity_certificates",
     "integrity_ladders",
+    "modular_certificates",
     "quotient_selectors",
     "raw_core_seeds",
     "reproducibility_evidence",
+    "selector_certificates",
     "ss_sat_evidence",
     "stack_series_evidence",
     "tensor_chain_evidence",
+    "tube_certificates",
 }
 ALLOWED_DATA_ROLES = {
     "core_seed",
@@ -136,6 +147,232 @@ ALLOWED_DATA_STORAGE = {
 
 def require_sha256(value: Any, expected: str, label: str, errors: list[str]) -> None:
     require(value == expected, f"{label} sha256 mismatch", errors)
+
+
+def verify_source_registry(data_registry: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    section = data_registry.get("source_registry", {})
+    require(isinstance(section, dict), "source registry block missing", errors)
+    if not isinstance(section, dict):
+        return {"package_count": 0}
+
+    require_schema(section.get("schema"), "d20.source_registry", "source registry schema mismatch", errors)
+    require(section.get("status") == "D20_SOURCE_REGISTRY_BUILT", "source registry status mismatch", errors)
+    require(section.get("package_count") == 1, "source registry package count mismatch", errors)
+    registry_checks = section.get("checks", {})
+    require(isinstance(registry_checks, dict), "source registry checks missing", errors)
+    if isinstance(registry_checks, dict):
+        require(
+            registry_checks.get("halloween_lookup_source_package_registered") is True,
+            "Halloween lookup source package is not registered",
+            errors,
+        )
+
+    packages = section.get("packages", {})
+    require(isinstance(packages, dict), "source registry packages block missing", errors)
+    if not isinstance(packages, dict):
+        return {"package_count": 0}
+
+    package_id = "halloween_c2_selector_lookup_witness_source_package"
+    package = packages.get(package_id, {})
+    require(isinstance(package, dict), "Halloween lookup source package registry entry missing", errors)
+    if not isinstance(package, dict):
+        return {"package_count": len(packages)}
+
+    certificate_path = HALLOWEEN_LOOKUP_SOURCE_PACKAGE_CERTIFICATE
+    certificate_rel = certificate_path.relative_to(ROOT).as_posix()
+    require_schema(
+        package.get("schema"),
+        "d20.source_registry.package",
+        "Halloween source package registry schema mismatch",
+        errors,
+    )
+    require(package.get("registry_id") == package_id, "Halloween source package registry id mismatch", errors)
+    require(package.get("present") is True, "Halloween source package not marked present", errors)
+    require(
+        package.get("status") == "D20_SOURCE_PACKAGE_REGISTERED",
+        "Halloween source package registry status mismatch",
+        errors,
+    )
+    require(
+        package.get("role") == "selected_witness_source_for_c2_selector_lookup",
+        "Halloween source package registry role mismatch",
+        errors,
+    )
+    require(package.get("package_name") == package_id, "Halloween source package name mismatch", errors)
+
+    certificate_entry = package.get("certificate", {})
+    require(isinstance(certificate_entry, dict), "Halloween source package certificate entry missing", errors)
+    require(certificate_path.exists(), "Halloween source package certificate file missing", errors)
+    certificate_payload: dict[str, Any] = {}
+    certificate_payload_sha256: str | None = None
+    if certificate_path.exists():
+        require(
+            isinstance(certificate_entry, dict)
+            and certificate_entry.get("path") == certificate_rel,
+            "Halloween source package certificate path mismatch",
+            errors,
+        )
+        if isinstance(certificate_entry, dict):
+            require(
+                certificate_entry.get("file_sha256") == sha_file(certificate_path),
+                "Halloween source package certificate file hash mismatch",
+                errors,
+            )
+        loaded = load_json(certificate_path)
+        if isinstance(loaded, dict):
+            certificate_payload = loaded
+            certificate_payload_sha256 = sha_json(
+                {
+                    key: value
+                    for key, value in certificate_payload.items()
+                    if key != "certificate_sha256"
+                }
+            )
+            require(
+                certificate_payload.get("certificate_sha256") == certificate_payload_sha256,
+                "Halloween source package embedded certificate hash mismatch",
+                errors,
+            )
+
+    if isinstance(certificate_entry, dict):
+        require(
+            certificate_entry.get("payload_sha256") == certificate_payload_sha256,
+            "Halloween source package registry payload hash mismatch",
+            errors,
+        )
+        require(
+            certificate_entry.get("embedded_certificate_sha256")
+            == certificate_payload.get("certificate_sha256"),
+            "Halloween source package registry embedded hash mismatch",
+            errors,
+        )
+        require(
+            certificate_entry.get("status") == HALLOWEEN_LOOKUP_SOURCE_PACKAGE_VERIFIED_STATUS,
+            "Halloween source package certificate status mismatch",
+            errors,
+        )
+        require(
+            certificate_entry.get("package_checks_pass") is True,
+            "Halloween source package registry does not record passing package checks",
+            errors,
+        )
+
+    package_checks = package.get("checks", {})
+    require(isinstance(package_checks, dict), "Halloween source package registry checks missing", errors)
+    if isinstance(package_checks, dict):
+        for check_name in [
+            "certificate_status_is_verified",
+            "certificate_file_exists",
+            "certificate_hash_matches_payload",
+            "certificate_reports_all_package_checks_pass",
+            "package_uses_only_halloween_source_and_lookup_artifacts",
+            "selector_counts_are_543_63_480",
+            "halloween_source_split_is_543_63_480",
+            "source_key_is_halloween_orbits_csv",
+            "artifact_keys_are_lookup_tables_and_manifest",
+            "source_registry_binding_checks_pass",
+        ]:
+            require(package_checks.get(check_name) is True, f"Halloween source package check failed: {check_name}", errors)
+
+    registry_binding = package.get("source_registry_binding", {})
+    require(isinstance(registry_binding, dict), "Halloween source package registry binding missing", errors)
+    if isinstance(registry_binding, dict):
+        require_schema(
+            registry_binding.get("schema"),
+            "d20.source_registry.binding",
+            "Halloween source package registry binding schema mismatch",
+            errors,
+        )
+        require(registry_binding.get("registry_id") == package_id, "Halloween source package registry binding id mismatch", errors)
+        require(registry_binding.get("package_name") == package_id, "Halloween source package registry binding package mismatch", errors)
+        require(registry_binding.get("all_checks_pass") is True, "Halloween source package registry binding checks failed", errors)
+        binding_checks = registry_binding.get("checks", {})
+        require(isinstance(binding_checks, dict), "Halloween source package registry binding checks missing", errors)
+        if isinstance(binding_checks, dict):
+            for check_name in [
+                "registry_id_matches_package_name",
+                "manifest_registry_id_matches_package_name",
+                "certificate_status_is_verified",
+                "certificate_reports_all_package_checks_pass",
+                "certificate_hash_matches_payload",
+                "package_uses_only_halloween_source_and_lookup_artifacts",
+            ]:
+                require(
+                    binding_checks.get(check_name) is True,
+                    f"Halloween source package registry binding check failed: {check_name}",
+                    errors,
+                )
+
+    source = package.get("source", {})
+    artifacts = package.get("artifacts", {})
+    require(
+        isinstance(source, dict)
+        and sorted(source.keys()) == ["halloween_actual_c2_kernel_orbits_csv"],
+        "Halloween source package source key mismatch",
+        errors,
+    )
+    require(
+        isinstance(artifacts, dict)
+        and sorted(artifacts.keys())
+        == [
+            "manifest",
+            "selector_lookup_witness_table_csv",
+            "selector_lookup_witness_table_json",
+        ],
+        "Halloween source package artifact key mismatch",
+        errors,
+    )
+    if isinstance(source, dict):
+        halloween_source = source.get("halloween_actual_c2_kernel_orbits_csv", {})
+        if isinstance(halloween_source, dict):
+            source_path = ROOT / str(halloween_source.get("path", ""))
+            require(source_path.exists(), "Halloween source CSV missing", errors)
+            if source_path.exists():
+                require(halloween_source.get("sha256") == sha_file(source_path), "Halloween source CSV hash mismatch", errors)
+            require(halloween_source.get("row_count") == 543, "Halloween source row count mismatch", errors)
+            require(halloween_source.get("fixed63_orbit_count") == 63, "Halloween fixed orbit count mismatch", errors)
+            require(
+                halloween_source.get("paired480_two_cycle_orbit_count") == 480,
+                "Halloween paired orbit count mismatch",
+                errors,
+            )
+
+    if isinstance(artifacts, dict):
+        for artifact_id, artifact_entry in artifacts.items():
+            require(isinstance(artifact_entry, dict), f"Halloween artifact {artifact_id} entry malformed", errors)
+            if not isinstance(artifact_entry, dict):
+                continue
+            artifact_path = ROOT / str(artifact_entry.get("path", ""))
+            require(artifact_path.exists(), f"Halloween artifact {artifact_id} missing", errors)
+            if artifact_path.exists():
+                require(
+                    artifact_entry.get("sha256") == sha_file(artifact_path),
+                    f"Halloween artifact {artifact_id} hash mismatch",
+                    errors,
+                )
+
+    derived = package.get("derived", {})
+    require(isinstance(derived, dict), "Halloween source package derived block missing", errors)
+    if isinstance(derived, dict):
+        require(derived.get("row_count") == 1086, "Halloween source package lookup row count mismatch", errors)
+        require(derived.get("selector_count") == 3, "Halloween source package selector count mismatch", errors)
+        require(
+            derived.get("selector_counts") == {"lazy63": 63, "paired_lazy480": 480, "raw543": 543},
+            "Halloween source package selector counts mismatch",
+            errors,
+        )
+        require(
+            derived.get("halloween_orbit_split")
+            == {
+                "fixed63_orbit_count": 63,
+                "paired480_two_cycle_orbit_count": 480,
+                "raw543_orbit_count": 543,
+            },
+            "Halloween source package orbit split mismatch",
+            errors,
+        )
+
+    return {"package_count": len(packages)}
 
 
 def verify_data_registry(data: dict[str, Any], errors: list[str]) -> dict[str, Any]:
@@ -205,7 +442,15 @@ def verify_data_registry(data: dict[str, Any], errors: list[str]) -> dict[str, A
             for name in required_files:
                 require(isinstance(name, str), f"{domain_id}: required file is not a string", errors)
                 if isinstance(name, str):
-                    require((base / name).exists(), f"{domain_id}: missing required data file {name}", errors)
+                    exists = (base / name).exists()
+                    if not exists and domain_id == "raw_core_seeds" and name in {
+                        "Halloween.npz",
+                        "T_985.npz",
+                        "tensor_sparse.npz",
+                    }:
+                        resolved = ROOT / raw_tensor_relpath()
+                        exists = resolved.exists() and resolved.parent == base
+                    require(exists, f"{domain_id}: missing required data file {name}", errors)
 
         obs = observations.get(domain_id, {}) if isinstance(observations, dict) else {}
         require(isinstance(obs, dict), f"{domain_id}: observation missing", errors)
@@ -260,8 +505,11 @@ def verify_data_registry(data: dict[str, Any], errors: list[str]) -> dict[str, A
     require(ladders.get("target_path") == "data/invariants/integrity", "integrity ladder target layout mismatch", errors)
     require(ladders.get("storage_status") == "canonical_standardized_layout", "integrity ladder storage status should mark standardized layout", errors)
 
+    source_registry_result = verify_source_registry(section, errors)
+
     return {
         "domain_count": len(domains),
+        "source_package_count": source_registry_result.get("package_count"),
         "top_level_directories": actual_dirs,
     }
 
@@ -465,32 +713,32 @@ def verify_root(errors: list[str]) -> dict[str, Any]:
     return cert
 
 
-def verify_root_layers(root: dict[str, Any], registry: dict[str, Any], errors: list[str]) -> None:
-    root_layers = root.get("layers", [])
-    registry_layers = registry.get("layers", [])
-    require(isinstance(root_layers, list), "root layers list missing", errors)
-    require(isinstance(registry_layers, list), "registry layers list missing", errors)
-    if not isinstance(root_layers, list) or not isinstance(registry_layers, list):
+def verify_root_certificates(root: dict[str, Any], registry: dict[str, Any], errors: list[str]) -> None:
+    root_certificates = root.get("certificates", [])
+    registry_certificates = registry.get("certificates", [])
+    require(isinstance(root_certificates, list), "root certificates list missing", errors)
+    require(isinstance(registry_certificates, list), "registry certificates list missing", errors)
+    if not isinstance(root_certificates, list) or not isinstance(registry_certificates, list):
         return
 
-    by_id = {entry.get("id"): entry for entry in root_layers if isinstance(entry, dict)}
-    require(len(root_layers) == len(registry_layers), "root layer count does not match registry", errors)
-    for entry in registry_layers:
+    by_id = {entry.get("id"): entry for entry in root_certificates if isinstance(entry, dict)}
+    require(len(root_certificates) == len(registry_certificates), "root certificate count does not match registry", errors)
+    for entry in registry_certificates:
         if not isinstance(entry, dict):
             continue
-        layer_id = entry.get("id")
+        certificate_id = entry.get("id")
         rel = entry.get("path")
-        root_entry = by_id.get(layer_id)
-        require(isinstance(root_entry, dict), f"root certificate missing layer id: {layer_id}", errors)
+        root_entry = by_id.get(certificate_id)
+        require(isinstance(root_entry, dict), f"root certificate missing id: {certificate_id}", errors)
         if not isinstance(root_entry, dict) or not isinstance(rel, str):
             continue
         p = ROOT / rel
-        require(root_entry.get("certificate") == rel, f"root layer path mismatch for {layer_id}", errors)
-        require(root_entry.get("legacy_dir") == entry.get("legacy_dir"), f"root legacy_dir mismatch for {layer_id}", errors)
-        require(root_entry.get("group") == entry.get("group"), f"root group mismatch for {layer_id}", errors)
-        require(root_entry.get("status") == entry.get("expected_status"), f"root status mismatch for {layer_id}", errors)
+        require(root_entry.get("certificate") == rel, f"root certificate path mismatch for {certificate_id}", errors)
+        require(root_entry.get("ordinal_dir") == entry.get("ordinal_dir"), f"root ordinal_dir mismatch for {certificate_id}", errors)
+        require(root_entry.get("group") == entry.get("group"), f"root group mismatch for {certificate_id}", errors)
+        require(root_entry.get("status") == entry.get("expected_status"), f"root status mismatch for {certificate_id}", errors)
         if p.exists():
-            require(root_entry.get("certificate_file_sha256") == sha_file(p), f"root layer hash mismatch for {layer_id}", errors)
+            require(root_entry.get("certificate_file_sha256") == sha_file(p), f"root certificate hash mismatch for {certificate_id}", errors)
 
 
 def verify_genome(data: dict[str, Any], errors: list[str]) -> dict[str, Any]:
@@ -584,8 +832,8 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "stack_series_evidence",
         "height_coherence",
         "reproducibility_evidence",
-        "layer_registry",
-        "layer_certificates",
+        "certificate_registry",
+        "certificates",
         "json_invariants",
         "npz_array_manifests",
         "source_manifest",
@@ -651,8 +899,8 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     require(plain_name_summary.get("source_file_count", 0) > 0, "tensor_chain plain-name view has no files", errors)
     require(plain_name_summary.get("changed_file_alias_count", 0) > 0, "tensor_chain plain-name view has no renamed file aliases", errors)
     require(
-        plain_name_summary.get("remaining_legacy_plain_token_count") == 0,
-        "tensor_chain plain-name view still contains legacy glossary tokens",
+        plain_name_summary.get("remaining_blocked_plain_token_count") == 0,
+        "tensor_chain plain-name view still contains blocked glossary tokens",
         errors,
     )
     ss_sat = data.get("ss_sat_evidence", {})
@@ -712,7 +960,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     require("residues/kissat_sigsegv.json" in residues, "SS-SAT Kissat residue missing", errors)
     require("residues/frat_checker_status.json" in residues, "SS-SAT FRAT checker residue missing", errors)
     require(
-        "residues/full_frat_legacy_analyzer_blocked.json" in residues,
+        "residues/full_frat_inherited_analyzer_blocked.json" in residues,
         "SS-SAT full-FRAT replay residue missing",
         errors,
     )
@@ -796,13 +1044,13 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     require(strict.get("remaining_seed_integer_count_in_A985_integral_theory") == 0, "final investigation remaining A985-integral seed count mismatch", errors)
     if "strict_scratch_constructor" in fin:
         require(strict.get("entrypoint_promoted") is True, "final investigation strict-scratch promotion mismatch", errors)
-    registry = data.get("layer_registry", {})
-    require_schema(registry.get("schema"), "d20.layer_registry", "d20 layer registry schema mismatch", errors)
-    require(registry.get("status") == "LAYER_REGISTRY_BUILT", "d20 layer registry status mismatch", errors)
-    require(registry.get("path") == "layers/index.json", "d20 layer registry path mismatch", errors)
-    require(len(registry.get("layers", [])) == len(EXPECTED), "d20 layer registry entry count mismatch", errors)
-    if LAYER_INDEX.exists():
-        require(registry.get("file_sha256") == sha_file(LAYER_INDEX), "d20 layer registry file hash mismatch", errors)
+    registry = data.get("certificate_registry", {})
+    require_schema(registry.get("schema"), "d20.certificate_registry", "d20 certificate registry schema mismatch", errors)
+    require(registry.get("status") == "CERTIFICATE_REGISTRY_BUILT", "d20 certificate registry status mismatch", errors)
+    require(registry.get("path") == "data/certificates.json", "d20 certificate registry path mismatch", errors)
+    require(len(registry.get("certificates", [])) == len(EXPECTED), "d20 certificate registry entry count mismatch", errors)
+    if CERTIFICATE_INDEX.exists():
+        require(registry.get("file_sha256") == sha_file(CERTIFICATE_INDEX), "d20 certificate registry file hash mismatch", errors)
 
     return {
         "schema": data.get("schema"),
@@ -814,11 +1062,12 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "genome_source_gene_count": genome.get("source_gene_count"),
         "size": p.stat().st_size,
         "section_count": len(data),
-        "layer_count": len(data.get("layer_certificates", {})),
-        "layer_registry_entries": len(registry.get("layers", [])),
+        "certificate_count": len(data.get("certificates", {})),
+        "certificate_registry_entries": len(registry.get("certificates", [])),
         "json_invariant_file_count": len(data.get("json_invariants", {})),
         "npz_array_manifest_count": len(data.get("npz_array_manifests", {})),
         "data_registry_domain_count": data_registry.get("domain_count"),
+        "source_registry_package_count": data_registry.get("source_package_count"),
         "certified_evidence_source_count": evidence_invariants.get("source_count"),
         "tensor_chain_present": bool(tensor_chain.get("present", False)),
         "ss_sat_evidence_present": bool(ss_sat.get("present", False)),
@@ -831,111 +1080,106 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     }
 
 
-def verify_layer_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, Any]]:
-    require(LAYER_INDEX.exists(), "missing layer registry: layers/index.json", errors)
-    if not LAYER_INDEX.exists():
+def verify_certificate_registry(errors: list[str]) -> tuple[dict[str, Any], dict[str, Any]]:
+    require(CERTIFICATE_INDEX.exists(), "missing certificate registry: data/certificates.json", errors)
+    if not CERTIFICATE_INDEX.exists():
         return {}, {"registry_entries": 0, "groups": []}
 
-    data = load_layer_registry()
-    require_schema(data.get("schema"), "d20.layer_registry", "layer registry schema mismatch", errors)
-    require(data.get("status") == "LAYER_REGISTRY_BUILT", "layer registry status mismatch", errors)
+    data = load_certificate_registry()
+    require_schema(data.get("schema"), "d20.certificate_registry", "certificate registry schema mismatch", errors)
+    require(data.get("status") == "CERTIFICATE_REGISTRY_BUILT", "certificate registry status mismatch", errors)
 
     groups = data.get("groups", {})
     policy = data.get("policy", {})
-    layers = data.get("layers", [])
-    require(isinstance(groups, dict) and bool(groups), "layer registry groups missing", errors)
-    require(isinstance(policy, dict), "layer registry policy missing", errors)
-    require(isinstance(layers, list) and bool(layers), "layer registry layers missing", errors)
+    certificates = data.get("certificates", [])
+    require(isinstance(groups, dict) and bool(groups), "certificate registry groups missing", errors)
+    require(isinstance(policy, dict), "certificate registry policy missing", errors)
+    require(isinstance(certificates, list) and bool(certificates), "certificate registry entries missing", errors)
     if isinstance(policy, dict):
-        require(policy.get("physical_layout") == "semantic_grouped_files", "layer registry physical layout is not flat semantic groups", errors)
-        require(policy.get("path_migration") == "complete", "layer registry path migration is not complete", errors)
+        require(policy.get("physical_layout") == "data_subject_files", "certificate registry physical layout is not data-subject files", errors)
+        require(policy.get("path_migration") == "consolidated_into_data", "certificate registry path migration is not consolidated", errors)
 
     ids: set[str] = set()
     dirs: set[str] = set()
     ordinals: set[int] = set()
     group_names = set(groups) if isinstance(groups, dict) else set()
 
-    for i, entry in enumerate(layers if isinstance(layers, list) else []):
-        require(isinstance(entry, dict), f"layer registry entry {i} is not an object", errors)
+    for i, entry in enumerate(certificates if isinstance(certificates, list) else []):
+        require(isinstance(entry, dict), f"certificate registry entry {i} is not an object", errors)
         if not isinstance(entry, dict):
             continue
 
-        layer_id = entry.get("id")
-        dirname = entry.get("legacy_dir")
+        certificate_id = entry.get("id")
+        dirname = entry.get("ordinal_dir")
         ordinal = entry.get("ordinal")
         group = entry.get("group")
         rel = entry.get("path")
-        legacy_rel = entry.get("legacy_path")
 
-        require(isinstance(layer_id, str) and bool(layer_id), f"layer registry entry {i} missing id", errors)
-        require(layer_id not in ids, f"duplicate layer id: {layer_id}", errors)
-        if isinstance(layer_id, str):
-            ids.add(layer_id)
+        require(isinstance(certificate_id, str) and bool(certificate_id), f"certificate registry entry {i} missing id", errors)
+        require(certificate_id not in ids, f"duplicate certificate id: {certificate_id}", errors)
+        if isinstance(certificate_id, str):
+            ids.add(certificate_id)
 
-        require(isinstance(dirname, str) and bool(dirname), f"{layer_id}: missing legacy_dir", errors)
-        require(dirname not in dirs, f"duplicate layer legacy_dir: {dirname}", errors)
+        require(isinstance(dirname, str) and bool(dirname), f"{certificate_id}: missing ordinal_dir", errors)
+        require(dirname not in dirs, f"duplicate layer ordinal_dir: {dirname}", errors)
         if isinstance(dirname, str):
             dirs.add(dirname)
 
-        require(isinstance(ordinal, int), f"{layer_id}: ordinal is not an integer", errors)
-        require(ordinal not in ordinals, f"duplicate layer ordinal: {ordinal}", errors)
+        require(isinstance(ordinal, int), f"{certificate_id}: ordinal is not an integer", errors)
+        require(ordinal not in ordinals, f"duplicate certificate ordinal: {ordinal}", errors)
         if isinstance(ordinal, int):
             ordinals.add(ordinal)
 
-        require(group in group_names, f"{layer_id}: unknown group {group!r}", errors)
-        require(isinstance(rel, str), f"{layer_id}: path is not a string", errors)
-        if isinstance(dirname, str):
-            expected_legacy_rel = f"layers/{dirname}/certificate.json"
-            require(legacy_rel == expected_legacy_rel, f"{layer_id}: legacy_path {legacy_rel!r} != {expected_legacy_rel!r}", errors)
+        require(group in group_names, f"{certificate_id}: unknown group {group!r}", errors)
+        require(isinstance(rel, str), f"{certificate_id}: path is not a string", errors)
         if isinstance(group, str) and isinstance(rel, str):
             rel_path = Path(rel)
-            require(rel_path.parent.as_posix() == f"layers/{group}", f"{layer_id}: path {rel!r} is not a direct child of its group", errors)
-            require(rel_path.suffix == ".json" and rel_path.name != "certificate.json", f"{layer_id}: path {rel!r} is not a flat JSON certificate", errors)
-            require((ROOT / rel).exists(), f"{layer_id}: registry path missing: {rel}", errors)
-            require(rel != legacy_rel, f"{layer_id}: path still points at legacy layout", errors)
+            require(rel_path.parent.as_posix() == f"data/{group}", f"{certificate_id}: path {rel!r} is not a direct child of its data group", errors)
+            require(rel_path.suffix == ".json" and rel_path.name != "certificate.json", f"{certificate_id}: path {rel!r} is not a subject JSON certificate", errors)
+            require((ROOT / rel).exists(), f"{certificate_id}: registry path missing: {rel}", errors)
 
         if isinstance(dirname, str) and dirname in EXPECTED:
             require(
                 entry.get("expected_status") == EXPECTED[dirname],
-                f"{layer_id}: expected_status does not match verifier expectation for {dirname}",
+                f"{certificate_id}: expected_status does not match verifier expectation for {dirname}",
                 errors,
             )
 
         depends_on = entry.get("depends_on", [])
-        require(isinstance(depends_on, list), f"{layer_id}: depends_on is not a list", errors)
+        require(isinstance(depends_on, list), f"{certificate_id}: depends_on is not a list", errors)
         if isinstance(depends_on, list):
             for dep in depends_on:
-                require(isinstance(dep, str), f"{layer_id}: dependency id is not a string", errors)
+                require(isinstance(dep, str), f"{certificate_id}: dependency id is not a string", errors)
 
-    require(dirs == set(EXPECTED), f"layer registry legacy_dir set mismatch: {sorted(dirs ^ set(EXPECTED))}", errors)
-    require(ordinals == set(range(len(EXPECTED))), "layer registry ordinal set mismatch", errors)
+    require(dirs == set(EXPECTED), f"certificate registry ordinal_dir set mismatch: {sorted(dirs ^ set(EXPECTED))}", errors)
+    require(ordinals == set(range(len(EXPECTED))), "certificate registry ordinal set mismatch", errors)
 
-    for entry in layers if isinstance(layers, list) else []:
+    for entry in certificates if isinstance(certificates, list) else []:
         if not isinstance(entry, dict):
             continue
-        layer_id = entry.get("id")
+        certificate_id = entry.get("id")
         depends_on = entry.get("depends_on", [])
         if not isinstance(depends_on, list):
             continue
         for dep in depends_on:
             if isinstance(dep, str):
-                require(dep in ids, f"{layer_id}: unknown dependency {dep}", errors)
+                require(dep in ids, f"{certificate_id}: unknown dependency {dep}", errors)
 
     return data, {
         "schema": data.get("schema"),
         "status": data.get("status"),
-        "registry_entries": len(layers) if isinstance(layers, list) else 0,
+        "registry_entries": len(certificates) if isinstance(certificates, list) else 0,
         "groups": sorted(group_names),
         "physical_layout": policy.get("physical_layout") if isinstance(policy, dict) else None,
         "path_migration": policy.get("path_migration") if isinstance(policy, dict) else None,
-        "file_sha256": sha_file(LAYER_INDEX),
+        "file_sha256": sha_file(CERTIFICATE_INDEX),
     }
 
 
-def verify_layer_layout(registry: dict[str, Any], errors: list[str]) -> dict[str, Any]:
-    layer_root = ROOT / "layers"
-    require(layer_root.is_dir(), "missing layers directory", errors)
-    if not layer_root.is_dir():
+def verify_certificate_layout(registry: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    data_root = ROOT / "data"
+    require(data_root.is_dir(), "missing data directory", errors)
+    if not data_root.is_dir():
         return {
             "status": "MISSING",
             "groups": [],
@@ -945,65 +1189,55 @@ def verify_layer_layout(registry: dict[str, Any], errors: list[str]) -> dict[str
 
     groups = registry.get("groups", {})
     group_names = set(groups) if isinstance(groups, dict) else set()
-    actual_top_dirs = {p.name for p in layer_root.iterdir() if p.is_dir()}
-    top_files = {p.name for p in layer_root.iterdir() if p.is_file()}
-
-    require(actual_top_dirs == group_names, f"layer group directory set mismatch: {sorted(actual_top_dirs ^ group_names)}", errors)
-    require(top_files <= {"index.json"}, f"unexpected top-level layer files: {sorted(top_files - {'index.json'})}", errors)
-
-    nested_dirs = [
-        p.relative_to(ROOT).as_posix()
-        for p in layer_root.rglob("*")
-        if p.is_dir() and p.parent != layer_root
-    ]
-    require(not nested_dirs, f"nested layer directories are not allowed: {nested_dirs}", errors)
+    missing_group_dirs = sorted(group for group in group_names if not (data_root / group).is_dir())
+    require(not missing_group_dirs, f"missing data certificate groups: {missing_group_dirs}", errors)
 
     registry_files = {
         entry.get("path")
-        for entry in registry.get("layers", [])
+        for entry in registry.get("certificates", [])
         if isinstance(entry, dict) and isinstance(entry.get("path"), str)
     }
     unexpected_files: list[str] = []
     summary_files: list[str] = []
-    for path in layer_root.rglob("*"):
-        if not path.is_file():
+    for group in group_names:
+        group_dir = data_root / group
+        if not group_dir.is_dir():
             continue
-        rel = path.relative_to(ROOT).as_posix()
-        if rel == "layers/index.json":
-            continue
-        rel_path = Path(rel)
-        parts = rel_path.parts
-        is_direct_group_file = len(parts) == 3 and parts[0] == "layers" and parts[1] in group_names
-        if not is_direct_group_file or rel_path.suffix != ".json":
+        for path in group_dir.iterdir():
+            if not path.is_file():
+                continue
+            rel = path.relative_to(ROOT).as_posix()
+            rel_path = Path(rel)
+            if rel_path.suffix != ".json":
+                unexpected_files.append(rel)
+                continue
+            if rel in registry_files:
+                continue
+            if rel_path.name.endswith(".summary.json"):
+                summary_files.append(rel)
+                continue
             unexpected_files.append(rel)
-            continue
-        if rel in registry_files:
-            continue
-        if rel_path.name.endswith(".summary.json"):
-            summary_files.append(rel)
-            continue
-        unexpected_files.append(rel)
 
-    require(not unexpected_files, f"unexpected layer files: {unexpected_files}", errors)
+    require(not unexpected_files, f"unexpected certificate files: {unexpected_files}", errors)
 
     return {
-        "status": "PASS" if not nested_dirs and not unexpected_files and actual_top_dirs == group_names and top_files <= {"index.json"} else "FAIL",
-        "groups": sorted(actual_top_dirs),
+        "status": "PASS" if not missing_group_dirs and not unexpected_files else "FAIL",
+        "groups": sorted(group_names),
         "certificate_files": len(registry_files),
         "summary_files": len(summary_files),
     }
 
 
-def verify_layers(errors: list[str], registry: dict[str, Any]) -> list[dict[str, Any]]:
+def verify_certificates(errors: list[str], registry: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    entries = registry.get("layers", [])
+    entries = registry.get("certificates", [])
     if not isinstance(entries, list) or not entries:
         entries = [
             {
                 "id": dirname,
-                "group": "legacy",
-                "legacy_dir": dirname,
-                "path": f"layers/{dirname}/certificate.json",
+                "group": "ordinal",
+                "ordinal_dir": dirname,
+                "path": f"data/{dirname}/certificate.json",
                 "expected_status": expected_status,
             }
             for dirname, expected_status in EXPECTED.items()
@@ -1012,13 +1246,13 @@ def verify_layers(errors: list[str], registry: dict[str, Any]) -> list[dict[str,
     for entry in entries:
         if not isinstance(entry, dict):
             continue
-        dirname = entry.get("legacy_dir")
+        dirname = entry.get("ordinal_dir")
         rel = entry.get("path")
         expected_status = entry.get("expected_status")
         if not isinstance(dirname, str) or not isinstance(rel, str):
             continue
         p = ROOT / rel
-        require(p.exists(), f"missing layer certificate: {rel}", errors)
+        require(p.exists(), f"missing certificate: {rel}", errors)
         if not p.exists():
             continue
         data = load_json(p)
@@ -1028,7 +1262,7 @@ def verify_layers(errors: list[str], registry: dict[str, Any]) -> list[dict[str,
         rows.append({
             "id": entry.get("id"),
             "group": entry.get("group"),
-            "layer": dirname,
+            "certificate": dirname,
             "status": status,
             "file_sha256": sha_file(p),
         })
@@ -1106,7 +1340,7 @@ def verify_core_arrays(errors: list[str]) -> dict[str, Any]:
 
 
 def verify_integrity(errors: list[str], registry: dict[str, Any]) -> dict[str, Any]:
-    data = load_json(layer_relpath("integrity.proof_system", registry))
+    data = load_json(certificate_relpath("integrity.proof_system", registry))
     summary = data.get("summary", {})
     fb = summary.get("finite_base", {})
     expected = {
@@ -1194,6 +1428,61 @@ def verify_constructor_witness(errors: list[str]) -> dict[str, Any]:
     }
 
 
+def verify_zero_axiom_strict_replay(errors: list[str]) -> dict[str, Any]:
+    try:
+        from src.derive_d20_zero_axiom_coorient_strict_replay_theorem import build_theorem
+
+        report = build_theorem()
+    except Exception as exc:
+        errors.append(f"zero-axiom strict replay exception: {type(exc).__name__}: {exc}")
+        return {"status": "ERROR", "error": f"{type(exc).__name__}: {exc}"}
+
+    require(
+        report.get("status") == "D20_ZERO_AXIOM_COORIENT_STRICT_REPLAY_CERTIFIED",
+        "zero-axiom strict replay status mismatch",
+        errors,
+    )
+    require(report.get("all_checks_pass") is True, "zero-axiom strict replay checks failed", errors)
+    checks = report.get("checks", {})
+    require(isinstance(checks, dict) and all(value is True for value in checks.values()), "zero-axiom strict replay check map mismatch", errors)
+
+    derived = report.get("derived", {})
+    require(
+        derived.get("cache_certificate_sha256") == derived.get("fresh_certificate_sha256"),
+        "zero-axiom strict replay certificate hash mismatch",
+        errors,
+    )
+    require(
+        derived.get("cache_file_sha256") == derived.get("fresh_pretty_sha256"),
+        "zero-axiom strict replay byte hash mismatch",
+        errors,
+    )
+    require(
+        int(derived.get("cache_byte_length", -1)) == int(derived.get("fresh_pretty_byte_length", -2)),
+        "zero-axiom strict replay byte length mismatch",
+        errors,
+    )
+    require(derived.get("canonical_base") == [18, 67, 37], "zero-axiom strict replay base mismatch", errors)
+    require(derived.get("final_signature_count") == 2576, "zero-axiom strict replay signature count mismatch", errors)
+    require(derived.get("closed_action_order") == 9216, "zero-axiom strict replay closure order mismatch", errors)
+
+    return {
+        "status": report.get("status"),
+        "certificate_sha256": report.get("certificate_sha256"),
+        "cache_certificate_sha256": derived.get("cache_certificate_sha256"),
+        "fresh_certificate_sha256": derived.get("fresh_certificate_sha256"),
+        "cache_file_sha256": derived.get("cache_file_sha256"),
+        "fresh_pretty_sha256": derived.get("fresh_pretty_sha256"),
+        "cache_newline": derived.get("cache_newline"),
+        "cache_byte_length": derived.get("cache_byte_length"),
+        "fresh_pretty_byte_length": derived.get("fresh_pretty_byte_length"),
+        "canonical_base": derived.get("canonical_base"),
+        "final_signature_count": derived.get("final_signature_count"),
+        "closed_action_order": derived.get("closed_action_order"),
+        "all_checks_pass": report.get("all_checks_pass"),
+    }
+
+
 def verify_tamper_resistance() -> dict[str, Any]:
     data = load_json("d20.json")
     clean_errors: list[str] = []
@@ -1248,20 +1537,20 @@ def run(mode: str) -> dict[str, Any]:
     errors: list[str] = []
     root = verify_root(errors)
     d20 = verify_d20_json(errors)
-    layer_registry, layer_registry_summary = verify_layer_registry(errors)
-    layer_layout = verify_layer_layout(layer_registry, errors)
-    verify_root_layers(root, layer_registry, errors)
-    layers = verify_layers(errors, layer_registry)
+    certificate_registry, certificate_registry_summary = verify_certificate_registry(errors)
+    certificate_layout = verify_certificate_layout(certificate_registry, errors)
+    verify_root_certificates(root, certificate_registry, errors)
+    certificates = verify_certificates(errors, certificate_registry)
     core = verify_core_arrays(errors)
-    integrity = verify_integrity(errors, layer_registry)
+    integrity = verify_integrity(errors, certificate_registry)
     out: dict[str, Any] = {
         "status": "PASS" if not errors else "FAIL",
         "mode": mode,
         "headline": root.get("status"),
         "d20": d20,
-        "layer_registry": layer_registry_summary,
-        "layer_layout": layer_layout,
-        "layer_count": len(layers),
+        "certificate_registry": certificate_registry_summary,
+        "certificate_layout": certificate_layout,
+        "certificate_count": len(certificates),
         "core": core,
         "integrity": integrity,
         "errors": errors,
@@ -1270,27 +1559,40 @@ def run(mode: str) -> dict[str, Any]:
         out["constructor_witness"] = verify_constructor_witness(errors)
         out["manifest"] = verify_manifest(errors)
         out["status"] = "PASS" if not errors else "FAIL"
+    if mode == "strict-replay":
+        out["zero_axiom_strict_replay"] = verify_zero_axiom_strict_replay(errors)
+        out["status"] = "PASS" if not errors else "FAIL"
     if mode == "rebuild":
         out["rebuild"] = "d20.json and source certificates checked; generated cache is not required"
     return out
 
 
-def maybe_regenerate(mode: str, pretty: bool, enabled: bool) -> dict[str, Any]:
+def maybe_regenerate(
+    mode: str,
+    pretty: bool,
+    enabled: bool,
+    *,
+    refresh_sources: bool = True,
+) -> dict[str, Any]:
     if not enabled:
         return {"regenerated_before_certification": False}
     from src.commands import regen
 
-    regen.rebuild_d20(pretty=pretty)
+    regen.rebuild_d20(pretty=pretty, refresh_sources=refresh_sources)
     regen.refresh_certificate()
     count = regen.refresh_manifest()
-    return {"regenerated_before_certification": True, "manifest_entries_refreshed": count}
+    return {
+        "regenerated_before_certification": True,
+        "source_certificates_refreshed": refresh_sources,
+        "manifest_entries_refreshed": count,
+    }
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(
         description="Verify the d20 bundle. Only --mode rebuild or --regenerate rewrites files."
     )
-    ap.add_argument("--mode", choices=["fast", "audit", "rebuild", "tamper"], default="audit")
+    ap.add_argument("--mode", choices=["fast", "audit", "rebuild", "tamper", "strict-replay"], default="audit")
     ap.add_argument("--pretty", action="store_true")
     ap.add_argument(
         "--regenerate",
@@ -1302,9 +1604,19 @@ def main() -> None:
         action="store_true",
         help=argparse.SUPPRESS,
     )
+    ap.add_argument(
+        "--cached-source",
+        action="store_true",
+        help="When regenerating, reuse existing checked source artifacts instead of refreshing pre-A985/coorient/evidence data.",
+    )
     args = ap.parse_args()
     should_regenerate = (args.mode == "rebuild" or args.regenerate) and not args.no_regenerate
-    regen_info = maybe_regenerate(args.mode, args.pretty, should_regenerate)
+    regen_info = maybe_regenerate(
+        args.mode,
+        args.pretty,
+        should_regenerate,
+        refresh_sources=not args.cached_source,
+    )
     out = run(args.mode)
     out["regeneration"] = regen_info
     if out["status"] != "PASS":

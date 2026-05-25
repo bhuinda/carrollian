@@ -11,7 +11,7 @@ from src.derive_canonical_flux_balance_gauge_theorem import (
     vertex_charges,
     vertex_labels,
 )
-from src.paths import D20_INVARIANTS, LAYERS, ROOT
+from src.paths import D20_INVARIANTS, DATA, ROOT
 
 
 THEOREM_ID = "canonical_loop_pi33_obstruction"
@@ -27,9 +27,9 @@ SECTOR33_BOUNDARY_ANNIHILATION_REPORT = (
 SECTOR33_HEIGHT_COHERENT_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_height_coherent_transport" / "report.json"
 )
-TUBE_PROJECTION_SECTION = LAYERS / "tube" / "projection_section.json"
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
-WEDDERBURN_TRACE = LAYERS / "drinfeld" / "wedderburn_trace.json"
+TUBE_PROJECTION_SECTION = DATA / "tube" / "projection_section.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
+WEDDERBURN_TRACE = DATA / "drinfeld" / "wedderburn_trace.json"
 
 FIELD_PRIME = 1000003
 GAMMA8_CYCLE_ID = 8

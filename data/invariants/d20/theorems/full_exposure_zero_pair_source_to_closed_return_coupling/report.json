@@ -1,0 +1,185 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ceb51e1f4d4f73d54acd0a50d0ea4acb7b0dbf3898c2ad7f0181769219876c71",
+  "checks": {
+    "canonical_all_mask_ward_identity_is_certified": true,
+    "canonical_neutral_coupling_maps_to_ward_kernel": true,
+    "finite_bms_carrollian_flux_balance_is_certified": true,
+    "individual_plus_minus_couplings_are_impossible": true,
+    "nontrivial_neutral_coupling_is_not_selected_by_current_invariants": true,
+    "propagator_charge_kernel_is_certified": true,
+    "public_flux_context_remains_rank_zero": true,
+    "source_generators_have_expected_sector26_images": true,
+    "symmetry_ward_input_is_certified": true,
+    "ward_character_image_is_exactly_order_two": true,
+    "ward_kernel_has_expected_size_and_dimension": true
+  },
+  "claim": "The denominator-cleared zero-pair packet-source residues do not individually couple to closed-return Ward characters: their sector-26 sums 4 and 22 lie outside the all-mask Ward image {0,13}. The paired plus/minus residue is neutral and admits only the canonical minimal closed-return coupling to the Ward-kernel zero mask unless a further selector chooses one of the 1024 neutral masks.",
+  "definition": {
+    "canonical_minimal_closed_return_mask": "The zero closed-return mask in the all-mask Ward kernel; it is the only representative selected without additional action-height or incidence data.",
+    "individual_coupling": "A coupling for the plus or minus denominator-cleared packet-source residue alone.",
+    "paired_neutral_coupling": "A coupling after summing the plus and minus packet-source residues in the sector-26 ledger.",
+    "source_to_closed_return_coupling": "A map from denominator-cleared packet-source residues into all-mask closed-return residue masks that preserves the sector-26 Ward character."
+  },
+  "derived": {
+    "coupling_summary": {
+      "canonical_trivial_coupling": {
+        "closed_return_mask": 0,
+        "source_id": "paired_plus_minus_neutral_source",
+        "ward_character_value_mod26": 0
+      },
+      "individual_coupling_status": "No Ward-character-preserving coupling exists for the individual plus or minus residues.",
+      "nontrivial_coupling_selector_status": "underdetermined: the certified Ward kernel has 1024 neutral masks and the current invariants do not select a unique nonzero closed-return representative",
+      "nonunique_neutral_target_sample_masks": [
+        0,
+        3,
+        5,
+        6,
+        8,
+        11,
+        13,
+        14,
+        17,
+        18,
+        20,
+        23,
+        25,
+        26,
+        28,
+        31,
+        33,
+        34,
+        36,
+        39,
+        41,
+        42,
+        44,
+        47
+      ],
+      "paired_neutral_coupling_status": "A canonical minimal coupling exists only for the neutral paired residue, and it maps to the zero closed-return mask unless an additional selector chooses a nonzero Ward-kernel mask.",
+      "source_generators": {
+        "minus_denominator_cleared_source": {
+          "sector26_clock_delta_mod26": 18,
+          "sector26_clock_pair_mod26": [
+            2,
+            20
+          ],
+          "sector26_clock_sum_mod26": 22
+        },
+        "paired_plus_minus_neutral_source": {
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair_mod26": [
+            0,
+            0
+          ],
+          "sector26_clock_sum_mod26": 0
+        },
+        "plus_denominator_cleared_source": {
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair_mod26": [
+            24,
+            6
+          ],
+          "sector26_clock_sum_mod26": 4
+        }
+      },
+      "ward_character_histogram": {
+        "0": 1024,
+        "13": 1024
+      },
+      "ward_character_image": [
+        0,
+        13
+      ],
+      "ward_kernel_dimension": 10,
+      "ward_kernel_size": 1024,
+      "ward_odd_sector_size": 1024
+    },
+    "coupling_tests": [
+      {
+        "canonical_closed_return_mask": null,
+        "coupling_status": "no_individual_coupling",
+        "reason": "sector-26 sum 4 is outside the all-mask Ward character image {0,13}",
+        "source_id": "plus_denominator_cleared_source",
+        "source_sector26_image": {
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair_mod26": [
+            24,
+            6
+          ],
+          "sector26_clock_sum_mod26": 4
+        },
+        "source_sum_in_ward_character_image": false,
+        "source_sum_mod26": 4
+      },
+      {
+        "canonical_closed_return_mask": null,
+        "coupling_status": "no_individual_coupling",
+        "reason": "sector-26 sum 22 is outside the all-mask Ward character image {0,13}",
+        "source_id": "minus_denominator_cleared_source",
+        "source_sector26_image": {
+          "sector26_clock_delta_mod26": 18,
+          "sector26_clock_pair_mod26": [
+            2,
+            20
+          ],
+          "sector26_clock_sum_mod26": 22
+        },
+        "source_sum_in_ward_character_image": false,
+        "source_sum_mod26": 22
+      },
+      {
+        "canonical_closed_return_mask": 0,
+        "coupling_status": "couples_to_ward_kernel",
+        "reason": "the paired source residue is sector-26 neutral and the minimal closed-return mask is the Ward-kernel zero mask",
+        "source_id": "paired_plus_minus_neutral_source",
+        "source_sector26_image": {
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair_mod26": [
+            0,
+            0
+          ],
+          "sector26_clock_sum_mod26": 0
+        },
+        "source_sum_in_ward_character_image": true,
+        "source_sum_mod26": 0
+      }
+    ],
+    "source_to_closed_return_coupling_matrix": {
+      "individual_minus_source": "no Ward-character-preserving target",
+      "individual_plus_source": "no Ward-character-preserving target",
+      "paired_plus_minus_source": "canonical target mask 0; nonzero Ward-kernel target underdetermined"
+    }
+  },
+  "inputs": {
+    "canonical_all_mask_ward_identity_report": {
+      "path": "data/invariants/d20/theorems/canonical_all_mask_ward_identity/report.json",
+      "sha256": "904f8f0a034750b0630cd78dc5e1005d5e346cab03442be9dcbd152934f8752e"
+    },
+    "finite_bms_carrollian_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_bms_carrollian_flux_balance/report.json",
+      "sha256": "b8755b6cc80e36cff5930114f45fc7dc6eec9d5a5a604437d71b43373822955d"
+    },
+    "zero_pair_propagator_charge_kernel_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_propagator_charge_kernel/report.json",
+      "sha256": "2eecf6fba47633a4ca17dd940f5db9554cb9eac5a96f25c1bba83521c864d439"
+    },
+    "zero_pair_propagator_symmetry_ward_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_propagator_symmetry_ward/report.json",
+      "sha256": "b5ad8c95cfc6b19065527aad2823712a857b0277893cc3605cbdee3414ea51bc"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not rule out every future nontrivial source-to-return law. It rules out one being forced by the currently certified sector-26 Ward character, propagator kernel, and finite BMS/Carrollian flux-balance invariants alone.",
+    "what_this_proves": [
+      "the plus and minus packet-source residues cannot be promoted individually to all-mask Ward characters",
+      "the paired plus/minus source residue is the only currently certified Ward-compatible source class",
+      "the canonical paired lift is trivial at closed-return level because no nonzero kernel selector is certified",
+      "a nontrivial sourced Ward identity would need an extra selector on the 1024-mask Ward kernel"
+    ]
+  },
+  "next_highest_yield_item": "Search for an additional canonical selector on the 1024-mask Ward kernel, using action height, gamma8 incidence, or compact amplitude quotient exposure, to decide whether a nontrivial sourced Ward lift exists.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_source_to_closed_return_coupling",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_CERTIFIED"
+}

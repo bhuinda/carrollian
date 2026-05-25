@@ -447,11 +447,11 @@ def main() -> None:
         )
     elif args.derive_center_idempotents:
         from src.derive_center_idempotents_from_t985 import derive_center_idempotents
-        from src.layer_registry import layer_path
+        from src.certificate_registry import certificate_path
 
         result = derive_center_idempotents(
             ROOT / "generated/tensor_from_source_coorient.npz",
-            layer_path("drinfeld.full_a985_lift"),
+            certificate_path("drinfeld.full_a985_lift"),
             ROOT / "generated/relation_memberships_from_source_coorient_aligned.npz",
             ROOT / "generated/terminal_quotients_from_source_coorient.npz",
             ROOT / "generated/center_idempotents_from_generated_T985.npz",
@@ -459,11 +459,11 @@ def main() -> None:
         )
     elif args.align_generated_sectors:
         from src.derive_generated_sector_alignment import derive_alignment as derive_generated_sector_alignment
-        from src.layer_registry import layer_path
+        from src.certificate_registry import certificate_path
 
         result = derive_generated_sector_alignment(
             ROOT / "generated/center_idempotents_from_generated_T985.npz",
-            layer_path("drinfeld.full_a985_lift"),
+            certificate_path("drinfeld.full_a985_lift"),
             ROOT / "generated/relation_memberships_from_source_coorient_aligned.npz",
             ROOT / "generated/generated_sector_alignment.npz",
             ROOT / "generated/generated_sector_alignment_report.json",
@@ -478,13 +478,13 @@ def main() -> None:
         )
     elif args.derive_representation_integral_wall:
         from src.derive_representation_integral_wall import derive_all as derive_representation_integral_wall
-        from src.layer_registry import layer_path
+        from src.certificate_registry import certificate_path
 
         result = derive_representation_integral_wall(
             ROOT / "data/raw/simple_branching_matrices.npz",
             ROOT / "generated/terminal_quotients_from_source_coorient.npz",
-            layer_path("drinfeld.full_a985_lift"),
-            layer_path("integrity.proof_system"),
+            certificate_path("drinfeld.full_a985_lift"),
+            certificate_path("integrity.proof_system"),
             ROOT / "generated/a236_representation_fusion_from_center.npz",
             ROOT / "generated/remaining_representation_integral_chain_report.json",
         )

@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS, INTEGRITY_INVARIANTS, LAYERS, ROOT
+from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS, INTEGRITY_INVARIANTS, DATA, ROOT
 
 
 THEOREM_ID = "sector33_residual_attachment"
@@ -16,12 +16,12 @@ NONEXACT_REPORT = D20_INVARIANTS / "theorems" / "nonexact_optical_residue" / "re
 PRIMITIVE_CYCLES_CSV = HCYCLE_INVARIANTS / "subscript_Hcycle_primitive_cycles.csv"
 D20_EDGES_CSV = HCYCLE_INVARIANTS / "subscript_Hcycle_d20_edges.csv"
 
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
-DRINFELD_BOUNDARY = LAYERS / "drinfeld" / "boundary.json"
-LINE_SURFACE_TRACE = LAYERS / "modular" / "derived_line_surface_trace.json"
-HESSE_TUBE_PENCIL = LAYERS / "modular" / "hesse_tube_character_pencil.json"
-TUBE_PROJECTION_SECTION = LAYERS / "tube" / "projection_section.json"
-TUBE_KERNEL_DESCENT_AUDIT = LAYERS / "tube" / "kernel_descent_audit.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
+DRINFELD_BOUNDARY = DATA / "drinfeld" / "boundary.json"
+LINE_SURFACE_TRACE = DATA / "modular" / "derived_line_surface_trace.json"
+HESSE_TUBE_PENCIL = DATA / "modular" / "hesse_tube_character_pencil.json"
+TUBE_PROJECTION_SECTION = DATA / "tube" / "projection_section.json"
+TUBE_KERNEL_DESCENT_AUDIT = DATA / "tube" / "kernel_descent_audit.json"
 
 PURE_C_NO_ESCAPE = INTEGRITY_INVARIANTS / "cvx_trace" / "reports" / "pure_c_no_escape_report.json"
 X_EXTRACTOR_SEARCH = INTEGRITY_INVARIANTS / "cvx_trace" / "reports" / "x_extractor_bounded_search_report.json"

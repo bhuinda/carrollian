@@ -1,16 +1,17 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "8912593c42931e7f5ad2a7eb60639d7de077222ad128f23e062041c784305b59",
+  "certificate_sha256": "8c93e89b1d9a7b6e673fc47ef9d54cd0d4727fdec2088b432ee1bc8f94481ff4",
   "checks": {
     "all_projectors_equal_central_page_sums": true,
     "all_rows_dereference_full_coo": true,
     "full_matrix_unit_coo_certified": true,
-    "legacy_transport_certified": true,
+    "perennial_join_key_emitted_when_available": true,
     "projector_count_is_7": true,
     "projector_product_failures_zero": true,
     "registered_stage_certified": true,
     "registered_subsupport_rows_preserved": true,
     "registered_subsupport_rows_use_registered_source": true,
+    "sector_transport_certified": true,
     "support_coo_rows_match_nonzero_count": true,
     "support_manifest_has_1011_rows": true,
     "top_projector_is_unit": true,
@@ -18,11 +19,20 @@
     "top_support_replaced_with_full_coo_985_rows": true,
     "zero_projector_is_zero": true
   },
-  "claim": "The registered support matrix-unit layer is now dereferenced through the all-39 legacy-labeled raw-orbital matrix-unit COO table. The top support is replaced by the full COO-backed table, registered subsupport rows retain their support labels, and all support projectors are emitted as sums of full COO diagonal matrix units.",
+  "claim": "The registered support matrix-unit layer is now dereferenced through the all-39 source-sector-labeled raw-orbital matrix-unit COO table. The top support is replaced by the full COO-backed table, registered subsupport rows retain their support labels, and all support projectors are emitted as sums of full COO diagonal matrix units.",
   "derived": {
     "coefficient_source_counts": {
       "CONSTRUCTED_FROM_PROMOTED_CENTRAL_PAGE": 975,
       "REGISTERED_SUPPORT_COO": 36
+    },
+    "perennial_join_key": {
+      "map_available": true,
+      "projector_summary_set_columns_added": [
+        "transported_source_support_perennial_ids",
+        "raw_support_perennial_ids"
+      ],
+      "support_coo_rows_resolved": 77535,
+      "support_manifest_rows_resolved": 1011
     },
     "projector_products": {
       "checked": 49,
@@ -57,15 +67,15 @@
     },
     "full_matrix_unit_orbital_coo": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
-      "sha256": "a343d6f592e7183e784cad7902458540576005646d6e28f32611f6ef7727f2d4"
-    },
-    "legacy_matrix_unit_transport": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/report.json",
-      "sha256": "b44fceb659ac57a889852d66daa08d92e1c17e6c9b1a41d8f3c3159e0b17624b"
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
     },
     "registered_support_matrix_units": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/report.json",
-      "sha256": "c760241ccdc80d2977c718dae6385c33d99687d32adaac3add6fef732a114d3c"
+      "sha256": "4f193acca172ec17b1e57574cab0178ea8a61676b0070d83c99c6fc881042bcd"
+    },
+    "sector_matrix_unit_transport": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_matrix_unit_transport/report.json",
+      "sha256": "5d0a5eda4dfcba00373c0045292c37b99ca6a7a654f2c27fb6372706ac076ff3"
     },
     "t985_tensor": {
       "path": "data/raw/T_985.npz",

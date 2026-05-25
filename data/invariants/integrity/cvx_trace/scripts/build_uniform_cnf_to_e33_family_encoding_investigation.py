@@ -36,8 +36,8 @@ STACK_SERIES = (
     / "a985_weighted"
     / "a985_weighted_stack_series_certificate.json"
 )
-LEGACY_GATE_CERTIFICATE = SS_SAT / "source_drops" / "external_evidence_gate" / "certificate.json"
-LEGACY_GATE_LEDGER = SS_SAT / "source_drops" / "external_evidence_gate" / "running_ledger.csv"
+SOURCE_GATE_CERTIFICATE = SS_SAT / "source_drops" / "external_evidence_gate" / "certificate.json"
+SOURCE_GATE_LEDGER = SS_SAT / "source_drops" / "external_evidence_gate" / "running_ledger.csv"
 SCALED_EVIDENCE = SS_SAT / "reports" / "ss_sat_scaled_evidence.json"
 SOLVER_RUNS = SS_SAT / "tables" / "solver_run_summary.csv"
 SCALED_SOLVER_RUNS = SS_SAT / "tables" / "scaled_solver_run_summary.csv"
@@ -45,7 +45,7 @@ PROOF_VERIFICATION = SS_SAT / "tables" / "proof_verification_summary.csv"
 SCALED_PROOF_VERIFICATION = SS_SAT / "tables" / "scaled_proof_verification_summary.csv"
 
 
-LEGACY_RELEVANT_INVARIANTS = {
+SOURCE_RELEVANT_INVARIANTS = {
     "Clauses_all_CNF_arity_1_to_3_quotient",
     "Clauses_all_CNF_arity_1_to_3_image_size",
     "Clauses_3SAT_quotient",
@@ -181,8 +181,8 @@ def proof_summary() -> dict[str, Any]:
     }
 
 
-def legacy_boolean_family_rows() -> dict[str, Any]:
-    rows = read_csv(LEGACY_GATE_LEDGER)
+def source_boolean_family_rows() -> dict[str, Any]:
+    rows = read_csv(SOURCE_GATE_LEDGER)
     selected = [
         {
             "layer": row.get("layer"),
@@ -192,11 +192,11 @@ def legacy_boolean_family_rows() -> dict[str, Any]:
             "source": row.get("source"),
         }
         for row in rows
-        if row.get("invariant") in LEGACY_RELEVANT_INVARIANTS
+        if row.get("invariant") in SOURCE_RELEVANT_INVARIANTS
     ]
     by_invariant = {row["invariant"]: row for row in selected}
     return {
-        "path": rel(LEGACY_GATE_LEDGER),
+        "path": rel(SOURCE_GATE_LEDGER),
         "selected_row_count": len(selected),
         "selected_rows": selected,
         "has_clause_3sat_mod2_quotient": "Clauses_3SAT_quotient" in by_invariant
@@ -249,7 +249,7 @@ def build_report() -> dict[str, Any]:
     cnf = cnf_fixture_summary()
     solver = solver_status_summary()
     proofs = proof_summary()
-    legacy = legacy_boolean_family_rows()
+    source = source_boolean_family_rows()
     finite_e33 = all_residue_summary()
     stack = stack_series_summary()
     x_target = load_json(X_TARGET)
@@ -289,12 +289,12 @@ def build_report() -> dict[str, Any]:
                 "benchmarks_with_unsat_witness_count": len(solver["benchmarks_with_unsat_witness"]),
             },
         },
-        "legacy_clause_family_mod2_seam_present": {
-            "passed": legacy["has_clause_3sat_mod2_quotient"],
+        "source_clause_family_mod2_seam_present": {
+            "passed": source["has_clause_3sat_mod2_quotient"],
             "evidence": {
-                "selected_row_count": legacy["selected_row_count"],
-                "has_a985_frame_field_rows": legacy["has_a985_frame_field_rows"],
-                "has_residual_snf_mod2_coordinate": legacy["has_residual_snf_mod2_coordinate"],
+                "selected_row_count": source["selected_row_count"],
+                "has_a985_frame_field_rows": source["has_a985_frame_field_rows"],
+                "has_residual_snf_mod2_coordinate": source["has_residual_snf_mod2_coordinate"],
             },
         },
         "finite_all_residue_e33_transport_family_present": {
@@ -490,8 +490,8 @@ def build_report() -> dict[str, Any]:
                 "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED",
             ),
             "ss_sat_scaled_evidence": report_status(SCALED_EVIDENCE, "SS_SAT_SCALED_EVIDENCE_CAPTURED"),
-            "legacy_external_evidence_gate": report_status(
-                LEGACY_GATE_CERTIFICATE,
+            "source_external_evidence_gate": report_status(
+                SOURCE_GATE_CERTIFICATE,
                 "GNATURAL_ONTOLOGICAL_COMPUTATION_EXTERNAL_EVIDENCE_GATE_READY_EVIDENCE_PENDING",
             ),
             "a985_weighted_stack_series": report_status(
@@ -552,7 +552,7 @@ def build_report() -> dict[str, Any]:
         "cnf_fixture_surface": cnf,
         "solver_status_surface": solver,
         "proof_surface": proofs,
-        "legacy_boolean_family_seams": legacy,
+        "source_boolean_family_seams": source,
         "finite_e33_target_testbed": finite_e33,
         "stack_series_scaling_seam": stack,
         "existing_frontier_decision": frontier.get("decision"),
@@ -566,19 +566,19 @@ def build_report() -> dict[str, Any]:
                 seam_checks[key]["passed"]
                 for key in [
                     "public_cnf_fixture_surface_present",
-                    "legacy_clause_family_mod2_seam_present",
+                    "source_clause_family_mod2_seam_present",
                     "finite_all_residue_e33_transport_family_present",
                     "intrinsic_rho33_transport_formula_present",
                 ]
             ),
             "may_use_d20_all_residue_family_as_finite_target_testbed": finite_e33["finite_target_testbed"],
-            "may_promote_legacy_clause_quotient_to_e33_reduction": False,
+            "may_promote_source_clause_quotient_to_e33_reduction": False,
             "may_claim_uniform_cnf_to_e33_family_encoding": certified,
             "may_claim_scalable_hidden_e33_family": certified,
             "may_claim_sat_complete_hidden_e33_family": certified,
             "may_claim_p_not_np": False,
             "reason": (
-                "The repo contains useful seams: public CNF fixtures/proofs, legacy finite Boolean quotient "
+                "The repo contains useful seams: public CNF fixtures/proofs, source finite Boolean quotient "
                 "rows, a certified 2048-class finite D20 e33 transport testbed, intrinsic height-return "
                 "rho_33 transport, a public CNF-to-D20-mask compiler candidate, an obligation "
                 "certificate that fences the finite target as a lookup testbed, a parameterized "
@@ -586,7 +586,7 @@ def build_report() -> dict[str, Any]:
                 "and a certified forall-instance yes/no preservation theorem."
                 if formula_candidate is not None
                 else (
-                    "The repo contains useful seams: public CNF fixtures/proofs, legacy finite Boolean quotient "
+                    "The repo contains useful seams: public CNF fixtures/proofs, source finite Boolean quotient "
                     "rows, a certified 2048-class finite D20 e33 transport testbed, and intrinsic height-return "
                     "rho_33 transport. It still has no public formula-to-cycle compiler, no unbounded target "
                     "family, no SAT target predicate with assignment witnesses, and no forall-instance "
@@ -602,7 +602,7 @@ def build_report() -> dict[str, Any]:
             if certified
             else [
                 "This does not define a reduction from CNF-SAT or 3SAT.",
-                "This does not turn the legacy Clause_3SAT quotient row into a sector-33 obstruction theorem.",
+                "This does not turn the source Clause_3SAT quotient row into a sector-33 obstruction theorem.",
                 "This does not make the finite 2048-mask D20 residue family asymptotic.",
                 "This does not prove P != NP.",
             ]

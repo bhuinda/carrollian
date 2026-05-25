@@ -1,0 +1,87 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7aed9ab8544117bdb7fd844ef713a7f77c04a01fc4c156a26f7d05308e3233e1",
+  "checks": {
+    "cubical_agda_enumeration_properties_are_certified": true,
+    "selector_membership_agda_interface_artifact_present_after_typecheck": true,
+    "selector_membership_artifact_hashes_are_stable": "fdd22a5897de0e70340d524dd40e31821587a8690878f0f7b58ff2ef17e6486a",
+    "selector_membership_decision_function_is_total_over_selectors_and_dynamics": true,
+    "selector_membership_decision_yes_no_counts_match_fibers": true,
+    "selector_membership_source_exists_and_imports_properties": true,
+    "selector_membership_source_has_all_fiber_count_proofs": true,
+    "selector_membership_source_has_named_selected_decision_witnesses": true,
+    "univalent_foundation_bridge_is_certified": true
+  },
+  "claim": "The Cubical Agda selector layer now has a generated total decision function for all eight selector criteria over all 543 dynamics ids, with fiber count proofs for every selector.",
+  "derived": {
+    "expected_decision_clause_count": 4344,
+    "expected_no_clause_count": 3253,
+    "expected_yes_clause_count": 1091,
+    "selector_fiber_counts": {
+      "global_action_minimal": 1,
+      "lazy_componentwise_spectral_gap": 63,
+      "lazy_componentwise_spectral_gap_action_tiebreak": 1,
+      "paired_action_minimal": 1,
+      "paired_lazy_componentwise_spectral_gap": 480,
+      "paired_lazy_componentwise_spectral_gap_action_tiebreak": 1,
+      "primitive_seeded": 1,
+      "raw_componentwise_absolute_spectral_gap": 543
+    },
+    "source_summary": {
+      "byte_size": 314494,
+      "decision_counts": {
+        "decision_clause_count": 4344,
+        "dynamics_count": 543,
+        "fiber_count_proof_count": 8,
+        "no_clause_count": 3253,
+        "selector_count": 8,
+        "yes_clause_count": 1091
+      },
+      "interface": {
+        "byte_size": 1000349,
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorMembership.agdai",
+        "sha256": "fdd22a5897de0e70340d524dd40e31821587a8690878f0f7b58ff2ef17e6486a"
+      },
+      "line_count": 4405,
+      "module": "C2SelectorFoundationSelectorMembership",
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorMembership.agda",
+      "sha256": "320c1811d33c1099d76226421bca50f125e6c0ec07e703608bbfb1a5555dd0e7",
+      "typecheck_command": "C:/Users/Admin/Documents/agda-toolchain/agda.exe --transliterate -v0 -i data/invariants/d20/formal/cubical -i C:/Users/Admin/Documents/agda-toolchain/cubical-0.9 data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorMembership.agda"
+    }
+  },
+  "inputs": {
+    "c2_cubical_agda_enumeration_properties_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties/report.json",
+      "sha256": "cbde3a76d4727b8a0a41a8a2b8d363cd1149275c0dbf023875546bb44b888e30"
+    },
+    "c2_univalent_foundation_bridge_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_univalent_foundation_bridge/report.json",
+      "sha256": "32dd1e7862ab91f8740ff77916fff7e0c8da6722f90b833443ccf85dfb49fb9d"
+    },
+    "cubical_agda_selector_membership_interface": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorMembership.agdai",
+      "sha256": "fdd22a5897de0e70340d524dd40e31821587a8690878f0f7b58ff2ef17e6486a"
+    },
+    "cubical_agda_selector_membership_source": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorMembership.agda",
+      "sha256": "320c1811d33c1099d76226421bca50f125e6c0ec07e703608bbfb1a5555dd0e7"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": [
+      "it does not yet package selector fibers as finite subtypes with equivalences to Fin n",
+      "it does not yet prove structure identity for dynamics codes",
+      "it does not choose the physical selector axiom"
+    ],
+    "what_this_proves": [
+      "selector membership is decidable for every selector/dynamics pair",
+      "all yes branches correspond to the 1091 generated membership constructors",
+      "all no branches are impossible-pattern proofs in Cubical Agda",
+      "all eight selector fiber counts are available as reflexive Cubical Agda proofs"
+    ]
+  },
+  "next_highest_yield_item": "Package each selector fiber as a Cubical Agda finite subtype and prove equivalence to Fin n for its certified cardinality.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_CERTIFIED"
+}

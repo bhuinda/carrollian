@@ -1,0 +1,821 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dd7682d313dc594c06926f56145cf38dcacdb97667803a0cf0ca002f9749f94d",
+  "checks": {
+    "active_plane_mode_masks_match_packet_model": true,
+    "component_count_matches_rank10_kernel_dimension": true,
+    "component_support_is_not_rank10_basis": true,
+    "doublets_are_active_partner_planes": true,
+    "full_exposure_boolean_gate_matches_radical_support": true,
+    "full_exposure_packet_propagation_graph_is_certified": true,
+    "packet239_alignment_is_238_239_with_radical119": true,
+    "projective_kernel_packet_tenfold_way_is_certified": true,
+    "projective_packet_spectral_charge_table_is_certified": true,
+    "radical_core_and_variable_axes_are_certified": true,
+    "tenfold_active_block_is_preserved": true
+  },
+  "claim": "The ten full-exposure propagation doublets match the rank-10 kernel dimension by count, but they do not form a canonical ten-axis basis. Each doublet is an active two-packet plane over a fixed radical character. The ten radical anchors have common core 83, vary only on radical axes 2, 3, 5, and 7, and satisfy the nonlinear support gate x2 or (x3 and x5). Thus the full-exposure graph is a ten-component tenfold-facing screen, not the full rank-10 coordinate cube.",
+  "definition": {
+    "active_plane": "The four kernel coordinates r + sigma*e8 + tau*e9 for sigma,tau in F2.",
+    "component_anchor": "The shared radical character r for an active-partner packet pair [2r,2r+1].",
+    "rank10_basis_test": "Whether the component coordinate directions span all ten kernel axes.",
+    "tenfold_alignment": "Compatibility with the certified 8 radical plus 2 active Cl(1,1) split."
+  },
+  "derived": {
+    "alignment_summary": {
+      "basis_failure_reason": "The ten graph components match the kernel dimension numerically, but their coordinate directions span only four radical axes plus the two active axes.",
+      "canonical_rank10_axis_basis": false,
+      "common_radical_core": 83,
+      "common_radical_core_binary": "01010011",
+      "component_count": 10,
+      "component_count_matches_kernel_dimension": true,
+      "fixed_one_radical_axes": [
+        0,
+        1,
+        4,
+        6
+      ],
+      "fixed_zero_radical_axes": [],
+      "free_active_axes": [
+        8,
+        9
+      ],
+      "full_mode_affine_direction_rank": 6,
+      "full_mode_linear_span_rank": 7,
+      "kernel_dimension": 10,
+      "radical_affine_direction_rank": 4,
+      "radical_anchor_binary": [
+        "01010111",
+        "01011111",
+        "01110111",
+        "01111011",
+        "01111111",
+        "11010111",
+        "11011111",
+        "11110111",
+        "11111011",
+        "11111111"
+      ],
+      "radical_anchor_count": 10,
+      "radical_anchors": [
+        87,
+        95,
+        119,
+        123,
+        127,
+        215,
+        223,
+        247,
+        251,
+        255
+      ],
+      "radical_linear_span_rank": 5,
+      "variable_radical_axes": [
+        2,
+        3,
+        5,
+        7
+      ]
+    },
+    "boolean_gate_witness": {
+      "condition": "x2 or (x3 and x5)",
+      "excluded_variable_patterns_2357": [
+        "0000",
+        "0100",
+        "0010",
+        "0001",
+        "0101",
+        "0011"
+      ],
+      "expected_radicals_from_gate": [
+        87,
+        95,
+        119,
+        123,
+        127,
+        215,
+        223,
+        247,
+        251,
+        255
+      ],
+      "fixed_equations": {
+        "radical_axes_equal_one": [
+          0,
+          1,
+          4,
+          6
+        ],
+        "radical_axes_equal_zero": []
+      },
+      "is_affine_subspace": false,
+      "not_affine_reason": "The radical support has 10 points; an affine F2-subspace would have power-of-two size.",
+      "support_radical_count": 10,
+      "variable_radical_axes": [
+        2,
+        3,
+        5,
+        7
+      ]
+    },
+    "component_alignment_rows": [
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          false,
+          false
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          87,
+          343,
+          599,
+          855
+        ],
+        "mode_masks_from_coordinate_plane": [
+          151,
+          695,
+          1207,
+          1687
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          151,
+          695,
+          1207,
+          1687
+        ],
+        "packet_pair": [
+          174,
+          175
+        ],
+        "radical_binary": "01010111",
+        "radical_character": 87,
+        "radical_support": [
+          0,
+          1,
+          2,
+          4,
+          6
+        ],
+        "relative_variable_pattern_2357": "1000",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          false,
+          false
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          95,
+          351,
+          607,
+          863
+        ],
+        "mode_masks_from_coordinate_plane": [
+          159,
+          703,
+          1215,
+          1695
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          159,
+          703,
+          1215,
+          1695
+        ],
+        "packet_pair": [
+          190,
+          191
+        ],
+        "radical_binary": "01011111",
+        "radical_character": 95,
+        "radical_support": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "relative_variable_pattern_2357": "1100",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          false,
+          false
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          119,
+          375,
+          631,
+          887
+        ],
+        "mode_masks_from_coordinate_plane": [
+          215,
+          759,
+          1271,
+          1751
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          215,
+          759,
+          1271,
+          1751
+        ],
+        "packet_pair": [
+          238,
+          239
+        ],
+        "radical_binary": "01110111",
+        "radical_character": 119,
+        "radical_support": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "relative_variable_pattern_2357": "1010",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          false,
+          false
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          123,
+          379,
+          635,
+          891
+        ],
+        "mode_masks_from_coordinate_plane": [
+          219,
+          763,
+          1275,
+          1755
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          219,
+          763,
+          1275,
+          1755
+        ],
+        "packet_pair": [
+          246,
+          247
+        ],
+        "radical_binary": "01111011",
+        "radical_character": 123,
+        "radical_support": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6
+        ],
+        "relative_variable_pattern_2357": "0110",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          false,
+          false
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          127,
+          383,
+          639,
+          895
+        ],
+        "mode_masks_from_coordinate_plane": [
+          223,
+          767,
+          1279,
+          1759
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          223,
+          767,
+          1279,
+          1759
+        ],
+        "packet_pair": [
+          254,
+          255
+        ],
+        "radical_binary": "01111111",
+        "radical_character": 127,
+        "radical_support": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "relative_variable_pattern_2357": "1110",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          true,
+          true
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          215,
+          471,
+          727,
+          983
+        ],
+        "mode_masks_from_coordinate_plane": [
+          407,
+          951,
+          1463,
+          1943
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          407,
+          951,
+          1463,
+          1943
+        ],
+        "packet_pair": [
+          430,
+          431
+        ],
+        "radical_binary": "11010111",
+        "radical_character": 215,
+        "radical_support": [
+          0,
+          1,
+          2,
+          4,
+          6,
+          7
+        ],
+        "relative_variable_pattern_2357": "1001",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          true,
+          true
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          223,
+          479,
+          735,
+          991
+        ],
+        "mode_masks_from_coordinate_plane": [
+          415,
+          959,
+          1471,
+          1951
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          415,
+          959,
+          1471,
+          1951
+        ],
+        "packet_pair": [
+          446,
+          447
+        ],
+        "radical_binary": "11011111",
+        "radical_character": 223,
+        "radical_support": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7
+        ],
+        "relative_variable_pattern_2357": "1101",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          true,
+          true
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          247,
+          503,
+          759,
+          1015
+        ],
+        "mode_masks_from_coordinate_plane": [
+          471,
+          1015,
+          1527,
+          2007
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          471,
+          1015,
+          1527,
+          2007
+        ],
+        "packet_pair": [
+          494,
+          495
+        ],
+        "radical_binary": "11110111",
+        "radical_character": 247,
+        "radical_support": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7
+        ],
+        "relative_variable_pattern_2357": "1011",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          true,
+          true
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          251,
+          507,
+          763,
+          1019
+        ],
+        "mode_masks_from_coordinate_plane": [
+          475,
+          1019,
+          1531,
+          2011
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          475,
+          1019,
+          1531,
+          2011
+        ],
+        "packet_pair": [
+          502,
+          503
+        ],
+        "radical_binary": "11111011",
+        "radical_character": 251,
+        "radical_support": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "relative_variable_pattern_2357": "0111",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      },
+      {
+        "active_sigma_values": [
+          0,
+          1
+        ],
+        "active_tau_values_per_packet": [
+          0,
+          1
+        ],
+        "gamma8_touched_pair": [
+          true,
+          true
+        ],
+        "graph_block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "kernel_coordinate_plane": [
+          255,
+          511,
+          767,
+          1023
+        ],
+        "mode_masks_from_coordinate_plane": [
+          479,
+          1023,
+          1535,
+          2015
+        ],
+        "optional_active_hamiltonian_classes": [
+          "BDI"
+        ],
+        "packet_mode_masks": [
+          479,
+          1023,
+          1535,
+          2015
+        ],
+        "packet_pair": [
+          510,
+          511
+        ],
+        "radical_binary": "11111111",
+        "radical_character": 255,
+        "radical_support": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "relative_variable_pattern_2357": "1111",
+        "tenfold_canonical_classes": [
+          "AI"
+        ]
+      }
+    ],
+    "component_alignment_rows_sha256": "98655a4fb03c5747c413fc79f4b2b696bd45fe7cdbc5f225165a4f315360f148",
+    "histograms": {
+      "gamma8_touched_pair": {
+        "(False, False)": 5,
+        "(True, True)": 5
+      },
+      "radical_support_size": {
+        "5": 1,
+        "6": 4,
+        "7": 4,
+        "8": 1
+      },
+      "relative_variable_pattern_2357": {
+        "0110": 1,
+        "0111": 1,
+        "1000": 1,
+        "1001": 1,
+        "1010": 1,
+        "1011": 1,
+        "1100": 1,
+        "1101": 1,
+        "1110": 1,
+        "1111": 1
+      }
+    },
+    "tenfold_alignment": {
+      "active_axes_are_free_in_every_component": true,
+      "canonical_module_class": "AI",
+      "fixed_radical_axis_count": 4,
+      "graph_operator_axis": "active_sigma",
+      "kernel_split": "8 radical spectator axes plus 2 active Cl(1,1) axes",
+      "moving_radical_axis_count": 4,
+      "optional_active_hamiltonian_class": "BDI",
+      "packet_internal_axis": "active_tau"
+    }
+  },
+  "inputs": {
+    "full_exposure_packet_propagation_graph_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json",
+      "sha256": "c115c85c7125e3b89ec5120c55cc6c4db5364bd8a026e20d78fac42af2371b82"
+    },
+    "projective_kernel_packet_tenfold_way_report": {
+      "path": "data/invariants/d20/theorems/projective_kernel_packet_tenfold_way/report.json",
+      "sha256": "9d7aff864c7d2c7b74e67d0fcdfdd7a2022b2d726fd875f630ce14603ed7ac57"
+    },
+    "projective_packet_spectral_charge_table_report": {
+      "path": "data/invariants/d20/theorems/projective_packet_spectral_charge_table/report.json",
+      "sha256": "fc02aab1cb58fe2473cb8c7997ed094c893ce3f0b6979d5f695b8150de610875"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not identify the ten full-exposure doublets with the ten coordinate axes. It certifies the opposite: the moving support has rank 6 in the 10-coordinate kernel.",
+    "what_this_proves": [
+      "the ten graph components are active planes in the certified 8+2 kernel coordinate split",
+      "the component count equals the rank-10 kernel dimension only as a count, not as a basis",
+      "full exposure is cut out by a fixed radical core plus a nonlinear four-axis radical gate",
+      "packet 239 is the active-sigma half of the radical-119 component [238,239]"
+    ]
+  },
+  "next_highest_yield_item": "Classify the automorphism/stabilizer of the full-exposure radical gate with fixed core 83 and condition x2 or (x3 and x5).",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_rank10_tenfold_alignment",
+  "status": "D20_FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_CERTIFIED"
+}

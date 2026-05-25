@@ -1,0 +1,81 @@
+{
+  "all_checks_pass": true,
+  "boundary": "These anchors normalize the static Z/2 x Z/4^2 frame. They do not remove the separate sector-local GL_d matrix-unit basis ambiguity for all open blocks.",
+  "certificate_sha256": "ab388e3437dc53080e6f284b487e49991dbf85a10e766a4fb8549c8a9f6dbef5",
+  "checks": {
+    "all_anchor_rows_vanish_on_sector33": true,
+    "anchor_order_profile_is_2_4_4": true,
+    "anchor_rows_count_is_3": true,
+    "constructed_static_representative_certified": true,
+    "exact_sector33_detector_generators_are_fold_sheet_and_primary_clock": true,
+    "finite_burning_ship_folded_map_certified": true,
+    "framed_clock_records_extra_zero_sector20": true,
+    "mod20_branch_lift_shape_matches_static": true,
+    "mod4_branch_lift_shape_matches_static": true,
+    "mod4_direct_shape_is_z4_squared": true,
+    "mod60_branch_lift_shape_matches_static": true,
+    "public_zero_alignment_certified": true,
+    "sector33_detector_certified": true,
+    "trace_evaluator_ready_or_profile_certified": true
+  },
+  "claim": "The A985 static 2-primary frame is normalized by the finite Burning Ship branch-lift convention: fold-sheet bit, primary mod-4 clock, and framed mod-4 clock map to the three constructed raw-orbital generators.",
+  "derived": {
+    "anchor_order": [
+      "z2_a12_parity",
+      "z4_a42_clock",
+      "z4_a12_frame_clock"
+    ],
+    "exact_sector33_detector_generators": [
+      "z2_a12_parity",
+      "z4_a42_clock"
+    ],
+    "normalization_convention": "Burning Ship branch-lifted static fold-frame",
+    "order_profile": [
+      2,
+      4,
+      4
+    ],
+    "tables": {
+      "anchors": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_fold_frame_normalization_anchors/burning_ship_fold_frame_normalization_anchors.csv",
+      "convention": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_fold_frame_normalization_anchors/burning_ship_fold_frame_normalization_convention.json"
+    },
+    "zero_sector_profile": {
+      "z2_a12_parity": [
+        33
+      ],
+      "z4_a12_frame_clock": [
+        20,
+        33
+      ],
+      "z4_a42_clock": [
+        33
+      ]
+    }
+  },
+  "inputs": {
+    "constructed_static_representative": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_constructed_representative/report.json",
+      "sha256": "8d4cbdb50ad9f314438a0a4d4b216542d30d66b931dc13baadd1e698f1ecabba"
+    },
+    "constructed_trace_evaluator": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/report.json",
+      "sha256": "0ff36f1518ffd4d0d0741b4ca9cc9d0ebc14f4185590e011c06866b8f22e9e1b"
+    },
+    "finite_burning_ship_folded_map": {
+      "path": "data/invariants/d20/theorems/finite_burningship_folded_map/report.json",
+      "sha256": "893d33396d7cc1411e24658e37a9b153c0fdf9bc47456cd9413f72676bc48727"
+    },
+    "public_zero_alignment": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/report.json",
+      "sha256": "897e0f52c6b913a4562ea9b99a402346922d38f559b01f6933ae30e8b9801a0e"
+    },
+    "sector33_detector": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_sector33_detector/report.json",
+      "sha256": "ba22d1e7eabd9db7f5db1ad70df7ba70054c5d56382ee69f0907d38cf2e90f29"
+    }
+  },
+  "next_highest_yield_item": "Thread this fold-frame convention into the sector-local normalization ledger as the static 2-primary anchor, while keeping the remaining GL_d block-basis obligations explicit.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_ship_fold_frame_normalization_anchors.source_drop",
+  "status": "D20_TINY_POINTER_A985_BURNING_SHIP_FOLD_FRAME_NORMALIZATION_ANCHORS_CERTIFIED"
+}

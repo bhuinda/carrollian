@@ -1,0 +1,20 @@
+{
+  "description": "Raw A985 orbital coordinates for one Burning_static_fields class representative. Coefficients are interpreted modulo 1000003 against the canonical raw relation order R_alpha.",
+  "field_prime": 1000003,
+  "required_csv_columns": [
+    "representative_id",
+    "quotient_generator",
+    "relation_alpha",
+    "coefficient_mod_1000003",
+    "source_artifact",
+    "source_row"
+  ],
+  "schema": "d20.tiny_pointer_a985.burning_static_representative_input@1",
+  "semantic_requirements": [
+    "relation_alpha must be an integer in [0,984]",
+    "coefficient_mod_1000003 must be reduced modulo 1000003",
+    "at least one nonzero row is required per quotient_generator",
+    "expected quotient generators are compatible with Z/2 x Z/4^2",
+    "source_artifact must identify the Burning/static field data source, not only the ledger summary"
+  ]
+}

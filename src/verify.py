@@ -7,6 +7,8 @@ the practical verification modes without hiding file writes behind a default:
 * core: validate the mathematical core and layer statuses only;
 * audit: validate core plus constructor witness and the file manifest;
 * rebuild: regenerate d20.json, refresh hashes, then audit;
+  pass --cached-source to reuse checked source artifacts and skip heavy source refresh;
+* strict-replay: validate core plus a fresh zero-axiom coorient replay;
 * tamper: mutate certified evidence in memory and require verification failure.
 """
 from __future__ import annotations
@@ -32,6 +34,7 @@ MODES = {
     "core": "fast",
     "audit": "audit",
     "rebuild": "rebuild",
+    "strict-replay": "strict-replay",
     "tamper": "tamper",
 }
 
@@ -46,8 +49,13 @@ def run(command: str, *, pretty: bool) -> int:
     return finish(result, pretty)
 
 
-def rebuild(*, pretty: bool) -> int:
-    regen_info = certify.maybe_regenerate("rebuild", pretty, True)
+def rebuild(*, pretty: bool, cached_source: bool = False) -> int:
+    regen_info = certify.maybe_regenerate(
+        "rebuild",
+        pretty,
+        True,
+        refresh_sources=not cached_source,
+    )
     result = certify.run("rebuild")
     result["regeneration"] = regen_info
     return finish(result, pretty)
@@ -61,13 +69,19 @@ def finish(result: dict[str, Any], pretty: bool) -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Verify the d20 bundle.")
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("core", "audit", "rebuild", "tamper"):
+    for name in ("core", "audit", "rebuild", "strict-replay", "tamper"):
         p = sub.add_parser(name)
         p.add_argument("--pretty", action="store_true")
+        if name == "rebuild":
+            p.add_argument(
+                "--cached-source",
+                action="store_true",
+                help="Reuse existing checked source artifacts and skip heavy source refresh.",
+            )
     args = parser.parse_args()
 
     if args.command == "rebuild":
-        raise SystemExit(rebuild(pretty=args.pretty))
+        raise SystemExit(rebuild(pretty=args.pretty, cached_source=args.cached_source))
     raise SystemExit(run(args.command, pretty=args.pretty))
 
 

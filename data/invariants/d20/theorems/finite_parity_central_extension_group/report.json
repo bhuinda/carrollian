@@ -1,0 +1,2134 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "aff9f9bbcb6f7af46b0a1a2ff7ce652e2b526b20cd7cd5224cc8eef91940f0d5",
+  "checks": {
+    "all_group_elements_have_inverses": true,
+    "c9_10_lift_has_order4_while_c5_9_and_c5_10_lifts_have_order2": true,
+    "central_bit_acts_as_global_sign": true,
+    "central_extension_group_has_d8_times_c2_8_type": true,
+    "central_extension_group_has_expected_order_center_derived_and_exponent": true,
+    "chosen_kernel_coordinate_basis_has_rank10": true,
+    "chosen_kernel_coordinates_roundtrip_all_1024_masks": true,
+    "cross_composite_relation_lifts_to_identity": true,
+    "finite_central_extension_anomaly_cocycle_is_certified": true,
+    "finite_generator_algebra_is_certified": true,
+    "finite_kernel_candidate_is_certified": true,
+    "input_cocycle_has_unique_f2_composite_triangle_survivor": true,
+    "named_commutator_table_is_exact_composite_triangle": true,
+    "named_projective_action_composition_matches_group_law": true,
+    "named_projective_actions_preserve_kernel_states": true,
+    "parity_cocycle_identity_holds_on_active_bits": true,
+    "parity_cocycle_is_normalized": true,
+    "projective_action_phase_identity_holds_on_active_bits": true
+  },
+  "claim": "The unique compatible F2 parity cocycle on the finite Virasoro generator layer integrates to a certified central extension of the rank-10 kernel translation group. In the canonical section the extension has order 2048, center order 512, derived subgroup order 2, exponent 4, and group type D8 x C2^8. Its nonzero named commutators are exactly the paired cross-return composite triangle, and it admits a signed projective action on all 1024 kernel states.",
+  "definition": {
+    "central_cocycle": "c(x,y)=x_a y_b in F2.",
+    "group_law": "(x,z)(y,t)=(x+y, z+t+c(x,y)).",
+    "kernel_coordinates": "Use the eight primitive-preserving coordinates P0,P1,P2,P3,P4,P6,P7,P8 plus a=C5_9 and b=C5_10; C9_10 is represented by a+b.",
+    "projective_kernel_action": "rho(x,z)|m> = (-1)^(z + x_a m_b) |m+x>, where m_b is the C5_10 coordinate of the state."
+  },
+  "derived": {
+    "active_bit_cocycle_identity_rows": [
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0,
+        "z_left": 1,
+        "z_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 0,
+        "z_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1,
+        "z_left": 1,
+        "z_right": 1
+      }
+    ],
+    "active_bit_projective_identity_rows": [
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 1,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 1,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 1,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 1,
+        "x_left": 0,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 1,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 1,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 1,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 1,
+        "x_left": 0,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 0,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 0,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 1,
+        "x_left": 1,
+        "x_right": 0,
+        "y_left": 1,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 0,
+        "y_right": 1
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0
+      },
+      {
+        "lhs": 0,
+        "passes": 1,
+        "rhs": 0,
+        "state_right": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 0
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 0,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1
+      },
+      {
+        "lhs": 1,
+        "passes": 1,
+        "rhs": 1,
+        "state_right": 1,
+        "x_left": 1,
+        "x_right": 1,
+        "y_left": 1,
+        "y_right": 1
+      }
+    ],
+    "central_extension_summary": {
+      "base_kernel_order": 1024,
+      "center_order": 512,
+      "central_order": 2,
+      "commutator_central_bit_histogram_on_base_pairs": {
+        "0": 655360,
+        "1": 393216
+      },
+      "commutator_pairing_rank": 2,
+      "derived_subgroup_order": 2,
+      "element_order_histogram": {
+        "1": 1,
+        "2": 1535,
+        "4": 512
+      },
+      "exponent": 4,
+      "extension_group_type": "D8 x C2^8",
+      "group_order": 2048,
+      "inverse_failure_count": 0,
+      "nilpotency_class": 2,
+      "noncentral_commutator_count": 0,
+      "radical_coord_count": 256,
+      "radical_dimension": 8,
+      "square_histogram_by_encoded_element": {
+        "0": 1536,
+        "1024": 512
+      }
+    },
+    "cross_composite_relation_lift": {
+      "product_central_bit": 0,
+      "product_coord": 0,
+      "relation_labels": [
+        "C5_9",
+        "C5_10",
+        "C9_10"
+      ]
+    },
+    "kernel_coordinate_basis": [
+      {
+        "basis_mask": 1,
+        "basis_source": "P0",
+        "coord_index": 0
+      },
+      {
+        "basis_mask": 2,
+        "basis_source": "P1",
+        "coord_index": 1
+      },
+      {
+        "basis_mask": 4,
+        "basis_source": "P2",
+        "coord_index": 2
+      },
+      {
+        "basis_mask": 8,
+        "basis_source": "P3",
+        "coord_index": 3
+      },
+      {
+        "basis_mask": 16,
+        "basis_source": "P4",
+        "coord_index": 4
+      },
+      {
+        "basis_mask": 64,
+        "basis_source": "P6",
+        "coord_index": 5
+      },
+      {
+        "basis_mask": 128,
+        "basis_source": "P7",
+        "coord_index": 6
+      },
+      {
+        "basis_mask": 256,
+        "basis_source": "P8",
+        "coord_index": 7
+      },
+      {
+        "basis_mask": 544,
+        "basis_source": "C5_9",
+        "coord_index": 8
+      },
+      {
+        "basis_mask": 1056,
+        "basis_source": "C5_10",
+        "coord_index": 9
+      }
+    ],
+    "named_lift_commutator_table": [
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P0",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P1",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P2",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P3",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P4",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P6",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P7",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "P8",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "P0"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "P1"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "P2"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "P3"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "P4"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "P6"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "P7"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "P8"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 0,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "C9_10"
+      }
+    ],
+    "named_lift_commutator_table_sha256": "3f843ae4b4580c81d9271d7e27e1bdc73621752a427427eb18721465f5597f4f",
+    "named_lifts": [
+      {
+        "coord": 1,
+        "coord_support": [
+          0
+        ],
+        "generator_label": "P0",
+        "generator_type": "primitive_preserving",
+        "lift_element": 1,
+        "lift_order": 2,
+        "operator_mask": 1,
+        "source_generators": [
+          0
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 2,
+        "coord_support": [
+          1
+        ],
+        "generator_label": "P1",
+        "generator_type": "primitive_preserving",
+        "lift_element": 2,
+        "lift_order": 2,
+        "operator_mask": 2,
+        "source_generators": [
+          1
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 4,
+        "coord_support": [
+          2
+        ],
+        "generator_label": "P2",
+        "generator_type": "primitive_preserving",
+        "lift_element": 4,
+        "lift_order": 2,
+        "operator_mask": 4,
+        "source_generators": [
+          2
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 8,
+        "coord_support": [
+          3
+        ],
+        "generator_label": "P3",
+        "generator_type": "primitive_preserving",
+        "lift_element": 8,
+        "lift_order": 2,
+        "operator_mask": 8,
+        "source_generators": [
+          3
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 16,
+        "coord_support": [
+          4
+        ],
+        "generator_label": "P4",
+        "generator_type": "primitive_preserving",
+        "lift_element": 16,
+        "lift_order": 2,
+        "operator_mask": 16,
+        "source_generators": [
+          4
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 32,
+        "coord_support": [
+          5
+        ],
+        "generator_label": "P6",
+        "generator_type": "primitive_preserving",
+        "lift_element": 32,
+        "lift_order": 2,
+        "operator_mask": 64,
+        "source_generators": [
+          6
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 64,
+        "coord_support": [
+          6
+        ],
+        "generator_label": "P7",
+        "generator_type": "primitive_preserving",
+        "lift_element": 64,
+        "lift_order": 2,
+        "operator_mask": 128,
+        "source_generators": [
+          7
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 128,
+        "coord_support": [
+          7
+        ],
+        "generator_label": "P8",
+        "generator_type": "primitive_preserving",
+        "lift_element": 128,
+        "lift_order": 2,
+        "operator_mask": 256,
+        "source_generators": [
+          8
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 256,
+        "coord_support": [
+          8
+        ],
+        "generator_label": "C5_9",
+        "generator_type": "paired_cross_return_composite",
+        "lift_element": 256,
+        "lift_order": 2,
+        "operator_mask": 544,
+        "source_generators": [
+          5,
+          9
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 512,
+        "coord_support": [
+          9
+        ],
+        "generator_label": "C5_10",
+        "generator_type": "paired_cross_return_composite",
+        "lift_element": 512,
+        "lift_order": 2,
+        "operator_mask": 1056,
+        "source_generators": [
+          5,
+          10
+        ],
+        "square_central_bit": 0,
+        "square_coord": 0
+      },
+      {
+        "coord": 768,
+        "coord_support": [
+          8,
+          9
+        ],
+        "generator_label": "C9_10",
+        "generator_type": "paired_cross_return_composite",
+        "lift_element": 768,
+        "lift_order": 4,
+        "operator_mask": 1536,
+        "source_generators": [
+          9,
+          10
+        ],
+        "square_central_bit": 1,
+        "square_coord": 0
+      }
+    ],
+    "nonzero_named_lift_commutators": [
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "C5_10"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C5_9",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C5_10",
+        "right": "C9_10"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "C5_9"
+      },
+      {
+        "commutator_central_bit": 1,
+        "commutator_coord": 0,
+        "left": "C9_10",
+        "right": "C5_10"
+      }
+    ],
+    "projective_action_summary": {
+      "checked_named_generator_pair_state_compositions": 123904,
+      "generator_projection_failure_count": 0,
+      "named_composition_failure_count": 0,
+      "named_generator_count": 11,
+      "named_projective_action_digest_sha256": "561817756d4dec7334df0a38509b3d0efd1c4715765b7c6223c687af715053a4",
+      "state_count": 1024
+    }
+  },
+  "inputs": {
+    "finite_central_extension_anomaly_cocycle_report": {
+      "path": "data/invariants/d20/theorems/finite_central_extension_anomaly_cocycle/report.json",
+      "sha256": "988c59341caeced713469a65c516c2aba0ccfe4596cc2e69fad4ab471eb90aa7"
+    },
+    "finite_virasoro_generator_algebra_report": {
+      "path": "data/invariants/d20/theorems/finite_virasoro_generator_algebra/report.json",
+      "sha256": "38e3cb8b09e075d52acdadb2907816d87c0fe042e7d47fc65798ce63703bdd73"
+    },
+    "finite_virasoro_string_kernel_candidate_report": {
+      "path": "data/invariants/d20/theorems/finite_virasoro_string_kernel_candidate/report.json",
+      "sha256": "fd547abff233b095ca27c611d7cf126f0d06fd76618ca9b8af6c85cf016a91b5"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not yet decompose the signed projective kernel action into irreducible central-character packets or compare those packets with Loop_297 atom exposure.",
+    "what_this_proves": [
+      "the parity cocycle is integrable as a finite central extension group",
+      "the extension is nonabelian only in the two-dimensional composite sector",
+      "the named commutator anomaly is exactly the composite triangle found by the cocycle search",
+      "the central bit acts as a genuine projective sign on the 1024-state kernel action"
+    ]
+  },
+  "next_highest_yield_item": "Decompose the signed projective kernel action into central-character irreducible packets and compare the packets with sector-26 clock classes and Loop_297 atom exposure.",
+  "object": "d20",
+  "schema": "d20.theorem.finite_parity_central_extension_group",
+  "status": "D20_FINITE_PARITY_CENTRAL_EXTENSION_GROUP_CERTIFIED"
+}

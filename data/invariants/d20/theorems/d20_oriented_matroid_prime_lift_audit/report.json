@@ -1,0 +1,234 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "576b410289248b432fdcedf0e5b277965e2d2c5e08a5e76b10d2aaaa6cd12bd7",
+  "checks": {
+    "all_audit_primes_are_prime": true,
+    "all_audit_primes_have_93_terms": true,
+    "all_audit_primes_have_ground_31": true,
+    "all_audit_primes_have_rank_20": true,
+    "all_audit_primes_match_baseline_basis_count": true,
+    "all_audit_primes_match_baseline_tutte_hash": true,
+    "all_audit_primes_pass_all_subsets_specialization": true,
+    "d20_input_is_certified": true,
+    "distinguished_q_circuit_has_zero_image": true,
+    "distinguished_q_circuit_is_primitive": true,
+    "distinguished_support_is_exact_q_circuit": true,
+    "exact_q_rank_is_20": true,
+    "sector33_dual_input_is_certified": true,
+    "sector33_extension_input_is_certified": true,
+    "tutte_os_input_is_certified": true
+  },
+  "claim": "The sector-33 Tutte/OS package is stable across five large prime-field reductions, all with rank 20, 93 Tutte terms, the same polynomial hash, and the same basis count. The underlying integer matrix has exact rational rank 20, and the gamma8+e33 positive circuit is an exact primitive rational circuit. This is a certified lift audit, not a full rational promotion.",
+  "definition": {
+    "audit_scope": "multi-prime stability of the sector-33 height-attachment Tutte polynomial, plus exact rational checks for rank and the distinguished gamma8+e33 circuit",
+    "non_claim": "this audit does not prove that every rational and modular circuit support agrees; that remains the promotion gate"
+  },
+  "derived": {
+    "audit_primes": [
+      1000003,
+      1000033,
+      1000037,
+      1000039,
+      1000081
+    ],
+    "baseline": {
+      "basis_count": 18356358,
+      "field_prime": 1000003,
+      "report_sha256": "92d42ee43a6e528b95ce67d84746b1dfcddbc4c7df02c03ec02a92f84bc59528",
+      "tutte_polynomial_sha256": "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f"
+    },
+    "exact_rational_audit": {
+      "ground_set_size": 31,
+      "matrix_rank_over_q": 20,
+      "positive_circuit_coefficient_gcd": 1,
+      "positive_circuit_coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "positive_circuit_kernel_image": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive_circuit_support": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "positive_support_deletion_ranks_over_q": {
+        "1": 5,
+        "11": 5,
+        "2": 5,
+        "21": 5,
+        "22": 5,
+        "30": 5
+      },
+      "positive_support_is_exact_q_circuit": true,
+      "positive_support_rank_over_q": 5
+    },
+    "prime_field_records": [
+      {
+        "cache_stats": {
+          "cache_entries": 307218,
+          "cache_hits": 258210,
+          "cache_misses": 307218,
+          "term_count": 93
+        },
+        "field_prime": 1000003,
+        "ground_set_size": 31,
+        "is_prime": true,
+        "polynomial_sha256": "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f",
+        "rank": 20,
+        "specializations": {
+          "T_1_1_basis_count": 18356358,
+          "T_2_2_all_subsets": 2147483648
+        },
+        "term_count": 93
+      },
+      {
+        "cache_stats": {
+          "cache_entries": 307218,
+          "cache_hits": 258210,
+          "cache_misses": 307218,
+          "term_count": 93
+        },
+        "field_prime": 1000033,
+        "ground_set_size": 31,
+        "is_prime": true,
+        "polynomial_sha256": "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f",
+        "rank": 20,
+        "specializations": {
+          "T_1_1_basis_count": 18356358,
+          "T_2_2_all_subsets": 2147483648
+        },
+        "term_count": 93
+      },
+      {
+        "cache_stats": {
+          "cache_entries": 307218,
+          "cache_hits": 258210,
+          "cache_misses": 307218,
+          "term_count": 93
+        },
+        "field_prime": 1000037,
+        "ground_set_size": 31,
+        "is_prime": true,
+        "polynomial_sha256": "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f",
+        "rank": 20,
+        "specializations": {
+          "T_1_1_basis_count": 18356358,
+          "T_2_2_all_subsets": 2147483648
+        },
+        "term_count": 93
+      },
+      {
+        "cache_stats": {
+          "cache_entries": 307218,
+          "cache_hits": 258210,
+          "cache_misses": 307218,
+          "term_count": 93
+        },
+        "field_prime": 1000039,
+        "ground_set_size": 31,
+        "is_prime": true,
+        "polynomial_sha256": "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f",
+        "rank": 20,
+        "specializations": {
+          "T_1_1_basis_count": 18356358,
+          "T_2_2_all_subsets": 2147483648
+        },
+        "term_count": 93
+      },
+      {
+        "cache_stats": {
+          "cache_entries": 307218,
+          "cache_hits": 258210,
+          "cache_misses": 307218,
+          "term_count": 93
+        },
+        "field_prime": 1000081,
+        "ground_set_size": 31,
+        "is_prime": true,
+        "polynomial_sha256": "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f",
+        "rank": 20,
+        "specializations": {
+          "T_1_1_basis_count": 18356358,
+          "T_2_2_all_subsets": 2147483648
+        },
+        "term_count": 93
+      }
+    ],
+    "prime_stability_summary": {
+      "all_primes_match_baseline": true,
+      "stable_basis_counts": [
+        18356358
+      ],
+      "stable_tutte_hashes": [
+        "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f"
+      ]
+    },
+    "promotion_boundary": {
+      "full_rational_promotion_certified": false,
+      "remaining_gate": "certify that every modular circuit support is an exact rational circuit, or replay deletion-contraction with exact rational rank-preservation witnesses"
+    }
+  },
+  "inputs": {
+    "d20_json": {
+      "path": "d20.json",
+      "sha256": "6de54862ed25ce2709e235af40ae86662f60c97ad7038903a63f2c7ca71ef919"
+    },
+    "d20_oriented_matroid_sector33_dual_report": {
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a"
+    },
+    "d20_oriented_matroid_sector33_extension_report": {
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_extension/report.json",
+      "sha256": "8f1e954c7dc92b4c9be5c89259c9988f916e276c682cad62ea8f55e43c67e819"
+    },
+    "d20_oriented_matroid_tutte_os_report": {
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_tutte_os/report.json",
+      "sha256": "7bacd49d4ababee8b739ba1d4841d98a96269c1bc6d6a2aae38aa92533cc7419"
+    }
+  },
+  "interpretation": {
+    "confirmed": [
+      "the finite-field Tutte polynomial is stable across the audited primes",
+      "the sector-33 height attachment has exact rational rank 20",
+      "the distinguished gamma8+e33 positive circuit is exact over Q"
+    ],
+    "guardrails": [
+      "multi-prime stability is evidence, not an exhaustive rational matroid equality proof",
+      "the OS/NBC summary remains formally certified over the audited prime fields",
+      "the rational promotion gate is explicit and not marked complete"
+    ]
+  },
+  "next_highest_yield_item": "Build the exact circuit-support promotion certificate: enumerate or otherwise certify that every modular circuit support in the sector-33 height attachment is also a rational circuit.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_oriented_matroid_prime_lift_audit",
+  "status": "D20_ORIENTED_MATROID_PRIME_LIFT_AUDIT_CERTIFIED"
+}

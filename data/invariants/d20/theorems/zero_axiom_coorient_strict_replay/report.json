@@ -1,0 +1,79 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "09849421b0f74ea67230efc811e280a43055534b2d51de1bb1158af02cf9e8b6",
+  "checks": {
+    "cache_self_hash_matches": true,
+    "cache_status_is_pass": true,
+    "cache_theorem_is_certified": true,
+    "canonical_base_is_expected": true,
+    "canonical_base_separates_all_points": true,
+    "closed_action_order_is_9216": true,
+    "final_signature_count_is_2576": true,
+    "fresh_body_hash_matches_cache_body_hash": true,
+    "fresh_canonical_payload_matches_cache": true,
+    "fresh_certificate_hash_matches_cache": true,
+    "fresh_pretty_bytes_match_cache_file_bytes": true,
+    "fresh_pretty_sha_matches_cache_file_sha": true,
+    "fresh_self_hash_matches": true,
+    "fresh_status_is_pass": true,
+    "marker_integer_count_is_9": true,
+    "selected_generator_orders_match": true,
+    "selected_generators_reconstruct": true,
+    "word_presentation_closure_order_is_9216": true
+  },
+  "claim": "A fresh strict replay of the zero-axiom coorient reduction reproduces the stored cache byte-for-byte under the repository's sorted pretty JSON rendering, including the same cache certificate hash.",
+  "definition": {
+    "byte_for_byte_comparison": "The fresh payload is rendered as json.dumps(payload, indent=2, sort_keys=True) plus a trailing newline, using the cache file's newline convention, and compared to data/invariants/d20/zero_axiom_coorient.json.",
+    "strict_replay": "The replay calls src.derive_zero_axiom_coorient:derive directly, bypassing the fast derive_d20 cache loader."
+  },
+  "derived": {
+    "cache_body_sha256": "5cff63a62891cbdb163d504c6e59da347d4ddf1e26f67e62793e0265de2482fb",
+    "cache_byte_length": 13018,
+    "cache_canonical_payload_sha256": "6a84fc796e00b00e0b5baf1cce951bca6c24d0b49715b4d9e269cef847f4fe47",
+    "cache_certificate_sha256": "5cff63a62891cbdb163d504c6e59da347d4ddf1e26f67e62793e0265de2482fb",
+    "cache_file_sha256": "51b84df01c5a7b120d7fa9b6a1aa77e0104f1df3172fc45cdde985db1eaf7142",
+    "cache_newline": "CRLF",
+    "canonical_base": [
+      18,
+      67,
+      37
+    ],
+    "closed_action_order": 9216,
+    "final_signature_count": 2576,
+    "fresh_body_sha256": "5cff63a62891cbdb163d504c6e59da347d4ddf1e26f67e62793e0265de2482fb",
+    "fresh_canonical_payload_sha256": "6a84fc796e00b00e0b5baf1cce951bca6c24d0b49715b4d9e269cef847f4fe47",
+    "fresh_certificate_sha256": "5cff63a62891cbdb163d504c6e59da347d4ddf1e26f67e62793e0265de2482fb",
+    "fresh_pretty_byte_length": 13018,
+    "fresh_pretty_sha256": "51b84df01c5a7b120d7fa9b6a1aa77e0104f1df3172fc45cdde985db1eaf7142",
+    "marker_integer_count": 9,
+    "selected_generator_indices": [
+      1,
+      4,
+      192
+    ],
+    "selected_generator_orders": [
+      2,
+      6,
+      2
+    ],
+    "word_presentation_closure_order": 9216
+  },
+  "inputs": {
+    "zero_axiom_coorient_cache": {
+      "path": "data/invariants/d20/zero_axiom_coorient.json",
+      "sha256": "51b84df01c5a7b120d7fa9b6a1aa77e0104f1df3172fc45cdde985db1eaf7142"
+    },
+    "zero_axiom_coorient_cache_theorem": {
+      "path": "data/invariants/d20/theorems/zero_axiom_coorient_cache/report.json",
+      "sha256": "2618580932b931d702a6c8b77595d9f9e3b3f88a9271795406eb54b97a0c7e91"
+    }
+  },
+  "interpretation": {
+    "what_is_certified": "The fast zero-axiom cache is not merely source-hash current; it is exactly the payload produced by a fresh strict replay in this workspace.",
+    "what_this_does_not_prove": "This theorem does not make the fast core verifier rerun the replay. It records a completed replay witness that validators can check cheaply."
+  },
+  "next_highest_yield_item": "Move the strict replay into an optional slow verification mode so routine core verification stays fast while release checks can demand a fresh replay.",
+  "object": "d20",
+  "schema": "d20.theorem.zero_axiom_coorient_strict_replay",
+  "status": "D20_ZERO_AXIOM_COORIENT_STRICT_REPLAY_CERTIFIED"
+}

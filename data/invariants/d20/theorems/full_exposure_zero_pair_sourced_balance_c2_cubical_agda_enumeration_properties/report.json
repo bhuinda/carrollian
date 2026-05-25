@@ -1,0 +1,72 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "436cca6be4db9b5cb7d46d93c94d3a7a8717224b3094e01d0fbe94df4b04b361",
+  "checks": {
+    "cubical_agda_enumeration_is_certified": true,
+    "properties_agda_interface_artifact_present_after_typecheck": true,
+    "properties_artifact_hashes_are_stable": "1cb59c42251083ae97b3d2bd141c84eb369f6a76e6250e85d7311f09eaa66f31",
+    "properties_source_exists_and_imports_generated_enumeration": true,
+    "properties_source_has_counting_lemmas": true,
+    "properties_source_has_decidable_equality_and_set_witnesses": true,
+    "properties_source_has_exhaustive_eliminators": true,
+    "properties_source_has_id_roundtrips": true
+  },
+  "claim": "The generated Cubical Agda enumerations now carry typechecked counting lemmas, exhaustive eliminators, decidable equality, and set-level witnesses for QuotientState and DynamicsId.",
+  "derived": {
+    "dynamics_count": 543,
+    "quotient_state_count": 543,
+    "selector_membership_count": 1091,
+    "source_summary": {
+      "byte_size": 1934044,
+      "interface": {
+        "byte_size": 4737226,
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationGeneratedProperties.agdai",
+        "sha256": "1cb59c42251083ae97b3d2bd141c84eb369f6a76e6250e85d7311f09eaa66f31"
+      },
+      "line_count": 4407,
+      "module": "C2SelectorFoundationGeneratedProperties",
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationGeneratedProperties.agda",
+      "proof_counts": {
+        "dynamics_by_id_clauses": 544,
+        "dynamics_elim_clauses": 543,
+        "dynamics_roundtrip_clauses": 543,
+        "quotient_state_by_id_clauses": 544,
+        "quotient_state_elim_clauses": 543,
+        "quotient_state_roundtrip_clauses": 543
+      },
+      "sha256": "1419ee79af560e66c1e23a1ef32b6834e79325cd5f9b329a54b1b55455e1cfbe",
+      "typecheck_command": "C:/Users/Admin/Documents/agda-toolchain/agda.exe --transliterate -v0 -i data/invariants/d20/formal/cubical -i C:/Users/Admin/Documents/agda-toolchain/cubical-0.9 data/invariants/d20/formal/cubical/C2SelectorFoundationGeneratedProperties.agda"
+    }
+  },
+  "inputs": {
+    "c2_cubical_agda_enumeration_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration/report.json",
+      "sha256": "0c426ad369f5e7ab10a58fa229c8f710f819a29cde6220d9000190287d547bb8"
+    },
+    "cubical_agda_properties_interface": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationGeneratedProperties.agdai",
+      "sha256": "1cb59c42251083ae97b3d2bd141c84eb369f6a76e6250e85d7311f09eaa66f31"
+    },
+    "cubical_agda_properties_source": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationGeneratedProperties.agda",
+      "sha256": "1419ee79af560e66c1e23a1ef32b6834e79325cd5f9b329a54b1b55455e1cfbe"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": [
+      "selector membership fibers do not yet have generated decidable membership functions",
+      "the skeletal identity rule is not yet upgraded to a full structure identity principle",
+      "the physical selector axiom is still not chosen"
+    ],
+    "what_this_proves": [
+      "the generated quotient-state enumeration has an exhaustive eliminator",
+      "the generated dynamics enumeration has an exhaustive eliminator",
+      "both generated enumeration types have decidable equality via certified id roundtrips",
+      "both generated enumeration types are sets in Cubical Agda"
+    ]
+  },
+  "next_highest_yield_item": "Add generated decidable selector-membership functions and fiber count proofs for all eight selector criteria in Cubical Agda.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_CERTIFIED"
+}

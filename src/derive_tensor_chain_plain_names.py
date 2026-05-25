@@ -29,15 +29,15 @@ def load_index() -> dict[str, Any]:
     return json.loads(INDEX.read_text(encoding="utf-8"))
 
 
-LegacyRule = tuple[str, str, Pattern[str]]
+PlainNameRule = tuple[str, str, Pattern[str]]
 
 
-def replacement_rules(index: dict[str, Any]) -> list[LegacyRule]:
+def replacement_rules(index: dict[str, Any]) -> list[PlainNameRule]:
     plain_names = index.get("plain_names", {})
     if not isinstance(plain_names, dict):
         return []
 
-    rules: list[LegacyRule] = []
+    rules: list[PlainNameRule] = []
     for source, target in plain_names.items():
         source_s = str(source)
         target_s = str(target)
@@ -51,7 +51,7 @@ def replacement_rules(index: dict[str, Any]) -> list[LegacyRule]:
     return sorted(rules, key=lambda item: len(item[0]), reverse=True)
 
 
-def plain_name(text: str, rules: list[LegacyRule]) -> str:
+def plain_name(text: str, rules: list[PlainNameRule]) -> str:
     out = text
     for _source, target, pattern in rules:
         out = pattern.sub(target, out)
@@ -61,7 +61,7 @@ def plain_name(text: str, rules: list[LegacyRule]) -> str:
     return out
 
 
-def legacy_hits(text: str, rules: list[LegacyRule]) -> list[str]:
+def blocked_glossary_hits(text: str, rules: list[PlainNameRule]) -> list[str]:
     hits: list[str] = []
     for source, _target, pattern in rules:
         if pattern.search(text):
@@ -87,7 +87,7 @@ def npz_array_names(path: Path) -> list[str]:
         return sorted(Path(name).stem for name in zf.namelist() if name.endswith(".npy"))
 
 
-def alias_rows(names: list[str], rules: list[LegacyRule]) -> list[dict[str, str]]:
+def alias_rows(names: list[str], rules: list[PlainNameRule]) -> list[dict[str, str]]:
     return [{"source": name, "plain": plain_name(name, rules)} for name in names]
 
 
@@ -95,15 +95,15 @@ def changed_count(rows: list[dict[str, str]]) -> int:
     return sum(1 for row in rows if row["source"] != row["plain"])
 
 
-def collect_legacy_hits(
+def collect_blocked_glossary_hits(
     section: str,
     container: str,
     rows: list[dict[str, str]],
-    rules: list[LegacyRule],
+    rules: list[PlainNameRule],
     out: list[dict[str, str]],
 ) -> None:
     for row in rows:
-        hits = legacy_hits(row["plain"], rules)
+        hits = blocked_glossary_hits(row["plain"], rules)
         for term in hits:
             out.append({
                 "section": section,
@@ -122,7 +122,7 @@ def derive() -> dict[str, Any]:
     csv_header_aliases: dict[str, Any] = {}
     json_key_aliases: dict[str, Any] = {}
     npz_array_aliases: dict[str, Any] = {}
-    legacy_plain_token_hits: list[dict[str, str]] = []
+    blocked_plain_token_hits: list[dict[str, str]] = []
 
     for path in sorted(BASE.rglob("*")):
         if not path.is_file() or path == OUT:
@@ -137,12 +137,18 @@ def derive() -> dict[str, Any]:
             "size": path.stat().st_size,
             "sha256": sha_file(path),
         })
-        collect_legacy_hits("file_aliases", rel, [{"source": rel, "plain": plain_rel}], rules, legacy_plain_token_hits)
+        collect_blocked_glossary_hits(
+            "file_aliases",
+            rel,
+            [{"source": rel, "plain": plain_rel}],
+            rules,
+            blocked_plain_token_hits,
+        )
 
         if path.suffix.lower() == ".csv":
             try:
                 rows = alias_rows(csv_columns(path), rules)
-                collect_legacy_hits("csv_header_aliases", rel, rows, rules, legacy_plain_token_hits)
+                collect_blocked_glossary_hits("csv_header_aliases", rel, rows, rules, blocked_plain_token_hits)
                 csv_header_aliases[rel] = {
                     "columns": rows,
                     "changed_column_count": changed_count(rows),
@@ -152,7 +158,7 @@ def derive() -> dict[str, Any]:
         elif path.suffix.lower() == ".json":
             try:
                 rows = alias_rows(json_top_level_keys(path), rules)
-                collect_legacy_hits("json_key_aliases", rel, rows, rules, legacy_plain_token_hits)
+                collect_blocked_glossary_hits("json_key_aliases", rel, rows, rules, blocked_plain_token_hits)
                 json_key_aliases[rel] = {
                     "top_level_keys": rows,
                     "changed_key_count": changed_count(rows),
@@ -162,7 +168,7 @@ def derive() -> dict[str, Any]:
         elif path.suffix.lower() == ".npz":
             try:
                 rows = alias_rows(npz_array_names(path), rules)
-                collect_legacy_hits("npz_array_aliases", rel, rows, rules, legacy_plain_token_hits)
+                collect_blocked_glossary_hits("npz_array_aliases", rel, rows, rules, blocked_plain_token_hits)
                 npz_array_aliases[rel] = {
                     "arrays": rows,
                     "changed_array_count": changed_count(rows),
@@ -203,9 +209,9 @@ def derive() -> dict[str, Any]:
             "changed_json_key_count": changed_json_keys,
             "npz_file_count": len(npz_array_aliases),
             "changed_npz_array_count": changed_npz_arrays,
-            "remaining_legacy_plain_token_count": len(legacy_plain_token_hits),
+            "remaining_blocked_plain_token_count": len(blocked_plain_token_hits),
         },
-        "remaining_legacy_plain_token_examples": legacy_plain_token_hits[:25],
+        "remaining_blocked_plain_token_examples": blocked_plain_token_hits[:25],
         "file_aliases": file_aliases,
         "csv_header_aliases": csv_header_aliases,
         "json_key_aliases": json_key_aliases,

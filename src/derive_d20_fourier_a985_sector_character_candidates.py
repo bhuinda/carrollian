@@ -8,10 +8,10 @@ from typing import Any
 
 try:
     from .derive_d20_sandpile_critical_group_theorem import rel, sha_file, sha_json
-    from .paths import D20_INVARIANTS, LAYERS
+    from .paths import D20_INVARIANTS, DATA
 except ImportError:  # Supports `python src/derive_d20_fourier_a985_sector_character_candidates.py`.
     from derive_d20_sandpile_critical_group_theorem import rel, sha_file, sha_json
-    from paths import D20_INVARIANTS, LAYERS
+    from paths import D20_INVARIANTS, DATA
 
 
 THEOREM_ID = "fourier_a985_sector_character_candidates"
@@ -26,7 +26,7 @@ SECTOR_UNIQUE_REPORT = (
 SECTOR_ADMISSIBILITY_REPORT = (
     D20_INVARIANTS / "theorems" / "sector_idempotent_support_admissibility" / "report.json"
 )
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
 
 H6_LABELS = ["B-", "B+", "V-", "V+", "S-", "S+"]
 EXPECTED_HOMOGENEOUS_COUNTS = {

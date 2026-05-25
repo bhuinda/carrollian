@@ -1,0 +1,143 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7dbfb4b6c5c4c05186133731a0a9c78357e3ac04025a91209c9aaddd5d1cd1ec",
+  "checks": {
+    "canonical_all_mask_ward_identity_is_certified": true,
+    "finite_bms_carrollian_flux_balance_is_certified": true,
+    "individual_kernel_residues_are_not_closed_return_ward_characters": true,
+    "kernel_is_fixed_by_surviving_label_symmetry": true,
+    "kernel_support_does_not_activate_gamma_or_hidden_ward_channels": true,
+    "label_breaking_factorization_is_certified": true,
+    "paired_kernel_residue_is_sector26_neutral": true,
+    "propagator_charge_kernel_is_certified": true,
+    "public_flux_balance_context_is_rank_zero": true,
+    "stabilizer_lift_is_certified": true,
+    "surviving_label_preserving_symmetry_is_identity": true,
+    "ward_character_image_is_order_two": true
+  },
+  "claim": "The denominator-cleared zero-pair propagator charge kernel is invariant under the surviving label-preserving symmetry because that symmetry is trivial. It is compatible with the finite Ward/flux-balance ledger as a packet-source kernel: the individual plus/minus sector-26 images are not closed-return Ward characters, but the paired residue is sector-26 neutral and does not disturb the rank-zero public flux balance.",
+  "definition": {
+    "packet_source_ward_compatibility": "A packet-source kernel is compatible when it is fixed by surviving labels, has no public closed-return flux contradiction, and its paired plus/minus cleared residue is neutral in the sector-26 ledger.",
+    "surviving_label_preserving_symmetry": "The full-exposure radical-gate lift after imposing the certified charge-frame, sector-26, and fine spectral labels.",
+    "ward_native_closed_return_character": "The all-mask corrected R33 character with image {0,13} in Z/26."
+  },
+  "derived": {
+    "compatibility_matrix": {
+      "needs_source_to_closed_return_coupling_for_stronger_claim": true,
+      "symmetry_invariant": true,
+      "ward_compatible_as_packet_source_pair": true,
+      "ward_native_as_individual_closed_return_character": false
+    },
+    "kernel_summary": {
+      "active_partner_packet_id": 238,
+      "kernel_status": "A finite propagator charge kernel exists after canonical denominator clearing. The raw pole residues live over Q because they contain 1/2 coefficients; the sector-26 ledger becomes integral only for the cleared plus/minus residue classes [1,1] and [1,-1].",
+      "minus_denominator_cleared_sector26_image": {
+        "sector26_clock_delta_mod26": 18,
+        "sector26_clock_pair_mod26": [
+          2,
+          20
+        ],
+        "sector26_clock_sum_mod26": 22
+      },
+      "plus_denominator_cleared_sector26_image": {
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair_mod26": [
+          24,
+          6
+        ],
+        "sector26_clock_sum_mod26": 4
+      },
+      "raw_half_residues_are_not_native_z26_classes": true,
+      "residue_row_count": 6,
+      "shared_support_axes": {
+        "central_frame": "central_negative",
+        "exposure_frame": "full",
+        "full_loop297_atom_exposure": true,
+        "gamma_frame": "gamma8_silent",
+        "hidden_frame": "hidden_cancelled",
+        "tenfold_frame": "AI|BDI"
+      },
+      "source_packet_id": 239,
+      "support_packet_ids": [
+        239,
+        238
+      ]
+    },
+    "symmetry_summary": {
+      "canonical_affine_lift_count": 384,
+      "fine_spectral_atomic_survivor_count": 1,
+      "identity_affine_id": 0,
+      "kernel_fixed_reason": "The full label-preserving symmetry is already reduced to the identity, so the denominator-cleared propagator charge kernel is fixed without quotienting.",
+      "nonidentity_affine_lift_count": 383,
+      "sector26_axis_survivor_count": 1,
+      "surviving_label_preserving_symmetry_order": 1,
+      "unlabelled_graph_action_lift_order": 393216
+    },
+    "ward_flux_summary": {
+      "compatibility_status": "Compatible as a denominator-cleared packet-source kernel: the individual plus/minus sector-26 residues are not closed-return Ward characters, while the paired source/dipole class is sector-26 neutral and the public closed-return flux rank remains zero.",
+      "hidden_corrected_rank_over_f2": 1,
+      "individual_residues_are_not_closed_return_ward_characters": true,
+      "minus_sector26_sum_mod26": 22,
+      "paired_residue_is_sector26_neutral": true,
+      "plus_minus_sum_mod26": {
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair_mod26": [
+          0,
+          0
+        ],
+        "sector26_clock_sum_mod26": 0
+      },
+      "plus_sector26_sum_mod26": 4,
+      "public_charge_components": [
+        "M",
+        "J",
+        "P",
+        "Phi"
+      ],
+      "public_closed_return_rank_over_f2": 0,
+      "ward_corrected_r33_character_image": [
+        0,
+        13
+      ],
+      "ward_corrected_r33_histogram": {
+        "0": 1024,
+        "13": 1024
+      }
+    }
+  },
+  "inputs": {
+    "canonical_all_mask_ward_identity_report": {
+      "path": "data/invariants/d20/theorems/canonical_all_mask_ward_identity/report.json",
+      "sha256": "904f8f0a034750b0630cd78dc5e1005d5e346cab03442be9dcbd152934f8752e"
+    },
+    "finite_bms_carrollian_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_bms_carrollian_flux_balance/report.json",
+      "sha256": "b8755b6cc80e36cff5930114f45fc7dc6eec9d5a5a604437d71b43373822955d"
+    },
+    "full_exposure_label_breaking_factorization_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_label_breaking_factorization/report.json",
+      "sha256": "a56c3317abae53658e3b04852558fabf18512bd936a540b6e3b7e12a7018831e"
+    },
+    "full_exposure_radical_gate_stabilizer_lift_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_radical_gate_stabilizer_lift/report.json",
+      "sha256": "82b96e832e161715dbfdcd9bc40ab90f2807598255da88fa4799e38ca91820bc"
+    },
+    "zero_pair_propagator_charge_kernel_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_propagator_charge_kernel/report.json",
+      "sha256": "2eecf6fba47633a4ca17dd940f5db9554cb9eac5a96f25c1bba83521c864d439"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not yet build a sourced Ward identity. A stronger theorem needs a coupling map from packet-source residues into closed-return masks or a new sourced finite Ward law.",
+    "what_this_proves": [
+      "the denominator-cleared kernel is fixed by the full surviving label-preserving symmetry",
+      "that invariance is identity-level, not protection by a nontrivial residual group",
+      "the individual plus/minus sector-26 residues are not native all-mask Ward characters",
+      "the paired cleared residue is sector-26 neutral and public-flux compatible"
+    ]
+  },
+  "next_highest_yield_item": "Construct the source-to-closed-return coupling map, or prove no such map exists, from the denominator-cleared propagator kernel into the all-mask Ward residue group.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_propagator_symmetry_ward",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_CERTIFIED"
+}

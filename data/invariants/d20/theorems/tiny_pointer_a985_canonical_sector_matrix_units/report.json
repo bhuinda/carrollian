@@ -1,0 +1,76 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6c5e4f37b6927f6691daa963bb8c167274aa862379814b79f51204b23afbfedc",
+  "checks": {
+    "all_39_source_sectors_present": true,
+    "all_985_matrix_units_present": true,
+    "all_sector_unit_grids_complete": true,
+    "all_units_have_raw_orbital_coo": true,
+    "diagonal_count_is_159": true,
+    "full_matrix_unit_coo_certified": true,
+    "full_sector_match_certified": true,
+    "manifest_nonzero_counts_match_coo": true,
+    "no_missing_local_matrix_unit_labels": true,
+    "off_diagonal_count_is_826": true,
+    "perennial_join_key_emitted_when_available": true,
+    "support_restricted_multiplication_certified": true,
+    "top_support_nonzero_products_match_sum_d_cubed": true,
+    "top_support_symbolic_matrix_unit_table_complete": true
+  },
+  "claim": "The off-diagonal matrix units are constructed, not deferred. For every one of the 39 source-sector labels, the repo now designates the certified raw-orbital block matrix units as the canonical source-sector matrix-unit gauge.",
+  "derived": {
+    "diagonal_matrix_unit_count": 159,
+    "expected_nonzero_products": 7923,
+    "gauge_counts": {
+      "CONSTRUCTED_RAW_BLOCK_CANONICAL_GAUGE": 975,
+      "REGISTERED_SUPPORT_CANONICAL_GAUGE": 10
+    },
+    "matrix_unit_count": 985,
+    "off_diagonal_matrix_unit_count": 826,
+    "perennial_join_key": {
+      "canonical_rows_resolved": 985,
+      "map_available": true,
+      "sector_rows_resolved": 39
+    },
+    "raw_orbital_coo_rows": 76703,
+    "source_counts": {
+      "CONSTRUCTED_FROM_PROMOTED_CENTRAL_PAGE": 975,
+      "REGISTERED_SUPPORT_COO": 10
+    },
+    "source_sector_count": 39,
+    "tables": {
+      "canonical_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/canonical_sector_matrix_units_manifest.csv",
+      "sector_summary": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/canonical_source_sector_matrix_unit_summary.csv"
+    },
+    "top_support_nonzero_products": 7923,
+    "top_support_symbolic_complete": true,
+    "top_support_zero_products": 962302
+  },
+  "gauge_note": "A later external convention may still differ by sector-local GL_d conjugacy, but that is a comparison problem. It is not a construction blocker for u_sector[s;i,j].",
+  "inputs": {
+    "full_matrix_unit_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_orbital_coo.csv",
+      "sha256": "988138f2d0d96963201b901ada1cb63b2217a31ae9924fd3ca87701eebc23ac1"
+    },
+    "full_matrix_unit_manifest": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_orbital_manifest.csv",
+      "sha256": "c64b73bf746a13cc199f0bf7a4088d8e45e07a7f45761f5792968b7c80a0b400"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
+    },
+    "full_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+      "sha256": "e9a92a1e259cd6aca8c588a7284d30a8752d345678df293cb5f9ad81dde87459"
+    },
+    "support_restricted_multiplication": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/report.json",
+      "sha256": "0403ba3c2943492f19511a048d2f5cf4f1cdfb7227a811befeab7f15ac11ec0f"
+    }
+  },
+  "next_highest_yield_item": "Use the canonical source-sector matrix units as the default input for sector-local character, Fourier, or block trace calculations; only introduce GL_d comparison data if a separate external convention needs to be matched.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_canonical_sector_matrix_units.source_drop",
+  "status": "D20_TINY_POINTER_A985_CANONICAL_SECTOR_MATRIX_UNITS_CERTIFIED"
+}

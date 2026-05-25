@@ -22,6 +22,10 @@ from src.derive_d20_tiny_pointer_a985_block_matrix_units import (
     array_digest,
     build_block_units,
 )
+from src.a985_perennial_ids import (  # noqa: E402
+    load_perennial_sector_maps_if_available,
+    write_a985_sector_csv_rows_if_available,
+)
 from src.paths import D20_INVARIANTS, ROOT
 
 
@@ -30,9 +34,9 @@ THEOREM_ID = "tiny_pointer_a985_full_matrix_unit_orbital_coo"
 OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
 CENTRAL_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_orbital_central_idempotents"
-FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_legacy_sector_match"
+FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_sector_match"
 REGISTERED_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_registered_support_matrix_units"
-LEGACY_TRANSPORT_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_legacy_matrix_unit_transport"
+SECTOR_TRANSPORT_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_sector_matrix_unit_transport"
 TENSOR_NPZ = ROOT / "data" / "raw" / "T_985.npz"
 
 
@@ -80,11 +84,11 @@ def write_csv_rows(path: Path, fieldnames: list[str], rows: list[dict[str, Any]]
 
 
 def load_maps() -> tuple[dict[int, int], dict[int, int], dict[int, int]]:
-    rows = read_csv_rows(FULL_MATCH_DIR / "legacy_to_raw_sector_full_match.csv")
-    legacy_to_raw = {int(row["legacy_sector"]): int(row["raw_sector"]) for row in rows}
-    raw_to_legacy = {raw: legacy for legacy, raw in legacy_to_raw.items()}
+    rows = read_csv_rows(FULL_MATCH_DIR / "source_to_raw_sector_full_match.csv")
+    source_to_raw = {int(row["source_sector"]): int(row["raw_sector"]) for row in rows}
+    raw_to_source = {raw: source_sector for source_sector, raw in source_to_raw.items()}
     dimensions = {int(row["raw_sector"]): int(row["block_dimension"]) for row in rows}
-    return legacy_to_raw, raw_to_legacy, dimensions
+    return source_to_raw, raw_to_source, dimensions
 
 
 def load_central_pages() -> tuple[np.ndarray, np.ndarray, np.ndarray]:
@@ -96,7 +100,7 @@ def load_central_pages() -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 
 
 def registered_unit_blocks(dimensions: dict[int, int]) -> tuple[dict[int, np.ndarray], dict[str, Any]]:
-    rows = read_csv_rows(REGISTERED_DIR / "registered_null_support_matrix_units_orbital_coo.csv")
+    rows = read_csv_rows(REGISTERED_DIR / "registered_null_support_source_matrix_units_orbital_coo.csv")
     entries: dict[tuple[int, int, int], dict[int, int]] = defaultdict(dict)
     conflicts: list[dict[str, int]] = []
     for row in rows:
@@ -181,39 +185,41 @@ def write_outputs(
     manifest_rows: list[dict[str, Any]],
     coo_rows: list[dict[str, Any]],
     sector_rows: list[dict[str, Any]],
-) -> None:
+    perennial_maps: dict[str, dict[int | str, dict[str, Any]]] | None,
+) -> dict[str, Any]:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(
-        OUT_DIR / "legacy_matrix_units_raw_orbital_arrays.npz",
+        OUT_DIR / "source_sector_matrix_units_raw_orbital_arrays.npz",
         field_prime=np.array([FIELD_PRIME], dtype=np.int64),
         matrix_units=matrix_units.astype(np.int64),
         unit_column=np.asarray([row["unit_column"] for row in manifest_rows], dtype=np.int64),
-        legacy_sector=np.asarray([row["legacy_sector"] for row in manifest_rows], dtype=np.int64),
+        source_sector=np.asarray([row["source_sector"] for row in manifest_rows], dtype=np.int64),
         raw_sector=np.asarray([row["raw_sector"] for row in manifest_rows], dtype=np.int64),
         i=np.asarray([row["i"] for row in manifest_rows], dtype=np.int64),
         j=np.asarray([row["j"] for row in manifest_rows], dtype=np.int64),
     )
-    write_csv_rows(
-        OUT_DIR / "legacy_matrix_units_orbital_manifest.csv",
+    manifest_stats = write_a985_sector_csv_rows_if_available(
+        OUT_DIR / "source_sector_matrix_units_orbital_manifest.csv",
         [
             "unit_column",
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "i",
             "j",
-            "legacy_matrix_unit_label",
+            "source_matrix_unit_label",
             "raw_matrix_unit_label",
             "coefficient_source",
             "nonzero_coefficients",
         ],
         manifest_rows,
+        perennial_maps,
     )
-    write_csv_rows(
-        OUT_DIR / "legacy_matrix_units_orbital_coo.csv",
+    coo_stats = write_a985_sector_csv_rows_if_available(
+        OUT_DIR / "source_sector_matrix_units_orbital_coo.csv",
         [
             "unit_column",
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "i",
@@ -223,11 +229,12 @@ def write_outputs(
             "coefficient_source",
         ],
         coo_rows,
+        perennial_maps,
     )
-    write_csv_rows(
+    sector_stats = write_a985_sector_csv_rows_if_available(
         OUT_DIR / "sector_matrix_unit_source_summary.csv",
         [
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "matrix_unit_count",
@@ -238,28 +245,31 @@ def write_outputs(
             "matrix_unit_block_sha256",
         ],
         sector_rows,
+        perennial_maps,
     )
+    return {"manifest": manifest_stats, "coo": coo_stats, "sector_summary": sector_stats}
 
 
 def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str, Any]:
     full_match = load_json(FULL_MATCH_DIR / "report.json")
-    legacy_transport = load_json(LEGACY_TRANSPORT_DIR / "report.json")
-    legacy_to_raw, raw_to_legacy, dimensions = load_maps()
+    sector_transport = load_json(SECTOR_TRANSPORT_DIR / "report.json")
+    perennial_maps = load_perennial_sector_maps_if_available()
+    source_to_raw, raw_to_source, dimensions = load_maps()
     central_pages, _trace_coeff, identity_indices = load_central_pages()
     triples = np.asarray(np.load(TENSOR_NPZ)["triples"], dtype=np.int64)
     oracle = MultiplicationOracle(triples)
     registered_blocks, registered_summary = registered_unit_blocks(dimensions)
     rng = np.random.default_rng(seed)
 
-    matrix_blocks_by_legacy: list[np.ndarray] = []
+    matrix_blocks_by_source: list[np.ndarray] = []
     manifest_rows: list[dict[str, Any]] = []
     coo_rows: list[dict[str, Any]] = []
     sector_rows: list[dict[str, Any]] = []
     constructed_count = 0
     registered_count = 0
     unit_column = 0
-    for legacy_sector in sorted(legacy_to_raw):
-        raw_sector = legacy_to_raw[legacy_sector]
+    for source_sector in sorted(source_to_raw):
+        raw_sector = source_to_raw[source_sector]
         dimension = dimensions[raw_sector]
         central_page = central_pages[raw_sector]
         if raw_sector in registered_blocks:
@@ -280,7 +290,7 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
             constructed_count += 1
             info["source"] = source
             info.setdefault("direct_matrix_unit_product_failures", "")
-        matrix_blocks_by_legacy.append(block)
+        matrix_blocks_by_source.append(block)
 
         for i in range(dimension):
             for j in range(dimension):
@@ -290,12 +300,12 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
                 manifest_rows.append(
                     {
                         "unit_column": unit_column,
-                        "legacy_sector": legacy_sector,
+                        "source_sector": source_sector,
                         "raw_sector": raw_sector,
                         "block_dimension": dimension,
                         "i": i,
                         "j": j,
-                        "legacy_matrix_unit_label": f"u_legacy[{legacy_sector};{i},{j}]",
+                        "source_matrix_unit_label": f"u_sector[{source_sector};{i},{j}]",
                         "raw_matrix_unit_label": f"u_raw[{raw_sector};{i},{j}]",
                         "coefficient_source": source,
                         "nonzero_coefficients": int(support.size),
@@ -305,7 +315,7 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
                     coo_rows.append(
                         {
                             "unit_column": unit_column,
-                            "legacy_sector": legacy_sector,
+                            "source_sector": source_sector,
                             "raw_sector": raw_sector,
                             "block_dimension": dimension,
                             "i": i,
@@ -318,7 +328,7 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
                 unit_column += 1
         sector_rows.append(
             {
-                "legacy_sector": legacy_sector,
+                "source_sector": source_sector,
                 "raw_sector": raw_sector,
                 "block_dimension": dimension,
                 "matrix_unit_count": int(dimension * dimension),
@@ -330,8 +340,8 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
             }
         )
 
-    matrix_units = np.concatenate(matrix_blocks_by_legacy, axis=1) % FIELD_PRIME
-    write_outputs(matrix_units, manifest_rows, coo_rows, sector_rows)
+    matrix_units = np.concatenate(matrix_blocks_by_source, axis=1) % FIELD_PRIME
+    perennial_stats = write_outputs(matrix_units, manifest_rows, coo_rows, sector_rows, perennial_maps)
 
     sample = sample_matrix_products(oracle, matrix_units, manifest_rows, sample_products, seed + 31)
     source_counts = Counter(row["coefficient_source"] for row in manifest_rows)
@@ -340,12 +350,12 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
     bridge_failures = sum(int(row["bridge_delta_failures"]) for row in sector_rows)
     direct_failures = sum(int(row["direct_matrix_unit_product_failures"]) for row in sector_rows)
     checks = {
-        "full_legacy_sector_match_certified": full_match.get("status")
-        == "D20_TINY_POINTER_A985_FULL_LEGACY_SECTOR_MATCH_CERTIFIED"
+        "full_sector_match_certified": full_match.get("status")
+        == "D20_TINY_POINTER_A985_FULL_SECTOR_MATCH_CERTIFIED"
         and full_match.get("all_checks_pass") is True,
-        "legacy_transport_certified": legacy_transport.get("status")
-        == "D20_TINY_POINTER_A985_LEGACY_MATRIX_UNIT_TRANSPORT_CERTIFIED"
-        and legacy_transport.get("all_checks_pass") is True,
+        "sector_transport_certified": sector_transport.get("status")
+        == "D20_TINY_POINTER_A985_SECTOR_MATRIX_UNIT_TRANSPORT_CERTIFIED"
+        and sector_transport.get("all_checks_pass") is True,
         "central_page_count_is_39": central_pages.shape == (39, RELATION_COUNT),
         "matrix_unit_count_is_985": matrix_units.shape == (RELATION_COUNT, RELATION_COUNT),
         "manifest_row_count_is_985": len(manifest_rows) == RELATION_COUNT,
@@ -357,6 +367,21 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
         "constructed_bridge_failures_zero": bridge_failures == 0,
         "registered_direct_product_failures_zero": direct_failures == 0,
         "sampled_matrix_unit_products_pass": sample["failure_count"] == 0,
+        "perennial_join_key_emitted_when_available": perennial_maps is None
+        or (
+            perennial_stats["manifest"]["rows_with_perennial_id"]
+            == perennial_stats["manifest"]["rows_with_direct_sector"]
+            == len(manifest_rows)
+            and perennial_stats["coo"]["rows_with_perennial_id"]
+            == perennial_stats["coo"]["rows_with_direct_sector"]
+            == len(coo_rows)
+            and perennial_stats["sector_summary"]["rows_with_perennial_id"]
+            == perennial_stats["sector_summary"]["rows_with_direct_sector"]
+            == len(sector_rows)
+            and perennial_stats["manifest"]["sector_mismatch_count"] == 0
+            and perennial_stats["coo"]["sector_mismatch_count"] == 0
+            and perennial_stats["sector_summary"]["sector_mismatch_count"] == 0
+        ),
     }
     report = {
         "schema": "d20.theorem.tiny_pointer_a985_full_matrix_unit_orbital_coo.source_drop",
@@ -364,7 +389,7 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
         "object": "d20",
         "field_prime": FIELD_PRIME,
         "claim": (
-            "All 985 legacy-labeled A985 block matrix units now have raw-orbital COO coefficient rows. "
+            "All 985 source-sector A985 block matrix units now have raw-orbital COO coefficient rows. "
             "Registered public-zero support blocks preserve the promoted registered COO coordinates; the "
             "remaining blocks are constructed from the promoted central pages inside the raw T985 algebra."
         ),
@@ -374,24 +399,24 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
                 "path": rel(CENTRAL_DIR / "a985_center_and_primitive_central_idempotents.npz"),
                 "sha256": sha_file(CENTRAL_DIR / "a985_center_and_primitive_central_idempotents.npz"),
             },
-            "full_legacy_sector_match": {
+            "full_sector_match": {
                 "path": rel(FULL_MATCH_DIR / "report.json"),
                 "sha256": sha_file(FULL_MATCH_DIR / "report.json"),
             },
-            "legacy_matrix_unit_transport": {
-                "path": rel(LEGACY_TRANSPORT_DIR / "report.json"),
-                "sha256": sha_file(LEGACY_TRANSPORT_DIR / "report.json"),
+            "sector_matrix_unit_transport": {
+                "path": rel(SECTOR_TRANSPORT_DIR / "report.json"),
+                "sha256": sha_file(SECTOR_TRANSPORT_DIR / "report.json"),
             },
             "registered_subset_coo": {
-                "path": rel(REGISTERED_DIR / "registered_null_support_matrix_units_orbital_coo.csv"),
-                "sha256": sha_file(REGISTERED_DIR / "registered_null_support_matrix_units_orbital_coo.csv"),
+                "path": rel(REGISTERED_DIR / "registered_null_support_source_matrix_units_orbital_coo.csv"),
+                "sha256": sha_file(REGISTERED_DIR / "registered_null_support_source_matrix_units_orbital_coo.csv"),
             },
         },
         "checks": checks,
         "derived": {
             "matrix_units_shape": list(matrix_units.shape),
             "matrix_units_sha256": array_digest(matrix_units),
-            "legacy_matrix_unit_count": len(manifest_rows),
+            "source_sector_matrix_unit_count": len(manifest_rows),
             "orbital_coo_rows": len(coo_rows),
             "identity_indices": [int(value) for value in identity_indices.tolist()],
             "sector_source_counts": {
@@ -402,16 +427,22 @@ def build_full_coo(seed: int, max_trials: int, sample_products: int) -> dict[str
             "coo_source_counts": {key: int(value) for key, value in sorted(coo_source_counts.items())},
             "registered_summary": registered_summary,
             "sampled_products": sample,
+            "perennial_join_key": {
+                "map_available": perennial_maps is not None,
+                "manifest_rows_resolved": int(perennial_stats["manifest"]["rows_with_perennial_id"]),
+                "coo_rows_resolved": int(perennial_stats["coo"]["rows_with_perennial_id"]),
+                "sector_rows_resolved": int(perennial_stats["sector_summary"]["rows_with_perennial_id"]),
+            },
             "tables": {
-                "arrays": rel(OUT_DIR / "legacy_matrix_units_raw_orbital_arrays.npz"),
-                "manifest": rel(OUT_DIR / "legacy_matrix_units_orbital_manifest.csv"),
-                "coo": rel(OUT_DIR / "legacy_matrix_units_orbital_coo.csv"),
+                "arrays": rel(OUT_DIR / "source_sector_matrix_units_raw_orbital_arrays.npz"),
+                "manifest": rel(OUT_DIR / "source_sector_matrix_units_orbital_manifest.csv"),
+                "coo": rel(OUT_DIR / "source_sector_matrix_units_orbital_coo.csv"),
                 "sector_summary": rel(OUT_DIR / "sector_matrix_unit_source_summary.csv"),
             },
         },
         "next_highest_yield_item": (
             "Replace the registered support manifest's top-support rows with this all-39 COO-backed "
-            "legacy matrix-unit table, or derive support-level projectors directly from the full COO table."
+            "source-sector matrix-unit table, or derive support-level projectors directly from the full COO table."
         ),
         "all_checks_pass": all(checks.values()),
     }
@@ -447,7 +478,7 @@ def sample_matrix_products(
         return {"checked": 0, "failure_count": 0, "failures": []}
     rng = np.random.default_rng(seed)
     by_key = {
-        (int(row["legacy_sector"]), int(row["i"]), int(row["j"])): int(row["unit_column"])
+        (int(row["source_sector"]), int(row["i"]), int(row["j"])): int(row["unit_column"])
         for row in manifest_rows
     }
     zero = np.zeros(RELATION_COUNT, dtype=np.int64)
@@ -459,8 +490,8 @@ def sample_matrix_products(
         right_row = manifest_rows[right]
         product = oracle.product(matrix_units[:, left], matrix_units[:, right])
         target = zero
-        if left_row["legacy_sector"] == right_row["legacy_sector"] and left_row["j"] == right_row["i"]:
-            target = matrix_units[:, by_key[(left_row["legacy_sector"], left_row["i"], right_row["j"])]]
+        if left_row["source_sector"] == right_row["source_sector"] and left_row["j"] == right_row["i"]:
+            target = matrix_units[:, by_key[(left_row["source_sector"], left_row["i"], right_row["j"])]]
         if not np.array_equal(product % FIELD_PRIME, target % FIELD_PRIME):
             failures.append({"left_column": left, "right_column": right})
             if len(failures) >= 8:
@@ -474,7 +505,7 @@ def markdown_report(report: dict[str, Any]) -> str:
     return (
         "# Full Matrix-Unit Orbital COO\n\n"
         f"Status: `{report['status']}`\n\n"
-        f"Matrix units: `{derived['legacy_matrix_unit_count']}`\n\n"
+        f"Matrix units: `{derived['source_sector_matrix_unit_count']}`\n\n"
         f"COO coefficient rows: `{derived['orbital_coo_rows']}`\n\n"
         "## Checks\n\n"
         f"{checks}\n\n"
@@ -508,10 +539,11 @@ def update_theorem_index(report: dict[str, Any]) -> None:
 
 def verify_full_coo() -> dict[str, Any]:
     report = load_json(OUT_DIR / "report.json")
-    manifest_rows = read_csv_rows(OUT_DIR / "legacy_matrix_units_orbital_manifest.csv")
-    coo_rows = read_csv_rows(OUT_DIR / "legacy_matrix_units_orbital_coo.csv")
+    manifest_rows = read_csv_rows(OUT_DIR / "source_sector_matrix_units_orbital_manifest.csv")
+    coo_rows = read_csv_rows(OUT_DIR / "source_sector_matrix_units_orbital_coo.csv")
     sector_rows = read_csv_rows(OUT_DIR / "sector_matrix_unit_source_summary.csv")
-    arrays = np.load(OUT_DIR / "legacy_matrix_units_raw_orbital_arrays.npz")
+    arrays = np.load(OUT_DIR / "source_sector_matrix_units_raw_orbital_arrays.npz")
+    perennial_available = bool(report.get("derived", {}).get("perennial_join_key", {}).get("map_available"))
     checks = {
         "report_status_certified": report.get("status") == STATUS,
         "report_checks_pass": report.get("all_checks_pass") is True,
@@ -520,6 +552,15 @@ def verify_full_coo() -> dict[str, Any]:
         "coo_rows_match_report": len(coo_rows) == report.get("derived", {}).get("orbital_coo_rows"),
         "sector_summary_has_39_rows": len(sector_rows) == 39,
         "coo_rows_match_array_nonzeros": len(coo_rows) == int(np.count_nonzero(arrays["matrix_units"] % FIELD_PRIME)),
+        "perennial_join_key_present_when_available": not perennial_available
+        or (
+            all(row.get("perennial_id", "").startswith("a985pf.") for row in manifest_rows)
+            and all(row.get("coordinate_fingerprint_id", "").startswith("a985coord.") for row in manifest_rows)
+            and all(row.get("perennial_id", "").startswith("a985pf.") for row in coo_rows)
+            and all(row.get("coordinate_fingerprint_id", "").startswith("a985coord.") for row in coo_rows)
+            and all(row.get("perennial_id", "").startswith("a985pf.") for row in sector_rows)
+            and all(row.get("coordinate_fingerprint_id", "").startswith("a985coord.") for row in sector_rows)
+        ),
     }
     return {
         "status": "D20_TINY_POINTER_A985_FULL_MATRIX_UNIT_ORBITAL_COO_VERIFIED"

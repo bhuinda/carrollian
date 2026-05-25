@@ -1,0 +1,89 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "2abb91ee536a99a5b14e23f6456126b9e5ff49f59be7fec7844d8dfe453082b6",
+  "checks": {
+    "cubical_agda_skeleton_is_certified": true,
+    "generated_agda_interface_artifact_present_after_typecheck": true,
+    "generated_artifact_hashes_are_stable": "6b4d864f04ea52e8126f0b552f7b020bc4314208138008e50ec4c67598ab65ae",
+    "generated_source_exists_and_imports_skeleton": true,
+    "generated_source_has_all_dynamics_code_rows": true,
+    "generated_source_has_all_dynamics_constructors": true,
+    "generated_source_has_all_quotient_state_constructors": true,
+    "generated_source_has_all_quotient_state_tables": true,
+    "generated_source_has_all_selector_memberships": true,
+    "generated_source_has_expected_selector_fiber_counts": true,
+    "generated_source_names_selected_dynamics": true,
+    "univalent_foundation_bridge_is_certified": true
+  },
+  "claim": "The compact C2 Cubical Agda skeleton has been expanded into a generated typechecked enumeration module containing all 543 quotient states, all 543 certified dynamics codes, and all 1091 selector membership constructors.",
+  "derived": {
+    "expected_dynamics_count": 543,
+    "expected_quotient_state_count": 543,
+    "expected_selector_membership_count": 1091,
+    "generated_interface_sha256": "6b4d864f04ea52e8126f0b552f7b020bc4314208138008e50ec4c67598ab65ae",
+    "generated_source_sha256": "b4554d50ba47481e956d09e64809bba4b40bb97e05aa75581068e0241dae6e56",
+    "selector_fiber_counts": {
+      "global_action_minimal": 1,
+      "lazy_componentwise_spectral_gap": 63,
+      "lazy_componentwise_spectral_gap_action_tiebreak": 1,
+      "paired_action_minimal": 1,
+      "paired_lazy_componentwise_spectral_gap": 480,
+      "paired_lazy_componentwise_spectral_gap_action_tiebreak": 1,
+      "primitive_seeded": 1,
+      "raw_componentwise_absolute_spectral_gap": 543
+    },
+    "source_summary": {
+      "byte_size": 240872,
+      "constructor_counts": {
+        "dynamics": 543,
+        "quotient_state": 543,
+        "selector_membership": 1091
+      },
+      "interface": {
+        "byte_size": 734594,
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationGenerated.agdai",
+        "sha256": "6b4d864f04ea52e8126f0b552f7b020bc4314208138008e50ec4c67598ab65ae"
+      },
+      "line_count": 6032,
+      "module": "C2SelectorFoundationGenerated",
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationGenerated.agda",
+      "sha256": "b4554d50ba47481e956d09e64809bba4b40bb97e05aa75581068e0241dae6e56",
+      "typecheck_command": "C:/Users/Admin/Documents/agda-toolchain/agda.exe --transliterate -v0 -i data/invariants/d20/formal/cubical -i C:/Users/Admin/Documents/agda-toolchain/cubical-0.9 data/invariants/d20/formal/cubical/C2SelectorFoundationGenerated.agda"
+    }
+  },
+  "inputs": {
+    "c2_cubical_agda_skeleton_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton/report.json",
+      "sha256": "fc4f3908a8cfd2cf8859cb783ee42a4e7e5e19c3472cf7ce95e9820445901cff"
+    },
+    "c2_univalent_foundation_bridge_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_univalent_foundation_bridge/report.json",
+      "sha256": "32dd1e7862ab91f8740ff77916fff7e0c8da6722f90b833443ccf85dfb49fb9d"
+    },
+    "cubical_agda_generated_interface": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationGenerated.agdai",
+      "sha256": "6b4d864f04ea52e8126f0b552f7b020bc4314208138008e50ec4c67598ab65ae"
+    },
+    "cubical_agda_generated_source": {
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationGenerated.agda",
+      "sha256": "b4554d50ba47481e956d09e64809bba4b40bb97e05aa75581068e0241dae6e56"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": [
+      "it does not yet prove finite decidable equality or exhaustive eliminator laws for the generated enumerations",
+      "it does not yet connect hash equality to Cubical structure identity",
+      "it does not choose a physical selector axiom"
+    ],
+    "what_this_proves": [
+      "the Cubical target now names every certified C2 quotient state",
+      "the Cubical target now names every certified C2 dynamics code",
+      "selector fiber membership is explicit as Agda constructors",
+      "the generated module typechecks against the compact skeleton and local Cubical library"
+    ]
+  },
+  "next_highest_yield_item": "Add Cubical Agda decidable equality and exhaustive eliminator/counting lemmas for the generated quotient-state and dynamics enumerations.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_CERTIFIED"
+}

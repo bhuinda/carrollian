@@ -1,0 +1,918 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5bb42fae02ca96504cf84e1a5e84a5cfea95ffc2eafa44e4f7de12886cd5bace",
+  "checks": {
+    "bridge_tasks_match_missing_inventory": true,
+    "cokernel_order_matches_block_determinant": true,
+    "explicit_restriction_test_is_certified": true,
+    "full_packet_matrix_lift_is_certified": true,
+    "global_smith_diagonal_is_2_power_10_6_power_10": true,
+    "global_smith_divisibility_chain_valid": true,
+    "global_smith_form_is_diagonal": true,
+    "local_smith_diagonal_is_2_6": true,
+    "operator_has_full_rank": true,
+    "packet_graph_is_certified": true,
+    "packet_operator_matches_graph_adjacency": true,
+    "ten_uniform_blocks_present": true,
+    "torsion_primes_are_2_and_3": true
+  },
+  "claim": "The certified 20-packet operator has exact Smith factors 2^10 and 6^10. Equivalently, each packet doublet has cokernel Z/2 x Z/6, with image test u-v = 0 mod 2 and u+v = 0 mod 6. This supplies the integer obstruction template for the missing A985, tube, and q42/q12 packet bridges, but does not construct those raw bridges.",
+  "definition": {
+    "integer_bridge_obstruction": "the Smith cokernel of the packet operator; any future raw-label bridge target must satisfy the block congruence tests before it can be an integral packet image",
+    "packet_operator": "the certified full-exposure two-step packet action"
+  },
+  "derived": {
+    "obstruction_summary": {
+      "cokernel": "Z/2^10 x Z/6^10",
+      "cokernel_order": 61917364224,
+      "local_block_smith_diagonal": [
+        2,
+        6
+      ],
+      "local_image_test": "u-v = 0 mod 2 and u+v = 0 mod 6 on each packet doublet",
+      "matrix_shape": [
+        20,
+        20
+      ],
+      "nonunit_invariant_factors": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "packet_operator": "direct_sum_10_copies_of_2I_plus_4S",
+      "rank_over_Q": 20,
+      "raw_bridge_candidate_count": 3,
+      "raw_bridge_columns_available": false,
+      "smith_diagonal_multiplicities": {
+        "2": 10,
+        "6": 10
+      },
+      "torsion_primes": [
+        2,
+        3
+      ]
+    },
+    "packet_image_congruence_rows": [
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 0,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          174,
+          175
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 1,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          190,
+          191
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 2,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          238,
+          239
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 3,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          246,
+          247
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 4,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          254,
+          255
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 5,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          430,
+          431
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 6,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          446,
+          447
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 7,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          494,
+          495
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 8,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          502,
+          503
+        ]
+      },
+      {
+        "block_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "component_id": 9,
+        "image_test_for_target_pair_u_v": [
+          "u_minus_v_is_0_mod_2",
+          "u_plus_v_is_0_mod_6"
+        ],
+        "local_cokernel": "Z/2 x Z/6",
+        "local_smith_diagonal": [
+          2,
+          6
+        ],
+        "packet_pair": [
+          510,
+          511
+        ]
+      }
+    ],
+    "packet_image_congruence_rows_sha256": "df0d7578f4648941f385fd0b7ec5e2f5d6a3d81fec72ec4510769d34927e4bff",
+    "packet_operator_matrix": [
+      [
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2
+      ]
+    ],
+    "packet_operator_matrix_sha256": "efe2747374fd916798c933b936ea5c30f592b9ce675ff6cc3738157f22edba55",
+    "raw_bridge_snf_tasks": [
+      {
+        "available_source_keys": [
+          "block_i",
+          "block_j",
+          "encoded_pairs",
+          "group_order",
+          "object_of_point",
+          "offsets",
+          "points",
+          "reps"
+        ],
+        "candidate": "A985_relation_basis_to_full_packets",
+        "prior_status": "blocked_missing_relation_to_packet_projection",
+        "snf_status": "packet_obstruction_template_ready_no_raw_columns",
+        "source_domain": "relation_id[0..984]",
+        "target_domain": "20 full-exposure packet ids and 40 packet modes",
+        "test_once_columns_exist": "for each packet doublet target (u,v), require u-v = 0 mod 2 and u+v = 0 mod 6"
+      },
+      {
+        "available_source_keys": [
+          "closed_loop_basis_count",
+          "closed_loop_commutator",
+          "closed_loop_unit",
+          "field_prime",
+          "full_a985_commutator_boundary",
+          "full_relation_count",
+          "identity_relations_by_object",
+          "local_primitive_piece_count",
+          "object_phase_assignment",
+          "primitive_piece_phase_counts",
+          "primitive_piece_rows_sha256",
+          "public_zero_support_action",
+          "reconstructed_from_local_primitives",
+          "screen_id",
+          "screen_square",
+          "signed_object_unit"
+        ],
+        "candidate": "screen0_tube_element_to_full_packets",
+        "prior_status": "blocked_missing_object_or_relation_to_packet_projection",
+        "snf_status": "packet_obstruction_template_ready_no_raw_columns",
+        "source_domain": "six signed object identity relations inside the closed-loop tube",
+        "target_domain": "20 full-exposure packet ids and 40 packet modes",
+        "test_once_columns_exist": "for each packet doublet target (u,v), require u-v = 0 mod 2 and u+v = 0 mod 6"
+      },
+      {
+        "available_source_keys": [
+          "block_i",
+          "block_j",
+          "q12_map",
+          "q12_tensor",
+          "q42_map",
+          "q42_tensor"
+        ],
+        "candidate": "q42_q12_tensor_to_full_packets",
+        "prior_status": "blocked_missing_quotient_class_to_packet_projection",
+        "snf_status": "packet_obstruction_template_ready_no_raw_columns",
+        "source_domain": "q42/q12 quotient classes of A985 relations",
+        "target_domain": "20 full-exposure packet ids and 40 packet modes",
+        "test_once_columns_exist": "for each packet doublet target (u,v), require u-v = 0 mod 2 and u+v = 0 mod 6"
+      }
+    ],
+    "raw_bridge_snf_tasks_sha256": "f815dee6aaabeb55bb70e9bbc598c7622d107fb13d7b34650e8d8f28656e1fcd",
+    "smith_normal_form": {
+      "diagonal": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "diagonal_multiplicities": {
+        "2": 10,
+        "6": 10
+      },
+      "divisibility_chain_valid": true,
+      "nonunit_invariant_factors": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "off_diagonal_nonzero": 0,
+      "reduction_steps": 20
+    }
+  },
+  "inputs": {
+    "d20_explicit_packet_restriction_map_test_report": {
+      "path": "data/invariants/d20/theorems/d20_explicit_packet_restriction_map_test/report.json",
+      "sha256": "abe9fe3f76deefdd472481813e77aabef03f2acc446a51cc6517777c766d504d"
+    },
+    "d20_full_packet_matrix_lift_report": {
+      "path": "data/invariants/d20/theorems/d20_full_packet_matrix_lift/report.json",
+      "sha256": "5c7a8bd31562f50ef1e2a56729002990159040732fe53edeb582b2ba19c55870"
+    },
+    "full_exposure_packet_propagation_graph_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json",
+      "sha256": "c115c85c7125e3b89ec5120c55cc6c4db5364bd8a026e20d78fac42af2371b82"
+    }
+  },
+  "interpretation": {
+    "denominator_reading": "The plus/minus packet projectors still require denominator 2, while the integral action itself has Smith factors 2 and 6 per doublet.",
+    "finite_boundary_reading": "The packet action is an integral finite quotient with only 2- and 3-primary torsion in its cokernel.",
+    "not_claimed": "This is not a raw A985 action, not a tube action, and not a theorem about rational prime distribution."
+  },
+  "next_highest_yield_item": "Populate one raw bridge column set, then reduce its packet targets against the block tests u-v = 0 mod 2 and u+v = 0 mod 6.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_packet_bridge_snf_obstruction",
+  "status": "D20_PACKET_BRIDGE_SNF_OBSTRUCTION_CERTIFIED"
+}

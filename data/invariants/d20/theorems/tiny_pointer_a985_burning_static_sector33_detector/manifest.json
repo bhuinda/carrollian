@@ -1,0 +1,44 @@
+{
+  "inputs": {
+    "constructed_representative": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_constructed_representative/report.json",
+      "sha256": "8d4cbdb50ad9f314438a0a4d4b216542d30d66b931dc13baadd1e698f1ecabba"
+    },
+    "full_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+      "sha256": "e9a92a1e259cd6aca8c588a7284d30a8752d345678df293cb5f9ad81dde87459"
+    },
+    "public_zero_alignment": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/report.json",
+      "sha256": "897e0f52c6b913a4562ea9b99a402346922d38f559b01f6933ae30e8b9801a0e"
+    },
+    "sector33_unique_public_zero": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
+      "sha256": "72d94a621f2dc84f7407673a676ba1cf46651f4284e91332b82a14bd0788f1c8"
+    }
+  },
+  "manifest_sha256": "3af8f0274b1fc8d6d6172245abb5142a133672ced62de5ab8140639e63ceef02",
+  "name": "tiny_pointer_a985_burning_static_sector33_detector",
+  "outputs": {
+    "detector_generators": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_sector33_detector/burning_static_sector33_detector_generators.csv",
+    "detector_table": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_sector33_detector/burning_static_sector33_detector_table.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_sector33_detector/manifest.json",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_sector33_detector/report.json"
+  },
+  "report_sha256": "064ad34cf1c26e5830eab6112dae51e4d40b8d7ab371b82c537a311930911c7b",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_static_sector33_detector_manifest.source_drop",
+  "validation_tests": [
+    "alignment_certified",
+    "constructed_representative_certified",
+    "full_sector_match_certified",
+    "sector33_unique_public_zero_certified",
+    "detector_generators_are_expected",
+    "detector_generators_have_exact_sector33_kernel",
+    "detector_table_has_all_39_source_sectors",
+    "all_zero_detector_is_unique_sector33",
+    "any_zero_detector_is_unique_sector33",
+    "sector33_source_to_raw_match_recorded",
+    "sector33_block_dimension_is_two",
+    "perennial_join_key_emitted_when_available"
+  ]
+}

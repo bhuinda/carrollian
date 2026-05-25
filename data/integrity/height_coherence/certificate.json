@@ -1,15 +1,43 @@
 {
+  "schema": "d20.uf_kernel.height_coherence.source_drop",
+  "status": "D20_UF_KERNEL_HEIGHT_COHERENCE_CERTIFIED",
+  "official_terms": {
+    "box_judgment": "BoxHeight(A_ext,h)",
+    "formal_name": "height coherence",
+    "source_terms": {
+      "BoxMonism": "BoxHeight(A_ext,h)",
+      "height monism": "height coherence"
+    }
+  },
+  "input": {
+    "arrays_path": "D:\\Projects\\carrollian\\data\\integrity\\height_coherence\\arrays\\d20_uf_kernel_arrays.npz",
+    "arrays_sha256": "a4c553ee8e383ec693d6fe5d7e8ca5e9e995714523ce5dcc6e655bf84f20516d",
+    "a42_to_a12_sha256": "c44b10e98d4a7f62bca98f890d11b4d49a319cf427ce18d121452698d68ed6c5",
+    "raw_halloween_npz_present": false,
+    "raw_halloween_npz_sha256": null
+  },
   "definition": {
-    "box_rule": "BoxHeight(A_ext,h) is accepted exactly when min(A_ext h)>0",
-    "gordan_alternative": "exactly one: exists h with A_ext h > 0, or exists nonzero y>=0 with A_ext^T y=0",
     "height_certificate": "A_ext h > 0",
     "height_coherence": "one global height h makes every local exterior inequality strictly positive",
-    "obstruction": "a nonzero y>=0 with A_ext^T y=0 is a positive circular obstruction"
+    "box_rule": "BoxHeight(A_ext,h) is accepted exactly when min(A_ext h)>0",
+    "obstruction": "a nonzero y>=0 with A_ext^T y=0 is a positive circular obstruction",
+    "gordan_alternative": "exactly one: exists h with A_ext h > 0, or exists nonzero y>=0 with A_ext^T y=0"
   },
   "height_coherence_certificates": [
     {
-      "acyclic_incidence_system": true,
+      "name": "tower_descent_height_coherence",
+      "node_count": 4,
       "edge_count": 3,
+      "rank_A_ext": 3,
+      "positive_height_certificate": true,
+      "acyclic_incidence_system": true,
+      "min_margin": 1,
+      "height_vector": [
+        0,
+        1,
+        2,
+        3
+      ],
       "edge_preview": [
         [
           "A985/raw",
@@ -30,23 +58,45 @@
           1
         ]
       ],
-      "height_vector": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "min_margin": 1,
-      "name": "tower_descent_height_coherence",
       "negative_control": false,
-      "node_count": 4,
-      "plain_meaning": "one global height h makes every local exterior inequality strictly positive",
-      "positive_height_certificate": true,
-      "rank_A_ext": 3
+      "plain_meaning": "one global height h makes every local exterior inequality strictly positive"
     },
     {
-      "acyclic_incidence_system": true,
+      "name": "six_channel_to_D20_face_height_coherence",
+      "node_count": 26,
       "edge_count": 60,
+      "rank_A_ext": 25,
+      "positive_height_certificate": true,
+      "acyclic_incidence_system": true,
+      "min_margin": 1,
+      "height_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
       "edge_preview": [
         [
           "B-",
@@ -169,6 +219,17 @@
           1
         ]
       ],
+      "negative_control": false,
+      "plain_meaning": "one global height h makes every local exterior inequality strictly positive"
+    },
+    {
+      "name": "A42_to_A12_saturated_resizing_height_coherence",
+      "node_count": 54,
+      "edge_count": 42,
+      "rank_A_ext": 42,
+      "positive_height_certificate": true,
+      "acyclic_incidence_system": true,
+      "min_margin": 1,
       "height_vector": [
         0,
         0,
@@ -176,14 +237,42 @@
         0,
         0,
         0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         1,
         1,
         1,
@@ -197,17 +286,6 @@
         1,
         1
       ],
-      "min_margin": 1,
-      "name": "six_channel_to_D20_face_height_coherence",
-      "negative_control": false,
-      "node_count": 26,
-      "plain_meaning": "one global height h makes every local exterior inequality strictly positive",
-      "positive_height_certificate": true,
-      "rank_A_ext": 25
-    },
-    {
-      "acyclic_incidence_system": true,
-      "edge_count": 42,
       "edge_preview": [
         [
           "A42:0",
@@ -330,73 +408,22 @@
           1
         ]
       ],
-      "height_vector": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "min_margin": 1,
-      "name": "A42_to_A12_saturated_resizing_height_coherence",
       "negative_control": false,
-      "node_count": 54,
-      "plain_meaning": "one global height h makes every local exterior inequality strictly positive",
-      "positive_height_certificate": true,
-      "rank_A_ext": 42
+      "plain_meaning": "one global height h makes every local exterior inequality strictly positive"
     },
     {
-      "acyclic_incidence_system": false,
+      "name": "three_cycle_positive_annihilator_control",
+      "node_count": 3,
       "edge_count": 3,
+      "rank_A_ext": 2,
+      "positive_height_certificate": false,
+      "acyclic_incidence_system": false,
+      "min_margin": -2,
+      "height_vector": [
+        0,
+        1,
+        2
+      ],
       "edge_preview": [
         [
           "x0",
@@ -417,67 +444,40 @@
           -2
         ]
       ],
-      "height_vector": [
-        0,
-        1,
-        2
-      ],
-      "min_margin": -2,
-      "name": "three_cycle_positive_annihilator_control",
       "negative_control": true,
-      "node_count": 3,
-      "plain_meaning": "no global height is supplied; this entry is either a rejected obstruction or a negative control",
-      "positive_height_certificate": false,
-      "rank_A_ext": 2
+      "plain_meaning": "no global height is supplied; this entry is either a rejected obstruction or a negative control"
     }
   ],
-  "input": {
-    "a42_to_a12_sha256": "c44b10e98d4a7f62bca98f890d11b4d49a319cf427ce18d121452698d68ed6c5",
-    "arrays_path": "D:\\Projects\\carrollian\\data\\integrity\\height_coherence\\arrays\\d20_uf_kernel_arrays.npz",
-    "arrays_sha256": "a4c553ee8e383ec693d6fe5d7e8ca5e9e995714523ce5dcc6e655bf84f20516d",
-    "raw_halloween_npz_present": false,
-    "raw_halloween_npz_sha256": null
+  "negative_control_positive_annihilator": {
+    "y": [
+      1,
+      1,
+      1
+    ],
+    "A_ext_T_y": [
+      0,
+      0,
+      0
+    ],
+    "is_positive_annihilator": true
+  },
+  "saturated_resizing_guard": {
+    "valid_saturated_bridge": true,
+    "lift_bad_preview": [],
+    "saturated_product_bad_preview": [],
+    "pointwise_atom_projection_failures": 510,
+    "pointwise_atom_projection_status": "REJECTED_AS_TOO_STRONG"
   },
   "kernel_update": {
+    "new_primitive_judgment": "BoxHeight(A_ext,h)",
     "acceptance_rule": "accept iff every entry of A_ext h is strictly positive",
+    "rejection_rule": "if a nonzero y>=0 with A_ext^T y=0 is exhibited, reject and return the annihilator witness",
     "constructive_univalence_gate": {
       "required_witnesses": [
         "equivalence_witness",
         "zero_transport_residue",
         "height_coherence"
       ]
-    },
-    "new_primitive_judgment": "BoxHeight(A_ext,h)",
-    "rejection_rule": "if a nonzero y>=0 with A_ext^T y=0 is exhibited, reject and return the annihilator witness"
-  },
-  "negative_control_positive_annihilator": {
-    "A_ext_T_y": [
-      0,
-      0,
-      0
-    ],
-    "is_positive_annihilator": true,
-    "y": [
-      1,
-      1,
-      1
-    ]
-  },
-  "official_terms": {
-    "box_judgment": "BoxHeight(A_ext,h)",
-    "formal_name": "height coherence",
-    "legacy_terms": {
-      "BoxMonism": "BoxHeight(A_ext,h)",
-      "height monism": "height coherence"
     }
-  },
-  "saturated_resizing_guard": {
-    "lift_bad_preview": [],
-    "pointwise_atom_projection_failures": 510,
-    "pointwise_atom_projection_status": "REJECTED_AS_TOO_STRONG",
-    "saturated_product_bad_preview": [],
-    "valid_saturated_bridge": true
-  },
-  "schema": "d20.uf_kernel.height_coherence",
-  "status": "D20_UF_KERNEL_HEIGHT_COHERENCE_CERTIFIED"
+  }
 }

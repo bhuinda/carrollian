@@ -24,6 +24,6 @@ Coordinate nonzeros: `72272`
 - `all_diagonal_sums_preserved`: `True`
 - `sampled_raw_candidate_products_pass`: `True`
 
-Boundary: No independent legacy off-diagonal matrix-unit basis is supplied by this fixture atlas.
+Boundary: No independent source-sector off-diagonal matrix-unit basis is supplied by this fixture atlas.
 
-Next: Wire the same all-sector verifier to accept an external legacy candidate COO file, then run it as soon as a genuine legacy off-diagonal source exists.
+Next: Wire the same all-sector verifier to accept an external source-sector candidate COO file, then run it as soon as a genuine source-sector off-diagonal source exists.

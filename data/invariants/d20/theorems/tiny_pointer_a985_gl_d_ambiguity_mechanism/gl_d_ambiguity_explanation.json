@@ -1,0 +1,14 @@
+{
+  "condition": "g_s is invertible and ginv_s is its inverse over F_1000003",
+  "formula": "v_s[i,j] = sum_{a,b} g_s[a,i] * ginv_s[j,b] * u_s[a,b]",
+  "reason": "A primitive central page e_s cuts out a simple matrix algebra M_d(F). Choosing matrix units inside that block is the same as choosing a basis of the d-dimensional simple module. Any invertible basis change gives another valid matrix-unit system.",
+  "scalar_quotient": "Multiplying g_s by a nonzero scalar does not change v_s, because the scalar cancels against g_s^{-1}. The effective ambiguity is therefore PGL_d, with dimension d^2 - 1.",
+  "schema": "d20.tiny_pointer_a985.gl_d_ambiguity_explanation@1",
+  "what_current_certificates_fix": [
+    "the primitive central idempotent e_s",
+    "the raw A985 multiplication law",
+    "one constructed matrix-unit system per source sector",
+    "Burning Ship fold-frame anchors for the static Z/2 x Z/4^2 quotient"
+  ],
+  "what_they_do_not_fix": "For open d>1 blocks they do not supply an independent ordered basis of the simple module, a preferred rank-one idempotent flag, or an external off-diagonal source."
+}

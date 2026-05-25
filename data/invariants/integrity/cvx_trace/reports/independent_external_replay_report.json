@@ -1,16 +1,16 @@
 {
   "artifact_hash_comparison": {
-    "baseline_count": 30,
+    "baseline_count": 50,
     "mismatch_count": 0,
     "mismatches": [],
     "passed": true,
-    "replayed_count": 30
+    "replayed_count": 50
   },
   "claim_level": "same_machine_isolated_snapshot_replay",
   "command_replay": {
-    "command_count": 16,
+    "command_count": 26,
     "failed_count": 0,
-    "passed_count": 16,
+    "passed_count": 26,
     "rows": [
       {
         "command": "python data/invariants/integrity/cvx_trace/scripts/build_formula_to_boundary_cycle_family_candidate.py",
@@ -153,9 +153,109 @@
         "step": "p_not_np_model_scoped_theorem"
       },
       {
+        "command": "python data/invariants/integrity/cvx_trace/scripts/build_public_bit_ram_standard_simulation.py",
+        "expected_stdout": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+        "index": 15,
+        "observed_stdout": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "public_bit_ram_standard_simulation"
+      },
+      {
+        "command": "python data/invariants/integrity/cvx_trace/scripts/build_standard_tm_public_bit_ram_frontend.py",
+        "expected_stdout": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+        "index": 16,
+        "observed_stdout": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "standard_tm_public_bit_ram_frontend"
+      },
+      {
+        "command": "python data/invariants/integrity/cvx_trace/scripts/build_semantic_x_reclassification_theorem.py",
+        "expected_stdout": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+        "index": 17,
+        "observed_stdout": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "semantic_x_reclassification"
+      },
+      {
+        "command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+        "expected_stdout": "",
+        "index": 18,
+        "observed_stdout": "",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "p_cvx_formal_machine_interface_agda"
+      },
+      {
+        "command": "python data/invariants/integrity/cvx_trace/scripts/build_p_cvx_formal_machine_interface.py",
+        "expected_stdout": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+        "index": 19,
+        "observed_stdout": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "p_cvx_formal_machine_interface"
+      },
+      {
+        "command": "python data/invariants/integrity/cvx_trace/scripts/build_p_cvx_standard_model_identification.py",
+        "expected_stdout": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED",
+        "index": 20,
+        "observed_stdout": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "p_cvx_standard_model_identification"
+      },
+      {
+        "command": "python data/invariants/integrity/cvx_trace/scripts/build_p_cvx_standard_equivalence_witness.py",
+        "expected_stdout": "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND",
+        "index": 21,
+        "observed_stdout": "P_CVX_STANDARD_P_EQUIVALENCE_WITNESS_BOUND",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "p_cvx_standard_equivalence_witness"
+      },
+      {
+        "command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda",
+        "expected_stdout": "",
+        "index": 22,
+        "observed_stdout": "",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "standard_p_not_np_replay_terms_agda"
+      },
+      {
+        "command": "python data/invariants/integrity/cvx_trace/scripts/build_standard_p_not_np_replay_terms.py",
+        "expected_stdout": "STANDARD_P_NOT_NP_REPLAY_TERMS_TYPECHECKED",
+        "index": 23,
+        "observed_stdout": "STANDARD_P_NOT_NP_REPLAY_TERMS_TYPECHECKED",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "standard_p_not_np_replay_terms"
+      },
+      {
+        "command": "python data/invariants/integrity/cvx_trace/scripts/build_standard_p_not_np_promotion_certificate.py",
+        "expected_stdout": "STANDARD_P_NOT_NP_PROMOTION_CERTIFIED_REPO_LOCAL",
+        "index": 24,
+        "observed_stdout": "STANDARD_P_NOT_NP_PROMOTION_CERTIFIED_REPO_LOCAL",
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "step": "standard_p_not_np_promotion_certificate"
+      },
+      {
         "command": "python data/invariants/integrity/cvx_trace/scripts/build_external_formal_audit_pack.py",
         "expected_stdout": "EXTERNAL_FORMAL_AUDIT_PACK_READY",
-        "index": 15,
+        "index": 25,
         "observed_stdout": "EXTERNAL_FORMAL_AUDIT_PACK_READY",
         "passed": true,
         "returncode": 0,
@@ -165,7 +265,7 @@
       {
         "command": "python data/invariants/integrity/cvx_trace/scripts/validate_cvx_trace.py",
         "expected_stdout": "CVX_TRACE_SCHEMA_VALIDATION_PASS",
-        "index": 16,
+        "index": 26,
         "observed_stdout": "CVX_TRACE_SCHEMA_VALIDATION_PASS",
         "passed": true,
         "returncode": 0,
@@ -186,12 +286,12 @@
   },
   "non_claims": [
     "This is not peer review.",
-    "This is not a proof-assistant formalization.",
+    "This is not theorem-level proof-assistant verification beyond the typechecked interface definitions.",
     "This is not a different-machine or different-implementation replay."
   ],
   "schema": "d20.integrity.independent_external_replay_report.source_drop",
   "snapshot": {
-    "path": "D:\\Projects\\carrollian\\.replay_tmp\\carrollian-independent-replay-20260524T110133Z-ga3sm893",
+    "path": "D:\\Projects\\carrollian\\.replay_tmp\\carrollian-independent-replay-20260524T135220Z-v1o3zev_",
     "retained_for_inspection": true,
     "surface": "data and layers trees copied into an ignored local replay directory; .git and virtual environments excluded"
   },

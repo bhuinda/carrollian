@@ -1,0 +1,1123 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "63895b6c26dffac785571e72fac8d5e59676a06afd5a27d00ecdb14837eff50c",
+  "checks": {
+    "canonical_frame_key_is_injective": true,
+    "charge_frame_classifier_is_certified": true,
+    "fine_spectral_key_is_injective_on_full_exposure_frame": true,
+    "full_exposure_frame_has_20_packets": true,
+    "label_breaking_factorization_is_certified": true,
+    "lift_theorem_already_locates_zero_pair_touched_packet": true,
+    "minimal_breaker_frame_has_identity_stabilizer": true,
+    "radical_gate_stabilizer_lift_is_certified": true,
+    "selected_packet_has_expected_intrinsic_signature": true,
+    "selection_rule_is_id_free": true,
+    "zero_pair_rule_selects_packet239_intrinsically": true
+  },
+  "claim": "The 20 full-exposure packets admit a canonical labelled coordinate frame built from the minimal label breakers. The frame key is injective, the factorization theorem supplies identity rigidity through sector-26 sum and fine spectral labels, and packet 239 is recovered without using its external id as the unique full-exposure sector-26 zero-pair fixed point.",
+  "definition": {
+    "canonical_labelled_frame": "The 20 full-exposure packets sorted and keyed by intrinsic charge-frame fields: full Loop_297 exposure, mass, clock, gamma, sector-26 clock data, and fine spectral charge.",
+    "id_free_selection": "A selection predicate whose input fields exclude packet_id and frame_index.",
+    "zero_pair_fixed_point": "A full-exposure packet whose sector-26 clock pair is [0,0], hence sum 0, delta 0, zero-pair true, and zero-touched true."
+  },
+  "derived": {
+    "canonical_frame_fields": [
+      "full_loop297_atom_exposure",
+      "mass_frame",
+      "clock_frame",
+      "gamma_frame",
+      "sector26_clock_sum_mod26",
+      "sector26_clock_delta_mod26",
+      "sector26_clock_zero_pair",
+      "sector26_clock_zero_touched",
+      "fine_spectral_charge_key"
+    ],
+    "canonical_frame_rows": [
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -10,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "zero_pair",
+          "gamma8_silent",
+          0,
+          0,
+          true,
+          true,
+          "32|0|0|0|25"
+        ],
+        "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "zero_pair",
+        "fine_spectral_charge_key": "32|0|0|0|25",
+        "frame_index": 0,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 32,
+        "local_pattern": "1010",
+        "mass_frame": "high",
+        "packet_id": 239,
+        "radical": 119,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          0,
+          0
+        ],
+        "sector26_clock_sum_mod26": 0,
+        "sector26_clock_zero_pair": true,
+        "sector26_clock_zero_touched": true,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            0,
+            0
+          ],
+          "sector26_clock_sum_mod26": 0,
+          "sector26_clock_zero_pair": true,
+          "sector26_clock_zero_touched": true
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -10,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "delta8_nonzero",
+          "gamma8_silent",
+          0,
+          8,
+          false,
+          false,
+          "32|0|8|0|25"
+        ],
+        "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "32|0|8|0|25",
+        "frame_index": 1,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 32,
+        "local_pattern": "1110",
+        "mass_frame": "high",
+        "packet_id": 254,
+        "radical": 127,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          22,
+          4
+        ],
+        "sector26_clock_sum_mod26": 0,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            22,
+            4
+          ],
+          "sector26_clock_sum_mod26": 0,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -6,
+        "canonical_frame_key": [
+          true,
+          "middle",
+          "delta8_nonzero",
+          "gamma8_silent",
+          4,
+          8,
+          false,
+          false,
+          "28|4|8|0|25"
+        ],
+        "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "28|4|8|0|25",
+        "frame_index": 2,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 28,
+        "local_pattern": "1010",
+        "mass_frame": "middle",
+        "packet_id": 238,
+        "radical": 119,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          24,
+          6
+        ],
+        "sector26_clock_sum_mod26": 4,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            24,
+            6
+          ],
+          "sector26_clock_sum_mod26": 4,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -10,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "balanced_nonzero",
+          "gamma8_silent",
+          6,
+          0,
+          false,
+          false,
+          "32|6|0|0|25"
+        ],
+        "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "32|6|0|0|25",
+        "frame_index": 3,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 32,
+        "local_pattern": "1100",
+        "mass_frame": "high",
+        "packet_id": 191,
+        "radical": 95,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          16,
+          16
+        ],
+        "sector26_clock_sum_mod26": 6,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            16,
+            16
+          ],
+          "sector26_clock_sum_mod26": 6,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -6,
+        "canonical_frame_key": [
+          true,
+          "middle",
+          "balanced_nonzero",
+          "gamma8_silent",
+          10,
+          0,
+          false,
+          false,
+          "28|10|0|0|25"
+        ],
+        "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "28|10|0|0|25",
+        "frame_index": 4,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 28,
+        "local_pattern": "1000",
+        "mass_frame": "middle",
+        "packet_id": 175,
+        "radical": 87,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          18,
+          18
+        ],
+        "sector26_clock_sum_mod26": 10,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            18,
+            18
+          ],
+          "sector26_clock_sum_mod26": 10,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -6,
+        "canonical_frame_key": [
+          true,
+          "middle",
+          "delta8_nonzero",
+          "gamma8_silent",
+          10,
+          8,
+          false,
+          false,
+          "28|10|8|0|25"
+        ],
+        "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "28|10|8|0|25",
+        "frame_index": 5,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 28,
+        "local_pattern": "1100",
+        "mass_frame": "middle",
+        "packet_id": 190,
+        "radical": 95,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          14,
+          22
+        ],
+        "sector26_clock_sum_mod26": 10,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            14,
+            22
+          ],
+          "sector26_clock_sum_mod26": 10,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -10,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "balanced_nonzero",
+          "gamma8_silent",
+          12,
+          0,
+          false,
+          false,
+          "32|12|0|0|25"
+        ],
+        "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "32|12|0|0|25",
+        "frame_index": 6,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 32,
+        "local_pattern": "0110",
+        "mass_frame": "high",
+        "packet_id": 247,
+        "radical": 123,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          6,
+          6
+        ],
+        "sector26_clock_sum_mod26": 12,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            6,
+            6
+          ],
+          "sector26_clock_sum_mod26": 12,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -2,
+        "canonical_frame_key": [
+          true,
+          "middle",
+          "delta8_nonzero",
+          "gamma8_silent",
+          14,
+          8,
+          false,
+          false,
+          "24|14|8|0|25"
+        ],
+        "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "24|14|8|0|25",
+        "frame_index": 7,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 24,
+        "local_pattern": "1000",
+        "mass_frame": "middle",
+        "packet_id": 174,
+        "radical": 87,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          16,
+          24
+        ],
+        "sector26_clock_sum_mod26": 14,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            16,
+            24
+          ],
+          "sector26_clock_sum_mod26": 14,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -6,
+        "canonical_frame_key": [
+          true,
+          "middle",
+          "delta8_nonzero",
+          "gamma8_silent",
+          16,
+          8,
+          false,
+          false,
+          "28|16|8|0|25"
+        ],
+        "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "28|16|8|0|25",
+        "frame_index": 8,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 28,
+        "local_pattern": "0110",
+        "mass_frame": "middle",
+        "packet_id": 246,
+        "radical": 123,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          4,
+          12
+        ],
+        "sector26_clock_sum_mod26": 16,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            4,
+            12
+          ],
+          "sector26_clock_sum_mod26": 16,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -14,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "balanced_nonzero",
+          "gamma8_silent",
+          22,
+          0,
+          false,
+          false,
+          "36|22|0|0|25"
+        ],
+        "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "36|22|0|0|25",
+        "frame_index": 9,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "gamma_frame": "gamma8_silent",
+        "laplacian_trace": 36,
+        "local_pattern": "1110",
+        "mass_frame": "high",
+        "packet_id": 255,
+        "radical": 127,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          24,
+          24
+        ],
+        "sector26_clock_sum_mod26": 22,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            24,
+            24
+          ],
+          "sector26_clock_sum_mod26": 22,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -10,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "delta8_nonzero",
+          "gamma8",
+          0,
+          8,
+          false,
+          false,
+          "32|0|8|2|25"
+        ],
+        "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "32|0|8|2|25",
+        "frame_index": 10,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 32,
+        "local_pattern": "0111",
+        "mass_frame": "high",
+        "packet_id": 502,
+        "radical": 251,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          22,
+          4
+        ],
+        "sector26_clock_sum_mod26": 0,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            22,
+            4
+          ],
+          "sector26_clock_sum_mod26": 0,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -18,
+        "canonical_frame_key": [
+          true,
+          "mass_ceiling",
+          "balanced_nonzero",
+          "gamma8",
+          6,
+          0,
+          false,
+          false,
+          "40|6|0|2|25"
+        ],
+        "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "40|6|0|2|25",
+        "frame_index": 11,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 40,
+        "local_pattern": "1111",
+        "mass_frame": "mass_ceiling",
+        "packet_id": 511,
+        "radical": 255,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          16,
+          16
+        ],
+        "sector26_clock_sum_mod26": 6,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            16,
+            16
+          ],
+          "sector26_clock_sum_mod26": 6,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -14,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "balanced_nonzero",
+          "gamma8",
+          10,
+          0,
+          false,
+          false,
+          "36|10|0|2|25"
+        ],
+        "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "36|10|0|2|25",
+        "frame_index": 12,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 36,
+        "local_pattern": "1011",
+        "mass_frame": "high",
+        "packet_id": 495,
+        "radical": 247,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          18,
+          18
+        ],
+        "sector26_clock_sum_mod26": 10,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            18,
+            18
+          ],
+          "sector26_clock_sum_mod26": 10,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -14,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "delta8_nonzero",
+          "gamma8",
+          10,
+          8,
+          false,
+          false,
+          "36|10|8|2|25"
+        ],
+        "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "36|10|8|2|25",
+        "frame_index": 13,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 36,
+        "local_pattern": "1111",
+        "mass_frame": "high",
+        "packet_id": 510,
+        "radical": 255,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          14,
+          22
+        ],
+        "sector26_clock_sum_mod26": 10,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            14,
+            22
+          ],
+          "sector26_clock_sum_mod26": 10,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -10,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "delta8_nonzero",
+          "gamma8",
+          14,
+          8,
+          false,
+          false,
+          "32|14|8|2|25"
+        ],
+        "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "32|14|8|2|25",
+        "frame_index": 14,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 32,
+        "local_pattern": "1011",
+        "mass_frame": "high",
+        "packet_id": 494,
+        "radical": 247,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          16,
+          24
+        ],
+        "sector26_clock_sum_mod26": 14,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            16,
+            24
+          ],
+          "sector26_clock_sum_mod26": 14,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -14,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "balanced_nonzero",
+          "gamma8",
+          16,
+          0,
+          false,
+          false,
+          "36|16|0|2|25"
+        ],
+        "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "36|16|0|2|25",
+        "frame_index": 15,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 36,
+        "local_pattern": "1101",
+        "mass_frame": "high",
+        "packet_id": 447,
+        "radical": 223,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          8,
+          8
+        ],
+        "sector26_clock_sum_mod26": 16,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            8,
+            8
+          ],
+          "sector26_clock_sum_mod26": 16,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -10,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "balanced_nonzero",
+          "gamma8",
+          20,
+          0,
+          false,
+          false,
+          "32|20|0|2|25"
+        ],
+        "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "32|20|0|2|25",
+        "frame_index": 16,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 32,
+        "local_pattern": "1001",
+        "mass_frame": "high",
+        "packet_id": 431,
+        "radical": 215,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          10,
+          10
+        ],
+        "sector26_clock_sum_mod26": 20,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            10,
+            10
+          ],
+          "sector26_clock_sum_mod26": 20,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -10,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "delta8_nonzero",
+          "gamma8",
+          20,
+          8,
+          false,
+          false,
+          "32|20|8|2|25"
+        ],
+        "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "32|20|8|2|25",
+        "frame_index": 17,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 32,
+        "local_pattern": "1101",
+        "mass_frame": "high",
+        "packet_id": 446,
+        "radical": 223,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          6,
+          14
+        ],
+        "sector26_clock_sum_mod26": 20,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            6,
+            14
+          ],
+          "sector26_clock_sum_mod26": 20,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 1,
+        "adjacency_trace": -14,
+        "canonical_frame_key": [
+          true,
+          "high",
+          "balanced_nonzero",
+          "gamma8",
+          22,
+          0,
+          false,
+          false,
+          "36|22|0|2|25"
+        ],
+        "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "balanced_nonzero",
+        "fine_spectral_charge_key": "36|22|0|2|25",
+        "frame_index": 18,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 36,
+        "local_pattern": "0111",
+        "mass_frame": "high",
+        "packet_id": 503,
+        "radical": 251,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          24,
+          24
+        ],
+        "sector26_clock_sum_mod26": 22,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 0,
+          "sector26_clock_pair": [
+            24,
+            24
+          ],
+          "sector26_clock_sum_mod26": 22,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      },
+      {
+        "active_sigma": 0,
+        "adjacency_trace": -6,
+        "canonical_frame_key": [
+          true,
+          "middle",
+          "delta8_nonzero",
+          "gamma8",
+          24,
+          8,
+          false,
+          false,
+          "28|24|8|2|25"
+        ],
+        "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+        "clock_frame": "delta8_nonzero",
+        "fine_spectral_charge_key": "28|24|8|2|25",
+        "frame_index": 19,
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 2,
+        "gamma8_touched": true,
+        "gamma_frame": "gamma8",
+        "laplacian_trace": 28,
+        "local_pattern": "1001",
+        "mass_frame": "middle",
+        "packet_id": 430,
+        "radical": 215,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          8,
+          16
+        ],
+        "sector26_clock_sum_mod26": 24,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "selection_signature": {
+          "full_loop297_atom_exposure": true,
+          "sector26_clock_delta_mod26": 8,
+          "sector26_clock_pair": [
+            8,
+            16
+          ],
+          "sector26_clock_sum_mod26": 24,
+          "sector26_clock_zero_pair": false,
+          "sector26_clock_zero_touched": false
+        }
+      }
+    ],
+    "canonical_frame_rows_sha256": "2cfa75a4ece6d9833eb3cca5abdd801dcd5319a50ecac510720ba39f40b180d3",
+    "canonical_frame_summary": {
+      "canonical_affine_lift_count": 384,
+      "charge_frame_key_count": 9,
+      "clock_frame_histogram": {
+        "balanced_nonzero": 9,
+        "delta8_nonzero": 10,
+        "zero_pair": 1
+      },
+      "fine_spectral_key_count": 20,
+      "frame_field_count": 9,
+      "frame_key_count": 20,
+      "gamma_frame_histogram": {
+        "gamma8": 10,
+        "gamma8_silent": 10
+      },
+      "packet_count": 20,
+      "sector26_sum_histogram": {
+        "0": 3,
+        "10": 4,
+        "12": 1,
+        "14": 2,
+        "16": 2,
+        "20": 2,
+        "22": 2,
+        "24": 1,
+        "4": 1,
+        "6": 2
+      },
+      "selected_packet_ids_by_zero_pair_fixed_rule": [
+        239
+      ]
+    },
+    "minimal_identity_breakers": {
+      "atomic_label_sets": [
+        [
+          "fine_spectral"
+        ],
+        [
+          "sector26_sum"
+        ],
+        [
+          "clock_frame",
+          "spectral_trace"
+        ],
+        [
+          "mass_frame",
+          "clock_frame"
+        ],
+        [
+          "mass_frame",
+          "sector26_zero_pair"
+        ],
+        [
+          "mass_frame",
+          "sector26_zero_touched"
+        ],
+        [
+          "sector26_zero_pair",
+          "spectral_trace"
+        ],
+        [
+          "sector26_zero_touched",
+          "spectral_trace"
+        ]
+      ],
+      "coarse_axis_sets": [
+        [
+          "sector26"
+        ],
+        [
+          "clock",
+          "spectral"
+        ],
+        [
+          "mass",
+          "clock"
+        ]
+      ],
+      "identity_rigid_atomic_singletons": [
+        [
+          "sector26_sum"
+        ],
+        [
+          "fine_spectral"
+        ]
+      ]
+    },
+    "packet239_selection": {
+      "selected_charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+      "selected_fine_spectral_charge_key": "32|0|0|0|25",
+      "selected_frame_indices": [
+        0
+      ],
+      "selected_packet_ids": [
+        239
+      ],
+      "selected_signature": {
+        "full_loop297_atom_exposure": true,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          0,
+          0
+        ],
+        "sector26_clock_sum_mod26": 0,
+        "sector26_clock_zero_pair": true,
+        "sector26_clock_zero_touched": true
+      },
+      "selection_rule": "full_exposure_sector26_zero_pair_fixed_point",
+      "selection_rule_fields": [
+        "full_loop297_atom_exposure",
+        "sector26_clock_pair",
+        "sector26_clock_sum_mod26",
+        "sector26_clock_delta_mod26",
+        "sector26_clock_zero_pair",
+        "sector26_clock_zero_touched"
+      ],
+      "uses_external_packet_id": false
+    }
+  },
+  "inputs": {
+    "full_exposure_label_breaking_factorization_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_label_breaking_factorization/report.json",
+      "sha256": "a56c3317abae53658e3b04852558fabf18512bd936a540b6e3b7e12a7018831e"
+    },
+    "full_exposure_radical_gate_stabilizer_lift_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_radical_gate_stabilizer_lift/report.json",
+      "sha256": "82b96e832e161715dbfdcd9bc40ab90f2807598255da88fa4799e38ca91820bc"
+    },
+    "projective_packet_charge_frame_classifier_report": {
+      "path": "data/invariants/d20/theorems/projective_packet_charge_frame_classifier/report.json",
+      "sha256": "106c90259b9d253a335ddc9c07110e5ba350d16c9ca6782b415752b9d5d364ef"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not overturn the stabilizer theorem: packet 239 is not proven to be a unique symmetry-fixed vacuum. It is an intrinsic labelled-frame coordinate selected by the certified sector-26 clock condition.",
+    "what_this_proves": [
+      "the labelled full-exposure packet frame is intrinsic and injective on the 20-packet stratum",
+      "sector-26 sum and fine spectral labels each independently kill the nonidentity radical-gate lifts",
+      "packet 239 is recoverable as the unique sector-26 zero-pair fixed point in that frame"
+    ]
+  },
+  "next_highest_yield_item": "Push the canonical labelled full-exposure frame through the two-step scattering table and express the transition operator in intrinsic label coordinates rather than packet ids.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_canonical_labelled_frame",
+  "status": "D20_FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_CERTIFIED"
+}

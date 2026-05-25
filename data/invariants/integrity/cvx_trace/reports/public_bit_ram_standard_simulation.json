@@ -1,0 +1,212 @@
+{
+  "claim_level": "one_way_standard_simulation_theorem",
+  "decision": {
+    "may_claim_p_cvx_equals_standard_p": false,
+    "may_claim_p_cvx_to_standard_p_for_represented_public_c_traces": true,
+    "may_claim_public_bit_ram_in_standard_p": true,
+    "may_claim_standard_p_to_p_cvx": false,
+    "reason": "The finite public bit-RAM has a fixed public opcode set, explicit public C typing, decision preservation, and a polynomial standard simulator. The reverse frontend from arbitrary standard machines is still not supplied."
+  },
+  "machine_models": {
+    "direction": "finite_public_bit_ram -> standard P",
+    "source": "finite_public_bit_ram",
+    "target": "standard deterministic polynomial-time RAM/Turing machine"
+  },
+  "next_highest_yield_item": {
+    "action": "Define a uniform compiler from standard deterministic Turing/RAM machine executions into finite_public_bit_ram programs and prove polynomial overhead.",
+    "id": "standard_tm_to_public_bit_ram_frontend"
+  },
+  "non_claims": [
+    "This does not provide a frontend from arbitrary standard Turing machines to finite_public_bit_ram.",
+    "This does not prove P_CVX equals standard P.",
+    "This does not classify uncompiled native machine instructions as C.",
+    "This does not allow X extractor/oracle/advice operations inside public P."
+  ],
+  "obligations": {
+    "compiled_events_are_public_c": {
+      "evidence": {
+        "opcode_to_class_code": {
+          "bit_and": "C_PUBLIC_BIT_AND",
+          "bit_not": "C_PUBLIC_BIT_NOT",
+          "bit_or": "C_PUBLIC_BIT_OR",
+          "bit_xor": "C_PUBLIC_BIT_XOR",
+          "branch": "C_PUBLIC_BRANCH",
+          "compare_zero": "C_PUBLIC_COMPARE_ZERO",
+          "const": "C_PUBLIC_CONST",
+          "copy": "C_PUBLIC_COPY",
+          "emit_decision": "C_PUBLIC_EMIT_DECISION",
+          "halt_accept": "C_PUBLIC_HALT_ACCEPT",
+          "halt_reject": "C_PUBLIC_HALT_REJECT",
+          "input_read": "C_PUBLIC_INPUT_READ",
+          "loop_tick": "C_PUBLIC_LOOP_TICK",
+          "ram_load": "C_PUBLIC_RAM_LOAD",
+          "ram_store": "C_PUBLIC_RAM_STORE"
+        },
+        "public_c_class_codes_present": [
+          "C_PUBLIC_BIT_AND",
+          "C_PUBLIC_BIT_NOT",
+          "C_PUBLIC_BIT_OR",
+          "C_PUBLIC_BIT_XOR",
+          "C_PUBLIC_BRANCH",
+          "C_PUBLIC_COMPARE_ZERO",
+          "C_PUBLIC_CONST",
+          "C_PUBLIC_COPY",
+          "C_PUBLIC_DPLL_EMPTY_CLAUSE_CONFLICT",
+          "C_PUBLIC_DPLL_SCAN_CLAUSE",
+          "C_PUBLIC_DPLL_UNIT_ASSIGN",
+          "C_PUBLIC_DPLL_UNIT_CONFLICT",
+          "C_PUBLIC_EMIT_DECISION",
+          "C_PUBLIC_HALT_ACCEPT",
+          "C_PUBLIC_HALT_REJECT",
+          "C_PUBLIC_INPUT_READ",
+          "C_PUBLIC_LOOP_TICK",
+          "C_PUBLIC_LRAT_DELETION",
+          "C_PUBLIC_LRAT_EMPTY_CLAUSE",
+          "C_PUBLIC_LRAT_LEMMA",
+          "C_PUBLIC_RAM_LOAD",
+          "C_PUBLIC_RAM_STORE"
+        ],
+        "x_policy_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+      },
+      "needed": "The source machine simulation must not introduce V or X events.",
+      "passed": true
+    },
+    "decision_preservation_inherited": {
+      "evidence": {
+        "applies_to": "executions already represented in the finite_public_bit_ram model",
+        "decision_preservation": "the compiled trace preserves the source machine emit_decision and halt instruction outputs",
+        "local_event_verification": "one opcode/class-code lookup plus public payload checks",
+        "trace_length_for_runtime_T": "T"
+      },
+      "needed": "The compiled execution must preserve emit_decision and halt outputs.",
+      "passed": true
+    },
+    "every_opcode_has_standard_simulation_case": {
+      "evidence": {
+        "bit_and": "read two public bits, write their conjunction",
+        "bit_not": "read one public bit, write its complement",
+        "bit_or": "read two public bits, write their disjunction",
+        "bit_xor": "read two public bits, write their public xor",
+        "branch": "read a public condition bit and update the program counter",
+        "compare_zero": "scan a public word and emit whether all bits are zero",
+        "const": "write a public constant word",
+        "copy": "copy a public word between public registers or memory cells",
+        "emit_decision": "copy the public decision register to the output channel",
+        "halt_accept": "enter the accepting halt state",
+        "halt_reject": "enter the rejecting halt state",
+        "input_read": "copy a public input bit or word into public memory",
+        "loop_tick": "increment a public step counter and continue",
+        "ram_load": "read a public-addressed public memory cell",
+        "ram_store": "write a public-addressed public memory cell"
+      },
+      "needed": "Each finite public bit-RAM opcode must have an explicit standard simulator case.",
+      "passed": true
+    },
+    "opcode_set_matches_compiler_rules": {
+      "evidence": {
+        "compiler_opcode_count": 15,
+        "compiler_opcodes": [
+          "bit_and",
+          "bit_not",
+          "bit_or",
+          "bit_xor",
+          "branch",
+          "compare_zero",
+          "const",
+          "copy",
+          "emit_decision",
+          "halt_accept",
+          "halt_reject",
+          "input_read",
+          "loop_tick",
+          "ram_load",
+          "ram_store"
+        ],
+        "schema_opcode_count": 15,
+        "schema_opcodes": [
+          "bit_and",
+          "bit_not",
+          "bit_or",
+          "bit_xor",
+          "branch",
+          "compare_zero",
+          "const",
+          "copy",
+          "emit_decision",
+          "halt_accept",
+          "halt_reject",
+          "input_read",
+          "loop_tick",
+          "ram_load",
+          "ram_store"
+        ]
+      },
+      "needed": "Every source opcode admitted by the schema must have a compiler/class-code rule.",
+      "passed": true
+    },
+    "polynomial_overhead_bound_declared": {
+      "evidence": {
+        "parameters": {
+          "P": "program instruction count",
+          "T": "executed finite_public_bit_ram instructions",
+          "W": "maximum public payload/address word width"
+        },
+        "source_trace_bound": "T",
+        "standard_multitape_tm_bound": "O(T * (W + log P)^2)",
+        "standard_ram_bound": "O(T * (W + log P))"
+      },
+      "needed": "The standard simulator overhead must be polynomial in source runtime and public width.",
+      "passed": true
+    },
+    "program_schema_fixes_finite_public_bit_ram": {
+      "evidence": {
+        "machine_model": "finite_public_bit_ram",
+        "schema": "data/invariants/integrity/cvx_trace/schemas/universal_public_bit_machine_program.schema.json"
+      },
+      "needed": "The source machine must be a fixed finite public bit-RAM model.",
+      "passed": true
+    }
+  },
+  "schema": "d20.integrity.public_bit_ram_standard_simulation.source_drop",
+  "source_audit": {
+    "event_schema": {
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/schemas/universal_trace_event.schema.json",
+      "sha256": "5f4b4ff0d5751b62fdafae129993ac703f6c715fc489f71f0278e3c4ab2f2fd3",
+      "status": null
+    },
+    "program_schema": {
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/schemas/universal_public_bit_machine_program.schema.json",
+      "sha256": "b4c7bbf580485e1354b24b0beb6ed512a385449f8cdc1993f1b67001608af3dd",
+      "status": null
+    },
+    "universal_trace_compiler": {
+      "expected_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "sha256": "86fd22cd03d89ff72614b88266c307a4f94d1d414e65c6fec2da10b942a34d33",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
+    "universal_trace_typing": {
+      "expected_status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "sha256": "aac294c9355a2226dfb08ea34874e354a05f904a767e9655e413c5d229d07a52",
+      "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "sha256": "42fb3a22481cdde0b942b2bd26fa06acbd47f6ec86e0ece1ba49ac46def0e04f",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+    }
+  },
+  "status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+  "theorem": {
+    "bound": "For runtime T, public word width W, and program size P, a RAM simulation costs O(T*(W+log P)); a multitape Turing simulation costs O(T*(W+log P)^2).",
+    "name": "Finite Public Bit-RAM Standard Simulation",
+    "statement": "Every finite_public_bit_ram execution admitted by the repository program schema and compiled by the universal trace compiler is simulated by a standard deterministic polynomial-time RAM/Turing machine with polynomial overhead, while preserving public decisions and using only public C operations."
+  }
+}

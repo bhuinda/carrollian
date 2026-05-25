@@ -1,0 +1,92 @@
+{
+  "all_checks_pass": true,
+  "boundary": "This compares the repo-native constructed A985-side Burning trace profile to certified public-zero sector supports. It does not assert that an external artifact uses the same generator names.",
+  "certificate_sha256": "c45e3496ad604fc7c84ba336faa891074175935e350816e538cefa5c1a85ba6c",
+  "checks": {
+    "alignment_rows_are_3_by_6": true,
+    "all_constructed_generators_vanish_on_sector33": true,
+    "at_least_two_generators_have_exact_sector33_kernel": true,
+    "constructed_representative_certified": true,
+    "exact_sector33_generators_detect_minimal_public_zero_without_sector33": true,
+    "fourier_trace_candidate_evaluation_certified": true,
+    "height_exact_public_zero_support_is_33": true,
+    "kernel_summary_has_three_rows": true,
+    "perennial_set_keys_emitted_when_available": true,
+    "public_zero_support_count_is_6_including_zero": true,
+    "public_zero_supports_certified": true,
+    "sector33_unique_public_zero_certified": true,
+    "trace_evaluator_ready_or_profile_certified": true
+  },
+  "claim": "The constructed Burning/A985 frame-section traces align with the certified public-zero sector structure: all three constructed generators vanish on sector 33, and two have kernel exactly {33}, the unique primitive public-zero and height-exact support.",
+  "derived": {
+    "constructed_generators": [
+      "z2_a12_parity",
+      "z4_a12_frame_clock",
+      "z4_a42_clock"
+    ],
+    "exact_sector33_kernel_generators": [
+      "z2_a12_parity",
+      "z4_a42_clock"
+    ],
+    "generators_vanishing_on_sector33": [
+      "z2_a12_parity",
+      "z4_a12_frame_clock",
+      "z4_a42_clock"
+    ],
+    "height_exact_public_zero_supports": [
+      "{33}"
+    ],
+    "minimal_public_zero_supports_without_sector33": [
+      "{6,26}",
+      "{25,26}"
+    ],
+    "perennial_join_key": {
+      "alignment_set_columns_added": [
+        "sector_support_perennial_ids",
+        "zero_member_sectors_perennial_ids",
+        "nonzero_member_sectors_perennial_ids"
+      ],
+      "fourier_set_columns_added": [
+        "sector_support_perennial_ids",
+        "constructed_kernel_intersection_perennial_ids"
+      ],
+      "kernel_set_columns_added": [
+        "zero_sectors_perennial_ids"
+      ],
+      "map_available": true
+    },
+    "public_zero_support_count": 6,
+    "tables": {
+      "fourier_public_zero_overlap": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/burning_static_fourier_public_zero_overlap.csv",
+      "kernel_summary": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/burning_static_constructed_kernel_summary.csv",
+      "public_zero_alignment": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/burning_static_public_zero_support_alignment.csv"
+    }
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "constructed_representative": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_constructed_representative/report.json",
+      "sha256": "8d4cbdb50ad9f314438a0a4d4b216542d30d66b931dc13baadd1e698f1ecabba"
+    },
+    "constructed_trace_evaluator": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/report.json",
+      "sha256": "0ff36f1518ffd4d0d0741b4ca9cc9d0ebc14f4185590e011c06866b8f22e9e1b"
+    },
+    "fourier_trace_candidate_evaluation": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/report.json",
+      "sha256": "195e1b59b750f5752e983061303c6cba68fc613f1664aac14ad863ec56f3b41f"
+    },
+    "public_zero_supports": {
+      "path": "data/invariants/d20/theorems/sector_idempotent_support_admissibility/report.json",
+      "sha256": "66a377f73fd896b9dcd762c5c0dad678f2e30b42f36c764716856a6fa8bfc16d"
+    },
+    "sector33_unique_public_zero": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
+      "sha256": "72d94a621f2dc84f7407673a676ba1cf46651f4284e91332b82a14bd0788f1c8"
+    }
+  },
+  "next_highest_yield_item": "Promote the exact-{33} constructed generators into a sector-33 detector theorem, then compare future imported Burning_static_fields rows against that detector.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_static_public_zero_alignment.source_drop",
+  "status": "D20_TINY_POINTER_A985_BURNING_STATIC_PUBLIC_ZERO_ALIGNMENT_CERTIFIED"
+}

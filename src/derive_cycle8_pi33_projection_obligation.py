@@ -6,7 +6,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS, LAYERS, ROOT
+from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS, DATA, ROOT
+from src.verify_c2_selector_lookup_witness_source_package import PACKAGE_HALLOWEEN_ORBITS_CSV
 
 
 OBLIGATION_ID = "cycle8_pi33_projection_coefficient"
@@ -17,9 +18,9 @@ SECTOR_ATTACHMENT_REPORT = (
 )
 D20_EDGES_CSV = HCYCLE_INVARIANTS / "subscript_Hcycle_d20_edges.csv"
 PRIMITIVE_CYCLES_CSV = HCYCLE_INVARIANTS / "subscript_Hcycle_primitive_cycles.csv"
-TUBE_PROJECTION_SECTION = LAYERS / "tube" / "projection_section.json"
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
-WEDDERBURN_TRACE = LAYERS / "drinfeld" / "wedderburn_trace.json"
+TUBE_PROJECTION_SECTION = DATA / "tube" / "projection_section.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
+WEDDERBURN_TRACE = DATA / "drinfeld" / "wedderburn_trace.json"
 BOUNDARY_TO_LOOP_REPORT = D20_INVARIANTS / "boundary_to_loop" / "report.json"
 BOUNDARY_ANNIHILATION_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_boundary_annihilation" / "report.json"
@@ -127,6 +128,271 @@ FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT = (
     D20_INVARIANTS
     / "theorems"
     / "finite_virasoro_generator_algebra"
+    / "report.json"
+)
+FINITE_CENTRAL_EXTENSION_ANOMALY_COCYCLE_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "finite_central_extension_anomaly_cocycle"
+    / "report.json"
+)
+FINITE_PARITY_CENTRAL_EXTENSION_GROUP_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "finite_parity_central_extension_group"
+    / "report.json"
+)
+PROJECTIVE_KERNEL_PACKET_TENFOLD_WAY_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "projective_kernel_packet_tenfold_way"
+    / "report.json"
+)
+PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "projective_packet_spectral_charge_table"
+    / "report.json"
+)
+PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "projective_packet_charge_frame_classifier"
+    / "report.json"
+)
+PACKET239_STABILIZER_SEED_CANDIDATE_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "packet239_stabilizer_seed_candidate"
+    / "report.json"
+)
+PACKET239_SEED_PROPAGATION_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "packet239_seed_propagation"
+    / "report.json"
+)
+FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_packet_propagation_cells"
+    / "report.json"
+)
+FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_packet_propagation_graph"
+    / "report.json"
+)
+FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_rank10_tenfold_alignment"
+    / "report.json"
+)
+FULL_EXPOSURE_RADICAL_GATE_STABILIZER_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_radical_gate_stabilizer"
+    / "report.json"
+)
+FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_radical_gate_stabilizer_lift"
+    / "report.json"
+)
+FULL_EXPOSURE_LABEL_BREAKING_FACTORIZATION_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_label_breaking_factorization"
+    / "report.json"
+)
+FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_canonical_labelled_frame"
+    / "report.json"
+)
+FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_label_coordinate_transition_operator"
+    / "report.json"
+)
+FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_label_coordinate_spectral_boundary"
+    / "report.json"
+)
+FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_label_coordinate_green_response"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_CHARGE_KERNEL_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_propagator_charge_kernel"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_propagator_symmetry_ward"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_source_to_closed_return_coupling"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_WARD_KERNEL_HEIGHT_SELECTOR_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_ward_kernel_height_selector"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_selected_sourced_ward_balance"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_cone"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_SHORTEST_PATHS_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_shortest_paths"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_TRANSPORT_FAMILIES_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_transport_families"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_SCATTERING_OPERATOR_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_MOVE_ORBIT_FAMILY_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543"
+    / "report.json"
+)
+RAW543_ACTUAL_C2_KERNEL_ORBITS_CSV = PACKAGE_HALLOWEEN_ORBITS_CSV
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_INDEXED_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_SPLIT_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_LOOKUP_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table"
+    / "report.json"
+)
+FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_REPORT = (
+    D20_INVARIANTS
+    / "theorems"
+    / "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization"
     / "report.json"
 )
 
@@ -385,6 +651,252 @@ def build_report() -> dict[str, Any]:
         if FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT.exists()
         else {}
     )
+    finite_central_extension_anomaly_cocycle = (
+        load_json(FINITE_CENTRAL_EXTENSION_ANOMALY_COCYCLE_REPORT)
+        if FINITE_CENTRAL_EXTENSION_ANOMALY_COCYCLE_REPORT.exists()
+        else {}
+    )
+    finite_parity_central_extension_group = (
+        load_json(FINITE_PARITY_CENTRAL_EXTENSION_GROUP_REPORT)
+        if FINITE_PARITY_CENTRAL_EXTENSION_GROUP_REPORT.exists()
+        else {}
+    )
+    projective_kernel_packet_tenfold_way = (
+        load_json(PROJECTIVE_KERNEL_PACKET_TENFOLD_WAY_REPORT)
+        if PROJECTIVE_KERNEL_PACKET_TENFOLD_WAY_REPORT.exists()
+        else {}
+    )
+    projective_packet_spectral_charge_table = (
+        load_json(PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_REPORT)
+        if PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_REPORT.exists()
+        else {}
+    )
+    projective_packet_charge_frame_classifier = (
+        load_json(PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT)
+        if PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT.exists()
+        else {}
+    )
+    packet239_stabilizer_seed_candidate = (
+        load_json(PACKET239_STABILIZER_SEED_CANDIDATE_REPORT)
+        if PACKET239_STABILIZER_SEED_CANDIDATE_REPORT.exists()
+        else {}
+    )
+    packet239_seed_propagation = (
+        load_json(PACKET239_SEED_PROPAGATION_REPORT)
+        if PACKET239_SEED_PROPAGATION_REPORT.exists()
+        else {}
+    )
+    full_exposure_packet_propagation_cells = (
+        load_json(FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_REPORT)
+        if FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_REPORT.exists()
+        else {}
+    )
+    full_exposure_packet_propagation_graph = (
+        load_json(FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_REPORT)
+        if FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_REPORT.exists()
+        else {}
+    )
+    full_exposure_rank10_tenfold_alignment = (
+        load_json(FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_REPORT)
+        if FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_REPORT.exists()
+        else {}
+    )
+    full_exposure_radical_gate_stabilizer = (
+        load_json(FULL_EXPOSURE_RADICAL_GATE_STABILIZER_REPORT)
+        if FULL_EXPOSURE_RADICAL_GATE_STABILIZER_REPORT.exists()
+        else {}
+    )
+    full_exposure_radical_gate_stabilizer_lift = (
+        load_json(FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_REPORT)
+        if FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_REPORT.exists()
+        else {}
+    )
+    full_exposure_label_breaking_factorization = (
+        load_json(FULL_EXPOSURE_LABEL_BREAKING_FACTORIZATION_REPORT)
+        if FULL_EXPOSURE_LABEL_BREAKING_FACTORIZATION_REPORT.exists()
+        else {}
+    )
+    full_exposure_canonical_labelled_frame = (
+        load_json(FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_REPORT)
+        if FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_REPORT.exists()
+        else {}
+    )
+    full_exposure_label_coordinate_transition_operator = (
+        load_json(FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_REPORT)
+        if FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_REPORT.exists()
+        else {}
+    )
+    full_exposure_label_coordinate_spectral_boundary = (
+        load_json(FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_REPORT)
+        if FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_REPORT.exists()
+        else {}
+    )
+    full_exposure_label_coordinate_green_response = (
+        load_json(FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_REPORT)
+        if FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_propagator_charge_kernel = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_CHARGE_KERNEL_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_CHARGE_KERNEL_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_propagator_symmetry_ward = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_source_to_closed_return_coupling = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_ward_kernel_height_selector = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_WARD_KERNEL_HEIGHT_SELECTOR_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_WARD_KERNEL_HEIGHT_SELECTOR_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_selected_sourced_ward_balance = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_cone = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_shortest_paths = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_SHORTEST_PATHS_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_SHORTEST_PATHS_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_transport_families = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_TRANSPORT_FAMILIES_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_TRANSPORT_FAMILIES_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_SCATTERING_OPERATOR_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_SCATTERING_OPERATOR_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_move_orbit_family = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_MOVE_ORBIT_FAMILY_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_MOVE_ORBIT_FAMILY_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_dynamics_selector = (
+        load_json(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_REPORT)
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63 = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480 = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543 = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_INDEXED_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_INDEXED_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_SPLIT_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_SPLIT_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_LOOKUP_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_LOOKUP_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_REPORT.exists()
+        else {}
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization = (
+        load_json(
+            FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_REPORT
+        )
+        if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_REPORT.exists()
+        else {}
+    )
 
     cycle = read_cycle8()
     cycle_edges = edge_rows(cycle["edge_ids"])
@@ -460,6 +972,164 @@ def build_report() -> dict[str, Any]:
     )
     finite_virasoro_generator_algebra_derived = (
         finite_virasoro_generator_algebra.get("derived", {})
+    )
+    finite_central_extension_anomaly_cocycle_derived = (
+        finite_central_extension_anomaly_cocycle.get("derived", {})
+    )
+    finite_parity_central_extension_group_derived = (
+        finite_parity_central_extension_group.get("derived", {})
+    )
+    projective_kernel_packet_tenfold_way_derived = (
+        projective_kernel_packet_tenfold_way.get("derived", {})
+    )
+    projective_packet_spectral_charge_table_derived = (
+        projective_packet_spectral_charge_table.get("derived", {})
+    )
+    projective_packet_charge_frame_classifier_derived = (
+        projective_packet_charge_frame_classifier.get("derived", {})
+    )
+    packet239_stabilizer_seed_candidate_derived = (
+        packet239_stabilizer_seed_candidate.get("derived", {})
+    )
+    packet239_seed_propagation_derived = packet239_seed_propagation.get("derived", {})
+    full_exposure_packet_propagation_cells_derived = (
+        full_exposure_packet_propagation_cells.get("derived", {})
+    )
+    full_exposure_packet_propagation_graph_derived = (
+        full_exposure_packet_propagation_graph.get("derived", {})
+    )
+    full_exposure_rank10_tenfold_alignment_derived = (
+        full_exposure_rank10_tenfold_alignment.get("derived", {})
+    )
+    full_exposure_radical_gate_stabilizer_derived = (
+        full_exposure_radical_gate_stabilizer.get("derived", {})
+    )
+    full_exposure_radical_gate_stabilizer_lift_derived = (
+        full_exposure_radical_gate_stabilizer_lift.get("derived", {})
+    )
+    full_exposure_label_breaking_factorization_derived = (
+        full_exposure_label_breaking_factorization.get("derived", {})
+    )
+    full_exposure_canonical_labelled_frame_derived = (
+        full_exposure_canonical_labelled_frame.get("derived", {})
+    )
+    full_exposure_label_coordinate_transition_operator_derived = (
+        full_exposure_label_coordinate_transition_operator.get("derived", {})
+    )
+    full_exposure_label_coordinate_spectral_boundary_derived = (
+        full_exposure_label_coordinate_spectral_boundary.get("derived", {})
+    )
+    full_exposure_label_coordinate_green_response_derived = (
+        full_exposure_label_coordinate_green_response.get("derived", {})
+    )
+    full_exposure_zero_pair_propagator_charge_kernel_derived = (
+        full_exposure_zero_pair_propagator_charge_kernel.get("derived", {})
+    )
+    full_exposure_zero_pair_propagator_symmetry_ward_derived = (
+        full_exposure_zero_pair_propagator_symmetry_ward.get("derived", {})
+    )
+    full_exposure_zero_pair_source_to_closed_return_coupling_derived = (
+        full_exposure_zero_pair_source_to_closed_return_coupling.get("derived", {})
+    )
+    full_exposure_zero_pair_ward_kernel_height_selector_derived = (
+        full_exposure_zero_pair_ward_kernel_height_selector.get("derived", {})
+    )
+    full_exposure_zero_pair_selected_sourced_ward_balance_derived = (
+        full_exposure_zero_pair_selected_sourced_ward_balance.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_cone_derived = (
+        full_exposure_zero_pair_sourced_balance_cone.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_shortest_paths_derived = (
+        full_exposure_zero_pair_sourced_balance_shortest_paths.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_transport_families_derived = (
+        full_exposure_zero_pair_sourced_balance_transport_families.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_derived = (
+        full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get("derived", {})
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+            "derived", {}
+        )
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_derived = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization.get(
+            "derived", {}
+        )
     )
 
     character_values_materialized = has_any_key(
@@ -641,6 +1311,356 @@ def build_report() -> dict[str, Any]:
         == "D20_FINITE_VIRASORO_GENERATOR_ALGEBRA_CERTIFIED"
         and finite_virasoro_generator_algebra.get("all_checks_pass") is True
     )
+    finite_central_extension_anomaly_cocycle_certified = (
+        finite_central_extension_anomaly_cocycle.get("status")
+        == "D20_FINITE_CENTRAL_EXTENSION_ANOMALY_COCYCLE_CERTIFIED"
+        and finite_central_extension_anomaly_cocycle.get("all_checks_pass") is True
+    )
+    finite_parity_central_extension_group_certified = (
+        finite_parity_central_extension_group.get("status")
+        == "D20_FINITE_PARITY_CENTRAL_EXTENSION_GROUP_CERTIFIED"
+        and finite_parity_central_extension_group.get("all_checks_pass") is True
+    )
+    projective_kernel_packet_tenfold_way_certified = (
+        projective_kernel_packet_tenfold_way.get("status")
+        == "D20_PROJECTIVE_KERNEL_PACKET_TENFOLD_WAY_CERTIFIED"
+        and projective_kernel_packet_tenfold_way.get("all_checks_pass") is True
+    )
+    projective_packet_spectral_charge_table_certified = (
+        projective_packet_spectral_charge_table.get("status")
+        == "D20_PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_CERTIFIED"
+        and projective_packet_spectral_charge_table.get("all_checks_pass") is True
+    )
+    projective_packet_charge_frame_classifier_certified = (
+        projective_packet_charge_frame_classifier.get("status")
+        == "D20_PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_CERTIFIED"
+        and projective_packet_charge_frame_classifier.get("all_checks_pass") is True
+    )
+    packet239_stabilizer_seed_candidate_certified = (
+        packet239_stabilizer_seed_candidate.get("status")
+        == "D20_PACKET239_STABILIZER_SEED_CANDIDATE_CERTIFIED"
+        and packet239_stabilizer_seed_candidate.get("all_checks_pass") is True
+    )
+    packet239_seed_propagation_certified = (
+        packet239_seed_propagation.get("status")
+        == "D20_PACKET239_SEED_PROPAGATION_CERTIFIED"
+        and packet239_seed_propagation.get("all_checks_pass") is True
+    )
+    full_exposure_packet_propagation_cells_certified = (
+        full_exposure_packet_propagation_cells.get("status")
+        == "D20_FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_CERTIFIED"
+        and full_exposure_packet_propagation_cells.get("all_checks_pass") is True
+    )
+    full_exposure_packet_propagation_graph_certified = (
+        full_exposure_packet_propagation_graph.get("status")
+        == "D20_FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_CERTIFIED"
+        and full_exposure_packet_propagation_graph.get("all_checks_pass") is True
+    )
+    full_exposure_rank10_tenfold_alignment_certified = (
+        full_exposure_rank10_tenfold_alignment.get("status")
+        == "D20_FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_CERTIFIED"
+        and full_exposure_rank10_tenfold_alignment.get("all_checks_pass") is True
+    )
+    full_exposure_radical_gate_stabilizer_certified = (
+        full_exposure_radical_gate_stabilizer.get("status")
+        == "D20_FULL_EXPOSURE_RADICAL_GATE_STABILIZER_CERTIFIED"
+        and full_exposure_radical_gate_stabilizer.get("all_checks_pass") is True
+    )
+    full_exposure_radical_gate_stabilizer_lift_certified = (
+        full_exposure_radical_gate_stabilizer_lift.get("status")
+        == "D20_FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_CERTIFIED"
+        and full_exposure_radical_gate_stabilizer_lift.get("all_checks_pass") is True
+    )
+    full_exposure_label_breaking_factorization_certified = (
+        full_exposure_label_breaking_factorization.get("status")
+        == "D20_FULL_EXPOSURE_LABEL_BREAKING_FACTORIZATION_CERTIFIED"
+        and full_exposure_label_breaking_factorization.get("all_checks_pass") is True
+    )
+    full_exposure_canonical_labelled_frame_certified = (
+        full_exposure_canonical_labelled_frame.get("status")
+        == "D20_FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_CERTIFIED"
+        and full_exposure_canonical_labelled_frame.get("all_checks_pass") is True
+    )
+    full_exposure_label_coordinate_transition_operator_certified = (
+        full_exposure_label_coordinate_transition_operator.get("status")
+        == "D20_FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_CERTIFIED"
+        and full_exposure_label_coordinate_transition_operator.get("all_checks_pass") is True
+    )
+    full_exposure_label_coordinate_spectral_boundary_certified = (
+        full_exposure_label_coordinate_spectral_boundary.get("status")
+        == "D20_FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_CERTIFIED"
+        and full_exposure_label_coordinate_spectral_boundary.get("all_checks_pass") is True
+    )
+    full_exposure_label_coordinate_green_response_certified = (
+        full_exposure_label_coordinate_green_response.get("status")
+        == "D20_FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_CERTIFIED"
+        and full_exposure_label_coordinate_green_response.get("all_checks_pass") is True
+    )
+    full_exposure_zero_pair_propagator_charge_kernel_certified = (
+        full_exposure_zero_pair_propagator_charge_kernel.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_CHARGE_KERNEL_CERTIFIED"
+        and full_exposure_zero_pair_propagator_charge_kernel.get("all_checks_pass") is True
+    )
+    full_exposure_zero_pair_propagator_symmetry_ward_certified = (
+        full_exposure_zero_pair_propagator_symmetry_ward.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_CERTIFIED"
+        and full_exposure_zero_pair_propagator_symmetry_ward.get("all_checks_pass") is True
+    )
+    full_exposure_zero_pair_source_to_closed_return_coupling_certified = (
+        full_exposure_zero_pair_source_to_closed_return_coupling.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_CERTIFIED"
+        and full_exposure_zero_pair_source_to_closed_return_coupling.get("all_checks_pass") is True
+    )
+    full_exposure_zero_pair_ward_kernel_height_selector_certified = (
+        full_exposure_zero_pair_ward_kernel_height_selector.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_WARD_KERNEL_HEIGHT_SELECTOR_CERTIFIED"
+        and full_exposure_zero_pair_ward_kernel_height_selector.get("all_checks_pass") is True
+    )
+    full_exposure_zero_pair_selected_sourced_ward_balance_certified = (
+        full_exposure_zero_pair_selected_sourced_ward_balance.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_CERTIFIED"
+        and full_exposure_zero_pair_selected_sourced_ward_balance.get("all_checks_pass") is True
+    )
+    full_exposure_zero_pair_sourced_balance_cone_certified = (
+        full_exposure_zero_pair_sourced_balance_cone.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_cone.get("all_checks_pass") is True
+    )
+    full_exposure_zero_pair_sourced_balance_shortest_paths_certified = (
+        full_exposure_zero_pair_sourced_balance_shortest_paths.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_SHORTEST_PATHS_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_shortest_paths.get("all_checks_pass") is True
+    )
+    full_exposure_zero_pair_sourced_balance_transport_families_certified = (
+        full_exposure_zero_pair_sourced_balance_transport_families.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_TRANSPORT_FAMILIES_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_transport_families.get("all_checks_pass")
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_certified = (
+        full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly.get("all_checks_pass")
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_SCATTERING_OPERATOR_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_MOVE_ORBIT_FAMILY_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership.get("status")
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_INDEXED_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_SPLIT_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_LOOKUP_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_certified = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization.get(
+            "status"
+        )
+        == "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_CERTIFIED"
+        and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization.get(
+            "all_checks_pass"
+        )
+        is True
+    )
+    indexed_split_rows = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_derived.get(
+            "indexed_selector_rows", []
+        )
+    )
+    indexed_split_row_by_name = {row.get("name"): row for row in indexed_split_rows}
+    indexed_lookup_rows = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_derived.get(
+            "lookup_selector_rows", []
+        )
+    )
+    indexed_lookup_row_by_name = {row.get("name"): row for row in indexed_lookup_rows}
+    lookup_table_selector_summaries = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_derived.get(
+            "lookup_table_selector_summaries", []
+        )
+    )
+    lookup_table_row_count_by_selector = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_derived.get(
+            "lookup_table_row_count_by_selector", {}
+        )
+    )
+    lookup_table_source_package = (
+        full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_derived.get(
+            "lookup_witness_source_package", {}
+        )
+    )
+    lookup_table_source_package_certificate = lookup_table_source_package.get("certificate", {})
+    actual_c2_kernel_orbit_sources = {
+        "lazy63": full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_derived.get(
+            "actual_c2_kernel_orbit_source", {}
+        ),
+        "paired_lazy480": full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_derived.get(
+            "actual_c2_kernel_orbit_source", {}
+        ),
+        "raw543": full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_derived.get(
+            "actual_c2_kernel_orbit_source", {}
+        ),
+        "raw543_indexed": full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_derived.get(
+            "actual_c2_kernel_orbit_source", {}
+        ),
+        "indexed_split": full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_derived.get(
+            "actual_c2_kernel_orbit_source", {}
+        ),
+        "indexed_lookup": full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_derived.get(
+            "actual_c2_kernel_orbit_source", {}
+        ),
+        "lookup_table": full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_derived.get(
+            "actual_c2_kernel_orbit_source", {}
+        ),
+    }
+    actual_c2_kernel_orbit_source_consumers = {
+        name: source
+        for name, source in actual_c2_kernel_orbit_sources.items()
+        if name != "lookup_table"
+    }
 
     checks = {
         "sector_attachment_is_certified": attachment.get("status")
@@ -1392,6 +2412,1672 @@ def build_report() -> dict[str, Any]:
             )
             is True
         ),
+        "finite_central_extension_anomaly_cocycle_is_certified": (
+            finite_central_extension_anomaly_cocycle_certified
+        ),
+        "finite_central_extension_anomaly_cocycle_kills_z26_alternating_term": (
+            finite_central_extension_anomaly_cocycle.get("checks", {}).get(
+                "canonical_z26_alternating_central_term_vanishes"
+            )
+            is True
+            and finite_central_extension_anomaly_cocycle.get("checks", {}).get(
+                "canonical_z26_clock_defect_is_symmetric"
+            )
+            is True
+        ),
+        "finite_central_extension_anomaly_cocycle_finds_f2_survivor": (
+            finite_central_extension_anomaly_cocycle.get("checks", {}).get(
+                "f2_compatible_alternating_solution_is_one_dimensional"
+            )
+            is True
+            and finite_central_extension_anomaly_cocycle_derived.get(
+                "central_extension_summary", {}
+            ).get("compatible_f2_cocycle_dimension")
+            == 1
+        ),
+        "finite_central_extension_anomaly_cocycle_tracks_composite_triangle": (
+            finite_central_extension_anomaly_cocycle.get("checks", {}).get(
+                "f2_representative_is_supported_on_cross_composite_triangle"
+            )
+            is True
+            and finite_central_extension_anomaly_cocycle.get("checks", {}).get(
+                "f2_representative_descends_through_cross_composite_relation"
+            )
+            is True
+        ),
+        "finite_parity_central_extension_group_is_certified": (
+            finite_parity_central_extension_group_certified
+        ),
+        "finite_parity_central_extension_group_has_d8_c2_8_type": (
+            finite_parity_central_extension_group.get("checks", {}).get(
+                "central_extension_group_has_d8_times_c2_8_type"
+            )
+            is True
+            and finite_parity_central_extension_group_derived.get(
+                "central_extension_summary", {}
+            ).get("extension_group_type")
+            == "D8 x C2^8"
+        ),
+        "finite_parity_central_extension_group_commutator_is_composite_triangle": (
+            finite_parity_central_extension_group.get("checks", {}).get(
+                "named_commutator_table_is_exact_composite_triangle"
+            )
+            is True
+            and finite_parity_central_extension_group.get("checks", {}).get(
+                "cross_composite_relation_lifts_to_identity"
+            )
+            is True
+        ),
+        "finite_parity_central_extension_group_certifies_projective_kernel_action": (
+            finite_parity_central_extension_group.get("checks", {}).get(
+                "named_projective_actions_preserve_kernel_states"
+            )
+            is True
+            and finite_parity_central_extension_group.get("checks", {}).get(
+                "named_projective_action_composition_matches_group_law"
+            )
+            is True
+            and finite_parity_central_extension_group.get("checks", {}).get(
+                "central_bit_acts_as_global_sign"
+            )
+            is True
+        ),
+        "projective_kernel_packet_tenfold_way_is_certified": (
+            projective_kernel_packet_tenfold_way_certified
+        ),
+        "projective_kernel_packet_tenfold_way_decomposes_512_packets": (
+            projective_kernel_packet_tenfold_way.get("checks", {}).get(
+                "packet_decomposition_has_total_dimension_1024"
+            )
+            is True
+            and projective_kernel_packet_tenfold_way_derived.get("packet_summary", {}).get(
+                "irreducible_packet_count"
+            )
+            == 512
+        ),
+        "projective_kernel_packet_tenfold_way_tracks_sector26_and_loop297": (
+            projective_kernel_packet_tenfold_way.get("checks", {}).get(
+                "packet_mode_sector26_clock_histogram_matches_kernel"
+            )
+            is True
+            and projective_kernel_packet_tenfold_way.get("checks", {}).get(
+                "packet_exposure_uses_all_25_loop297_atoms"
+            )
+            is True
+        ),
+        "projective_kernel_packet_tenfold_way_certifies_rank10_tenfold_witness": (
+            projective_kernel_packet_tenfold_way.get("checks", {}).get(
+                "rank10_bott_split_is_8_plus_2"
+            )
+            is True
+            and projective_kernel_packet_tenfold_way.get("checks", {}).get(
+                "tenfold_way_minimal_real_class_is_ai_without_extra_hamiltonian"
+            )
+            is True
+            and projective_kernel_packet_tenfold_way.get("checks", {}).get(
+                "tenfold_way_optional_active_clifford_hamiltonian_gives_bdi_witness"
+            )
+            is True
+        ),
+        "projective_packet_spectral_charge_table_is_certified": (
+            projective_packet_spectral_charge_table_certified
+        ),
+        "projective_packet_spectral_charge_table_has_512_rows": (
+            projective_packet_spectral_charge_table.get("checks", {}).get(
+                "packet_table_has_512_rows_and_total_dimension_1024"
+            )
+            is True
+            and projective_packet_spectral_charge_table_derived.get(
+                "spectral_charge_summary", {}
+            ).get("packet_count")
+            == 512
+        ),
+        "projective_packet_spectral_charge_table_tracks_charge_histograms": (
+            projective_packet_spectral_charge_table.get("checks", {}).get(
+                "laplacian_trace_histogram_matches_packet_spectrum"
+            )
+            is True
+            and projective_packet_spectral_charge_table.get("checks", {}).get(
+                "sector26_clock_delta_splits_evenly"
+            )
+            is True
+            and projective_packet_spectral_charge_table.get("checks", {}).get(
+                "hidden_clock_cancels_packetwise"
+            )
+            is True
+        ),
+        "projective_packet_spectral_charge_table_identifies_unique_full_clock_zero_packet": (
+            projective_packet_spectral_charge_table.get("checks", {}).get(
+                "unique_full_loop_clock_zero_packet_is_239"
+            )
+            is True
+            and projective_packet_spectral_charge_table.get("checks", {}).get(
+                "distinguished_full_loop_packets_match"
+            )
+            is True
+        ),
+        "projective_packet_charge_frame_classifier_is_certified": (
+            projective_packet_charge_frame_classifier_certified
+        ),
+        "projective_packet_charge_frame_classifier_has_47_classes": (
+            projective_packet_charge_frame_classifier.get("checks", {}).get(
+                "charge_frame_key_count_is_47"
+            )
+            is True
+            and projective_packet_charge_frame_classifier_derived.get(
+                "classifier_summary", {}
+            ).get("charge_frame_class_count")
+            == 47
+        ),
+        "projective_packet_charge_frame_classifier_names_all_axes": (
+            projective_packet_charge_frame_classifier.get("checks", {}).get(
+                "charge_frame_axes_are_named"
+            )
+            is True
+            and projective_packet_charge_frame_classifier.get("checks", {}).get(
+                "hidden_axis_is_cancelled_everywhere"
+            )
+            is True
+            and projective_packet_charge_frame_classifier.get("checks", {}).get(
+                "tenfold_axis_is_ai_bdi_everywhere"
+            )
+            is True
+        ),
+        "projective_packet_charge_frame_classifier_isolates_packet239": (
+            projective_packet_charge_frame_classifier.get("checks", {}).get(
+                "packet239_is_unique_full_exposure_clock_zero_packet"
+            )
+            is True
+            and projective_packet_charge_frame_classifier.get("checks", {}).get(
+                "packet239_is_unique_in_charge_frame_and_fine_key"
+            )
+            is True
+        ),
+        "packet239_stabilizer_seed_candidate_is_certified": (
+            packet239_stabilizer_seed_candidate_certified
+        ),
+        "packet239_stabilizer_seed_candidate_has_uniform_stabilizers": (
+            packet239_stabilizer_seed_candidate.get("checks", {}).get(
+                "all_packets_have_full_setwise_stabilizer"
+            )
+            is True
+            and packet239_stabilizer_seed_candidate.get("checks", {}).get(
+                "all_packets_have_uniform_scalar_stabilizer"
+            )
+            is True
+            and packet239_stabilizer_seed_candidate.get("checks", {}).get(
+                "all_packets_have_uniform_identity_kernel_order"
+            )
+            is True
+        ),
+        "packet239_stabilizer_seed_candidate_compares_full_exposure_peers": (
+            packet239_stabilizer_seed_candidate.get("checks", {}).get(
+                "full_exposure_packets_have_same_stabilizer_orders"
+            )
+            is True
+            and packet239_stabilizer_seed_candidate.get("checks", {}).get(
+                "packet239_stabilizer_orders_match_full_exposure_peers"
+            )
+            is True
+        ),
+        "packet239_stabilizer_seed_candidate_preserves_charge_seed_uniqueness": (
+            packet239_stabilizer_seed_candidate.get("checks", {}).get(
+                "packet239_charge_frame_remains_unique"
+            )
+            is True
+            and packet239_stabilizer_seed_candidate.get("checks", {}).get(
+                "packet239_is_charge_seed_not_symmetry_fixed_vacuum"
+            )
+            is True
+        ),
+        "packet239_seed_propagation_is_certified": (
+            packet239_seed_propagation_certified
+        ),
+        "packet239_seed_propagation_hits_two_odd_shadows": (
+            packet239_seed_propagation.get("checks", {}).get(
+                "one_step_crossing_rows_hit_two_odd_packet_shadows"
+            )
+            is True
+            and packet239_seed_propagation.get("checks", {}).get(
+                "one_step_crossing_rows_are_full_exposure_gamma_silent"
+            )
+            is True
+        ),
+        "packet239_seed_propagation_returns_only_238_239": (
+            packet239_seed_propagation.get("checks", {}).get(
+                "two_step_cross_return_rows_hit_only_packets_238_and_239"
+            )
+            is True
+            and packet239_seed_propagation.get("checks", {}).get(
+                "cross_return_charge_frames_are_seed_and_active_partner"
+            )
+            is True
+        ),
+        "packet239_seed_propagation_tracks_cross_return_flux": (
+            packet239_seed_propagation.get("checks", {}).get(
+                "two_step_cross_return_flux_histogram_matches"
+            )
+            is True
+            and packet239_seed_propagation.get("checks", {}).get(
+                "two_step_cross_return_action_histogram_matches"
+            )
+            is True
+            and packet239_seed_propagation.get("checks", {}).get(
+                "two_step_cross_returns_cancel_hidden_transfer"
+            )
+            is True
+        ),
+        "full_exposure_packet_propagation_cells_is_certified": (
+            full_exposure_packet_propagation_cells_certified
+        ),
+        "full_exposure_packet_propagation_cells_covers_20_packets": (
+            full_exposure_packet_propagation_cells.get("checks", {}).get(
+                "full_exposure_packet_count_is_20"
+            )
+            is True
+            and full_exposure_packet_propagation_cells_derived.get(
+                "propagation_cell_summary", {}
+            ).get("full_exposure_packet_count")
+            == 20
+        ),
+        "full_exposure_packet_propagation_cells_has_uniform_shape": (
+            full_exposure_packet_propagation_cells.get("checks", {}).get(
+                "every_full_packet_has_two_odd_shadows"
+            )
+            is True
+            and full_exposure_packet_propagation_cells.get("checks", {}).get(
+                "each_source_returns_twice_and_partner_four_times"
+            )
+            is True
+            and full_exposure_packet_propagation_cells.get("checks", {}).get(
+                "two_step_cross_returns_target_each_full_packet_six_times"
+            )
+            is True
+        ),
+        "full_exposure_packet_propagation_cells_tracks_flux_and_exposure": (
+            full_exposure_packet_propagation_cells.get("checks", {}).get(
+                "one_step_crossings_preserve_full_exposure"
+            )
+            is True
+            and full_exposure_packet_propagation_cells.get("checks", {}).get(
+                "two_step_flux_and_action_histograms_match"
+            )
+            is True
+            and full_exposure_packet_propagation_cells.get("checks", {}).get(
+                "two_step_cross_returns_cancel_hidden_transfer"
+            )
+            is True
+        ),
+        "full_exposure_packet_propagation_graph_is_certified": (
+            full_exposure_packet_propagation_graph_certified
+        ),
+        "full_exposure_packet_propagation_graph_has_ten_doublets": (
+            full_exposure_packet_propagation_graph.get("checks", {}).get(
+                "graph_decomposes_into_ten_active_partner_doublets"
+            )
+            is True
+            and full_exposure_packet_propagation_graph_derived.get(
+                "graph_summary", {}
+            ).get("component_count")
+            == 10
+        ),
+        "full_exposure_packet_propagation_graph_has_uniform_operator": (
+            full_exposure_packet_propagation_graph.get("checks", {}).get(
+                "graph_has_uniform_weighted_degrees"
+            )
+            is True
+            and full_exposure_packet_propagation_graph.get("checks", {}).get(
+                "graph_has_uniform_self_and_partner_weights"
+            )
+            is True
+            and full_exposure_packet_propagation_graph.get("checks", {}).get(
+                "spectral_readout_matches_ten_doublet_blocks"
+            )
+            is True
+        ),
+        "full_exposure_packet_propagation_graph_balances_flux": (
+            full_exposure_packet_propagation_graph.get("checks", {}).get(
+                "signed_flux_balances_per_source_and_component"
+            )
+            is True
+            and full_exposure_packet_propagation_graph.get("checks", {}).get(
+                "hidden_transfer_cancels_everywhere"
+            )
+            is True
+            and full_exposure_packet_propagation_graph.get("checks", {}).get(
+                "action_budget_is_uniform"
+            )
+            is True
+        ),
+        "full_exposure_rank10_tenfold_alignment_is_certified": (
+            full_exposure_rank10_tenfold_alignment_certified
+        ),
+        "full_exposure_rank10_tenfold_alignment_maps_doublets": (
+            full_exposure_rank10_tenfold_alignment.get("checks", {}).get(
+                "doublets_are_active_partner_planes"
+            )
+            is True
+            and full_exposure_rank10_tenfold_alignment.get("checks", {}).get(
+                "active_plane_mode_masks_match_packet_model"
+            )
+            is True
+        ),
+        "full_exposure_rank10_tenfold_alignment_certifies_nonbasis": (
+            full_exposure_rank10_tenfold_alignment.get("checks", {}).get(
+                "component_support_is_not_rank10_basis"
+            )
+            is True
+            and full_exposure_rank10_tenfold_alignment_derived.get(
+                "alignment_summary", {}
+            ).get("canonical_rank10_axis_basis")
+            is False
+            and full_exposure_rank10_tenfold_alignment_derived.get(
+                "alignment_summary", {}
+            ).get("full_mode_affine_direction_rank")
+            == 6
+        ),
+        "full_exposure_rank10_tenfold_alignment_preserves_active_tenfold_block": (
+            full_exposure_rank10_tenfold_alignment.get("checks", {}).get(
+                "tenfold_active_block_is_preserved"
+            )
+            is True
+            and full_exposure_rank10_tenfold_alignment_derived.get(
+                "tenfold_alignment", {}
+            ).get("canonical_module_class")
+            == "AI"
+            and full_exposure_rank10_tenfold_alignment_derived.get(
+                "tenfold_alignment", {}
+            ).get("optional_active_hamiltonian_class")
+            == "BDI"
+        ),
+        "full_exposure_radical_gate_stabilizer_is_certified": (
+            full_exposure_radical_gate_stabilizer_certified
+        ),
+        "full_exposure_radical_gate_stabilizer_has_expected_orders": (
+            full_exposure_radical_gate_stabilizer.get("checks", {}).get(
+                "linear_stabilizer_order_is_64"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer.get("checks", {}).get(
+                "affine_stabilizer_order_is_384"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer_derived.get(
+                "stabilizer_summary", {}
+            ).get("linear_stabilizer_order")
+            == 64
+            and full_exposure_radical_gate_stabilizer_derived.get(
+                "stabilizer_summary", {}
+            ).get("affine_stabilizer_order")
+            == 384
+        ),
+        "full_exposure_radical_gate_stabilizer_prism_decomposition": (
+            full_exposure_radical_gate_stabilizer.get("checks", {}).get(
+                "gate_complement_is_six_point_prism"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer.get("checks", {}).get(
+                "group_decomposition_orders_match"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer_derived.get(
+                "complement_prism_witness", {}
+            ).get("product_point_count")
+            == 6
+        ),
+        "full_exposure_radical_gate_stabilizer_orbits_and_translations": (
+            full_exposure_radical_gate_stabilizer.get("checks", {}).get(
+                "pure_translation_stabilizer_is_x7_flip"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer.get("checks", {}).get(
+                "all_affine_translation_parts_are_complement_patterns"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer.get("checks", {}).get(
+                "orbit_structure_matches_prism_gate"
+            )
+            is True
+        ),
+        "full_exposure_radical_gate_stabilizer_lift_is_certified": (
+            full_exposure_radical_gate_stabilizer_lift_certified
+        ),
+        "full_exposure_radical_gate_stabilizer_lift_preserves_graph_action": (
+            full_exposure_radical_gate_stabilizer_lift.get("checks", {}).get(
+                "all_384_affine_stabilizers_lift_to_canonical_graph_action"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer_lift.get("checks", {}).get(
+                "active_flip_extension_has_expected_order"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer_lift_derived.get(
+                "graph_action_lift_summary", {}
+            ).get("graph_action_lift_order")
+            == 393216
+        ),
+        "full_exposure_radical_gate_stabilizer_lift_classifies_label_breaking": (
+            full_exposure_radical_gate_stabilizer_lift.get("checks", {}).get(
+                "combined_gamma_marker_reduces_canonical_lift_to_six"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer_lift.get("checks", {}).get(
+                "charge_frame_and_fine_spectral_labels_reduce_to_identity"
+            )
+            is True
+            and full_exposure_radical_gate_stabilizer_lift.get("checks", {}).get(
+                "packet239_is_the_unique_zero_pair_touched_packet"
+            )
+            is True
+        ),
+        "full_exposure_label_breaking_factorization_is_certified": (
+            full_exposure_label_breaking_factorization_certified
+        ),
+        "full_exposure_label_breaking_factorization_has_expected_axis_counts": (
+            full_exposure_label_breaking_factorization.get("checks", {}).get(
+                "axis_family_counts_match_expected_factorization"
+            )
+            is True
+            and full_exposure_label_breaking_factorization_derived.get(
+                "breaker_summary", {}
+            ).get("axis_family_survivor_counts")
+            == {
+                "mass": 2,
+                "clock": 48,
+                "gamma": 24,
+                "sector26": 1,
+                "spectral": 2,
+            }
+        ),
+        "full_exposure_label_breaking_factorization_identifies_minimal_breakers": (
+            full_exposure_label_breaking_factorization.get("checks", {}).get(
+                "minimal_axis_identity_sets_are_exact"
+            )
+            is True
+            and full_exposure_label_breaking_factorization.get("checks", {}).get(
+                "minimal_atomic_identity_sets_are_exact"
+            )
+            is True
+            and full_exposure_label_breaking_factorization.get("checks", {}).get(
+                "atomic_counts_identify_true_single_label_breakers"
+            )
+            is True
+        ),
+        "full_exposure_canonical_labelled_frame_is_certified": (
+            full_exposure_canonical_labelled_frame_certified
+        ),
+        "full_exposure_canonical_labelled_frame_is_identity_rigid": (
+            full_exposure_canonical_labelled_frame.get("checks", {}).get(
+                "canonical_frame_key_is_injective"
+            )
+            is True
+            and full_exposure_canonical_labelled_frame.get("checks", {}).get(
+                "minimal_breaker_frame_has_identity_stabilizer"
+            )
+            is True
+            and full_exposure_canonical_labelled_frame_derived.get(
+                "canonical_frame_summary", {}
+            ).get("frame_key_count")
+            == 20
+        ),
+        "full_exposure_canonical_labelled_frame_selects_packet239_intrinsically": (
+            full_exposure_canonical_labelled_frame.get("checks", {}).get(
+                "zero_pair_rule_selects_packet239_intrinsically"
+            )
+            is True
+            and full_exposure_canonical_labelled_frame.get("checks", {}).get(
+                "selection_rule_is_id_free"
+            )
+            is True
+            and full_exposure_canonical_labelled_frame_derived.get(
+                "packet239_selection", {}
+            ).get("selected_packet_ids")
+            == [239]
+        ),
+        "full_exposure_label_coordinate_transition_operator_is_certified": (
+            full_exposure_label_coordinate_transition_operator_certified
+        ),
+        "full_exposure_label_coordinate_transition_operator_has_expected_blocks": (
+            full_exposure_label_coordinate_transition_operator.get("checks", {}).get(
+                "label_operator_has_expected_weight_profile"
+            )
+            is True
+            and full_exposure_label_coordinate_transition_operator.get("checks", {}).get(
+                "label_operator_has_ten_uniform_doublet_blocks"
+            )
+            is True
+            and full_exposure_label_coordinate_transition_operator_derived.get(
+                "transition_summary", {}
+            ).get("edge_kind_weight_histogram")
+            == {"active_partner|4": 20, "source_loop|2": 20}
+        ),
+        "full_exposure_label_coordinate_transition_operator_identifies_zero_pair_transition": (
+            full_exposure_label_coordinate_transition_operator.get("checks", {}).get(
+                "zero_pair_coordinate_transitions_are_identified"
+            )
+            is True
+            and full_exposure_label_coordinate_transition_operator_derived.get(
+                "zero_pair_target_weights", {}
+            ).get("active_partner", {})
+            .get("witness_target_packet_id")
+            == 238
+            and full_exposure_label_coordinate_transition_operator_derived.get(
+                "zero_pair_target_weights", {}
+            ).get("source_loop", {})
+            .get("witness_target_packet_id")
+            == 239
+        ),
+        "full_exposure_label_coordinate_spectral_boundary_is_certified": (
+            full_exposure_label_coordinate_spectral_boundary_certified
+        ),
+        "full_exposure_label_coordinate_spectral_boundary_diagonalizes_operator": (
+            full_exposure_label_coordinate_spectral_boundary.get("checks", {}).get(
+                "spectra_match_ten_uniform_doublets"
+            )
+            is True
+            and full_exposure_label_coordinate_spectral_boundary_derived.get(
+                "global_spectrum", {}
+            ).get("adjacency_eigenvalue_histogram")
+            == {"-2": 10, "6": 10}
+        ),
+        "full_exposure_label_coordinate_spectral_boundary_rejects_zero_pair_eigenboundary": (
+            full_exposure_label_coordinate_spectral_boundary.get("checks", {}).get(
+                "zero_pair_delta_is_not_an_eigenvector_or_left_eigenfunctional"
+            )
+            is True
+            and full_exposure_label_coordinate_spectral_boundary.get("checks", {}).get(
+                "zero_pair_singleton_dirichlet_spectrum_is_not_unique"
+            )
+            is True
+            and full_exposure_label_coordinate_spectral_boundary.get("checks", {}).get(
+                "zero_pair_component_dirichlet_spectrum_is_not_unique"
+            )
+            is True
+        ),
+        "full_exposure_label_coordinate_green_response_is_certified": (
+            full_exposure_label_coordinate_green_response_certified
+        ),
+        "full_exposure_label_coordinate_green_response_resolves_zero_pair_source": (
+            full_exposure_label_coordinate_green_response.get("checks", {}).get(
+                "zero_pair_source_is_unique_and_targets_packet238"
+            )
+            is True
+            and full_exposure_label_coordinate_green_response.get("checks", {}).get(
+                "zero_pair_response_has_two_coordinate_support"
+            )
+            is True
+            and full_exposure_label_coordinate_green_response_derived.get(
+                "zero_pair_source_response", {}
+            ).get("support_witness_packet_ids")
+            == [239, 238]
+        ),
+        "full_exposure_label_coordinate_green_response_identities_hold_exactly": (
+            full_exposure_label_coordinate_green_response.get("checks", {}).get(
+                "adjacency_resolvent_identity_holds_exactly"
+            )
+            is True
+            and full_exposure_label_coordinate_green_response.get("checks", {}).get(
+                "markov_resolvent_identity_holds_exactly"
+            )
+            is True
+            and full_exposure_label_coordinate_green_response.get("checks", {}).get(
+                "massive_laplacian_green_identity_holds_exactly"
+            )
+            is True
+        ),
+        "full_exposure_label_coordinate_green_response_is_label_specific_not_operator_unique": (
+            full_exposure_label_coordinate_green_response.get("checks", {}).get(
+                "all_sources_have_same_analytic_response_profile"
+            )
+            is True
+            and full_exposure_label_coordinate_green_response.get("checks", {}).get(
+                "zero_pair_response_profile_is_not_operator_unique"
+            )
+            is True
+        ),
+        "full_exposure_zero_pair_propagator_charge_kernel_is_certified": (
+            full_exposure_zero_pair_propagator_charge_kernel_certified
+        ),
+        "full_exposure_zero_pair_propagator_charge_kernel_has_expected_support_axes": (
+            full_exposure_zero_pair_propagator_charge_kernel.get("checks", {}).get(
+                "support_has_shared_propagator_axes"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_charge_kernel.get("checks", {}).get(
+                "support_is_same_radical_full_exposure_pair"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_charge_kernel_derived.get(
+                "propagator_charge_kernel_summary", {}
+            ).get("support_packet_ids")
+            == [239, 238]
+        ),
+        "full_exposure_zero_pair_propagator_charge_kernel_clears_sector26_denominator": (
+            full_exposure_zero_pair_propagator_charge_kernel.get("checks", {}).get(
+                "raw_half_residues_are_recorded_as_non_native_z26_classes"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_charge_kernel.get("checks", {}).get(
+                "denominator_cleared_sector26_images_are_integral_and_complementary"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_charge_kernel_derived.get(
+                "propagator_charge_kernel_summary", {}
+            ).get("plus_denominator_cleared_sector26_image")
+            == {
+                "sector26_clock_delta_mod26": 8,
+                "sector26_clock_pair_mod26": [24, 6],
+                "sector26_clock_sum_mod26": 4,
+            }
+            and full_exposure_zero_pair_propagator_charge_kernel_derived.get(
+                "propagator_charge_kernel_summary", {}
+            ).get("minus_denominator_cleared_sector26_image")
+            == {
+                "sector26_clock_delta_mod26": 18,
+                "sector26_clock_pair_mod26": [2, 20],
+                "sector26_clock_sum_mod26": 22,
+            }
+        ),
+        "full_exposure_zero_pair_propagator_symmetry_ward_is_certified": (
+            full_exposure_zero_pair_propagator_symmetry_ward_certified
+        ),
+        "full_exposure_zero_pair_propagator_symmetry_ward_has_identity_invariance": (
+            full_exposure_zero_pair_propagator_symmetry_ward.get("checks", {}).get(
+                "surviving_label_preserving_symmetry_is_identity"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_symmetry_ward.get("checks", {}).get(
+                "kernel_is_fixed_by_surviving_label_symmetry"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_symmetry_ward_derived.get(
+                "symmetry_summary", {}
+            ).get("surviving_label_preserving_symmetry_order")
+            == 1
+        ),
+        "full_exposure_zero_pair_propagator_symmetry_ward_is_packet_source_compatible": (
+            full_exposure_zero_pair_propagator_symmetry_ward.get("checks", {}).get(
+                "individual_kernel_residues_are_not_closed_return_ward_characters"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_symmetry_ward.get("checks", {}).get(
+                "paired_kernel_residue_is_sector26_neutral"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_symmetry_ward.get("checks", {}).get(
+                "public_flux_balance_context_is_rank_zero"
+            )
+            is True
+            and full_exposure_zero_pair_propagator_symmetry_ward_derived.get(
+                "compatibility_matrix", {}
+            ).get("needs_source_to_closed_return_coupling_for_stronger_claim")
+            is True
+        ),
+        "full_exposure_zero_pair_source_to_closed_return_coupling_is_certified": (
+            full_exposure_zero_pair_source_to_closed_return_coupling_certified
+        ),
+        "full_exposure_zero_pair_source_to_closed_return_coupling_proves_individual_no_go": (
+            full_exposure_zero_pair_source_to_closed_return_coupling.get("checks", {}).get(
+                "individual_plus_minus_couplings_are_impossible"
+            )
+            is True
+            and full_exposure_zero_pair_source_to_closed_return_coupling_derived.get(
+                "coupling_summary", {}
+            ).get("ward_character_image")
+            == [0, 13]
+            and full_exposure_zero_pair_source_to_closed_return_coupling_derived.get(
+                "source_to_closed_return_coupling_matrix", {}
+            ).get("individual_plus_source")
+            == "no Ward-character-preserving target"
+            and full_exposure_zero_pair_source_to_closed_return_coupling_derived.get(
+                "source_to_closed_return_coupling_matrix", {}
+            ).get("individual_minus_source")
+            == "no Ward-character-preserving target"
+        ),
+        "full_exposure_zero_pair_source_to_closed_return_coupling_selects_only_trivial_neutral_map": (
+            full_exposure_zero_pair_source_to_closed_return_coupling.get("checks", {}).get(
+                "canonical_neutral_coupling_maps_to_ward_kernel"
+            )
+            is True
+            and full_exposure_zero_pair_source_to_closed_return_coupling.get("checks", {}).get(
+                "nontrivial_neutral_coupling_is_not_selected_by_current_invariants"
+            )
+            is True
+            and full_exposure_zero_pair_source_to_closed_return_coupling_derived.get(
+                "coupling_summary", {}
+            )
+            .get("canonical_trivial_coupling", {})
+            .get("closed_return_mask")
+            == 0
+            and full_exposure_zero_pair_source_to_closed_return_coupling_derived.get(
+                "coupling_summary", {}
+            ).get("ward_kernel_size")
+            == 1024
+        ),
+        "full_exposure_zero_pair_ward_kernel_height_selector_is_certified": (
+            full_exposure_zero_pair_ward_kernel_height_selector_certified
+        ),
+        "full_exposure_zero_pair_ward_kernel_height_selector_selects_mask288": (
+            full_exposure_zero_pair_ward_kernel_height_selector.get("checks", {}).get(
+                "selector_has_unique_minimum_positive_kernel_action"
+            )
+            is True
+            and full_exposure_zero_pair_ward_kernel_height_selector.get("checks", {}).get(
+                "selected_mask_is_nonzero_ward_kernel_mask"
+            )
+            is True
+            and full_exposure_zero_pair_ward_kernel_height_selector_derived.get(
+                "selector_summary", {}
+            ).get("selected_mask")
+            == 288
+            and full_exposure_zero_pair_ward_kernel_height_selector_derived.get(
+                "selector_summary", {}
+            ).get("selected_height_action")
+            == 1065984
+        ),
+        "full_exposure_zero_pair_ward_kernel_height_selector_lifts_paired_source_nontrivially": (
+            full_exposure_zero_pair_ward_kernel_height_selector.get("checks", {}).get(
+                "selected_mask_is_nontrivial_sourced_ward_lift"
+            )
+            is True
+            and full_exposure_zero_pair_ward_kernel_height_selector.get("checks", {}).get(
+                "individual_source_no_go_remains_in_force"
+            )
+            is True
+            and full_exposure_zero_pair_ward_kernel_height_selector_derived.get(
+                "selector_summary", {}
+            )
+            .get("source_lift", {})
+            .get("height_selected_nontrivial_mask")
+            == 288
+        ),
+        "full_exposure_zero_pair_selected_sourced_ward_balance_is_certified": (
+            full_exposure_zero_pair_selected_sourced_ward_balance_certified
+        ),
+        "full_exposure_zero_pair_selected_sourced_ward_balance_uses_mask288": (
+            full_exposure_zero_pair_selected_sourced_ward_balance.get("checks", {}).get(
+                "selector_selects_mask288"
+            )
+            is True
+            and full_exposure_zero_pair_selected_sourced_ward_balance.get("checks", {}).get(
+                "selected_balance_is_first_nontrivial_sourced_target"
+            )
+            is True
+            and full_exposure_zero_pair_selected_sourced_ward_balance_derived.get(
+                "sourced_balance_summary", {}
+            ).get("selected_mask")
+            == 288
+        ),
+        "full_exposure_zero_pair_selected_sourced_ward_balance_closes_public_and_hidden_terms": (
+            full_exposure_zero_pair_selected_sourced_ward_balance.get("checks", {}).get(
+                "selected_bms_row_closes_public_balance"
+            )
+            is True
+            and full_exposure_zero_pair_selected_sourced_ward_balance.get("checks", {}).get(
+                "selected_bms_row_closes_hidden_balance"
+            )
+            is True
+            and full_exposure_zero_pair_selected_sourced_ward_balance_derived.get(
+                "sourced_balance_summary", {}
+            )
+            .get("selected_hidden_terms", {})
+            .get("hidden_balance_error")
+            == 0
+        ),
+        "full_exposure_zero_pair_selected_sourced_ward_balance_is_scattering_realized": (
+            full_exposure_zero_pair_selected_sourced_ward_balance.get("checks", {}).get(
+                "gamma8_to_selected_scattering_step_is_generator5"
+            )
+            is True
+            and full_exposure_zero_pair_selected_sourced_ward_balance.get("checks", {}).get(
+                "selected_to_gamma8_reverse_scattering_step_is_generator5"
+            )
+            is True
+            and full_exposure_zero_pair_selected_sourced_ward_balance_derived.get(
+                "sourced_balance_summary", {}
+            )
+            .get("scattering_step", {})
+            .get("generator_cycle_id")
+            == 5
+        ),
+        "full_exposure_zero_pair_sourced_balance_cone_is_certified": (
+            full_exposure_zero_pair_sourced_balance_cone_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_cone_classifies_gamma8_star": (
+            full_exposure_zero_pair_sourced_balance_cone.get("checks", {}).get(
+                "gamma8_star_has_expected_kernel_and_odd_targets"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_cone.get("checks", {}).get(
+                "height_ordered_kernel_targets_are_all_balanced"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_cone_derived.get(
+                "cone_summary", {}
+            ).get("nonzero_kernel_target_count")
+            == 9
+        ),
+        "full_exposure_zero_pair_sourced_balance_cone_keeps_mask288_as_height_apex": (
+            full_exposure_zero_pair_sourced_balance_cone.get("checks", {}).get(
+                "mask288_is_unique_nonzero_height_apex"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_cone_derived.get(
+                "cone_summary", {}
+            )
+            .get("height_apex", {})
+            .get("mask")
+            == 288
+            and full_exposure_zero_pair_sourced_balance_cone_derived.get(
+                "cone_summary", {}
+            )
+            .get("height_apex", {})
+            .get("height_gap_to_next")
+            == 82944
+        ),
+        "full_exposure_zero_pair_sourced_balance_cone_rejects_single_apex_algebraic_generation": (
+            full_exposure_zero_pair_sourced_balance_cone.get("checks", {}).get(
+                "mask288_does_not_generate_target_set_as_f2_span"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_cone.get("checks", {}).get(
+                "mask288_has_only_generator3_one_step_kernel_preserving_exit"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_cone_derived.get(
+                "cone_summary", {}
+            ).get("apex_f2_span")
+            == [0, 288]
+        ),
+        "full_exposure_zero_pair_sourced_balance_shortest_paths_is_certified": (
+            full_exposure_zero_pair_sourced_balance_shortest_paths_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_shortest_paths_cover_all_nonzero_kernel_masks": (
+            full_exposure_zero_pair_sourced_balance_shortest_paths.get("checks", {}).get(
+                "all_nonzero_ward_kernel_masks_are_covered"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_shortest_paths.get("checks", {}).get(
+                "all_shortest_path_witnesses_end_at_target"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_shortest_paths_derived.get(
+                "shortest_path_summary", {}
+            ).get("target_count")
+            == 1023
+        ),
+        "full_exposure_zero_pair_sourced_balance_shortest_paths_close_all_target_balances": (
+            full_exposure_zero_pair_sourced_balance_shortest_paths.get("checks", {}).get(
+                "all_targets_close_public_and_hidden_balance"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_shortest_paths.get("checks", {}).get(
+                "all_paths_transfer_odd_source_to_kernel_clock"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_shortest_paths.get("checks", {}).get(
+                "all_signed_height_deltas_match_target_minus_source"
+            )
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_shortest_paths_keep_mask288_minimum": (
+            full_exposure_zero_pair_sourced_balance_shortest_paths.get("checks", {}).get(
+                "mask288_remains_unique_shortest_path_action_apex"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_shortest_paths_derived.get(
+                "shortest_path_summary", {}
+            )
+            .get("unique_minimum_path", {})
+            .get("target_mask")
+            == 288
+            and full_exposure_zero_pair_sourced_balance_shortest_paths_derived.get(
+                "shortest_path_summary", {}
+            )
+            .get("unique_minimum_path", {})
+            .get("shortest_path_action")
+            == 691200
+        ),
+        "full_exposure_zero_pair_sourced_balance_transport_families_is_certified": (
+            full_exposure_zero_pair_sourced_balance_transport_families_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_transport_families_compress_scalar_data": (
+            full_exposure_zero_pair_sourced_balance_transport_families.get("checks", {}).get(
+                "path_and_height_scalar_families_have_805_values"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_transport_families.get("checks", {}).get(
+                "full_transport_signature_compresses_to_991_families"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_transport_families_derived.get(
+                "transport_family_summary", {}
+            ).get("transport_signature_family_count")
+            == 991
+        ),
+        "full_exposure_zero_pair_sourced_balance_transport_families_resolve_symmetry_levels": (
+            full_exposure_zero_pair_sourced_balance_transport_families.get("checks", {}).get(
+                "hidden_split_c2_compresses_targets_but_breaks_action_height_labels"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_transport_families.get("checks", {}).get(
+                "full_augmented_ledger_symmetry_compression_is_identity"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_transport_families_derived.get(
+                "transport_family_summary", {}
+            ).get("full_augmented_ledger_stabilizer_order")
+            == 1
+        ),
+        "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_is_certified": (
+            full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_identifies_c2": (
+            full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient.get(
+                "checks", {}
+            ).get("source_and_kernel_target_preserving_group_is_hidden_split_c2")
+            is True
+            and full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient.get(
+                "checks", {}
+            ).get("hidden_split_c2_quotient_has_543_kernel_target_orbits")
+            is True
+            and full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_derived.get(
+                "label_relaxation_summary", {}
+            ).get("hidden_split_c2_orbit_count")
+            == 543
+        ),
+        "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_names_forgotten_labels": (
+            full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient.get(
+                "checks", {}
+            ).get(
+                "hidden_split_c2_forgets_target_support_step_action_height_and_fourier_refinements"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient.get(
+                "checks", {}
+            ).get("nonidentity_c2_requires_forgetting_six_augmented_ledger_axes")
+            is True
+            and full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_derived.get(
+                "public_level_summary", {}
+            ).get("full_public_orbit_count")
+            == 45
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_is_exact": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly.get("checks", {}).get(
+                "tau_cocycle_law_holds_for_action_and_height"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly.get(
+                "checks", {}
+            ).get("path_action_and_target_height_have_the_same_c2_cocycle")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly.get(
+                "checks", {}
+            ).get("representative_counterterm_is_exact_coboundary_for_action_and_height")
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_descends_balance": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly.get("checks", {}).get(
+                "twisted_quotient_hidden_balance_descends_on_every_target"
+            )
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly.get(
+                "checks", {}
+            ).get("public_balance_descends_without_extra_anomaly")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_derived.get(
+                "anomaly_summary", {}
+            ).get("nonzero_anomaly_orbit_count")
+            == 472
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_identifies_primal_operator": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger.get(
+                "checks", {}
+            ).get("primal_operator_is_the_nonidentity_hidden_split_c2")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger.get(
+                "checks", {}
+            ).get("gamma8_is_fixed_source_anchor_not_the_quotient_anomaly")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_derived.get(
+                "operator_summary", {}
+            ).get("quotient_anomaly_is_gamma8")
+            is False
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_is_markov_spectral_balanced": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger.get(
+                "checks", {}
+            ).get("primal_operator_is_a_permutation_markov_operator")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger.get(
+                "checks", {}
+            ).get("orbit_projection_is_markov_and_idempotent")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger.get(
+                "checks", {}
+            ).get("quotient_ledger_is_ward_balanced")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_derived.get(
+                "operator_summary", {}
+            ).get("orbit_count")
+            == 543
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_has_canonical_move_orbit": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator.get(
+                "checks", {}
+            ).get("move_set_is_c2_closed_and_kernel_preserving")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator.get(
+                "checks", {}
+            ).get("move_set_contains_generator3_and_tau_image_composite")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_derived.get(
+                "operator_summary", {}
+            ).get("move_set_delta_masks")
+            == [8, 1034]
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_is_markov_spectral_stationary": (
+            full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator.get(
+                "checks", {}
+            ).get("operator_is_markov_on_every_quotient_orbit")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator.get(
+                "checks", {}
+            ).get("spectrum_matches_component_normal_forms")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator.get(
+                "checks", {}
+            ).get("stationary_data_is_ward_balanced")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_derived.get(
+                "operator_summary", {}
+            ).get("component_count")
+            == 144
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_classifies_all_hidden_neutral_moves": (
+            full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+                "checks", {}
+            ).get("all_c2_hidden_neutral_move_orbits_are_classified")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_derived.get(
+                "family_summary", {}
+            ).get("move_orbit_count")
+            == 543
+            and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_derived.get(
+                "family_summary", {}
+            ).get("fixed_move_orbit_count")
+            == 63
+            and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_derived.get(
+                "family_summary", {}
+            ).get("paired_move_orbit_count")
+            == 480
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_is_markov_spectral_stationary": (
+            full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+                "checks", {}
+            ).get("all_move_orbits_are_hidden_neutral_and_markov_symmetric")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+                "checks", {}
+            ).get("every_family_member_is_stationary_ward_balanced")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+                "checks", {}
+            ).get("operator_family_has_three_component_types")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+                "checks", {}
+            ).get("operator_family_has_three_spectrum_types")
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_separates_primitive_canonical_from_action_minimal": (
+            full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+                "checks", {}
+            ).get("primitive_seeded_operator_is_unique_and_matches_prior_scattering_operator")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+                "checks", {}
+            ).get("primitive_seeded_operator_is_not_global_action_minimum")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_move_orbit_family.get(
+                "checks", {}
+            ).get("paired_action_minimum_is_not_the_primitive_seeded_operator")
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_splits_natural_criteria": (
+            full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+                "checks", {}
+            ).get("primitive_seeded_selector_is_unique_prior_operator")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+                "checks", {}
+            ).get("global_action_selector_is_unique_fixed_minimum")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+                "checks", {}
+            ).get("paired_action_selector_is_unique_paired_minimum")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+                "checks", {}
+            ).get("selection_criteria_are_not_equivalent")
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_spectral_gap_is_explicit": (
+            full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+                "checks", {}
+            ).get("raw_absolute_gap_is_degenerate_on_entire_family")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+                "checks", {}
+            ).get("lazy_gap_selects_exactly_fixed_singleton_family")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+                "checks", {}
+            ).get("lazy_gap_action_tiebreak_is_global_action_minimum")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_dynamics_selector.get(
+                "checks", {}
+            ).get("paired_lazy_gap_action_tiebreak_is_paired_action_minimum")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_derived.get(
+                "selector_summary", {}
+            ).get("lazy_spectral_gap_selected_count")
+            == 63
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_typecheck_artifact_present": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get(
+                "checks", {}
+            ).get("agda_source_exists_and_is_cubical_safe")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get(
+                "checks", {}
+            ).get("agda_source_imports_cubical_library")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get(
+                "checks", {}
+            ).get("agda_interface_artifact_present_after_typecheck")
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_names_core_uf_interface": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get(
+                "checks", {}
+            ).get("agda_source_names_core_hit_and_universe_records")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get(
+                "checks", {}
+            ).get("agda_source_embeds_bridge_counts")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton.get(
+                "checks", {}
+            ).get("agda_source_proves_contractible_singleton_fibers")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_derived.get(
+                "source_summary", {}
+            ).get("module")
+            == "C2SelectorFoundation"
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_names_all_states_and_dynamics": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get(
+                "checks", {}
+            ).get("generated_source_has_all_quotient_state_constructors")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get(
+                "checks", {}
+            ).get("generated_source_has_all_dynamics_constructors")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get(
+                "checks", {}
+            ).get("generated_source_has_all_dynamics_code_rows")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_derived.get(
+                "source_summary", {}
+            )
+            .get("constructor_counts", {})
+            .get("quotient_state")
+            == 543
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_derived.get(
+                "source_summary", {}
+            )
+            .get("constructor_counts", {})
+            .get("dynamics")
+            == 543
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_names_all_selector_memberships": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get(
+                "checks", {}
+            ).get("generated_source_has_all_selector_memberships")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get(
+                "checks", {}
+            ).get("generated_source_has_expected_selector_fiber_counts")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration.get(
+                "checks", {}
+            ).get("generated_agda_interface_artifact_present_after_typecheck")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_derived.get(
+                "expected_selector_membership_count"
+            )
+            == 1091
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_have_counts_and_eliminators": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties.get(
+                "checks", {}
+            ).get("properties_source_has_counting_lemmas")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties.get(
+                "checks", {}
+            ).get("properties_source_has_exhaustive_eliminators")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_derived.get(
+                "source_summary", {}
+            )
+            .get("proof_counts", {})
+            .get("quotient_state_elim_clauses")
+            == 543
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_derived.get(
+                "source_summary", {}
+            )
+            .get("proof_counts", {})
+            .get("dynamics_elim_clauses")
+            == 543
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_have_decidable_equality": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties.get(
+                "checks", {}
+            ).get("properties_source_has_id_roundtrips")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties.get(
+                "checks", {}
+            ).get("properties_source_has_decidable_equality_and_set_witnesses")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties.get(
+                "checks", {}
+            ).get("properties_agda_interface_artifact_present_after_typecheck")
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_decision_is_total": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership.get(
+                "checks", {}
+            ).get("selector_membership_decision_function_is_total_over_selectors_and_dynamics")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_derived.get(
+                "source_summary", {}
+            )
+            .get("decision_counts", {})
+            .get("decision_clause_count")
+            == 4344
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_counts_match_fibers": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership.get(
+                "checks", {}
+            ).get("selector_membership_decision_yes_no_counts_match_fibers")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_derived.get(
+                "source_summary", {}
+            )
+            .get("decision_counts", {})
+            .get("yes_clause_count")
+            == 1091
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_derived.get(
+                "source_summary", {}
+            )
+            .get("decision_counts", {})
+            .get("no_clause_count")
+            == 3253
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_has_all_fiber_proofs": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership.get(
+                "checks", {}
+            ).get("selector_membership_source_has_all_fiber_count_proofs")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership.get(
+                "checks", {}
+            ).get("selector_membership_agda_interface_artifact_present_after_typecheck")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_derived.get(
+                "source_summary", {}
+            )
+            .get("decision_counts", {})
+            .get("fiber_count_proof_count")
+            == 8
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_are_fin1": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons.get(
+                "checks", {}
+            ).get("singleton_source_has_all_five_iso_witnesses")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons.get(
+                "checks", {}
+            ).get("singleton_agda_interface_artifact_present_after_typecheck")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_derived.get(
+                "source_summary", {}
+            )
+            .get("proof_counts", {})
+            .get("fin_equivalence_count")
+            == 5
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_is_fin63": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63.get(
+                "checks", {}
+            ).get("lazy_source_has_exact_63_fiber_witnesses")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63.get(
+                "checks", {}
+            ).get("lazy63_agda_interface_artifact_present_after_typecheck")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_derived.get(
+                "source_summary", {}
+            )
+            .get("proof_counts", {})
+            .get("fin_equivalence_count")
+            == 1
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_derived.get(
+                "lazy_selector", {}
+            ).get("selected_count")
+            == 63
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_is_fin480": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480.get(
+                "checks", {}
+            ).get("paired_lazy_source_has_exact_480_fiber_witnesses")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480.get(
+                "checks", {}
+            ).get("paired_lazy480_agda_interface_artifact_present_after_typecheck")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_derived.get(
+                "source_summary", {}
+            )
+            .get("proof_counts", {})
+            .get("fin_equivalence_count")
+            == 1
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_derived.get(
+                "paired_lazy_selector", {}
+            ).get("selected_count")
+            == 480
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_is_fin543": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543.get(
+                "checks", {}
+            ).get("raw_source_has_exact_543_fiber_witnesses")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543.get(
+                "checks", {}
+            ).get("raw543_agda_interface_artifact_present_after_typecheck")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_derived.get(
+                "source_summary", {}
+            )
+            .get("proof_counts", {})
+            .get("fin_equivalence_count")
+            == 1
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_derived.get(
+                "raw_selector", {}
+            ).get("selected_count")
+            == 543
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_non_singleton_spine_uses_actual_c2_kernel_orbits": (
+            RAW543_ACTUAL_C2_KERNEL_ORBITS_CSV.exists()
+            and all(
+                source.get("raw543_orbit_count") == 543
+                and source.get("fixed63_orbit_count") == 63
+                and source.get("paired480_two_cycle_orbit_count") == 480
+                for source in actual_c2_kernel_orbit_sources.values()
+            )
+            and all(
+                source.get("path") == str(RAW543_ACTUAL_C2_KERNEL_ORBITS_CSV)
+                for source in actual_c2_kernel_orbit_source_consumers.values()
+            )
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_preserves_sources": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization.get(
+                "checks", {}
+            ).get("shared_emitter_reproduces_certified_agda_sources")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization.get(
+                "checks", {}
+            ).get("all_agda_interfaces_remain_fresh")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_derived.get(
+                "factorized_generator_count"
+            )
+            == 4
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_is_compact_fin543": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed.get(
+                "checks", {}
+            ).get("indexed_source_has_fin543_equivalence")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed.get(
+                "checks", {}
+            ).get("indexed_source_has_no_fd_suc_constructor_normal_forms")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed.get(
+                "checks", {}
+            ).get("indexed_source_is_smaller_than_direct_raw543_source")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed.get(
+                "checks", {}
+            ).get("raw543_indexed_agda_interface_artifact_present_after_typecheck")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_derived.get(
+                "source_summary", {}
+            )
+            .get("proof_counts", {})
+            .get("fin_equivalence_count")
+            == 1
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_covers_lazy63_and_paired_lazy480": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split.get(
+                "checks", {}
+            ).get("indexed_split_covers_lazy63_and_paired_lazy480")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split.get(
+                "checks", {}
+            ).get("all_indexed_split_rows_certified")
+            is True
+            and indexed_split_row_by_name.get("lazy63", {})
+            .get("selector", {})
+            .get("selected_count")
+            == 63
+            and indexed_split_row_by_name.get("paired_lazy480", {})
+            .get("selector", {})
+            .get("selected_count")
+            == 480
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_sources_have_no_fd_suc_constructor_normal_forms": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split.get(
+                "checks", {}
+            ).get("all_indexed_split_sources_have_no_fd_suc_constructor_normal_forms")
+            is True
+            and all(
+                row.get("source_summary", {})
+                .get("compactness", {})
+                .get("fd_suc_occurrence_count")
+                == 0
+                for row in indexed_split_rows
+            )
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_covers_raw543_lazy63_and_paired_lazy480": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup.get(
+                "checks", {}
+            ).get("lookup_covers_raw543_lazy63_and_paired_lazy480")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup.get(
+                "checks", {}
+            ).get("all_lookup_rows_certified")
+            is True
+            and indexed_lookup_row_by_name.get("raw543", {})
+            .get("selector", {})
+            .get("selected_count")
+            == 543
+            and indexed_lookup_row_by_name.get("lazy63", {})
+            .get("selector", {})
+            .get("selected_count")
+            == 63
+            and indexed_lookup_row_by_name.get("paired_lazy480", {})
+            .get("selector", {})
+            .get("selected_count")
+            == 480
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_collapses_right_inverse_rows": (
+            all(
+                row.get("source_summary", {})
+                .get("compactness", {})
+                .get("inspect_occurrence_count")
+                == 0
+                and row.get("source_summary", {})
+                .get("compactness", {})
+                .get("inj_to_nat_occurrence_count")
+                == 0
+                and row.get("source_summary", {})
+                .get("compactness", {})
+                .get("to_from_id_occurrence_count")
+                == 0
+                and row.get("source_summary", {})
+                .get("compactness", {})
+                .get("from_to_id_occurrence_count")
+                == 1
+                and row.get("source_summary", {})
+                .get("proof_counts", {})
+                .get("right_inverse_from_to_id_definition_count")
+                == 1
+                for row in indexed_lookup_rows
+            )
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_sources_have_no_fd_suc_and_are_smaller": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup.get(
+                "checks", {}
+            ).get("all_lookup_sources_have_no_fd_suc_constructor_normal_forms")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup.get(
+                "checks", {}
+            ).get("all_lookup_sources_are_smaller_than_previous_indexed_sources")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup.get(
+                "checks", {}
+            ).get("lookup_witness_table_source_is_halloween_package")
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_is_certified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_certified
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_has_1086_rows": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_table_json_has_1086_rows")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_table_csv_has_1086_rows")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_derived.get(
+                "lookup_table_row_count"
+            )
+            == 1086
+            and lookup_table_row_count_by_selector == {"lazy63": 63, "paired_lazy480": 480, "raw543": 543}
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_matches_lookup_sources": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_table_rows_match_lookup_agda_sources")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_table_selected_ids_match_actual_c2_kernel_order")
+            is True
+            and all(
+                summary.get("all_exact_clauses_in_source") is True
+                and summary.get("indices_are_contiguous") is True
+                for summary in lookup_table_selector_summaries
+            )
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_soundness_agda_typechecked": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_table_soundness_agda_interface_artifact_present_after_typecheck")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_table_soundness_exports_three_fin_equivalences")
+            is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_source_package_verified": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_source_package_standalone_verifier_passes")
+            is True
+            and full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_source_package_uses_only_halloween_source_and_lookup_artifacts")
+            is True
+            and lookup_table_source_package_certificate.get("status")
+            == "D20_C2_SELECTOR_LOOKUP_WITNESS_SOURCE_PACKAGE_VERIFIED"
+            and lookup_table_source_package_certificate.get("all_checks_pass") is True
+        ),
+        "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_source_package_registry_id_threaded": (
+            full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table.get(
+                "checks", {}
+            ).get("lookup_source_package_registry_id_is_threaded")
+            is True
+            and lookup_table_source_package.get("source_registry_binding", {}).get(
+                "all_checks_pass"
+            )
+            is True
+        ),
         "character_table_only_hash_materialized": not character_values_materialized
         and character.get("character_table_sha256") is not None
         and character.get("shape") == [39, 985],
@@ -1406,7 +4092,7 @@ def build_report() -> dict[str, Any]:
     }
     all_checks_pass = all(checks.values())
     status = (
-        "D20_CYCLE8_PI33_FINITE_VIRASORO_GENERATOR_ALGEBRA_CERTIFIED"
+        "D20_CYCLE8_PI33_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_CERTIFIED"
         if all_checks_pass
         else "D20_CYCLE8_PI33_PROJECTION_OBLIGATION_NEEDS_REVIEW"
     )
@@ -1432,7 +4118,51 @@ def build_report() -> dict[str, Any]:
             "reduced_amplitude_quotient_scattering_automaton_certified; "
             "amplitude_quotient_fourier_mode_classifier_certified; "
             "finite_virasoro_string_kernel_candidate_certified; "
-            "finite_virasoro_generator_algebra_certified"
+            "finite_virasoro_generator_algebra_certified; "
+            "finite_central_extension_anomaly_cocycle_certified; "
+            "finite_parity_central_extension_group_certified; "
+            "projective_kernel_packet_tenfold_way_certified; "
+            "projective_packet_spectral_charge_table_certified; "
+            "projective_packet_charge_frame_classifier_certified; "
+            "packet239_stabilizer_seed_candidate_certified; "
+            "packet239_seed_propagation_certified; "
+            "full_exposure_packet_propagation_cells_certified; "
+            "full_exposure_packet_propagation_graph_certified; "
+            "full_exposure_rank10_tenfold_alignment_certified; "
+            "full_exposure_radical_gate_stabilizer_certified; "
+            "full_exposure_radical_gate_stabilizer_lift_certified; "
+            "full_exposure_label_breaking_factorization_certified; "
+            "full_exposure_canonical_labelled_frame_certified; "
+            "full_exposure_label_coordinate_transition_operator_certified; "
+            "full_exposure_label_coordinate_spectral_boundary_certified; "
+            "full_exposure_label_coordinate_green_response_certified; "
+            "full_exposure_zero_pair_propagator_charge_kernel_certified; "
+            "full_exposure_zero_pair_propagator_symmetry_ward_certified; "
+            "full_exposure_zero_pair_source_to_closed_return_coupling_certified; "
+            "full_exposure_zero_pair_ward_kernel_height_selector_certified; "
+            "full_exposure_zero_pair_selected_sourced_ward_balance_certified; "
+            "full_exposure_zero_pair_sourced_balance_cone_certified; "
+            "full_exposure_zero_pair_sourced_balance_shortest_paths_certified; "
+            "full_exposure_zero_pair_sourced_balance_transport_families_certified; "
+            "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_certified; "
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_certified"
         ),
         "object": "d20",
         "target": (
@@ -1471,7 +4201,152 @@ def build_report() -> dict[str, Any]:
             "The general obstruction-correction suite proves this is one row of a full 11-coordinate table: "
             "every basis coordinate is self-anomalous and admits a rank-one correction. The global "
             "counterterm-lattice theorem activates all 11 corrections together, annihilates the full "
-            "half-anomaly form, and makes normalized R33 an additive order-two character on all 2048 masks."
+            "half-anomaly form, and makes normalized R33 an additive order-two character on all 2048 masks. "
+            "The finite central-extension/anomaly cocycle theorem then separates the sector-26 clock "
+            "nonlinearity from central charge: the canonical Z/26 defect is symmetric with zero alternating "
+            "central term, while a unique compatible F2 parity cocycle survives on the paired cross-return "
+            "composite triangle. The finite parity central-extension group theorem integrates that cocycle: "
+            "the resulting group is D8 x C2^8, with the composite triangle as its exact named commutator "
+            "support and a signed projective action on the 1024-state kernel. The projective kernel packet "
+            "theorem decomposes that signed action into 512 two-dimensional central-negative packets, attaches "
+            "sector-26 and Loop_297 exposure data, and records the finite tenfold-way witness: an 8+2 Bott "
+            "split with canonical AI module structure and an optional BDI active-Clifford Hamiltonian readout. "
+            "The packet spectral/charge table turns those packets into a 512-row ledger of spectral traces, "
+            "sector-26 clocks, hidden-clock cancellation, gamma_8 incidence, and Loop_297 atom exposure; it "
+            "isolates packet 239 as the unique full-exposure sector-26 clock-zero packet. The packet charge-frame "
+            "classifier names the mass, clock, exposure, gamma_8, hidden, central, and tenfold axes and proves "
+            "packet 239 is unique by both the named charge frame and the fine spectral/charge key. The "
+            "packet-239 stabilizer theorem then tests the vacuum/seed interpretation: packet 239 has the same "
+            "setwise, scalar, and identity-kernel stabilizer orders as every other packet, so it is a "
+            "charge-frame seed candidate rather than a unique symmetry-fixed vacuum. The packet-239 seed "
+            "propagation theorem then pushes this seed through the non-kernel crossing generators 5, 9, and 10: "
+            "one-step crossings reach two odd packet shadows, while paired cross-returns close only on packets "
+            "238 and 239 with hidden-transfer cancellation. The full-exposure propagation-cell theorem "
+            "generalizes this seed law to all 20 full-exposure packets: every source has two odd shadows, "
+            "six paired cross-returns, source/active-partner closure, and the same certified flux/action "
+            "histograms. The full-exposure propagation-graph theorem then turns those cells into a weighted "
+            "20-vertex transition operator, decomposing it into ten closed active-partner doublets with "
+            "block [[2,4],[4,2]], spectrum 6^10 plus (-2)^10, and per-source signed flux cancellation. "
+            "The rank-10/tenfold alignment theorem maps those doublets into the certified 8+2 kernel "
+            "coordinate split and proves the crucial non-basis result: the ten components match the "
+            "rank-10 dimension by count, but their moving support has rank 6, with common radical core "
+            "83 and nonlinear radical gate x2 or (x3 and x5). The radical-gate stabilizer theorem "
+            "then classifies this nonlinear gate symmetry: affine order 384, linear order 64, a "
+            "six-point complement prism in x2=0, support orbits of sizes 8 and 2, and the x7 flip "
+            "as the only pure translation symmetry. The radical-gate stabilizer lift theorem then "
+            "separates graph/action symmetry from labelled physics: all 384 affine stabilizers lift "
+            "to the unlabelled weighted packet graph, the active-flip graph/action extension has order "
+            "393216, the combined gamma marker leaves only six canonical affine lifts, and the full "
+            "charge-frame plus fine spectral labels leave only identity. The label-breaking factorization "
+            "theorem then names the actual breaker axes: mass alone leaves two canonical lifts, clock "
+            "leaves 48, gamma leaves 24, spectral trace leaves two, the full sector-26 clock family "
+            "leaves identity, and at atomic resolution sector26_clock_sum_mod26 and the fine spectral "
+            "key each individually kill every nonidentity radical-gate lift while sector26_clock_delta "
+            "kills none. The canonical labelled full-exposure frame theorem then turns those breakers "
+            "into an injective 20-packet coordinate frame and recovers packet 239 without using its "
+            "external id: it is the unique full-exposure sector-26 zero-pair fixed point, with clock "
+            "pair [0,0], sector-26 sum 0, and sector-26 delta 0. The label-coordinate transition "
+            "operator theorem then rewrites the full-exposure two-step graph in intrinsic frame labels: "
+            "the operator is still ten uniform [[2,4],[4,2]] doublet blocks, and the zero-pair coordinate "
+            "has a self-loop of weight two plus an active-partner transition of weight four. The "
+            "label-coordinate spectral-boundary theorem diagonalizes this operator into ten plus/minus "
+            "doublets and proves the zero-pair coordinate is label-distinguished, but not an eigenvector, "
+            "left eigenfunctional, singleton Dirichlet spectrum, or component Dirichlet spectrum. The "
+            "label-coordinate Green-response theorem then inserts the zero-pair labelled source and computes "
+            "the exact adjacency, Markov, and massive-Laplacian responses: the support is precisely packet "
+            "239 and active partner packet 238, with pole residues fixed by the plus/minus doublet spectrum. "
+            "The zero-pair propagator charge-kernel theorem then pushes those pole residues through the "
+            "packet charge-frame and sector-26 ledger: raw half-residues live over Q, but after canonical "
+            "denominator clearing the plus and minus residue classes are integral complementary mod-26 "
+            "classes on the same full-exposure, gamma-silent, hidden-cancelled, central-negative AI|BDI pair. "
+            "The propagator symmetry/Ward theorem then proves the denominator-cleared kernel is fixed by "
+            "the surviving label-preserving symmetry because that symmetry is identity, and is Ward-compatible "
+            "only as a packet-source pair: individual residues are not all-mask Ward characters, while the "
+            "paired residue is sector-26 neutral and public-flux rank remains zero. The source-to-closed-return "
+            "coupling theorem then closes the stronger test: no Ward-character-preserving coupling exists for "
+            "the individual plus/minus source residues, and the paired neutral residue has only the canonical "
+            "minimal map to the Ward-kernel zero mask until an extra selector chooses a nonzero kernel mask. "
+            "The Ward-kernel height-selector theorem then supplies that extra invariant selector: the unique "
+            "minimum positive action in the nonzero Ward kernel is mask 288 = cycle5 + gamma8, with height "
+            "1065984 and corrected clock 0, giving the paired source its first certified nontrivial "
+            "closed-return target. The selected sourced Ward-balance theorem then propagates mask 288 through "
+            "the finite BMS/Carrollian and scattering ledgers: gamma8 reaches 288 by generator 5, public "
+            "charge/flux/residual terms vanish, and the hidden balance closes as 0 - 1065984 + 1065984 = 0. "
+            "The sourced-balance cone theorem then classifies the full one-step gamma8 Ward-kernel target "
+            "star: there are nine nonzero balanced kernel targets, mask 288 is the unique height apex, and "
+            "that apex is not an algebraic generator of the whole target set. The sourced-balance shortest-path "
+            "theorem then extends this from the one-step star to all 1023 nonzero Ward-kernel masks: every "
+            "target has a canonical gamma8-XOR shortest scattering path, closes public and hidden balance, "
+            "and keeps mask 288 as the unique minimum-action target. The transport-family theorem then "
+            "compresses the full atlas: action and height collapse to 805 scalar values, Fourier transport "
+            "signatures give 991 families, the hidden-split C2 topologically compresses targets to 543 orbits "
+            "but breaks most action-height labels, and the full augmented action/charge ledger leaves only "
+            "identity symmetry. The label-relaxed orbit-quotient theorem then proves exactly what must be "
+            "forgotten to recover nontrivial symmetry: the gamma8-sourced Ward-kernel atlas admits the C2 "
+            "quotient only after dropping target identity, exact support, step/action/height, Fourier and "
+            "sector-26 refinements, and the six augmented ledger breaker axes; source-fixed public symmetry "
+            "requires enlarging to a 1983-mask closure, and the full 120 public action requires all 2047 "
+            "nonzero residue masks and no gamma8 source anchor. The C2 quotient-anomaly theorem then proves "
+            "that the action/height breaking is exact cocycle data: the path-action and target-height "
+            "cocycles coincide, have even sector-26 shadow with complete mod-13 half-shadow, and make "
+            "the sourced Ward/BMS balance descend after the representative height counterterm is subtracted "
+            "from action/height and added to R33. The C2 quotient transport-ledger theorem then identifies "
+            "the primal operator as the nonidentity hidden-split involution tau, not gamma8: tau fixes "
+            "gamma8 as source anchor, acts as a Markov permutation on the 1023 quotient targets with "
+            "spectrum +1^543 and -1^480, and induces a rank-543 idempotent Markov projection whose "
+            "543-row anomaly-corrected quotient ledger is Ward/BMS-balanced. The quotient scattering "
+            "operator theorem then builds the first nontrivial dynamics on that quotient: the C2-closed "
+            "hidden-neutral move orbit {8,1034} gives a Markov operator with 144 components, spectrum "
+            "1^144, 0^255, (-1)^143, and (-1/2)^1, and a degree-weighted stationary state whose "
+            "public and hidden Ward/BMS errors vanish. The C2 move-orbit family theorem then classifies "
+            "all 543 C2-closed hidden-neutral composite move orbits: 63 are fixed and 480 are paired, "
+            "every zero-exit-closed move operator is symmetric Markov and stationary Ward-balanced, the "
+            "family has exactly three component/spectrum types, and the earlier {8,1034} operator is "
+            "unique only under the primitive-seeded criterion, not under global action minimization. The "
+            "C2 dynamics selector theorem then certifies the split between natural physical criteria: "
+            "primitive seeding selects {8,1034}, global action minimization selects {384}, paired-action "
+            "minimization selects {288,320}, raw absolute spectral gap is degenerate on all 543 family "
+            "members, and lazy componentwise spectral gap selects the 63 fixed singleton operators with "
+            "{384} as its action tiebreak. The C2 Cubical foundation bridge then packages this selector "
+            "layer as a complete finite skeletal candidate: C2 quotient targets are a set-truncated HIT "
+            "with 543 quotient states, C2 Ward-balanced dynamics are a 543-code finite structure universe, "
+            "selectors are dependent fibers, singleton selector fibers are contractible, and the remaining "
+            "raw/lazy spectral ambiguity is preserved as noncontractible fibers. The bridge explicitly does "
+            "not claim a proof-assistant formalization of univalence. The Cubical Agda skeleton theorem "
+            "then emits and typechecks the module C2SelectorFoundation, naming the C2TargetQuotient HIT, "
+            "WardBalancedDynamicsStructure, SelectedDynamics selector fibers, contractible singleton "
+            "selector witnesses, and SkeletalIdentityRule target interface. The Cubical Agda enumeration "
+            "theorem then emits and typechecks C2SelectorFoundationGenerated, naming all 543 quotient states, "
+            "all 543 dynamics codes, and all 1091 selector membership constructors. The Cubical Agda "
+            "enumeration-properties theorem then emits and typechecks C2SelectorFoundationGeneratedProperties, "
+            "adding counting lemmas, exhaustive eliminators, decidable equality, and set witnesses for the "
+            "quotient-state and dynamics enumerations. The Cubical Agda selector-membership theorem then emits "
+            "and typechecks C2SelectorFoundationSelectorMembership, making selector membership decidable for "
+            "all 4344 selector/dynamics pairs, with 1091 yes branches, 3253 no branches, and all eight fiber "
+            "count proofs. The Cubical Agda selector finite-subtype singleton theorem then emits and typechecks "
+            "C2SelectorFoundationSelectorFiniteSubtypeSingletons, packaging the five contractible selector "
+            "fibers as Sigma subtypes and proving equivalences to Fin 1. The lazy63 finite-subtype theorem "
+            "then emits and typechecks C2SelectorFoundationSelectorFiniteSubtypeLazy63, packaging the lazy "
+            "componentwise spectral-gap fiber as a Sigma subtype and proving equivalence to Fin 63. The "
+            "paired-lazy480 finite-subtype theorem then emits and typechecks "
+            "C2SelectorFoundationSelectorFiniteSubtypePairedLazy480, packaging the paired lazy "
+            "componentwise spectral-gap fiber as a Sigma subtype and proving equivalence to Fin 480. The "
+            "raw543 finite-subtype theorem then emits and typechecks "
+            "C2SelectorFoundationSelectorFiniteSubtypeRaw543, packaging the raw componentwise absolute "
+            "spectral-gap fiber as the full dynamics Sigma subtype and proving equivalence to Fin 543. The "
+            "finite-subtype emitter-factorization theorem then rewrites the singleton, lazy63, "
+            "paired-lazy480, and raw543 generators through one shared emitter while reproducing the "
+            "certified Agda sources byte-for-byte. The raw543 indexed finite-subtype theorem then "
+            "certifies the same Fin 543 equivalence through natural-number indexed witnesses with no "
+            "generated FD.suc constructor normal forms. The indexed split finite-subtype theorem then "
+            "promotes that compact indexed proof mode to the lazy63 and paired-lazy480 selector fibers, "
+            "certifying Fin 63 and Fin 480 equivalences with no generated FD.suc constructor normal forms. "
+            "The indexed lookup finite-subtype theorem then collapses the raw543/lazy63/paired-lazy480 "
+            "right inverses through a shared Nat-index helper and FinData fromToId', removing the generated "
+            "inspect/injection inverse rows while preserving the certified Fin 543, Fin 63, and Fin 480 "
+            "equivalences. The lookup-table theorem then externalizes all 1086 selected witness rows as "
+            "JSON/CSV artifacts, checks each row against the lookup Agda source clauses, and typechecks a "
+            "Cubical soundness module tying the table counts back to the certified Fin equivalences."
         ),
         "inputs": {
             "sector_attachment_report": {
@@ -1692,6 +4567,352 @@ def build_report() -> dict[str, Any]:
                 "path": rel(FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT),
                 "sha256": sha_file(FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT)
                 if FINITE_VIRASORO_GENERATOR_ALGEBRA_REPORT.exists()
+                else None,
+            },
+            "finite_central_extension_anomaly_cocycle_report": {
+                "path": rel(FINITE_CENTRAL_EXTENSION_ANOMALY_COCYCLE_REPORT),
+                "sha256": sha_file(FINITE_CENTRAL_EXTENSION_ANOMALY_COCYCLE_REPORT)
+                if FINITE_CENTRAL_EXTENSION_ANOMALY_COCYCLE_REPORT.exists()
+                else None,
+            },
+            "finite_parity_central_extension_group_report": {
+                "path": rel(FINITE_PARITY_CENTRAL_EXTENSION_GROUP_REPORT),
+                "sha256": sha_file(FINITE_PARITY_CENTRAL_EXTENSION_GROUP_REPORT)
+                if FINITE_PARITY_CENTRAL_EXTENSION_GROUP_REPORT.exists()
+                else None,
+            },
+            "projective_kernel_packet_tenfold_way_report": {
+                "path": rel(PROJECTIVE_KERNEL_PACKET_TENFOLD_WAY_REPORT),
+                "sha256": sha_file(PROJECTIVE_KERNEL_PACKET_TENFOLD_WAY_REPORT)
+                if PROJECTIVE_KERNEL_PACKET_TENFOLD_WAY_REPORT.exists()
+                else None,
+            },
+            "projective_packet_spectral_charge_table_report": {
+                "path": rel(PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_REPORT),
+                "sha256": sha_file(PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_REPORT)
+                if PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_REPORT.exists()
+                else None,
+            },
+            "projective_packet_charge_frame_classifier_report": {
+                "path": rel(PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT),
+                "sha256": sha_file(PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT)
+                if PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT.exists()
+                else None,
+            },
+            "packet239_stabilizer_seed_candidate_report": {
+                "path": rel(PACKET239_STABILIZER_SEED_CANDIDATE_REPORT),
+                "sha256": sha_file(PACKET239_STABILIZER_SEED_CANDIDATE_REPORT)
+                if PACKET239_STABILIZER_SEED_CANDIDATE_REPORT.exists()
+                else None,
+            },
+            "packet239_seed_propagation_report": {
+                "path": rel(PACKET239_SEED_PROPAGATION_REPORT),
+                "sha256": sha_file(PACKET239_SEED_PROPAGATION_REPORT)
+                if PACKET239_SEED_PROPAGATION_REPORT.exists()
+                else None,
+            },
+            "full_exposure_packet_propagation_cells_report": {
+                "path": rel(FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_REPORT)
+                if FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_REPORT.exists()
+                else None,
+            },
+            "full_exposure_packet_propagation_graph_report": {
+                "path": rel(FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_REPORT)
+                if FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_REPORT.exists()
+                else None,
+            },
+            "full_exposure_rank10_tenfold_alignment_report": {
+                "path": rel(FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_REPORT)
+                if FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_REPORT.exists()
+                else None,
+            },
+            "full_exposure_radical_gate_stabilizer_report": {
+                "path": rel(FULL_EXPOSURE_RADICAL_GATE_STABILIZER_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_RADICAL_GATE_STABILIZER_REPORT)
+                if FULL_EXPOSURE_RADICAL_GATE_STABILIZER_REPORT.exists()
+                else None,
+            },
+            "full_exposure_radical_gate_stabilizer_lift_report": {
+                "path": rel(FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_REPORT)
+                if FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_REPORT.exists()
+                else None,
+            },
+            "full_exposure_label_breaking_factorization_report": {
+                "path": rel(FULL_EXPOSURE_LABEL_BREAKING_FACTORIZATION_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_LABEL_BREAKING_FACTORIZATION_REPORT)
+                if FULL_EXPOSURE_LABEL_BREAKING_FACTORIZATION_REPORT.exists()
+                else None,
+            },
+            "full_exposure_canonical_labelled_frame_report": {
+                "path": rel(FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_REPORT)
+                if FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_REPORT.exists()
+                else None,
+            },
+            "full_exposure_label_coordinate_transition_operator_report": {
+                "path": rel(FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_REPORT)
+                if FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_REPORT.exists()
+                else None,
+            },
+            "full_exposure_label_coordinate_spectral_boundary_report": {
+                "path": rel(FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_REPORT)
+                if FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_REPORT.exists()
+                else None,
+            },
+            "full_exposure_label_coordinate_green_response_report": {
+                "path": rel(FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_REPORT)
+                if FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_propagator_charge_kernel_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_CHARGE_KERNEL_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_CHARGE_KERNEL_REPORT)
+                if FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_CHARGE_KERNEL_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_propagator_symmetry_ward_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_REPORT)
+                if FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_source_to_closed_return_coupling_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_REPORT)
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_ward_kernel_height_selector_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_WARD_KERNEL_HEIGHT_SELECTOR_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_ZERO_PAIR_WARD_KERNEL_HEIGHT_SELECTOR_REPORT)
+                if FULL_EXPOSURE_ZERO_PAIR_WARD_KERNEL_HEIGHT_SELECTOR_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_selected_sourced_ward_balance_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_REPORT)
+                if FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_cone_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_REPORT)
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_shortest_paths_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_SHORTEST_PATHS_REPORT),
+                "sha256": sha_file(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_SHORTEST_PATHS_REPORT)
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_SHORTEST_PATHS_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_transport_families_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_TRANSPORT_FAMILIES_REPORT),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_TRANSPORT_FAMILIES_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_TRANSPORT_FAMILIES_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_report": {
+                "path": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_REPORT),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_SCATTERING_OPERATOR_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_SCATTERING_OPERATOR_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_SCATTERING_OPERATOR_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_MOVE_ORBIT_FAMILY_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_MOVE_ORBIT_FAMILY_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_MOVE_ORBIT_FAMILY_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_REPORT.exists()
+                else None,
+            },
+            "raw543_actual_c2_kernel_orbits_csv": {
+                "path": rel(RAW543_ACTUAL_C2_KERNEL_ORBITS_CSV),
+                "sha256": sha_file(RAW543_ACTUAL_C2_KERNEL_ORBITS_CSV)
+                if RAW543_ACTUAL_C2_KERNEL_ORBITS_CSV.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_INDEXED_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_INDEXED_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_INDEXED_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_SPLIT_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_SPLIT_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_SPLIT_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_LOOKUP_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_LOOKUP_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_LOOKUP_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_REPORT.exists()
+                else None,
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_report": {
+                "path": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_REPORT
+                ),
+                "sha256": sha_file(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_REPORT
+                )
+                if FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_REPORT.exists()
                 else None,
             },
         },
@@ -2469,6 +5690,912 @@ def build_report() -> dict[str, Any]:
                 ),
                 "status": "certified",
             },
+            "finite_central_extension_anomaly_cocycle": {
+                "needed_type": (
+                    "finite central-extension/anomaly cocycle test on the string-kernel generator algebra"
+                ),
+                "needed_for": (
+                    "separate the symmetric sector-26 clock coboundary from a surviving alternating "
+                    "central cocycle and locate the parity anomaly support"
+                ),
+                "report": rel(FINITE_CENTRAL_EXTENSION_ANOMALY_COCYCLE_REPORT),
+                "central_extension_summary": (
+                    finite_central_extension_anomaly_cocycle_derived.get(
+                        "central_extension_summary"
+                    )
+                ),
+                "compatible_f2_alternating_search": (
+                    finite_central_extension_anomaly_cocycle_derived.get(
+                        "compatible_f2_alternating_search"
+                    )
+                ),
+                "status": "certified",
+            },
+            "finite_parity_central_extension_group": {
+                "needed_type": (
+                    "finite parity central-extension group and signed projective kernel action"
+                ),
+                "needed_for": (
+                    "integrate the surviving F2 cocycle, certify the named commutator support, "
+                    "and realize the central bit as a projective sign on the rank-10 kernel"
+                ),
+                "report": rel(FINITE_PARITY_CENTRAL_EXTENSION_GROUP_REPORT),
+                "central_extension_summary": finite_parity_central_extension_group_derived.get(
+                    "central_extension_summary"
+                ),
+                "projective_action_summary": finite_parity_central_extension_group_derived.get(
+                    "projective_action_summary"
+                ),
+                "status": "certified",
+            },
+            "projective_kernel_packet_tenfold_way": {
+                "needed_type": (
+                    "central-character packet decomposition and finite tenfold-way witness"
+                ),
+                "needed_for": (
+                    "decompose the signed projective kernel action, attach sector-26 and Loop_297 "
+                    "packet data, and record the 8+2 real Clifford/Bott readout"
+                ),
+                "report": rel(PROJECTIVE_KERNEL_PACKET_TENFOLD_WAY_REPORT),
+                "packet_summary": projective_kernel_packet_tenfold_way_derived.get(
+                    "packet_summary"
+                ),
+                "tenfold_way_witness": projective_kernel_packet_tenfold_way_derived.get(
+                    "tenfold_way_witness"
+                ),
+                "loop297_packet_exposure_summary": (
+                    projective_kernel_packet_tenfold_way_derived.get(
+                        "loop297_packet_exposure_summary"
+                    )
+                ),
+                "status": "certified",
+            },
+            "projective_packet_spectral_charge_table": {
+                "needed_type": "packet-level spectral/charge table on the signed kernel packets",
+                "needed_for": (
+                    "name the packet spectral traces, sector-26 clocks, hidden-clock cancellation, "
+                    "gamma8 incidence, Loop_297 exposure, and distinguished packet sets"
+                ),
+                "report": rel(PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_REPORT),
+                "spectral_charge_summary": projective_packet_spectral_charge_table_derived.get(
+                    "spectral_charge_summary"
+                ),
+                "distinguished_packet_sets": projective_packet_spectral_charge_table_derived.get(
+                    "distinguished_packet_sets"
+                ),
+                "status": "certified",
+            },
+            "projective_packet_charge_frame_classifier": {
+                "needed_type": "named finite charge-frame classifier on projective packets",
+                "needed_for": (
+                    "name the mass, clock, exposure, gamma8, hidden, central, and tenfold axes, "
+                    "and isolate packet 239 as the distinguished full-exposure clock-zero packet"
+                ),
+                "report": rel(PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_REPORT),
+                "classifier_summary": projective_packet_charge_frame_classifier_derived.get(
+                    "classifier_summary"
+                ),
+                "distinguished_packet_239": projective_packet_charge_frame_classifier_derived.get(
+                    "distinguished_packet_239"
+                ),
+                "status": "certified",
+            },
+            "packet239_stabilizer_seed_candidate": {
+                "needed_type": "stabilizer comparison for the distinguished packet-239 seed candidate",
+                "needed_for": (
+                    "test whether packet 239 is symmetry-fixed or only charge-frame distinguished"
+                ),
+                "report": rel(PACKET239_STABILIZER_SEED_CANDIDATE_REPORT),
+                "stabilizer_summary": packet239_stabilizer_seed_candidate_derived.get(
+                    "stabilizer_summary"
+                ),
+                "packet239_stabilizer": packet239_stabilizer_seed_candidate_derived.get(
+                    "packet239_stabilizer"
+                ),
+                "status": "certified",
+            },
+            "packet239_seed_propagation": {
+                "needed_type": "local non-kernel propagation cell for packet 239",
+                "needed_for": (
+                    "push packet 239 through crossing generators 5, 9, and 10 and classify odd shadows "
+                    "plus paired cross-return packets"
+                ),
+                "report": rel(PACKET239_SEED_PROPAGATION_REPORT),
+                "propagation_summary": packet239_seed_propagation_derived.get(
+                    "propagation_summary"
+                ),
+                "status": "certified",
+            },
+            "full_exposure_packet_propagation_cells": {
+                "needed_type": "uniform non-kernel propagation cells for all full-exposure packets",
+                "needed_for": (
+                    "test whether packet-239 seed propagation is exceptional or one cell of a 20-packet "
+                    "full-exposure propagation law"
+                ),
+                "report": rel(FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_REPORT),
+                "propagation_cell_summary": (
+                    full_exposure_packet_propagation_cells_derived.get(
+                        "propagation_cell_summary"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_packet_propagation_graph": {
+                "needed_type": "weighted graph quotient of the full-exposure propagation cells",
+                "needed_for": (
+                    "classify the two-step packet transition operator, its active-partner doublets, "
+                    "and graph-level flux/action invariants"
+                ),
+                "report": rel(FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_REPORT),
+                "graph_summary": full_exposure_packet_propagation_graph_derived.get(
+                    "graph_summary"
+                ),
+                "spectral_summary": full_exposure_packet_propagation_graph_derived.get(
+                    "spectral_summary"
+                ),
+                "status": "certified",
+            },
+            "full_exposure_rank10_tenfold_alignment": {
+                "needed_type": "rank-10 coordinate and tenfold-way alignment test for graph doublets",
+                "needed_for": (
+                    "decide whether the ten full-exposure graph components form a canonical kernel "
+                    "basis or only a ten-component screen inside the 8+2 split"
+                ),
+                "report": rel(FULL_EXPOSURE_RANK10_TENFOLD_ALIGNMENT_REPORT),
+                "alignment_summary": full_exposure_rank10_tenfold_alignment_derived.get(
+                    "alignment_summary"
+                ),
+                "boolean_gate_witness": full_exposure_rank10_tenfold_alignment_derived.get(
+                    "boolean_gate_witness"
+                ),
+                "tenfold_alignment": full_exposure_rank10_tenfold_alignment_derived.get(
+                    "tenfold_alignment"
+                ),
+                "status": "certified",
+            },
+            "full_exposure_radical_gate_stabilizer": {
+                "needed_type": "affine stabilizer classification for the nonlinear full-exposure radical gate",
+                "needed_for": (
+                    "classify the symmetry group of the x2 or (x3 and x5) radical gate before lifting "
+                    "those symmetries to packet propagation, charge-frame, gamma8, and action labels"
+                ),
+                "report": rel(FULL_EXPOSURE_RADICAL_GATE_STABILIZER_REPORT),
+                "stabilizer_summary": full_exposure_radical_gate_stabilizer_derived.get(
+                    "stabilizer_summary"
+                ),
+                "complement_prism_witness": full_exposure_radical_gate_stabilizer_derived.get(
+                    "complement_prism_witness"
+                ),
+                "group_decomposition": full_exposure_radical_gate_stabilizer_derived.get(
+                    "group_decomposition"
+                ),
+                "status": "certified",
+            },
+            "full_exposure_radical_gate_stabilizer_lift": {
+                "needed_type": (
+                    "canonical and active-flip lifts of the 384 radical-gate affine stabilizers to "
+                    "the full packet propagation graph"
+                ),
+                "needed_for": (
+                    "separate unlabelled graph/action symmetry from the label-breaking charge-frame, "
+                    "gamma8, and spectral invariants"
+                ),
+                "report": rel(FULL_EXPOSURE_RADICAL_GATE_STABILIZER_LIFT_REPORT),
+                "graph_action_lift_summary": full_exposure_radical_gate_stabilizer_lift_derived.get(
+                    "graph_action_lift_summary"
+                ),
+                "label_preservation_summaries": (
+                    full_exposure_radical_gate_stabilizer_lift_derived.get(
+                        "label_preservation_summaries"
+                    )
+                ),
+                "full_exposure_label_witness": full_exposure_radical_gate_stabilizer_lift_derived.get(
+                    "full_exposure_label_witness"
+                ),
+                "status": "certified",
+            },
+            "full_exposure_label_breaking_factorization": {
+                "needed_type": (
+                    "minimal invariant-axis factorization of charge-frame symmetry breaking for the "
+                    "canonical radical-gate lifts"
+                ),
+                "needed_for": (
+                    "identify exactly which mass, clock, gamma, sector-26, and spectral labels break "
+                    "the nonidentity radical-gate lifts"
+                ),
+                "report": rel(FULL_EXPOSURE_LABEL_BREAKING_FACTORIZATION_REPORT),
+                "breaker_summary": full_exposure_label_breaking_factorization_derived.get(
+                    "breaker_summary"
+                ),
+                "axis_family_rows": full_exposure_label_breaking_factorization_derived.get(
+                    "axis_family_rows"
+                ),
+                "atomic_label_rows": full_exposure_label_breaking_factorization_derived.get(
+                    "atomic_label_rows"
+                ),
+                "status": "certified",
+            },
+            "full_exposure_canonical_labelled_frame": {
+                "needed_type": (
+                    "injective intrinsic coordinate frame for the 20 labelled full-exposure packets"
+                ),
+                "needed_for": (
+                    "recover packet 239 by an id-free sector-26 zero-pair fixed-point condition"
+                ),
+                "report": rel(FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_REPORT),
+                "canonical_frame_summary": full_exposure_canonical_labelled_frame_derived.get(
+                    "canonical_frame_summary"
+                ),
+                "packet239_selection": full_exposure_canonical_labelled_frame_derived.get(
+                    "packet239_selection"
+                ),
+                "minimal_identity_breakers": full_exposure_canonical_labelled_frame_derived.get(
+                    "minimal_identity_breakers"
+                ),
+                "status": "certified",
+            },
+            "full_exposure_label_coordinate_transition_operator": {
+                "needed_type": (
+                    "weighted full-exposure transition operator expressed in intrinsic labelled-frame coordinates"
+                ),
+                "needed_for": (
+                    "remove packet ids from the transition coordinates and identify the zero-pair "
+                    "coordinate's self-loop and active-partner transition"
+                ),
+                "report": rel(FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_REPORT),
+                "transition_summary": full_exposure_label_coordinate_transition_operator_derived.get(
+                    "transition_summary"
+                ),
+                "zero_pair_target_weights": (
+                    full_exposure_label_coordinate_transition_operator_derived.get(
+                        "zero_pair_target_weights"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_label_coordinate_spectral_boundary": {
+                "needed_type": (
+                    "exact spectral and eigenboundary test of the intrinsic label-coordinate transition operator"
+                ),
+                "needed_for": (
+                    "decide whether the zero-pair coordinate is operator-distinguished, rather than only "
+                    "label-distinguished"
+                ),
+                "report": rel(FULL_EXPOSURE_LABEL_COORDINATE_SPECTRAL_BOUNDARY_REPORT),
+                "spectral_boundary_summary": (
+                    full_exposure_label_coordinate_spectral_boundary_derived.get(
+                        "spectral_boundary_summary"
+                    )
+                ),
+                "global_spectrum": full_exposure_label_coordinate_spectral_boundary_derived.get(
+                    "global_spectrum"
+                ),
+                "zero_pair_coordinate_spectral_row": (
+                    full_exposure_label_coordinate_spectral_boundary_derived.get(
+                        "zero_pair_coordinate_spectral_row"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_label_coordinate_green_response": {
+                "needed_type": (
+                    "exact Green/resolvent response of the intrinsic label-coordinate operator to a labelled source"
+                ),
+                "needed_for": (
+                    "turn the zero-pair coordinate into a source insertion and compute its finite "
+                    "propagator kernel"
+                ),
+                "report": rel(FULL_EXPOSURE_LABEL_COORDINATE_GREEN_RESPONSE_REPORT),
+                "green_response_summary": full_exposure_label_coordinate_green_response_derived.get(
+                    "green_response_summary"
+                ),
+                "zero_pair_source_response": (
+                    full_exposure_label_coordinate_green_response_derived.get(
+                        "zero_pair_source_response"
+                    )
+                ),
+                "exact_identity_witnesses": (
+                    full_exposure_label_coordinate_green_response_derived.get(
+                        "exact_identity_witnesses"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_propagator_charge_kernel": {
+                "needed_type": (
+                    "packet charge-frame and sector-26 ledger image of the zero-pair Green pole residues"
+                ),
+                "needed_for": (
+                    "decide whether the zero-pair source response carries a finite propagator charge kernel"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_CHARGE_KERNEL_REPORT),
+                "propagator_charge_kernel_summary": (
+                    full_exposure_zero_pair_propagator_charge_kernel_derived.get(
+                        "propagator_charge_kernel_summary"
+                    )
+                ),
+                "residue_charge_rows_sha256": (
+                    full_exposure_zero_pair_propagator_charge_kernel_derived.get(
+                        "residue_charge_rows_sha256"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_propagator_symmetry_ward": {
+                "needed_type": (
+                    "surviving-label symmetry and finite Ward/flux compatibility test for the zero-pair propagator kernel"
+                ),
+                "needed_for": (
+                    "separate identity-level symmetry invariance from a stronger sourced Ward identity claim"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_PROPAGATOR_SYMMETRY_WARD_REPORT),
+                "symmetry_summary": full_exposure_zero_pair_propagator_symmetry_ward_derived.get(
+                    "symmetry_summary"
+                ),
+                "ward_flux_summary": full_exposure_zero_pair_propagator_symmetry_ward_derived.get(
+                    "ward_flux_summary"
+                ),
+                "compatibility_matrix": (
+                    full_exposure_zero_pair_propagator_symmetry_ward_derived.get(
+                        "compatibility_matrix"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_source_to_closed_return_coupling": {
+                "needed_type": (
+                    "source-to-closed-return coupling test for the denominator-cleared zero-pair propagator kernel"
+                ),
+                "needed_for": (
+                    "decide whether packet-source residues can be promoted to all-mask Ward characters"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCE_TO_CLOSED_RETURN_COUPLING_REPORT),
+                "coupling_summary": (
+                    full_exposure_zero_pair_source_to_closed_return_coupling_derived.get(
+                        "coupling_summary"
+                    )
+                ),
+                "source_to_closed_return_coupling_matrix": (
+                    full_exposure_zero_pair_source_to_closed_return_coupling_derived.get(
+                        "source_to_closed_return_coupling_matrix"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_ward_kernel_height_selector": {
+                "needed_type": (
+                    "action-height selector on the nonzero all-mask Ward kernel for the paired zero-pair source"
+                ),
+                "needed_for": (
+                    "choose a nontrivial closed-return target for the paired neutral packet-source residue"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_WARD_KERNEL_HEIGHT_SELECTOR_REPORT),
+                "selector_summary": (
+                    full_exposure_zero_pair_ward_kernel_height_selector_derived.get(
+                        "selector_summary"
+                    )
+                ),
+                "selector_candidates_by_height": (
+                    full_exposure_zero_pair_ward_kernel_height_selector_derived.get(
+                        "selector_candidates_by_height"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_selected_sourced_ward_balance": {
+                "needed_type": (
+                    "selected finite BMS/Carrollian sourced Ward balance for the nontrivial zero-pair lift"
+                ),
+                "needed_for": (
+                    "prove the selected closed-return target is realized by scattering and closes the public/hidden balance"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_SELECTED_SOURCED_WARD_BALANCE_REPORT),
+                "sourced_balance_summary": (
+                    full_exposure_zero_pair_selected_sourced_ward_balance_derived.get(
+                        "sourced_balance_summary"
+                    )
+                ),
+                "scattering_witness": (
+                    full_exposure_zero_pair_selected_sourced_ward_balance_derived.get(
+                        "scattering_witness"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_cone": {
+                "needed_type": (
+                    "height-ordered cone classifier for one-step gamma8 Ward-kernel sourced balance targets"
+                ),
+                "needed_for": (
+                    "separate the height-apex result from the stronger algebraic-generation claim"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_CONE_REPORT),
+                "cone_summary": full_exposure_zero_pair_sourced_balance_cone_derived.get(
+                    "cone_summary"
+                ),
+                "height_ordered_nonzero_kernel_targets": (
+                    full_exposure_zero_pair_sourced_balance_cone_derived.get(
+                        "height_ordered_nonzero_kernel_targets"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_shortest_paths": {
+                "needed_type": (
+                    "canonical shortest scattering-path classifier from gamma8 to every nonzero Ward-kernel target"
+                ),
+                "needed_for": (
+                    "extend sourced Ward/BMS balance from the one-step cone to all nonzero Ward-kernel masks"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_SHORTEST_PATHS_REPORT),
+                "shortest_path_summary": (
+                    full_exposure_zero_pair_sourced_balance_shortest_paths_derived.get(
+                        "shortest_path_summary"
+                    )
+                ),
+                "shortest_path_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_shortest_paths_derived.get(
+                        "shortest_path_summary", {}
+                    ).get("path_rows_sha256")
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_transport_families": {
+                "needed_type": (
+                    "canonical transport-family compression and symmetry-level resolution for the 1023-path atlas"
+                ),
+                "needed_for": (
+                    "separate scalar/Fourier/path compression from any nontrivial D20 symmetry quotient claim"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_TRANSPORT_FAMILIES_REPORT),
+                "transport_family_summary": (
+                    full_exposure_zero_pair_sourced_balance_transport_families_derived.get(
+                        "transport_family_summary"
+                    )
+                ),
+                "hidden_split_c2_orbit_summary": (
+                    full_exposure_zero_pair_sourced_balance_transport_families_derived.get(
+                        "hidden_split_c2_orbit_summary"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient": {
+                "needed_type": (
+                    "label-relaxed orbit quotient ladder for nontrivial gamma8-sourced transport symmetry"
+                ),
+                "needed_for": (
+                    "prove which transport, Fourier, charge, action, and source labels must be forgotten "
+                    "to recover nontrivial D20 quotient symmetry"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_LABEL_RELAXED_ORBIT_QUOTIENT_REPORT
+                ),
+                "label_relaxation_summary": (
+                    full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_derived.get(
+                        "label_relaxation_summary"
+                    )
+                ),
+                "public_level_summary": (
+                    full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient_derived.get(
+                        "public_level_summary"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly": {
+                "needed_type": (
+                    "exact C2 quotient anomaly/cocycle for sourced action-height label breaking"
+                ),
+                "needed_for": (
+                    "test whether sourced Ward/BMS balance descends to the nontrivial hidden-split C2 quotient "
+                    "after carrying the action-height anomaly as connection data"
+                ),
+                "report": rel(FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_REPORT),
+                "anomaly_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_derived.get(
+                        "anomaly_summary"
+                    )
+                ),
+                "anomaly_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_derived.get(
+                        "anomaly_rows_sha256"
+                    )
+                ),
+                "orbit_balance_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly_derived.get(
+                        "orbit_balance_rows_sha256"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger": {
+                "needed_type": (
+                    "C2 primal-operator, Markov projection, spectrum, and 543-orbit quotient transport ledger"
+                ),
+                "needed_for": (
+                    "identify whether the quotient anomaly is gamma8, name the primal operator, and test "
+                    "the anomaly-corrected quotient ledger for Markov/spectral Ward balance"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_REPORT
+                ),
+                "operator_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_derived.get(
+                        "operator_summary"
+                    )
+                ),
+                "quotient_ledger_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger_derived.get(
+                        "quotient_ledger_rows_sha256"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator": {
+                "needed_type": (
+                    "nontrivial C2 quotient scattering operator from the minimal hidden-neutral move orbit"
+                ),
+                "needed_for": (
+                    "turn the 543-orbit anomaly-corrected quotient ledger into Markov/spectral dynamics "
+                    "with Ward-balanced stationary data"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_SCATTERING_OPERATOR_REPORT
+                ),
+                "operator_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_derived.get(
+                        "operator_summary"
+                    )
+                ),
+                "quotient_operator_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_derived.get(
+                        "quotient_operator_rows_sha256"
+                    )
+                ),
+                "component_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator_derived.get(
+                        "component_rows_sha256"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family": {
+                "needed_type": (
+                    "complete C2-closed hidden-neutral quotient dynamics family"
+                ),
+                "needed_for": (
+                    "decide whether the primitive-seeded quotient scattering operator is canonical or one "
+                    "member of a larger Ward-balanced dynamics family"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_MOVE_ORBIT_FAMILY_REPORT
+                ),
+                "family_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_derived.get(
+                        "family_summary"
+                    )
+                ),
+                "move_family_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_derived.get(
+                        "move_family_rows_sha256"
+                    )
+                ),
+                "stationary_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_move_orbit_family_derived.get(
+                        "stationary_rows_sha256"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector": {
+                "needed_type": (
+                    "selector table for choosing among certified C2 quotient dynamics"
+                ),
+                "needed_for": (
+                    "separate primitive-seeded, least-action, paired-transport, and spectral-gap "
+                    "physical preference criteria"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_REPORT
+                ),
+                "selector_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_derived.get(
+                        "selector_summary"
+                    )
+                ),
+                "selector_table_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_derived.get(
+                        "selector_table_sha256"
+                    )
+                ),
+                "scored_move_rows_sha256": (
+                    full_exposure_zero_pair_sourced_balance_c2_dynamics_selector_derived.get(
+                        "scored_move_rows_sha256"
+                    )
+                ),
+                "status": "certified",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton": {
+                "needed_type": (
+                    "Cubical Agda target skeleton for the C2 foundation bridge"
+                ),
+                "needed_for": (
+                    "move the finite UF candidate into a proof-assistant module with a typechecked "
+                    "set-quotient HIT skeleton, selector fibers, and contractible singleton witnesses"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SKELETON_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "status": "certified_typechecked_skeleton",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration": {
+                "needed_type": (
+                    "generated Cubical Agda finite enumeration for the C2 selector foundation"
+                ),
+                "needed_for": (
+                    "make every quotient state, dynamics code, and selector membership an explicit "
+                    "typechecked Agda constructor"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "selector_fiber_counts": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_derived.get(
+                        "selector_fiber_counts"
+                    )
+                ),
+                "status": "certified_typechecked_enumeration",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties": {
+                "needed_type": (
+                    "Cubical Agda decidable equality, eliminator, and counting layer for generated enumerations"
+                ),
+                "needed_for": (
+                    "make quotient-state and dynamics enumerations usable as finite set-level types inside "
+                    "Cubical Agda"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_ENUMERATION_PROPERTIES_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "status": "certified_typechecked_properties",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership": {
+                "needed_type": (
+                    "Cubical Agda total selector-membership decision function and fiber count proofs"
+                ),
+                "needed_for": (
+                    "turn selector fibers from generated constructors into decidable finite predicates over "
+                    "all certified dynamics ids"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_MEMBERSHIP_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "selector_fiber_counts": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership_derived.get(
+                        "selector_fiber_counts"
+                    )
+                ),
+                "status": "certified_typechecked_selector_membership",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons": {
+                "needed_type": (
+                    "Cubical Agda finite Sigma subtype equivalences for singleton selector fibers"
+                ),
+                "needed_for": (
+                    "turn the five contractible selector fibers into proof-assistant-native finite "
+                    "subtypes equivalent to Fin 1"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "singleton_selectors": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_derived.get(
+                        "singleton_selectors"
+                    )
+                ),
+                "status": "certified_typechecked_singleton_finite_subtypes",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63": {
+                "needed_type": (
+                    "Cubical Agda finite Sigma subtype equivalence for the lazy spectral-gap selector fiber"
+                ),
+                "needed_for": (
+                    "turn the 63-element lazy spectral-gap ambiguity into a proof-assistant-native finite "
+                    "subtype equivalent to Fin 63"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "lazy_selector": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_derived.get(
+                        "lazy_selector"
+                    )
+                ),
+                "actual_c2_kernel_orbit_source": actual_c2_kernel_orbit_sources["lazy63"],
+                "status": "certified_typechecked_lazy63_finite_subtype",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480": {
+                "needed_type": (
+                    "Cubical Agda finite Sigma subtype equivalence for the paired lazy spectral-gap selector fiber"
+                ),
+                "needed_for": (
+                    "turn the 480-element paired lazy spectral-gap ambiguity into a "
+                    "proof-assistant-native finite subtype equivalent to Fin 480"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "paired_lazy_selector": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_derived.get(
+                        "paired_lazy_selector"
+                    )
+                ),
+                "actual_c2_kernel_orbit_source": actual_c2_kernel_orbit_sources[
+                    "paired_lazy480"
+                ],
+                "status": "certified_typechecked_paired_lazy480_finite_subtype",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543": {
+                "needed_type": (
+                    "Cubical Agda finite Sigma subtype equivalence for the raw spectral-gap selector fiber"
+                ),
+                "needed_for": (
+                    "turn the full 543-element raw spectral-gap ambiguity into a proof-assistant-native "
+                    "finite subtype equivalent to Fin 543"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "raw_selector": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_derived.get(
+                        "raw_selector"
+                    )
+                ),
+                "actual_c2_kernel_orbit_source": actual_c2_kernel_orbit_sources["raw543"],
+                "status": "certified_typechecked_raw543_finite_subtype",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed": {
+                "needed_type": (
+                    "compact indexed Cubical Agda finite Sigma subtype equivalence for the raw spectral-gap selector fiber"
+                ),
+                "needed_for": (
+                    "replace large generated FinData constructor normal forms on the raw543 finite-subtype path"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_INDEXED_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_derived.get(
+                        "source_summary"
+                    )
+                ),
+                "raw_selector": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed_derived.get(
+                        "raw_selector"
+                    )
+                ),
+                "actual_c2_kernel_orbit_source": actual_c2_kernel_orbit_sources[
+                    "raw543_indexed"
+                ],
+                "status": "certified_typechecked_raw543_indexed_finite_subtype",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split": {
+                "needed_type": (
+                    "compact indexed Cubical Agda finite Sigma subtype equivalences for the lazy63 and paired-lazy480 selector fibers"
+                ),
+                "needed_for": (
+                    "switch the active selector finite-subtype spine away from generated FinData "
+                    "constructor normal forms for all non-singleton spectral fibers"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_SPLIT_REPORT
+                ),
+                "actual_c2_kernel_orbit_source": actual_c2_kernel_orbit_sources[
+                    "indexed_split"
+                ],
+                "indexed_selector_rows": indexed_split_rows,
+                "status": "certified_typechecked_indexed_lazy63_and_paired_lazy480_finite_subtypes",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup": {
+                "needed_type": (
+                    "lookup-collapsed indexed Cubical Agda finite Sigma subtype equivalences for raw543, lazy63, and paired-lazy480"
+                ),
+                "needed_for": (
+                    "remove generated inspect/injection right-inverse rows from all non-singleton "
+                    "spectral selector finite-subtype modules"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_INDEXED_LOOKUP_REPORT
+                ),
+                "actual_c2_kernel_orbit_source": actual_c2_kernel_orbit_sources[
+                    "indexed_lookup"
+                ],
+                "lookup_selector_rows": indexed_lookup_rows,
+                "status": "certified_typechecked_lookup_collapsed_indexed_finite_subtypes",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table": {
+                "needed_type": (
+                    "verified JSON/CSV selected-witness table plus Cubical soundness module for raw543, lazy63, and paired-lazy480"
+                ),
+                "needed_for": (
+                    "audit the selected selector witness rows as a standalone Halloween source "
+                    "package consumed by the lookup emitter"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_REPORT
+                ),
+                "lookup_table_row_count": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table_derived.get(
+                        "lookup_table_row_count"
+                    )
+                ),
+                "lookup_table_row_count_by_selector": lookup_table_row_count_by_selector,
+                "lookup_table_selector_summaries": lookup_table_selector_summaries,
+                "lookup_witness_source_package": lookup_table_source_package,
+                "actual_c2_kernel_orbit_source": actual_c2_kernel_orbit_sources[
+                    "lookup_table"
+                ],
+                "status": "certified_lookup_witness_table_source_package_and_typechecked_soundness",
+            },
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization": {
+                "needed_type": (
+                    "shared emitter for certified Cubical Agda selector finite-subtype modules"
+                ),
+                "needed_for": (
+                    "keep singleton, lazy63, paired-lazy480, and raw543 finite-subtype proof "
+                    "generators aligned without changing their certified Agda sources"
+                ),
+                "report": rel(
+                    FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_REPORT
+                ),
+                "source_summary": (
+                    full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization_derived.get(
+                        "factorized_generators"
+                    )
+                ),
+                "status": "certified_emitter_factorization_preserves_sources",
+            },
         },
         "missing_maps": {
             "full_drinfeld_projection_coordinates": {
@@ -2604,14 +6731,220 @@ def build_report() -> dict[str, Any]:
                 "discharged by "
                 "data/invariants/d20/theorems/finite_virasoro_generator_algebra/report.json"
             ),
+            "finite_central_extension_anomaly_cocycle": (
+                "discharged by "
+                "data/invariants/d20/theorems/finite_central_extension_anomaly_cocycle/report.json"
+            ),
+            "finite_parity_central_extension_group": (
+                "discharged by "
+                "data/invariants/d20/theorems/finite_parity_central_extension_group/report.json"
+            ),
+            "projective_kernel_packet_tenfold_way": (
+                "discharged by "
+                "data/invariants/d20/theorems/projective_kernel_packet_tenfold_way/report.json"
+            ),
+            "projective_packet_spectral_charge_table": (
+                "discharged by "
+                "data/invariants/d20/theorems/projective_packet_spectral_charge_table/report.json"
+            ),
+            "projective_packet_charge_frame_classifier": (
+                "discharged by "
+                "data/invariants/d20/theorems/projective_packet_charge_frame_classifier/report.json"
+            ),
+            "packet239_stabilizer_seed_candidate": (
+                "discharged by "
+                "data/invariants/d20/theorems/packet239_stabilizer_seed_candidate/report.json"
+            ),
+            "packet239_seed_propagation": (
+                "discharged by "
+                "data/invariants/d20/theorems/packet239_seed_propagation/report.json"
+            ),
+            "full_exposure_packet_propagation_cells": (
+                "discharged by "
+                "data/invariants/d20/theorems/full_exposure_packet_propagation_cells/report.json"
+            ),
+            "full_exposure_packet_propagation_graph": (
+                "discharged by "
+                "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json"
+            ),
+            "full_exposure_rank10_tenfold_alignment": (
+                "discharged by "
+                "data/invariants/d20/theorems/full_exposure_rank10_tenfold_alignment/report.json"
+            ),
+            "full_exposure_radical_gate_stabilizer": (
+                "discharged by "
+                "data/invariants/d20/theorems/full_exposure_radical_gate_stabilizer/report.json"
+            ),
+            "full_exposure_radical_gate_stabilizer_lift": (
+                "discharged by "
+                "data/invariants/d20/theorems/full_exposure_radical_gate_stabilizer_lift/report.json"
+            ),
+            "full_exposure_label_breaking_factorization": (
+                "discharged by "
+                "data/invariants/d20/theorems/full_exposure_label_breaking_factorization/report.json"
+            ),
+            "full_exposure_canonical_labelled_frame": (
+                "discharged by "
+                "data/invariants/d20/theorems/full_exposure_canonical_labelled_frame/report.json"
+            ),
+            "full_exposure_label_coordinate_transition_operator": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_label_coordinate_transition_operator/report.json"
+            ),
+            "full_exposure_label_coordinate_spectral_boundary": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_label_coordinate_spectral_boundary/report.json"
+            ),
+            "full_exposure_label_coordinate_green_response": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_label_coordinate_green_response/report.json"
+            ),
+            "full_exposure_zero_pair_propagator_charge_kernel": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_propagator_charge_kernel/report.json"
+            ),
+            "full_exposure_zero_pair_propagator_symmetry_ward": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_propagator_symmetry_ward/report.json"
+            ),
+            "full_exposure_zero_pair_source_to_closed_return_coupling": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_source_to_closed_return_coupling/report.json"
+            ),
+            "full_exposure_zero_pair_ward_kernel_height_selector": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_ward_kernel_height_selector/report.json"
+            ),
+            "full_exposure_zero_pair_selected_sourced_ward_balance": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_selected_sourced_ward_balance/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_cone": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_cone/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_shortest_paths": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_shortest_paths/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_transport_families": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_transport_families/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_quotient_scattering_operator/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_move_orbit_family/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_dynamics_selector/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_skeleton/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration_properties/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_membership/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_indexed/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_split/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup/report.json"
+            ),
+            "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table": (
+                "discharged by "
+                "data/invariants/d20/theorems/"
+                "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/report.json"
+            ),
             "remaining_recovery_obligation": (
-                "Test finite central-extension/anomaly cocycles on the generator algebra."
+                "Stage the Halloween source-registry, theorem-registry, and Agda replay artifacts for review."
             ),
         },
         "checks": checks,
         "all_checks_pass": all_checks_pass,
         "next_highest_yield_item": (
-            "Test finite central-extension/anomaly cocycles on the generator algebra."
+            "Stage the Halloween source-registry, theorem-registry, and Agda replay artifacts for review."
         ),
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})
@@ -2665,6 +6998,48 @@ def write_report(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             "verify the amplitude-quotient Fourier mode classifier diagonalizes and sector-26-classifies all 2048 modes",
             "verify the finite Virasoro/string-kernel candidate identifies the rank-10 sector-26 closure",
             "verify the finite Virasoro generator algebra and its sector-26 clock defect",
+            "verify the finite central-extension/anomaly cocycle separates the Z/26 coboundary from the F2 survivor",
+            "verify the finite parity central-extension group and signed projective kernel action",
+            "verify the projective kernel packet decomposition and finite tenfold-way witness",
+            "verify the projective packet spectral/charge table and distinguished packet sets",
+            "verify the projective packet charge-frame classifier and packet 239 isolation",
+            "verify the packet-239 stabilizer comparison and seed-candidate status",
+            "verify the packet-239 non-kernel seed propagation cell",
+            "verify the uniform non-kernel propagation cells for all 20 full-exposure packets",
+            "verify the weighted full-exposure propagation graph and its ten active-partner doublets",
+            "verify the rank-10/tenfold alignment and non-basis result for the graph doublets",
+            "verify the affine stabilizer classification of the nonlinear full-exposure radical gate",
+            "verify the radical-gate stabilizer lift and label-breaking survivor counts",
+            "verify the minimal invariant-axis factorization of label symmetry breaking",
+            "verify the canonical labelled full-exposure frame and id-free packet-239 selection",
+            "verify the full-exposure label-coordinate transition operator",
+            "verify the full-exposure label-coordinate spectral-boundary theorem",
+            "verify the full-exposure label-coordinate Green/resolvent response theorem",
+            "verify the zero-pair propagator charge-kernel theorem",
+            "verify the zero-pair propagator symmetry/Ward compatibility theorem",
+            "verify the zero-pair source-to-closed-return coupling no-go and neutral kernel lift",
+            "verify the zero-pair Ward-kernel height selector and selected mask 288",
+            "verify the zero-pair selected sourced Ward/BMS balance for mask 288",
+            "verify the zero-pair one-step sourced-balance cone and mask-288 apex limits",
+            "verify the zero-pair all-kernel sourced-balance shortest-path classifier",
+            "verify the zero-pair sourced-balance transport-family compression and symmetry-level resolution",
+            "verify the zero-pair sourced-balance label-relaxed orbit quotient and forgotten-label certificate",
+            "verify the zero-pair sourced-balance C2 quotient anomaly and twisted balance descent",
+            "verify the zero-pair sourced-balance C2 quotient transport ledger, primal operator, and spectrum",
+            "verify the zero-pair sourced-balance C2 quotient scattering operator and stationary Ward balance",
+            "verify the zero-pair sourced-balance C2 move-orbit family and canonicality split",
+            "verify the zero-pair sourced-balance C2 dynamics selector and spectral-gap split",
+            "verify the zero-pair sourced-balance C2 Cubical foundation bridge candidate",
+            "verify the zero-pair sourced-balance C2 Cubical Agda skeleton and typecheck artifact",
+            "verify the zero-pair sourced-balance C2 Cubical Agda generated enumeration",
+            "verify the zero-pair sourced-balance C2 Cubical Agda generated enumeration properties",
+            "verify the zero-pair sourced-balance C2 Cubical Agda selector-membership decisions",
+            "verify the zero-pair sourced-balance C2 Cubical Agda selector finite-subtype singletons",
+            "verify the zero-pair sourced-balance C2 Cubical Agda lazy63 selector finite subtype",
+            "verify the zero-pair sourced-balance C2 Cubical Agda paired-lazy480 selector finite subtype",
+            "verify the zero-pair sourced-balance C2 Cubical Agda raw543 selector finite subtype",
+            "verify the zero-pair sourced-balance C2 Cubical Agda finite-subtype emitter factorization",
+            "verify the zero-pair sourced-balance C2 Cubical Agda selector finite-subtype lookup table and soundness module",
             "verify the full Drinfeld idempotent matrix remains hash-only in the current JSON artifacts",
         ],
     }

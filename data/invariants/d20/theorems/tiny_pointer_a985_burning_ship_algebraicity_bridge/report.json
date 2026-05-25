@@ -1,0 +1,79 @@
+{
+  "all_checks_pass": true,
+  "boundary": "This theorem certifies the finite quotient bridge and the availability of canonical A985 trace detectors. It does not yet provide a raw 985-orbital Burning_static_fields vector or class representative.",
+  "certificate_sha256": "d9d00f575cd85a453bd7d0b9b5e23ec7d68f8ae53e79dba26e65e1d32d67f308",
+  "checks": {
+    "a985_frame_quotient_order_is_2400": true,
+    "a985_image_size_matches_critical_group_index": true,
+    "burning_equals_a985_two_primary_component": true,
+    "burning_image_size_matches_critical_group_index": true,
+    "burning_quotient_order_is_32": true,
+    "canonical_a985_sector_characters_certified": true,
+    "critical_group_order_is_5184000": true,
+    "fourier_trace_candidate_evaluation_certified": true,
+    "hybrid_burning_rows_collapse_trivially": true,
+    "ledger_has_a985_frame_image_size": true,
+    "ledger_has_a985_frame_quotient": true,
+    "ledger_has_burning_family_image_size": true,
+    "ledger_has_burning_family_quotient": true,
+    "ledger_has_burning_proof_trace_repeat": true,
+    "ledger_has_burning_scheduler_repeat": true,
+    "prior_burningship_certificate_imported": true
+  },
+  "claim": "The certified Burning Ship/static-field algebraicity is the 2-primary shadow of the A985 frame-field quotient: Burning_static_fields has quotient Z/2 x Z/4^2, and A985_frame_fields has quotient Z/2 x Z/20 x Z/60 whose 2-primary component is also Z/2 x Z/4^2.",
+  "derived": {
+    "a985_frame_fields": {
+      "image_size": 2160,
+      "odd_primary_cofactor": 75,
+      "quotient": "Z/2 x Z/20 x Z/60",
+      "quotient_factors": [
+        2,
+        20,
+        60
+      ],
+      "quotient_order": 2400,
+      "two_primary_component": "Z/2 x Z/4^2"
+    },
+    "bridge": {
+      "a985_odd_cofactor_beyond_burning": 75,
+      "same_two_primary_component": true,
+      "shared_two_primary_component": "Z/2 x Z/4^2",
+      "shared_two_primary_order": 32
+    },
+    "burning_static_fields": {
+      "image_size": 162000,
+      "quotient": "Z/2 x Z/4^2",
+      "quotient_factors": [
+        2,
+        4,
+        4
+      ],
+      "quotient_order": 32,
+      "two_primary_component": "Z/2 x Z/4^2"
+    },
+    "critical_group_order": 5184000,
+    "tables": {
+      "bridge_checks": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/burning_a985_bridge_checks.csv",
+      "evidence_rows": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/burning_a985_bridge_evidence_rows.csv",
+      "primary_decomposition": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/burning_a985_primary_decomposition.csv"
+    }
+  },
+  "inputs": {
+    "canonical_sector_characters": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/report.json",
+      "sha256": "ea7becf164d2162b03118cbf849bcca99527eb575e13a6dbb105ade9301f8ac5"
+    },
+    "external_evidence_gate_ledger": {
+      "path": "data/evidence/ss_sat/source_drops/external_evidence_gate/running_ledger.csv",
+      "sha256": "2ffb0f06efe3daff14cf2ba7c089d145ecdfb1fa77f19d548a873b947e372d91"
+    },
+    "fourier_trace_candidate_evaluation": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/report.json",
+      "sha256": "195e1b59b750f5752e983061303c6cba68fc613f1664aac14ad863ec56f3b41f"
+    }
+  },
+  "next_highest_yield_item": "Materialize a Burning_static_fields representative in the raw A985 orbital basis, then apply the canonical 39-sector character table to locate its sector support and trace profile.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_ship_algebraicity_bridge.source_drop",
+  "status": "D20_TINY_POINTER_A985_BURNING_SHIP_ALGEBRAICITY_BRIDGE_CERTIFIED"
+}

@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -162,7 +162,7 @@ def load_sector_units() -> tuple[list[dict[str, str]], np.ndarray]:
 def self_candidate_rows(manifest: list[dict[str, str]]) -> list[dict[str, Any]]:
     coo_rows = read_csv_rows(PILOT_DIR / "sector5_current_matrix_unit_coo.csv")
     labels = {
-        int(row["local_unit_column"]): f"v_legacy[5;{row['i']},{row['j']}]"
+        int(row["local_unit_column"]): f"v_sector[5;{row['i']},{row['j']}]"
         for row in manifest
     }
     out: list[dict[str, Any]] = []
@@ -292,7 +292,7 @@ def write_outputs(
             source_i, source_j = divmod(source_col, 2)
             coordinate_rows.append(
                 {
-                    "candidate_unit_label": f"v_legacy[5;{target_i},{target_j}]",
+                    "candidate_unit_label": f"v_sector[5;{target_i},{target_j}]",
                     "target_i": target_i,
                     "target_j": target_j,
                     "source_i": source_i,
@@ -355,7 +355,7 @@ def markdown_report(report: dict[str, Any]) -> str:
         f"Status: `{report['status']}`\n\n"
         "This proves the GL2 solver and raw-coordinate verifier on a controlled self-candidate. "
         "The candidate is the already certified sector-5 raw matrix-unit chart, so this is an "
-        "executable normalization path, not an independent legacy-basis solution.\n\n"
+        "executable normalization path, not an independent source-sector-basis solution.\n\n"
         "## Checks\n\n"
         f"{checks}\n\n"
         f"Next: {report['next_highest_yield_item']}\n"
@@ -402,7 +402,7 @@ def build_selftest() -> dict[str, Any]:
         col_residual = residual[:, col]
         residual_rows.append(
             {
-                "candidate_unit_label": f"v_legacy[5;{target_i},{target_j}]",
+                "candidate_unit_label": f"v_sector[5;{target_i},{target_j}]",
                 "target_i": target_i,
                 "target_j": target_j,
                 "max_residual_mod_1000003": int(np.max(col_residual)),
@@ -437,7 +437,7 @@ def build_selftest() -> dict[str, Any]:
         "claim": (
             "The sector-5 GL2 normalization solver path is executable and verified on a controlled "
             "self-candidate. The self-candidate is the current certified raw matrix-unit chart, so "
-            "the solved transform is the identity; this is not an independent legacy off-diagonal "
+            "the solved transform is the identity; this is not an independent source-sector off-diagonal "
             "basis certification."
         ),
         "inputs": {
@@ -476,7 +476,7 @@ def build_selftest() -> dict[str, Any]:
         },
         "next_highest_yield_item": (
             "Run this solver against a non-self sector-5 candidate source, or derive such a candidate "
-            "from an upstream legacy off-diagonal construction."
+            "from an upstream source-sector off-diagonal construction."
         ),
         "all_checks_pass": all(checks.values()),
     }
@@ -543,3 +543,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

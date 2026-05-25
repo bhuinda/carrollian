@@ -33,4 +33,4 @@ All audited proof-log events are typed `C`; no `V`, no `X`, no extension variabl
 
 - `residues/kissat_sigsegv.json`: Kissat crashed on `php_3_2.cnf` and `xor_unsat.cnf`.
 - `residues/frat_checker_status.json`: full standalone FRAT checking is blocked locally.
-- `residues/full_frat_legacy_analyzer_blocked.json`: the legacy degree-5 full-FRAT route-rank analyzer is blocked by route explosion; the extracted LRAT replay remains available and verified.
+- `residues/full_frat_inherited_analyzer_blocked.json`: the inherited degree-5 full-FRAT route-rank analyzer is blocked by route explosion; the extracted LRAT replay remains available and verified.

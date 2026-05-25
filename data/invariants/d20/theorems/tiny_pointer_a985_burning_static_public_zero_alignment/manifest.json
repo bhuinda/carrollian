@@ -1,0 +1,50 @@
+{
+  "inputs": {
+    "constructed_representative": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_constructed_representative/report.json",
+      "sha256": "8d4cbdb50ad9f314438a0a4d4b216542d30d66b931dc13baadd1e698f1ecabba"
+    },
+    "constructed_trace_evaluator": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_trace_evaluator/report.json",
+      "sha256": "0ff36f1518ffd4d0d0741b4ca9cc9d0ebc14f4185590e011c06866b8f22e9e1b"
+    },
+    "fourier_trace_candidate_evaluation": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/report.json",
+      "sha256": "195e1b59b750f5752e983061303c6cba68fc613f1664aac14ad863ec56f3b41f"
+    },
+    "public_zero_supports": {
+      "path": "data/invariants/d20/theorems/sector_idempotent_support_admissibility/report.json",
+      "sha256": "66a377f73fd896b9dcd762c5c0dad678f2e30b42f36c764716856a6fa8bfc16d"
+    },
+    "sector33_unique_public_zero": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
+      "sha256": "72d94a621f2dc84f7407673a676ba1cf46651f4284e91332b82a14bd0788f1c8"
+    }
+  },
+  "manifest_sha256": "635c9a81684c17756fa0ed743114e76b1d2e11175daaa9378c0eec10f9df6650",
+  "name": "tiny_pointer_a985_burning_static_public_zero_alignment",
+  "outputs": {
+    "fourier_public_zero_overlap": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/burning_static_fourier_public_zero_overlap.csv",
+    "kernel_summary": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/burning_static_constructed_kernel_summary.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/manifest.json",
+    "public_zero_alignment": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/burning_static_public_zero_support_alignment.csv",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_public_zero_alignment/report.json"
+  },
+  "report_sha256": "c45e3496ad604fc7c84ba336faa891074175935e350816e538cefa5c1a85ba6c",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_static_public_zero_alignment_manifest.source_drop",
+  "validation_tests": [
+    "constructed_representative_certified",
+    "trace_evaluator_ready_or_profile_certified",
+    "public_zero_supports_certified",
+    "sector33_unique_public_zero_certified",
+    "fourier_trace_candidate_evaluation_certified",
+    "public_zero_support_count_is_6_including_zero",
+    "height_exact_public_zero_support_is_33",
+    "all_constructed_generators_vanish_on_sector33",
+    "at_least_two_generators_have_exact_sector33_kernel",
+    "exact_sector33_generators_detect_minimal_public_zero_without_sector33",
+    "kernel_summary_has_three_rows",
+    "alignment_rows_are_3_by_6",
+    "perennial_set_keys_emitted_when_available"
+  ]
+}

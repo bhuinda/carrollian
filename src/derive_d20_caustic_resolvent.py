@@ -5,10 +5,10 @@ from pathlib import Path
 
 try:
     from .d20_optics_common import sha_json, write_json
-    from .layer_registry import layer_path
+    from .certificate_registry import certificate_path
 except ImportError:  # Supports `python src/derive_d20_caustic_resolvent.py`.
     from d20_optics_common import sha_json, write_json
-    from layer_registry import layer_path
+    from certificate_registry import certificate_path
 
 
 def derive(layer17: Path, layer18: Path, sector_alignment: Path, out_json: Path) -> dict:
@@ -54,8 +54,8 @@ def derive(layer17: Path, layer18: Path, sector_alignment: Path, out_json: Path)
 
 if __name__ == "__main__":
     print(json.dumps(derive(
-        layer_path("geometry.wu_golay_quintic_resolvent"),
-        layer_path("geometry.canonical_24_syzygy_frame"),
+        certificate_path("geometry.wu_golay_quintic_resolvent"),
+        certificate_path("geometry.canonical_24_syzygy_frame"),
         Path("generated/generated_sector_alignment_report.json"),
         Path("generated/d20_caustic_resolvent_report.json"),
     ), indent=2, sort_keys=True))

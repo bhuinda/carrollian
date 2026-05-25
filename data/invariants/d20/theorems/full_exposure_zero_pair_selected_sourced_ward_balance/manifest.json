@@ -1,0 +1,34 @@
+{
+  "certification_tests": [
+    "verify height selector, finite BMS/Carrollian balance, and scattering table inputs",
+    "verify selector chooses mask 288 with basis cycles [5,8]",
+    "verify mask 288 closes public charge/flux/residual balance",
+    "verify mask 288 closes hidden R33/action balance",
+    "verify mask 288 decomposes as gamma8 plus cycle 5",
+    "verify gamma8 reaches mask 288 by the canonical generator-5 scattering step",
+    "verify the reverse generator-5 scattering step returns to gamma8",
+    "verify the selected balance is nonzero and first by certified height order"
+  ],
+  "inputs": {
+    "canonical_finite_scattering_table_report": {
+      "path": "data/invariants/d20/theorems/canonical_finite_scattering_table/report.json",
+      "sha256": "3b0cea41366d6972213ad43dd1052a86256a4cfd27249d98072f35c1d804362f"
+    },
+    "finite_bms_carrollian_flux_balance_report": {
+      "path": "data/invariants/d20/theorems/finite_bms_carrollian_flux_balance/report.json",
+      "sha256": "b8755b6cc80e36cff5930114f45fc7dc6eec9d5a5a604437d71b43373822955d"
+    },
+    "zero_pair_ward_kernel_height_selector_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_ward_kernel_height_selector/report.json",
+      "sha256": "e7e312b6502751d2b8496f60239a7528631153d4697799f330bd66fc4e1b4330"
+    }
+  },
+  "manifest_sha256": "9988dfc96b7d685c5e4d900d12be13baae8c76e1810cba6507807541173877bd",
+  "name": "full_exposure_zero_pair_selected_sourced_ward_balance",
+  "outputs": {
+    "manifest": "data/invariants/d20/theorems/full_exposure_zero_pair_selected_sourced_ward_balance/manifest.json",
+    "report": "data/invariants/d20/theorems/full_exposure_zero_pair_selected_sourced_ward_balance/report.json"
+  },
+  "report_sha256": "0197a9786611b4c9f2b85237ab22948c811f3b7df021dec1cc84a0f6c655f648",
+  "schema": "d20.theorem.full_exposure_zero_pair_selected_sourced_ward_balance_manifest"
+}

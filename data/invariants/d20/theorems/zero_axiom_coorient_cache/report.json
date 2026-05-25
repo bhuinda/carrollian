@@ -1,0 +1,196 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "da6983ce98e931ffc94b074df36288d9c86064259d65f3b0d506b6c84c855003",
+  "checks": {
+    "all_source_files_exist_and_match": true,
+    "cache_self_hash_matches": true,
+    "cache_status_is_pass": true,
+    "canonical_base_is_expected": true,
+    "canonical_base_is_not_seed": true,
+    "canonical_base_separates_all_points": true,
+    "closed_action_order_is_9216": true,
+    "full_zero_axiom_constructor_boundary_recorded": true,
+    "marker_does_not_use_supplied_relation_partition": true,
+    "marker_integer_count_is_9": true,
+    "marker_is_not_seed": true,
+    "marker_uses_generated_relation_body": true,
+    "selected_generator_orders_match": true,
+    "selected_generators_reconstruct": true,
+    "stored_base_matches_canonical_base": true,
+    "trace_final_signature_count_is_2576": true,
+    "trace_has_three_steps": true,
+    "word_presentation_closure_order_is_9216": true,
+    "zero_axiom_reduction_recorded": true
+  },
+  "claim": "The stored zero-axiom coorient cache is a checked finite certificate boundary: its source hashes match the current workspace, its self hash is valid, the canonical base [18,67,37] separates all 2576 points, and the derived lift closes to order 9216.",
+  "definition": {
+    "cache_path": "data/invariants/d20/zero_axiom_coorient.json",
+    "cache_policy": "d20 derivation may load this cache when the recorded source hashes match; otherwise it must recompute the zero-axiom coorient reduction.",
+    "certified_boundary": "This is a finite cache-validity certificate, not a claim that the full zero-axiom constructor is primitive input."
+  },
+  "derived": {
+    "cache_certificate_sha256": "5cff63a62891cbdb163d504c6e59da347d4ddf1e26f67e62793e0265de2482fb",
+    "canonical_base": [
+      18,
+      67,
+      37
+    ],
+    "canonical_base_trace": [
+      {
+        "chosen_point": 18,
+        "first_ten_ties": [
+          18,
+          20,
+          22,
+          25,
+          26,
+          27,
+          29,
+          31,
+          34,
+          37
+        ],
+        "lexicographic_tie_count": 768,
+        "step": 1,
+        "unique_two_sided_signatures": 284
+      },
+      {
+        "chosen_point": 67,
+        "first_ten_ties": [
+          67,
+          151,
+          261,
+          276,
+          777,
+          797,
+          809,
+          951,
+          960,
+          1176
+        ],
+        "lexicographic_tie_count": 24,
+        "step": 2,
+        "unique_two_sided_signatures": 2274
+      },
+      {
+        "chosen_point": 37,
+        "first_ten_ties": [
+          37,
+          146,
+          421,
+          565,
+          697,
+          786,
+          811,
+          936,
+          991,
+          1093
+        ],
+        "lexicographic_tie_count": 24,
+        "step": 3,
+        "unique_two_sided_signatures": 2576
+      }
+    ],
+    "closed_action": {
+      "action_sha256": "a153e0a0587089bf8511ae5c8e6722c9acdfa80a0c41884dd14a5fae812ef955",
+      "degree": 2576,
+      "group_order": 9216
+    },
+    "final_signature_count": 2576,
+    "generator_permutations_sha256": "b0aacddfec6f38bd0fb85a6fac24f9ee9b063cf4c721fffc6051bc9a3e9d9f8a",
+    "marker_integer_count": 9,
+    "selected_generator_base_images": [
+      [
+        260,
+        120,
+        235
+      ],
+      [
+        669,
+        702,
+        720
+      ],
+      [
+        18,
+        151,
+        39
+      ]
+    ],
+    "selected_generator_indices": [
+      1,
+      4,
+      192
+    ],
+    "selected_generator_orders": [
+      2,
+      6,
+      2
+    ],
+    "source_file_rows_sha256": "e55c78bc72665799b4a4acf29609ecfad5f78b7f4f2e9360a3bade74daae7984",
+    "word_presentation": {
+      "closure_order": 9216,
+      "generators": [
+        "alpha",
+        "beta",
+        "gamma"
+      ],
+      "presentation_sha256": "9b6cbe2956324c6deeedb6d1eb81556752dbb5425a9120a25818cc8d36e8a4fe"
+    }
+  },
+  "inputs": {
+    "source_files": [
+      {
+        "actual_sha256": "be7d17f4711784664fbc281a68667aa5d1852aed24045817ae5f3a66bcd05de2",
+        "exists": true,
+        "matches": true,
+        "path": "data/invariants/d20/d20_d6_selector_derivation.json",
+        "recorded_sha256": "be7d17f4711784664fbc281a68667aa5d1852aed24045817ae5f3a66bcd05de2",
+        "source_id": "d6_selector"
+      },
+      {
+        "actual_sha256": "34c5fe7a0921b92026fc0abb5c6fd91e24bf3c96d221d78a3fd77514cbe0af92",
+        "exists": true,
+        "matches": true,
+        "path": "generated\\relation_memberships_pre_A985_from_source_aligned.npz",
+        "recorded_sha256": "34c5fe7a0921b92026fc0abb5c6fd91e24bf3c96d221d78a3fd77514cbe0af92",
+        "source_id": "relation_body"
+      },
+      {
+        "actual_sha256": "4da54562a00de179a5cad61b45905c567d402441a452060c883ee0ac9486b073",
+        "exists": true,
+        "matches": true,
+        "path": "data\\invariants\\d20\\pre_A985_relation_body_theorem.json",
+        "recorded_sha256": "4da54562a00de179a5cad61b45905c567d402441a452060c883ee0ac9486b073",
+        "source_id": "relation_body_theorem"
+      },
+      {
+        "actual_sha256": "866c5b46f1e80666f9c8b6ea327aa512f04a549e220a4a79df5a7ed5bf6b9e4e",
+        "exists": true,
+        "matches": true,
+        "path": "data\\invariants\\d20\\coorient_relator_profile_from_a0_a5.json",
+        "recorded_sha256": "866c5b46f1e80666f9c8b6ea327aa512f04a549e220a4a79df5a7ed5bf6b9e4e",
+        "source_id": "relator_profile_theorem"
+      },
+      {
+        "actual_sha256": "11be2cf057f1fbcf4b796e9d71ef58a1965f9f4cfc48d13cc7998920df970304",
+        "exists": true,
+        "matches": true,
+        "path": "data/coorient/absolute_d20_word_presentation.json",
+        "recorded_sha256": "11be2cf057f1fbcf4b796e9d71ef58a1965f9f4cfc48d13cc7998920df970304",
+        "source_id": "word_presentation"
+      }
+    ],
+    "zero_axiom_coorient_cache": {
+      "path": "data/invariants/d20/zero_axiom_coorient.json",
+      "sha256": "51b84df01c5a7b120d7fa9b6a1aa77e0104f1df3172fc45cdde985db1eaf7142"
+    }
+  },
+  "interpretation": {
+    "what_is_certified": "The cached zero-axiom coorient payload is current with respect to its stated finite source files and can be used by derive_d20 without repeating the slow matrix reconstruction step.",
+    "what_this_does_not_prove": "This cache certificate does not replace strict-scratch reconstruction; it documents the fast path boundary and its invalidation rule."
+  },
+  "next_highest_yield_item": "Add an explicit strict-scratch theorem that compares a fresh zero-axiom recomputation against this cache certificate byte-for-byte.",
+  "object": "d20",
+  "schema": "d20.theorem.zero_axiom_coorient_cache",
+  "status": "D20_ZERO_AXIOM_COORIENT_CACHE_CERTIFIED"
+}

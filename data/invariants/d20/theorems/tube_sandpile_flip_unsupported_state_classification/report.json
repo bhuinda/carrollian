@@ -1,0 +1,424 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d4713d041b3b8d2e2be2e4d33f2f939071b240ae998d8714ef9b6287da9307ba",
+  "checks": {
+    "fourier_a985_sector_source_is_certified": true,
+    "fourier_residue_source_is_certified": true,
+    "missing_object_states_match_sector_states": true,
+    "object_state_11_is_absent": true,
+    "object_state_counts_match": true,
+    "residue_screen0_splits_each_screen12_cell_256_256": true,
+    "residue_screen12_has_four_equal_cells": true,
+    "support_admissible_profile_still_splits_64_cosets": true,
+    "support_pullback_source_is_certified": true,
+    "support_state_counts_match": true,
+    "support_touch_counts_match": true,
+    "supported_object_states_match_sector_states": true,
+    "unsupported_state_has_residue_mass": true,
+    "unsupported_state_has_transition_mass": true,
+    "unsupported_state_hits_56_cosets": true
+  },
+  "claim": "The unsupported screen12=11 state is residue-visible but outside the current A985/tube six-object phase image. The full residue cube has 512 masks in screen12=11, and grade-flip data uses that state, but no signed object label or local primitive sector piece realizes it.",
+  "definition": {
+    "classification_boundary": "The classification is relative to the current support-level A985/tube model. It does not prove that no larger or different construction can realize the missing state.",
+    "object_phase_image": "The set of screen12 states realized by the six object labels B-, B+, V-, V+, S-, S+ in the certified A985/tube phase tests.",
+    "screen12_state": "The two-bit value formed from signed_turn_screen_1 and signed_turn_screen_2, using 0 for phase +1 and 1 for phase -1."
+  },
+  "derived": {
+    "classification": {
+      "classification": "residue_visible_but_outside_current_object_phase_image",
+      "minimum_extension_needed": "Any support-level realization of state 11 would require at least one new primitive piece or object-phase label with screen1_phase=-1 and screen2_phase=-1, or a different non-support construction.",
+      "reason": "The residue screen12 map has all four states, but the six signed object labels realize only 00, 01, and 10. Since the 39-sector support rows are assembled from local primitive pieces labelled by those six objects, state 11 has no local primitive sector support inside the current model.",
+      "unsupported_state": "11"
+    },
+    "object_labels_by_state": {
+      "00": [
+        "B-",
+        "V-"
+      ],
+      "01": [
+        "B+",
+        "S+"
+      ],
+      "10": [
+        "V+",
+        "S-"
+      ],
+      "11": []
+    },
+    "object_phase_rows": [
+      {
+        "label": "B-",
+        "object": 0,
+        "screen12_state": "00",
+        "screen1_phase": 1,
+        "screen2_phase": 1
+      },
+      {
+        "label": "B+",
+        "object": 1,
+        "screen12_state": "01",
+        "screen1_phase": 1,
+        "screen2_phase": -1
+      },
+      {
+        "label": "V-",
+        "object": 2,
+        "screen12_state": "00",
+        "screen1_phase": 1,
+        "screen2_phase": 1
+      },
+      {
+        "label": "V+",
+        "object": 3,
+        "screen12_state": "10",
+        "screen1_phase": -1,
+        "screen2_phase": 1
+      },
+      {
+        "label": "S-",
+        "object": 4,
+        "screen12_state": "10",
+        "screen1_phase": -1,
+        "screen2_phase": 1
+      },
+      {
+        "label": "S+",
+        "object": 5,
+        "screen12_state": "01",
+        "screen1_phase": 1,
+        "screen2_phase": -1
+      }
+    ],
+    "object_phase_rows_sha256": "e1f5a05a6040590f0b39526d209c7e22b7b47e81a9d43b54bd0a8a71e0cdcb84",
+    "object_state_counts": {
+      "00": 2,
+      "01": 2,
+      "10": 2
+    },
+    "residue_screen12_counts": {
+      "full_signature_counts": {
+        "000": 256,
+        "001": 256,
+        "010": 256,
+        "011": 256,
+        "100": 256,
+        "101": 256,
+        "110": 256,
+        "111": 256
+      },
+      "screen0_split_by_screen12": {
+        "00": {
+          "0": 256,
+          "1": 256
+        },
+        "01": {
+          "0": 256,
+          "1": 256
+        },
+        "10": {
+          "0": 256,
+          "1": 256
+        },
+        "11": {
+          "0": 256,
+          "1": 256
+        }
+      },
+      "screen12_counts": {
+        "00": 512,
+        "01": 512,
+        "10": 512,
+        "11": 512
+      }
+    },
+    "sector_support_state_rows": [
+      {
+        "homogeneous_sector_count": 0,
+        "homogeneous_sector_ids": [],
+        "local_pre_idempotent_count": 30,
+        "object_label_counts": {
+          "B-": 16,
+          "V-": 14
+        },
+        "public_zero_sector_ids": [],
+        "screen12_state": "00",
+        "screen1_phase": 1,
+        "screen2_phase": 1,
+        "sector_touch_count": 23,
+        "sector_touch_ids": [
+          0,
+          1,
+          4,
+          5,
+          8,
+          11,
+          12,
+          14,
+          15,
+          17,
+          18,
+          20,
+          21,
+          23,
+          27,
+          28,
+          30,
+          31,
+          32,
+          35,
+          36,
+          37,
+          38
+        ],
+        "state_cell_sha256": "8a9a1c0d6ed274fb2cbc58ade817de4abfce531286bd55068439b9c004a3a3f0"
+      },
+      {
+        "homogeneous_sector_count": 4,
+        "homogeneous_sector_ids": [
+          7,
+          10,
+          19,
+          33
+        ],
+        "local_pre_idempotent_count": 35,
+        "object_label_counts": {
+          "B+": 13,
+          "S+": 22
+        },
+        "public_zero_sector_ids": [
+          33
+        ],
+        "screen12_state": "01",
+        "screen1_phase": 1,
+        "screen2_phase": -1,
+        "sector_touch_count": 27,
+        "sector_touch_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          18,
+          19,
+          22,
+          27,
+          29,
+          30,
+          31,
+          32,
+          33,
+          35,
+          36,
+          37,
+          38
+        ],
+        "state_cell_sha256": "a376896d85ee722d75b98f39d202045f17e04c4c88458da24aa01e5e6976136a"
+      },
+      {
+        "homogeneous_sector_count": 5,
+        "homogeneous_sector_ids": [
+          16,
+          24,
+          25,
+          26,
+          34
+        ],
+        "local_pre_idempotent_count": 44,
+        "object_label_counts": {
+          "S-": 20,
+          "V+": 24
+        },
+        "public_zero_sector_ids": [],
+        "screen12_state": "10",
+        "screen1_phase": -1,
+        "screen2_phase": 1,
+        "sector_touch_count": 32,
+        "sector_touch_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          31,
+          34,
+          35,
+          36,
+          37,
+          38
+        ],
+        "state_cell_sha256": "389815b958ba0a6da7bb73df211c12210c12bc3f005893ca8ad31857d59d8b1c"
+      },
+      {
+        "homogeneous_sector_count": 0,
+        "homogeneous_sector_ids": [],
+        "local_pre_idempotent_count": 0,
+        "object_label_counts": {},
+        "public_zero_sector_ids": [],
+        "screen12_state": "11",
+        "screen1_phase": -1,
+        "screen2_phase": -1,
+        "sector_touch_count": 0,
+        "sector_touch_ids": [],
+        "state_cell_sha256": "d31c9ef4acafefbc1eb27b28eda3cfad31cb0e893328e2ab9168855e60de497f"
+      }
+    ],
+    "sector_support_state_rows_sha256": "27c9fdebd86e045419212a52dd5b180d7fe0ea3ab318b6185d67b676d14947b1",
+    "support_pullback_profile_summary": {
+      "class_count": 64,
+      "class_rows_sha256": "930a9bd60f03d4916df8b972356d144fb02e2c579d4051cb25408ed9e309d731",
+      "class_size_histogram": {
+        "1": 64
+      },
+      "fields": [
+        "grade_flip_pair_count",
+        "exact_divisor_fiber_count",
+        "pair_sandpile_class_order_histogram",
+        "fiber_sandpile_class_order_histogram",
+        "support_admissible_cell_transition_histogram"
+      ]
+    },
+    "transition_obstruction_summary": {
+      "coset_count_using_missing_state": 56,
+      "cosets_using_missing_state": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        46,
+        47,
+        48,
+        50,
+        51,
+        52,
+        53,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "endpoint_state_multiplicity": {
+        "00": 795,
+        "01": 592,
+        "10": 686,
+        "11": 497
+      },
+      "missing_state_pair_count": 420,
+      "missing_state_transition_histogram": {
+        "00->11": 63,
+        "01->11": 55,
+        "10->11": 71,
+        "11->00": 43,
+        "11->01": 55,
+        "11->10": 56,
+        "11->11": 77
+      },
+      "support_admissible_pair_count": 865,
+      "support_admissible_transition_histogram": {
+        "00->00": 165,
+        "00->01": 107,
+        "00->10": 97,
+        "01->00": 77,
+        "01->01": 94,
+        "01->10": 47,
+        "10->00": 78,
+        "10->01": 63,
+        "10->10": 137
+      },
+      "total_pair_count": 1285
+    }
+  },
+  "inputs": {
+    "fourier_a985_sector_character_candidates_report": {
+      "path": "data/invariants/d20/theorems/fourier_a985_sector_character_candidates/report.json",
+      "sha256": "cd736ac3f7639afdd92f544d672cb128c275a8cede5838dfec6028c68d4d5da6"
+    },
+    "fourier_residue_screen_report": {
+      "path": "data/invariants/d20/theorems/fourier_residue_screen/report.json",
+      "sha256": "818c981b57d677a8efd614e6731f8978b5fc14ebf5102b28e05625c8d8241c7e"
+    },
+    "tube_sandpile_flip_sector_support_pullback_report": {
+      "path": "data/invariants/d20/theorems/tube_sandpile_flip_sector_support_pullback/report.json",
+      "sha256": "96007d6e50e559864e7911325e75ebd4129569912f85eb9bbe445aa8f5b75b3d"
+    }
+  },
+  "interpretation": {
+    "what_is_certified": "State 11 is not lost in the residue calculation; it is absent from the object-labelled support side before sector aggregation.",
+    "what_remains_open": "Whether state 11 should be modeled by extending the support data or treated as purely residue-level data remains a separate theorem."
+  },
+  "next_highest_yield_item": "Test whether adding a formal screen12=11 support cell preserves the finite algebra checks or immediately violates existing object-phase constraints.",
+  "object": "d20",
+  "schema": "d20.theorem.tube_sandpile_flip_unsupported_state_classification",
+  "status": "D20_TUBE_SANDPILE_FLIP_UNSUPPORTED_STATE_CLASSIFIED"
+}

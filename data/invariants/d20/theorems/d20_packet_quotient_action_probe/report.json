@@ -1,0 +1,235 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "92224c25e7ff06510c7d8280da4df1e443635f0a4d909739e1b2e031cd8b4858",
+  "checks": {
+    "a985_or_tube_packet_operator_is_not_found": true,
+    "active_partner_piece_is_the_four_remaining_ordered_crossing_pairs": true,
+    "all_cells_have_only_source_and_active_partner_targets": true,
+    "dimension_boundary_blocks_faithful_full_a985_action_here": true,
+    "full_exposure_packet_count_is_20": true,
+    "full_packet_matrix_lift_input_is_certified": true,
+    "full_paired_cross_return_operator_lands_in_Mat_2_Q_power_10": true,
+    "graph_blocks_are_uniform_2I_plus_4S": true,
+    "label_blocks_are_uniform_2I_plus_4S": true,
+    "label_coordinate_input_is_certified": true,
+    "negative_boundary_is_explicit": true,
+    "packet_cell_input_is_certified": true,
+    "packet_graph_input_is_certified": true,
+    "quotient_and_tube_context_inputs_are_certified": true,
+    "source_loop_piece_is_exactly_5_10_plus_10_5": true
+  },
+  "claim": "The quotient-action probe finds certified packet-level scattering actions that preserve the 20 full-exposure packets and land in Mat_2(Q)^10. The source-loop piece [5,10]+[10,5] acts as 2I, the active-partner piece acts as 4S, and their sum is the already certified 2I+4S doublet block. No certified A985, tube, or terminal-quotient packet operator map is found yet.",
+  "definition": {
+    "negative_boundary": "The positive scattering operator is not certified as an A985 element, tube central element, or terminal quotient tensor restriction.",
+    "packet_quotient_action_probe": "A boundary search over the certified quotient, tube, sandpile, and full-exposure packet certificates for an operator that preserves the 20-packet full-exposure subspace and lands in the Mat_2(Q)^10 lift.",
+    "positive_result": "The primitive-generator paired cross-return scattering operator and its source-loop and active-partner pieces have certified packet actions."
+  },
+  "derived": {
+    "candidate_source_rows": [
+      {
+        "certified_status": "D20_FULL_EXPOSURE_PACKET_PROPAGATION_CELLS_CERTIFIED",
+        "packet_operator_status": "supplies_raw_paired_cross_return_rows",
+        "source_id": "full_exposure_packet_propagation_cells",
+        "status": "positive_packet_action_source"
+      },
+      {
+        "certified_status": "D20_FULL_EXPOSURE_PACKET_PROPAGATION_GRAPH_CERTIFIED",
+        "packet_operator_status": "supplies_20_by_20_transition_matrix",
+        "source_id": "full_exposure_packet_propagation_graph",
+        "status": "positive_packet_action_matrix"
+      },
+      {
+        "certified_status": "D20_FULL_EXPOSURE_LABEL_COORDINATE_TRANSITION_OPERATOR_CERTIFIED",
+        "packet_operator_status": "rewrites_the_packet_action_in_intrinsic_labels",
+        "source_id": "full_exposure_label_coordinate_transition_operator",
+        "status": "positive_label_coordinate_witness"
+      },
+      {
+        "certified_status": "D20_FULL_PACKET_MATRIX_LIFT_CERTIFIED",
+        "packet_operator_status": "confirms_landing_in_Mat_2_Q_power_10",
+        "source_id": "d20_full_packet_matrix_lift",
+        "status": "positive_block_lift_receiver"
+      },
+      {
+        "packet_operator_status": "quotient_context_no_full_exposure_packet_restriction_map",
+        "source_id": "compact_amplitude_quotient",
+        "status": "D20_COMPACT_AMPLITUDE_QUOTIENT_CERTIFIED"
+      },
+      {
+        "packet_operator_status": "quotient_context_no_full_exposure_packet_restriction_map",
+        "source_id": "reduced_amplitude_quotient_scattering_automaton",
+        "status": "D20_REDUCED_AMPLITUDE_QUOTIENT_SCATTERING_AUTOMATON_CERTIFIED"
+      },
+      {
+        "packet_operator_status": "tube_context_no_full_exposure_packet_restriction_map",
+        "source_id": "fourier_screen0_tube_central_element",
+        "status": "D20_FOURIER_SCREEN0_TUBE_CENTRAL_ELEMENT_CERTIFIED"
+      },
+      {
+        "packet_operator_status": "sandpile_context_no_full_exposure_packet_restriction_map",
+        "source_id": "tube_sandpile_divisor_map",
+        "status": "D20_TUBE_SANDPILE_DIVISOR_MAP_CERTIFIED"
+      },
+      {
+        "packet_operator_status": "sandpile_context_no_full_exposure_packet_restriction_map",
+        "source_id": "tube_sandpile_kernel_flips",
+        "status": "D20_TUBE_SANDPILE_KERNEL_FLIPS_CERTIFIED"
+      },
+      {
+        "packet_operator_status": "raw_quotient_tensor_input_no_packet_restriction_certificate",
+        "source_id": "raw_quotients_npz",
+        "status": "hashed_input_present"
+      }
+    ],
+    "candidate_source_rows_sha256": "fbfe0cf7897c8238116574ceddb7242909b7802ece73d9fb96c9c5248f46c998",
+    "certified_packet_actions": [
+      {
+        "block_decomposition": "2I",
+        "block_on_each_active_partner_doublet": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "lands_in_block_lift": true,
+        "operator_id": "source_loop_5_10_plus_10_5",
+        "operator_kind": "primitive_generator_scattering_piece",
+        "preserves_full_exposure_20_packet_subspace": true,
+        "source": "ordered crossing pairs [5,10] and [10,5]"
+      },
+      {
+        "block_decomposition": "4S",
+        "block_on_each_active_partner_doublet": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "lands_in_block_lift": true,
+        "operator_id": "active_partner_cross_pair_sum",
+        "operator_kind": "primitive_generator_scattering_piece",
+        "preserves_full_exposure_20_packet_subspace": true,
+        "source": "ordered crossing pairs [5,9], [9,5], [9,10], and [10,9]"
+      },
+      {
+        "block_decomposition": "2I+4S",
+        "block_on_each_active_partner_doublet": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "lands_in_block_lift": true,
+        "operator_id": "full_paired_cross_return_sum",
+        "operator_kind": "primitive_generator_scattering_operator",
+        "preserves_full_exposure_20_packet_subspace": true,
+        "source": "sum of all ordered distinct crossing pairs from {5,9,10}"
+      }
+    ],
+    "certified_packet_actions_sha256": "30ae89b04fa9c5811d2ade13041ed681d5f72d9dd94a1e6be3f510a74da62482",
+    "negative_boundary": {
+      "a985_multiplication_tensor_restricted_to_packets": "not_certified",
+      "raw_quotient_tensor_restricted_to_packets": "not_certified",
+      "scattering_operator_is_a985_element": false,
+      "scattering_operator_is_terminal_quotient_element": false,
+      "scattering_operator_is_tube_central_element": false,
+      "tube_central_element_restricted_to_packets": "not_certified"
+    },
+    "operator_probe_summary": {
+      "a985_dimension": 985,
+      "a985_or_tube_packet_operator_found": false,
+      "active_partner_action_block": "4S",
+      "active_partner_doublet_count": 10,
+      "block_algebra": "Mat_2(Q)^10",
+      "block_lift_image_dimension_bound": 40,
+      "certified_a985_to_packet_operator_map_present": false,
+      "full_exposure_packet_count": 20,
+      "lands_in_block_lift": true,
+      "minimum_kernel_dimension_for_any_a985_map_into_this_block_lift": 945,
+      "only_scattering_quotient_packet_actions_found": true,
+      "packet_space_dimension": 20,
+      "positive_packet_action_count": 3,
+      "preserves_full_exposure_20_packet_subspace": true,
+      "source_loop_action_block": "2I",
+      "strongest_certified_packet_action": "full_paired_cross_return_sum",
+      "strongest_certified_packet_action_block": "2I+4S",
+      "terminal_quotient_packet_operator_found": false
+    }
+  },
+  "inputs": {
+    "compact_amplitude_quotient_report": {
+      "path": "data/invariants/d20/theorems/compact_amplitude_quotient/report.json",
+      "sha256": "86407aadab91adcaf79ef0afd36a991831689103804fb09193d349cd4a76306d"
+    },
+    "constants": {
+      "path": "data/raw/constants.json",
+      "sha256": "f6f8d910c62188971545fb7de5d4bcd16f52a8880872c4230fe0e0420696def0"
+    },
+    "d20_full_packet_matrix_lift_report": {
+      "path": "data/invariants/d20/theorems/d20_full_packet_matrix_lift/report.json",
+      "sha256": "5c7a8bd31562f50ef1e2a56729002990159040732fe53edeb582b2ba19c55870"
+    },
+    "fourier_screen0_tube_central_element_report": {
+      "path": "data/invariants/d20/theorems/fourier_screen0_tube_central_element/report.json",
+      "sha256": "366ef6d4a81743163b80e6025923b256432dc7b6f0768c927c7a81721e23e278"
+    },
+    "full_exposure_label_coordinate_transition_operator_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_label_coordinate_transition_operator/report.json",
+      "sha256": "70cd9f1687843c0c2440cdb95ad388e20d91859735c7caca76fbc3eb0760eb32"
+    },
+    "full_exposure_packet_propagation_cells_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_cells/report.json",
+      "sha256": "0cea64975c4b45cfa152fee8a51d70bf23da4788ff561895f81580bd86e7c963"
+    },
+    "full_exposure_packet_propagation_graph_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json",
+      "sha256": "c115c85c7125e3b89ec5120c55cc6c4db5364bd8a026e20d78fac42af2371b82"
+    },
+    "quotients_npz": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    },
+    "reduced_amplitude_quotient_scattering_automaton_report": {
+      "path": "data/invariants/d20/theorems/reduced_amplitude_quotient_scattering_automaton/report.json",
+      "sha256": "8588e1c5576b86f5aab13d11260c1242a632dbd38fe6ac0d7293c882f1f1058f"
+    },
+    "tube_sandpile_divisor_map_report": {
+      "path": "data/invariants/d20/theorems/tube_sandpile_divisor_map/report.json",
+      "sha256": "e210723b0fae3e1e517699348252cbdc1fa5ed5639e49236517cab64662af292"
+    },
+    "tube_sandpile_kernel_flips_report": {
+      "path": "data/invariants/d20/theorems/tube_sandpile_kernel_flips/report.json",
+      "sha256": "6a3498175e2feacd432c3c12563716b445c4e03ccb4a51ca2ec4740fb37617f2"
+    }
+  },
+  "interpretation": {
+    "what_this_certifies": [
+      "the paired cross-return scattering operator preserves the 20 full-exposure packets",
+      "the source-loop [5,10]+[10,5] piece acts as 2I on every active-partner doublet",
+      "the remaining ordered crossing pairs act as 4S on every active-partner doublet",
+      "the full packet action lands in the already certified Mat_2(Q)^10 block lift"
+    ],
+    "what_this_does_not_certify": [
+      "an A985 multiplication element acting on the 20 packets",
+      "a tube central element acting on the 20 packets",
+      "a terminal quotient tensor restriction acting on the 20 packets",
+      "a physical Matrix/M-theory promotion"
+    ]
+  },
+  "next_highest_yield_item": "Construct an explicit restriction map from A985, the tube screen-0 central element, or q42/q12 quotient tensors to the 20 full-exposure packets and test whether any resulting packet action equals 2I, 4S, or 2I+4S.",
+  "object": "d20",
+  "schema": "d20.theorem.d20_packet_quotient_action_probe",
+  "status": "D20_PACKET_QUOTIENT_ACTION_PROBE_CERTIFIED"
+}

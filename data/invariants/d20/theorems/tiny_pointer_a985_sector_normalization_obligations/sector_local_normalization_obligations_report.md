@@ -10,10 +10,10 @@ Change-of-basis template terms: `73594`
 
 ## Checks
 
-- `full_legacy_sector_match_certified`: `True`
+- `full_source_sector_match_certified`: `True`
 - `full_matrix_unit_coo_certified`: `True`
 - `support_restricted_multiplication_certified`: `True`
-- `legacy_lift_has_no_matrix_unit_basis`: `True`
+- `source_lift_has_no_matrix_unit_basis`: `True`
 - `obligation_rows_cover_39_sectors`: `True`
 - `matrix_unit_counts_sum_to_985`: `True`
 - `matrix_unit_products_sum_to_top_support_products`: `True`
@@ -23,5 +23,6 @@ Change-of-basis template terms: `73594`
 - `registered_source_sector_count_is_4`: `True`
 - `change_of_basis_terms_match_sector_templates`: `True`
 - `remaining_projective_gauge_dimension_positive`: `True`
+- `perennial_join_key_emitted_when_available`: `True`
 
-Next: Supply or derive a genuine legacy off-diagonal matrix-unit basis for one open sector, then solve its GL_d/scalar normalization equation against the raw-orbital matrix units.
+Next: Supply or derive a genuine source-sector off-diagonal matrix-unit basis for one open sector, then solve its GL_d/scalar normalization equation against the raw-orbital matrix units.

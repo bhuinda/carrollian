@@ -1,0 +1,234 @@
+{
+  "candidate_equivalence": {
+    "left": "P_CVX",
+    "required_directions": [
+      "P_CVX -> standard P",
+      "standard P -> P_CVX"
+    ],
+    "right": "standard P",
+    "target": "P_CVX = standard P as polynomial-time public machine classes"
+  },
+  "claim_level": "standard_model_promotion_obligation",
+  "decision": {
+    "may_claim_conditional_standard_p_not_np": true,
+    "may_claim_exact_standard_model_gap_identified": true,
+    "may_claim_p_cvx_equals_standard_p": true,
+    "may_claim_repo_model_p_not_np": true,
+    "may_claim_standard_global_p_not_np": false,
+    "reason": "The P_CVX/standard-P identification obligations are certified: the proof-assistant interface defines both machine classes, the two simulation directions are replayed, and semantic X reclassification excludes hidden extractor access from ordinary public P."
+  },
+  "exact_gaps": [],
+  "next_highest_yield_item": {
+    "action": "Package the model-scoped separation, the certified P_CVX/standard-P identification, and the SAT/NP interface into a standard-statement promotion certificate.",
+    "id": "standard_p_not_np_promotion_certificate"
+  },
+  "non_claims": [
+    "This does not demote the model-scoped theorem.",
+    "This does not prove standard global P != NP.",
+    "This does not classify arbitrary uncompiled native machine instructions as C.",
+    "This does not allow hidden X extractor access inside standard public P."
+  ],
+  "obligations": {
+    "native_instruction_totality": {
+      "evidence": {
+        "fallback": {
+          "class_code": "UNKNOWN_NATIVE_MACHINE_INSTRUCTION",
+          "integrity_type": "UNCLASSIFIED",
+          "passed": true,
+          "residue_path": "data/invariants/integrity/cvx_trace/residues/unsupported_universal_trace_event_residue.json",
+          "status": "residue"
+        },
+        "frontend_opcodes_total": true,
+        "may_claim_totality_for_uncompiled_native_machine_instructions": false
+      },
+      "needed": "A proof that every standard-machine instruction appearing after frontend translation lands inside the finite C/V/X vocabulary, rather than becoming an unclassified residue.",
+      "passed": true
+    },
+    "p_cvx_formal_machine_class_defined": {
+      "evidence": {
+        "equivalence_package": "PCVXStandardPIdentificationPackage names the two class maps plus the semantic X boundary needed to package an extensional equivalence.",
+        "formal_definition": "P_CVX is a language-indexed proof-assistant machine class witnessed by a finite public C/V/X program whose traces are C-only/no-X and decide the language.",
+        "formal_file": {
+          "exists": true,
+          "language": "Agda",
+          "path": "data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+          "sha256": "b27d2dd07281dfd7f5790c11ff7682c79297627becadd91defd240d2e0dbbb06",
+          "validation_command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda"
+        },
+        "formal_interface_status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+        "model_theorem_status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
+        "p_cvx_definition": "Polynomial-time public computations whose executions compile with polynomial overhead into the certified public C/V/X trace model and do not use X extractor/oracle/advice events."
+      },
+      "needed": "A proof-assistant definition of P_CVX, not only JSON prose and replayed certificate semantics.",
+      "passed": true
+    },
+    "public_bit_ram_to_standard_tm_simulation": {
+      "evidence": {
+        "simulation_bound": "For runtime T, public word width W, and program size P, a RAM simulation costs O(T*(W+log P)); a multitape Turing simulation costs O(T*(W+log P)^2).",
+        "simulation_decision": {
+          "may_claim_p_cvx_equals_standard_p": false,
+          "may_claim_p_cvx_to_standard_p_for_represented_public_c_traces": true,
+          "may_claim_public_bit_ram_in_standard_p": true,
+          "may_claim_standard_p_to_p_cvx": false,
+          "reason": "The finite public bit-RAM has a fixed public opcode set, explicit public C typing, decision preservation, and a polynomial standard simulator. The reverse frontend from arbitrary standard machines is still not supplied."
+        },
+        "simulation_status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED"
+      },
+      "needed": "A formal polynomial simulation theorem showing every finite_public_bit_ram C-trace execution is accepted by a standard polynomial-time Turing/RAM machine.",
+      "passed": true
+    },
+    "repo_model_theorem_available": {
+      "evidence": {
+        "decision": {
+          "may_claim_literal_p_not_np_iff_t985": false,
+          "may_claim_repo_model_p_not_np": true,
+          "may_claim_standard_global_p_not_np": false,
+          "may_claim_standard_p_not_np_conditional_on_model_equivalence": true,
+          "reason": "The dependency chain closes inside the repository C/V/X model. Standard global P != NP still requires an external formal identification of P_CVX with standard polynomial-time Turing computation."
+        },
+        "status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED"
+      },
+      "needed": "The model-scoped theorem must already be extracted before standard promotion is attempted.",
+      "passed": true
+    },
+    "semantic_x_reclassification_excluded_for_standard_algorithms": {
+      "evidence": {
+        "proof_system_tier_8": {
+          "burden_to_beat_integrity": "prove faithful polynomial integrity trace or exhibit a solver outside the type system",
+          "default_integrity_type": "open",
+          "status": "P-vs-NP-grade universality bridge",
+          "system": "Arbitrary polynomial-time Turing machine",
+          "tier": 8,
+          "what_is_known": "must be compiled to sector-interface trace to enter finite theorem"
+        },
+        "semantic_x_decision": {
+          "may_claim_hidden_recovery_is_public_c": false,
+          "may_claim_oracle_or_advice_inside_public_p": false,
+          "may_claim_semantic_x_reclassification": true,
+          "may_claim_standard_global_p_not_np": false,
+          "reason": "Within the repository interface semantics, ordinary standard public executions are C-only after frontend translation, and hidden recovery is either impossible in pure C or is typed X. This still leaves formal proof-assistant definitions of P and P_CVX as the remaining standard promotion gap."
+        },
+        "semantic_x_status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+        "x_policy_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+        "x_surface_rule": {
+          "admission_rule": "X events are explicit hidden-sector extractor/oracle/advice steps, not public-P operations.",
+          "allowed_integrity_types": [
+            "X"
+          ],
+          "meaning": "A trace containing X is an extractor trace or oracle/advice trace. It cannot be used as a public-P solver witness unless the theorem deliberately changes models."
+        }
+      },
+      "needed": "A theorem that a standard public polynomial algorithm cannot implement the hidden X extractor under a different public name without either producing a C-trace contradiction or being retyped as X by a formal semantic classifier.",
+      "passed": true
+    },
+    "standard_p_hprop_or_machine_class_defined": {
+      "evidence": {
+        "definition": "StandardP is a language-indexed proof-assistant machine class witnessed by a public standard machine, a polynomial time bound, and a decision proof.",
+        "formal_file": {
+          "exists": true,
+          "language": "Agda",
+          "path": "data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+          "sha256": "b27d2dd07281dfd7f5790c11ff7682c79297627becadd91defd240d2e0dbbb06",
+          "validation_command": "agda -v0 -i data/invariants/integrity/cvx_trace/formal data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda"
+        },
+        "formal_files": [
+          "data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+          "data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda"
+        ],
+        "formal_interface_status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED"
+      },
+      "needed": "A proof-assistant definition of standard P as a Turing-machine, RAM-machine, or equivalent polynomial-time machine class.",
+      "passed": true
+    },
+    "standard_tm_to_public_bit_ram_frontend": {
+      "evidence": {
+        "frontend_bound": "For source runtime T, input length n, k tapes, alphabet bit-width a, state bit-width q, and transition table size |delta|, the compiled execution has O(T*(k*(a+log(T+n+1)) + q + |delta|)) public bit-RAM steps.",
+        "frontend_decision": {
+          "may_claim_frontend_opcodes_total_in_cvx_vocab": true,
+          "may_claim_oracle_or_advice_algorithms_covered": false,
+          "may_claim_semantic_x_reclassification": false,
+          "may_claim_standard_p_to_p_cvx_for_public_deterministic_tm": true,
+          "may_claim_standard_tm_to_public_bit_ram_frontend": true,
+          "reason": "The frontend covers ordinary deterministic public Turing-machine executions and emits only finite_public_bit_ram C opcodes. It does not by itself prove that a standard algorithm which recovers hidden-sector data is semantically reclassified as X."
+        },
+        "frontend_status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED"
+      },
+      "needed": "A uniform polynomial translation from arbitrary standard polynomial-time Turing-machine executions into finite_public_bit_ram programs/traces, preserving decisions.",
+      "passed": true
+    }
+  },
+  "schema": "d20.integrity.p_cvx_standard_model_identification.source_drop",
+  "source_audit": {
+    "p_cvx_formal_machine_interface": {
+      "expected_status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_cvx_formal_machine_interface.json",
+      "sha256": "c8c01f48034f406f6581ad91daf7def31bbaaff7833d7ffa27b729f27e529b68",
+      "status": "P_CVX_STANDARD_P_FORMAL_MACHINE_INTERFACE_DEFINED"
+    },
+    "p_not_np_model_scoped_theorem": {
+      "expected_status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/p_not_np_model_scoped_theorem.json",
+      "sha256": "ec4f54977bd4e09587802f1d4974d513c538e4c09324fa804631d513dffe0fdf",
+      "status": "P_NOT_NP_CVX_MODEL_THEOREM_EXTRACTED"
+    },
+    "polynomial_trace_compiler_scope": {
+      "expected_status": "POLYNOMIAL_TRACE_COMPILER_UNIVERSAL_MACHINE_WITNESSED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/polynomial_trace_compiler_scope_certificate.json",
+      "sha256": "b4961fd6d65b36cbc656b41507db175c7c30722f9da4351f09f24ed6b03865a8",
+      "status": "POLYNOMIAL_TRACE_COMPILER_UNIVERSAL_MACHINE_WITNESSED"
+    },
+    "proof_system_ladder": {
+      "expected_status": "PROOF_SYSTEM_INTEGRITY_LADDER_BUILT",
+      "passed": true,
+      "path": "layers/integrity/proof_system.json",
+      "sha256": "6bbdcf58ab7e7f2013728e7cb38377d06e0bcf6d9839999193b953c5dba01f63",
+      "status": "PROOF_SYSTEM_INTEGRITY_LADDER_BUILT"
+    },
+    "public_bit_ram_standard_simulation": {
+      "expected_status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/public_bit_ram_standard_simulation.json",
+      "sha256": "c2f1fe0e47d5fbd650f9790eb948e4e377370a7a99d28985a948955e953d560f",
+      "status": "PUBLIC_BIT_RAM_STANDARD_SIMULATION_CERTIFIED"
+    },
+    "semantic_x_reclassification": {
+      "expected_status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/semantic_x_reclassification_theorem.json",
+      "sha256": "102bf023e8e7e5b321ef8458f6d0d8de705c7ce42a2818541eb9cd2b72c91108",
+      "status": "SEMANTIC_X_RECLASSIFICATION_THEOREM_CERTIFIED"
+    },
+    "standard_tm_public_bit_ram_frontend": {
+      "expected_status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/standard_tm_public_bit_ram_frontend.json",
+      "sha256": "9d6f6b967a797d3a5b53dd3fd4433849484095bff6198e6e35cfff39fd10f2b1",
+      "status": "STANDARD_TM_TO_PUBLIC_BIT_RAM_FRONTEND_CERTIFIED"
+    },
+    "universal_trace_compiler": {
+      "expected_status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_compiler_report.json",
+      "sha256": "86fd22cd03d89ff72614b88266c307a4f94d1d414e65c6fec2da10b942a34d33",
+      "status": "UNIVERSAL_TRACE_COMPILER_POLYNOMIAL_OVERHEAD_PASS"
+    },
+    "universal_trace_typing": {
+      "expected_status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/universal_trace_typing_report.json",
+      "sha256": "aac294c9355a2226dfb08ea34874e354a05f904a767e9655e413c5d229d07a52",
+      "status": "UNIVERSAL_TRACE_TYPING_TOTALITY_WITNESS_PASS"
+    },
+    "x_policy_boundary": {
+      "expected_status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X",
+      "passed": true,
+      "path": "data/invariants/integrity/cvx_trace/reports/x_policy_boundary_certificate.json",
+      "sha256": "42fb3a22481cdde0b942b2bd26fa06acbd47f6ec86e0ece1ba49ac46def0e04f",
+      "status": "X_POLICY_BOUNDARY_CERTIFIED_PUBLIC_P_EXCLUDES_X"
+    }
+  },
+  "status": "P_CVX_STANDARD_P_IDENTIFICATION_CERTIFIED"
+}

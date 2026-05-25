@@ -1,0 +1,74 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e7c1887769b2f96909c6c6b324f63899ab62eb56f718b5c77a1643d5e095d330",
+  "checks": {
+    "all_rows_have_source_sector": true,
+    "full_match_is_certified": true,
+    "no_transport_mismatch_rows": true,
+    "perennial_join_key_emitted_when_available": true,
+    "registered_stage_is_certified": true,
+    "registered_support_source_transport_matches_source": true,
+    "sector_profile_count_is_39": true,
+    "sector_profile_matrix_unit_counts_match_d_squared": true,
+    "top_support_counts_are_d_squared": true,
+    "top_support_covers_all_39_source_sectors": true,
+    "top_support_has_985_rows": true,
+    "transported_manifest_row_count_is_1011": true
+  },
+  "claim": "The certified full source-to-raw sector match transports source-sector labels and sector-local Wedderburn profile data onto the registered raw A985 matrix-unit manifest.",
+  "derived": {
+    "block_dimension_histogram": {
+      "1": 7,
+      "10": 2,
+      "11": 1,
+      "12": 1,
+      "2": 8,
+      "3": 4,
+      "4": 8,
+      "5": 4,
+      "6": 2,
+      "8": 1,
+      "9": 1
+    },
+    "perennial_join_key": {
+      "manifest_rows_resolved": 1011,
+      "map_available": true,
+      "profile_rows_resolved": 39,
+      "support_set_columns_added": [
+        "transported_source_support_perennial_ids",
+        "raw_support_perennial_ids"
+      ]
+    },
+    "source_sector_rows_filled_from_full_match": 975,
+    "source_sector_rows_preserved_and_confirmed": 36,
+    "tables": {
+      "registered_support_source_transport": "data/invariants/d20/theorems/tiny_pointer_a985_sector_matrix_unit_transport/registered_support_source_transport.csv",
+      "source_sector_matrix_unit_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_sector_matrix_unit_transport/source_sector_matrix_unit_manifest.csv",
+      "source_sector_matrix_unit_profiles": "data/invariants/d20/theorems/tiny_pointer_a985_sector_matrix_unit_transport/source_sector_matrix_unit_profiles.csv"
+    },
+    "transported_manifest_rows": 1011,
+    "unit_top_all_39_rows": 985
+  },
+  "inputs": {
+    "full_a985_lift": {
+      "path": "layers/drinfeld/full_a985_lift.json",
+      "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
+    },
+    "full_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+      "sha256": "e9a92a1e259cd6aca8c588a7284d30a8752d345678df293cb5f9ad81dde87459"
+    },
+    "registered_source_manifest": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/registered_support_source_matrix_unit_manifest.csv",
+      "sha256": "40713a073dde6e4c9b7532cd7f25284942b01ccbf789a452a8d541c95a080398"
+    },
+    "registered_support_matrix_units": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/report.json",
+      "sha256": "4f193acca172ec17b1e57574cab0178ea8a61676b0070d83c99c6fc881042bcd"
+    }
+  },
+  "next_highest_yield_item": "Attach raw orbital COO coefficients to the all-39 source-sector matrix-unit manifest, not only to the registered public-zero support subset.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_sector_matrix_unit_transport.source_drop",
+  "status": "D20_TINY_POINTER_A985_SECTOR_MATRIX_UNIT_TRANSPORT_CERTIFIED"
+}

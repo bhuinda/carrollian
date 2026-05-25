@@ -1,27 +1,33 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "f71957b4e74232109602f6cfe34f51a3fe7e1cbcccdbf18a777ec012bffe34f1",
+  "certificate_sha256": "2577a1475f75358d01cc03caa3dab54e33a960b5cecafa62127059815a60cace",
   "checks": {
     "change_of_basis_terms_match_sector_templates": true,
     "dimension_one_fixed_sector_count_is_7": true,
-    "full_legacy_sector_match_certified": true,
     "full_matrix_unit_coo_certified": true,
-    "legacy_lift_has_no_matrix_unit_basis": true,
+    "full_source_sector_match_certified": true,
     "matrix_unit_counts_sum_to_985": true,
     "matrix_unit_products_sum_to_top_support_products": true,
     "obligation_rows_cover_39_sectors": true,
     "open_sector_count_is_30": true,
+    "perennial_join_key_emitted_when_available": true,
     "registered_source_sector_count_is_4": true,
     "registered_support_anchored_nontrivial_sector_count_is_2": true,
     "remaining_projective_gauge_dimension_positive": true,
+    "source_lift_has_no_matrix_unit_basis": true,
     "support_restricted_multiplication_certified": true
   },
-  "claim": "The all-39 legacy-labeled matrix units are certified as algebraic matrix-unit systems, but the certified legacy lift does not contain an off-diagonal matrix-unit basis. The remaining sector-local normalization is therefore exactly the listed GL_d/scalar change-of-basis obligation for the open primitive blocks.",
+  "claim": "The all-39 source-sector-labeled matrix units are certified as algebraic matrix-unit systems, but the certified source lift does not contain an off-diagonal matrix-unit basis. The remaining sector-local normalization is therefore exactly the listed GL_d/scalar change-of-basis obligation for the open primitive blocks.",
   "derived": {
     "change_of_basis_template_terms": 73594,
     "dimension_one_fixed_sector_count": 7,
     "matrix_unit_count": 985,
     "open_sector_count": 30,
+    "perennial_join_key": {
+      "map_available": true,
+      "obligation_rows_resolved": 39,
+      "term_rows_resolved": 73594
+    },
     "registered_support_anchored_sector_count": 2,
     "registered_support_source_sector_count": 4,
     "remaining_projective_gauge_dimension": 940,
@@ -38,24 +44,24 @@
       "path": "layers/drinfeld/full_a985_lift.json",
       "sha256": "3d950b59e3d94dba4545d73bb2dd26e21389ec948babd873fd6e76a2a721299c"
     },
-    "full_legacy_sector_match": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json",
-      "sha256": "cff667391bb0368af9b1ff0077754a3192ac700e3f9130b34c8ba8bba548f715"
-    },
     "full_matrix_unit_orbital_coo": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
-      "sha256": "a343d6f592e7183e784cad7902458540576005646d6e28f32611f6ef7727f2d4"
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
     },
-    "registered_support_sector_match": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/legacy_to_raw_sector_match.csv",
-      "sha256": "7b7cb0b62a903ecf00b21933eeb029de05d2a834afb7ccfd3643c4c69489720d"
+    "full_source_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+      "sha256": "e9a92a1e259cd6aca8c588a7284d30a8752d345678df293cb5f9ad81dde87459"
+    },
+    "registered_support_sector_source": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/sector_matrix_unit_source_summary.csv",
+      "sha256": "81788d1fccb8eea18281cc28a7b10100f36ba51522b43ed3b434df47670b7b4a"
     },
     "support_restricted_multiplication": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/report.json",
-      "sha256": "d59f461d8ecaa87592d2903501d0bb2fc20479de67d634a8404927556fc6f02f"
+      "sha256": "0403ba3c2943492f19511a048d2f5cf4f1cdfb7227a811befeab7f15ac11ec0f"
     }
   },
-  "next_highest_yield_item": "Supply or derive a genuine legacy off-diagonal matrix-unit basis for one open sector, then solve its GL_d/scalar normalization equation against the raw-orbital matrix units.",
+  "next_highest_yield_item": "Supply or derive a genuine source-sector off-diagonal matrix-unit basis for one open sector, then solve its GL_d/scalar normalization equation against the raw-orbital matrix units.",
   "object": "d20",
   "schema": "d20.theorem.tiny_pointer_a985_sector_normalization_obligations.source_drop",
   "status": "D20_TINY_POINTER_A985_SECTOR_NORMALIZATION_OBLIGATIONS_CERTIFIED"

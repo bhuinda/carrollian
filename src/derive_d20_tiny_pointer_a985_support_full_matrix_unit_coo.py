@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -21,6 +21,10 @@ from src.derive_d20_tiny_pointer_a985_block_matrix_units import (  # noqa: E402
     MultiplicationOracle,
     array_digest,
 )
+from src.a985_perennial_ids import (  # noqa: E402
+    load_perennial_sector_maps_if_available,
+    write_a985_sector_csv_rows_if_available,
+)
 from src.paths import D20_INVARIANTS, ROOT  # noqa: E402
 
 
@@ -29,9 +33,9 @@ THEOREM_ID = "tiny_pointer_a985_support_full_matrix_unit_orbital_coo"
 OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
 CENTRAL_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_orbital_central_idempotents"
-FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_legacy_sector_match"
+FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_sector_match"
 REGISTERED_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_registered_support_matrix_units"
-LEGACY_TRANSPORT_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_legacy_matrix_unit_transport"
+SECTOR_TRANSPORT_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_sector_matrix_unit_transport"
 FULL_COO_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_matrix_unit_orbital_coo"
 TENSOR_NPZ = ROOT / "data" / "raw" / "T_985.npz"
 
@@ -100,24 +104,24 @@ def support_name(row: dict[str, str]) -> str:
     return row.get("support_name") or row.get("support_name") or ""
 
 
-def legacy_support(row: dict[str, str]) -> str:
-    return row.get("legacy_support") or row.get("legacy_support") or ""
+def source_support(row: dict[str, str]) -> str:
+    return row.get("source_support") or row.get("source_support") or ""
 
 
 def raw_support(row: dict[str, str]) -> str:
     return row.get("raw_support") or row.get("raw_support") or ""
 
 
-def transported_legacy_support(row: dict[str, str]) -> str:
-    return row.get("transported_legacy_support") or row.get("transported_legacy_support") or ""
+def transported_source_support(row: dict[str, str]) -> str:
+    return row.get("transported_source_support") or row.get("transported_source_support") or ""
 
 
-def load_legacy_maps() -> tuple[dict[int, int], dict[int, int], dict[int, int]]:
-    rows = read_csv_rows(FULL_MATCH_DIR / "legacy_to_raw_sector_full_match.csv")
-    legacy_to_raw = {int(row["legacy_sector"]): int(row["raw_sector"]) for row in rows}
-    raw_to_legacy = {raw: legacy for legacy, raw in legacy_to_raw.items()}
-    dimensions = {int(row["legacy_sector"]): int(row["block_dimension"]) for row in rows}
-    return legacy_to_raw, raw_to_legacy, dimensions
+def load_source_maps() -> tuple[dict[int, int], dict[int, int], dict[int, int]]:
+    rows = read_csv_rows(FULL_MATCH_DIR / "source_to_raw_sector_full_match.csv")
+    source_to_raw = {int(row["source_sector"]): int(row["raw_sector"]) for row in rows}
+    raw_to_source = {raw: source for source, raw in source_to_raw.items()}
+    dimensions = {int(row["source_sector"]): int(row["block_dimension"]) for row in rows}
+    return source_to_raw, raw_to_source, dimensions
 
 
 def load_central_pages() -> tuple[np.ndarray, np.ndarray]:
@@ -129,7 +133,7 @@ def load_central_pages() -> tuple[np.ndarray, np.ndarray]:
 
 def full_coo_spans() -> dict[int, dict[str, int]]:
     spans: dict[int, dict[str, int]] = {}
-    for coo_index, row in enumerate(read_csv_rows(FULL_COO_DIR / "legacy_matrix_units_orbital_coo.csv")):
+    for coo_index, row in enumerate(read_csv_rows(FULL_COO_DIR / "source_sector_matrix_units_orbital_coo.csv")):
         unit_column = int(row["unit_column"])
         if unit_column not in spans:
             spans[unit_column] = {"first_full_coo_row": coo_index, "full_coo_row_count": 0}
@@ -146,22 +150,22 @@ def build_support_rows(
     for row in transported_rows:
         if support_name(row) != "unit_top_all_39":
             continue
-        key = (int(row["legacy_sector"]), int(row["i"]), int(row["j"]))
+        key = (int(row["source_sector"]), int(row["i"]), int(row["j"]))
         transport_by_key[key] = row
 
     full_by_key: dict[tuple[int, int, int], dict[str, str]] = {}
     for row in full_manifest_rows:
-        key = (int(row["legacy_sector"]), int(row["i"]), int(row["j"]))
+        key = (int(row["source_sector"]), int(row["i"]), int(row["j"]))
         full_by_key[key] = row
 
     out: list[dict[str, Any]] = []
     support_row = 0
 
     for full_row in full_manifest_rows:
-        legacy_sector = int(full_row["legacy_sector"])
+        source_sector = int(full_row["source_sector"])
         i = int(full_row["i"])
         j = int(full_row["j"])
-        key = (legacy_sector, i, j)
+        key = (source_sector, i, j)
         source_row = transport_by_key[key]
         unit_column = int(full_row["unit_column"])
         span = spans[unit_column]
@@ -170,9 +174,9 @@ def build_support_rows(
                 "support_unit_row": support_row,
                 "source_row": int(source_row["source_row"]),
                 "support_name": "unit_top_all_39",
-                "legacy_support": transported_legacy_support(source_row) or set_literal(list(range(39))),
+                "source_support": transported_source_support(source_row) or set_literal(list(range(39))),
                 "raw_support": raw_support(source_row),
-                "legacy_sector": legacy_sector,
+                "source_sector": source_sector,
                 "raw_sector": int(full_row["raw_sector"]),
                 "block_dimension": int(full_row["block_dimension"]),
                 "i": i,
@@ -183,7 +187,7 @@ def build_support_rows(
                 "full_coo_first_row": span["first_full_coo_row"],
                 "full_coo_row_count": span["full_coo_row_count"],
                 "nonzero_coefficients": int(full_row["nonzero_coefficients"]),
-                "legacy_matrix_unit_label": full_row["legacy_matrix_unit_label"],
+                "source_matrix_unit_label": full_row["source_matrix_unit_label"],
                 "raw_matrix_unit_label": full_row["raw_matrix_unit_label"],
                 "coefficient_source": full_row["coefficient_source"],
                 "support_row_source": "TOP_SUPPORT_REPLACED_FROM_FULL_COO",
@@ -194,10 +198,10 @@ def build_support_rows(
     for source_row in transported_rows:
         if support_name(source_row) == "unit_top_all_39":
             continue
-        legacy_sector = int(source_row["legacy_sector"])
+        source_sector = int(source_row["source_sector"])
         i = int(source_row["i"])
         j = int(source_row["j"])
-        full_row = full_by_key[(legacy_sector, i, j)]
+        full_row = full_by_key[(source_sector, i, j)]
         unit_column = int(full_row["unit_column"])
         span = spans[unit_column]
         out.append(
@@ -205,9 +209,9 @@ def build_support_rows(
                 "support_unit_row": support_row,
                 "source_row": int(source_row["source_row"]),
                 "support_name": support_name(source_row),
-                "legacy_support": legacy_support(source_row),
+                "source_support": source_support(source_row),
                 "raw_support": raw_support(source_row),
-                "legacy_sector": legacy_sector,
+                "source_sector": source_sector,
                 "raw_sector": int(full_row["raw_sector"]),
                 "block_dimension": int(full_row["block_dimension"]),
                 "i": i,
@@ -218,7 +222,7 @@ def build_support_rows(
                 "full_coo_first_row": span["first_full_coo_row"],
                 "full_coo_row_count": span["full_coo_row_count"],
                 "nonzero_coefficients": int(full_row["nonzero_coefficients"]),
-                "legacy_matrix_unit_label": full_row["legacy_matrix_unit_label"],
+                "source_matrix_unit_label": full_row["source_matrix_unit_label"],
                 "raw_matrix_unit_label": full_row["raw_matrix_unit_label"],
                 "coefficient_source": full_row["coefficient_source"],
                 "support_row_source": "REGISTERED_SUPPORT_DEREFERENCED_TO_FULL_COO",
@@ -238,7 +242,7 @@ def build_support_coo_rows(support_rows: list[dict[str, Any]], matrix_units: np.
                 {
                     "support_unit_row": row["support_unit_row"],
                     "support_name": row["support_name"],
-                    "legacy_sector": row["legacy_sector"],
+                    "source_sector": row["source_sector"],
                     "raw_sector": row["raw_sector"],
                     "i": row["i"],
                     "j": row["j"],
@@ -252,13 +256,13 @@ def build_support_coo_rows(support_rows: list[dict[str, Any]], matrix_units: np.
 
 
 def central_sum(
-    legacy_sectors: set[int],
+    source_sectors: set[int],
     central_pages: np.ndarray,
-    legacy_to_raw: dict[int, int],
+    source_to_raw: dict[int, int],
 ) -> np.ndarray:
     out = np.zeros(RELATION_COUNT, dtype=np.int64)
-    for legacy_sector in sorted(legacy_sectors):
-        out += central_pages[legacy_to_raw[legacy_sector]]
+    for source_sector in sorted(source_sectors):
+        out += central_pages[source_to_raw[source_sector]]
     return out % FIELD_PRIME
 
 
@@ -268,7 +272,7 @@ def build_projectors(
     matrix_units: np.ndarray,
     central_pages: np.ndarray,
     identity_indices: np.ndarray,
-    legacy_to_raw: dict[int, int],
+    source_to_raw: dict[int, int],
 ) -> tuple[np.ndarray, list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
     projector_columns: list[np.ndarray] = []
     summary_rows: list[dict[str, Any]] = []
@@ -277,23 +281,23 @@ def build_projectors(
 
     for projector_column, row in enumerate(support_transport_rows):
         name = support_name(row)
-        legacy_set = parse_set(transported_legacy_support(row))
-        support_sets[name] = legacy_set
+        source_set = parse_set(transported_source_support(row))
+        support_sets[name] = source_set
         diag_columns: list[int] = []
-        for legacy_sector in sorted(legacy_set):
+        for source_sector in sorted(source_set):
             dimension = int(next(
                 item["block_dimension"]
                 for key, item in full_by_key.items()
-                if key[0] == legacy_sector
+                if key[0] == source_sector
             ))
             for i in range(dimension):
-                diag_columns.append(int(full_by_key[(legacy_sector, i, i)]["unit_column"]))
+                diag_columns.append(int(full_by_key[(source_sector, i, i)]["unit_column"]))
 
         if diag_columns:
             vec = np.sum(matrix_units[:, diag_columns], axis=1) % FIELD_PRIME
         else:
             vec = np.zeros(RELATION_COUNT, dtype=np.int64)
-        target = central_sum(legacy_set, central_pages, legacy_to_raw)
+        target = central_sum(source_set, central_pages, source_to_raw)
         support = np.nonzero(vec)[0]
         for relation in support:
             coo_rows.append(
@@ -309,10 +313,10 @@ def build_projectors(
             {
                 "projector_column": projector_column,
                 "support_name": name,
-                "legacy_support": legacy_support(row),
+                "source_support": source_support(row),
                 "raw_support": raw_support(row),
-                "transported_legacy_support": transported_legacy_support(row),
-                "legacy_sector_count": len(legacy_set),
+                "transported_source_support": transported_source_support(row),
+                "source_sector_count": len(source_set),
                 "matrix_unit_rows": int(row["matrix_unit_rows"]),
                 "diagonal_terms": len(diag_columns),
                 "nonzero_coefficients": int(support.size),
@@ -327,7 +331,7 @@ def build_projectors(
     unit[identity_indices] = 1
     top_idx = next(idx for idx, row in enumerate(summary_rows) if row["support_name"] == "unit_top_all_39")
     zero_idx = next(idx for idx, row in enumerate(summary_rows) if row["support_name"] == "zero")
-    product_summary = verify_projector_products(projectors, support_transport_rows, support_sets, central_pages, legacy_to_raw)
+    product_summary = verify_projector_products(projectors, support_transport_rows, support_sets, central_pages, source_to_raw)
     checks = {
         "projector_count_is_7": projectors.shape == (RELATION_COUNT, 7),
         "zero_projector_is_zero": bool(np.array_equal(projectors[:, zero_idx], np.zeros(RELATION_COUNT, dtype=np.int64))),
@@ -343,7 +347,7 @@ def verify_projector_products(
     support_transport_rows: list[dict[str, str]],
     support_sets: dict[str, set[int]],
     central_pages: np.ndarray,
-    legacy_to_raw: dict[int, int],
+    source_to_raw: dict[int, int],
 ) -> dict[str, Any]:
     triples = np.asarray(np.load(TENSOR_NPZ)["triples"], dtype=np.int64)
     oracle = MultiplicationOracle(triples)
@@ -354,7 +358,7 @@ def verify_projector_products(
             right_name = support_name(right_row)
             product = oracle.product(projectors[:, left_index], projectors[:, right_index])
             intersection = support_sets[left_name] & support_sets[right_name]
-            target = central_sum(intersection, central_pages, legacy_to_raw)
+            target = central_sum(intersection, central_pages, source_to_raw)
             if not np.array_equal(product % FIELD_PRIME, target % FIELD_PRIME):
                 failures.append({"left": left_name, "right": right_name})
                 if len(failures) >= 8:
@@ -375,7 +379,8 @@ def write_outputs(
     projector_summary_rows: list[dict[str, Any]],
     projector_coo_rows: list[dict[str, Any]],
     matrix_units: np.ndarray,
-) -> None:
+    perennial_maps: dict[str, dict[int | str, dict[str, Any]]] | None,
+) -> dict[str, Any]:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     full_columns = np.asarray([row["full_unit_column"] for row in support_rows], dtype=np.int64)
     support_matrix_units = matrix_units[:, full_columns] % FIELD_PRIME
@@ -386,20 +391,20 @@ def write_outputs(
         support_projectors=projectors.astype(np.int64),
         full_unit_column=full_columns,
         support_unit_row=np.asarray([row["support_unit_row"] for row in support_rows], dtype=np.int64),
-        legacy_sector=np.asarray([row["legacy_sector"] for row in support_rows], dtype=np.int64),
+        source_sector=np.asarray([row["source_sector"] for row in support_rows], dtype=np.int64),
         raw_sector=np.asarray([row["raw_sector"] for row in support_rows], dtype=np.int64),
         i=np.asarray([row["i"] for row in support_rows], dtype=np.int64),
         j=np.asarray([row["j"] for row in support_rows], dtype=np.int64),
     )
-    write_csv_rows(
+    support_manifest_stats = write_a985_sector_csv_rows_if_available(
         OUT_DIR / "support_matrix_units_orbital_manifest.csv",
         [
             "support_unit_row",
             "source_row",
             "support_name",
-            "legacy_support",
+            "source_support",
             "raw_support",
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "i",
@@ -410,19 +415,20 @@ def write_outputs(
             "full_coo_first_row",
             "full_coo_row_count",
             "nonzero_coefficients",
-            "legacy_matrix_unit_label",
+            "source_matrix_unit_label",
             "raw_matrix_unit_label",
             "coefficient_source",
             "support_row_source",
         ],
         support_rows,
+        perennial_maps,
     )
-    write_csv_rows(
+    support_coo_stats = write_a985_sector_csv_rows_if_available(
         OUT_DIR / "support_matrix_units_orbital_coo.csv",
         [
             "support_unit_row",
             "support_name",
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "i",
             "j",
@@ -432,16 +438,17 @@ def write_outputs(
             "coefficient_source",
         ],
         support_coo_rows,
+        perennial_maps,
     )
-    write_csv_rows(
+    projector_summary_stats = write_a985_sector_csv_rows_if_available(
         OUT_DIR / "support_projector_summary.csv",
         [
             "projector_column",
             "support_name",
-            "legacy_support",
+            "source_support",
             "raw_support",
-            "transported_legacy_support",
-            "legacy_sector_count",
+            "transported_source_support",
+            "source_sector_count",
             "matrix_unit_rows",
             "diagonal_terms",
             "nonzero_coefficients",
@@ -449,6 +456,7 @@ def write_outputs(
             "projector_sha256",
         ],
         projector_summary_rows,
+        perennial_maps,
     )
     write_csv_rows(
         OUT_DIR / "support_projectors_orbital_coo.csv",
@@ -461,6 +469,11 @@ def write_outputs(
         ],
         projector_coo_rows,
     )
+    return {
+        "support_manifest": support_manifest_stats,
+        "support_coo": support_coo_stats,
+        "projector_summary": projector_summary_stats,
+    }
 
 
 def markdown_report(report: dict[str, Any]) -> str:
@@ -504,22 +517,23 @@ def update_theorem_index(report: dict[str, Any]) -> None:
 
 def build_support_full_coo() -> dict[str, Any]:
     registered_report = load_json(REGISTERED_DIR / "report.json")
-    transport_report = load_json(LEGACY_TRANSPORT_DIR / "report.json")
+    transport_report = load_json(SECTOR_TRANSPORT_DIR / "report.json")
     full_coo_report = load_json(FULL_COO_DIR / "report.json")
-    legacy_to_raw, _raw_to_legacy, _dimensions = load_legacy_maps()
+    perennial_maps = load_perennial_sector_maps_if_available()
+    source_to_raw, _raw_to_source, _dimensions = load_source_maps()
     central_pages, identity_indices = load_central_pages()
 
-    full_manifest_rows = read_csv_rows(FULL_COO_DIR / "legacy_matrix_units_orbital_manifest.csv")
-    transported_rows = read_csv_rows(LEGACY_TRANSPORT_DIR / "legacy_labeled_matrix_unit_manifest.csv")
-    support_transport = read_csv_rows(LEGACY_TRANSPORT_DIR / "registered_support_legacy_transport.csv")
+    full_manifest_rows = read_csv_rows(FULL_COO_DIR / "source_sector_matrix_units_orbital_manifest.csv")
+    transported_rows = read_csv_rows(SECTOR_TRANSPORT_DIR / "source_sector_matrix_unit_manifest.csv")
+    support_transport = read_csv_rows(SECTOR_TRANSPORT_DIR / "registered_support_source_transport.csv")
     spans = full_coo_spans()
     support_rows = build_support_rows(full_manifest_rows, transported_rows, spans)
 
-    arrays = np.load(FULL_COO_DIR / "legacy_matrix_units_raw_orbital_arrays.npz")
+    arrays = np.load(FULL_COO_DIR / "source_sector_matrix_units_raw_orbital_arrays.npz")
     matrix_units = np.asarray(arrays["matrix_units"], dtype=np.int64) % FIELD_PRIME
     support_coo_rows = build_support_coo_rows(support_rows, matrix_units)
     full_by_key = {
-        (int(row["legacy_sector"]), int(row["i"]), int(row["j"])): row
+        (int(row["source_sector"]), int(row["i"]), int(row["j"])): row
         for row in full_manifest_rows
     }
     projectors, projector_summary_rows, projector_coo_rows, projector_checks = build_projectors(
@@ -528,9 +542,17 @@ def build_support_full_coo() -> dict[str, Any]:
         matrix_units,
         central_pages,
         identity_indices,
-        legacy_to_raw,
+        source_to_raw,
     )
-    write_outputs(support_rows, support_coo_rows, projectors, projector_summary_rows, projector_coo_rows, matrix_units)
+    perennial_stats = write_outputs(
+        support_rows,
+        support_coo_rows,
+        projectors,
+        projector_summary_rows,
+        projector_coo_rows,
+        matrix_units,
+        perennial_maps,
+    )
 
     top_rows = [row for row in support_rows if row["support_name"] == "unit_top_all_39"]
     subsupport_rows = [row for row in support_rows if row["support_name"] != "unit_top_all_39"]
@@ -540,8 +562,8 @@ def build_support_full_coo() -> dict[str, Any]:
         "registered_stage_certified": registered_report.get("status")
         == "D20_TINY_POINTER_A985_REGISTERED_SUPPORT_MATRIX_UNITS_CERTIFIED"
         and registered_report.get("all_checks_pass") is True,
-        "legacy_transport_certified": transport_report.get("status")
-        == "D20_TINY_POINTER_A985_LEGACY_MATRIX_UNIT_TRANSPORT_CERTIFIED"
+        "sector_transport_certified": transport_report.get("status")
+        == "D20_TINY_POINTER_A985_SECTOR_MATRIX_UNIT_TRANSPORT_CERTIFIED"
         and transport_report.get("all_checks_pass") is True,
         "full_matrix_unit_coo_certified": full_coo_report.get("status")
         == "D20_TINY_POINTER_A985_FULL_MATRIX_UNIT_ORBITAL_COO_CERTIFIED"
@@ -560,6 +582,18 @@ def build_support_full_coo() -> dict[str, Any]:
         "registered_subsupport_rows_use_registered_source": all(
             row["coefficient_source"] == "REGISTERED_SUPPORT_COO" for row in subsupport_rows
         ),
+        "perennial_join_key_emitted_when_available": perennial_maps is None
+        or (
+            perennial_stats["support_manifest"]["rows_with_perennial_id"]
+            == perennial_stats["support_manifest"]["rows_with_direct_sector"]
+            == len(support_rows)
+            and perennial_stats["support_coo"]["rows_with_perennial_id"]
+            == perennial_stats["support_coo"]["rows_with_direct_sector"]
+            == len(support_coo_rows)
+            and perennial_stats["support_manifest"]["sector_mismatch_count"] == 0
+            and perennial_stats["support_coo"]["sector_mismatch_count"] == 0
+            and perennial_stats["projector_summary"]["sector_mismatch_count"] == 0
+        ),
         **projector_checks["checks"],
     }
     report = {
@@ -569,7 +603,7 @@ def build_support_full_coo() -> dict[str, Any]:
         "field_prime": FIELD_PRIME,
         "claim": (
             "The registered support matrix-unit layer is now dereferenced through the all-39 "
-            "legacy-labeled raw-orbital matrix-unit COO table. The top support is replaced by the "
+            "source-sector-labeled raw-orbital matrix-unit COO table. The top support is replaced by the "
             "full COO-backed table, registered subsupport rows retain their support labels, and all "
             "support projectors are emitted as sums of full COO diagonal matrix units."
         ),
@@ -578,9 +612,9 @@ def build_support_full_coo() -> dict[str, Any]:
                 "path": rel(REGISTERED_DIR / "report.json"),
                 "sha256": sha_file(REGISTERED_DIR / "report.json"),
             },
-            "legacy_matrix_unit_transport": {
-                "path": rel(LEGACY_TRANSPORT_DIR / "report.json"),
-                "sha256": sha_file(LEGACY_TRANSPORT_DIR / "report.json"),
+            "sector_matrix_unit_transport": {
+                "path": rel(SECTOR_TRANSPORT_DIR / "report.json"),
+                "sha256": sha_file(SECTOR_TRANSPORT_DIR / "report.json"),
             },
             "full_matrix_unit_orbital_coo": {
                 "path": rel(FULL_COO_DIR / "report.json"),
@@ -605,6 +639,12 @@ def build_support_full_coo() -> dict[str, Any]:
             "support_row_source_counts": {key: int(value) for key, value in sorted(row_source_counts.items())},
             "coefficient_source_counts": {key: int(value) for key, value in sorted(coefficient_source_counts.items())},
             "projector_products": projector_checks["products"],
+            "perennial_join_key": {
+                "map_available": perennial_maps is not None,
+                "support_manifest_rows_resolved": int(perennial_stats["support_manifest"]["rows_with_perennial_id"]),
+                "support_coo_rows_resolved": int(perennial_stats["support_coo"]["rows_with_perennial_id"]),
+                "projector_summary_set_columns_added": perennial_stats["projector_summary"]["added_columns"],
+            },
             "tables": {
                 "arrays": rel(OUT_DIR / "support_matrix_units_and_projectors_raw_orbital_arrays.npz"),
                 "support_manifest": rel(OUT_DIR / "support_matrix_units_orbital_manifest.csv"),
@@ -648,6 +688,7 @@ def verify_support_full_coo() -> dict[str, Any]:
     projector_rows = read_csv_rows(OUT_DIR / "support_projector_summary.csv")
     projector_coo_rows = read_csv_rows(OUT_DIR / "support_projectors_orbital_coo.csv")
     arrays = np.load(OUT_DIR / "support_matrix_units_and_projectors_raw_orbital_arrays.npz")
+    perennial_available = bool(report.get("derived", {}).get("perennial_join_key", {}).get("map_available"))
     checks = {
         "report_status_certified": report.get("status") == STATUS,
         "report_checks_pass": report.get("all_checks_pass") is True,
@@ -664,6 +705,15 @@ def verify_support_full_coo() -> dict[str, Any]:
         == int(np.count_nonzero(arrays["support_matrix_units"] % FIELD_PRIME)),
         "projector_coo_rows_match_arrays": len(projector_coo_rows)
         == int(np.count_nonzero(arrays["support_projectors"] % FIELD_PRIME)),
+        "perennial_join_key_present_when_available": not perennial_available
+        or (
+            all(row.get("perennial_id", "").startswith("a985pf.") for row in manifest_rows)
+            and all(row.get("coordinate_fingerprint_id", "").startswith("a985coord.") for row in manifest_rows)
+            and all(row.get("perennial_id", "").startswith("a985pf.") for row in support_coo_rows)
+            and all(row.get("coordinate_fingerprint_id", "").startswith("a985coord.") for row in support_coo_rows)
+            and "transported_source_support_perennial_ids" in projector_rows[0]
+            and "raw_support_perennial_ids" in projector_rows[0]
+        ),
     }
     return {
         "status": "D20_TINY_POINTER_A985_SUPPORT_FULL_MATRIX_UNIT_ORBITAL_COO_VERIFIED"
@@ -688,3 +738,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

@@ -11,9 +11,9 @@ from typing import Any
 import numpy as np
 
 try:
-    from .layer_registry import layer_relpath
+    from .certificate_registry import certificate_relpath
 except ImportError:  # Supports `python src/derive_generated_sector_alignment.py`.
-    from layer_registry import layer_relpath
+    from certificate_registry import certificate_relpath
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -202,7 +202,7 @@ def derive_alignment(
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--generated-center", default="generated/center_idempotents_from_generated_T985.npz")
-    ap.add_argument("--canonical-center", default=layer_relpath("drinfeld.full_a985_lift"))
+    ap.add_argument("--canonical-center", default=certificate_relpath("drinfeld.full_a985_lift"))
     ap.add_argument("--relations", default="generated/relation_memberships_from_source_coorient_aligned.npz")
     ap.add_argument("--out-npz", default="generated/generated_sector_alignment.npz")
     ap.add_argument("--out-json", default="generated/generated_sector_alignment_report.json")

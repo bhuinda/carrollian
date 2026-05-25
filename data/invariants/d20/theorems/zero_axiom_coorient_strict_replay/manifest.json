@@ -1,0 +1,27 @@
+{
+  "certification_tests": [
+    "run a fresh src.derive_zero_axiom_coorient strict replay",
+    "verify fresh and cached payload self hashes",
+    "compare fresh canonical payload hash to cached canonical payload hash",
+    "compare fresh sorted pretty JSON bytes to the cache file bytes",
+    "record the replay result as a cheap-to-validate theorem report"
+  ],
+  "inputs": {
+    "zero_axiom_coorient_cache": {
+      "path": "data/invariants/d20/zero_axiom_coorient.json",
+      "sha256": "51b84df01c5a7b120d7fa9b6a1aa77e0104f1df3172fc45cdde985db1eaf7142"
+    },
+    "zero_axiom_coorient_cache_theorem": {
+      "path": "data/invariants/d20/theorems/zero_axiom_coorient_cache/report.json",
+      "sha256": "2618580932b931d702a6c8b77595d9f9e3b3f88a9271795406eb54b97a0c7e91"
+    }
+  },
+  "manifest_sha256": "8cf0c128ad0571eb210f5fd9a674a2171242575c78c844a59c8596607c0fa43f",
+  "name": "zero_axiom_coorient_strict_replay",
+  "outputs": {
+    "manifest": "data/invariants/d20/theorems/zero_axiom_coorient_strict_replay/manifest.json",
+    "report": "data/invariants/d20/theorems/zero_axiom_coorient_strict_replay/report.json"
+  },
+  "report_sha256": "09849421b0f74ea67230efc811e280a43055534b2d51de1bb1158af02cf9e8b6",
+  "schema": "d20.theorem.zero_axiom_coorient_strict_replay_manifest"
+}

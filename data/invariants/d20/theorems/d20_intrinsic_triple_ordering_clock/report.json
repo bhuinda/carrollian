@@ -1,0 +1,835 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "77938b38267c9180dbb969f9336d296259db7926b71ea26f0eafd83731659310",
+  "checks": {
+    "canonical_order_is_derived_from_transport_signatures": true,
+    "composite_block_discriminant_is_13": true,
+    "even_residue_image_is_order13_subgroup": true,
+    "hidden_transport_matrix_is_expected": true,
+    "intrinsic_line_matches_prior_clock_line": true,
+    "intrinsic_triple_has_three_distinct_labels": true,
+    "intrinsic_triple_is_expected_hidden_transport_basis": true,
+    "placeholder_labels_are_removed": true,
+    "polarity_doubled_image_is_all_sector26": true,
+    "prior_clock_input_is_certified": true,
+    "profile_counts_are_1_3_3_6": true,
+    "sector26_input_is_certified": true,
+    "strict_weak_order_count_is_13": true,
+    "transport_form_is_permutation_rigid": true
+  },
+  "claim": "The 13-ordering sector-26 clock no longer needs an external labelled three-set. The certified sector-26 hidden transport form supplies an intrinsic, permutation-rigid triple (R33, K_mixed_S, K_pure_Sminus). Its strict weak orderings reproduce the same order-13 anti-diagonal line and the same 26-state polarity-doubled clock as the prior weak-order theorem.",
+  "definition": {
+    "canonical_order": "the order derived from transport signatures: isolated first, then larger self-transport on the sector-26 composite block",
+    "clock_map": "strict weak order code k on the intrinsic triple maps to 2k modulo 26, with polarity doubling to 2k and 2k+1",
+    "intrinsic_triple": "the sector-26 hidden transport basis (R33, K_mixed_S, K_pure_Sminus)"
+  },
+  "derived": {
+    "anti_diagonal_pairs_mod26": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        24
+      ],
+      [
+        4,
+        22
+      ],
+      [
+        6,
+        20
+      ],
+      [
+        8,
+        18
+      ],
+      [
+        10,
+        16
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        14,
+        12
+      ],
+      [
+        16,
+        10
+      ],
+      [
+        18,
+        8
+      ],
+      [
+        20,
+        6
+      ],
+      [
+        22,
+        4
+      ],
+      [
+        24,
+        2
+      ]
+    ],
+    "anti_diagonal_pairs_sha256": "0ce6e1ef7287469a948e04d9a095fc12dd744746b5cea0b93378f65612e0ff1a",
+    "clock_summary": {
+      "anti_diagonal_line_hash": "0ce6e1ef7287469a948e04d9a095fc12dd744746b5cea0b93378f65612e0ff1a",
+      "even_sector26_residue_image": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "external_placeholders_replaced_by_intrinsic_labels": {
+        "a": "R33",
+        "b": "K_mixed_S",
+        "c": "K_pure_Sminus"
+      },
+      "matches_prior_weak_order_clock_line": true,
+      "matches_prior_weak_order_count": true,
+      "polarity_doubled_sector26_image": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "profile_counts": {
+        "1,1,1": 6,
+        "1,2": 3,
+        "2,1": 3,
+        "3": 1
+      },
+      "strict_weak_order_count": 13,
+      "uses_external_placeholder_labels": false
+    },
+    "intrinsic_element_records": [
+      {
+        "canonical_order_key": [
+          0,
+          -4,
+          "R33"
+        ],
+        "index": 0,
+        "label": "R33",
+        "offdiagonal_abs_sum": 0,
+        "row": [
+          4,
+          0,
+          0
+        ],
+        "self_transport": 4,
+        "transport_isolated": true
+      },
+      {
+        "canonical_order_key": [
+          1,
+          -5,
+          "K_mixed_S"
+        ],
+        "index": 1,
+        "label": "K_mixed_S",
+        "offdiagonal_abs_sum": 1,
+        "row": [
+          0,
+          5,
+          1
+        ],
+        "self_transport": 5,
+        "transport_isolated": false
+      },
+      {
+        "canonical_order_key": [
+          1,
+          -2,
+          "K_pure_Sminus"
+        ],
+        "index": 2,
+        "label": "K_pure_Sminus",
+        "offdiagonal_abs_sum": 1,
+        "row": [
+          0,
+          1,
+          2
+        ],
+        "self_transport": 2,
+        "transport_isolated": false
+      }
+    ],
+    "intrinsic_order_records": [
+      {
+        "anti_diagonal_pair_mod26": [
+          0,
+          0
+        ],
+        "code_mod13": 0,
+        "ordered_partition": [
+          [
+            "R33",
+            "K_mixed_S",
+            "K_pure_Sminus"
+          ]
+        ],
+        "profile": [
+          3
+        ],
+        "sector26_even_residue": 0,
+        "sector26_polarity_residues": {
+          "negative": 1,
+          "positive": 0
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          2,
+          24
+        ],
+        "code_mod13": 1,
+        "ordered_partition": [
+          [
+            "K_mixed_S"
+          ],
+          [
+            "R33",
+            "K_pure_Sminus"
+          ]
+        ],
+        "profile": [
+          1,
+          2
+        ],
+        "sector26_even_residue": 2,
+        "sector26_polarity_residues": {
+          "negative": 3,
+          "positive": 2
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          4,
+          22
+        ],
+        "code_mod13": 2,
+        "ordered_partition": [
+          [
+            "K_pure_Sminus"
+          ],
+          [
+            "R33",
+            "K_mixed_S"
+          ]
+        ],
+        "profile": [
+          1,
+          2
+        ],
+        "sector26_even_residue": 4,
+        "sector26_polarity_residues": {
+          "negative": 5,
+          "positive": 4
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          6,
+          20
+        ],
+        "code_mod13": 3,
+        "ordered_partition": [
+          [
+            "R33"
+          ],
+          [
+            "K_mixed_S",
+            "K_pure_Sminus"
+          ]
+        ],
+        "profile": [
+          1,
+          2
+        ],
+        "sector26_even_residue": 6,
+        "sector26_polarity_residues": {
+          "negative": 7,
+          "positive": 6
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          8,
+          18
+        ],
+        "code_mod13": 4,
+        "ordered_partition": [
+          [
+            "K_mixed_S",
+            "K_pure_Sminus"
+          ],
+          [
+            "R33"
+          ]
+        ],
+        "profile": [
+          2,
+          1
+        ],
+        "sector26_even_residue": 8,
+        "sector26_polarity_residues": {
+          "negative": 9,
+          "positive": 8
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          10,
+          16
+        ],
+        "code_mod13": 5,
+        "ordered_partition": [
+          [
+            "R33",
+            "K_mixed_S"
+          ],
+          [
+            "K_pure_Sminus"
+          ]
+        ],
+        "profile": [
+          2,
+          1
+        ],
+        "sector26_even_residue": 10,
+        "sector26_polarity_residues": {
+          "negative": 11,
+          "positive": 10
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          12,
+          14
+        ],
+        "code_mod13": 6,
+        "ordered_partition": [
+          [
+            "R33",
+            "K_pure_Sminus"
+          ],
+          [
+            "K_mixed_S"
+          ]
+        ],
+        "profile": [
+          2,
+          1
+        ],
+        "sector26_even_residue": 12,
+        "sector26_polarity_residues": {
+          "negative": 13,
+          "positive": 12
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          14,
+          12
+        ],
+        "code_mod13": 7,
+        "ordered_partition": [
+          [
+            "K_mixed_S"
+          ],
+          [
+            "K_pure_Sminus"
+          ],
+          [
+            "R33"
+          ]
+        ],
+        "profile": [
+          1,
+          1,
+          1
+        ],
+        "sector26_even_residue": 14,
+        "sector26_polarity_residues": {
+          "negative": 15,
+          "positive": 14
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          16,
+          10
+        ],
+        "code_mod13": 8,
+        "ordered_partition": [
+          [
+            "K_mixed_S"
+          ],
+          [
+            "R33"
+          ],
+          [
+            "K_pure_Sminus"
+          ]
+        ],
+        "profile": [
+          1,
+          1,
+          1
+        ],
+        "sector26_even_residue": 16,
+        "sector26_polarity_residues": {
+          "negative": 17,
+          "positive": 16
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          18,
+          8
+        ],
+        "code_mod13": 9,
+        "ordered_partition": [
+          [
+            "K_pure_Sminus"
+          ],
+          [
+            "K_mixed_S"
+          ],
+          [
+            "R33"
+          ]
+        ],
+        "profile": [
+          1,
+          1,
+          1
+        ],
+        "sector26_even_residue": 18,
+        "sector26_polarity_residues": {
+          "negative": 19,
+          "positive": 18
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          20,
+          6
+        ],
+        "code_mod13": 10,
+        "ordered_partition": [
+          [
+            "K_pure_Sminus"
+          ],
+          [
+            "R33"
+          ],
+          [
+            "K_mixed_S"
+          ]
+        ],
+        "profile": [
+          1,
+          1,
+          1
+        ],
+        "sector26_even_residue": 20,
+        "sector26_polarity_residues": {
+          "negative": 21,
+          "positive": 20
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          22,
+          4
+        ],
+        "code_mod13": 11,
+        "ordered_partition": [
+          [
+            "R33"
+          ],
+          [
+            "K_mixed_S"
+          ],
+          [
+            "K_pure_Sminus"
+          ]
+        ],
+        "profile": [
+          1,
+          1,
+          1
+        ],
+        "sector26_even_residue": 22,
+        "sector26_polarity_residues": {
+          "negative": 23,
+          "positive": 22
+        }
+      },
+      {
+        "anti_diagonal_pair_mod26": [
+          24,
+          2
+        ],
+        "code_mod13": 12,
+        "ordered_partition": [
+          [
+            "R33"
+          ],
+          [
+            "K_pure_Sminus"
+          ],
+          [
+            "K_mixed_S"
+          ]
+        ],
+        "profile": [
+          1,
+          1,
+          1
+        ],
+        "sector26_even_residue": 24,
+        "sector26_polarity_residues": {
+          "negative": 25,
+          "positive": 24
+        }
+      }
+    ],
+    "intrinsic_order_records_sha256": "c476dd346bba1425da05e8a4718d1becb9cffab79c48729630ca6d1969b8e6f3",
+    "intrinsic_triple_summary": {
+      "basis_order": [
+        "R33",
+        "K_mixed_S",
+        "K_pure_Sminus"
+      ],
+      "canonical_element_order": [
+        "R33",
+        "K_mixed_S",
+        "K_pure_Sminus"
+      ],
+      "composite_block_basis_order": [
+        "K_mixed_S",
+        "K_pure_Sminus"
+      ],
+      "composite_block_discriminant": 13,
+      "determinant": 36,
+      "interpretation": "The triple is intrinsic to the sector-26 hidden transport certificate: R33 is transport-isolated, while K_mixed_S and K_pure_Sminus form the rank-one sector-26 composite block with discriminant 13.",
+      "matrix": [
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "smith_normal_form_diagonal": [
+        1,
+        1,
+        36
+      ],
+      "source": "sector26_invariant_suite.hidden_transport_form",
+      "trace": 11,
+      "transport_preserving_permutation_count": 1,
+      "transport_preserving_permutations": [
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "transport_permutation_records": [
+      {
+        "cycle_notation": [],
+        "image_labels": [
+          "R33",
+          "K_mixed_S",
+          "K_pure_Sminus"
+        ],
+        "image_matrix": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "is_identity": true,
+        "permutation": [
+          0,
+          1,
+          2
+        ],
+        "preserves_transport_matrix": true
+      },
+      {
+        "cycle_notation": [
+          [
+            "K_mixed_S",
+            "K_pure_Sminus"
+          ]
+        ],
+        "image_labels": [
+          "R33",
+          "K_pure_Sminus",
+          "K_mixed_S"
+        ],
+        "image_matrix": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            5
+          ]
+        ],
+        "is_identity": false,
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "preserves_transport_matrix": false
+      },
+      {
+        "cycle_notation": [
+          [
+            "R33",
+            "K_mixed_S"
+          ]
+        ],
+        "image_labels": [
+          "K_mixed_S",
+          "R33",
+          "K_pure_Sminus"
+        ],
+        "image_matrix": [
+          [
+            5,
+            0,
+            1
+          ],
+          [
+            0,
+            4,
+            0
+          ],
+          [
+            1,
+            0,
+            2
+          ]
+        ],
+        "is_identity": false,
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "preserves_transport_matrix": false
+      },
+      {
+        "cycle_notation": [
+          [
+            "R33",
+            "K_mixed_S",
+            "K_pure_Sminus"
+          ]
+        ],
+        "image_labels": [
+          "K_mixed_S",
+          "K_pure_Sminus",
+          "R33"
+        ],
+        "image_matrix": [
+          [
+            5,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            4
+          ]
+        ],
+        "is_identity": false,
+        "permutation": [
+          1,
+          2,
+          0
+        ],
+        "preserves_transport_matrix": false
+      },
+      {
+        "cycle_notation": [
+          [
+            "R33",
+            "K_pure_Sminus",
+            "K_mixed_S"
+          ]
+        ],
+        "image_labels": [
+          "K_pure_Sminus",
+          "R33",
+          "K_mixed_S"
+        ],
+        "image_matrix": [
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            0,
+            4,
+            0
+          ],
+          [
+            1,
+            0,
+            5
+          ]
+        ],
+        "is_identity": false,
+        "permutation": [
+          2,
+          0,
+          1
+        ],
+        "preserves_transport_matrix": false
+      },
+      {
+        "cycle_notation": [
+          [
+            "R33",
+            "K_pure_Sminus"
+          ]
+        ],
+        "image_labels": [
+          "K_pure_Sminus",
+          "K_mixed_S",
+          "R33"
+        ],
+        "image_matrix": [
+          [
+            2,
+            1,
+            0
+          ],
+          [
+            1,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            4
+          ]
+        ],
+        "is_identity": false,
+        "permutation": [
+          2,
+          1,
+          0
+        ],
+        "preserves_transport_matrix": false
+      }
+    ],
+    "transport_permutation_records_sha256": "a8cbc25dc9832478ffc70655a950660c3aec93c0ea82f28282163c17b76746a1"
+  },
+  "inputs": {
+    "d20_strict_weak_order_sector26_clock_report": {
+      "path": "data/invariants/d20/theorems/d20_strict_weak_order_sector26_clock/report.json",
+      "sha256": "0e22f580d6e6fc754f2fcd23df69dda1b1b43e5b7c426018b7c353c29c897e6c"
+    },
+    "sector26_invariant_suite_report": {
+      "path": "data/invariants/d20/theorems/sector26_invariant_suite/report.json",
+      "sha256": "e8dcb12e8eb4ca2b31d880100dd128547d5ee1ab5a72bf0e3ebf217f0b966a0e"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This does not prove uniqueness among every possible D20 triple. It proves that the sector-26 hidden transport triple is a certified intrinsic source.",
+    "what_this_proves": [
+      "the 13-state clock can be anchored to an intrinsic D20 transport triple",
+      "the hidden transport matrix rigidly orders that triple up to identity",
+      "the intrinsic triple clock gives the same sector-26 line as the previous placeholder version"
+    ]
+  },
+  "next_highest_yield_item": "Classify all certified D20 triples with a discriminant-13 or order-13 clock signature and test uniqueness of the hidden transport triple.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_intrinsic_triple_ordering_clock",
+  "status": "D20_INTRINSIC_TRIPLE_ORDERING_CLOCK_CERTIFIED"
+}

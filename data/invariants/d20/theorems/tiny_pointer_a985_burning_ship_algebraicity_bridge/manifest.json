@@ -1,0 +1,45 @@
+{
+  "inputs": {
+    "canonical_sector_characters": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/report.json",
+      "sha256": "ea7becf164d2162b03118cbf849bcca99527eb575e13a6dbb105ade9301f8ac5"
+    },
+    "external_evidence_gate_ledger": {
+      "path": "data/evidence/ss_sat/source_drops/external_evidence_gate/running_ledger.csv",
+      "sha256": "2ffb0f06efe3daff14cf2ba7c089d145ecdfb1fa77f19d548a873b947e372d91"
+    },
+    "fourier_trace_candidate_evaluation": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_fourier_trace_candidate_evaluation/report.json",
+      "sha256": "195e1b59b750f5752e983061303c6cba68fc613f1664aac14ad863ec56f3b41f"
+    }
+  },
+  "manifest_sha256": "579900787851bf11089c92413dc1d3876e45704d2c41ef8966059ef6e180057c",
+  "name": "tiny_pointer_a985_burning_ship_algebraicity_bridge",
+  "outputs": {
+    "bridge_checks": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/burning_a985_bridge_checks.csv",
+    "evidence_rows": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/burning_a985_bridge_evidence_rows.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/manifest.json",
+    "primary_decomposition": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/burning_a985_primary_decomposition.csv",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/report.json"
+  },
+  "report_sha256": "d9d00f575cd85a453bd7d0b9b5e23ec7d68f8ae53e79dba26e65e1d32d67f308",
+  "schema": "d20.theorem.tiny_pointer_a985_burning_ship_algebraicity_bridge_manifest.source_drop",
+  "validation_tests": [
+    "ledger_has_burning_family_quotient",
+    "ledger_has_burning_family_image_size",
+    "ledger_has_burning_proof_trace_repeat",
+    "ledger_has_burning_scheduler_repeat",
+    "prior_burningship_certificate_imported",
+    "ledger_has_a985_frame_quotient",
+    "ledger_has_a985_frame_image_size",
+    "critical_group_order_is_5184000",
+    "burning_quotient_order_is_32",
+    "a985_frame_quotient_order_is_2400",
+    "burning_image_size_matches_critical_group_index",
+    "a985_image_size_matches_critical_group_index",
+    "burning_equals_a985_two_primary_component",
+    "hybrid_burning_rows_collapse_trivially",
+    "canonical_a985_sector_characters_certified",
+    "fourier_trace_candidate_evaluation_certified"
+  ]
+}

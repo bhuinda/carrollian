@@ -1,0 +1,540 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9d645a4145d4f6caed13a4a811952c0d772725563339c5842a27c7c686aef0aa",
+  "checks": {
+    "actual_c2_kernel_orbits_drive_lookup_table": true,
+    "indexed_lookup_emitter_consumes_lookup_table": true,
+    "indexed_lookup_emitter_consumes_source_package": true,
+    "indexed_lookup_theorem_is_certified": true,
+    "lookup_source_package_has_immutable_hash_contract": true,
+    "lookup_source_package_registry_id_is_threaded": true,
+    "lookup_source_package_standalone_verifier_passes": true,
+    "lookup_source_package_uses_only_halloween_source_and_lookup_artifacts": true,
+    "lookup_table_artifact_hashes_are_stable": true,
+    "lookup_table_counts_match_actual_c2_kernel_fibers": true,
+    "lookup_table_csv_has_1086_rows": true,
+    "lookup_table_has_three_selectors": true,
+    "lookup_table_indices_are_contiguous": true,
+    "lookup_table_json_has_1086_rows": true,
+    "lookup_table_membership_constructors_are_exact": true,
+    "lookup_table_row_ids_are_contiguous": true,
+    "lookup_table_rows_match_lookup_agda_sources": true,
+    "lookup_table_selected_ids_match_actual_c2_kernel_order": true,
+    "lookup_table_soundness_agda_interface_artifact_present_after_typecheck": true,
+    "lookup_table_soundness_exports_three_fin_equivalences": true,
+    "lookup_table_soundness_source_imports_lookup_modules": true
+  },
+  "claim": "The raw543, lazy63, and paired-lazy480 lookup-collapsed selector witnesses are externalized as a 1086-row JSON/CSV table, and a Cubical Agda soundness module ties the table row counts back to the certified Fin 543, Fin 63, and Fin 480 lookup equivalences.",
+  "derived": {
+    "actual_c2_kernel_orbit_source": {
+      "fixed63_orbit_count": 63,
+      "paired480_two_cycle_orbit_count": 480,
+      "path": "D:\\Projects\\carrollian\\data\\invariants\\d20\\theorems\\raw543_repo_c2_kernel_action\\actual_c2_kernel_orbits_raw543.csv",
+      "raw543_orbit_count": 543
+    },
+    "lookup_table_artifact_summary": {
+      "csv": {
+        "byte_size": 3789575,
+        "fieldnames": [
+          "row_id",
+          "selector_index",
+          "selector_name",
+          "selector_key",
+          "selector_agda",
+          "fiber_count",
+          "fiber_index",
+          "dynamics_id",
+          "dynamics_constructor",
+          "membership_constructor",
+          "index_bound_witness",
+          "lookup_module",
+          "lookup_prefix",
+          "equivalence_name",
+          "to_fin_data_clause",
+          "from_nat_clause",
+          "from_nat_to_fin_data_clause",
+          "left_inverse_clause"
+        ],
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/selector_lookup_witness_table.csv",
+        "sha256": "3474e54ccb8198318df8013fef09549a6584afb39643030667d2632737cb33d8"
+      },
+      "json": {
+        "byte_size": 4359259,
+        "embedded_table_sha256": "7ab411e9565671c18886b9ae24fdb596ba03998e73437ae2dc8b5b4b484b882f",
+        "embedded_table_sha256_matches_payload": true,
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/selector_lookup_witness_table.json",
+        "sha256": "112a1634a784e31b70095148c5b16c62cb98dfb53a111764cc959564269aae00"
+      }
+    },
+    "lookup_table_row_count": 1086,
+    "lookup_table_row_count_by_selector": {
+      "lazy63": 63,
+      "paired_lazy480": 480,
+      "raw543": 543
+    },
+    "lookup_table_selector_count": 3,
+    "lookup_table_selector_summaries": [
+      {
+        "all_exact_clauses_in_source": true,
+        "exact_clause_checks": {
+          "from_nat_clauses_in_source": true,
+          "from_nat_to_fin_data_clauses_in_source": true,
+          "left_inverse_clauses_in_source": true,
+          "to_fin_data_clauses_in_source": true
+        },
+        "fiber_count": 543,
+        "index_bound_witnesses_are_exact": true,
+        "indices_are_contiguous": true,
+        "lookup_source": {
+          "byte_size": 1933563,
+          "equivalence_name": "rawSpectralGapLookupFiberEquivFin",
+          "module": "C2SelectorFoundationSelectorFiniteSubtypeRaw543IndexedLookup",
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeRaw543IndexedLookup.agda",
+          "sha256": "6f4638b9df2606bc896e666752edac35f5024479749a44da3b12024dc55cb44b"
+        },
+        "membership_constructors_match_dynamics_ids": true,
+        "row_id_span": [
+          0,
+          542
+        ],
+        "selected_ids_match_actual_c2_kernel_order": true,
+        "selector_agda": "rawComponentwiseAbsoluteSpectralGap",
+        "selector_key": "raw_componentwise_absolute_spectral_gap",
+        "selector_name": "raw543",
+        "table_row_count": 543
+      },
+      {
+        "all_exact_clauses_in_source": true,
+        "exact_clause_checks": {
+          "from_nat_clauses_in_source": true,
+          "from_nat_to_fin_data_clauses_in_source": true,
+          "left_inverse_clauses_in_source": true,
+          "to_fin_data_clauses_in_source": true
+        },
+        "fiber_count": 63,
+        "index_bound_witnesses_are_exact": true,
+        "indices_are_contiguous": true,
+        "lookup_source": {
+          "byte_size": 95040,
+          "equivalence_name": "lazySpectralGapLookupFiberEquivFin",
+          "module": "C2SelectorFoundationSelectorFiniteSubtypeLazy63IndexedLookup",
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLazy63IndexedLookup.agda",
+          "sha256": "d3be10cdfaaf59f9c948a73b1dc97b4dfc38dcd58ab281929d8b38d4dca8d894"
+        },
+        "membership_constructors_match_dynamics_ids": true,
+        "row_id_span": [
+          543,
+          605
+        ],
+        "selected_ids_match_actual_c2_kernel_order": true,
+        "selector_agda": "lazyComponentwiseSpectralGap",
+        "selector_key": "lazy_componentwise_spectral_gap",
+        "selector_name": "lazy63",
+        "table_row_count": 63
+      },
+      {
+        "all_exact_clauses_in_source": true,
+        "exact_clause_checks": {
+          "from_nat_clauses_in_source": true,
+          "from_nat_to_fin_data_clauses_in_source": true,
+          "left_inverse_clauses_in_source": true,
+          "to_fin_data_clauses_in_source": true
+        },
+        "fiber_count": 480,
+        "index_bound_witnesses_are_exact": true,
+        "indices_are_contiguous": true,
+        "lookup_source": {
+          "byte_size": 1559045,
+          "equivalence_name": "pairedLazySpectralGapLookupFiberEquivFin",
+          "module": "C2SelectorFoundationSelectorFiniteSubtypePairedLazy480IndexedLookup",
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypePairedLazy480IndexedLookup.agda",
+          "sha256": "aeb898f60f65be8f489aa687498d3a0e4557444e864f57abfaac007ebdf91c62"
+        },
+        "membership_constructors_match_dynamics_ids": true,
+        "row_id_span": [
+          606,
+          1085
+        ],
+        "selected_ids_match_actual_c2_kernel_order": true,
+        "selector_agda": "pairedLazyComponentwiseSpectralGap",
+        "selector_key": "paired_lazy_componentwise_spectral_gap",
+        "selector_name": "paired_lazy480",
+        "table_row_count": 480
+      }
+    ],
+    "lookup_table_soundness_summary": {
+      "byte_size": 1814,
+      "equivalence_exports": {
+        "lazy63": true,
+        "paired_lazy480": true,
+        "raw543": true
+      },
+      "imports": {
+        "lazy_lookup_module": true,
+        "paired_lookup_module": true,
+        "raw_lookup_module": true
+      },
+      "interface": {
+        "byte_size": 42633,
+        "fresh_for_source": true,
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLookupTableSoundness.agdai",
+        "sha256": "cdf3286cf39a50fe1a5bbb3755a40fa398d66303ce7d9a68997f740e944813e2"
+      },
+      "line_count": 44,
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLookupTableSoundness.agda",
+      "proof_counts": {
+        "lookup_table_soundness_equivalence_count": 7,
+        "selector_count_definition_count": 2,
+        "total_row_count_1086_proof_count": 2
+      },
+      "sha256": "0d35b4637ad7baa2c709232dcec8b26a0c53a66286f8e6d10763154a2403d035",
+      "typecheck_command": "C:/Users/Admin/Documents/agda-toolchain/agda.exe --warning=noUnsupportedIndexedMatch --transliterate -v0 -i data/invariants/d20/formal/cubical -i C:/Users/Admin/Documents/agda-toolchain/cubical-0.9 data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLookupTableSoundness.agda"
+    },
+    "lookup_witness_source_package": {
+      "certificate": {
+        "all_checks_pass": true,
+        "certificate_sha256": "f70e837f3c6c02ac44eb849b4ba3a9785ce23c18671fc71ba67b0d3f1e03b967",
+        "checks": {
+          "csv_fieldnames_match_contract": true,
+          "halloween_orbit_ids_are_contiguous": true,
+          "halloween_orbit_split_is_63_plus_480": true,
+          "lazy63_rows_match_halloween_fixed_orbits": true,
+          "manifest_artifact_hashes_match_files": true,
+          "manifest_hash_matches_payload": true,
+          "manifest_lock_contract_matches_rows": true,
+          "manifest_names_halloween_source": true,
+          "manifest_schema_is_lookup_witness_source_package": true,
+          "manifest_source_registry_id_matches_package_name": true,
+          "manifest_status_is_locked": true,
+          "package_files_exist": true,
+          "package_uses_only_halloween_source_and_lookup_artifacts": true,
+          "paired_lazy480_rows_match_halloween_paired_orbits": true,
+          "raw543_rows_match_halloween_orbit_order": true,
+          "row_ids_are_contiguous": true,
+          "selector_contracts_hold": true,
+          "selector_counts_match_contract": true,
+          "table_embedded_hash_matches_payload": true,
+          "table_has_1086_rows_and_three_selectors": true,
+          "table_json_and_csv_rows_match": true
+        },
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/source_package_certificate.json",
+        "sha256": "8ecb7ff4fb143db740195223691e185c33bed2c018dcdec917462e451745e352",
+        "status": "D20_C2_SELECTOR_LOOKUP_WITNESS_SOURCE_PACKAGE_VERIFIED"
+      },
+      "halloween_actual_c2_kernel_orbits_csv": {
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/halloween_actual_c2_kernel_orbits_raw543.csv",
+        "sha256": "be922eba1e015b9a210d27e79c720dceccb40bbf36cb44d8caad0c5286d0eba5"
+      },
+      "manifest": {
+        "embedded_manifest_sha256": "dd83db53632b155827c162746280e29453cb5ca1f583d1767a5275f8237d8b7b",
+        "lock_contract": {
+          "actual_c2_kernel_split": {
+            "fixed63_orbit_count": 63,
+            "paired480_two_cycle_orbit_count": 480,
+            "raw543_orbit_count": 543
+          },
+          "csv_fieldnames": [
+            "row_id",
+            "selector_index",
+            "selector_name",
+            "selector_key",
+            "selector_agda",
+            "fiber_count",
+            "fiber_index",
+            "dynamics_id",
+            "dynamics_constructor",
+            "membership_constructor",
+            "index_bound_witness",
+            "lookup_module",
+            "lookup_prefix",
+            "equivalence_name",
+            "to_fin_data_clause",
+            "from_nat_clause",
+            "from_nat_to_fin_data_clause",
+            "left_inverse_clause"
+          ],
+          "row_count": 1086,
+          "selector_counts": {
+            "lazy63": 63,
+            "paired_lazy480": 480,
+            "raw543": 543
+          },
+          "selector_order": [
+            "raw543",
+            "lazy63",
+            "paired_lazy480"
+          ],
+          "standalone_source_dependency": true,
+          "table_sha256": "7ab411e9565671c18886b9ae24fdb596ba03998e73437ae2dc8b5b4b484b882f"
+        },
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/manifest.json",
+        "schema": "d20.selector_finite_subtype.lookup_witness_source_package.v1",
+        "sha256": "1dc6ebde0081858116756d55d22bda65ff2306d2e8a4272751691cc5665f8adb",
+        "source_registry_id": "halloween_c2_selector_lookup_witness_source_package",
+        "status": "D20_C2_SELECTOR_LOOKUP_WITNESS_SOURCE_PACKAGE_LOCKED"
+      },
+      "package_dir": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package",
+      "source_registry_binding": {
+        "all_checks_pass": true,
+        "certificate": {
+          "embedded_certificate_sha256": "f70e837f3c6c02ac44eb849b4ba3a9785ce23c18671fc71ba67b0d3f1e03b967",
+          "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/source_package_certificate.json",
+          "payload_sha256": "f70e837f3c6c02ac44eb849b4ba3a9785ce23c18671fc71ba67b0d3f1e03b967",
+          "sha256": "8ecb7ff4fb143db740195223691e185c33bed2c018dcdec917462e451745e352",
+          "status": "D20_C2_SELECTOR_LOOKUP_WITNESS_SOURCE_PACKAGE_VERIFIED"
+        },
+        "checks": {
+          "certificate_hash_matches_payload": true,
+          "certificate_reports_all_package_checks_pass": true,
+          "certificate_status_is_verified": true,
+          "manifest_registry_id_matches_package_name": true,
+          "package_uses_only_halloween_source_and_lookup_artifacts": true,
+          "registry_id_matches_package_name": true
+        },
+        "manifest": {
+          "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/manifest.json",
+          "sha256": "1dc6ebde0081858116756d55d22bda65ff2306d2e8a4272751691cc5665f8adb",
+          "source_registry_id": "halloween_c2_selector_lookup_witness_source_package"
+        },
+        "package_dir": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package",
+        "package_name": "halloween_c2_selector_lookup_witness_source_package",
+        "registry_id": "halloween_c2_selector_lookup_witness_source_package",
+        "schema": "d20.source_registry.binding.v1",
+        "source_package_registered_status": "D20_SOURCE_PACKAGE_REGISTERED",
+        "source_registry_status": "D20_SOURCE_REGISTRY_BUILT"
+      },
+      "table_csv": {
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/selector_lookup_witness_table.csv",
+        "sha256": "3474e54ccb8198318df8013fef09549a6584afb39643030667d2632737cb33d8"
+      },
+      "table_json": {
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/selector_lookup_witness_table.json",
+        "sha256": "112a1634a784e31b70095148c5b16c62cb98dfb53a111764cc959564269aae00"
+      }
+    }
+  },
+  "inputs": {
+    "c2_cubical_agda_selector_finite_subtype_indexed_lookup_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_indexed_lookup/report.json",
+      "sha256": "71293ed81dbe2edb50e1129d128336918069ab7f2d035f502bb3e239e3bf7a67"
+    },
+    "lookup_selector_sources": [
+      {
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeRaw543IndexedLookup.agda",
+        "selector_name": "raw543",
+        "sha256": "6f4638b9df2606bc896e666752edac35f5024479749a44da3b12024dc55cb44b"
+      },
+      {
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLazy63IndexedLookup.agda",
+        "selector_name": "lazy63",
+        "sha256": "d3be10cdfaaf59f9c948a73b1dc97b4dfc38dcd58ab281929d8b38d4dca8d894"
+      },
+      {
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypePairedLazy480IndexedLookup.agda",
+        "selector_name": "paired_lazy480",
+        "sha256": "aeb898f60f65be8f489aa687498d3a0e4557444e864f57abfaac007ebdf91c62"
+      }
+    ],
+    "raw543_actual_c2_kernel_orbits_csv": {
+      "path": "data/invariants/d20/theorems/raw543_repo_c2_kernel_action/actual_c2_kernel_orbits_raw543.csv",
+      "sha256": "be922eba1e015b9a210d27e79c720dceccb40bbf36cb44d8caad0c5286d0eba5"
+    }
+  },
+  "interpretation": {
+    "explicit_seam": "The indexed lookup emitter consumes the standalone Halloween source package for selected witness clauses; the package is the only selected-witness source input.",
+    "what_this_proves": [
+      "the selected witness rows for the three non-singleton spectral selectors are materialized as an audited table",
+      "the table rows are exact source clauses in the lookup-collapsed Agda modules",
+      "the table row counts are tied to certified Cubical equivalences to Fin 543, Fin 63, and Fin 480",
+      "the Halloween lookup rows are locked as a standalone source package with its own verifier"
+    ]
+  },
+  "next_highest_yield_item": "Stage the Halloween source-registry, theorem-registry, and Agda replay artifacts for review.",
+  "object": "d20",
+  "outputs": {
+    "lookup_table_soundness_agda": {
+      "byte_size": 1814,
+      "equivalence_exports": {
+        "lazy63": true,
+        "paired_lazy480": true,
+        "raw543": true
+      },
+      "imports": {
+        "lazy_lookup_module": true,
+        "paired_lookup_module": true,
+        "raw_lookup_module": true
+      },
+      "interface": {
+        "byte_size": 42633,
+        "fresh_for_source": true,
+        "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLookupTableSoundness.agdai",
+        "sha256": "cdf3286cf39a50fe1a5bbb3755a40fa398d66303ce7d9a68997f740e944813e2"
+      },
+      "line_count": 44,
+      "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLookupTableSoundness.agda",
+      "proof_counts": {
+        "lookup_table_soundness_equivalence_count": 7,
+        "selector_count_definition_count": 2,
+        "total_row_count_1086_proof_count": 2
+      },
+      "sha256": "0d35b4637ad7baa2c709232dcec8b26a0c53a66286f8e6d10763154a2403d035",
+      "typecheck_command": "C:/Users/Admin/Documents/agda-toolchain/agda.exe --warning=noUnsupportedIndexedMatch --transliterate -v0 -i data/invariants/d20/formal/cubical -i C:/Users/Admin/Documents/agda-toolchain/cubical-0.9 data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLookupTableSoundness.agda"
+    },
+    "lookup_witness_source_package": {
+      "certificate": {
+        "all_checks_pass": true,
+        "certificate_sha256": "f70e837f3c6c02ac44eb849b4ba3a9785ce23c18671fc71ba67b0d3f1e03b967",
+        "checks": {
+          "csv_fieldnames_match_contract": true,
+          "halloween_orbit_ids_are_contiguous": true,
+          "halloween_orbit_split_is_63_plus_480": true,
+          "lazy63_rows_match_halloween_fixed_orbits": true,
+          "manifest_artifact_hashes_match_files": true,
+          "manifest_hash_matches_payload": true,
+          "manifest_lock_contract_matches_rows": true,
+          "manifest_names_halloween_source": true,
+          "manifest_schema_is_lookup_witness_source_package": true,
+          "manifest_source_registry_id_matches_package_name": true,
+          "manifest_status_is_locked": true,
+          "package_files_exist": true,
+          "package_uses_only_halloween_source_and_lookup_artifacts": true,
+          "paired_lazy480_rows_match_halloween_paired_orbits": true,
+          "raw543_rows_match_halloween_orbit_order": true,
+          "row_ids_are_contiguous": true,
+          "selector_contracts_hold": true,
+          "selector_counts_match_contract": true,
+          "table_embedded_hash_matches_payload": true,
+          "table_has_1086_rows_and_three_selectors": true,
+          "table_json_and_csv_rows_match": true
+        },
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/source_package_certificate.json",
+        "sha256": "8ecb7ff4fb143db740195223691e185c33bed2c018dcdec917462e451745e352",
+        "status": "D20_C2_SELECTOR_LOOKUP_WITNESS_SOURCE_PACKAGE_VERIFIED"
+      },
+      "halloween_actual_c2_kernel_orbits_csv": {
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/halloween_actual_c2_kernel_orbits_raw543.csv",
+        "sha256": "be922eba1e015b9a210d27e79c720dceccb40bbf36cb44d8caad0c5286d0eba5"
+      },
+      "manifest": {
+        "embedded_manifest_sha256": "dd83db53632b155827c162746280e29453cb5ca1f583d1767a5275f8237d8b7b",
+        "lock_contract": {
+          "actual_c2_kernel_split": {
+            "fixed63_orbit_count": 63,
+            "paired480_two_cycle_orbit_count": 480,
+            "raw543_orbit_count": 543
+          },
+          "csv_fieldnames": [
+            "row_id",
+            "selector_index",
+            "selector_name",
+            "selector_key",
+            "selector_agda",
+            "fiber_count",
+            "fiber_index",
+            "dynamics_id",
+            "dynamics_constructor",
+            "membership_constructor",
+            "index_bound_witness",
+            "lookup_module",
+            "lookup_prefix",
+            "equivalence_name",
+            "to_fin_data_clause",
+            "from_nat_clause",
+            "from_nat_to_fin_data_clause",
+            "left_inverse_clause"
+          ],
+          "row_count": 1086,
+          "selector_counts": {
+            "lazy63": 63,
+            "paired_lazy480": 480,
+            "raw543": 543
+          },
+          "selector_order": [
+            "raw543",
+            "lazy63",
+            "paired_lazy480"
+          ],
+          "standalone_source_dependency": true,
+          "table_sha256": "7ab411e9565671c18886b9ae24fdb596ba03998e73437ae2dc8b5b4b484b882f"
+        },
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/manifest.json",
+        "schema": "d20.selector_finite_subtype.lookup_witness_source_package.v1",
+        "sha256": "1dc6ebde0081858116756d55d22bda65ff2306d2e8a4272751691cc5665f8adb",
+        "source_registry_id": "halloween_c2_selector_lookup_witness_source_package",
+        "status": "D20_C2_SELECTOR_LOOKUP_WITNESS_SOURCE_PACKAGE_LOCKED"
+      },
+      "package_dir": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package",
+      "source_registry_binding": {
+        "all_checks_pass": true,
+        "certificate": {
+          "embedded_certificate_sha256": "f70e837f3c6c02ac44eb849b4ba3a9785ce23c18671fc71ba67b0d3f1e03b967",
+          "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/source_package_certificate.json",
+          "payload_sha256": "f70e837f3c6c02ac44eb849b4ba3a9785ce23c18671fc71ba67b0d3f1e03b967",
+          "sha256": "8ecb7ff4fb143db740195223691e185c33bed2c018dcdec917462e451745e352",
+          "status": "D20_C2_SELECTOR_LOOKUP_WITNESS_SOURCE_PACKAGE_VERIFIED"
+        },
+        "checks": {
+          "certificate_hash_matches_payload": true,
+          "certificate_reports_all_package_checks_pass": true,
+          "certificate_status_is_verified": true,
+          "manifest_registry_id_matches_package_name": true,
+          "package_uses_only_halloween_source_and_lookup_artifacts": true,
+          "registry_id_matches_package_name": true
+        },
+        "manifest": {
+          "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/manifest.json",
+          "sha256": "1dc6ebde0081858116756d55d22bda65ff2306d2e8a4272751691cc5665f8adb",
+          "source_registry_id": "halloween_c2_selector_lookup_witness_source_package"
+        },
+        "package_dir": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package",
+        "package_name": "halloween_c2_selector_lookup_witness_source_package",
+        "registry_id": "halloween_c2_selector_lookup_witness_source_package",
+        "schema": "d20.source_registry.binding.v1",
+        "source_package_registered_status": "D20_SOURCE_PACKAGE_REGISTERED",
+        "source_registry_status": "D20_SOURCE_REGISTRY_BUILT"
+      },
+      "table_csv": {
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/selector_lookup_witness_table.csv",
+        "sha256": "3474e54ccb8198318df8013fef09549a6584afb39643030667d2632737cb33d8"
+      },
+      "table_json": {
+        "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/source_package/selector_lookup_witness_table.json",
+        "sha256": "112a1634a784e31b70095148c5b16c62cb98dfb53a111764cc959564269aae00"
+      }
+    },
+    "lookup_witness_table_csv": {
+      "byte_size": 3789575,
+      "fieldnames": [
+        "row_id",
+        "selector_index",
+        "selector_name",
+        "selector_key",
+        "selector_agda",
+        "fiber_count",
+        "fiber_index",
+        "dynamics_id",
+        "dynamics_constructor",
+        "membership_constructor",
+        "index_bound_witness",
+        "lookup_module",
+        "lookup_prefix",
+        "equivalence_name",
+        "to_fin_data_clause",
+        "from_nat_clause",
+        "from_nat_to_fin_data_clause",
+        "left_inverse_clause"
+      ],
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/selector_lookup_witness_table.csv",
+      "sha256": "3474e54ccb8198318df8013fef09549a6584afb39643030667d2632737cb33d8"
+    },
+    "lookup_witness_table_json": {
+      "byte_size": 4359259,
+      "embedded_table_sha256": "7ab411e9565671c18886b9ae24fdb596ba03998e73437ae2dc8b5b4b484b882f",
+      "embedded_table_sha256_matches_payload": true,
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table/selector_lookup_witness_table.json",
+      "sha256": "112a1634a784e31b70095148c5b16c62cb98dfb53a111764cc959564269aae00"
+    }
+  },
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lookup_table",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LOOKUP_TABLE_CERTIFIED"
+}

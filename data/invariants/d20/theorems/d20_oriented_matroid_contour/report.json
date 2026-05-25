@@ -1,0 +1,418 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4c5b01628dd824195c6e34c6367f21b974e4e1477abab5c47bf06d41eac778e9",
+  "checks": {
+    "augmented_hidden_split_c2_is_cross_linked": true,
+    "augmented_symmetry_inputs_are_certified": true,
+    "d20_input_is_certified": true,
+    "finite_contour_input_is_certified": true,
+    "gamma8_active_positive_row_extends_to_acyclic_tope": true,
+    "gamma8_active_positive_signed_stabilizer_is_identity": true,
+    "gamma8_cyclic_signed_circuit_is_not_misclassified_as_tope": true,
+    "gamma8_reported_signed_row_matches_graphic_circuit": true,
+    "gamma8_support_is_circuit": true,
+    "graphic_oriented_matroid_has_expected_rank": true,
+    "public_boundary_input_is_certified": true,
+    "public_source_forgotten_automorphism_order_is_120": true,
+    "pure_contour_relaxation_is_not_c2_overclaim": true,
+    "sector33_inputs_are_certified": true,
+    "sector33_is_not_overclaimed_as_pure_contour_cocircuit": true,
+    "signed_circuit_count_matches_recomputation": true,
+    "signed_cocircuit_count_matches_recomputation": true
+  },
+  "claim": "The D20 finite contour system has a classical graphic oriented-matroid spine. Its signed circuits are the 1168 simple cycles and its signed cocircuits are the 12878 bonds of the public dodecahedral boundary. The gamma8 active height row is a signed circuit support that extends to an acyclic tope and has trivial signed stabilizer in Aut(M_contour). The full public source-forgotten automorphism group has order 120. The pure contour matroid does not by itself certify sector 33 as a cocircuit/hyperplane or produce the hidden C2 relaxation; those require the existing augmented sector/ledger structure.",
+  "definition": {
+    "m_contour": "the graphic oriented matroid of the directed D20 boundary incidence matrix partial_D20, with ground set the 30 public boundary edges",
+    "signed_circuit": "a signed simple cycle of the directed public boundary graph, normalized up to global sign",
+    "signed_cocircuit": "a signed bond/minimal cut of the public boundary graph, normalized up to global sign",
+    "tope_witness": "an acyclic full orientation extending a partial edge-sign assignment"
+  },
+  "derived": {
+    "augmented_symmetry_cross_link": {
+      "full_augmented_ledger_stabilizer_order": 1,
+      "full_public_action_requires_forgetting_gamma8_source_anchor": true,
+      "hidden_split_stabilizer_order": 2,
+      "interpretation": "The certified C2 belongs to the augmented hidden-split/label-relaxed ledger, not to the pure graphic contour matroid relaxation.",
+      "label_relaxed_hidden_split_c2_has_543_kernel_target_orbits": true
+    },
+    "blocked_or_deferred": {
+      "full_covector_and_tope_enumeration": "deferred; this certificate gives counts/hashes for circuits/cocircuits and a gamma8 tope witness",
+      "orlik_solomon_betti_numbers": "deferred_until_tutte_polynomial_or_no-broken-circuit_basis_pass",
+      "pure_contour_gamma8_relaxation_c2": "not_supported_by_pure_contour_matroid",
+      "sector33_cocircuit_or_hyperplane_in_m_contour": "blocked_missing_sector33_ground_set_extension",
+      "tutte_polynomial": "deferred_to_deletion_contraction_or_specialized_graph_polynomial_pass"
+    },
+    "contour_oriented_matroid_summary": {
+      "corank_cycle_rank": 11,
+      "edge_count": 30,
+      "ground_set": "directed public D20 boundary edges",
+      "oriented_matroid": "M_contour = OM(partial_D20), the graphic oriented matroid of the directed D20 incidence matrix",
+      "primitive_h_cycle_basis_count": 11,
+      "primitive_h_cycle_basis_rank": 11,
+      "rank": 19,
+      "signed_circuit_count": 1168,
+      "signed_circuit_length_histogram": {
+        "10": 36,
+        "11": 120,
+        "12": 100,
+        "13": 60,
+        "14": 180,
+        "15": 180,
+        "16": 90,
+        "17": 180,
+        "18": 130,
+        "20": 30,
+        "5": 12,
+        "8": 30,
+        "9": 20
+      },
+      "signed_circuits_sha256": "68bf579b7a3f4ac9fb177ac250f156ea6c721d2d15ec4f638f8057e5dd7bb134",
+      "signed_cocircuit_count": 12878,
+      "signed_cocircuit_size_histogram": {
+        "10": 3336,
+        "11": 2880,
+        "12": 1280,
+        "3": 20,
+        "4": 30,
+        "5": 72,
+        "6": 240,
+        "7": 720,
+        "8": 1620,
+        "9": 2680
+      },
+      "signed_cocircuits_sha256": "0da405e39156ab60478e35f0dc03cba959f48ee1f57b576680a1c076ed41e01e",
+      "vertex_count": 20
+    },
+    "gamma8_tests": {
+      "active_positive_extends_to_acyclic_tope": true,
+      "active_positive_partial_orientation_is_acyclic": true,
+      "active_positive_row": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          22,
+          1
+        ]
+      ],
+      "active_positive_tope_witness": {
+        "complete_orientation_is_acyclic": true,
+        "extends": true,
+        "matches_partial_signs": true,
+        "signed_tope": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            15,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            20,
+            1
+          ],
+          [
+            21,
+            1
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            26,
+            1
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            28,
+            1
+          ],
+          [
+            29,
+            1
+          ]
+        ],
+        "topological_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      "basis_coordinate": 8,
+      "cyclic_signed_circuit_partial_orientation_is_acyclic": false,
+      "cyclic_signed_circuit_row": [
+        [
+          1,
+          -1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          11,
+          -1
+        ],
+        [
+          21,
+          -1
+        ],
+        [
+          22,
+          1
+        ]
+      ],
+      "height_action_matches_active_positive_row": true,
+      "height_dot_active_positive_row": 374784,
+      "height_dot_reported_signed_circuit_row": -122880,
+      "overclaim_guard": "The cyclic signed circuit row is a circuit, not a tope; the all-positive active height row is the sign pattern that extends to an acyclic tope.",
+      "reported_height_action": 374784,
+      "reported_signed_circuit_matches_graphic_circuit_up_to_global_sign": true,
+      "support": [
+        1,
+        2,
+        11,
+        21,
+        22
+      ],
+      "support_is_hyperplane_zero_set": false,
+      "support_is_signed_circuit": true,
+      "support_is_signed_cocircuit": false
+    },
+    "orlik_solomon_summary": {
+      "circuit_boundary_relation_count": 1168,
+      "gamma8_circuit_relation_support": [
+        1,
+        2,
+        11,
+        21,
+        22
+      ],
+      "generator_count": 30,
+      "presentation_status": "Orlik-Solomon presentation skeleton identified for the graphic matroid; graded Betti numbers and Tutte polynomial are not computed in this certificate."
+    },
+    "pure_contour_symmetry_tests": {
+      "active_positive_signed_row_stabilizer_ids": [
+        0
+      ],
+      "active_positive_signed_row_stabilizer_order": 1,
+      "active_support_only_stabilizer_ids": [
+        0,
+        1,
+        26,
+        27,
+        62,
+        63,
+        70,
+        71,
+        82,
+        83
+      ],
+      "active_support_only_stabilizer_order": 10,
+      "cyclic_signed_circuit_stabilizer_ids": [
+        0,
+        26,
+        62,
+        71,
+        83
+      ],
+      "cyclic_signed_circuit_stabilizer_order": 5,
+      "cyclic_signed_circuit_unoriented_stabilizer_ids": [
+        0,
+        1,
+        26,
+        27,
+        62,
+        63,
+        70,
+        71,
+        82,
+        83
+      ],
+      "cyclic_signed_circuit_unoriented_stabilizer_order": 10,
+      "public_boundary_report_automorphism_order": 120,
+      "public_graph_automorphism_order": 120,
+      "pure_contour_relaxation_is_c2": false
+    },
+    "sector33_tests": {
+      "active_support_is_circuit_not_cocircuit": true,
+      "active_support_is_not_hyperplane_zero_set": true,
+      "blocked_extension": "To test sector 33 as a cocircuit or hyperplane, the contour matroid needs an explicit single-element or decorated extension whose ground set includes the sector idempotent/coefficient, not only public boundary edges.",
+      "current_contour_ground_set": "30 public boundary edges",
+      "profile_public_zero_sectors": [
+        33
+      ],
+      "sector33_active_support_reading": "sector 33 is attached to the gamma8 circuit support by the height transport report",
+      "sector33_height_transport_is_certified": true,
+      "sector33_is_ground_set_element_of_m_contour": false,
+      "sector33_public_zero_is_certified": true
+    }
+  },
+  "inputs": {
+    "d20_finite_contour_integration_report": {
+      "path": "data/invariants/d20/theorems/d20_finite_contour_integration/report.json",
+      "sha256": "966c5f3d7793096d8748dc47a15c6d2a20a9cd1537c5889553e2330667d35ec3"
+    },
+    "d20_json": {
+      "path": "d20.json",
+      "sha256": "6de54862ed25ce2709e235af40ae86662f60c97ad7038903a63f2c7ca71ef919"
+    },
+    "hidden_split_augmented_ledger_stabilizer_report": {
+      "path": "data/invariants/d20/theorems/hidden_split_augmented_ledger_stabilizer/report.json",
+      "sha256": "c1ef9505a252c54fa1dbd4dfed796f8e2477410087aaa88d61b7f753dd74222f"
+    },
+    "public_boundary_graph_report": {
+      "path": "data/invariants/d20/theorems/public_boundary_graph_invariants/report.json",
+      "sha256": "c6ac264c96d5f8874016013df50234f5dfbc21c7fcfa0c24fb7e1de4c94004a8"
+    },
+    "sector33_height_coherent_transport_report": {
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "sha256": "a33668aef24f3405c5f7c4caa5f1301d076ac6c778f7e54afcaff1b61e71f708"
+    },
+    "sector33_unique_public_zero_support_report": {
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
+      "sha256": "72d94a621f2dc84f7407673a676ba1cf46651f4284e91332b82a14bd0788f1c8"
+    },
+    "sourced_balance_label_relaxed_orbit_quotient_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient/report.json",
+      "sha256": "00674f55efbc22e6ce2e32b3b98f0960be7c72a7141f7641063851cd7b66f6b1"
+    }
+  },
+  "interpretation": {
+    "classical_terms_confirmed": {
+      "boundary_contour": "signed circuit",
+      "gamma8_choice_operator": "acyclic active-row tope selector with trivial signed stabilizer",
+      "height_certificate": "positive active circuit row with acyclic tope extension",
+      "public_120_symmetry": "Aut(M_contour) after forgetting source/ledger decorations"
+    },
+    "classical_terms_not_yet_confirmed": {
+      "c2_after_forgetting_as_pure_matroid_stabilizer": "not_supported_by_pure_contour_matroid",
+      "sector33_as_cocircuit_or_hyperplane": "blocked_missing_sector33_ground_set_extension",
+      "tutte_and_full_os_package": "deferred"
+    },
+    "overclaim_guard": "This is an oriented-matroid certificate for the D20 public contour incidence system. It is not a proof of P != NP, not M-theory, and not yet a sector-33 single-element extension theorem."
+  },
+  "next_highest_yield_item": "Build the decorated/single-element extension M_contour + e33 so sector 33 can be tested as an actual cocircuit or hyperplane, then compute the Tutte/Orlik-Solomon invariants for that extended matroid.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_oriented_matroid_contour",
+  "status": "D20_ORIENTED_MATROID_CONTOUR_CERTIFIED"
+}

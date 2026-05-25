@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -13,6 +13,10 @@ ROOT_FOR_IMPORT = Path(__file__).resolve().parents[1]
 if str(ROOT_FOR_IMPORT) not in sys.path:
     sys.path.insert(0, str(ROOT_FOR_IMPORT))
 
+from src.a985_perennial_ids import (  # noqa: E402
+    load_perennial_sector_maps_if_available,
+    write_a985_sector_csv_rows_if_available,
+)
 from src.paths import D20_INVARIANTS, ROOT
 
 
@@ -20,11 +24,10 @@ STATUS = "D20_TINY_POINTER_A985_SECTOR_NORMALIZATION_OBLIGATIONS_CERTIFIED"
 THEOREM_ID = "tiny_pointer_a985_sector_normalization_obligations"
 OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
-FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_legacy_sector_match"
+FULL_MATCH_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_sector_match"
 FULL_COO_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_full_matrix_unit_orbital_coo"
 SUPPORT_MULT_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_support_restricted_multiplication_tables"
-REGISTERED_DIR = D20_INVARIANTS / "theorems" / "tiny_pointer_a985_registered_support_matrix_units"
-FULL_A985_LIFT = ROOT / "layers" / "drinfeld" / "full_a985_lift.json"
+FULL_A985_LIFT = ROOT / "data" / "drinfeld" / "full_a985_lift.json"
 
 
 def canonical(obj: Any) -> bytes:
@@ -71,27 +74,31 @@ def write_csv_rows(path: Path, fieldnames: list[str], rows: list[dict[str, Any]]
 
 
 def load_registered_anchor_sectors() -> set[int]:
-    rows = read_csv_rows(REGISTERED_DIR / "legacy_to_raw_sector_match.csv")
-    return {int(row["legacy_sector"]) for row in rows}
+    rows = read_csv_rows(FULL_COO_DIR / "sector_matrix_unit_source_summary.csv")
+    return {
+        int(row["source_sector"])
+        for row in rows
+        if row["coefficient_source"] == "REGISTERED_SUPPORT_COO"
+    }
 
 
-def load_legacy_profiles() -> dict[int, dict[str, Any]]:
+def load_source_profiles() -> dict[int, dict[str, Any]]:
     full = load_json(FULL_A985_LIFT)
     profiles = full["gluing_and_sector_profiles"]["sector_profiles"]
     return {int(profile["sector"]): profile for profile in profiles}
 
 
-def normalization_status(legacy_sector: int, dimension: int, coefficient_source: str, registered: set[int]) -> tuple[str, str, int]:
+def normalization_status(source_sector: int, dimension: int, coefficient_source: str, registered: set[int]) -> tuple[str, str, int]:
     if dimension == 1:
         return ("CANONICAL_DIMENSION_ONE", "central idempotent is the only matrix unit", 0)
-    if legacy_sector in registered and coefficient_source == "REGISTERED_SUPPORT_COO":
+    if source_sector in registered and coefficient_source == "REGISTERED_SUPPORT_COO":
         return ("REGISTERED_SUPPORT_ANCHORED", "promoted registered support matrix-unit source fixes this basis", 0)
-    return ("OPEN_GL_BLOCK_NORMALIZATION", "no legacy off-diagonal matrix-unit basis is present in the certified lift", dimension * dimension - 1)
+    return ("OPEN_GL_BLOCK_NORMALIZATION", "no source-sector off-diagonal matrix-unit basis is present in the certified lift", dimension * dimension - 1)
 
 
 def build_obligations() -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     registered = load_registered_anchor_sectors()
-    profiles = load_legacy_profiles()
+    profiles = load_source_profiles()
     sector_rows = read_csv_rows(FULL_COO_DIR / "sector_matrix_unit_source_summary.csv")
     product_summary = {
         row["support_name"]: row
@@ -102,16 +109,16 @@ def build_obligations() -> tuple[list[dict[str, Any]], list[dict[str, Any]], lis
     obligations: list[dict[str, Any]] = []
     term_rows: list[dict[str, Any]] = []
     for row in sector_rows:
-        legacy_sector = int(row["legacy_sector"])
+        source_sector = int(row["source_sector"])
         raw_sector = int(row["raw_sector"])
         dimension = int(row["block_dimension"])
         source = row["coefficient_source"]
-        status, anchor, projective_dim = normalization_status(legacy_sector, dimension, source, registered)
+        status, anchor, projective_dim = normalization_status(source_sector, dimension, source, registered)
         template_terms = dimension**4 if status == "OPEN_GL_BLOCK_NORMALIZATION" else 0
-        profile = profiles[legacy_sector]
+        profile = profiles[source_sector]
         obligations.append(
             {
-                "legacy_sector": legacy_sector,
+                "source_sector": source_sector,
                 "raw_sector": raw_sector,
                 "block_dimension": dimension,
                 "matrix_unit_count": int(row["matrix_unit_count"]),
@@ -135,16 +142,16 @@ def build_obligations() -> tuple[list[dict[str, Any]], list[dict[str, Any]], lis
                     for b in range(dimension):
                         term_rows.append(
                             {
-                                "legacy_sector": legacy_sector,
+                                "source_sector": source_sector,
                                 "raw_sector": raw_sector,
                                 "block_dimension": dimension,
                                 "target_i": i,
                                 "target_j": j,
                                 "source_a": a,
                                 "source_b": b,
-                                "coefficient_symbol": f"g_{legacy_sector}[{a},{i}]*ginv_{legacy_sector}[{j},{b}]",
-                                "source_matrix_unit_label": f"u_legacy[{legacy_sector};{a},{b}]",
-                                "target_matrix_unit_label": f"v_legacy[{legacy_sector};{i},{j}]",
+                                "coefficient_symbol": f"g_{source_sector}[{a},{i}]*ginv_{source_sector}[{j},{b}]",
+                                "source_matrix_unit_label": f"u_sector[{source_sector};{a},{b}]",
+                                "target_matrix_unit_label": f"v_sector[{source_sector};{i},{j}]",
                             }
                         )
 
@@ -154,7 +161,7 @@ def build_obligations() -> tuple[list[dict[str, Any]], list[dict[str, Any]], lis
         {
             "summary_key": "sector_count",
             "summary_value": len(obligations),
-            "detail": "all legacy sectors",
+            "detail": "all source sectors",
         },
         {
             "summary_key": "canonical_dimension_one_sectors",
@@ -169,7 +176,7 @@ def build_obligations() -> tuple[list[dict[str, Any]], list[dict[str, Any]], lis
         {
             "summary_key": "open_gl_block_normalization_sectors",
             "summary_value": status_counts["OPEN_GL_BLOCK_NORMALIZATION"],
-            "detail": "blocks requiring an external legacy matrix-unit basis or normalization convention",
+            "detail": "blocks requiring an external source-sector matrix-unit basis or normalization convention",
         },
         {
             "summary_key": "remaining_projective_gauge_dimension",
@@ -195,17 +202,22 @@ def build_obligations() -> tuple[list[dict[str, Any]], list[dict[str, Any]], lis
     return obligations, term_rows, summary
 
 
-def legacy_lift_has_matrix_unit_basis() -> bool:
+def source_lift_has_matrix_unit_basis() -> bool:
     text = FULL_A985_LIFT.read_text(encoding="utf-8").lower()
     return "matrix_unit" in text or "matrix-unit" in text
 
 
-def write_outputs(obligations: list[dict[str, Any]], terms: list[dict[str, Any]], summary: list[dict[str, Any]]) -> None:
+def write_outputs(
+    obligations: list[dict[str, Any]],
+    terms: list[dict[str, Any]],
+    summary: list[dict[str, Any]],
+    perennial_maps: dict[str, dict[int | str, dict[str, Any]]] | None,
+) -> dict[str, Any]:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    write_csv_rows(
+    obligation_stats = write_a985_sector_csv_rows_if_available(
         OUT_DIR / "sector_local_normalization_obligations.csv",
         [
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "matrix_unit_count",
@@ -221,11 +233,12 @@ def write_outputs(obligations: list[dict[str, Any]], terms: list[dict[str, Any]]
             "matrix_unit_block_sha256",
         ],
         obligations,
+        perennial_maps,
     )
-    write_csv_rows(
+    term_stats = write_a985_sector_csv_rows_if_available(
         OUT_DIR / "sector_local_change_of_basis_terms.csv",
         [
-            "legacy_sector",
+            "source_sector",
             "raw_sector",
             "block_dimension",
             "target_i",
@@ -237,12 +250,14 @@ def write_outputs(obligations: list[dict[str, Any]], terms: list[dict[str, Any]]
             "target_matrix_unit_label",
         ],
         terms,
+        perennial_maps,
     )
     write_csv_rows(
         OUT_DIR / "sector_local_normalization_summary.csv",
         ["summary_key", "summary_value", "detail"],
         summary,
     )
+    return {"obligations": obligation_stats, "terms": term_stats}
 
 
 def markdown_report(report: dict[str, Any]) -> str:
@@ -288,8 +303,9 @@ def build_normalization_obligations() -> dict[str, Any]:
     full_match_report = load_json(FULL_MATCH_DIR / "report.json")
     full_coo_report = load_json(FULL_COO_DIR / "report.json")
     support_mult_report = load_json(SUPPORT_MULT_DIR / "report.json")
+    perennial_maps = load_perennial_sector_maps_if_available()
     obligations, terms, summary = build_obligations()
-    write_outputs(obligations, terms, summary)
+    perennial_stats = write_outputs(obligations, terms, summary, perennial_maps)
     support_summary_rows = read_csv_rows(SUPPORT_MULT_DIR / "support_restricted_table_summary.csv")
     top_support_products = next(
         int(row["nonzero_products"])
@@ -304,8 +320,8 @@ def build_normalization_obligations() -> dict[str, Any]:
     gauge_total = sum(int(row["remaining_projective_gauge_dimension"]) for row in obligations)
     template_total = sum(int(row["change_of_basis_template_terms"]) for row in obligations)
     checks = {
-        "full_legacy_sector_match_certified": full_match_report.get("status")
-        == "D20_TINY_POINTER_A985_FULL_LEGACY_SECTOR_MATCH_CERTIFIED"
+        "full_source_sector_match_certified": full_match_report.get("status")
+        == "D20_TINY_POINTER_A985_FULL_SECTOR_MATCH_CERTIFIED"
         and full_match_report.get("all_checks_pass") is True,
         "full_matrix_unit_coo_certified": full_coo_report.get("status")
         == "D20_TINY_POINTER_A985_FULL_MATRIX_UNIT_ORBITAL_COO_CERTIFIED"
@@ -313,7 +329,7 @@ def build_normalization_obligations() -> dict[str, Any]:
         "support_restricted_multiplication_certified": support_mult_report.get("status")
         == "D20_TINY_POINTER_A985_SUPPORT_RESTRICTED_MULTIPLICATION_TABLES_CERTIFIED"
         and support_mult_report.get("all_checks_pass") is True,
-        "legacy_lift_has_no_matrix_unit_basis": not legacy_lift_has_matrix_unit_basis(),
+        "source_lift_has_no_matrix_unit_basis": not source_lift_has_matrix_unit_basis(),
         "obligation_rows_cover_39_sectors": len(obligations) == 39,
         "matrix_unit_counts_sum_to_985": matrix_units_total == 985,
         "matrix_unit_products_sum_to_top_support_products": product_total == top_support_products,
@@ -323,19 +339,30 @@ def build_normalization_obligations() -> dict[str, Any]:
         "registered_source_sector_count_is_4": source_counts["REGISTERED_SUPPORT_COO"] == 4,
         "change_of_basis_terms_match_sector_templates": len(terms) == template_total,
         "remaining_projective_gauge_dimension_positive": gauge_total > 0,
+        "perennial_join_key_emitted_when_available": perennial_maps is None
+        or (
+            perennial_stats["obligations"]["rows_with_perennial_id"]
+            == perennial_stats["obligations"]["rows_with_direct_sector"]
+            == len(obligations)
+            and perennial_stats["terms"]["rows_with_perennial_id"]
+            == perennial_stats["terms"]["rows_with_direct_sector"]
+            == len(terms)
+            and perennial_stats["obligations"]["sector_mismatch_count"] == 0
+            and perennial_stats["terms"]["sector_mismatch_count"] == 0
+        ),
     }
     report = {
         "schema": "d20.theorem.tiny_pointer_a985_sector_normalization_obligations.source_drop",
         "status": STATUS if all(checks.values()) else "D20_TINY_POINTER_A985_SECTOR_NORMALIZATION_OBLIGATIONS_NEEDS_REVIEW",
         "object": "d20",
         "claim": (
-            "The all-39 legacy-labeled matrix units are certified as algebraic matrix-unit systems, "
-            "but the certified legacy lift does not contain an off-diagonal matrix-unit basis. "
+            "The all-39 source-sector-labeled matrix units are certified as algebraic matrix-unit systems, "
+            "but the certified source lift does not contain an off-diagonal matrix-unit basis. "
             "The remaining sector-local normalization is therefore exactly the listed GL_d/scalar "
             "change-of-basis obligation for the open primitive blocks."
         ),
         "inputs": {
-            "full_legacy_sector_match": {
+            "full_source_sector_match": {
                 "path": rel(FULL_MATCH_DIR / "report.json"),
                 "sha256": sha_file(FULL_MATCH_DIR / "report.json"),
             },
@@ -347,9 +374,9 @@ def build_normalization_obligations() -> dict[str, Any]:
                 "path": rel(SUPPORT_MULT_DIR / "report.json"),
                 "sha256": sha_file(SUPPORT_MULT_DIR / "report.json"),
             },
-            "registered_support_sector_match": {
-                "path": rel(REGISTERED_DIR / "legacy_to_raw_sector_match.csv"),
-                "sha256": sha_file(REGISTERED_DIR / "legacy_to_raw_sector_match.csv"),
+            "registered_support_sector_source": {
+                "path": rel(FULL_COO_DIR / "sector_matrix_unit_source_summary.csv"),
+                "sha256": sha_file(FULL_COO_DIR / "sector_matrix_unit_source_summary.csv"),
             },
             "full_a985_lift": {
                 "path": rel(FULL_A985_LIFT),
@@ -367,6 +394,11 @@ def build_normalization_obligations() -> dict[str, Any]:
             "registered_support_source_sector_count": source_counts["REGISTERED_SUPPORT_COO"],
             "remaining_projective_gauge_dimension": gauge_total,
             "change_of_basis_template_terms": len(terms),
+            "perennial_join_key": {
+                "map_available": perennial_maps is not None,
+                "obligation_rows_resolved": int(perennial_stats["obligations"]["rows_with_perennial_id"]),
+                "term_rows_resolved": int(perennial_stats["terms"]["rows_with_perennial_id"]),
+            },
             "tables": {
                 "obligations": rel(OUT_DIR / "sector_local_normalization_obligations.csv"),
                 "change_of_basis_terms": rel(OUT_DIR / "sector_local_change_of_basis_terms.csv"),
@@ -374,7 +406,7 @@ def build_normalization_obligations() -> dict[str, Any]:
             },
         },
         "next_highest_yield_item": (
-            "Supply or derive a genuine legacy off-diagonal matrix-unit basis for one open sector, "
+            "Supply or derive a genuine source-sector off-diagonal matrix-unit basis for one open sector, "
             "then solve its GL_d/scalar normalization equation against the raw-orbital matrix units."
         ),
         "all_checks_pass": all(checks.values()),
@@ -407,6 +439,7 @@ def verify_normalization_obligations() -> dict[str, Any]:
     summary = read_csv_rows(OUT_DIR / "sector_local_normalization_summary.csv")
     status_counts = Counter(row["normalization_status"] for row in obligations)
     template_total = sum(int(row["change_of_basis_template_terms"]) for row in obligations)
+    perennial_available = bool(report.get("derived", {}).get("perennial_join_key", {}).get("map_available"))
     checks = {
         "report_status_certified": report.get("status") == STATUS,
         "report_checks_pass": report.get("all_checks_pass") is True,
@@ -417,6 +450,13 @@ def verify_normalization_obligations() -> dict[str, Any]:
         "open_sector_count_is_30": status_counts["OPEN_GL_BLOCK_NORMALIZATION"] == 30,
         "term_rows_match_report": len(terms) == report.get("derived", {}).get("change_of_basis_template_terms"),
         "term_rows_match_obligation_templates": len(terms) == template_total,
+        "perennial_join_key_present_when_available": not perennial_available
+        or (
+            all(row.get("perennial_id", "").startswith("a985pf.") for row in obligations)
+            and all(row.get("coordinate_fingerprint_id", "").startswith("a985coord.") for row in obligations)
+            and all(row.get("perennial_id", "").startswith("a985pf.") for row in terms)
+            and all(row.get("coordinate_fingerprint_id", "").startswith("a985coord.") for row in terms)
+        ),
     }
     return {
         "status": "D20_TINY_POINTER_A985_SECTOR_NORMALIZATION_OBLIGATIONS_VERIFIED"
@@ -441,3 +481,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

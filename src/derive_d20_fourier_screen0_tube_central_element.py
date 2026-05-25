@@ -12,13 +12,13 @@ try:
     from .derive_d20_sandpile_critical_group_theorem import rel, sha_file, sha_json
     from .derive_sector33_boundary_annihilation_theorem import FIELD_PRIME, H6_LABELS, signed_mod
     from .derive_sector33_unique_public_zero_support_theorem import local_idempotent_cache
-    from .paths import D20_INVARIANTS, LAYERS, ROOT
+    from .paths import D20_INVARIANTS, DATA, ROOT
 except ImportError:  # Supports `python src/derive_d20_fourier_screen0_tube_central_element.py`.
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
     from src.derive_d20_sandpile_critical_group_theorem import rel, sha_file, sha_json
     from src.derive_sector33_boundary_annihilation_theorem import FIELD_PRIME, H6_LABELS, signed_mod
     from src.derive_sector33_unique_public_zero_support_theorem import local_idempotent_cache
-    from src.paths import D20_INVARIANTS, LAYERS, ROOT
+    from src.paths import D20_INVARIANTS, DATA, ROOT
 
 
 THEOREM_ID = "fourier_screen0_tube_central_element"
@@ -30,8 +30,8 @@ FOURIER_A985_REPORT = (
 SECTOR_UNIQUE_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_unique_public_zero_support" / "report.json"
 )
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
-CORE_A985 = LAYERS / "core" / "a985.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
+CORE_A985 = DATA / "core" / "a985.json"
 RELATION_NPZ = ROOT / "data" / "raw" / "relation_memberships.npz"
 TENSOR_NPZ = ROOT / "data" / "raw" / "T_985.npz"
 

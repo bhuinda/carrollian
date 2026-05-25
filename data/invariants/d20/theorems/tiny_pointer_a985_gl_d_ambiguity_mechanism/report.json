@@ -1,0 +1,83 @@
+{
+  "all_checks_pass": true,
+  "boundary": "This explains and witnesses the ambiguity. It does not choose the missing external basis for the 30 open sectors.",
+  "certificate_sha256": "78eb4e03ec703c45ae640f9c4c59566cba1cbd92de42aa9ded20cb51a6f2b29e",
+  "checks": {
+    "all_open_fixture_atlas_certified": true,
+    "dimension_histogram_matches_wedderburn_profile": true,
+    "dimension_one_sector_count_is_7": true,
+    "every_open_sector_has_nontrivial_witness": true,
+    "every_open_witness_has_zero_residual": true,
+    "every_open_witness_preserves_central_page": true,
+    "fold_frame_anchors_certified": true,
+    "full_matrix_unit_coo_certified": true,
+    "intrinsic_pgl_dimension_is_946": true,
+    "nontrivial_sectors_have_pgl_group": true,
+    "normalization_obligations_certified": true,
+    "open_sector_count_is_30": true,
+    "perennial_join_key_emitted_when_available": true,
+    "registered_support_anchored_nontrivial_count_is_2": true,
+    "residual_unanchored_pgl_dimension_is_940": true,
+    "sector_rows_cover_39": true
+  },
+  "claim": "The sector-local GL_d ambiguity is the ordinary basis-change symmetry of each matrix block e_s A985 e_s. Central idempotents and matrix-unit laws determine the block algebra but not an ordered simple-module basis; non-identity GL_d conjugates give equally valid raw-orbital matrix units.",
+  "derived": {
+    "dimension_histogram": {
+      "1": 7,
+      "10": 2,
+      "11": 1,
+      "12": 1,
+      "2": 8,
+      "3": 4,
+      "4": 8,
+      "5": 4,
+      "6": 2,
+      "8": 1,
+      "9": 1
+    },
+    "formula": "v_s[i,j] = sum_{a,b} g_s[a,i] * ginv_s[j,b] * u_s[a,b]",
+    "intrinsic_pgl_dimension": 946,
+    "nontrivial_sector_count": 32,
+    "open_sector_count": 30,
+    "perennial_join_key": {
+      "map_available": true,
+      "mechanism_rows_resolved": 39,
+      "witness_rows_resolved": 30
+    },
+    "residual_unanchored_pgl_dimension": 940,
+    "status_counts": {
+      "CANONICAL_DIMENSION_ONE": 7,
+      "OPEN_GL_BLOCK_NORMALIZATION": 30,
+      "REGISTERED_SUPPORT_ANCHORED": 2
+    },
+    "tables": {
+      "explanation": "data/invariants/d20/theorems/tiny_pointer_a985_gl_d_ambiguity_mechanism/gl_d_ambiguity_explanation.json",
+      "mechanism_by_sector": "data/invariants/d20/theorems/tiny_pointer_a985_gl_d_ambiguity_mechanism/gl_d_ambiguity_mechanism_by_sector.csv",
+      "nontrivial_conjugate_witnesses": "data/invariants/d20/theorems/tiny_pointer_a985_gl_d_ambiguity_mechanism/gl_d_nontrivial_conjugate_witnesses.csv"
+    },
+    "witness_count": 30
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "all_open_fixture_atlas": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_all_open_sector_normalization_fixture_atlas/report.json",
+      "sha256": "1efa8e41024b33146952eab58eda3218a246ff7b66b6513132aec5a584c1fd6d"
+    },
+    "fold_frame_anchors": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_fold_frame_normalization_anchors/report.json",
+      "sha256": "bdfb966e16e1e3ce26b1f7124912563267e4f9890ea7f224fa0b0fb27faf89ec"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
+    },
+    "sector_normalization_obligations": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_normalization_obligations/report.json",
+      "sha256": "9087a010789780134a81e7aa13d43e466059fb82d99dcd7d227a506f1e9efb05"
+    }
+  },
+  "next_highest_yield_item": "Either accept the current constructed basis as the repo convention for open sectors, or add an external criterion that selects a rank-one idempotent flag in each open block.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_gl_d_ambiguity_mechanism.source_drop",
+  "status": "D20_TINY_POINTER_A985_GL_D_AMBIGUITY_MECHANISM_CERTIFIED"
+}

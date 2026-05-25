@@ -11,9 +11,9 @@ import numpy as np
 import sympy as sp
 
 try:
-    from .layer_registry import layer_relpath
+    from .certificate_registry import certificate_relpath
 except ImportError:  # Supports `python src/derive_center_idempotents_from_t985.py`.
-    from layer_registry import layer_relpath
+    from certificate_registry import certificate_relpath
 
 ROOT = Path(__file__).resolve().parents[1]
 MOD_DEFAULT = 1000003
@@ -449,7 +449,7 @@ def derive_center_idempotents(
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--tensor", default="generated/tensor_from_source_coorient.npz")
-    ap.add_argument("--center-cert", default=layer_relpath("drinfeld.full_a985_lift"))
+    ap.add_argument("--center-cert", default=certificate_relpath("drinfeld.full_a985_lift"))
     ap.add_argument("--relations", default="generated/relation_memberships_from_source_coorient_aligned.npz")
     ap.add_argument("--terminal", default="generated/terminal_quotients_from_source_coorient.npz")
     ap.add_argument("--out-npz", default="generated/center_idempotents_from_generated_T985.npz")

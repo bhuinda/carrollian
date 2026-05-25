@@ -1,0 +1,723 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e9fb1f599eb8d7ddeac04004c29c3cbafa104cb5642f941dd3fdfc8f81ceba25",
+  "checks": {
+    "d20_input_is_certified": true,
+    "exact_replay_cache_matches_prime_replay": true,
+    "finite_field_tutte_os_input_is_certified": true,
+    "prime_lift_audit_input_is_certified": true,
+    "rational_all_subsets_specialization": true,
+    "rational_basis_count_matches_finite_field": true,
+    "rational_characteristic_matches_finite_field": true,
+    "rational_ground_set_size_is_31": true,
+    "rational_os_hilbert_matches_finite_field": true,
+    "rational_rank_is_20": true,
+    "rational_tutte_has_93_terms": true,
+    "rational_tutte_matches_finite_field_hash": true
+  },
+  "claim": "The sector-33 height-attachment matrix has an exact rational deletion-contraction replay with rank 20, 307218 cached states, 93 Tutte terms, and the same Tutte hash as the audited finite-field package. Therefore the recorded Tutte polynomial, characteristic polynomial, and NBC/Orlik-Solomon Hilbert vector are promoted to the rational matroid represented by the integer sector-33 matrix.",
+  "definition": {
+    "exact_replay": "loop/coloop-aware deletion-contraction replayed with exact Python Fraction row-reduced rational matrix states",
+    "non_claim": "this does not enumerate every signed circuit or prove oriented matroid sign equality between all prime reductions and Q",
+    "promotion_scope": "promotes the sector-33 Tutte polynomial, characteristic polynomial, and NBC/Orlik-Solomon Hilbert vector from the audited finite-field witness to the rational matrix"
+  },
+  "derived": {
+    "exact_deletion_contraction_replay": {
+      "cache_entries": 307218,
+      "cache_hits": 258210,
+      "cache_misses": 307218,
+      "term_count": 93
+    },
+    "finite_field_comparison": {
+      "exact_rational_replay_matches_finite_field": true,
+      "finite_characteristic_polynomial_sha256": "99b03c0a63f53e6d2e8fa0607b0fda2211d156b70a604c556663aa19fd189b76",
+      "finite_field_prime": 1000003,
+      "finite_os_hilbert_sha256": "33bede11c042d432e3d8dd86091ffdaa3df40a4ea6d5fbe95498304769b94513",
+      "finite_tutte_polynomial_sha256": "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f"
+    },
+    "promotion_boundary": {
+      "full_signed_circuit_support_promotion_certified": false,
+      "rational_tutte_os_promoted": true,
+      "remaining_gate": "enumerate or otherwise certify every signed circuit/cocircuit support and orientation over Q"
+    },
+    "rational_characteristic_polynomial": {
+      "polynomial_sha256": "99b03c0a63f53e6d2e8fa0607b0fda2211d156b70a604c556663aa19fd189b76",
+      "rank": 20,
+      "relation": "chi(q)=(-1)^rank T(1-q,0)",
+      "terms": [
+        {
+          "coefficient": 1,
+          "q_degree": 20
+        },
+        {
+          "coefficient": -31,
+          "q_degree": 19
+        },
+        {
+          "coefficient": 465,
+          "q_degree": 18
+        },
+        {
+          "coefficient": -4495,
+          "q_degree": 17
+        },
+        {
+          "coefficient": 31465,
+          "q_degree": 16
+        },
+        {
+          "coefficient": -169910,
+          "q_degree": 15
+        },
+        {
+          "coefficient": 736253,
+          "q_degree": 14
+        },
+        {
+          "coefficient": -2629188,
+          "q_degree": 13
+        },
+        {
+          "coefficient": 7885197,
+          "q_degree": 12
+        },
+        {
+          "coefficient": -20136265,
+          "q_degree": 11
+        },
+        {
+          "coefficient": 44226029,
+          "q_degree": 10
+        },
+        {
+          "coefficient": -84130369,
+          "q_degree": 9
+        },
+        {
+          "coefficient": 139195247,
+          "q_degree": 8
+        },
+        {
+          "coefficient": -200530134,
+          "q_degree": 7
+        },
+        {
+          "coefficient": 250845194,
+          "q_degree": 6
+        },
+        {
+          "coefficient": -270168922,
+          "q_degree": 5
+        },
+        {
+          "coefficient": 246213179,
+          "q_degree": 4
+        },
+        {
+          "coefficient": -183757958,
+          "q_degree": 3
+        },
+        {
+          "coefficient": 105676200,
+          "q_degree": 2
+        },
+        {
+          "coefficient": -41461368,
+          "q_degree": 1
+        },
+        {
+          "coefficient": 8179410,
+          "q_degree": 0
+        }
+      ],
+      "variable": "q"
+    },
+    "rational_matrix": {
+      "ground_set_size": 31,
+      "integer_matrix_sha256": "127b281fb5f6d492be1d1014cc55060141e72e64f505e6a994d538d31c95875e",
+      "matrix_shape": {
+        "cols": 31,
+        "rows": 21
+      },
+      "rank": 20,
+      "sector33_height_attachment": {
+        "active_support": [
+          1,
+          2,
+          11,
+          21,
+          22
+        ],
+        "new_element": "e33",
+        "new_element_id": 30,
+        "sector33_dimension": 2,
+        "sector33_transport_scalar": -187392,
+        "sector_bridge_column": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -187392
+        ]
+      }
+    },
+    "rational_orlik_solomon_algebra": {
+      "hilbert_coefficients_by_degree": [
+        1,
+        31,
+        465,
+        4495,
+        31465,
+        169910,
+        736253,
+        2629188,
+        7885197,
+        20136265,
+        44226029,
+        84130369,
+        139195247,
+        200530134,
+        250845194,
+        270168922,
+        246213179,
+        183757958,
+        105676200,
+        41461368,
+        8179410
+      ],
+      "hilbert_coefficients_sha256": "33bede11c042d432e3d8dd86091ffdaa3df40a4ea6d5fbe95498304769b94513",
+      "summary_scope": "NBC Hilbert vector for the exact rational matroid",
+      "top_degree": 20,
+      "total_nbc_monomials": 1605977280
+    },
+    "rational_tutte_polynomial": {
+      "polynomial_sha256": "1347f9f96941fe775c353ac7488ce7c81bc71cb99511c34828cd78dde8cc939f",
+      "specializations": {
+        "T_1_0": 8179410,
+        "T_1_1_basis_count": 18356358,
+        "T_1_2_spanning_set_count": 56442046,
+        "T_2_0": 1605977280,
+        "T_2_1_independent_set_count": 1792839630,
+        "T_2_2_all_subsets": 2147483648
+      },
+      "term_count": 93,
+      "terms": [
+        {
+          "coefficient": 1,
+          "x_degree": 20,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 11,
+          "x_degree": 19,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 66,
+          "x_degree": 18,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 286,
+          "x_degree": 17,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 1001,
+          "x_degree": 16,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 3002,
+          "x_degree": 15,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 1,
+          "x_degree": 15,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 7995,
+          "x_degree": 14,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 12,
+          "x_degree": 14,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 19348,
+          "x_degree": 13,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 87,
+          "x_degree": 13,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 43168,
+          "x_degree": 12,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 484,
+          "x_degree": 12,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 6,
+          "x_degree": 12,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 89545,
+          "x_degree": 11,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 2169,
+          "x_degree": 11,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 68,
+          "x_degree": 11,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 173339,
+          "x_degree": 10,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 8047,
+          "x_degree": 10,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 457,
+          "x_degree": 10,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 6,
+          "x_degree": 10,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 313086,
+          "x_degree": 9,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 25330,
+          "x_degree": 9,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 2266,
+          "x_degree": 9,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 74,
+          "x_degree": 9,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 525472,
+          "x_degree": 8,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 69024,
+          "x_degree": 8,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 9006,
+          "x_degree": 8,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 539,
+          "x_degree": 8,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 12,
+          "x_degree": 8,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 812058,
+          "x_degree": 7,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 164826,
+          "x_degree": 7,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 29912,
+          "x_degree": 7,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 2812,
+          "x_degree": 7,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 121,
+          "x_degree": 7,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 1136993,
+          "x_degree": 6,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 345254,
+          "x_degree": 6,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 84656,
+          "x_degree": 6,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 11719,
+          "x_degree": 6,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 878,
+          "x_degree": 6,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 31,
+          "x_degree": 6,
+          "y_degree": 5
+        },
+        {
+          "coefficient": 1405296,
+          "x_degree": 5,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 626438,
+          "x_degree": 5,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 203528,
+          "x_degree": 5,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 39951,
+          "x_degree": 5,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 4585,
+          "x_degree": 5,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 281,
+          "x_degree": 5,
+          "y_degree": 5
+        },
+        {
+          "coefficient": 7,
+          "x_degree": 5,
+          "y_degree": 6
+        },
+        {
+          "coefficient": 1472212,
+          "x_degree": 4,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 958113,
+          "x_degree": 4,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 405168,
+          "x_degree": 4,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 110482,
+          "x_degree": 4,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 19008,
+          "x_degree": 4,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 1929,
+          "x_degree": 4,
+          "y_degree": 5
+        },
+        {
+          "coefficient": 90,
+          "x_degree": 4,
+          "y_degree": 6
+        },
+        {
+          "coefficient": 1225726,
+          "x_degree": 3,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 1183114,
+          "x_degree": 3,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 635971,
+          "x_degree": 3,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 234838,
+          "x_degree": 3,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 58740,
+          "x_degree": 3,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 9671,
+          "x_degree": 3,
+          "y_degree": 5
+        },
+        {
+          "coefficient": 957,
+          "x_degree": 3,
+          "y_degree": 6
+        },
+        {
+          "coefficient": 43,
+          "x_degree": 3,
+          "y_degree": 7
+        },
+        {
+          "coefficient": 722963,
+          "x_degree": 2,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 1105886,
+          "x_degree": 2,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 732943,
+          "x_degree": 2,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 355251,
+          "x_degree": 2,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 123887,
+          "x_degree": 2,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 30606,
+          "x_degree": 2,
+          "y_degree": 5
+        },
+        {
+          "coefficient": 5135,
+          "x_degree": 2,
+          "y_degree": 6
+        },
+        {
+          "coefficient": 524,
+          "x_degree": 2,
+          "y_degree": 7
+        },
+        {
+          "coefficient": 24,
+          "x_degree": 2,
+          "y_degree": 8
+        },
+        {
+          "coefficient": 227842,
+          "x_degree": 1,
+          "y_degree": 0
+        },
+        {
+          "coefficient": 699999,
+          "x_degree": 1,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 551599,
+          "x_degree": 1,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 339150,
+          "x_degree": 1,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 159121,
+          "x_degree": 1,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 56268,
+          "x_degree": 1,
+          "y_degree": 5
+        },
+        {
+          "coefficient": 14723,
+          "x_degree": 1,
+          "y_degree": 6
+        },
+        {
+          "coefficient": 2723,
+          "x_degree": 1,
+          "y_degree": 7
+        },
+        {
+          "coefficient": 320,
+          "x_degree": 1,
+          "y_degree": 8
+        },
+        {
+          "coefficient": 18,
+          "x_degree": 1,
+          "y_degree": 9
+        },
+        {
+          "coefficient": 227842,
+          "x_degree": 0,
+          "y_degree": 1
+        },
+        {
+          "coefficient": 204878,
+          "x_degree": 0,
+          "y_degree": 2
+        },
+        {
+          "coefficient": 153354,
+          "x_degree": 0,
+          "y_degree": 3
+        },
+        {
+          "coefficient": 93066,
+          "x_degree": 0,
+          "y_degree": 4
+        },
+        {
+          "coefficient": 45068,
+          "x_degree": 0,
+          "y_degree": 5
+        },
+        {
+          "coefficient": 17282,
+          "x_degree": 0,
+          "y_degree": 6
+        },
+        {
+          "coefficient": 5179,
+          "x_degree": 0,
+          "y_degree": 7
+        },
+        {
+          "coefficient": 1178,
+          "x_degree": 0,
+          "y_degree": 8
+        },
+        {
+          "coefficient": 192,
+          "x_degree": 0,
+          "y_degree": 9
+        },
+        {
+          "coefficient": 20,
+          "x_degree": 0,
+          "y_degree": 10
+        },
+        {
+          "coefficient": 1,
+          "x_degree": 0,
+          "y_degree": 11
+        }
+      ],
+      "variables": [
+        "x",
+        "y"
+      ]
+    }
+  },
+  "inputs": {
+    "d20_json": {
+      "path": "d20.json",
+      "sha256": "6de54862ed25ce2709e235af40ae86662f60c97ad7038903a63f2c7ca71ef919"
+    },
+    "d20_oriented_matroid_prime_lift_audit_report": {
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_prime_lift_audit/report.json",
+      "sha256": "7b5f7640b97f05f2694910bb5069c75a3ea284f27ab6b06eb3efbde03980d695"
+    },
+    "d20_oriented_matroid_tutte_os_report": {
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_tutte_os/report.json",
+      "sha256": "7bacd49d4ababee8b739ba1d4841d98a96269c1bc6d6a2aae38aa92533cc7419"
+    }
+  },
+  "interpretation": {
+    "confirmed": [
+      "the Tutte polynomial is now computed by an exact rational replay",
+      "the rational Tutte/characteristic/OS hashes match the finite-field package",
+      "the exact replay uses the same cached state count as the audited prime-field computations"
+    ],
+    "guardrails": [
+      "the promotion is for Tutte/OS invariants of the rational matroid",
+      "signed oriented-matroid circuit enumeration remains a separate certificate",
+      "the theorem does not claim a P vs NP consequence"
+    ]
+  },
+  "next_highest_yield_item": "Build the signed circuit/cocircuit support promotion certificate for the rational sector-33 oriented matroid.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_oriented_matroid_rational_tutte_promotion",
+  "status": "D20_ORIENTED_MATROID_RATIONAL_TUTTE_PROMOTION_CERTIFIED"
+}

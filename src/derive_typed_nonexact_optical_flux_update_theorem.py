@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from src.paths import D20_INVARIANTS, LAYERS, ROOT
+from src.paths import D20_INVARIANTS, DATA, ROOT
 
 
 THEOREM_ID = "typed_nonexact_optical_flux_update"
@@ -21,7 +21,7 @@ SUPERSELECTION_FLUX_EXTENSION_REPORT = (
 MINIMAL_COMPOSITE_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "minimal_composite_null_supports_transport" / "report.json"
 )
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
 
 FIELD_PRIME = 1_000_003
 PUBLIC_COMPONENTS = ["M", "J", "P", "Phi"]

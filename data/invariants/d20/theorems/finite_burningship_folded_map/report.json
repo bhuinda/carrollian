@@ -1,0 +1,55 @@
+{
+  "all_checks_pass": true,
+  "boundary": "This is a finite dynamical-system model of the classical formula. It does not prove that the imported sandpile_burningship certificate used this exact finite fold rule.",
+  "certificate_sha256": "724b0c342247fae8c4ec6796b902caa0eae6b873d66a360969863fe5d5c7d082",
+  "checks": {
+    "all_finite_maps_are_total_on_grid": true,
+    "all_transition_indegrees_uniform_when_parameters_vary": true,
+    "bridge_certified": true,
+    "mod20_branch_lift_matches_static_2primary": true,
+    "mod4_branch_lift_matches_static_2primary": true,
+    "mod4_direct_shape_is_z4_squared": true,
+    "mod60_branch_lift_matches_static_2primary": true,
+    "mod60_has_nontrivial_orbit_variety": true,
+    "semantics_file_emitted": true,
+    "target_quotient_factors_are_z2_z4_z4": true
+  },
+  "claim": "A literal finite folded version of the Burning Ship recurrence has been evaluated on cyclic grids. Its direct mod-4 parameter frame gives Z/4^2; the A985 static Z/2 x Z/4^2 shape appears when the finite model keeps the order-two fold-sheet bit.",
+  "derived": {
+    "classical_formula": "z_{n+1} = (abs(Re z_n) + i abs(Im z_n))^2 + c",
+    "finite_fold": "abs_m(r) = min(r mod m, -r mod m)",
+    "mod4_branch_lift_two_primary_shape": "Z/2 x Z/4^2",
+    "mod4_direct_two_primary_shape": "Z/4^2",
+    "mod60_attractor_count_from_zero_seed": 1530,
+    "mod60_orbit_type_count": 106,
+    "moduli": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      20,
+      60
+    ],
+    "tables": {
+      "modulus_summary": "data/invariants/d20/theorems/finite_burningship_folded_map/finite_burningship_modulus_summary.csv",
+      "orbit_type_histogram": "data/invariants/d20/theorems/finite_burningship_folded_map/finite_burningship_orbit_type_histogram.csv",
+      "semantics": "data/invariants/d20/theorems/finite_burningship_folded_map/finite_burningship_folded_map_semantics.json",
+      "top_attractors": "data/invariants/d20/theorems/finite_burningship_folded_map/finite_burningship_top_attractors.csv"
+    },
+    "target_two_primary_shape": "Z/2 x Z/4^2"
+  },
+  "inputs": {
+    "burning_a985_bridge": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_ship_algebraicity_bridge/report.json",
+      "sha256": "d647563196e0acdf3e7d677f9bd7f7237f8803d8676c8fcf2e99cd11bbe32b47"
+    }
+  },
+  "next_highest_yield_item": "Use the branch-lifted Z/2 x Z/4^2 finite frame as a naming and normalization model for the A985 static 2-primary readout.",
+  "object": "d20",
+  "schema": "d20.theorem.finite_burningship_folded_map.source_drop",
+  "status": "D20_FINITE_BURNINGSHIP_FOLDED_MAP_CERTIFIED"
+}

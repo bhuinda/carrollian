@@ -30,10 +30,13 @@
     },
     "formal_uf_proof_artifact_present": {
       "evidence": {
-        "formal_files": []
+        "formal_files": [
+          "data/invariants/integrity/cvx_trace/formal/PcvxStandardMachineInterface.agda",
+          "data/invariants/integrity/cvx_trace/formal/StandardPNotNPReplayTerms.agda"
+        ]
       },
       "needed": "A Lean/Coq/Agda/HoTT artifact carrying the definitions and maps.",
-      "passed": false
+      "passed": true
     },
     "forward_map_t985_to_p_not_np": {
       "evidence": {
@@ -59,7 +62,7 @@
     "tiny_pointer_dereference_certified": {
       "evidence": {
         "certified_pointer_status": "D20_CERTIFIED_POINTER_A985_MATRIX_UNIT_DEREFERENCE_CERTIFIED",
-        "claim": "The A985 nested-pointer evidence is a certified pointer: legacy sector and public-zero support labels dereference through a unique six-identity fingerprint map into the raw orbital matrix-unit address space.",
+        "claim": "The A985 nested-pointer evidence is a certified pointer: source sector and public-zero support labels dereference through a unique six-identity fingerprint map into the raw orbital matrix-unit address space.",
         "finite_defect_count": 0,
         "open_boundary_count": 1
       },
@@ -81,7 +84,7 @@
     },
     "tiny_pointer_supplies_backward_map": {
       "evidence": {
-        "why_not": "The tiny pointer certifies a dereference from legacy/public support labels into raw A985 orbital matrix-unit coordinates. Its own support-restricted multiplication layer reads data/raw/T_985.npz. That is an internal address/reconstruction certificate, not a necessity theorem PneqNP -> T985Certified."
+        "why_not": "The tiny pointer certifies a dereference from source/public support labels into raw A985 orbital matrix-unit coordinates. Its own support-restricted multiplication layer reads data/raw/T_985.npz. That is an internal address/reconstruction certificate, not a necessity theorem PneqNP -> T985Certified."
       },
       "needed": "A proof that any hProp proof of P != NP determines the tiny pointer and thereby determines T985Certified, without assuming A985/T985 as an input surface.",
       "passed": false

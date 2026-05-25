@@ -284,7 +284,7 @@ def minor_witness(
 
 
 def layer_recorded_summary() -> dict[str, Any] | None:
-    path = ROOT / "layers/core/a985.json"
+    path = ROOT / "data/core/a985.json"
     if not path.exists():
         return None
     data = json.loads(path.read_text(encoding="utf-8"))
@@ -292,7 +292,7 @@ def layer_recorded_summary() -> dict[str, Any] | None:
     if not isinstance(block, dict):
         return None
     return {
-        "path": "layers/core/a985.json",
+        "path": "data/core/a985.json",
         "sha256": h_file(path),
         "field_primes": block.get("field_primes"),
         "stable": block.get("stable"),

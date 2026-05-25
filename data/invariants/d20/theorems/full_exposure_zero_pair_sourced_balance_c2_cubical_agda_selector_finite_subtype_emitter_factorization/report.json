@@ -1,0 +1,172 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e4875dbaaecfba15c1addd31495f6f6719f2cdbbd6df6964832806e002c441ed",
+  "checks": {
+    "all_agda_interfaces_remain_fresh": true,
+    "all_generators_use_shared_emitter": true,
+    "all_prior_finite_subtype_reports_certified": true,
+    "shared_emitter_exposes_non_singleton_emitter": true,
+    "shared_emitter_exposes_singleton_emitter": true,
+    "shared_emitter_reproduces_certified_agda_sources": true,
+    "shared_emitter_source_exists": true,
+    "univalent_foundation_bridge_is_certified": true
+  },
+  "claim": "The singleton, lazy63, paired-lazy480, and raw543 Cubical Agda finite-subtype generators are factored through one shared emitter without changing their certified Agda sources.",
+  "derived": {
+    "agda_source_change_policy": "generated source equality is byte-for-byte against current certified Agda files, so existing typechecked interface artifacts remain valid",
+    "factorized_generator_count": 4,
+    "factorized_generators": [
+      {
+        "agda_interface": {
+          "fresh_for_source": true,
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeSingletons.agdai",
+          "sha256": "6ae6af9868c2a65fb2818107fb93806895995992db2ec02382e197012cce9bbc"
+        },
+        "agda_source": {
+          "generated_matches_current": true,
+          "line_count": 5576,
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeSingletons.agda",
+          "sha256": "d6507b69c3f3283a2fae29d0f109ae419d1687acbda547cff01dca9c21606820"
+        },
+        "expected_status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_CERTIFIED",
+        "generator": {
+          "path": "src/derive_full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_theorem.py",
+          "sha256": "c1fa409ca2f9723fe3dfdb952db5c75b0ba082fe1cb5d4ce86f2bdfba4788ae8",
+          "uses_shared_emitter": true
+        },
+        "name": "singletons",
+        "report": {
+          "all_checks_pass": true,
+          "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons/report.json",
+          "sha256": "c29ea199fc3103328a3d42fb3c10f10cc812bf6c795108f16eecb923a2434d16",
+          "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_SINGLETONS_CERTIFIED"
+        }
+      },
+      {
+        "agda_interface": {
+          "fresh_for_source": true,
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLazy63.agdai",
+          "sha256": "b9e71916580f99677b0697be7c8eb1fb99ec55406aec5dedd8cb783316c8234b"
+        },
+        "agda_source": {
+          "generated_matches_current": true,
+          "line_count": 1250,
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeLazy63.agda",
+          "sha256": "68867bd488c00426f55255422788b680d26425e151bf0471d9086c9d9517a649"
+        },
+        "expected_status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_CERTIFIED",
+        "generator": {
+          "path": "src/derive_full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_theorem.py",
+          "sha256": "c7befc97045a603f904f2f9ca96b5e539730b38c5b154746a5b9a20b3e5bae08",
+          "uses_shared_emitter": true
+        },
+        "name": "lazy63",
+        "report": {
+          "all_checks_pass": true,
+          "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63/report.json",
+          "sha256": "24839e936c709f94b748319fe7a3463aa507d3f974a6faae17d060ff7bc6649e",
+          "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_LAZY63_CERTIFIED"
+        }
+      },
+      {
+        "agda_interface": {
+          "fresh_for_source": true,
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypePairedLazy480.agdai",
+          "sha256": "21f3ca97b4b17878b6970e5f4df61fb2a6b08b9a25cc04fb3e0794f6cef7d29c"
+        },
+        "agda_source": {
+          "generated_matches_current": true,
+          "line_count": 2090,
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypePairedLazy480.agda",
+          "sha256": "fffb8091ab4b4d684affc5a0d3dbcc18e1f00f221c998fa06170c2cce24b3a8a"
+        },
+        "expected_status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_CERTIFIED",
+        "generator": {
+          "path": "src/derive_full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_theorem.py",
+          "sha256": "8737ca68078b337973d880ec477a6baeb8ecee1d7dc8f5b775d71babaa95e6a3",
+          "uses_shared_emitter": true
+        },
+        "name": "paired_lazy480",
+        "report": {
+          "all_checks_pass": true,
+          "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480/report.json",
+          "sha256": "f3d82963e4d12a14368fe9f4af255f85d794539177ca5b610dd5fc0ee837c9ae",
+          "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_PAIRED_LAZY480_CERTIFIED"
+        }
+      },
+      {
+        "agda_interface": {
+          "fresh_for_source": true,
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeRaw543.agdai",
+          "sha256": "9d5adc835f1752d17daa7f06ef16563cb8404c33795f93d8056d13ea4056af7c"
+        },
+        "agda_source": {
+          "generated_matches_current": true,
+          "line_count": 2210,
+          "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtypeRaw543.agda",
+          "sha256": "b0ab2e72b6b28c88f0f914c422639da38ae799ed0a68c0cf23a7040329e7ea59"
+        },
+        "expected_status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_CERTIFIED",
+        "generator": {
+          "path": "src/derive_full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_theorem.py",
+          "sha256": "8d3917d6f76fb79d5f3380741be9ae9225a028d513b5c1f0fa3f1e0566a8357c",
+          "uses_shared_emitter": true
+        },
+        "name": "raw543",
+        "report": {
+          "all_checks_pass": true,
+          "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543/report.json",
+          "sha256": "f38084dade6cdc054e80de5c7aeb486bbb8e4e1877820f3eacee8a03688d10e1",
+          "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_RAW543_CERTIFIED"
+        }
+      }
+    ]
+  },
+  "inputs": {
+    "c2_univalent_foundation_bridge_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_univalent_foundation_bridge/report.json",
+      "sha256": "32dd1e7862ab91f8740ff77916fff7e0c8da6722f90b833443ccf85dfb49fb9d"
+    },
+    "finite_subtype_generators": [
+      {
+        "name": "singletons",
+        "path": "src/derive_full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_singletons_theorem.py",
+        "sha256": "c1fa409ca2f9723fe3dfdb952db5c75b0ba082fe1cb5d4ce86f2bdfba4788ae8"
+      },
+      {
+        "name": "lazy63",
+        "path": "src/derive_full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_lazy63_theorem.py",
+        "sha256": "c7befc97045a603f904f2f9ca96b5e539730b38c5b154746a5b9a20b3e5bae08"
+      },
+      {
+        "name": "paired_lazy480",
+        "path": "src/derive_full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_paired_lazy480_theorem.py",
+        "sha256": "8737ca68078b337973d880ec477a6baeb8ecee1d7dc8f5b775d71babaa95e6a3"
+      },
+      {
+        "name": "raw543",
+        "path": "src/derive_full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_raw543_theorem.py",
+        "sha256": "8d3917d6f76fb79d5f3380741be9ae9225a028d513b5c1f0fa3f1e0566a8357c"
+      }
+    ],
+    "shared_emitter_source": {
+      "path": "src/c2_selector_finite_subtype_emitter.py",
+      "sha256": "438ecbb9271015faa196253594fe8ba6f11b95ef1de61a96c99e2f718911ab19"
+    }
+  },
+  "interpretation": {
+    "what_remains": [
+      "replace large constructor-normal forms with a compact indexed-vector proof layer",
+      "use the shared emitter as the base for future selector-fiber finite subtype proofs"
+    ],
+    "what_this_proves": [
+      "the finite-subtype proof generators now share one source emitter",
+      "the shared emitter reproduces all four certified Agda modules exactly",
+      "no large Agda re-typecheck is required for this refactor because the Agda source files did not change"
+    ]
+  },
+  "next_highest_yield_item": "Replace the large generated FinData constructor normal forms with a compact indexed-vector proof layer to reduce Agda source size and typecheck time.",
+  "object": "d20",
+  "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype_emitter_factorization",
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_EMITTER_FACTORIZATION_CERTIFIED"
+}

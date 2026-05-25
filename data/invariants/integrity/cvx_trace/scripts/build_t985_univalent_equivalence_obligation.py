@@ -133,7 +133,7 @@ def build_report() -> dict[str, Any]:
             "passed": False,
             "evidence": {
                 "why_not": (
-                    "The tiny pointer certifies a dereference from legacy/public support labels into raw "
+                    "The tiny pointer certifies a dereference from source/public support labels into raw "
                     "A985 orbital matrix-unit coordinates. Its own support-restricted multiplication layer "
                     "reads data/raw/T_985.npz. That is an internal address/reconstruction certificate, not "
                     "a necessity theorem PneqNP -> T985Certified."

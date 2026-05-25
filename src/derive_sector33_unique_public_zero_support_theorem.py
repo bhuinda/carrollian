@@ -8,7 +8,7 @@ from typing import Any
 
 import numpy as np
 
-from src.paths import D20_INVARIANTS, LAYERS, ROOT
+from src.paths import D20_INVARIANTS, DATA, ROOT
 from src.derive_sector33_boundary_annihilation_theorem import (
     FIELD_PRIME,
     H6_LABELS,
@@ -27,8 +27,8 @@ DEFAULT_OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 ALL_RESIDUE_TRANSPORT_REPORT = (
     D20_INVARIANTS / "theorems" / "sector33_all_residue_height_transport" / "report.json"
 )
-FULL_A985_LIFT = LAYERS / "drinfeld" / "full_a985_lift.json"
-CORE_A985 = LAYERS / "core" / "a985.json"
+FULL_A985_LIFT = DATA / "drinfeld" / "full_a985_lift.json"
+CORE_A985 = DATA / "core" / "a985.json"
 RELATION_NPZ = ROOT / "data" / "raw" / "relation_memberships.npz"
 QUOTIENT_NPZ = ROOT / "data" / "raw" / "quotients.npz"
 TENSOR_NPZ = ROOT / "data" / "raw" / "T_985.npz"

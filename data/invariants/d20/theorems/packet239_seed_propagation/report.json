@@ -1,0 +1,460 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "70e469ac0715a410d9ccfefbfb2de4d47410ec48b238173079e2735e8fe52aab",
+  "checks": {
+    "cross_return_charge_frames_are_seed_and_active_partner": true,
+    "finite_kernel_crossing_generators_are_5_9_10": true,
+    "fourier_mode_classifier_is_certified": true,
+    "one_step_crossing_clock_pairs_match": true,
+    "one_step_crossing_hidden_clock_cancels_packetwise": true,
+    "one_step_crossing_rows_are_full_exposure_gamma_silent": true,
+    "one_step_crossing_rows_hit_two_odd_packet_shadows": true,
+    "only_5_10_returns_to_seed_packet": true,
+    "packet239_stabilizer_seed_candidate_is_certified": true,
+    "projective_packet_charge_frame_classifier_is_certified": true,
+    "projective_packet_spectral_charge_table_is_certified": true,
+    "scattering_inputs_are_certified": true,
+    "seed_packet239_is_charge_frame_unique": true,
+    "two_step_cross_return_action_histogram_matches": true,
+    "two_step_cross_return_flux_histogram_matches": true,
+    "two_step_cross_return_rows_hit_only_packets_238_and_239": true,
+    "two_step_cross_returns_cancel_hidden_transfer": true,
+    "two_step_cross_returns_preserve_full_exposure_and_gamma_silence": true
+  },
+  "claim": "Under the admissible non-kernel crossing generators 5, 9, and 10, packet 239 propagates to two odd packet shadows. Paired cross-return scattering closes the seed cell on exactly two kernel packets, 238 and 239. Packet 239 returns only through the 5/10 paired crossing, while all paired cross-returns preserve full Loop_297 exposure, gamma8 silence, and hidden-transfer cancellation.",
+  "definition": {
+    "non_kernel_crossing_generators": "The primitive generators 5, 9, and 10 crossing the rank-10 kernel.",
+    "odd_packet_shadow": "The odd-parity packet obtained by removing the parity source bit e5 and reading the same radical/active coordinates used for kernel packets.",
+    "paired_cross_return": "An ordered two-step scattering path using two distinct crossing generators, returning from odd parity to the rank-10 kernel."
+  },
+  "derived": {
+    "one_step_crossing_rows": [
+      {
+        "corrected_hidden_clock_pair": [
+          13,
+          13
+        ],
+        "corrected_hidden_clock_sum_mod26": 0,
+        "finite_height_flux_delta_per_mode": 691200,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "generator_cycle_id": 5,
+        "hidden_R33_transfer_mod26_per_mode": 13,
+        "laplacian_eigenvalue_pair": [
+          14,
+          18
+        ],
+        "laplacian_trace": 32,
+        "loop297_atom_union_count": 25,
+        "loop297_atom_union_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "loop_step_coefficient_sum_signed": 52320,
+        "loop_step_support_sum": 193,
+        "mode_masks": [
+          727,
+          1783
+        ],
+        "optical_action": 691200,
+        "packet_transfer": "kernel_to_odd",
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          9,
+          17
+        ],
+        "sector26_clock_sum_mod26": 0,
+        "source_packet_id": 239,
+        "target_active_sigma": 1,
+        "target_packet_key": "odd:119:1",
+        "target_parity": "odd",
+        "target_radical_character": 119
+      },
+      {
+        "corrected_hidden_clock_pair": [
+          13,
+          13
+        ],
+        "corrected_hidden_clock_sum_mod26": 0,
+        "finite_height_flux_delta_per_mode": 992256,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "generator_cycle_id": 9,
+        "hidden_R33_transfer_mod26_per_mode": 13,
+        "laplacian_eigenvalue_pair": [
+          14,
+          14
+        ],
+        "laplacian_trace": 28,
+        "loop297_atom_union_count": 25,
+        "loop297_atom_union_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "loop_step_coefficient_sum_signed": 96448,
+        "loop_step_support_sum": 264,
+        "mode_masks": [
+          247,
+          1239
+        ],
+        "optical_action": 992256,
+        "packet_transfer": "kernel_to_odd",
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          15,
+          15
+        ],
+        "sector26_clock_sum_mod26": 4,
+        "source_packet_id": 239,
+        "target_active_sigma": 0,
+        "target_packet_key": "odd:119:0",
+        "target_parity": "odd",
+        "target_radical_character": 119
+      },
+      {
+        "corrected_hidden_clock_pair": [
+          13,
+          13
+        ],
+        "corrected_hidden_clock_sum_mod26": 0,
+        "finite_height_flux_delta_per_mode": 1090560,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "generator_cycle_id": 10,
+        "hidden_R33_transfer_mod26_per_mode": 13,
+        "laplacian_eigenvalue_pair": [
+          18,
+          14
+        ],
+        "laplacian_trace": 32,
+        "loop297_atom_union_count": 25,
+        "loop297_atom_union_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "loop_step_coefficient_sum_signed": 140640,
+        "loop_step_support_sum": 399,
+        "mode_masks": [
+          1783,
+          727
+        ],
+        "optical_action": 1090560,
+        "packet_transfer": "kernel_to_odd",
+        "sector26_clock_delta_mod26": 18,
+        "sector26_clock_pair": [
+          17,
+          9
+        ],
+        "sector26_clock_sum_mod26": 0,
+        "source_packet_id": 239,
+        "target_active_sigma": 1,
+        "target_packet_key": "odd:119:1",
+        "target_parity": "odd",
+        "target_radical_character": 119
+      }
+    ],
+    "one_step_crossing_rows_sha256": "4d47804cb8614809bccbd6fac6b495a778d399ca67bc625c5f153f316c2d0f34",
+    "propagation_summary": {
+      "active_partner_packet_id": 238,
+      "crossing_generators": [
+        5,
+        9,
+        10
+      ],
+      "one_step_crossing_row_count": 3,
+      "one_step_unique_odd_packet_shadows": [
+        "odd:119:0",
+        "odd:119:1"
+      ],
+      "seed_packet_id": 239,
+      "seed_return_ordered_crossings": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          5
+        ]
+      ],
+      "two_step_cross_return_row_count": 6,
+      "two_step_net_height_flux_delta_histogram": {
+        "-301056": 1,
+        "-399360": 1,
+        "-98304": 1,
+        "301056": 1,
+        "399360": 1,
+        "98304": 1
+      },
+      "two_step_target_charge_frame_histogram": {
+        "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 2,
+        "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 4
+      },
+      "two_step_target_packet_histogram": {
+        "238": 4,
+        "239": 2
+      },
+      "two_step_total_optical_action_histogram": {
+        "1683456": 2,
+        "1781760": 2,
+        "2082816": 2
+      }
+    },
+    "seed_packet": {
+      "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+      "fine_spectral_charge_key": "32|0|0|0|25",
+      "mode_masks": [
+        759,
+        1751
+      ],
+      "packet_id": 239
+    },
+    "two_step_cross_return_rows": [
+      {
+        "first_generator_cycle_id": 5,
+        "first_height_flux_delta": 691200,
+        "hidden_R33_transfer_mod26_total": 0,
+        "net_height_flux_delta": -301056,
+        "returns_to_seed_packet": false,
+        "second_generator_cycle_id": 9,
+        "second_height_flux_delta": -992256,
+        "source_packet_id": 239,
+        "target_charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "target_fine_spectral_charge_key": "28|4|8|0|25",
+        "target_full_loop297_atom_exposure": true,
+        "target_gamma8_touched": false,
+        "target_mode_masks": [
+          215,
+          1271
+        ],
+        "target_packet_id": 238,
+        "target_packet_key": "kernel:238",
+        "target_sector26_clock_zero_pair": false,
+        "total_optical_action": 1683456
+      },
+      {
+        "first_generator_cycle_id": 5,
+        "first_height_flux_delta": 691200,
+        "hidden_R33_transfer_mod26_total": 0,
+        "net_height_flux_delta": -399360,
+        "returns_to_seed_packet": true,
+        "second_generator_cycle_id": 10,
+        "second_height_flux_delta": -1090560,
+        "source_packet_id": 239,
+        "target_charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "target_fine_spectral_charge_key": "32|0|0|0|25",
+        "target_full_loop297_atom_exposure": true,
+        "target_gamma8_touched": false,
+        "target_mode_masks": [
+          1751,
+          759
+        ],
+        "target_packet_id": 239,
+        "target_packet_key": "kernel:239",
+        "target_sector26_clock_zero_pair": true,
+        "total_optical_action": 1781760
+      },
+      {
+        "first_generator_cycle_id": 9,
+        "first_height_flux_delta": 992256,
+        "hidden_R33_transfer_mod26_total": 0,
+        "net_height_flux_delta": 301056,
+        "returns_to_seed_packet": false,
+        "second_generator_cycle_id": 5,
+        "second_height_flux_delta": -691200,
+        "source_packet_id": 239,
+        "target_charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "target_fine_spectral_charge_key": "28|4|8|0|25",
+        "target_full_loop297_atom_exposure": true,
+        "target_gamma8_touched": false,
+        "target_mode_masks": [
+          215,
+          1271
+        ],
+        "target_packet_id": 238,
+        "target_packet_key": "kernel:238",
+        "target_sector26_clock_zero_pair": false,
+        "total_optical_action": 1683456
+      },
+      {
+        "first_generator_cycle_id": 9,
+        "first_height_flux_delta": 992256,
+        "hidden_R33_transfer_mod26_total": 0,
+        "net_height_flux_delta": -98304,
+        "returns_to_seed_packet": false,
+        "second_generator_cycle_id": 10,
+        "second_height_flux_delta": -1090560,
+        "source_packet_id": 239,
+        "target_charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "target_fine_spectral_charge_key": "28|4|8|0|25",
+        "target_full_loop297_atom_exposure": true,
+        "target_gamma8_touched": false,
+        "target_mode_masks": [
+          1271,
+          215
+        ],
+        "target_packet_id": 238,
+        "target_packet_key": "kernel:238",
+        "target_sector26_clock_zero_pair": false,
+        "total_optical_action": 2082816
+      },
+      {
+        "first_generator_cycle_id": 10,
+        "first_height_flux_delta": 1090560,
+        "hidden_R33_transfer_mod26_total": 0,
+        "net_height_flux_delta": 399360,
+        "returns_to_seed_packet": true,
+        "second_generator_cycle_id": 5,
+        "second_height_flux_delta": -691200,
+        "source_packet_id": 239,
+        "target_charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "target_fine_spectral_charge_key": "32|0|0|0|25",
+        "target_full_loop297_atom_exposure": true,
+        "target_gamma8_touched": false,
+        "target_mode_masks": [
+          1751,
+          759
+        ],
+        "target_packet_id": 239,
+        "target_packet_key": "kernel:239",
+        "target_sector26_clock_zero_pair": true,
+        "total_optical_action": 1781760
+      },
+      {
+        "first_generator_cycle_id": 10,
+        "first_height_flux_delta": 1090560,
+        "hidden_R33_transfer_mod26_total": 0,
+        "net_height_flux_delta": 98304,
+        "returns_to_seed_packet": false,
+        "second_generator_cycle_id": 9,
+        "second_height_flux_delta": -992256,
+        "source_packet_id": 239,
+        "target_charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "target_fine_spectral_charge_key": "28|4|8|0|25",
+        "target_full_loop297_atom_exposure": true,
+        "target_gamma8_touched": false,
+        "target_mode_masks": [
+          1271,
+          215
+        ],
+        "target_packet_id": 238,
+        "target_packet_key": "kernel:238",
+        "target_sector26_clock_zero_pair": false,
+        "total_optical_action": 2082816
+      }
+    ],
+    "two_step_cross_return_rows_sha256": "5b6a54749e48eb54583fe218b6844b27ef1b61ac7a86f562abf6ccca0614e57a"
+  },
+  "inputs": {
+    "amplitude_quotient_fourier_mode_classifier_report": {
+      "path": "data/invariants/d20/theorems/amplitude_quotient_fourier_mode_classifier/report.json",
+      "sha256": "cc4b2b3cd08f45339f5d72e66ff7acb6e75b7ddad51672756736a23ecd24599a"
+    },
+    "canonical_finite_scattering_table_report": {
+      "path": "data/invariants/d20/theorems/canonical_finite_scattering_table/report.json",
+      "sha256": "3b0cea41366d6972213ad43dd1052a86256a4cfd27249d98072f35c1d804362f"
+    },
+    "finite_virasoro_string_kernel_candidate_report": {
+      "path": "data/invariants/d20/theorems/finite_virasoro_string_kernel_candidate/report.json",
+      "sha256": "fd547abff233b095ca27c611d7cf126f0d06fd76618ca9b8af6c85cf016a91b5"
+    },
+    "loop297_scattering_amplitude_lift_report": {
+      "path": "data/invariants/d20/theorems/loop297_scattering_amplitude_lift/report.json",
+      "sha256": "514c191af07e528b406a4d9856985129de600fbeb4c5e34aa2aff16c1bdf042b"
+    },
+    "packet239_stabilizer_seed_candidate_report": {
+      "path": "data/invariants/d20/theorems/packet239_stabilizer_seed_candidate/report.json",
+      "sha256": "6dd2a672b570d749d79b5f123b0f1dc309c9603ba27457676f7fac91afb4caba"
+    },
+    "projective_packet_charge_frame_classifier_report": {
+      "path": "data/invariants/d20/theorems/projective_packet_charge_frame_classifier/report.json",
+      "sha256": "106c90259b9d253a335ddc9c07110e5ba350d16c9ca6782b415752b9d5d364ef"
+    },
+    "projective_packet_spectral_charge_table_report": {
+      "path": "data/invariants/d20/theorems/projective_packet_spectral_charge_table/report.json",
+      "sha256": "fc02aab1cb58fe2473cb8c7997ed094c893ce3f0b6979d5f695b8150de610875"
+    }
+  },
+  "interpretation": {
+    "what_this_does_not_prove": "This is only the local seed-cell propagation from packet 239. It does not yet classify the propagation cells of all 20 full-exposure packets.",
+    "what_this_proves": [
+      "packet 239 has a certified non-kernel propagation cell",
+      "one-step crossings leave the kernel but retain full Loop_297 exposure and gamma8 silence",
+      "paired cross-returns close only on packet 239 and active partner packet 238",
+      "packet 239 is returned by the ordered 5/10 crossing pair, not by every crossing pair"
+    ]
+  },
+  "next_highest_yield_item": "Generalize seed propagation to all 20 full-exposure packets and classify their non-kernel crossing cells.",
+  "object": "d20",
+  "schema": "d20.theorem.packet239_seed_propagation",
+  "status": "D20_PACKET239_SEED_PROPAGATION_CERTIFIED"
+}

@@ -1,0 +1,43 @@
+{
+  "abstract_two_primary_section": [
+    {
+      "a985_frame_quotient_source": "Z/2 factor",
+      "abstract_order": 2,
+      "burning_generator": "z2_a12_parity",
+      "raw_formula": "q12_map(relation_alpha) mod 2"
+    },
+    {
+      "a985_frame_quotient_source": "5 times the Z/20 factor",
+      "abstract_order": 4,
+      "burning_generator": "z4_a42_clock",
+      "raw_formula": "q42_map(relation_alpha) mod 4"
+    },
+    {
+      "a985_frame_quotient_source": "15 times the Z/60 factor",
+      "abstract_order": 4,
+      "burning_generator": "z4_a12_frame_clock",
+      "raw_formula": "(q12_map(relation_alpha) + source_object + target_object) mod 4"
+    }
+  ],
+  "field_prime": 1000003,
+  "object_indexing": {
+    "clock_mod4": "(family_index + sign_bit) mod 4",
+    "family_index": "floor(object_index / 2), with B=0, V=1, S=2",
+    "sign_bit": "object_index mod 2, with minus=0 and plus=1"
+  },
+  "object_labels": [
+    "B-",
+    "B+",
+    "V-",
+    "V+",
+    "S-",
+    "S+"
+  ],
+  "schema": "d20.tiny_pointer_a985.burning_static_designed_frame_section.rules@1",
+  "status_boundary": "This is a designed section of the certified A985 frame 2-primary shape. It is not an imported Burning_static_fields generator map.",
+  "terminal_frame_readouts": {
+    "block_i_block_j": "source and target object indices of the raw A985 relation",
+    "q12_map": "certified A985 -> A12 terminal quotient class",
+    "q42_map": "certified A985 -> A42 terminal quotient class"
+  }
+}

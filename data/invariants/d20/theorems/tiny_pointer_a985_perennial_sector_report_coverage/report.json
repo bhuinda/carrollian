@@ -1,0 +1,43 @@
+{
+  "all_checks_pass": true,
+  "boundary": "This is a report-coverage overlay, not a recomputation of the underlying matrix units or sector characters. Older numeric columns are retained as aliases for traceability.",
+  "certificate_sha256": "63cf096882737882237a7f7083f9bb4954f1221c05a9c640991dc7b9be665c24",
+  "checks": {
+    "alias_table_emitted": true,
+    "all_direct_sector_rows_resolved": true,
+    "automatic_augmenter_selftest_passes": true,
+    "coverage_table_emitted": true,
+    "direct_sector_tables_covered": true,
+    "perennial_fingerprints_certified": true,
+    "perennial_map_has_39_raw_aliases": true,
+    "perennial_map_has_39_source_aliases": true,
+    "sector_facing_tables_covered": true,
+    "source_raw_sector_aliases_are_coherent": true
+  },
+  "claim": "Sector-facing A985 CSV report tables now have perennial-id-covered views emitted through the shared automatic A985 perennial-id augmenter. The augmented copies add perennial_id and coordinate_fingerprint_id for direct source/raw sector rows, and add perennial-id set columns for transported source, raw, and zero-sector support fields. Original witness tables remain unchanged.",
+  "derived": {
+    "automatic_augmenter": "src/a985_perennial_ids.py::augment_a985_sector_rows",
+    "covered_csv_tables": 55,
+    "covered_direct_sector_tables": 42,
+    "covered_rows_total": 365113,
+    "direct_sector_rows": 364987,
+    "direct_sector_rows_resolved_to_perennial_id": 364987,
+    "sector_mismatch_count": 0,
+    "tables": {
+      "alias_table": "data/invariants/d20/theorems/tiny_pointer_a985_perennial_sector_report_coverage/perennial_sector_alias_table.csv",
+      "augmented_root": "data/invariants/d20/theorems/tiny_pointer_a985_perennial_sector_report_coverage/augmented",
+      "coverage": "data/invariants/d20/theorems/tiny_pointer_a985_perennial_sector_report_coverage/perennial_sector_report_coverage.csv"
+    },
+    "unresolved_direct_sector_rows": 0
+  },
+  "inputs": {
+    "perennial_sector_fingerprints": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_perennial_sector_fingerprints/report.json",
+      "sha256": "0e6cb4607e6ba921a1c87ff668bf2059993a620f1cd92ee05579564338754db6"
+    }
+  },
+  "next_highest_yield_item": "For new sector-facing theorems, write CSV tables through the automatic A985 perennial-id augmenter so perennial_id appears without hand-maintained joins.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_perennial_sector_report_coverage",
+  "status": "D20_TINY_POINTER_A985_PERENNIAL_SECTOR_REPORT_COVERAGE_CERTIFIED"
+}

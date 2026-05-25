@@ -1,0 +1,50 @@
+{
+  "inputs": {
+    "full_matrix_unit_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_orbital_coo.csv",
+      "sha256": "988138f2d0d96963201b901ada1cb63b2217a31ae9924fd3ca87701eebc23ac1"
+    },
+    "full_matrix_unit_manifest": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_orbital_manifest.csv",
+      "sha256": "c64b73bf746a13cc199f0bf7a4088d8e45e07a7f45761f5792968b7c80a0b400"
+    },
+    "full_matrix_unit_orbital_coo": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
+    },
+    "full_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+      "sha256": "e9a92a1e259cd6aca8c588a7284d30a8752d345678df293cb5f9ad81dde87459"
+    },
+    "support_restricted_multiplication": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/report.json",
+      "sha256": "0403ba3c2943492f19511a048d2f5cf4f1cdfb7227a811befeab7f15ac11ec0f"
+    }
+  },
+  "manifest_sha256": "86004afe25b5985702f1b5d66fb88d571799fe06351bd64018539fa72cb26597",
+  "name": "tiny_pointer_a985_canonical_sector_matrix_units",
+  "outputs": {
+    "canonical_manifest": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/canonical_sector_matrix_units_manifest.csv",
+    "manifest": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/manifest.json",
+    "report": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/report.json",
+    "sector_summary": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/canonical_source_sector_matrix_unit_summary.csv"
+  },
+  "report_sha256": "6c5e4f37b6927f6691daa963bb8c167274aa862379814b79f51204b23afbfedc",
+  "schema": "d20.theorem.tiny_pointer_a985_canonical_sector_matrix_units_manifest.source_drop",
+  "validation_tests": [
+    "full_sector_match_certified",
+    "full_matrix_unit_coo_certified",
+    "support_restricted_multiplication_certified",
+    "all_39_source_sectors_present",
+    "all_985_matrix_units_present",
+    "diagonal_count_is_159",
+    "off_diagonal_count_is_826",
+    "all_sector_unit_grids_complete",
+    "all_units_have_raw_orbital_coo",
+    "manifest_nonzero_counts_match_coo",
+    "no_missing_local_matrix_unit_labels",
+    "top_support_symbolic_matrix_unit_table_complete",
+    "top_support_nonzero_products_match_sum_d_cubed",
+    "perennial_join_key_emitted_when_available"
+  ]
+}

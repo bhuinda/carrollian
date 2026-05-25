@@ -1,10 +1,10 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "0658265daf6dcd058890ef94b8953c2eb7bf4094d5a4c0d332edb0525bb2d173",
+  "certificate_sha256": "7bcf6d2b9489e9f01847060347e8c8a0637cf41058df62e4805b5e6d3b0b1c3f",
   "checks": {
     "block_dimensions_sum_to_159": true,
-    "canonical_legacy_matrix_units_certified": true,
     "canonical_matrix_unit_traces_match_delta": true,
+    "canonical_source_sector_matrix_units_certified": true,
     "central_page_count_is_39": true,
     "central_page_trace_matches_block_dimensions": true,
     "central_projection_sample_commutes": true,
@@ -13,9 +13,10 @@
     "full_matrix_unit_coo_certified": true,
     "identity_character_matches_block_dimensions": true,
     "matrix_unit_counts_sum_to_985": true,
+    "perennial_join_key_emitted_when_available": true,
     "sector_count_is_39": true
   },
-  "claim": "The canonical legacy-sector matrix units now give a block character table for the raw 985-orbital basis: chi_s(R_alpha) is the trace of e_s R_alpha in the canonical legacy block End(F_p^d_s).",
+  "claim": "The canonical source-sector matrix units now give a block character table for the raw 985-orbital basis: chi_s(R_alpha) is the trace of e_s R_alpha in the canonical source-sector block End(F_p^d_s).",
   "derived": {
     "central_page_trace_failures": [],
     "character_table_sha256": "3f16b7bb5285fc0b1905377c1d7c884444ad8abb7755cb5196ec82316b839012",
@@ -34,6 +35,11 @@
     ],
     "matrix_unit_trace_failures": [],
     "nonzero_character_values": 3660,
+    "perennial_join_key": {
+      "character_rows_resolved": 38415,
+      "map_available": true,
+      "summary_rows_resolved": 39
+    },
     "projection_sample_failures": [],
     "tables": {
       "character_table_csv": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_character_table.csv",
@@ -43,21 +49,21 @@
   },
   "field_prime": 1000003,
   "inputs": {
-    "canonical_legacy_matrix_units": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_legacy_matrix_units/report.json",
-      "sha256": "3cab1c6db227d21616649c2bf8d6f933b39a697771d23a81514642a16899e846"
+    "canonical_source_sector_matrix_units": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/report.json",
+      "sha256": "17f24baf5ce9387f8da366566693452d7597dc21285ef143bc7f5e0ace303465"
     },
     "central_idempotents": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
       "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
     },
     "full_matrix_unit_arrays": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/legacy_matrix_units_raw_orbital_arrays.npz",
-      "sha256": "2a23eb5de3d8408bb0b1963549bbb654d0e623f705e0db10b5f7e39989321ab9"
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_raw_orbital_arrays.npz",
+      "sha256": "1e57a9d6f17b377ef1fbf4716be4589ec032b25efeefea1e0d68018e31e2e779"
     },
     "full_matrix_unit_orbital_coo": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
-      "sha256": "bf9cc74c497d68309ff288d39b4c64ee56ba70fc09766925ebd267ec933d0259"
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
     },
     "t985_tensor": {
       "path": "data/raw/T_985.npz",

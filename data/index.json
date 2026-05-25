@@ -39,6 +39,20 @@
       "storage_status": "canonical_current_layout",
       "target_path": "data/core/coorient"
     },
+    "core_certificates": {
+      "canonical_role": "derived_invariant",
+      "file_classes": [
+        "json_certificate"
+      ],
+      "migration_policy": "consolidated_from_top_level_certificate_tree",
+      "owner": "main_certificate_computer",
+      "path": "data/core",
+      "required_files": [
+        "a985.json"
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/core"
+    },
     "d20_invariants": {
       "canonical_role": "derived_invariant",
       "file_classes": [
@@ -72,6 +86,41 @@
       ],
       "storage_status": "canonical_current_layout",
       "target_path": "data/reference/dihedral"
+    },
+    "drinfeld_certificates": {
+      "canonical_role": "derived_invariant",
+      "file_classes": [
+        "json_certificate"
+      ],
+      "migration_policy": "consolidated_from_top_level_certificate_tree",
+      "owner": "main_certificate_computer",
+      "path": "data/drinfeld",
+      "required_files": [
+        "boundary.json",
+        "grothendieck_center.json",
+        "idempotent_gluing.json",
+        "wedderburn_trace.json",
+        "full_a985_lift.json"
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/drinfeld"
+    },
+    "geometry_certificates": {
+      "canonical_role": "derived_invariant",
+      "file_classes": [
+        "json_certificate"
+      ],
+      "migration_policy": "consolidated_from_top_level_certificate_tree",
+      "owner": "main_certificate_computer",
+      "path": "data/geometry",
+      "required_files": [
+        "intrinsic_support_dependency.json",
+        "mds_arc_hilbert.json",
+        "wu_golay_quintic_resolvent.json",
+        "canonical_24_syzygy_frame.json"
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/geometry"
     },
     "hcycle_game_control": {
       "canonical_role": "derived_invariant",
@@ -129,6 +178,21 @@
       "storage_status": "canonical_standardized_layout",
       "target_path": "data/integrity/height_coherence"
     },
+    "integrity_certificates": {
+      "canonical_role": "derived_invariant",
+      "file_classes": [
+        "json_certificate"
+      ],
+      "migration_policy": "consolidated_from_top_level_certificate_tree",
+      "owner": "main_certificate_computer",
+      "path": "data/integrity",
+      "required_files": [
+        "proof_system.json",
+        "proof_system.summary.json"
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/integrity"
+    },
     "integrity_ladders": {
       "canonical_role": "derived_invariant",
       "file_classes": [
@@ -139,6 +203,7 @@
         "json_report",
         "json_schema",
         "json_trace",
+        "proof_assistant_source",
         "python_source"
       ],
       "migration_policy": "physically_normalized_into_invariants_tree",
@@ -163,6 +228,27 @@
         "cvx_trace/reports/quotient_kernel_reflection_certificate.json",
         "cvx_trace/reports/p_not_np_model_scoped_theorem.json",
         "cvx_trace/reports/p_not_np_model_scoped_theorem.md",
+        "cvx_trace/reports/public_bit_ram_standard_simulation.json",
+        "cvx_trace/reports/public_bit_ram_standard_simulation.md",
+        "cvx_trace/reports/standard_tm_public_bit_ram_frontend.json",
+        "cvx_trace/reports/standard_tm_public_bit_ram_frontend.md",
+        "cvx_trace/reports/semantic_x_reclassification_theorem.json",
+        "cvx_trace/reports/semantic_x_reclassification_theorem.md",
+        "cvx_trace/reports/p_cvx_formal_machine_interface.json",
+        "cvx_trace/reports/p_cvx_formal_machine_interface.md",
+        "cvx_trace/formal/PcvxStandardMachineInterface.agda",
+        "cvx_trace/reports/p_cvx_standard_model_identification.json",
+        "cvx_trace/reports/p_cvx_standard_model_identification.md",
+        "cvx_trace/reports/p_cvx_standard_equivalence_witness.json",
+        "cvx_trace/reports/p_cvx_standard_equivalence_witness.md",
+        "cvx_trace/reports/standard_p_not_np_replay_terms.json",
+        "cvx_trace/reports/standard_p_not_np_replay_terms.md",
+        "cvx_trace/formal/StandardPNotNPReplayTerms.agda",
+        "cvx_trace/reports/standard_p_not_np_promotion_certificate.json",
+        "cvx_trace/reports/standard_p_not_np_promotion_certificate.md",
+        "cvx_trace/reports/self_contained_external_audit_bundle.json",
+        "cvx_trace/reports/self_contained_external_audit_bundle.md",
+        "cvx_trace/reports/self_contained_audit_bundle_replay_report.json",
         "cvx_trace/reports/t985_univalent_equivalence_obligation.json",
         "cvx_trace/reports/parameterized_e33_target_schema_certificate.json",
         "cvx_trace/reports/polynomial_trace_compiler_scope_certificate.json",
@@ -204,6 +290,16 @@
         "cvx_trace/scripts/build_independent_external_replay_report.py",
         "cvx_trace/scripts/build_quotient_kernel_reflection_certificate.py",
         "cvx_trace/scripts/build_p_not_np_model_scoped_theorem.py",
+        "cvx_trace/scripts/build_public_bit_ram_standard_simulation.py",
+        "cvx_trace/scripts/build_standard_tm_public_bit_ram_frontend.py",
+        "cvx_trace/scripts/build_semantic_x_reclassification_theorem.py",
+        "cvx_trace/scripts/build_p_cvx_formal_machine_interface.py",
+        "cvx_trace/scripts/build_p_cvx_standard_model_identification.py",
+        "cvx_trace/scripts/build_p_cvx_standard_equivalence_witness.py",
+        "cvx_trace/scripts/build_standard_p_not_np_replay_terms.py",
+        "cvx_trace/scripts/build_standard_p_not_np_promotion_certificate.py",
+        "cvx_trace/scripts/build_self_contained_external_audit_bundle.py",
+        "cvx_trace/scripts/build_self_contained_audit_bundle_replay_report.py",
         "cvx_trace/scripts/build_t985_univalent_equivalence_obligation.py",
         "cvx_trace/scripts/build_parameterized_e33_target_schema_certificate.py",
         "cvx_trace/scripts/build_polynomial_trace_compiler_scope_certificate.py",
@@ -231,6 +327,26 @@
       ],
       "storage_status": "canonical_standardized_layout",
       "target_path": "data/invariants/integrity"
+    },
+    "modular_certificates": {
+      "canonical_role": "derived_invariant",
+      "file_classes": [
+        "json_certificate"
+      ],
+      "migration_policy": "consolidated_from_top_level_certificate_tree",
+      "owner": "main_certificate_computer",
+      "path": "data/modular",
+      "required_files": [
+        "ribbon_boundary.json",
+        "completion_obstruction.json",
+        "adjoined_hopf_operator.json",
+        "twist_completion_test.json",
+        "derived_line_surface_trace.json",
+        "hesse_tube_character_pencil.json",
+        "lasso_uniqueness_pseudomodular_audit.json"
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/modular"
     },
     "quotient_selectors": {
       "canonical_role": "derived_selector",
@@ -263,7 +379,7 @@
         "quotients.npz",
         "relation_memberships.npz",
         "simple_branching_matrices.npz",
-        "T_985.npz"
+        "Halloween.npz"
       ],
       "storage_status": "canonical_current_layout",
       "target_path": "data/core/raw"
@@ -297,6 +413,25 @@
       },
       "storage_status": "canonical_standardized_layout",
       "target_path": "data/evidence/reproducibility"
+    },
+    "selector_certificates": {
+      "canonical_role": "derived_invariant",
+      "file_classes": [
+        "json_certificate"
+      ],
+      "migration_policy": "consolidated_from_top_level_certificate_tree",
+      "owner": "main_certificate_computer",
+      "path": "data/selectors",
+      "required_files": [
+        "quadratic_golay_obstruction.json",
+        "wu_spinh_6j_marking.json",
+        "mog_resolvent_invariant.json",
+        "mog_canonicity_boundary.json",
+        "full_row_refined_obstruction.json",
+        "hexacode_row_selector.json"
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/selectors"
     },
     "ss_sat_evidence": {
       "canonical_role": "evidence_archive",
@@ -410,35 +545,63 @@
       },
       "storage_status": "canonical_standardized_layout",
       "target_path": "data/evidence/tensor_chain"
+    },
+    "tube_certificates": {
+      "canonical_role": "derived_invariant",
+      "file_classes": [
+        "json_certificate"
+      ],
+      "migration_policy": "consolidated_from_top_level_certificate_tree",
+      "owner": "main_certificate_computer",
+      "path": "data/tube",
+      "required_files": [
+        "projection_section.json",
+        "kernel_descent_audit.json"
+      ],
+      "storage_status": "canonical_current_layout",
+      "target_path": "data/tube"
     }
   },
   "planned_layout": {
+    "data/core": "A985 core certificate data",
     "data/core/coorient": "coorient lift markers, word presentations, and generator arrays",
     "data/core/quotient": "canonical quotient selectors",
     "data/core/raw": "primitive checked seeds and compact comparison arrays",
+    "data/drinfeld": "Drinfeld boundary, center, gluing, trace, and lift certificate data",
     "data/evidence/a236_compute": "A236 computation cache and branching evidence",
     "data/evidence/reproducibility": "portable reproduction bundles retained under canonical evidence storage",
     "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, manifests, and source provenance",
     "data/evidence/stack_series": "bounded stack-series evidence split into named stages, reports, and manifests",
     "data/evidence/tensor_chain": "tensor-chain evidence split into reports, tables, arrays, and stages",
+    "data/geometry": "geometry and syzygy-frame certificate data",
     "data/integrity/height_coherence": "height-coherence integrity certificates, guards, arrays, tables, and verification scripts",
     "data/invariants/d20": "d20 object invariants and integrated evidence invariants",
     "data/invariants/hcycle": "H-cycle board, control, and game-theory invariants",
     "data/invariants/integrity": "proof-system integrity and boundary ledgers",
-    "data/reference/dihedral": "general dihedral formula references"
+    "data/modular": "ribbon, modular obstruction, Hopf, trace, character, and lasso certificate data",
+    "data/reference/dihedral": "general dihedral formula references",
+    "data/selectors": "selector obstruction, marking, MOG, row-refinement, and hexacode certificate data",
+    "data/tube": "tube projection and kernel-descent certificate data"
   },
   "policy": {
     "canonical_top_level_directories": [
       "a236_compute",
       "coorient",
+      "core",
       "dihedral",
+      "drinfeld",
       "evidence",
+      "geometry",
       "integrity",
       "invariants",
+      "modular",
       "quotient",
-      "raw"
+      "raw",
+      "selectors",
+      "tube"
     ],
     "canonical_top_level_files": [
+      "certificates.json",
       "index.json"
     ],
     "ingest_policy": "ingest is a transient drop zone and must not be referenced by canonical certificate data",

@@ -1,22 +1,22 @@
 {
   "inputs": {
-    "full_legacy_sector_match": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_legacy_sector_match/report.json",
-      "sha256": "69341804011de3836292f5baa4a16b335b813e4e930abc49ffb0030aca734047",
-      "status": "D20_TINY_POINTER_A985_FULL_LEGACY_SECTOR_MATCH_CERTIFIED"
-    },
-    "legacy_matrix_unit_transport": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_legacy_matrix_unit_transport/report.json",
-      "sha256": "c97ba9903cece22fa172b554099abadb6adf33f773ffe2beb63fe6de08f518ad",
-      "status": "D20_TINY_POINTER_A985_LEGACY_MATRIX_UNIT_TRANSPORT_CERTIFIED"
+    "full_source_sector_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/report.json",
+      "sha256": "28601f6df97e2ac2524cf0f102eb281ccdac440b858c683b78aeed496860f20a",
+      "status": "D20_TINY_POINTER_A985_FULL_SECTOR_MATCH_CERTIFIED"
     },
     "registered_support_matrix_units": {
       "path": "data/invariants/d20/theorems/tiny_pointer_a985_registered_support_matrix_units/report.json",
-      "sha256": "16e11f949775572ee17ee7f3d347efc44d1d5d10eda13be28d6d4aec0ece3ffe",
+      "sha256": "2584576798a51e1826d098b1fa00036204ab24cf7b7ef98c7e2bdddac6b7dbe2",
       "status": "D20_TINY_POINTER_A985_REGISTERED_SUPPORT_MATRIX_UNITS_CERTIFIED"
+    },
+    "sector_matrix_unit_transport": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_matrix_unit_transport/report.json",
+      "sha256": "5d0a5eda4dfcba00373c0045292c37b99ca6a7a654f2c27fb6372706ac076ff3",
+      "status": "D20_TINY_POINTER_A985_SECTOR_MATRIX_UNIT_TRANSPORT_CERTIFIED"
     }
   },
-  "manifest_sha256": "c78bc55dcca350a45c3bc47f3156f78c27fef467ba012fd6873ec56fc1f8a44d",
+  "manifest_sha256": "0da686e0eb74c101b6290ff349d01e2e303bc0a665f5c8ac0011f09ee1f0126d",
   "name": "certified_pointer_a985_matrix_unit_dereference",
   "outputs": {
     "certified_pointer_instance": "data/invariants/d20/theorems/certified_pointer_a985_matrix_unit_dereference/certified_pointer_instance.json",
@@ -25,15 +25,15 @@
     "markdown_report": "data/invariants/d20/theorems/certified_pointer_a985_matrix_unit_dereference/certified_pointer_report.md",
     "report": "data/invariants/d20/theorems/certified_pointer_a985_matrix_unit_dereference/report.json"
   },
-  "report_sha256": "3a3de8e9c965d1143acae7b112973a153e10e67514a8422d9264e1d8eb0db2b7",
+  "report_sha256": "21ab0ac2dd6e5fbff7ce2be50ff3297ee14f1d11848bb9709ed5833d8ed5cf1d",
   "schema": "d20.theorem.certified_pointer_a985_matrix_unit_dereference_manifest.source_drop",
   "validation_tests": [
     "schema_required_slots_present",
     "full_match_is_certified",
     "registered_matrix_units_are_certified",
-    "legacy_matrix_unit_transport_is_certified",
-    "legacy_to_raw_map_has_39_rows",
-    "legacy_to_raw_map_is_bijective",
+    "sector_matrix_unit_transport_is_certified",
+    "source_to_raw_map_has_39_rows",
+    "source_to_raw_map_is_bijective",
     "dereference_manifest_has_1011_rows",
     "sector_profile_table_has_39_rows",
     "registered_support_transport_has_7_rows",
