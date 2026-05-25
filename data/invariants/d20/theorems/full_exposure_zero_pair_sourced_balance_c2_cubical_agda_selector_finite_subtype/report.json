@@ -1,9 +1,9 @@
 {
-  "all_checks_pass": false,
-  "certificate_sha256": "9da373dae9daeb2637ae4491d78641a470b2826b927f8a1bcb868e74eafb253b",
+  "all_checks_pass": true,
+  "certificate_sha256": "ccef786aea1875af97143a94838b91edb711f288ff6f6d17664f8aa2dc04b7e8",
   "checks": {
-    "selector_finite_subtype_agda_interface_artifact_present_after_typecheck": false,
-    "selector_finite_subtype_artifact_hashes_are_stable": null,
+    "selector_finite_subtype_agda_interface_artifact_present_after_typecheck": true,
+    "selector_finite_subtype_artifact_hashes_are_stable": true,
     "selector_finite_subtype_defines_sigma_subtype": true,
     "selector_finite_subtype_has_all_fin_data_iso_clauses": true,
     "selector_finite_subtype_has_all_fin_equivalences": true,
@@ -12,7 +12,8 @@
     "selector_membership_theorem_is_certified": true,
     "univalent_foundation_bridge_is_certified": true
   },
-  "claim": "A generated Cubical Agda selector finite-subtype module has the expected source-level Sigma subtype and equivalence clauses, but remains provisional until Agda produces the selector finite-subtype interface artifact.",
+  "claim": "Each Cubical Agda selector fiber is now a finite Sigma subtype of DynamicsId equipped with a typechecked equivalence to Fin n for its certified cardinality.",
+  "demotion_reason": null,
   "derived": {
     "finite_subtype_shape": "SelectorFiber s = Sigma DynamicsId (SelectorMembership s), with SelectorFiber s equiv Fin (selectorFiberCount s).",
     "selector_fiber_counts": {
@@ -26,11 +27,11 @@
       "raw_componentwise_absolute_spectral_gap": 543
     },
     "source_summary": {
-      "byte_size": 4263290,
+      "byte_size": 4274988,
       "interface": {
-        "byte_size": 0,
+        "byte_size": 23170198,
         "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtype.agdai",
-        "sha256": null
+        "sha256": "282ae3404baacbe43dbf8b6513ab3dfe0eda97b1d9b1737d200c90f2302b41bc"
       },
       "line_count": 4615,
       "module": "C2SelectorFoundationSelectorFiniteSubtype",
@@ -47,7 +48,7 @@
         "uniform_finite_equiv_clause_count": 8,
         "uniform_finite_package_clause_count": 8
       },
-      "sha256": "27229c07dbdb46ec5ca067e89efe39be17f5e82936bc4724f4f5ea4945dc7cef",
+      "sha256": "14048ff59d102e058f41f18ed48cf03844d7c6913a9bde957064fc76b4b338bf",
       "typecheck_command": "C:/Users/Admin/Documents/agda-toolchain/agda.exe --warning=noUnsupportedIndexedMatch --transliterate -v0 -i data/invariants/d20/formal/cubical -i C:/Users/Admin/Documents/agda-toolchain/cubical-0.9 data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtype.agda"
     }
   },
@@ -62,15 +63,16 @@
     },
     "cubical_agda_selector_finite_subtype_interface": {
       "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtype.agdai",
-      "sha256": null
+      "sha256": "282ae3404baacbe43dbf8b6513ab3dfe0eda97b1d9b1737d200c90f2302b41bc"
     },
     "cubical_agda_selector_finite_subtype_source": {
       "path": "data/invariants/d20/formal/cubical/C2SelectorFoundationSelectorFiniteSubtype.agda",
-      "sha256": "27229c07dbdb46ec5ca067e89efe39be17f5e82936bc4724f4f5ea4945dc7cef"
+      "sha256": "14048ff59d102e058f41f18ed48cf03844d7c6913a9bde957064fc76b4b338bf"
     }
   },
   "interpretation": {
     "what_this_does_not_prove": [
+      "while demoted, it does not count as a certified or provisional invariant report",
       "it does not prove a final physical selector axiom",
       "it does not prove full structure identity for the dynamics operators",
       "it does not connect the finite selector fibers to external continuum semantics"
@@ -87,8 +89,8 @@
       "future physical selector axioms can be phrased as operations on finite fibers rather than external filters"
     ]
   },
-  "next_highest_yield_item": "Split the selector finite-subtype proof into per-selector Cubical Agda modules and typecheck the singleton fibers before rejoining the raw/lazy/paired large fibers.",
+  "next_highest_yield_item": "Use the finite selector subtype equivalences to prove path-level transport of singleton selector choices across Cubical structure identity.",
   "object": "d20",
   "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype",
-  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_NEEDS_REVIEW"
+  "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_CERTIFIED"
 }

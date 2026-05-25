@@ -655,8 +655,15 @@ def refresh_certificate() -> None:
     cert = json.loads(CERTIFICATE.read_text(encoding="utf-8"))
     d20 = json.loads(D20.read_text(encoding="utf-8"))
     invariant_reports = invariant_report_rows()
-    certified_invariant_reports = [row for row in invariant_reports if row.get("certified") is True]
-    provisional_invariant_reports = [row for row in invariant_reports if row.get("certified") is not True]
+    certified_invariant_reports = [
+        row for row in invariant_reports if row.get("classification") == "certified"
+    ]
+    provisional_invariant_reports = [
+        row for row in invariant_reports if row.get("classification") == "provisional"
+    ]
+    demoted_invariant_reports = [
+        row for row in invariant_reports if row.get("classification") == "demoted"
+    ]
 
     d20_object_hash = d20.get("d20_sha256")
     if not isinstance(d20_object_hash, str) or len(d20_object_hash) != 64:
@@ -684,6 +691,8 @@ def refresh_certificate() -> None:
     cert["invariant_report_inventory"] = invariant_report_inventory()
     cert["provisional_invariant_reports"] = provisional_invariant_reports
     cert["provisional_invariant_report_count"] = len(provisional_invariant_reports)
+    cert["demoted_invariant_reports"] = demoted_invariant_reports
+    cert["demoted_invariant_report_count"] = len(demoted_invariant_reports)
     cert["d20_sha256"] = sha_json_body(cert, "d20_sha256")
     CERTIFICATE.write_text(json.dumps(cert, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
 

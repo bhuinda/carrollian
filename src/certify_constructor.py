@@ -51,6 +51,23 @@ def sha_json(obj: Any) -> str:
     return hashlib.sha256(canonical(obj)).hexdigest()
 
 
+def stable_constructor_payload(obj: Any) -> Any:
+    """Remove volatile diagnostics before hashing constructor reports."""
+    if isinstance(obj, dict):
+        return {
+            k: stable_constructor_payload(v)
+            for k, v in obj.items()
+            if k != "constructor_result_sha256" and not str(k).endswith("_seconds")
+        }
+    if isinstance(obj, list):
+        return [stable_constructor_payload(v) for v in obj]
+    return obj
+
+
+def stable_constructor_sha_json(obj: Any) -> str:
+    return sha_json(stable_constructor_payload(obj))
+
+
 def load_npz(rel: str):
     return np.load(ROOT / rel)
 

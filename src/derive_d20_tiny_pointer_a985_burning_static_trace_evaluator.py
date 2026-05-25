@@ -25,7 +25,10 @@ from src.paths import D20_INVARIANTS, ROOT  # noqa: E402
 FIELD_PRIME = 1_000_003
 RELATION_COUNT = 985
 THEOREM_ID = "tiny_pointer_a985_burning_static_trace_evaluator"
-STATUS_READY_ABSENT = "D20_TINY_POINTER_A985_BURNING_STATIC_TRACE_EVALUATOR_READY_INPUT_ABSENT"
+STATUS_CONTRACT_CERTIFIED = (
+    "D20_TINY_POINTER_A985_BURNING_STATIC_TRACE_EVALUATOR_CONTRACT_CERTIFIED"
+)
+STATUS_NEEDS_REVIEW = "D20_TINY_POINTER_A985_BURNING_STATIC_TRACE_EVALUATOR_NEEDS_REVIEW"
 STATUS_PROFILE_CERTIFIED = "D20_TINY_POINTER_A985_BURNING_STATIC_TRACE_PROFILE_CERTIFIED"
 STATUS_DESIGNED_PROFILE_CERTIFIED = (
     "D20_TINY_POINTER_A985_BURNING_STATIC_DESIGNED_TRACE_PROFILE_CERTIFIED"
@@ -494,7 +497,8 @@ def build_trace_evaluator(input_path: Path | None) -> dict[str, Any]:
             }
         )
 
-    if input_present and all(checks.values()):
+    all_checks_pass = all(checks.values())
+    if input_present and all_checks_pass:
         status = (
             STATUS_CONSTRUCTED_PROFILE_CERTIFIED
             if input_source_kind == "constructed_a985_frame_section"
@@ -504,8 +508,10 @@ def build_trace_evaluator(input_path: Path | None) -> dict[str, Any]:
             else STATUS_PROFILE_CERTIFIED
             )
         )
+    elif all_checks_pass:
+        status = STATUS_CONTRACT_CERTIFIED
     else:
-        status = STATUS_READY_ABSENT
+        status = STATUS_NEEDS_REVIEW
     claim = (
         "The Burning_static_fields representative-to-sector trace evaluator is ready: supplied raw "
         "985-orbital coordinates will be mapped through the canonical A985 character table into all "
@@ -533,8 +539,8 @@ def build_trace_evaluator(input_path: Path | None) -> dict[str, Any]:
         "object": "d20",
         "claim": claim,
         "boundary": (
-            "A SOURCE_ABSENT status means no Burning_static_fields raw representative was present; "
-            "only the evaluator and its identity selftest are certified. It is not a Burning support profile."
+            "The contract-certified status means no Burning_static_fields raw representative was present; "
+            "only the evaluator contract and identity selftest are certified. It is not a Burning support profile."
         )
         if not input_present
         else (
@@ -607,7 +613,7 @@ def build_trace_evaluator(input_path: Path | None) -> dict[str, Any]:
             )
             )
         ),
-        "all_checks_pass": all(checks.values()),
+        "all_checks_pass": all_checks_pass,
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})
     manifest = {
@@ -686,7 +692,7 @@ def verify_outputs() -> dict[str, Any]:
         "report_checks_pass": report.get("all_checks_pass") is True,
         "status_is_expected": report.get("status")
         in {
-            STATUS_READY_ABSENT,
+            STATUS_CONTRACT_CERTIFIED,
             STATUS_PROFILE_CERTIFIED,
             STATUS_DESIGNED_PROFILE_CERTIFIED,
             STATUS_CONSTRUCTED_PROFILE_CERTIFIED,
@@ -722,7 +728,7 @@ def verify_outputs() -> dict[str, Any]:
     else:
         checks.update(
             {
-                "status_records_input_absent": report.get("status") == STATUS_READY_ABSENT,
+                "status_certifies_absent_input_contract": report.get("status") == STATUS_CONTRACT_CERTIFIED,
                 "validation_rows_empty_without_input": len(validation_rows) == 0,
                 "profile_rows_empty_without_input": len(profile_rows) == 0,
                 "summary_rows_empty_without_input": len(summary_rows) == 0,

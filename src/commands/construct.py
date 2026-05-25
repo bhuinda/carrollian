@@ -20,7 +20,7 @@ from src.certify_constructor import (
     COMPLETED_FULL_SCRATCH_STEPS,
     MISSING_FULL_SCRATCH_STEPS,
     construct_from_supplied_raw_seeds,
-    sha_json,
+    stable_constructor_sha_json,
 )
 from src.certify_io import raw_tensor_relpath
 from src.paths import D20_INVARIANTS, GENERATED, ROOT
@@ -55,9 +55,7 @@ def mark_strict_scratch_blocked(result: dict) -> dict:
         COMPLETED_FULL_SCRATCH_STEPS,
     )
     result["next_high_yield_step"] = result["remaining_boundary"][0] if result["remaining_boundary"] else None
-    result["constructor_result_sha256"] = sha_json(
-        {k: v for k, v in result.items() if k != "constructor_result_sha256"}
-    )
+    result["constructor_result_sha256"] = stable_constructor_sha_json(result)
     return result
 
 
@@ -110,6 +108,7 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
     from src.build_orbit_tensor import compute_tensor_from_orbitals
     from src.derive_absolute_coorient_word_presentation import derive as derive_absolute_word
     from src.derive_a236_generated_branching_boundary import derive_boundary as derive_a236_boundary
+    from src.derive_a236_profunctor_from_tube_cache import derive_profunctor as derive_a236_profunctor
     from src.derive_center_idempotents_from_t985 import derive_center_idempotents
     from src.derive_lifted_coorient_generators_formula import derive_formula as derive_lifted_generators
     from src.derive_native_a236_formulae import derive as derive_native_a236
@@ -185,6 +184,13 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
         GENERATED / "strict_scratch_terminal_quotients_from_dihedral_formula.npz",
         GENERATED / "strict_scratch_a236_generated_branching_boundary_report.json",
     )
+    a236_profunctor = derive_a236_profunctor(
+        GENERATED / "strict_scratch_center_idempotents_from_generated_T985.npz",
+        GENERATED / "strict_scratch_terminal_quotients_from_dihedral_formula.npz",
+        ROOT / "data/a236_compute/cache",
+        GENERATED / "strict_scratch_a236_profunctor_from_tube_cache.npz",
+        GENERATED / "strict_scratch_a236_profunctor_from_tube_cache_report.json",
+    )
 
     relation_matches_formula = (
         formula.get("ordered_pair_orbits", {}).get("encoded_pairs_sha256")
@@ -206,8 +212,14 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
         "center_idempotents_pass": center.get("constructor_status") == "CENTER_IDEMPOTENTS_FROM_GENERATED_T985_PASS",
         "native_a236_formulae_pass": a236.get("all_checks_pass") is True,
         "a236_generated_branching_boundary_pass": a236_boundary.get("all_checks_pass") is True,
+        "a236_profunctor_from_tube_cache_pass": a236_profunctor.get("all_checks_pass") is True,
     }
-    unresolved_boundaries = list(MISSING_FULL_SCRATCH_STEPS)
+    resolved_full_scratch_steps = list(COMPLETED_FULL_SCRATCH_STEPS)
+    if checks["a236_profunctor_from_tube_cache_pass"]:
+        resolved_full_scratch_steps.extend(MISSING_FULL_SCRATCH_STEPS)
+        unresolved_boundaries: list[str] = []
+    else:
+        unresolved_boundaries = list(MISSING_FULL_SCRATCH_STEPS)
     ok = all(checks.values()) and not unresolved_boundaries
     relation = _relation_summary(pre_relation)
     result: dict[str, Any] = {
@@ -226,8 +238,8 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
             "data/raw/quotients.npz",
             "data/raw/simple_branching_matrices.npz",
         ],
-        "constructor_scope": "H8^3 source relation body, formula-derived coorient action, A985 tensor, D6/D3 terminal selector, A42/A12 terminal quotients, and native A236 branching formulae",
-        "completed_full_scratch_steps": COMPLETED_FULL_SCRATCH_STEPS,
+        "constructor_scope": "H8^3 source relation body, formula-derived coorient action, A985 tensor, D6/D3 terminal selector, A42/A12 terminal quotients, native A236 branching formulae, and tube-cache-aligned A985->A236 profunctor",
+        "completed_full_scratch_steps": resolved_full_scratch_steps,
         "missing_full_scratch_steps": [] if ok else unresolved_boundaries,
         "remaining_boundary": [] if ok else unresolved_boundaries,
         "checks": checks,
@@ -254,6 +266,10 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
             "simple_branching_naturality": a236.get("branching", {}).get("naturality_exact"),
             "a236_generated_branching_boundary_status": a236_boundary.get("constructor_status"),
             "a236_generated_branching_remaining_boundary": a236_boundary.get("remaining_boundary"),
+            "a236_profunctor_status": a236_profunctor.get("constructor_status"),
+            "a236_profunctor_input_boundary": a236_profunctor.get("input_boundary"),
+            "a236_profunctor_remaining_boundary": a236_profunctor.get("remaining_boundary"),
+            "a236_profunctor_sha256": a236_profunctor.get("constructor_result_sha256"),
         },
         "computability": {
             "regeneration_scope": "generated_source_coorient_pipeline",
@@ -262,12 +278,12 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
             "full_scratch_object_constructor": bool(ok),
             "large_artifacts_regenerated_from_seed_boundary": False,
             "seed_boundary_file_count": 0,
-            "completed_full_scratch_step_count": len(COMPLETED_FULL_SCRATCH_STEPS),
+            "completed_full_scratch_step_count": len(resolved_full_scratch_steps),
             "missing_full_scratch_step_count": 0 if ok else len(unresolved_boundaries),
             "next_high_yield_step": None if ok else unresolved_boundaries[0],
         },
     }
-    result["constructor_result_sha256"] = sha_json({k: v for k, v in result.items() if k != "constructor_result_sha256"})
+    result["constructor_result_sha256"] = stable_constructor_sha_json(result)
     return result
 
 
@@ -288,6 +304,7 @@ def main() -> None:
     ap.add_argument("--align-generated-sectors", action="store_true", help="Canonically align generated primitive idempotent columns to canonical sector numbering by intrinsic signatures.")
     ap.add_argument("--derive-a236-center-obstruction", action="store_true", help="Prove A236 is not an ordinary central projection of generated A985.")
     ap.add_argument("--derive-a236-generated-branching-boundary", action="store_true", help="Show that generated A985 center and terminal readouts do not determine the native A236 branching functor.")
+    ap.add_argument("--derive-a236-profunctor", action="store_true", help="Derive the checked tube-cache-aligned A985->A236 semisimple profunctor.")
     ap.add_argument("--derive-terminal-selector-from-c20", action="store_true", help="Derive the six terminal selector hashes from packet-20 C20 diagonal valencies instead of storing them as primary seed data.")
     ap.add_argument("--derive-coorient-formula-obstruction", action="store_true", help="Prove the fixed coorient Be3 generators are not ordinary 24-coordinate Golay permutations.")
     ap.add_argument("--derive-terminal-selector-intrinsic-obstruction", action="store_true", help="Test whether the terminal diagonal selector is derivable from generated diagonal relation data without packet-20/coorient representation marker.")
@@ -319,6 +336,7 @@ def main() -> None:
             "align_generated_sectors",
             "derive_a236_center_obstruction",
             "derive_a236_generated_branching_boundary",
+            "derive_a236_profunctor",
             "derive_terminal_selector_from_c20",
             "derive_coorient_formula_obstruction",
             "derive_terminal_selector_intrinsic_obstruction",
@@ -531,6 +549,22 @@ def main() -> None:
             ),
             ROOT / "generated/a236_generated_branching_boundary_report.json",
         )
+    elif args.derive_a236_profunctor:
+        from src.derive_a236_profunctor_from_tube_cache import derive_profunctor as derive_a236_profunctor
+
+        result = derive_a236_profunctor(
+            _prefer_existing(
+                ROOT / "generated/strict_scratch_center_idempotents_from_generated_T985.npz",
+                ROOT / "generated/center_idempotents_from_generated_T985.npz",
+            ),
+            _prefer_existing(
+                ROOT / "generated/strict_scratch_terminal_quotients_from_dihedral_formula.npz",
+                ROOT / "generated/terminal_quotients_from_source_coorient.npz",
+            ),
+            ROOT / "data/a236_compute/cache",
+            ROOT / "generated/a236_profunctor_from_tube_cache.npz",
+            ROOT / "generated/a236_profunctor_from_tube_cache_report.json",
+        )
     elif args.derive_representation_integral_wall:
         from src.derive_representation_integral_wall import derive_all as derive_representation_integral_wall
         from src.derive_native_a236_formulae import derive as derive_native_a236_formulae
@@ -620,7 +654,7 @@ def main() -> None:
             "completed_steps": COMPLETED_FULL_SCRATCH_STEPS,
             "remaining_boundary": MISSING_FULL_SCRATCH_STEPS,
         }
-        result["constructor_result_sha256"] = sha_json({k: v for k, v in result.items() if k != "constructor_result_sha256"})
+        result["constructor_result_sha256"] = stable_constructor_sha_json(result)
     elif args.recover_be3_from_orbitals:
         from src.recover_be3_from_orbitals import recover_be3_from_orbitals
 
@@ -650,6 +684,7 @@ def main() -> None:
         if is_full_scratch_constructor(result):
             result["strict_scratch_required"] = True
             result["strict_scratch_passed"] = True
+            result["constructor_result_sha256"] = stable_constructor_sha_json(result)
         else:
             result = mark_strict_scratch_blocked(result)
 

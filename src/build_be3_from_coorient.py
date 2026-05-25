@@ -10,6 +10,7 @@ from typing import Any
 
 import numpy as np
 
+from .certify_constructor import stable_constructor_sha_json
 from .generate_source import source_constructor_certificate
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -311,8 +312,7 @@ def construct_be3_from_source_coorient(
         ],
         "total_seconds": round(time.time() - t0, 6),
     }
-    body = json.dumps(result, sort_keys=True, separators=(",", ":")).encode("utf-8")
-    result["constructor_result_sha256"] = hashlib.sha256(body).hexdigest()
+    result["constructor_result_sha256"] = stable_constructor_sha_json(result)
     if out_json is not None:
         out_json.parent.mkdir(parents=True, exist_ok=True)
         out_json.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")

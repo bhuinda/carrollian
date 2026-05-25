@@ -1,10 +1,10 @@
 # Burning static trace evaluator
 
-Status: `D20_TINY_POINTER_A985_BURNING_STATIC_TRACE_EVALUATOR_READY_INPUT_ABSENT`
+Status: `D20_TINY_POINTER_A985_BURNING_STATIC_TRACE_EVALUATOR_CONTRACT_CERTIFIED`
 
 The Burning_static_fields representative-to-sector trace evaluator is ready: supplied raw 985-orbital coordinates will be mapped through the canonical A985 character table into all 39 source-sector traces.
 
-Boundary: A SOURCE_ABSENT status means no Burning_static_fields raw representative was present; only the evaluator and its identity selftest are certified. It is not a Burning support profile.
+Boundary: The contract-certified status means no Burning_static_fields raw representative was present; only the evaluator contract and identity selftest are certified. It is not a Burning support profile.
 
 ## Checks
 

@@ -159,7 +159,8 @@ def selector_block(fiber: dict[str, Any]) -> list[str]:
     for index, move_id in enumerate(selected_ids):
         constructor = membership_constructor(selector_key, move_id)
         lines.append(
-            f"{prefix}FiberToFinData (d{move_id} , {constructor}) = FDP.fromℕ' {count} {index} _"
+            f"{prefix}FiberToFinData (d{move_id} , {constructor}) = "
+            f"FDP.fromℕ' {count} {index} ({count - index - 1} , refl)"
         )
 
     lines.extend(["", f"{prefix}FiberFromFinData : FD.Fin {count} → SelectorFiber {selector}"])
@@ -304,6 +305,8 @@ def build_theorem() -> dict[str, Any]:
     source_text = CUBICAL_AGDA_SOURCE.read_text(encoding="utf-8")
     interface_exists = CUBICAL_AGDA_INTERFACE.exists()
     interface_size = CUBICAL_AGDA_INTERFACE.stat().st_size if interface_exists else 0
+    source_sha256 = sha_file(CUBICAL_AGDA_SOURCE)
+    interface_sha256 = sha_file(CUBICAL_AGDA_INTERFACE) if interface_exists else None
     selector_fibers = bridge["derived"]["selector_fibers"]
     expected_witness_count = sum(int(fiber["selected_count"]) for fiber in selector_fibers)
     to_fin_data_clauses = re.findall(r"^\w+FiberToFinData \(d\d+ , \w+\) = ", source_text, re.MULTILINE)
@@ -323,7 +326,7 @@ def build_theorem() -> dict[str, Any]:
 
     source_summary = {
         "path": rel(CUBICAL_AGDA_SOURCE),
-        "sha256": sha_file(CUBICAL_AGDA_SOURCE),
+        "sha256": source_sha256,
         "byte_size": CUBICAL_AGDA_SOURCE.stat().st_size,
         "line_count": len(source_text.splitlines()),
         "module": "C2SelectorFoundationSelectorFiniteSubtype",
@@ -336,7 +339,7 @@ def build_theorem() -> dict[str, Any]:
         ),
         "interface": {
             "path": rel(CUBICAL_AGDA_INTERFACE),
-            "sha256": sha_file(CUBICAL_AGDA_INTERFACE) if interface_exists else None,
+            "sha256": interface_sha256,
             "byte_size": interface_size,
         },
         "proof_counts": {
@@ -387,14 +390,15 @@ def build_theorem() -> dict[str, Any]:
         and len(finite_package_clauses) == len(selector_fibers) == 8,
         "selector_finite_subtype_agda_interface_artifact_present_after_typecheck": interface_exists
         and interface_size > 0,
-        "selector_finite_subtype_artifact_hashes_are_stable": sha_file(CUBICAL_AGDA_SOURCE)
-        and (sha_file(CUBICAL_AGDA_INTERFACE) if interface_exists else None),
+        "selector_finite_subtype_artifact_hashes_are_stable": len(source_sha256) == 64
+        and isinstance(interface_sha256, str)
+        and len(interface_sha256) == 64,
     }
     all_checks_pass = all(checks.values())
     status = (
         "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_CERTIFIED"
         if all_checks_pass
-        else "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_NEEDS_REVIEW"
+        else "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_CUBICAL_AGDA_SELECTOR_FINITE_SUBTYPE_FORMAL_TRACKING_DEMOTED"
     )
     claim = (
         "Each Cubical Agda selector fiber is now a finite Sigma subtype of DynamicsId equipped with "
@@ -402,8 +406,8 @@ def build_theorem() -> dict[str, Any]:
         if all_checks_pass
         else (
             "A generated Cubical Agda selector finite-subtype module has the expected source-level "
-            "Sigma subtype and equivalence clauses, but remains provisional until Agda produces the "
-            "selector finite-subtype interface artifact."
+            "Sigma subtype and equivalence clauses, but this report is demoted to formal tracking "
+            "until Agda produces the selector finite-subtype interface artifact."
         )
     )
     next_highest_yield_item = (
@@ -415,11 +419,31 @@ def build_theorem() -> dict[str, Any]:
             "typecheck the singleton fibers before rejoining the raw/lazy/paired large fibers."
         )
     )
+    proven_items = (
+        [
+            "each selector fiber is a typechecked finite subtype of the generated dynamics universe",
+            "each fiber has an explicit two-sided isomorphism to a finite index type",
+            "Cubical's FinData-to-Fin equivalence converts those isomorphisms into equivalences to Fin n",
+            "the selector layer now has a uniform finite-family interface in Cubical Agda",
+        ]
+        if all_checks_pass
+        else [
+            "the generated source contains the expected Sigma subtype shape",
+            "the generated source contains the expected FinData and finite-family clauses",
+            "the interface artifact is absent, so no typechecked finite-subtype theorem is certified here",
+        ]
+    )
     report = {
         "schema": "d20.theorem.full_exposure_zero_pair_sourced_balance_c2_cubical_agda_selector_finite_subtype",
         "status": status,
         "object": "d20",
         "claim": claim,
+        "demotion_reason": None
+        if all_checks_pass
+        else (
+            "Agda is missing the selector finite-subtype interface artifact; the source-shape data is retained "
+            "as formal tracking evidence, not as a certified invariant theorem."
+        ),
         "inputs": {
             "c2_univalent_foundation_bridge_report": {
                 "path": rel(C2_UNIVALENT_FOUNDATION_BRIDGE_REPORT),
@@ -431,11 +455,11 @@ def build_theorem() -> dict[str, Any]:
             },
             "cubical_agda_selector_finite_subtype_source": {
                 "path": rel(CUBICAL_AGDA_SOURCE),
-                "sha256": sha_file(CUBICAL_AGDA_SOURCE),
+                "sha256": source_sha256,
             },
             "cubical_agda_selector_finite_subtype_interface": {
                 "path": rel(CUBICAL_AGDA_INTERFACE),
-                "sha256": sha_file(CUBICAL_AGDA_INTERFACE) if interface_exists else None,
+                "sha256": interface_sha256,
             },
         },
         "derived": {
@@ -449,18 +473,14 @@ def build_theorem() -> dict[str, Any]:
             ),
         },
         "interpretation": {
-            "what_this_proves": [
-                "each selector fiber is a typechecked finite subtype of the generated dynamics universe",
-                "each fiber has an explicit two-sided isomorphism to a finite index type",
-                "Cubical's FinData-to-Fin equivalence converts those isomorphisms into equivalences to Fin n",
-                "the selector layer now has a uniform finite-family interface in Cubical Agda",
-            ],
+            "what_this_proves": proven_items,
             "why_it_matters_if_extended": [
                 "finite selector identity can now be transported through univalence-style equivalences",
                 "selector ambiguity is no longer only a JSON count; it is a formal finite type with canonical cardinality",
                 "future physical selector axioms can be phrased as operations on finite fibers rather than external filters",
             ],
             "what_this_does_not_prove": [
+                "while demoted, it does not count as a certified or provisional invariant report",
                 "it does not prove a final physical selector axiom",
                 "it does not prove full structure identity for the dynamics operators",
                 "it does not connect the finite selector fibers to external continuum semantics",

@@ -16,7 +16,10 @@ if str(ROOT_FOR_IMPORT) not in sys.path:
 from src.paths import D20_INVARIANTS, ROOT  # noqa: E402
 
 
-STATUS = "D20_TINY_POINTER_A985_BURNING_STATIC_REPRESENTATIVE_SOURCE_ABSENT"
+STATUS_CONTRACT_CERTIFIED = (
+    "D20_TINY_POINTER_A985_BURNING_STATIC_REPRESENTATIVE_INTAKE_CONTRACT_CERTIFIED"
+)
+STATUS_NEEDS_REVIEW = "D20_TINY_POINTER_A985_BURNING_STATIC_REPRESENTATIVE_INTAKE_NEEDS_REVIEW"
 THEOREM_ID = "tiny_pointer_a985_burning_static_representative_intake"
 OUT_DIR = D20_INVARIANTS / "theorems" / THEOREM_ID
 
@@ -275,9 +278,10 @@ def build_intake() -> dict[str, Any]:
         "input_schema_emitted": (OUT_DIR / "burning_static_representative_input_schema.json").exists(),
         "no_raw_projection_emitted_without_source": not (OUT_DIR / "burning_static_raw_a985_projection.csv").exists(),
     }
+    all_checks_pass = all(checks.values())
     report = {
         "schema": "d20.theorem.tiny_pointer_a985_burning_static_representative_intake.source_drop",
-        "status": STATUS,
+        "status": STATUS_CONTRACT_CERTIFIED if all_checks_pass else STATUS_NEEDS_REVIEW,
         "object": "d20",
         "claim": (
             "The local evidence is sufficient for the Burning/A985 finite quotient bridge, but it "
@@ -312,7 +316,7 @@ def build_intake() -> dict[str, Any]:
             "Supply or derive the Burning_static_fields quotient-generator rows in the emitted input "
             "schema; then the canonical A985 character table can compute the sector support and trace profile."
         ),
-        "all_checks_pass": all(checks.values()),
+        "all_checks_pass": all_checks_pass,
     }
     report["certificate_sha256"] = sha_json({k: v for k, v in report.items() if k != "certificate_sha256"})
     manifest = {
@@ -382,7 +386,7 @@ def verify_intake() -> dict[str, Any]:
     pending_rows = read_csv_rows(OUT_DIR / "burning_static_representative_pending_inputs.csv")
     schema = load_json(OUT_DIR / "burning_static_representative_input_schema.json")
     checks = {
-        "report_status_is_source_absent": report.get("status") == STATUS,
+        "report_status_is_contract_certified": report.get("status") == STATUS_CONTRACT_CERTIFIED,
         "report_checks_pass": report.get("all_checks_pass") is True,
         "artifact_audit_nonempty": len(artifact_rows) > 0,
         "ledger_rows_nonempty": len(ledger_rows) >= 8,

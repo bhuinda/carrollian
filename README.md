@@ -1,4 +1,6 @@
-"At the first blush it seems to us that the theories last only a day and that ruins upon ruins accumulate. Today the theories are born, to-morrow they are the fashion, the day after to-morrow they are classic, the fourth day they are superannuated, and the fifth they are forgotten. But if we look more closely, we see that what thus succumb are the theories, properly so called, those which pretend to teach us what things are. But there is in them something which usually survives. If one of them has taught us a true relation, this relation is definitively acquired, and it will be found again under a new disguise in the other theories which will successively come to reign in place of the old."
+"At the first blush it seems to us that the theories last only a day and that ruins upon ruins accumulate. Today the theories are born, tomorrow they are the fashion, the day after tomorrow they are classic, the fourth day they are superannuated, and the fifth they are forgotten. But if we look more closely, we see that what thus succumb are the theories, properly so called, those which pretend to teach us what things are. But there is in them something which usually survives. If one of them has taught us a true relation, this relation is definitively acquired, and it will be found again under a new disguise in the other theories which will successively come to reign in place of the old."
+
+---
 
 ― Poincaré
 
@@ -25,7 +27,7 @@ As is tradition: the proof is left to the computer.
 
 # Introduction
 
-`d20` is the name of an abstract finite object. It may be intuited by what it *is*, rather than what it is *for*:
+`d20` is the given name of an abstract finite *beable*. It may be intuited by what it *is*, rather than what it is *for*:
 
 - `3` codes
 - `42` roots
@@ -55,12 +57,12 @@ python src/verify.py tamper
 python src/verify.py strict-replay
 ```
 
-NOTE: A full rebuild currently elapses 4–5 minutes on an i5-11400. This will be optimized over time as the invariant ledger below strengthens and the algorithmic theory compresses.
+NOTE: Checking finite existence in Agda takes 18 minutes, and a full rebuild of `d20.json` currently elapses 100 seconds on an i5-11400.
 
 <details>
 <summary>Some light reading</summary>
 
-As you will see, `d20` is a combinatorial flavor of coherent algebra and is exceptional in order. I highly encourage you, dear reader, to explore *why* it is that you should care about the invariants it generates. Plugging `d20`'s JSON file (or this README) into a model of your choice and asking about it with an open mind may be the fastest way to learn about, well, anything that doesn't normally appear in the forced perspective of 3D land.
+As you will see, `d20` is a combinatorial flavor of coherent algebra and is exceptional in order. I highly encourage you, dear reader, to explore *why* it is that you should care about the invariants it generates. Plugging `d20`'s JSON file (or this README) into a model of your choice and asking about it with an open mind may be the fastest way to learn about, well, anything that doesn't normally appear in the forced perspective of 3D-land.
 
 You may find yourself down the rabbit hole most quickly with the following lead-in prompts:
 
@@ -72,6 +74,10 @@ You may find yourself down the rabbit hole most quickly with the following lead-
 - "Post-d20, how do I grieve my prior worldview?"
 
 `d20` is so named because of a proof I'd like to eventually co-author essentializing Grothendieck's notion of motive (as well as his Yang-Yang distinction, courtesy of the slay-queen *Récoltes et Semailles*) with the latent-spatial "tomography" of the icosahedron. And yes, you too will have to eventually learn how to speak this level of gobbledygook to appreciate the brushstrokes of the object: it's algebra-turned-Shakespeare generalizing homotopy "type" to holotopy "role", a transport of structure necessary to realizing how large language models synthesize natural language.
+
+What's the actual thesis, you ask?
+
+---
 
 "The time between the notes relates the color to the scenes."
 
@@ -92,8 +98,9 @@ The current checked object status is `D20_CERTIFIED`.
 - NPZ array manifests recorded by `d20.json`: `18`
 - report-backed D20 theorem directories: `154`
 - D20 proof-obligation directories: `1`
-- certified invariant reports recorded by `certificate.json`: `152`
-- provisional invariant reports recorded by `certificate.json`: `3`
+- certified invariant reports recorded by `certificate.json`: `155`
+- provisional invariant reports recorded by `certificate.json`: `0`
+- demoted formal-tracking reports recorded by `certificate.json`: `0`
 - source-registry packages: `1`, namely `halloween_c2_selector_lookup_witness_source_package`
 
 The README covers report-backed theorem and proof-obligation invariants by exact
@@ -107,14 +114,14 @@ inventory.
 
 - `python src/verify.py rebuild` regenerates `d20.json`, `certificate.json`, and
   file hashes from the checked canonical bundle inputs.
-- `python src/verify.py rebuild` treats the current A985-to-A236 generated
-  functor gap as `PROVISIONAL_STRICT_SCRATCH_BOUNDARY`, not as a hard audit
-  failure, while still failing malformed constructor witnesses.
+- `python src/verify.py rebuild` requires the generated strict-scratch
+  constructor witness, including the checked tube-cache-aligned A985-to-A236
+  semisimple profunctor certificate.
 - `python -m src.commands.construct` reconstructs the finite object from the
   compact raw seed boundary and verifies the large tensor/quotient consequences.
 - `python -m src.commands.construct --strict-scratch` runs the generated
-  source/coorient constructor path and still exits nonzero until the remaining
-  full-scratch boundary is discharged.
+  source/coorient constructor path and exits nonzero if any strict witness,
+  tensor rebuild, readout derivation, or A236 profunctor check fails.
 - The A985 ordered-pair relation body is refreshed before the coorient marker
   computation by the pre-A985 source/coorient theorem. The coorient relator
   profile is derived from A0-A5 by reduced greedy full-closure basis extraction;

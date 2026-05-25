@@ -19,8 +19,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 try:
     from .certify_io import raw_tensor_relpath
+    from .certify_constructor import stable_constructor_sha_json
 except ImportError:  # Supports `python src/build_orbit_tensor.py`.
     from certify_io import raw_tensor_relpath
+    from certify_constructor import stable_constructor_sha_json
 
 
 def sha_bytes(a: np.ndarray) -> str:
@@ -182,8 +184,7 @@ def compute_tensor_from_orbitals(
         "comparison": comparison,
         "output_npz": str(out_npz.relative_to(ROOT)) if out_npz is not None and out_npz.exists() else None,
     }
-    body = json.dumps(result, sort_keys=True, separators=(",", ":")).encode("utf-8")
-    result["constructor_result_sha256"] = hashlib.sha256(body).hexdigest()
+    result["constructor_result_sha256"] = stable_constructor_sha_json(result)
     return result
 
 

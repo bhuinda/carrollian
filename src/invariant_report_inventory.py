@@ -26,6 +26,9 @@ PROVISIONAL_STATUS_MARKERS = (
     "_SOURCE_ABSENT",
     "_READY_INPUT_ABSENT",
 )
+DEMOTED_STATUS_MARKERS = (
+    "_DEMOTED",
+)
 
 
 def sha_file(path: Path) -> str:
@@ -47,9 +50,23 @@ def load_json(path: Path) -> dict[str, Any]:
 def status_is_certified(status: Any) -> bool:
     if not isinstance(status, str):
         return False
+    if any(status.endswith(marker) for marker in DEMOTED_STATUS_MARKERS):
+        return False
     if any(status.endswith(marker) for marker in PROVISIONAL_STATUS_MARKERS):
         return False
     return any(status.endswith(marker) for marker in CERTIFIED_STATUS_MARKERS)
+
+
+def status_is_demoted(status: Any) -> bool:
+    return isinstance(status, str) and any(status.endswith(marker) for marker in DEMOTED_STATUS_MARKERS)
+
+
+def status_classification(status: Any) -> str:
+    if status_is_certified(status):
+        return "certified"
+    if status_is_demoted(status):
+        return "demoted"
+    return "provisional"
 
 
 def invariant_report_rows(*, root: Path = ROOT) -> list[dict[str, Any]]:
@@ -65,12 +82,14 @@ def invariant_report_rows(*, root: Path = ROOT) -> list[dict[str, Any]]:
             payload = load_json(report_path)
             rel = report_path.relative_to(root).as_posix()
             status = payload.get("status")
+            classification = status_classification(status)
             row: dict[str, Any] = {
                 "id": directory.name,
                 "kind": kind,
                 "path": rel,
                 "status": status,
-                "certified": status_is_certified(status),
+                "certified": classification == "certified",
+                "classification": classification,
                 "schema": payload.get("schema"),
                 "report_file_sha256": sha_file(report_path),
             }
@@ -86,12 +105,13 @@ def invariant_report_rows(*, root: Path = ROOT) -> list[dict[str, Any]]:
 
 def invariant_report_inventory(*, root: Path = ROOT) -> dict[str, Any]:
     rows = invariant_report_rows(root=root)
-    certified = [row for row in rows if row.get("certified") is True]
-    provisional = [row for row in rows if row.get("certified") is not True]
+    certified = [row for row in rows if row.get("classification") == "certified"]
+    provisional = [row for row in rows if row.get("classification") == "provisional"]
+    demoted = [row for row in rows if row.get("classification") == "demoted"]
     return {
         "schema": "d20.certified_invariant_report_inventory",
         "status": "D20_CERTIFIED_INVARIANT_REPORT_INVENTORY_BUILT",
-        "automation": "scan data/invariants/d20/{theorems,proof_obligations}/*/report.json during certificate refresh",
+        "automation": "scan data/invariants/d20/{theorems,proof_obligations}/*/report.json during certificate refresh; certified/provisional/demoted classification is derived from status markers",
         "scan_roots": [
             "data/invariants/d20/theorems",
             "data/invariants/d20/proof_obligations",
@@ -99,6 +119,8 @@ def invariant_report_inventory(*, root: Path = ROOT) -> dict[str, Any]:
         "report_count": len(rows),
         "certified_report_count": len(certified),
         "provisional_report_count": len(provisional),
+        "demoted_report_count": len(demoted),
         "certified_status_markers": list(CERTIFIED_STATUS_MARKERS),
         "provisional_status_markers": list(PROVISIONAL_STATUS_MARKERS),
+        "demoted_status_markers": list(DEMOTED_STATUS_MARKERS),
     }
