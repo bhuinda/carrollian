@@ -101,8 +101,8 @@ def derive_obstruction(
             "Pin/CY layers and the full generated algebra."
         ),
         "remaining_boundary_refined": [
-            "derive the native A236 fusion functor that produces the 34 simple dimensions 1^20,3^10,4,5,6,7",
-            "derive B236->A42 and B236->A12 from that native fusion functor rather than compact branching seed",
+            "derive the A985->A236 semisimple profunctor/fusion functor from generated T985/tube data",
+            "derive B236->A42 and B236->A12 as restrictions of that generated A236 functor",
             "derive fixed coorient generator permutations from a smaller typed coorient formula",
         ],
     }

@@ -219,7 +219,7 @@ def derive_terminal_selector_intrinsic_obstruction(
         "remaining_boundary": [
             "derive the lifted coorient generator permutations from a smaller typed coorient formula",
             "derive packet20 C20 or an equivalent representation marker from primitive representation/coorient data rather than constants.json",
-            "derive native A236 fusion and branching matrices without the compact branching seed",
+            "derive the A985->A236 semisimple profunctor/fusion functor from generated T985/tube data",
         ],
     }
     result["constructor_result_sha256"] = sha_json({k: v for k, v in result.items() if k != "constructor_result_sha256"})

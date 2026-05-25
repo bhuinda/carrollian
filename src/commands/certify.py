@@ -12,8 +12,10 @@ from src.runtime import ensure_numpy_runtime
 
 ensure_numpy_runtime(ROOT, __file__)
 
+from src.certify_constructor import MISSING_FULL_SCRATCH_STEPS
 from src.certify_io import raw_tensor_relpath
 from src.certificate_registry import CERTIFICATE_INDEX, certificate_relpath, load_certificate_registry
+from src.invariant_report_inventory import invariant_report_inventory, invariant_report_rows
 from src.paths import ROOT
 from src.verify_c2_selector_lookup_witness_source_package import (
     PACKAGE_CERTIFICATE as HALLOWEEN_LOOKUP_SOURCE_PACKAGE_CERTIFICATE,
@@ -741,6 +743,49 @@ def verify_root_certificates(root: dict[str, Any], registry: dict[str, Any], err
             require(root_entry.get("certificate_file_sha256") == sha_file(p), f"root certificate hash mismatch for {certificate_id}", errors)
 
 
+def verify_root_invariant_reports(root: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    rows = invariant_report_rows()
+    certified = [row for row in rows if row.get("certified") is True]
+    provisional = [row for row in rows if row.get("certified") is not True]
+    inventory = invariant_report_inventory()
+
+    recorded_inventory = root.get("invariant_report_inventory", {})
+    require(isinstance(recorded_inventory, dict), "root invariant report inventory missing", errors)
+    if isinstance(recorded_inventory, dict):
+        for key in ("schema", "status", "report_count", "certified_report_count", "provisional_report_count"):
+            require(
+                recorded_inventory.get(key) == inventory.get(key),
+                f"root invariant report inventory mismatch for {key}",
+                errors,
+            )
+
+    recorded_certified = root.get("certified_invariant_reports", [])
+    recorded_provisional = root.get("provisional_invariant_reports", [])
+    require(isinstance(recorded_certified, list), "root certified invariant reports list missing", errors)
+    require(isinstance(recorded_provisional, list), "root provisional invariant reports list missing", errors)
+    require(
+        root.get("certified_invariant_report_count") == len(certified),
+        "root certified invariant report count mismatch",
+        errors,
+    )
+    require(
+        root.get("provisional_invariant_report_count") == len(provisional),
+        "root provisional invariant report count mismatch",
+        errors,
+    )
+
+    if isinstance(recorded_certified, list):
+        require(recorded_certified == certified, "root certified invariant reports do not match filesystem scan", errors)
+    if isinstance(recorded_provisional, list):
+        require(recorded_provisional == provisional, "root provisional invariant reports do not match filesystem scan", errors)
+
+    return {
+        "report_count": len(rows),
+        "certified_report_count": len(certified),
+        "provisional_report_count": len(provisional),
+    }
+
+
 def verify_genome(data: dict[str, Any], errors: list[str]) -> dict[str, Any]:
     genome = data.get("genome", {})
     require(isinstance(genome, dict), "d20 genome missing", errors)
@@ -1374,6 +1419,7 @@ def verify_manifest(errors: list[str]) -> dict[str, Any]:
 
 
 def verify_constructor_witness(errors: list[str]) -> dict[str, Any]:
+    error_start = len(errors)
     try:
         from src.commands.construct import construct_from_generated_strict_scratch_pipeline
 
@@ -1382,11 +1428,24 @@ def verify_constructor_witness(errors: list[str]) -> dict[str, Any]:
         errors.append(f"constructor witness exception: {type(exc).__name__}: {exc}")
         return {"status": "ERROR", "error": f"{type(exc).__name__}: {exc}"}
 
+    constructor_status = witness.get("constructor_status")
+    full_scratch_certified = constructor_status == "GENERATED_STRICT_SCRATCH_CONSTRUCTOR_PASS"
+    provisional_boundary = constructor_status == "D20_FULL_SCRATCH_BLOCKED"
+
     require(witness.get("schema") == "d20.constructor.generated_strict_scratch_pipeline@1", "constructor witness schema mismatch", errors)
-    require(witness.get("constructor_status") == "GENERATED_STRICT_SCRATCH_CONSTRUCTOR_PASS", "constructor witness status mismatch", errors)
-    require(witness.get("strict_scratch_passed") is True, "constructor witness strict-scratch check failed", errors)
+    require(full_scratch_certified or provisional_boundary, "constructor witness status mismatch", errors)
     require(witness.get("constructs_from_supplied_raw_seeds") is False, "constructor witness used supplied raw seeds", errors)
-    require(witness.get("full_scratch_object_constructor") is True, "constructor witness did not certify full scratch construction", errors)
+    if full_scratch_certified:
+        require(witness.get("strict_scratch_passed") is True, "constructor witness strict-scratch check failed", errors)
+        require(witness.get("full_scratch_object_constructor") is True, "constructor witness did not certify full scratch construction", errors)
+    elif provisional_boundary:
+        require(witness.get("strict_scratch_passed") is False, "constructor witness blocked strict-scratch flag mismatch", errors)
+        require(witness.get("full_scratch_object_constructor") is False, "constructor witness blocked full-scratch flag mismatch", errors)
+        require(
+            witness.get("missing_full_scratch_steps") == MISSING_FULL_SCRATCH_STEPS,
+            "constructor witness provisional boundary mismatch",
+            errors,
+        )
 
     finite = witness.get("finite_object", {})
     require(finite.get("points") == 2576, "constructor witness point count mismatch", errors)
@@ -1407,8 +1466,17 @@ def verify_constructor_witness(errors: list[str]) -> dict[str, Any]:
     for name, passed in witness.get("checks", {}).items():
         require(passed is True, f"constructor witness check failed: {name}", errors)
 
+    if full_scratch_certified:
+        audit_class = "CERTIFIED_FULL_SCRATCH_CONSTRUCTOR"
+    elif provisional_boundary:
+        audit_class = "PROVISIONAL_STRICT_SCRATCH_BOUNDARY"
+    else:
+        audit_class = "INVALID_CONSTRUCTOR_WITNESS"
+
     return {
         "status": witness.get("constructor_status"),
+        "audit_class": audit_class,
+        "hard_failure": len(errors) > error_start,
         "schema": witness.get("schema"),
         "result_sha256": witness.get("constructor_result_sha256"),
         "constructs_from_supplied_raw_seeds": witness.get("constructs_from_supplied_raw_seeds"),
@@ -1540,6 +1608,7 @@ def run(mode: str) -> dict[str, Any]:
     certificate_registry, certificate_registry_summary = verify_certificate_registry(errors)
     certificate_layout = verify_certificate_layout(certificate_registry, errors)
     verify_root_certificates(root, certificate_registry, errors)
+    invariant_report_inventory_summary = verify_root_invariant_reports(root, errors)
     certificates = verify_certificates(errors, certificate_registry)
     core = verify_core_arrays(errors)
     integrity = verify_integrity(errors, certificate_registry)
@@ -1550,6 +1619,7 @@ def run(mode: str) -> dict[str, Any]:
         "d20": d20,
         "certificate_registry": certificate_registry_summary,
         "certificate_layout": certificate_layout,
+        "invariant_report_inventory": invariant_report_inventory_summary,
         "certificate_count": len(certificates),
         "core": core,
         "integrity": integrity,

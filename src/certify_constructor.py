@@ -31,11 +31,14 @@ COMPLETED_FULL_SCRATCH_STEPS = [
     "derive the 39-dimensional center directly from generated T985",
     "materialize 39 primitive central idempotents by a split generic center element over the verifier field",
     "recover the public-zero dim-2/rank-36 sector column intrinsically from generated idempotents",
+    "derive the sector-33 1+35 Hesse/Plucker operation wall and Pi33 exclusion from generated idempotent character traces",
     "derive packet20 C20 from Be3 stabilizer orders and the marked D6 polarity divisor formula",
+    "derive the six terminal diagonal selector hashes from D6/D3 stabilizer formulae rather than a selector seed",
     "derive d20 finite optics: etendue, complement-pair conservation, Snell transport, and quintic caustic resolvent",
 ]
 
 MISSING_FULL_SCRATCH_STEPS = [
+    "derive the A985->A236 semisimple profunctor/fusion functor from generated T985/tube data",
     "promote the generated source/coorient pipeline to the default strict-scratch constructor instead of defaulting to compact raw audit seeds",
 ]
 

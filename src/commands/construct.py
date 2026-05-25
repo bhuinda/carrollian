@@ -69,6 +69,10 @@ def _load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _prefer_existing(primary: Path, fallback: Path) -> Path:
+    return primary if primary.exists() else fallback
+
+
 def _relation_summary(path: Path) -> dict[str, Any]:
     import numpy as np
 
@@ -105,11 +109,13 @@ def _relation_summary(path: Path) -> dict[str, Any]:
 def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
     from src.build_orbit_tensor import compute_tensor_from_orbitals
     from src.derive_absolute_coorient_word_presentation import derive as derive_absolute_word
+    from src.derive_a236_generated_branching_boundary import derive_boundary as derive_a236_boundary
+    from src.derive_center_idempotents_from_t985 import derive_center_idempotents
     from src.derive_lifted_coorient_generators_formula import derive_formula as derive_lifted_generators
     from src.derive_native_a236_formulae import derive as derive_native_a236
     from src.derive_packet20_c20_from_d6_stabilizers import derive as derive_packet20_c20
     from src.derive_pre_a985_relation_body import ensure_pre_a985_relation_body
-    from src.derive_terminal_selector_from_c20 import derive_selector_from_c20
+    from src.dihedral_dn_formulae import derive_dihedral_formulae
 
     pre_relation = ensure_pre_a985_relation_body(regenerate=False, write_report=True)
     pre_report_path = GENERATED / "pre_A985_source_to_relation_body_report.json"
@@ -152,20 +158,32 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
         GENERATED / "strict_scratch_packet20_C20_from_d6_stabilizers.npz",
         GENERATED / "strict_scratch_packet20_C20_from_d6_stabilizers_report.json",
     )
-    selector = derive_selector_from_c20(
+    terminal = derive_dihedral_formulae(
         pre_relation,
-        GENERATED / "strict_scratch_packet20_C20_from_d6_stabilizers.npz",
-        GENERATED / "strict_scratch_terminal_selector_from_c20.json",
-        GENERATED / "strict_scratch_terminal_quotients_from_c20.npz",
-        GENERATED / "strict_scratch_terminal_selector_from_c20_report.json",
-        ROOT / "data/quotient/terminal_quotient_selector.json",
-        ROOT / "data/raw/quotients.npz",
         strict_tensor,
+        GENERATED / "strict_scratch_terminal_selector_from_dihedral_formula.json",
+        GENERATED / "strict_scratch_terminal_quotients_from_dihedral_formula.npz",
+        GENERATED / "strict_scratch_dihedral_dn_formulae_report.json",
+        ROOT / "data/raw/quotients.npz",
+        GENERATED / "strict_scratch_terminal_selector_from_c20.json",
+    )
+    center = derive_center_idempotents(
+        strict_tensor,
+        None,
+        pre_relation,
+        GENERATED / "strict_scratch_terminal_quotients_from_dihedral_formula.npz",
+        GENERATED / "strict_scratch_center_idempotents_from_generated_T985.npz",
+        GENERATED / "strict_scratch_center_idempotents_from_generated_T985_report.json",
     )
     a236 = derive_native_a236(
-        ROOT / "data/raw/simple_branching_matrices.npz",
+        None,
         GENERATED / "strict_scratch_native_a236_formulae.npz",
         GENERATED / "strict_scratch_native_a236_formulae_report.json",
+    )
+    a236_boundary = derive_a236_boundary(
+        GENERATED / "strict_scratch_center_idempotents_from_generated_T985.npz",
+        GENERATED / "strict_scratch_terminal_quotients_from_dihedral_formula.npz",
+        GENERATED / "strict_scratch_a236_generated_branching_boundary_report.json",
     )
 
     relation_matches_formula = (
@@ -174,7 +192,7 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
         and formula.get("ordered_pair_orbits", {}).get("offsets_sha256")
         == pre_report.get("ordered_pair_orbits", {}).get("offsets_sha256")
     )
-    quotient = selector.get("terminal_quotients") or {}
+    quotient = terminal.get("terminal_quotients") or {}
     checks = {
         "pre_A985_relation_body_pass": pre_report.get("constructor_status") == "SOURCE_COORIENT_TO_BE3_ORBITALS_PASS",
         "formula_generators_pass": formula.get("all_checks_pass") is True,
@@ -183,15 +201,18 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
         "tensor_rebuild_pass": tensor.get("constructor_status") == "ORBITALS_TO_TENSOR_PASS",
         "tensor_matches_canonical_audit_target": tensor.get("comparison", {}).get("matches_supplied_tensor") is True,
         "packet20_c20_pass": c20.get("all_checks_pass") is True,
-        "terminal_selector_pass": selector.get("constructor_status") == "TERMINAL_SELECTOR_FROM_PACKET20_DIAGONAL_PASS",
+        "terminal_selector_dihedral_formulae_pass": terminal.get("constructor_status") == "DIHEDRAL_DN_FORMULAE_PASS",
         "terminal_quotients_pass": quotient.get("constructor_status") == "TERMINAL_QUOTIENTS_PASS",
+        "center_idempotents_pass": center.get("constructor_status") == "CENTER_IDEMPOTENTS_FROM_GENERATED_T985_PASS",
         "native_a236_formulae_pass": a236.get("all_checks_pass") is True,
+        "a236_generated_branching_boundary_pass": a236_boundary.get("all_checks_pass") is True,
     }
-    ok = all(checks.values())
+    unresolved_boundaries = list(MISSING_FULL_SCRATCH_STEPS)
+    ok = all(checks.values()) and not unresolved_boundaries
     relation = _relation_summary(pre_relation)
     result: dict[str, Any] = {
         "schema": "d20.constructor.generated_strict_scratch_pipeline@1",
-        "constructor_status": "GENERATED_STRICT_SCRATCH_CONSTRUCTOR_PASS" if ok else "GENERATED_STRICT_SCRATCH_CONSTRUCTOR_FAIL",
+        "constructor_status": "GENERATED_STRICT_SCRATCH_CONSTRUCTOR_PASS" if ok else "D20_FULL_SCRATCH_BLOCKED",
         "strict_scratch_required": True,
         "strict_scratch_passed": bool(ok),
         "full_scratch_object_constructor": bool(ok),
@@ -205,10 +226,10 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
             "data/raw/quotients.npz",
             "data/raw/simple_branching_matrices.npz",
         ],
-        "constructor_scope": "H8^3 source relation body, formula-derived coorient action, A985 tensor, A42/A12 terminal quotients, and native A236 branching formulae",
+        "constructor_scope": "H8^3 source relation body, formula-derived coorient action, A985 tensor, D6/D3 terminal selector, A42/A12 terminal quotients, and native A236 branching formulae",
         "completed_full_scratch_steps": COMPLETED_FULL_SCRATCH_STEPS,
-        "missing_full_scratch_steps": [] if ok else ["inspect failed generated strict-scratch checks"],
-        "remaining_boundary": [] if ok else ["inspect failed generated strict-scratch checks"],
+        "missing_full_scratch_steps": [] if ok else unresolved_boundaries,
+        "remaining_boundary": [] if ok else unresolved_boundaries,
         "checks": checks,
         "finite_object": relation,
         "coorient": {
@@ -224,10 +245,15 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
         },
         "readouts": {
             "packet20_C20_status": c20.get("constructor_status"),
-            "terminal_selector_status": selector.get("constructor_status"),
+            "terminal_selector_status": terminal.get("constructor_status"),
             "terminal_quotients_status": quotient.get("constructor_status"),
+            "center_idempotents_status": center.get("constructor_status"),
             "native_a236_status": a236.get("constructor_status"),
+            "native_a236_seed_required": a236.get("seed_independence", {}).get("simple_branching_seed_required"),
+            "native_a236_not_claimed": a236.get("seed_independence", {}).get("not_claimed"),
             "simple_branching_naturality": a236.get("branching", {}).get("naturality_exact"),
+            "a236_generated_branching_boundary_status": a236_boundary.get("constructor_status"),
+            "a236_generated_branching_remaining_boundary": a236_boundary.get("remaining_boundary"),
         },
         "computability": {
             "regeneration_scope": "generated_source_coorient_pipeline",
@@ -236,9 +262,9 @@ def construct_from_generated_strict_scratch_pipeline() -> dict[str, Any]:
             "full_scratch_object_constructor": bool(ok),
             "large_artifacts_regenerated_from_seed_boundary": False,
             "seed_boundary_file_count": 0,
-            "completed_full_scratch_step_count": len(COMPLETED_FULL_SCRATCH_STEPS) if ok else len(COMPLETED_FULL_SCRATCH_STEPS) - 1,
-            "missing_full_scratch_step_count": 0 if ok else 1,
-            "next_high_yield_step": None if ok else "inspect failed generated strict-scratch checks",
+            "completed_full_scratch_step_count": len(COMPLETED_FULL_SCRATCH_STEPS),
+            "missing_full_scratch_step_count": 0 if ok else len(unresolved_boundaries),
+            "next_high_yield_step": None if ok else unresolved_boundaries[0],
         },
     }
     result["constructor_result_sha256"] = sha_json({k: v for k, v in result.items() if k != "constructor_result_sha256"})
@@ -261,6 +287,7 @@ def main() -> None:
     ap.add_argument("--derive-center-idempotents", action="store_true", help="Derive the A985 center basis and primitive central idempotents directly from generated T985.")
     ap.add_argument("--align-generated-sectors", action="store_true", help="Canonically align generated primitive idempotent columns to canonical sector numbering by intrinsic signatures.")
     ap.add_argument("--derive-a236-center-obstruction", action="store_true", help="Prove A236 is not an ordinary central projection of generated A985.")
+    ap.add_argument("--derive-a236-generated-branching-boundary", action="store_true", help="Show that generated A985 center and terminal readouts do not determine the native A236 branching functor.")
     ap.add_argument("--derive-terminal-selector-from-c20", action="store_true", help="Derive the six terminal selector hashes from packet-20 C20 diagonal valencies instead of storing them as primary seed data.")
     ap.add_argument("--derive-coorient-formula-obstruction", action="store_true", help="Prove the fixed coorient Be3 generators are not ordinary 24-coordinate Golay permutations.")
     ap.add_argument("--derive-terminal-selector-intrinsic-obstruction", action="store_true", help="Test whether the terminal diagonal selector is derivable from generated diagonal relation data without packet-20/coorient representation marker.")
@@ -291,6 +318,7 @@ def main() -> None:
             "derive_center_idempotents",
             "align_generated_sectors",
             "derive_a236_center_obstruction",
+            "derive_a236_generated_branching_boundary",
             "derive_terminal_selector_from_c20",
             "derive_coorient_formula_obstruction",
             "derive_terminal_selector_intrinsic_obstruction",
@@ -404,11 +432,25 @@ def main() -> None:
             encoding="utf-8",
         )
     elif args.derive_dihedral_formulae:
+        from src.build_orbit_tensor import compute_tensor_from_orbitals
+        from src.derive_pre_a985_relation_body import ensure_pre_a985_relation_body
         from src.dihedral_dn_formulae import derive_dihedral_formulae
 
+        relation_npz = ROOT / "generated/relation_memberships_from_source_coorient_aligned.npz"
+        if not relation_npz.exists():
+            relation_npz = ensure_pre_a985_relation_body(regenerate=False, write_report=True)
+        tensor_npz = ROOT / "generated/tensor_from_source_coorient.npz"
+        if not tensor_npz.exists():
+            compute_tensor_from_orbitals(
+                relation_npz,
+                tensor_npz,
+                ROOT / raw_tensor_relpath(),
+                None,
+                False,
+            )
         result = derive_dihedral_formulae(
-            ROOT / "generated/relation_memberships_from_source_coorient_aligned.npz",
-            ROOT / "generated/tensor_from_source_coorient.npz",
+            relation_npz,
+            tensor_npz,
             ROOT / "generated/terminal_selector_from_dihedral_formula.json",
             ROOT / "generated/terminal_quotients_from_dihedral_formula.npz",
             ROOT / "generated/dihedral_dn_formulae_report.json",
@@ -447,11 +489,10 @@ def main() -> None:
         )
     elif args.derive_center_idempotents:
         from src.derive_center_idempotents_from_t985 import derive_center_idempotents
-        from src.certificate_registry import certificate_path
 
         result = derive_center_idempotents(
             ROOT / "generated/tensor_from_source_coorient.npz",
-            certificate_path("drinfeld.full_a985_lift"),
+            None,
             ROOT / "generated/relation_memberships_from_source_coorient_aligned.npz",
             ROOT / "generated/terminal_quotients_from_source_coorient.npz",
             ROOT / "generated/center_idempotents_from_generated_T985.npz",
@@ -476,17 +517,54 @@ def main() -> None:
             ROOT / "data/raw/simple_branching_matrices.npz",
             ROOT / "generated/a236_center_obstruction_report.json",
         )
+    elif args.derive_a236_generated_branching_boundary:
+        from src.derive_a236_generated_branching_boundary import derive_boundary as derive_a236_generated_branching_boundary
+
+        result = derive_a236_generated_branching_boundary(
+            _prefer_existing(
+                ROOT / "generated/center_idempotents_from_generated_T985.npz",
+                ROOT / "generated/strict_scratch_center_idempotents_from_generated_T985.npz",
+            ),
+            _prefer_existing(
+                ROOT / "generated/terminal_quotients_from_source_coorient.npz",
+                ROOT / "generated/strict_scratch_terminal_quotients_from_dihedral_formula.npz",
+            ),
+            ROOT / "generated/a236_generated_branching_boundary_report.json",
+        )
     elif args.derive_representation_integral_wall:
         from src.derive_representation_integral_wall import derive_all as derive_representation_integral_wall
+        from src.derive_native_a236_formulae import derive as derive_native_a236_formulae
         from src.certificate_registry import certificate_path
 
+        native_a236_npz = ROOT / "generated/native_a236_formulae.npz"
+        if not native_a236_npz.exists():
+            derive_native_a236_formulae(
+                None,
+                native_a236_npz,
+                ROOT / "generated/native_a236_formulae_report.json",
+            )
         result = derive_representation_integral_wall(
-            ROOT / "data/raw/simple_branching_matrices.npz",
-            ROOT / "generated/terminal_quotients_from_source_coorient.npz",
+            native_a236_npz,
+            _prefer_existing(
+                ROOT / "generated/terminal_quotients_from_source_coorient.npz",
+                ROOT / "generated/strict_scratch_terminal_quotients_from_dihedral_formula.npz",
+            ),
             certificate_path("drinfeld.full_a985_lift"),
             certificate_path("integrity.proof_system"),
             ROOT / "generated/a236_representation_fusion_from_center.npz",
             ROOT / "generated/remaining_representation_integral_chain_report.json",
+            _prefer_existing(
+                ROOT / "generated/center_idempotents_from_generated_T985.npz",
+                ROOT / "generated/strict_scratch_center_idempotents_from_generated_T985.npz",
+            ),
+            _prefer_existing(
+                ROOT / "generated/relation_memberships_from_source_coorient_aligned.npz",
+                ROOT / "generated/relation_memberships_pre_A985_from_source_aligned.npz",
+            ),
+            _prefer_existing(
+                ROOT / "generated/tensor_from_source_coorient.npz",
+                ROOT / "generated/strict_scratch_tensor_from_pre_a985.npz",
+            ),
         )
     elif args.search_midlevel_a236:
         from src.derive_midlevel_selector_search import run_search as run_midlevel_selector_search

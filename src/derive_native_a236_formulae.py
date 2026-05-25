@@ -27,8 +27,9 @@ def native_formula_arrays() -> dict[str, np.ndarray]:
     - 10 triplet objects: complementary Lambda^3 U pairs / D6 polarity triplets;
     - 4 terminal blocks: dimensions 4,5,6,7.
 
-    The row order is the canonical verifier row order; the data are produced from
-    typed block rows below and then checked against the compact certified reference seed.
+    The row order is the canonical verifier row order.  A caller may compare
+    the output to a compact reference seed, but the arrays below do not depend
+    on loading that seed.
     """
     dims236 = np.array([1,3,3,1,1,1,1,1,3,1,1,1,3,1,1,1,5,1,1,3,6,1,4,1,3,7,1,3,3,3,3,1,1,1], dtype=np.int64)
     dims42 = np.array([1,1,6,1,1,1,1], dtype=np.int64)
@@ -98,7 +99,7 @@ def derive(compare_npz: Path | None, out_npz: Path, out_json: Path) -> dict[str,
     comparison: dict[str, Any] = {}
     if compare_npz is not None and compare_npz.exists():
         z = np.load(compare_npz)
-        comparison = {f"{k}_matches_certified reference_seed": bool(np.array_equal(arr[k], np.asarray(z[k], dtype=np.int64))) for k in ["dims236","dims42","dims12","B42_12","B236_42","B236_12","comp"]}
+        comparison = {f"{k}_matches_certified_reference_seed": bool(np.array_equal(arr[k], np.asarray(z[k], dtype=np.int64))) for k in ["dims236","dims42","dims12","B42_12","B236_42","B236_12","comp"]}
 
     dims236 = arr["dims236"]; dims42 = arr["dims42"]; dims12 = arr["dims12"]
     B236_42 = arr["B236_42"]; B42_12 = arr["B42_12"]; B236_12 = arr["B236_12"]
@@ -110,6 +111,12 @@ def derive(compare_npz: Path | None, out_npz: Path, out_json: Path) -> dict[str,
             "A236": "20 Lambda^3(U) face-line simples + 10 complementary-pair D6 triplet simples + terminal 4,5,6,7 blocks",
             "A42": "Pin sheet: six one-dimensional signed sheets plus one 6-dimensional regular sheet",
             "A12": "d20 terminal sector: one 3-dimensional body plus three one-dimensional terminal residues",
+        },
+        "seed_independence": {
+            "simple_branching_seed_required": False,
+            "comparison_seed_loaded": bool(comparison),
+            "array_source": "native D20/D6 typed block formulae",
+            "not_claimed": "A236 branching is not claimed to be derived from generated T985 primitive idempotents",
         },
         "A236": {
             "simple_count": int(dims236.size),
@@ -142,14 +149,14 @@ def derive(compare_npz: Path | None, out_npz: Path, out_json: Path) -> dict[str,
         "comparison": comparison,
         "output_npz": str(out_npz.relative_to(ROOT)),
     }
-    result["all_checks_pass"] = bool(
+    structural_checks_pass = bool(
         result["A236"]["dimension_sum_squares"] == 236
         and result["A42"]["dimension_sum_squares"] == 42
         and result["A12"]["dimension_sum_squares"] == 12
         and all(result["branching"]["row_dimension_checks"].values())
         and result["branching"]["naturality_exact"]
-        and all(comparison.values()) if comparison else True
     )
+    result["all_checks_pass"] = bool(structural_checks_pass and (all(comparison.values()) if comparison else True))
     result["constructor_result_sha256"] = sha_json({k: v for k, v in result.items() if k != "constructor_result_sha256"})
     out_json.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")

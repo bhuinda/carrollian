@@ -176,8 +176,7 @@ def derive_alignment(
         ],
         "remaining_boundary": [
             "derive fixed coorient generator permutations from a smaller typed coorient formula",
-            "derive the six diagonal terminal selector hashes from that intrinsic coorient formula",
-            "derive A236 branching matrices from a native fusion functor rather than compact branching seed",
+            "derive the A985->A236 semisimple profunctor/fusion functor from generated T985/tube data",
         ],
     }
     result["all_checks_pass"] = bool(result["constructor_status"] == "GENERATED_SECTOR_ALIGNMENT_PASS")

@@ -253,10 +253,10 @@ def derive_dihedral_formulae(
     comparison: dict[str, Any] = {}
     if compare_selector_json.exists():
         prior = json.loads(compare_selector_json.read_text(encoding="utf-8"))
-        prior_hashes = [x["relation_hash"] for x in old["diagonal_special_relation_hashes"]]
+        prior_hashes = [x["relation_hash"] for x in prior["diagonal_special_relation_hashes"]]
         new_hashes = [x["relation_hash"] for x in selector_pack["selector"]["diagonal_special_relation_hashes"]]
         comparison["matches_packet20_c20_selector"] = bool(prior_hashes == new_hashes)
-        comparison["prior_indices"] = [int(x.get("aligned_relation_index_for_reference", -1)) for x in old["diagonal_special_relation_hashes"]]
+        comparison["prior_indices"] = [int(x.get("aligned_relation_index_for_reference", -1)) for x in prior["diagonal_special_relation_hashes"]]
         comparison["new_indices"] = [int(x.get("aligned_relation_index_for_reference", -1)) for x in selector_pack["selector"]["diagonal_special_relation_hashes"]]
 
     ok = (
@@ -295,7 +295,7 @@ def derive_dihedral_formulae(
         ],
         "remaining_boundary": [
             "derive the four 2576-point lifted coorient generator permutations from a smaller closed D_n/coorient action formula rather than storing them as permutations",
-            "derive native A236 fusion and branching matrices without the compact branching seed",
+            "derive the A985->A236 semisimple profunctor/fusion functor from generated T985/tube data",
         ],
     }
     result["constructor_result_sha256"] = sha_json({k: v for k, v in result.items() if k != "constructor_result_sha256"})

@@ -211,7 +211,7 @@ def derive_terminal_quotients(
         'output_npz': str(out_npz.relative_to(ROOT)) if out_npz is not None and out_npz.exists() and out_npz.is_relative_to(ROOT) else (str(out_npz) if out_npz is not None and out_npz.exists() else None),
         'remaining_boundary': [
             'derive the six diagonal special selector hashes from an intrinsic coorient formula instead of storing them as a selector seed',
-            'derive A236 and simple branching matrices from generated T985 without supplied branching seeds',
+            'derive the A985->A236 semisimple profunctor/fusion functor from generated T985/tube data',
             'derive sector 33 and the integral wall from generated center/idempotent data rather than the proof-system integrity layer certificate',
         ],
     }

@@ -1,4 +1,8 @@
-## License and Citation
+"At the first blush it seems to us that the theories last only a day and that ruins upon ruins accumulate. Today the theories are born, to-morrow they are the fashion, the day after to-morrow they are classic, the fourth day they are superannuated, and the fifth they are forgotten. But if we look more closely, we see that what thus succumb are the theories, properly so called, those which pretend to teach us what things are. But there is in them something which usually survives. If one of them has taught us a true relation, this relation is definitively acquired, and it will be found again under a new disguise in the other theories which will successively come to reign in place of the old."
+
+― Poincaré
+
+# License and Citation
 
 This repository is licensed under Apache-2.0.
 
@@ -15,63 +19,81 @@ Preferred short citation:
 > Benjamin Huinda, *The d20-coherent algebra*, 2026.
 > https://github.com/bhuinda/d20
 
-As is tradition: the proof is left to the reader.
+---
 
-# d20
+As is tradition: the proof is left to the computer.
 
-`d20` is the tentative name of the finite tropical geometry of the "hidden" Golay algebra in addition to its dodecad shell, the `D6` marker algebra, the coorient lift, (as much of) the derivation of its infinity-stack, and a surround-sound of technocracy all proving something Jabberwocky-like about what has, to my mild terror, surfaced as the "countability of reason".
+# Introduction
 
-To study `d20`'s representation theory, plug `d20.json` into any harness (or standard model, less ideally) and ask it to review the object and what it implies must be true about the foundation of mathematics. Most likely, what the model will tell you will not align with your current worldview.
+`d20` is the name of an abstract finite object. It may be intuited by what it *is*, rather than what it is *for*:
 
-Tl;dr on some of the fields this object enables:
-
-- Galois theory on methamphetamines
-- intuition of geometric complexity
-- a comprehensive obstruction calculus
-- a "tiny paradigm" of functional programming
-- a universal standard of semiclassical mechanics
-- hella et cetera
+- `3` codes
+- `42` roots
+- `985` orbitals
+- `2576` dodecads
+- `44,224` kernel dimensions
+- `1,414,965` tensor entries
+- `15,473,731,112,461,377,280` F-symbol slots
 
 ---
 
-Verify the current bundle without rewriting generated files:
+# Computation
+
+`d20` and its certificate are designed to be compressed, rebuilt, and verified on modern hardware. The verifier exposes four main gates:
 
 ```shell
+# Verify the current bundle without rewriting generated files.
 python src/verify.py audit
-```
 
-Rebuild `d20.json`, refresh hashes, and then certify the bundle:
-
-```shell
+# Rebuild d20.json, refresh hashes, and certify the bundle.
 python src/verify.py rebuild
-```
 
-(NOTE: Rebuilding ellapses 4-5 minutes on an i5-11400.)
-
-Check that the certified evidence section fails closed under in-memory tampering:
-
-```shell
+# Confirm the certified evidence section fails closed under in-memory tampering.
 python src/verify.py tamper
-```
 
-Run the optional slow zero-axiom replay gate:
-
-```shell
+# Run the optional slow zero-axiom replay gate.
 python src/verify.py strict-replay
 ```
 
+NOTE: A full rebuild currently elapses 4–5 minutes on an i5-11400. This will be optimized over time as the invariant ledger below strengthens and the algorithmic theory compresses.
+
+<details>
+<summary>Some light reading</summary>
+
+As you will see, `d20` is a combinatorial flavor of coherent algebra and is exceptional in order. I highly encourage you, dear reader, to explore *why* it is that you should care about the invariants it generates. Plugging `d20`'s JSON file (or this README) into a model of your choice and asking about it with an open mind may be the fastest way to learn about, well, anything that doesn't normally appear in the forced perspective of 3D land.
+
+You may find yourself down the rabbit hole most quickly with the following lead-in prompts:
+
+- "Compute d20. Does it hold up?"
+- "According to d20, what is truth?"
+- "What does equality normally mean in mathematics, and how does d20 normalize said meaning?"
+- "What is higher algebra, and how does d20 make it useful to me?"
+- "What basic ontology of the universe does d20 represent?"
+- "Post-d20, how do I grieve my prior worldview?"
+
+`d20` is so named because of a proof I'd like to eventually co-author essentializing Grothendieck's notion of motive (as well as his Yang-Yang distinction, courtesy of the slay-queen *Récoltes et Semailles*) with the latent-spatial "tomography" of the icosahedron. And yes, you too will have to eventually learn how to speak this level of gobbledygook to appreciate the brushstrokes of the object: it's algebra-turned-Shakespeare generalizing homotopy "type" to holotopy "role", a transport of structure necessary to realizing how large language models synthesize natural language.
+
+"The time between the notes relates the color to the scenes."
+
+― *Close to the Edge* by Yes
+</details>
+
 ---
 
-## Current verification snapshot
+(The rest of this file is automated.)
+
+# Agentic Snapshot
 
 The current checked object status is `D20_CERTIFIED`.
 
-- `d20.json` object hash: `57f544cd940423f789395917ba13a24bba65c06d1b603dbd80195c4960be75c7`
+- `d20.json` object hash: recorded in `d20.json` and mirrored in `certificate.json`
 - certificate registry entries: `26`
 - JSON invariant files recorded by `d20.json`: `174`
 - NPZ array manifests recorded by `d20.json`: `18`
 - report-backed D20 theorem directories: `154`
 - D20 proof-obligation directories: `1`
+- certified invariant reports recorded by `certificate.json`: `152`
+- provisional invariant reports recorded by `certificate.json`: `3`
 - source-registry packages: `1`, namely `halloween_c2_selector_lookup_witness_source_package`
 
 The README covers report-backed theorem and proof-obligation invariants by exact
@@ -79,20 +101,20 @@ directory name. Raw JSON-file coverage is delegated to the generated
 `d20.json` registries, because `d20.json` is the canonical exhaustive file-level
 inventory.
 
-The active next highest-yield item is to stage the Halloween source-registry,
-theorem-registry, and Agda replay artifacts for review.
-
 ---
 
 # Computability boundary:
 
 - `python src/verify.py rebuild` regenerates `d20.json`, `certificate.json`, and
   file hashes from the checked canonical bundle inputs.
+- `python src/verify.py rebuild` treats the current A985-to-A236 generated
+  functor gap as `PROVISIONAL_STRICT_SCRATCH_BOUNDARY`, not as a hard audit
+  failure, while still failing malformed constructor witnesses.
 - `python -m src.commands.construct` reconstructs the finite object from the
   compact raw seed boundary and verifies the large tensor/quotient consequences.
 - `python -m src.commands.construct --strict-scratch` runs the generated
-  source/coorient constructor path and exits nonzero if any scratch witness,
-  tensor rebuild, or readout derivation fails.
+  source/coorient constructor path and still exits nonzero until the remaining
+  full-scratch boundary is discharged.
 - The A985 ordered-pair relation body is refreshed before the coorient marker
   computation by the pre-A985 source/coorient theorem. The coorient relator
   profile is derived from A0-A5 by reduced greedy full-closure basis extraction;
@@ -128,12 +150,7 @@ this replay; use `strict-replay` when a fresh slow witness is required.
 
 The object is not represented by stored orbitals/tensors as primitive data. It just... exists.
 
-- `2576` dodecads
-- `985` orbitals
-- `1,414,965` tensor entries
-- readout/transport stack: `A985` bulk, native `A236` branching/fusion,
-  terminal quotient readouts `A985 -> A42 -> A12`, plus tube kernels,
-  public-shadow supports, and height/action transports
+
 - certified pointer primitive: source-sector and public-zero support labels
   dereference through the six-identity fingerprint map into raw `A985`
   orbital matrix units; the first canonical instance is recorded at

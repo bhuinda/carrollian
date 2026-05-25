@@ -164,7 +164,7 @@ def derive_selector_from_c20(
         "remaining_boundary": [
             "derive packet20 C20 itself from primitive representation/coorient data instead of constants.json",
             "derive the fixed coorient generator permutations from a smaller typed coorient formula",
-            "derive A236 branching matrices from a native fusion functor rather than compact branching seed",
+            "derive the A985->A236 semisimple profunctor/fusion functor from generated T985/tube data",
         ],
     }
     result["constructor_result_sha256"] = hashlib.sha256(canonical({k: v for k, v in result.items() if k != "constructor_result_sha256"})).hexdigest()

@@ -8,7 +8,6 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-import sympy as sp
 
 try:
     from .certificate_registry import certificate_relpath
@@ -30,6 +29,36 @@ def sha_json(obj: Any) -> str:
 
 def sha_array(a: np.ndarray) -> str:
     return hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
+
+
+def derive_identity_relations_from_relation_body(relation_npz: Path) -> list[int]:
+    rel = np.load(relation_npz)
+    encoded = rel["encoded_pairs"].astype(np.int64)
+    offsets = rel["offsets"].astype(np.int64)
+    object_of_point = rel["object_of_point"].astype(np.int64)
+    block_i = rel["block_i"].astype(np.int64)
+    block_j = rel["block_j"].astype(np.int64)
+    point_count = int(object_of_point.size)
+    object_count = int(max(object_of_point.max(), block_i.max(), block_j.max()) + 1)
+    object_sizes = np.bincount(object_of_point, minlength=object_count)
+
+    identities: list[int] = []
+    for obj in range(object_count):
+        matches: list[int] = []
+        for rel_idx in np.nonzero((block_i == obj) & (block_j == obj))[0]:
+            seg = encoded[int(offsets[rel_idx]) : int(offsets[rel_idx + 1])]
+            rows = seg // point_count
+            cols = seg % point_count
+            if (
+                int(seg.size) == int(object_sizes[obj])
+                and bool(np.array_equal(rows, cols))
+                and bool(np.all(object_of_point[rows] == obj))
+            ):
+                matches.append(int(rel_idx))
+        if len(matches) != 1:
+            raise RuntimeError(f"expected one identity relation for object {obj}, got {matches}")
+        identities.append(matches[0])
+    return identities
 
 
 def rref_nullspace(A: np.ndarray, mod: int) -> tuple[np.ndarray, int, list[int]]:
@@ -183,28 +212,30 @@ def find_pivot_rows(B: np.ndarray, mod: int) -> list[int]:
 
 
 def factor_linear_roots(coeff: np.ndarray, mod: int) -> tuple[list[int], list[tuple[int, int]]]:
-    """For z^d=sum c_i z^i, factor x^d-sum c_i x^i and return roots if split."""
-    x = sp.symbols("x")
+    """For z^d=sum c_i z^i, scan F_mod for roots of x^d-sum c_i x^i."""
     degree = int(coeff.size)
-    expr = x ** degree
-    for i, ci in enumerate(coeff):
-        expr -= int(ci) * x ** i
-    poly = sp.Poly(expr, x, modulus=mod)
-    factor_list = sp.factor_list(poly, modulus=mod)[1]
     roots: list[int] = []
-    factor_degrees: list[tuple[int, int]] = []
-    for fac, exp in factor_list:
-        deg = int(fac.degree())
-        factor_degrees.append((deg, int(exp)))
-        if deg == 1 and exp == 1:
-            a, b = [int(c) % mod for c in fac.all_coeffs()]
-            roots.append((-b * pow(a, -1, mod)) % mod)
+    chunk = 100_000
+    coeff_mod = np.asarray(coeff, dtype=np.int64) % mod
+    for start in range(0, mod, chunk):
+        xs = np.arange(start, min(start + chunk, mod), dtype=np.int64)
+        vals = np.ones_like(xs, dtype=np.int64)
+        for ci in coeff_mod[::-1]:
+            vals = (vals * xs - int(ci)) % mod
+        roots.extend(int(x) for x in xs[vals == 0])
+    if len(roots) == degree and len(set(roots)) == degree:
+        factor_degrees = [(1, 1)] * degree
+    else:
+        remaining = max(degree - len(roots), 0)
+        factor_degrees = [(1, 1)] * len(roots)
+        if remaining:
+            factor_degrees.append((remaining, 1))
     return roots, factor_degrees
 
 
 def derive_center_idempotents(
     tensor_npz: Path,
-    center_cert_json: Path,
+    center_cert_json: Path | None,
     relation_npz: Path,
     terminal_npz: Path,
     out_npz: Path | None = None,
@@ -213,8 +244,16 @@ def derive_center_idempotents(
     seed: int = 124,
 ) -> dict[str, Any]:
     triples = np.load(tensor_npz)["triples"].astype(np.int64)
-    center_cert = json.loads(center_cert_json.read_text(encoding="utf-8"))
-    identity_relations = center_cert["full_A985_idempotent_validation"]["identity_relations_by_object"]
+    identity_relations = derive_identity_relations_from_relation_body(relation_npz)
+    identity_comparison: dict[str, Any] = {"center_certificate_loaded": False}
+    if center_cert_json is not None and center_cert_json.exists():
+        center_cert = json.loads(center_cert_json.read_text(encoding="utf-8"))
+        prior_identity_relations = center_cert["full_A985_idempotent_validation"]["identity_relations_by_object"]
+        identity_comparison = {
+            "center_certificate_loaded": True,
+            "matches_center_certificate_identity_rows": bool(identity_relations == prior_identity_relations),
+            "center_certificate_identity_relations_by_object": [int(x) for x in prior_identity_relations],
+        }
 
     rng = np.random.default_rng(seed)
     B = np.eye(NREL, dtype=np.int64)
@@ -322,6 +361,8 @@ def derive_center_idempotents(
     multiplicities = []
     q42_counts = []
     q12_counts = []
+    q42_shadow_columns: list[np.ndarray] = []
+    q12_shadow_columns: list[np.ndarray] = []
     active_object_pairs = []
     sector33_candidates = []
     if idempotents_materialized:
@@ -360,6 +401,8 @@ def derive_center_idempotents(
             q12_shadow = np.array([int(x) % mod for x in q12_shadow], dtype=np.int64)
             q42n = int(np.count_nonzero(q42_shadow))
             q12n = int(np.count_nonzero(q12_shadow))
+            q42_shadow_columns.append(q42_shadow)
+            q12_shadow_columns.append(q12_shadow)
             q42_counts.append(q42n)
             q12_counts.append(q12n)
             support = np.nonzero(e)[0]
@@ -381,6 +424,12 @@ def derive_center_idempotents(
             "row_chart_pivots": [int(x) for x in rows],
             "row_chart_inverse_sha256": sha_array(row_chart_inv),
             "random_commutator_coeff_hashes": random_hashes,
+        },
+        "generated_unit": {
+            "identity_relation_source": "relation body diagonal identity rows",
+            "identity_relations_by_object": [int(x) for x in identity_relations],
+            "identity_relations_sha256": sha_array(np.array(identity_relations, dtype=np.int64)),
+            "comparison": identity_comparison,
         },
         "generic_center_element": {
             "power_rank": int(power_rank),
@@ -410,12 +459,13 @@ def derive_center_idempotents(
             "multiplicities": [int(x) for x in multiplicities],
             "q42_shadow_nonzero_counts": [int(x) for x in q42_counts],
             "q12_shadow_nonzero_counts": [int(x) for x in q12_counts],
+            "q42_shadow_matrix_sha256": sha_array(np.stack(q42_shadow_columns, axis=1)) if q42_shadow_columns else None,
+            "q12_shadow_matrix_sha256": sha_array(np.stack(q12_shadow_columns, axis=1)) if q12_shadow_columns else None,
             "public_zero_dim2_rank36_candidates_by_generated_column": [int(x) for x in sector33_candidates],
         },
         "remaining_boundary": [
-            "match generated primitive idempotent columns canonically to the canonical sector numbering without using the certified sector-profile file",
             "derive the named coorient generator formula rather than storing fixed coorient generator permutations",
-            "derive A236 branching matrices directly from generated primitive idempotent coordinates rather than the compact simple-branching seed",
+            "derive the A985->A236 semisimple profunctor/fusion functor from generated T985/tube data; generated primitive idempotent coordinates alone do not determine the native A236 branching matrices",
         ],
     }
     result["all_checks_pass"] = bool(result["constructor_status"] == "CENTER_IDEMPOTENTS_FROM_GENERATED_T985_PASS")
@@ -439,6 +489,9 @@ def derive_center_idempotents(
             multiplicities=np.array(multiplicities, dtype=np.int64),
             q42_shadow_nonzero_counts=np.array(q42_counts, dtype=np.int64),
             q12_shadow_nonzero_counts=np.array(q12_counts, dtype=np.int64),
+            q42_shadow_matrix=np.stack(q42_shadow_columns, axis=1).astype(np.int64) if q42_shadow_columns else np.zeros((42, 0), dtype=np.int64),
+            q12_shadow_matrix=np.stack(q12_shadow_columns, axis=1).astype(np.int64) if q12_shadow_columns else np.zeros((12, 0), dtype=np.int64),
+            identity_relations_by_object=np.array(identity_relations, dtype=np.int64),
         )
     if out_json is not None:
         out_json.parent.mkdir(parents=True, exist_ok=True)
@@ -449,7 +502,7 @@ def derive_center_idempotents(
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--tensor", default="generated/tensor_from_source_coorient.npz")
-    ap.add_argument("--center-cert", default=certificate_relpath("drinfeld.full_a985_lift"))
+    ap.add_argument("--center-cert", default="")
     ap.add_argument("--relations", default="generated/relation_memberships_from_source_coorient_aligned.npz")
     ap.add_argument("--terminal", default="generated/terminal_quotients_from_source_coorient.npz")
     ap.add_argument("--out-npz", default="generated/center_idempotents_from_generated_T985.npz")
@@ -460,7 +513,7 @@ def main() -> None:
     args = ap.parse_args()
     result = derive_center_idempotents(
         ROOT / args.tensor,
-        ROOT / args.center_cert,
+        ROOT / args.center_cert if args.center_cert else None,
         ROOT / args.relations,
         ROOT / args.terminal,
         ROOT / args.out_npz,

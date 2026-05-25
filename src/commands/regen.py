@@ -30,6 +30,7 @@ from src.runtime import ensure_numpy_runtime
 
 ensure_numpy_runtime(ROOT, __file__)
 
+from src.invariant_report_inventory import invariant_report_inventory, invariant_report_rows
 from src.paths import D20_INVARIANTS, MANIFESTS, ROOT
 
 MANIFEST = MANIFESTS / "file_hashes.json"
@@ -653,6 +654,9 @@ def certificate_summaries() -> list[dict[str, Any]]:
 def refresh_certificate() -> None:
     cert = json.loads(CERTIFICATE.read_text(encoding="utf-8"))
     d20 = json.loads(D20.read_text(encoding="utf-8"))
+    invariant_reports = invariant_report_rows()
+    certified_invariant_reports = [row for row in invariant_reports if row.get("certified") is True]
+    provisional_invariant_reports = [row for row in invariant_reports if row.get("certified") is not True]
 
     d20_object_hash = d20.get("d20_sha256")
     if not isinstance(d20_object_hash, str) or len(d20_object_hash) != 64:
@@ -675,6 +679,11 @@ def refresh_certificate() -> None:
         cert.pop(stale_key, None)
     cert["certificates"] = certificate_summaries()
     cert["certificate_count"] = len(cert["certificates"])
+    cert["certified_invariant_reports"] = certified_invariant_reports
+    cert["certified_invariant_report_count"] = len(certified_invariant_reports)
+    cert["invariant_report_inventory"] = invariant_report_inventory()
+    cert["provisional_invariant_reports"] = provisional_invariant_reports
+    cert["provisional_invariant_report_count"] = len(provisional_invariant_reports)
     cert["d20_sha256"] = sha_json_body(cert, "d20_sha256")
     CERTIFICATE.write_text(json.dumps(cert, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
 
