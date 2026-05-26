@@ -1,0 +1,52 @@
+{
+  "address_layer": {
+    "address_atoms": [
+      "raw_sector",
+      "matrix_unit_i",
+      "matrix_unit_j",
+      "orbital_relation_R_alpha"
+    ],
+    "basis_size": 985,
+    "name": "A985 raw orbital matrix-unit address space",
+    "sector_count": 39
+  },
+  "canonical_aliases": {
+    "address_label": "raw_sector",
+    "coordinate_label": "coordinate_fingerprint_id",
+    "rows": 39,
+    "semantic_label": "perennial_id",
+    "source_label": "source_sector",
+    "table": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/sector_label_alias_registry.csv"
+  },
+  "meaning": "A tiny pointer is the primitive dereference record attached to the native d20 atom domain. A d20 atom is a 3-subset of H6; the A985 sector and matrix-unit labels are the address layer used to dereference atom-supported readouts.",
+  "native_source_domain": {
+    "atom_count": 20,
+    "definition": "C(H6,3)",
+    "h6": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
+    ],
+    "name": "d20_atom",
+    "table": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/d20_atom_domain.csv"
+  },
+  "object": "d20",
+  "pointer_slots": [
+    "source",
+    "address_space",
+    "pointer_map",
+    "dereference",
+    "public_readout",
+    "proxy",
+    "verifier",
+    "defect_ledger"
+  ],
+  "primitive": "tiny_pointer",
+  "schema": "d20.vocabulary.tiny_pointer_d20_atom_primitive",
+  "schema_sha256": "8e748b9e9f8822a8747c7a6156b7724b5ff8ead58b2d3e4c09afdfb1f643dc34",
+  "status": "D20_TINY_POINTER_D20_ATOM_PRIMITIVE_SCHEMA_EMITTED",
+  "typing_boundary": "This registry does not identify the 20 native d20 atoms with the 39 A985 sectors. It fixes the atoms as source-domain primitives and the A985 labels as certified dereference addresses."
+}

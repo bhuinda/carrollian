@@ -1,5 +1,7 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
+import argparse
 import csv
 import json
 from typing import Any
@@ -15,6 +17,7 @@ try:
         build_manifest,
         build_report,
     )
+    from .derive_d20_golay_shell_three_level_structured_probe import BOUND, TOL, optimize_profile
 except ImportError:  # Supports direct script execution.
     from certify_io import ROOT, h_file, h_json
     from derive_d20_golay_shell_three_level_terwilliger_profile_reps import (
@@ -26,6 +29,11 @@ except ImportError:  # Supports direct script execution.
         build_manifest,
         build_report,
     )
+    from derive_d20_golay_shell_three_level_structured_probe import (
+        BOUND,
+        TOL,
+        optimize_profile,
+    )
 
 
 ARTIFACT_REL = ARTIFACT_PATH.relative_to(ROOT).as_posix()
@@ -33,6 +41,9 @@ REPORT_REL = (OUT_DIR / "report.json").relative_to(ROOT).as_posix()
 MANIFEST_REL = (OUT_DIR / "manifest.json").relative_to(ROOT).as_posix()
 INDEX_REL = INDEX_PATH.relative_to(ROOT).as_posix()
 PROFILE_CSV_REL = PROFILE_CSV.relative_to(ROOT).as_posix()
+SOS_REPORT_PATH = OUT_DIR / "three_level_bivariate_sos_verification.json"
+SOS_REPORT_REL = SOS_REPORT_PATH.relative_to(ROOT).as_posix()
+SOS_CHECK_SCHEMA = "d20.proof_obligation.golay_shell_three_level_terwilliger_profile_reps.profile_sos_check@1"
 
 EXPECTED_CHECKS = {
     "w24_endpoint_certified",
@@ -73,6 +84,111 @@ def _check_input_file(entry: dict[str, Any], rel_path: str, label: str) -> None:
 def _read_profile_csv() -> list[dict[str, str]]:
     with PROFILE_CSV.open("r", encoding="utf-8", newline="") as f:
         return list(csv.DictReader(f))
+
+
+def _parse_profile(profile: str, shell: int) -> list[int]:
+    values = [int(x) for x in profile.split(",") if x != ""]
+    expected = (shell + 1) ** 2
+    if len(values) != expected:
+        raise AssertionError(f"Terwilliger profile length is not {(shell + 1)}x{(shell + 1)}")
+    return values
+
+
+def _write_json(path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+
+
+def verify_bivariate_sos_over_profiles(
+    *,
+    max_profiles: int | None = None,
+    include_top_failures: int = 25,
+    verbose: bool = False,
+) -> dict[str, Any]:
+    rows = _read_profile_csv()
+    if max_profiles is not None and max_profiles > 0:
+        rows = rows[:max_profiles]
+    if not rows:
+        raise AssertionError("Terwilliger profile CSV is empty")
+    if "profile" not in rows[0]:
+        raise AssertionError("Terwilliger profile CSV is missing profile column")
+
+    positive_profiles: list[dict[str, Any]] = []
+    max_best_f = -10.0
+    max_best_profile: dict[str, Any] | None = None
+    max_grad_norm = 0.0
+    max_grad_profile: dict[str, Any] | None = None
+
+    for index, row in enumerate(rows):
+        shell = int(row["shell"])
+        if shell not in (12, 16):
+            raise AssertionError(f"Terwilliger profile shell unexpected: {shell}")
+        first_size = int(row["first_size"])
+        second_size = int(row["second_size"])
+        rest_size = int(row["rest_size"])
+        if first_size + second_size + rest_size != 24:
+            raise AssertionError(f"Terwilliger profile size bookkeeping mismatch at row {index}")
+
+        profile = _parse_profile(row["profile"], shell)
+        witness = optimize_profile(profile, shell, first_size, second_size)
+        best_f = float(witness["best_F"])
+        grad_norm = float(witness["best_gradient_norm"])
+        max_best_f = max(max_best_f, best_f)
+        if grad_norm > max_grad_norm:
+            max_grad_norm = grad_norm
+            max_grad_profile = {
+                "row": index,
+                "shell": shell,
+                "first_size": first_size,
+                "second_size": second_size,
+                "best_F": best_f,
+                "best_u": witness["best_u"],
+                "best_v": witness["best_v"],
+                "best_gradient_norm": grad_norm,
+                "hessian_nonpositive": witness["local_hessian_nonpositive"],
+            }
+        if best_f > TOL or witness["local_hessian_nonpositive"] is not True:
+            positive_profiles.append(
+                {
+                    "row": index,
+                    "shell": shell,
+                    "first_size": first_size,
+                    "second_size": second_size,
+                    "best_F": best_f,
+                    "best_u": witness["best_u"],
+                    "best_v": witness["best_v"],
+                    "best_gradient_norm": grad_norm,
+                    "hessian_min_eigenvalue_at_equality": witness[
+                        "hessian_min_eigenvalue_at_equality"
+                    ],
+                    "hessian_max_eigenvalue_at_equality": witness[
+                        "hessian_max_eigenvalue_at_equality"
+                    ],
+                }
+            )
+            if best_f > max_best_f:
+                max_best_profile = positive_profiles[-1]
+        if verbose and best_f > TOL:
+            print(f"row {index}: shell={shell} best_F={best_f:.3e}")
+
+    positive_profiles.sort(key=lambda row: row["best_F"], reverse=True)
+    summary = {
+        "schema": SOS_CHECK_SCHEMA,
+        "name": THEOREM_ID,
+        "schema_version": "1",
+        "status": "PASS" if not positive_profiles else "FAIL",
+        "profile_count": len(rows),
+        "checked_profile_count": len(rows),
+        "optimization_tolerance": float(TOL),
+        "optimization_bound": float(BOUND),
+        "positive_profile_count": len(positive_profiles),
+        "max_best_F": max_best_f,
+        "max_gradient_norm": max_grad_norm,
+        "max_gradient_witness": max_grad_profile,
+        "violations": positive_profiles[:include_top_failures],
+    }
+    _write_json(SOS_REPORT_PATH, summary)
+    return summary
 
 
 def _profile_support_sizes(profile: list[int], shell: int, shell_count: int) -> tuple[int, int]:
@@ -232,5 +348,38 @@ def validate_d20_golay_shell_three_level_terwilliger_profile_reps() -> dict[str,
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--verify-bivariate-sos",
+        action="store_true",
+        help="Verify a per-profile bivariate SOS-style ascent certificate over existing CSV rows.",
+    )
+    parser.add_argument(
+        "--max-profiles",
+        type=int,
+        default=0,
+        help="Limit bivariate SOS verification to the first N rows (for quick spot-checks).",
+    )
+    parser.add_argument(
+        "--show-top-failures",
+        type=int,
+        default=25,
+        help="Number of highest-Best-F violating rows to include in output.",
+    )
+    parser.add_argument("--quiet", action="store_true", help="Output machine-readable JSON only.")
+    args = parser.parse_args()
+
+    if args.verify_bivariate_sos:
+        result = verify_bivariate_sos_over_profiles(
+            max_profiles=args.max_profiles if args.max_profiles > 0 else None,
+            include_top_failures=max(0, args.show_top_failures),
+        )
+        if not args.quiet:
+            print(json.dumps(result, sort_keys=True, indent=2))
+        if result["status"] != "PASS":
+            raise SystemExit(1)
+        raise SystemExit(0)
+
     validate_d20_golay_shell_three_level_terwilliger_profile_reps()
-    print("D20 Golay shell three-level Terwilliger profile reps validated")
+    if not args.quiet:
+        print("D20 Golay shell three-level Terwilliger profile reps validated")

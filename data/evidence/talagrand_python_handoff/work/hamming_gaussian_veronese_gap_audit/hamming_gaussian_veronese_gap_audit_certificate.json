@@ -1,0 +1,54 @@
+{
+  "fit_rows": [
+    {
+      "entries": 134596,
+      "fit_entries": 134596,
+      "max_abs_log_residual": 2.182085713214607,
+      "positive_entries_total": 134596,
+      "r2_log_additive": -4.82502926502093e-13,
+      "rmse_log_additive": 0.9448708304384322,
+      "shell_weight": 12,
+      "side": "split_6_vector",
+      "subset_size": 6,
+      "zero_entries_total": 0
+    },
+    {
+      "entries": 2704156,
+      "fit_entries": 0,
+      "max_abs_log_residual": null,
+      "positive_entries_total": 1310540,
+      "r2_log_additive": null,
+      "rmse_log_additive": null,
+      "shell_weight": 16,
+      "side": "right_split_degree_profile",
+      "subset_size": 12,
+      "zero_entries_total": 1393616
+    }
+  ],
+  "main_finding": "The failed split spectral route fails because it optimizes over ambient split vectors not constrained to be Veronese monomial vectors.",
+  "remaining_residue": "Krawtchouk/SOS certificate on y_I=prod_{i in I}x_i.",
+  "scope": "Audit of split-spectral relaxation ghosts for the remaining Golay shell domination lemma.",
+  "sha256": "bb5d983020401bc9f4b1b9adc15570f0a3a8a7f397ece9441aa43895111e1627",
+  "source_chain": "G24 generated from H8^3 by Type II neighbor root killing 42->18->6->0",
+  "spectral_ghost_rows": [
+    {
+      "nnz": 2380224,
+      "rayleigh_after_positive_power": 17.997896883387977,
+      "row_degree_classes": "16:21252;18:113344",
+      "shape": "134596x134596",
+      "shell_weight": 12,
+      "split": "6+6",
+      "veronese_gap_witness": "positive spectral vector is not exactly log-additive"
+    },
+    {
+      "nnz": 1381380,
+      "rayleigh_after_positive_power": null,
+      "row_degree_classes": "right 12-subset degrees 0:1393616;1:1275120;3:35420",
+      "shape": "10626x2704156",
+      "shell_weight": 16,
+      "split": "4+12",
+      "veronese_gap_witness": "ambient right split space contains many zero-degree/ghost coordinates; proof must use Veronese constraints and shortened-rank structure"
+    }
+  ],
+  "status": "HAMMING_GAUSSIAN_VERONESE_GAP_AUDIT_COMPLETE"
+}

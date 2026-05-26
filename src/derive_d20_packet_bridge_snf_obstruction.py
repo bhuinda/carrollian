@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import hashlib
 import json
@@ -161,7 +162,8 @@ def build_congruence_rows(component_rows: list[dict[str, Any]]) -> list[dict[str
                 "local_smith_diagonal": [2, 6],
                 "local_cokernel": "Z/2 x Z/6",
                 "image_test_for_target_pair_u_v": [
-                    "u_minus_v_is_0_mod_2",
+                    "u_is_0_mod_2",
+                    "v_is_0_mod_2",
                     "u_plus_v_is_0_mod_6",
                 ],
             }
@@ -179,11 +181,45 @@ def build_bridge_tasks(missing_rows: list[dict[str, Any]]) -> list[dict[str, Any
             "target_domain": row["target_domain"],
             "available_source_keys": row["available_source_keys"],
             "test_once_columns_exist": (
-                "for each packet doublet target (u,v), require u-v = 0 mod 2 and u+v = 0 mod 6"
+                "for each packet doublet target (u,v), require u = 0 mod 2, "
+                "v = 0 mod 2, and u+v = 0 mod 6"
             ),
         }
         for row in missing_rows
     ]
+
+
+def block_image_residues_mod12(block: list[list[int]]) -> list[list[int]]:
+    residues = {
+        (
+            (block[0][0] * a + block[0][1] * b) % 12,
+            (block[1][0] * a + block[1][1] * b) % 12,
+        )
+        for a in range(12)
+        for b in range(12)
+    }
+    return [list(pair) for pair in sorted(residues)]
+
+
+def exact_original_basis_residues_mod12() -> list[list[int]]:
+    residues = [
+        [u, v]
+        for u in range(12)
+        for v in range(12)
+        if u % 2 == 0 and v % 2 == 0 and (u + v) % 6 == 0
+    ]
+    return residues
+
+
+def weak_two_congruence_false_positives_mod12() -> list[list[int]]:
+    exact = {tuple(pair) for pair in exact_original_basis_residues_mod12()}
+    weak = {
+        (u, v)
+        for u in range(12)
+        for v in range(12)
+        if (u - v) % 2 == 0 and (u + v) % 6 == 0
+    }
+    return [list(pair) for pair in sorted(weak - exact)]
 
 
 def build_theorem() -> dict[str, Any]:
@@ -204,6 +240,9 @@ def build_theorem() -> dict[str, Any]:
     congruence_rows = build_congruence_rows(component_rows)
     missing_rows = restriction["derived"]["missing_bridge_inventory"]
     bridge_tasks = build_bridge_tasks(missing_rows)
+    local_image_residues = block_image_residues_mod12([[2, 4], [4, 2]])
+    exact_image_residues = exact_original_basis_residues_mod12()
+    weak_false_positives = weak_two_congruence_false_positives_mod12()
     obstruction_summary = {
         "packet_operator": "direct_sum_10_copies_of_2I_plus_4S",
         "matrix_shape": [len(packet_operator), len(packet_operator[0])],
@@ -214,7 +253,9 @@ def build_theorem() -> dict[str, Any]:
         "cokernel_order": determinant_abs,
         "torsion_primes": prime_factors(nonunit),
         "local_block_smith_diagonal": local_snf["diagonal"],
-        "local_image_test": "u-v = 0 mod 2 and u+v = 0 mod 6 on each packet doublet",
+        "local_image_test": (
+            "u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6 on each packet doublet"
+        ),
         "raw_bridge_columns_available": False,
         "raw_bridge_candidate_count": len(bridge_tasks),
     }
@@ -240,6 +281,23 @@ def build_theorem() -> dict[str, Any]:
         "operator_has_full_rank": obstruction_summary["rank_over_Q"] == 20,
         "cokernel_order_matches_block_determinant": determinant_abs == 12**10,
         "torsion_primes_are_2_and_3": obstruction_summary["torsion_primes"] == [2, 3],
+        "original_basis_image_test_matches_block_lattice": local_image_residues
+        == exact_image_residues,
+        "weaker_two_congruence_test_has_odd_false_positives": weak_false_positives
+        == [
+            [1, 5],
+            [1, 11],
+            [3, 3],
+            [3, 9],
+            [5, 1],
+            [5, 7],
+            [7, 5],
+            [7, 11],
+            [9, 3],
+            [9, 9],
+            [11, 1],
+            [11, 7],
+        ],
         "bridge_tasks_match_missing_inventory": [row["candidate"] for row in bridge_tasks]
         == [row["candidate"] for row in missing_rows],
     }
@@ -251,13 +309,13 @@ def build_theorem() -> dict[str, Any]:
             "packet_operator": "the certified full-exposure two-step packet action",
             "integer_bridge_obstruction": (
                 "the Smith cokernel of the packet operator; any future raw-label bridge target "
-                "must satisfy the block congruence tests before it can be an integral packet image"
+                "must satisfy the original-basis block lattice tests before it can be an integral packet image"
             ),
         },
         "claim": (
             "The certified 20-packet operator has exact Smith factors 2^10 and 6^10. "
-            "Equivalently, each packet doublet has cokernel Z/2 x Z/6, with image test "
-            "u-v = 0 mod 2 and u+v = 0 mod 6. This supplies the integer obstruction "
+            "In the original packet basis, each doublet target (u,v) is an integral image "
+            "exactly when u and v are both even and u+v is divisible by 6. This supplies the integer obstruction "
             "template for the missing A985, tube, and q42/q12 packet bridges, but does not "
             "construct those raw bridges."
         ),
@@ -282,6 +340,12 @@ def build_theorem() -> dict[str, Any]:
                 "divisibility_chain_valid": snf["divisibility_chain_valid"],
                 "reduction_steps": snf["reduction_steps"],
             },
+            "original_basis_image_test": {
+                "modulus": 12,
+                "block_image_residues_mod12": local_image_residues,
+                "exact_congruence_residues_mod12": exact_image_residues,
+                "weak_two_congruence_false_positive_residues_mod12": weak_false_positives,
+            },
             "packet_image_congruence_rows": congruence_rows,
             "packet_image_congruence_rows_sha256": sha_json(congruence_rows),
             "raw_bridge_snf_tasks": bridge_tasks,
@@ -305,7 +369,7 @@ def build_theorem() -> dict[str, Any]:
         },
         "next_highest_yield_item": (
             "Populate one raw bridge column set, then reduce its packet targets against the block "
-            "tests u-v = 0 mod 2 and u+v = 0 mod 6."
+            "tests u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6."
         ),
     }
     report["certificate_sha256"] = sha_json(

@@ -1,0 +1,23 @@
+{
+  "algorithm": [
+    "Load pi_Foam33 as a 33x56 matrix over F_p.",
+    "Load R_hc generators as 56x56 matrices or sparse deterministic maps.",
+    "Load R_Foam generators as 33x33 matrices.",
+    "For each generator g compute D_g = pi_Foam33 R_hc_g - R_Foam_g pi_Foam33.",
+    "Pass iff every D_g is zero.",
+    "Separately verify core restriction, bridge-kernel behavior, and cycle8/gamma8 response."
+  ],
+  "not_sufficient": [
+    "raw multiplication closure of the 56-support",
+    "bare boundary-to-loop annihilation",
+    "dimension count 56->33 alone"
+  ],
+  "required_inputs": [
+    "projection_table for pi_Foam33",
+    "e33 56-support vector",
+    "Foam33 target basis order",
+    "height/action-return operator matrices or deterministic rules",
+    "Foam target action-return operator"
+  ],
+  "verifier_name": "verify_height_coherent_action_return_intertwining.py"
+}

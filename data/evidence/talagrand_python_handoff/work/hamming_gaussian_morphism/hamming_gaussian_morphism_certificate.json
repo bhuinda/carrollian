@@ -1,0 +1,343 @@
+{
+  "hamming_gaussian_dictionary": {
+    "central_invariant": "Weight-4 codewords are exactly fourth-order Walsh correlations, which become fourth-order Hermite obstruction modes under the Gaussian lift.",
+    "orthant_map": "C subset F2^n maps to O_C={z in R^n: sign_2(z) in C}; gamma_n(O_C)=|C|/2^n.",
+    "self_dual_correlation_rule": "For uniform signs over a binary self-dual code C, E prod_{i in S} Y_i = 1 iff 1_S in C, otherwise 0.",
+    "walsh_hermite_map": "Walsh character chi_S maps to normalized Hermite monomial prod_{i in S} Z_i."
+  },
+  "main_computed_bridge": {
+    "fourth_order_obstruction_equals_root_count_at_each_stage": true,
+    "interpretation": "The Type-II neighbor chain kills fourth-order Walsh/Hermite obstruction modes while preserving code size, self-duality, double-even parity, and Gaussian orthant mass 2^-12.",
+    "sequence": [
+      42,
+      18,
+      6,
+      0
+    ]
+  },
+  "neighbor_chain": {
+    "code_sizes": [
+      4096,
+      4096,
+      4096,
+      4096
+    ],
+    "endpoint_minimum_nonzero_weight": 8,
+    "endpoint_self_dual_type_ii": true,
+    "endpoint_weight_histogram": {
+      "0": 1,
+      "12": 2576,
+      "16": 759,
+      "24": 1,
+      "8": 759
+    },
+    "expected_root_sequence": [
+      42,
+      18,
+      6,
+      0
+    ],
+    "golay_weight_enumerator_pass": true,
+    "root_sequence": [
+      42,
+      18,
+      6,
+      0
+    ],
+    "root_sequence_pass": true,
+    "supports_one_based": [
+      [
+        2,
+        4,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        20,
+        22
+      ],
+      [
+        3,
+        4,
+        9,
+        13,
+        15,
+        16,
+        19,
+        20
+      ],
+      [
+        2,
+        5,
+        7,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23
+      ]
+    ]
+  },
+  "remaining_theorem_obligations": [
+    "Identify the fourth-order Hermite obstruction with a convex-order defect functional in Talagrand/Song/Hua-Tudose style.",
+    "Construct or locate a martingale/Laguerre partition whose cells realize the H8^3 neighbor-chain obstruction cancellation.",
+    "Prove the finite Type-II neighbor closure is functorial under the Walsh-Hermite lift rather than merely invariant-compatible.",
+    "Relate the endpoint Golay/G24 theta or moment series to the Gaussian convexification body produced by the finite assembly theorem."
+  ],
+  "scope": "Build H8^3, run explicit Type-II neighbor chain, compute Walsh/Hermite/Gaussian-skeleton invariants. This proves the finite invariant skeleton, not Talagrand equivalence itself.",
+  "source": {
+    "C0": {
+      "definition": "H8^{oplus 3} inside F2^24",
+      "dimension": 12,
+      "size": 4096,
+      "weight_histogram": {
+        "0": 1,
+        "12": 2828,
+        "16": 591,
+        "20": 42,
+        "24": 1,
+        "4": 42,
+        "8": 591
+      }
+    },
+    "H8": {
+      "definition": "RM(1,3), truth tables of affine functions on F2^3",
+      "dimension": 4,
+      "length": 8,
+      "nonconstant_affine_halfspace_count": 14,
+      "size": 16,
+      "weight_histogram": {
+        "0": 1,
+        "4": 14,
+        "8": 1
+      }
+    }
+  },
+  "stages": [
+    {
+      "complement_fourth_order_count_weight20": 42,
+      "dimension": 12,
+      "doubly_even": true,
+      "fourth_order_hermite_obstruction_density": 0.003952569169960474,
+      "fourth_order_hermite_obstruction_norm_sq": 42,
+      "fourth_order_walsh_correlation_count": 42,
+      "label": "C0_H8_oplus_3",
+      "length": 24,
+      "minimum_nonzero_weight": 4,
+      "neighbor_support_one_based": null,
+      "orthant_measure": {
+        "denominator": 16777216,
+        "numerator": 4096,
+        "power_of_two": -12
+      },
+      "self_dual_by_rank_and_self_orthogonal": true,
+      "self_orthogonal": true,
+      "sha256_hex_words": "38d264462e02d2ebbb58543295ac4fc0e910fd4b93eeb2752418fd746a775112",
+      "size": 4096,
+      "walsh_correlation_support_by_degree": {
+        "0": 1,
+        "12": 2828,
+        "16": 591,
+        "20": 42,
+        "24": 1,
+        "4": 42,
+        "8": 591
+      },
+      "weight_histogram": {
+        "0": 1,
+        "12": 2828,
+        "16": 591,
+        "20": 42,
+        "24": 1,
+        "4": 42,
+        "8": 591
+      }
+    },
+    {
+      "complement_fourth_order_count_weight20": 18,
+      "dimension": 12,
+      "doubly_even": true,
+      "fourth_order_hermite_obstruction_density": 0.0016939582156973462,
+      "fourth_order_hermite_obstruction_norm_sq": 18,
+      "fourth_order_walsh_correlation_count": 18,
+      "label": "C1_neighbor_1",
+      "length": 24,
+      "minimum_nonzero_weight": 4,
+      "neighbor_support_one_based": [
+        2,
+        4,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        20,
+        22
+      ],
+      "neighbor_vector": {
+        "hex_word": "2bbb0a",
+        "in_previous_code": false,
+        "new_code_size": 4096,
+        "orthogonal_subcode_size": 2048,
+        "weight": 12
+      },
+      "orthant_measure": {
+        "denominator": 16777216,
+        "numerator": 4096,
+        "power_of_two": -12
+      },
+      "self_dual_by_rank_and_self_orthogonal": true,
+      "self_orthogonal": true,
+      "sha256_hex_words": "8e46cd3195f9b74ef7245d5be21e966cb705a0c261f765cdc12199f6565f7499",
+      "size": 4096,
+      "walsh_correlation_support_by_degree": {
+        "0": 1,
+        "12": 2684,
+        "16": 687,
+        "20": 18,
+        "24": 1,
+        "4": 18,
+        "8": 687
+      },
+      "weight_histogram": {
+        "0": 1,
+        "12": 2684,
+        "16": 687,
+        "20": 18,
+        "24": 1,
+        "4": 18,
+        "8": 687
+      }
+    },
+    {
+      "complement_fourth_order_count_weight20": 6,
+      "dimension": 12,
+      "doubly_even": true,
+      "fourth_order_hermite_obstruction_density": 0.000564652738565782,
+      "fourth_order_hermite_obstruction_norm_sq": 6,
+      "fourth_order_walsh_correlation_count": 6,
+      "label": "C2_neighbor_2",
+      "length": 24,
+      "minimum_nonzero_weight": 4,
+      "neighbor_support_one_based": [
+        3,
+        4,
+        9,
+        13,
+        15,
+        16,
+        19,
+        20
+      ],
+      "neighbor_vector": {
+        "hex_word": "0cd10c",
+        "in_previous_code": false,
+        "new_code_size": 4096,
+        "orthogonal_subcode_size": 2048,
+        "weight": 8
+      },
+      "orthant_measure": {
+        "denominator": 16777216,
+        "numerator": 4096,
+        "power_of_two": -12
+      },
+      "self_dual_by_rank_and_self_orthogonal": true,
+      "self_orthogonal": true,
+      "sha256_hex_words": "63b0473e6601af953bb5f39087416fdb3496d55fa4dc2e816ef58058b542fa35",
+      "size": 4096,
+      "walsh_correlation_support_by_degree": {
+        "0": 1,
+        "12": 2612,
+        "16": 735,
+        "20": 6,
+        "24": 1,
+        "4": 6,
+        "8": 735
+      },
+      "weight_histogram": {
+        "0": 1,
+        "12": 2612,
+        "16": 735,
+        "20": 6,
+        "24": 1,
+        "4": 6,
+        "8": 735
+      }
+    },
+    {
+      "complement_fourth_order_count_weight20": 0,
+      "dimension": 12,
+      "doubly_even": true,
+      "fourth_order_hermite_obstruction_density": 0.0,
+      "fourth_order_hermite_obstruction_norm_sq": 0,
+      "fourth_order_walsh_correlation_count": 0,
+      "label": "C3_neighbor_3",
+      "length": 24,
+      "minimum_nonzero_weight": 8,
+      "neighbor_support_one_based": [
+        2,
+        5,
+        7,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23
+      ],
+      "neighbor_vector": {
+        "hex_word": "77ebd2",
+        "in_previous_code": false,
+        "new_code_size": 4096,
+        "orthogonal_subcode_size": 2048,
+        "weight": 16
+      },
+      "orthant_measure": {
+        "denominator": 16777216,
+        "numerator": 4096,
+        "power_of_two": -12
+      },
+      "self_dual_by_rank_and_self_orthogonal": true,
+      "self_orthogonal": true,
+      "sha256_hex_words": "a0ae82a75890afd43a836e34cbc9d69bf0e878d1455070f8ec84e7b22a746436",
+      "size": 4096,
+      "walsh_correlation_support_by_degree": {
+        "0": 1,
+        "12": 2576,
+        "16": 759,
+        "24": 1,
+        "8": 759
+      },
+      "weight_histogram": {
+        "0": 1,
+        "12": 2576,
+        "16": 759,
+        "24": 1,
+        "8": 759
+      }
+    }
+  ],
+  "status": "HAMMING_GAUSSIAN_MORPHISM_INVARIANTS_PASS"
+}

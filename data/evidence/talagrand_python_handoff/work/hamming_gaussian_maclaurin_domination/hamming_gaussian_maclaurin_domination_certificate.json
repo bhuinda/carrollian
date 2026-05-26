@@ -1,0 +1,63 @@
+{
+  "block_rms_domination_candidate": "For every nonnegative x in R^24 and w in {8,12,16,24}, sum_{d in G24, wt(d)=w} prod_{i in supp(d)} x_i <= A_w * (sum_i x_i^2 / 24)^(w/2). Equality occurs at x=(1,...,1).",
+  "conditional_safe_bound": {
+    "r_star": 0.752867418111206,
+    "s_star": 3.688282036678107,
+    "safe_K2_conditional": 1.7575186441578108,
+    "safe_K_conditional": 1.3257143901149337
+  },
+  "golay_weight_enumerator": {
+    "0": 1,
+    "12": 2576,
+    "16": 759,
+    "24": 1,
+    "8": 759
+  },
+  "optimization_rows": [
+    {
+      "block_count": 759,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "nit": 26,
+      "random_probe_max_ratio": 1.0,
+      "ratio": 1.000000000000001,
+      "std_log_coordinates": 1.4037936833074414e-09,
+      "success": true,
+      "weight": 8
+    },
+    {
+      "block_count": 2576,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "nit": 20,
+      "random_probe_max_ratio": 1.0,
+      "ratio": 1.0000000000000013,
+      "std_log_coordinates": 4.5991842195743776e-10,
+      "success": true,
+      "weight": 12
+    },
+    {
+      "block_count": 759,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nit": 36,
+      "random_probe_max_ratio": 1.0,
+      "ratio": 1.0000000000000027,
+      "std_log_coordinates": 9.58020820499652e-12,
+      "success": true,
+      "weight": 16
+    },
+    {
+      "block_count": 1,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nit": 22,
+      "random_probe_max_ratio": 1.0,
+      "ratio": 1.0000000000000036,
+      "std_log_coordinates": 1.0966000756858607e-11,
+      "success": true,
+      "weight": 24
+    }
+  ],
+  "remaining_residue": "Prove the block-RMS domination lemma and then improve the analytic bound from the safe K^2 to the sharp codeword-sign K^2, or replace this route with a direct Krawtchouk/association-scheme domination certificate.",
+  "scope": "Reduces the sharp Golay/Gaussian MGF inequality to a block-RMS/Maclaurin domination lemma plus a one-variable analytic bound. The block domination lemma is numerically stress-tested, not proved here.",
+  "sha256": "eebc4c18588ac4f115d40455b7b47fdfc7047b8c006affc9c00eb398f5603c6d",
+  "sharp_candidate_K2_from_codeword_sign_direction": 1.444854859266432,
+  "status": "HAMMING_GAUSSIAN_MACLAURIN_DOMINATION_REDUCTION_COMPLETE"
+}

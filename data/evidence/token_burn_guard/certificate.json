@@ -1,0 +1,56 @@
+{
+  "audit_status": "TOKEN_BURN_GUARD_PASS",
+  "certificate_sha256": "9eb3db11a72b776b9caba138da22d2e33d79eaf6d12d1f052afccad19cb7c33c",
+  "checks": {
+    "active_entrypoint_dirs_have_sitecustomize": true,
+    "active_entrypoints_import_guard_bootstrap": true,
+    "active_subprocess_output_is_captured_or_redirected": true,
+    "archive_surfaces_are_explicitly_classified": true,
+    "bounded_json_selftest_passed": true,
+    "default_stdout_cap_is_finite": true,
+    "direct_file_execution_guard_selftest_passed": true,
+    "ignored_transient_surfaces_are_explicitly_classified": true,
+    "non_python_script_surfaces_reviewed": true,
+    "primary_command_entrypoints_use_bounded_json": true,
+    "root_sitecustomize_installs_guard": true,
+    "src_sitecustomize_installs_guard": true,
+    "stream_guard_selftest_passed": true,
+    "token_guard_module_exists": true
+  },
+  "coverage": {
+    "active_non_python_script_count": 2,
+    "active_python_entrypoint_count": 377,
+    "active_python_entrypoint_dirs_missing_sitecustomize": 0,
+    "active_python_entrypoints_missing_bootstrap": 0,
+    "active_subprocess_output_risk_count": 0,
+    "archival_shell_scripts_missing_guard": 0,
+    "archive_python_entrypoint_count": 11,
+    "archive_python_entrypoint_dirs_missing_sitecustomize": 0,
+    "archive_python_entrypoints_missing_bootstrap": 0,
+    "ignored_transient_script_count": 3889
+  },
+  "full_generated_report": "generated/token_burn_guard_audit.json",
+  "policy": {
+    "archive_policy": "Tracked archive Python entrypoints and tracked archive shell scripts are guarded, but source archives remain evidence, not supported execution APIs.",
+    "bounded_json_default_cap_bytes": 8192,
+    "default_stdout_cap_bytes": 8192,
+    "disable_env": "CARROLLIAN_TOKEN_BURN_GUARD=0",
+    "full_stdout_escape_hatch": "CARROLLIAN_TOKEN_BURN_ALLOW_FULL_STDOUT=1",
+    "manual_shell_boundary": "Arbitrary user shell commands such as Get-Content hugefile or python -c print(...) are outside repo-defined runner control.",
+    "new_python_entrypoint_gate": "certify.py audit fails when a new active __main__ file lacks the bootstrap or its directory lacks sitecustomize.py.",
+    "non_python_policy": "Active non-Python scripts are allowlisted and must redirect high-volume external tool output to files.",
+    "powershell_policy": "Only explicitly reviewed active PowerShell scripts are allowed; future active .ps1 files fail the token-burn audit until added to the reviewed allowlist or wrapped.",
+    "python_entrypoint_requirement": "Every active direct Python entrypoint must import the token-burn guard bootstrap marker."
+  },
+  "schema": "d20.token_burn_guard.certificate@1",
+  "startup_probe": {
+    "repo_local_sitecustomize_auto_loaded": false,
+    "returncode": 0,
+    "stdout": [
+      "sitecustomize_loaded=False",
+      "stdout_type=TextIOWrapper"
+    ],
+    "stdout_guard_auto_installed": false
+  },
+  "status": "TOKEN_BURN_GUARD_CERTIFIED"
+}

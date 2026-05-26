@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 import argparse
 import csv
 import hashlib

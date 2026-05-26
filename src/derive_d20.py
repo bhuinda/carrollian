@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import argparse
 import csv
@@ -692,6 +693,11 @@ def hcycle_game_theory() -> dict[str, Any]:
 
 def json_payloads() -> dict[str, Any]:
     skip = {"d20.json", "certificate.json", "data/certificates.json"}
+    non_identity_prefixes = (
+        "data/evidence/compiler_a42_d20_replay_test/",
+        "data/evidence/compiler_selftest/",
+        "data/evidence/token_burn_guard/",
+    )
     payloads: dict[str, Any] = {}
     for path in scanned_files(JSON_SCAN_ROOTS, "*.json"):
         if excluded_scan_path(path):
@@ -702,6 +708,8 @@ def json_payloads() -> dict[str, Any]:
             continue
         rel = path.relative_to(ROOT).as_posix()
         if rel in skip:
+            continue
+        if rel.startswith(non_identity_prefixes):
             continue
         if rel.startswith("manifests/"):
             continue

@@ -43,9 +43,21 @@ As is tradition: the proof is left to the computer.
 
 # Computation
 
-`d20` and its certificate are designed to be compressed, rebuilt, and verified on modern hardware. The verifier exposes four main gates:
+`d20` and its certificate are designed to be compressed, rebuilt, and verified
+on modern hardware. The verifier exposes core certificate gates plus cheap
+integration gates for compiler and evidence surfaces:
 
 ```shell
+# Run the cheap compiler+cubic integration gates without strict replay,
+# rebuild, or saturation-cache certification.
+python src/verify.py integration-nonstrict
+
+# Run only the cheap compiler integration gate.
+python src/verify.py compiler-nonstrict
+
+# Run only the cheap cubic symbolic-elimination integration gate.
+python src/verify.py jacobian-cubic-nonstrict
+
 # Verify the current bundle without rewriting generated files.
 python src/verify.py audit
 
@@ -55,11 +67,30 @@ python src/verify.py rebuild
 # Confirm the certified evidence section fails closed under in-memory tampering.
 python src/verify.py tamper
 
+# Check bounded-output guard coverage without running the mathematical audit.
+python src/verify.py token-burn
+
+# Rescan invariant reports into certificate.json without rebuilding d20.json.
+python src/verify.py refresh-certificate
+
 # Run the optional slow zero-axiom replay gate.
 python src/verify.py strict-replay
 ```
 
 NOTE: Checking finite existence in Agda takes 18 minutes, and a full rebuild of `d20.json` currently elapses 100 seconds on an i5-11400.
+
+The normal `audit` gate includes the token-burn guard check. That check bounds
+repo-defined Python stdout/stderr, verifies direct-entrypoint bootstraps,
+requires subprocess capture or file redirection, and fails when new active
+script surfaces appear without an explicit policy. Its compact tracked
+certificate is refreshed with its evidence-index hash entry at:
+
+```text
+data/evidence/token_burn_guard/certificate.json
+```
+
+The boundary is explicit: repo-defined runners are guarded; arbitrary manual
+shell commands such as printing a huge file are outside repository control.
 
 <details>
 <summary>Some light reading</summary>
@@ -84,6 +115,44 @@ What's the actual thesis, you ask?
 "The time between the notes relates the color to the scenes."
 
 ― *Close to the Edge* by Yes
+
+A working proposal is a **compiled residual bridge morphism**:
+
+- Name: `Apt(Sc)`
+- Morphism: `M11→33_res/trop : 11 ⇝ 33` (scene-level, not type-level or role-level)
+
+`Apt(Sc)` is the aperture operator on scenes:
+
+`Apt(Sc) = Λ ∘ ⊘_c ∘ L`
+
+with scene tuple `(L, ν₃, Λ_hc, ∂₃, Bal, Cert)`, where
+
+- `L(11) = {011,111}`
+- `ν₃(11) = (256 ⊕ 256) ⊘ 3`
+- `Λ_hc(γ)= λ_∂(γ)-dim(Π₃₃) ⟨C_γ,h⟩ e₃₃`, `dim(Π₃₃)=2`
+- `∂₃(γ)=R_height₃₃(γ)`
+- `Bal(γ)=R_height₃₃(γ)+Φ_finite(γ)`
+
+For `γ=256`, the closure is witnessed:
+
+`-374784 + 374784 = 0`
+
+So `Apt(Sc_d20)(11)=33` is certified in the residual channel, even though
+strict support transport fails (`11` is unsupported). The map is lawful exactly
+because lift, tropical cofactor normalization, coherent residual transport,
+and balance closure are carried in the scene boundary/certificate layer.
+
+Inference schema (scene-calculus):
+
+`Sc ⊢ x Apt_c y : ( L(x)↓c ∈ Cof(Sc) ) ∧ ( y = Λ(⊘_c(L(x))) ) ∧ ( Bal(y)=0 ) ∧ (Cert=pass)`
+
+Instantiation:
+
+`Sc_d20 ⊢ 11 Apt_3 33`
+
+This is what we call a **cofactor-normalized residual scene bridge**, i.e.:
+
+`11` has no strict support image, but it has a certified sector-33 aperture reading.
 </details>
 
 ---
@@ -195,9 +264,38 @@ The object is not represented by stored orbitals/tensors as primitive data. It j
 - packet-20, optics, integrity, H-cycles, and game/control invariants
 - `data/index.json` is the canonical data-domain registry. It marks current
   folders, required files, roles, and the planned normalized layout.
+- `data/evidence/index.json` is the lightweight evidence registry. It points to
+  each evidence root's local manifest or index without requiring a broad file
+  hash refresh. New evidence-producing certifiers should update it through
+  `src.evidence_registry.sync_evidence_index_entry` or
+  `src.evidence_registry.upsert_evidence_index_entry`.
 - `data/evidence/tensor_chain` contains the extracted tensor-chain evidence,
   split into reports, tables, arrays, and stages with a plain-name index at
   `data/evidence/tensor_chain/index.json`.
+- `data/evidence/compiler_a42_d20_replay_test` records the compiler's
+  tensor-backed A42/D20 coordinate replay gate: a positive replay, a
+  missing-coordinate block, and a tampered-coordinate failure. Verify it with
+  `python src/verify.py compiler-a42-d20-replay --pretty`.
+  Use `python src/verify.py compiler-nonstrict --pretty` as the cheap aggregate
+  compiler gate; it includes the scene compiler smoke test, the A42/D20 replay
+  evidence, and evidence-registry coherence.
+- `data/evidence/jacobian_cubic_symbolic_elimination` records the normalized
+  cubic symbolic-elimination evidence contract, promotion command, and strict
+  cache gate for the 48 Rabinowitsch saturation certificates.
+  `saturation_certificate_status_summary.json` is the compact, non-running
+  readout of the current closure level and next certificate action.
+  Use `python src/verify.py jacobian-cubic-nonstrict --pretty` as the cheap
+  integration gate for this evidence root. It checks the registry, compact
+  status, intake protocol, and closure checklist while deliberately excluding
+  the strict certificate cache. Use
+  `python src/verify.py jacobian-cubic-cache --pretty` only when the 48 stable
+  saturation certificate JSON files are expected to exist.
+- `data/evidence/token_burn_guard` records the compact bounded-output
+  certificate used by `python src/verify.py token-burn` and by the normal
+  `audit` gate.
+- `certificate.json` is refreshed from incoming invariant reports by
+  `python src/verify.py refresh-certificate`; the command also updates the
+  `certificate.json` entry in `manifests/file_hashes.json`.
 - Command entrypoints live in `src/commands/`; root command files are not kept.
 
 The certificate stack is indexed by `data/certificates.json` and stored as
@@ -1683,7 +1781,8 @@ any future raw packet target `(u,v)` on a doublet to be an integral image of the
 packet operator, it must satisfy:
 
 ```text
-u-v = 0 mod 2
+u = 0 mod 2
+v = 0 mod 2
 u+v = 0 mod 6
 ```
 
@@ -1692,6 +1791,113 @@ and `q42`/`q12` packet bridges. It does not construct those bridges; it says
 what every proposed bridge column must pass before it can be an integral
 packet image. The only torsion primes visible in this packet obstruction are
 `2` and `3`.
+
+The D20 boundary-to-Loop_297 step-atom incidence table is certified at:
+
+```text
+data/invariants/d20/theorems/d20_boundary_loop_step_atom_incidence/report.json
+```
+
+It emits the signed `Lambda^3 H6` boundary incidence table for the `25` visible
+compact `Loop_297` step atoms:
+
+```text
+data/invariants/d20/theorems/d20_boundary_loop_step_atom_incidence/boundary_atom_step_incidence.csv
+data/invariants/d20/theorems/d20_boundary_loop_step_atom_incidence/directed_pair_projection_step_atom_alignment.csv
+```
+
+The incidence convention is target minus source on the public D20 boundary.
+The resulting `20 x 25` signed matrix has rank `19` over `Q`, so the visible
+step atoms span the full zero-sum public boundary hyperplane rationally. Its
+integral Smith factors are `[2,4,4]`, giving the boundary quotient reading:
+
+```text
+Z^20 / image = Z x Z/2 x Z/4 x Z/4
+```
+
+The certificate also records that the boundary-to-`Loop_297` map has all `30`
+directed `A985` pair projections, but only `25` appear among the compact
+primitive step atoms. The missing compact step-pair projections are
+`B+->V-`, `B-->V+`, `B-->V-`, `S+->B+`, and `S-->B-`. This is now the
+sharpest boundary-side artifact: rationally full, integrally unsaturated, and
+still not a map into the full-exposure packet doublets.
+
+The D20 boundary-packet pairing obstruction is certified at:
+
+```text
+data/invariants/d20/theorems/d20_boundary_packet_pairing_obstruction/report.json
+```
+
+It tests the strongest raw relabelling escape hatch. For every unordered pair
+of public `Lambda^3 H6` atoms, it asks whether those two rows could be treated
+as a packet doublet while all `25` visible step-atom columns satisfy the exact
+packet SNF test. The compatibility graph has `0` edges, so no pairing of the
+`20` public atoms into `10` packet doublets can make the raw signed boundary
+incidence columns land in the packet image. Scalars `1` through `5` still give
+no compatible pairs; scalar `6` is the first scalar where a perfect pairing can
+exist. Combining that packet scalar with the boundary incidence exponent `4`
+gives the joint clearing bound `12`. This is a clearing obstruction, not a
+physical bridge: the remaining target is a nontrivial signed quotient or
+normalization that preserves the `Loop_297`/`A985` labels rather than merely
+scaling everything into the block lattice.
+
+The D20 boundary-packet row-normalization obstruction is certified at:
+
+```text
+data/invariants/d20/theorems/d20_boundary_packet_row_normalization_obstruction/report.json
+```
+
+It closes the next diagonal escape hatch. Each public boundary row has odd
+visible step entries, so any row-wise normalization must at least clear parity.
+Testing the even row-scalar residues `{0,2,4}` modulo `6` on all `190`
+unordered public-atom pairs shows that every pair has exactly one compatible
+residue pair: `(0,0) mod 6`. Thus independent signs or nonuniform row scalars
+cannot improve on scalar-`6` packet clearing. Any stronger bridge must be a
+genuinely non-diagonal signed quotient or linear combination of boundary atoms,
+not just a relabelling, pairing, or diagonal row normalization.
+
+The D20 boundary-packet low-support candidate atlas is certified at:
+
+```text
+data/invariants/d20/theorems/d20_boundary_packet_low_support_candidate_atlas/report.json
+```
+
+It enumerates every signed support-at-most-`2` linear combination of public
+boundary atoms with coefficients `±1`, testing `800` candidates against the
+packet SNF parity layer. The first non-diagonal candidates exist: exactly `12`
+support-`2` rows have even visible step images, and they lie over only three
+public support families:
+
+```text
+[0,11], [6,17], [14,15]
+```
+
+These form `6` packet-compatible doublet candidates by pairing each row with
+its negative. Every such doublet has rank `1`, and the even-image span has
+rank `6`, so this is a degenerate low-support atlas rather than the missing
+`20`-packet bridge. The next target is support `3`: look for packet-compatible
+doublets of rank `2` or for more than three independent support families.
+
+The D20 Loop_297 step-atom packet SNF probe is certified at:
+
+```text
+data/invariants/d20/theorems/d20_loop_step_packet_snf_probe/report.json
+```
+
+It tests the currently visible boundary-to-loop surface against that exact SNF
+obstruction. For each of the `25` certified `Loop_297` step atoms, it forms the
+natural support-count column into the `20` full-exposure packets by counting
+how many of a packet's two mode masks contain that step atom. All `25` visible
+columns fail the packet image test on all `10` active-partner doublets. The
+failure histogram is `236` failures of `u+v = 0 mod 6`, `12` failures of
+`u = 0 mod 2` plus `u+v = 0 mod 6`, and `2` failures of all three local tests.
+This rules out the naive `Loop_297` active-step support map as the missing raw
+packet bridge. It does not rule out a signed or multiplicity-carrying
+`A985`/tube/`q42`/`q12` bridge; the next target is a normalization or quotient
+map from the signed boundary incidence lattice to the full-exposure packet
+doublets that is stronger than scalar `6` packet clearing and joint scalar
+`12` boundary/packet clearing, stronger than any diagonal row scaling, and not
+merely one of the rank-`1` support-`2` plus/minus candidates above.
 
 The D20 finite contour-integration test is certified at:
 

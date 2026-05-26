@@ -1,0 +1,356 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1640c74b7d88cac79957c5ee0c34a37831bc4028e512371b38bae3e50c407742",
+  "checks": {
+    "all_step_statuses_match_expected": true,
+    "exactly_closed_ledger_nonempty": true,
+    "final_global_proof_not_claimed": true,
+    "handoff_manifest_passed": true,
+    "kkt_obligation_preserves_open_target": true,
+    "kkt_obligation_report_present": true,
+    "numerical_audit_not_promoted_to_proof": true,
+    "open_obstruction_is_last_step": true,
+    "run_order_has_expected_steps": true,
+    "source_certificates_present": true
+  },
+  "claim": "The Talagrand handoff main chain is indexed and classified in canonical proof-obligation form without claiming the final global proof.",
+  "claim_boundary": "This is a chain audit and integration map. It verifies the handoff status, ordered source certificates, and open KKT boundary; it does not exclude the multilevel KKT obstruction system.",
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "c5ecd93e026605d4d24bac0323e144fee17ed9279e757ba52d454115a05b158d",
+      "path": "generated/d20_talagrand_closure_chain_audit.json",
+      "schema": "d20.proof_obligation.talagrand_closure_chain_audit.artifact@1",
+      "sha256": "5e71db6a86eee7829890adb50beaca484c4e39f371ca962f77fade58aac46a39",
+      "size": 14784,
+      "status": "D20_TALAGRAND_CLOSURE_CHAIN_EXTRACTED_FROM_HANDOFF"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_talagrand_closure_chain_audit.py",
+      "sha256": "28919351097efd1950570229fdd1ea9eb3d1efd7211243f718d65bb8db2f9deb",
+      "size": 16878
+    },
+    "handoff_manifest": {
+      "path": "data/evidence/talagrand_python_handoff/manifest.json",
+      "sha256": "6e28f7faecc651539ad03630f964f83e670a7648559cdcc7c6814f02a3f6616a",
+      "size": 333864
+    },
+    "kkt_obligation_report": {
+      "path": "data/invariants/d20/proof_obligations/d20_talagrand_multilevel_kkt_obstruction_system/report.json",
+      "sha256": "51a6a466b06186ba898b01668360a983053222db4f7dd62e1f0a429e25c2fc53",
+      "size": 9759
+    },
+    "run_order": {
+      "path": "data/evidence/talagrand_python_handoff/RUN_ORDER.md",
+      "sha256": "c9ab93fe98da8fff0f398cbf0ccf45882ec77875b47ef6c8178339539557c267",
+      "size": 681
+    },
+    "status_ledger": {
+      "path": "data/evidence/talagrand_python_handoff/STATUS_LEDGER.json",
+      "sha256": "f07de350f57788e98a559fc68ebee4d6040ffbd1163939ce645ed6a8ee683a13",
+      "size": 1409
+    },
+    "step_certificates": {
+      "01_hamming_gaussian_talagrand_bridge": {
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge_certificate.json",
+        "sha256": "9f65db601ef3cd26de272fbbe7283c104e9f0ce2ce5b41f6001ba257d99fcccf",
+        "size": 1751
+      },
+      "02_exact_all_two_level_shell_certificate": {
+        "path": "data/evidence/talagrand_python_handoff/work/exact_all_two_level_shell_certificate/exact_all_two_level_shell_certificate.json",
+        "sha256": "b24484dbffc88d76c3fc9fa667458facc0b16f763a91c184d78e72edb34cf625",
+        "size": 1381
+      },
+      "03_exact_pair_stabilized_shell_certificate": {
+        "path": "data/evidence/talagrand_python_handoff/work/exact_pair_stabilized_shell_certificate/exact_pair_stabilized_shell_certificate.json",
+        "sha256": "796936a1eeecb36e3602de3d36f38499d2e27dae691670cde84f037c55bd3a6b",
+        "size": 2864
+      },
+      "04_talagrand_global_pairwise_schur_polynomial": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_global_pairwise_schur_polynomial/global_pairwise_schur_polynomial_certificate.json",
+        "sha256": "a7e48295bd72ad669aafc65c14ddbb689a8d11bcb9699738dfbcf6b14ae28d09",
+        "size": 2520
+      },
+      "05_talagrand_exterior_trace_first_difference": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_exterior_trace_first_difference/exterior_trace_first_difference_certificate.json",
+        "sha256": "3b7ab627a7d5fedf3aed7b52d995f25d81fe48f4d9c5bd5b36873f791d7660b7",
+        "size": 2858
+      },
+      "06_talagrand_ordered_branch_Q_cone_decomposition": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_ordered_branch_Q_cone_decomposition/ordered_branch_Q_cone_certificate.json",
+        "sha256": "c5a830fb4c38e3d92e8bd9cd3271dd2395f99be12799e7425a99dcc416e06e83",
+        "size": 2588
+      },
+      "07_talagrand_Q_residual_oriented_block_factorization": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_Q_residual_oriented_block_factorization/Q_residual_oriented_block_factorization_certificate.json",
+        "sha256": "c65c08aeb93c8daa329f65f535041855f886b3537fe8aad0bb1f74a7ba5dca26",
+        "size": 2239
+      },
+      "08_talagrand_barrier_contact_derivative_identity": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_barrier_contact_derivative_identity/barrier_contact_derivative_identity_certificate.json",
+        "sha256": "6426446816b8d161b648d2251ecfa04a200722b2ab1ef75b687b55c3c0995087",
+        "size": 2133
+      },
+      "09_talagrand_pair_stabilized_contact_closure": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_pair_stabilized_contact_closure/pair_stabilized_contact_closure_certificate.json",
+        "sha256": "0107dff9fa897ebe12d184243c025a2ecfdf6aba758f913354ca5538dfb94900",
+        "size": 2544
+      },
+      "10_talagrand_multilevel_contact_normal_form": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_multilevel_contact_normal_form/multilevel_contact_normal_form_certificate.json",
+        "sha256": "d33f667f281a87a79d28e9fb068616d631565084ea778cb64a732b6c16b0a2d1",
+        "size": 2484
+      },
+      "11_talagrand_weighted_asymmetry_contact_audit": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_weighted_asymmetry_contact_audit/weighted_asymmetry_contact_audit_certificate.json",
+        "sha256": "a776106ea943d1ecb519204fc37b57b7e8245f64eb8291945276d292e8993fa6",
+        "size": 1865
+      },
+      "12_talagrand_multilevel_KKT_obstruction_system": {
+        "path": "data/evidence/talagrand_python_handoff/work/talagrand_multilevel_KKT_obstruction_system/multilevel_KKT_obstruction_certificate.json",
+        "sha256": "591e751478302ed530015e7c14c231847d0802329b6bdfc55d35032a83f7359f",
+        "size": 4127
+      }
+    },
+    "validator": {
+      "path": "src/certify_d20_talagrand_closure_chain_audit.py",
+      "sha256": "c4c3ee620f97d3cad45f12c2d540885e5e14d6cadf99f0781c2eb058d1421ff0",
+      "size": 10587
+    }
+  },
+  "next_highest_yield_item": "Use the chain audit to drive the exact KKT exclusion certificate: start from the multilevel contact normal form and construct a Terwilliger block-SOS or exact interval/Krawtchouk certificate for w=12,16.",
+  "schema": "d20.proof_obligation.talagrand_closure_chain_audit@1",
+  "source_handoff": {
+    "global_status": "HANDOFF_BUNDLE_BUILT; FINAL_GLOBAL_TALAGRAND_PROOF_NOT_CLAIMED",
+    "manifest_sha256": "948d0c264603d615f46e8bfd1ff44d8dd388033a271ef119770cee1c39b6315e",
+    "remaining_open_target": "Exclude the multilevel KKT obstruction system with dF>0, equivalently prove the weighted-asymmetry contact lemma exactly.",
+    "root": "data/evidence/talagrand_python_handoff"
+  },
+  "status": "D20_TALAGRAND_CLOSURE_CHAIN_AUDITED_FINAL_PROOF_NOT_CLAIMED",
+  "witness": {
+    "classification_counts": {
+      "exact_slice_closed": 3,
+      "factorization_certified": 1,
+      "identity_certified": 1,
+      "normal_form_certified": 2,
+      "numerical_audit_only": 1,
+      "open_exact_obstruction": 1,
+      "reduction_built": 1,
+      "reduction_target_materialized": 1,
+      "supporting_bridge": 1
+    },
+    "open_boundary": {
+      "certified_here": [
+        "all 12 RUN_ORDER entries are present in canonical evidence storage",
+        "each primary certificate has the expected handoff status",
+        "the weighted-asymmetry audit is classified as numerical only",
+        "the KKT obstruction is linked to the first-class open proof obligation"
+      ],
+      "not_certified": [
+        "the weighted-asymmetry contact lemma exactly",
+        "absence of KKT solutions with dF>0",
+        "the final global Talagrand inequality"
+      ]
+    },
+    "status_ledger_exactly_closed": [
+      "All two-level threshold directions",
+      "Pair-stabilized three-level shell/contact slice",
+      "First-difference exterior normal form",
+      "Barrier contact derivative identity",
+      "Multilevel four-coefficient normal form"
+    ],
+    "steps": [
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge_certificate.json",
+          "sha256": "9f65db601ef3cd26de272fbbe7283c104e9f0ce2ce5b41f6001ba257d99fcccf",
+          "size": 1751
+        },
+        "claim": null,
+        "claim_boundary": null,
+        "classification": "supporting_bridge",
+        "directory": "hamming_gaussian_talagrand_bridge",
+        "expected_status": "HAMMING_GAUSSIAN_TALAGRAND_BRIDGE_CONSTRUCTED",
+        "order": 1,
+        "status": "HAMMING_GAUSSIAN_TALAGRAND_BRIDGE_CONSTRUCTED",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/exact_all_two_level_shell_certificate/exact_all_two_level_shell_certificate.json",
+          "sha256": "b24484dbffc88d76c3fc9fa667458facc0b16f763a91c184d78e72edb34cf625",
+          "size": 1381
+        },
+        "claim": "Certifies all two-level threshold shell-domination gaps exactly by (z-1)^2 times a nonnegative-coefficient integer polynomial.",
+        "claim_boundary": "This closes all two-level threshold directions, not arbitrary multilevel KKT/barrier directions.",
+        "classification": "exact_slice_closed",
+        "directory": "exact_all_two_level_shell_certificate",
+        "expected_status": "EXACT_ALL_TWO_LEVEL_SHELL_GAP_FACTOR_CERTIFIED",
+        "order": 2,
+        "status": "EXACT_ALL_TWO_LEVEL_SHELL_GAP_FACTOR_CERTIFIED",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/exact_pair_stabilized_shell_certificate/exact_pair_stabilized_shell_certificate.json",
+          "sha256": "796936a1eeecb36e3602de3d36f38499d2e27dae691670cde84f037c55bd3a6b",
+          "size": 2864
+        },
+        "claim": "Certifies the pair-stabilized three-level shell gap exactly via (u-1)^2 Q(u)+v^2 R(u,v^2) with nonnegative integer coefficients.",
+        "claim_boundary": "This proves the pair-stabilized 3-level family, not the full multilevel Barrier Schur Compression Lemma.",
+        "classification": "exact_slice_closed",
+        "directory": "exact_pair_stabilized_shell_certificate",
+        "expected_status": "EXACT_PAIR_STABILIZED_SHELL_GAP_CERTIFIED",
+        "order": 3,
+        "status": "EXACT_PAIR_STABILIZED_SHELL_GAP_CERTIFIED",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": false,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_global_pairwise_schur_polynomial/global_pairwise_schur_polynomial_certificate.json",
+          "sha256": "a7e48295bd72ad669aafc65c14ddbb689a8d11bcb9699738dfbcf6b14ae28d09",
+          "size": 2520
+        },
+        "claim": "Materializes the exact sparse integer pairwise Schur compression polynomial P_w for representative pair (0,1), for w=12,16.",
+        "claim_boundary": "This is not a proof of P_w>=0 on the barrier. It is the exact polynomial target for the remaining semialgebraic certificate.",
+        "classification": "reduction_target_materialized",
+        "directory": "talagrand_global_pairwise_schur_polynomial",
+        "expected_status": "GLOBAL_PAIRWISE_SCHUR_POLYNOMIAL_TARGET_MATERIALIZED",
+        "order": 4,
+        "status": "GLOBAL_PAIRWISE_SCHUR_POLYNOMIAL_TARGET_MATERIALIZED",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": false,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_exterior_trace_first_difference/exterior_trace_first_difference_certificate.json",
+          "sha256": "3b7ab627a7d5fedf3aed7b52d995f25d81fe48f4d9c5bd5b36873f791d7660b7",
+          "size": 2858
+        },
+        "claim": "Materializes the exact first exterior trace normal form P_w=(x_0-x_1)Q_w for the pairwise Schur obstruction, for w=12,16.",
+        "claim_boundary": "This is not the final Talagrand proof. It certifies the correct first normal-form factor after the naive square-factor route failed.",
+        "classification": "normal_form_certified",
+        "directory": "talagrand_exterior_trace_first_difference",
+        "expected_status": "EXTERIOR_TRACE_FIRST_DIFFERENCE_NORMAL_FORM_CERTIFIED",
+        "order": 5,
+        "status": "EXTERIOR_TRACE_FIRST_DIFFERENCE_NORMAL_FORM_CERTIFIED",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_ordered_branch_Q_cone_decomposition/ordered_branch_Q_cone_certificate.json",
+          "sha256": "c5a830fb4c38e3d92e8bd9cd3271dd2395f99be12799e7425a99dcc416e06e83",
+          "size": 2588
+        },
+        "claim": "Decomposes the first-difference quotient Q_w on the ordered branch x_0>=x_1 by substituting x_0=x_1+c. Nonnegative cone groups are certified positive; residual groups are isolated.",
+        "claim_boundary": "This is a reduction certificate, not a final proof of barrier positivity of Q_w.",
+        "classification": "reduction_built",
+        "directory": "talagrand_ordered_branch_Q_cone_decomposition",
+        "expected_status": "ORDERED_BRANCH_Q_CONE_DECOMPOSITION_BUILT",
+        "order": 6,
+        "status": "ORDERED_BRANCH_Q_CONE_DECOMPOSITION_BUILT",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_Q_residual_oriented_block_factorization/Q_residual_oriented_block_factorization_certificate.json",
+          "sha256": "c65c08aeb93c8daa329f65f535041855f886b3537fe8aad0bb1f74a7ba5dca26",
+          "size": 2239
+        },
+        "claim": "Certifies the exact oriented-block factorization of the ordered-branch residual of Q_w for w=12,16.",
+        "claim_boundary": "This is a normal-form/factorization certificate, not the final proof of residual nonnegativity under the barrier.",
+        "classification": "factorization_certified",
+        "directory": "talagrand_Q_residual_oriented_block_factorization",
+        "expected_status": "Q_RESIDUAL_ORIENTED_BLOCK_FACTORIZATION_CERTIFIED",
+        "order": 7,
+        "status": "Q_RESIDUAL_ORIENTED_BLOCK_FACTORIZATION_CERTIFIED",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_barrier_contact_derivative_identity/barrier_contact_derivative_identity_certificate.json",
+          "sha256": "6426446816b8d161b648d2251ecfa04a200722b2ab1ef75b687b55c3c0995087",
+          "size": 2133
+        },
+        "claim": "Certifies the exact identity 24^(w/2)Q = w Delta B - S D(B) for w=12,16 by symbolic derivation and deterministic integer/modular sample verification.",
+        "claim_boundary": "This is not the final proof of B>=0=>Q>=0. It converts the final proof target into a contact normal-derivative inequality.",
+        "classification": "identity_certified",
+        "directory": "talagrand_barrier_contact_derivative_identity",
+        "expected_status": "BARRIER_CONTACT_DERIVATIVE_IDENTITY_CERTIFIED",
+        "order": 8,
+        "status": "BARRIER_CONTACT_DERIVATIVE_IDENTITY_CERTIFIED",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_pair_stabilized_contact_closure/pair_stabilized_contact_closure_certificate.json",
+          "sha256": "0107dff9fa897ebe12d184243c025a2ecfdf6aba758f913354ca5538dfb94900",
+          "size": 2544
+        },
+        "claim": "Exactly proves the barrier contact derivative inequality on the pair-stabilized three-level family for w=12,16.",
+        "claim_boundary": "This closes a certified slice of the final theorem, not the full multilevel Barrier Schur Compression Lemma.",
+        "classification": "exact_slice_closed",
+        "directory": "talagrand_pair_stabilized_contact_closure",
+        "expected_status": "PAIR_STABILIZED_CONTACT_DERIVATIVE_CLOSED_EXACT",
+        "order": 9,
+        "status": "PAIR_STABILIZED_CONTACT_DERIVATIVE_CLOSED_EXACT",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_multilevel_contact_normal_form/multilevel_contact_normal_form_certificate.json",
+          "sha256": "d33f667f281a87a79d28e9fb068616d631565084ea778cb64a732b6c16b0a2d1",
+          "size": 2484
+        },
+        "claim": "Generalizes the pair-stabilized contact proof to arbitrary multilevel coordinates by deriving the exact four-coefficient normal form and contact identity.",
+        "claim_boundary": "This is a true multilevel reduction, not the final proof. The remaining lemma is the weighted asymmetry bound on the contact surface.",
+        "classification": "normal_form_certified",
+        "directory": "talagrand_multilevel_contact_normal_form",
+        "expected_status": "MULTILEVEL_CONTACT_NORMAL_FORM_CERTIFIED",
+        "order": 10,
+        "status": "MULTILEVEL_CONTACT_NORMAL_FORM_CERTIFIED",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_weighted_asymmetry_contact_audit/weighted_asymmetry_contact_audit_certificate.json",
+          "sha256": "a776106ea943d1ecb519204fc37b57b7e8245f64eb8291945276d292e8993fa6",
+          "size": 1865
+        },
+        "claim": "Audits the multilevel weighted-asymmetry contact lemma with analytic-gradient constrained optimization; no valid contact point with positive outward derivative is found.",
+        "claim_boundary": "Numerical audit only; not the final proof.",
+        "classification": "numerical_audit_only",
+        "directory": "talagrand_weighted_asymmetry_contact_audit",
+        "expected_status": "WEIGHTED_ASYMMETRY_CONTACT_AUDIT_NO_VALID_OUTWARD_DERIVATIVE",
+        "order": 11,
+        "status": "WEIGHTED_ASYMMETRY_CONTACT_AUDIT_NO_VALID_OUTWARD_DERIVATIVE",
+        "status_matches_expected": true
+      },
+      {
+        "boundary_mentions_not_final_proof": true,
+        "certificate": {
+          "path": "data/evidence/talagrand_python_handoff/work/talagrand_multilevel_KKT_obstruction_system/multilevel_KKT_obstruction_certificate.json",
+          "sha256": "591e751478302ed530015e7c14c231847d0802329b6bdfc55d35032a83f7359f",
+          "size": 4127
+        },
+        "claim": "Formalizes the exact KKT obstruction system that any multilevel counterexample to the weighted-asymmetry contact lemma must satisfy.",
+        "claim_boundary": "This is not a proof of the final theorem. It is the exact multilevel KKT system left to exclude.",
+        "classification": "open_exact_obstruction",
+        "directory": "talagrand_multilevel_KKT_obstruction_system",
+        "expected_status": "MULTILEVEL_KKT_OBSTRUCTION_SYSTEM_FORMALIZED_NOT_CLOSED",
+        "order": 12,
+        "status": "MULTILEVEL_KKT_OBSTRUCTION_SYSTEM_FORMALIZED_NOT_CLOSED",
+        "status_matches_expected": true
+      }
+    ]
+  }
+}

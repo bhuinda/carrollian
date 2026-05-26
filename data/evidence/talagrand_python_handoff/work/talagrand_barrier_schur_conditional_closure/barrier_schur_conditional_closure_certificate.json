@@ -1,0 +1,59 @@
+{
+  "certificate_sha256": "fa2c2a098a75ecf49f540676ee99365296c56f9a5ca0a7b12e050201ab45e6a9",
+  "claim": "Formalizes the exact implication: Barrier Schur Compression Lemma implies the global Golay shell-domination/Talagrand inequality for w=12,16.",
+  "claim_boundary": "This does not prove the Barrier Schur Compression Lemma. It is a conditional closure theorem.",
+  "created_utc": "2026-05-26T19:08:51.356074+00:00",
+  "dependencies": [
+    {
+      "certificate_sha256": "e2bbe5c4210997b7eec280287124a14eb6e7d06b0df21cd182d8f5bdb8d8c821",
+      "name": "exact_all_two_level_shell",
+      "path": "/mnt/data/exact_all_two_level_shell_certificate/exact_all_two_level_shell_certificate.json",
+      "present": true,
+      "sha256": "b24484dbffc88d76c3fc9fa667458facc0b16f763a91c184d78e72edb34cf625",
+      "status": "EXACT_ALL_TWO_LEVEL_SHELL_GAP_FACTOR_CERTIFIED"
+    },
+    {
+      "certificate_sha256": "54b222e979fd6628739ec37613aa6be9f443303694f09a1d42b0ba8ba73b2ffe",
+      "name": "barrier_schur_audit",
+      "path": "/mnt/data/talagrand_barrier_schur_compression_audit/talagrand_barrier_schur_compression_certificate.json",
+      "present": true,
+      "sha256": "65fd776fb9a44549c52d45964b1ddd09c4e2856dc0d1a9ff29d2c334bbd1ba49",
+      "status": "TALAGRAND_BARRIER_SCHUR_COMPRESSION_AUDIT_NO_DANGER"
+    },
+    {
+      "certificate_sha256": "cfaa611486bdda499229d2f24c55e6394e4b31441aa6d9f783ecac331800e0d4",
+      "name": "lambda_hc_act_invariance",
+      "path": "/mnt/data/lambda_hc_act_invariance_audit/lambda_hc_act_invariance_certificate.json",
+      "present": true,
+      "sha256": "99fea72597e687f7e985e3e263fff2fcebe562f95f3bb87e7369624968fdd5ca",
+      "status": "LAMBDA_HC_ACT_INVARIANCE_CERTIFIED"
+    },
+    {
+      "certificate_sha256": "2cd840f340984f404490c9905018d32adbbc813e7baf605846a1c067ff6bb4c6",
+      "name": "act_sdpi_reduction",
+      "path": "/mnt/data/talagrand_act_sdpi_reduction/talagrand_act_sdpi_reduction_certificate.json",
+      "present": true,
+      "sha256": "c1d632f69256c2d3118ae8beb646d407d2ace0ce1a3bf7ac0b8858a624b86b68",
+      "status": "TALAGRAND_REDUCED_TO_ACT_SDPI_WITH_NO_NUMERICAL_VIOLATION"
+    }
+  ],
+  "schema": "golay_talagrand.barrier_schur_conditional_closure@1",
+  "status": "TALAGRAND_CONDITIONAL_CLOSURE_FROM_BARRIER_SCHUR_FORMALIZED",
+  "theorem": {
+    "assumption": "Barrier Schur Compression Lemma: if F_w(theta)>=0 then (theta_i-theta_j)(grad_i F_w(theta)-grad_j F_w(theta))<=0 for all i,j.",
+    "conclusion": "The Golay shell-domination inequality holds for w=12,16.",
+    "exact_two_level_role": "Closes all two-level threshold endpoints and supports a weaker threshold-compression route.",
+    "name": "Barrier Schur Conditional Closure Theorem",
+    "proof_spine": [
+      "Center theta so sum theta_i=0.",
+      "Use scale invariance to get sum_i grad_i F=0.",
+      "Use pairwise identity 24<theta,g>=sum_{i<j}(theta_i-theta_j)(g_i-g_j).",
+      "Barrier Schur compression gives <theta,g><=0 on F>=0.",
+      "Radial compression phi(s)=F((1-s)theta) has phi'(s)>=0 whenever phi(s)>=0.",
+      "Since phi(1)=F(0)=0, no phi(0)>0 is possible.",
+      "Therefore F(theta)<=0 globally."
+    ],
+    "remaining_unproved": "The Barrier Schur Compression Lemma itself.",
+    "status": "CONDITIONAL_NOT_GLOBAL_PROOF"
+  }
+}

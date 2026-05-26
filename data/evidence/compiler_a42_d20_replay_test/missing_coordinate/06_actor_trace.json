@@ -1,0 +1,45 @@
+{
+  "actors": [
+    {
+      "actor_id": "obligation_extractor",
+      "geon_condition": {
+        "public_boundary_zero": false,
+        "residue_nonzero": false
+      },
+      "role_shadow": "maps visible request constraints to public obligations"
+    },
+    {
+      "actor_id": "claim_extractor",
+      "geon_condition": {
+        "public_boundary_zero": false,
+        "residue_nonzero": false
+      },
+      "role_shadow": "maps public answer text to public claim rows"
+    },
+    {
+      "actor_id": "support_resolver",
+      "geon_condition": {
+        "public_boundary_zero": false,
+        "residue_nonzero": false
+      },
+      "role_shadow": "maps claims to visible files and request support"
+    },
+    {
+      "actor_id": "residue_checker",
+      "geon_condition": {
+        "public_boundary_zero": false,
+        "residue_nonzero": true
+      },
+      "role_shadow": "records missing evidence, symbolic lowering, and uncertainty"
+    },
+    {
+      "actor_id": "d20_lowering",
+      "geon_condition": {
+        "public_boundary_zero": false,
+        "residue_nonzero": false
+      },
+      "role_shadow": "loads tensor and quotient summaries for public readout"
+    }
+  ],
+  "schema": "holotopy.actor_trace"
+}

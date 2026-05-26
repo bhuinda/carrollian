@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import csv
 import hashlib
@@ -39,9 +40,10 @@ DIRECT_ATTEMPT_REPORT = (
 )
 INDICATOR_CSV = (
     ROOT
-    / "temp"
-    / "all_python_work_files"
-    / "python_files"
+    / "data"
+    / "evidence"
+    / "talagrand_python_handoff"
+    / "work"
     / "hamming_gaussian_indicator_shell_domination"
     / "indicator_shell_domination_by_support_size.csv"
 )
@@ -509,7 +511,7 @@ def build_manifest(report: dict[str, Any], artifact: dict[str, Any]) -> dict[str
         "schema": "d20.proof_obligation.golay_shell_two_level_lift_probe_manifest@1",
         "name": THEOREM_ID,
         "certification_tests": [
-            "verify W24 endpoint and prior archive/direct-attempt inputs",
+            "verify W24 endpoint and handoff archive/direct-attempt inputs",
             "rebuild the W24 code from the certified generator basis",
             "construct selected two-level split masks",
             "optimize the w=12 and w=16 two-level shell objectives over t",

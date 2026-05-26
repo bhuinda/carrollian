@@ -1,0 +1,60 @@
+{
+  "certificate_sha256": "fcc385844da640b418c36cb0f15e1ddec923e815d6593e6a9802bf012fb90c54",
+  "claim": "Certifies the pair-stabilized three-level shell gap exactly via (u-1)^2 Q(u)+v^2 R(u,v^2) with nonnegative integer coefficients.",
+  "claim_boundary": "This proves the pair-stabilized 3-level family, not the full multilevel Barrier Schur Compression Lemma.",
+  "created_utc": "2026-05-26T19:20:07.579413+00:00",
+  "rows": [
+    {
+      "P0_divisible_by_u_minus_1_squared": true,
+      "Q0_coeff_max": 174347199488,
+      "Q0_coeff_min": 164864,
+      "Q0_coefficients_ascending": "174347199488 91851999232 50946438144 10040877056 5341923328 642969600 332695552 22421504 11375616 329728 164864",
+      "Q0_coefficients_nonnegative": true,
+      "Q0_degree": 10,
+      "R_coeff_max": 277028505600,
+      "R_coeff_min": 164864,
+      "R_coefficients_nonnegative": true,
+      "R_degree": 10,
+      "certified": true,
+      "gap_degree": 12,
+      "n00": 616,
+      "n01": 672,
+      "n10": 672,
+      "n11": 616,
+      "odd_terms_after_A_u_plus_v_B_u_minus_v": 0,
+      "shell": 12,
+      "shell_blocks": 2576
+    },
+    {
+      "P0_divisible_by_u_minus_1_squared": true,
+      "Q0_coeff_max": 33174988822272,
+      "Q0_coeff_min": 194304,
+      "Q0_coefficients_ascending": "33174988822272 27603467054592 15998573800704 4393680546816 2426986172160 460291797504 245997219072 31702640640 16544402688 1386164736 710569728 34974720 17681664 388608 194304",
+      "Q0_coefficients_nonnegative": true,
+      "Q0_degree": 14,
+      "R_coeff_max": 66616335869952,
+      "R_coeff_min": 194304,
+      "R_coefficients_nonnegative": true,
+      "R_degree": 14,
+      "certified": true,
+      "gap_degree": 16,
+      "n00": 77,
+      "n01": 176,
+      "n10": 176,
+      "n11": 330,
+      "odd_terms_after_A_u_plus_v_B_u_minus_v": 0,
+      "shell": 16,
+      "shell_blocks": 759
+    }
+  ],
+  "schema": "golay_talagrand.exact_pair_stabilized_shell@1",
+  "status": "EXACT_PAIR_STABILIZED_SHELL_GAP_CERTIFIED",
+  "theorem": {
+    "certificate": "Under A=u+v, B=u-v, the polynomial becomes P_w=(u-1)^2 Q_w(u)+v^2 R_w(u,v^2), where Q_w and R_w have nonnegative integer coefficients.",
+    "consequence": "P_w(A,B)>=0 for all A,B>=0. Equality occurs only on the equal diagonal in this pair-stabilized family.",
+    "name": "Exact pair-stabilized shell gap certificate",
+    "normalization": "P_w(A,B)=A_w(1)(A^2+B^2+22)^(w/2)-24^(w/2)(n11 AB+n10(A+B)+n00), where n11,n10,n00 are the pair membership profile counts.",
+    "role_in_global_proof": "This closes the exact pair-stabilized 3-level obstruction and supplies a local model for the Barrier Schur Compression Lemma.",
+    "statement": "For w=12,16, restrict to vectors with two distinguished coordinates A,B and the other 22 coordinates equal to C. By homogeneity set C=1. The shell gap is nonnegative for all A,B>=0."
+  }
+}

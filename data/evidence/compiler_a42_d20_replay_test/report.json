@@ -1,0 +1,32 @@
+{
+  "certificate_sha256": "373049053bd4642cc015610436bddac169f27d6b85a3f2ffbb3e15ffe3770da6",
+  "checks": {
+    "missing_coordinate_blocks": {
+      "compile_status": "BLOCKED_WITH_RESIDUE",
+      "missing_residue_id": "res_002",
+      "verify_status": "BLOCKED_WITH_RESIDUE"
+    },
+    "positive_a42_d20_coordinate_replay": {
+      "compile_status": "PASS_WITH_RESIDUE",
+      "residue_flags": {
+        "a42_to_q12_boundary_zero": true,
+        "d20_a42_boundary_zero": true,
+        "d20_graph_valid": true,
+        "d20_q12_boundary_zero": true,
+        "discharged": true,
+        "q12_boundary_zero": true,
+        "q42_boundary_zero": true
+      },
+      "residue_sha256": "805496c7262d4c5a2f20be3230d08b4cdeb52ce1961e3a87e4c444838c8fe5ec",
+      "verify_status": "PASS_WITH_RESIDUE"
+    },
+    "tampered_coordinate_fails_replay": {
+      "error_count": 4,
+      "setup_status": "PASS_WITH_RESIDUE",
+      "tampered_verify_status": "FAIL"
+    }
+  },
+  "output_dir": "data/evidence/compiler_a42_d20_replay_test",
+  "schema": "holotopy.compiler_a42_d20_replay_test",
+  "status": "PASS"
+}

@@ -1,0 +1,36 @@
+{
+  "certificate_sha256": "8d5557e8e51b594eb9ff85c5ebf1f17d3cf76cf5e8e4c298882fb69de06bcffd",
+  "claim": "Prefix constrained optimization supports the barrier route for w=12. For w=16, SLSQP returns near-barrier rows with small positive E and slightly negative F, so this numerical audit is inconclusive rather than a proof.",
+  "claim_boundary": "Numerical constrained audit only. The w=16 near-barrier positive excess may be tolerance/constraint leakage; it is not a valid counterexample because F<0, but it prevents calling the audit closed.",
+  "created_utc": "2026-05-26T10:16:19.405019+00:00",
+  "schema": "golay_talagrand.barrier_majorization_prefix_constrained@1",
+  "status": "TALAGRAND_BARRIER_PREFIX_AUDIT_NUMERICALLY_INCONCLUSIVE_FOR_W16",
+  "summary": [
+    {
+      "F_at_max_valid_E": -2.948752353404417e-13,
+      "invalid_solver_or_below_barrier_rows": 0,
+      "k_at_max_valid_E": 19,
+      "max_near_E": 1.3097320312738248e-06,
+      "max_valid_E": 1.3097320312738248e-06,
+      "near_E_gt_1e_5": 0,
+      "near_barrier_rows_F_ge_minus_1e_7": 23,
+      "prefix_constraints_tested": 23,
+      "shell": 12,
+      "valid_E_gt_1e_5": 0,
+      "valid_barrier_rows_F_ge_minus_1e_10": 23
+    },
+    {
+      "F_at_max_valid_E": -1.4654943925052066e-13,
+      "invalid_solver_or_below_barrier_rows": 3,
+      "k_at_max_valid_E": 9,
+      "max_near_E": 5.124512077081533e-05,
+      "max_valid_E": 1.344173932160686e-06,
+      "near_E_gt_1e_5": 1,
+      "near_barrier_rows_F_ge_minus_1e_7": 21,
+      "prefix_constraints_tested": 23,
+      "shell": 16,
+      "valid_E_gt_1e_5": 0,
+      "valid_barrier_rows_F_ge_minus_1e_10": 20
+    }
+  ]
+}

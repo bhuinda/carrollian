@@ -1,0 +1,73 @@
+{
+  "artifacts": [
+    "hamming_gaussian_full_subgaussian_probe_report.md",
+    "hamming_gaussian_full_subgaussian_probe_certificate.json",
+    "structured_projection_constants.csv",
+    "random_search_projection_constants.csv",
+    "support_regime_ledger.csv",
+    "codeword_sign_direction_distribution.csv",
+    "hamming_gaussian_full_subgaussian_probe.py"
+  ],
+  "certificate_sha256": "73031f09f921ad84cfe24b6548f2a82037632753c3cb1060b59266f2cec26572",
+  "endpoint": "G24",
+  "exact_structured_findings": {
+    "best_structured_probe": {
+      "K": 1.2020187417182888,
+      "K2": 1.4448490554420184,
+      "lambda": 0.6846368715083798,
+      "log_mgf": 8.126888356023315,
+      "name": "equal_first_24",
+      "support": 24,
+      "type": "equal_subset"
+    },
+    "codeword_sign_direction_K_lower_bound": {
+      "K": 1.2020187417182888,
+      "K2": 1.4448490554420184,
+      "lambda": 0.6846368715083798,
+      "log_mgf": 8.126888356023315
+    },
+    "codeword_sign_direction_distribution": "<sign(d),Y> = 24 - 2 wt(c+d), hence distribution is the Golay weight enumerator",
+    "octad_even_parity_equal_direction_K_lower_bound": {
+      "K": 0.999991666854964,
+      "K2": 0.9999833337793693,
+      "lambda": 0.01,
+      "log_mgf": 0.00039999333351174775
+    }
+  },
+  "finite_facts": {
+    "code_size": 4096,
+    "dual_distance": 8,
+    "length": 24,
+    "proven_sparse_uniform_supports": "all |S| < 8",
+    "weight_enumerator": {
+      "0": 1,
+      "12": 2576,
+      "16": 759,
+      "24": 1,
+      "8": 759
+    }
+  },
+  "interpretation": {
+    "at_weight_8_and_above": "Golay constraints reappear as legitimate code-induced structure, not Hamming root defects",
+    "below_weight_8": "the Golay endpoint has exact independent Rademacher sparse projection law",
+    "new_candidate_worst_direction": "full sign direction of a Golay codeword, with K around 1.202019"
+  },
+  "not_claimed": [
+    "not a proof of the sharp global K-subgaussian constant for all coefficient vectors",
+    "not a proof of multivariate convex-order domination",
+    "random search is diagnostic, not exhaustive"
+  ],
+  "numerical_search": {
+    "best_random_probe": {
+      "K": 1.0109254066835094,
+      "K2": 1.0219701778782186,
+      "a_sha256": "ea160cf27fa71e8819d0af52aa9b8bb7366498388a3b9047479bfba88c25171a",
+      "lambda": 0.7448101265822785,
+      "sample": 21,
+      "support": 24
+    },
+    "random_directions_tested": 400
+  },
+  "scope": "structured and numerical probe of full Golay sign vector subgaussian/convex-order constants beyond sparse support <8",
+  "status": "HAMMING_GAUSSIAN_FULL_SUBGAUSSIAN_PROBE_COMPLETE"
+}

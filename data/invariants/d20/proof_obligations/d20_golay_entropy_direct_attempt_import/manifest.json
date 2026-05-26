@@ -1,24 +1,34 @@
 {
-  "artifact_sha256_excluding_hash_field": "993aa5ca0e08ac58d671573d01931ef10aa76e455c853fb750bedc2ff3426c14",
+  "artifact_sha256_excluding_hash_field": "e03d304ccdf2fd5c04834a77d4a0ccbee1e5e5c7f1eb46a905cf784e33b7f417",
   "certification_tests": [
-    "verify temp manifest file hashes",
-    "verify temp direct-attempt status and no-counterexample summary",
+    "verify handoff manifest file hashes",
+    "verify direct-attempt status and no-counterexample summary",
     "verify CSV traces record no exceeds_zero counterexample",
     "verify observed F maxima are within numerical roundoff of zero",
-    "verify W24 endpoint weight enumerator matches the temp direct-attempt enumerator",
+    "verify W24 endpoint weight enumerator matches the direct-attempt enumerator",
     "record that the entropy inequality and sector33-to-W24 map remain open"
   ],
   "inputs": {
     "artifact": {
-      "artifact_sha256_excluding_this_field": "993aa5ca0e08ac58d671573d01931ef10aa76e455c853fb750bedc2ff3426c14",
+      "artifact_sha256_excluding_this_field": "e03d304ccdf2fd5c04834a77d4a0ccbee1e5e5c7f1eb46a905cf784e33b7f417",
       "path": "generated/d20_golay_entropy_direct_attempt_import.json",
       "schema": "d20.proof_obligation.golay_entropy_direct_attempt_import.artifact@1",
-      "sha256": "f5adeaf0fd39e59b07fe7f5cc68dd40cd2d2ec9edbc34ad95939b758b9832dc9",
+      "sha256": "7ab6cbe449cd60d99bf1a5d04b2d21765867e549840f6f7fb13547a2518fc769",
       "status": "D20_GOLAY_ENTROPY_DIRECT_ATTEMPT_IMPORTED_NO_COUNTEREXAMPLE"
     },
     "derive_script": {
       "path": "src/derive_d20_golay_entropy_direct_attempt_import.py",
-      "sha256": "50de555667b543c3ad7e5e6d7c4274a461f54a7612d1e781ad9267f5276431e9"
+      "sha256": "48cd6b7f951a34a9a62b8dce0f5b5d85c83903fad55f3a4ea43843a026356286"
+    },
+    "direct_certificate": {
+      "path": "data/evidence/talagrand_python_handoff/work/golay_entropy_direct_attempt/golay_entropy_direct_attempt_certificate.json",
+      "recorded_certificate_sha256": "6a9b87b2a874244e124ae6ee6e7531bda4240c44881516aa5789b6b8f3830a65",
+      "sha256": "de1c2376dbf0e42a0b8aeffa961b5494db600c99ff83e0ef4549126d3adea88b",
+      "status": "DIRECT_VARIATIONAL_AND_SANDPILE_ATTEMPT_COMPLETE_NO_COUNTEREXAMPLE"
+    },
+    "direct_report": {
+      "path": "data/evidence/talagrand_python_handoff/work/golay_entropy_direct_attempt/golay_entropy_direct_attempt_report.md",
+      "sha256": "3403b4807d0d878f157f0dc7619e0f5f71446d60e39a11d9fe3972273519a568"
     },
     "golay_hamming_probe": {
       "certificate_sha256": "157cf8a3fe197c799f98086136834c59991c4effb8cc8a952dc2c49d0f20153f",
@@ -26,34 +36,20 @@
       "sha256": "20ad7d94966d3045e88eb8113ba95bda3e0b5394bfb41f16f11b2e6a95d5eb2d",
       "status": "D20_GOLAY_HAMMING_CORRESPONDENCE_PROBE_CERTIFIED"
     },
+    "handoff_manifest": {
+      "direct_attempt_file_count": 7,
+      "path": "data/evidence/talagrand_python_handoff/manifest.json",
+      "sha256": "6e28f7faecc651539ad03630f964f83e670a7648559cdcc7c6814f02a3f6616a"
+    },
     "mixed_duad_prune": {
       "certificate_sha256": "05ef410f5825ab21fb6fe157393ceabb35c6fc365ae7b2c3547d63678b3bfac6",
       "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_mixed_duad_quotient_orthogonality_prune/report.json",
       "sha256": "3992b62860d81f3f3da47b7589ed1cc80b780a6a2d971acb2e854e462d9515ed",
       "status": "D20_SECTOR33_W24_MIXED_DUAD_QUOTIENT_ORTHOGONALITY_PRUNE_CERTIFIED"
     },
-    "temp_certificate": {
-      "path": "temp/golay_entropy_direct_attempt/golay_entropy_direct_attempt_certificate.json",
-      "recorded_certificate_sha256": "6a9b87b2a874244e124ae6ee6e7531bda4240c44881516aa5789b6b8f3830a65",
-      "sha256": "de1c2376dbf0e42a0b8aeffa961b5494db600c99ff83e0ef4549126d3adea88b",
-      "status": "DIRECT_VARIATIONAL_AND_SANDPILE_ATTEMPT_COMPLETE_NO_COUNTEREXAMPLE"
-    },
-    "temp_manifest": {
-      "path": "temp/golay_entropy_direct_attempt/manifest.json",
-      "sha256": "22d5d31366b13f597d60cb9f0b273f970b9616f706ce3d0969bebfca21d5509f",
-      "status": "DIRECT_VARIATIONAL_AND_SANDPILE_ATTEMPT_COMPLETE_NO_COUNTEREXAMPLE"
-    },
-    "temp_report": {
-      "path": "temp/golay_entropy_direct_attempt/golay_entropy_direct_attempt_report.md",
-      "sha256": "3403b4807d0d878f157f0dc7619e0f5f71446d60e39a11d9fe3972273519a568"
-    },
-    "temp_reproduce_script": {
-      "path": "temp/golay_entropy_direct_attempt/reproduce_direct_attempt.py",
-      "sha256": "079d98d62407d34f18b382f6db170d04bd6cf51c1d89f98e201774121e0e93c7"
-    },
     "validator": {
       "path": "src/certify_d20_golay_entropy_direct_attempt_import.py",
-      "sha256": "32115168e51171de642b219c948ed4118c991237bfe7874bafecafa2a0637fc7"
+      "sha256": "d71cfe149b6537700bd80e4d69cb7d8addf6024dd18bef723eaec881b619e4f3"
     },
     "w24_row_alphabetization": {
       "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
@@ -62,13 +58,13 @@
       "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
     }
   },
-  "manifest_sha256": "e155adb654af560b3a723d711ee42e0f0dd8d9b312164346282cac09d2fb984c",
+  "manifest_sha256": "0cb91244f373e95a5c5053c503368dbe95578da4c7a1570d7edecc30469ac136",
   "name": "d20_golay_entropy_direct_attempt_import",
   "outputs": {
     "artifact": "generated/d20_golay_entropy_direct_attempt_import.json",
     "manifest": "data/invariants/d20/proof_obligations/d20_golay_entropy_direct_attempt_import/manifest.json",
     "report": "data/invariants/d20/proof_obligations/d20_golay_entropy_direct_attempt_import/report.json"
   },
-  "report_sha256": "642310dcff1e7b40016b10b696e5ddf013d48a9581a44c1753b5212b1058a14a",
+  "report_sha256": "1f268d847024f56024b4b6b970f0dd7ff731ab0355ab24b73e9d6932fba26d20",
   "schema": "d20.proof_obligation.golay_entropy_direct_attempt_import_manifest@1"
 }

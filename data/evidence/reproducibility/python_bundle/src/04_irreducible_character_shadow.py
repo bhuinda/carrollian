@@ -1,3 +1,4 @@
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 from pathlib import Path
 import argparse, json
 from common import *

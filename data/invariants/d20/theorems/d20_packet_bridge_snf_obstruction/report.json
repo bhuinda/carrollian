@@ -1,6 +1,6 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "5bb42fae02ca96504cf84e1a5e84a5cfea95ffc2eafa44e4f7de12886cd5bace",
+  "certificate_sha256": "f5f783f62faa3761a46d9d6d2cea7e8319ba8cf4c1319de0c5fd8b3b6dc866c6",
   "checks": {
     "bridge_tasks_match_missing_inventory": true,
     "cokernel_order_matches_block_determinant": true,
@@ -11,14 +11,16 @@
     "global_smith_form_is_diagonal": true,
     "local_smith_diagonal_is_2_6": true,
     "operator_has_full_rank": true,
+    "original_basis_image_test_matches_block_lattice": true,
     "packet_graph_is_certified": true,
     "packet_operator_matches_graph_adjacency": true,
     "ten_uniform_blocks_present": true,
-    "torsion_primes_are_2_and_3": true
+    "torsion_primes_are_2_and_3": true,
+    "weaker_two_congruence_test_has_odd_false_positives": true
   },
-  "claim": "The certified 20-packet operator has exact Smith factors 2^10 and 6^10. Equivalently, each packet doublet has cokernel Z/2 x Z/6, with image test u-v = 0 mod 2 and u+v = 0 mod 6. This supplies the integer obstruction template for the missing A985, tube, and q42/q12 packet bridges, but does not construct those raw bridges.",
+  "claim": "The certified 20-packet operator has exact Smith factors 2^10 and 6^10. In the original packet basis, each doublet target (u,v) is an integral image exactly when u and v are both even and u+v is divisible by 6. This supplies the integer obstruction template for the missing A985, tube, and q42/q12 packet bridges, but does not construct those raw bridges.",
   "definition": {
-    "integer_bridge_obstruction": "the Smith cokernel of the packet operator; any future raw-label bridge target must satisfy the block congruence tests before it can be an integral packet image",
+    "integer_bridge_obstruction": "the Smith cokernel of the packet operator; any future raw-label bridge target must satisfy the original-basis block lattice tests before it can be an integral packet image",
     "packet_operator": "the certified full-exposure two-step packet action"
   },
   "derived": {
@@ -29,7 +31,7 @@
         2,
         6
       ],
-      "local_image_test": "u-v = 0 mod 2 and u+v = 0 mod 6 on each packet doublet",
+      "local_image_test": "u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6 on each packet doublet",
       "matrix_shape": [
         20,
         20
@@ -69,6 +71,159 @@
         3
       ]
     },
+    "original_basis_image_test": {
+      "block_image_residues_mod12": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          8
+        ]
+      ],
+      "exact_congruence_residues_mod12": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          8
+        ]
+      ],
+      "modulus": 12,
+      "weak_two_congruence_false_positive_residues_mod12": [
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          7
+        ]
+      ]
+    },
     "packet_image_congruence_rows": [
       {
         "block_matrix": [
@@ -83,7 +238,8 @@
         ],
         "component_id": 0,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -109,7 +265,8 @@
         ],
         "component_id": 1,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -135,7 +292,8 @@
         ],
         "component_id": 2,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -161,7 +319,8 @@
         ],
         "component_id": 3,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -187,7 +346,8 @@
         ],
         "component_id": 4,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -213,7 +373,8 @@
         ],
         "component_id": 5,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -239,7 +400,8 @@
         ],
         "component_id": 6,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -265,7 +427,8 @@
         ],
         "component_id": 7,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -291,7 +454,8 @@
         ],
         "component_id": 8,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -317,7 +481,8 @@
         ],
         "component_id": 9,
         "image_test_for_target_pair_u_v": [
-          "u_minus_v_is_0_mod_2",
+          "u_is_0_mod_2",
+          "v_is_0_mod_2",
           "u_plus_v_is_0_mod_6"
         ],
         "local_cokernel": "Z/2 x Z/6",
@@ -331,7 +496,7 @@
         ]
       }
     ],
-    "packet_image_congruence_rows_sha256": "df0d7578f4648941f385fd0b7ec5e2f5d6a3d81fec72ec4510769d34927e4bff",
+    "packet_image_congruence_rows_sha256": "3d9e4a0f1af177d3b245351b5fd8032f3a2fd6da3abf00d65186e65177346af1",
     "packet_operator_matrix": [
       [
         2,
@@ -792,7 +957,7 @@
         "snf_status": "packet_obstruction_template_ready_no_raw_columns",
         "source_domain": "relation_id[0..984]",
         "target_domain": "20 full-exposure packet ids and 40 packet modes",
-        "test_once_columns_exist": "for each packet doublet target (u,v), require u-v = 0 mod 2 and u+v = 0 mod 6"
+        "test_once_columns_exist": "for each packet doublet target (u,v), require u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6"
       },
       {
         "available_source_keys": [
@@ -818,7 +983,7 @@
         "snf_status": "packet_obstruction_template_ready_no_raw_columns",
         "source_domain": "six signed object identity relations inside the closed-loop tube",
         "target_domain": "20 full-exposure packet ids and 40 packet modes",
-        "test_once_columns_exist": "for each packet doublet target (u,v), require u-v = 0 mod 2 and u+v = 0 mod 6"
+        "test_once_columns_exist": "for each packet doublet target (u,v), require u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6"
       },
       {
         "available_source_keys": [
@@ -834,10 +999,10 @@
         "snf_status": "packet_obstruction_template_ready_no_raw_columns",
         "source_domain": "q42/q12 quotient classes of A985 relations",
         "target_domain": "20 full-exposure packet ids and 40 packet modes",
-        "test_once_columns_exist": "for each packet doublet target (u,v), require u-v = 0 mod 2 and u+v = 0 mod 6"
+        "test_once_columns_exist": "for each packet doublet target (u,v), require u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6"
       }
     ],
-    "raw_bridge_snf_tasks_sha256": "f815dee6aaabeb55bb70e9bbc598c7622d107fb13d7b34650e8d8f28656e1fcd",
+    "raw_bridge_snf_tasks_sha256": "25728e97440985e05e5a39fce7fd8fd736f09d3bc4bff08e38be3214e3d9357e",
     "smith_normal_form": {
       "diagonal": [
         2,
@@ -911,7 +1076,7 @@
     "finite_boundary_reading": "The packet action is an integral finite quotient with only 2- and 3-primary torsion in its cokernel.",
     "not_claimed": "This is not a raw A985 action, not a tube action, and not a theorem about rational prime distribution."
   },
-  "next_highest_yield_item": "Populate one raw bridge column set, then reduce its packet targets against the block tests u-v = 0 mod 2 and u+v = 0 mod 6.",
+  "next_highest_yield_item": "Populate one raw bridge column set, then reduce its packet targets against the block tests u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6.",
   "object": "D20",
   "schema": "d20.theorem.d20_packet_bridge_snf_obstruction",
   "status": "D20_PACKET_BRIDGE_SNF_OBSTRUCTION_CERTIFIED"

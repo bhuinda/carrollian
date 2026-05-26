@@ -1,0 +1,59 @@
+{
+  "all_runs_converged_to_equal": false,
+  "best_ratio_seen": 1.000000000000004,
+  "equal_jacobian_spectrum": [
+    {
+      "contraction_at_equal": true,
+      "jacobian_max_eigen_tangent": 0.2608695652173915,
+      "jacobian_min_eigen_tangent": 0.26086956521739085,
+      "jacobian_spectral_radius_tangent": 0.2608695652173915,
+      "shell_weight": 12,
+      "zero_eigen_abs": 1.249000902703301e-16
+    },
+    {
+      "contraction_at_equal": true,
+      "jacobian_max_eigen_tangent": 0.17391304347826111,
+      "jacobian_min_eigen_tangent": 0.17391304347826073,
+      "jacobian_spectral_radius_tangent": 0.17391304347826111,
+      "shell_weight": 16,
+      "zero_eigen_abs": 2.498001805406602e-16
+    }
+  ],
+  "finite_source": "G24 generated from H8^3 by Type II neighbor chain 42->18->6->0.",
+  "fixed_point_map": "x_i <- sqrt((24/w) P_x(i in B)), with multiplicative damping in log coordinates.",
+  "kkt_condition": "For a positive maximizer under mean-square normalization, product-biased shell inclusion probabilities must satisfy P(i in B) = (w/24) x_i^2.",
+  "main_boundary": "This is not a global proof. It reduces the residue to proving global uniqueness of the positive KKT fixed point, or providing a Veronese-constrained Krawtchouk/SOS certificate.",
+  "main_positive_result": "All tested log-positive starts converged to the all-equal KKT fixed point for w=12 and w=16; equal point is locally contracting for the KKT map.",
+  "scope": "Damped KKT fixed-point basin audit for the remaining Golay shell domination lemma in shells w=12 and w=16.",
+  "sha256": "685422d0b3d6e6a8a3326f8d1bb95d8d1a8152cb707206a8709c8c76e0b155ca",
+  "status": "HAMMING_GAUSSIAN_KKT_BASIN_AUDIT_COMPLETE",
+  "summary": [
+    {
+      "all_converged_to_equal": false,
+      "best_label": "prefix23_amp3.0",
+      "best_ratio": 1.0000000000000027,
+      "max_cv_x": 1.0000000000000002,
+      "max_iterations": 65,
+      "max_kkt_residual": 1.0781971193384296e-11,
+      "shell_weight": 12,
+      "starts": 296
+    },
+    {
+      "all_converged_to_equal": false,
+      "best_label": "prefix1_amp0.25",
+      "best_ratio": 1.000000000000004,
+      "max_cv_x": 0.7071067811865476,
+      "max_iterations": 60,
+      "max_kkt_residual": 1.311580210056926e-11,
+      "shell_weight": 16,
+      "starts": 296
+    }
+  ],
+  "weight_enumerator": {
+    "0": 1,
+    "12": 2576,
+    "16": 759,
+    "24": 1,
+    "8": 759
+  }
+}

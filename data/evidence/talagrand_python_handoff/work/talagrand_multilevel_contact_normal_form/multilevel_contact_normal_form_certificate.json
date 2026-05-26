@@ -1,0 +1,55 @@
+{
+  "certificate_sha256": "8ccf663fc8f3a955d1533bc3a47124e1a343ed33bd03a3665007d22f62bb469e",
+  "claim": "Generalizes the pair-stabilized contact proof to arbitrary multilevel coordinates by deriving the exact four-coefficient normal form and contact identity.",
+  "claim_boundary": "This is a true multilevel reduction, not the final proof. The remaining lemma is the weighted asymmetry bound on the contact surface.",
+  "created_utc": "2026-05-26T21:56:21.218992+00:00",
+  "schema": "golay_talagrand.multilevel_contact_normal_form@1",
+  "status": "MULTILEVEL_CONTACT_NORMAL_FORM_CERTIFIED",
+  "summary": [
+    {
+      "h": 6,
+      "identity_failures": 0,
+      "samples": 64,
+      "shell": 12,
+      "shell_blocks": 2576,
+      "unweighted_C00": 616,
+      "unweighted_C01": 672,
+      "unweighted_C10": 672,
+      "unweighted_C11": 616,
+      "unweighted_pair_asymmetry_C10_minus_C01": 0
+    },
+    {
+      "h": 8,
+      "identity_failures": 0,
+      "samples": 64,
+      "shell": 16,
+      "shell_blocks": 759,
+      "unweighted_C00": 77,
+      "unweighted_C01": 176,
+      "unweighted_C10": 176,
+      "unweighted_C11": 330,
+      "unweighted_pair_asymmetry_C10_minus_C01": 0
+    }
+  ],
+  "theorem": {
+    "contact_target": "On B=0 and a>=b, prove D(B)<=0, equivalently Q>=0.",
+    "definitions": {
+      "C00": "sum of rest monomials over shell blocks containing neither 0 nor 1",
+      "C01": "sum of rest monomials over shell blocks containing 1 but not 0",
+      "C10": "sum of rest monomials over shell blocks containing 0 but not 1",
+      "C11": "sum of rest monomials over shell blocks containing both 0 and 1"
+    },
+    "formulas": {
+      "A": "ab C11 + a C10 + b C01 + C00",
+      "B": "24^h A - m S^h",
+      "D(B)": "24^h(a C10-b C01)-m w S^(h-1)(a^2-b^2)",
+      "Q": "wA(a^2-b^2)-S(a C10-b C01)",
+      "S": "a^2+b^2+R, where R=sum_{i=2}^{23}x_i^2",
+      "contact_identity": "24^h Q = w(a^2-b^2)B - S D(B)"
+    },
+    "important_consequence": "The general multilevel problem is not pair-stabilized; pair-stabilized is the symmetric rest case. The real multilevel obstruction is the weighted asymmetry C10-C01.",
+    "name": "Multilevel Contact Normal Form",
+    "remaining_exact_lemma": "Weighted Asymmetry Lemma: on the contact surface B=0, 24^h(a C10-b C01) <= m w S^(h-1)(a^2-b^2).",
+    "statement": "For arbitrary positive multilevel rest coordinates x_2,...,x_23, the pairwise barrier problem is exactly a four-coefficient problem C11,C10,C01,C00."
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "artifacts": {
+    "job_plan": {
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_jobs.json",
+      "sha256": "4847a515c83fb925f1e1a71975671fd58b428ebcf0f549ad2f04324d99135d9d",
+      "size": 69774
+    },
+    "queue": {
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_queue.json",
+      "sha256": "165efba27d05c2f171f003f4158e1057ef6979d7cd3b5fddaab5884c44eda2ed",
+      "size": 67989
+    },
+    "queue_audit": {
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_queue_audit.json",
+      "sha256": "3cc489c0a0443828eaecba3c034479e0aacced217d9a7e7049808135f6315ec8",
+      "size": 2535
+    },
+    "source_audit": {
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_source_audit.json",
+      "sha256": "23afc8f1fb58c130e94266ac1d860e6a4626a4f1aeebde1225ed225df7e5f762",
+      "size": 67018
+    },
+    "stable_cache_directory": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_cache",
+    "staging_source_directory": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_staging_cache"
+  },
+  "checks": {
+    "job_count_is_48": true,
+    "non_running_commands_are_guarded": true,
+    "queue_next_job_matches_source_state": true,
+    "single_job_run_requires_explicit_flag": true,
+    "single_job_run_writes_stable_cache": true,
+    "source_counts_cover_jobs": true,
+    "staging_promotion_path_declared": true,
+    "strict_cache_requires_48_verified": true
+  },
+  "commands": {
+    "audit_sources": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --audit-saturation-sources",
+    "inspect_job": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --show-saturation-job <job_id|label|input_sha256>",
+    "plan_job": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job <job_id|label|input_sha256>",
+    "promote_staging": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --promote-saturation-cache",
+    "run_one_job": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job <job_id> --run-saturation-job",
+    "strict_cache": "python src/verify.py jacobian-cubic-cache --pretty",
+    "verify_job": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --verify-saturation-job <job_id|label|input_sha256>"
+  },
+  "contract_sha256": "4f114aa73a9d625a9956a3de6beef0e9ad9846f6fadbb427691859255208dade",
+  "current_state": {
+    "next_job": {
+      "cache_source": null,
+      "input_sha256": "25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a",
+      "job_id": "saturation_001",
+      "label": "mixed:q3_equals_lambda_p3:p0_nonzero:h2_det_x2",
+      "next_action": "produce_certificate",
+      "plan_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job saturation_001",
+      "queue_position": 1,
+      "run_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job saturation_001 --run-saturation-job",
+      "settings": {
+        "basis_limit": 240,
+        "order": "grevlex",
+        "pair_limit": 9000,
+        "reduction_step_limit": 120000
+      },
+      "stable_cache_file": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_cache/25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a.json",
+      "stable_present": false,
+      "staging_cache_file": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_staging_cache/25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a.json",
+      "staging_present": false,
+      "status": "missing",
+      "verification_status": "SKIPPED",
+      "verify_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --verify-saturation-job saturation_001"
+    },
+    "queue_status": "PENDING_CERTIFICATES",
+    "source_counts": {
+      "invalid_present": 0,
+      "missing_both": 48,
+      "produce_needed": 48,
+      "promotion_ready": 0,
+      "stable_present": 0,
+      "stable_verified": 0,
+      "staging_present": 0,
+      "staging_verified": 0
+    }
+  },
+  "protocol_sha256": "7496a7063dc52272fa482c6b3131361cd165f3e6abba6009500ecfb6037acbed",
+  "runs_expensive_computation": false,
+  "schema": "holotopy.saturation_certificate_intake_protocol",
+  "status": "PASS",
+  "transitions": [
+    {
+      "command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job <job_id|label|input_sha256>",
+      "evidence": [
+        "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_jobs.json",
+        "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_queue.json"
+      ],
+      "from": "contract_declared",
+      "name": "declared_to_planned",
+      "runs_expensive_computation": false,
+      "to": "job_planned"
+    },
+    {
+      "command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job <job_id> --run-saturation-job",
+      "from": "job_planned",
+      "name": "planned_to_stable_candidate",
+      "requires_explicit_flag": "--run-saturation-job",
+      "runs_expensive_computation": true,
+      "to": "stable_cache_candidate",
+      "writes": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_cache"
+    },
+    {
+      "command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --audit-saturation-sources",
+      "condition": "staging certificate passes the per-job cache checks",
+      "evidence": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_source_audit.json",
+      "from": "staging_cache_candidate",
+      "name": "staging_candidate_to_verified_source",
+      "runs_expensive_computation": false,
+      "to": "verified_staging_source"
+    },
+    {
+      "command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --promote-saturation-cache",
+      "from": "verified_staging_source",
+      "from_directory": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_staging_cache",
+      "name": "verified_staging_source_to_stable_candidate",
+      "runs_expensive_computation": false,
+      "to": "stable_cache_candidate",
+      "to_directory": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_cache"
+    },
+    {
+      "checks": [
+        "cache schema",
+        "input hash",
+        "result label",
+        "result input hash",
+        "contradiction flag",
+        "zero remainder hash"
+      ],
+      "command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --verify-saturation-job <job_id|label|input_sha256>",
+      "from": "stable_cache_candidate",
+      "name": "stable_candidate_to_verified_job",
+      "runs_expensive_computation": false,
+      "to": "verified_job"
+    },
+    {
+      "command": "python src/verify.py jacobian-cubic-cache --pretty",
+      "from": "verified_job_count_48",
+      "name": "verified_jobs_to_strict_cache",
+      "requires": {
+        "verified_certificate_count": 48
+      },
+      "runs_expensive_computation": false,
+      "to": "strict_cache_verified"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "certificate_sha256": "553a1520c02bff5118eaf7a8bb5728772678945f6ff18b8245202ad5bc2d0df0",
+  "checks": {
+    "finite_search_found_no_quadratic_counterexample": true,
+    "formal_quadratic_identity_check_passed": true,
+    "full_jacobian_conjecture_solved": false
+  },
+  "finite_field_search": {
+    "family": "same normalized homogeneous quadratic family over F_p",
+    "fields": [
+      {
+        "coefficient_tuples_checked": 729,
+        "field": "F_3",
+        "first_non_permutation": null,
+        "jacobian_one_candidates": 9,
+        "non_permutation_candidates": 0
+      },
+      {
+        "coefficient_tuples_checked": 15625,
+        "field": "F_5",
+        "first_non_permutation": null,
+        "jacobian_one_candidates": 25,
+        "non_permutation_candidates": 0
+      },
+      {
+        "coefficient_tuples_checked": 117649,
+        "field": "F_7",
+        "first_non_permutation": null,
+        "jacobian_one_candidates": 49,
+        "non_permutation_candidates": 0
+      }
+    ],
+    "interpretation": "This finite search is not a proof of the characteristic-zero open problem; it checks that the same bounded family has no counterexample over small odd prime fields."
+  },
+  "formal_identity_check": {
+    "all_checks_pass": true,
+    "case_checks": {
+      "a=0_nonzero_H1": {
+        "F_after_I_minus_H_x_is_x": true,
+        "F_after_I_minus_H_y_is_y": true,
+        "I_minus_H_after_F_x_is_x": true,
+        "I_minus_H_after_F_y_is_y": true,
+        "det_jacobian_is_one": true
+      },
+      "a=b=c=0": {
+        "F_after_I_minus_H_x_is_x": true,
+        "F_after_I_minus_H_y_is_y": true,
+        "I_minus_H_after_F_x_is_x": true,
+        "I_minus_H_after_F_y_is_y": true,
+        "det_jacobian_is_one": true
+      },
+      "a_nonzero_rank_one": {
+        "F_after_I_minus_H_x_is_x": true,
+        "F_after_I_minus_H_y_is_y": true,
+        "I_minus_H_after_F_x_is_x": true,
+        "I_minus_H_after_F_y_is_y": true,
+        "det_jacobian_is_one": true
+      }
+    },
+    "checks": {
+      "case_a_triangular_x_identity": true,
+      "case_b_triangular_y_identity": true,
+      "case_c_rank_one_laurent_identity": true,
+      "determinant_constraints_match": true
+    },
+    "determinant_coefficients": {
+      "x^0 y^1": [
+        {
+          "coeff": [
+            2,
+            1
+          ],
+          "exp": {
+            "f": 1
+          }
+        },
+        {
+          "coeff": [
+            1,
+            1
+          ],
+          "exp": {
+            "b": 1
+          }
+        }
+      ],
+      "x^0 y^2": [
+        {
+          "coeff": [
+            -2,
+            1
+          ],
+          "exp": {
+            "c": 1,
+            "e": 1
+          }
+        },
+        {
+          "coeff": [
+            2,
+            1
+          ],
+          "exp": {
+            "b": 1,
+            "f": 1
+          }
+        }
+      ],
+      "x^1 y^0": [
+        {
+          "coeff": [
+            1,
+            1
+          ],
+          "exp": {
+            "e": 1
+          }
+        },
+        {
+          "coeff": [
+            2,
+            1
+          ],
+          "exp": {
+            "a": 1
+          }
+        }
+      ],
+      "x^1 y^1": [
+        {
+          "coeff": [
+            -4,
+            1
+          ],
+          "exp": {
+            "c": 1,
+            "d": 1
+          }
+        },
+        {
+          "coeff": [
+            4,
+            1
+          ],
+          "exp": {
+            "a": 1,
+            "f": 1
+          }
+        }
+      ],
+      "x^2 y^0": [
+        {
+          "coeff": [
+            -2,
+            1
+          ],
+          "exp": {
+            "b": 1,
+            "d": 1
+          }
+        },
+        {
+          "coeff": [
+            2,
+            1
+          ],
+          "exp": {
+            "a": 1,
+            "e": 1
+          }
+        }
+      ]
+    },
+    "determinant_coefficients_sha256": "b533239db7907ea2afa8009f1b72285069e50785742edfada6b863196564d568",
+    "engine": "exact_laurent_polynomial_Q[x,y,a,b,c,d,e,f]"
+  },
+  "problem": "Jacobian conjecture for polynomial maps",
+  "residue": [
+    {
+      "description": "The full Jacobian conjecture remains outside this bounded quadratic subcase.",
+      "discharged": false,
+      "kind": "open_problem_not_solved"
+    },
+    {
+      "description": "The formal identity checker covers the normalized homogeneous quadratic subcase, not higher-degree or non-normalized maps.",
+      "discharged": false,
+      "kind": "bounded_case_split_only"
+    },
+    {
+      "description": "The finite search excludes F_2 because characteristic 2 collapses derivative constraints outside the characteristic-zero target.",
+      "discharged": true,
+      "kind": "characteristic_two_excluded"
+    }
+  ],
+  "schema": "holotopy.polynomial_attempt.jacobian_quadratic",
+  "status": "BOUNDED_PROGRESS",
+  "symbolic_result": {
+    "case_split": [
+      {
+        "case": "a=b=c=0",
+        "normal_form": "H=(0,d*x^2)",
+        "reason": "H composed with H is zero."
+      },
+      {
+        "case": "a=0 and H1 is not zero",
+        "normal_form": "H=(c*y^2,0)",
+        "reason": "b=0 and c*d=0, so the nonzero direction is triangular."
+      },
+      {
+        "case": "a != 0",
+        "normal_form": "H=v*L^2, L=2*a*x+b*y, v=(1/(4a),-1/(2b))",
+        "reason": "The constraints force b != 0, c=b^2/(4a), d=-2a^2/b, and L(v)=0."
+      }
+    ],
+    "claim": "In characteristic zero, every normalized homogeneous quadratic plane map with det JF=1 is invertible.",
+    "inverse_certificate": "In every case H=v*L^2 with L(v)=0, including triangular degenerations. Thus H(z+/-H(z))=H(z), so F^{-1}=I-H.",
+    "setup": {
+      "H1": "a*x^2 + b*x*y + c*y^2",
+      "H2": "d*x^2 + e*x*y + f*y^2",
+      "linear_jacobian_constraints": [
+        "e=-2a",
+        "f=-b/2"
+      ],
+      "quadratic_jacobian_constraints": [
+        "2*a^2 + b*d = 0",
+        "a*b + 2*c*d = 0",
+        "b^2 - 4*a*c = 0"
+      ]
+    }
+  },
+  "target": "Normalized quadratic plane maps F=(x+H1,y+H2), where H1,H2 are homogeneous quadratics and det JF is identically 1."
+}

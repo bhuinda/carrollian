@@ -1,0 +1,26 @@
+{
+  "boundary": "This package formalizes the correct theorem target and input constraints. It does not compute the missing R_hc matrix.",
+  "correct_statement": "pi_Foam33 \u2218 R_hc = R_Foam \u2218 pi_Foam33",
+  "interpretation": "Foam33 is actor-compatible for height/action-return transport, not a raw algebra quotient.",
+  "known_constraints": [
+    "R_hc must not reduce to bare boundary-to-loop lambda_boundary.",
+    "R_hc must see the unique simultaneous mod2/mod3 invisible primitive at basis index 6.",
+    "R_hc must convert signed-balanced bridge support into the global-anchor correction without violating e33 idempotency.",
+    "R_hc must preserve the Foam core quotient."
+  ],
+  "minimal_operator_shape": {
+    "R_Foam": "induced operator on 1_glob \u2295 2 Foam16",
+    "R_hc": "height-coherent action-return operator on Supp(e33)",
+    "bridge_kernel": "23-dimensional correction shell",
+    "pi_Foam33": "56-to-33 support/basis projection"
+  },
+  "name": "Height-Coherent Action-Return Intertwining Theorem",
+  "pass_condition": [
+    "For every tested action-return generator g, pi_Foam33(R_hc(g,v)) = R_Foam(g,pi_Foam33(v)).",
+    "Core coordinates remain closed.",
+    "Bridge kernel maps only to the global-anchor correction or zero.",
+    "Cycle8/gamma8 produces the expected height-coherent nonzero class, while bare boundary-to-loop remains annihilated."
+  ],
+  "wrong_statement": "pi_Foam33(xy)=pi_Foam33(x)pi_Foam33(y) on raw 56-support multiplication",
+  "wrong_statement_status": "false by multiplication compatibility v11"
+}

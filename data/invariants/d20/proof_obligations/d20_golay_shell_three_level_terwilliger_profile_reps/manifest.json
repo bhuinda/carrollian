@@ -1,0 +1,61 @@
+{
+  "artifact_sha256_excluding_hash_field": "8b9a4637366a6813f41cac7f698949088055cce7d71a1eca2d7c79b4ecc0cdb3",
+  "certification_tests": [
+    "verify W24 endpoint and exhaustive two-level input hashes and statuses",
+    "recover 49 first-color representatives from the exact two-level dodecad profile table",
+    "verify recovered first-color profile counts cover all 2^24 subsets",
+    "for each first-color representative and each target shell, exhaust every second-color subset of the complement by zeta transforms",
+    "emit exact shell-profile representatives and explicit masks",
+    "record that M24 single-orbit separation and SOS positivity remain open",
+    "verify per-profile bivariate SOS certificate search over the emitted profiles"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "8b9a4637366a6813f41cac7f698949088055cce7d71a1eca2d7c79b4ecc0cdb3",
+      "path": "generated/d20_golay_shell_three_level_terwilliger_profile_reps.json",
+      "schema": "d20.proof_obligation.golay_shell_three_level_terwilliger_profile_reps.artifact@1",
+      "sha256": "916cce6c17628a49bb5c9373b4fec141ee2857d147693aff3771214dd1540b89",
+      "status": "D20_GOLAY_SHELL_THREE_LEVEL_TERWILLIGER_PROFILE_REPS_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_golay_shell_three_level_terwilliger_profile_reps.py",
+      "sha256": "bde374af7338235b86691ddc5d0036311d25a4e01cbe0d7a744d32d65070f0fe"
+    },
+    "exhaustive_two_level_profiles_csv": {
+      "path": "data/invariants/d20/proof_obligations/d20_golay_shell_exhaustive_two_level_sos/exhaustive_two_level_profiles.csv",
+      "sha256": "a4c5b3e2d51b6aebab27276aa9df5b95504e93608b9d7fbee4984288d5428316"
+    },
+    "exhaustive_two_level_sos": {
+      "certificate_sha256": "5d3b36d10878097a70b9fb777420bd34bcac18841c14575dbfc522d0afcffbfe",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_shell_exhaustive_two_level_sos/report.json",
+      "sha256": "42a51ae5cdfc780a5a366381ec075306de98a843d5adf549cee75e42e615ebd8",
+      "status": "D20_GOLAY_SHELL_EXHAUSTIVE_TWO_LEVEL_SOS_CERTIFIED"
+    },
+    "three_level_bivariate_sos_verification": {
+      "path": "data/invariants/d20/proof_obligations/d20_golay_shell_three_level_terwilliger_profile_reps/three_level_bivariate_sos_verification.json",
+      "schema": "d20.proof_obligation.golay_shell_three_level_terwilliger_profile_reps.profile_sos_check@1",
+      "sha256": "2bde6a1c472e100fe204a04f8bf09da99bb113d440d70b3e5f2ea0a9ec52cbbe",
+      "status": "PASS"
+    },
+    "validator": {
+      "path": "src/certify_d20_golay_shell_three_level_terwilliger_profile_reps.py",
+      "sha256": "e653d0affe7f22396249819ef350ba20c0c9734d6829321d9c6bc639518aed22"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "manifest_sha256": "bb3562549233b9bee40389493a4d42ffbd8fc135f443a7adc0ae4db789701f9e",
+  "name": "d20_golay_shell_three_level_terwilliger_profile_reps",
+  "outputs": {
+    "artifact": "generated/d20_golay_shell_three_level_terwilliger_profile_reps.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_golay_shell_three_level_terwilliger_profile_reps/manifest.json",
+    "profile_csv": "data/invariants/d20/proof_obligations/d20_golay_shell_three_level_terwilliger_profile_reps/three_level_terwilliger_profiles.csv",
+    "report": "data/invariants/d20/proof_obligations/d20_golay_shell_three_level_terwilliger_profile_reps/report.json"
+  },
+  "report_sha256": "be4a75a4a52b70e08c980119e8d79f8a725521eaa47b8181b43ca41105903f4d",
+  "schema": "d20.proof_obligation.golay_shell_three_level_terwilliger_profile_reps_manifest@1"
+}

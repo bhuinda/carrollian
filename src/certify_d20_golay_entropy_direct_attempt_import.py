@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import json
 from typing import Any
@@ -33,10 +34,10 @@ MANIFEST_REL = (OUT_DIR / "manifest.json").relative_to(ROOT).as_posix()
 INDEX_REL = INDEX_PATH.relative_to(ROOT).as_posix()
 
 EXPECTED_CHECKS = {
-    "temp_manifest_status_matches_certificate",
-    "temp_manifest_file_hashes_all_match",
-    "temp_report_records_no_counterexample_status",
-    "temp_reproduction_script_is_placeholder_not_full_replay",
+    "handoff_manifest_declares_direct_attempt_files",
+    "handoff_manifest_file_hashes_all_match",
+    "direct_certificate_status_matches_expected",
+    "handoff_report_records_no_counterexample_status",
     "certificate_summary_has_shells_12_and_16",
     "summary_csv_matches_certificate_summary",
     "no_counterexample_recorded_for_each_shell",
@@ -47,7 +48,7 @@ EXPECTED_CHECKS = {
     "dodecad_and_weight16_shell_sizes_match",
     "golay_hamming_probe_records_morphism_open",
     "sector33_w24_local_matching_still_open",
-    "temp_internal_certificate_hash_not_used_as_repo_self_hash",
+    "handoff_internal_certificate_hash_not_used_as_repo_self_hash",
     "final_entropy_inequality_not_certified",
 }
 
@@ -112,11 +113,11 @@ def validate_d20_golay_entropy_direct_attempt_import() -> dict[str, Any]:
     if summary[0].get("blocks") != 2576 or summary[1].get("blocks") != 759:
         raise AssertionError("Golay entropy shell block counts mismatch")
 
-    integrity = artifact.get("temp_integrity", {})
+    integrity = artifact.get("handoff_integrity", {})
     if not all(row.get("matches") is True for row in integrity.get("manifest_file_hashes", {}).values()):
-        raise AssertionError("Golay entropy temp manifest hash mismatch")
+        raise AssertionError("Golay entropy handoff manifest hash mismatch")
     if integrity.get("recorded_certificate_hash_matches_repo_canonical_hash") is not False:
-        raise AssertionError("Golay entropy temp hash boundary mismatch")
+        raise AssertionError("Golay entropy handoff hash boundary mismatch")
 
     connection = artifact.get("connection_to_current_problem", {})
     if connection.get("w24_endpoint", {}).get("status") != "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED":

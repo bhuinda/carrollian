@@ -1,0 +1,133 @@
+{
+  "certificate_sha256": "6dac92ebd774ded452b2b968d6edcdeb413d6abb2b03a25bd7f12860004c3663",
+  "claim": "The uploaded sector-33 compatibility data rule out raw algebra-quotient compatibility and identify height-coherent action-return intertwining as the correct finite theorem target.",
+  "claim_boundary": "This locks the theorem target and constraints. It does not compute the missing height/action-return operator matrix.",
+  "created_utc": "2026-05-26T08:23:52.449120+00:00",
+  "facts": {
+    "A8_candidate_dimension": 8,
+    "Lambda3_A8_candidate": 56,
+    "Q_B_mod2_kernel_dimension": 7,
+    "Q_B_mod2_rank": 4,
+    "Q_B_mod3_kernel_dimension": 5,
+    "Q_B_mod3_rank": 6,
+    "active_objects": [
+      "B+",
+      "S+"
+    ],
+    "all_30_pair_lifts_pi33_zero": true,
+    "basis6_TDO_height": 903168,
+    "basis6_TDO_height_over_6144": 147,
+    "cycle8_coeff_sum": 53952,
+    "cycle8_length": 5,
+    "cycle8_optical_action": 374784,
+    "cycle8_pi33_signed_orientation": 0,
+    "cycle8_support": 193,
+    "duad_fiber_via_H6_mod3": "C(6,2)=15",
+    "e33_negative_count": 28,
+    "e33_positive_count": 28,
+    "e33_signed_sum": 0,
+    "e33_support": 56,
+    "e33_support_via_A8": "C(8,3)=56",
+    "gamma8_height": 374784,
+    "gamma8_height_over_6144": 61,
+    "hidden_pair_height_difference": 903168,
+    "q12_nonzero_count": 0,
+    "q42_nonzero_count": 0,
+    "signed_obstruction_product": "C(8,3)*C(6,2)=840",
+    "unique_hidden_kernel_generator_index": 6
+  },
+  "ladder": [
+    {
+      "content": "e33^2=e33 over raw A985 multiplication; 56-entry support remains exactly 56",
+      "meaning": "sector 33 is a genuine idempotent sector",
+      "status": "PASS",
+      "test": "sector idempotent"
+    },
+    {
+      "content": "56 -> 33 has rank 33 and kernel 23; core injects and bridge collapses",
+      "meaning": "support/basis projection exists",
+      "status": "PASS",
+      "test": "Foam33 support projection"
+    },
+    {
+      "content": "pi_Foam33 is not a raw algebra homomorphism on the full 56-support relation algebra",
+      "meaning": "the bridge is a correction shell, not a two-sided quotient ideal",
+      "status": "FAIL_EXPECTED",
+      "test": "raw algebra quotient"
+    },
+    {
+      "content": "core-core quotient has no relation-label inconsistencies",
+      "meaning": "the obstruction is localized to the anchor/bridge collapse",
+      "status": "PASS",
+      "test": "Foam core multiplicative consistency"
+    },
+    {
+      "content": "all 30 directed pair lifts and cycle-8 variants have zero pi33 readout",
+      "meaning": "bare boundary loop cannot recover sector 33",
+      "status": "ANNIHILATED",
+      "test": "bare boundary-to-loop recovery"
+    },
+    {
+      "content": "cycle8 lift is nonzero and overlaps sector 33 only through signed-balanced bridge support",
+      "meaning": "support contact is real, coefficient/character readout is zero",
+      "status": "TOUCHES_SUPPORT_NOT_CHARACTER",
+      "test": "cycle8 support overlap"
+    },
+    {
+      "content": "A8 candidate has dim 8, Lambda^3 A8 = 56, hidden generator basis index 6 carries height 903168",
+      "meaning": "the missing operator is height/action-return correction",
+      "status": "TARGET_LOCKED",
+      "test": "height-coherent transport data"
+    }
+  ],
+  "operator_target": {
+    "boundary": "This package formalizes the correct theorem target and input constraints. It does not compute the missing R_hc matrix.",
+    "correct_statement": "pi_Foam33 \u2218 R_hc = R_Foam \u2218 pi_Foam33",
+    "interpretation": "Foam33 is actor-compatible for height/action-return transport, not a raw algebra quotient.",
+    "known_constraints": [
+      "R_hc must not reduce to bare boundary-to-loop lambda_boundary.",
+      "R_hc must see the unique simultaneous mod2/mod3 invisible primitive at basis index 6.",
+      "R_hc must convert signed-balanced bridge support into the global-anchor correction without violating e33 idempotency.",
+      "R_hc must preserve the Foam core quotient."
+    ],
+    "minimal_operator_shape": {
+      "R_Foam": "induced operator on 1_glob \u2295 2 Foam16",
+      "R_hc": "height-coherent action-return operator on Supp(e33)",
+      "bridge_kernel": "23-dimensional correction shell",
+      "pi_Foam33": "56-to-33 support/basis projection"
+    },
+    "name": "Height-Coherent Action-Return Intertwining Theorem",
+    "pass_condition": [
+      "For every tested action-return generator g, pi_Foam33(R_hc(g,v)) = R_Foam(g,pi_Foam33(v)).",
+      "Core coordinates remain closed.",
+      "Bridge kernel maps only to the global-anchor correction or zero.",
+      "Cycle8/gamma8 produces the expected height-coherent nonzero class, while bare boundary-to-loop remains annihilated."
+    ],
+    "wrong_statement": "pi_Foam33(xy)=pi_Foam33(x)pi_Foam33(y) on raw 56-support multiplication",
+    "wrong_statement_status": "false by multiplication compatibility v11"
+  },
+  "schema": "d20.height_coherent_action_return_intertwining_target@1",
+  "sources": {
+    "boundary_annihilation": {
+      "path": "/mnt/data/sector33_boundary_annihilation_processed_report.json",
+      "sha256": "747097f988ebff0fc6d6f43332e3fc29ee56717c297130154f7159c7fc9500d2"
+    },
+    "boundary_to_loop": {
+      "path": "/mnt/data/sector33_boundary_to_loop_map_report.json",
+      "sha256": "b91701a9b92fad82d35d78445f031250181231a42f0cf8fd15b8cff7c07e8d29"
+    },
+    "foam_projection_v10": {
+      "path": "/mnt/data/scenic_tensor_foam_projection_v10.md",
+      "sha256": "87f3c510212debbe774e87c517ae38275cc220ce14411af2462d7d6b7e4c3f9a"
+    },
+    "height_coherent_transport": {
+      "path": "/mnt/data/sector33_height_coherent_transport_processed_report.json",
+      "sha256": "264742c1fabbff50bc9e60f43ba4190b5f6898fc33e0576d84fbecbe5b690caf"
+    },
+    "multiplication_compatibility_v11": {
+      "path": "/mnt/data/scenic_tensor_multiplication_compatibility_v11.md",
+      "sha256": "208578958f3359ca3925a23a5dc07e16314b42e3b0695d1b559e5bcd8fd1cdb7"
+    }
+  },
+  "status": "HEIGHT_COHERENT_ACTION_RETURN_INTERTWINING_TARGET_LOCKED"
+}

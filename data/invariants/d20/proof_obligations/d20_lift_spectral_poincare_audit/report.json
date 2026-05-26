@@ -1,0 +1,857 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e26c7ae9b8a4615d36cb3bd138d6ebce3f06e3965d25072d242ee2ac97c277d5",
+  "checks": {
+    "branches_stay_inside_full_window": true,
+    "checkpoint_pair_matches_recurrence_nearest_return": true,
+    "cursor_aligned_branch_diverges_from_near_return": true,
+    "cursor_aligned_branch_has_no_boundary_loss": true,
+    "full_window_canvas_embedded": true,
+    "initial_distance_is_near_return": true,
+    "initial_distance_matches_recurrence_report": true,
+    "laplacian_band_signature_matches_expected": true,
+    "natural_branch_diverges_from_near_return": true,
+    "natural_branch_has_no_boundary_loss": true,
+    "recurrence_audit_certified": true,
+    "visualization_data_loaded": true
+  },
+  "claim": "The recurrence audit's nearest spectral return is a finite Poincare candidate, not an exact repeat: replaying the two checkpointed D20 lifted states forward keeps both inside the full visualization window with no boundary loss, while both natural and cursor-aligned continuations amplify the initial five-band spectral separation.",
+  "closure_boundary": {
+    "certifies": [
+      "the nearest spectral return can be replayed from full lifted-state checkpoints",
+      "both forward branches have no boundary loss through the finite horizon",
+      "the initial near-return separation is amplified in both natural and cursor-aligned continuations",
+      "the observed behavior is a finite-time spectral shear witness, not an exact period"
+    ],
+    "does_not_certify": [
+      "a global Poincare map",
+      "an asymptotic Lyapunov exponent",
+      "that every near-return shears by the same factor",
+      "a physical atom interpretation beyond the certified finite replay behavior"
+    ]
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "dfa83f5f2b4a4ae897fcc587b54a606c802406a1ca89e0adf4d461e53885ed54",
+      "path": "generated/d20_lift_spectral_poincare_audit.json",
+      "sha256": "fe790411f0978c420a1df86efea52e44beca66950835c5550c92ae98ecac3943",
+      "status": "D20_LIFT_SPECTRAL_POINCARE_AUDIT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_spectral_poincare_audit.py",
+      "sha256": "f0e4b839cadbf7918aee7702b9a30f8132d96d3ab30b856df61515e4e4babbe4"
+    },
+    "recurrence_report": {
+      "certificate_sha256": "b8716eb9e581ad5f461607a9cdc0eec765b409c0f1c239cbcb0c0306539ab628",
+      "path": "data/invariants/d20/proof_obligations/d20_lift_spectral_recurrence_audit/report.json",
+      "sha256": "3aa419c8901297440ae3fa30b2b361b558d2e6c05861f4695fa6c663bedc52b6",
+      "status": "D20_LIFT_SPECTRAL_RECURRENCE_AUDIT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_spectral_poincare_audit.py",
+      "sha256": "e937fd3364464cd4082dd3ec9088cedff0f8f5003b35d166c100537dc53f24bd"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "28c0832f388bfb6e0485afeb06a02f356e10104c2a5b4871f678a5ec7de64e82"
+    }
+  },
+  "next_highest_yield_item": "Lift the Poincare witness into the HTML panel: display the nearest-return pair, natural/cursor-aligned divergence curves, and branch toggles over the full D20 object window.",
+  "schema": "d20.proof_obligation.lift_spectral_poincare_audit@1",
+  "status": "D20_LIFT_SPECTRAL_POINCARE_AUDIT_CERTIFIED",
+  "witness": {
+    "cursor_aligned_comparisons": [
+      {
+        "centroid_delta": -0.0032206075112610755,
+        "distance": 0.010320095213029606,
+        "dominant_band_pair": [
+          3.0,
+          3.0
+        ],
+        "entropy_delta": -0.004343222400376656,
+        "left_frame": 1248,
+        "live_grain_delta": 5493,
+        "offset": 0,
+        "right_frame": 1896,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": -0.47365517583402905,
+        "distance": 0.2519186040367304,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": -0.11185768873446833,
+        "left_frame": 1256,
+        "live_grain_delta": 5342,
+        "offset": 8,
+        "right_frame": 1904,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": -0.17654470488031881,
+        "distance": 0.1765135959106699,
+        "dominant_band_pair": [
+          5.0,
+          2.0
+        ],
+        "entropy_delta": -0.049186089718355475,
+        "left_frame": 1264,
+        "live_grain_delta": 5493,
+        "offset": 16,
+        "right_frame": 1912,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.30275638662570215,
+        "distance": 0.20822316552129302,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": -0.0935944476908882,
+        "left_frame": 1272,
+        "live_grain_delta": 5339,
+        "offset": 24,
+        "right_frame": 1920,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.07756516015915027,
+        "distance": 0.05940194596409088,
+        "dominant_band_pair": [
+          5.0,
+          5.0
+        ],
+        "entropy_delta": -0.02312275879669301,
+        "left_frame": 1280,
+        "live_grain_delta": 5493,
+        "offset": 32,
+        "right_frame": 1928,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.09060437031696766,
+        "distance": 0.21117773271826598,
+        "dominant_band_pair": [
+          0.763932,
+          5.0
+        ],
+        "entropy_delta": 0.03988163297589331,
+        "left_frame": 1288,
+        "live_grain_delta": 5389,
+        "offset": 40,
+        "right_frame": 1936,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.24964793846926847,
+        "distance": 0.13884132295210033,
+        "dominant_band_pair": [
+          5.0,
+          5.0
+        ],
+        "entropy_delta": -0.11289084575511954,
+        "left_frame": 1296,
+        "live_grain_delta": 5389,
+        "offset": 48,
+        "right_frame": 1944,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 1.2652020530878318,
+        "distance": 0.4580634148371947,
+        "dominant_band_pair": [
+          2.0,
+          5.0
+        ],
+        "entropy_delta": -0.1925489862950187,
+        "left_frame": 1304,
+        "live_grain_delta": 5344,
+        "offset": 56,
+        "right_frame": 1952,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 1.4484995042019366,
+        "distance": 0.5866292323300747,
+        "dominant_band_pair": [
+          2.0,
+          5.0
+        ],
+        "entropy_delta": 0.05250534460172962,
+        "left_frame": 1312,
+        "live_grain_delta": 5191,
+        "offset": 64,
+        "right_frame": 1960,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.6717181379896493,
+        "distance": 0.3800625262218152,
+        "dominant_band_pair": [
+          3.0,
+          5.236068
+        ],
+        "entropy_delta": 0.03172584003994683,
+        "left_frame": 1320,
+        "live_grain_delta": 5340,
+        "offset": 72,
+        "right_frame": 1968,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.2192709060281901,
+        "distance": 0.4347606298152567,
+        "dominant_band_pair": [
+          5.236068,
+          5.0
+        ],
+        "entropy_delta": 0.15698346808803543,
+        "left_frame": 1328,
+        "live_grain_delta": 5234,
+        "offset": 80,
+        "right_frame": 1976,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.20010672194623425,
+        "distance": 0.247404324362057,
+        "dominant_band_pair": [
+          2.0,
+          3.0
+        ],
+        "entropy_delta": 0.01319670334113121,
+        "left_frame": 1336,
+        "live_grain_delta": 5387,
+        "offset": 88,
+        "right_frame": 1984,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.7690620288473959,
+        "distance": 0.3580071737268604,
+        "dominant_band_pair": [
+          0.763932,
+          2.0
+        ],
+        "entropy_delta": -0.03576190378803101,
+        "left_frame": 1344,
+        "live_grain_delta": 5235,
+        "offset": 96,
+        "right_frame": 1992,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.059035026000785695,
+        "distance": 0.05646942062745841,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": -0.03575209221306008,
+        "left_frame": 1352,
+        "live_grain_delta": 5235,
+        "offset": 104,
+        "right_frame": 2000,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": -0.13311303207680547,
+        "distance": 0.28909245048621207,
+        "dominant_band_pair": [
+          2.0,
+          3.0
+        ],
+        "entropy_delta": -0.022146214568352862,
+        "left_frame": 1360,
+        "live_grain_delta": 5234,
+        "offset": 112,
+        "right_frame": 2008,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.4975505861520504,
+        "distance": 0.5052687283062295,
+        "dominant_band_pair": [
+          2.0,
+          3.0
+        ],
+        "entropy_delta": 0.1357108919008897,
+        "left_frame": 1368,
+        "live_grain_delta": 5386,
+        "offset": 120,
+        "right_frame": 2016,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.10420705502860006,
+        "distance": 0.3653493195523906,
+        "dominant_band_pair": [
+          2.0,
+          5.236068
+        ],
+        "entropy_delta": 0.08878716804382136,
+        "left_frame": 1376,
+        "live_grain_delta": 5282,
+        "offset": 128,
+        "right_frame": 2024,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.5201996412177867,
+        "distance": 0.34104710386529247,
+        "dominant_band_pair": [
+          5.0,
+          2.0
+        ],
+        "entropy_delta": -0.11234361746473698,
+        "left_frame": 1384,
+        "live_grain_delta": 5176,
+        "offset": 136,
+        "right_frame": 2032,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.6182049273298169,
+        "distance": 0.2749465569526213,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": 0.012679671987972041,
+        "left_frame": 1392,
+        "live_grain_delta": 5182,
+        "offset": 144,
+        "right_frame": 2040,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.7912714596562545,
+        "distance": 0.4690626957071881,
+        "dominant_band_pair": [
+          0.763932,
+          3.0
+        ],
+        "entropy_delta": 0.05608178375109396,
+        "left_frame": 1400,
+        "live_grain_delta": 5182,
+        "offset": 152,
+        "right_frame": 2048,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -1.0420143967301052,
+        "distance": 0.4216288137563117,
+        "dominant_band_pair": [
+          5.236068,
+          2.0
+        ],
+        "entropy_delta": -0.13916175124054464,
+        "left_frame": 1408,
+        "live_grain_delta": 5137,
+        "offset": 160,
+        "right_frame": 2056,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.15948069427817257,
+        "distance": 0.4410057035389431,
+        "dominant_band_pair": [
+          0.763932,
+          2.0
+        ],
+        "entropy_delta": -0.1180531669239342,
+        "left_frame": 1416,
+        "live_grain_delta": 5243,
+        "offset": 168,
+        "right_frame": 2064,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.13339380606588414,
+        "distance": 0.25999479609637505,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": -0.09740720846740947,
+        "left_frame": 1424,
+        "live_grain_delta": 5092,
+        "offset": 176,
+        "right_frame": 2072,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.2306139550465116,
+        "distance": 0.2543017823809437,
+        "dominant_band_pair": [
+          3.0,
+          3.0
+        ],
+        "entropy_delta": 0.19177818923226797,
+        "left_frame": 1432,
+        "live_grain_delta": 5193,
+        "offset": 184,
+        "right_frame": 2080,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": -0.5711971985614128,
+        "distance": 0.19853836592100343,
+        "dominant_band_pair": [
+          5.0,
+          2.0
+        ],
+        "entropy_delta": -0.019323484089043275,
+        "left_frame": 1440,
+        "live_grain_delta": 5087,
+        "offset": 192,
+        "right_frame": 2088,
+        "same_dominant_band": false
+      }
+    ],
+    "cursor_aligned_summary": {
+      "boundary_loss_range": [
+        0,
+        0
+      ],
+      "divergence_gain": 56.843393420385084,
+      "final_distance": 0.19853836592100343,
+      "horizon_frames": 192,
+      "initial_distance": 0.010320095213029606,
+      "max_distance": 0.5866292323300747,
+      "max_distance_offset": 64,
+      "min_distance_after_initial": 0.05646942062745841,
+      "radius_range": [
+        11.439213067610451,
+        12.976899008316904
+      ],
+      "same_dominant_band_count": 9,
+      "sample_count": 25,
+      "sample_stride": 8
+    },
+    "natural_source_phase_comparisons": [
+      {
+        "centroid_delta": -0.0032206075112610755,
+        "distance": 0.010320095213029606,
+        "dominant_band_pair": [
+          3.0,
+          3.0
+        ],
+        "entropy_delta": -0.004343222400376656,
+        "left_frame": 1248,
+        "live_grain_delta": 5493,
+        "offset": 0,
+        "right_frame": 1896,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": -0.47365517583402905,
+        "distance": 0.2519186040367304,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": -0.11185768873446833,
+        "left_frame": 1256,
+        "live_grain_delta": 5342,
+        "offset": 8,
+        "right_frame": 1904,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": -0.05179878044444486,
+        "distance": 0.25121630452387916,
+        "dominant_band_pair": [
+          5.0,
+          2.0
+        ],
+        "entropy_delta": -0.09911536366905449,
+        "left_frame": 1264,
+        "live_grain_delta": 5446,
+        "offset": 16,
+        "right_frame": 1912,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.12559965517204175,
+        "distance": 0.12447783444964089,
+        "dominant_band_pair": [
+          2.0,
+          3.0
+        ],
+        "entropy_delta": -0.028543138425275227,
+        "left_frame": 1272,
+        "live_grain_delta": 5398,
+        "offset": 24,
+        "right_frame": 1920,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.23535059707743144,
+        "distance": 0.22222751715656416,
+        "dominant_band_pair": [
+          5.0,
+          5.0
+        ],
+        "entropy_delta": -0.08220402581467923,
+        "left_frame": 1280,
+        "live_grain_delta": 5398,
+        "offset": 32,
+        "right_frame": 1928,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.9453182956395665,
+        "distance": 0.273262350821856,
+        "dominant_band_pair": [
+          0.763932,
+          5.0
+        ],
+        "entropy_delta": -0.05502286756697794,
+        "left_frame": 1288,
+        "live_grain_delta": 5294,
+        "offset": 40,
+        "right_frame": 1936,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.12139989114835092,
+        "distance": 0.09856062498586485,
+        "dominant_band_pair": [
+          5.0,
+          5.0
+        ],
+        "entropy_delta": 0.028346698142080795,
+        "left_frame": 1296,
+        "live_grain_delta": 5400,
+        "offset": 48,
+        "right_frame": 1944,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.8971526184410732,
+        "distance": 0.24345569126076058,
+        "dominant_band_pair": [
+          2.0,
+          5.0
+        ],
+        "entropy_delta": 0.03881859997705783,
+        "left_frame": 1304,
+        "live_grain_delta": 5402,
+        "offset": 56,
+        "right_frame": 1952,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.9811535358653183,
+        "distance": 0.4432480846785616,
+        "dominant_band_pair": [
+          2.0,
+          3.0
+        ],
+        "entropy_delta": 0.07172665557703106,
+        "left_frame": 1312,
+        "live_grain_delta": 5249,
+        "offset": 64,
+        "right_frame": 1960,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.7501727260385871,
+        "distance": 0.3411602052872773,
+        "dominant_band_pair": [
+          3.0,
+          5.236068
+        ],
+        "entropy_delta": 0.04362882984444161,
+        "left_frame": 1320,
+        "live_grain_delta": 5249,
+        "offset": 72,
+        "right_frame": 1968,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.07292869051210182,
+        "distance": 0.4593178374003996,
+        "dominant_band_pair": [
+          5.236068,
+          5.0
+        ],
+        "entropy_delta": 0.1650861383021629,
+        "left_frame": 1328,
+        "live_grain_delta": 5248,
+        "offset": 80,
+        "right_frame": 1976,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.5626010386097793,
+        "distance": 0.24534122564867905,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": -0.053209769098069515,
+        "left_frame": 1336,
+        "live_grain_delta": 5352,
+        "offset": 88,
+        "right_frame": 1984,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.47641177405633917,
+        "distance": 0.16964223124917105,
+        "dominant_band_pair": [
+          0.763932,
+          2.0
+        ],
+        "entropy_delta": 0.045779331390492395,
+        "left_frame": 1344,
+        "live_grain_delta": 5200,
+        "offset": 96,
+        "right_frame": 1992,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.28886019276756336,
+        "distance": 0.12065040316628554,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": -0.10001574538456615,
+        "left_frame": 1352,
+        "live_grain_delta": 5304,
+        "offset": 104,
+        "right_frame": 2000,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": -0.15005237863593246,
+        "distance": 0.3796991451598591,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": -0.17192180025267212,
+        "left_frame": 1360,
+        "live_grain_delta": 5197,
+        "offset": 112,
+        "right_frame": 2008,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.6046238166214288,
+        "distance": 0.4251186342927178,
+        "dominant_band_pair": [
+          2.0,
+          5.236068
+        ],
+        "entropy_delta": -0.02353761918663233,
+        "left_frame": 1368,
+        "live_grain_delta": 5304,
+        "offset": 120,
+        "right_frame": 2016,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.4678715451511666,
+        "distance": 0.2312237003963059,
+        "dominant_band_pair": [
+          2.0,
+          2.0
+        ],
+        "entropy_delta": 0.1109416774841877,
+        "left_frame": 1376,
+        "live_grain_delta": 5304,
+        "offset": 128,
+        "right_frame": 2024,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.02258652151032159,
+        "distance": 0.19459154832122072,
+        "dominant_band_pair": [
+          5.0,
+          5.0
+        ],
+        "entropy_delta": -0.07074313594875714,
+        "left_frame": 1384,
+        "live_grain_delta": 5198,
+        "offset": 136,
+        "right_frame": 2032,
+        "same_dominant_band": true
+      },
+      {
+        "centroid_delta": 0.8075540876847085,
+        "distance": 0.3927507846620583,
+        "dominant_band_pair": [
+          2.0,
+          5.236068
+        ],
+        "entropy_delta": 0.0016903396983382057,
+        "left_frame": 1392,
+        "live_grain_delta": 5202,
+        "offset": 144,
+        "right_frame": 2040,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 1.6170745423552773,
+        "distance": 0.5149342055883183,
+        "dominant_band_pair": [
+          0.763932,
+          2.0
+        ],
+        "entropy_delta": -0.020163348439548145,
+        "left_frame": 1400,
+        "live_grain_delta": 5202,
+        "offset": 152,
+        "right_frame": 2048,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -1.0599889958693915,
+        "distance": 0.3335430374878765,
+        "dominant_band_pair": [
+          5.236068,
+          2.0
+        ],
+        "entropy_delta": -0.0643198121877333,
+        "left_frame": 1408,
+        "live_grain_delta": 5204,
+        "offset": 160,
+        "right_frame": 2056,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.3626189767306043,
+        "distance": 0.2977674066858307,
+        "dominant_band_pair": [
+          0.763932,
+          3.0
+        ],
+        "entropy_delta": 0.037402816581612375,
+        "left_frame": 1416,
+        "live_grain_delta": 5204,
+        "offset": 168,
+        "right_frame": 2064,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 1.399833022442316,
+        "distance": 0.6042222705798274,
+        "dominant_band_pair": [
+          2.0,
+          5.236068
+        ],
+        "entropy_delta": -0.13049443846017295,
+        "left_frame": 1424,
+        "live_grain_delta": 5053,
+        "offset": 176,
+        "right_frame": 2072,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": 0.3187403583923092,
+        "distance": 0.4062996957818806,
+        "dominant_band_pair": [
+          3.0,
+          5.0
+        ],
+        "entropy_delta": 0.1310045064652351,
+        "left_frame": 1432,
+        "live_grain_delta": 5204,
+        "offset": 184,
+        "right_frame": 2080,
+        "same_dominant_band": false
+      },
+      {
+        "centroid_delta": -0.9021614001808005,
+        "distance": 0.23746406474932866,
+        "dominant_band_pair": [
+          5.0,
+          2.0
+        ],
+        "entropy_delta": -0.007863793546116327,
+        "left_frame": 1440,
+        "live_grain_delta": 5098,
+        "offset": 192,
+        "right_frame": 2088,
+        "same_dominant_band": false
+      }
+    ],
+    "natural_source_phase_summary": {
+      "boundary_loss_range": [
+        0,
+        0
+      ],
+      "divergence_gain": 58.548129460760045,
+      "final_distance": 0.23746406474932866,
+      "horizon_frames": 192,
+      "initial_distance": 0.010320095213029606,
+      "max_distance": 0.6042222705798274,
+      "max_distance_offset": 176,
+      "min_distance_after_initial": 0.09856062498586485,
+      "radius_range": [
+        11.439213067610451,
+        12.964597305719915
+      ],
+      "same_dominant_band_count": 9,
+      "sample_count": 25,
+      "sample_stride": 8
+    },
+    "nearest_return": {
+      "distance": 0.010320095213029606,
+      "found": true,
+      "frame_gap": 648,
+      "frame_pair": [
+        1248,
+        1896
+      ],
+      "left": {
+        "band_probability_vector": [
+          0.11990583104885318,
+          0.28188292983762336,
+          0.3441483721035175,
+          0.15247098816964202,
+          0.101591878840364
+        ],
+        "dominant_band": 3.0,
+        "live_grains": 24074,
+        "quantized_key": [
+          120,
+          282,
+          344,
+          152,
+          102
+        ],
+        "spectral_centroid": 2.982107804014729,
+        "spectral_entropy": 0.9304149808909677
+      },
+      "right": {
+        "band_probability_vector": [
+          0.11833292260278633,
+          0.2789098189897051,
+          0.3533229114261691,
+          0.14976483180324943,
+          0.09966951517809007
+        ],
+        "dominant_band": 3.0,
+        "live_grains": 29567,
+        "quantized_key": [
+          118,
+          279,
+          353,
+          150,
+          100
+        ],
+        "spectral_centroid": 2.978887196503468,
+        "spectral_entropy": 0.9260717584905911
+      }
+    }
+  }
+}

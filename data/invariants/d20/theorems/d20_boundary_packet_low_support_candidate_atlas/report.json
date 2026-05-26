@@ -1,0 +1,1133 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1e9b61fe58e4876bbc637b1712cc5ec1cb87349306380aae05b46863362f42e7",
+  "checks": {
+    "boundary_loop_step_atom_incidence_is_certified": true,
+    "candidate_count_is_800": true,
+    "candidate_support_histogram_matches": true,
+    "compatible_doublet_count_is_6": true,
+    "compatible_doublets_are_only_opposite_rows": true,
+    "compatible_doublets_are_rank_one": true,
+    "even_image_candidate_count_is_12": true,
+    "even_image_span_rank_is_6": true,
+    "even_image_support_families_match": true,
+    "incidence_matrix_is_20_by_25": true,
+    "no_full_packet_doublet_map_available": true,
+    "no_support_1_even_image_candidates": true,
+    "packet_bridge_snf_obstruction_is_certified": true,
+    "packet_snf_local_test_is_exact": true,
+    "row_normalization_obstruction_is_certified": true
+  },
+  "claim": "The first non-diagonal low-support signed boundary combinations that can pass the packet SNF parity layer are exactly twelve support-2 rows over public atom families [0,11], [6,17], and [14,15]. They form six packet-compatible doublet candidates by pairing each row with its negative, but every such doublet has rank one, so this is a degenerate candidate atlas rather than a full 20-packet bridge.",
+  "definition": {
+    "candidate_family": "signed_support_at_most_2_boundary_combinations",
+    "coefficient_set": [
+      -1,
+      1
+    ],
+    "packet_snf_image_test": "u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6 on each packet doublet",
+    "support_limit": 2
+  },
+  "derived": {
+    "compatible_doublet_candidate_rows": [
+      {
+        "doublet_id": 0,
+        "doublet_rank_over_Q": 1,
+        "left_candidate_id": 80,
+        "left_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 0,
+            "public_atom_label": "{B-,B+,V-}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 11,
+            "public_atom_label": "{B+,V-,S-}"
+          }
+        ],
+        "passes_packet_snf_image": true,
+        "right_candidate_id": 83,
+        "right_is_negative_left": true,
+        "right_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 0,
+            "public_atom_label": "{B-,B+,V-}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 11,
+            "public_atom_label": "{B+,V-,S-}"
+          }
+        ]
+      },
+      {
+        "doublet_id": 1,
+        "doublet_rank_over_Q": 1,
+        "left_candidate_id": 81,
+        "left_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 0,
+            "public_atom_label": "{B-,B+,V-}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 11,
+            "public_atom_label": "{B+,V-,S-}"
+          }
+        ],
+        "passes_packet_snf_image": true,
+        "right_candidate_id": 82,
+        "right_is_negative_left": true,
+        "right_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 0,
+            "public_atom_label": "{B-,B+,V-}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 11,
+            "public_atom_label": "{B+,V-,S-}"
+          }
+        ]
+      },
+      {
+        "doublet_id": 2,
+        "doublet_rank_over_Q": 1,
+        "left_candidate_id": 476,
+        "left_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 6,
+            "public_atom_label": "{B-,V-,S+}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 17,
+            "public_atom_label": "{V-,V+,S+}"
+          }
+        ],
+        "passes_packet_snf_image": true,
+        "right_candidate_id": 479,
+        "right_is_negative_left": true,
+        "right_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 6,
+            "public_atom_label": "{B-,V-,S+}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 17,
+            "public_atom_label": "{V-,V+,S+}"
+          }
+        ]
+      },
+      {
+        "doublet_id": 3,
+        "doublet_rank_over_Q": 1,
+        "left_candidate_id": 477,
+        "left_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 6,
+            "public_atom_label": "{B-,V-,S+}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 17,
+            "public_atom_label": "{V-,V+,S+}"
+          }
+        ],
+        "passes_packet_snf_image": true,
+        "right_candidate_id": 478,
+        "right_is_negative_left": true,
+        "right_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 6,
+            "public_atom_label": "{B-,V-,S+}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 17,
+            "public_atom_label": "{V-,V+,S+}"
+          }
+        ]
+      },
+      {
+        "doublet_id": 4,
+        "doublet_rank_over_Q": 1,
+        "left_candidate_id": 740,
+        "left_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 14,
+            "public_atom_label": "{B+,V+,S+}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 15,
+            "public_atom_label": "{B+,S-,S+}"
+          }
+        ],
+        "passes_packet_snf_image": true,
+        "right_candidate_id": 743,
+        "right_is_negative_left": true,
+        "right_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 14,
+            "public_atom_label": "{B+,V+,S+}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 15,
+            "public_atom_label": "{B+,S-,S+}"
+          }
+        ]
+      },
+      {
+        "doublet_id": 5,
+        "doublet_rank_over_Q": 1,
+        "left_candidate_id": 741,
+        "left_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 14,
+            "public_atom_label": "{B+,V+,S+}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 15,
+            "public_atom_label": "{B+,S-,S+}"
+          }
+        ],
+        "passes_packet_snf_image": true,
+        "right_candidate_id": 742,
+        "right_is_negative_left": true,
+        "right_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 14,
+            "public_atom_label": "{B+,V+,S+}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 15,
+            "public_atom_label": "{B+,S-,S+}"
+          }
+        ]
+      }
+    ],
+    "compatible_doublet_candidate_rows_sha256": "7ac3e778ca308cae7d97560ffb92d4c0bb94fbade15b37e9ae41139f0040f27d",
+    "even_image_candidate_rows": [
+      {
+        "candidate_id": 80,
+        "coefficient_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 0,
+            "public_atom_label": "{B-,B+,V-}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 11,
+            "public_atom_label": "{B+,V-,S-}"
+          }
+        ],
+        "image_gcd": 4,
+        "image_is_even": true,
+        "image_nonzero_count": 4,
+        "image_value_histogram": {
+          "-4": 2,
+          "0": 21,
+          "4": 2
+        },
+        "image_vector": [
+          -4,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": -4,
+            "step_atom_id": 0
+          },
+          {
+            "coefficient": 4,
+            "step_atom_id": 2
+          },
+          {
+            "coefficient": -4,
+            "step_atom_id": 9
+          },
+          {
+            "coefficient": 4,
+            "step_atom_id": 23
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 81,
+        "coefficient_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 0,
+            "public_atom_label": "{B-,B+,V-}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 11,
+            "public_atom_label": "{B+,V-,S-}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 4,
+        "image_value_histogram": {
+          "-2": 2,
+          "-4": 1,
+          "0": 21,
+          "8": 1
+        },
+        "image_vector": [
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -4,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": -2,
+            "step_atom_id": 0
+          },
+          {
+            "coefficient": -4,
+            "step_atom_id": 9
+          },
+          {
+            "coefficient": 8,
+            "step_atom_id": 11
+          },
+          {
+            "coefficient": -2,
+            "step_atom_id": 23
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 82,
+        "coefficient_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 0,
+            "public_atom_label": "{B-,B+,V-}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 11,
+            "public_atom_label": "{B+,V-,S-}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 4,
+        "image_value_histogram": {
+          "-8": 1,
+          "0": 21,
+          "2": 2,
+          "4": 1
+        },
+        "image_vector": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          -8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": 2,
+            "step_atom_id": 0
+          },
+          {
+            "coefficient": 4,
+            "step_atom_id": 9
+          },
+          {
+            "coefficient": -8,
+            "step_atom_id": 11
+          },
+          {
+            "coefficient": 2,
+            "step_atom_id": 23
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 83,
+        "coefficient_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 0,
+            "public_atom_label": "{B-,B+,V-}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 11,
+            "public_atom_label": "{B+,V-,S-}"
+          }
+        ],
+        "image_gcd": 4,
+        "image_is_even": true,
+        "image_nonzero_count": 4,
+        "image_value_histogram": {
+          "-4": 2,
+          "0": 21,
+          "4": 2
+        },
+        "image_vector": [
+          4,
+          0,
+          -4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -4,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": 4,
+            "step_atom_id": 0
+          },
+          {
+            "coefficient": -4,
+            "step_atom_id": 2
+          },
+          {
+            "coefficient": 4,
+            "step_atom_id": 9
+          },
+          {
+            "coefficient": -4,
+            "step_atom_id": 23
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 476,
+        "coefficient_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 6,
+            "public_atom_label": "{B-,V-,S+}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 17,
+            "public_atom_label": "{V-,V+,S+}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 4,
+        "image_value_histogram": {
+          "-2": 2,
+          "0": 21,
+          "2": 2
+        },
+        "image_vector": [
+          0,
+          0,
+          0,
+          0,
+          -2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          -2
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": -2,
+            "step_atom_id": 4
+          },
+          {
+            "coefficient": 2,
+            "step_atom_id": 7
+          },
+          {
+            "coefficient": 2,
+            "step_atom_id": 21
+          },
+          {
+            "coefficient": -2,
+            "step_atom_id": 24
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 477,
+        "coefficient_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 6,
+            "public_atom_label": "{B-,V-,S+}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 17,
+            "public_atom_label": "{V-,V+,S+}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 2,
+        "image_value_histogram": {
+          "-2": 1,
+          "0": 23,
+          "2": 1
+        },
+        "image_vector": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": -2,
+            "step_atom_id": 6
+          },
+          {
+            "coefficient": 2,
+            "step_atom_id": 7
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 478,
+        "coefficient_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 6,
+            "public_atom_label": "{B-,V-,S+}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 17,
+            "public_atom_label": "{V-,V+,S+}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 2,
+        "image_value_histogram": {
+          "-2": 1,
+          "0": 23,
+          "2": 1
+        },
+        "image_vector": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": 2,
+            "step_atom_id": 6
+          },
+          {
+            "coefficient": -2,
+            "step_atom_id": 7
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 479,
+        "coefficient_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 6,
+            "public_atom_label": "{B-,V-,S+}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 17,
+            "public_atom_label": "{V-,V+,S+}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 4,
+        "image_value_histogram": {
+          "-2": 2,
+          "0": 21,
+          "2": 2
+        },
+        "image_vector": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          0,
+          0,
+          2
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": 2,
+            "step_atom_id": 4
+          },
+          {
+            "coefficient": -2,
+            "step_atom_id": 7
+          },
+          {
+            "coefficient": -2,
+            "step_atom_id": 21
+          },
+          {
+            "coefficient": 2,
+            "step_atom_id": 24
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 740,
+        "coefficient_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 14,
+            "public_atom_label": "{B+,V+,S+}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 15,
+            "public_atom_label": "{B+,S-,S+}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 3,
+        "image_value_histogram": {
+          "-4": 1,
+          "0": 22,
+          "2": 2
+        },
+        "image_vector": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          -4,
+          0,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": 2,
+            "step_atom_id": 13
+          },
+          {
+            "coefficient": 2,
+            "step_atom_id": 19
+          },
+          {
+            "coefficient": -4,
+            "step_atom_id": 22
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 741,
+        "coefficient_support": [
+          {
+            "coefficient": -1,
+            "public_atom_id": 14,
+            "public_atom_label": "{B+,V+,S+}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 15,
+            "public_atom_label": "{B+,S-,S+}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 3,
+        "image_value_histogram": {
+          "-4": 1,
+          "0": 22,
+          "2": 2
+        },
+        "image_vector": [
+          0,
+          -4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": -4,
+            "step_atom_id": 1
+          },
+          {
+            "coefficient": 2,
+            "step_atom_id": 15
+          },
+          {
+            "coefficient": 2,
+            "step_atom_id": 19
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 742,
+        "coefficient_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 14,
+            "public_atom_label": "{B+,V+,S+}"
+          },
+          {
+            "coefficient": -1,
+            "public_atom_id": 15,
+            "public_atom_label": "{B+,S-,S+}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 3,
+        "image_value_histogram": {
+          "-2": 2,
+          "0": 22,
+          "4": 1
+        },
+        "image_vector": [
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": 4,
+            "step_atom_id": 1
+          },
+          {
+            "coefficient": -2,
+            "step_atom_id": 15
+          },
+          {
+            "coefficient": -2,
+            "step_atom_id": 19
+          }
+        ],
+        "support_size": 2
+      },
+      {
+        "candidate_id": 743,
+        "coefficient_support": [
+          {
+            "coefficient": 1,
+            "public_atom_id": 14,
+            "public_atom_label": "{B+,V+,S+}"
+          },
+          {
+            "coefficient": 1,
+            "public_atom_id": 15,
+            "public_atom_label": "{B+,S-,S+}"
+          }
+        ],
+        "image_gcd": 2,
+        "image_is_even": true,
+        "image_nonzero_count": 3,
+        "image_value_histogram": {
+          "-2": 2,
+          "0": 22,
+          "4": 1
+        },
+        "image_vector": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        "step_atom_support": [
+          {
+            "coefficient": -2,
+            "step_atom_id": 13
+          },
+          {
+            "coefficient": -2,
+            "step_atom_id": 19
+          },
+          {
+            "coefficient": 4,
+            "step_atom_id": 22
+          }
+        ],
+        "support_size": 2
+      }
+    ],
+    "even_image_candidate_rows_sha256": "300f1b3e0fb749dcf669bb353693633b5f2f5bb9ff30c40a3e0b54b102bbc523",
+    "even_image_support_family_rows": [
+      {
+        "candidate_ids": [
+          80,
+          81,
+          82,
+          83
+        ],
+        "public_atom_support": [
+          0,
+          11
+        ],
+        "signed_candidate_count": 4
+      },
+      {
+        "candidate_ids": [
+          476,
+          477,
+          478,
+          479
+        ],
+        "public_atom_support": [
+          6,
+          17
+        ],
+        "signed_candidate_count": 4
+      },
+      {
+        "candidate_ids": [
+          740,
+          741,
+          742,
+          743
+        ],
+        "public_atom_support": [
+          14,
+          15
+        ],
+        "signed_candidate_count": 4
+      }
+    ],
+    "even_image_support_family_rows_sha256": "a962ba3fe75cdb8fbd257de89458f78875e794e27b208ecad43d276cb6b359f0",
+    "low_support_summary": {
+      "all_compatible_doublets_are_opposite_rows": true,
+      "candidate_count": 800,
+      "candidate_family": "signed_support_at_most_2_boundary_combinations",
+      "candidate_support_size_histogram": {
+        "1": 40,
+        "2": 760
+      },
+      "coefficient_set": [
+        -1,
+        1
+      ],
+      "compatible_doublet_count": 6,
+      "compatible_doublet_rank_histogram": {
+        "1": 6
+      },
+      "even_image_candidate_count": 12,
+      "even_image_span_rank_over_Q": 6,
+      "even_image_support_families": [
+        [
+          0,
+          11
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "even_image_support_family_count": 3,
+      "even_image_support_size_histogram": {
+        "2": 12
+      },
+      "full_packet_doublet_map_available": false,
+      "support_limit": 2
+    }
+  },
+  "inputs": {
+    "d20_boundary_loop_step_atom_incidence_report": {
+      "path": "data/invariants/d20/theorems/d20_boundary_loop_step_atom_incidence/report.json",
+      "sha256": "fb7c4dbc7789d3ce8477dd2dbd3a7143aeb04e01a433654b7acab2a7409ba5bd"
+    },
+    "d20_boundary_packet_row_normalization_obstruction_report": {
+      "path": "data/invariants/d20/theorems/d20_boundary_packet_row_normalization_obstruction/report.json",
+      "sha256": "f214103787df85055df4d86d8f21f9c18d07f1ec94171e2a81ae53370fbb4cd1"
+    },
+    "d20_packet_bridge_snf_obstruction_report": {
+      "path": "data/invariants/d20/theorems/d20_packet_bridge_snf_obstruction/report.json",
+      "sha256": "47f84677ac6ceb27b317d439ffa4c9f3d29d40291af01e53cfdb3ee78a6e0ba7"
+    }
+  },
+  "interpretation": {
+    "degeneracy": "These candidates are rank-one plus/minus doublets and only cover three support families, so they do not supply the ten independent packet doublets needed for the full Mat_2(Q)^10 bridge.",
+    "not_claimed": "This is not an A985/tube/q42/q12 packet action and not a physical M-theory or DLCQ lift.",
+    "positive_boundary": "Non-diagonal signed support-2 boundary combinations do exist and can satisfy the packet SNF image test when paired with their negatives."
+  },
+  "next_highest_yield_item": "Extend the signed-combination search to support 3, then test whether any packet-compatible doublets have rank two or assemble into more than three independent support families.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_boundary_packet_low_support_candidate_atlas",
+  "status": "D20_BOUNDARY_PACKET_LOW_SUPPORT_CANDIDATE_ATLAS_CERTIFIED"
+}

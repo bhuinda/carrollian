@@ -1,0 +1,40 @@
+{
+  "status": "HAMMING_GAUSSIAN_KKT_CONTRACTION_ROUTE_AUDIT_COMPLETE",
+  "claim_boundary": "This is an empirical/numerical route audit. It does not prove global contraction, but tests whether the KKT fixed-point map has contraction behavior on the sampled domain.",
+  "target_lemma": "A_w(x) <= A_w(1) (sum x_i^2/24)^(w/2) for w=12,16, x_i>=0.",
+  "fixed_point_map": "T_i(x)=sqrt((24/w) P_x(i in B)), RMS-normalized; interior KKT points are fixed points.",
+  "summary": [
+    {
+      "shell": 12,
+      "max_sample_eig_radius": 1.844757724013385,
+      "max_sample_sv_norm": 2.1024196351496154,
+      "all_kkt_iterates_converged_to_equal": true,
+      "converged_count": 62,
+      "starts": 62,
+      "monotone_count": 62,
+      "max_final_cv": 1.0134903240813527e-16,
+      "max_iter_final_ratio": 1.0000000000000027,
+      "max_hilbert_pair_contraction": 0.4333860412785645,
+      "mean_hilbert_pair_contraction": 0.27142499515337765
+    },
+    {
+      "shell": 16,
+      "max_sample_eig_radius": 1.9767445820356366,
+      "max_sample_sv_norm": 2.416777180752202,
+      "all_kkt_iterates_converged_to_equal": true,
+      "converged_count": 62,
+      "starts": 62,
+      "monotone_count": 62,
+      "max_final_cv": 0,
+      "max_iter_final_ratio": 1.0,
+      "max_hilbert_pair_contraction": 0.4091391355593321,
+      "mean_hilbert_pair_contraction": 0.18562557156758794
+    }
+  ],
+  "interpretation": [
+    "If the map were globally contractive in a suitable projective metric, fixed-point uniqueness would follow.",
+    "The audit measures log-coordinate derivative radii, singular norms, monotonicity of KKT iteration, and Hilbert projective contraction on sampled pairs.",
+    "This narrows the proof route to a possible projective contraction / KKT uniqueness theorem, or rejects it if expansion is observed."
+  ],
+  "certificate_sha256": "6a6fd32ba5aa3173df7d256b8ca13f6505f7d2699a03d64ec45d4dd766792174"
+}

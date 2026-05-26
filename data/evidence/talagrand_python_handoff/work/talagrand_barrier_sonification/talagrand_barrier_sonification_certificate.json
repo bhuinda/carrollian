@@ -1,0 +1,66 @@
+{
+  "certificate_sha256": "b0ae9d9948a5a6dc572536770a3edad8d004464cf908fb202289bf9e3cb29cfc",
+  "claim": "Builds a generalized sonification/barrier scanner for Talagrand radial traces, encoding barrier altitude, majorization excess, radial pull, and Lambda_hc silence.",
+  "claim_boundary": "Diagnostic artifact only; not a proof.",
+  "created_utc": "2026-05-26T18:16:20.518879+00:00",
+  "danger_rows_total": 0,
+  "schema": "golay_talagrand.barrier_sonification@1",
+  "sonification_schema": {
+    "channels": {
+      "Emax": "majorization excess; encoded as roughness/dissonance",
+      "F": "barrier altitude; ratio=exp(F); encoded by pitch",
+      "Lambda_hc": "silent Act-kernel channel; should remain zero in public sonification",
+      "dF": "radial pull; encoded indirectly in brightness",
+      "kmax": "top-k cumulative excess location; recorded in CSV"
+    },
+    "danger_condition": "F >= 0 and Emax > 0",
+    "interpretation": "Dissonance below the barrier is harmless; dissonance at the barrier is the proof obstruction.",
+    "name": "Generalized barrier sonification schema",
+    "purpose": "Convert radial Talagrand barrier dynamics into a temporal invariant signal."
+  },
+  "status": "TALAGRAND_BARRIER_SONIFICATION_SCANNER_BUILT",
+  "trace_summaries": [
+    {
+      "F_at_max_E": -21.11210447411992,
+      "danger_rows": 0,
+      "description": "random w=12 radial trace; no sampled barrier dissonance",
+      "dissonant_rows": 0,
+      "max_E": 3.250329692894294e-14,
+      "max_E_t": 14.332046332046332,
+      "max_F": 0.0,
+      "max_ratio": 1.0,
+      "ratio_at_max_E": 6.778436399552742e-10,
+      "rows": 260,
+      "shell": 12,
+      "trace": "w12_random_safe"
+    },
+    {
+      "F_at_max_E": -3.399091160396587,
+      "danger_rows": 0,
+      "description": "known w=16 harmless-dissonance trace: majorization fails far below barrier",
+      "dissonant_rows": 198,
+      "max_E": 0.01415487625454992,
+      "max_E_t": 6.486486486486486,
+      "max_F": 0.0,
+      "max_ratio": 1.0,
+      "ratio_at_max_E": 0.0334036146969219,
+      "rows": 260,
+      "shell": 16,
+      "trace": "w16_prefix16_low_barrier_dissonance"
+    },
+    {
+      "F_at_max_E": -45.43063254460428,
+      "danger_rows": 0,
+      "description": "random w=16 radial trace; safe test channel",
+      "dissonant_rows": 0,
+      "max_E": 4.583833312921115e-14,
+      "max_E_t": 12.046332046332047,
+      "max_F": 0.0,
+      "max_ratio": 1.0,
+      "ratio_at_max_E": 1.8609168851604125e-20,
+      "rows": 260,
+      "shell": 16,
+      "trace": "w16_random_safe"
+    }
+  ]
+}

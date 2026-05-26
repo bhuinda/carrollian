@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import json
 from typing import Any
@@ -36,6 +37,7 @@ EXPECTED_CHECKS = {
     "archive_root_exists",
     "source_manifest_hashes_all_match",
     "source_manifest_sizes_all_match",
+    "source_manifest_declares_all_imported_sources",
     "source_manifest_count_matches_actual_python_count",
     "all_python_sources_compile",
     "syntax_warnings_are_warning_only",

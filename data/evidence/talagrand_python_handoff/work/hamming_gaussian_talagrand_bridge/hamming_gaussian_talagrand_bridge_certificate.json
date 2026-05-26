@@ -1,0 +1,37 @@
+{
+  "analytic_bridge": {
+    "convex_order_calibration": "uses external universal subgaussian comparison theorem; exact sharp coefficient not asserted",
+    "finite_gaussian_assembly": "uses three-Gaussian theorem / Talagrand convexity result",
+    "mgf_bound": "prod_i cosh(lambda a_i) <= exp(lambda^2 ||a||_2^2 / 2)",
+    "mgf_identity": "E exp(lambda sum a_i eps_i)=prod_i cosh(lambda a_i)"
+  },
+  "artifacts": [
+    "hamming_gaussian_talagrand_bridge_report.md",
+    "hamming_gaussian_talagrand_bridge_certificate.json",
+    "bridge_implication_ledger.csv",
+    "sparse_mgf_sanity.csv",
+    "hamming_gaussian_talagrand_bridge.py"
+  ],
+  "certificate_sha256": "c30f8c30ae2a50d0f333df3616d85c824486a8ade520dc59c1c490cb32f14a6f",
+  "finite_input": {
+    "covered_supports": "all coordinate supports |S| < 8",
+    "endpoint_dual_distance": 8,
+    "projection_law": "independent Rademacher baseline for every real coefficient vector supported on |S|<8",
+    "real_coefficients": true,
+    "source_chain": "H8^3 -> G24 -> sparse projections"
+  },
+  "not_claimed": [
+    "not a proof of the sharp universal Rademacher-to-Gaussian convex-order scale",
+    "not a proof of full multivariate convex order for the entire 24-coordinate Golay code measure",
+    "not a new proof of Talagrand's theorem; imports the theorem as the analytic assembly layer",
+    "not coverage of supports of size >= 8 where Golay structure is visible"
+  ],
+  "sanity_checks": {
+    "max_ratio": 1.0,
+    "mgf_bound_all_pass": true,
+    "mgf_grid_profiles_checked": 27,
+    "mgf_grid_rows": 243
+  },
+  "scope": "theorem-ledger bridge from Golay dual-distance sparse independence to Talagrand Gaussian finite assembly",
+  "status": "HAMMING_GAUSSIAN_TALAGRAND_BRIDGE_CONSTRUCTED"
+}

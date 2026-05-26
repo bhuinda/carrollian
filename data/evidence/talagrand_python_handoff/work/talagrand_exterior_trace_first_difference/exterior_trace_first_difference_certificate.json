@@ -1,0 +1,57 @@
+{
+  "certificate_sha256": "7bd07ce43aac93bdc28a1274effec5a4040ac32079d8b2921d73bb3645054378",
+  "claim": "Materializes the exact first exterior trace normal form P_w=(x_0-x_1)Q_w for the pairwise Schur obstruction, for w=12,16.",
+  "claim_boundary": "This is not the final Talagrand proof. It certifies the correct first normal-form factor after the naive square-factor route failed.",
+  "created_utc": "2026-05-26T20:46:50.787512+00:00",
+  "schema": "golay_talagrand.exterior_trace_first_difference@1",
+  "source_sparse_terms_sha256": "1538871ae643bdf40ffeb8b08c286793d35e01238624c9e8e17dfe6eed83046a",
+  "status": "EXTERIOR_TRACE_FIRST_DIFFERENCE_NORMAL_FORM_CERTIFIED",
+  "summary": [
+    {
+      "certified_first_difference_factor": true,
+      "exact_x0_minus_x1_factor_groups": 32144,
+      "pair_total_cancellation_failures": 0,
+      "pair_total_cancellation_groups": 32144,
+      "quotient_coeff_l1": 91392,
+      "quotient_coeff_max": 13,
+      "quotient_coeff_min": -13,
+      "quotient_negative": 17360,
+      "quotient_positive": 17360,
+      "quotient_terms": 34720,
+      "raw_P_coeff_l1": 182784,
+      "raw_P_negative": 34720,
+      "raw_P_positive": 34720,
+      "raw_P_terms": 69440,
+      "remainder_terms": 0,
+      "rest_groups": 32144,
+      "shell": 12
+    },
+    {
+      "certified_first_difference_factor": true,
+      "exact_x0_minus_x1_factor_groups": 8503,
+      "pair_total_cancellation_failures": 0,
+      "pair_total_cancellation_groups": 8503,
+      "quotient_coeff_l1": 32032,
+      "quotient_coeff_max": 17,
+      "quotient_coeff_min": -17,
+      "quotient_negative": 4631,
+      "quotient_positive": 4631,
+      "quotient_terms": 9262,
+      "raw_P_coeff_l1": 64064,
+      "raw_P_negative": 9262,
+      "raw_P_positive": 9262,
+      "raw_P_terms": 18524,
+      "remainder_terms": 0,
+      "rest_groups": 8503,
+      "shell": 16
+    }
+  ],
+  "theorem": {
+    "interpretation": "The obstruction carries exactly one antisymmetric pair trace. The previous square-factor shortcut fails; the correct first normal form is first-difference, not second-difference.",
+    "name": "Exterior Trace First-Difference Normal Form",
+    "relation_to_exterior_death": "The exterior law kills repeated directions; this certificate identifies the surviving first pair-trace that must be controlled by barrier positivity rather than by naive S_24 symmetry.",
+    "remaining_target": "Prove Q_w has the correct sign on the ordered barrier branch x_0>=x_1, B_w>=0, or produce a barrier multiplier/SOS decomposition.",
+    "statement": "For w=12,16, the pairwise Schur obstruction polynomial P_w has an exact first exterior trace factor P_w=(x_0-x_1)Q_w.",
+    "verification": "The certificate groups P_w by the 22 remaining exponents and verifies pair-total cancellation in x_0,x_1, equivalently zero remainder after division by x_0-x_1."
+  }
+}

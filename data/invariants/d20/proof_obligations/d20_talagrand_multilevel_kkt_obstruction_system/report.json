@@ -1,0 +1,185 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "a14fb1610a57a7699479b4ddad31201722921447e4511bd004e7d94c264ef28f",
+  "checks": {
+    "contact_normal_form_certified": true,
+    "contact_normal_form_keeps_weighted_asymmetry_open": true,
+    "handoff_final_global_proof_not_claimed": true,
+    "kkt_certificate_claim_boundary_not_proof": true,
+    "kkt_certificate_status_not_closed": true,
+    "kkt_source_files_present": true,
+    "kkt_theorem_status_not_closed": true,
+    "remaining_certificate_mentions_df_positive": true,
+    "remaining_certificate_mentions_shells_12_16": true,
+    "weighted_asymmetry_audit_found_no_positive_rows": true,
+    "weighted_asymmetry_audit_numerical_only": true
+  },
+  "claim": "Formalizes the exact KKT obstruction system that any multilevel counterexample to the weighted-asymmetry contact lemma must satisfy.",
+  "claim_boundary": "This is not a proof of the final theorem. It is the exact multilevel KKT system left to exclude.",
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "f4232e11f2c50c2156d847ca5563d8767bf36e9e965350aecf09a7d43c50f828",
+      "path": "generated/d20_talagrand_multilevel_kkt_obstruction_system.json",
+      "schema": "d20.proof_obligation.talagrand_multilevel_kkt_obstruction_system.artifact@1",
+      "sha256": "e791102c5e566b338b330609e4efec998a649f51b1d5dbb6f7aba9a044c7840b",
+      "size": 6698,
+      "status": "D20_TALAGRAND_MULTILEVEL_KKT_OBSTRUCTION_SYSTEM_EXTRACTED_FROM_HANDOFF"
+    },
+    "contact_normal_form_certificate": {
+      "path": "data/evidence/talagrand_python_handoff/work/talagrand_multilevel_contact_normal_form/multilevel_contact_normal_form_certificate.json",
+      "sha256": "d33f667f281a87a79d28e9fb068616d631565084ea778cb64a732b6c16b0a2d1",
+      "size": 2484
+    },
+    "derive_script": {
+      "path": "src/derive_d20_talagrand_multilevel_kkt_obstruction_system.py",
+      "sha256": "549bec7428bef89f6e8c08bbba26fcfa70c00999e28dcb8492bd2f26e9dc47a7",
+      "size": 13937
+    },
+    "handoff_manifest": {
+      "path": "data/evidence/talagrand_python_handoff/manifest.json",
+      "sha256": "6e28f7faecc651539ad03630f964f83e670a7648559cdcc7c6814f02a3f6616a",
+      "size": 333864
+    },
+    "kkt_certificate": {
+      "embedded_certificate_sha256": "f4bf718c1a1b94269d17b65e95748f5557323994098832e1ee4295b23b897e6a",
+      "path": "data/evidence/talagrand_python_handoff/work/talagrand_multilevel_KKT_obstruction_system/multilevel_KKT_obstruction_certificate.json",
+      "sha256": "591e751478302ed530015e7c14c231847d0802329b6bdfc55d35032a83f7359f",
+      "size": 4127
+    },
+    "kkt_theorem": {
+      "path": "data/evidence/talagrand_python_handoff/work/talagrand_multilevel_KKT_obstruction_system/multilevel_KKT_obstruction_theorem.json",
+      "sha256": "6729e5dff73c48d050b8d4852d8a713965f1b0f72f687106b8ac9582a9d334c1",
+      "size": 1189
+    },
+    "status_ledger": {
+      "path": "data/evidence/talagrand_python_handoff/STATUS_LEDGER.json",
+      "sha256": "f07de350f57788e98a559fc68ebee4d6040ffbd1163939ce645ed6a8ee683a13",
+      "size": 1409
+    },
+    "validator": {
+      "path": "src/certify_d20_talagrand_multilevel_kkt_obstruction_system.py",
+      "sha256": "a42a635cfc83a9d9acdefd5ed26802eb2916c7b4132ee1cb3f63a57ef75d2a51",
+      "size": 9843
+    },
+    "weighted_asymmetry_audit_certificate": {
+      "path": "data/evidence/talagrand_python_handoff/work/talagrand_weighted_asymmetry_contact_audit/weighted_asymmetry_contact_audit_certificate.json",
+      "sha256": "a776106ea943d1ecb519204fc37b57b7e8245f64eb8291945276d292e8993fa6",
+      "size": 1865
+    }
+  },
+  "next_highest_yield_item": "Build an exact exclusion certificate for the KKT obstruction system with dF>0, starting with a Terwilliger block-SOS or exact interval/Krawtchouk certificate for w=12,16.",
+  "schema": "d20.proof_obligation.talagrand_multilevel_kkt_obstruction_system@1",
+  "source_handoff": {
+    "global_status": "HANDOFF_BUNDLE_BUILT; FINAL_GLOBAL_TALAGRAND_PROOF_NOT_CLAIMED",
+    "manifest_sha256": "948d0c264603d615f46e8bfd1ff44d8dd388033a271ef119770cee1c39b6315e",
+    "remaining_open_target": "Exclude the multilevel KKT obstruction system with dF>0, equivalently prove the weighted-asymmetry contact lemma exactly.",
+    "root": "data/evidence/talagrand_python_handoff"
+  },
+  "status": "D20_TALAGRAND_MULTILEVEL_KKT_OBSTRUCTION_SYSTEM_FORMALIZED_NOT_CLOSED",
+  "witness": {
+    "cases": [
+      {
+        "KKT_equation": "H_F(theta) v = lambda gradF(theta)",
+        "assumptions": "F(theta)=0; sum theta_i=0; theta0>theta1; dF=v\u00b7gradF>0",
+        "case": "interior_ordered_branch",
+        "exclusion_target": "No solution with dF>0 and second-order maximum condition on tangent ker dF\u22291^perp.",
+        "multiplier_formula": "lambda = (v^T H_F v)/(v^T gradF)"
+      },
+      {
+        "KKT_equation": "H_F(theta) v = lambda gradF(theta) + nu v, nu>=0",
+        "assumptions": "F(theta)=0; sum theta_i=0; theta0=theta1; dF=v\u00b7gradF>0",
+        "case": "boundary_ordered_branch",
+        "exclusion_target": "No active-boundary contact point with positive pair derivative.",
+        "multiplier_formula": "nu = v^T H_F v/||v||^2 - lambda dF/||v||^2"
+      },
+      {
+        "KKT_equation": "gradF=0; dF=0",
+        "assumptions": "theta=constant vector",
+        "case": "equal_contact",
+        "exclusion_target": "Allowed equality point; not an obstruction.",
+        "multiplier_formula": "lambda,nu not forced"
+      }
+    ],
+    "open_boundary": {
+      "certified_here": [
+        "the exact KKT obstruction system is promoted from the handoff into the proof-obligation registry",
+        "the multilevel contact normal form input is present and certified by the handoff",
+        "the weighted-asymmetry audit is recorded only as numerical supporting evidence"
+      ],
+      "not_certified": [
+        "no exclusion proof for KKT solutions with dF>0",
+        "no Terwilliger block-SOS certificate",
+        "no exact interval/Krawtchouk certificate",
+        "no final global Talagrand proof"
+      ]
+    },
+    "proof_spine": [
+      {
+        "formula": "F_w=log A_w(e^theta)-log A_w(1)-(w/2)log((1/24)sum_i exp(2theta_i)).",
+        "statement": "The global shell inequality is equivalent to F_w(theta)<=0 for all theta.",
+        "step": 1
+      },
+      {
+        "formula": "F=0 and theta_i>=theta_j implies partial_iF-partial_jF<=0.",
+        "statement": "Barrier Schur compression would prove the shell inequality.",
+        "step": 2
+      },
+      {
+        "formula": "dF=partial_0F-partial_1F.",
+        "statement": "For pair v=e0-e1, the remaining multilevel contact lemma is dF=v\u00b7gradF<=0 on F=0, v\u00b7theta>=0.",
+        "step": 3
+      },
+      {
+        "formula": "sum theta_i=0; F=0; v\u00b7theta>=0; dF>0.",
+        "statement": "If the lemma fails, compactness after centering gives a maximizer of dF on the contact set.",
+        "step": 4
+      },
+      {
+        "formula": "H_F v = lambda gradF + nu v, with nu>=0 and nu(v\u00b7theta)=0.",
+        "statement": "At such a maximizer, KKT gives an exact finite analytic obstruction system.",
+        "step": 5
+      },
+      {
+        "formula": "rank/SOS/Terwilliger certificate needed.",
+        "statement": "The analytic-gradient audit found no valid positive solution and collapsed to equal, but exact proof still requires excluding this KKT system symbolically.",
+        "step": 6
+      }
+    ],
+    "supporting_evidence": {
+      "contact_normal_form": {
+        "claim_boundary": "This is a true multilevel reduction, not the final proof. The remaining lemma is the weighted asymmetry bound on the contact surface.",
+        "remaining_exact_lemma": "Weighted Asymmetry Lemma: on the contact surface B=0, 24^h(a C10-b C01) <= m w S^(h-1)(a^2-b^2).",
+        "status": "MULTILEVEL_CONTACT_NORMAL_FORM_CERTIFIED"
+      },
+      "weighted_asymmetry_numerical_audit": {
+        "claim_boundary": "Numerical audit only; not the final proof.",
+        "max_valid_dF_pair": 1.0547118733938987e-15,
+        "positive_outward_derivative_rows": 0,
+        "shells": [
+          12,
+          16
+        ],
+        "starts": 74,
+        "status": "WEIGHTED_ASYMMETRY_CONTACT_AUDIT_NO_VALID_OUTWARD_DERIVATIVE",
+        "valid_contact_rows": 47
+      }
+    },
+    "theorem": {
+      "KKT_obstruction": "If the contact lemma fails, then there exists theta, lambda, nu with F=0, sum theta=0, v\u00b7theta>=0, dF>0, nu>=0, nu(v\u00b7theta)=0, and H v=lambda g+nu v.",
+      "boundary_reduction": "If v\u00b7theta=0, then H v=lambda g+nu v with nu>=0.",
+      "contact_lemma": "F_w(theta)=0 and v\u00b7theta>=0 imply dF<=0.",
+      "definitions": {
+        "F_w(theta)": "log A_w(e^theta)-log A_w(1)-(w/2)log((1/24)sum_i exp(2theta_i))",
+        "H": "Hessian of F_w(theta)",
+        "dF": "v\u00b7g=partial_0F-partial_1F",
+        "g": "grad F_w(theta)",
+        "v": "e_0-e_1"
+      },
+      "interior_reduction": "If v\u00b7theta>0, then nu=0 and H v=lambda g.",
+      "name": "Multilevel KKT obstruction system for the weighted-asymmetry contact lemma",
+      "remaining_exact_certificate": "Prove the KKT obstruction system has no solution with dF>0 for w=12,16, e.g. by a Terwilliger block-SOS or exact interval/Krawtchouk certificate.",
+      "status": "KKT_OBSTRUCTION_SYSTEM_FORMALIZED_NOT_CLOSED",
+      "why_this_generalizes_pair_stabilized": "The pair-stabilized proof closes the fixed-rest symmetric slice. This KKT system is for arbitrary multilevel theta and does not assume the other 22 coordinates are equal."
+    }
+  }
+}

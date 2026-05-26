@@ -1,0 +1,47 @@
+{
+  "certificate_sha256": "2b84cc4070d5fe6c090eea938df25984b6f7b81b01c37e5b01a3ab10e4696984",
+  "claim": "Certifies the exact identity 24^(w/2)Q = w Delta B - S D(B) for w=12,16 by symbolic derivation and deterministic integer/modular sample verification.",
+  "claim_boundary": "This is not the final proof of B>=0=>Q>=0. It converts the final proof target into a contact normal-derivative inequality.",
+  "created_utc": "2026-05-26T21:25:06.173842+00:00",
+  "schema": "golay_talagrand.barrier_contact_derivative_identity@1",
+  "status": "BARRIER_CONTACT_DERIVATIVE_IDENTITY_CERTIFIED",
+  "summary": [
+    {
+      "P_factor_failures": 0,
+      "h": 6,
+      "identity_failures": 0,
+      "integer_samples": 16,
+      "modular_samples": 96,
+      "samples": 112,
+      "shell": 12,
+      "shell_blocks": 2576
+    },
+    {
+      "P_factor_failures": 0,
+      "h": 8,
+      "identity_failures": 0,
+      "integer_samples": 16,
+      "modular_samples": 96,
+      "samples": 112,
+      "shell": 16,
+      "shell_blocks": 759
+    }
+  ],
+  "theorem": {
+    "contact_form": "On the contact hypersurface B=0, Q = -S D(B)/24^(w/2).",
+    "definitions": {
+      "A": "A_w(x), the shell monomial polynomial",
+      "B": "24^(w/2) A_w - A_w(1) S^(w/2), the violation/barrier polynomial",
+      "D": "x_0 d/dx_0 - x_1 d/dx_1",
+      "Delta": "x_0^2 - x_1^2",
+      "N": "x_0 partial_0 A_w - x_1 partial_1 A_w",
+      "Q": "w A_w Delta - S N, the first-difference quotient of the pairwise Schur obstruction",
+      "S": "sum_i x_i^2"
+    },
+    "identity": "24^(w/2) Q = w Delta B - S D(B)",
+    "name": "Barrier contact derivative identity",
+    "proof_use": "The ordered-branch target Q>=0 on B>=0 reduces at first contact to D(B)<=0. This is the exact normal-derivative version of Barrier Schur Compression.",
+    "remaining_target": "Prove that no first positive crossing of B can have D(B)>0; equivalently prove inward/contracting normal derivative on the contact barrier.",
+    "why_this_matters": "The barrier condition is now attached directly to the derivative of the barrier polynomial, instead of an unrelated residual polynomial."
+  }
+}

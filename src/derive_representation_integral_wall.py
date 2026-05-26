@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import argparse
 import hashlib
@@ -109,14 +110,14 @@ def pointwise_closure(functions: np.ndarray, mod: int = MOD_DEFAULT) -> dict[str
     )
     rounds = 0
     while True:
-        prior_rank = len(basis)
+        rank_at_step_start = len(basis)
         candidates = list(basis)
         for left in basis:
             for right in basis:
                 candidates.append((left * right) % mod)
         basis = independent_column_basis(candidates, mod)
         rounds += 1
-        if len(basis) == prior_rank or rounds >= 8 or len(basis) == functions.shape[0]:
+        if len(basis) == rank_at_step_start or rounds >= 8 or len(basis) == functions.shape[0]:
             break
     B = np.stack(basis, axis=1)
     classes: dict[tuple[int, ...], list[int]] = {}
@@ -640,10 +641,10 @@ def derive_sector33_integral_wall_from_generated_center(
     )
     delta33_after_public_integral = pi33_in_operation
 
-    legacy_comparison: dict[str, Any] = {"integrity_certificate_loaded": False}
+    integrity_layer_comparison: dict[str, Any] = {"integrity_certificate_loaded": False}
     if integrity_cert_json is not None and integrity_cert_json.exists():
         fb = load_json(integrity_cert_json).get("summary", {}).get("finite_base", {})
-        legacy_comparison = {
+        integrity_layer_comparison = {
             "integrity_certificate_loaded": True,
             "not_used_to_derive_generated_wall": True,
             "matches_operation_algebra_dimension": fb.get("operation_algebra_dimension") == operation_algebra_dimension,
@@ -710,7 +711,7 @@ def derive_sector33_integral_wall_from_generated_center(
             "q12_shadow_matrix_sha256": sha_array(q12_shadow),
             "combined_shadow_matrix_sha256": sha_array(combined_shadow),
         },
-        "legacy_integrity_layer_comparison": legacy_comparison,
+        "integrity_layer_comparison": integrity_layer_comparison,
     }
     result["sector33_checks_pass"] = bool(
         sector33_column is not None

@@ -1,7 +1,7 @@
 {
-  "artifact_sha256_excluding_hash_field": "9d7dcae74f961a2414c35704ec25a676e5a8b4044ed0bce97da3febb3c831b30",
+  "artifact_sha256_excluding_hash_field": "e6c7bf13c0151366fbcf7001a714fadcd7f4a7549a218a8fcbfb524ed5ab7dd1",
   "certification_tests": [
-    "verify all source hashes and sizes against temp manifest",
+    "verify all source hashes and sizes against handoff manifest",
     "compile all Python sources",
     "verify generated replay certificates and expected statuses",
     "verify root-killing, dual-distance, indicator-shell, sparse-signed, Talagrand MGF, local SDPI, and Spin^h/Veronese checks",
@@ -10,40 +10,40 @@
   ],
   "inputs": {
     "artifact": {
-      "artifact_sha256_excluding_this_field": "9d7dcae74f961a2414c35704ec25a676e5a8b4044ed0bce97da3febb3c831b30",
+      "artifact_sha256_excluding_this_field": "e6c7bf13c0151366fbcf7001a714fadcd7f4a7549a218a8fcbfb524ed5ab7dd1",
       "path": "generated/d20_hamming_gaussian_python_work_archive_import.json",
       "schema": "d20.proof_obligation.hamming_gaussian_python_work_archive_import.artifact@1",
-      "sha256": "08c4f9972b579498c1770a2b89b01565cc0d680735b3dca2816a535c4119d593",
+      "sha256": "f9590c618f53389660fccffba8307c2f5a49425073199c24490638731e397b01",
       "status": "D20_HAMMING_GAUSSIAN_PYTHON_WORK_ARCHIVE_IMPORTED_PARTIAL_REPLAY"
     },
     "derive_script": {
       "path": "src/derive_d20_hamming_gaussian_python_work_archive_import.py",
-      "sha256": "681a13115428b192933e88cdc0274ba9f8cfed9bbc252ea6b71727b15afaf014"
+      "sha256": "ca75183a0f445762a3aec0537b86d2928507acf15468e9e0a0a02591ddd73cba"
     },
-    "temp_index": {
-      "path": "temp/all_python_work_files/python_files_index.md",
-      "sha256": "928419c802fa218a1b5b4fb9a51c19319751f9a3a9cfc0a7d128af796eeb394f"
+    "handoff_manifest": {
+      "path": "data/evidence/talagrand_python_handoff/manifest.json",
+      "sha256": "6e28f7faecc651539ad03630f964f83e670a7648559cdcc7c6814f02a3f6616a"
     },
-    "temp_manifest": {
-      "path": "temp/all_python_work_files/python_files_manifest.json",
-      "sha256": "3487346852f8b08f01d194f4b62e1c7ffcbd5acd3d58be46372425e97f5d059a"
+    "handoff_run_order": {
+      "path": "data/evidence/talagrand_python_handoff/RUN_ORDER.md",
+      "sha256": "c9ab93fe98da8fff0f398cbf0ccf45882ec77875b47ef6c8178339539557c267"
     },
     "validator": {
       "path": "src/certify_d20_hamming_gaussian_python_work_archive_import.py",
-      "sha256": "eea803b54357ec78ff015d3ed5dade6c80754727186f5cd7c0cfd24189c54e50"
+      "sha256": "f65e30e01d1674f66f2e3cc81c1a5b696bf51423ffaeb85cbabd4ac3c554f062"
     },
     "w24_row_alphabetization": {
       "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
       "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9"
     }
   },
-  "manifest_sha256": "9ad52df198ec1d56d5e82880050030183f94a63c94fb22a4f529b725ecf85d5d",
+  "manifest_sha256": "17f5ce8db573e99f464cb9e439cd37b236c5e1efbdb839b8f55292c398ff4234",
   "name": "d20_hamming_gaussian_python_work_archive_import",
   "outputs": {
     "artifact": "generated/d20_hamming_gaussian_python_work_archive_import.json",
     "manifest": "data/invariants/d20/proof_obligations/d20_hamming_gaussian_python_work_archive_import/manifest.json",
     "report": "data/invariants/d20/proof_obligations/d20_hamming_gaussian_python_work_archive_import/report.json"
   },
-  "report_sha256": "f9900be4684d3c50378f06d1e2250246c18e4fa57cff062ac9d07ffdb393f3b9",
+  "report_sha256": "4dda55e4e21bf8c8caf2d794962e0d78c380c2c3c802fd9d9ad0090d898db785",
   "schema": "d20.proof_obligation.hamming_gaussian_python_work_archive_import_manifest@1"
 }

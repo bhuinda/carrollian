@@ -1,0 +1,51 @@
+{
+  "certificate_sha256": "31db8c1bd3fa291db6a3d1a05f10da4a89e8e97983bcb704909f52e78bd8f8af",
+  "claim": "Decomposes the first-difference quotient Q_w on the ordered branch x_0>=x_1 by substituting x_0=x_1+c. Nonnegative cone groups are certified positive; residual groups are isolated.",
+  "claim_boundary": "This is a reduction certificate, not a final proof of barrier positivity of Q_w.",
+  "created_utc": "2026-05-26T21:04:32.241580+00:00",
+  "schema": "golay_talagrand.ordered_branch_Q_cone_decomposition@1",
+  "source_Q_terms_sha256": "13bf719ffd8b76c6006b41acc37112edbdc059cd11311d312735f0080f9a0e90",
+  "status": "ORDERED_BRANCH_Q_CONE_DECOMPOSITION_BUILT",
+  "summary": [
+    {
+      "cone_coeff_l1": 108864,
+      "groups": 32144,
+      "max_residual_coeff": 33,
+      "min_cone_coeff": 1,
+      "min_residual_coeff": -2,
+      "ordered_cone_positive_fraction": 0.519163763066202,
+      "ordered_cone_positive_groups": 16688,
+      "ordered_cone_positive_terms": 19880,
+      "ordered_cone_residual_groups": 15456,
+      "residual_coeff_l1": 73920,
+      "residual_negative_terms": 30240,
+      "residual_positive_terms": 2016,
+      "residual_terms": 32256,
+      "shell": 12
+    },
+    {
+      "cone_coeff_l1": 48576,
+      "groups": 8503,
+      "max_residual_coeff": 45,
+      "min_cone_coeff": 1,
+      "min_residual_coeff": -2,
+      "ordered_cone_positive_fraction": 0.5239327296248383,
+      "ordered_cone_positive_groups": 4455,
+      "ordered_cone_positive_terms": 5544,
+      "ordered_cone_residual_groups": 4048,
+      "residual_coeff_l1": 23584,
+      "residual_negative_terms": 7920,
+      "residual_positive_terms": 528,
+      "residual_terms": 8448,
+      "shell": 16
+    }
+  ],
+  "theorem": {
+    "name": "Ordered-branch Q cone decomposition",
+    "proof_use": "This is the next reduction toward proving Q_w>=0 on the barrier: the residual terms are the only terms not already nonnegative on the ordered branch.",
+    "remaining_target": "Prove residual_Q_w>=0 under the barrier condition, or absorb it into a barrier multiple plus an ordered-cone-positive certificate.",
+    "result": "The decomposition separates Q_w into an ordered-cone-positive part and a residual part that still needs the barrier condition.",
+    "statement": "On the ordered branch x_0>=x_1, substitute x_0=x_1+c with c>=0. Terms with nonnegative coefficients in (c,x_1,rest) are automatically certified positive.",
+    "why_this_is_not_final": "Some rest-exponent groups remain residual with negative coefficients after x_0=x_1+c; those terms encode the real barrier obstruction."
+  }
+}

@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 from typing import Any
 
@@ -9,7 +10,7 @@ from .scene_builder import TurnCompileConfig, compile_turn
 def run_selftest() -> dict[str, Any]:
     stamp = utc_timestamp().replace(":", "").replace("-", "")
     turn_id = f"compiler_selftest_{stamp}"
-    base = ROOT / "temp" / "compiler_selftest"
+    base = ROOT / "data" / "evidence" / "compiler_selftest"
     core_lock = base / "CORE.lock.json"
     run_dir = base / "runs" / turn_id
     result = compile_turn(

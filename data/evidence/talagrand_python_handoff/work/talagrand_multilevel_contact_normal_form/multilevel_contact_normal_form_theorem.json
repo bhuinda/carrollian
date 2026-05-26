@@ -1,0 +1,21 @@
+{
+  "contact_target": "On B=0 and a>=b, prove D(B)<=0, equivalently Q>=0.",
+  "definitions": {
+    "C00": "sum of rest monomials over shell blocks containing neither 0 nor 1",
+    "C01": "sum of rest monomials over shell blocks containing 1 but not 0",
+    "C10": "sum of rest monomials over shell blocks containing 0 but not 1",
+    "C11": "sum of rest monomials over shell blocks containing both 0 and 1"
+  },
+  "formulas": {
+    "A": "ab C11 + a C10 + b C01 + C00",
+    "B": "24^h A - m S^h",
+    "D(B)": "24^h(a C10-b C01)-m w S^(h-1)(a^2-b^2)",
+    "Q": "wA(a^2-b^2)-S(a C10-b C01)",
+    "S": "a^2+b^2+R, where R=sum_{i=2}^{23}x_i^2",
+    "contact_identity": "24^h Q = w(a^2-b^2)B - S D(B)"
+  },
+  "important_consequence": "The general multilevel problem is not pair-stabilized; pair-stabilized is the symmetric rest case. The real multilevel obstruction is the weighted asymmetry C10-C01.",
+  "name": "Multilevel Contact Normal Form",
+  "remaining_exact_lemma": "Weighted Asymmetry Lemma: on the contact surface B=0, 24^h(a C10-b C01) <= m w S^(h-1)(a^2-b^2).",
+  "statement": "For arbitrary positive multilevel rest coordinates x_2,...,x_23, the pairwise barrier problem is exactly a four-coefficient problem C11,C10,C01,C00."
+}

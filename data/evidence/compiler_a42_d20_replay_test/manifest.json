@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "core_lock": {
+      "path": "data/evidence/compiler_a42_d20_replay_test/CORE.lock.json",
+      "sha256": "c6c0314c71a0dd20950349c8c8d76421adeeb5ce03cc05c83595b97e80c981a3",
+      "size": 3568
+    },
+    "missing_coordinate_residue_ledger": {
+      "path": "data/evidence/compiler_a42_d20_replay_test/missing_coordinate/08_residue_ledger.json",
+      "sha256": "cddc92a9cbcd2fc966db93b8ad5c0d3fdbfe33261354ae3eee2c39bf75edb741",
+      "size": 646
+    },
+    "positive_residue_ledger": {
+      "path": "data/evidence/compiler_a42_d20_replay_test/positive/08_residue_ledger.json",
+      "sha256": "0f4e592a292eb89e3b466a84144de0c012b16993ce4857d2899864baada76c29",
+      "size": 861
+    },
+    "positive_turn_lock": {
+      "path": "data/evidence/compiler_a42_d20_replay_test/positive/TURN.lock.json",
+      "sha256": "a7e9bb8c998ccf41f299a95d6ccbe07f886c4e947aa38720e1584f63368bf8c8",
+      "size": 1708
+    },
+    "report": {
+      "path": "data/evidence/compiler_a42_d20_replay_test/report.json",
+      "sha256": "03cb70d722617d209f74d4496702d12227d192e604ef51cb136bb3bfa989e555",
+      "size": 1125
+    },
+    "support_coordinates": {
+      "path": "data/evidence/compiler_a42_d20_replay_test/support_coordinates.json",
+      "sha256": "4fd8ed2265bd42c20654063c4878ce3efb54b2c8a4904aa94f09a30d6de7c544",
+      "size": 158
+    },
+    "tampered_coordinate_support_ledger": {
+      "path": "data/evidence/compiler_a42_d20_replay_test/tampered_coordinate/04_support_ledger.json",
+      "sha256": "30ddfcb88533cebb86bf246128e6cb53ff3c458829ab40b75fefcf7b1a3010c3",
+      "size": 912
+    }
+  },
+  "checks": {
+    "missing_coordinate_blocks": true,
+    "positive_a42_d20_coordinate_replay": true,
+    "tampered_coordinate_fails_replay": true
+  },
+  "commands": {
+    "regenerate": "python src/compiler_a42_d20_replay_test.py",
+    "verify": "python src/verify.py compiler-a42-d20-replay --pretty"
+  },
+  "entrypoint": {
+    "path": "data/evidence/compiler_a42_d20_replay_test/report.json",
+    "sha256": "03cb70d722617d209f74d4496702d12227d192e604ef51cb136bb3bfa989e555",
+    "size": 1125
+  },
+  "manifest_sha256": "1026cca0fde645a4216f2da0ca624f0a1cf2e091eb29959d0da4ba6ba9f255bc",
+  "promotion": {
+    "lock_file": "data/evidence/compiler_a42_d20_replay_test/.write.lock",
+    "manifest_promoted_last": true,
+    "method": "locked_staging_then_file_replace"
+  },
+  "purpose": "Replay-gated A42 and D20 coordinate witness coverage for compiler turn capsules.",
+  "runs": {
+    "missing_coordinate": "data/evidence/compiler_a42_d20_replay_test/missing_coordinate",
+    "positive": "data/evidence/compiler_a42_d20_replay_test/positive",
+    "tampered_coordinate": "data/evidence/compiler_a42_d20_replay_test/tampered_coordinate"
+  },
+  "schema": "holotopy.compiler_a42_d20_replay_manifest",
+  "status": "COMPILER_A42_D20_REPLAY_CERTIFIED",
+  "test_id": "compiler_a42_d20_replay_test"
+}

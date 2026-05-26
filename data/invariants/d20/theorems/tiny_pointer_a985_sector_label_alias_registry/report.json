@@ -1,0 +1,57 @@
+{
+  "all_checks_pass": true,
+  "boundary": "The theorem fixes canonical labels and the d20 atom source domain for tiny-pointer dereference. It does not assert a bijection between atoms and A985 sectors.",
+  "checks": {
+    "alias_registry_emitted": true,
+    "all_alias_rows_have_unique_fingerprint_matches": true,
+    "atom_domain_emitted": true,
+    "coordinate_fingerprint_ids_are_unique": true,
+    "d20_atom_count_matches_certified_evidence": true,
+    "d20_atom_domain_has_20_rows": true,
+    "perennial_ids_are_unique": true,
+    "primitive_schema_emitted": true,
+    "raw_sector_aliases_are_unique": true,
+    "source_sector_alias_rows_are_39": true,
+    "source_sector_aliases_are_unique": true
+  },
+  "claim": "The tiny pointer is canonicalized as the primitive dereference structure associated to d20 atoms: native atoms are C(H6,3), while A985 source, raw, perennial, and coordinate labels form the certified address aliases used by the pointer.",
+  "derived": {
+    "alias_registry_rows": 39,
+    "atom_domain_rows": 20,
+    "coordinate_fingerprint_id_count": 39,
+    "perennial_id_count": 39,
+    "raw_sector_count": 39,
+    "source_sector_count": 39,
+    "tables": {
+      "atom_domain": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/d20_atom_domain.csv",
+      "sector_label_alias_registry": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/sector_label_alias_registry.csv",
+      "tiny_pointer_d20_atom_primitive_schema": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/tiny_pointer_d20_atom_primitive_schema.json"
+    }
+  },
+  "inputs": {
+    "certified_evidence_invariants": {
+      "path": "data/invariants/d20/certified_evidence_invariants.json",
+      "sha256": "d749871058ed372b01230af07f7a57bba040fd3c5dfa203e7fdb86286822b5ac"
+    },
+    "certified_pointer_a985_matrix_unit_dereference": {
+      "path": "data/invariants/d20/theorems/certified_pointer_a985_matrix_unit_dereference/report.json",
+      "sha256": "5b80bc69ef3afaef08862b5d8b1cddb8436ec5116793f0a04e213921659e97d8"
+    },
+    "certified_pointer_a985_matrix_unit_instance": {
+      "path": "data/invariants/d20/theorems/certified_pointer_a985_matrix_unit_dereference/certified_pointer_instance.json",
+      "sha256": "8ac3ab7b03da46797a24b16e20130c92559a2ff7888af7afec74a3115b9dbfa7"
+    },
+    "perennial_sector_fingerprints": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_perennial_sector_fingerprints/perennial_sector_fingerprints.csv",
+      "sha256": "bbfb503280fd9b2b4ff9001d6e649205c60fb2f1b2831c2ddb65a8b432f99400"
+    },
+    "source_to_raw_sector_full_match": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_sector_match/source_to_raw_sector_full_match.csv",
+      "sha256": "771dbb249f158389814c5316faeb11a27ccc4df51523fbdf237b7be05e1528aa"
+    }
+  },
+  "next_highest_yield_item": "Attach certified per-atom support incidence to this registry when an atom-to-support table is emitted from the Tiny Pointers source material.",
+  "object": "d20",
+  "schema": "d20.theorem.tiny_pointer_a985_sector_label_alias_registry",
+  "status": "D20_TINY_POINTER_A985_SECTOR_LABEL_ALIAS_REGISTRY_CERTIFIED"
+}

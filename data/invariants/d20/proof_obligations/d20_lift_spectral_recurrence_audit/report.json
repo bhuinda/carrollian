@@ -1,0 +1,752 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b8716eb9e581ad5f461607a9cdc0eec765b409c0f1c239cbcb0c0306539ab628",
+  "checks": {
+    "baseline_has_no_boundary_loss": true,
+    "baseline_has_no_exact_quantized_recurrence": true,
+    "baseline_near_return_distance_small": true,
+    "baseline_near_return_found": true,
+    "baseline_near_return_gap_large": true,
+    "baseline_radius_stays_inside_full_window": true,
+    "baseline_sample_count_matches_schedule": true,
+    "baseline_visits_all_nonconstant_dominant_bands": true,
+    "full_window_canvas_embedded": true,
+    "laplacian_band_signature_matches_expected": true,
+    "perturbation_trials_change_dominant_band": true,
+    "perturbation_trials_have_near_returns": true,
+    "perturbation_trials_have_no_boundary_loss": true,
+    "spectral_timeseries_audit_certified": true,
+    "visualization_data_loaded": true
+  },
+  "claim": "The longer full-window D20 lifted sandpile replay exhibits a bounded spectral orbit in the public D20 Laplacian band-power simplex. Through frame 2048 after warmup the replay has no boundary loss, visits all five nonconstant bands as dominant bands, has no exact 1e-3 quantized recurrence, but does have a strong near-return in normalized band power.",
+  "closure_boundary": {
+    "certifies": [
+      "no boundary loss in the sampled baseline orbit through frame 2048",
+      "a reproducible baseline near-return in normalized five-band spectral power",
+      "absence of exact 1e-3 quantized recurrence in the sampled baseline orbit",
+      "dominant-band visitation of all five nonconstant public D20 Laplacian bands",
+      "source-schedule cursor perturbations preserve bounded near-return behavior in the tested window"
+    ],
+    "does_not_certify": [
+      "an exact period",
+      "an infinite-time invariant measure",
+      "that all source schedules or all voltage lifts share the same spectral orbit",
+      "a physical atom interpretation beyond the certified finite replay behavior"
+    ]
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "310c509e309553537099e92c9617bda2caf5916038b0e644ccc7d54d1d71497b",
+      "path": "generated/d20_lift_spectral_recurrence_audit.json",
+      "sha256": "06c848ccb356545b5b304dc9573aee41f43500dab9cef96ba48ce73e66eaea8f",
+      "status": "D20_LIFT_SPECTRAL_RECURRENCE_AUDIT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_spectral_recurrence_audit.py",
+      "sha256": "85b8a9522235f557167e25ce8da4160eef721bdfeec9cc1a3734f6f593f6eb6e"
+    },
+    "spectral_timeseries_report": {
+      "certificate_sha256": "0cf3a07976c9f9141cbbefaa3e6ee7eb9406dbe21f0e38bd84a0f94caef2b052",
+      "path": "data/invariants/d20/proof_obligations/d20_lift_spectral_timeseries_audit/report.json",
+      "sha256": "41efb016e993562e8aa52d611273ea54e8fa32feb65709219d1b8927f28fe83b",
+      "status": "D20_LIFT_SPECTRAL_TIMESERIES_AUDIT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_spectral_recurrence_audit.py",
+      "sha256": "abd398a2981074f789e6d1ecfc1b7dfcb453ca63bd8ea3441d9d02bb654ea1eb"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "28c0832f388bfb6e0485afeb06a02f356e10104c2a5b4871f678a5ec7de64e82"
+    }
+  },
+  "next_highest_yield_item": "Promote the near-return into a candidate Poincare section: persist the nearest-return frame pair, replay from both states, and compare future spectral divergence over a fixed horizon.",
+  "schema": "d20.proof_obligation.lift_spectral_recurrence_audit@1",
+  "status": "D20_LIFT_SPECTRAL_RECURRENCE_AUDIT_CERTIFIED",
+  "witness": {
+    "baseline_summary": {
+      "active_fiber_range": [
+        2943,
+        18641
+      ],
+      "boundary_loss_range": [
+        0,
+        0
+      ],
+      "dominant_band_counts": {
+        "0.763932": 23,
+        "2.000000": 124,
+        "3.000000": 32,
+        "5.000000": 53,
+        "5.236068": 25
+      },
+      "dominant_band_sequence": [
+        2.0,
+        5.236068,
+        5.236068,
+        5.0,
+        2.0,
+        2.0,
+        5.236068,
+        5.236068,
+        2.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.236068,
+        5.0,
+        2.0,
+        5.236068,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        3.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        0.763932,
+        2.0,
+        2.0,
+        5.236068,
+        5.0,
+        5.0,
+        2.0,
+        0.763932,
+        3.0,
+        5.0,
+        5.236068,
+        0.763932,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        0.763932,
+        5.0,
+        2.0,
+        2.0,
+        3.0,
+        5.236068,
+        2.0,
+        5.0,
+        3.0,
+        0.763932,
+        5.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        0.763932,
+        3.0,
+        2.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.236068,
+        3.0,
+        5.0,
+        2.0,
+        5.236068,
+        5.0,
+        2.0,
+        5.236068,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.236068,
+        2.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        5.236068,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        5.236068,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        2.0,
+        0.763932,
+        0.763932,
+        2.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.236068,
+        5.0,
+        2.0,
+        0.763932,
+        5.0,
+        3.0,
+        5.236068,
+        2.0,
+        3.0,
+        5.0,
+        2.0,
+        2.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        2.0,
+        3.0,
+        5.0,
+        5.236068,
+        3.0,
+        2.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        5.0,
+        0.763932,
+        5.0,
+        2.0,
+        2.0,
+        3.0,
+        5.236068,
+        2.0,
+        0.763932,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        2.0,
+        0.763932,
+        5.236068,
+        0.763932,
+        2.0,
+        3.0,
+        5.0,
+        5.0,
+        5.236068,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        5.236068,
+        0.763932,
+        2.0,
+        0.763932,
+        0.763932,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        0.763932,
+        2.0,
+        5.0,
+        3.0,
+        5.0,
+        0.763932,
+        0.763932,
+        3.0,
+        2.0,
+        3.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        0.763932,
+        0.763932,
+        2.0,
+        2.0,
+        0.763932,
+        3.0,
+        5.0,
+        3.0,
+        5.0,
+        5.0,
+        0.763932,
+        5.0,
+        3.0,
+        2.0,
+        2.0,
+        3.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        3.0,
+        5.236068,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.236068,
+        2.0,
+        5.0,
+        5.236068,
+        2.0
+      ],
+      "exact_quantized_collision_count": 0,
+      "exact_quantized_collisions": [],
+      "first_frame": 0,
+      "golden_pair_probability_range": [
+        0.02953386744355431,
+        0.7412266163082308
+      ],
+      "last_frame": 2048,
+      "live_grain_range": [
+        6591,
+        30663
+      ],
+      "nearest_return": {
+        "distance": 0.010320095213029606,
+        "found": true,
+        "frame_gap": 648,
+        "frame_pair": [
+          1248,
+          1896
+        ],
+        "left": {
+          "band_probability_vector": [
+            0.11990583104885318,
+            0.28188292983762336,
+            0.3441483721035175,
+            0.15247098816964202,
+            0.101591878840364
+          ],
+          "dominant_band": 3.0,
+          "live_grains": 24074,
+          "quantized_key": [
+            120,
+            282,
+            344,
+            152,
+            102
+          ],
+          "spectral_centroid": 2.982107804014729,
+          "spectral_entropy": 0.9304149808909677
+        },
+        "right": {
+          "band_probability_vector": [
+            0.11833292260278633,
+            0.2789098189897051,
+            0.3533229114261691,
+            0.14976483180324943,
+            0.09966951517809007
+          ],
+          "dominant_band": 3.0,
+          "live_grains": 29567,
+          "quantized_key": [
+            118,
+            279,
+            353,
+            150,
+            100
+          ],
+          "spectral_centroid": 2.978887196503468,
+          "spectral_entropy": 0.9260717584905911
+        }
+      },
+      "sample_count": 257,
+      "spatial_radius_range": [
+        5.025739274827678,
+        12.90517810182756
+      ],
+      "spectral_bandwidth_range": [
+        0.9717766829836623,
+        1.9746041407885244
+      ],
+      "spectral_centroid_range": [
+        1.7725469697895297,
+        4.48214699770515
+      ],
+      "spectral_coherence_range": [
+        0.011948099027022208,
+        0.46808874934178146
+      ],
+      "spectral_entropy_range": [
+        0.5319112506582185,
+        0.9880519009729778
+      ]
+    },
+    "nearest_return": {
+      "distance": 0.010320095213029606,
+      "found": true,
+      "frame_gap": 648,
+      "frame_pair": [
+        1248,
+        1896
+      ],
+      "left": {
+        "band_probability_vector": [
+          0.11990583104885318,
+          0.28188292983762336,
+          0.3441483721035175,
+          0.15247098816964202,
+          0.101591878840364
+        ],
+        "dominant_band": 3.0,
+        "live_grains": 24074,
+        "quantized_key": [
+          120,
+          282,
+          344,
+          152,
+          102
+        ],
+        "spectral_centroid": 2.982107804014729,
+        "spectral_entropy": 0.9304149808909677
+      },
+      "right": {
+        "band_probability_vector": [
+          0.11833292260278633,
+          0.2789098189897051,
+          0.3533229114261691,
+          0.14976483180324943,
+          0.09966951517809007
+        ],
+        "dominant_band": 3.0,
+        "live_grains": 29567,
+        "quantized_key": [
+          118,
+          279,
+          353,
+          150,
+          100
+        ],
+        "spectral_centroid": 2.978887196503468,
+        "spectral_entropy": 0.9260717584905911
+      }
+    },
+    "perturbation_summaries": [
+      {
+        "cursor_offset": 1,
+        "id": "cursor_offset_1",
+        "summary": {
+          "active_fiber_range": [
+            2943,
+            9686
+          ],
+          "boundary_loss_range": [
+            0,
+            0
+          ],
+          "dominant_band_counts": {
+            "2.000000": 14,
+            "3.000000": 7,
+            "5.000000": 6,
+            "5.236068": 6
+          },
+          "dominant_band_sequence": [
+            2.0,
+            5.236068,
+            2.0,
+            5.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            5.236068,
+            2.0,
+            5.236068,
+            5.0,
+            2.0,
+            3.0,
+            2.0,
+            5.236068,
+            3.0,
+            2.0,
+            5.0,
+            5.236068,
+            2.0,
+            5.0,
+            3.0,
+            2.0,
+            5.236068,
+            2.0,
+            3.0,
+            3.0,
+            5.0,
+            3.0,
+            2.0,
+            5.0,
+            3.0
+          ],
+          "exact_quantized_collision_count": 0,
+          "exact_quantized_collisions": [],
+          "first_frame": 0,
+          "golden_pair_probability_range": [
+            0.08474097109336422,
+            0.48276473587373414
+          ],
+          "last_frame": 512,
+          "live_grain_range": [
+            6591,
+            15884
+          ],
+          "nearest_return": {
+            "distance": 0.014084622532189449,
+            "found": true,
+            "frame_gap": 224,
+            "frame_pair": [
+              176,
+              400
+            ],
+            "left": {
+              "band_probability_vector": [
+                0.1913195424537595,
+                0.25678234737145456,
+                0.19544275657651025,
+                0.2572351899880596,
+                0.09922016361021599
+              ],
+              "dominant_band": 5.0,
+              "live_grains": 10208,
+              "quantized_key": [
+                191,
+                257,
+                195,
+                257,
+                99
+              ],
+              "spectral_centroid": 3.05174755875274,
+              "spectral_entropy": 0.9711906049452204
+            },
+            "right": {
+              "band_probability_vector": [
+                0.1921849559867086,
+                0.26515864690640795,
+                0.18429758734769622,
+                0.2590351183912068,
+                0.09932369136798042
+              ],
+              "dominant_band": 2.0,
+              "live_grains": 14201,
+              "quantized_key": [
+                192,
+                265,
+                184,
+                259,
+                99
+              ],
+              "spectral_centroid": 3.045267487622535,
+              "spectral_entropy": 0.9692273759234461
+            }
+          },
+          "sample_count": 33,
+          "spatial_radius_range": [
+            5.025739274827678,
+            9.314186103298725
+          ],
+          "spectral_bandwidth_range": [
+            1.1932430042025586,
+            1.8206386427858712
+          ],
+          "spectral_centroid_range": [
+            2.467872320580276,
+            4.248176458230381
+          ],
+          "spectral_coherence_range": [
+            0.012122000142854361,
+            0.3097237767392309
+          ],
+          "spectral_entropy_range": [
+            0.6902762232607691,
+            0.9878779998571456
+          ]
+        }
+      },
+      {
+        "cursor_offset": 11,
+        "id": "cursor_offset_11",
+        "summary": {
+          "active_fiber_range": [
+            2943,
+            9744
+          ],
+          "boundary_loss_range": [
+            0,
+            0
+          ],
+          "dominant_band_counts": {
+            "0.763932": 2,
+            "2.000000": 18,
+            "3.000000": 2,
+            "5.000000": 4,
+            "5.236068": 7
+          },
+          "dominant_band_sequence": [
+            2.0,
+            5.236068,
+            2.0,
+            2.0,
+            5.0,
+            2.0,
+            2.0,
+            5.236068,
+            5.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            5.236068,
+            5.236068,
+            5.0,
+            2.0,
+            2.0,
+            0.763932,
+            3.0,
+            5.236068,
+            5.0,
+            2.0,
+            5.236068,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            0.763932,
+            3.0,
+            5.236068,
+            2.0
+          ],
+          "exact_quantized_collision_count": 0,
+          "exact_quantized_collisions": [],
+          "first_frame": 0,
+          "golden_pair_probability_range": [
+            0.12703065836081534,
+            0.6414360033358506
+          ],
+          "last_frame": 512,
+          "live_grain_range": [
+            6591,
+            15918
+          ],
+          "nearest_return": {
+            "distance": 0.05557270515718533,
+            "found": true,
+            "frame_gap": 272,
+            "frame_pair": [
+              160,
+              432
+            ],
+            "left": {
+              "band_probability_vector": [
+                0.09770502064784484,
+                0.4220586782574341,
+                0.0774967894892818,
+                0.2850439593006022,
+                0.11769555230483715
+              ],
+              "dominant_band": 2.0,
+              "live_grains": 9896,
+              "quantized_key": [
+                98,
+                422,
+                77,
+                285,
+                118
+              ],
+              "spectral_centroid": 3.1927294284849586,
+              "spectral_entropy": 0.8693123835581567
+            },
+            "right": {
+              "band_probability_vector": [
+                0.13821389933003808,
+                0.43504889854786133,
+                0.06977180677664722,
+                0.2714116368665412,
+                0.0855537584789122
+              ],
+              "dominant_band": 2.0,
+              "live_grains": 14840,
+              "quantized_key": [
+                138,
+                435,
+                70,
+                271,
+                86
+              ],
+              "spectral_centroid": 2.9900227193525257,
+              "spectral_entropy": 0.8609677517582972
+            }
+          },
+          "sample_count": 33,
+          "spatial_radius_range": [
+            5.025739274827678,
+            9.317161935233651
+          ],
+          "spectral_bandwidth_range": [
+            1.2765344565347971,
+            1.7972730059225985
+          ],
+          "spectral_centroid_range": [
+            2.3409700157274056,
+            4.170207704039228
+          ],
+          "spectral_coherence_range": [
+            0.009297730400112392,
+            0.28709066471905453
+          ],
+          "spectral_entropy_range": [
+            0.7129093352809455,
+            0.9907022695998876
+          ]
+        }
+      }
+    ]
+  }
+}

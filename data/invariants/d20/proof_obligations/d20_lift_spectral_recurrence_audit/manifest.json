@@ -1,0 +1,47 @@
+{
+  "artifact_sha256_excluding_hash_field": "310c509e309553537099e92c9617bda2caf5916038b0e644ccc7d54d1d71497b",
+  "certification_tests": [
+    "verify the spectral time-series audit is certified",
+    "replay the baseline lifted sandpile through frame 2048",
+    "sample normalized five-band public D20 Laplacian power every eight frames",
+    "find the nearest nonlocal spectral return",
+    "verify no exact 1e-3 quantized recurrence occurs in the sampled baseline orbit",
+    "verify all five nonconstant bands appear as dominant bands",
+    "run two deterministic source-schedule cursor perturbations and verify bounded near-return behavior"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "310c509e309553537099e92c9617bda2caf5916038b0e644ccc7d54d1d71497b",
+      "path": "generated/d20_lift_spectral_recurrence_audit.json",
+      "sha256": "06c848ccb356545b5b304dc9573aee41f43500dab9cef96ba48ce73e66eaea8f",
+      "status": "D20_LIFT_SPECTRAL_RECURRENCE_AUDIT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_spectral_recurrence_audit.py",
+      "sha256": "85b8a9522235f557167e25ce8da4160eef721bdfeec9cc1a3734f6f593f6eb6e"
+    },
+    "spectral_timeseries_report": {
+      "certificate_sha256": "0cf3a07976c9f9141cbbefaa3e6ee7eb9406dbe21f0e38bd84a0f94caef2b052",
+      "path": "data/invariants/d20/proof_obligations/d20_lift_spectral_timeseries_audit/report.json",
+      "sha256": "41efb016e993562e8aa52d611273ea54e8fa32feb65709219d1b8927f28fe83b",
+      "status": "D20_LIFT_SPECTRAL_TIMESERIES_AUDIT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_spectral_recurrence_audit.py",
+      "sha256": "abd398a2981074f789e6d1ecfc1b7dfcb453ca63bd8ea3441d9d02bb654ea1eb"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "28c0832f388bfb6e0485afeb06a02f356e10104c2a5b4871f678a5ec7de64e82"
+    }
+  },
+  "manifest_sha256": "1fff0aff9ebd7630ec6dc7ffa42ad36524f02a871b4d8533cb52fc4ab4b66650",
+  "name": "d20_lift_spectral_recurrence_audit",
+  "outputs": {
+    "artifact": "generated/d20_lift_spectral_recurrence_audit.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_lift_spectral_recurrence_audit/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_lift_spectral_recurrence_audit/report.json"
+  },
+  "report_sha256": "b8716eb9e581ad5f461607a9cdc0eec765b409c0f1c239cbcb0c0306539ab628",
+  "schema": "d20.proof_obligation.lift_spectral_recurrence_audit_manifest@1"
+}

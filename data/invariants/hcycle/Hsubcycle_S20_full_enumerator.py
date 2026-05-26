@@ -13,6 +13,7 @@ Full enumeration:
     for k in range(20!):
         yield unrank_s20(k)
 """
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 from math import factorial
 from itertools import combinations

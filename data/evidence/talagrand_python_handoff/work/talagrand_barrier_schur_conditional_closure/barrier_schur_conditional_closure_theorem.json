@@ -1,0 +1,17 @@
+{
+  "assumption": "Barrier Schur Compression Lemma: if F_w(theta)>=0 then (theta_i-theta_j)(grad_i F_w(theta)-grad_j F_w(theta))<=0 for all i,j.",
+  "conclusion": "The Golay shell-domination inequality holds for w=12,16.",
+  "exact_two_level_role": "Closes all two-level threshold endpoints and supports a weaker threshold-compression route.",
+  "name": "Barrier Schur Conditional Closure Theorem",
+  "proof_spine": [
+    "Center theta so sum theta_i=0.",
+    "Use scale invariance to get sum_i grad_i F=0.",
+    "Use pairwise identity 24<theta,g>=sum_{i<j}(theta_i-theta_j)(g_i-g_j).",
+    "Barrier Schur compression gives <theta,g><=0 on F>=0.",
+    "Radial compression phi(s)=F((1-s)theta) has phi'(s)>=0 whenever phi(s)>=0.",
+    "Since phi(1)=F(0)=0, no phi(0)>0 is possible.",
+    "Therefore F(theta)<=0 globally."
+  ],
+  "remaining_unproved": "The Barrier Schur Compression Lemma itself.",
+  "status": "CONDITIONAL_NOT_GLOBAL_PROOF"
+}

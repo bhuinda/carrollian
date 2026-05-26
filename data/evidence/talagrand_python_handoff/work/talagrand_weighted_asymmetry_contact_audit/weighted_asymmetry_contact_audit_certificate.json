@@ -1,0 +1,39 @@
+{
+  "certificate_sha256": "a10f870ed9e3a68f8394a5a158a3884a66c7538af1c850cbd92fa9850d632e72",
+  "claim": "Audits the multilevel weighted-asymmetry contact lemma with analytic-gradient constrained optimization; no valid contact point with positive outward derivative is found.",
+  "claim_boundary": "Numerical audit only; not the final proof.",
+  "created_utc": "2026-05-26T22:08:14.696864+00:00",
+  "schema": "golay_talagrand.weighted_asymmetry_contact_audit@1",
+  "status": "WEIGHTED_ASYMMETRY_CONTACT_AUDIT_NO_VALID_OUTWARD_DERIVATIVE",
+  "summary": [
+    {
+      "best_theta0_minus_theta1": -9.159163135029802e-17,
+      "best_theta_std": 2.0419178720053592e-07,
+      "elapsed_seconds": 32.70207142829895,
+      "max_valid_dF_pair": 1.0547118733938987e-15,
+      "min_valid_dF_pair": -9.992007221626409e-16,
+      "positive_outward_derivative_rows": 0,
+      "shell": 12,
+      "starts": 37,
+      "valid_contact_rows": 24
+    },
+    {
+      "best_theta0_minus_theta1": -9.25972368062122e-16,
+      "best_theta_std": 2.3785830994390363e-07,
+      "elapsed_seconds": 55.401251554489136,
+      "max_valid_dF_pair": 9.992007221626409e-16,
+      "min_valid_dF_pair": -2.9976021664879227e-15,
+      "positive_outward_derivative_rows": 0,
+      "shell": 16,
+      "starts": 37,
+      "valid_contact_rows": 23
+    }
+  ],
+  "theorem": {
+    "audit_method": "Constrained SLSQP maximization of D(F), using analytic gradient and Hessian-derived objective gradient.",
+    "boundary": "Numerical audit only. The exact proof still requires a symbolic asymmetry/SOS/Terwilliger certificate.",
+    "name": "Weighted Asymmetry Contact Lemma audit",
+    "normal_form": "Equivalently, in multilevel variables, prove 24^h(a C10-b C01) <= m w S^(h-1)(a^2-b^2) on the contact surface B=0.",
+    "target": "On F(theta)=0 and theta0>=theta1, prove D(F)=partial_0F-partial_1F<=0."
+  }
+}

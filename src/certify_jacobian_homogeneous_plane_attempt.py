@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import hashlib
 import json
@@ -8,7 +9,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT_DIR = ROOT / "temp" / "jacobian_homogeneous_plane_attempt"
+OUT_DIR = ROOT / "data" / "evidence" / "jacobian_homogeneous_plane_attempt"
 REPORT = OUT_DIR / "report.json"
 VARS = ("x", "y", "r", "s", "t")
 VAR_INDEX = {name: index for index, name in enumerate(VARS)}

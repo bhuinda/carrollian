@@ -1,0 +1,55 @@
+{
+  "audit_sha256": "ff097a47dc597a74f810bf152ba2b820ec802e85fc6ca165b33e437cb8849f9f",
+  "checks": {
+    "input_hashes_are_unique": true,
+    "job_ids_are_contiguous": true,
+    "job_ids_are_unique": true,
+    "next_job_is_first_pending": true,
+    "plan_commands_are_plan_only": true,
+    "queue_has_48_jobs": true,
+    "queue_hash_matches_payload": true,
+    "queue_is_non_running": true,
+    "queue_json_valid": true,
+    "queue_matches_current_status": true,
+    "queue_positions_are_contiguous": true,
+    "run_commands_are_explicitly_guarded": true,
+    "status_counts_match_jobs": true,
+    "verify_commands_are_non_producing": true
+  },
+  "contract_sha256": "4f114aa73a9d625a9956a3de6beef0e9ad9846f6fadbb427691859255208dade",
+  "next_job": {
+    "cache_source": null,
+    "input_sha256": "25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a",
+    "job_id": "saturation_001",
+    "label": "mixed:q3_equals_lambda_p3:p0_nonzero:h2_det_x2",
+    "next_action": "produce_certificate",
+    "plan_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job saturation_001",
+    "queue_position": 1,
+    "run_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job saturation_001 --run-saturation-job",
+    "settings": {
+      "basis_limit": 240,
+      "order": "grevlex",
+      "pair_limit": 9000,
+      "reduction_step_limit": 120000
+    },
+    "stable_cache_file": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_cache/25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a.json",
+    "stable_present": false,
+    "staging_cache_file": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_staging_cache/25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a.json",
+    "staging_present": false,
+    "status": "missing",
+    "verification_status": "SKIPPED",
+    "verify_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --verify-saturation-job saturation_001"
+  },
+  "queue": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_queue.json",
+  "queue_error": null,
+  "queue_sha256": "165efba27d05c2f171f003f4158e1057ef6979d7cd3b5fddaab5884c44eda2ed",
+  "runs_expensive_computation": false,
+  "schema": "holotopy.saturation_certificate_queue_audit",
+  "status": "PASS",
+  "status_counts": {
+    "missing": 48,
+    "stable_present": 0,
+    "staging_present": 0,
+    "verified": 0
+  }
+}

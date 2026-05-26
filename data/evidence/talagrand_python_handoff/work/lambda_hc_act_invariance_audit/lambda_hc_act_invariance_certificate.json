@@ -1,0 +1,52 @@
+{
+  "certificate_sha256": "cfaa611486bdda499229d2f24c55e6394e4b31441aa6d9f783ecac331800e0d4",
+  "claim": "For all 2048 closed-return residue masks, Lambda_hc lies in the kernel of Act, so the Act-dependent Talagrand shell functional is invariant under Lambda_hc corrections.",
+  "claim_boundary": "This certifies invariance of the shell functional under the finite Lambda_hc correction family. It does not prove the full global Talagrand inequality.",
+  "created_utc": "2026-05-26T08:55:23.483128+00:00",
+  "dependencies": {
+    "act_dependence_certificate_sha256": "7a847487783febde764526838bd880aea3a88682500fb1f210e8a48025946f68",
+    "act_factorization_certificate_sha256": "fc3684cd6819480d4ee05d7da43989c3962f06051b14c2d18c5e351d1414f6b3",
+    "boundary_to_loop_certificate_sha256": "73553f0b77bf91647729fa28472c62b50d846ab6a7f916eb5d1ddecb96045926",
+    "corrected_summary_sha256": "76faf0f60423e7173327f777a50f7d4e6424bd42eed68595e41f0738a20dde81",
+    "e33_certificate_sha256": "b1450772bc495a50e83c25ccf7ba570ef092c72bceda8c6fea5005c9785701df",
+    "height_action_return_certificate_sha256": "1582dc9ad41a1219ff7c7c9d23ba80bf01096419f03ca21efe4db28f2752807c",
+    "height_rows_sha256": "aab89d0152958e3bc034f48a46f3420eaaf31ed97fa84fb1574cd30be18784b1"
+  },
+  "failures": [],
+  "schema": "golay_talagrand.lambda_hc_act_invariance@1",
+  "status": "LAMBDA_HC_ACT_INVARIANCE_CERTIFIED",
+  "summary": {
+    "Act_kernel_failures": 0,
+    "Act_kernel_masks": 2048,
+    "full_mask_corrected_support": 297,
+    "gamma8_corrected_support": 237,
+    "mask_count": 2048,
+    "max_corrected_support": 297,
+    "median_corrected_support": 297.0,
+    "min_corrected_support": 0,
+    "nonzero_height_masks": 2047,
+    "zero_height_masks": 1
+  },
+  "theorem": {
+    "does_not_claim": [
+      "the global Talagrand inequality for all x",
+      "a symbolic integer proof independent of the finite-field certificate",
+      "a raw algebra homomorphism property for pi_Foam33"
+    ],
+    "finite_scope": "2048 closed-return residue masks; field F_1000003; vector-level Lambda_hc data from e33_full_corrected_transport.",
+    "name": "Lambda_hc Act Invariance Lemma",
+    "proof_dependency_chain": [
+      "Act Dependence Lemma formalized: Talagrand shell functional factors through Act.",
+      "All-residue height/action-return scalar table: every height residual is assigned a sector-33 correction coefficient.",
+      "All-residue boundary-to-loop materialization: every lambda_boundary(m) is explicitly materialized.",
+      "e33 full corrected transport: every Lambda_hc(m) vector is materialized.",
+      "q42/q12 shadow vanishing: every Lambda_hc(m) is public-invisible under the certified sector-33 public-zero readout."
+    ],
+    "statement": [
+      "Let Act be the public shell actor used by the Talagrand shell functional.",
+      "Assume the Act Dependence Lemma: T_w = T_hat_w o Act.",
+      "For every closed-return residue mask m in F_2^11, Lambda_hc(m) has zero q42 and q12 public shadow and is carried by sector 33.",
+      "Therefore Act(Lambda_hc(m))=0, hence T_w(x+Lambda_hc(m))=T_w(x) for every audited/public shell state x."
+    ]
+  }
+}

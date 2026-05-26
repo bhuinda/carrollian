@@ -12,6 +12,7 @@ This is the single rebuild command. It performs, in order:
   4. run the verifier audit without a second regeneration pass.
 """
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import argparse
 import hashlib
@@ -32,6 +33,7 @@ ensure_numpy_runtime(ROOT, __file__)
 
 from src.invariant_report_inventory import invariant_report_inventory, invariant_report_rows
 from src.paths import D20_INVARIANTS, MANIFESTS, ROOT
+from src.token_burn_guard import bounded_text
 
 MANIFEST = MANIFESTS / "file_hashes.json"
 D20 = ROOT / "d20.json"
@@ -49,6 +51,7 @@ EXCLUDED_DIRS = {
     ".replay_tmp",
     ".tools",
     ".venv",
+    ".venv_four_level",
     ".msys-tmp",
     "__pycache__",
     "a236_compute_py_bundle",
@@ -64,6 +67,8 @@ EXCLUDED_DIR_PREFIXES = (
     "gnatural_ontological_computation_v",
     "kissat-rel-",
 )
+
+EXCLUDED_PATH_PREFIXES: tuple[str, ...] = ()
 
 EXCLUDED_SUFFIXES = {
     ".pyc",
@@ -139,7 +144,21 @@ def run(cmd: list[str], *, check: bool = True, capture: bool = False) -> subproc
     print("$ " + " ".join(cmd), flush=True)
     if capture:
         return subprocess.run(cmd, cwd=ROOT, text=True, check=check, capture_output=True)
-    return subprocess.run(cmd, cwd=ROOT, text=True, check=check)
+    proc = subprocess.run(cmd, cwd=ROOT, text=True, check=False, capture_output=True)
+    if proc.stdout:
+        sys.stdout.write(bounded_text(proc.stdout))
+        sys.stdout.flush()
+    if proc.stderr:
+        sys.stderr.write(bounded_text(proc.stderr))
+        sys.stderr.flush()
+    if check and proc.returncode != 0:
+        raise subprocess.CalledProcessError(
+            proc.returncode,
+            cmd,
+            output=bounded_text(proc.stdout or ""),
+            stderr=bounded_text(proc.stderr or ""),
+        )
+    return proc
 
 
 def csv_row_count(path: Path) -> int:
@@ -609,7 +628,6 @@ def refresh_source_certificates() -> None:
         raise SystemExit("coorient word-presentation refresh failed")
     if not refresh_universal_integral_uniqueness():
         raise SystemExit("universal integral uniqueness refresh failed")
-    refresh_tensor_chain_manifest()
     refresh_tensor_chain_plain_name_view()
     refresh_tensor_chain_manifest()
     refresh_ss_sat_manifest()
@@ -651,7 +669,7 @@ def certificate_summaries() -> list[dict[str, Any]]:
     return rows
 
 
-def refresh_certificate() -> None:
+def refresh_certificate() -> dict[str, Any]:
     cert = json.loads(CERTIFICATE.read_text(encoding="utf-8"))
     d20 = json.loads(D20.read_text(encoding="utf-8"))
     invariant_reports = invariant_report_rows()
@@ -695,6 +713,50 @@ def refresh_certificate() -> None:
     cert["demoted_invariant_report_count"] = len(demoted_invariant_reports)
     cert["d20_sha256"] = sha_json_body(cert, "d20_sha256")
     CERTIFICATE.write_text(json.dumps(cert, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
+    return {
+        "certificate": "certificate.json",
+        "certificate_sha256": sha_file(CERTIFICATE),
+        "certificate_size": CERTIFICATE.stat().st_size,
+        "certified_invariant_report_count": len(certified_invariant_reports),
+        "provisional_invariant_report_count": len(provisional_invariant_reports),
+        "demoted_invariant_report_count": len(demoted_invariant_reports),
+        "invariant_report_count": len(invariant_reports),
+    }
+
+
+def refresh_manifest_entry(path: Path) -> dict[str, Any]:
+    rel = path.relative_to(ROOT).as_posix()
+    manifest = load_json(MANIFEST)
+    entries = manifest.get("entries", [])
+    if not isinstance(entries, list):
+        raise ValueError("manifest entries missing")
+    entry = {
+        "path": rel,
+        "sha256": sha_file(path),
+        "size": path.stat().st_size,
+    }
+    replaced = False
+    next_entries = []
+    for current in entries:
+        if isinstance(current, dict) and current.get("path") == rel:
+            if not replaced:
+                next_entries.append(entry)
+                replaced = True
+            continue
+        next_entries.append(current)
+    if not replaced:
+        next_entries.append(entry)
+        next_entries.sort(key=lambda item: str(item.get("path", "")) if isinstance(item, dict) else "")
+    manifest["entries"] = next_entries
+    MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
+    return {
+        "manifest": MANIFEST.relative_to(ROOT).as_posix(),
+        "manifest_entry": rel,
+        "manifest_entry_updated": True,
+        "manifest_entry_was_present": replaced,
+        "sha256": entry["sha256"],
+        "size": entry["size"],
+    }
 
 
 def refresh_manifest() -> int:
@@ -715,6 +777,8 @@ def refresh_manifest() -> int:
             continue
         rel = path.relative_to(ROOT).as_posix()
         if rel == "manifests/file_hashes.json":
+            continue
+        if any(rel.startswith(prefix) for prefix in EXCLUDED_PATH_PREFIXES):
             continue
         if any(
             part in EXCLUDED_DIRS or part.startswith(EXCLUDED_DIR_PREFIXES)

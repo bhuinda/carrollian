@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import hashlib
 import itertools
@@ -9,7 +10,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT_DIR = ROOT / "temp" / "jacobian_cubic_plane_attempt"
+OUT_DIR = ROOT / "data" / "evidence" / "jacobian_cubic_plane_attempt"
 REPORT = OUT_DIR / "report.json"
 P3_KEYS = [(3, 0), (2, 1), (1, 2), (0, 3)]
 SYMBOLIC_VARS = ("x", "y", "r", "s", "u", "v")

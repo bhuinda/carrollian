@@ -1,0 +1,46 @@
+{
+  "certificate_sha256": "60e5c8c99dc2140331b7a00734f376bfbedccebb49bb9afdc417d66a94e4a478",
+  "claim": "The naive square-factor route for the global pairwise Schur polynomial is obstructed: P_w is not divisible by (x_0-x_1)^2 for w=12,16 in the literal labeled coordinate polynomial.",
+  "claim_boundary": "This is an obstruction certificate for a false shortcut, not a counterexample to Talagrand or to barrier Schur compression.",
+  "created_utc": "2026-05-26T19:34:22.515130+00:00",
+  "schema": "golay_talagrand.pairwise_schur_square_obstruction@1",
+  "source_remainder_sha256": "7af163ce208d386bf9a094dc50480f19f0318b050d923ac525118827f69ee5dd",
+  "source_summary_sha256": "c2923196cc7638b56cd2a78e3b2c1231f4e8409c3330d52835924c34ae9963d8",
+  "status": "PAIRWISE_SCHUR_NAIVE_SQUARE_FACTOR_OBSTRUCTED",
+  "summary": [
+    {
+      "P_rest_groups": 32144,
+      "divisibility_by_x0_minus_x1_squared": false,
+      "interpretation": "P_w=(x0-x1)^2 R_w. R_w is the reduced pairwise Schur quotient; it still has mixed signs, so barrier information remains essential.",
+      "quotient_coeff_l1": 77952,
+      "quotient_coeff_max": 13,
+      "quotient_coeff_min": -2,
+      "quotient_negative_terms": 15456,
+      "quotient_positive_terms": 5152,
+      "quotient_terms": 20608,
+      "remainder_terms": 61824,
+      "shell": 12
+    },
+    {
+      "P_rest_groups": 8503,
+      "divisibility_by_x0_minus_x1_squared": false,
+      "interpretation": "P_w=(x0-x1)^2 R_w. R_w is the reduced pairwise Schur quotient; it still has mixed signs, so barrier information remains essential.",
+      "quotient_coeff_l1": 28512,
+      "quotient_coeff_max": 17,
+      "quotient_coeff_min": -2,
+      "quotient_negative_terms": 4048,
+      "quotient_positive_terms": 1518,
+      "quotient_terms": 5566,
+      "remainder_terms": 16192,
+      "shell": 16
+    }
+  ],
+  "theorem": {
+    "actual_result": "P_w has a visible single factor (x_0-x_1) by construction, but is not divisible by (x_0-x_1)^2 in the literal coordinate labeling.",
+    "consequence": "The final proof cannot use a naive symmetric Schur-square factorization. It must use the correct M24-equivariant pair-stabilizer/orbit compression, or a true semialgebraic barrier certificate.",
+    "false_candidate": "P_w should be divisible by (x_0-x_1)^2.",
+    "name": "Pairwise Schur naive square-factor obstruction",
+    "reason": "The Golay shell polynomial is M24-invariant, not S24-invariant. M24 is highly transitive, but literal transposition of coordinates 0 and 1 while fixing the other 22 labels is not a symmetry of the labeled polynomial. Therefore the bracket need not vanish on x_0=x_1 with the other coordinates held fixed.",
+    "remaining_target": "Prove pairwise Schur compression on the barrier by M24-equivariant compression rather than by literal (x_0-x_1)^2 coefficient factorization."
+  }
+}

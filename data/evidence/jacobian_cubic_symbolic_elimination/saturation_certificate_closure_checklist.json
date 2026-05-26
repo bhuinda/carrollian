@@ -1,0 +1,117 @@
+{
+  "artifacts": {
+    "intake_protocol": {
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_intake_protocol.json",
+      "sha256": "b75197340b3b709bef1e5e5e9d9efb6e233e6f45fc729bfb0312dd1289d2bcfe",
+      "size": 7338
+    },
+    "job_plan": {
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_jobs.json",
+      "sha256": "4847a515c83fb925f1e1a71975671fd58b428ebcf0f549ad2f04324d99135d9d",
+      "size": 69774
+    },
+    "queue": {
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_queue.json",
+      "sha256": "165efba27d05c2f171f003f4158e1057ef6979d7cd3b5fddaab5884c44eda2ed",
+      "size": 67989
+    },
+    "source_audit": {
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_certificate_source_audit.json",
+      "sha256": "23afc8f1fb58c130e94266ac1d860e6a4626a4f1aeebde1225ed225df7e5f762",
+      "size": 67018
+    },
+    "stable_cache_directory": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_cache",
+    "staging_source_directory": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_staging_cache"
+  },
+  "checklist_sha256": "f85dac2f6dcef07637a3daf95998fd29ecc385e3b47e381a9963602f6b496e5d",
+  "checks": {
+    "contract_expects_48_certificates": true,
+    "intake_protocol_passes": true,
+    "intake_ready_lists_focused_intake_verifier": true,
+    "missing_is_explicit_residue": true,
+    "provisional_lists_contract_and_index": true,
+    "queue_declares_48_jobs": true,
+    "source_counts_cover_48_jobs": true,
+    "strict_certified_lists_strict_cache_verifier": true,
+    "strict_state_requires_48_stable_verified": true
+  },
+  "contract_sha256": "4f114aa73a9d625a9956a3de6beef0e9ad9846f6fadbb427691859255208dade",
+  "current_level": "intake_ready",
+  "current_state": {
+    "next_job": {
+      "cache_source": null,
+      "input_sha256": "25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a",
+      "job_id": "saturation_001",
+      "label": "mixed:q3_equals_lambda_p3:p0_nonzero:h2_det_x2",
+      "next_action": "produce_certificate",
+      "plan_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job saturation_001",
+      "queue_position": 1,
+      "run_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --produce-saturation-job saturation_001 --run-saturation-job",
+      "settings": {
+        "basis_limit": 240,
+        "order": "grevlex",
+        "pair_limit": 9000,
+        "reduction_step_limit": 120000
+      },
+      "stable_cache_file": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_cache/25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a.json",
+      "stable_present": false,
+      "staging_cache_file": "data/evidence/jacobian_cubic_symbolic_elimination/saturation_staging_cache/25440b66848a05dd08ffbf1f2f235b193644ee622d9686c0ee475cbbab62ce4a.json",
+      "staging_present": false,
+      "status": "missing",
+      "verification_status": "SKIPPED",
+      "verify_command": "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --verify-saturation-job saturation_001"
+    },
+    "queue_status": "PENDING_CERTIFICATES",
+    "source_counts": {
+      "invalid_present": 0,
+      "missing_both": 48,
+      "produce_needed": 48,
+      "promotion_ready": 0,
+      "stable_present": 0,
+      "stable_verified": 0,
+      "staging_present": 0,
+      "staging_verified": 0
+    }
+  },
+  "levels": {
+    "intake_ready": {
+      "description": "The job queue and intake protocol identify the next certificate action without running algebra.",
+      "required_state": {
+        "invalid_present": 0,
+        "job_count": 48,
+        "source_counts_partition_jobs": true
+      },
+      "required_verifiers": [
+        "python src/verify.py jacobian-cubic-intake --pretty",
+        "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --audit-saturation-sources",
+        "python src/certify_jacobian_cubic_symbolic_elimination_attempt.py --saturation-job-status-summary"
+      ],
+      "strict_cache_may_fail": true
+    },
+    "provisional_integrated": {
+      "allowed_residue": "missing saturation certificate cache files",
+      "description": "The contract, registry, and public intake artifacts are present and current.",
+      "required_verifiers": [
+        "python src/verify.py jacobian-cubic-contract --pretty",
+        "python src/verify.py evidence-index --pretty"
+      ],
+      "strict_cache_may_fail": true
+    },
+    "strict_certified": {
+      "description": "All 48 stable cache certificates verify and the strict cache verifier passes.",
+      "required_state": {
+        "invalid_present": 0,
+        "produce_needed": 0,
+        "promotion_ready": 0,
+        "stable_verified": 48
+      },
+      "required_verifiers": [
+        "python src/verify.py jacobian-cubic-cache --pretty"
+      ],
+      "strict_cache_may_fail": false
+    }
+  },
+  "runs_expensive_computation": false,
+  "schema": "holotopy.saturation_certificate_closure_checklist",
+  "status": "PASS"
+}

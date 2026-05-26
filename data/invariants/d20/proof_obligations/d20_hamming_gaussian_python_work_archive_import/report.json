@@ -1,6 +1,6 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "f9900be4684d3c50378f06d1e2250246c18e4fa57cff062ac9d07ffdb393f3b9",
+  "certificate_sha256": "4dda55e4e21bf8c8caf2d794962e0d78c380c2c3c802fd9d9ad0090d898db785",
   "checks": {
     "all_python_sources_compile": true,
     "archive_root_exists": true,
@@ -15,6 +15,7 @@
     "root_killing_sequence_42_18_6_0_replayed": true,
     "scipy_dependency_scripts_recorded": true,
     "source_manifest_count_matches_actual_python_count": true,
+    "source_manifest_declares_all_imported_sources": true,
     "source_manifest_hashes_all_match": true,
     "source_manifest_sizes_all_match": true,
     "sparse_signed_probe_pass_checks": true,
@@ -23,30 +24,30 @@
     "talagrand_sparse_mgf_sanity_passes": true,
     "w24_endpoint_is_certified": true
   },
-  "claim": "The all_python_work_files archive is internally consistent and partially replay-certified in this workspace. The finite Hamming/Golay layers are strong: root killing is 42 -> 18 -> 6 -> 0, the Golay endpoint has dual distance 8, sparse <8 projections reduce to independent Rademacher sums, and the Boolean indicator shell domination audit checks all 2^24 supports. The final entropy contraction inequalities for w=12,16 remain open.",
+  "claim": "The Talagrand Python handoff work set is internally consistent and partially replay-certified in this workspace. The finite Hamming/Golay layers are strong: root killing is 42 -> 18 -> 6 -> 0, the Golay endpoint has dual distance 8, sparse <8 projections reduce to independent Rademacher sums, and the Boolean indicator shell domination audit checks all 2^24 supports. The final entropy contraction inequalities for w=12,16 remain open.",
   "inputs": {
     "artifact": {
-      "artifact_sha256_excluding_this_field": "9d7dcae74f961a2414c35704ec25a676e5a8b4044ed0bce97da3febb3c831b30",
+      "artifact_sha256_excluding_this_field": "e6c7bf13c0151366fbcf7001a714fadcd7f4a7549a218a8fcbfb524ed5ab7dd1",
       "path": "generated/d20_hamming_gaussian_python_work_archive_import.json",
       "schema": "d20.proof_obligation.hamming_gaussian_python_work_archive_import.artifact@1",
-      "sha256": "08c4f9972b579498c1770a2b89b01565cc0d680735b3dca2816a535c4119d593",
+      "sha256": "f9590c618f53389660fccffba8307c2f5a49425073199c24490638731e397b01",
       "status": "D20_HAMMING_GAUSSIAN_PYTHON_WORK_ARCHIVE_IMPORTED_PARTIAL_REPLAY"
     },
     "derive_script": {
       "path": "src/derive_d20_hamming_gaussian_python_work_archive_import.py",
-      "sha256": "681a13115428b192933e88cdc0274ba9f8cfed9bbc252ea6b71727b15afaf014"
+      "sha256": "ca75183a0f445762a3aec0537b86d2928507acf15468e9e0a0a02591ddd73cba"
     },
-    "temp_index": {
-      "path": "temp/all_python_work_files/python_files_index.md",
-      "sha256": "928419c802fa218a1b5b4fb9a51c19319751f9a3a9cfc0a7d128af796eeb394f"
+    "handoff_manifest": {
+      "path": "data/evidence/talagrand_python_handoff/manifest.json",
+      "sha256": "6e28f7faecc651539ad03630f964f83e670a7648559cdcc7c6814f02a3f6616a"
     },
-    "temp_manifest": {
-      "path": "temp/all_python_work_files/python_files_manifest.json",
-      "sha256": "3487346852f8b08f01d194f4b62e1c7ffcbd5acd3d58be46372425e97f5d059a"
+    "handoff_run_order": {
+      "path": "data/evidence/talagrand_python_handoff/RUN_ORDER.md",
+      "sha256": "c9ab93fe98da8fff0f398cbf0ccf45882ec77875b47ef6c8178339539557c267"
     },
     "validator": {
       "path": "src/certify_d20_hamming_gaussian_python_work_archive_import.py",
-      "sha256": "eea803b54357ec78ff015d3ed5dade6c80754727186f5cd7c0cfd24189c54e50"
+      "sha256": "f65e30e01d1674f66f2e3cc81c1a5b696bf51423ffaeb85cbabd4ac3c554f062"
     },
     "w24_row_alphabetization": {
       "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
@@ -75,20 +76,21 @@
       "hamming_gaussian_entropy_logsobolev_route/local_sdpi_spectrum.csv": {
         "check": "all_margins_positive",
         "exists": true,
-        "max_margin": 0.16304347826086912,
-        "min_margin": 0.1032608695652172,
+        "margin_column": "local_margin_target_minus_eta",
+        "max_margin": 0.163043478261,
+        "min_margin": 0.103260869565,
         "ok": true,
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_entropy_logsobolev_route/local_sdpi_spectrum.csv",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_entropy_logsobolev_route/local_sdpi_spectrum.csv",
         "row_count": 3,
-        "sha256": "a548b6c4d2d863e0d22e2b88e31989c62f8d914824c94b0e3ad0229d63335d11"
+        "sha256": "5fae7159deb728afaf524f01474b09ae21abf6ae9312edcffc9e07a6654e165e"
       },
       "hamming_gaussian_entropy_spinh_veronese/spinh_veronese_numeric_checks.csv": {
         "check": "status_column_pass",
         "exists": true,
         "ok": true,
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_entropy_spinh_veronese/spinh_veronese_numeric_checks.csv",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_entropy_spinh_veronese/spinh_veronese_numeric_checks.csv",
         "row_count": 1,
-        "sha256": "e92ff614ce9ad84bbbce6562446628120f1aaca2493cb2c96b10f2c3dd931450",
+        "sha256": "7ec92616e67467703f11cedda0d0a05bb98d4afdf1aa57df138e0b6f4d7cf733",
         "statuses": [
           "PASS"
         ]
@@ -137,20 +139,20 @@
           0.9440648008516725
         ],
         "expected_status": "HAMMING_GAUSSIAN_CALL_ORDER_PROBE_PASS",
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_call_order/hamming_gaussian_call_order_certificate.json",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_call_order/hamming_gaussian_call_order_certificate.json",
         "root_sequence": [
           42,
           18,
           6,
           0
         ],
-        "sha256": "166e4b1ac1d4371dd406ff39ac515a350197ed2d23ed519cda71189c9478e6af",
+        "sha256": "fe58caa99de453f78ca3a0605a84395e2c77d6421b47ea87b94e346fa268b22c",
         "status": "HAMMING_GAUSSIAN_CALL_ORDER_PROBE_PASS",
         "status_matches": true
       },
       "hamming_gaussian_convex_order/hamming_gaussian_convex_order_certificate.json": {
         "expected_status": "HAMMING_GAUSSIAN_CONVEX_ORDER_PROBE_PASS",
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_convex_order/hamming_gaussian_convex_order_certificate.json",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_convex_order/hamming_gaussian_convex_order_certificate.json",
         "positive_defect_sequence_D4_plus": [
           672,
           288,
@@ -163,7 +165,7 @@
           6,
           0
         ],
-        "sha256": "3dce7d65e8f09bd61d3b0392dd54119efaf7b106a890e9a7a6cac16b8728d632",
+        "sha256": "513669c547895092462f3ae177efa1b871907e104a2a0e3d81de0a128c0c65a0",
         "status": "HAMMING_GAUSSIAN_CONVEX_ORDER_PROBE_PASS",
         "status_matches": true
       },
@@ -176,14 +178,14 @@
           "weight_enumerator_expected_pass": true
         },
         "expected_status": "HAMMING_GAUSSIAN_DUAL_DISTANCE_KRAWTCHOUK_PASS",
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_dual_distance/hamming_gaussian_dual_distance_certificate.json",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_dual_distance/hamming_gaussian_dual_distance_certificate.json",
         "root_sequence": [
           42,
           18,
           6,
           0
         ],
-        "sha256": "f14832a952ba90343f62aa9e96827cc1e0acb85b6ed5955720b1a6f51471c76e",
+        "sha256": "7c02218228c4da5adf1f0b2ae45328cf5e94d389db2bbfa4cee15b9eca81620c",
         "status": "HAMMING_GAUSSIAN_DUAL_DISTANCE_KRAWTCHOUK_PASS",
         "status_matches": true
       },
@@ -197,8 +199,8 @@
           "not a proof of multivariate convex-order domination",
           "random search is diagnostic, not exhaustive"
         ],
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_full_subgaussian_probe/hamming_gaussian_full_subgaussian_probe_certificate.json",
-        "sha256": "dd4a36a05c86691c2a841b917824e2f6e679c29a26ee269460344868f5826b69",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_full_subgaussian_probe/hamming_gaussian_full_subgaussian_probe_certificate.json",
+        "sha256": "b1e963cc017f6830c727fc7e0220e5c96e3137dc58a7be11a430c4127903fbb1",
         "status": "HAMMING_GAUSSIAN_FULL_SUBGAUSSIAN_PROBE_COMPLETE",
         "status_matches": true
       },
@@ -206,17 +208,17 @@
         "all_indicator_cases_pass": true,
         "expected_status": "HAMMING_GAUSSIAN_INDICATOR_SHELL_DOMINATION_CERTIFIED",
         "global_max_ratio": 1.0,
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination_certificate.json",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination_certificate.json",
         "remaining_residue": "Lift from Boolean indicator vectors to arbitrary nonnegative vectors x. Candidate routes: layer-cake/threshold integration, association-scheme tensor spectral bound, or Krawtchouk/SOS certificate.",
-        "sha256": "9ea180887bcb6899b9665446da112bf02c6587ceaf84b1d76e8dd4bf55fe5e67",
+        "sha256": "cc64db58d41d9d8b6e1f81e671abf8e58bf65a63fcab517c4089b1d7096deeff",
         "status": "HAMMING_GAUSSIAN_INDICATOR_SHELL_DOMINATION_CERTIFIED",
         "status_matches": true,
         "total_subsets_checked": 16777216
       },
       "hamming_gaussian_morphism/hamming_gaussian_morphism_certificate.json": {
         "expected_status": "HAMMING_GAUSSIAN_MORPHISM_INVARIANTS_PASS",
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_morphism/hamming_gaussian_morphism_certificate.json",
-        "sha256": "247b0fc8f00a96a1b512b5853b0a3628156457889f4c143b0de45797389c8025",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_morphism/hamming_gaussian_morphism_certificate.json",
+        "sha256": "fc0b16e063725ea8f6f28695ee9a9933c4b28e9a343d4f4c609871d5d041af17",
         "status": "HAMMING_GAUSSIAN_MORPHISM_INVARIANTS_PASS",
         "status_matches": true
       },
@@ -231,8 +233,8 @@
           "root_chain_42_18_6_0": true,
           "signed_projection_count_formula_ok": true
         },
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_sparse_signed/hamming_gaussian_sparse_signed_certificate.json",
-        "sha256": "8d2d812f6cf901f6216b4b0f9e752fe2b31f21852be4910de9b27dd39aa1fbab",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_sparse_signed/hamming_gaussian_sparse_signed_certificate.json",
+        "sha256": "b98c6d800d36173065bc24356985437ca832497ae46fbcfd5a8b91ae21e5dd1f",
         "status": "HAMMING_GAUSSIAN_SPARSE_SIGNED_PROBE_PASS",
         "status_matches": true
       },
@@ -251,36 +253,38 @@
           "not a new proof of Talagrand's theorem; imports the theorem as the analytic assembly layer",
           "not coverage of supports of size >= 8 where Golay structure is visible"
         ],
-        "path": "temp/all_python_work_files/python_files/hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge_certificate.json",
+        "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge_certificate.json",
         "sanity_checks": {
           "max_ratio": 1.0,
           "mgf_bound_all_pass": true,
           "mgf_grid_profiles_checked": 27,
           "mgf_grid_rows": 243
         },
-        "sha256": "b9031939353a9fb926429a500f75023dfbc896d6b3a96e23daeff2afd146c593",
+        "sha256": "9f65db601ef3cd26de272fbbe7283c104e9f0ce2ce5b41f6001ba257d99fcccf",
         "status": "HAMMING_GAUSSIAN_TALAGRAND_BRIDGE_CONSTRUCTED",
         "status_matches": true
       }
     },
     "source_archive": {
-      "index": {
-        "path": "temp/all_python_work_files/python_files_index.md",
-        "sha256": "928419c802fa218a1b5b4fb9a51c19319751f9a3a9cfc0a7d128af796eeb394f"
-      },
       "manifest": {
-        "path": "temp/all_python_work_files/python_files_manifest.json",
-        "sha256": "3487346852f8b08f01d194f4b62e1c7ffcbd5acd3d58be46372425e97f5d059a"
+        "path": "data/evidence/talagrand_python_handoff/manifest.json",
+        "sha256": "6e28f7faecc651539ad03630f964f83e670a7648559cdcc7c6814f02a3f6616a"
+      },
+      "run_order": {
+        "path": "data/evidence/talagrand_python_handoff/RUN_ORDER.md",
+        "sha256": "c9ab93fe98da8fff0f398cbf0ccf45882ec77875b47ef6c8178339539557c267"
       },
       "source_manifest": {
         "actual_python_file_count": 16,
+        "all_files_declared": true,
         "all_hashes_match": true,
         "all_sizes_match": true,
-        "created_utc": "2026-05-26T02:00:32.594122+00:00",
+        "created_utc": "2026-05-26T22:30:33.713229+00:00",
         "files": [
           {
             "actual_sha256": "7cbf2221027100ccd38324cb3d287bf360ce54b4dc356e151c5a5fb838a8fa93",
             "actual_size_bytes": 16588,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "7cbf2221027100ccd38324cb3d287bf360ce54b4dc356e151c5a5fb838a8fa93",
             "expected_size_bytes": 16588,
@@ -291,6 +295,7 @@
           {
             "actual_sha256": "7ef22d3e598ba8871bf8996c2af1284da8698f018abb2db19ab1e36272bcb04c",
             "actual_size_bytes": 14231,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "7ef22d3e598ba8871bf8996c2af1284da8698f018abb2db19ab1e36272bcb04c",
             "expected_size_bytes": 14231,
@@ -301,6 +306,7 @@
           {
             "actual_sha256": "7120e0ac5ded401aa5ee74a2102551e3c40ce9f6589d5d4520bac7752134ac83",
             "actual_size_bytes": 9646,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "7120e0ac5ded401aa5ee74a2102551e3c40ce9f6589d5d4520bac7752134ac83",
             "expected_size_bytes": 9646,
@@ -311,6 +317,7 @@
           {
             "actual_sha256": "3a35d7e2acfa82d6692e75cba5c11debd099a296081aa6eb4e7b432fed80b9e2",
             "actual_size_bytes": 16456,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "3a35d7e2acfa82d6692e75cba5c11debd099a296081aa6eb4e7b432fed80b9e2",
             "expected_size_bytes": 16456,
@@ -321,6 +328,7 @@
           {
             "actual_sha256": "37c2be07163a351d9239222ed62ec3614f70b6a0e33c1d9c72ff046dbc36b46b",
             "actual_size_bytes": 1773,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "37c2be07163a351d9239222ed62ec3614f70b6a0e33c1d9c72ff046dbc36b46b",
             "expected_size_bytes": 1773,
@@ -331,6 +339,7 @@
           {
             "actual_sha256": "428dca76cfc0badecedfb0a323c6ce008f3e6f89f622a42306b28736757ca9fe",
             "actual_size_bytes": 3134,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "428dca76cfc0badecedfb0a323c6ce008f3e6f89f622a42306b28736757ca9fe",
             "expected_size_bytes": 3134,
@@ -341,6 +350,7 @@
           {
             "actual_sha256": "7b1907604f303cdc91d994d06fb9a200c8907aa723f2ad26019edf168931280a",
             "actual_size_bytes": 15272,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "7b1907604f303cdc91d994d06fb9a200c8907aa723f2ad26019edf168931280a",
             "expected_size_bytes": 15272,
@@ -351,6 +361,7 @@
           {
             "actual_sha256": "321242519d83502bb1d44b4577302c9037269b974587e47d8fdd5186cff13f20",
             "actual_size_bytes": 8354,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "321242519d83502bb1d44b4577302c9037269b974587e47d8fdd5186cff13f20",
             "expected_size_bytes": 8354,
@@ -361,6 +372,7 @@
           {
             "actual_sha256": "1d567ec6567fbc98814a0a144be7617fa04742c930023112c7bab594347e5662",
             "actual_size_bytes": 12732,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "1d567ec6567fbc98814a0a144be7617fa04742c930023112c7bab594347e5662",
             "expected_size_bytes": 12732,
@@ -371,6 +383,7 @@
           {
             "actual_sha256": "f84c18ef1b5d7b07d5fed9b7e187be84a145914df9c3d188b37e653d2021656f",
             "actual_size_bytes": 14038,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "f84c18ef1b5d7b07d5fed9b7e187be84a145914df9c3d188b37e653d2021656f",
             "expected_size_bytes": 14038,
@@ -381,6 +394,7 @@
           {
             "actual_sha256": "98190c8f2ddc2e6d91398c5ae0ad50368324fc6d900a0d3a0976da8195877616",
             "actual_size_bytes": 9815,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "98190c8f2ddc2e6d91398c5ae0ad50368324fc6d900a0d3a0976da8195877616",
             "expected_size_bytes": 9815,
@@ -391,6 +405,7 @@
           {
             "actual_sha256": "0fa6e6eeef334ad30d3601c13f89b232a578c2a29a04bf0393f56265b7e22546",
             "actual_size_bytes": 20717,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "0fa6e6eeef334ad30d3601c13f89b232a578c2a29a04bf0393f56265b7e22546",
             "expected_size_bytes": 20717,
@@ -401,6 +416,7 @@
           {
             "actual_sha256": "6a4abca25cbe788ab42b57ab13197ebccb6217ad918c62e4da88a65e17f91e19",
             "actual_size_bytes": 7754,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "6a4abca25cbe788ab42b57ab13197ebccb6217ad918c62e4da88a65e17f91e19",
             "expected_size_bytes": 7754,
@@ -411,6 +427,7 @@
           {
             "actual_sha256": "d0f0444fba76e8a527a3c4313d903bdad8b7a3d6f99e0713437ecf2dc3561034",
             "actual_size_bytes": 7389,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "d0f0444fba76e8a527a3c4313d903bdad8b7a3d6f99e0713437ecf2dc3561034",
             "expected_size_bytes": 7389,
@@ -421,6 +438,7 @@
           {
             "actual_sha256": "adabee75ab9ef3b78717ff1d2c9ae5115c520030d700a632801734ed9fdaa583",
             "actual_size_bytes": 18068,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "adabee75ab9ef3b78717ff1d2c9ae5115c520030d700a632801734ed9fdaa583",
             "expected_size_bytes": 18068,
@@ -431,6 +449,7 @@
           {
             "actual_sha256": "43159ebdcc0250fac114a5f3ba7197d0e7751fd8e4a205232f78b9a3b60d974a",
             "actual_size_bytes": 20193,
+            "declared_in_handoff_manifest": true,
             "exists": true,
             "expected_sha256": "43159ebdcc0250fac114a5f3ba7197d0e7751fd8e4a205232f78b9a3b60d974a",
             "expected_size_bytes": 20193,
@@ -440,7 +459,7 @@
           }
         ],
         "manifest_count": 16,
-        "recorded_root": "/mnt/data"
+        "recorded_root": "data/evidence/talagrand_python_handoff"
       }
     },
     "syntax": {
@@ -448,49 +467,49 @@
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_call_order/hamming_gaussian_call_order.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_call_order/hamming_gaussian_call_order.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_convex_order/hamming_gaussian_convex_order.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_convex_order/hamming_gaussian_convex_order.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_critical_point_audit/hamming_gaussian_critical_point_audit.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_critical_point_audit/hamming_gaussian_critical_point_audit.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_dual_distance/hamming_gaussian_dual_distance.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_dual_distance/hamming_gaussian_dual_distance.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_entropy_logsobolev_route/entropy_logsobolev_local_sdpi.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_entropy_logsobolev_route/entropy_logsobolev_local_sdpi.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_entropy_spinh_veronese/veronese_spinh_audit.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_entropy_spinh_veronese/veronese_spinh_audit.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_full_subgaussian_probe/hamming_gaussian_full_subgaussian_probe.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_full_subgaussian_probe/hamming_gaussian_full_subgaussian_probe.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination.py",
           "syntax_warnings": [
             {
               "category": "SyntaxWarning",
@@ -565,54 +584,54 @@
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_morphism/hamming_gaussian_morphism.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_morphism/hamming_gaussian_morphism.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_sharp_constant_candidate/hamming_gaussian_sharp_constant_candidate.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_sharp_constant_candidate/hamming_gaussian_sharp_constant_candidate.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_shortening_rank/hamming_gaussian_shortening_rank.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_shortening_rank/hamming_gaussian_shortening_rank.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_sparse_signed/hamming_gaussian_sparse_signed.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_sparse_signed/hamming_gaussian_sparse_signed.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/hamming_gaussian_two_level_probe/hamming_gaussian_two_level_probe.py",
+          "path": "data/evidence/talagrand_python_handoff/work/hamming_gaussian_two_level_probe/hamming_gaussian_two_level_probe.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/run_crypto_static_audit.py",
+          "path": "data/evidence/talagrand_python_handoff/work/run_crypto_static_audit.py",
           "syntax_warnings": []
         },
         {
           "error": null,
           "ok": true,
-          "path": "temp/all_python_work_files/python_files/verifier_security_audit.py",
+          "path": "data/evidence/talagrand_python_handoff/work/verifier_security_audit.py",
           "syntax_warnings": []
         }
       ],
       "warning_files": [
-        "temp/all_python_work_files/python_files/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination.py"
+        "data/evidence/talagrand_python_handoff/work/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination.py"
       ]
     }
   }

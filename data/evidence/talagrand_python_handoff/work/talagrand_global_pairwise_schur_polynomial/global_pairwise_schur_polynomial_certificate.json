@@ -1,0 +1,49 @@
+{
+  "certificate_sha256": "40023551c171d985715e18fd91124ca699e9d1b2baa906251239cb3b9038b870",
+  "claim": "Materializes the exact sparse integer pairwise Schur compression polynomial P_w for representative pair (0,1), for w=12,16.",
+  "claim_boundary": "This is not a proof of P_w>=0 on the barrier. It is the exact polynomial target for the remaining semialgebraic certificate.",
+  "created_utc": "2026-05-26T19:24:23.772170+00:00",
+  "schema": "golay_talagrand.global_pairwise_schur_polynomial@1",
+  "status": "GLOBAL_PAIRWISE_SCHUR_POLYNOMIAL_TARGET_MATERIALIZED",
+  "summary": [
+    {
+      "A_terms": 2576,
+      "N_terms": 1344,
+      "P_coeff_l1": 182784,
+      "P_coeff_max": 13,
+      "P_coeff_min": -13,
+      "P_degree": 15,
+      "P_negative_terms": 34720,
+      "P_positive_terms": 34720,
+      "P_terms": 69440,
+      "blocks": 2576,
+      "bracket_terms": 34720,
+      "interpretation": "P>=0 is pairwise Schur compression for pair (0,1); P can be negative below the barrier, so a barrier condition is required.",
+      "shell": 12
+    },
+    {
+      "A_terms": 759,
+      "N_terms": 352,
+      "P_coeff_l1": 64064,
+      "P_coeff_max": 17,
+      "P_coeff_min": -17,
+      "P_degree": 19,
+      "P_negative_terms": 9262,
+      "P_positive_terms": 9262,
+      "P_terms": 18524,
+      "blocks": 759,
+      "bracket_terms": 9262,
+      "interpretation": "P>=0 is pairwise Schur compression for pair (0,1); P can be negative below the barrier, so a barrier condition is required.",
+      "shell": 16
+    }
+  ],
+  "theorem": {
+    "definition": "For pair (0,1), set A=A_w(x), S=sum_i x_i^2, N=x0*d0A-x1*d1A. The pairwise barrier Schur inequality is equivalent to P_w(x)>=0 on the barrier region 24^(w/2)A_w(x)>=A_w(1)S^(w/2), where P_w=-(x0-x1)(S*N-w*A*(x0^2-x1^2)).",
+    "name": "Global pairwise Schur polynomial target",
+    "next_certificate_target": "Find an exact Positivstellensatz/SOS/Krawtchouk certificate proving P_w>=0 on {24^(w/2)A_w - A_w(1)S^(w/2)>=0}.",
+    "positive_denominators_removed": "The sign of theta0-theta1 matches the sign of x0-x1, and A,S>0 inside the positive orthant.",
+    "symmetry_reduction": "M24 2-transitivity reduces the pair to (0,1).",
+    "why_not_finished": "P_w has negative coefficients and can be negative below the barrier. The needed certificate is semialgebraic: P_w>=0 under the barrier constraint, not coefficientwise positivity.",
+    "why_this_is_exact": "P_w is an integer sparse polynomial obtained directly from the Golay shell monomial polynomial."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "certificate_sha256": "c78fcf7d618fe6b71221fdf47e8bc7881d09c5cbbd2ae3026de915de81eb1b73",
+  "claim": "For the audited rest_size <= 6 four-level scenic profile band, the Talagrand obstruction is closed after actor readout: Vandermonde horn cycles cancel symmetrically and Act(H2) lands in the exact three-level nonnegative cone.",
+  "claim_boundary": "Audited band only. Not a full arbitrary-vector Talagrand proof.",
+  "created_utc": "2026-05-26T07:45:34.335961+00:00",
+  "dependency_records": [
+    {
+      "certificate_sha256": "e548c6b499ebb3a16a6815689bfeffb9ef8ad9332935b564365124465e967b1b",
+      "dependency": "three_level_exact",
+      "path": "/mnt/data/three_level_pairwise_square_exact_rational_final/three_level_pairwise_square_exact_rational_final_certificate.json",
+      "present": true,
+      "sha256": "ebadd16c4307da9d574e61ce630e686feb7eb3f80307ce99556af2b5f5c37513",
+      "status": "THREE_LEVEL_PAIRWISE_SQUARE_CONE_EXACT_RATIONAL_FULL_PASS"
+    },
+    {
+      "certificate_sha256": "a9165c04c3a6f44ec51868cca0e65b1d3cbdace83be81f287e155e7aa1984834",
+      "dependency": "toric_chain",
+      "path": "/mnt/data/scenic_toric_code_audit/scenic_toric_chain_rest_le_6_certificate.json",
+      "present": true,
+      "sha256": "047350e35c4e81ffe7541159bf664f880fbd47f10e7560a7807b05f4c649f5b5",
+      "status": "SCENIC_TORIC_CHAIN_AUDIT_REST_LE_6_PASS"
+    },
+    {
+      "certificate_sha256": "8faf2d32fb85775cf2c2c8b9d68b37cf90eb9be04f17f5d5931aaae292ec1ed6",
+      "dependency": "horn_cycle",
+      "path": "/mnt/data/scenic_toric_horn_cycle_audit/scenic_toric_horn_cycle_certificate.json",
+      "present": true,
+      "sha256": "dbc2d0ca1042d7025493e7f519da0c6131cac49e11e1c3a112fd46580ae63bc1",
+      "status": "SCENIC_TORIC_HORN_CYCLE_AUDIT_COMPLETE"
+    },
+    {
+      "certificate_sha256": "0f008fd1f850b666fdb9ca838abeb1214eff76a6f2c0308bef50452eb69f5d5d",
+      "dependency": "vandermonde_factor",
+      "path": "/mnt/data/scenic_toric_vandermonde_horn_residue/scenic_toric_vandermonde_horn_residue_certificate.json",
+      "present": true,
+      "sha256": "579670618a3ebb7ee71446cdc6918184777feccc913f850c522dbb3c7eaf0771",
+      "status": "SCENIC_TORIC_VANDERMONDE_HORN_RESIDUE_PASS"
+    },
+    {
+      "certificate_sha256": "a0fa51afd9611ca52d49b364246485ce711536a84f955db92ea9ad219c631858",
+      "dependency": "vandermonde_symmetric_cancellation",
+      "path": "/mnt/data/scenic_toric_vandermonde_symmetric_cancellation/vandermonde_symmetric_cancellation_certificate.json",
+      "present": true,
+      "sha256": "be47a0d5ae05867030eaf2e593b3f97fe20e1c1f1ca3c1760ac87b8b35db40d3",
+      "status": "SCENIC_TORIC_VANDERMONDE_SYMMETRIC_CANCELLATION_PASS"
+    },
+    {
+      "certificate_sha256": "15c0b64b808fa918f431f3d14c564e552361e9c3d806d7bf097ce8226fda1f37",
+      "dependency": "h2_basis",
+      "path": "/mnt/data/scenic_toric_h2_basis_audit/scenic_toric_h2_basis_certificate.json",
+      "present": true,
+      "sha256": "7d31a397f6e9d9c2acf082eb69bd42e2562addf2f99a79fb5e458d0273ca82f1",
+      "status": "SCENIC_TORIC_H2_BASIS_AUDIT_PASS"
+    },
+    {
+      "certificate_sha256": "fc3684cd6819480d4ee05d7da43989c3962f06051b14c2d18c5e351d1414f6b3",
+      "dependency": "act_factorization",
+      "path": "/mnt/data/act_dependence_factorization_audit/act_dependence_factorization_certificate.json",
+      "present": true,
+      "sha256": "42a4315df3d457c350313fa7ae9c7b0ecac83f5fa71dde0d4e5ebedc31ea3f62",
+      "status": "ACT_DEPENDENCE_FACTORIZATION_PASS"
+    }
+  ],
+  "schema": "golay_talagrand.audited_four_level_closure@1",
+  "status": "AUDITED_TALAGRAND_FOUR_LEVEL_CLOSURE_PASS_REST_LE_6",
+  "theorem": {
+    "does_not_claim": [
+      "full rest_size > 6 four-level closure",
+      "arbitrary-level closure",
+      "full arbitrary-vector shell domination",
+      "full Talagrand proof for all nonnegative x"
+    ],
+    "name": "Audited Four-Level Talagrand Closure Theorem",
+    "remaining_global_obligation": "extend the same Act/Vandermonde/H2 certificate over the full four-level profile table, or prove a level-reduction theorem that reduces the full problem to the audited band.",
+    "scope": "audited four-level scenic profile band with rest_size <= 6, shells w=12 and w=16",
+    "statement": [
+      "For the audited band, every three-level face appearing under Act has an exact nonnegative three-level shell-gap certificate.",
+      "The same-boundary horn-cycle sector factors through the four-variable Vandermonde and is killed by ordinary color-symmetric shell readout.",
+      "The H2 face-residue sector, after Act, lands in the already-certified three-level nonnegative cone.",
+      "Therefore the audited four-level obstruction to the Talagrand shell functional vanishes or is nonnegative after public actor readout."
+    ]
+  }
+}

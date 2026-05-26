@@ -1,0 +1,1 @@
+The compiler writes a turn capsule with request, obligations, claims, support ledger, SceneIR, D20 lowering, residue ledger, verification report, final answer, certificate, replay instructions, metrics, and TURN.lock.

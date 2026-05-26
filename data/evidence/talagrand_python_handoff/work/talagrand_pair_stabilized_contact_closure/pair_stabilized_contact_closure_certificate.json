@@ -1,0 +1,55 @@
+{
+  "certificate_sha256": "1307212822b2afc236e07a18fdf3879cd9d9afec64f340d24f558908eacb702d",
+  "claim": "Exactly proves the barrier contact derivative inequality on the pair-stabilized three-level family for w=12,16.",
+  "claim_boundary": "This closes a certified slice of the final theorem, not the full multilevel Barrier Schur Compression Lemma.",
+  "created_utc": "2026-05-26T21:41:04.794299+00:00",
+  "schema": "golay_talagrand.pair_stabilized_contact_closure@1",
+  "status": "PAIR_STABILIZED_CONTACT_DERIVATIVE_CLOSED_EXACT",
+  "summary": [
+    {
+      "Bviol_at_equal": 0,
+      "D_Bviol_at_equal": 0,
+      "Gap_factor_form": "Gap=(u-1)^2 Q(u)+v^2 R(u,v^2)",
+      "P0_remainder_after_u_minus_1_squared": "0",
+      "Q_coeff_min": 164864,
+      "Q_positive_coefficients": true,
+      "R_coeff_min": 164864,
+      "R_positive_coefficients": true,
+      "certified": true,
+      "contact_derivative_nonpositive": true,
+      "contact_set_certified_as_equal_point": true,
+      "n00": 616,
+      "n10": 672,
+      "n11": 616,
+      "odd_terms": 0,
+      "shell": 12,
+      "shell_blocks": 2576
+    },
+    {
+      "Bviol_at_equal": 0,
+      "D_Bviol_at_equal": 0,
+      "Gap_factor_form": "Gap=(u-1)^2 Q(u)+v^2 R(u,v^2)",
+      "P0_remainder_after_u_minus_1_squared": "0",
+      "Q_coeff_min": 194304,
+      "Q_positive_coefficients": true,
+      "R_coeff_min": 194304,
+      "R_positive_coefficients": true,
+      "certified": true,
+      "contact_derivative_nonpositive": true,
+      "contact_set_certified_as_equal_point": true,
+      "n00": 77,
+      "n10": 176,
+      "n11": 330,
+      "odd_terms": 0,
+      "shell": 16,
+      "shell_blocks": 759
+    }
+  ],
+  "theorem": {
+    "name": "Pair-stabilized contact derivative closure",
+    "proof": "The negative violation barrier Gap=-B_w factors under A=u+v, B=u-v as Gap=(u-1)^2Q(u)+v^2R(u,v^2), with Q and R having strictly positive integer coefficients. For A,B>=0, u>=0 and v^2>=0, so Gap=0 implies u=1 and v=0. Thus A=B=1. Direct substitution gives D(B_w)=0.",
+    "remaining_global_gap": "Extend from the pair-stabilized slice to arbitrary multilevel contact points, likely through Terwilliger/Krawtchouk block reduction or an SOS multiplier.",
+    "role": "This closes the exact pair-stabilized contact slice of the Barrier Schur Compression Lemma.",
+    "statement": "For the pair-stabilized three-level family x=(A,B,1,...,1), the barrier contact condition B_w=0 forces A=B=1, hence the pair-normal derivative D(B_w)=0 and the contact derivative inequality holds exactly."
+  }
+}

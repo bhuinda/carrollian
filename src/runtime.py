@@ -9,6 +9,8 @@ from glob import glob
 from pathlib import Path
 from typing import Any
 
+from src.token_burn_guard import bounded_text
+
 
 BOOTSTRAP_ENV = "CARROLLIAN_RUNTIME_BOOTSTRAPPED"
 SELECTED_ENV = "CARROLLIAN_RUNTIME_SELECTED"
@@ -36,7 +38,20 @@ def ensure_numpy_runtime(root: Path, script_file: str | Path) -> None:
         env[BOOTSTRAP_ENV] = "1"
         env[SELECTED_ENV] = json.dumps(info, sort_keys=True)
         script = str(Path(script_file).resolve())
-        completed = subprocess.run([str(exe), script, *sys.argv[1:]], env=env, cwd=root)
+        completed = subprocess.run(
+            [str(exe), script, *sys.argv[1:]],
+            env=env,
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if completed.stdout:
+            sys.stdout.write(bounded_text(completed.stdout))
+            sys.stdout.flush()
+        if completed.stderr:
+            sys.stderr.write(bounded_text(completed.stderr))
+            sys.stderr.flush()
         raise SystemExit(completed.returncode)
 
     raise RuntimeError(runtime_error_message(original_error))

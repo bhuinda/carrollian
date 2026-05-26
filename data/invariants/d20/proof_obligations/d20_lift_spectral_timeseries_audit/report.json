@@ -1,0 +1,348 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "0cf3a07976c9f9141cbbefaa3e6ee7eb9406dbe21f0e38bd84a0f94caef2b052",
+  "checks": {
+    "all_samples_have_live_mass": true,
+    "all_samples_support_every_nonconstant_laplacian_band": true,
+    "dominant_band_changes_during_replay": true,
+    "full_window_canvas_embedded": true,
+    "golden_pair_visible_in_every_sample": true,
+    "laplacian_band_signature_matches_expected": true,
+    "observed_samples_have_no_boundary_loss": true,
+    "phase_entropy_audit_certified": true,
+    "sample_frame_schedule_complete": true,
+    "spatial_radius_stays_inside_full_window": true,
+    "spectral_centroid_stays_inside_nonconstant_band_range": true,
+    "visualization_data_loaded": true
+  },
+  "claim": "The full-window D20 lifted sandpile replay now has a reproducible fiber-mass spectral time series. Across the sampled 0..256-frame observation window after warmup, the state remains inside the full 128x128 lift window, every nonconstant public D20 Laplacian band carries power, the dominant band changes over time, and the golden 3 +/- sqrt(5) bands remain visible in every sampled frame.",
+  "closure_boundary": {
+    "certifies": [
+      "the replayed full-window lifted sandpile has no boundary loss through sampled frame 256",
+      "the 20-fiber centered mass vector has nonzero power in every nonconstant public D20 Laplacian band at every sample",
+      "the dominant spectral band changes during the observation window",
+      "the golden 3 +/- sqrt(5) Laplacian pair is visible at every sample"
+    ],
+    "does_not_certify": [
+      "an infinite-time limit cycle or invariant measure",
+      "that the physical atom interpretation is mathematically established",
+      "that the same spectral bands dominate under every voltage lift or every source schedule"
+    ]
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "783b9c6df6a675e6bb6b35ea4396959c8ff607149e7b698a50c9793721de56af",
+      "path": "generated/d20_lift_spectral_timeseries_audit.json",
+      "sha256": "8dbd277bb4cca4448a7dc35b37ec0df85d5039184e68b32cdb9b745ab18ebeae",
+      "status": "D20_LIFT_SPECTRAL_TIMESERIES_AUDIT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_spectral_timeseries_audit.py",
+      "sha256": "49e5d8a619a4d2f16db6a0881fa8f328a4c21f9d15c43d38ef55433d153df0bd"
+    },
+    "phase_entropy_audit_report": {
+      "certificate_sha256": "ccf95337af0ba527a6c52fa1973a8d19cd1d1d931444cc6cf90e9d6e695ce56d",
+      "path": "data/invariants/d20/proof_obligations/d20_geon_phase_entropy_audit/report.json",
+      "sha256": "ae2987f6467a7d08c094276c4337f3f4d534c4315726e86bce517fb4f53b384f",
+      "status": "D20_GEON_PHASE_ENTROPY_AUDIT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_spectral_timeseries_audit.py",
+      "sha256": "b3f7faaa13f9a09ca49e1e78f9c5f4120458a7cc7c996f69379c2d55f7632d5c"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "28c0832f388bfb6e0485afeb06a02f356e10104c2a5b4871f678a5ec7de64e82"
+    }
+  },
+  "next_highest_yield_item": "Extend this audit into a recurrence search: hash normalized fiber-mass spectra over a much longer replay, detect near-returns, and compare the resulting spectral orbit against source-schedule perturbations.",
+  "schema": "d20.proof_obligation.lift_spectral_timeseries_audit@1",
+  "status": "D20_LIFT_SPECTRAL_TIMESERIES_AUDIT_CERTIFIED",
+  "witness": {
+    "first_sample": {
+      "active_fibers": 2943,
+      "active_lift_cells": 235,
+      "boundary_loss": 0,
+      "fiber_masses": [
+        627,
+        410,
+        362,
+        215,
+        387,
+        241,
+        229,
+        632,
+        409,
+        228,
+        230,
+        236,
+        236,
+        356,
+        258,
+        222,
+        367,
+        242,
+        457,
+        247
+      ],
+      "frame": 0,
+      "live_grains": 6591,
+      "retention": 1.0,
+      "spatial": {
+        "bbox_xyxy": [
+          55,
+          57,
+          72,
+          73
+        ],
+        "centroid_xy": [
+          63.96434531937491,
+          65.07570930056137
+        ],
+        "radius": 5.025739274827678
+      },
+      "spectral": {
+        "bands": [
+          {
+            "lambda": 0.763932,
+            "multiplicity": 3,
+            "power": 72059.45107831364,
+            "probability": 0.22846935330509827
+          },
+          {
+            "lambda": 2.0,
+            "multiplicity": 5,
+            "power": 79056.25000000004,
+            "probability": 0.25065317653608854
+          },
+          {
+            "lambda": 3.0,
+            "multiplicity": 4,
+            "power": 65024.799999999945,
+            "probability": 0.2061655172566853
+          },
+          {
+            "lambda": 5.0,
+            "multiplicity": 4,
+            "power": 27377.19999999986,
+            "probability": 0.08680126042740156
+          },
+          {
+            "lambda": 5.236068,
+            "multiplicity": 3,
+            "power": 71883.2489216865,
+            "probability": 0.22791069247472623
+          }
+        ],
+        "bandwidth": 1.6951777561964556,
+        "centroid": 2.921700140713066,
+        "coherence": 0.031422028929403156,
+        "constant_mode_power": 1.852684209337465e-26,
+        "dominant_band": 2.0,
+        "entropy_normalized": 0.9685779710705968,
+        "golden_pair_probability": 0.4563800457798245,
+        "nonconstant_power": 315400.95
+      },
+      "topples": 354239,
+      "unstable_fibers": 34
+    },
+    "last_sample": {
+      "active_fibers": 7254,
+      "active_lift_cells": 503,
+      "boundary_loss": 0,
+      "fiber_masses": [
+        657,
+        619,
+        585,
+        610,
+        605,
+        601,
+        574,
+        568,
+        628,
+        585,
+        582,
+        583,
+        609,
+        595,
+        557,
+        612,
+        598,
+        597,
+        586,
+        586
+      ],
+      "frame": 256,
+      "live_grains": 11937,
+      "retention": 1.0,
+      "spatial": {
+        "bbox_xyxy": [
+          51,
+          53,
+          77,
+          76
+        ],
+        "centroid_xy": [
+          64.00770712909441,
+          64.55717516964062
+        ],
+        "radius": 8.011042678667614
+      },
+      "spectral": {
+        "bands": [
+          {
+            "lambda": 0.763932,
+            "multiplicity": 3,
+            "power": 1744.4769150519687,
+            "probability": 0.18193333872712442
+          },
+          {
+            "lambda": 2.0,
+            "multiplicity": 5,
+            "power": 1563.5833333333355,
+            "probability": 0.1630677561605598
+          },
+          {
+            "lambda": 3.0,
+            "multiplicity": 4,
+            "power": 1733.9999999999995,
+            "probability": 0.18084069019820512
+          },
+          {
+            "lambda": 5.0,
+            "multiplicity": 4,
+            "power": 3467.466666666662,
+            "probability": 0.3616257585001551
+          },
+          {
+            "lambda": 5.236068,
+            "multiplicity": 3,
+            "power": 1079.023084948035,
+            "probability": 0.1125324564139557
+          }
+        ],
+        "bandwidth": 1.708179110581163,
+        "centroid": 3.404998668727509,
+        "coherence": 0.05017110636748778,
+        "constant_mode_power": 7.119469669619632e-27,
+        "dominant_band": 5.0,
+        "entropy_normalized": 0.9498288936325122,
+        "golden_pair_probability": 0.2944657951410801,
+        "nonconstant_power": 9588.55
+      },
+      "topples": 2003504,
+      "unstable_fibers": 9
+    },
+    "sample_count": 12,
+    "summary": {
+      "active_fiber_range": [
+        2943,
+        7254
+      ],
+      "active_lift_cell_range": [
+        233,
+        503
+      ],
+      "boundary_loss_range": [
+        0,
+        0
+      ],
+      "dominant_band_counts": {
+        "2.000000": 8,
+        "5.000000": 1,
+        "5.236068": 3
+      },
+      "dominant_band_sequence": [
+        2.0,
+        2.0,
+        5.236068,
+        2.0,
+        5.236068,
+        5.236068,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0
+      ],
+      "golden_pair_probability_range": [
+        0.18395238391505367,
+        0.46958117757925133
+      ],
+      "laplacian_band_signature": [
+        {
+          "lambda": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "lambda": 0.763932,
+          "multiplicity": 3
+        },
+        {
+          "lambda": 2.0,
+          "multiplicity": 5
+        },
+        {
+          "lambda": 3.0,
+          "multiplicity": 4
+        },
+        {
+          "lambda": 5.0,
+          "multiplicity": 4
+        },
+        {
+          "lambda": 5.236068,
+          "multiplicity": 3
+        }
+      ],
+      "live_grain_range": [
+        6591,
+        11937
+      ],
+      "retention_range": [
+        1.0,
+        1.0
+      ],
+      "sample_count": 12,
+      "sample_frames": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        96,
+        128,
+        192,
+        256
+      ],
+      "spatial_radius_range": [
+        5.025739274827678,
+        8.011042678667614
+      ],
+      "spectral_bandwidth_range": [
+        1.3420762309180099,
+        1.708179110581163
+      ],
+      "spectral_centroid_range": [
+        2.8057429927325055,
+        3.626921329670075
+      ],
+      "spectral_coherence_range": [
+        0.016909495234545324,
+        0.2492541242382752
+      ],
+      "spectral_entropy_range": [
+        0.7507458757617248,
+        0.9830905047654547
+      ],
+      "unstable_fiber_range": [
+        1,
+        34
+      ]
+    }
+  }
+}

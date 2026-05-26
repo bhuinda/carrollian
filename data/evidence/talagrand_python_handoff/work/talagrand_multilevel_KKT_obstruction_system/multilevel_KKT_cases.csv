@@ -1,0 +1,4 @@
+case,assumptions,KKT_equation,multiplier_formula,exclusion_target
+interior_ordered_branch,F(theta)=0; sum theta_i=0; theta0>theta1; dF=v·gradF>0,H_F(theta) v = lambda gradF(theta),lambda = (v^T H_F v)/(v^T gradF),No solution with dF>0 and second-order maximum condition on tangent ker dF∩1^perp.
+boundary_ordered_branch,F(theta)=0; sum theta_i=0; theta0=theta1; dF=v·gradF>0,"H_F(theta) v = lambda gradF(theta) + nu v, nu>=0",nu = v^T H_F v/||v||^2 - lambda dF/||v||^2,No active-boundary contact point with positive pair derivative.
+equal_contact,theta=constant vector,gradF=0; dF=0,"lambda,nu not forced",Allowed equality point; not an obstruction.

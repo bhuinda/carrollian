@@ -1,0 +1,80 @@
+{
+  "cases": [
+    {
+      "KKT_equation": "H_F(theta) v = lambda gradF(theta)",
+      "assumptions": "F(theta)=0; sum theta_i=0; theta0>theta1; dF=v\u00b7gradF>0",
+      "case": "interior_ordered_branch",
+      "exclusion_target": "No solution with dF>0 and second-order maximum condition on tangent ker dF\u22291^perp.",
+      "multiplier_formula": "lambda = (v^T H_F v)/(v^T gradF)"
+    },
+    {
+      "KKT_equation": "H_F(theta) v = lambda gradF(theta) + nu v, nu>=0",
+      "assumptions": "F(theta)=0; sum theta_i=0; theta0=theta1; dF=v\u00b7gradF>0",
+      "case": "boundary_ordered_branch",
+      "exclusion_target": "No active-boundary contact point with positive pair derivative.",
+      "multiplier_formula": "nu = v^T H_F v/||v||^2 - lambda dF/||v||^2"
+    },
+    {
+      "KKT_equation": "gradF=0; dF=0",
+      "assumptions": "theta=constant vector",
+      "case": "equal_contact",
+      "exclusion_target": "Allowed equality point; not an obstruction.",
+      "multiplier_formula": "lambda,nu not forced"
+    }
+  ],
+  "certificate_sha256": "f4bf718c1a1b94269d17b65e95748f5557323994098832e1ee4295b23b897e6a",
+  "claim": "Formalizes the exact KKT obstruction system that any multilevel counterexample to the weighted-asymmetry contact lemma must satisfy.",
+  "claim_boundary": "This is not a proof of the final theorem. It is the exact multilevel KKT system left to exclude.",
+  "created_utc": "2026-05-26T22:20:23.086595+00:00",
+  "proof_spine": [
+    {
+      "formula": "F_w=log A_w(e^theta)-log A_w(1)-(w/2)log((1/24)sum_i exp(2theta_i)).",
+      "statement": "The global shell inequality is equivalent to F_w(theta)<=0 for all theta.",
+      "step": 1
+    },
+    {
+      "formula": "F=0 and theta_i>=theta_j implies partial_iF-partial_jF<=0.",
+      "statement": "Barrier Schur compression would prove the shell inequality.",
+      "step": 2
+    },
+    {
+      "formula": "dF=partial_0F-partial_1F.",
+      "statement": "For pair v=e0-e1, the remaining multilevel contact lemma is dF=v\u00b7gradF<=0 on F=0, v\u00b7theta>=0.",
+      "step": 3
+    },
+    {
+      "formula": "sum theta_i=0; F=0; v\u00b7theta>=0; dF>0.",
+      "statement": "If the lemma fails, compactness after centering gives a maximizer of dF on the contact set.",
+      "step": 4
+    },
+    {
+      "formula": "H_F v = lambda gradF + nu v, with nu>=0 and nu(v\u00b7theta)=0.",
+      "statement": "At such a maximizer, KKT gives an exact finite analytic obstruction system.",
+      "step": 5
+    },
+    {
+      "formula": "rank/SOS/Terwilliger certificate needed.",
+      "statement": "The analytic-gradient audit found no valid positive solution and collapsed to equal, but exact proof still requires excluding this KKT system symbolically.",
+      "step": 6
+    }
+  ],
+  "schema": "golay_talagrand.multilevel_KKT_obstruction_system@1",
+  "status": "MULTILEVEL_KKT_OBSTRUCTION_SYSTEM_FORMALIZED_NOT_CLOSED",
+  "theorem": {
+    "KKT_obstruction": "If the contact lemma fails, then there exists theta, lambda, nu with F=0, sum theta=0, v\u00b7theta>=0, dF>0, nu>=0, nu(v\u00b7theta)=0, and H v=lambda g+nu v.",
+    "boundary_reduction": "If v\u00b7theta=0, then H v=lambda g+nu v with nu>=0.",
+    "contact_lemma": "F_w(theta)=0 and v\u00b7theta>=0 imply dF<=0.",
+    "definitions": {
+      "F_w(theta)": "log A_w(e^theta)-log A_w(1)-(w/2)log((1/24)sum_i exp(2theta_i))",
+      "H": "Hessian of F_w(theta)",
+      "dF": "v\u00b7g=partial_0F-partial_1F",
+      "g": "grad F_w(theta)",
+      "v": "e_0-e_1"
+    },
+    "interior_reduction": "If v\u00b7theta>0, then nu=0 and H v=lambda g.",
+    "name": "Multilevel KKT obstruction system for the weighted-asymmetry contact lemma",
+    "remaining_exact_certificate": "Prove the KKT obstruction system has no solution with dF>0 for w=12,16, e.g. by a Terwilliger block-SOS or exact interval/Krawtchouk certificate.",
+    "status": "KKT_OBSTRUCTION_SYSTEM_FORMALIZED_NOT_CLOSED",
+    "why_this_generalizes_pair_stabilized": "The pair-stabilized proof closes the fixed-rest symmetric slice. This KKT system is for arbitrary multilevel theta and does not assume the other 22 coordinates are equal."
+  }
+}

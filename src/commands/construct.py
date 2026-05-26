@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import argparse
 import json
@@ -24,6 +25,7 @@ from src.certify_constructor import (
 )
 from src.certify_io import raw_tensor_relpath
 from src.paths import D20_INVARIANTS, GENERATED, ROOT
+from src.token_burn_guard import emit_json
 
 
 def is_full_scratch_constructor(result: dict) -> bool:
@@ -691,7 +693,7 @@ def main() -> None:
     out_path = ROOT / args.out
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(result, indent=2 if args.pretty else None, sort_keys=True), encoding="utf-8")
-    print(json.dumps(result, indent=2 if args.pretty else None, sort_keys=True))
+    emit_json(result, pretty=args.pretty)
     if args.strict_scratch and not result.get("strict_scratch_passed", False):
         raise SystemExit(1)
 

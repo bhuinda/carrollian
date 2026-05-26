@@ -1,0 +1,383 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "fdd49a08085329cfb0cee82eab60a88db255cdc9c8e1109f707575df6337c849",
+  "checks": {
+    "all_unordered_pair_count_is_190": true,
+    "boundary_lattice_exponent_is_4": true,
+    "boundary_loop_step_atom_incidence_is_certified": true,
+    "complement_pairing_pair_column_pass_count_is_184": true,
+    "complement_pairing_raw_has_no_column_passes": true,
+    "complement_pairs_are_10": true,
+    "full_exposure_packet_graph_is_certified": true,
+    "incidence_matrix_is_20_by_25": true,
+    "joint_boundary_packet_scalar_lcm_is_12": true,
+    "minimal_scalar_with_matching_is_6": true,
+    "packet_bridge_snf_obstruction_is_certified": true,
+    "packet_snf_local_test_is_exact": true,
+    "public_atom_rows_have_20_entries": true,
+    "raw_compatible_pair_count_is_zero": true,
+    "raw_perfect_matching_does_not_exist": true,
+    "scalar_6_makes_all_pairs_compatible": true,
+    "scalars_1_to_5_have_no_compatible_pairs": true
+  },
+  "claim": "No raw relabelling of the 20 signed public boundary coordinates into ten packet doublets can make the visible Loop_297 step-atom columns land in the certified packet SNF image: the compatibility graph has zero edges. A scalar normalization of 6 is the first scalar that can make any pairing compatible with the packet block tests; combined with the boundary incidence exponent 4, the joint scalar clearing bound is 12.",
+  "definition": {
+    "candidate_packet_pairing": "an unordered pairing of the 20 public boundary atoms into ten putative packet doublets",
+    "compatibility_test": "u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6 on each packet doublet",
+    "input_boundary_matrix": "the signed Lambda^3 H6 target-minus-source incidence matrix for the 25 visible Loop_297 step atoms"
+  },
+  "derived": {
+    "canonical_complement_pair_rows": [
+      {
+        "left_h6_triple": "B-|B+|V-",
+        "pair_id": 0,
+        "public_atom_pair": [
+          0,
+          19
+        ],
+        "right_h6_triple": "V+|S-|S+"
+      },
+      {
+        "left_h6_triple": "B-|B+|V+",
+        "pair_id": 1,
+        "public_atom_pair": [
+          1,
+          18
+        ],
+        "right_h6_triple": "V-|S-|S+"
+      },
+      {
+        "left_h6_triple": "B-|B+|S-",
+        "pair_id": 2,
+        "public_atom_pair": [
+          2,
+          17
+        ],
+        "right_h6_triple": "V-|V+|S+"
+      },
+      {
+        "left_h6_triple": "B-|B+|S+",
+        "pair_id": 3,
+        "public_atom_pair": [
+          3,
+          16
+        ],
+        "right_h6_triple": "V-|V+|S-"
+      },
+      {
+        "left_h6_triple": "B-|V-|V+",
+        "pair_id": 4,
+        "public_atom_pair": [
+          4,
+          15
+        ],
+        "right_h6_triple": "B+|S-|S+"
+      },
+      {
+        "left_h6_triple": "B-|V-|S-",
+        "pair_id": 5,
+        "public_atom_pair": [
+          5,
+          14
+        ],
+        "right_h6_triple": "B+|V+|S+"
+      },
+      {
+        "left_h6_triple": "B-|V-|S+",
+        "pair_id": 6,
+        "public_atom_pair": [
+          6,
+          13
+        ],
+        "right_h6_triple": "B+|V+|S-"
+      },
+      {
+        "left_h6_triple": "B-|V+|S-",
+        "pair_id": 7,
+        "public_atom_pair": [
+          7,
+          12
+        ],
+        "right_h6_triple": "B+|V-|S+"
+      },
+      {
+        "left_h6_triple": "B-|V+|S+",
+        "pair_id": 8,
+        "public_atom_pair": [
+          8,
+          11
+        ],
+        "right_h6_triple": "B+|V-|S-"
+      },
+      {
+        "left_h6_triple": "B-|S-|S+",
+        "pair_id": 9,
+        "public_atom_pair": [
+          9,
+          10
+        ],
+        "right_h6_triple": "B+|V-|V+"
+      }
+    ],
+    "canonical_complement_pair_rows_sha256": "3aa34a3740a043cd901f7f99f9943a34ad3375f57c5a22c5ea71ea50ab0605d1",
+    "obstruction_summary": {
+      "all_unordered_public_pair_count": 190,
+      "boundary_incidence_nonunit_factors": [
+        2,
+        4,
+        4
+      ],
+      "boundary_lattice_exponent": 4,
+      "complement_pair_columns_passing_packet_snf": [],
+      "complement_pair_raw_failure_histogram": {
+        "pass": 184,
+        "u_not_0_mod_2|u_plus_v_not_0_mod_6": 20,
+        "u_not_0_mod_2|v_not_0_mod_2": 10,
+        "u_not_0_mod_2|v_not_0_mod_2|u_plus_v_not_0_mod_6": 2,
+        "u_plus_v_not_0_mod_6": 18,
+        "v_not_0_mod_2|u_plus_v_not_0_mod_6": 16
+      },
+      "joint_boundary_packet_scalar_lcm": 12,
+      "minimal_scalar_with_any_compatible_pair": 6,
+      "minimal_scalar_with_perfect_matching": 6,
+      "packet_doublet_count": 10,
+      "public_atom_count": 20,
+      "raw_compatible_pair_count": 0,
+      "raw_failure_histogram_over_all_unordered_pairs": {
+        "pass": 3204,
+        "u_not_0_mod_2|u_plus_v_not_0_mod_6": 468,
+        "u_not_0_mod_2|v_not_0_mod_2": 52,
+        "u_not_0_mod_2|v_not_0_mod_2|u_plus_v_not_0_mod_6": 38,
+        "u_plus_v_not_0_mod_6": 496,
+        "v_not_0_mod_2|u_plus_v_not_0_mod_6": 492
+      },
+      "raw_perfect_matching_exists": false,
+      "step_atom_column_count": 25
+    },
+    "packet_component_pairs": [
+      [
+        174,
+        175
+      ],
+      [
+        190,
+        191
+      ],
+      [
+        238,
+        239
+      ],
+      [
+        246,
+        247
+      ],
+      [
+        254,
+        255
+      ],
+      [
+        430,
+        431
+      ],
+      [
+        446,
+        447
+      ],
+      [
+        494,
+        495
+      ],
+      [
+        502,
+        503
+      ],
+      [
+        510,
+        511
+      ]
+    ],
+    "packet_component_pairs_sha256": "f9e032b6f6ff3f0671a1e9150411390fd5fd241b1aacd11ab45e09c5e52ca4f4",
+    "raw_compatible_public_atom_pairs": [],
+    "raw_compatible_public_atom_pairs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "scalar_compatibility_scan_rows": [
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 1
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 2
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 3
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 4
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 5
+      },
+      {
+        "compatible_pair_count": 190,
+        "first_perfect_matching": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "perfect_matching_exists": true,
+        "scalar": 6
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 7
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 8
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 9
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 10
+      },
+      {
+        "compatible_pair_count": 0,
+        "first_perfect_matching": null,
+        "perfect_matching_exists": false,
+        "scalar": 11
+      },
+      {
+        "compatible_pair_count": 190,
+        "first_perfect_matching": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            18,
+            19
+          ]
+        ],
+        "perfect_matching_exists": true,
+        "scalar": 12
+      }
+    ],
+    "scalar_compatibility_scan_rows_sha256": "d675a42da05a9e2816a74665ff3c480519bfb7d4cebe9c68c2accdd430df9d3c"
+  },
+  "inputs": {
+    "d20_boundary_loop_step_atom_incidence_report": {
+      "path": "data/invariants/d20/theorems/d20_boundary_loop_step_atom_incidence/report.json",
+      "sha256": "fb7c4dbc7789d3ce8477dd2dbd3a7143aeb04e01a433654b7acab2a7409ba5bd"
+    },
+    "d20_packet_bridge_snf_obstruction_report": {
+      "path": "data/invariants/d20/theorems/d20_packet_bridge_snf_obstruction/report.json",
+      "sha256": "47f84677ac6ceb27b317d439ffa4c9f3d29d40291af01e53cfdb3ee78a6e0ba7"
+    },
+    "full_exposure_packet_propagation_graph_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json",
+      "sha256": "c115c85c7125e3b89ec5120c55cc6c4db5364bd8a026e20d78fac42af2371b82"
+    }
+  },
+  "interpretation": {
+    "negative_boundary": "The signed boundary incidence table cannot be turned into packet-image columns by merely choosing a different pairing of the 20 public atoms.",
+    "normalization_pressure": "Any packet-compatible boundary-to-packet normalization must introduce at least the packet scalar 6, and a full zero-sum boundary-lattice lift must also account for the boundary exponent 4.",
+    "not_claimed": "The scalar 12 bound is a clearing bound, not a certified physical bridge or DLCQ/M-theory construction."
+  },
+  "next_highest_yield_item": "Search for a nontrivial signed quotient/normalization, not just scalar clearing, that maps the boundary incidence lattice into packet doublets and preserves the Loop_297/A985 step labels.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_boundary_packet_pairing_obstruction",
+  "status": "D20_BOUNDARY_PACKET_PAIRING_OBSTRUCTION_CERTIFIED"
+}

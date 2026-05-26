@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import json
 from typing import Any, Dict
@@ -71,6 +72,10 @@ def validate_d20_packet_bridge_snf_obstruction() -> Dict[str, Any]:
         raise AssertionError("D20 packet bridge SNF obstruction torsion-prime mismatch")
     if summary.get("local_block_smith_diagonal") != [2, 6]:
         raise AssertionError("D20 packet bridge SNF obstruction local SNF mismatch")
+    if summary.get("local_image_test") != (
+        "u = 0 mod 2, v = 0 mod 2, and u+v = 0 mod 6 on each packet doublet"
+    ):
+        raise AssertionError("D20 packet bridge SNF obstruction local image test mismatch")
     if summary.get("raw_bridge_columns_available") is not False:
         raise AssertionError("D20 packet bridge SNF obstruction raw-column overclaim")
     if summary.get("raw_bridge_candidate_count") != 3:
@@ -90,6 +95,43 @@ def validate_d20_packet_bridge_snf_obstruction() -> Dict[str, Any]:
     if snf.get("off_diagonal_nonzero") != 0 or snf.get("divisibility_chain_valid") is not True:
         raise AssertionError("D20 packet bridge SNF obstruction Smith form mismatch")
 
+    image_test = derived.get("original_basis_image_test", {})
+    expected_residues = [
+        [0, 0],
+        [0, 6],
+        [2, 4],
+        [2, 10],
+        [4, 2],
+        [4, 8],
+        [6, 0],
+        [6, 6],
+        [8, 4],
+        [8, 10],
+        [10, 2],
+        [10, 8],
+    ]
+    if image_test.get("modulus") != 12:
+        raise AssertionError("D20 packet bridge SNF obstruction image-test modulus mismatch")
+    if image_test.get("block_image_residues_mod12") != expected_residues:
+        raise AssertionError("D20 packet bridge SNF obstruction block residues mismatch")
+    if image_test.get("exact_congruence_residues_mod12") != expected_residues:
+        raise AssertionError("D20 packet bridge SNF obstruction exact residues mismatch")
+    if image_test.get("weak_two_congruence_false_positive_residues_mod12") != [
+        [1, 5],
+        [1, 11],
+        [3, 3],
+        [3, 9],
+        [5, 1],
+        [5, 7],
+        [7, 5],
+        [7, 11],
+        [9, 3],
+        [9, 9],
+        [11, 1],
+        [11, 7],
+    ]:
+        raise AssertionError("D20 packet bridge SNF obstruction weak-test residues mismatch")
+
     congruence_rows = derived.get("packet_image_congruence_rows", [])
     if len(congruence_rows) != 10:
         raise AssertionError("D20 packet bridge SNF obstruction congruence row count mismatch")
@@ -103,7 +145,8 @@ def validate_d20_packet_bridge_snf_obstruction() -> Dict[str, Any]:
         if row.get("local_cokernel") != "Z/2 x Z/6":
             raise AssertionError("D20 packet bridge SNF obstruction row cokernel mismatch")
         if row.get("image_test_for_target_pair_u_v") != [
-            "u_minus_v_is_0_mod_2",
+            "u_is_0_mod_2",
+            "v_is_0_mod_2",
             "u_plus_v_is_0_mod_6",
         ]:
             raise AssertionError("D20 packet bridge SNF obstruction row congruence mismatch")
@@ -121,6 +164,15 @@ def validate_d20_packet_bridge_snf_obstruction() -> Dict[str, Any]:
         raise AssertionError("D20 packet bridge SNF obstruction task candidate mismatch")
     if any(row.get("snf_status") != "packet_obstruction_template_ready_no_raw_columns" for row in tasks):
         raise AssertionError("D20 packet bridge SNF obstruction task status mismatch")
+    if any(
+        row.get("test_once_columns_exist")
+        != (
+            "for each packet doublet target (u,v), require u = 0 mod 2, "
+            "v = 0 mod 2, and u+v = 0 mod 6"
+        )
+        for row in tasks
+    ):
+        raise AssertionError("D20 packet bridge SNF obstruction task test mismatch")
 
     hfield = rec.get("certificate_sha256")
     tmp = dict(rec)

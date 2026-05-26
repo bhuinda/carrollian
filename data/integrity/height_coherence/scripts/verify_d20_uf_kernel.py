@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Verifier for D20 UF kernel source_drop: height coherence certificates."""
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 import argparse, csv, hashlib, json, sys
 from pathlib import Path
 from typing import Any, Dict

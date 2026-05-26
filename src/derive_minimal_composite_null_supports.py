@@ -20,6 +20,7 @@ support enumeration. It classifies the two minimal non-Pi33 public-zero composit
 by their internal block/support profile.
 """
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import argparse
 import hashlib

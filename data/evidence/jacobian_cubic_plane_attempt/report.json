@@ -1,0 +1,134 @@
+{
+  "certificate_sha256": "6fdc2010c31be7ba05dc2bc7c94c4b87b75d7f1336ddb70fc5b6d9832c594fc5",
+  "checks": {
+    "finite_field_elimination_found_no_cubic_counterexample": true,
+    "finite_field_keller_candidates_equal_rank_one_shears": true,
+    "full_jacobian_conjecture_solved": false,
+    "symbolic_rank_one_shear_identity_verified": true
+  },
+  "finite_field_elimination": {
+    "fields": [
+      {
+        "expected_rank_one_shear_candidates": 145,
+        "extra_shear_candidates_sample": [],
+        "field": "F_5",
+        "first_non_permutation_candidates": [],
+        "h2_trace_zero": 625,
+        "h2_tuples_checked": 15625,
+        "h3_linear_solution_count": 6725,
+        "jacobian_one_candidates": 145,
+        "keller_candidates_equal_rank_one_shears": true,
+        "linear_rank_histogram": {
+          "3": 1,
+          "6": 144
+        },
+        "max_h3_free_dimension": 5,
+        "missing_keller_candidates_from_shear_sample": [],
+        "non_permutation_candidates": 0,
+        "rank_one_shear_candidates": 145,
+        "sample_shear_parameterization": {
+          "duplicate_zero_removed_count": 5,
+          "form": "H=(s,-r)*(u*(r*x+s*y)^2+v*(r*x+s*y)^3)",
+          "projective_line_count": 6,
+          "scalar_pair_count": 25
+        }
+      },
+      {
+        "expected_rank_one_shear_candidates": 385,
+        "extra_shear_candidates_sample": [],
+        "field": "F_7",
+        "first_non_permutation_candidates": [],
+        "h2_trace_zero": 2401,
+        "h2_tuples_checked": 117649,
+        "h3_linear_solution_count": 35623,
+        "jacobian_one_candidates": 385,
+        "keller_candidates_equal_rank_one_shears": true,
+        "linear_rank_histogram": {
+          "3": 1,
+          "6": 384
+        },
+        "max_h3_free_dimension": 5,
+        "missing_keller_candidates_from_shear_sample": [],
+        "non_permutation_candidates": 0,
+        "rank_one_shear_candidates": 385,
+        "sample_shear_parameterization": {
+          "duplicate_zero_removed_count": 7,
+          "form": "H=(s,-r)*(u*(r*x+s*y)^2+v*(r*x+s*y)^3)",
+          "projective_line_count": 8,
+          "scalar_pair_count": 49
+        }
+      },
+      {
+        "expected_rank_one_shear_candidates": 1441,
+        "extra_shear_candidates_sample": [],
+        "field": "F_11",
+        "first_non_permutation_candidates": [],
+        "h2_trace_zero": 14641,
+        "h2_tuples_checked": 1771561,
+        "h3_linear_solution_count": 335291,
+        "jacobian_one_candidates": 1441,
+        "keller_candidates_equal_rank_one_shears": true,
+        "linear_rank_histogram": {
+          "3": 1,
+          "6": 1440
+        },
+        "max_h3_free_dimension": 5,
+        "missing_keller_candidates_from_shear_sample": [],
+        "non_permutation_candidates": 0,
+        "rank_one_shear_candidates": 1441,
+        "sample_shear_parameterization": {
+          "duplicate_zero_removed_count": 11,
+          "form": "H=(s,-r)*(u*(r*x+s*y)^2+v*(r*x+s*y)^3)",
+          "projective_line_count": 12,
+          "scalar_pair_count": 121
+        }
+      }
+    ],
+    "fields_sha256": "6cb5966838ff76f1c1bfa417247acc3ce07f1581f6605e5c751a48358b6339d5"
+  },
+  "method": {
+    "classification": "Compare the surviving Keller candidates to the generated rank-one shear family H=(s,-r)*(u*(r*x+s*y)^2+v*(r*x+s*y)^3).",
+    "decomposition": "H=H2+H3",
+    "degree_equations": [
+      "degree 1: trace(JH2)=0",
+      "degree 2: trace(JH3)+det(JH2)=0",
+      "degree 3: mixed determinant term det(JH2,JH3)=0",
+      "degree 4: det(JH3)=0"
+    ],
+    "elimination": "For each H2 over F_p, solve the degree 2 and 3 equations as a linear system in H3, then test the remaining quartic determinant and permutation property."
+  },
+  "problem": "Jacobian conjecture for polynomial maps",
+  "residue": [
+    {
+      "description": "This is an odd-prime finite-field elimination search, not a characteristic-zero proof.",
+      "discharged": false,
+      "kind": "finite_field_only"
+    },
+    {
+      "description": "Only normalized plane maps of degree at most 3 are searched.",
+      "discharged": false,
+      "kind": "degree_bound_only"
+    },
+    {
+      "description": "The full Jacobian conjecture remains outside this finite bounded search.",
+      "discharged": false,
+      "kind": "open_problem_not_solved"
+    }
+  ],
+  "schema": "holotopy.polynomial_attempt.jacobian_cubic_plane",
+  "status": "BOUNDED_PROGRESS",
+  "symbolic_identity_check": {
+    "all_checks_pass": true,
+    "checks": {
+      "F_after_I_minus_H_x_is_x": true,
+      "F_after_I_minus_H_y_is_y": true,
+      "I_minus_H_after_F_x_is_x": true,
+      "I_minus_H_after_F_y_is_y": true,
+      "det_jacobian_is_one": true,
+      "linear_form_annihilates_vector": true
+    },
+    "engine": "exact_polynomial_Q[x,y,r,s,u,v]",
+    "family": "H=(s,-r)*(u*(r*x+s*y)^2+v*(r*x+s*y)^3)"
+  },
+  "target": "Normalized plane maps F=(x+P,y+Q) with P,Q containing all degree-2 and degree-3 terms."
+}

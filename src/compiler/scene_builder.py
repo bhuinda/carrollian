@@ -56,6 +56,7 @@ class TurnCompileConfig:
     write_core_lock: bool = False
     support_coordinates_file: Path | None = None
     extra_support_files: tuple[Path, ...] = ()
+    timestamp: str | None = None
 
 
 def _extra_support_refs(paths: tuple[Path, ...], *, root: Path) -> list[str]:
@@ -226,7 +227,11 @@ def compile_turn(config: TurnCompileConfig, *, root: Path = ROOT) -> dict[str, A
     core_hash = core_lock.get("core_hash") if core_present else None
     core_ref = core_lock_ref(core_path, run_dir) if core_present else None
 
-    request = parse_request(turn_id=config.turn_id, user_text=normalize_text(config.user_text))
+    request = parse_request(
+        turn_id=config.turn_id,
+        user_text=normalize_text(config.user_text),
+        timestamp=config.timestamp,
+    )
     obligations = mark_obligations_closed(normalize_obligations(extract_obligations(config.user_text)))
     claims = normalize_claims(extract_claims(config.answer_text))
     claims, support_ledger = resolve_claim_support(claims, root=root, core_lock_ref=core_ref)

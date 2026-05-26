@@ -1,0 +1,47 @@
+{
+  "artifact_sha256_excluding_hash_field": "783b9c6df6a675e6bb6b35ea4396959c8ff607149e7b698a50c9793721de56af",
+  "certification_tests": [
+    "verify the full-window canvas is embedded in the generated visualization",
+    "verify the public D20 graph Laplacian band signature",
+    "replay the lifted sandpile from the deterministic visualization DATA source",
+    "sample the 20-fiber mass vector at the declared frames",
+    "verify all sampled frames retain mass inside the full 128x128 lift window",
+    "verify every nonconstant Laplacian band carries power in every sample",
+    "verify the dominant band changes and the golden pair remains visible"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "783b9c6df6a675e6bb6b35ea4396959c8ff607149e7b698a50c9793721de56af",
+      "path": "generated/d20_lift_spectral_timeseries_audit.json",
+      "sha256": "8dbd277bb4cca4448a7dc35b37ec0df85d5039184e68b32cdb9b745ab18ebeae",
+      "status": "D20_LIFT_SPECTRAL_TIMESERIES_AUDIT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_spectral_timeseries_audit.py",
+      "sha256": "49e5d8a619a4d2f16db6a0881fa8f328a4c21f9d15c43d38ef55433d153df0bd"
+    },
+    "phase_entropy_audit_report": {
+      "certificate_sha256": "ccf95337af0ba527a6c52fa1973a8d19cd1d1d931444cc6cf90e9d6e695ce56d",
+      "path": "data/invariants/d20/proof_obligations/d20_geon_phase_entropy_audit/report.json",
+      "sha256": "ae2987f6467a7d08c094276c4337f3f4d534c4315726e86bce517fb4f53b384f",
+      "status": "D20_GEON_PHASE_ENTROPY_AUDIT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_spectral_timeseries_audit.py",
+      "sha256": "b3f7faaa13f9a09ca49e1e78f9c5f4120458a7cc7c996f69379c2d55f7632d5c"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "28c0832f388bfb6e0485afeb06a02f356e10104c2a5b4871f678a5ec7de64e82"
+    }
+  },
+  "manifest_sha256": "d1c55cb8b1eb31174986c41101a5abdf6edea19b2b2164c0b26ae6183baf60b4",
+  "name": "d20_lift_spectral_timeseries_audit",
+  "outputs": {
+    "artifact": "generated/d20_lift_spectral_timeseries_audit.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_lift_spectral_timeseries_audit/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_lift_spectral_timeseries_audit/report.json"
+  },
+  "report_sha256": "0cf3a07976c9f9141cbbefaa3e6ee7eb9406dbe21f0e38bd84a0f94caef2b052",
+  "schema": "d20.proof_obligation.lift_spectral_timeseries_audit_manifest@1"
+}

@@ -1,0 +1,46 @@
+{
+  "artifact_sha256_excluding_hash_field": "dfa83f5f2b4a4ae897fcc587b54a606c802406a1ca89e0adf4d461e53885ed54",
+  "certification_tests": [
+    "verify the recurrence audit is certified",
+    "checkpoint both nearest-return lifted states",
+    "replay natural-source-phase and cursor-aligned continuations",
+    "verify no boundary loss occurs through the finite horizon",
+    "verify the initial spectral distance matches the recurrence report",
+    "verify the near-return separation is amplified in both continuations"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "dfa83f5f2b4a4ae897fcc587b54a606c802406a1ca89e0adf4d461e53885ed54",
+      "path": "generated/d20_lift_spectral_poincare_audit.json",
+      "sha256": "fe790411f0978c420a1df86efea52e44beca66950835c5550c92ae98ecac3943",
+      "status": "D20_LIFT_SPECTRAL_POINCARE_AUDIT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_spectral_poincare_audit.py",
+      "sha256": "f0e4b839cadbf7918aee7702b9a30f8132d96d3ab30b856df61515e4e4babbe4"
+    },
+    "recurrence_report": {
+      "certificate_sha256": "b8716eb9e581ad5f461607a9cdc0eec765b409c0f1c239cbcb0c0306539ab628",
+      "path": "data/invariants/d20/proof_obligations/d20_lift_spectral_recurrence_audit/report.json",
+      "sha256": "3aa419c8901297440ae3fa30b2b361b558d2e6c05861f4695fa6c663bedc52b6",
+      "status": "D20_LIFT_SPECTRAL_RECURRENCE_AUDIT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_spectral_poincare_audit.py",
+      "sha256": "e937fd3364464cd4082dd3ec9088cedff0f8f5003b35d166c100537dc53f24bd"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "28c0832f388bfb6e0485afeb06a02f356e10104c2a5b4871f678a5ec7de64e82"
+    }
+  },
+  "manifest_sha256": "cc94c6baf12f01bef0f00e15ce6af900c005e2b50cf84dd90b607094ed2ddff2",
+  "name": "d20_lift_spectral_poincare_audit",
+  "outputs": {
+    "artifact": "generated/d20_lift_spectral_poincare_audit.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_lift_spectral_poincare_audit/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_lift_spectral_poincare_audit/report.json"
+  },
+  "report_sha256": "e26c7ae9b8a4615d36cb3bd138d6ebce3f06e3965d25072d242ee2ac97c277d5",
+  "schema": "d20.proof_obligation.lift_spectral_poincare_audit_manifest@1"
+}

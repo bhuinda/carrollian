@@ -1,0 +1,78 @@
+{
+  "certificate_sha256": "b1450772bc495a50e83c25ccf7ba570ef092c72bceda8c6fea5005c9785701df",
+  "checks": {
+    "all_2048_corrected_vectors_built": true,
+    "e33_abs_sum_matches": true,
+    "e33_centrality": true,
+    "e33_idempotent": true,
+    "e33_identity_coefficients_match_sector33": true,
+    "e33_positive_negative_28_28": true,
+    "e33_signed_sum_zero": true,
+    "e33_support_56": true,
+    "gamma8_corrected_abs_sum_matches_uploaded": true,
+    "gamma8_corrected_sum_matches_uploaded": true,
+    "gamma8_corrected_support_matches_uploaded": true,
+    "unique_e33_candidate_found": true,
+    "zero_mask_corrected_is_zero": true
+  },
+  "claim": "Reconstructs the explicit sector-33 idempotent vector e33 and materializes corrected height-coherent transport vectors Lambda_hc(mask)=lambda_boundary(mask)-A_h(mask)/2*e33 for all 2048 closed-return masks.",
+  "claim_boundary": "Corrected vectors are over F_1000003 in the 985 relation basis. This is vector-level finite-field certification, not a symbolic proof over the integers.",
+  "corrected_transport": {
+    "full_mask_summary": {
+      "basis_cycle_ids": "0 1 2 3 4 5 6 7 8 9 10",
+      "corrected_abs_sum_signed_lift": 6309171,
+      "corrected_coefficient_sum_signed": 512349,
+      "corrected_support": 297,
+      "corrected_vector_sha256_dense_i8": "f9ded6215a69f229dfb60bfd41c06e62b6e13ee72e0f69230bdebba60377cd9d",
+      "height_action": 10564608,
+      "lambda_support": 297,
+      "mask": 2047,
+      "transport_scalar_mod_1000003": 717714
+    },
+    "gamma8_mask": 256,
+    "gamma8_summary": {
+      "basis_cycle_ids": "8",
+      "corrected_abs_sum_signed_lift": 230880,
+      "corrected_coefficient_sum_signed": 53952,
+      "corrected_support": 237,
+      "corrected_vector_sha256_dense_i8": "fd308ec8c89ca0e7a4bcb411a8ae0b6ad6d65e217d7c383be913f2e5fbb1ab5a",
+      "height_action": 374784,
+      "lambda_support": 193,
+      "mask": 256,
+      "transport_scalar_mod_1000003": 812611
+    },
+    "mask_count": 2048,
+    "max_corrected_support": 297,
+    "min_nonzero_corrected_support": 237,
+    "total_sparse_entries": 607600
+  },
+  "created_utc": "2026-05-26T08:50:29.252274+00:00",
+  "e33": {
+    "B_plus_local_candidate": 3,
+    "S_plus_local_candidate": 17,
+    "abs_sum_signed_lift": 13343790,
+    "dense_vector_sha256_i8": "16d0a0e9e63da6f1bcbecd94414ceadab4cb0a37c02728142d657e135ddeef1c",
+    "identity_coefficients_signed": [
+      0,
+      -31250,
+      0,
+      0,
+      0,
+      492189
+    ],
+    "negative_count": 28,
+    "positive_count": 28,
+    "signed_sum": 0,
+    "support": 56
+  },
+  "field_prime": 1000003,
+  "schema": "d20.e33_full_corrected_transport@1",
+  "source_hashes": {
+    "T_985.npz": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d",
+    "all_mask_lambda_vectors_dense.npz": "eca445e0144cb8a3a6e5b371e18f340826a1b25cd02dac3c8e05c51699005d14",
+    "all_residue_height_transport_rows.csv": "aab89d0152958e3bc034f48a46f3420eaaf31ed97fa84fb1574cd30be18784b1",
+    "gamma8_report_json": "a33668aef24f3405c5f7c4caa5f1301d076ac6c778f7e54afcaff1b61e71f708",
+    "relation_memberships.npz": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+  },
+  "status": "E33_VECTOR_AND_ALL_CORRECTED_TRANSPORTS_CERTIFIED"
+}

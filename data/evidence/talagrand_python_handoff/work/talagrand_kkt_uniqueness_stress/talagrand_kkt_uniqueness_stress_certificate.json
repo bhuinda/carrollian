@@ -1,0 +1,35 @@
+{
+  "certificate_sha256": "6bb4cc4196e28ef7918d5320fa50be7502a153bbe0be6bb4e979ff7d4bb571dc",
+  "claim": "Stress-tests the remaining Act-visible SDPI/shell-domination problem by iterating the exact interior KKT fixed-point map for shells 12 and 16. No violating attractor is found; all final ratios are <=1 within numerical tolerance.",
+  "claim_boundary": "This is a numerical basin/uniqueness stress test, not a proof of global KKT uniqueness or global KL-SDPI. Some extreme starts converge to boundary-like non-equal attractors with ratio below 1; those are not violations and are covered by the boundary/indicator certificate route.",
+  "created_utc": "2026-05-26T09:15:30.037295+00:00",
+  "fixed_point_map": "x_i^2 <- (24/w) P_q(i in B), with q(B) proportional prod_{i in B} x_i, RMS-normalized.",
+  "schema": "golay_talagrand.kkt_uniqueness_stress@1",
+  "status": "TALAGRAND_KKT_STRESS_NO_VIOLATING_ATTRACTOR_FOUND",
+  "summary": [
+    {
+      "best_final_psi": 4.440892098500626e-15,
+      "best_final_ratio": 1.0000000000000044,
+      "boundary_or_non_equal_attractor_count": 36,
+      "equal_attractor_count": 215,
+      "max_final_cv": 1.0,
+      "max_final_ratio_non_equal": 0.0248447204968944,
+      "max_iterations": 28,
+      "monotone_count": 251,
+      "shell": 12,
+      "starts": 251
+    },
+    {
+      "best_final_psi": 4.440892098500626e-15,
+      "best_final_ratio": 1.0000000000000044,
+      "boundary_or_non_equal_attractor_count": 40,
+      "equal_attractor_count": 211,
+      "max_final_cv": 0.7071067811865476,
+      "max_final_ratio_non_equal": 0.0337666749011858,
+      "max_iterations": 25,
+      "monotone_count": 251,
+      "shell": 16,
+      "starts": 251
+    }
+  ]
+}

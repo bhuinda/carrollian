@@ -1,0 +1,123 @@
+{
+  "certificate_sha256": "2d37dac49c569a728dd5334302cabcd1cb1578b1ffede64d77d6a7ccb533a886",
+  "claim": "The proof has been reduced to a single KKT barrier/uniqueness lemma; hidden-sector and boundary accounting are certified or localized, but the global theorem is not yet proved.",
+  "claim_boundary": "This is a proof-state certificate, not a proof of Talagrand.",
+  "created_utc": "2026-05-26T09:58:03.512732+00:00",
+  "dependency_status": [
+    {
+      "certificate_sha256": "cfaa611486bdda499229d2f24c55e6394e4b31441aa6d9f783ecac331800e0d4",
+      "name": "lambda_hc_act_invariance",
+      "path": "/mnt/data/lambda_hc_act_invariance_audit/lambda_hc_act_invariance_certificate.json",
+      "present": true,
+      "sha256": "99fea72597e687f7e985e3e263fff2fcebe562f95f3bb87e7369624968fdd5ca",
+      "status": "LAMBDA_HC_ACT_INVARIANCE_CERTIFIED"
+    },
+    {
+      "certificate_sha256": "2cd840f340984f404490c9905018d32adbbc813e7baf605846a1c067ff6bb4c6",
+      "name": "talagrand_act_sdpi_reduction",
+      "path": "/mnt/data/talagrand_act_sdpi_reduction/talagrand_act_sdpi_reduction_certificate.json",
+      "present": true,
+      "sha256": "c1d632f69256c2d3118ae8beb646d407d2ace0ce1a3bf7ac0b8858a624b86b68",
+      "status": "TALAGRAND_REDUCED_TO_ACT_SDPI_WITH_NO_NUMERICAL_VIOLATION"
+    },
+    {
+      "certificate_sha256": "6bb4cc4196e28ef7918d5320fa50be7502a153bbe0be6bb4e979ff7d4bb571dc",
+      "name": "kkt_no_violation_stress",
+      "path": "/mnt/data/talagrand_kkt_uniqueness_stress/talagrand_kkt_uniqueness_stress_certificate.json",
+      "present": true,
+      "sha256": "2881792abd24bf9c943216ffa01a720767e6c63a11b4455fe7c8be44346a3bf2",
+      "status": "TALAGRAND_KKT_STRESS_NO_VIOLATING_ATTRACTOR_FOUND"
+    },
+    {
+      "certificate_sha256": "2383b458fdd42f0b457eda492df96182747c23b05fa39b6c1da2458cf7020d7a",
+      "name": "boundary_amgm_sieve",
+      "path": "/mnt/data/talagrand_boundary_amgm_sieve/talagrand_boundary_amgm_sieve_certificate.json",
+      "present": true,
+      "sha256": "1207e4b43c298d48770a049ec4a193fa99f02e1a9b7a2b0081a3b38869254dd2",
+      "status": "TALAGRAND_BOUNDARY_AMGM_SIEVE_COMPLETE"
+    },
+    {
+      "certificate_sha256": "fe732e71c011b71b7305dad09a6efa5e960053c345ade49a4c602081f3469576",
+      "name": "high_support_boundary_kkt",
+      "path": "/mnt/data/talagrand_high_support_boundary_kkt/talagrand_high_support_boundary_kkt_certificate.json",
+      "present": true,
+      "sha256": "7b4bced6ebc87161cb153b3928571f4c99f2e3718f826ff3d1f6792004133cf8",
+      "status": "TALAGRAND_HIGH_SUPPORT_BOUNDARY_KKT_STRESS_NO_VIOLATION"
+    },
+    {
+      "certificate_sha256": "f349c697d50d132f65213110eabdeea7edd236dc71e8ac9b8f93526056cc7904",
+      "name": "high_support_complement_orbit",
+      "path": "/mnt/data/talagrand_high_support_complement_orbit/talagrand_high_support_complement_orbit_certificate.json",
+      "present": true,
+      "sha256": "80418b037faedfc736e23cc6df6e0aef9c91de3b8248d3af20d4835fc2909119",
+      "status": "TALAGRAND_HIGH_SUPPORT_COMPLEMENT_ORBIT_AND_LOCAL_MAX_CERTIFIED"
+    },
+    {
+      "certificate_sha256": "8d45f9757eb2151c9c8961e00f0bed5fe4f85ab20f3c7eaa1842730f1ed4a4b3",
+      "name": "external_field_sdpi_blocker",
+      "path": "/mnt/data/talagrand_external_field_sdpi_blocker/talagrand_external_field_sdpi_blocker_certificate.json",
+      "present": true,
+      "sha256": "cade9abad5761f5d77dd8cf0d617566d4a4817eadad3d6468266856a86c5442e",
+      "status": "TALAGRAND_GLOBAL_EXTERNAL_FIELD_SDPI_ROUTE_BLOCKED"
+    }
+  ],
+  "lemma_ladder": [
+    {
+      "content": "Lambda_hc(m) lies in ker(Act) for all 2048 residue masks, so sector-33 height corrections do not change the Act-dependent shell functional.",
+      "lemma": "Hidden-sector neutrality",
+      "proof_role": "removes hidden finite obstruction from Talagrand",
+      "status": "CERTIFIED"
+    },
+    {
+      "content": "Talagrand shell domination is reduced to the Act-visible Golay shell incidence channel.",
+      "lemma": "Act reduction",
+      "proof_role": "moves problem from A985 transport to shell polynomial / entropy problem",
+      "status": "CERTIFIED_AS_REDUCTION"
+    },
+    {
+      "content": "Small and medium support faces are bounded by the AM-GM edge-count sieve.",
+      "lemma": "Boundary AM-GM sieve",
+      "proof_role": "removes low-support boundary strata",
+      "status": "CERTIFIED"
+    },
+    {
+      "content": "High-support contained block counts depend only on complement size; equal-on-support has strict negative tangent Hessian and subunit proper-boundary ratio.",
+      "lemma": "High-support complement orbit/local maximum",
+      "proof_role": "reduces high boundary to global-on-face uniqueness",
+      "status": "CERTIFIED_LOCAL"
+    },
+    {
+      "content": "External fields can have local eta above 2/w far below the ratio barrier.",
+      "lemma": "Naive global external-field SDPI",
+      "proof_role": "prevents wrong proof route",
+      "status": "BLOCKED"
+    },
+    {
+      "content": "Every positive interior maximizer is equal; high-local-eta regions cannot reach ratio one.",
+      "lemma": "Positive KKT uniqueness / barrier principle",
+      "proof_role": "final missing global theorem",
+      "status": "OPEN_FINAL"
+    }
+  ],
+  "schema": "golay_talagrand.uniqueness_argument_state@1",
+  "status": "GLOBAL_TALAGRAND_NOT_YET_PROVED_KKT_BARRIER_REMAINS",
+  "theorem_state": {
+    "final_open_lemma": {
+      "name": "KKT barrier uniqueness lemma",
+      "statement": "For w=12,16, the Act-visible shell objective has no non-equal positive interior maximizer; equivalently, any point with shell ratio at or above one is forced to the equal point by the KKT equations.",
+      "why_not_done": "Current evidence is numerical/local/certificate-reduction. A rigorous global barrier or SOS certificate is still missing.",
+      "why_this_closes": "Boundary faces are already controlled; if every positive interior maximizer is equal, then the global maximum is the equal vector and the Talagrand shell inequality follows."
+    },
+    "name": "Talagrand uniqueness argument state",
+    "next_actual_breakthrough_target": "Produce a rigorous barrier certificate: high eta implies ratio <= c<1, while ratio near 1 implies negative-definite KKT contraction to the equal point.",
+    "verdict": "not globally solved",
+    "what_is_solved": [
+      "The hidden sector-33/action-return obstruction is closed.",
+      "The problem is reduced to the Act-visible shell polynomial.",
+      "Small and medium boundary strata are rigorously bounded.",
+      "High-support boundary strata are reduced by complement size and strict local maximality.",
+      "The naive all-external-field SDPI route is ruled out."
+    ],
+    "wrong_route_removed": "Uniform external-field SDPI with coefficient 2/w is false; proof must be barrier/KKT, not global spectral independence."
+  }
+}

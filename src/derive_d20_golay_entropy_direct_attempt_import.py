@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import csv
 import hashlib
@@ -17,11 +18,11 @@ OUT_DIR = D20_INVARIANTS / "proof_obligations" / THEOREM_ID
 INDEX_PATH = D20_INVARIANTS / "proof_obligations" / "index.json"
 ARTIFACT_PATH = GENERATED / f"{THEOREM_ID}.json"
 
-TEMP_DIR = ROOT / "temp" / "golay_entropy_direct_attempt"
-TEMP_MANIFEST = TEMP_DIR / "manifest.json"
-TEMP_CERTIFICATE = TEMP_DIR / "golay_entropy_direct_attempt_certificate.json"
-TEMP_REPORT = TEMP_DIR / "golay_entropy_direct_attempt_report.md"
-TEMP_REPRODUCE = TEMP_DIR / "reproduce_direct_attempt.py"
+HANDOFF_ROOT = ROOT / "data" / "evidence" / "talagrand_python_handoff"
+HANDOFF_MANIFEST = HANDOFF_ROOT / "manifest.json"
+DIRECT_ATTEMPT_DIR = HANDOFF_ROOT / "work" / "golay_entropy_direct_attempt"
+DIRECT_ATTEMPT_CERTIFICATE = DIRECT_ATTEMPT_DIR / "golay_entropy_direct_attempt_certificate.json"
+DIRECT_ATTEMPT_REPORT = DIRECT_ATTEMPT_DIR / "golay_entropy_direct_attempt_report.md"
 
 W24_ROW_ALPHABETIZATION = (
     D20_INVARIANTS
@@ -93,6 +94,24 @@ def input_entry(path: Path, extra: dict[str, Any] | None = None) -> dict[str, An
     return entry
 
 
+def handoff_file_hashes(manifest: dict[str, Any], names: list[str]) -> dict[str, Any]:
+    files = manifest.get("files", {})
+    rows: dict[str, Any] = {}
+    for name in names:
+        key = f"work/golay_entropy_direct_attempt/{name}"
+        item = files.get(key)
+        path = DIRECT_ATTEMPT_DIR / name
+        expected = item.get("sha256") if isinstance(item, dict) else None
+        rows[name] = {
+            "path": relpath(path),
+            "declared_in_handoff_manifest": isinstance(item, dict),
+            "expected_sha256": expected,
+            "actual_sha256": sha_file(path),
+            "matches": expected == sha_file(path),
+        }
+    return rows
+
+
 def artifact_hash(payload: dict[str, Any]) -> str:
     tmp = dict(payload)
     tmp.pop("artifact_sha256_excluding_this_field", None)
@@ -136,7 +155,7 @@ def csv_summary(path: Path) -> dict[str, Any]:
 
 
 def shell_rows_from_summary_csv() -> list[dict[str, Any]]:
-    rows = rows_from_csv(TEMP_DIR / "direct_attempt_summary.csv")
+    rows = rows_from_csv(DIRECT_ATTEMPT_DIR / "direct_attempt_summary.csv")
     converted = []
     for row in rows:
         converted.append(
@@ -165,27 +184,23 @@ def max_observed_f(csv_summaries: dict[str, Any]) -> float:
 
 
 def build_artifact() -> dict[str, Any]:
-    manifest = load_json(TEMP_MANIFEST)
-    certificate = load_json(TEMP_CERTIFICATE)
+    handoff_manifest = load_json(HANDOFF_MANIFEST)
+    certificate = load_json(DIRECT_ATTEMPT_CERTIFICATE)
     w24 = load_json(W24_ROW_ALPHABETIZATION)
     golay_probe = load_json(GOLAY_HAMMING_PROBE)
     mixed = load_json(MIXED_DUAD_PRUNE)
 
-    report_text = TEMP_REPORT.read_text(encoding="utf-8")
-    reproduce_text = TEMP_REPRODUCE.read_text(encoding="utf-8")
-    manifest_hashes = {
-        name: {
-            "expected_sha256": expected,
-            "actual_sha256": sha_file(TEMP_DIR / name),
-            "matches": sha_file(TEMP_DIR / name) == expected,
-        }
-        for name, expected in manifest["files"].items()
-    }
+    report_text = DIRECT_ATTEMPT_REPORT.read_text(encoding="utf-8")
+    manifest_names = CSV_FILES + [
+        "golay_entropy_direct_attempt_certificate.json",
+        "golay_entropy_direct_attempt_report.md",
+    ]
+    manifest_hashes = handoff_file_hashes(handoff_manifest, manifest_names)
     cert_without_hash = dict(certificate)
     claimed_cert_hash = cert_without_hash.pop("certificate_sha256", None)
     repo_canonical_cert_hash = sha_json(cert_without_hash)
     csv_summaries = {
-        name: csv_summary(TEMP_DIR / name)
+        name: csv_summary(DIRECT_ATTEMPT_DIR / name)
         for name in CSV_FILES
     }
     summary_csv_rows = shell_rows_from_summary_csv()
@@ -198,11 +213,12 @@ def build_artifact() -> dict[str, Any]:
     observed_max_f = max_observed_f(csv_summaries)
 
     checks = {
-        "temp_manifest_status_matches_certificate": manifest["status"] == certificate["status"] == EXPECTED_STATUS,
-        "temp_manifest_file_hashes_all_match": all(row["matches"] for row in manifest_hashes.values()),
-        "temp_report_records_no_counterexample_status": EXPECTED_STATUS in report_text,
-        "temp_reproduction_script_is_placeholder_not_full_replay": "For the full version" in reproduce_text
-        and len(reproduce_text.strip().splitlines()) <= 4,
+        "handoff_manifest_declares_direct_attempt_files": all(
+            row["declared_in_handoff_manifest"] for row in manifest_hashes.values()
+        ),
+        "handoff_manifest_file_hashes_all_match": all(row["matches"] for row in manifest_hashes.values()),
+        "direct_certificate_status_matches_expected": certificate["status"] == EXPECTED_STATUS,
+        "handoff_report_records_no_counterexample_status": EXPECTED_STATUS in report_text,
         "certificate_summary_has_shells_12_and_16": [row["shell"] for row in certificate_summary] == [12, 16],
         "summary_csv_matches_certificate_summary": summary_csv_rows == certificate_summary,
         "no_counterexample_recorded_for_each_shell": all(
@@ -223,7 +239,7 @@ def build_artifact() -> dict[str, Any]:
         == "OPEN_NOT_CONSTRUCTED",
         "sector33_w24_local_matching_still_open": mixed["checks"]["explicit_morphism_remains_open"] is True
         and mixed["checks"]["no_mixed_assignment_is_self_orthogonal"] is True,
-        "temp_internal_certificate_hash_not_used_as_repo_self_hash": claimed_cert_hash
+        "handoff_internal_certificate_hash_not_used_as_repo_self_hash": claimed_cert_hash
         != repo_canonical_cert_hash,
         "final_entropy_inequality_not_certified": True,
     }
@@ -232,21 +248,23 @@ def build_artifact() -> dict[str, Any]:
         "schema": "d20.proof_obligation.golay_entropy_direct_attempt_import.artifact@1",
         "status": "D20_GOLAY_ENTROPY_DIRECT_ATTEMPT_IMPORTED_NO_COUNTEREXAMPLE",
         "claim_scope": (
-            "Import the temp Golay entropy direct-attempt artifact as bounded computational "
+            "Import the handoff Golay entropy direct-attempt artifact as bounded computational "
             "evidence tied to the certified W24/Golay endpoint. This is not a proof of the "
             "w=12,16 entropy contraction inequalities."
         ),
         "source_reports": {
-            "temp_manifest": input_entry(TEMP_MANIFEST, {"status": manifest["status"]}),
-            "temp_certificate": input_entry(
-                TEMP_CERTIFICATE,
+            "handoff_manifest": input_entry(
+                HANDOFF_MANIFEST,
+                {"direct_attempt_file_count": len(manifest_names)},
+            ),
+            "direct_certificate": input_entry(
+                DIRECT_ATTEMPT_CERTIFICATE,
                 {
                     "recorded_certificate_sha256": certificate["certificate_sha256"],
                     "status": certificate["status"],
                 },
             ),
-            "temp_report": input_entry(TEMP_REPORT),
-            "temp_reproduce_script": input_entry(TEMP_REPRODUCE),
+            "direct_report": input_entry(DIRECT_ATTEMPT_REPORT),
             "w24_row_alphabetization": input_entry(
                 W24_ROW_ALPHABETIZATION,
                 {
@@ -269,13 +287,13 @@ def build_artifact() -> dict[str, Any]:
                 },
             ),
         },
-        "temp_integrity": {
+        "handoff_integrity": {
             "manifest_file_hashes": manifest_hashes,
             "recorded_certificate_sha256": claimed_cert_hash,
             "repo_canonical_certificate_hash_excluding_field": repo_canonical_cert_hash,
             "recorded_certificate_hash_matches_repo_canonical_hash": claimed_cert_hash
             == repo_canonical_cert_hash,
-            "certificate_file_sha256": sha_file(TEMP_CERTIFICATE),
+            "certificate_file_sha256": sha_file(DIRECT_ATTEMPT_CERTIFICATE),
         },
         "direct_attempt": {
             "status": certificate["status"],
@@ -306,11 +324,11 @@ def build_artifact() -> dict[str, Any]:
                 "D(q||u_B16) >= 8 D(p_q||u_24)",
                 "a sandpile least-action proof of entropy monotonicity",
                 "a Krawtchouk/SOS certificate",
-                "an independent replay from the placeholder script",
+                "an independent full replay from source-only inputs",
                 "a sector33-to-W24 morphism",
             ],
             "certified_here": [
-                "temp artifact file integrity against its manifest",
+                "handoff artifact file integrity against its manifest",
                 "no counterexample recorded in the supplied direct search traces",
                 "the supplied W24 weight enumerator matches the certified repo W24/Golay endpoint",
                 "the direct entropy attempt is downstream of, not a substitute for, the open sector33-to-W24 map",
@@ -328,7 +346,7 @@ def build_report(artifact: dict[str, Any]) -> dict[str, Any]:
         "status": "D20_GOLAY_ENTROPY_DIRECT_ATTEMPT_IMPORT_CERTIFIED",
         "all_checks_pass": all(artifact["checks"].values()),
         "claim": (
-            "The temp Golay entropy direct attempt is imported as bounded computational evidence: "
+            "The handoff Golay entropy direct attempt is imported as bounded computational evidence: "
             "its manifest hashes match, its supplied traces record no counterexample for the "
             "w=12 and w=16 shell objectives, and its weight enumerator matches the certified "
             "W24/Golay endpoint. It does not prove the entropy contraction inequalities and it "
@@ -340,9 +358,9 @@ def build_report(artifact: dict[str, Any]) -> dict[str, Any]:
                 "the direct attempt numerically maximizes the equivalent log-shell objective F_w."
             ),
             "import_boundary": (
-                "The temp certificate is treated as an external computational artifact. The repo "
+                "The handoff certificate is treated as an external computational artifact. The repo "
                 "certificate verifies file integrity and trace summaries, but does not treat the "
-                "temp certificate_sha256 as a repo self hash."
+                "handoff certificate_sha256 as a repo self hash."
             ),
         },
         "closure_boundary": {
@@ -365,7 +383,7 @@ def build_report(artifact: dict[str, Any]) -> dict[str, Any]:
             **artifact["source_reports"],
         },
         "witness": {
-            "temp_integrity": artifact["temp_integrity"],
+            "handoff_integrity": artifact["handoff_integrity"],
             "direct_attempt": artifact["direct_attempt"],
             "connection_to_current_problem": artifact["connection_to_current_problem"],
             "open_boundary": artifact["open_boundary"],
@@ -386,11 +404,11 @@ def build_manifest(report: dict[str, Any], artifact: dict[str, Any]) -> dict[str
         "schema": "d20.proof_obligation.golay_entropy_direct_attempt_import_manifest@1",
         "name": THEOREM_ID,
         "certification_tests": [
-            "verify temp manifest file hashes",
-            "verify temp direct-attempt status and no-counterexample summary",
+            "verify handoff manifest file hashes",
+            "verify direct-attempt status and no-counterexample summary",
             "verify CSV traces record no exceeds_zero counterexample",
             "verify observed F maxima are within numerical roundoff of zero",
-            "verify W24 endpoint weight enumerator matches the temp direct-attempt enumerator",
+            "verify W24 endpoint weight enumerator matches the direct-attempt enumerator",
             "record that the entropy inequality and sector33-to-W24 map remain open",
         ],
         "inputs": report["inputs"],

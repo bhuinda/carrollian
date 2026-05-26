@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
+import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 import argparse, hashlib, json, re, sys
 from pathlib import Path
 from typing import Any
@@ -13,6 +14,7 @@ from src.runtime import ensure_numpy_runtime
 ensure_numpy_runtime(ROOT, __file__)
 
 from src.certify_io import raw_tensor_relpath
+from src.token_burn_guard import emit_json
 from src.certificate_registry import CERTIFICATE_INDEX, certificate_relpath, load_certificate_registry
 from src.invariant_report_inventory import invariant_report_inventory, invariant_report_rows
 from src.paths import ROOT
@@ -52,10 +54,20 @@ EXPECTED = {
     "24_hexacode_row_selector": "HEXACODE_ROW_SELECTOR_CONSTRUCTED_GOLAY_CERTIFIED_CANONICALITY_EXTERNAL",
     "25_proof_system_integrity": "PROOF_SYSTEM_INTEGRITY_LADDER_BUILT",
 }
+JACOBIAN_SAT_CACHE_MANIFEST = (
+    "data/evidence/jacobian_cubic_symbolic_elimination/saturation_cache/manifest.json"
+)
+JACOBIAN_SAT_CACHE_INDEX_MANIFEST = (
+    "manifests/jacobian_cubic_symbolic_elimination_saturation_cache_manifest.json"
+)
 
 
 def canonical(obj: Any) -> bytes:
     return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode("utf-8")
+
+
+def repo_relative(path: Path) -> str:
+    return path.relative_to(ROOT).as_posix()
 
 
 def schema_name(value: Any) -> Any:
@@ -110,6 +122,7 @@ EVIDENCE_INVARIANTS_REL = "data/invariants/d20/certified_evidence_invariants.jso
 DATA_REGISTRY_REL = "data/index.json"
 EXPECTED_DATA_DOMAINS = {
     "a236_compute_cache",
+    "compiler_a42_d20_replay_evidence",
     "coorient_lift",
     "core_certificates",
     "d20_invariants",
@@ -120,6 +133,7 @@ EXPECTED_DATA_DOMAINS = {
     "hcycle_game_control",
     "integrity_certificates",
     "integrity_ladders",
+    "jacobian_cubic_symbolic_elimination_evidence",
     "modular_certificates",
     "quotient_selectors",
     "raw_core_seeds",
@@ -127,6 +141,7 @@ EXPECTED_DATA_DOMAINS = {
     "selector_certificates",
     "ss_sat_evidence",
     "stack_series_evidence",
+    "talagrand_python_handoff_evidence",
     "tensor_chain_evidence",
     "tube_certificates",
 }
@@ -142,6 +157,8 @@ ALLOWED_DATA_STORAGE = {
     "canonical_current_layout",
     "canonical_current_layout_flat",
     "canonical_standardized_layout",
+    "canonical_source_handoff_archive",
+    "contract_locked_certificates_pending",
     "mixed_canonical_archive",
 }
 
@@ -529,7 +546,26 @@ def verify_certified_evidence_invariants(data: dict[str, Any], errors: list[str]
         "certified evidence invariants status mismatch",
         errors,
     )
-    require(section.get("source_count") == 3, "certified evidence invariant source count mismatch", errors)
+    source_reservation = {
+        "status",
+        "schema",
+        "source_count",
+        "integration_policy",
+        "witness_hashes",
+        "file_sha256",
+        "path",
+        "present",
+    }
+    source_blocks = [
+        k
+        for k, value in section.items()
+        if k not in source_reservation and isinstance(value, dict)
+    ]
+    require(
+        section.get("source_count") == len(source_blocks),
+        f"certified evidence invariant source count mismatch: {section.get('source_count')} != {len(source_blocks)}",
+        errors,
+    )
 
     policy = section.get("integration_policy", {})
     require(policy.get("raw_drops_are_transient") is True, "certified evidence raw-drop policy mismatch", errors)
@@ -747,6 +783,10 @@ def verify_root_invariant_reports(root: dict[str, Any], errors: list[str]) -> di
     certified = [row for row in rows if row.get("classification") == "certified"]
     provisional = [row for row in rows if row.get("classification") == "provisional"]
     demoted = [row for row in rows if row.get("classification") == "demoted"]
+    sort_key = lambda row: (str(row.get("kind", "")), str(row.get("path", "")), str(row.get("id", "")))
+    certified = sorted(certified, key=sort_key)
+    provisional = sorted(provisional, key=sort_key)
+    demoted = sorted(demoted, key=sort_key)
     inventory = invariant_report_inventory()
 
     recorded_inventory = root.get("invariant_report_inventory", {})
@@ -789,10 +829,13 @@ def verify_root_invariant_reports(root: dict[str, Any], errors: list[str]) -> di
     )
 
     if isinstance(recorded_certified, list):
+        recorded_certified = sorted(recorded_certified, key=sort_key)
         require(recorded_certified == certified, "root certified invariant reports do not match filesystem scan", errors)
     if isinstance(recorded_provisional, list):
+        recorded_provisional = sorted(recorded_provisional, key=sort_key)
         require(recorded_provisional == provisional, "root provisional invariant reports do not match filesystem scan", errors)
     if isinstance(recorded_demoted, list):
+        recorded_demoted = sorted(recorded_demoted, key=sort_key)
         require(recorded_demoted == demoted, "root demoted invariant reports do not match filesystem scan", errors)
 
     return {
@@ -1334,11 +1377,37 @@ def verify_certificates(errors: list[str], registry: dict[str, Any]) -> list[dic
 def verify_core_arrays(errors: list[str]) -> dict[str, Any]:
     import numpy as np
 
+    def safe_load(path: Path, label: str) -> dict[str, Any] | None:
+        try:
+            return np.load(path)
+        except Exception as exc:
+            require(
+                False,
+                f"core invariant {label} load failed ({path}): {type(exc).__name__}: {exc}",
+                errors,
+            )
+            return None
+
+    def safe_array(payload: Any, key: str, label: str) -> Any | None:
+        try:
+            return np.asarray(payload[key], dtype=np.int64)
+        except Exception as exc:
+            require(
+                False,
+                f"core invariant {label} missing or invalid array '{key}': {type(exc).__name__}: {exc}",
+                errors,
+            )
+            return None
+
     out: dict[str, Any] = {}
-    z = np.load(ROOT / raw_tensor_relpath())
-    triples = np.asarray(z["triples"], dtype=np.int64)
-    reps = np.asarray(z["reps"], dtype=np.int64)
-    M = np.asarray(z["M"], dtype=np.int64)
+    z = safe_load(ROOT / raw_tensor_relpath(), "tensor")
+    if z is None:
+        return out
+    triples = safe_array(z, "triples", "tensor")
+    reps = safe_array(z, "reps", "tensor")
+    M = safe_array(z, "M", "tensor")
+    if triples is None or reps is None or M is None:
+        return out
     require(triples.shape == (1_414_965, 4), f"tensor triples shape mismatch: {triples.shape}", errors)
     require(int(triples[:, 3].sum()) == 2_537_360, "tensor coefficient total mismatch", errors)
     require(reps.shape == (985, 5), f"reps shape mismatch: {reps.shape}", errors)
@@ -1350,11 +1419,15 @@ def verify_core_arrays(errors: list[str]) -> dict[str, Any]:
         "object_pair_matrix_shape": list(M.shape),
     })
 
-    q = np.load(ROOT / "data/raw/quotients.npz")
-    q42 = np.asarray(q["q42_map"], dtype=np.int64)
-    q12 = np.asarray(q["q12_map"], dtype=np.int64)
-    q42t = np.asarray(q["q42_tensor"], dtype=np.int64)
-    q12t = np.asarray(q["q12_tensor"], dtype=np.int64)
+    q = safe_load(ROOT / "data/raw/quotients.npz", "quotients")
+    if q is None:
+        return out
+    q42 = safe_array(q, "q42_map", "quotients")
+    q12 = safe_array(q, "q12_map", "quotients")
+    q42t = safe_array(q, "q42_tensor", "quotients")
+    q12t = safe_array(q, "q12_tensor", "quotients")
+    if q42 is None or q12 is None or q42t is None or q12t is None:
+        return out
     require(q42.shape == (985,), f"q42 map shape mismatch: {q42.shape}", errors)
     require(q12.shape == (985,), f"q12 map shape mismatch: {q12.shape}", errors)
     require(q42t.shape == (42, 42, 42), f"q42 tensor shape mismatch: {q42t.shape}", errors)
@@ -1374,11 +1447,15 @@ def verify_core_arrays(errors: list[str]) -> dict[str, Any]:
         "q12_tensor_nonzero": int(np.count_nonzero(q12t)),
     })
 
-    b = np.load(ROOT / "data/raw/simple_branching_matrices.npz")
-    B236_42 = np.asarray(b["B236_42"], dtype=np.int64)
-    B42_12 = np.asarray(b["B42_12"], dtype=np.int64)
-    B236_12 = np.asarray(b["B236_12"], dtype=np.int64)
-    comp = np.asarray(b["comp"], dtype=np.int64)
+    b = safe_load(ROOT / "data/raw/simple_branching_matrices.npz", "simple branching")
+    if b is None:
+        return out
+    B236_42 = safe_array(b, "B236_42", "simple branching")
+    B42_12 = safe_array(b, "B42_12", "simple branching")
+    B236_12 = safe_array(b, "B236_12", "simple branching")
+    comp = safe_array(b, "comp", "simple branching")
+    if B236_42 is None or B42_12 is None or B236_12 is None or comp is None:
+        return out
     naturality = np.array_equal(B236_42 @ B42_12, B236_12) and np.array_equal(comp, B236_12)
     require(naturality, "simple branching naturality failed", errors)
     out.update({
@@ -1388,7 +1465,9 @@ def verify_core_arrays(errors: list[str]) -> dict[str, Any]:
         "B236_to_A12_shape": list(B236_12.shape),
     })
 
-    l = np.load(ROOT / "data/raw/leech_projective_generators.npz")
+    l = safe_load(ROOT / "data/raw/leech_projective_generators.npz", "leech generators")
+    if l is None:
+        return out
     arr_keys = sorted(l.files)
     shape_found = None
     for k in arr_keys:
@@ -1423,8 +1502,24 @@ def verify_integrity(errors: list[str], registry: dict[str, Any]) -> dict[str, A
 def verify_manifest(errors: list[str]) -> dict[str, Any]:
     man = load_json("manifests/file_hashes.json")
     checked = 0
-    for ent in man.get("entries", []):
-        rel = ent["path"]
+    require(isinstance(man, dict), "manifest payload missing", errors)
+    entries = man.get("entries") if isinstance(man, dict) else []
+    require(isinstance(entries, list), "manifest entries missing", errors)
+    if not isinstance(entries, list):
+        return {"manifest_entries_checked": checked}
+
+    for ent in entries:
+        require(isinstance(ent, dict), "manifest entry is not an object", errors)
+        if not isinstance(ent, dict):
+            continue
+        rel = ent.get("path")
+        size = ent.get("size")
+        sha = ent.get("sha256")
+        require(isinstance(rel, str), "manifest entry missing path", errors)
+        require(isinstance(size, int), "manifest entry missing size", errors)
+        require(isinstance(sha, str) and len(sha) == 64, "manifest entry sha256 missing", errors)
+        if not isinstance(rel, str) or not isinstance(size, int) or not (isinstance(sha, str) and len(sha) == 64):
+            continue
         p = ROOT / rel
         require(p.exists(), f"manifest path missing: {rel}", errors)
         if not p.exists():
@@ -1433,6 +1528,236 @@ def verify_manifest(errors: list[str]) -> dict[str, Any]:
         require(sha_file(p) == ent["sha256"], f"manifest sha mismatch: {rel}", errors)
         checked += 1
     return {"manifest_entries_checked": checked}
+
+
+def verify_jacobian_saturation_cache_manifest(errors: list[str]) -> dict[str, Any]:
+    rel = JACOBIAN_SAT_CACHE_INDEX_MANIFEST
+    p = ROOT / rel
+    if not p.exists():
+        rel = JACOBIAN_SAT_CACHE_MANIFEST
+        p = ROOT / rel
+        if not p.exists():
+            return {"status": "MISSING", "path": rel, "note": "manifest not present"}
+        payload = load_json(rel)
+        manifest_errors: list[str] = []
+        require(
+            payload.get("schema") == "holotopy.saturation_cache_verification",
+            "jacobian saturation cache manifest schema mismatch",
+            manifest_errors,
+        )
+        require(payload.get("status") in {"PASS", "FAIL"}, "jacobian saturation cache manifest status missing", manifest_errors)
+
+        entries = payload.get("entries")
+        require(isinstance(entries, list), "jacobian saturation cache manifest entries missing", manifest_errors)
+
+        cache_paths: set[str] = set()
+        if isinstance(entries, list):
+            for index, entry in enumerate(entries):
+                require(
+                    isinstance(entry, dict),
+                    f"jacobian saturation cache manifest entry {index} is not an object",
+                    manifest_errors,
+                )
+                if not isinstance(entry, dict):
+                    continue
+                cache_file = entry.get("cache_file")
+                require(
+                    isinstance(cache_file, str),
+                    f"jacobian saturation cache manifest entry {index} missing cache_file",
+                    manifest_errors,
+                )
+                if isinstance(cache_file, str):
+                    cache_paths.add(cache_file)
+
+        require(
+            payload.get("expected_certificate_count") == len(cache_paths),
+            "jacobian saturation cache manifest expected_certificate_count mismatch",
+            manifest_errors,
+        )
+        verified_entries = [
+            entry for entry in (entries if isinstance(entries, list) else [])
+            if isinstance(entry, dict) and entry.get("status") == "PASS"
+        ]
+        require(
+            payload.get("verified_certificate_count") == len(verified_entries),
+            "jacobian saturation cache manifest verified_certificate_count mismatch",
+            manifest_errors,
+        )
+
+        actual_cache_paths = sorted(
+            repo_relative(path) for path in p.parent.glob("*.json")
+            if path.name != "manifest.json"
+        )
+        missing = sorted(cache_paths - set(actual_cache_paths))
+        extra = sorted(set(actual_cache_paths) - cache_paths)
+        require(not extra, f"jacobian saturation cache manifest has extra cache files: {extra}", manifest_errors)
+
+        require(
+            payload.get("manifest_sha256")
+            == sha_json({key: value for key, value in payload.items() if key != "manifest_sha256"}),
+            "jacobian saturation cache manifest hash mismatch",
+            manifest_errors,
+        )
+
+        if payload.get("status") == "FAIL":
+            nested = payload.get("errors")
+            require(
+                isinstance(nested, list) and nested,
+                "jacobian saturation cache manifest payload status is FAIL",
+                manifest_errors,
+            )
+
+        optional_cache_errors = []
+        if missing:
+            optional_cache_errors.append(f"jacobian saturation cache manifest missing cache files: {missing}")
+        if manifest_errors:
+            errors.extend(manifest_errors)
+        status = (
+            "FAIL"
+            if manifest_errors
+            else "DEMOTED_OPTIONAL_STRICT_CACHE_MISSING"
+            if optional_cache_errors
+            else "PASS"
+        )
+        return {
+            "status": status,
+            "path": rel,
+            "entries": len(entries) if isinstance(entries, list) else 0,
+            "expected_certificate_count": payload.get("expected_certificate_count"),
+            "verified_certificate_count": payload.get("verified_certificate_count"),
+            "status_from_payload": payload.get("status"),
+            "manifest_schema": payload.get("schema"),
+            "errors": manifest_errors,
+            "optional_cache_errors": optional_cache_errors,
+            "policy": "strict saturation cache files are optional evidence; absence demotes this cache gate but does not fail core d20 verification",
+        }
+
+    index_payload = load_json(rel)
+    manifest_errors: list[str] = []
+    require(
+        index_payload.get("schema") == "holotopy.saturation_cache_artifact_manifest",
+        "jacobian saturation cache indexed manifest schema mismatch",
+        manifest_errors,
+    )
+    require(
+        index_payload.get("status") in {"PASS", "FAIL"},
+        "jacobian saturation cache indexed manifest status missing",
+        manifest_errors,
+    )
+
+    cache_manifest_rel = index_payload.get("cache_manifest")
+    require(
+        isinstance(cache_manifest_rel, str),
+        "jacobian saturation cache indexed manifest missing cache manifest path",
+        manifest_errors,
+    )
+    cache_manifest_path = ROOT / cache_manifest_rel if isinstance(cache_manifest_rel, str) else p
+    require(
+        cache_manifest_path.exists(),
+        "jacobian saturation cache indexed manifest points to non-existent cache manifest",
+        manifest_errors,
+    )
+    require(
+        cache_manifest_rel == JACOBIAN_SAT_CACHE_MANIFEST,
+        "jacobian saturation cache indexed manifest references unexpected cache manifest",
+        manifest_errors,
+    )
+    cache_payload = load_json(cache_manifest_path)
+    require(
+        cache_payload.get("manifest_sha256") == index_payload.get("cache_manifest_sha256"),
+        "jacobian saturation cache indexed manifest cache manifest hash mismatch",
+        manifest_errors,
+    )
+
+    entries = index_payload.get("entries")
+    require(isinstance(entries, list), "jacobian saturation cache indexed manifest entries missing", manifest_errors)
+
+    cache_paths: set[str] = set()
+    if isinstance(entries, list):
+        for index, entry in enumerate(entries):
+            require(
+                isinstance(entry, dict),
+                f"jacobian saturation cache indexed manifest entry {index} is not an object",
+                manifest_errors,
+            )
+            if not isinstance(entry, dict):
+                continue
+            cache_file = entry.get("cache_file")
+            require(
+                isinstance(cache_file, str),
+                f"jacobian saturation cache indexed manifest entry {index} missing cache_file",
+                manifest_errors,
+            )
+            if isinstance(cache_file, str):
+                cache_paths.add(cache_file)
+
+    require(
+        index_payload.get("expected_certificate_count") == len(cache_paths),
+        "jacobian saturation cache indexed manifest expected_certificate_count mismatch",
+        manifest_errors,
+    )
+    indexed_verified_entries = [
+        entry for entry in (entries if isinstance(entries, list) else [])
+        if isinstance(entry, dict) and entry.get("status") == "PASS"
+    ]
+    require(
+        index_payload.get("verified_certificate_count") == len(indexed_verified_entries),
+        "jacobian saturation cache indexed manifest verified_certificate_count mismatch",
+        manifest_errors,
+    )
+
+    cache_dir_rel = index_payload.get("cache_directory")
+    require(isinstance(cache_dir_rel, str), "jacobian saturation cache indexed manifest missing cache directory", manifest_errors)
+    cache_dir_path = ROOT / cache_dir_rel if isinstance(cache_dir_rel, str) else p.parent
+    if isinstance(cache_dir_rel, str):
+        require(cache_dir_path.exists(), "jacobian saturation cache indexed manifest cache directory missing", manifest_errors)
+        actual_cache_paths = sorted(
+            repo_relative(path) for path in cache_dir_path.glob("*.json")
+            if path.name != "manifest.json"
+        )
+    else:
+        actual_cache_paths = sorted(repo_relative(path) for path in p.parent.glob("*.json") if path.name != "manifest.json")
+
+    missing = sorted(cache_paths - set(actual_cache_paths))
+    extra = sorted(set(actual_cache_paths) - cache_paths)
+    require(not extra, f"jacobian saturation cache indexed manifest has extra cache files: {extra}", manifest_errors)
+
+    require(
+        index_payload.get("cache_manifest_sha256") is not None,
+        "jacobian saturation cache indexed manifest missing cache manifest hash",
+        manifest_errors,
+    )
+    require(
+        index_payload.get("manifest_sha256")
+        == sha_json({key: value for key, value in index_payload.items() if key != "manifest_sha256"}),
+        "jacobian saturation cache indexed manifest hash mismatch",
+        manifest_errors,
+    )
+
+    optional_cache_errors = []
+    if missing:
+        optional_cache_errors.append(f"jacobian saturation cache indexed manifest missing cache files: {missing}")
+    if manifest_errors:
+        errors.extend(manifest_errors)
+    status = (
+        "FAIL"
+        if manifest_errors
+        else "DEMOTED_OPTIONAL_STRICT_CACHE_MISSING"
+        if optional_cache_errors
+        else "PASS"
+    )
+    return {
+        "status": status,
+        "path": rel,
+        "entries": len(entries) if isinstance(entries, list) else 0,
+        "expected_certificate_count": index_payload.get("expected_certificate_count"),
+        "verified_certificate_count": index_payload.get("verified_certificate_count"),
+        "status_from_payload": index_payload.get("status"),
+        "manifest_schema": index_payload.get("schema"),
+        "errors": manifest_errors,
+        "optional_cache_errors": optional_cache_errors,
+        "policy": "strict saturation cache files are optional evidence; absence demotes this cache gate but does not fail core d20 verification",
+    }
 
 
 def verify_constructor_witness(errors: list[str]) -> dict[str, Any]:
@@ -1599,9 +1924,50 @@ def verify_tamper_resistance() -> dict[str, Any]:
     }
 
 
+def verify_token_burn_guard(errors: list[str]) -> dict[str, Any]:
+    try:
+        from src.certify_token_burn_guard import (
+            compact_certificate,
+            validate_token_burn_guard,
+            write_token_burn_guard_artifacts,
+        )
+    except Exception as exc:
+        errors.append(f"token-burn guard import failed: {type(exc).__name__}: {exc}")
+        return {"status": "ERROR", "error": f"{type(exc).__name__}: {exc}"}
+
+    try:
+        result = validate_token_burn_guard()
+        artifacts = write_token_burn_guard_artifacts(result)
+        certificate = compact_certificate(result)
+    except Exception as exc:
+        errors.append(f"token-burn guard audit failed: {type(exc).__name__}: {exc}")
+        return {"status": "ERROR", "error": f"{type(exc).__name__}: {exc}"}
+
+    if result.get("status") != "TOKEN_BURN_GUARD_PASS":
+        errors.append("token-burn guard status is not TOKEN_BURN_GUARD_PASS")
+
+    return {
+        "status": result.get("status"),
+        "certificate_status": certificate.get("status"),
+        "certificate_sha256": certificate.get("certificate_sha256"),
+        "artifacts": artifacts,
+        "coverage": certificate.get("coverage"),
+        "checks": result.get("checks"),
+    }
+
+
 def run(mode: str) -> dict[str, Any]:
     if mode == "tamper":
         return verify_tamper_resistance()
+    if mode == "token-burn":
+        errors: list[str] = []
+        token_burn_guard = verify_token_burn_guard(errors)
+        return {
+            "status": "PASS" if not errors else "FAIL",
+            "mode": mode,
+            "token_burn_guard": token_burn_guard,
+            "errors": errors,
+        }
 
     errors: list[str] = []
     root = verify_root(errors)
@@ -1626,7 +1992,11 @@ def run(mode: str) -> dict[str, Any]:
         "integrity": integrity,
         "errors": errors,
     }
+    out["jacobian_saturation_cache_manifest"] = verify_jacobian_saturation_cache_manifest(errors)
+    if out["jacobian_saturation_cache_manifest"]["status"] == "FAIL":
+        out["status"] = "FAIL"
     if mode in {"audit", "rebuild"}:
+        out["token_burn_guard"] = verify_token_burn_guard(errors)
         out["constructor_witness"] = verify_constructor_witness(errors)
         out["manifest"] = verify_manifest(errors)
         out["status"] = "PASS" if not errors else "FAIL"
@@ -1663,7 +2033,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(
         description="Verify the d20 bundle. Only --mode rebuild or --regenerate rewrites files."
     )
-    ap.add_argument("--mode", choices=["fast", "audit", "rebuild", "tamper", "strict-replay"], default="audit")
+    ap.add_argument("--mode", choices=["fast", "audit", "rebuild", "tamper", "strict-replay", "token-burn"], default="audit")
     ap.add_argument("--pretty", action="store_true")
     ap.add_argument(
         "--regenerate",
@@ -1691,9 +2061,9 @@ def main() -> None:
     out = run(args.mode)
     out["regeneration"] = regen_info
     if out["status"] != "PASS":
-        print(json.dumps(out, indent=2 if args.pretty else None, sort_keys=True))
+        emit_json(out, pretty=args.pretty)
         sys.exit(1)
-    print(json.dumps(out, indent=2 if args.pretty else None, sort_keys=True))
+    emit_json(out, pretty=args.pretty)
 
 
 if __name__ == "__main__":

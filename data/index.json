@@ -328,6 +328,66 @@
       "storage_status": "canonical_standardized_layout",
       "target_path": "data/invariants/integrity"
     },
+    "compiler_a42_d20_replay_evidence": {
+      "canonical_role": "evidence_archive",
+      "file_classes": [
+        "json_certificate",
+        "json_manifest",
+        "json_report",
+        "turn_capsule"
+      ],
+      "migration_policy": "compiler A42/D20 coordinate replay evidence integrated under canonical evidence tree",
+      "owner": "scene_compiler",
+      "path": "data/evidence/compiler_a42_d20_replay_test",
+      "required_files": [
+        "CORE.lock.json",
+        "manifest.json",
+        "report.json",
+        "support_coordinates.json",
+        "positive/TURN.lock.json",
+        "positive/08_residue_ledger.json",
+        "missing_coordinate/08_residue_ledger.json",
+        "tampered_coordinate/04_support_ledger.json"
+      ],
+      "standardized_subdirectories": {
+        "missing_coordinate": "negative turn capsule proving missing coordinate support blocks residue discharge",
+        "positive": "positive tensor-backed turn capsule with replayable A42 and D20 residue witness",
+        "tampered_coordinate": "negative turn capsule proving coordinate tamper fails replay"
+      },
+      "storage_status": "canonical_standardized_layout",
+      "target_path": "data/evidence/compiler_a42_d20_replay_test"
+    },
+    "jacobian_cubic_symbolic_elimination_evidence": {
+      "canonical_role": "evidence_archive",
+      "file_classes": [
+        "json_audit",
+        "json_checklist",
+        "json_contract",
+        "json_manifest",
+        "json_protocol",
+        "json_summary",
+        "markdown_report"
+      ],
+      "migration_policy": "normalized cubic symbolic-elimination evidence contract integrated under canonical evidence tree",
+      "owner": "symbolic_elimination",
+      "path": "data/evidence/jacobian_cubic_symbolic_elimination",
+      "required_files": [
+        "README.md",
+        "manifest.json",
+        "saturation_certificate_closure_checklist.json",
+        "saturation_certificate_intake_protocol.json",
+        "saturation_certificate_jobs.json",
+        "saturation_certificate_queue.json",
+        "saturation_certificate_queue_audit.json",
+        "saturation_certificate_source_audit.json",
+        "saturation_certificate_status_summary.json"
+      ],
+      "standardized_subdirectories": {
+        "saturation_cache": "strict Rabinowitsch saturation certificate cache, pending 48 certificate files"
+      },
+      "storage_status": "contract_locked_certificates_pending",
+      "target_path": "data/evidence/jacobian_cubic_symbolic_elimination"
+    },
     "modular_certificates": {
       "canonical_role": "derived_invariant",
       "file_classes": [
@@ -516,6 +576,35 @@
       "storage_status": "canonical_standardized_layout",
       "target_path": "data/evidence/stack_series"
     },
+    "talagrand_python_handoff_evidence": {
+      "canonical_role": "evidence_archive",
+      "file_classes": [
+        "csv_table",
+        "json_certificate",
+        "json_manifest",
+        "json_report",
+        "markdown_report",
+        "npz_array",
+        "python_source",
+        "wav_audio"
+      ],
+      "migration_policy": "ingress handoff archive copied into canonical evidence tree with final global proof boundary preserved",
+      "owner": "talagrand_hamming_golay_proof_development",
+      "path": "data/evidence/talagrand_python_handoff",
+      "required_files": [
+        "README_HANDOFF.md",
+        "RUN_ORDER.md",
+        "STATUS_LEDGER.json",
+        "MANIFEST.csv",
+        "manifest.json",
+        "work/talagrand_multilevel_KKT_obstruction_system/multilevel_KKT_obstruction_certificate.json"
+      ],
+      "standardized_subdirectories": {
+        "work": "original handoff work tree containing scripts, verifier scripts, certificates, reports, CSV/JSON tables, NPZ arrays, and WAV sonification artifacts"
+      },
+      "storage_status": "canonical_source_handoff_archive",
+      "target_path": "data/evidence/talagrand_python_handoff"
+    },
     "tensor_chain_evidence": {
       "canonical_role": "evidence_archive",
       "file_classes": [
@@ -569,9 +658,12 @@
     "data/core/raw": "primitive checked seeds and compact comparison arrays",
     "data/drinfeld": "Drinfeld boundary, center, gluing, trace, and lift certificate data",
     "data/evidence/a236_compute": "A236 computation cache and branching evidence",
+    "data/evidence/compiler_a42_d20_replay_test": "compiler A42/D20 coordinate replay evidence with positive, missing-coordinate, and tamper capsules",
+    "data/evidence/jacobian_cubic_symbolic_elimination": "normalized cubic symbolic-elimination evidence contract and strict saturation-cache gate",
     "data/evidence/reproducibility": "portable reproduction bundles retained under canonical evidence storage",
     "data/evidence/ss_sat": "SS-SAT external solver/proof evidence split into benchmarks, logs, proofs, audits, residues, reports, tables, manifests, and source provenance",
     "data/evidence/stack_series": "bounded stack-series evidence split into named stages, reports, and manifests",
+    "data/evidence/talagrand_python_handoff": "Talagrand/Hamming/Golay Python handoff archive of record with open global-proof boundary",
     "data/evidence/tensor_chain": "tensor-chain evidence split into reports, tables, arrays, and stages",
     "data/geometry": "geometry and syzygy-frame certificate data",
     "data/integrity/height_coherence": "height-coherence integrity certificates, guards, arrays, tables, and verification scripts",
