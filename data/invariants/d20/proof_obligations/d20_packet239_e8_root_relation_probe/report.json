@@ -1,0 +1,752 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4b5a8f2fcc50131961e2add445a2e833122f03f2d170729a0a5fa0075874e580",
+  "checks": {
+    "d20_input_is_certified": true,
+    "explicit_e8_morphism_remains_open": true,
+    "full_exposure_canonical_labelled_frame_input_is_certified": true,
+    "full_exposure_frame_has_20_packets": true,
+    "full_exposure_times_a12_classes_is_240": true,
+    "golay_240_entries_are_shell_profile_counts_not_packet_roots": true,
+    "golay_shell_exhaustive_two_level_sos_input_is_certified": true,
+    "golay_shell_has_240_profile_entries": true,
+    "no_certified_240_root_set_present_in_current_witnesses": true,
+    "packet239_arithmetic_resonance_input_is_certified": true,
+    "packet239_is_not_packet240": true,
+    "packet239_is_unique_full_exposure_clock_zero": true,
+    "packet239_linear_image_is_d8_not_e8": true,
+    "packet239_seed_closure_is_exactly_packets_238_and_239": true,
+    "packet239_seed_propagation_input_is_certified": true,
+    "packet239_selected_id_free": true,
+    "packet239_stabilizer_orders_are_uniform_not_exceptional": true,
+    "packet239_stabilizer_seed_candidate_input_is_certified": true,
+    "packet239_zero_based_ordinal_is_240": true,
+    "packet_charge_frame_classifier_input_is_certified": true,
+    "packet_spectral_charge_table_input_is_certified": true,
+    "packet_table_has_512_packets_not_240": true,
+    "selected_packet_reports_have_no_explicit_e8_relation_claim": true,
+    "selected_packet_reports_have_no_rank8_cartan_dynkin_witness": true,
+    "w24_hexacode_row_alphabetization_input_is_certified": true
+  },
+  "claim": "Packet 239 has certified contact with the integer 240 only through its zero-based ordinal and through the open numerical candidate 20 full-exposure packets x 12 A12 classes. The current packet and Golay certificates do not establish an E8-root relation: the local packet universe has 512 packets, packet239 closes with packet238 under the certified seed propagation, its linear stabilizer image is D8/V4 rather than an exceptional E8 witness, and the Golay 240s are W24 shell profile entries.",
+  "closure_boundary": {
+    "certifies": [
+      "packet239 is the id-free full-exposure sector-26 zero-pair packet",
+      "packet239 is the 240th packet only under zero-based packet indexing",
+      "the full-exposure frame has 20 packets and CY(d20)=A12 has 12 classes, so their product is 240",
+      "packet239 seed propagation closes on packets 238 and 239, not on a 240-element orbit",
+      "packet239 has the same stabilizer orders as its full-exposure peers and a D8 real signed 2x2 linear image",
+      "the selected packet/Golay reports contain no explicit E8-root, rank-8 Cartan, or Dynkin witness",
+      "Golay shell entries equal to 240 are shell-intersection counts, not packet239 roots"
+    ],
+    "does_not_certify": [
+      "absence of every possible future E8 relation",
+      "a 240-element root shell from the 20 x 12 numerical candidate",
+      "an E8 lattice, Gram matrix, Cartan matrix, or Dynkin diagram construction",
+      "a literature-level claim about all known mathematics outside this local repository"
+    ]
+  },
+  "definition": {
+    "boundary_probe": "A certificate that classifies the current local evidence as positive, negative, or still-open without rebuilding D20.",
+    "certified_e8_relation": "For this probe, an established E8 relation would require at least an explicit 240-element root candidate set together with an 8-dimensional norm/Gram or Cartan/Dynkin witness and a recorded morphism from packet239/D20 data to it."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "2b83eb6a7286d54388211b426e9f1a73b27119c38a5858505173cfb5e4a6a97d",
+      "path": "generated/d20_packet239_e8_root_relation_probe.json",
+      "schema": "d20.proof_obligation.packet239_e8_root_relation_probe.artifact@1",
+      "sha256": "d065f08ff691cba028e090fea06498ebca95e7fc12c0b1e4ad3bb9d47f622e40",
+      "status": "D20_PACKET239_E8_ROOT_RELATION_PROBE_DERIVED"
+    },
+    "d20": {
+      "d20_sha256": "3973b3cd3e933d77777420fd882f04c8b9f31dc13cb2a49a36dea11941f65c0a",
+      "path": "d20.json",
+      "schema": "d20.object",
+      "sha256": "9355a5a1cc0bd3278f8e6151a9fb2cafd5a1930ee9b2313036377d245a31e4f7",
+      "status": "D20_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_packet239_e8_root_relation_probe.py",
+      "sha256": "b3b794e3ffa8aaad7ad4a987e914ba4e0b47286954dd14fa57b9e16568caf709"
+    },
+    "full_exposure_canonical_labelled_frame": {
+      "certificate_sha256": "63895b6c26dffac785571e72fac8d5e59676a06afd5a27d00ecdb14837eff50c",
+      "path": "data/invariants/d20/theorems/full_exposure_canonical_labelled_frame/report.json",
+      "schema": "d20.theorem.full_exposure_canonical_labelled_frame",
+      "sha256": "7a08d667b81a7df1e28cc5564c2e7dc5de6273104e02afc20bcb609ce9726cc1",
+      "status": "D20_FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_CERTIFIED"
+    },
+    "golay_shell_exhaustive_two_level_sos": {
+      "certificate_sha256": "5d3b36d10878097a70b9fb777420bd34bcac18841c14575dbfc522d0afcffbfe",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_shell_exhaustive_two_level_sos/report.json",
+      "schema": "d20.proof_obligation.golay_shell_exhaustive_two_level_sos@1",
+      "sha256": "42a51ae5cdfc780a5a366381ec075306de98a843d5adf549cee75e42e615ebd8",
+      "status": "D20_GOLAY_SHELL_EXHAUSTIVE_TWO_LEVEL_SOS_CERTIFIED"
+    },
+    "packet239_arithmetic_resonance": {
+      "certificate_sha256": "15a70483ee589bd992ec68e15bc5d0b444fb1c57e0cb0794d4a0dcc65b32c34c",
+      "path": "data/invariants/d20/theorems/packet239_arithmetic_resonance/report.json",
+      "schema": "d20.theorem.packet239_arithmetic_resonance",
+      "sha256": "9c5e232865b59a6b77aaa59610c24e56328da28c26f3f33aeb4758b7e7b81579",
+      "status": "D20_PACKET239_ARITHMETIC_RESONANCE_CERTIFIED"
+    },
+    "packet239_seed_propagation": {
+      "certificate_sha256": "70e469ac0715a410d9ccfefbfb2de4d47410ec48b238173079e2735e8fe52aab",
+      "path": "data/invariants/d20/theorems/packet239_seed_propagation/report.json",
+      "schema": "d20.theorem.packet239_seed_propagation",
+      "sha256": "7e7f452900c58685ebf98a476d34a903ad208e4cf28cc6ad103cd3b03404e990",
+      "status": "D20_PACKET239_SEED_PROPAGATION_CERTIFIED"
+    },
+    "packet239_stabilizer_seed_candidate": {
+      "certificate_sha256": "ac7c500ad881f8ee4858af98d299d117748a2b5320cf9cdc60c024fec9b34dc8",
+      "path": "data/invariants/d20/theorems/packet239_stabilizer_seed_candidate/report.json",
+      "schema": "d20.theorem.packet239_stabilizer_seed_candidate",
+      "sha256": "6dd2a672b570d749d79b5f123b0f1dc309c9603ba27457676f7fac91afb4caba",
+      "status": "D20_PACKET239_STABILIZER_SEED_CANDIDATE_CERTIFIED"
+    },
+    "packet_charge_frame_classifier": {
+      "certificate_sha256": "b259b47b257194380abffc64ed100b8b75e99e1b3984d5fc4337ecc4c61b3a6a",
+      "path": "data/invariants/d20/theorems/projective_packet_charge_frame_classifier/report.json",
+      "schema": "d20.theorem.projective_packet_charge_frame_classifier",
+      "sha256": "106c90259b9d253a335ddc9c07110e5ba350d16c9ca6782b415752b9d5d364ef",
+      "status": "D20_PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_CERTIFIED"
+    },
+    "packet_spectral_charge_table": {
+      "certificate_sha256": "eef79da7c90cf02d528744968905417e372c67e70df97f7de76cb555709e7b8b",
+      "path": "data/invariants/d20/theorems/projective_packet_spectral_charge_table/report.json",
+      "schema": "d20.theorem.projective_packet_spectral_charge_table",
+      "sha256": "fc02aab1cb58fe2473cb8c7997ed094c893ce3f0b6979d5f695b8150de610875",
+      "status": "D20_PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_packet239_e8_root_relation_probe.py",
+      "sha256": "c710611666071598f3f6f04125d994270c920ea2d2ad00e194fb21083e994b97"
+    },
+    "w24_hexacode_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "schema": "d20.proof_obligation.w24_hexacode_row_alphabetization@1",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Construct the 20 x 12 full-exposure-by-A12 candidate shell explicitly and test whether it admits an 8-dimensional norm-2 Gram/Cartan witness for E8.",
+  "schema": "d20.proof_obligation.packet239_e8_root_relation_probe@1",
+  "status": "D20_PACKET239_E8_ROOT_RELATION_PROBE_CERTIFIED",
+  "witness": {
+    "candidate_240_sources": {
+      "full_exposure_times_a12_classes": {
+        "left_factor": {
+          "name": "full_exposure_packet_count",
+          "packet_ids": [
+            174,
+            175,
+            190,
+            191,
+            238,
+            239,
+            246,
+            247,
+            254,
+            255,
+            430,
+            431,
+            446,
+            447,
+            494,
+            495,
+            502,
+            503,
+            510,
+            511
+          ],
+          "value": 20
+        },
+        "product": 240,
+        "right_factor": {
+          "name": "CY(d20)=A12.classes",
+          "value": 12
+        },
+        "status": "numerically exact and potentially worth testing, but not yet an incidence, orbit, coordinate, Gram, Cartan, or E8-root construction"
+      },
+      "golay_shell_profile_entries": {
+        "interpretation": "The integer 240 appears as a W24/Golay shell-intersection profile entry. These rows count codewords with a fixed intersection size; they do not supply a packet239 orbit, a 240-vector coordinate set, or an E8 Gram/Cartan witness.",
+        "profile_csv": {
+          "path": "data/invariants/d20/proof_obligations/d20_golay_shell_exhaustive_two_level_sos/exhaustive_two_level_profiles.csv",
+          "sha256": "a4c5b3e2d51b6aebab27276aa9df5b95504e93608b9d7fbee4984288d5428316"
+        },
+        "profile_csv_row_count": 98,
+        "profile_entries_equal_240_count": 12,
+        "rows_with_entry_240_count": 7,
+        "sample_rows_with_entry_240": [
+          {
+            "profile": [
+              1,
+              0,
+              45,
+              240,
+              570,
+              864,
+              570,
+              240,
+              45,
+              0,
+              1,
+              0,
+              0
+            ],
+            "shell": 12,
+            "subset_count": 170016,
+            "support_size": 10
+          },
+          {
+            "profile": [
+              0,
+              0,
+              6,
+              40,
+              240,
+              600,
+              804,
+              600,
+              240,
+              40,
+              6,
+              0,
+              0
+            ],
+            "shell": 12,
+            "subset_count": 1020096,
+            "support_size": 12
+          },
+          {
+            "profile": [
+              0,
+              0,
+              1,
+              0,
+              45,
+              240,
+              570,
+              864,
+              570,
+              240,
+              45,
+              0,
+              1
+            ],
+            "shell": 12,
+            "subset_count": 170016,
+            "support_size": 14
+          },
+          {
+            "profile": [
+              5,
+              64,
+              240,
+              320,
+              130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "shell": 16,
+            "subset_count": 10626,
+            "support_size": 4
+          },
+          {
+            "profile": [
+              0,
+              0,
+              0,
+              0,
+              30,
+              72,
+              240,
+              240,
+              135,
+              40,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "shell": 16,
+            "subset_count": 170016,
+            "support_size": 10
+          },
+          {
+            "profile": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              40,
+              135,
+              240,
+              240,
+              72,
+              30,
+              0,
+              0,
+              0,
+              0
+            ],
+            "shell": 16,
+            "subset_count": 170016,
+            "support_size": 14
+          },
+          {
+            "profile": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              130,
+              320,
+              240,
+              64,
+              5
+            ],
+            "shell": 16,
+            "subset_count": 10626,
+            "support_size": 20
+          }
+        ]
+      },
+      "zero_based_ordinal": {
+        "interpretation": "indexing fact only; not a root orbit",
+        "ordinal": 240,
+        "packet_id": 239
+      }
+    },
+    "missing_e8_witnesses": [
+      "an explicit 240-element vector/root set sourced from packet239",
+      "an 8-dimensional ambient lattice or coordinate realization",
+      "a norm-2 proof for the 240 elements",
+      "a rank-8 Gram matrix or E8 Cartan/Dynkin certificate",
+      "a morphism from the D20 packet/full-exposure/A12 data to that root set"
+    ],
+    "packet239_id_free_selection": {
+      "selected_charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+      "selected_fine_spectral_charge_key": "32|0|0|0|25",
+      "selected_frame_indices": [
+        0
+      ],
+      "selected_packet_ids": [
+        239
+      ],
+      "selected_signature": {
+        "full_loop297_atom_exposure": true,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          0,
+          0
+        ],
+        "sector26_clock_sum_mod26": 0,
+        "sector26_clock_zero_pair": true,
+        "sector26_clock_zero_touched": true
+      },
+      "selection_rule": "full_exposure_sector26_zero_pair_fixed_point",
+      "selection_rule_fields": [
+        "full_loop297_atom_exposure",
+        "sector26_clock_pair",
+        "sector26_clock_sum_mod26",
+        "sector26_clock_delta_mod26",
+        "sector26_clock_zero_pair",
+        "sector26_clock_zero_touched"
+      ],
+      "uses_external_packet_id": false
+    },
+    "packet_count_boundary": {
+      "full_exposure_packet_count": 20,
+      "packet239_zero_based_ordinal": 240,
+      "packet_count": 512,
+      "packet_dimension_total": 1024
+    },
+    "packet_rows": {
+      "packet238_active_partner": {
+        "active_sigma": 0,
+        "adjacency_eigenvalue_pair": [
+          -1,
+          -5
+        ],
+        "adjacency_trace": -6,
+        "central_character": -1,
+        "coarse_spectral_charge_key": "28|8|0|25",
+        "corrected_hidden_clock_pair": [
+          0,
+          0
+        ],
+        "corrected_hidden_clock_sum_mod26": 0,
+        "dimension": 2,
+        "fine_spectral_charge_key": "28|4|8|0|25",
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "hidden_projection_pair": [
+          "sector_orthogonal",
+          "sector_orthogonal"
+        ],
+        "laplacian_eigenvalue_pair": [
+          12,
+          16
+        ],
+        "laplacian_trace": 28,
+        "loop297_atom_union_count": 25,
+        "loop297_atom_union_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "mode_active_step_atom_counts": [
+          24,
+          25
+        ],
+        "mode_masks": [
+          215,
+          1271
+        ],
+        "mode_support_weights": [
+          6,
+          8
+        ],
+        "packet_id": 238,
+        "radical_character": 119,
+        "sector26_clock_balanced": false,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          24,
+          6
+        ],
+        "sector26_clock_sum_mod26": 4,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "tenfold_canonical_class": "AI",
+        "tenfold_optional_active_hamiltonian_class": "BDI"
+      },
+      "packet239_selected_seed": {
+        "active_sigma": 1,
+        "adjacency_eigenvalue_pair": [
+          -5,
+          -5
+        ],
+        "adjacency_trace": -10,
+        "central_character": -1,
+        "coarse_spectral_charge_key": "32|0|0|25",
+        "corrected_hidden_clock_pair": [
+          0,
+          0
+        ],
+        "corrected_hidden_clock_sum_mod26": 0,
+        "dimension": 2,
+        "fine_spectral_charge_key": "32|0|0|0|25",
+        "full_loop297_atom_exposure": true,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "hidden_projection_pair": [
+          "sector_orthogonal",
+          "sector_orthogonal"
+        ],
+        "laplacian_eigenvalue_pair": [
+          16,
+          16
+        ],
+        "laplacian_trace": 32,
+        "loop297_atom_union_count": 25,
+        "loop297_atom_union_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "mode_active_step_atom_counts": [
+          25,
+          25
+        ],
+        "mode_masks": [
+          759,
+          1751
+        ],
+        "mode_support_weights": [
+          8,
+          8
+        ],
+        "packet_id": 239,
+        "radical_character": 119,
+        "sector26_clock_balanced": true,
+        "sector26_clock_delta_mod26": 0,
+        "sector26_clock_pair": [
+          0,
+          0
+        ],
+        "sector26_clock_sum_mod26": 0,
+        "sector26_clock_zero_pair": true,
+        "sector26_clock_zero_touched": true,
+        "tenfold_canonical_class": "AI",
+        "tenfold_optional_active_hamiltonian_class": "BDI"
+      },
+      "packet240_successor": {
+        "active_sigma": 0,
+        "adjacency_eigenvalue_pair": [
+          3,
+          -1
+        ],
+        "adjacency_trace": 2,
+        "central_character": -1,
+        "coarse_spectral_charge_key": "20|8|0|20",
+        "corrected_hidden_clock_pair": [
+          13,
+          13
+        ],
+        "corrected_hidden_clock_sum_mod26": 0,
+        "dimension": 2,
+        "fine_spectral_charge_key": "20|16|8|0|20",
+        "full_loop297_atom_exposure": false,
+        "gamma8_mode_count": 0,
+        "gamma8_touched": false,
+        "hidden_projection_pair": [
+          "sector_orthogonal",
+          "sector_orthogonal"
+        ],
+        "laplacian_eigenvalue_pair": [
+          8,
+          12
+        ],
+        "laplacian_trace": 20,
+        "loop297_atom_union_count": 20,
+        "loop297_atom_union_ids": [
+          0,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24
+        ],
+        "mode_active_step_atom_counts": [
+          18,
+          20
+        ],
+        "mode_masks": [
+          216,
+          1272
+        ],
+        "mode_support_weights": [
+          4,
+          6
+        ],
+        "packet_id": 240,
+        "radical_character": 120,
+        "sector26_clock_balanced": false,
+        "sector26_clock_delta_mod26": 8,
+        "sector26_clock_pair": [
+          4,
+          12
+        ],
+        "sector26_clock_sum_mod26": 16,
+        "sector26_clock_zero_pair": false,
+        "sector26_clock_zero_touched": false,
+        "tenfold_canonical_class": "AI",
+        "tenfold_optional_active_hamiltonian_class": "BDI"
+      }
+    },
+    "seed_propagation_boundary": {
+      "active_partner_packet_id": 238,
+      "crossing_generators": [
+        5,
+        9,
+        10
+      ],
+      "one_step_crossing_row_count": 3,
+      "one_step_unique_odd_packet_shadows": [
+        "odd:119:0",
+        "odd:119:1"
+      ],
+      "seed_packet_id": 239,
+      "seed_return_ordered_crossings": [
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          5
+        ]
+      ],
+      "two_step_cross_return_row_count": 6,
+      "two_step_net_height_flux_delta_histogram": {
+        "-301056": 1,
+        "-399360": 1,
+        "-98304": 1,
+        "301056": 1,
+        "399360": 1,
+        "98304": 1
+      },
+      "two_step_target_charge_frame_histogram": {
+        "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 2,
+        "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI": 4
+      },
+      "two_step_target_packet_histogram": {
+        "238": 4,
+        "239": 2
+      },
+      "two_step_total_optical_action_histogram": {
+        "1683456": 2,
+        "1781760": 2,
+        "2082816": 2
+      }
+    },
+    "semantic_relation_scan": {
+      "explicit_e8_relation_hit_count": 0,
+      "hit_count": 0,
+      "hit_count_by_term": {
+        "dynkin_literal": 0,
+        "e8_literal": 0,
+        "e8_roots_phrase": 0,
+        "e_8_literal": 0,
+        "rank8_cartan_or_gram_phrase": 0,
+        "two_hundred_forty_roots_phrase": 0
+      },
+      "hits": [],
+      "rank8_cartan_dynkin_hit_count": 0,
+      "truncated_hit_count": 0
+    },
+    "stabilizer_boundary": {
+      "full_exposure_stabilizer_comparison": {
+        "full_exposure_packet_ids": [
+          174,
+          175,
+          190,
+          191,
+          238,
+          239,
+          246,
+          247,
+          254,
+          255,
+          430,
+          431,
+          446,
+          447,
+          494,
+          495,
+          502,
+          503,
+          510,
+          511
+        ],
+        "identity_kernel_order_histogram": {
+          "256": 20
+        },
+        "same_identity_kernel_as_packet239_within_full_exposure": [
+          238,
+          239
+        ],
+        "scalar_stabilizer_order_histogram": {
+          "512": 20
+        },
+        "setwise_stabilizer_order_histogram": {
+          "2048": 20
+        }
+      },
+      "packet239_stabilizer": {
+        "active_sigma": 1,
+        "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+        "fine_spectral_charge_key": "32|0|0|0|25",
+        "full_loop297_atom_exposure": true,
+        "gamma8_touched": false,
+        "identity_kernel_order": 256,
+        "identity_kernel_sha256": "b96ec0fe907bc7940d9df70175ef0ccce785b8b8a3762b6877d581fdd2768eb2",
+        "linear_image_order": 8,
+        "linear_image_type": "D8_real_signed_2x2",
+        "packet_id": 239,
+        "projective_image_order": 4,
+        "projective_image_type": "V4",
+        "radical_character": 119,
+        "scalar_stabilizer_order": 512,
+        "sector26_clock_zero_pair": true,
+        "setwise_stabilizer_order": 2048
+      }
+    }
+  }
+}

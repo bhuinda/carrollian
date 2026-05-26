@@ -1,0 +1,74 @@
+{
+  "artifact_sha256_excluding_hash_field": "9f351233c506ed57d11105ab8caf65909d3ec864f921426bb03d12079e9a0fa2",
+  "certification_tests": [
+    "verify MOG grid is 4x6 and row-labelled by four F4 values",
+    "enumerate the 64-word F4 hexacode from the recorded 3x6 generator",
+    "build the local two-lift table for each parity/symbol pair",
+    "generate 4096 binary words with uniform column parity and xor choice rule",
+    "verify rank 12, minimum weight 8, self-orthogonality, doubly-even weights, and Golay enumerator",
+    "verify column-pair, row-pair, active 6j edge, and Wu octad containment",
+    "preserve the external canonicity boundary"
+  ],
+  "inputs": {
+    "alphabetized_golay_finiteness": {
+      "certificate_sha256": "70bec9b47426f7ba719704bbd80b69910a445de0ba2cfddcdcf7e44c92eb0ab3",
+      "path": "data/invariants/d20/proof_obligations/d20_alphabetized_golay_finiteness/report.json",
+      "sha256": "f6c674dbbbbf3170586c7624662dfc1582247a5d80f65fb0d4ccc057b82c4349",
+      "status": "D20_ALPHABETIZED_GOLAY_FINITENESS_CERTIFIED"
+    },
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "9f351233c506ed57d11105ab8caf65909d3ec864f921426bb03d12079e9a0fa2",
+      "path": "generated/d20_w24_hexacode_row_alphabetization.json",
+      "schema": "d20.proof_obligation.w24_hexacode_row_alphabetization.artifact@1",
+      "sha256": "03c3bd16612b051963527cfc2554d4f2da0154242a968e80b6cf773f9b495958",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_w24_hexacode_row_alphabetization.py",
+      "sha256": "f7e515ba897fa32943115b269a0d4252d1913cb139b5e69e385925fddd24bdb3"
+    },
+    "full_row_refined_obstruction": {
+      "full_row_refined_golay_selector_obstruction_sha256": "642ffe8aa4131440aca9190f24ae3baf6ae966c41e10a12dcd126e4242398caa",
+      "path": "data/selectors/full_row_refined_obstruction.json",
+      "sha256": "810d1253cd51f9af69a77251b2ea009e0d94d3a185ec032b08b1a23ea1a0c4e2",
+      "status": "FULL_ROW_REFINED_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED_HEXACODE_REQUIRED"
+    },
+    "hexacode_row_selector": {
+      "hexacode_row_selector_sha256": "f24d9a5f35a9539ae6807af22779d274d08a2f9b97d0c4777af9fb478c2b7a33",
+      "path": "data/selectors/hexacode_row_selector.json",
+      "sha256": "846b7947b5daf1358de908325de6ef1cf2241cc8a2526b74493913bfcad5c53f",
+      "status": "HEXACODE_ROW_SELECTOR_CONSTRUCTED_GOLAY_CERTIFIED_CANONICALITY_EXTERNAL"
+    },
+    "mog_canonicity_boundary": {
+      "mog_canonicity_boundary_sha256": "7c67fdbda1c0c3b2b5314720e0ad489889252e63dffa894257d3d78b6fb17452",
+      "path": "data/selectors/mog_canonicity_boundary.json",
+      "sha256": "3a0ad29e623b7e41eeb3b2b94d30edc1ab1bebffef73bd0df69c030987866731",
+      "status": "MOG_COLUMN_SEXTET_CANONICITY_CERTIFIED_FULL_ROW_GOLAY_SELECTOR_STILL_EXTERNAL"
+    },
+    "mog_resolvent_invariant": {
+      "mog_resolvent_invariant_sha256": "312e4b0a9465c1985b567c979b13103ba37e00c95afb47e6241fa44a8f0b5f24",
+      "path": "data/selectors/mog_resolvent_invariant.json",
+      "sha256": "a7731a664f557802a0a342e009bc260e81f3d9321e6e51e3fb8f0c8d66d3cf2f",
+      "status": "MOG_RESOLVENT_SEXTET_AND_WU_6J_TETRAHEDRON_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL"
+    },
+    "validator": {
+      "path": "src/certify_d20_w24_hexacode_row_alphabetization.py",
+      "sha256": "62ff87b402bdbd22e6c6b5d21094a1b9d4b966149e56f204cbffc6f857af1243"
+    },
+    "wu_spinh_6j_marking": {
+      "path": "data/selectors/wu_spinh_6j_marking.json",
+      "sha256": "62615a8b509919e2117d1ef9b4627cfe14b14dea4dcadaf85a0b2e62eee7b154",
+      "status": "WU_SPINH_OCTAD_SPIN12_6J_MARKING_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "wu_spinh_6j_marking_sha256": "0cf932c4883f61044f4f76f234d11f91740a71683fdbb039a93fb76d2a0ffa78"
+    }
+  },
+  "manifest_sha256": "d8acb70f6cdb2b4faa3c92d264c33c259e3988d8041e5961f414b940d392a2f0",
+  "name": "d20_w24_hexacode_row_alphabetization",
+  "outputs": {
+    "artifact": "generated/d20_w24_hexacode_row_alphabetization.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json"
+  },
+  "report_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+  "schema": "d20.proof_obligation.w24_hexacode_row_alphabetization_manifest@1"
+}

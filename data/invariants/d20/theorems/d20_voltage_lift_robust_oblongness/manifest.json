@@ -1,0 +1,48 @@
+{
+  "certification_tests": [
+    "verify family and intrinsic metric artifact hashes",
+    "verify exactly five named variants are tested",
+    "verify every named variant has anisotropy ratio greater than one",
+    "verify summary min/median/max match the named variants",
+    "verify intrinsic regular-hex ratio is exactly 31/23",
+    "verify cooriented selector lift is recorded as coordinate-amplified"
+  ],
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_d20_voltage_lift_robust_oblongness.py",
+      "sha256": "719e48e99acd0617a8b5d5f171f3849c8658094bd22cf3ed77bb335fc787d879"
+    },
+    "family_comparison": {
+      "artifact_sha256_excluding_this_field": "3e6b88c6bce4e7d0cc3ac1fa22f9a749eb7c7bcddf0cee12729c096700ced6e0",
+      "path": "generated/d20_voltage_lift_family_comparison.json",
+      "schema": "d20.sandpile.voltage_lift.family_comparison@1",
+      "sha256": "e5a35d9943eb2fa34c04835562e49721a55184b604338d3e1ef5ccf259f704e4",
+      "status": "PROVISIONAL_RENDER_LIFT_FAMILY_AUDIT"
+    },
+    "intrinsic_hex_metric_artifact": {
+      "artifact_sha256_excluding_this_field": "6602190c6f48350ecb8b7ca47c553b494d10930aac7525b56edf8103818deb74",
+      "path": "generated/d20_voltage_lift_intrinsic_hex_metric.json",
+      "schema": "d20.sandpile.voltage_lift.intrinsic_hex_metric@1",
+      "sha256": "a07d56be9d43b37df960d47f4b88cd754b90cf6d70c7ca6710430f4c8388da3f",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_DERIVED"
+    },
+    "intrinsic_hex_metric_report": {
+      "certificate_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd",
+      "path": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "sha256": "30d26b454eb3dd9bb889a2c31b1234a6cb2450f0e2237f51386342b21dbbcd91",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_voltage_lift_robust_oblongness.py",
+      "sha256": "88871dc631ef303cc7373556fac2e03b6d4d096e39ba1c105aa87377ec15a9c6"
+    }
+  },
+  "manifest_sha256": "3dbc5f2a63dd294dd938fbf1ce95cbbaff291a5cb67e6dd5331f40f334590485",
+  "name": "d20_voltage_lift_robust_oblongness",
+  "outputs": {
+    "manifest": "data/invariants/d20/theorems/d20_voltage_lift_robust_oblongness/manifest.json",
+    "report": "data/invariants/d20/theorems/d20_voltage_lift_robust_oblongness/report.json"
+  },
+  "report_sha256": "6b6c802beb0b94e27613de34d19bf56020fa9704f7e14dcda494451f571ebd07",
+  "schema": "d20.theorem.voltage_lift_robust_oblongness_manifest@1"
+}

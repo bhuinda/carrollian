@@ -1,0 +1,912 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dda3aa7b72a89d541c66a4a62b2a492c3ef4780b3653360c26a7274454c488b8",
+  "checks": {
+    "all_candidates_reduce_to_length_24": true,
+    "candidate_count_is_6400": true,
+    "explicit_morphism_remains_open": true,
+    "extra_pool_has_twenty_five_elements": true,
+    "fixed_cocircuit_has_six_elements": true,
+    "hexacode_golay_endpoint_is_certified": true,
+    "no_extended_golay_shape_match_in_bounded_family": true,
+    "no_punctured_golay_shape_match_in_bounded_family": true,
+    "prior_correspondence_probe_is_certified": true,
+    "quadratic_obstruction_remains_active": true,
+    "sector33_dual_input_is_certified": true,
+    "target_extended_golay_histogram_matches_hexacode_report": true
+  },
+  "claim": "The natural sector33 cocircuit-plus-one delete/contract search over F2 found no extended or punctured Golay-shaped binary row space. This certifies a negative bounded search result, not a proof that no more general Golay-Hamming morphism exists.",
+  "closure_boundary": {
+    "certifies": [
+      "6400 natural sector33 cocircuit-plus-one binary minors were tested",
+      "every tested reduction had length 24 before optional puncturing",
+      "no tested 24-coordinate row space matched the extended Golay weight profile",
+      "no tested rank-12 24-coordinate row space had a puncture matching the length-23 Golay profile",
+      "the explicit sector33 31 -> 24 -> 23 morphism remains open outside this bounded family"
+    ],
+    "does_not_certify": [
+      "absence of a Golay-Hamming morphism using non-cocircuit deletion/contract choices",
+      "absence of a morphism using additional marking, quotienting, or coordinate relabelling data",
+      "a canonical sector33-to-W24 coordinate map",
+      "a rebuild of d20.json or any finite critical group artifact"
+    ]
+  },
+  "definition": {
+    "bounded_family": "For each of the sector33 primal and dual binary matrices, remove the fixed six-element positive cocircuit plus one element from its complement; for each seven-element removal set, try every delete/contract mask.",
+    "match_criteria": "A 24-coordinate candidate must have rank 12 and the extended Golay weight enumerator; a 23-coordinate puncture must have the perfect binary Golay weight enumerator."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "dd38c61105c613ff3a69a991d4394ffb8ae692514879f685027d998f318a2222",
+      "path": "generated/d20_golay_hamming_minor_puncture_search.json",
+      "schema": "d20.proof_obligation.golay_hamming_minor_puncture_search.artifact@1",
+      "sha256": "19c351266c5d4c1a45f5e34745b5a0072f63189507ebb71f213126d2927e124d",
+      "status": "D20_GOLAY_HAMMING_MINOR_PUNCTURE_SEARCH_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_golay_hamming_minor_puncture_search.py",
+      "sha256": "32bcea01cee86e674d0b976a13a4092e7989c4ea9b66c2a6a60e259cac6e7579"
+    },
+    "hexacode_row_selector": {
+      "hexacode_row_selector_sha256": "f24d9a5f35a9539ae6807af22779d274d08a2f9b97d0c4777af9fb478c2b7a33",
+      "path": "data/selectors/hexacode_row_selector.json",
+      "sha256": "846b7947b5daf1358de908325de6ef1cf2241cc8a2526b74493913bfcad5c53f"
+    },
+    "prior_correspondence_probe": {
+      "certificate_sha256": "157cf8a3fe197c799f98086136834c59991c4effb8cc8a952dc2c49d0f20153f",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_hamming_correspondence_probe/report.json",
+      "sha256": "20ad7d94966d3045e88eb8113ba95bda3e0b5394bfb41f16f11b2e6a95d5eb2d",
+      "status": "D20_GOLAY_HAMMING_CORRESPONDENCE_PROBE_CERTIFIED"
+    },
+    "quadratic_golay_obstruction": {
+      "path": "data/selectors/quadratic_golay_obstruction.json",
+      "quadratic_golay_selector_obstruction_sha256": "89f5bcf84e30b49a15d68addafe6ce1f69c7d5800b20d314cd7cb37cf639958d",
+      "sha256": "2a7f0084fd05e45eb8ef8c914a47b81b6221731ce96120f696e758b4b6f68a6e",
+      "status": "QUADRATIC_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_golay_hamming_minor_puncture_search.py",
+      "sha256": "2598f085cc81ccfd60071a832f759a23b11a3b5f7b4531bdbc5eeec2ac39e3e0"
+    }
+  },
+  "next_highest_yield_item": "Leave the cocircuit-plus-one family and test labelled 31 -> 24 maps induced by the Wu 24-frame coordinates, if a candidate coordinate labelling can be derived.",
+  "schema": "d20.proof_obligation.golay_hamming_minor_puncture_search@1",
+  "status": "D20_GOLAY_HAMMING_MINOR_PUNCTURE_SEARCH_CERTIFIED",
+  "target_code_profiles": {
+    "extended_golay_24_12_8": {
+      "length": 24,
+      "properties": [
+        "self_dual",
+        "self_orthogonal",
+        "doubly_even",
+        "minimum_distance_8"
+      ],
+      "rank": 12,
+      "weight_histogram": {
+        "0": 1,
+        "12": 2576,
+        "16": 759,
+        "24": 1,
+        "8": 759
+      }
+    },
+    "punctured_golay_23_12_7": {
+      "length": 23,
+      "properties": [
+        "perfect_binary_golay_profile",
+        "minimum_distance_7"
+      ],
+      "rank": 12,
+      "weight_histogram": {
+        "0": 1,
+        "11": 1288,
+        "12": 1288,
+        "15": 506,
+        "16": 253,
+        "23": 1,
+        "7": 253,
+        "8": 506
+      }
+    }
+  },
+  "witness": {
+    "best_candidates": [
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21
+        ],
+        "deleted_original_elements": [
+          22,
+          30
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          22
+        ],
+        "deleted_original_elements": [
+          21,
+          30
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          2,
+          21,
+          22
+        ],
+        "deleted_original_elements": [
+          11,
+          30
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          11,
+          21,
+          22
+        ],
+        "deleted_original_elements": [
+          2,
+          30
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          2,
+          11,
+          21,
+          22
+        ],
+        "deleted_original_elements": [
+          1,
+          30
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22
+        ],
+        "deleted_original_elements": [
+          30
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          30
+        ],
+        "deleted_original_elements": [
+          21,
+          22
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          2,
+          21,
+          30
+        ],
+        "deleted_original_elements": [
+          11,
+          22
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          2,
+          11,
+          21,
+          30
+        ],
+        "deleted_original_elements": [
+          1,
+          22
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          30
+        ],
+        "deleted_original_elements": [
+          22
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          11,
+          22,
+          30
+        ],
+        "deleted_original_elements": [
+          2,
+          21
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      },
+      {
+        "contracted_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          22,
+          30
+        ],
+        "deleted_original_elements": [
+          21
+        ],
+        "doubly_even": false,
+        "effective_contract_count": 5,
+        "extended_golay_shape": false,
+        "extra_removed_from_cocircuit_complement": 0,
+        "minimum_nonzero_weight": 3,
+        "punctured_golay_shape": false,
+        "rank": 14,
+        "remaining_columns": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "removed_original_elements": [
+          0,
+          1,
+          2,
+          11,
+          21,
+          22,
+          30
+        ],
+        "self_orthogonal": false,
+        "source_matrix": "sector33_primal_mod2"
+      }
+    ],
+    "natural_removal_family": {
+      "candidate_count": 6400,
+      "extra_element_count": 25,
+      "extra_element_pool": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "fixed_six_element_cocircuit": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "operation_masks_per_removal_set": 128,
+      "source_matrix_count": 2
+    },
+    "search_summary": {
+      "all_reduced_lengths_are_24": true,
+      "exact_morphism_found": false,
+      "extended_golay_shape_match_count": 0,
+      "operation_histogram": {
+        "requested_contracts=0;effective_contracts=0": 50,
+        "requested_contracts=1;effective_contracts=0": 12,
+        "requested_contracts=1;effective_contracts=1": 338,
+        "requested_contracts=2;effective_contracts=1": 97,
+        "requested_contracts=2;effective_contracts=2": 953,
+        "requested_contracts=3;effective_contracts=1": 12,
+        "requested_contracts=3;effective_contracts=2": 364,
+        "requested_contracts=3;effective_contracts=3": 1374,
+        "requested_contracts=4;effective_contracts=2": 97,
+        "requested_contracts=4;effective_contracts=3": 640,
+        "requested_contracts=4;effective_contracts=4": 1013,
+        "requested_contracts=5;effective_contracts=2": 12,
+        "requested_contracts=5;effective_contracts=3": 197,
+        "requested_contracts=5;effective_contracts=4": 541,
+        "requested_contracts=5;effective_contracts=5": 300,
+        "requested_contracts=6;effective_contracts=3": 30,
+        "requested_contracts=6;effective_contracts=4": 150,
+        "requested_contracts=6;effective_contracts=5": 170,
+        "requested_contracts=7;effective_contracts=4": 20,
+        "requested_contracts=7;effective_contracts=5": 30
+      },
+      "punctured_golay_shape_match_count": 0,
+      "rank12_candidate_count": 0,
+      "rank_histogram_by_source": {
+        "sector33_dual_mod2": {
+          "0": 55,
+          "1": 770,
+          "2": 1413,
+          "3": 962
+        },
+        "sector33_primal_mod2": {
+          "14": 450,
+          "15": 1040,
+          "16": 986,
+          "17": 542,
+          "18": 162,
+          "19": 20
+        }
+      }
+    },
+    "source_matrix_summaries": {
+      "sector33_dual_mod2": {
+        "integer_matrix_sha256": "a1ae4125242bae65b25cf8c5b320b34e56cccc383d9ab6715ac7cddbd5d5c10f",
+        "matrix_sha256": "e65cd560d29367cbdc51f720bc12980fc8ea747e5d1602c14305e37feb90cc84",
+        "rank_mod2": 5,
+        "shape": {
+          "cols": 31,
+          "rows": 11
+        }
+      },
+      "sector33_primal_mod2": {
+        "integer_matrix_sha256": "127b281fb5f6d492be1d1014cc55060141e72e64f505e6a994d538d31c95875e",
+        "matrix_sha256": "8987866e115799762b9ac077297a6c7c43df929c2ee573581a0b2c13b21ad97d",
+        "rank_mod2": 19,
+        "shape": {
+          "cols": 31,
+          "rows": 21
+        }
+      }
+    }
+  }
+}

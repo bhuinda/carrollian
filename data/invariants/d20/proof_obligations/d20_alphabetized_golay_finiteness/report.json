@@ -1,0 +1,236 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "70bec9b47426f7ba719704bbd80b69910a445de0ba2cfddcdcf7e44c92eb0ab3",
+  "checks": {
+    "alphabetization_finiteness_boundary_recorded": true,
+    "d20_alphabet_has_six_labels": true,
+    "d20_and_mog_alphabets_match_as_sets": true,
+    "d20_residual_symmetry_is_dih6": true,
+    "full_coordinate_aut_count_matches_6_factorial_times_internal_s4": true,
+    "full_row_refined_selector_remains_obstructed": true,
+    "hexacode_selector_is_external_endpoint": true,
+    "internal_s4_count_matches_certificate": true,
+    "minor_search_was_negative_bounded_search": true,
+    "mog_atom_partition_is_six_by_four": true,
+    "mog_columns_cover_w24_disjointly": true,
+    "pair_octad_addresses_are_lambda2_h6": true,
+    "quadratic_selector_search_space_is_finite": true,
+    "row_alignment_count_matches_preserve_all_h6_label_stabilizer": true,
+    "row_alignment_mod_global_is_quotient_by_s4": true,
+    "spin12_big_cell_is_scalar_plus_lambda2_h6": true,
+    "w24_frame_is_constructed_with_24_coordinates": true,
+    "w24_labels_are_euler_plus_23_syzygies": true
+  },
+  "claim": "Alphabetization makes the D20/Golay correspondence problem finite: the D20 signed H6 alphabet matches the six MOG atoms of W24, each atom has four coordinates, and the remaining row-refinement/selector ambiguity is bounded by explicit finite permutation and F2 quadratic-space counts. This does not construct the morphism or the intrinsic Golay selector.",
+  "closure_boundary": {
+    "certifies": [
+      "the D20 signed alphabet and W24 MOG atom labels are the same six-element set",
+      "the W24 alphabetization partitions 24 coordinates into six labelled atoms of size four",
+      "pair-octad addresses are the finite Lambda^2 H6 address set of size 15",
+      "row-refinement ambiguity after fixed H6 labels is finite with 191102976 labelled alignments",
+      "the remaining selector search is finite, with 9845550 maximal singular 7-plane candidates before filters",
+      "the naive cocircuit-plus-one minor search is not the alphabetized finite problem"
+    ],
+    "does_not_certify": [
+      "a selected alphabetized D20 -> W24 morphism",
+      "a canonical row alignment from pair-octad/Wu/6j data alone",
+      "an intrinsic Golay selector without external hexacode/F4 row labelling",
+      "exhaustion of the full alphabetized selector search",
+      "a rebuild of d20.json or any finite critical group artifact"
+    ]
+  },
+  "definition": {
+    "alphabetization": "A candidate map must preserve the finite H6 label alphabet and the W24 MOG atom partition before row-refinement or hexacode selector data is read.",
+    "finiteness_mechanism": "The alphabet leaves only internal S4 choices inside six labelled atoms and finite F2 selector choices in the 14-dimensional quotient quadratic space."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "ad0788bf55c4acdceb174ef9a60a41b73a5339145ffa2d3db9ee5f796183e555",
+      "path": "generated/d20_alphabetized_golay_finiteness.json",
+      "schema": "d20.proof_obligation.alphabetized_golay_finiteness.artifact@1",
+      "sha256": "33eca2c630c29d4cde4ee6a1c0a810d63f3bebecc7ecc0ed97ba8622148c8038",
+      "status": "D20_ALPHABETIZED_GOLAY_FINITENESS_DERIVED"
+    },
+    "canonical_24_syzygy_frame": {
+      "canonical_24_syzygy_frame_sha256": "1164fc0ae884ec7fd3bce24ecde7f07264298aa786d82fb3fa05562c77298c1b",
+      "path": "data/geometry/canonical_24_syzygy_frame.json",
+      "sha256": "0e8712ee10e9838a1e15a142f01255a3e7a38a774057b705a4c6183ccb203c84",
+      "status": "CANONICAL_24_COORDINATE_SYZYGY_FRAME_CERTIFIED_GOLAY_SELECTION_STILL_OPEN"
+    },
+    "coorient_word_presentation": {
+      "path": "data/coorient/absolute_d20_word_presentation.json",
+      "sha256": "11be2cf057f1fbcf4b796e9d71ef58a1965f9f4cfc48d13cc7998920df970304"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_alphabetized_golay_finiteness.py",
+      "sha256": "ba20585097e277159094489fc385380bcbc3f03b2e29038eff4f5ff1b679eb06"
+    },
+    "full_row_refined_obstruction": {
+      "full_row_refined_golay_selector_obstruction_sha256": "642ffe8aa4131440aca9190f24ae3baf6ae966c41e10a12dcd126e4242398caa",
+      "path": "data/selectors/full_row_refined_obstruction.json",
+      "sha256": "810d1253cd51f9af69a77251b2ea009e0d94d3a185ec032b08b1a23ea1a0c4e2",
+      "status": "FULL_ROW_REFINED_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED_HEXACODE_REQUIRED"
+    },
+    "hexacode_row_selector": {
+      "hexacode_row_selector_sha256": "f24d9a5f35a9539ae6807af22779d274d08a2f9b97d0c4777af9fb478c2b7a33",
+      "path": "data/selectors/hexacode_row_selector.json",
+      "sha256": "846b7947b5daf1358de908325de6ef1cf2241cc8a2526b74493913bfcad5c53f"
+    },
+    "minor_puncture_search": {
+      "certificate_sha256": "dda3aa7b72a89d541c66a4a62b2a492c3ef4780b3653360c26a7274454c488b8",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_hamming_minor_puncture_search/report.json",
+      "sha256": "ebf134c5183fb8b89df947031bd48048df76177cf3369adfaf04c3f7ed12bda0",
+      "status": "D20_GOLAY_HAMMING_MINOR_PUNCTURE_SEARCH_CERTIFIED"
+    },
+    "mog_canonicity_boundary": {
+      "mog_canonicity_boundary_sha256": "7c67fdbda1c0c3b2b5314720e0ad489889252e63dffa894257d3d78b6fb17452",
+      "path": "data/selectors/mog_canonicity_boundary.json",
+      "sha256": "3a0ad29e623b7e41eeb3b2b94d30edc1ab1bebffef73bd0df69c030987866731",
+      "status": "MOG_COLUMN_SEXTET_CANONICITY_CERTIFIED_FULL_ROW_GOLAY_SELECTOR_STILL_EXTERNAL"
+    },
+    "mog_resolvent_invariant": {
+      "mog_resolvent_invariant_sha256": "312e4b0a9465c1985b567c979b13103ba37e00c95afb47e6241fa44a8f0b5f24",
+      "path": "data/selectors/mog_resolvent_invariant.json",
+      "sha256": "a7731a664f557802a0a342e009bc260e81f3d9321e6e51e3fb8f0c8d66d3cf2f",
+      "status": "MOG_RESOLVENT_SEXTET_AND_WU_6J_TETRAHEDRON_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL"
+    },
+    "validator": {
+      "path": "src/certify_d20_alphabetized_golay_finiteness.py",
+      "sha256": "54a1d614bd1d18e46ea7573007f1fa08a5af1469a7b23fb6a0c132e3c8f8a02e"
+    },
+    "wu_spinh_6j_marking": {
+      "path": "data/selectors/wu_spinh_6j_marking.json",
+      "sha256": "62615a8b509919e2117d1ef9b4627cfe14b14dea4dcadaf85a0b2e62eee7b154",
+      "status": "WU_SPINH_OCTAD_SPIN12_6J_MARKING_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "wu_spinh_6j_marking_sha256": "0cf932c4883f61044f4f76f234d11f91740a71683fdbb039a93fb76d2a0ffa78"
+    }
+  },
+  "next_highest_yield_item": "Derive or import an actual W24 row alphabetization witness, then enumerate the finite row-refined/hexacode selector candidates against the Golay weight tests.",
+  "schema": "d20.proof_obligation.alphabetized_golay_finiteness@1",
+  "status": "D20_ALPHABETIZED_GOLAY_FINITENESS_CERTIFIED",
+  "witness": {
+    "finite_bounds": {
+      "candidate_maximal_singular_7_planes_before_min_distance_filter": 9845550,
+      "coarse_alphabetized_selector_upper_bound": 1881513905356800,
+      "coarse_mod_global_row_relabel_selector_upper_bound": 78396412723200,
+      "column_permutation_order_6_factorial": 720,
+      "full_pair_octad_hypergraph_coordinate_aut_order": 137594142720,
+      "internal_s4_per_atom_order": 191102976,
+      "labeled_row_alignments": 191102976,
+      "preserve_all_h6_labels_coordinate_stabilizer": 191102976,
+      "row_alignments_mod_global_row_relabel": 7962624
+    },
+    "finite_reduction": {
+      "alphabetized_problem": "A candidate D20-to-Golay morphism is constrained to preserve the finite H6 alphabet and the MOG atom partition of W24; after this typing, the remaining row-refinement/selector choices live in finite permutation and finite F2 quadratic-space search sets.",
+      "atom_partition": {
+        "atom_classes": [
+          [
+            0,
+            6,
+            12,
+            18
+          ],
+          [
+            1,
+            7,
+            13,
+            19
+          ],
+          [
+            2,
+            8,
+            14,
+            20
+          ],
+          [
+            3,
+            9,
+            15,
+            21
+          ],
+          [
+            4,
+            10,
+            16,
+            22
+          ],
+          [
+            5,
+            11,
+            17,
+            23
+          ]
+        ],
+        "atom_count": 6,
+        "atom_sizes": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "columns_cover_24": true,
+        "columns_pairwise_disjoint": true
+      },
+      "d20_signed_alphabet": [
+        "B-",
+        "B+",
+        "S-",
+        "S+",
+        "V+",
+        "V-"
+      ],
+      "finite_address_spaces": {
+        "d20_projective_root_count": 30,
+        "lambda2_h6_coordinate_count": 15,
+        "pair_octad_address_count": 15,
+        "scalar_plus_lambda2_h6_dimension": 16,
+        "spin12_big_cell_dimension": 16
+      },
+      "label_sets_match": true,
+      "mog_atom_labels": [
+        "B-",
+        "B+",
+        "V-",
+        "V+",
+        "S-",
+        "S+"
+      ],
+      "w24_coordinate_count": 24,
+      "w24_coordinate_labels": [
+        "Euler_unit",
+        "sigma_00",
+        "sigma_01",
+        "sigma_02",
+        "sigma_03",
+        "sigma_04",
+        "sigma_05",
+        "sigma_06",
+        "sigma_07",
+        "sigma_08",
+        "sigma_09",
+        "sigma_10",
+        "sigma_11",
+        "sigma_12",
+        "sigma_13",
+        "sigma_14",
+        "sigma_15",
+        "sigma_16",
+        "sigma_17",
+        "sigma_18",
+        "sigma_19",
+        "sigma_20",
+        "sigma_21",
+        "sigma_22"
+      ]
+    },
+    "selector_boundary": {
+      "column_sextet_certified": true,
+      "full_row_refined_golay_selector_certified": false,
+      "hexacode_endpoint_constructs_g24": true,
+      "missing_structure": "hexacode/F4 row labelling or equivalent external row-refined selector",
+      "row_alignment_from_pair_octad_wu_6j_data": false
+    }
+  }
+}

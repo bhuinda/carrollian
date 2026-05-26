@@ -1,0 +1,571 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "eaa96d0544331547ca39491a3d0f3e81dc0724e8107d88e9c100dd83c5a0ee92",
+  "checks": {
+    "all_remaining_sets_have_24_edges": true,
+    "best_row_count_defect_is_positive": true,
+    "extra_removed_pool_has_twenty_five_edges": true,
+    "golay_rowspace_test_blocked_before_basis_compare": true,
+    "no_intrinsic_state_to_f4_row_rule_is_balanced": true,
+    "row_lift_rule_count_per_extra_is_4096": true,
+    "row_lift_rule_total_is_102400": true,
+    "sector33_dual_input_is_certified": true,
+    "source_has_six_intrinsic_local_edge_states": true,
+    "target_has_four_f4_rows_and_six_columns": true,
+    "typed_coordinate_search_input_is_certified": true,
+    "w24_row_alphabetization_is_certified": true
+  },
+  "claim": "The intrinsic sector33 edge state does not yet lift to the certified W24 F4 row alphabet. For each of the 25 cocircuit-plus-one surviving 24-edge sets, all 4^6 maps from the six intrinsic local edge states to the four F4 rows were tested. None gives the required six surviving edges in each F4 row, so the Golay basis comparison is blocked before a coordinate bijection exists.",
+  "closure_boundary": {
+    "certifies": [
+      "the tested sector33 local edge state has six values",
+      "25 cocircuit-plus-one extra-deletion cases were tested",
+      "4096 state-to-F4 row rules were tested per extra deletion",
+      "102400 total row-lift rules were tested",
+      "no tested intrinsic state-to-F4 row rule satisfies W24 row balance",
+      "the certified W24 Golay basis was not reached because no coordinate bijection exists in this family"
+    ],
+    "does_not_certify": [
+      "absence of a row lift using per-edge, non-state-local choices",
+      "absence of a row lift using additional hexacode or Wu marking data",
+      "absence of a sector33-to-W24 morphism outside the cocircuit-plus-one family",
+      "a rebuild of d20.json or any finite critical group artifact"
+    ]
+  },
+  "definition": {
+    "intrinsic_local_state": "state(edge)=(selector_choice, duplicate_ordinal), where duplicate_ordinal distinguishes the two public edges over the same Lambda^2 H6 selector duad",
+    "row_balance_test": "A W24 H6 x F4 coordinate bijection must place exactly six of the 24 surviving coordinates in each F4 row."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "2f613daf84deffb4bbb2c31acde97c7ba5752c0274973618f237d443bd1f73ba",
+      "path": "generated/d20_sector33_w24_f4_row_lift_solver.json",
+      "schema": "d20.proof_obligation.sector33_w24_f4_row_lift_solver.artifact@1",
+      "sha256": "0124d2306371b13c7d93eb1325e0672d5b8d5e01611d8fd74877b691b5c6bb74",
+      "status": "D20_SECTOR33_W24_F4_ROW_LIFT_SOLVER_DERIVED"
+    },
+    "d20_json": {
+      "path": "d20.json",
+      "sha256": "9355a5a1cc0bd3278f8e6151a9fb2cafd5a1930ee9b2313036377d245a31e4f7",
+      "status": "D20_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_sector33_w24_f4_row_lift_solver.py",
+      "sha256": "4a93fb0a3461625fdabf28990a9c2ef2dfe9f97cc375955b3b159fcde5597a2c"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "typed_coordinate_search": {
+      "certificate_sha256": "09637943533b984ab406856c54a2f8b0de2b2163620e783bf725653d65e9a877",
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_typed_coordinate_search/report.json",
+      "sha256": "bd56bf8aeeaa493ee35bb4e67e5afdf62993bb3290585ce9c33beab214785019",
+      "status": "D20_SECTOR33_W24_TYPED_COORDINATE_SEARCH_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_sector33_w24_f4_row_lift_solver.py",
+      "sha256": "41c517e90e24af81fbf623cab7998bbf61cb6b020ce28c62012e665d0f925fac"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Move beyond state-local row rules: enumerate per-edge F4 row assignments for the balanced relaxed H6 maps, using Golay-basis rowspace comparison as the early pruning oracle.",
+  "schema": "d20.proof_obligation.sector33_w24_f4_row_lift_solver@1",
+  "status": "D20_SECTOR33_W24_F4_ROW_LIFT_SOLVER_CERTIFIED",
+  "witness": {
+    "basis_compare_boundary": {
+      "attempted_compare": false,
+      "reason": "No intrinsic local-state-to-F4 row rule produces six surviving coordinates in each F4 row, so no W24 coordinate bijection reaches the Golay basis comparison."
+    },
+    "row_lift_search": {
+      "best_l1_defect_from_six_per_f4_row": 2,
+      "defect_histogram": {
+        "10": 7104,
+        "12": 15912,
+        "14": 15408,
+        "16": 14256,
+        "18": 10512,
+        "2": 672,
+        "20": 4344,
+        "22": 7728,
+        "24": 8400,
+        "26": 1632,
+        "28": 1308,
+        "30": 456,
+        "32": 36,
+        "34": 288,
+        "36": 112,
+        "4": 2688,
+        "6": 5232,
+        "8": 6312
+      },
+      "extra_removed_count": 25,
+      "extra_removed_pool": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "fixed_removed_cocircuit": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "fixed_removed_old_edges": [
+        1,
+        2,
+        11,
+        21,
+        22
+      ],
+      "local_states": [
+        {
+          "duplicate_ordinal": 0,
+          "selector_choice": 0,
+          "state_id": 0
+        },
+        {
+          "duplicate_ordinal": 1,
+          "selector_choice": 0,
+          "state_id": 1
+        },
+        {
+          "duplicate_ordinal": 0,
+          "selector_choice": 1,
+          "state_id": 2
+        },
+        {
+          "duplicate_ordinal": 1,
+          "selector_choice": 1,
+          "state_id": 3
+        },
+        {
+          "duplicate_ordinal": 0,
+          "selector_choice": 2,
+          "state_id": 4
+        },
+        {
+          "duplicate_ordinal": 1,
+          "selector_choice": 2,
+          "state_id": 5
+        }
+      ],
+      "per_extra_records": [
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 0,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 4,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 3,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 3,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 4,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 2,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 5,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 6,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 6,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 4,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 7,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 2,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 8,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 3,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 9,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 4,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 10,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 4,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 12,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 6,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 13,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 2,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 14,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 4,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 15,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 3,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 16,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 6,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 17,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 3,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 18,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 4,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 19,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 4,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 20,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 4,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 23,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 0
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 24,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 4,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 4,
+          "extra_removed": 25,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 7,
+            "1:0": 4,
+            "1:1": 4,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 26,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 6,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 27,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 6,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 28,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 6,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        },
+        {
+          "balanced_row_lift_rule_count": 0,
+          "best_l1_defect_from_six_per_f4_row": 2,
+          "extra_removed": 29,
+          "remaining_edge_count": 24,
+          "state_count_vector": {
+            "0:0": 5,
+            "0:1": 6,
+            "1:0": 4,
+            "1:1": 5,
+            "2:0": 3,
+            "2:1": 1
+          }
+        }
+      ],
+      "row_balanced_rule_count": 0,
+      "row_lift_rule_count_per_extra": 4096,
+      "row_lift_rule_total": 102400,
+      "state_definition": {
+        "duplicate_ordinal": "ordinal 0 or 1 among the two edges with the same Lambda^2 H6 selector_duad",
+        "selector_choice": "edge selector_choice in {0,1,2}"
+      }
+    },
+    "target_w24_row_type": {
+      "f4_row_labels": [
+        {
+          "f4_label": "0",
+          "f4_value": 0,
+          "row": 0
+        },
+        {
+          "f4_label": "1",
+          "f4_value": 1,
+          "row": 1
+        },
+        {
+          "f4_label": "omega",
+          "f4_value": 2,
+          "row": 2
+        },
+        {
+          "f4_label": "omega+1",
+          "f4_value": 3,
+          "row": 3
+        }
+      ],
+      "reason": "W24 is H6 x F4, so a 24-coordinate bijection has six coordinates in each F4 row.",
+      "required_total_per_f4_row": 6
+    }
+  }
+}

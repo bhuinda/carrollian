@@ -1,0 +1,61 @@
+{
+  "artifact_sha256_excluding_hash_field": "dd38c61105c613ff3a69a991d4394ffb8ae692514879f685027d998f318a2222",
+  "certification_tests": [
+    "verify prior correspondence probe and source certificates",
+    "verify target extended Golay histogram from the hexacode selector report",
+    "verify the fixed sector33 positive cocircuit has six elements",
+    "verify the natural complement pool has 25 possible seventh elements",
+    "verify 6400 delete/contract candidates are searched over F2",
+    "verify all reduced candidates have 24 columns",
+    "verify no candidate matches the extended or punctured Golay profiles"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "dd38c61105c613ff3a69a991d4394ffb8ae692514879f685027d998f318a2222",
+      "path": "generated/d20_golay_hamming_minor_puncture_search.json",
+      "schema": "d20.proof_obligation.golay_hamming_minor_puncture_search.artifact@1",
+      "sha256": "19c351266c5d4c1a45f5e34745b5a0072f63189507ebb71f213126d2927e124d",
+      "status": "D20_GOLAY_HAMMING_MINOR_PUNCTURE_SEARCH_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_golay_hamming_minor_puncture_search.py",
+      "sha256": "32bcea01cee86e674d0b976a13a4092e7989c4ea9b66c2a6a60e259cac6e7579"
+    },
+    "hexacode_row_selector": {
+      "hexacode_row_selector_sha256": "f24d9a5f35a9539ae6807af22779d274d08a2f9b97d0c4777af9fb478c2b7a33",
+      "path": "data/selectors/hexacode_row_selector.json",
+      "sha256": "846b7947b5daf1358de908325de6ef1cf2241cc8a2526b74493913bfcad5c53f"
+    },
+    "prior_correspondence_probe": {
+      "certificate_sha256": "157cf8a3fe197c799f98086136834c59991c4effb8cc8a952dc2c49d0f20153f",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_hamming_correspondence_probe/report.json",
+      "sha256": "20ad7d94966d3045e88eb8113ba95bda3e0b5394bfb41f16f11b2e6a95d5eb2d",
+      "status": "D20_GOLAY_HAMMING_CORRESPONDENCE_PROBE_CERTIFIED"
+    },
+    "quadratic_golay_obstruction": {
+      "path": "data/selectors/quadratic_golay_obstruction.json",
+      "quadratic_golay_selector_obstruction_sha256": "89f5bcf84e30b49a15d68addafe6ce1f69c7d5800b20d314cd7cb37cf639958d",
+      "sha256": "2a7f0084fd05e45eb8ef8c914a47b81b6221731ce96120f696e758b4b6f68a6e",
+      "status": "QUADRATIC_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_golay_hamming_minor_puncture_search.py",
+      "sha256": "2598f085cc81ccfd60071a832f759a23b11a3b5f7b4531bdbc5eeec2ac39e3e0"
+    }
+  },
+  "manifest_sha256": "f91753032ed574d2bd0e01cce291e3311c4df5692d0e47782a2763d8d2e19072",
+  "name": "d20_golay_hamming_minor_puncture_search",
+  "outputs": {
+    "artifact": "generated/d20_golay_hamming_minor_puncture_search.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_golay_hamming_minor_puncture_search/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_golay_hamming_minor_puncture_search/report.json"
+  },
+  "report_sha256": "dda3aa7b72a89d541c66a4a62b2a492c3ef4780b3653360c26a7274454c488b8",
+  "schema": "d20.proof_obligation.golay_hamming_minor_puncture_search_manifest@1"
+}

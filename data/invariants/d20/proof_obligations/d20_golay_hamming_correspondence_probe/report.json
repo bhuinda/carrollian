@@ -1,0 +1,170 @@
+{
+  "all_checks_pass": true,
+  "candidate_morphism": {
+    "currently_certified_maps": [
+      "D20 signed-label edge transitions -> intrinsic A2 regular-hex covariance",
+      "sector33 height attachment -> 31-element finite-field Tutte/OS package",
+      "Wu quintic resolvent -> 23-dimensional syzygy basis with Golay extension unresolved",
+      "external six-column hexacode row selector -> extended binary Golay code G24"
+    ],
+    "diagram": [
+      "M31 = sector33 height attachment on 30 D20 edge elements plus e33",
+      "candidate minor/marking: M31 -> canonical 24-coordinate Wu/Golay frame",
+      "puncture Euler/unit coordinate: W24 -> length-23 punctured Golay frame"
+    ],
+    "missing_map": "a canonical delete/contract/select functor from the 31-element sector33 matroid to the 24-coordinate Wu/Golay frame, compatible with the six-column hexacode selector, followed by a typed puncture to 23 coordinates",
+    "morphism_status": "OPEN_NOT_CONSTRUCTED"
+  },
+  "certificate_sha256": "157cf8a3fe197c799f98086136834c59991c4effb8cc8a952dc2c49d0f20153f",
+  "checks": {
+    "explicit_31_to_24_to_23_morphism_not_constructed": true,
+    "hexacode_canonicity_is_external": true,
+    "hexacode_has_six_columns": true,
+    "hexacode_selector_constructs_extended_golay": true,
+    "intrinsic_metric_ratio_is_31_over_23": true,
+    "major_numerator_matches_sector33_ground_set": true,
+    "metric_eigenvalues_have_common_denominator_20": true,
+    "minor_numerator_matches_punctured_golay_length": true,
+    "minor_numerator_matches_wu_syzygy_rank": true,
+    "open_boundary_is_recorded": true,
+    "quadratic_obstruction_blocks_intrinsic_rank12_typeII_selector": true,
+    "sector33_all_subsets_is_2_to_31": true,
+    "sector33_dual_cocircuit_includes_e33": true,
+    "sector33_dual_positive_cocircuit_has_six_elements": true,
+    "sector33_ground_is_30_edges_plus_e33": true,
+    "sector33_os_hilbert_begins_1_31": true,
+    "wu_report_declares_golay_extension_unresolved": true
+  },
+  "claim": "The observed 31/23 alignment is certified as a shared numeric boundary between the D20 intrinsic hex metric, the 31-element sector33 height attachment, the 23-dimensional Wu syzygy profile, and the externally marked hexacode/Golay endpoint. The explicit 31 -> 24 -> 23 Golay-Hamming correspondence morphism remains open and is not promoted to a theorem here.",
+  "closure_boundary": {
+    "certifies": [
+      "31 is the major eigenvalue numerator of the intrinsic hex metric and the sector33 matroid ground size",
+      "the sector33 31 equals 30 D20 edge elements plus the e33 wall element",
+      "23 is the minor eigenvalue numerator, the Wu linear syzygy rank, and the punctured length of G24",
+      "the shared sixfold spine is visible as the sector33 positive cocircuit size and the hexacode column count",
+      "the explicit Golay-Hamming correspondence morphism is not currently constructed"
+    ],
+    "does_not_certify": [
+      "a canonical map from the sector33 31-element matroid to the 24-coordinate Wu/Golay frame",
+      "an intrinsic Golay selector from D20/Wu support geometry alone",
+      "a Hamming [31] code structure on the sector33 matroid",
+      "a rebuild of d20.json or any finite critical group artifact"
+    ]
+  },
+  "definition": {
+    "certified_open_boundary": "The probe is successful only because it records both the positive alignments and the obstruction/canonicity seams that prevent a direct Golay theorem.",
+    "morphism_under_test": "a canonical delete/contract/select functor from the 31-element sector33 matroid to the 24-coordinate Wu/Golay frame, compatible with the six-column hexacode selector, followed by a typed puncture to 23 coordinates"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "3c132bab3536f5057fd2fd500375ec4b35d9023b6bd8d59421878c75bdbd1f50",
+      "path": "generated/d20_golay_hamming_correspondence_probe.json",
+      "schema": "d20.proof_obligation.golay_hamming_correspondence_probe.artifact@1",
+      "sha256": "73d824d3e87858808204d79773c15dd5163d3c837f513c90979c6b5af4d6cf33",
+      "status": "D20_GOLAY_HAMMING_CORRESPONDENCE_PROBE_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_golay_hamming_correspondence_probe.py",
+      "sha256": "65d1b58b85b0116837dbcc8818de8a6d4ac1eb638ad05e381e73ae43b54bff0c"
+    },
+    "hexacode_row_selector": {
+      "hexacode_row_selector_sha256": "f24d9a5f35a9539ae6807af22779d274d08a2f9b97d0c4777af9fb478c2b7a33",
+      "path": "data/selectors/hexacode_row_selector.json",
+      "sha256": "846b7947b5daf1358de908325de6ef1cf2241cc8a2526b74493913bfcad5c53f"
+    },
+    "intrinsic_hex_metric": {
+      "certificate_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd",
+      "path": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "sha256": "30d26b454eb3dd9bb889a2c31b1234a6cb2450f0e2237f51386342b21dbbcd91",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_CERTIFIED"
+    },
+    "quadratic_golay_obstruction": {
+      "path": "data/selectors/quadratic_golay_obstruction.json",
+      "quadratic_golay_selector_obstruction_sha256": "89f5bcf84e30b49a15d68addafe6ce1f69c7d5800b20d314cd7cb37cf639958d",
+      "sha256": "2a7f0084fd05e45eb8ef8c914a47b81b6221731ce96120f696e758b4b6f68a6e",
+      "status": "QUADRATIC_GOLAY_SELECTOR_OBSTRUCTION_CERTIFIED"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "sector33_tutte_os": {
+      "certificate_sha256": "92d42ee43a6e528b95ce67d84746b1dfcddbc4c7df02c03ec02a92f84bc59528",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_tutte_os/report.json",
+      "sha256": "7bacd49d4ababee8b739ba1d4841d98a96269c1bc6d6a2aae38aa92533cc7419",
+      "status": "D20_ORIENTED_MATROID_TUTTE_OS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_golay_hamming_correspondence_probe.py",
+      "sha256": "799cd9e410910590587b35292df597e428bcc066e3f770d73f6a350a0d97eab2"
+    },
+    "wu_golay_resolvent": {
+      "path": "data/geometry/wu_golay_quintic_resolvent.json",
+      "sha256": "eb8283d4e868817052f7c42f56793d568fac7786b558696c20cee2bcf9df9c5f",
+      "status": "WU_GOLAY_QUINTIC_RESOLVENT_CERTIFIED_WITH_GOLAY_EXTENSION_UNRESOLVED",
+      "wu_golay_quintic_resolvent_sha256": "52e94422ce083351f144a12a4c1329d4eb40a09ddaa47832ae5e2ff8afd2c6b4"
+    }
+  },
+  "next_highest_yield_item": "Try the explicit minor/puncture search: enumerate natural delete/contract sets from the sector33 dual cocircuit and e33 wall data, then compare any induced 24-coordinate binary row space against the certified hexacode/Golay selector.",
+  "obstruction_boundary": {
+    "hexacode_canonicity_reason": "source_drop proved row-refined selector is not determined by column-pair/Wu/6j incidence; source_drop adjoins a row-pair/F4 hexacode selector and certifies the resulting Golay code.",
+    "quadratic_selector_interpretation": "The canonical 24-coordinate syzygy frame is real, but the natural quadratic/isotropic selectors tested here are obstructed. No nonzero symmetric or alternating form makes all 39 sector kernels totally isotropic. The support-incidence nullspace has Witt bound 10, so it cannot contain a rank-12 Type-II/Golay code. A Golay code therefore requires additional Wu/spin^h or external Golay marking data, not just the source_drop W24 kernel/support geometry.",
+    "wu_golay_reason": "The 23 linear syzygies form a basis of a 23-dimensional kernel of a 68-column multiplication map. This is numerically Golay-shaped, but it is not by itself a length-23 punctured-code coordinate system."
+  },
+  "schema": "d20.proof_obligation.golay_hamming_correspondence_probe@1",
+  "status": "D20_GOLAY_HAMMING_CORRESPONDENCE_PROBE_CERTIFIED",
+  "witness": {
+    "metric": {
+      "anisotropy_ratio_exact": "31/23",
+      "eigenvalues_exact": {
+        "major": "31/20",
+        "minor": "23/20"
+      },
+      "major_numerator": 31,
+      "minor_numerator": 23
+    },
+    "sector33_hamming_31": {
+      "centered_pentagonal_order": 4,
+      "d20_old_edge_elements": 30,
+      "hamming_length_m": 5,
+      "new_element": "e33",
+      "new_element_id": 30,
+      "os_hilbert_first_coefficients": [
+        1,
+        31
+      ],
+      "sector33_ground_set_size": 31,
+      "tutte_all_subsets_specialization": 2147483648
+    },
+    "sixfold_spine": {
+      "hexacode_columns": 6,
+      "hexacode_f4_dimension": 3,
+      "sector33_dual_positive_cocircuit_support": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "sector33_dual_positive_cocircuit_support_size": 6
+    },
+    "wu_golay_23": {
+      "extended_golay_length": 24,
+      "extended_golay_rank": 12,
+      "extended_golay_weight_histogram": {
+        "0": 1,
+        "12": 2576,
+        "16": 759,
+        "24": 1,
+        "8": 759
+      },
+      "punctured_golay_length": 23,
+      "wu_golay_extension_test_passes": false,
+      "wu_linear_syzygy_basis_rank": 23,
+      "wu_linear_syzygy_dimension": 23
+    }
+  }
+}

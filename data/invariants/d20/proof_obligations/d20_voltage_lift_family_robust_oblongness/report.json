@@ -1,0 +1,204 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "fdb65128a255562fc702f5e09fe08330fe28ac5d853519f97afa464a5c11f0fe",
+  "checks": {
+    "all_tested_variants_anisotropic": true,
+    "canonical_metric_selection_witnessed": true,
+    "coordinate_amplification_is_separated_from_robust_shape": true,
+    "cooriented_selector_is_maximal_among_tested_variants": true,
+    "family_artifact_internal_hash_verified": true,
+    "five_natural_lift_variants_tested": true,
+    "generated_family_artifact_present": true,
+    "intrinsic_hex_metric_witness_present": true,
+    "intrinsic_proof_not_claimed": true,
+    "oblong_covariance_survives_all_tested_coordinate_rules": true,
+    "proof_layer_integration_witnessed": true,
+    "regular_hex_label_delta_is_minimal_among_tested_variants": true,
+    "summary_min_median_max_match_variants": true
+  },
+  "claim": "The named five-rule D20 voltage-lift family has certified robust oblongness: all five tested natural lifts have covariance anisotropy greater than one. The intrinsic regular-hex metric is certified separately, and the cooriented selector lift remains marked as coordinate-amplified.",
+  "closure_boundary": {
+    "certifies": [
+      "the current generated witness has five tested natural lift variants",
+      "all five tested variants have anisotropy ratio greater than 1",
+      "the cooriented sign/selector lift is the strongest tested projection",
+      "the regular-hex label-delta lift is the weakest tested projection",
+      "the intrinsic regular-hex metric is now derived from signed-label edge transitions",
+      "canonical metric selection is witnessed separately from the stronger cooriented selector render",
+      "proof-layer integration is witnessed by the scoped robust-oblongness theorem",
+      "the robust-oblongness obligation is closed only for the named five-rule family"
+    ],
+    "does_not_certify": [
+      "an intrinsic coordinate-free theorem of D20 voltage-lift oblongness",
+      "a unique canonical lift family selected without visualization choices",
+      "a rebuild of d20.json or the certified finite critical group",
+      "a physical continuum sandpile limit",
+      "that every possible D20 voltage lift is oblong",
+      "that the cooriented sign/selector render is the intrinsic metric"
+    ]
+  },
+  "definition": {
+    "coordinate_amplification": "The ratio between the strongest and weakest tested anisotropy values in the generated lift family.",
+    "robust_oblongness": "All tested natural lift-coordinate rules produce a single covariance ellipse with anisotropy ratio greater than 1.",
+    "voltage_lift_family": "The five generated D20 edge-coordinate rules recorded in generated/d20_voltage_lift_family_comparison.json."
+  },
+  "inputs": {
+    "intrinsic_hex_metric_artifact": {
+      "artifact_sha256_excluding_this_field": "6602190c6f48350ecb8b7ca47c553b494d10930aac7525b56edf8103818deb74",
+      "path": "generated/d20_voltage_lift_intrinsic_hex_metric.json",
+      "schema": "d20.sandpile.voltage_lift.intrinsic_hex_metric@1",
+      "sha256": "a07d56be9d43b37df960d47f4b88cd754b90cf6d70c7ca6710430f4c8388da3f",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_DERIVED"
+    },
+    "intrinsic_hex_metric_report": {
+      "certificate_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd",
+      "path": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "sha256": "30d26b454eb3dd9bb889a2c31b1234a6cb2450f0e2237f51386342b21dbbcd91",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_CERTIFIED"
+    },
+    "robust_oblongness_theorem_report": {
+      "certificate_sha256": "6b6c802beb0b94e27613de34d19bf56020fa9704f7e14dcda494451f571ebd07",
+      "path": "data/invariants/d20/theorems/d20_voltage_lift_robust_oblongness/report.json",
+      "sha256": "b6a302ca27f75b4581365278578ffeaea8ea78d8a5240343c23c1da35064b888",
+      "status": "D20_VOLTAGE_LIFT_ROBUST_OBLONGNESS_CERTIFIED"
+    },
+    "sandpile_visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "060d1515ce4e78a3b8c14863873b951a3b808280ef2df7963fa6ae154584dfad"
+    },
+    "validator": {
+      "path": "src/certify_d20_voltage_lift_family_robust_oblongness.py",
+      "sha256": "2a5a9aa8cb46ec297b0b127539034811ea80d7f06ce230bbac4d80bce4f66df2"
+    },
+    "voltage_lift_edge_steps": {
+      "path": "generated/d20_voltage_lift_edge_steps.json",
+      "sha256": "114ba946d3f5399ed101fe83abe6d33c3e515cc5b2a7561ffb6d4e4132edf6f0"
+    },
+    "voltage_lift_family_comparison": {
+      "artifact_sha256_excluding_this_field": "3e6b88c6bce4e7d0cc3ac1fa22f9a749eb7c7bcddf0cee12729c096700ced6e0",
+      "path": "generated/d20_voltage_lift_family_comparison.json",
+      "schema": "d20.sandpile.voltage_lift.family_comparison@1",
+      "sha256": "e5a35d9943eb2fa34c04835562e49721a55184b604338d3e1ef5ccf259f704e4",
+      "status": "PROVISIONAL_RENDER_LIFT_FAMILY_AUDIT"
+    },
+    "voltage_lift_symmetry_comparison": {
+      "path": "generated/d20_voltage_lift_symmetry_comparison.json",
+      "schema": "d20.sandpile.voltage_lift.symmetry_comparison@2",
+      "sha256": "21d334b74d154db07d795fed2c5f84b4c99fc8aae03c31052f17813b119c33a0",
+      "status": "PROVISIONAL_RENDER_LIFT_COMPARISON"
+    }
+  },
+  "open_obligations": [],
+  "schema": "d20.proof_obligation.voltage_lift_family_robust_oblongness@1",
+  "status": "D20_VOLTAGE_LIFT_FAMILY_ROBUST_OBLONGNESS_CERTIFIED",
+  "witness": {
+    "anisotropic_variant_count": 5,
+    "anisotropy_ratio_max": 5.597704972546332,
+    "anisotropy_ratio_median": 2.750000000000001,
+    "anisotropy_ratio_min": 1.3478260869565217,
+    "conclusion": "The spheroid geometry survives the tested natural lifts, but the dramatic oblongness is coordinate-amplified by the current cooriented sign/selector lift.",
+    "coordinate_dependent_features": [
+      "anisotropy magnitude varies from about 1.35x to about 5.60x",
+      "principal-axis angle shifts from about -41.3 degrees to -60 degrees",
+      "the cooriented selector sign lift is the strongest oblong projection among the tested variants"
+    ],
+    "principal_axis_angle_max_degrees": -41.25207118013507,
+    "principal_axis_angle_min_degrees": -59.99999999999999,
+    "ranking_by_anisotropy_desc": [
+      {
+        "anisotropy_ratio": 5.597704972546332,
+        "id": "cooriented_sign_selector",
+        "label": "cooriented sign + selector tie-break",
+        "principal_axis_angle_degrees": -41.25207118013507,
+        "rank": 1
+      },
+      {
+        "anisotropy_ratio": 4.043478260869565,
+        "id": "integer_label_delta",
+        "label": "integer label delta",
+        "principal_axis_angle_degrees": -45,
+        "rank": 2
+      },
+      {
+        "anisotropy_ratio": 2.750000000000001,
+        "id": "integer_unit_direction",
+        "label": "integer unit direction",
+        "principal_axis_angle_degrees": -45.00000000000002,
+        "rank": 3
+      },
+      {
+        "anisotropy_ratio": 1.4999999999999998,
+        "id": "regular_hex_unit_direction",
+        "label": "regular-hex unit direction",
+        "principal_axis_angle_degrees": -59.99999999999999,
+        "rank": 4
+      },
+      {
+        "anisotropy_ratio": 1.3478260869565217,
+        "id": "regular_hex_label_delta",
+        "label": "regular-hex label delta",
+        "principal_axis_angle_degrees": -59.99999999999999,
+        "rank": 5
+      }
+    ],
+    "robust_features": [
+      "all tested natural lifts have a single oblong covariance ellipse with anisotropy ratio greater than 1",
+      "all tested principal axes have negative slope in the chosen screen coordinates",
+      "the qualitative spheroid/ellipse behavior survives coordinate choice"
+    ],
+    "variant_metrics": [
+      {
+        "anisotropy_ratio": 5.597704972546332,
+        "id": "cooriented_sign_selector",
+        "label": "cooriented sign + selector tie-break",
+        "principal_axis_angle_degrees": -41.25207118013507
+      },
+      {
+        "anisotropy_ratio": 4.043478260869565,
+        "id": "integer_label_delta",
+        "label": "integer label delta",
+        "principal_axis_angle_degrees": -45
+      },
+      {
+        "anisotropy_ratio": 2.750000000000001,
+        "id": "integer_unit_direction",
+        "label": "integer unit direction",
+        "principal_axis_angle_degrees": -45.00000000000002
+      },
+      {
+        "anisotropy_ratio": 1.3478260869565217,
+        "id": "regular_hex_label_delta",
+        "label": "regular-hex label delta",
+        "principal_axis_angle_degrees": -59.99999999999999
+      },
+      {
+        "anisotropy_ratio": 1.4999999999999998,
+        "id": "regular_hex_unit_direction",
+        "label": "regular-hex unit direction",
+        "principal_axis_angle_degrees": -59.99999999999999
+      }
+    ],
+    "variants_tested": 5
+  },
+  "witness_checks_pass": true,
+  "witnessed_obligations": [
+    {
+      "id": "canonical_metric_selection",
+      "status": "witnessed",
+      "witness_report": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "witness_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd"
+    },
+    {
+      "id": "intrinsic_lift_family_definition",
+      "status": "witnessed",
+      "witness_report": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "witness_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd"
+    },
+    {
+      "id": "proof_layer_integration",
+      "status": "witnessed",
+      "witness_report": "data/invariants/d20/theorems/d20_voltage_lift_robust_oblongness/report.json",
+      "witness_sha256": "6b6c802beb0b94e27613de34d19bf56020fa9704f7e14dcda494451f571ebd07"
+    }
+  ]
+}

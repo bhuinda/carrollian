@@ -1,0 +1,97 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5e986320aa42e1e5d261ecf2560be2a33139f8462ab64a935aa4ea32b61097d2",
+  "checks": {
+    "all_alpha_channels_constant_opaque": true,
+    "all_three_canvases_present": true,
+    "browser_capture_blocked_not_claimed": true,
+    "every_frame_byte_length_matches_rgba_shape": true,
+    "every_frame_hash_matches_base64_payload": true,
+    "frame_count_is_18": true,
+    "phase_audit_certified": true,
+    "sample_frames_match_phase_audit": true,
+    "some_non_alpha_state_entropy_present": true,
+    "source_visualization_hash_recorded": true
+  },
+  "claim": "Raw RGBA frame buffers are now archived for the deterministic D20 geon replay. Every archived alpha channel is constant opaque, while non-alpha state channels carry entropy. Live browser getImageData capture remains blocked in this environment and is not claimed by this certificate.",
+  "closure_boundary": {
+    "certifies": [
+      "raw RGBA byte buffers are archived for the deterministic renderer replay",
+      "all archived frames have byte length width * height * 4",
+      "all archived frame hashes match their base64 RGBA payloads",
+      "all archived alpha channels are constant opaque",
+      "non-alpha state channels carry entropy in the archived frame set"
+    ],
+    "does_not_certify": [
+      "live browser getImageData capture",
+      "nontrivial alpha-channel entropy",
+      "subpixel browser-compositor entropy",
+      "a physical geon interpretation"
+    ]
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "5ecff34970dce8559acbab55d4c9237a1d633ca66584bafa5281283a45bd5b38",
+      "path": "generated/d20_geon_rgba_replay_frame_archive.json",
+      "schema": "d20.proof_obligation.geon_rgba_replay_frame_archive.artifact@1",
+      "sha256": "91f5c29551a9e46a818cc7950883af0632e16f52da1bdfe0c0ce379953bb9252",
+      "status": "D20_GEON_RGBA_REPLAY_FRAME_ARCHIVE_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_geon_rgba_replay_frame_archive.py",
+      "sha256": "b694620158bfb895a88b619027719642fd977ce691a787acc867d3f08ac0446c"
+    },
+    "phase_entropy_audit_report": {
+      "certificate_sha256": "12789ad0901a709775b230704ace5e83de46dc450d3100195b8714d612ad1d1d",
+      "path": "data/invariants/d20/proof_obligations/d20_geon_phase_entropy_audit/report.json",
+      "sha256": "68c863792d00d0e5641d796c463f90801886202dc81bc54e4358f366a8895d3d",
+      "status": "D20_GEON_PHASE_ENTROPY_AUDIT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_geon_rgba_replay_frame_archive.py",
+      "sha256": "bb023e058fd270c967fc316ed83038e7b7ef8dbdb6646e6ea5dd70a09bd044e3"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "060d1515ce4e78a3b8c14863873b951a3b808280ef2df7963fa6ae154584dfad"
+    }
+  },
+  "next_highest_yield_item": "Run the same frame-buffer capture in an environment where the browser can load the local visualization, then compare the live getImageData hashes against this replay archive frame-by-frame.",
+  "schema": "d20.proof_obligation.geon_rgba_replay_frame_archive@1",
+  "status": "D20_GEON_RGBA_REPLAY_FRAME_ARCHIVE_CERTIFIED_BROWSER_CAPTURE_BLOCKED",
+  "witness": {
+    "browser_capture_status": {
+      "attempted_targets": [
+        "file:///D:/Projects/carrollian/generated/d20_sandpile_visualization.html",
+        "http://127.0.0.1:8765/d20_sandpile_visualization.html"
+      ],
+      "boundary": "This archive is a deterministic replay frame-buffer archive, not a live-browser getImageData certificate. The in-app browser blocked both local targets.",
+      "status": "BLOCKED_IN_CURRENT_ENVIRONMENT"
+    },
+    "capture_method": {
+      "canvases": [
+        "d20LiftCanvas",
+        "d20HexLiftCanvas",
+        "toppleCanvas"
+      ],
+      "engine": "repo-local deterministic replay of the exact D20 canvas render rules",
+      "raw_format": "RGBA byte buffer encoded as base64",
+      "sample_frames": [
+        0,
+        1,
+        8,
+        32,
+        64,
+        96
+      ]
+    },
+    "frame_count": 18,
+    "summary": {
+      "alpha_entropy_bits_max": 0.0,
+      "alpha_entropy_bits_min": 0.0,
+      "non_alpha_category_entropy_bits_max": 1.703736293051497,
+      "non_alpha_category_entropy_bits_min": 0.03178552071785978,
+      "total_rgba_bytes": 910848
+    }
+  }
+}

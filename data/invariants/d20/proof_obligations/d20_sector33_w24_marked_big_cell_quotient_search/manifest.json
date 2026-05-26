@@ -1,0 +1,69 @@
+{
+  "artifact_sha256_excluding_hash_field": "2096376cecab5414b9853da53f5fa728600bf1944f6910b28aba307a1a73611f",
+  "certification_tests": [
+    "verify D20, W24 row-alphabetization, per-edge prune, sector33 dual, and Wu/Spin12 marking inputs",
+    "verify the marked big cell has one scalar and 15 Lambda^2 H6 two-form coordinates",
+    "verify the D20 selector-duad order matches the marked two-form coordinate order",
+    "compute the duplicate-xor-collapse quotient rowspace",
+    "compute the lower-edge selector quotient rowspace",
+    "compute the upper-edge selector quotient rowspace",
+    "verify the three quotient ranks are 11, 16, and 14",
+    "verify no tested quotient has rank 12",
+    "verify no tested quotient is self-orthogonal"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "2096376cecab5414b9853da53f5fa728600bf1944f6910b28aba307a1a73611f",
+      "path": "generated/d20_sector33_w24_marked_big_cell_quotient_search.json",
+      "schema": "d20.proof_obligation.sector33_w24_marked_big_cell_quotient_search.artifact@1",
+      "sha256": "d0e2935bc4862aaa2e2aad3b2c0493c2d17c4bc829de0ae5bd3b3d26168cb46f",
+      "status": "D20_SECTOR33_W24_MARKED_BIG_CELL_QUOTIENT_SEARCH_DERIVED"
+    },
+    "d20_json": {
+      "path": "d20.json",
+      "sha256": "9355a5a1cc0bd3278f8e6151a9fb2cafd5a1930ee9b2313036377d245a31e4f7",
+      "status": "D20_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_sector33_w24_marked_big_cell_quotient_search.py",
+      "sha256": "c32c1500107b77232ac6165c1ba50f19487a007fbd8ca7c9961defe11eb85387"
+    },
+    "per_edge_rowspace_prune": {
+      "certificate_sha256": "c2fc2066d96c592f89cc98a82c2e6f6782dce84b8be9f96d2e91abbde7c60a0a",
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_per_edge_rowspace_prune/report.json",
+      "sha256": "6ca731a6c328f8e3081ffacf39f582e0cee6dc9becf477bbad9fd69f09ab05a6",
+      "status": "D20_SECTOR33_W24_PER_EDGE_ROWSPACE_PRUNE_CERTIFIED"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_sector33_w24_marked_big_cell_quotient_search.py",
+      "sha256": "5ef9aaaa7e5f9c6a28d7bf63e5b783258f369c2fe5ab3e7bbc75e2ffa5c42d8a"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    },
+    "wu_spinh_6j_marking": {
+      "path": "data/selectors/wu_spinh_6j_marking.json",
+      "recorded_selector_status": "still external: Wu/spin^h marking canonically selects an octad plus Spin12 16-complement, not a rank-12 Type-II code by itself",
+      "sha256": "62615a8b509919e2117d1ef9b4627cfe14b14dea4dcadaf85a0b2e62eee7b154",
+      "status": "WU_SPINH_OCTAD_SPIN12_6J_MARKING_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL"
+    }
+  },
+  "manifest_sha256": "ea2fd7491aa30757a3bad2bac46a7068ae013e5ec1019694e19eb0e6b078f309",
+  "name": "d20_sector33_w24_marked_big_cell_quotient_search",
+  "outputs": {
+    "artifact": "generated/d20_sector33_w24_marked_big_cell_quotient_search.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_big_cell_quotient_search/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_big_cell_quotient_search/report.json"
+  },
+  "report_sha256": "0ffa56adeb41dcb1e9d2914cb7edfbe1fa795e7beace07c2b303940ee1951a6b",
+  "schema": "d20.proof_obligation.sector33_w24_marked_big_cell_quotient_search_manifest@1"
+}

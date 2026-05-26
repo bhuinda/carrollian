@@ -1,0 +1,396 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "da3c35f04b9002faed4839fbdb591d91d2ef9149e1b984818c68b945e146966f",
+  "checks": {
+    "all_selected_endpoint_limits_within_tolerance": true,
+    "all_selected_two_level_maxima_within_tolerance": true,
+    "archive_indicator_shell_input_certified": true,
+    "direct_entropy_attempt_import_certified": true,
+    "equality_orbit_seen_at_t_zero": true,
+    "final_arbitrary_vector_theorem_not_certified": true,
+    "generated_code_has_4096_words": true,
+    "generated_code_weight_histogram_matches_w24": true,
+    "two_level_rows_nonempty": true,
+    "w24_endpoint_certified": true
+  },
+  "claim": "The selected two-level lift from Boolean indicator faces toward arbitrary nonnegative shell weights produced no counterexample for w=12 or w=16. The tested family includes all W24 shell supports, canonical MOG masks, indicator-worst masks, and deterministic random split masks. This narrows the entropy gap but does not prove the arbitrary-vector shell domination theorem.",
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "1ae05acbfcb857a32680a1c6ae002d512fd22d83b1ebf775b7b598fe2906a997",
+      "path": "generated/d20_golay_shell_two_level_lift_probe.json",
+      "schema": "d20.proof_obligation.golay_shell_two_level_lift_probe.artifact@1",
+      "sha256": "9bb34a6950520feb053ea4fc3ea1a7d123ccc7917db876126452e3164a1cfcfb",
+      "status": "D20_GOLAY_SHELL_TWO_LEVEL_LIFT_PROBE_NO_COUNTEREXAMPLE"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_golay_shell_two_level_lift_probe.py",
+      "sha256": "2c76d78d97e707a15be59204a07a1be545c2296590cd580a9bd9a698965021cb"
+    },
+    "direct_entropy_attempt": {
+      "certificate_sha256": "642310dcff1e7b40016b10b696e5ddf013d48a9581a44c1753b5212b1058a14a",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_entropy_direct_attempt_import/report.json",
+      "sha256": "c2522cb633a8ab06c6ff3a926d1f4dbae3a10d191655cf2fda2650c8db3db39f",
+      "status": "D20_GOLAY_ENTROPY_DIRECT_ATTEMPT_IMPORT_CERTIFIED"
+    },
+    "indicator_shell_csv": {
+      "path": "temp/all_python_work_files/python_files/hamming_gaussian_indicator_shell_domination/indicator_shell_domination_by_support_size.csv",
+      "sha256": "2eae94ccb2deddf78b05d86e9f3fce6bdd21e7444c980ab08ffc022b7b409d70"
+    },
+    "python_work_archive": {
+      "certificate_sha256": "f9900be4684d3c50378f06d1e2250246c18e4fa57cff062ac9d07ffdb393f3b9",
+      "path": "data/invariants/d20/proof_obligations/d20_hamming_gaussian_python_work_archive_import/report.json",
+      "sha256": "f0c55c0ed22834514c849eef93620dbaa2a1b69d007eb61977450222a2d51687",
+      "status": "D20_HAMMING_GAUSSIAN_PYTHON_WORK_ARCHIVE_IMPORT_CERTIFIED_PARTIAL_REPLAY"
+    },
+    "validator": {
+      "path": "src/certify_d20_golay_shell_two_level_lift_probe.py",
+      "sha256": "62d5ac6647b4ca4570ce835d2c9341ea849ebe279551a15e7f9d7b8aaa8b8358"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Replace selected split masks by an exhaustive M24 subset-orbit/Terwilliger reduction, then certify every two-level profile before attacking three-level or full Krawtchouk/SOS domination.",
+  "schema": "d20.proof_obligation.golay_shell_two_level_lift_probe@1",
+  "status": "D20_GOLAY_SHELL_TWO_LEVEL_LIFT_PROBE_CERTIFIED_NO_COUNTEREXAMPLE",
+  "witness": {
+    "definition": {
+      "objective": "F_w(S,t)=log(sum_B exp(t*|B cap S|))-log(A_w)-(w/2)log((|S|exp(2t)+24-|S|)/24)",
+      "optimization": "For each selected profile, derivative sign changes on [-40,40] are bracketed on a 1600-step grid and refined by bisection; endpoints approximate the two Boolean face limits.",
+      "target": "F_w(S,t)<=0 for w in {12,16}.",
+      "two_level_vector": "x_i=exp(t) on S and x_i=1 off S"
+    },
+    "open_boundary": {
+      "certified_here": [
+        "no two-level counterexample on the selected split-mask family",
+        "all W24 shell-support splits of weights 8,12,16,24 are included",
+        "the Boolean endpoint limits for those selected splits stay within tolerance"
+      ],
+      "not_certified": [
+        "all possible split masks up to M24 orbit",
+        "arbitrary nonnegative vectors with three or more distinct values",
+        "the final w=12 entropy contraction theorem",
+        "the final w=16 entropy contraction theorem"
+      ]
+    },
+    "selection": {
+      "included_families": [
+        "empty and full support",
+        "all prefixes and complements",
+        "all singletons and complements",
+        "MOG rows and columns",
+        "certified W24 row, row-pair, and column-pair masks",
+        "all W24 shell supports of weights 8,12,16,24 and complements",
+        "indicator-shell worst masks from the exhaustive Boolean certificate",
+        "deterministic random masks stratified by support size"
+      ],
+      "shells": [
+        12,
+        16
+      ],
+      "split_mask_count": 4716,
+      "two_level_row_count": 9432,
+      "unique_profiles": {
+        "by_shell": {
+          "12": 45,
+          "16": 45
+        },
+        "unique_profile_count": 90
+      }
+    },
+    "witness": {
+      "csv": {
+        "path": "data/invariants/d20/proof_obligations/d20_golay_shell_two_level_lift_probe/two_level_lift_profiles.csv",
+        "sha256": "3be950b73e4096541d4efc6b4a0d8ff68b7b06bfcb897dd274831695c68db6eb"
+      },
+      "max_F": 0.0,
+      "max_excess_over_tolerance": -1e-10,
+      "tolerance": 1e-10,
+      "top_rows": [
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": 0.0,
+          "endpoint_right_F": 0.0,
+          "exceeds_tolerance": false,
+          "label_count": 11,
+          "labels": "complement:deterministic_random;complement:full;complement:indicator_worst_shell_12;complement:indicator_worst_shell_16;complement:prefix_k24;complement:w24_shell_support_w24;deterministic_random;empty",
+          "max_F": 0.0,
+          "profile": "2576,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 1,
+          "shell": 12,
+          "support_mask": 0,
+          "support_size": 0
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": 0.0,
+          "endpoint_right_F": 0.0,
+          "exceeds_tolerance": false,
+          "label_count": 11,
+          "labels": "complement:deterministic_random;complement:full;complement:indicator_worst_shell_12;complement:indicator_worst_shell_16;complement:prefix_k24;complement:w24_shell_support_w24;deterministic_random;empty",
+          "max_F": 0.0,
+          "profile": "759,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 1,
+          "shell": 16,
+          "support_mask": 0,
+          "support_size": 0
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.43778949404716805,
+          "endpoint_right_F": -421.62482419847225,
+          "exceeds_tolerance": false,
+          "label_count": 4,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k1;singleton_0",
+          "max_F": 0.0,
+          "profile": "1288,1288,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 1,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.7581353733177414,
+          "endpoint_right_F": -574.9810344653246,
+          "exceeds_tolerance": false,
+          "label_count": 4,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k1;singleton_0",
+          "max_F": 0.0,
+          "profile": "253,506,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 1,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.43778949404716805,
+          "endpoint_right_F": -421.62482419847225,
+          "exceeds_tolerance": false,
+          "label_count": 1,
+          "labels": "singleton_1",
+          "max_F": 0.0,
+          "profile": "1288,1288,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 2,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.7581353733177414,
+          "endpoint_right_F": -574.9810344653246,
+          "exceeds_tolerance": false,
+          "label_count": 1,
+          "labels": "singleton_1",
+          "max_F": 0.0,
+          "profile": "253,506,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 2,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.9086778617529463,
+          "endpoint_right_F": -386.5213062249627,
+          "exceeds_tolerance": false,
+          "label_count": 3,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k2",
+          "max_F": 0.0,
+          "profile": "616,1344,616,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 3,
+          "support_size": 2
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -1.5921053396249087,
+          "endpoint_right_F": -540.9536559246311,
+          "exceeds_tolerance": false,
+          "label_count": 3,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k2",
+          "max_F": 0.0,
+          "profile": "77,352,330,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 3,
+          "support_size": 2
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.43778949404716805,
+          "endpoint_right_F": -421.62482419847225,
+          "exceeds_tolerance": false,
+          "label_count": 1,
+          "labels": "singleton_2",
+          "max_F": 0.0,
+          "profile": "1288,1288,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 4,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.7581353733177414,
+          "endpoint_right_F": -574.9810344653246,
+          "exceeds_tolerance": false,
+          "label_count": 1,
+          "labels": "singleton_2",
+          "max_F": 0.0,
+          "profile": "253,506,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 4,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -1.4180151283078581,
+          "endpoint_right_F": -349.74255423397597,
+          "exceeds_tolerance": false,
+          "label_count": 3,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k3",
+          "max_F": 0.0,
+          "profile": "280,1008,1008,280,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 7,
+          "support_size": 3
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -2.5192281986760254,
+          "endpoint_right_F": -504.64936191323943,
+          "exceeds_tolerance": false,
+          "label_count": 3,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k3",
+          "max_F": 0.0,
+          "profile": "21,168,360,210,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 7,
+          "support_size": 3
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.43778949404716805,
+          "endpoint_right_F": -421.62482419847225,
+          "exceeds_tolerance": false,
+          "label_count": 2,
+          "labels": "complement:deterministic_random;singleton_3",
+          "max_F": 0.0,
+          "profile": "1288,1288,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 8,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.7581353733177414,
+          "endpoint_right_F": -574.9810344653246,
+          "exceeds_tolerance": false,
+          "label_count": 2,
+          "labels": "complement:deterministic_random;singleton_3",
+          "max_F": 0.0,
+          "profile": "253,506,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 8,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -1.9725720036784686,
+          "endpoint_right_F": -312.3159445290739,
+          "exceeds_tolerance": false,
+          "label_count": 3,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k4",
+          "max_F": 0.0,
+          "profile": "120,640,1056,640,120,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 15,
+          "support_size": 4
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -3.5639914106098907,
+          "endpoint_right_F": -467.43039157311557,
+          "exceeds_tolerance": false,
+          "label_count": 3,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k4",
+          "max_F": 0.0,
+          "profile": "5,64,240,320,130,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 15,
+          "support_size": 4
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.43778949404716805,
+          "endpoint_right_F": -421.62482419847225,
+          "exceeds_tolerance": false,
+          "label_count": 2,
+          "labels": "deterministic_random;singleton_4",
+          "max_F": 0.0,
+          "profile": "1288,1288,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 16,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -0.7581353733177414,
+          "endpoint_right_F": -574.9810344653246,
+          "exceeds_tolerance": false,
+          "label_count": 2,
+          "labels": "deterministic_random;singleton_4",
+          "max_F": 0.0,
+          "profile": "253,506,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 16,
+          "support_size": 1
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -2.5811029692273197,
+          "endpoint_right_F": -274.5710965688333,
+          "exceeds_tolerance": false,
+          "label_count": 3,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k5",
+          "max_F": 0.0,
+          "profile": "48,360,880,880,360,48,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 12,
+          "support_mask": 31,
+          "support_size": 5
+        },
+        {
+          "arg_t": 0.0,
+          "endpoint_left_F": -4.763082967943586,
+          "endpoint_right_F": -429.7263656073953,
+          "exceeds_tolerance": false,
+          "label_count": 3,
+          "labels": "indicator_worst_shell_12;indicator_worst_shell_16;prefix_k5",
+          "max_F": 0.0,
+          "profile": "1,20,120,280,260,78,0,0,0,0,0,0,0,0,0,0,0",
+          "root_count": 3,
+          "shell": 16,
+          "support_mask": 31,
+          "support_size": 5
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "artifact_sha256_excluding_hash_field": "8c778afafb76a51d003c40952a746c77ceb543b73ce3e938516178203eaa625e",
+  "certification_tests": [
+    "verify D20 visualization source loads with 20 vertices and 30 edges",
+    "verify robust oblongness and intrinsic hex metric reports are certified",
+    "replay baseline plus six local post-seed perturbations",
+    "extract D20 cooriented negative-space and negative-edge masks",
+    "verify all variants have top four negative-edge Fourier modes at axis frequency 27",
+    "verify edge-axis power exceeds histogram-preserving shuffle nulls",
+    "verify perturbed spectra remain close while exact edge masks are not claimed invariant"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "8c778afafb76a51d003c40952a746c77ceb543b73ce3e938516178203eaa625e",
+      "path": "generated/d20_lift_negative_space_grid_perturbation_audit.json",
+      "schema": "d20.proof_obligation.lift_negative_space_grid_perturbation_audit.artifact@1",
+      "sha256": "e2a256fed6a2877821387179f81d03a1bb7ea657f6f9f7cb201966be40984632",
+      "status": "D20_LIFT_NEGATIVE_SPACE_GRID_PERTURBATION_AUDIT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_negative_space_grid_perturbation_audit.py",
+      "sha256": "030b102360fcd0508085dd7405250369c5f9746022da0658633127f3d8982fc9"
+    },
+    "edge_steps": {
+      "path": "generated/d20_voltage_lift_edge_steps.json",
+      "sha256": "114ba946d3f5399ed101fe83abe6d33c3e515cc5b2a7561ffb6d4e4132edf6f0"
+    },
+    "intrinsic_hex_metric_report": {
+      "certificate_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd",
+      "path": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "sha256": "30d26b454eb3dd9bb889a2c31b1234a6cb2450f0e2237f51386342b21dbbcd91",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_CERTIFIED"
+    },
+    "robust_oblongness_theorem_report": {
+      "certificate_sha256": "6b6c802beb0b94e27613de34d19bf56020fa9704f7e14dcda494451f571ebd07",
+      "path": "data/invariants/d20/theorems/d20_voltage_lift_robust_oblongness/report.json",
+      "sha256": "b6a302ca27f75b4581365278578ffeaea8ea78d8a5240343c23c1da35064b888",
+      "status": "D20_VOLTAGE_LIFT_ROBUST_OBLONGNESS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_negative_space_grid_perturbation_audit.py",
+      "sha256": "c7165c2b44e9842188d611c9475a117e8b55224a21b76be9577f270dc6e0b3b7"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "060d1515ce4e78a3b8c14863873b951a3b808280ef2df7963fa6ae154584dfad"
+    }
+  },
+  "manifest_sha256": "a6f2867c418749974492d3368c827c73b5b649f2218f6727aa000ce631e04900",
+  "name": "d20_lift_negative_space_grid_perturbation_audit",
+  "outputs": {
+    "artifact": "generated/d20_lift_negative_space_grid_perturbation_audit.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_lift_negative_space_grid_perturbation_audit/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_lift_negative_space_grid_perturbation_audit/report.json"
+  },
+  "report_sha256": "f57824519d8f0dac78fcaba4af032ba724fabbcae1f38a1bb8999f2e08bb908b",
+  "schema": "d20.proof_obligation.lift_negative_space_grid_perturbation_audit_manifest@1"
+}

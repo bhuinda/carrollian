@@ -1,0 +1,444 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "642310dcff1e7b40016b10b696e5ddf013d48a9581a44c1753b5212b1058a14a",
+  "checks": {
+    "all_csv_exceeds_zero_counts_are_zero": true,
+    "certificate_summary_has_shells_12_and_16": true,
+    "dodecad_and_weight16_shell_sizes_match": true,
+    "final_entropy_inequality_not_certified": true,
+    "golay_hamming_probe_records_morphism_open": true,
+    "max_observed_F_within_roundoff": true,
+    "no_counterexample_recorded_for_each_shell": true,
+    "sector33_w24_local_matching_still_open": true,
+    "summary_csv_matches_certificate_summary": true,
+    "temp_internal_certificate_hash_not_used_as_repo_self_hash": true,
+    "temp_manifest_file_hashes_all_match": true,
+    "temp_manifest_status_matches_certificate": true,
+    "temp_report_records_no_counterexample_status": true,
+    "temp_reproduction_script_is_placeholder_not_full_replay": true,
+    "w24_endpoint_is_certified": true,
+    "w24_weight_enumerator_matches_direct_attempt": true
+  },
+  "claim": "The temp Golay entropy direct attempt is imported as bounded computational evidence: its manifest hashes match, its supplied traces record no counterexample for the w=12 and w=16 shell objectives, and its weight enumerator matches the certified W24/Golay endpoint. It does not prove the entropy contraction inequalities and it does not construct the still-open sector33-to-W24 map.",
+  "closure_boundary": {
+    "certifies": [
+      "temp artifact file integrity against its manifest",
+      "no counterexample recorded in the supplied direct search traces",
+      "the supplied W24 weight enumerator matches the certified repo W24/Golay endpoint",
+      "the direct entropy attempt is downstream of, not a substitute for, the open sector33-to-W24 map"
+    ],
+    "does_not_certify": [
+      "D(q||u_B12) >= 6 D(p_q||u_24)",
+      "D(q||u_B16) >= 8 D(p_q||u_24)",
+      "a sandpile least-action proof of entropy monotonicity",
+      "a Krawtchouk/SOS certificate",
+      "an independent replay from the placeholder script",
+      "a sector33-to-W24 morphism"
+    ]
+  },
+  "definition": {
+    "entropy_target": "For w=12,16, prove Delta_w(q)=D(q||u_Bw)-(w/2)D(p_q||u_24) >= 0; the direct attempt numerically maximizes the equivalent log-shell objective F_w.",
+    "import_boundary": "The temp certificate is treated as an external computational artifact. The repo certificate verifies file integrity and trace summaries, but does not treat the temp certificate_sha256 as a repo self hash."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "993aa5ca0e08ac58d671573d01931ef10aa76e455c853fb750bedc2ff3426c14",
+      "path": "generated/d20_golay_entropy_direct_attempt_import.json",
+      "schema": "d20.proof_obligation.golay_entropy_direct_attempt_import.artifact@1",
+      "sha256": "f5adeaf0fd39e59b07fe7f5cc68dd40cd2d2ec9edbc34ad95939b758b9832dc9",
+      "status": "D20_GOLAY_ENTROPY_DIRECT_ATTEMPT_IMPORTED_NO_COUNTEREXAMPLE"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_golay_entropy_direct_attempt_import.py",
+      "sha256": "50de555667b543c3ad7e5e6d7c4274a461f54a7612d1e781ad9267f5276431e9"
+    },
+    "golay_hamming_probe": {
+      "certificate_sha256": "157cf8a3fe197c799f98086136834c59991c4effb8cc8a952dc2c49d0f20153f",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_hamming_correspondence_probe/report.json",
+      "sha256": "20ad7d94966d3045e88eb8113ba95bda3e0b5394bfb41f16f11b2e6a95d5eb2d",
+      "status": "D20_GOLAY_HAMMING_CORRESPONDENCE_PROBE_CERTIFIED"
+    },
+    "mixed_duad_prune": {
+      "certificate_sha256": "05ef410f5825ab21fb6fe157393ceabb35c6fc365ae7b2c3547d63678b3bfac6",
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_mixed_duad_quotient_orthogonality_prune/report.json",
+      "sha256": "3992b62860d81f3f3da47b7589ed1cc80b780a6a2d971acb2e854e462d9515ed",
+      "status": "D20_SECTOR33_W24_MIXED_DUAD_QUOTIENT_ORTHOGONALITY_PRUNE_CERTIFIED"
+    },
+    "temp_certificate": {
+      "path": "temp/golay_entropy_direct_attempt/golay_entropy_direct_attempt_certificate.json",
+      "recorded_certificate_sha256": "6a9b87b2a874244e124ae6ee6e7531bda4240c44881516aa5789b6b8f3830a65",
+      "sha256": "de1c2376dbf0e42a0b8aeffa961b5494db600c99ff83e0ef4549126d3adea88b",
+      "status": "DIRECT_VARIATIONAL_AND_SANDPILE_ATTEMPT_COMPLETE_NO_COUNTEREXAMPLE"
+    },
+    "temp_manifest": {
+      "path": "temp/golay_entropy_direct_attempt/manifest.json",
+      "sha256": "22d5d31366b13f597d60cb9f0b273f970b9616f706ce3d0969bebfca21d5509f",
+      "status": "DIRECT_VARIATIONAL_AND_SANDPILE_ATTEMPT_COMPLETE_NO_COUNTEREXAMPLE"
+    },
+    "temp_report": {
+      "path": "temp/golay_entropy_direct_attempt/golay_entropy_direct_attempt_report.md",
+      "sha256": "3403b4807d0d878f157f0dc7619e0f5f71446d60e39a11d9fe3972273519a568"
+    },
+    "temp_reproduce_script": {
+      "path": "temp/golay_entropy_direct_attempt/reproduce_direct_attempt.py",
+      "sha256": "079d98d62407d34f18b382f6db170d04bd6cf51c1d89f98e201774121e0e93c7"
+    },
+    "validator": {
+      "path": "src/certify_d20_golay_entropy_direct_attempt_import.py",
+      "sha256": "32115168e51171de642b219c948ed4118c991237bfe7874bafecafa2a0637fc7"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Turn the no-counterexample data into a real finite certificate: either a Krawtchouk/SOS certificate for the w=12,16 shell objective, or a sandpile least-action monotonicity proof for Delta_w.",
+  "schema": "d20.proof_obligation.golay_entropy_direct_attempt_import@1",
+  "status": "D20_GOLAY_ENTROPY_DIRECT_ATTEMPT_IMPORT_CERTIFIED",
+  "witness": {
+    "connection_to_current_problem": {
+      "interpretation": "The entropy attempt attaches downstream to the certified W24 shell once a sector33-to-W24 map exists. It does not construct that map and does not close the entropy inequality.",
+      "mixed_local_duad_matching_status": "D20_SECTOR33_W24_MIXED_DUAD_QUOTIENT_ORTHOGONALITY_PRUNE_CERTIFIED",
+      "sector33_to_w24_map_status": "OPEN_NOT_CONSTRUCTED",
+      "w24_endpoint": {
+        "dodecad_count": 2576,
+        "rank": 12,
+        "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED",
+        "weight_histogram": {
+          "0": 1,
+          "12": 2576,
+          "16": 759,
+          "24": 1,
+          "8": 759
+        }
+      }
+    },
+    "direct_attempt": {
+      "csv_summaries": {
+        "direct_attempt_summary.csv": {
+          "fields": [
+            "shell",
+            "blocks",
+            "best_pattern_F",
+            "best_pattern_label",
+            "best_multistart_F",
+            "best_multistart_start",
+            "best_kkt_F",
+            "best_kkt_start",
+            "any_counterexample_found"
+          ],
+          "numeric_ranges": {
+            "best_kkt_F": {
+              "max": 1.7208457753428432e-15,
+              "min": 9.621934899331655e-16
+            },
+            "best_kkt_start": {
+              "max": 27.0,
+              "min": 6.0
+            },
+            "best_multistart_F": {
+              "max": 2.0475288936992494e-15,
+              "min": 1.5090504466035344e-15
+            },
+            "best_multistart_start": {
+              "max": 222.0,
+              "min": 158.0
+            },
+            "best_pattern_F": {
+              "max": 0.0,
+              "min": 0.0
+            },
+            "blocks": {
+              "max": 2576.0,
+              "min": 759.0
+            },
+            "shell": {
+              "max": 16.0,
+              "min": 12.0
+            }
+          },
+          "path": "temp/golay_entropy_direct_attempt/direct_attempt_summary.csv",
+          "row_count": 2,
+          "sha256": "61cc92b45322cee06e8f93339a32c3b4d42566d78d9989cdd68506bdd133d6f6"
+        },
+        "kkt_sandpile_iteration_trace.csv": {
+          "fields": [
+            "shell",
+            "start",
+            "iter",
+            "F",
+            "grad_norm",
+            "z_std",
+            "z_max",
+            "z_min"
+          ],
+          "numeric_ranges": {
+            "F": {
+              "max": 1.7208456912830368e-15,
+              "min": -4.1699009241731275
+            },
+            "grad_norm": {
+              "max": 1.1491288077528998,
+              "min": 1.0053497077208614e-15
+            },
+            "iter": {
+              "max": 21.0,
+              "min": 1.0
+            },
+            "shell": {
+              "max": 16.0,
+              "min": 12.0
+            },
+            "start": {
+              "max": 76.0,
+              "min": 0.0
+            },
+            "z_max": {
+              "max": 6.066012182133488,
+              "min": 6.430041684287364e-16
+            },
+            "z_min": {
+              "max": -5.78241158658936e-16,
+              "min": -13.655658511803647
+            },
+            "z_std": {
+              "max": 8.599256073127075,
+              "min": 3.2993611548463054e-16
+            }
+          },
+          "path": "temp/golay_entropy_direct_attempt/kkt_sandpile_iteration_trace.csv",
+          "row_count": 316,
+          "sha256": "1b067d60f4eb431ca7337558ec48371a3baf2b5d337e20f2f9d69a159572219e"
+        },
+        "lbfgs_multistart_search.csv": {
+          "exceeds_zero_true_count": 0,
+          "fields": [
+            "shell",
+            "start",
+            "success",
+            "F",
+            "grad_norm",
+            "z_std",
+            "z_max",
+            "z_min",
+            "nit",
+            "exceeds_zero"
+          ],
+          "numeric_ranges": {
+            "F": {
+              "max": 2.0475288936992494e-15,
+              "min": -3.6951100107898327
+            },
+            "grad_norm": {
+              "max": 1.3656256463457378e-06,
+              "min": 2.396642123083981e-15
+            },
+            "nit": {
+              "max": 91.0,
+              "min": 0.0
+            },
+            "shell": {
+              "max": 16.0,
+              "min": 12.0
+            },
+            "start": {
+              "max": 399.0,
+              "min": 0.0
+            },
+            "z_max": {
+              "max": 351.28615785184104,
+              "min": 0.0
+            },
+            "z_min": {
+              "max": 0.0,
+              "min": -4509.399800432296
+            },
+            "z_std": {
+              "max": 1011.8798119993845,
+              "min": 0.0
+            }
+          },
+          "path": "temp/golay_entropy_direct_attempt/lbfgs_multistart_search.csv",
+          "row_count": 800,
+          "sha256": "6a2de57f4253fe184fa9e3bc08e5abdb6f6a9129fdc9835b9f7bf7b8f78cffdd"
+        },
+        "sandpile_like_gradient_balancing.csv": {
+          "fields": [
+            "shell",
+            "scale",
+            "iter",
+            "F",
+            "grad_norm",
+            "odometer_l1",
+            "z_std"
+          ],
+          "numeric_ranges": {
+            "F": {
+              "max": -2.6824580089021566e-16,
+              "min": -184.84154377382237
+            },
+            "grad_norm": {
+              "max": 15.393163306504293,
+              "min": 0.0
+            },
+            "iter": {
+              "max": 100.0,
+              "min": 1.0
+            },
+            "odometer_l1": {
+              "max": 112.11495584086751,
+              "min": 0.8809797867778351
+            },
+            "scale": {
+              "max": 8.0,
+              "min": 1.0
+            },
+            "shell": {
+              "max": 16.0,
+              "min": 12.0
+            },
+            "z_std": {
+              "max": 7.597438903610849,
+              "min": 4.360054625568481e-16
+            }
+          },
+          "path": "temp/golay_entropy_direct_attempt/sandpile_like_gradient_balancing.csv",
+          "row_count": 64,
+          "sha256": "2abb80baca989102b921233546dd2705616d17815b237cb0d62d6ed895a73f46"
+        },
+        "structured_pattern_search.csv": {
+          "exceeds_zero_true_count": 0,
+          "fields": [
+            "shell",
+            "label",
+            "F",
+            "grad_norm",
+            "z_std",
+            "exceeds_zero"
+          ],
+          "numeric_ranges": {
+            "F": {
+              "max": 0.0,
+              "min": -253.00872362158253
+            },
+            "grad_norm": {
+              "max": 15.49192885865644,
+              "min": 2.4273040365536066e-15
+            },
+            "shell": {
+              "max": 16.0,
+              "min": 12.0
+            },
+            "z_std": {
+              "max": 11.668909720230294,
+              "min": 0.0
+            }
+          },
+          "path": "temp/golay_entropy_direct_attempt/structured_pattern_search.csv",
+          "row_count": 300,
+          "sha256": "748ab7783b266e45e9664533511259f23978952ae7e435f20cced48dfac9dba6"
+        }
+      },
+      "max_observed_F": 2.0475288936992494e-15,
+      "status": "DIRECT_VARIATIONAL_AND_SANDPILE_ATTEMPT_COMPLETE_NO_COUNTEREXAMPLE",
+      "summary": [
+        {
+          "any_counterexample_found": false,
+          "best_kkt_F": 1.7208457753428432e-15,
+          "best_kkt_start": 27,
+          "best_multistart_F": 2.0475288936992494e-15,
+          "best_multistart_start": 158,
+          "best_pattern_F": 0.0,
+          "best_pattern_label": "equal",
+          "blocks": 2576,
+          "shell": 12
+        },
+        {
+          "any_counterexample_found": false,
+          "best_kkt_F": 9.621934899331655e-16,
+          "best_kkt_start": 6,
+          "best_multistart_F": 1.5090504466035344e-15,
+          "best_multistart_start": 222,
+          "best_pattern_F": 0.0,
+          "best_pattern_label": "equal",
+          "blocks": 759,
+          "shell": 16
+        }
+      ],
+      "timestamp_utc": "2026-05-25T22:07:24.378991+00:00",
+      "weight_enumerator": {
+        "0": 1,
+        "12": 2576,
+        "16": 759,
+        "24": 1,
+        "8": 759
+      }
+    },
+    "open_boundary": {
+      "certified_here": [
+        "temp artifact file integrity against its manifest",
+        "no counterexample recorded in the supplied direct search traces",
+        "the supplied W24 weight enumerator matches the certified repo W24/Golay endpoint",
+        "the direct entropy attempt is downstream of, not a substitute for, the open sector33-to-W24 map"
+      ],
+      "not_certified": [
+        "D(q||u_B12) >= 6 D(p_q||u_24)",
+        "D(q||u_B16) >= 8 D(p_q||u_24)",
+        "a sandpile least-action proof of entropy monotonicity",
+        "a Krawtchouk/SOS certificate",
+        "an independent replay from the placeholder script",
+        "a sector33-to-W24 morphism"
+      ]
+    },
+    "temp_integrity": {
+      "certificate_file_sha256": "de1c2376dbf0e42a0b8aeffa961b5494db600c99ff83e0ef4549126d3adea88b",
+      "manifest_file_hashes": {
+        "direct_attempt_summary.csv": {
+          "actual_sha256": "61cc92b45322cee06e8f93339a32c3b4d42566d78d9989cdd68506bdd133d6f6",
+          "expected_sha256": "61cc92b45322cee06e8f93339a32c3b4d42566d78d9989cdd68506bdd133d6f6",
+          "matches": true
+        },
+        "golay_entropy_direct_attempt_certificate.json": {
+          "actual_sha256": "de1c2376dbf0e42a0b8aeffa961b5494db600c99ff83e0ef4549126d3adea88b",
+          "expected_sha256": "de1c2376dbf0e42a0b8aeffa961b5494db600c99ff83e0ef4549126d3adea88b",
+          "matches": true
+        },
+        "golay_entropy_direct_attempt_report.md": {
+          "actual_sha256": "3403b4807d0d878f157f0dc7619e0f5f71446d60e39a11d9fe3972273519a568",
+          "expected_sha256": "3403b4807d0d878f157f0dc7619e0f5f71446d60e39a11d9fe3972273519a568",
+          "matches": true
+        },
+        "kkt_sandpile_iteration_trace.csv": {
+          "actual_sha256": "1b067d60f4eb431ca7337558ec48371a3baf2b5d337e20f2f9d69a159572219e",
+          "expected_sha256": "1b067d60f4eb431ca7337558ec48371a3baf2b5d337e20f2f9d69a159572219e",
+          "matches": true
+        },
+        "lbfgs_multistart_search.csv": {
+          "actual_sha256": "6a2de57f4253fe184fa9e3bc08e5abdb6f6a9129fdc9835b9f7bf7b8f78cffdd",
+          "expected_sha256": "6a2de57f4253fe184fa9e3bc08e5abdb6f6a9129fdc9835b9f7bf7b8f78cffdd",
+          "matches": true
+        },
+        "reproduce_direct_attempt.py": {
+          "actual_sha256": "079d98d62407d34f18b382f6db170d04bd6cf51c1d89f98e201774121e0e93c7",
+          "expected_sha256": "079d98d62407d34f18b382f6db170d04bd6cf51c1d89f98e201774121e0e93c7",
+          "matches": true
+        },
+        "sandpile_like_gradient_balancing.csv": {
+          "actual_sha256": "2abb80baca989102b921233546dd2705616d17815b237cb0d62d6ed895a73f46",
+          "expected_sha256": "2abb80baca989102b921233546dd2705616d17815b237cb0d62d6ed895a73f46",
+          "matches": true
+        },
+        "structured_pattern_search.csv": {
+          "actual_sha256": "748ab7783b266e45e9664533511259f23978952ae7e435f20cced48dfac9dba6",
+          "expected_sha256": "748ab7783b266e45e9664533511259f23978952ae7e435f20cced48dfac9dba6",
+          "matches": true
+        }
+      },
+      "recorded_certificate_hash_matches_repo_canonical_hash": false,
+      "recorded_certificate_sha256": "6a9b87b2a874244e124ae6ee6e7531bda4240c44881516aa5789b6b8f3830a65",
+      "repo_canonical_certificate_hash_excluding_field": "96d2a3ffab2dcb8ea85eda8e409da6768a386b7b6db809883bac12a924cc10c8"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "artifact_sha256_excluding_hash_field": "5ecff34970dce8559acbab55d4c9237a1d633ca66584bafa5281283a45bd5b38",
+  "certification_tests": [
+    "verify the source visualization hash matches the phase-entropy audit input",
+    "verify the prior phase-entropy audit is certified",
+    "verify 18 RGBA frames cover six sample frames across three canvases",
+    "verify every RGBA byte buffer length and hash",
+    "verify all alpha channels are constant opaque",
+    "verify browser capture remains explicitly blocked rather than claimed"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "5ecff34970dce8559acbab55d4c9237a1d633ca66584bafa5281283a45bd5b38",
+      "path": "generated/d20_geon_rgba_replay_frame_archive.json",
+      "schema": "d20.proof_obligation.geon_rgba_replay_frame_archive.artifact@1",
+      "sha256": "91f5c29551a9e46a818cc7950883af0632e16f52da1bdfe0c0ce379953bb9252",
+      "status": "D20_GEON_RGBA_REPLAY_FRAME_ARCHIVE_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_geon_rgba_replay_frame_archive.py",
+      "sha256": "b694620158bfb895a88b619027719642fd977ce691a787acc867d3f08ac0446c"
+    },
+    "phase_entropy_audit_report": {
+      "certificate_sha256": "12789ad0901a709775b230704ace5e83de46dc450d3100195b8714d612ad1d1d",
+      "path": "data/invariants/d20/proof_obligations/d20_geon_phase_entropy_audit/report.json",
+      "sha256": "68c863792d00d0e5641d796c463f90801886202dc81bc54e4358f366a8895d3d",
+      "status": "D20_GEON_PHASE_ENTROPY_AUDIT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_geon_rgba_replay_frame_archive.py",
+      "sha256": "bb023e058fd270c967fc316ed83038e7b7ef8dbdb6646e6ea5dd70a09bd044e3"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "060d1515ce4e78a3b8c14863873b951a3b808280ef2df7963fa6ae154584dfad"
+    }
+  },
+  "manifest_sha256": "6208f5c43d46d226d941fb3c3106e65092b45844167ce3a955d7298ce11c60af",
+  "name": "d20_geon_rgba_replay_frame_archive",
+  "outputs": {
+    "artifact": "generated/d20_geon_rgba_replay_frame_archive.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_geon_rgba_replay_frame_archive/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_geon_rgba_replay_frame_archive/report.json"
+  },
+  "report_sha256": "5e986320aa42e1e5d261ecf2560be2a33139f8462ab64a935aa4ea32b61097d2",
+  "schema": "d20.proof_obligation.geon_rgba_replay_frame_archive_manifest@1"
+}

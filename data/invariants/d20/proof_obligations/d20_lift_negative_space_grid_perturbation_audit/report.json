@@ -1,0 +1,122 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "f57824519d8f0dac78fcaba4af032ba724fabbcae1f38a1bb8999f2e08bb908b",
+  "checks": {
+    "all_edge_axis_power_z_scores_exceed_100": true,
+    "all_perturbed_edge_spectral_cosines_exceed_0_94": true,
+    "all_perturbed_negative_jaccards_exceed_0_78": true,
+    "baseline_and_all_perturbations_have_axis27_top_four": true,
+    "exact_negative_edge_mask_not_claimed_invariant": true,
+    "intrinsic_hex_metric_certified": true,
+    "robust_oblongness_theorem_certified": true,
+    "seven_perturbation_variants_tested": true,
+    "source_visualization_loaded": true
+  },
+  "claim": "The D20 cooriented voltage-lift render has a certified screen-space negative-space grid signature: the negative-edge mask's strongest Fourier modes are the axis modes (0,+/-27) and (+/-27,0), and this signature survives the tested local perturbations. The exact negative-edge pixels are not invariant, so the certified invariant is spectral/quasi-invariant rather than pointwise.",
+  "closure_boundary": {
+    "certifies": [
+      "the D20 cooriented lift negative-space edge mask has a strong axis-27 grid signature",
+      "the axis-27 signature survives the tested local post-seed perturbations",
+      "perturbed negative-space spectra remain close to the baseline spectrum",
+      "the exact negative-edge pixel set is not invariant"
+    ],
+    "does_not_certify": [
+      "a coordinate-free intrinsic lattice in the D20 object",
+      "physical spacetime structure",
+      "subpixel or alpha-channel phase structure",
+      "all possible perturbations"
+    ]
+  },
+  "definition": {
+    "grid_signature": "the four strongest non-DC Fourier modes of the negative-edge mask are the axis modes (0,+/-27) and (+/-27,0)",
+    "negative_edge_mask": "horizontal/vertical boundary of the negative-space mask, computed without wraparound",
+    "negative_space": "screen-space pixels with D20 cooriented lift render category 0",
+    "quasi_invariance": "perturbations may change exact negative-edge pixels, but preserve the axis-27 spectral signature and remain close to the baseline spectrum"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "8c778afafb76a51d003c40952a746c77ceb543b73ce3e938516178203eaa625e",
+      "path": "generated/d20_lift_negative_space_grid_perturbation_audit.json",
+      "schema": "d20.proof_obligation.lift_negative_space_grid_perturbation_audit.artifact@1",
+      "sha256": "e2a256fed6a2877821387179f81d03a1bb7ea657f6f9f7cb201966be40984632",
+      "status": "D20_LIFT_NEGATIVE_SPACE_GRID_PERTURBATION_AUDIT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_negative_space_grid_perturbation_audit.py",
+      "sha256": "030b102360fcd0508085dd7405250369c5f9746022da0658633127f3d8982fc9"
+    },
+    "edge_steps": {
+      "path": "generated/d20_voltage_lift_edge_steps.json",
+      "sha256": "114ba946d3f5399ed101fe83abe6d33c3e515cc5b2a7561ffb6d4e4132edf6f0"
+    },
+    "intrinsic_hex_metric_report": {
+      "certificate_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd",
+      "path": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "sha256": "30d26b454eb3dd9bb889a2c31b1234a6cb2450f0e2237f51386342b21dbbcd91",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_CERTIFIED"
+    },
+    "robust_oblongness_theorem_report": {
+      "certificate_sha256": "6b6c802beb0b94e27613de34d19bf56020fa9704f7e14dcda494451f571ebd07",
+      "path": "data/invariants/d20/theorems/d20_voltage_lift_robust_oblongness/report.json",
+      "sha256": "b6a302ca27f75b4581365278578ffeaea8ea78d8a5240343c23c1da35064b888",
+      "status": "D20_VOLTAGE_LIFT_ROBUST_OBLONGNESS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_negative_space_grid_perturbation_audit.py",
+      "sha256": "c7165c2b44e9842188d611c9475a117e8b55224a21b76be9577f270dc6e0b3b7"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "060d1515ce4e78a3b8c14863873b951a3b808280ef2df7963fa6ae154584dfad"
+    }
+  },
+  "next_highest_yield_item": "Separate screen-coordinate effects from intrinsic D20 geometry by repeating this negative-space audit under regular-hex projection and under randomized label-preserving edge-step perturbations.",
+  "schema": "d20.proof_obligation.lift_negative_space_grid_perturbation_audit@1",
+  "status": "D20_LIFT_NEGATIVE_SPACE_GRID_PERTURBATION_AUDIT_CERTIFIED",
+  "witness": {
+    "simulation": {
+      "canvas_size": [
+        128,
+        128
+      ],
+      "frame_topple_limit": 7000,
+      "observation_frame_after_warmup": 96,
+      "perturbation_count": 7,
+      "warmup_steps": 36,
+      "warmup_topple_limit": 9000
+    },
+    "summary": {
+      "common_top_four_axis_frequency_abs": 27,
+      "edge_axis_power_z_score_range": [
+        177.90231736081515,
+        223.15942148041094
+      ],
+      "negative_edge_fraction_range": [
+        0.0882568359375,
+        0.09576416015625
+      ],
+      "negative_fraction_range": [
+        0.60260009765625,
+        0.62030029296875
+      ],
+      "perturbed_edge_spectral_cosine_range": [
+        0.9472777544056324,
+        0.9727537779615775
+      ],
+      "perturbed_negative_jaccard_range": [
+        0.7800285561306443,
+        0.85884337801106
+      ]
+    },
+    "variant_count": 7,
+    "variant_ids": [
+      "baseline",
+      "source_plus_37",
+      "source_plus_113",
+      "east_v7_plus_89",
+      "west_v14_plus_89",
+      "north_v3_plus_89",
+      "south_v11_plus_89"
+    ]
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "adc13dc9864618479f67aa2537ab9b1395d3f743e554a52b369679f48ea58d63",
+  "checks": {
+    "dynamic_frequency_equals_two_times_half_span": true,
+    "dynamic_half_span_is_13_5": true,
+    "intrinsic_hex_metric_certified": true,
+    "projection_null_audit_certified": true,
+    "robust_oblongness_theorem_certified": true,
+    "small_fixed_windows_track_two_times_half_span": true,
+    "source_visualization_loaded": true,
+    "uncropped_lift_coordinates_do_not_have_axis27": true,
+    "uncropped_lift_coordinates_low_frequency_dominated": true,
+    "wide_windows_are_low_frequency_dominated": true
+  },
+  "claim": "The visible high-axis negative-space frequency is a render-window artifact, not a canonical D20 invariant. The dynamic window has half-span 13.5 and dominant high-axis frequency 27, while fixed small windows move the high-axis frequency as 2 * half_span. Uncropped lift coordinates and wide windows are low-frequency dominated. This artifact is retained only as a demotion/regression guard.",
+  "closure_boundary": {
+    "certifies": [
+      "the visible high-axis frequency is a render-window artifact: it equals 2 * the active crop half-span",
+      "small fixed crop windows move the high-axis frequency according to 2 * half_span",
+      "uncropped native lift coordinates are low-frequency dominated and do not show the crop-scale frequency",
+      "wide fixed windows are low-frequency dominated in the tested set"
+    ],
+    "does_not_certify": [
+      "that all negative-space structure is a render artifact",
+      "that no intrinsic D20 negative-space invariant exists",
+      "a physical spacetime interpretation",
+      "all possible crop windows or perturbations"
+    ]
+  },
+  "definition": {
+    "crop_window_test": "Compare the current dynamic crop render against fixed windows at the same active bbox center and against the uncropped native lift-coordinate state mask.",
+    "interpretation": "The exact high-axis frequency is a render-window artifact explained by the crop/zoom scale, not by an uncropped coordinate-free D20 lift frequency.",
+    "scale_frequency_rule": "For the small fixed windows tested here, the dominant high-axis negative-edge frequency equals 2 * half_span. The dynamic crop has half_span 13.5 and frequency 27."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "26cad3c20cc7918d7719836db4188b98bdb043f3d22afa056fc3327c3793f2c6",
+      "path": "generated/d20_lift_negative_space_crop_window_artifact.json",
+      "schema": "d20.proof_obligation.lift_negative_space_crop_window_artifact.artifact@1",
+      "sha256": "398d9e97508ae5eee7f77cdafa39e47cff1c1cb8e5d2d5dda3a3a5bd794d1bd7",
+      "status": "D20_LIFT_NEGATIVE_SPACE_CROP_WINDOW_ARTIFACT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_lift_negative_space_crop_window_artifact.py",
+      "sha256": "11ac39a7e7ea878fe9d1bdd2c7b52dcdcfeb41d3c84496d4191bab853d76d326"
+    },
+    "edge_steps": {
+      "path": "generated/d20_voltage_lift_edge_steps.json",
+      "sha256": "114ba946d3f5399ed101fe83abe6d33c3e515cc5b2a7561ffb6d4e4132edf6f0"
+    },
+    "intrinsic_hex_metric_report": {
+      "certificate_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd",
+      "path": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "sha256": "30d26b454eb3dd9bb889a2c31b1234a6cb2450f0e2237f51386342b21dbbcd91",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_CERTIFIED"
+    },
+    "projection_null_audit_report": {
+      "certificate_sha256": "d16fe7c97d46874791213211347b87abdf51fd725e24d2cb5385405fd63297c4",
+      "path": "data/invariants/d20/proof_obligations/d20_lift_negative_space_projection_null_audit/report.json",
+      "sha256": "9813f646239f1761ae06e5a494a90989c83cf447abfd71c1c198914efca8ea95",
+      "status": "D20_LIFT_NEGATIVE_SPACE_PROJECTION_NULL_AUDIT_CERTIFIED"
+    },
+    "robust_oblongness_theorem_report": {
+      "certificate_sha256": "6b6c802beb0b94e27613de34d19bf56020fa9704f7e14dcda494451f571ebd07",
+      "path": "data/invariants/d20/theorems/d20_voltage_lift_robust_oblongness/report.json",
+      "sha256": "b6a302ca27f75b4581365278578ffeaea8ea78d8a5240343c23c1da35064b888",
+      "status": "D20_VOLTAGE_LIFT_ROBUST_OBLONGNESS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_lift_negative_space_crop_window_artifact.py",
+      "sha256": "be501b9444ff8d47c7a26b2f42e77e85a234c333666bf06282f3eac86a6d70e8"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "060d1515ce4e78a3b8c14863873b951a3b808280ef2df7963fa6ae154584dfad"
+    }
+  },
+  "next_highest_yield_item": "Keep this out of the canonical invariant list. If a native negative-space claim is still desired, define it before crop/render projection and test it independently.",
+  "schema": "d20.proof_obligation.lift_negative_space_crop_window_artifact@1",
+  "status": "D20_LIFT_NEGATIVE_SPACE_CROP_WINDOW_ARTIFACT_CERTIFIED",
+  "witness": {
+    "simulation": {
+      "canvas_size": [
+        128,
+        128
+      ],
+      "dynamic_bbox": {
+        "center": [
+          64.0,
+          64.5
+        ],
+        "half_span": 13.5,
+        "scale_frequency": 27
+      },
+      "frame_topple_limit": 7000,
+      "observation_frame_after_warmup": 96,
+      "small_half_spans": [
+        8,
+        10,
+        12,
+        14
+      ],
+      "warmup_steps": 36,
+      "warmup_topple_limit": 9000,
+      "wide_half_spans": [
+        18,
+        20,
+        24,
+        32,
+        64
+      ]
+    },
+    "summary": {
+      "dynamic_dominant_high_axis_frequency": 27,
+      "dynamic_half_span": 13.5,
+      "small_window_expected_observed_frequency_pairs": [
+        [
+          16,
+          16
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          24,
+          24
+        ],
+        [
+          28,
+          28
+        ]
+      ],
+      "uncropped_top_four_signature": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "wide_window_top_four_signatures": {
+        "fixed_bbox_window_halfspan_18": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "fixed_bbox_window_halfspan_20": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "fixed_bbox_window_halfspan_24": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "fixed_bbox_window_halfspan_32": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "fixed_bbox_window_halfspan_64": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    }
+  }
+}

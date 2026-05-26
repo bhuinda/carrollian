@@ -1,0 +1,103 @@
+{
+  "artifact_sha256_excluding_hash_field": "2b83eb6a7286d54388211b426e9f1a73b27119c38a5858505173cfb5e4a6a97d",
+  "certification_tests": [
+    "verify d20.json and all source reports are certified",
+    "verify packet239 is selected by the id-free full-exposure sector-26 zero-pair rule",
+    "verify packet239 is the 240th packet only as zero-based ordinal",
+    "verify the packet universe is 512 and the full-exposure frame has 20 packets",
+    "verify 20 full-exposure packets times 12 A12 classes equals 240 but remains only a candidate",
+    "verify packet239 seed propagation closes on packets 238 and 239",
+    "verify packet239 stabilizer data is uniform and has D8 real signed 2x2 linear image",
+    "scan selected certified reports for explicit E8-root or rank-8 Cartan/Dynkin witnesses",
+    "classify Golay 240 occurrences as W24 shell-profile entries"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "2b83eb6a7286d54388211b426e9f1a73b27119c38a5858505173cfb5e4a6a97d",
+      "path": "generated/d20_packet239_e8_root_relation_probe.json",
+      "schema": "d20.proof_obligation.packet239_e8_root_relation_probe.artifact@1",
+      "sha256": "d065f08ff691cba028e090fea06498ebca95e7fc12c0b1e4ad3bb9d47f622e40",
+      "status": "D20_PACKET239_E8_ROOT_RELATION_PROBE_DERIVED"
+    },
+    "d20": {
+      "d20_sha256": "3973b3cd3e933d77777420fd882f04c8b9f31dc13cb2a49a36dea11941f65c0a",
+      "path": "d20.json",
+      "schema": "d20.object",
+      "sha256": "9355a5a1cc0bd3278f8e6151a9fb2cafd5a1930ee9b2313036377d245a31e4f7",
+      "status": "D20_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_packet239_e8_root_relation_probe.py",
+      "sha256": "b3b794e3ffa8aaad7ad4a987e914ba4e0b47286954dd14fa57b9e16568caf709"
+    },
+    "full_exposure_canonical_labelled_frame": {
+      "certificate_sha256": "63895b6c26dffac785571e72fac8d5e59676a06afd5a27d00ecdb14837eff50c",
+      "path": "data/invariants/d20/theorems/full_exposure_canonical_labelled_frame/report.json",
+      "schema": "d20.theorem.full_exposure_canonical_labelled_frame",
+      "sha256": "7a08d667b81a7df1e28cc5564c2e7dc5de6273104e02afc20bcb609ce9726cc1",
+      "status": "D20_FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_CERTIFIED"
+    },
+    "golay_shell_exhaustive_two_level_sos": {
+      "certificate_sha256": "5d3b36d10878097a70b9fb777420bd34bcac18841c14575dbfc522d0afcffbfe",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_shell_exhaustive_two_level_sos/report.json",
+      "schema": "d20.proof_obligation.golay_shell_exhaustive_two_level_sos@1",
+      "sha256": "42a51ae5cdfc780a5a366381ec075306de98a843d5adf549cee75e42e615ebd8",
+      "status": "D20_GOLAY_SHELL_EXHAUSTIVE_TWO_LEVEL_SOS_CERTIFIED"
+    },
+    "packet239_arithmetic_resonance": {
+      "certificate_sha256": "15a70483ee589bd992ec68e15bc5d0b444fb1c57e0cb0794d4a0dcc65b32c34c",
+      "path": "data/invariants/d20/theorems/packet239_arithmetic_resonance/report.json",
+      "schema": "d20.theorem.packet239_arithmetic_resonance",
+      "sha256": "9c5e232865b59a6b77aaa59610c24e56328da28c26f3f33aeb4758b7e7b81579",
+      "status": "D20_PACKET239_ARITHMETIC_RESONANCE_CERTIFIED"
+    },
+    "packet239_seed_propagation": {
+      "certificate_sha256": "70e469ac0715a410d9ccfefbfb2de4d47410ec48b238173079e2735e8fe52aab",
+      "path": "data/invariants/d20/theorems/packet239_seed_propagation/report.json",
+      "schema": "d20.theorem.packet239_seed_propagation",
+      "sha256": "7e7f452900c58685ebf98a476d34a903ad208e4cf28cc6ad103cd3b03404e990",
+      "status": "D20_PACKET239_SEED_PROPAGATION_CERTIFIED"
+    },
+    "packet239_stabilizer_seed_candidate": {
+      "certificate_sha256": "ac7c500ad881f8ee4858af98d299d117748a2b5320cf9cdc60c024fec9b34dc8",
+      "path": "data/invariants/d20/theorems/packet239_stabilizer_seed_candidate/report.json",
+      "schema": "d20.theorem.packet239_stabilizer_seed_candidate",
+      "sha256": "6dd2a672b570d749d79b5f123b0f1dc309c9603ba27457676f7fac91afb4caba",
+      "status": "D20_PACKET239_STABILIZER_SEED_CANDIDATE_CERTIFIED"
+    },
+    "packet_charge_frame_classifier": {
+      "certificate_sha256": "b259b47b257194380abffc64ed100b8b75e99e1b3984d5fc4337ecc4c61b3a6a",
+      "path": "data/invariants/d20/theorems/projective_packet_charge_frame_classifier/report.json",
+      "schema": "d20.theorem.projective_packet_charge_frame_classifier",
+      "sha256": "106c90259b9d253a335ddc9c07110e5ba350d16c9ca6782b415752b9d5d364ef",
+      "status": "D20_PROJECTIVE_PACKET_CHARGE_FRAME_CLASSIFIER_CERTIFIED"
+    },
+    "packet_spectral_charge_table": {
+      "certificate_sha256": "eef79da7c90cf02d528744968905417e372c67e70df97f7de76cb555709e7b8b",
+      "path": "data/invariants/d20/theorems/projective_packet_spectral_charge_table/report.json",
+      "schema": "d20.theorem.projective_packet_spectral_charge_table",
+      "sha256": "fc02aab1cb58fe2473cb8c7997ed094c893ce3f0b6979d5f695b8150de610875",
+      "status": "D20_PROJECTIVE_PACKET_SPECTRAL_CHARGE_TABLE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_packet239_e8_root_relation_probe.py",
+      "sha256": "c710611666071598f3f6f04125d994270c920ea2d2ad00e194fb21083e994b97"
+    },
+    "w24_hexacode_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "schema": "d20.proof_obligation.w24_hexacode_row_alphabetization@1",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "manifest_sha256": "5915cb67162ca58a83d3177b837f37f84255164c912189f2bb37ac450d956e2a",
+  "name": "d20_packet239_e8_root_relation_probe",
+  "outputs": {
+    "artifact": "generated/d20_packet239_e8_root_relation_probe.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_packet239_e8_root_relation_probe/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/d20_packet239_e8_root_relation_probe/report.json"
+  },
+  "report_sha256": "4b5a8f2fcc50131961e2add445a2e833122f03f2d170729a0a5fa0075874e580",
+  "schema": "d20.proof_obligation.packet239_e8_root_relation_probe_manifest@1"
+}

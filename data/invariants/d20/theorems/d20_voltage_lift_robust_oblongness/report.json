@@ -1,0 +1,147 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6b6c802beb0b94e27613de34d19bf56020fa9704f7e14dcda494451f571ebd07",
+  "checks": {
+    "all_named_variants_are_oblong": true,
+    "cooriented_selector_is_coordinate_amplified": true,
+    "family_artifact_hash_verified": true,
+    "five_named_variants_tested": true,
+    "intrinsic_artifact_hash_verified": true,
+    "intrinsic_ratio_is_31_over_23": true,
+    "regular_hex_label_delta_matches_intrinsic": true,
+    "summary_min_median_max_match_variants": true
+  },
+  "claim": "For the named five-rule D20 voltage-lift family recorded by the local witness, every tested natural lift has an oblong covariance ellipse. The intrinsic regular-hex metric supplies the canonical base ratio 31/23, while the cooriented sign/selector render is a coordinate-amplified projection rather than the intrinsic metric.",
+  "closure_boundary": {
+    "certifies": [
+      "all five named natural D20 voltage-lift variants are anisotropic",
+      "the canonical intrinsic regular-hex lift is oblong with exact ratio 31/23",
+      "the cooriented sign/selector render is the strongest named projection, with ratio 5.597704972546332",
+      "the stronger cooriented render is recorded as coordinate-amplified relative to the intrinsic hex metric",
+      "the robust-oblongness proof-layer integration obligation is discharged for this scoped theorem"
+    ],
+    "does_not_certify": [
+      "that every possible D20 voltage lift is oblong",
+      "that the cooriented sign/selector render is the intrinsic metric",
+      "a rebuild of d20.json or of the finite critical group",
+      "a physical continuum sandpile limit"
+    ]
+  },
+  "definition": {
+    "coordinate_amplification": "The ratio between the strongest named projection and the intrinsic regular-hex base ratio.",
+    "intrinsic_base_metric": "The certified regular-hex Dih_6 metric on signed H6 labels, using edge voltage hex(entering_label) - hex(leaving_label).",
+    "named_lift_family": "The five natural edge-coordinate rules in generated/d20_voltage_lift_family_comparison.json.",
+    "robust_oblongness": "Every named lift has covariance anisotropy ratio greater than 1."
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_d20_voltage_lift_robust_oblongness.py",
+      "sha256": "719e48e99acd0617a8b5d5f171f3849c8658094bd22cf3ed77bb335fc787d879"
+    },
+    "family_comparison": {
+      "artifact_sha256_excluding_this_field": "3e6b88c6bce4e7d0cc3ac1fa22f9a749eb7c7bcddf0cee12729c096700ced6e0",
+      "path": "generated/d20_voltage_lift_family_comparison.json",
+      "schema": "d20.sandpile.voltage_lift.family_comparison@1",
+      "sha256": "e5a35d9943eb2fa34c04835562e49721a55184b604338d3e1ef5ccf259f704e4",
+      "status": "PROVISIONAL_RENDER_LIFT_FAMILY_AUDIT"
+    },
+    "intrinsic_hex_metric_artifact": {
+      "artifact_sha256_excluding_this_field": "6602190c6f48350ecb8b7ca47c553b494d10930aac7525b56edf8103818deb74",
+      "path": "generated/d20_voltage_lift_intrinsic_hex_metric.json",
+      "schema": "d20.sandpile.voltage_lift.intrinsic_hex_metric@1",
+      "sha256": "a07d56be9d43b37df960d47f4b88cd754b90cf6d70c7ca6710430f4c8388da3f",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_DERIVED"
+    },
+    "intrinsic_hex_metric_report": {
+      "certificate_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd",
+      "path": "data/invariants/d20/proof_obligations/d20_voltage_lift_intrinsic_hex_metric/report.json",
+      "sha256": "30d26b454eb3dd9bb889a2c31b1234a6cb2450f0e2237f51386342b21dbbcd91",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_voltage_lift_robust_oblongness.py",
+      "sha256": "88871dc631ef303cc7373556fac2e03b6d4d096e39ba1c105aa87377ec15a9c6"
+    }
+  },
+  "schema": "d20.theorem.voltage_lift_robust_oblongness@1",
+  "status": "D20_VOLTAGE_LIFT_ROBUST_OBLONGNESS_CERTIFIED",
+  "witness": {
+    "anisotropic_variant_count": 5,
+    "anisotropy_ratio_max": 5.597704972546332,
+    "anisotropy_ratio_median": 2.750000000000001,
+    "anisotropy_ratio_min": 1.3478260869565217,
+    "coordinate_amplification_over_intrinsic": 4.153135947373085,
+    "intrinsic_ratio": 1.3478260869565217,
+    "intrinsic_ratio_exact": "31/23",
+    "ranking_by_anisotropy_desc": [
+      {
+        "anisotropy_ratio": 5.597704972546332,
+        "id": "cooriented_sign_selector",
+        "label": "cooriented sign + selector tie-break",
+        "principal_axis_angle_degrees": -41.25207118013507,
+        "rank": 1
+      },
+      {
+        "anisotropy_ratio": 4.043478260869565,
+        "id": "integer_label_delta",
+        "label": "integer label delta",
+        "principal_axis_angle_degrees": -45,
+        "rank": 2
+      },
+      {
+        "anisotropy_ratio": 2.750000000000001,
+        "id": "integer_unit_direction",
+        "label": "integer unit direction",
+        "principal_axis_angle_degrees": -45.00000000000002,
+        "rank": 3
+      },
+      {
+        "anisotropy_ratio": 1.4999999999999998,
+        "id": "regular_hex_unit_direction",
+        "label": "regular-hex unit direction",
+        "principal_axis_angle_degrees": -59.99999999999999,
+        "rank": 4
+      },
+      {
+        "anisotropy_ratio": 1.3478260869565217,
+        "id": "regular_hex_label_delta",
+        "label": "regular-hex label delta",
+        "principal_axis_angle_degrees": -59.99999999999999,
+        "rank": 5
+      }
+    ],
+    "variant_metrics": [
+      {
+        "anisotropy_ratio": 5.597704972546332,
+        "id": "cooriented_sign_selector",
+        "label": "cooriented sign + selector tie-break",
+        "principal_axis_angle_degrees": -41.25207118013507
+      },
+      {
+        "anisotropy_ratio": 4.043478260869565,
+        "id": "integer_label_delta",
+        "label": "integer label delta",
+        "principal_axis_angle_degrees": -45
+      },
+      {
+        "anisotropy_ratio": 2.750000000000001,
+        "id": "integer_unit_direction",
+        "label": "integer unit direction",
+        "principal_axis_angle_degrees": -45.00000000000002
+      },
+      {
+        "anisotropy_ratio": 1.3478260869565217,
+        "id": "regular_hex_label_delta",
+        "label": "regular-hex label delta",
+        "principal_axis_angle_degrees": -59.99999999999999
+      },
+      {
+        "anisotropy_ratio": 1.4999999999999998,
+        "id": "regular_hex_unit_direction",
+        "label": "regular-hex unit direction",
+        "principal_axis_angle_degrees": -59.99999999999999
+      }
+    ],
+    "variants_tested": 5
+  }
+}

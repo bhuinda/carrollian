@@ -1,0 +1,527 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "09637943533b984ab406856c54a2f8b0de2b2163620e783bf725653d65e9a877",
+  "checks": {
+    "all_deterministic_candidates_leave_24_edges": true,
+    "deterministic_projection_candidate_count_is_150": true,
+    "each_lambda2_h6_duad_has_two_sector_edges": true,
+    "extra_removed_pool_has_25_edges": true,
+    "fixed_cocircuit_has_five_edges_plus_e33": true,
+    "minor_puncture_search_is_certified_negative": true,
+    "no_deterministic_h6_projection_is_w24_balanced": true,
+    "relaxed_pair_assignment_is_too_weak": true,
+    "sector33_dual_input_is_certified": true,
+    "sector33_ground_is_30_edges_plus_e33": true,
+    "target_w24_is_h6_by_f4": true,
+    "typed_coordinate_morphism_remains_open": true,
+    "w24_row_alphabetization_is_certified": true
+  },
+  "claim": "After fixing the certified W24 H6 x F4 row alphabetization, the natural sector33 cocircuit-plus-one coordinate-map family does not produce a typed W24 coordinate bijection. The six deterministic H6 projection rules over the 25 possible extra deletions leave 150 candidates, and none has four remaining edges over each H6 column. This is a typed finite negative result, not a proof against more general external row-refined maps.",
+  "closure_boundary": {
+    "certifies": [
+      "the W24 target alphabet is fixed as H6 x F4",
+      "the sector33 edge alphabet has 15 Lambda^2 H6 duads with two edges each",
+      "the fixed positive cocircuit has five old edges plus e33",
+      "150 deterministic typed projection candidates were tested",
+      "no deterministic candidate balances to four coordinates over each H6 label",
+      "the prior unlabelled cocircuit-plus-one binary minor search remains negative"
+    ],
+    "does_not_certify": [
+      "absence of a sector33-to-W24 morphism using non-deterministic per-edge choices",
+      "absence of a morphism using additional row-refined or hexacode data",
+      "a canonical F4 row assignment for sector33 edges",
+      "a rebuild of d20.json or any finite critical group artifact"
+    ]
+  },
+  "definition": {
+    "sector33_source": "The source ground is 30 D20 public edge elements plus e33. Each public edge has three H6 pairs: the shared duad, the swapped pair, and the missing pair.",
+    "tested_family": "Delete the fixed sector33 positive cocircuit, then delete one further old edge. For each remaining 24-edge set, test the six deterministic H6 projection rules shared[0], shared[1], swapped[0], swapped[1], missing[0], missing[1].",
+    "typed_target": "W24 coordinates are the certified H6 column labels crossed with four F4 row labels."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "6f6036c0f7dec7f4bd995a3d3b7848d64f12121e4f280eea42ee6b4630ff29ab",
+      "path": "generated/d20_sector33_w24_typed_coordinate_search.json",
+      "schema": "d20.proof_obligation.sector33_w24_typed_coordinate_search.artifact@1",
+      "sha256": "46d4124ba79cd7cbec456ff5490c6b27e0d9e868d62928758251c322dfacadb4",
+      "status": "D20_SECTOR33_W24_TYPED_COORDINATE_SEARCH_DERIVED"
+    },
+    "d20_json": {
+      "path": "d20.json",
+      "sha256": "9355a5a1cc0bd3278f8e6151a9fb2cafd5a1930ee9b2313036377d245a31e4f7",
+      "status": "D20_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_sector33_w24_typed_coordinate_search.py",
+      "sha256": "e6e7a8039e896fb87bc63cd20b983db454c69f298ae283996435154b0397e13b"
+    },
+    "minor_puncture_search": {
+      "certificate_sha256": "dda3aa7b72a89d541c66a4a62b2a492c3ef4780b3653360c26a7274454c488b8",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_hamming_minor_puncture_search/report.json",
+      "sha256": "ebf134c5183fb8b89df947031bd48048df76177cf3369adfaf04c3f7ed12bda0",
+      "status": "D20_GOLAY_HAMMING_MINOR_PUNCTURE_SEARCH_CERTIFIED"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_sector33_w24_typed_coordinate_search.py",
+      "sha256": "f6ac1db3e54b3cea9364856ebf66d43899516349c095466d6a8eec83c9dd79b6"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Promote the search from deterministic H6 projection rules to an explicit finite F4 row-lift solver: assign rows to the 24 surviving sector33 edges, then test the induced binary row space against the certified W24 Golay basis.",
+  "schema": "d20.proof_obligation.sector33_w24_typed_coordinate_search@1",
+  "status": "D20_SECTOR33_W24_TYPED_COORDINATE_SEARCH_CERTIFIED",
+  "witness": {
+    "relaxed_assignment_boundary": {
+      "balanced_extra_deletions_by_pair_family": {
+        "missing_pair": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "shared_duad": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "swapped_pair": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ]
+      },
+      "interpretation": "If each edge may choose either label from a pair independently, every extra deletion can be balanced to four edges per H6 label. That relaxation is not a canonical coordinate map; it shows why a deterministic row/column rule is needed."
+    },
+    "sector33_edge_type": {
+      "ground_edge_count": 30,
+      "lambda2_h6_duad_profile": {
+        "{B+,S+}": [
+          9,
+          26
+        ],
+        "{B+,S-}": [
+          7,
+          22
+        ],
+        "{B+,V+}": [
+          4,
+          21
+        ],
+        "{B+,V-}": [
+          2,
+          20
+        ],
+        "{B-,B+}": [
+          0,
+          5
+        ],
+        "{B-,S+}": [
+          8,
+          14
+        ],
+        "{B-,S-}": [
+          6,
+          16
+        ],
+        "{B-,V+}": [
+          3,
+          10
+        ],
+        "{B-,V-}": [
+          1,
+          12
+        ],
+        "{S-,S+}": [
+          19,
+          29
+        ],
+        "{V+,S+}": [
+          18,
+          28
+        ],
+        "{V+,S-}": [
+          17,
+          25
+        ],
+        "{V-,S+}": [
+          15,
+          24
+        ],
+        "{V-,S-}": [
+          13,
+          23
+        ],
+        "{V-,V+}": [
+          11,
+          27
+        ]
+      },
+      "new_element": "e33",
+      "new_element_id": 30,
+      "positive_cocircuit_old_edges": [
+        1,
+        2,
+        11,
+        21,
+        22
+      ],
+      "positive_cocircuit_support": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ]
+    },
+    "target_w24_type": {
+      "column_labels": [
+        "B-",
+        "B+",
+        "V-",
+        "V+",
+        "S-",
+        "S+"
+      ],
+      "coordinate_count": 24,
+      "coordinate_type": "H6 column label times F4 row label",
+      "row_f4_labels": [
+        {
+          "f4_label": "0",
+          "f4_value": 0,
+          "row": 0
+        },
+        {
+          "f4_label": "1",
+          "f4_value": 1,
+          "row": 1
+        },
+        {
+          "f4_label": "omega",
+          "f4_value": 2,
+          "row": 2
+        },
+        {
+          "f4_label": "omega+1",
+          "f4_value": 3,
+          "row": 3
+        }
+      ]
+    },
+    "typed_search": {
+      "all_remaining_sets_have_24_edges": true,
+      "balanced_candidate_count": 0,
+      "best_l1_defect_from_four_per_h6_label": 12,
+      "best_records_first_12": [
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 5,
+            "B-": 8,
+            "S+": 0,
+            "S-": 2,
+            "V+": 4,
+            "V-": 5
+          },
+          "extra_removed": 0,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "shared_duad[0]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 6,
+            "B-": 8,
+            "S+": 0,
+            "S-": 3,
+            "V+": 3,
+            "V-": 4
+          },
+          "extra_removed": 0,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "swapped_pair[0]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 3,
+            "B-": 0,
+            "S+": 4,
+            "S-": 7,
+            "V+": 7,
+            "V-": 3
+          },
+          "extra_removed": 0,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "missing_pair[1]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 5,
+            "B-": 8,
+            "S+": 0,
+            "S-": 2,
+            "V+": 4,
+            "V-": 5
+          },
+          "extra_removed": 3,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "shared_duad[0]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 5,
+            "B-": 8,
+            "S+": 0,
+            "S-": 3,
+            "V+": 3,
+            "V-": 5
+          },
+          "extra_removed": 3,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "swapped_pair[0]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 3,
+            "B-": 0,
+            "S+": 4,
+            "S-": 7,
+            "V+": 7,
+            "V-": 3
+          },
+          "extra_removed": 3,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "missing_pair[1]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 4,
+            "B-": 9,
+            "S+": 0,
+            "S-": 2,
+            "V+": 4,
+            "V-": 5
+          },
+          "extra_removed": 4,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "shared_duad[0]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 6,
+            "B-": 7,
+            "S+": 0,
+            "S-": 3,
+            "V+": 3,
+            "V-": 5
+          },
+          "extra_removed": 4,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "swapped_pair[0]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 3,
+            "B-": 0,
+            "S+": 5,
+            "S-": 6,
+            "V+": 7,
+            "V-": 3
+          },
+          "extra_removed": 4,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "missing_pair[1]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 5,
+            "B-": 8,
+            "S+": 0,
+            "S-": 2,
+            "V+": 4,
+            "V-": 5
+          },
+          "extra_removed": 5,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "shared_duad[0]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 3,
+            "B-": 0,
+            "S+": 5,
+            "S-": 7,
+            "V+": 6,
+            "V-": 3
+          },
+          "extra_removed": 5,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "missing_pair[1]"
+        },
+        {
+          "balanced_four_per_h6_label": false,
+          "column_count_vector": {
+            "B+": 5,
+            "B-": 8,
+            "S+": 0,
+            "S-": 2,
+            "V+": 4,
+            "V-": 5
+          },
+          "extra_removed": 6,
+          "l1_defect_from_four_per_h6_label": 12,
+          "remaining_edge_count": 24,
+          "rule": "shared_duad[0]"
+        }
+      ],
+      "candidate_count": 150,
+      "defect_histogram": {
+        "12": 57,
+        "14": 38,
+        "16": 22,
+        "18": 30,
+        "20": 3
+      },
+      "extra_removed_count": 25,
+      "extra_removed_pool": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "fixed_removed_cocircuit": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "projection_rules": [
+        "shared_duad[0]",
+        "shared_duad[1]",
+        "swapped_pair[0]",
+        "swapped_pair[1]",
+        "missing_pair[0]",
+        "missing_pair[1]"
+      ]
+    }
+  }
+}

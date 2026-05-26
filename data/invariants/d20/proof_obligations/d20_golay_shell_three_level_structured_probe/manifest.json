@@ -1,0 +1,52 @@
+{
+  "artifact_sha256_excluding_hash_field": "c682c5f7b3b97255932feea5367c0722f5c4af3468679d017f59978251f4064a",
+  "certification_tests": [
+    "verify W24 endpoint and exhaustive two-level input",
+    "rebuild W24 from the certified generator basis",
+    "construct selected structured three-level partitions",
+    "compute exact shell intersection profiles for selected partitions",
+    "run deterministic bounded gradient ascent from fixed starts on each unique profile",
+    "verify no positive structured three-level maximum is found",
+    "verify local Hessian at equality is nonpositive for every selected profile",
+    "record that full three-level exhaustion remains open"
+  ],
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "c682c5f7b3b97255932feea5367c0722f5c4af3468679d017f59978251f4064a",
+      "path": "generated/d20_golay_shell_three_level_structured_probe.json",
+      "schema": "d20.proof_obligation.golay_shell_three_level_structured_probe.artifact@1",
+      "sha256": "c3387d0d4602f4038fc266fa11692cefc1400b1f3f26aabf7b3ee2d81da77fe3",
+      "status": "D20_GOLAY_SHELL_THREE_LEVEL_STRUCTURED_PROBE_NO_COUNTEREXAMPLE"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_golay_shell_three_level_structured_probe.py",
+      "sha256": "5129316479ca149722a3c4881d02cb07653eda37a61fdcd84e8b0dbf9597374e"
+    },
+    "exhaustive_two_level_sos": {
+      "certificate_sha256": "5d3b36d10878097a70b9fb777420bd34bcac18841c14575dbfc522d0afcffbfe",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_shell_exhaustive_two_level_sos/report.json",
+      "sha256": "42a51ae5cdfc780a5a366381ec075306de98a843d5adf549cee75e42e615ebd8",
+      "status": "D20_GOLAY_SHELL_EXHAUSTIVE_TWO_LEVEL_SOS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_golay_shell_three_level_structured_probe.py",
+      "sha256": "3d5ef3d1745a822c630226fe7d51daa1c2b45c0ed27991e3a4851a7fbf34c608"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "manifest_sha256": "ec333b39cc0ceebda50c67477f3e6dedcf8db69e2b817953b4ff61f6f416d62b",
+  "name": "d20_golay_shell_three_level_structured_probe",
+  "outputs": {
+    "artifact": "generated/d20_golay_shell_three_level_structured_probe.json",
+    "manifest": "data/invariants/d20/proof_obligations/d20_golay_shell_three_level_structured_probe/manifest.json",
+    "profile_csv": "data/invariants/d20/proof_obligations/d20_golay_shell_three_level_structured_probe/three_level_structured_profiles.csv",
+    "report": "data/invariants/d20/proof_obligations/d20_golay_shell_three_level_structured_probe/report.json"
+  },
+  "report_sha256": "b668840c0cbd184298783389484a44175ab5d206e984bac84a46a6914a420da5",
+  "schema": "d20.proof_obligation.golay_shell_three_level_structured_probe_manifest@1"
+}

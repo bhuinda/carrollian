@@ -1,0 +1,4030 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6a343c6b56ea2c6696e68066a4c4058d66feee9fcdfc80e993f5b83c165bf764",
+  "checks": {
+    "a12_class_count_is_12": true,
+    "candidate_is_cardinality_match_not_root_witness": true,
+    "candidate_rows_are_uniquely_labelled": true,
+    "cartesian_candidate_has_240_rows": true,
+    "d20_input_is_certified": true,
+    "full_exposure_frame_is_certified": true,
+    "full_exposure_packet_count_is_20": true,
+    "natural_product_embedding_has_240_norm2_vectors": true,
+    "natural_product_embedding_has_no_antipodal_pairs": true,
+    "natural_product_embedding_inner_histogram_is_not_e8": true,
+    "natural_product_embedding_rank_is_31": true,
+    "natural_product_embedding_rank_is_not_e8_rank": true,
+    "nontrivial_morphism_or_projection_still_required": true,
+    "packet239_contributes_12_candidate_rows": true,
+    "previous_packet239_e8_probe_is_certified": true,
+    "standard_e8_shell_has_240_norm2_roots": true,
+    "standard_e8_shell_has_240_ordered_antipodal_pairs": true,
+    "standard_e8_shell_rank_is_8": true
+  },
+  "claim": "The 20 x 12 full-exposure-by-A12 candidate shell is real and has 240 labelled elements, with packet239 contributing 12 of them. Under the direct product incidence embedding (packet,A12)->e_packet+f_A12, the shell has norm square 2 but rank 31, no antipodal pairs, and the wrong inner-product histogram. Thus the product is a cardinality source, not yet an E8 root-shell morphism.",
+  "closure_boundary": {
+    "certifies": [
+      "the explicit 20 x 12 candidate has exactly 240 labelled elements",
+      "packet239 contributes exactly 12 of those labelled elements",
+      "the natural product incidence embedding gives 240 norm-square-2 vectors",
+      "that natural embedding has rank 31, not rank 8",
+      "that natural embedding has no antipodal pairs, while E8 has 240 ordered antipodal root pairs",
+      "the natural product inner-product histogram differs from the standard E8 root-shell histogram"
+    ],
+    "does_not_certify": [
+      "that no other nonlinear or quotient morphism from D20 to E8 exists",
+      "an E8 Gram matrix for the 20 x 12 candidate",
+      "a signing, projection, or quotient reducing the product shell to rank 8",
+      "a literature-level classification claim outside the local artifacts"
+    ]
+  },
+  "definition": {
+    "candidate_shell": "The Cartesian product of the 20 full-exposure packet-frame rows with the 12 CY(d20)=A12 classes.",
+    "e8_reference": "The standard 240-root E8 shell, used only as an exact finite comparison target.",
+    "natural_product_embedding": "The label-forgetting incidence map (i,a)->e_i+f_a in the direct sum of packet-frame and A12 class coordinates."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "2b704fd934fbaef938047b799e96f07f72bef45ecd4771a5f38316665ba61dc1",
+      "path": "generated/d20_packet239_e8_20x12_candidate_shell_probe.json",
+      "schema": "d20.proof_obligation.packet239_e8_20x12_candidate_shell_probe.artifact@1",
+      "sha256": "f6ac334e06e44dfcd5fcd254bb245b4d8a586af8627bf1d2b008ed8bbc5e3019",
+      "status": "D20_PACKET239_E8_20X12_CANDIDATE_SHELL_PROBE_DERIVED"
+    },
+    "d20": {
+      "d20_sha256": "3973b3cd3e933d77777420fd882f04c8b9f31dc13cb2a49a36dea11941f65c0a",
+      "path": "d20.json",
+      "schema": "d20.object",
+      "sha256": "9355a5a1cc0bd3278f8e6151a9fb2cafd5a1930ee9b2313036377d245a31e4f7",
+      "status": "D20_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_packet239_e8_20x12_candidate_shell_probe.py",
+      "sha256": "ecbd5025401b019005a49516a3517c882af204209643eb0afd2d2aafab4f38c0"
+    },
+    "full_exposure_frame": {
+      "certificate_sha256": "63895b6c26dffac785571e72fac8d5e59676a06afd5a27d00ecdb14837eff50c",
+      "path": "data/invariants/d20/theorems/full_exposure_canonical_labelled_frame/report.json",
+      "schema": "d20.theorem.full_exposure_canonical_labelled_frame",
+      "sha256": "7a08d667b81a7df1e28cc5564c2e7dc5de6273104e02afc20bcb609ce9726cc1",
+      "status": "D20_FULL_EXPOSURE_CANONICAL_LABELLED_FRAME_CERTIFIED"
+    },
+    "previous_packet239_e8_probe": {
+      "certificate_sha256": "4b5a8f2fcc50131961e2add445a2e833122f03f2d170729a0a5fa0075874e580",
+      "path": "data/invariants/d20/proof_obligations/d20_packet239_e8_root_relation_probe/report.json",
+      "schema": "d20.proof_obligation.packet239_e8_root_relation_probe@1",
+      "sha256": "692367b60e12fe2e3c253efb32b6808ea66be644ed950affc7ae06509aac7edf",
+      "status": "D20_PACKET239_E8_ROOT_RELATION_PROBE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_packet239_e8_20x12_candidate_shell_probe.py",
+      "sha256": "23ec283d24e4a17eff326cbb7bfc8983e7b5052bd335350b2910986bf6ef7b8f"
+    }
+  },
+  "next_highest_yield_item": "Search for a nontrivial signing/projection of the 20 x 12 shell whose Gram matrix has rank 8, norm square 2, 120 antipodal pairs, and the E8 inner-product histogram.",
+  "schema": "d20.proof_obligation.packet239_e8_20x12_candidate_shell_probe@1",
+  "status": "D20_PACKET239_E8_20X12_CANDIDATE_SHELL_PROBE_CERTIFIED",
+  "witness": {
+    "candidate_definition": {
+      "a12_class_count": 12,
+      "candidate_count": 240,
+      "candidate_rows": [
+        {
+          "a12_class": 0,
+          "candidate_label": "F00:A00",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 0,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F00:A01",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 1,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F00:A02",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 2,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F00:A03",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 3,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F00:A04",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 4,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F00:A05",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 5,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F00:A06",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 6,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F00:A07",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 7,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F00:A08",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 8,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F00:A09",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 9,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F00:A10",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 10,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F00:A11",
+          "charge_frame_key": "high|zero_pair|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "zero_pair",
+          "fine_spectral_charge_key": "32|0|0|0|25",
+          "frame_index": 0,
+          "is_packet239_row": true,
+          "mass_frame": "high",
+          "packet_id": 239,
+          "row_index": 11,
+          "sector26_clock_pair": [
+            0,
+            0
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F01:A00",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 12,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F01:A01",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 13,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F01:A02",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 14,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F01:A03",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 15,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F01:A04",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 16,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F01:A05",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 17,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F01:A06",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 18,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F01:A07",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 19,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F01:A08",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 20,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F01:A09",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 21,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F01:A10",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 22,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F01:A11",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|0|25",
+          "frame_index": 1,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 254,
+          "row_index": 23,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F02:A00",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 24,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F02:A01",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 25,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F02:A02",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 26,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F02:A03",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 27,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F02:A04",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 28,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F02:A05",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 29,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F02:A06",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 30,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F02:A07",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 31,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F02:A08",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 32,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F02:A09",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 33,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F02:A10",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 34,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F02:A11",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|4|8|0|25",
+          "frame_index": 2,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 238,
+          "row_index": 35,
+          "sector26_clock_pair": [
+            24,
+            6
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F03:A00",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 36,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F03:A01",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 37,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F03:A02",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 38,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F03:A03",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 39,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F03:A04",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 40,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F03:A05",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 41,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F03:A06",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 42,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F03:A07",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 43,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F03:A08",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 44,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F03:A09",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 45,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F03:A10",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 46,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F03:A11",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|6|0|0|25",
+          "frame_index": 3,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 191,
+          "row_index": 47,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F04:A00",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 48,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F04:A01",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 49,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F04:A02",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 50,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F04:A03",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 51,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F04:A04",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 52,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F04:A05",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 53,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F04:A06",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 54,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F04:A07",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 55,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F04:A08",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 56,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F04:A09",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 57,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F04:A10",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 58,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F04:A11",
+          "charge_frame_key": "middle|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "28|10|0|0|25",
+          "frame_index": 4,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 175,
+          "row_index": 59,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F05:A00",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 60,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F05:A01",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 61,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F05:A02",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 62,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F05:A03",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 63,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F05:A04",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 64,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F05:A05",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 65,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F05:A06",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 66,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F05:A07",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 67,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F05:A08",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 68,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F05:A09",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 69,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F05:A10",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 70,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F05:A11",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|10|8|0|25",
+          "frame_index": 5,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 190,
+          "row_index": 71,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F06:A00",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 72,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F06:A01",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 73,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F06:A02",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 74,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F06:A03",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 75,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F06:A04",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 76,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F06:A05",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 77,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F06:A06",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 78,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F06:A07",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 79,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F06:A08",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 80,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F06:A09",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 81,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F06:A10",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 82,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F06:A11",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|12|0|0|25",
+          "frame_index": 6,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 247,
+          "row_index": 83,
+          "sector26_clock_pair": [
+            6,
+            6
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F07:A00",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 84,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F07:A01",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 85,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F07:A02",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 86,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F07:A03",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 87,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F07:A04",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 88,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F07:A05",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 89,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F07:A06",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 90,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F07:A07",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 91,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F07:A08",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 92,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F07:A09",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 93,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F07:A10",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 94,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F07:A11",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "24|14|8|0|25",
+          "frame_index": 7,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 174,
+          "row_index": 95,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F08:A00",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 96,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F08:A01",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 97,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F08:A02",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 98,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F08:A03",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 99,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F08:A04",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 100,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F08:A05",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 101,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F08:A06",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 102,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F08:A07",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 103,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F08:A08",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 104,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F08:A09",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 105,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F08:A10",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 106,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F08:A11",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|16|8|0|25",
+          "frame_index": 8,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 246,
+          "row_index": 107,
+          "sector26_clock_pair": [
+            4,
+            12
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F09:A00",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 108,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F09:A01",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 109,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F09:A02",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 110,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F09:A03",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 111,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F09:A04",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 112,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F09:A05",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 113,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F09:A06",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 114,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F09:A07",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 115,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F09:A08",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 116,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F09:A09",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 117,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F09:A10",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 118,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F09:A11",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8_silent|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|0|25",
+          "frame_index": 9,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 255,
+          "row_index": 119,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F10:A00",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 120,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F10:A01",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 121,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F10:A02",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 122,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F10:A03",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 123,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F10:A04",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 124,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F10:A05",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 125,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F10:A06",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 126,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F10:A07",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 127,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F10:A08",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 128,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F10:A09",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 129,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F10:A10",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 130,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F10:A11",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|0|8|2|25",
+          "frame_index": 10,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 502,
+          "row_index": 131,
+          "sector26_clock_pair": [
+            22,
+            4
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F11:A00",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 132,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F11:A01",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 133,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F11:A02",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 134,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F11:A03",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 135,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F11:A04",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 136,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F11:A05",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 137,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F11:A06",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 138,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F11:A07",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 139,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F11:A08",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 140,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F11:A09",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 141,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F11:A10",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 142,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F11:A11",
+          "charge_frame_key": "mass_ceiling|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "40|6|0|2|25",
+          "frame_index": 11,
+          "is_packet239_row": false,
+          "mass_frame": "mass_ceiling",
+          "packet_id": 511,
+          "row_index": 143,
+          "sector26_clock_pair": [
+            16,
+            16
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F12:A00",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 144,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F12:A01",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 145,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F12:A02",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 146,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F12:A03",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 147,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F12:A04",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 148,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F12:A05",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 149,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F12:A06",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 150,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F12:A07",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 151,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F12:A08",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 152,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F12:A09",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 153,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F12:A10",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 154,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F12:A11",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|10|0|2|25",
+          "frame_index": 12,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 495,
+          "row_index": 155,
+          "sector26_clock_pair": [
+            18,
+            18
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F13:A00",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 156,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F13:A01",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 157,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F13:A02",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 158,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F13:A03",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 159,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F13:A04",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 160,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F13:A05",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 161,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F13:A06",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 162,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F13:A07",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 163,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F13:A08",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 164,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F13:A09",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 165,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F13:A10",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 166,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F13:A11",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "36|10|8|2|25",
+          "frame_index": 13,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 510,
+          "row_index": 167,
+          "sector26_clock_pair": [
+            14,
+            22
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F14:A00",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 168,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F14:A01",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 169,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F14:A02",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 170,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F14:A03",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 171,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F14:A04",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 172,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F14:A05",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 173,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F14:A06",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 174,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F14:A07",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 175,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F14:A08",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 176,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F14:A09",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 177,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F14:A10",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 178,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F14:A11",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|14|8|2|25",
+          "frame_index": 14,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 494,
+          "row_index": 179,
+          "sector26_clock_pair": [
+            16,
+            24
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F15:A00",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 180,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F15:A01",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 181,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F15:A02",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 182,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F15:A03",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 183,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F15:A04",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 184,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F15:A05",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 185,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F15:A06",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 186,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F15:A07",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 187,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F15:A08",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 188,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F15:A09",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 189,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F15:A10",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 190,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F15:A11",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|16|0|2|25",
+          "frame_index": 15,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 447,
+          "row_index": 191,
+          "sector26_clock_pair": [
+            8,
+            8
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F16:A00",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 192,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F16:A01",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 193,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F16:A02",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 194,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F16:A03",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 195,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F16:A04",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 196,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F16:A05",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 197,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F16:A06",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 198,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F16:A07",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 199,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F16:A08",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 200,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F16:A09",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 201,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F16:A10",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 202,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F16:A11",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "32|20|0|2|25",
+          "frame_index": 16,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 431,
+          "row_index": 203,
+          "sector26_clock_pair": [
+            10,
+            10
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F17:A00",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 204,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F17:A01",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 205,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F17:A02",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 206,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F17:A03",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 207,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F17:A04",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 208,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F17:A05",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 209,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F17:A06",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 210,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F17:A07",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 211,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F17:A08",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 212,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F17:A09",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 213,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F17:A10",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 214,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F17:A11",
+          "charge_frame_key": "high|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "32|20|8|2|25",
+          "frame_index": 17,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 446,
+          "row_index": 215,
+          "sector26_clock_pair": [
+            6,
+            14
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F18:A00",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 216,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F18:A01",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 217,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F18:A02",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 218,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F18:A03",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 219,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F18:A04",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 220,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F18:A05",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 221,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F18:A06",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 222,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F18:A07",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 223,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F18:A08",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 224,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F18:A09",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 225,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F18:A10",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 226,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F18:A11",
+          "charge_frame_key": "high|balanced_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "balanced_nonzero",
+          "fine_spectral_charge_key": "36|22|0|2|25",
+          "frame_index": 18,
+          "is_packet239_row": false,
+          "mass_frame": "high",
+          "packet_id": 503,
+          "row_index": 227,
+          "sector26_clock_pair": [
+            24,
+            24
+          ]
+        },
+        {
+          "a12_class": 0,
+          "candidate_label": "F19:A00",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 228,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 1,
+          "candidate_label": "F19:A01",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 229,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 2,
+          "candidate_label": "F19:A02",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 230,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 3,
+          "candidate_label": "F19:A03",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 231,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 4,
+          "candidate_label": "F19:A04",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 232,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 5,
+          "candidate_label": "F19:A05",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 233,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 6,
+          "candidate_label": "F19:A06",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 234,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 7,
+          "candidate_label": "F19:A07",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 235,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 8,
+          "candidate_label": "F19:A08",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 236,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 9,
+          "candidate_label": "F19:A09",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 237,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 10,
+          "candidate_label": "F19:A10",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 238,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        },
+        {
+          "a12_class": 11,
+          "candidate_label": "F19:A11",
+          "charge_frame_key": "middle|delta8_nonzero|full|gamma8|hidden_cancelled|central_negative|AI|BDI",
+          "clock_frame": "delta8_nonzero",
+          "fine_spectral_charge_key": "28|24|8|2|25",
+          "frame_index": 19,
+          "is_packet239_row": false,
+          "mass_frame": "middle",
+          "packet_id": 430,
+          "row_index": 239,
+          "sector26_clock_pair": [
+            8,
+            16
+          ]
+        }
+      ],
+      "candidate_rows_sha256": "20838c76f6fdc5ebf4eee1bfaadf1e10956e89350f3323163c38b26640a11ba0",
+      "full_exposure_packet_count": 20,
+      "full_exposure_packet_ids": [
+        239,
+        254,
+        238,
+        191,
+        175,
+        190,
+        247,
+        174,
+        246,
+        255,
+        502,
+        511,
+        495,
+        510,
+        494,
+        447,
+        431,
+        446,
+        503,
+        430
+      ],
+      "packet239_candidate_labels": [
+        "F00:A00",
+        "F00:A01",
+        "F00:A02",
+        "F00:A03",
+        "F00:A04",
+        "F00:A05",
+        "F00:A06",
+        "F00:A07",
+        "F00:A08",
+        "F00:A09",
+        "F00:A10",
+        "F00:A11"
+      ],
+      "set": "full_exposure_frame_packets x CY(d20)=A12 classes"
+    },
+    "comparison": {
+      "conclusion": "The explicit 20 x 12 candidate matches E8 only in cardinality and norm under the direct incidence embedding. It fails rank and antipodal structure, so an E8 claim requires an additional nontrivial D20-to-E8 morphism, quotient, signing, or projection not present here.",
+      "inner_histogram_e8": {
+        "-1": 13440,
+        "-2": 240,
+        "0": 30240,
+        "1": 13440,
+        "2": 240
+      },
+      "inner_histogram_product": {
+        "0": 50160,
+        "1": 7200,
+        "2": 240
+      },
+      "ordered_antipodal_pairs_e8": 240,
+      "ordered_antipodal_pairs_product": 0,
+      "rank_e8": 8,
+      "rank_product": 31,
+      "same_cardinality": true,
+      "same_norm_square": true
+    },
+    "natural_product_embedding": {
+      "definition": "Map (packet frame index i, A12 class a) to e_i + f_a in Z^(20+12). This is the direct incidence embedding supplied by the product labels.",
+      "interpretation": "The product incidence embedding has norm square 2, but rank 31 and no antipodal pairs. It is therefore not the E8 root shell.",
+      "stats": {
+        "ambient_dimension": 32,
+        "norm_sq_histogram": {
+          "2": 240
+        },
+        "ordered_inner_product_histogram": {
+          "0": 50160,
+          "1": 7200,
+          "2": 240
+        },
+        "rank_over_q": 31,
+        "vector_count": 240
+      }
+    },
+    "standard_e8_reference_shell": {
+      "definition": "The usual E8 roots, scaled by 2: permutations of (+/-2,+/-2,0^6) and sign vectors (+/-1)^8 with an even number of minus signs. Inner products are divided by 4.",
+      "stats": {
+        "ambient_dimension": 8,
+        "norm_sq_histogram": {
+          "2": 240
+        },
+        "ordered_inner_product_histogram": {
+          "-1": 13440,
+          "-2": 240,
+          "0": 30240,
+          "1": 13440,
+          "2": 240
+        },
+        "rank_over_q": 8,
+        "vector_count": 240
+      }
+    }
+  }
+}

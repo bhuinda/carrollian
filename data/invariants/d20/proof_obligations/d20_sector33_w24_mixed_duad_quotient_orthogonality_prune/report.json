@@ -1,0 +1,1024 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "05ef410f5825ab21fb6fe157393ceabb35c6fc365ae7b2c3547d63678b3bfac6",
+  "checks": {
+    "all_mixed_assignments_pruned_by_orthogonality": true,
+    "big_cell_pair_order_matches_d20_selector_duad_index": true,
+    "choice_family_size_is_3_to_15": true,
+    "d20_input_is_certified": true,
+    "d20_selector_duad_profile_has_15_pairs": true,
+    "d20_selector_duads_have_two_edges_each": true,
+    "explicit_morphism_remains_open": true,
+    "gram_upper_triangle_has_231_coordinates": true,
+    "left_assignment_count_is_3_to_7": true,
+    "left_gram_states_are_collision_free": true,
+    "marked_big_cell_quotient_input_is_certified": true,
+    "meet_in_middle_split_is_7_and_8": true,
+    "no_matching_gram_state_pairs": true,
+    "no_mixed_assignment_is_self_orthogonal": true,
+    "rank12_count_not_needed_after_orthogonality_prune": true,
+    "right_assignment_count_is_3_to_8": true,
+    "right_gram_states_are_collision_free": true,
+    "sector33_dual_input_is_certified": true,
+    "source_matrix_shape_is_21_by_31": true,
+    "w24_row_alphabetization_is_certified": true,
+    "wu_marking_is_certified_external_boundary": true
+  },
+  "claim": "The full mixed local-duad quotient family has no self-orthogonal candidate. Across 3^15 = 14,348,907 assignments, the split Gram search finds zero solutions to Q Q^T = 0, so every mixed first/second/xor duad quotient is pruned before rank-12 Golay basis comparison.",
+  "closure_boundary": {
+    "certifies": [
+      "14348907 mixed local-duad quotient assignments were covered",
+      "the Gram upper-triangle encoding has 231 coordinates for the 21 source rows",
+      "the 7+8 meet-in-middle split has no matching Gram state pairs",
+      "no mixed local-duad quotient assignment is self-orthogonal",
+      "therefore no mixed local-duad quotient assignment reaches Type-II/Golay comparison"
+    ],
+    "does_not_certify": [
+      "absence of a morphism using a general 30-to-16 linear quotient",
+      "absence of a morphism using coordinates outside the local first/second/xor duad rules",
+      "absence of a morphism using the Wu octad together with the Spin12 complement",
+      "an intrinsic Golay selector independent of external Wu/hexacode marking data",
+      "a rebuild of d20.json or any finite critical group artifact"
+    ]
+  },
+  "definition": {
+    "meet_in_middle": {
+      "left_assignment_count": 2187,
+      "left_duad_count": 7,
+      "right_assignment_count": 6561,
+      "right_duad_count": 8,
+      "self_orthogonal_assignment_count": 0
+    },
+    "mixed_duad_family": "each of the 15 Lambda^2 H6 selector duads independently chooses the lower edge, upper edge, or xor of both duplicate sector33 edge columns; e33 is kept as the scalar coordinate",
+    "orthogonality_test": "Q Q^T = 0 over F2, encoded by the upper triangle including diagonal"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "8754a7202e82c086c891d339a8907fb9dee4915f651d209997bac3628d15393b",
+      "path": "generated/d20_sector33_w24_mixed_duad_quotient_orthogonality_prune.json",
+      "schema": "d20.proof_obligation.sector33_w24_mixed_duad_quotient_orthogonality_prune.artifact@1",
+      "sha256": "6017b9f448c2f8c12e6a713bee702d4d8a973dbf842b8ccc348e74b0e4ce85a2",
+      "status": "D20_SECTOR33_W24_MIXED_DUAD_QUOTIENT_ORTHOGONALITY_PRUNE_DERIVED"
+    },
+    "d20_json": {
+      "path": "d20.json",
+      "sha256": "9355a5a1cc0bd3278f8e6151a9fb2cafd5a1930ee9b2313036377d245a31e4f7",
+      "status": "D20_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_sector33_w24_mixed_duad_quotient_orthogonality_prune.py",
+      "sha256": "519f6d31c17fe3f6dcfafa540533d9e19824414961f0ed7f563c37fe97c7b7d6"
+    },
+    "marked_big_cell_quotient_search": {
+      "certificate_sha256": "0ffa56adeb41dcb1e9d2914cb7edfbe1fa795e7beace07c2b303940ee1951a6b",
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_big_cell_quotient_search/report.json",
+      "sha256": "ffd0c8e6a330b77bc8102eae98983d7465cf1a9118780b55c51d63879381a98b",
+      "status": "D20_SECTOR33_W24_MARKED_BIG_CELL_QUOTIENT_SEARCH_CERTIFIED"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_sector33_w24_mixed_duad_quotient_orthogonality_prune.py",
+      "sha256": "0a07666d5820a2ee41849c34cf51dcab2fe77a4670ca10499a17ef74ba399269"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    },
+    "wu_spinh_6j_marking": {
+      "path": "data/selectors/wu_spinh_6j_marking.json",
+      "recorded_selector_status": "still external: Wu/spin^h marking canonically selects an octad plus Spin12 16-complement, not a rank-12 Type-II code by itself",
+      "sha256": "62615a8b509919e2117d1ef9b4627cfe14b14dea4dcadaf85a0b2e62eee7b154",
+      "status": "WU_SPINH_OCTAD_SPIN12_6J_MARKING_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL"
+    }
+  },
+  "next_highest_yield_item": "Move beyond local-duad selectors and solve the general F2 linear quotient constraints for a 30-to-16 Spin12 map, with Q Q^T = 0 and rank 12 as hard gates.",
+  "schema": "d20.proof_obligation.sector33_w24_mixed_duad_quotient_orthogonality_prune@1",
+  "status": "D20_SECTOR33_W24_MIXED_DUAD_QUOTIENT_ORTHOGONALITY_PRUNE_CERTIFIED",
+  "witness": {
+    "marked_big_cell_profile": {
+      "ambient_even_half_spin_dimension": 32,
+      "coordinate_count": 16,
+      "d20_selector_duad_labels_in_marked_order": [
+        "{B-,B+}",
+        "{B-,V-}",
+        "{B-,V+}",
+        "{B-,S-}",
+        "{B-,S+}",
+        "{B+,V-}",
+        "{B+,V+}",
+        "{B+,S-}",
+        "{B+,S+}",
+        "{V-,V+}",
+        "{V-,S-}",
+        "{V-,S+}",
+        "{V+,S-}",
+        "{V+,S+}",
+        "{S-,S+}"
+      ],
+      "foam_big_cell_dimension": 16,
+      "golay_selector_constructed": false,
+      "golay_selector_status": "still external: Wu/spin^h marking canonically selects an octad plus Spin12 16-complement, not a rank-12 Type-II code by itself",
+      "h6_labels": [
+        "B-",
+        "B+",
+        "V-",
+        "V+",
+        "S-",
+        "S+"
+      ],
+      "lambda2_H6_coordinate_count": 15,
+      "pair_order_matches_d20_selector_duad_index": true,
+      "pair_set_matches_d20_selector_duads": true,
+      "scalar_coordinate_count": 1,
+      "scalar_coordinates": [
+        0
+      ],
+      "status": "WU_SPINH_OCTAD_SPIN12_6J_MARKING_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL",
+      "two_form_coordinate_count": 15,
+      "two_form_coordinates": [
+        {
+          "coordinate": 2,
+          "foam_coordinate": "B-∧B+",
+          "pair": [
+            "B-",
+            "B+"
+          ]
+        },
+        {
+          "coordinate": 3,
+          "foam_coordinate": "B-∧V-",
+          "pair": [
+            "B-",
+            "V-"
+          ]
+        },
+        {
+          "coordinate": 5,
+          "foam_coordinate": "B-∧V+",
+          "pair": [
+            "B-",
+            "V+"
+          ]
+        },
+        {
+          "coordinate": 6,
+          "foam_coordinate": "B-∧S-",
+          "pair": [
+            "B-",
+            "S-"
+          ]
+        },
+        {
+          "coordinate": 8,
+          "foam_coordinate": "B-∧S+",
+          "pair": [
+            "B-",
+            "S+"
+          ]
+        },
+        {
+          "coordinate": 9,
+          "foam_coordinate": "B+∧V-",
+          "pair": [
+            "B+",
+            "V-"
+          ]
+        },
+        {
+          "coordinate": 11,
+          "foam_coordinate": "B+∧V+",
+          "pair": [
+            "B+",
+            "V+"
+          ]
+        },
+        {
+          "coordinate": 12,
+          "foam_coordinate": "B+∧S-",
+          "pair": [
+            "B+",
+            "S-"
+          ]
+        },
+        {
+          "coordinate": 14,
+          "foam_coordinate": "B+∧S+",
+          "pair": [
+            "B+",
+            "S+"
+          ]
+        },
+        {
+          "coordinate": 15,
+          "foam_coordinate": "V-∧V+",
+          "pair": [
+            "V-",
+            "V+"
+          ]
+        },
+        {
+          "coordinate": 17,
+          "foam_coordinate": "V-∧S-",
+          "pair": [
+            "V-",
+            "S-"
+          ]
+        },
+        {
+          "coordinate": 18,
+          "foam_coordinate": "V-∧S+",
+          "pair": [
+            "V-",
+            "S+"
+          ]
+        },
+        {
+          "coordinate": 20,
+          "foam_coordinate": "V+∧S-",
+          "pair": [
+            "V+",
+            "S-"
+          ]
+        },
+        {
+          "coordinate": 21,
+          "foam_coordinate": "V+∧S+",
+          "pair": [
+            "V+",
+            "S+"
+          ]
+        },
+        {
+          "coordinate": 23,
+          "foam_coordinate": "S-∧S+",
+          "pair": [
+            "S-",
+            "S+"
+          ]
+        }
+      ],
+      "two_form_pairs": [
+        [
+          "B-",
+          "B+"
+        ],
+        [
+          "B-",
+          "V-"
+        ],
+        [
+          "B-",
+          "V+"
+        ],
+        [
+          "B-",
+          "S-"
+        ],
+        [
+          "B-",
+          "S+"
+        ],
+        [
+          "B+",
+          "V-"
+        ],
+        [
+          "B+",
+          "V+"
+        ],
+        [
+          "B+",
+          "S-"
+        ],
+        [
+          "B+",
+          "S+"
+        ],
+        [
+          "V-",
+          "V+"
+        ],
+        [
+          "V-",
+          "S-"
+        ],
+        [
+          "V-",
+          "S+"
+        ],
+        [
+          "V+",
+          "S-"
+        ],
+        [
+          "V+",
+          "S+"
+        ],
+        [
+          "S-",
+          "S+"
+        ]
+      ]
+    },
+    "mixed_orthogonality_search": {
+      "candidate_gate": {
+        "assignment_count_pruned_by_orthogonality": 14348907,
+        "basis_compare_attempted": false,
+        "orthogonality_precondition": "candidate must have self-orthogonal binary rowspace",
+        "rank12_count_computed": false,
+        "rank12_count_not_needed_reason": "self-orthogonality is necessary for Type-II/Golay comparison and no mixed assignment passes it",
+        "rank_precondition": "candidate would then need rank 12 before W24 basis comparison"
+      },
+      "choice_family": {
+        "assignment_count": 14348907,
+        "choice_count_per_duad": 3,
+        "choice_names": [
+          "first_edge_selector",
+          "second_edge_selector",
+          "duplicate_xor_collapse"
+        ],
+        "column_options": [
+          {
+            "choice_column_masks_hex": [
+              "3",
+              "c",
+              "f"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B-",
+              "B+"
+            ],
+            "selector_duad": "{B-,B+}",
+            "selector_duad_index": 0,
+            "source_edge_ids": [
+              0,
+              5
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "11",
+              "60",
+              "71"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B-",
+              "V-"
+            ],
+            "selector_duad": "{B-,V-}",
+            "selector_duad_index": 1,
+            "source_edge_ids": [
+              1,
+              12
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "82",
+              "110",
+              "192"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B-",
+              "V+"
+            ],
+            "selector_duad": "{B-,V+}",
+            "selector_duad_index": 2,
+            "source_edge_ids": [
+              3,
+              10
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "24",
+              "280",
+              "2a4"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B-",
+              "S-"
+            ],
+            "selector_duad": "{B-,S-}",
+            "selector_duad_index": 3,
+            "source_edge_ids": [
+              6,
+              16
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "108",
+              "240",
+              "348"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B-",
+              "S+"
+            ],
+            "selector_duad": "{B-,S+}",
+            "selector_duad_index": 4,
+            "source_edge_ids": [
+              8,
+              14
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "801",
+              "1400",
+              "1c01"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B+",
+              "V-"
+            ],
+            "selector_duad": "{B+,V-}",
+            "selector_duad_index": 5,
+            "source_edge_ids": [
+              2,
+              20
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "4002",
+              "2400",
+              "6402"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B+",
+              "V+"
+            ],
+            "selector_duad": "{B+,V+}",
+            "selector_duad_index": 6,
+            "source_edge_ids": [
+              4,
+              21
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "8004",
+              "2800",
+              "a804"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B+",
+              "S-"
+            ],
+            "selector_duad": "{B+,S-}",
+            "selector_duad_index": 7,
+            "source_edge_ids": [
+              7,
+              22
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "1008",
+              "c000",
+              "d008"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "B+",
+              "S+"
+            ],
+            "selector_duad": "{B+,S+}",
+            "selector_duad_index": 8,
+            "source_edge_ids": [
+              9,
+              26
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "410",
+              "30000",
+              "30410"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "V-",
+              "V+"
+            ],
+            "selector_duad": "{V-,V+}",
+            "selector_duad_index": 9,
+            "source_edge_ids": [
+              11,
+              27
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "40020",
+              "10800",
+              "50820"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "V-",
+              "S-"
+            ],
+            "selector_duad": "{V-,S-}",
+            "selector_duad_index": 10,
+            "source_edge_ids": [
+              13,
+              23
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "20040",
+              "41000",
+              "61040"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "V-",
+              "S+"
+            ],
+            "selector_duad": "{V-,S+}",
+            "selector_duad_index": 11,
+            "source_edge_ids": [
+              15,
+              24
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "10080",
+              "82000",
+              "92080"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "V+",
+              "S-"
+            ],
+            "selector_duad": "{V+,S-}",
+            "selector_duad_index": 12,
+            "source_edge_ids": [
+              17,
+              25
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "4100",
+              "a0000",
+              "a4100"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "V+",
+              "S+"
+            ],
+            "selector_duad": "{V+,S+}",
+            "selector_duad_index": 13,
+            "source_edge_ids": [
+              18,
+              28
+            ]
+          },
+          {
+            "choice_column_masks_hex": [
+              "8200",
+              "c0000",
+              "c8200"
+            ],
+            "choice_names": [
+              "first_edge_selector",
+              "second_edge_selector",
+              "duplicate_xor_collapse"
+            ],
+            "pair": [
+              "S-",
+              "S+"
+            ],
+            "selector_duad": "{S-,S+}",
+            "selector_duad_index": 14,
+            "source_edge_ids": [
+              19,
+              29
+            ]
+          }
+        ],
+        "duad_count": 15,
+        "scalar_column_mask_hex": "2001",
+        "scalar_source_element_id": 30
+      },
+      "d20_selector_duad_profile": {
+        "all_selector_duads_have_two_edges": true,
+        "edge_id_multiset_by_selector_duad": {
+          "{B+,S+}": [
+            9,
+            26
+          ],
+          "{B+,S-}": [
+            7,
+            22
+          ],
+          "{B+,V+}": [
+            4,
+            21
+          ],
+          "{B+,V-}": [
+            2,
+            20
+          ],
+          "{B-,B+}": [
+            0,
+            5
+          ],
+          "{B-,S+}": [
+            8,
+            14
+          ],
+          "{B-,S-}": [
+            6,
+            16
+          ],
+          "{B-,V+}": [
+            3,
+            10
+          ],
+          "{B-,V-}": [
+            1,
+            12
+          ],
+          "{S-,S+}": [
+            19,
+            29
+          ],
+          "{V+,S+}": [
+            18,
+            28
+          ],
+          "{V+,S-}": [
+            17,
+            25
+          ],
+          "{V-,S+}": [
+            15,
+            24
+          ],
+          "{V-,S-}": [
+            13,
+            23
+          ],
+          "{V-,V+}": [
+            11,
+            27
+          ]
+        },
+        "selector_duad_count": 15,
+        "selector_duad_index_set": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "selector_duads": [
+          {
+            "edge_ids": [
+              0,
+              5
+            ],
+            "pair": [
+              "B-",
+              "B+"
+            ],
+            "selector_duad": "{B-,B+}",
+            "selector_duad_index": 0
+          },
+          {
+            "edge_ids": [
+              1,
+              12
+            ],
+            "pair": [
+              "B-",
+              "V-"
+            ],
+            "selector_duad": "{B-,V-}",
+            "selector_duad_index": 1
+          },
+          {
+            "edge_ids": [
+              3,
+              10
+            ],
+            "pair": [
+              "B-",
+              "V+"
+            ],
+            "selector_duad": "{B-,V+}",
+            "selector_duad_index": 2
+          },
+          {
+            "edge_ids": [
+              6,
+              16
+            ],
+            "pair": [
+              "B-",
+              "S-"
+            ],
+            "selector_duad": "{B-,S-}",
+            "selector_duad_index": 3
+          },
+          {
+            "edge_ids": [
+              8,
+              14
+            ],
+            "pair": [
+              "B-",
+              "S+"
+            ],
+            "selector_duad": "{B-,S+}",
+            "selector_duad_index": 4
+          },
+          {
+            "edge_ids": [
+              2,
+              20
+            ],
+            "pair": [
+              "B+",
+              "V-"
+            ],
+            "selector_duad": "{B+,V-}",
+            "selector_duad_index": 5
+          },
+          {
+            "edge_ids": [
+              4,
+              21
+            ],
+            "pair": [
+              "B+",
+              "V+"
+            ],
+            "selector_duad": "{B+,V+}",
+            "selector_duad_index": 6
+          },
+          {
+            "edge_ids": [
+              7,
+              22
+            ],
+            "pair": [
+              "B+",
+              "S-"
+            ],
+            "selector_duad": "{B+,S-}",
+            "selector_duad_index": 7
+          },
+          {
+            "edge_ids": [
+              9,
+              26
+            ],
+            "pair": [
+              "B+",
+              "S+"
+            ],
+            "selector_duad": "{B+,S+}",
+            "selector_duad_index": 8
+          },
+          {
+            "edge_ids": [
+              11,
+              27
+            ],
+            "pair": [
+              "V-",
+              "V+"
+            ],
+            "selector_duad": "{V-,V+}",
+            "selector_duad_index": 9
+          },
+          {
+            "edge_ids": [
+              13,
+              23
+            ],
+            "pair": [
+              "V-",
+              "S-"
+            ],
+            "selector_duad": "{V-,S-}",
+            "selector_duad_index": 10
+          },
+          {
+            "edge_ids": [
+              15,
+              24
+            ],
+            "pair": [
+              "V-",
+              "S+"
+            ],
+            "selector_duad": "{V-,S+}",
+            "selector_duad_index": 11
+          },
+          {
+            "edge_ids": [
+              17,
+              25
+            ],
+            "pair": [
+              "V+",
+              "S-"
+            ],
+            "selector_duad": "{V+,S-}",
+            "selector_duad_index": 12
+          },
+          {
+            "edge_ids": [
+              18,
+              28
+            ],
+            "pair": [
+              "V+",
+              "S+"
+            ],
+            "selector_duad": "{V+,S+}",
+            "selector_duad_index": 13
+          },
+          {
+            "edge_ids": [
+              19,
+              29
+            ],
+            "pair": [
+              "S-",
+              "S+"
+            ],
+            "selector_duad": "{S-,S+}",
+            "selector_duad_index": 14
+          }
+        ]
+      },
+      "gram_encoding": {
+        "row_count": 21,
+        "scalar_gram_bit_count": 3,
+        "scalar_gram_hex": "8000000000000000000000000000000000000000000002001",
+        "self_orthogonality_condition": "Q Q^T = 0 over F2, encoded by the upper triangle including diagonal",
+        "upper_triangle_coordinate_count": 231
+      },
+      "meet_in_middle": {
+        "left_assignment_count": 2187,
+        "left_duad_count": 7,
+        "left_gram_state_count": 2187,
+        "left_gram_state_counter_sha256": "8fe042912c8b259e3f8a30423c6c00d595febcae8fb1e9547e742e065c6af61b",
+        "left_max_state_multiplicity": 1,
+        "matching_state_pair_count": 0,
+        "right_assignment_count": 6561,
+        "right_duad_count": 8,
+        "right_gram_state_count": 6561,
+        "right_gram_state_counter_sha256": "b6c75ce9224f55b939089cbeb05fc0d155128c70a27de4e17bb18a49a33cfe13",
+        "right_max_state_multiplicity": 1,
+        "self_orthogonal_assignment_count": 0
+      },
+      "sector33_attachment": {
+        "active_support": [
+          1,
+          2,
+          11,
+          21,
+          22
+        ],
+        "new_element": "e33",
+        "new_element_id": 30,
+        "sector33_dimension": 2,
+        "sector33_transport_scalar": -187392,
+        "sector_bridge_column": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -187392
+        ]
+      },
+      "source_matrix": "sector33_primal_mod2",
+      "source_shape": {
+        "cols": 31,
+        "rows": 21
+      }
+    },
+    "target_golay_profile": {
+      "generator_basis_masks_sha256": "197c2a34afd141701046968a766b75870e0ce16f560b9e0b40aebabc368d436d",
+      "length": 24,
+      "rank": 12,
+      "weight_histogram": {
+        "0": 1,
+        "12": 2576,
+        "16": 759,
+        "24": 1,
+        "8": 759
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9b163c2dee5f77a6eab915780e6fc5a7e2292a31305f67e70dc78069c5bafebd",
+  "checks": {
+    "all_edges_change_one_signed_label": true,
+    "anisotropy_ratio_is_31_over_23": true,
+    "coorient_source_residual_symmetry_is_dih6": true,
+    "edge_count_is_30": true,
+    "metric_does_not_use_selector_choice": true,
+    "regular_hex_label_delta_family_variant_matches": true
+  },
+  "claim": "The canonical comparison metric for the D20 voltage-lift witness is the normalized regular-hex metric on the six signed H6 labels. Under the intrinsic edge rule entering_label - leaving_label on Lambda^3 signed-label faces, the covariance ellipse has exact anisotropy ratio 31/23 with major axis at -60 degrees in one Dih_6 coordinate representative.",
+  "closure_boundary": {
+    "certifies": [
+      "the intrinsic edge step uses only the two signed labels exchanged by each D20 edge",
+      "selector_choice is not used by the intrinsic hex metric",
+      "the normalized Dih_6 regular-hex metric gives covariance eigenvalues 31/20 and 23/20",
+      "the generated render family regular_hex_label_delta variant matches the intrinsic metric witness"
+    ],
+    "does_not_certify": [
+      "the stronger cooriented sign/selector render lift as intrinsic",
+      "the full robust-oblongness theorem across every possible D20 lift",
+      "a rebuild of d20.json or of the finite critical group"
+    ]
+  },
+  "definition": {
+    "ambient_space": "U = <e_0,...,e_5> indexed by the six signed H6 labels",
+    "edge_rule": "For an edge between two triples I and J, the D20 projective-root transition changes exactly one signed label. The voltage step is hex(entering_label) - hex(leaving_label).",
+    "face_space": "Lambda^3 U, with the 20 D20 vertices represented by signed-label triples",
+    "metric_selection": "Use the unique normalized regular-hex metric on the three signed opposite label axes, invariant under the residual Dih_6 label symmetry, up to reflection and global scale.",
+    "normalization": "all six signed labels have norm 1",
+    "residual_label_symmetry": "Dih_6",
+    "selector_boundary": "selector_choice is read only for audit histograms and is not used by the intrinsic hex metric"
+  },
+  "inputs": {
+    "coorient_word_presentation": {
+      "path": "data/coorient/absolute_d20_word_presentation.json",
+      "sha256": "11be2cf057f1fbcf4b796e9d71ef58a1965f9f4cfc48d13cc7998920df970304"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_voltage_lift_intrinsic_hex_metric.py",
+      "sha256": "9fbd213d3053f5d8e0f09bb1d235d606e158e2a780084f4de8ef9e1eb4d9b508"
+    },
+    "edge_csv": {
+      "path": "data/invariants/hcycle/subscript_Hcycle_d20_edges.csv",
+      "sha256": "f484ade770edd35757f2752509b8b3bc68d6c4ffbb2c57118eb752557203241a"
+    },
+    "family_comparison": {
+      "path": "generated/d20_voltage_lift_family_comparison.json",
+      "sha256": "e5a35d9943eb2fa34c04835562e49721a55184b604338d3e1ef5ccf259f704e4"
+    },
+    "intrinsic_hex_metric_artifact": {
+      "artifact_sha256_excluding_this_field": "6602190c6f48350ecb8b7ca47c553b494d10930aac7525b56edf8103818deb74",
+      "path": "generated/d20_voltage_lift_intrinsic_hex_metric.json",
+      "schema": "d20.sandpile.voltage_lift.intrinsic_hex_metric@1",
+      "sha256": "a07d56be9d43b37df960d47f4b88cd754b90cf6d70c7ca6710430f4c8388da3f",
+      "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_DERIVED"
+    },
+    "validator": {
+      "path": "src/certify_d20_voltage_lift_intrinsic_hex_metric.py",
+      "sha256": "5ea0fbbf95d3786bd4244feab71526976eb9a08e0c1d06fa38abdee11274b945"
+    }
+  },
+  "schema": "d20.proof_obligation.voltage_lift_intrinsic_hex_metric@1",
+  "status": "D20_VOLTAGE_LIFT_INTRINSIC_HEX_METRIC_CERTIFIED",
+  "witness": {
+    "anisotropy_ratio": 1.3478260869565217,
+    "anisotropy_ratio_exact": "31/23",
+    "artifact": "generated/d20_voltage_lift_intrinsic_hex_metric.json",
+    "edge_count": 30,
+    "eigenvalues_exact": {
+      "major": "31/20",
+      "minor": "23/20"
+    },
+    "matched_family_variant": "regular_hex_label_delta",
+    "principal_axis_angle_degrees": -60.0
+  }
+}

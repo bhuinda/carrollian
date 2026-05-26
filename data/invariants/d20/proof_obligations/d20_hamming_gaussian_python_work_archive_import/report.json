@@ -1,0 +1,619 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "f9900be4684d3c50378f06d1e2250246c18e4fa57cff062ac9d07ffdb393f3b9",
+  "checks": {
+    "all_python_sources_compile": true,
+    "archive_root_exists": true,
+    "endpoint_dual_distance_8_replayed": true,
+    "expected_replay_certificates_present": true,
+    "expected_replay_statuses_match": true,
+    "final_entropy_inequality_not_certified": true,
+    "indicator_shell_domination_passes_boolean_case": true,
+    "indicator_shell_total_subsets_is_full_boolean_cube": true,
+    "logsobolev_local_sdpi_csv_passes": true,
+    "mnt_data_bound_scripts_recorded": true,
+    "root_killing_sequence_42_18_6_0_replayed": true,
+    "scipy_dependency_scripts_recorded": true,
+    "source_manifest_count_matches_actual_python_count": true,
+    "source_manifest_hashes_all_match": true,
+    "source_manifest_sizes_all_match": true,
+    "sparse_signed_probe_pass_checks": true,
+    "spinh_veronese_csv_passes": true,
+    "syntax_warnings_are_warning_only": true,
+    "talagrand_sparse_mgf_sanity_passes": true,
+    "w24_endpoint_is_certified": true
+  },
+  "claim": "The all_python_work_files archive is internally consistent and partially replay-certified in this workspace. The finite Hamming/Golay layers are strong: root killing is 42 -> 18 -> 6 -> 0, the Golay endpoint has dual distance 8, sparse <8 projections reduce to independent Rademacher sums, and the Boolean indicator shell domination audit checks all 2^24 supports. The final entropy contraction inequalities for w=12,16 remain open.",
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "9d7dcae74f961a2414c35704ec25a676e5a8b4044ed0bce97da3febb3c831b30",
+      "path": "generated/d20_hamming_gaussian_python_work_archive_import.json",
+      "schema": "d20.proof_obligation.hamming_gaussian_python_work_archive_import.artifact@1",
+      "sha256": "08c4f9972b579498c1770a2b89b01565cc0d680735b3dca2816a535c4119d593",
+      "status": "D20_HAMMING_GAUSSIAN_PYTHON_WORK_ARCHIVE_IMPORTED_PARTIAL_REPLAY"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_hamming_gaussian_python_work_archive_import.py",
+      "sha256": "681a13115428b192933e88cdc0274ba9f8cfed9bbc252ea6b71727b15afaf014"
+    },
+    "temp_index": {
+      "path": "temp/all_python_work_files/python_files_index.md",
+      "sha256": "928419c802fa218a1b5b4fb9a51c19319751f9a3a9cfc0a7d128af796eeb394f"
+    },
+    "temp_manifest": {
+      "path": "temp/all_python_work_files/python_files_manifest.json",
+      "sha256": "3487346852f8b08f01d194f4b62e1c7ffcbd5acd3d58be46372425e97f5d059a"
+    },
+    "validator": {
+      "path": "src/certify_d20_hamming_gaussian_python_work_archive_import.py",
+      "sha256": "eea803b54357ec78ff015d3ed5dade6c80754727186f5cd7c0cfd24189c54e50"
+    },
+    "w24_row_alphabetization": {
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9"
+    }
+  },
+  "next_highest_yield_item": "Promote the indicator shell domination result to arbitrary nonnegative vectors for w=12,16, preferably via a Krawtchouk/SOS certificate; otherwise turn the sandpile least-action heuristic into a monotonicity proof for Delta_w.",
+  "schema": "d20.proof_obligation.hamming_gaussian_python_work_archive_import@1",
+  "status": "D20_HAMMING_GAUSSIAN_PYTHON_WORK_ARCHIVE_IMPORT_CERTIFIED_PARTIAL_REPLAY",
+  "witness": {
+    "connection_to_current_problem": {
+      "boolean_indicator_shell_domination": "certified for all 2^24 supports, but only for indicator vectors",
+      "covered_sparse_projection_regime": "all real coefficient projections supported on fewer than 8 coordinates",
+      "finite_source_status": "solid for the replayed H8^3 to G24 root-killing and dual-distance layers",
+      "golay_endpoint_dual_distance": 8,
+      "remaining_gap": "Lift indicator and sparse evidence to arbitrary nonnegative shell vectors for w=12,16; this is the finite entropy contraction problem.",
+      "root_killing_sequence": [
+        42,
+        18,
+        6,
+        0
+      ],
+      "sharp_constant_candidate": 1.2020187417182888
+    },
+    "csv_witnesses": {
+      "hamming_gaussian_entropy_logsobolev_route/local_sdpi_spectrum.csv": {
+        "check": "all_margins_positive",
+        "exists": true,
+        "max_margin": 0.16304347826086912,
+        "min_margin": 0.1032608695652172,
+        "ok": true,
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_entropy_logsobolev_route/local_sdpi_spectrum.csv",
+        "row_count": 3,
+        "sha256": "a548b6c4d2d863e0d22e2b88e31989c62f8d914824c94b0e3ad0229d63335d11"
+      },
+      "hamming_gaussian_entropy_spinh_veronese/spinh_veronese_numeric_checks.csv": {
+        "check": "status_column_pass",
+        "exists": true,
+        "ok": true,
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_entropy_spinh_veronese/spinh_veronese_numeric_checks.csv",
+        "row_count": 1,
+        "sha256": "e92ff614ce9ad84bbbce6562446628120f1aaca2493cb2c96b10f2c3dd931450",
+        "statuses": [
+          "PASS"
+        ]
+      }
+    },
+    "environment_boundary": {
+      "mnt_data_bound_scripts_not_workspace_replayed": [
+        "run_crypto_static_audit.py",
+        "verifier_security_audit.py",
+        "hamming_gaussian_two_level_probe/hamming_gaussian_two_level_probe.py"
+      ],
+      "python_replay_executable": "system python selected by the shell",
+      "scipy_dependency_scripts_not_replayed_by_certificate": [
+        "hamming_gaussian_critical_point_audit/hamming_gaussian_critical_point_audit.py",
+        "hamming_gaussian_sharp_constant_candidate/hamming_gaussian_sharp_constant_candidate.py",
+        "hamming_gaussian_shortening_rank/hamming_gaussian_shortening_rank.py",
+        "hamming_gaussian_two_level_probe/hamming_gaussian_two_level_probe.py"
+      ]
+    },
+    "open_boundary": {
+      "certified_here": [
+        "archive source file count, size, and SHA-256 integrity",
+        "all 16 Python sources parse and compile",
+        "eight generated certificates have the expected statuses",
+        "root-killing sequence 42 -> 18 -> 6 -> 0",
+        "Golay endpoint dual distance 8 and sparse <8 Rademacher reduction",
+        "all Boolean indicator shell cases pass with max ratio 1.0",
+        "local SDPI and Spin^h/Veronese CSV witnesses pass their local checks"
+      ],
+      "not_certified": [
+        "D(q||u_B12) >= 6 D(p_q||u_24)",
+        "D(q||u_B16) >= 8 D(p_q||u_24)",
+        "arbitrary-vector shell domination from the indicator shell certificate",
+        "global sharp subgaussian constant over all coefficient vectors",
+        "full multivariate convex-order domination",
+        "independent replay of SciPy-dependent scripts by this certificate",
+        "workspace replay of scripts hardwired to /mnt/data"
+      ]
+    },
+    "replayed_certificates": {
+      "hamming_gaussian_call_order/hamming_gaussian_call_order_certificate.json": {
+        "critical_scale_sequence": [
+          0.8234141206885741,
+          0.8234141206885741,
+          0.8234141206885741,
+          0.9440648008516725
+        ],
+        "expected_status": "HAMMING_GAUSSIAN_CALL_ORDER_PROBE_PASS",
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_call_order/hamming_gaussian_call_order_certificate.json",
+        "root_sequence": [
+          42,
+          18,
+          6,
+          0
+        ],
+        "sha256": "166e4b1ac1d4371dd406ff39ac515a350197ed2d23ed519cda71189c9478e6af",
+        "status": "HAMMING_GAUSSIAN_CALL_ORDER_PROBE_PASS",
+        "status_matches": true
+      },
+      "hamming_gaussian_convex_order/hamming_gaussian_convex_order_certificate.json": {
+        "expected_status": "HAMMING_GAUSSIAN_CONVEX_ORDER_PROBE_PASS",
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_convex_order/hamming_gaussian_convex_order_certificate.json",
+        "positive_defect_sequence_D4_plus": [
+          672,
+          288,
+          96,
+          0
+        ],
+        "root_sequence": [
+          42,
+          18,
+          6,
+          0
+        ],
+        "sha256": "3dce7d65e8f09bd61d3b0392dd54119efaf7b106a890e9a7a6cac16b8728d632",
+        "status": "HAMMING_GAUSSIAN_CONVEX_ORDER_PROBE_PASS",
+        "status_matches": true
+      },
+      "hamming_gaussian_dual_distance/hamming_gaussian_dual_distance_certificate.json": {
+        "endpoint": {
+          "dual_distance_is_8": true,
+          "dual_weights_1_to_7_zero": true,
+          "real_coefficient_projection_reduction": "For every support S with |S|<8 and every real coefficient vector a, sum_{i in S} a_i (-1)^{c_i} for c uniform in G24 has the same law as an independent Rademacher sum.",
+          "uniform_marginals_for_all_coordinate_sets_size_less_than_8": true,
+          "weight_enumerator_expected_pass": true
+        },
+        "expected_status": "HAMMING_GAUSSIAN_DUAL_DISTANCE_KRAWTCHOUK_PASS",
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_dual_distance/hamming_gaussian_dual_distance_certificate.json",
+        "root_sequence": [
+          42,
+          18,
+          6,
+          0
+        ],
+        "sha256": "f14832a952ba90343f62aa9e96827cc1e0acb85b6ed5955720b1a6f51471c76e",
+        "status": "HAMMING_GAUSSIAN_DUAL_DISTANCE_KRAWTCHOUK_PASS",
+        "status_matches": true
+      },
+      "hamming_gaussian_full_subgaussian_probe/hamming_gaussian_full_subgaussian_probe_certificate.json": {
+        "best_random_K": 1.0109254066835094,
+        "codeword_K": 1.2020187417182888,
+        "codeword_K2": 1.4448490554420184,
+        "expected_status": "HAMMING_GAUSSIAN_FULL_SUBGAUSSIAN_PROBE_COMPLETE",
+        "not_claimed": [
+          "not a proof of the sharp global K-subgaussian constant for all coefficient vectors",
+          "not a proof of multivariate convex-order domination",
+          "random search is diagnostic, not exhaustive"
+        ],
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_full_subgaussian_probe/hamming_gaussian_full_subgaussian_probe_certificate.json",
+        "sha256": "dd4a36a05c86691c2a841b917824e2f6e679c29a26ee269460344868f5826b69",
+        "status": "HAMMING_GAUSSIAN_FULL_SUBGAUSSIAN_PROBE_COMPLETE",
+        "status_matches": true
+      },
+      "hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination_certificate.json": {
+        "all_indicator_cases_pass": true,
+        "expected_status": "HAMMING_GAUSSIAN_INDICATOR_SHELL_DOMINATION_CERTIFIED",
+        "global_max_ratio": 1.0,
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination_certificate.json",
+        "remaining_residue": "Lift from Boolean indicator vectors to arbitrary nonnegative vectors x. Candidate routes: layer-cake/threshold integration, association-scheme tensor spectral bound, or Krawtchouk/SOS certificate.",
+        "sha256": "9ea180887bcb6899b9665446da112bf02c6587ceaf84b1d76e8dd4bf55fe5e67",
+        "status": "HAMMING_GAUSSIAN_INDICATOR_SHELL_DOMINATION_CERTIFIED",
+        "status_matches": true,
+        "total_subsets_checked": 16777216
+      },
+      "hamming_gaussian_morphism/hamming_gaussian_morphism_certificate.json": {
+        "expected_status": "HAMMING_GAUSSIAN_MORPHISM_INVARIANTS_PASS",
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_morphism/hamming_gaussian_morphism_certificate.json",
+        "sha256": "247b0fc8f00a96a1b512b5853b0a3628156457889f4c143b0de45797389c8025",
+        "status": "HAMMING_GAUSSIAN_MORPHISM_INVARIANTS_PASS",
+        "status_matches": true
+      },
+      "hamming_gaussian_sparse_signed/hamming_gaussian_sparse_signed_certificate.json": {
+        "boundary": "This is a sparse one-dimensional convex-order probe certificate. It does not prove full multivariate convex order or all dense sign-linear projections.",
+        "expected_status": "HAMMING_GAUSSIAN_SPARSE_SIGNED_PROBE_PASS",
+        "pass_checks": {
+          "all_stage_codes_type_ii_self_dual": true,
+          "exact_signed_sparse_audit_kmax": 5,
+          "k4_endpoint_improves_critical_scale": true,
+          "k4_endpoint_reduces_max_defect": true,
+          "root_chain_42_18_6_0": true,
+          "signed_projection_count_formula_ok": true
+        },
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_sparse_signed/hamming_gaussian_sparse_signed_certificate.json",
+        "sha256": "8d2d812f6cf901f6216b4b0f9e752fe2b31f21852be4910de9b27dd39aa1fbab",
+        "status": "HAMMING_GAUSSIAN_SPARSE_SIGNED_PROBE_PASS",
+        "status_matches": true
+      },
+      "hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge_certificate.json": {
+        "expected_status": "HAMMING_GAUSSIAN_TALAGRAND_BRIDGE_CONSTRUCTED",
+        "finite_input": {
+          "covered_supports": "all coordinate supports |S| < 8",
+          "endpoint_dual_distance": 8,
+          "projection_law": "independent Rademacher baseline for every real coefficient vector supported on |S|<8",
+          "real_coefficients": true,
+          "source_chain": "H8^3 -> G24 -> sparse projections"
+        },
+        "not_claimed": [
+          "not a proof of the sharp universal Rademacher-to-Gaussian convex-order scale",
+          "not a proof of full multivariate convex order for the entire 24-coordinate Golay code measure",
+          "not a new proof of Talagrand's theorem; imports the theorem as the analytic assembly layer",
+          "not coverage of supports of size >= 8 where Golay structure is visible"
+        ],
+        "path": "temp/all_python_work_files/python_files/hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge_certificate.json",
+        "sanity_checks": {
+          "max_ratio": 1.0,
+          "mgf_bound_all_pass": true,
+          "mgf_grid_profiles_checked": 27,
+          "mgf_grid_rows": 243
+        },
+        "sha256": "b9031939353a9fb926429a500f75023dfbc896d6b3a96e23daeff2afd146c593",
+        "status": "HAMMING_GAUSSIAN_TALAGRAND_BRIDGE_CONSTRUCTED",
+        "status_matches": true
+      }
+    },
+    "source_archive": {
+      "index": {
+        "path": "temp/all_python_work_files/python_files_index.md",
+        "sha256": "928419c802fa218a1b5b4fb9a51c19319751f9a3a9cfc0a7d128af796eeb394f"
+      },
+      "manifest": {
+        "path": "temp/all_python_work_files/python_files_manifest.json",
+        "sha256": "3487346852f8b08f01d194f4b62e1c7ffcbd5acd3d58be46372425e97f5d059a"
+      },
+      "source_manifest": {
+        "actual_python_file_count": 16,
+        "all_hashes_match": true,
+        "all_sizes_match": true,
+        "created_utc": "2026-05-26T02:00:32.594122+00:00",
+        "files": [
+          {
+            "actual_sha256": "7cbf2221027100ccd38324cb3d287bf360ce54b4dc356e151c5a5fb838a8fa93",
+            "actual_size_bytes": 16588,
+            "exists": true,
+            "expected_sha256": "7cbf2221027100ccd38324cb3d287bf360ce54b4dc356e151c5a5fb838a8fa93",
+            "expected_size_bytes": 16588,
+            "hash_matches": true,
+            "path": "hamming_gaussian_call_order/hamming_gaussian_call_order.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "7ef22d3e598ba8871bf8996c2af1284da8698f018abb2db19ab1e36272bcb04c",
+            "actual_size_bytes": 14231,
+            "exists": true,
+            "expected_sha256": "7ef22d3e598ba8871bf8996c2af1284da8698f018abb2db19ab1e36272bcb04c",
+            "expected_size_bytes": 14231,
+            "hash_matches": true,
+            "path": "hamming_gaussian_convex_order/hamming_gaussian_convex_order.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "7120e0ac5ded401aa5ee74a2102551e3c40ce9f6589d5d4520bac7752134ac83",
+            "actual_size_bytes": 9646,
+            "exists": true,
+            "expected_sha256": "7120e0ac5ded401aa5ee74a2102551e3c40ce9f6589d5d4520bac7752134ac83",
+            "expected_size_bytes": 9646,
+            "hash_matches": true,
+            "path": "hamming_gaussian_critical_point_audit/hamming_gaussian_critical_point_audit.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "3a35d7e2acfa82d6692e75cba5c11debd099a296081aa6eb4e7b432fed80b9e2",
+            "actual_size_bytes": 16456,
+            "exists": true,
+            "expected_sha256": "3a35d7e2acfa82d6692e75cba5c11debd099a296081aa6eb4e7b432fed80b9e2",
+            "expected_size_bytes": 16456,
+            "hash_matches": true,
+            "path": "hamming_gaussian_dual_distance/hamming_gaussian_dual_distance.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "37c2be07163a351d9239222ed62ec3614f70b6a0e33c1d9c72ff046dbc36b46b",
+            "actual_size_bytes": 1773,
+            "exists": true,
+            "expected_sha256": "37c2be07163a351d9239222ed62ec3614f70b6a0e33c1d9c72ff046dbc36b46b",
+            "expected_size_bytes": 1773,
+            "hash_matches": true,
+            "path": "hamming_gaussian_entropy_logsobolev_route/entropy_logsobolev_local_sdpi.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "428dca76cfc0badecedfb0a323c6ce008f3e6f89f622a42306b28736757ca9fe",
+            "actual_size_bytes": 3134,
+            "exists": true,
+            "expected_sha256": "428dca76cfc0badecedfb0a323c6ce008f3e6f89f622a42306b28736757ca9fe",
+            "expected_size_bytes": 3134,
+            "hash_matches": true,
+            "path": "hamming_gaussian_entropy_spinh_veronese/veronese_spinh_audit.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "7b1907604f303cdc91d994d06fb9a200c8907aa723f2ad26019edf168931280a",
+            "actual_size_bytes": 15272,
+            "exists": true,
+            "expected_sha256": "7b1907604f303cdc91d994d06fb9a200c8907aa723f2ad26019edf168931280a",
+            "expected_size_bytes": 15272,
+            "hash_matches": true,
+            "path": "hamming_gaussian_full_subgaussian_probe/hamming_gaussian_full_subgaussian_probe.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "321242519d83502bb1d44b4577302c9037269b974587e47d8fdd5186cff13f20",
+            "actual_size_bytes": 8354,
+            "exists": true,
+            "expected_sha256": "321242519d83502bb1d44b4577302c9037269b974587e47d8fdd5186cff13f20",
+            "expected_size_bytes": 8354,
+            "hash_matches": true,
+            "path": "hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "1d567ec6567fbc98814a0a144be7617fa04742c930023112c7bab594347e5662",
+            "actual_size_bytes": 12732,
+            "exists": true,
+            "expected_sha256": "1d567ec6567fbc98814a0a144be7617fa04742c930023112c7bab594347e5662",
+            "expected_size_bytes": 12732,
+            "hash_matches": true,
+            "path": "hamming_gaussian_morphism/hamming_gaussian_morphism.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "f84c18ef1b5d7b07d5fed9b7e187be84a145914df9c3d188b37e653d2021656f",
+            "actual_size_bytes": 14038,
+            "exists": true,
+            "expected_sha256": "f84c18ef1b5d7b07d5fed9b7e187be84a145914df9c3d188b37e653d2021656f",
+            "expected_size_bytes": 14038,
+            "hash_matches": true,
+            "path": "hamming_gaussian_sharp_constant_candidate/hamming_gaussian_sharp_constant_candidate.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "98190c8f2ddc2e6d91398c5ae0ad50368324fc6d900a0d3a0976da8195877616",
+            "actual_size_bytes": 9815,
+            "exists": true,
+            "expected_sha256": "98190c8f2ddc2e6d91398c5ae0ad50368324fc6d900a0d3a0976da8195877616",
+            "expected_size_bytes": 9815,
+            "hash_matches": true,
+            "path": "hamming_gaussian_shortening_rank/hamming_gaussian_shortening_rank.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "0fa6e6eeef334ad30d3601c13f89b232a578c2a29a04bf0393f56265b7e22546",
+            "actual_size_bytes": 20717,
+            "exists": true,
+            "expected_sha256": "0fa6e6eeef334ad30d3601c13f89b232a578c2a29a04bf0393f56265b7e22546",
+            "expected_size_bytes": 20717,
+            "hash_matches": true,
+            "path": "hamming_gaussian_sparse_signed/hamming_gaussian_sparse_signed.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "6a4abca25cbe788ab42b57ab13197ebccb6217ad918c62e4da88a65e17f91e19",
+            "actual_size_bytes": 7754,
+            "exists": true,
+            "expected_sha256": "6a4abca25cbe788ab42b57ab13197ebccb6217ad918c62e4da88a65e17f91e19",
+            "expected_size_bytes": 7754,
+            "hash_matches": true,
+            "path": "hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "d0f0444fba76e8a527a3c4313d903bdad8b7a3d6f99e0713437ecf2dc3561034",
+            "actual_size_bytes": 7389,
+            "exists": true,
+            "expected_sha256": "d0f0444fba76e8a527a3c4313d903bdad8b7a3d6f99e0713437ecf2dc3561034",
+            "expected_size_bytes": 7389,
+            "hash_matches": true,
+            "path": "hamming_gaussian_two_level_probe/hamming_gaussian_two_level_probe.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "adabee75ab9ef3b78717ff1d2c9ae5115c520030d700a632801734ed9fdaa583",
+            "actual_size_bytes": 18068,
+            "exists": true,
+            "expected_sha256": "adabee75ab9ef3b78717ff1d2c9ae5115c520030d700a632801734ed9fdaa583",
+            "expected_size_bytes": 18068,
+            "hash_matches": true,
+            "path": "run_crypto_static_audit.py",
+            "size_matches": true
+          },
+          {
+            "actual_sha256": "43159ebdcc0250fac114a5f3ba7197d0e7751fd8e4a205232f78b9a3b60d974a",
+            "actual_size_bytes": 20193,
+            "exists": true,
+            "expected_sha256": "43159ebdcc0250fac114a5f3ba7197d0e7751fd8e4a205232f78b9a3b60d974a",
+            "expected_size_bytes": 20193,
+            "hash_matches": true,
+            "path": "verifier_security_audit.py",
+            "size_matches": true
+          }
+        ],
+        "manifest_count": 16,
+        "recorded_root": "/mnt/data"
+      }
+    },
+    "syntax": {
+      "compile_results": [
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_call_order/hamming_gaussian_call_order.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_convex_order/hamming_gaussian_convex_order.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_critical_point_audit/hamming_gaussian_critical_point_audit.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_dual_distance/hamming_gaussian_dual_distance.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_entropy_logsobolev_route/entropy_logsobolev_local_sdpi.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_entropy_spinh_veronese/veronese_spinh_audit.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_full_subgaussian_probe/hamming_gaussian_full_subgaussian_probe.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination.py",
+          "syntax_warnings": [
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\{\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\{\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\}\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\}\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\{\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\{\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\}\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\}\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\{\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\{\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\}\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\}\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\(\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\(\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\d\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\d\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\)\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\)\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\)\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\)\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\i\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\i\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\o\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\o\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\ \" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\ \"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\s\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\s\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\l\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\l\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\]\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\]\"? A raw string is also an option."
+            },
+            {
+              "category": "SyntaxWarning",
+              "message": "\"\\)\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\)\"? A raw string is also an option."
+            }
+          ]
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_morphism/hamming_gaussian_morphism.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_sharp_constant_candidate/hamming_gaussian_sharp_constant_candidate.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_shortening_rank/hamming_gaussian_shortening_rank.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_sparse_signed/hamming_gaussian_sparse_signed.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_talagrand_bridge/hamming_gaussian_talagrand_bridge.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/hamming_gaussian_two_level_probe/hamming_gaussian_two_level_probe.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/run_crypto_static_audit.py",
+          "syntax_warnings": []
+        },
+        {
+          "error": null,
+          "ok": true,
+          "path": "temp/all_python_work_files/python_files/verifier_security_audit.py",
+          "syntax_warnings": []
+        }
+      ],
+      "warning_files": [
+        "temp/all_python_work_files/python_files/hamming_gaussian_indicator_shell_domination/hamming_gaussian_indicator_shell_domination.py"
+      ]
+    }
+  }
+}

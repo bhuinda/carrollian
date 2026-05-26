@@ -1,0 +1,3766 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "2a810ec48b3b4ee5cf76a2bb9dc888e1f6873f5d7000c0ea71da27fc478d0dc8",
+  "checks": {
+    "delete_contract_candidate_count_is_6400": true,
+    "delete_contract_route_reduced_to_typed_octad_placement": true,
+    "deletion_shadow_obstruction_input_is_certified": true,
+    "dual_compatible_shadows_are_rank0_or_rank1": true,
+    "dual_delete_contract_shadow_candidate_count_is_3200": true,
+    "dual_delete_contract_shadow_compatible_count_is_70": true,
+    "dual_has_one_unique_nontrivial_weight8_support": true,
+    "minor_puncture_search_input_is_certified_negative": true,
+    "primal_delete_contract_shadow_candidate_count_is_3200": true,
+    "primal_delete_contract_shadow_has_no_golay_weight_compatible_case": true,
+    "sector33_dual_input_is_certified": true,
+    "target_allowed_weights_are_0_8_12_16_24": true,
+    "unique_dual_octad_not_in_current_w24_under_identity_labels": true,
+    "w24_row_alphabetization_is_certified": true
+  },
+  "claim": "The full cocircuit-plus-one delete/contract shadow test does not produce a sector33-to-W24 Golay morphism. All 3200 primal orthogonal shadows contain forbidden Golay weights. The dual side has 70 weight-compatible cases, but 55 are rank-zero and the remaining 15 are the same rank-one weight-8 support. Thus the route has narrowed to one typed octad-placement problem, not a full 31 -> 24 -> 23 map.",
+  "closure_boundary": {
+    "certifies": [
+      "6400 cocircuit-plus-one delete/contract shadows were tested",
+      "all primal orthogonal shadows are blocked by forbidden Golay weights",
+      "the only nontrivial dual-compatible shadow is rank 1 and weight 8",
+      "the unique nontrivial support is [0, 3, 12, 13, 14, 16, 20, 24]",
+      "that support is not a W24 Golay word under the current identity coordinate labels"
+    ],
+    "does_not_certify": [
+      "absence of a coordinate relabelling that sends the unique sector33 octad to a W24 octad",
+      "absence of a morphism using non-edge coordinates or additional quotienting",
+      "absence of a morphism using external Wu/spin or hexacode marking data",
+      "a rebuild of d20.json or any finite critical group artifact"
+    ]
+  },
+  "definition": {
+    "marked_shadow_test": "For high-rank primal minors, test the orthogonal shadow required by self-dual Golay containment. For low-rank dual minors, test the rowspace directly as a possible Golay subcode shadow.",
+    "weight_filter": "Any Golay subcode shadow can only have weights appearing in the certified W24 Golay code: 0, 8, 12, 16, 24."
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "83337a8f6b5e95dfecaec5783a5b66743f6b5dd0b7a28cd99caa81d77abc6b93",
+      "path": "generated/d20_sector33_w24_marked_delete_contract_shadow_probe.json",
+      "schema": "d20.proof_obligation.sector33_w24_marked_delete_contract_shadow_probe.artifact@1",
+      "sha256": "a639a5b75cf8e4aa9584ff600935a3073ea672b9d46c6187ea5c86733ca5936d",
+      "status": "D20_SECTOR33_W24_MARKED_DELETE_CONTRACT_SHADOW_PROBE_DERIVED"
+    },
+    "deletion_shadow_obstruction": {
+      "certificate_sha256": "b7e2d111958aadf669dfac4a79f05a70cc5946d8c72636a3d51d09d820e8eedc",
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_quotient_shadow_obstruction/report.json",
+      "sha256": "14f95afd46c04e8b7744e827772858053d128c752cf1d72d2ff56b9b8cf3115f",
+      "status": "D20_SECTOR33_W24_MARKED_QUOTIENT_SHADOW_OBSTRUCTION_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_sector33_w24_marked_delete_contract_shadow_probe.py",
+      "sha256": "1d323c8750b669a6a1d73ffef4e121a4db04d57af4270b0eca183adff33b6e75"
+    },
+    "minor_puncture_search": {
+      "certificate_sha256": "dda3aa7b72a89d541c66a4a62b2a492c3ef4780b3653360c26a7274454c488b8",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_hamming_minor_puncture_search/report.json",
+      "sha256": "ebf134c5183fb8b89df947031bd48048df76177cf3369adfaf04c3f7ed12bda0",
+      "status": "D20_GOLAY_HAMMING_MINOR_PUNCTURE_SEARCH_CERTIFIED"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_sector33_w24_marked_delete_contract_shadow_probe.py",
+      "sha256": "1015a66ada164fcd340e44529f180e9dea725fcb68e8261e29abc4d7a22e920e"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Test the unique sector33 rank-one octad support against the W24 octad system with typed H6/F4 placement constraints. If that cannot be placed, the current cocircuit-plus-one 31 -> 24 route is exhausted.",
+  "schema": "d20.proof_obligation.sector33_w24_marked_delete_contract_shadow_probe@1",
+  "status": "D20_SECTOR33_W24_MARKED_DELETE_CONTRACT_SHADOW_PROBE_CERTIFIED",
+  "witness": {
+    "delete_contract_shadow_analysis": {
+      "allowed_golay_weights": [
+        0,
+        8,
+        12,
+        16,
+        24
+      ],
+      "candidate_count": 6400,
+      "extra_removed_count": 25,
+      "extra_removed_pool": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "fixed_removed_cocircuit": [
+        1,
+        2,
+        11,
+        21,
+        22,
+        30
+      ],
+      "operation_masks_per_removal_set": 128,
+      "sector33_attachment": {
+        "active_support": [
+          1,
+          2,
+          11,
+          21,
+          22
+        ],
+        "new_element": "e33",
+        "new_element_id": 30,
+        "sector33_dimension": 2,
+        "sector33_transport_scalar": -187392,
+        "sector_bridge_column": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -187392
+        ]
+      },
+      "shadow_summaries": {
+        "dual_rowspace_shadow": {
+          "candidate_count": 3200,
+          "compatible_records": [
+            {
+              "contracted_original_elements": [
+                1,
+                5,
+                11
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                22,
+                30
+              ],
+              "effective_contract_count": 3,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                5,
+                11
+              ],
+              "deleted_original_elements": [
+                21,
+                22,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                5,
+                11,
+                21
+              ],
+              "deleted_original_elements": [
+                2,
+                22,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                5,
+                11,
+                21
+              ],
+              "deleted_original_elements": [
+                22,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                5,
+                11,
+                22
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                5,
+                11,
+                22
+              ],
+              "deleted_original_elements": [
+                21,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                5,
+                11,
+                21,
+                22
+              ],
+              "deleted_original_elements": [
+                2,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                5,
+                11,
+                21,
+                22
+              ],
+              "deleted_original_elements": [
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                5,
+                11,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                22
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                5,
+                11,
+                30
+              ],
+              "deleted_original_elements": [
+                21,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                5,
+                11,
+                21,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                5,
+                11,
+                21,
+                30
+              ],
+              "deleted_original_elements": [
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                5,
+                11,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                5,
+                11,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                5,
+                11,
+                21,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                2
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                5,
+                11,
+                21,
+                22,
+                30
+              ],
+              "deleted_original_elements": [],
+              "effective_contract_count": 5,
+              "extra_removed": 5,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                6,
+                11
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                22,
+                30
+              ],
+              "effective_contract_count": 3,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                6,
+                11
+              ],
+              "deleted_original_elements": [
+                21,
+                22,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                6,
+                11,
+                21
+              ],
+              "deleted_original_elements": [
+                2,
+                22,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                6,
+                11,
+                21
+              ],
+              "deleted_original_elements": [
+                22,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                6,
+                11,
+                22
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                6,
+                11,
+                22
+              ],
+              "deleted_original_elements": [
+                21,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                6,
+                11,
+                21,
+                22
+              ],
+              "deleted_original_elements": [
+                2,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                6,
+                11,
+                21,
+                22
+              ],
+              "deleted_original_elements": [
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                6,
+                11,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                22
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                6,
+                11,
+                30
+              ],
+              "deleted_original_elements": [
+                21,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                6,
+                11,
+                21,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                6,
+                11,
+                21,
+                30
+              ],
+              "deleted_original_elements": [
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                6,
+                11,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                6,
+                11,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                6,
+                11,
+                21,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                2
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                6,
+                11,
+                21,
+                22,
+                30
+              ],
+              "deleted_original_elements": [],
+              "effective_contract_count": 5,
+              "extra_removed": 6,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                9,
+                11
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                22,
+                30
+              ],
+              "effective_contract_count": 3,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                9,
+                11
+              ],
+              "deleted_original_elements": [
+                21,
+                22,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                9,
+                11,
+                21
+              ],
+              "deleted_original_elements": [
+                2,
+                22,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                9,
+                11,
+                21
+              ],
+              "deleted_original_elements": [
+                22,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                9,
+                11,
+                22
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                9,
+                11,
+                22
+              ],
+              "deleted_original_elements": [
+                21,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                9,
+                11,
+                21,
+                22
+              ],
+              "deleted_original_elements": [
+                2,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                9,
+                11,
+                21,
+                22
+              ],
+              "deleted_original_elements": [
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                9,
+                11,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                21,
+                22
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [
+                [
+                  0,
+                  3,
+                  12,
+                  13,
+                  14,
+                  16,
+                  20,
+                  24
+                ]
+              ],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 1,
+              "shadow_weight_histogram": {
+                "0": 1,
+                "8": 1
+              },
+              "source_rank": 1
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                9,
+                11,
+                30
+              ],
+              "deleted_original_elements": [
+                21,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                9,
+                11,
+                21,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                9,
+                11,
+                21,
+                30
+              ],
+              "deleted_original_elements": [
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                9,
+                11,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                9,
+                11,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                9,
+                11,
+                21,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                2
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                9,
+                11,
+                21,
+                22,
+                30
+              ],
+              "deleted_original_elements": [],
+              "effective_contract_count": 5,
+              "extra_removed": 9,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                13,
+                21
+              ],
+              "deleted_original_elements": [
+                2,
+                22,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                13,
+                21
+              ],
+              "deleted_original_elements": [
+                22,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                13,
+                21,
+                22
+              ],
+              "deleted_original_elements": [
+                2,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                13,
+                21,
+                22
+              ],
+              "deleted_original_elements": [
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                13,
+                30
+              ],
+              "deleted_original_elements": [
+                21,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                13,
+                21,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                13,
+                21,
+                30
+              ],
+              "deleted_original_elements": [
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                13,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                13,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                13,
+                21,
+                22,
+                30
+              ],
+              "deleted_original_elements": [
+                2
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                13,
+                21,
+                22,
+                30
+              ],
+              "deleted_original_elements": [],
+              "effective_contract_count": 5,
+              "extra_removed": 13,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                21,
+                24
+              ],
+              "deleted_original_elements": [
+                2,
+                22,
+                30
+              ],
+              "effective_contract_count": 4,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                21,
+                24
+              ],
+              "deleted_original_elements": [
+                22,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                21,
+                22,
+                24
+              ],
+              "deleted_original_elements": [
+                2,
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                21,
+                22,
+                24
+              ],
+              "deleted_original_elements": [
+                30
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                24,
+                30
+              ],
+              "deleted_original_elements": [
+                21,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                21,
+                24,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                21,
+                24,
+                30
+              ],
+              "deleted_original_elements": [
+                22
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                22,
+                24,
+                30
+              ],
+              "deleted_original_elements": [
+                2,
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                22,
+                24,
+                30
+              ],
+              "deleted_original_elements": [
+                21
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                11,
+                21,
+                22,
+                24,
+                30
+              ],
+              "deleted_original_elements": [
+                2
+              ],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            },
+            {
+              "contracted_original_elements": [
+                1,
+                2,
+                11,
+                21,
+                22,
+                24,
+                30
+              ],
+              "deleted_original_elements": [],
+              "effective_contract_count": 5,
+              "extra_removed": 24,
+              "nonzero_shadow_supports": [],
+              "remaining_columns": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "shadow_rank": 0,
+              "shadow_weight_histogram": {
+                "0": 1
+              },
+              "source_rank": 0
+            }
+          ],
+          "compatible_records_sha256": "f7cbb11fb806a61bd78052728dd239254afcc5afc06eed6b952ced511fa39617",
+          "forbidden_weight_case_histogram": {
+            "10": 1110,
+            "3": 148,
+            "4": 1726,
+            "5": 2560,
+            "6": 259,
+            "7": 1450,
+            "9": 1655
+          },
+          "golay_weight_compatible_case_count": 70,
+          "golay_weight_compatible_rank_histogram": {
+            "0": 55,
+            "1": 15
+          },
+          "shadow_rank_histogram": {
+            "0": 55,
+            "1": 770,
+            "2": 1413,
+            "3": 962
+          },
+          "shadow_rule": "rowspace",
+          "source_matrix": "sector33_dual_mod2",
+          "source_rank_histogram": {
+            "0": 55,
+            "1": 770,
+            "2": 1413,
+            "3": 962
+          },
+          "unique_nonzero_supports": [
+            {
+              "case_count": 15,
+              "extra_removed_values": [
+                5,
+                6,
+                9
+              ],
+              "support": [
+                0,
+                3,
+                12,
+                13,
+                14,
+                16,
+                20,
+                24
+              ],
+              "support_weight": 8
+            }
+          ]
+        },
+        "primal_orthogonal_shadow": {
+          "candidate_count": 3200,
+          "compatible_records": [],
+          "compatible_records_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "forbidden_weight_case_histogram": {
+            "10": 3200,
+            "11": 3200,
+            "13": 3200,
+            "14": 3200,
+            "15": 3170,
+            "17": 2066,
+            "3": 636,
+            "4": 3076,
+            "5": 3200,
+            "6": 2696,
+            "7": 3148,
+            "9": 3200
+          },
+          "golay_weight_compatible_case_count": 0,
+          "golay_weight_compatible_rank_histogram": {},
+          "shadow_rank_histogram": {
+            "10": 450,
+            "5": 20,
+            "6": 162,
+            "7": 542,
+            "8": 986,
+            "9": 1040
+          },
+          "shadow_rule": "orthogonal_complement",
+          "source_matrix": "sector33_primal_mod2",
+          "source_rank_histogram": {
+            "14": 450,
+            "15": 1040,
+            "16": 986,
+            "17": 542,
+            "18": 162,
+            "19": 20
+          },
+          "unique_nonzero_supports": []
+        }
+      },
+      "source_matrix_count": 2
+    },
+    "target_golay_weight_test": {
+      "allowed_weights": [
+        0,
+        8,
+        12,
+        16,
+        24
+      ],
+      "rank": 12,
+      "self_dual": true,
+      "weight_histogram": {
+        "0": 1,
+        "12": 2576,
+        "16": 759,
+        "24": 1,
+        "8": 759
+      }
+    },
+    "unique_dual_octad_identity_w24_test": [
+      {
+        "contained_in_current_w24_golay_under_identity_labels": false,
+        "identity_w24_mask": 17920009,
+        "support": [
+          0,
+          3,
+          12,
+          13,
+          14,
+          16,
+          20,
+          24
+        ]
+      }
+    ]
+  }
+}

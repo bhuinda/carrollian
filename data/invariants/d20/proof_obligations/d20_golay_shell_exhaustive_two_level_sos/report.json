@@ -1,0 +1,284 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5d3b36d10878097a70b9fb777420bd34bcac18841c14575dbfc522d0afcffbfe",
+  "checks": {
+    "all_gap_polynomials_have_double_equality_root": true,
+    "all_gap_polynomials_have_positive_coefficient_quotients": true,
+    "all_profile_entries_well_formed": true,
+    "all_profile_sums_match_shell_sizes": true,
+    "archive_two_level_precursor_certified": true,
+    "both_shells_cover_all_subsets": true,
+    "both_shells_have_49_profiles": true,
+    "full_arbitrary_vector_theorem_not_certified": true,
+    "generated_code_has_4096_words": true,
+    "generated_code_weight_histogram_matches_w24": true,
+    "profile_csv_written": true,
+    "selected_two_level_precursor_certified": true,
+    "w24_endpoint_certified": true
+  },
+  "claim": "The two-level case of the Golay shell domination inequality is certified exhaustively for w=12 and w=16. For every subset S of the 24 coordinates, the exact intersection profile is reduced to one of 49 profiles per shell, and the integer gap polynomial factors as (r-1)^2 times a polynomial with nonnegative integer coefficients. This proves the two-level lift case; the arbitrary-vector entropy contraction remains open.",
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "8fd3bbe0fe9e99e7290b902ed4997bfb0a09252d6f1ec13849ba4cdddd3686c4",
+      "path": "generated/d20_golay_shell_exhaustive_two_level_sos.json",
+      "schema": "d20.proof_obligation.golay_shell_exhaustive_two_level_sos.artifact@1",
+      "sha256": "a52fd117e663d8f90517626cad7bba1e73c8ac71029e8e1b3e48625dd7b8089f",
+      "status": "D20_GOLAY_SHELL_EXHAUSTIVE_TWO_LEVEL_POSITIVE_QUOTIENT_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_golay_shell_exhaustive_two_level_sos.py",
+      "sha256": "470627208e798a00fbc2553f84a321005dafe7d457ff9cdfb588b38306f7d698"
+    },
+    "python_work_archive": {
+      "certificate_sha256": "f9900be4684d3c50378f06d1e2250246c18e4fa57cff062ac9d07ffdb393f3b9",
+      "path": "data/invariants/d20/proof_obligations/d20_hamming_gaussian_python_work_archive_import/report.json",
+      "sha256": "f0c55c0ed22834514c849eef93620dbaa2a1b69d007eb61977450222a2d51687",
+      "status": "D20_HAMMING_GAUSSIAN_PYTHON_WORK_ARCHIVE_IMPORT_CERTIFIED_PARTIAL_REPLAY"
+    },
+    "selected_two_level_probe": {
+      "certificate_sha256": "da3c35f04b9002faed4839fbdb591d91d2ef9149e1b984818c68b945e146966f",
+      "path": "data/invariants/d20/proof_obligations/d20_golay_shell_two_level_lift_probe/report.json",
+      "sha256": "0be67abc8bcb610708be4282b9079907ac7848a29ff3317ea6ceced558904932",
+      "status": "D20_GOLAY_SHELL_TWO_LEVEL_LIFT_PROBE_CERTIFIED_NO_COUNTEREXAMPLE"
+    },
+    "validator": {
+      "path": "src/certify_d20_golay_shell_exhaustive_two_level_sos.py",
+      "sha256": "5994e334171950a1e216eabfc7234c55ae128f8fdc9f10827f8ee6a257268118"
+    },
+    "w24_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Attempt the three-level analogue. If the same positive-quotient pattern survives for all three-block MOG/Terwilliger profiles, promote it toward a full Krawtchouk/SOS certificate for arbitrary nonnegative vectors.",
+  "schema": "d20.proof_obligation.golay_shell_exhaustive_two_level_sos@1",
+  "status": "D20_GOLAY_SHELL_EXHAUSTIVE_TWO_LEVEL_SOS_CERTIFIED",
+  "witness": {
+    "definition": {
+      "certificate_rule": "For every exact profile, Q_{w,S}(r)=(r-1)^2 R_{w,S}(r), and all coefficients of R_{w,S} are nonnegative integers. Thus Q_{w,S}(r)>=0 for every r>=0.",
+      "integer_gap_polynomial": "Q_{w,S}(r)=A_w(1)(|S|r^2+24-|S|)^(w/2)-24^(w/2) sum_j n_j(S) r^j",
+      "profile": "n_j(S)=#{B in G24_w : |B cap S|=j}",
+      "transform_method": "Superset zeta gives A(T)=#{B in G24_w:T subset B}; subset zeta on fixed |T| layers gives binomial moments c_m(S)=sum_{T subset S,|T|=m}A(T); binomial inversion recovers every n_j(S).",
+      "two_level_vector": "x_i=r on S and x_i=1 off S, with r>=0."
+    },
+    "open_boundary": {
+      "certified_here": [
+        "all two-level vectors x_i=r on S and x_i=1 off S for every S subset {1,...,24}",
+        "w=12 shell domination in the two-level case",
+        "w=16 shell domination in the two-level case",
+        "exact positive-coefficient quotient certificates for all 98 shell/profile cases"
+      ],
+      "not_certified": [
+        "three-level or higher nonnegative vectors",
+        "arbitrary nonnegative vectors in R^24",
+        "the full w=12 entropy contraction theorem",
+        "the full w=16 entropy contraction theorem"
+      ]
+    },
+    "witness": {
+      "length": 24,
+      "profile_csv": {
+        "path": "data/invariants/d20/proof_obligations/d20_golay_shell_exhaustive_two_level_sos/exhaustive_two_level_profiles.csv",
+        "sha256": "a4c5b3e2d51b6aebab27276aa9df5b95504e93608b9d7fbee4984288d5428316"
+      },
+      "profile_csv_row_count": 98,
+      "sample_profiles": [
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "0,0,0,0,0,0,0,0,0,0,0,0,0",
+          "min_positive_quotient_coefficient": 0,
+          "positive_quotient_coefficients": "0,0,0,0,0,0,0,0,0,0,0",
+          "positive_quotient_nonnegative": true,
+          "profile": "2576,0,0,0,0,0,0,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 11,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 1,
+          "support_size": 0
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "135199816976,-246140633088,99480117408,0,10813056240,0,626843840,0,20440560,0,355488,0,2576",
+          "min_positive_quotient_coefficient": 2576,
+          "positive_quotient_coefficients": "135199816976,24259000864,12798302160,1337603456,689960992,42318528,21519904,721280,363216,5152,2576",
+          "positive_quotient_nonnegative": true,
+          "profile": "1288,1288,0,0,0,0,0,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 24,
+          "support_size": 1
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "174347199488,-256842399744,41589639168,0,36206607360,0,4388679680,0,299228160,0,10881024,0,164864",
+          "min_positive_quotient_coefficient": 164864,
+          "positive_quotient_coefficients": "174347199488,91851999232,50946438144,10040877056,5341923328,642969600,332695552,22421504,11375616,329728,164864",
+          "positive_quotient_nonnegative": true,
+          "profile": "616,1344,616,0,0,0,0,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 276,
+          "support_size": 2
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "167424694416,-192631799808,-3260204640,-53508833280,67632712560,0,12882421440,0,1380259440,0,78871968,0,1877904",
+          "min_positive_quotient_coefficient": 1877904,
+          "positive_quotient_coefficients": "167424694416,142217589024,113750278992,31774135680,17430704928,3087274176,1626264864,165255552,84505680,3755808,1877904",
+          "positive_quotient_nonnegative": true,
+          "profile": "280,1008,1008,280,0,0,0,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 2024,
+          "support_size": 3
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "141931642880,-122305904640,-3967942656,-122305904640,75986042880,0,26378240000,0,3956736000,0,316538880,0,10551296",
+          "min_positive_quotient_coefficient": 10551296,
+          "positive_quotient_coefficients": "141931642880,161557381120,177215176704,70567067648,39905001472,9242935296,4959109120,675282944,348192768,21102592,10551296",
+          "positive_quotient_nonnegative": true,
+          "profile": "120,640,1056,640,120,0,0,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 10626,
+          "support_size": 4
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "112017246608,-68797071360,23182311840,-168170618880,57093014640,-9172942848,44171960000,0,8718150000,0,917700000,0,40250000",
+          "min_positive_quotient_coefficient": 40250000,
+          "positive_quotient_coefficients": "112017246608,155237421856,221639908944,119871777152,75196660000,21348600000,11672500000,1996400000,1038450000,80500000,40250000",
+          "positive_quotient_nonnegative": true,
+          "profile": "48,360,880,880,360,48,0,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 42504,
+          "support_size": 5
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "84557841408,-36691771392,60569192448,-183458856960,31364029440,-36691771392,61842714624,0,16225090560,0,2163345408,0,120185856",
+          "min_positive_quotient_coefficient": 120185856,
+          "positive_quotient_coefficients": "84557841408,132423911424,240859173888,165835579392,122176014336,41824677888,23316056064,4807434240,2523902976,240371712,120185856",
+          "positive_quotient_nonnegative": true,
+          "profile": "16,192,600,960,600,192,16,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 21252,
+          "support_size": 6
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "84175635456,-34398535680,54836103168,-175814737920,25630940160,-34398535680,61460508672,0,16225090560,0,2163345408,0,120185856",
+          "min_positive_quotient_coefficient": 120185856,
+          "positive_quotient_coefficients": "84175635456,133952735232,238565938176,167364403200,121793808384,41824677888,23316056064,4807434240,2523902976,240371712,120185856",
+          "positive_quotient_nonnegative": true,
+          "profile": "18,180,630,920,630,180,18,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 113344,
+          "support_size": 6
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "62178377744,-21403533312,89406568608,-160526499840,-2391179280,-64210599936,65415858368,0,26811870960,0,4416072864,0,303063824",
+          "min_positive_quotient_coefficient": 303063824,
+          "positive_quotient_coefficients": "62178377744,102953222176,233134635216,202789548416,170053282336,73106416320,41575408672,10044401024,5325264336,606127648,303063824",
+          "positive_quotient_nonnegative": true,
+          "profile": "0,112,336,840,840,336,112,0,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 6072,
+          "support_size": 7
+        },
+        {
+          "first_division_remainder": 0,
+          "gap_coefficients": "61031759888,-15670444032,79087007904,-154793410560,3341910000,-74530160640,71148947648,-1146617856,26811870960,0,4416072864,0,303063824",
+          "min_positive_quotient_coefficient": 303063824,
+          "positive_quotient_coefficients": "61031759888,106393075744,230841399504,200496312704,173493135904,71959798464,41575408672,10044401024,5325264336,606127648,303063824",
+          "positive_quotient_nonnegative": true,
+          "profile": "6,82,390,810,810,390,82,6,0,0,0,0,0",
+          "quotient_zero_coefficient_count": 0,
+          "second_division_remainder": 0,
+          "shell": 12,
+          "subset_count": 340032,
+          "support_size": 7
+        }
+      ],
+      "shells": {
+        "12": {
+          "all_gap_polynomials_have_double_root_at_one": true,
+          "all_positive_quotients_nonnegative": true,
+          "all_subsets_covered": true,
+          "malformed_chunks": 0,
+          "max_profile_sum": 2576,
+          "min_positive_quotient_coefficient": 0,
+          "min_profile_entry": 0,
+          "shell": 12,
+          "shell_count": 2576,
+          "subset_count_total": 16777216,
+          "transform_maxima": [
+            2576,
+            30912,
+            170016,
+            566720,
+            1275120,
+            2040192,
+            2380224,
+            2040192,
+            1275120,
+            566720,
+            170016,
+            30912,
+            2576
+          ],
+          "unique_profile_count": 49
+        },
+        "16": {
+          "all_gap_polynomials_have_double_root_at_one": true,
+          "all_positive_quotients_nonnegative": true,
+          "all_subsets_covered": true,
+          "malformed_chunks": 0,
+          "max_profile_sum": 759,
+          "min_positive_quotient_coefficient": 0,
+          "min_profile_entry": 0,
+          "shell": 16,
+          "shell_count": 759,
+          "subset_count_total": 16777216,
+          "transform_maxima": [
+            759,
+            12144,
+            91080,
+            425040,
+            1381380,
+            3315312,
+            6078072,
+            8682960,
+            9768330,
+            8682960,
+            6078072,
+            3315312,
+            1381380,
+            425040,
+            91080,
+            12144,
+            759
+          ],
+          "unique_profile_count": 49
+        }
+      },
+      "subset_count_per_shell": 16777216
+    }
+  }
+}
