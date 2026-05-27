@@ -1,0 +1,112 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "02d8b6aa60935b68b3c5d25d832edf6a07bd8d01c6be80f42236d063ae9e074d",
+  "checks": {
+    "affinity_delta_numerator_is_41": true,
+    "affinity_metric_graph_is_connected": true,
+    "atlas_report_certified": true,
+    "atom_count_is_20": true,
+    "complement_pair_count_is_10": true,
+    "johnson_delta_numerator_is_2": true,
+    "johnson_diameter_is_3": true,
+    "johnson_edge_count_is_90": true,
+    "johnson_graph_is_connected": true,
+    "max_complement_mass_contrast_is_155776": true,
+    "pair_count_is_190": true,
+    "pair_layer_counts_match_c_h6_3": true,
+    "pair_records_shape_is_190_by_15": true,
+    "signature_class_union_is_233": true,
+    "signature_delta_numerator_is_146": true,
+    "signature_metric_graph_is_connected": true
+  },
+  "claim": "The C985-derived d20 boundary atlas carries a verified hyperbolic graph readout: the C(H6,3) Johnson graph has exact Gromov delta 1, while signature-weighted metrics expose stronger four-point curvature witnesses.",
+  "closure_boundary": {
+    "certifies": [
+      "Johnson-neighborhood graph on the 20 d20 boundary atoms",
+      "all 190 atom-pair layer records with signature overlap and tensor mass contrast",
+      "exact unweighted and signature-weighted shortest-path matrices",
+      "exact four-point Gromov hyperbolicity witnesses for the boundary metrics",
+      "antipodal complement-pair contrast landmarks"
+    ],
+    "does_not_certify_because_not_required": [
+      "a canonical hyperbolic embedding in the Poincare disk or hyperboloid model",
+      "a packet bridge from d20 atoms to A985/tube coordinates",
+      "a packet normalization killing known boundary torsion",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "boundary_atlas": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.json",
+      "sha256": "b62925995990cf4ae91710a7a74c7e7015f5c5be6c47f0b55365dd959845d844"
+    },
+    "boundary_atlas_npz": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.npz",
+      "sha256": "9d1d4ce89a4a0cbb982b6571f7c6017038ac9afd8ceb1f9dc62d40c901991615"
+    },
+    "boundary_atlas_report": {
+      "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json",
+      "sha256": "c4a06fe54ede9305984391a4be10808467321d29003b68efb93b21b672982e95",
+      "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_hyperbolic_boundary_graph.py",
+      "sha256": "8658c40fd5bbc26dc3c04a9b06d7801c8d1b8ad37da49b932c291ae894e8994c"
+    },
+    "relation_geometry_signatures": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+      "sha256": "28406664614db343b98547643f71278e83f9e1537b1f935cde013e32f2e1c694"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_hyperbolic_boundary_graph.py",
+      "sha256": "52937c851c578bba3ca25eb50013736c6e273eb6a8831798d701ee213a43b7a4"
+    }
+  },
+  "next_highest_yield_item": "Build a canonical 2D hyperbolic embedding from the certified graph metrics, then compare geodesic neighborhoods against the C985 tensor-mass landmarks.",
+  "outputs": {
+    "boundary_hyperbolic_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_edges.csv",
+    "boundary_hyperbolic_graph": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_graph.json",
+    "boundary_hyperbolic_metrics": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_metrics.npz",
+    "hyperbolic_certificate": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/hyperbolic_certificate.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/report.json"
+  },
+  "schema": "c985.proof_obligation.d20_hyperbolic_boundary_graph@1",
+  "stage_protocol": {
+    "closure": "certify a hyperbolic boundary graph readout without claiming a packet bridge or optional categorical enrichment",
+    "coherence": "check C(H6,3) layer counts, connectivity, exact hyperbolicity witnesses, and metric reproducibility",
+    "draft": "use the certified C985-to-d20 boundary atlas as the 20-vertex source",
+    "emit": "emit graph JSON, edge CSV, metric NPZ, certificate, and next graph-deepening target",
+    "witness": "materialize pair records, Johnson edges, complement contrasts, and shortest-path metrics"
+  },
+  "status": "C985_D20_HYPERBOLIC_BOUNDARY_GRAPH_CERTIFIED",
+  "witness": {
+    "affinity_delta_fraction": [
+      41,
+      2
+    ],
+    "affinity_distance_diameter": 54,
+    "affinity_distance_sha256": "4742ac1ddb9fe58f07fb4f0c5330c73a94805367c75d174a9ac3783f96c4df56",
+    "atom_count": 20,
+    "complement_pair_count": 10,
+    "johnson_delta_fraction": [
+      2,
+      2
+    ],
+    "johnson_diameter": 3,
+    "johnson_distance_sha256": "a72cb53d1f8fe6a2dac15d93c2ffcae146fcd573c9ac15d575ca4ab9432a1c3d",
+    "johnson_edge_count": 90,
+    "max_complement_mass_contrast": 155776,
+    "max_signature_overlap_on_johnson_edge": 61,
+    "pair_count": 190,
+    "pair_records_sha256": "428b03f82327ac807ab14030a1821484fc9f3050f88080446514bac094aeb2c2",
+    "signature_class_count": 233,
+    "signature_delta_fraction": [
+      146,
+      2
+    ],
+    "signature_distance_diameter": 193,
+    "signature_distance_sha256": "2f72410cf7b2dfe953459e65705b5ab73717d74a2b5eedd30fe3857b7b8fe01e"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "certification_tests": [
+    "load the certified C985 tensor-geometry readout",
+    "load the certified d20 C(H6,3) atom domain",
+    "aggregate six ordered distinct object-sector paths per d20 atom",
+    "attach relation signatures whose source and target lie inside each atom",
+    "verify distinct/repeated object-path partition totals",
+    "verify all relation-signature classes are visible through atom incidence"
+  ],
+  "inputs": {
+    "d20_atom_domain": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/d20_atom_domain.csv",
+      "sha256": "79545f23224cf1834c79e495c0cc1718ce91b44880b98ac94f3c6a81304ae77d"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_boundary_invariant_atlas.py",
+      "sha256": "05268dd855e70866ec032331e9fb0aae9c1230ea38790b53306f048ab086c656"
+    },
+    "object_sector_cubes": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/object_sector_cubes.npz",
+      "sha256": "fee2031d4f16790455274933a35d186440eef27b3f8c5a2011753ce2285d3a9a"
+    },
+    "relation_geometry_signatures": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+      "sha256": "28406664614db343b98547643f71278e83f9e1537b1f935cde013e32f2e1c694"
+    },
+    "tensor_geometry_report": {
+      "certificate_sha256": "de1650d0232ec6bbd4a57721e37784cfc87ebcafead5b00f508463035cd2ecef",
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/report.json",
+      "sha256": "7c77dcdbf747487520764cbc8b5eb7c027c124b4673336d1f1986ba1184018f7",
+      "status": "C985_TENSOR_GEOMETRY_INVARIANTS_CERTIFIED"
+    },
+    "tensor_geometry_summary": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/tensor_geometry_summary.json",
+      "sha256": "ed3f3e8346c6e6339ee38e2209d43bc3782207ccfa519339818e900d499b5990"
+    },
+    "tiny_pointer_report": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/report.json",
+      "sha256": "4bf79809955a15d19250fe0d5283c2235e76afd034c3b8ad0ce0f3ed3aa80918",
+      "status": "D20_TINY_POINTER_A985_SECTOR_LABEL_ALIAS_REGISTRY_CERTIFIED"
+    },
+    "tiny_pointer_schema": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/tiny_pointer_d20_atom_primitive_schema.json",
+      "sha256": "fee05ef4624bd587b200f9885223ae99a3b67943ed8a26c87df9db7596d91368"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_boundary_invariant_atlas.py",
+      "sha256": "68dfe04040eb0600f901e0104f65dc805b3aa16d1822d429de01107556cd9590"
+    }
+  },
+  "manifest_sha256": "436a0f459cf876e707f31f9f55ce1c057441266784760687ea535fcb94327f29",
+  "name": "c985_d20_boundary_invariant_atlas",
+  "outputs": {
+    "d20_boundary_invariant_atlas": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.json",
+    "d20_boundary_invariant_atlas_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.csv",
+    "d20_boundary_invariant_atlas_npz": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.npz",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/manifest.json",
+    "projection_certificate": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/projection_certificate.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json"
+  },
+  "report_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+  "schema": "c985.proof_obligation.d20_boundary_invariant_atlas_manifest@1",
+  "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+}

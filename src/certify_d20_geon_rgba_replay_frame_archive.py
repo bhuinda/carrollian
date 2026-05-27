@@ -38,9 +38,9 @@ INDEX_REL = INDEX_PATH.relative_to(ROOT).as_posix()
 EXPECTED_CHECKS = {
     "source_visualization_hash_recorded",
     "phase_audit_certified",
-    "frame_count_is_18",
+    "frame_count_is_24",
     "sample_frames_match_phase_audit",
-    "all_three_canvases_present",
+    "all_four_canvases_present",
     "every_frame_byte_length_matches_rgba_shape",
     "every_frame_hash_matches_base64_payload",
     "all_alpha_channels_constant_opaque",
@@ -112,10 +112,17 @@ def validate_d20_geon_rgba_replay_frame_archive() -> dict[str, Any]:
         raise AssertionError("RGBA replay archive checks mismatch")
 
     frames = artifact.get("frames", [])
-    if len(frames) != 18:
-        raise AssertionError("RGBA replay archive expected 18 frames")
+    if len(frames) != 24:
+        raise AssertionError("RGBA replay archive expected 24 frames")
     for row in frames:
         _validate_frame(row)
+    atom_frames = [row for row in frames if row.get("canvas_id") == "d20RgbaAtomCanvas"]
+    if len(atom_frames) != 6:
+        raise AssertionError("RGBA replay archive expected six D20 atom frames")
+    for row in atom_frames:
+        entropy = row.get("channel_summary", {}).get("entropy_bits", {})
+        if any(float(entropy.get(channel, 0.0)) <= 0.0 for channel in ("red", "green", "blue")):
+            raise AssertionError(f"D20 atom frame {row['frame']} non-alpha entropy is zero")
     if artifact.get("browser_capture_status", {}).get("status") != "BLOCKED_IN_CURRENT_ENVIRONMENT":
         raise AssertionError("browser-capture blocked boundary missing")
     if "not a live-browser" not in artifact.get("browser_capture_status", {}).get("boundary", ""):

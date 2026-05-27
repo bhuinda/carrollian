@@ -1,0 +1,169 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4c9b5781e9888d18d21a4f3b714576264726ce92b2027db3ff0ba5a5ca9d6909",
+  "checks": {
+    "active_cells_nonzero": true,
+    "alignment_values_finite": true,
+    "null_assignment_is_permutation": true,
+    "null_mode_unit_norm": true,
+    "real_mode_unit_norm": true,
+    "renderer_embeds_eigenmode_witness": true,
+    "replay_frames_present": true,
+    "stress_graph_certified": true
+  },
+  "claim": "A deterministic D20 lift replay can be compared against a certified stress-graph transport mode and a shuffled null mode. The report records whether the live coil-like atlas signal aligns more strongly with the real atlas mode than with the null assignment.",
+  "closure_boundary": {
+    "certifies": [
+      "fixed-seed real-vs-null transport-eigenmode measurements",
+      "deterministic replay parameters and graph-mode construction",
+      "finite alignment values against certified atlas-derived inputs"
+    ],
+    "does_not_certify": [
+      "literal electron-path eigenmodes",
+      "magnetic-field control",
+      "black-hole or gravitational dynamics",
+      "browser compositor pixels"
+    ]
+  },
+  "definition": {
+    "claim_boundary": "certifies reproducible real-vs-null alignment measurements only; it does not certify a continuum electron eigenpath, Maxwell field, or gravitational model",
+    "live_signal": "per-frame histogram of live dominant D20 fibers weighted by graph-smoothed signed atlas tension and log local load",
+    "null_mode": "same graph update with deterministic atom-to-tension shuffle i -> (7*i + 11) mod 20",
+    "object": "fixed-seed D20 lifted sandpile transport eigenmode witness",
+    "real_mode": "dominant smoothed transport vector from the certified C985 D20 stress graph"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "ef763c12b239664ca34d02aa977557a262cf144b09ab5c77a6f95909b5ffa4bf",
+      "path": "generated/d20_transport_eigenmode_report.json",
+      "schema": "d20.transport_eigenmode_report.artifact@1",
+      "sha256": "9bd985deba45bd68dda9082b7165df0620405a50da250d14ce58f5b1258c5eb7",
+      "status": "D20_TRANSPORT_EIGENMODE_REPORT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_transport_eigenmode_report.py",
+      "sha256": "410d60eed495079655df5963e9664eaff28e2177f753633e8667987bffdcedd5"
+    },
+    "stress_graph_artifact": {
+      "artifact_sha256_excluding_this_field": "5bd822ddda121407977177b980fab93a3e210fd833c4dbc076e35cd4701c1cd4",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/artifact.json",
+      "schema": "c985.d20_boundary_neighborhood_stress_graph.artifact@1",
+      "sha256": "8b0fa599e688122a5c1d31fb1ce2f7774af2b090212a2587be4d62f9b068f0fc",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "stress_graph_report": {
+      "certificate_sha256": "e52211930ae30a3a9e0e3285905f355f418f726165903178b1975d3a7c1f4930",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/report.json",
+      "sha256": "8e04b2a9a97b0b86ed29586e35678698652c72dce71ab4288d4bc1ffc9f5bc87",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_transport_eigenmode_report.py",
+      "sha256": "7b452a10d67883632606c841410539b7b85ce5630538707865517f93f880b197"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "f0d88b86e9fdcd11774a317d6433781e33b460060d1e7722fb2a7bef0138904c"
+    }
+  },
+  "interpretation": {
+    "mean_gap": 0.4296811426731722,
+    "null_mode_alignment_mean": 0.041500615541806694,
+    "positive_gap_fraction": 1.0,
+    "real_mode_alignment_mean": 0.4711817582149789,
+    "support_status": "REAL_MODE_ADVANTAGE"
+  },
+  "next_highest_yield_item": "Add a batch A/B harness over many collider shots and compare capture/residue statistics for real atlas assignment versus shuffled null assignment.",
+  "schema": "d20.transport_eigenmode_report@1",
+  "stage_protocol": {
+    "closure": "emit a reproducible alignment gap without promoting a physical EM/GR claim",
+    "coherence": "verify stress graph certification, unit modes, finite alignments, and null permutation",
+    "draft": "treat the Tesla-coil reading as a graph-transport eigenmode hypothesis",
+    "emit": "publish artifact, report, manifest, and registry entry",
+    "witness": "replay the D20 lift with fixed warmup and compare live signals to real/null modes"
+  },
+  "status": "D20_TRANSPORT_EIGENMODE_REPORT_CERTIFIED",
+  "witness": {
+    "conclusion": "REAL_MODE_ADVANTAGE",
+    "null_mode_head": [
+      -0.213420505963,
+      -0.0935754335,
+      0.068529840813,
+      -0.220522878933,
+      -0.51388613011,
+      -0.01508379481,
+      -0.032739949233,
+      0.508371612074
+    ],
+    "real_mode_head": [
+      0.2778268518,
+      0.052079103117,
+      0.141337214998,
+      0.019851756662,
+      0.098135324607,
+      0.161565041647,
+      0.008946777895,
+      0.231229923234
+    ],
+    "real_null_mode_dot": -0.05354378527965719,
+    "sample_frames": [
+      {
+        "active_cells": 7958,
+        "frame": 0,
+        "null_alignment": 0.1821604751986592,
+        "real_alignment": 0.6791932449569288,
+        "signal_l2_norm": 1.0
+      },
+      {
+        "active_cells": 7933,
+        "frame": 1,
+        "null_alignment": 0.08182568281829197,
+        "real_alignment": 0.44166036491071564,
+        "signal_l2_norm": 1.0
+      },
+      {
+        "active_cells": 8018,
+        "frame": 2,
+        "null_alignment": 0.05704924438624906,
+        "real_alignment": 0.4436501694675007,
+        "signal_l2_norm": 1.0
+      },
+      {
+        "active_cells": 8018,
+        "frame": 3,
+        "null_alignment": 0.08842893087567422,
+        "real_alignment": 0.4916021516748024,
+        "signal_l2_norm": 0.9999999999999999
+      },
+      {
+        "active_cells": 8120,
+        "frame": 4,
+        "null_alignment": 0.03832322089462919,
+        "real_alignment": 0.46029410422161443,
+        "signal_l2_norm": 1.0
+      },
+      {
+        "active_cells": 8266,
+        "frame": 5,
+        "null_alignment": 0.0748641145544371,
+        "real_alignment": 0.43184244868930105,
+        "signal_l2_norm": 1.0
+      }
+    ],
+    "summary": {
+      "active_cells_mean": 8261.114583333334,
+      "frame_count": 96,
+      "null_alignment_max": 0.1821604751986592,
+      "null_alignment_mean": 0.041500615541806694,
+      "null_alignment_min": 0.0012317130102216963,
+      "positive_gap_fraction": 1.0,
+      "positive_gap_frame_count": 96,
+      "real_alignment_max": 0.6791932449569288,
+      "real_alignment_mean": 0.4711817582149789,
+      "real_alignment_min": 0.3785499714748343,
+      "real_minus_null_gap_max": 0.5510153261794948,
+      "real_minus_null_gap_mean": 0.4296811426731722,
+      "real_minus_null_gap_min": 0.321184641258181
+    }
+  }
+}

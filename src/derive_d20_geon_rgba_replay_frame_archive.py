@@ -20,6 +20,7 @@ try:
         entropy_from_counts,
         load_visualization_data,
         palette_channel_entropies,
+        rgba_channel_summary,
         spectral_metrics,
     )
     from .paths import D20_INVARIANTS, GENERATED, ROOT, relpath
@@ -34,6 +35,7 @@ except ImportError:  # Supports direct script execution.
         entropy_from_counts,
         load_visualization_data,
         palette_channel_entropies,
+        rgba_channel_summary,
         spectral_metrics,
     )
     from paths import D20_INVARIANTS, GENERATED, ROOT, relpath
@@ -118,6 +120,25 @@ def frame_record(canvas_id: str, frame: int, categories: np.ndarray, palette: li
     }
 
 
+def rgba_frame_record(canvas_id: str, frame: int, rgba: np.ndarray) -> dict[str, Any]:
+    raw = rgba.astype(np.uint8, copy=False).tobytes()
+    channels = rgba_channel_summary(rgba)
+    entropy = channels["entropy_bits"]
+    return {
+        "canvas_id": canvas_id,
+        "frame": frame,
+        "width": int(rgba.shape[1]),
+        "height": int(rgba.shape[0]),
+        "byte_length": len(raw),
+        "rgba_sha256": hashlib.sha256(raw).hexdigest(),
+        "rgba_base64": base64.b64encode(raw).decode("ascii"),
+        "category_counts": None,
+        "category_entropy_bits": max(float(entropy[name]) for name in ("red", "green", "blue")),
+        "channel_summary": channels,
+        "spectral_summary": spectral_metrics(rgba[:, :, 0]),
+    }
+
+
 def capture_d20_frames(data: dict[str, Any]) -> list[dict[str, Any]]:
     sim = D20LiftSimulator(data)
     sim.seed()
@@ -133,6 +154,7 @@ def capture_d20_frames(data: dict[str, Any]) -> list[dict[str, Any]]:
         if frame in sample_set:
             frames.append(frame_record("d20LiftCanvas", frame, sim.render_cooriented(categories, sums), D20_PALETTE))
             frames.append(frame_record("d20HexLiftCanvas", frame, sim.render_hex(categories, sums), D20_PALETTE))
+            frames.append(rgba_frame_record("d20RgbaAtomCanvas", frame, sim.render_rgba_atom(sums)))
     return frames
 
 
@@ -172,11 +194,11 @@ def build_artifact() -> dict[str, Any]:
         "source_visualization_hash_recorded": sha_file(VISUALIZATION)
         == phase_report["inputs"]["visualization"]["sha256"],
         "phase_audit_certified": phase_report.get("status") == "D20_GEON_PHASE_ENTROPY_AUDIT_CERTIFIED",
-        "frame_count_is_18": len(frames) == 18,
+        "frame_count_is_24": len(frames) == 24,
         "sample_frames_match_phase_audit": sorted({int(row["frame"]) for row in frames})
         == sorted(SAMPLE_FRAMES),
-        "all_three_canvases_present": sorted({row["canvas_id"] for row in frames})
-        == ["d20HexLiftCanvas", "d20LiftCanvas", "toppleCanvas"],
+        "all_four_canvases_present": sorted({row["canvas_id"] for row in frames})
+        == ["d20HexLiftCanvas", "d20LiftCanvas", "d20RgbaAtomCanvas", "toppleCanvas"],
         "every_frame_byte_length_matches_rgba_shape": all(
             int(row["byte_length"]) == int(row["width"]) * int(row["height"]) * 4
             for row in frames
@@ -218,7 +240,7 @@ def build_artifact() -> dict[str, Any]:
             "engine": "repo-local deterministic replay of the exact D20 canvas render rules",
             "raw_format": "RGBA byte buffer encoded as base64",
             "sample_frames": sorted(SAMPLE_FRAMES),
-            "canvases": ["d20LiftCanvas", "d20HexLiftCanvas", "toppleCanvas"],
+            "canvases": ["d20LiftCanvas", "d20HexLiftCanvas", "d20RgbaAtomCanvas", "toppleCanvas"],
         },
         "frame_count": len(frames),
         "frames": frames,
@@ -250,9 +272,10 @@ def build_report(artifact: dict[str, Any]) -> dict[str, Any]:
             "certifies": [
                 "raw RGBA byte buffers are archived for the deterministic renderer replay",
                 "all archived frames have byte length width * height * 4",
-                "all archived frame hashes match their base64 RGBA payloads",
-                "all archived alpha channels are constant opaque",
-                "non-alpha state channels carry entropy in the archived frame set",
+            "all archived frame hashes match their base64 RGBA payloads",
+            "all archived alpha channels are constant opaque",
+            "the D20 RGBA atom frames are archived as raw invariant-bearing byte buffers",
+            "non-alpha state channels carry entropy in the archived frame set",
             ],
             "does_not_certify": [
                 "live browser getImageData capture",
@@ -299,7 +322,7 @@ def build_manifest(report: dict[str, Any], artifact: dict[str, Any]) -> dict[str
         "certification_tests": [
             "verify the source visualization hash matches the phase-entropy audit input",
             "verify the prior phase-entropy audit is certified",
-            "verify 18 RGBA frames cover six sample frames across three canvases",
+            "verify 24 RGBA frames cover six sample frames across four canvases",
             "verify every RGBA byte buffer length and hash",
             "verify all alpha channels are constant opaque",
             "verify browser capture remains explicitly blocked rather than claimed",

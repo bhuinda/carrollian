@@ -35,10 +35,18 @@ INDEX_REL = INDEX_PATH.relative_to(ROOT).as_posix()
 
 EXPECTED_CHECKS = {
     "visualization_data_loaded",
+    "d20_lift_render_grid_is_2_by_2",
+    "d20_rgba_atom_canvas_declared",
+    "d20_atlas_tension_canvas_declared",
+    "d20_atlas_tension_uses_certified_stress_graph",
+    "d20_rgba_atom_3d_canvas_declared",
+    "d20_rgba_atom_3d_uses_translucent_projection",
     "robust_oblongness_theorem_certified",
     "intrinsic_ratio_is_31_over_23",
     "all_named_voltage_lifts_oblong",
     "d20_render_alpha_entropy_zero",
+    "d20_rgba_atom_alpha_entropy_zero",
+    "d20_rgba_atom_non_alpha_channels_nonzero",
     "topple_render_alpha_entropy_zero",
     "d20_render_state_entropy_nonzero",
     "topple_height_entropy_nonzero",
@@ -107,12 +115,24 @@ def validate_d20_geon_phase_entropy_audit() -> dict[str, Any]:
     topple_final = artifact.get("phase_entropy_witness", {}).get("square_abelian_topple", {}).get(
         "final", {}
     )
+    canvas_audit = artifact.get("canvas_source_audit", {})
+    if canvas_audit.get("d20_lift_grid", {}).get("frame_count") != 4:
+        raise AssertionError("D20 lift grid is not recorded as four frames")
+    if canvas_audit.get("d20_rgba_atom_3d_canvas", {}).get("id") != "d20RgbaAtom3dCanvas":
+        raise AssertionError("D20 RGBA atom 3D canvas audit is missing")
+    if canvas_audit.get("d20_atlas_tension_canvas", {}).get("id") != "d20AtlasTensionCanvas":
+        raise AssertionError("D20 atlas tension canvas audit is missing")
     if d20_final.get("cooriented_render_channels", {}).get("unique_values", {}).get("alpha") != [255]:
         raise AssertionError("D20 alpha channel is not constant opaque")
+    if d20_final.get("rgba_atom_channels", {}).get("unique_values", {}).get("alpha") != [255]:
+        raise AssertionError("D20 RGBA atom alpha channel is not constant opaque")
     if topple_final.get("render_channels", {}).get("unique_values", {}).get("alpha") != [255]:
         raise AssertionError("topple alpha channel is not constant opaque")
     if float(d20_final.get("cooriented_render_entropy_bits", 0.0)) <= 0.0:
         raise AssertionError("D20 render entropy is zero")
+    atom_entropy = d20_final.get("rgba_atom_channel_entropy_bits", {})
+    if any(float(atom_entropy.get(channel, 0.0)) <= 0.0 for channel in ("red", "green", "blue")):
+        raise AssertionError("D20 RGBA atom non-alpha channel entropy is zero")
     if float(topple_final.get("height_entropy_bits", 0.0)) <= 0.0:
         raise AssertionError("topple height entropy is zero")
     _assert_spectral_witness(d20_final.get("cooriented_render_spectral_null", {}), "D20 render")
@@ -120,7 +140,7 @@ def validate_d20_geon_phase_entropy_audit() -> dict[str, Any]:
 
     open_ids = [row.get("id") for row in artifact.get("open_obligations", [])]
     if open_ids != [
-        "rgba_frame_capture",
+        "live_browser_rgba_capture",
         "three_coordinate_hamming_weight8_witness",
         "physical_geon_interpretation",
     ]:

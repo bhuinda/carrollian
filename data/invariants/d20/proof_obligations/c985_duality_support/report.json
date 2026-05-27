@@ -1,0 +1,316 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5fc729ca0b8b77aebb00d04f5de20a31d4b6e40e05e7ba5557fcecf031747ae2",
+  "checks": {
+    "coevaluation_spaces_are_nonzero": true,
+    "duality_failures_are_zero": true,
+    "duality_record_count_is_985": true,
+    "evaluation_spaces_are_nonzero": true,
+    "fusion_multiplicity_typing_certified": true,
+    "identity_orbitals_are_self_dual": true,
+    "transpose_flips_all_source_targets": true,
+    "transpose_is_involution": true,
+    "typed_registry_certified": true,
+    "unit_triangle_coherence_certified": true
+  },
+  "claim": "The transpose involution supplies a typed dual candidate for each C985 simple, with nonzero evaluation and coevaluation multiplicity spaces against the six identity orbitals.",
+  "closure_boundary": {
+    "certifies": [
+      "transpose dual candidate for every C985 simple",
+      "source/target flip and transpose involution",
+      "nonzero evaluation multiplicity space X_alpha^vee tensor X_alpha -> 1_target",
+      "nonzero coevaluation multiplicity space 1_source -> X_alpha tensor X_alpha^vee"
+    ],
+    "does_not_certify": [
+      "specific evaluation and coevaluation linear combinations",
+      "zig-zag identities",
+      "full rigidity",
+      "full finite semisimple multi-fusion category status"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_duality_support.py",
+      "sha256": "c6dbbdac3f09984eda4e2ce6c66812114e530f23116cdf7be605fa9acdb413c3"
+    },
+    "fusion_basis_index": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_index.npz",
+      "sha256": "7c0e6e1e161e82b620f2bb2750b2a109bdc950c40f4848d3293e19790d3f66c8"
+    },
+    "fusion_basis_points": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_points.npz",
+      "sha256": "3805a6cf6e7fdd178decc70f5f2ab4e81ba25d03b9db015bc12efe1dd0fbfacd"
+    },
+    "fusion_report": {
+      "certificate_sha256": "dad6709e91e16cf434b121aa2eb0fe26b318d2e05a5fc800b30f7f9d7fdb2dc7",
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/report.json",
+      "sha256": "2eb666d526750e5ba7812c22b685a81f7391c2a7d13fdf2242ba054ac8e92d35",
+      "status": "C985_FUSION_MULTIPLICITY_TYPING_CERTIFIED"
+    },
+    "identity_orbitals": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/identity_orbitals.json",
+      "sha256": "59c5b2235998b3cd7605183da0cfd1d9d94856fb136cb646cdc2f9e0402596e2"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "source_target": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+      "sha256": "69d649e5a876fc3d90ef5f804c91081224b44c7619524a0735ed1c44e2bd60ec"
+    },
+    "transpose": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/transpose.npy",
+      "sha256": "da4b67de1f267cb6406e4df497d470fdb870bf4ecaed4ef31f20e929b81d070b"
+    },
+    "triangle_report": {
+      "certificate_sha256": "bbbd80fdb7846feeb6f4f11dec6515f0a9810c82d831cc1aa855abd1002ae5c8",
+      "path": "data/invariants/d20/proof_obligations/c985_unit_triangle_coherence/report.json",
+      "sha256": "bad8fc71dad5f97773d423f32f471ebd5511d04641071f309bc2214d22291623",
+      "status": "C985_UNIT_TRIANGLE_COHERENCE_CERTIFIED"
+    },
+    "typed_registry_report": {
+      "certificate_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+      "sha256": "28855e8904a1fd21aac84bb922a33442c4c58e49413f49a5e891f0f5001813a4",
+      "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_duality_support.py",
+      "sha256": "a5162e156707998cee33a8b6de3f9259f8659c09a7806c26a649ae5008dd5e12"
+    }
+  },
+  "next_highest_yield_item": "Choose explicit evaluation/coevaluation vectors in these nonzero multiplicity spaces and verify the two zig-zag identities using the associator oracle.",
+  "outputs": {
+    "duality_certificate": "data/invariants/d20/proof_obligations/c985_duality_support/duality_certificate.json",
+    "duality_support_records": "data/invariants/d20/proof_obligations/c985_duality_support/duality_support_records.npz",
+    "duality_support_table": "data/invariants/d20/proof_obligations/c985_duality_support/duality_support_table.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_duality_support/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_duality_support/report.json"
+  },
+  "schema": "c985.proof_obligation.duality_support@1",
+  "stage_protocol": {
+    "closure": "certify duality support while leaving zig-zag identities open",
+    "coherence": "check source/target flip and nonzero eval/coeval spaces for all 985 simples",
+    "draft": "use certified transpose, identity orbitals, and fusion multiplicity bases",
+    "emit": "emit duality support certificate and next C985 zig-zag target",
+    "witness": "materialize duality_support_records.npz and duality support certificate"
+  },
+  "status": "C985_DUALITY_SUPPORT_CERTIFIED",
+  "witness": {
+    "duality_records_sha256": "765939859bea5d84b5a9399d8b89880a3e83bbf6bc565ee94c30bd5077f03881",
+    "duality_summary": {
+      "coeval_dim_max": 64,
+      "coeval_dim_min": 1,
+      "coeval_dim_total": 15456,
+      "duality_failure_count": 0,
+      "eval_dim_max": 64,
+      "eval_dim_min": 1,
+      "eval_dim_total": 15456,
+      "first_duality_failures": []
+    },
+    "first_16_duality_records": [
+      [
+        0,
+        0,
+        0,
+        0,
+        6,
+        6,
+        6,
+        6,
+        100,
+        100
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        6,
+        6,
+        3,
+        3,
+        114,
+        114
+      ],
+      [
+        2,
+        2,
+        0,
+        0,
+        6,
+        6,
+        6,
+        6,
+        475,
+        475
+      ],
+      [
+        3,
+        3,
+        0,
+        0,
+        6,
+        6,
+        6,
+        6,
+        97,
+        97
+      ],
+      [
+        4,
+        4,
+        0,
+        0,
+        6,
+        6,
+        3,
+        3,
+        478,
+        478
+      ],
+      [
+        5,
+        5,
+        0,
+        0,
+        6,
+        6,
+        6,
+        6,
+        119,
+        119
+      ],
+      [
+        6,
+        6,
+        0,
+        0,
+        6,
+        6,
+        1,
+        1,
+        96,
+        96
+      ],
+      [
+        7,
+        8,
+        0,
+        0,
+        6,
+        6,
+        24,
+        24,
+        184,
+        178
+      ],
+      [
+        8,
+        7,
+        0,
+        0,
+        6,
+        6,
+        24,
+        24,
+        178,
+        184
+      ],
+      [
+        9,
+        13,
+        0,
+        0,
+        6,
+        6,
+        12,
+        12,
+        1074,
+        857
+      ],
+      [
+        10,
+        10,
+        0,
+        0,
+        6,
+        6,
+        24,
+        24,
+        849,
+        849
+      ],
+      [
+        11,
+        12,
+        0,
+        0,
+        6,
+        6,
+        24,
+        24,
+        179,
+        183
+      ],
+      [
+        12,
+        11,
+        0,
+        0,
+        6,
+        6,
+        24,
+        24,
+        183,
+        179
+      ],
+      [
+        13,
+        9,
+        0,
+        0,
+        6,
+        6,
+        12,
+        12,
+        857,
+        1074
+      ],
+      [
+        14,
+        14,
+        0,
+        0,
+        6,
+        6,
+        12,
+        12,
+        175,
+        175
+      ],
+      [
+        15,
+        15,
+        0,
+        0,
+        6,
+        6,
+        24,
+        24,
+        176,
+        176
+      ]
+    ],
+    "identity_relations": [
+      6,
+      163,
+      227,
+      349,
+      618,
+      893
+    ],
+    "relation_count": 985
+  }
+}

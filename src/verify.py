@@ -23,6 +23,41 @@ the practical verification modes without hiding file writes behind a default:
 * jacobian-cubic-cache: validate the cached normalized cubic elimination certificates;
 * talagrand-chain-audit: validate the extracted Talagrand closure chain audit;
 * talagrand-kkt-obligation: validate the extracted Talagrand KKT open proof obligation;
+* c985-registry: validate the C985 typed simple-object registry proof obligation;
+* c985-fusion: validate the C985 fusion multiplicity typing proof obligation;
+* c985-associator: validate the C985 associator rebracketing oracle proof obligation;
+* c985-unit: validate the C985 unit tensor laws proof obligation;
+* c985-triangle: validate the C985 unit triangle coherence proof obligation;
+* c985-duality: validate the C985 transpose duality support proof obligation;
+* c985-pentagon: validate the C985 pentagon chain normal form proof obligation;
+* c985-zigzag: validate the C985 dual zig-zag identities proof obligation;
+* c985-final: validate the final C985 finite semisimple multi-fusion certificate;
+* c985-geometry: validate the C985 tensor geometry invariant-discovery readout;
+* c985-d20-atlas: validate the C985-to-d20 boundary invariant atlas;
+* c985-hyperbolic-graph: validate the C985-derived d20 hyperbolic boundary graph;
+* c985-poincare: validate the C985-derived d20 Poincare disk embedding;
+* c985-filtration: validate the C985-derived d20 Poincare landmark filtration;
+* c985-nerve: validate the C985-derived d20 signature-class nerve;
+* c985-chart-atlas: validate the C985-derived d20 hyperbolic chart atlas;
+* c985-transition-groupoid: validate the C985-derived d20 transition groupoid;
+* c985-normal-words: validate the C985-derived d20 normal-form words;
+* c985-symbolic-rewrites: validate the C985-derived d20 symbolic rewrite rules;
+* c985-symbolic-associativity: validate the C985-derived d20 symbolic associativity diamond;
+* c985-rewrite-complex: validate the C985-derived d20 rewrite-complex hyperbolicity;
+* c985-interval-sheaf: validate the C985-derived d20 geodesic interval sheaf;
+* c985-preserved-core: validate the C985-derived d20 preserved-core subcomplex;
+* c985-chamber-spine: validate the C985-derived d20 chamber-spine orientation;
+* c985-morse-reeb: validate the C985-derived d20 Morse/Reeb quotient;
+* c985-boundary-transfer: validate the C985-derived d20 boundary transfer operator;
+* c985-atom-flow: validate the C985-derived d20 stationary atom-flow lift;
+* c985-signature-subboundary: validate the C985-derived d20 recurrent signature subboundary;
+* c985-signature-transfer: validate the C985-derived d20 signature subboundary transfer operator;
+* c985-signature-spectral-cut: validate the C985-derived d20 signature transfer spectral cut;
+* c985-signature-quotient: validate the C985-derived d20 signature spectral quotient dynamics;
+* c985-signature-geometry: validate the C985-derived d20 signature quotient Poincare geometry;
+* c985-signature-geodesic: validate the C985-derived d20 signature geodesic order;
+* c985-signature-residual-chart: validate the C985-derived d20 signature geodesic residual chart;
+* c985-signature-cell-complex: validate the C985-derived d20 signature residual cell complex;
 * token-burn: validate bounded-output guard coverage for repo-defined runners;
 * tamper: mutate certified evidence in memory and require verification failure.
 """
@@ -1486,6 +1521,560 @@ def integration_nonstrict(*, pretty: bool) -> int:
     return finish(result, pretty)
 
 
+def c985_registry(*, pretty: bool) -> int:
+    from src.certify_c985_typed_simple_object_registry import (
+        validate_c985_typed_simple_object_registry,
+    )
+
+    try:
+        result = validate_c985_typed_simple_object_registry()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.typed_simple_object_registry@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_fusion(*, pretty: bool) -> int:
+    from src.certify_c985_fusion_multiplicity_typing import (
+        validate_c985_fusion_multiplicity_typing,
+    )
+
+    try:
+        result = validate_c985_fusion_multiplicity_typing()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.fusion_multiplicity_typing@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_associator(*, pretty: bool) -> int:
+    from src.certify_c985_associator_rebracketing_oracle import (
+        validate_c985_associator_rebracketing_oracle,
+    )
+
+    try:
+        result = validate_c985_associator_rebracketing_oracle()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.associator_rebracketing_oracle@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_unit(*, pretty: bool) -> int:
+    from src.certify_c985_unit_tensor_laws import validate_c985_unit_tensor_laws
+
+    try:
+        result = validate_c985_unit_tensor_laws()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.unit_tensor_laws@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_triangle(*, pretty: bool) -> int:
+    from src.certify_c985_unit_triangle_coherence import (
+        validate_c985_unit_triangle_coherence,
+    )
+
+    try:
+        result = validate_c985_unit_triangle_coherence()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.unit_triangle_coherence@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_duality(*, pretty: bool) -> int:
+    from src.certify_c985_duality_support import validate_c985_duality_support
+
+    try:
+        result = validate_c985_duality_support()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.duality_support@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_pentagon(*, pretty: bool) -> int:
+    from src.certify_c985_pentagon_chain_normal_form import (
+        validate_c985_pentagon_chain_normal_form,
+    )
+
+    try:
+        result = validate_c985_pentagon_chain_normal_form()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.pentagon_chain_normal_form@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_zigzag(*, pretty: bool) -> int:
+    from src.certify_c985_zigzag_identities import validate_c985_zigzag_identities
+
+    try:
+        result = validate_c985_zigzag_identities()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.zigzag_identities@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_final(*, pretty: bool) -> int:
+    from src.certify_c985_final_multifusion_certificate import (
+        validate_c985_final_multifusion_certificate,
+    )
+
+    try:
+        result = validate_c985_final_multifusion_certificate()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.final_multifusion_certificate@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_geometry(*, pretty: bool) -> int:
+    from src.certify_c985_tensor_geometry_invariants import (
+        validate_c985_tensor_geometry_invariants,
+    )
+
+    try:
+        result = validate_c985_tensor_geometry_invariants()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.tensor_geometry_invariants@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_d20_atlas(*, pretty: bool) -> int:
+    from src.certify_c985_d20_boundary_invariant_atlas import (
+        validate_c985_d20_boundary_invariant_atlas,
+    )
+
+    try:
+        result = validate_c985_d20_boundary_invariant_atlas()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_boundary_invariant_atlas@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_hyperbolic_graph(*, pretty: bool) -> int:
+    from src.certify_c985_d20_hyperbolic_boundary_graph import (
+        validate_c985_d20_hyperbolic_boundary_graph,
+    )
+
+    try:
+        result = validate_c985_d20_hyperbolic_boundary_graph()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_hyperbolic_boundary_graph@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_poincare(*, pretty: bool) -> int:
+    from src.certify_c985_d20_poincare_embedding import (
+        validate_c985_d20_poincare_embedding,
+    )
+
+    try:
+        result = validate_c985_d20_poincare_embedding()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_poincare_embedding@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_filtration(*, pretty: bool) -> int:
+    from src.certify_c985_d20_poincare_landmark_filtration import (
+        validate_c985_d20_poincare_landmark_filtration,
+    )
+
+    try:
+        result = validate_c985_d20_poincare_landmark_filtration()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_poincare_landmark_filtration@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_nerve(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_class_nerve import (
+        validate_c985_d20_signature_class_nerve,
+    )
+
+    try:
+        result = validate_c985_d20_signature_class_nerve()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_class_nerve@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_chart_atlas(*, pretty: bool) -> int:
+    from src.certify_c985_d20_hyperbolic_chart_atlas import (
+        validate_c985_d20_hyperbolic_chart_atlas,
+    )
+
+    try:
+        result = validate_c985_d20_hyperbolic_chart_atlas()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_hyperbolic_chart_atlas@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_transition_groupoid(*, pretty: bool) -> int:
+    from src.certify_c985_d20_transition_groupoid import (
+        validate_c985_d20_transition_groupoid,
+    )
+
+    try:
+        result = validate_c985_d20_transition_groupoid()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_transition_groupoid@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_normal_words(*, pretty: bool) -> int:
+    from src.certify_c985_d20_normal_form_words import (
+        validate_c985_d20_normal_form_words,
+    )
+
+    try:
+        result = validate_c985_d20_normal_form_words()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_normal_form_words@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_symbolic_rewrites(*, pretty: bool) -> int:
+    from src.certify_c985_d20_symbolic_rewrite_rules import (
+        validate_c985_d20_symbolic_rewrite_rules,
+    )
+
+    try:
+        result = validate_c985_d20_symbolic_rewrite_rules()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_symbolic_rewrite_rules@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_symbolic_associativity(*, pretty: bool) -> int:
+    from src.certify_c985_d20_symbolic_associativity import (
+        validate_c985_d20_symbolic_associativity,
+    )
+
+    try:
+        result = validate_c985_d20_symbolic_associativity()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_symbolic_associativity@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_rewrite_complex(*, pretty: bool) -> int:
+    from src.certify_c985_d20_rewrite_complex_hyperbolicity import (
+        validate_c985_d20_rewrite_complex_hyperbolicity,
+    )
+
+    try:
+        result = validate_c985_d20_rewrite_complex_hyperbolicity()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_rewrite_complex_hyperbolicity@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_interval_sheaf(*, pretty: bool) -> int:
+    from src.certify_c985_d20_geodesic_interval_sheaf import (
+        validate_c985_d20_geodesic_interval_sheaf,
+    )
+
+    try:
+        result = validate_c985_d20_geodesic_interval_sheaf()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_geodesic_interval_sheaf@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_preserved_core(*, pretty: bool) -> int:
+    from src.certify_c985_d20_preserved_core_subcomplex import (
+        validate_c985_d20_preserved_core_subcomplex,
+    )
+
+    try:
+        result = validate_c985_d20_preserved_core_subcomplex()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_preserved_core_subcomplex@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_chamber_spine(*, pretty: bool) -> int:
+    from src.certify_c985_d20_chamber_spine import (
+        validate_c985_d20_chamber_spine,
+    )
+
+    try:
+        result = validate_c985_d20_chamber_spine()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_chamber_spine@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_morse_reeb(*, pretty: bool) -> int:
+    from src.certify_c985_d20_morse_reeb_quotient import (
+        validate_c985_d20_morse_reeb_quotient,
+    )
+
+    try:
+        result = validate_c985_d20_morse_reeb_quotient()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_morse_reeb_quotient@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_boundary_transfer(*, pretty: bool) -> int:
+    from src.certify_c985_d20_boundary_transfer_operator import (
+        validate_c985_d20_boundary_transfer_operator,
+    )
+
+    try:
+        result = validate_c985_d20_boundary_transfer_operator()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_boundary_transfer_operator@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_atom_flow(*, pretty: bool) -> int:
+    from src.certify_c985_d20_stationary_atom_flow_lift import (
+        validate_c985_d20_stationary_atom_flow_lift,
+    )
+
+    try:
+        result = validate_c985_d20_stationary_atom_flow_lift()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_stationary_atom_flow_lift@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_subboundary(*, pretty: bool) -> int:
+    from src.certify_c985_d20_recurrent_signature_subboundary import (
+        validate_c985_d20_recurrent_signature_subboundary,
+    )
+
+    try:
+        result = validate_c985_d20_recurrent_signature_subboundary()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_recurrent_signature_subboundary@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_transfer(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_subboundary_transfer_operator import (
+        validate_c985_d20_signature_subboundary_transfer_operator,
+    )
+
+    try:
+        result = validate_c985_d20_signature_subboundary_transfer_operator()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_subboundary_transfer_operator@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_spectral_cut(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_transfer_spectral_cut import (
+        validate_c985_d20_signature_transfer_spectral_cut,
+    )
+
+    try:
+        result = validate_c985_d20_signature_transfer_spectral_cut()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_transfer_spectral_cut@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_quotient(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_spectral_quotient_dynamics import (
+        validate_c985_d20_signature_spectral_quotient_dynamics,
+    )
+
+    try:
+        result = validate_c985_d20_signature_spectral_quotient_dynamics()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_spectral_quotient_dynamics@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_geometry(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_quotient_poincare_geometry import (
+        validate_c985_d20_signature_quotient_poincare_geometry,
+    )
+
+    try:
+        result = validate_c985_d20_signature_quotient_poincare_geometry()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_quotient_poincare_geometry@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_geodesic(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_geodesic_order import (
+        validate_c985_d20_signature_geodesic_order,
+    )
+
+    try:
+        result = validate_c985_d20_signature_geodesic_order()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_geodesic_order@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_residual_chart(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_geodesic_residual_chart import (
+        validate_c985_d20_signature_geodesic_residual_chart,
+    )
+
+    try:
+        result = validate_c985_d20_signature_geodesic_residual_chart()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_geodesic_residual_chart@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_cell_complex(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_residual_cell_complex import (
+        validate_c985_d20_signature_residual_cell_complex,
+    )
+
+    try:
+        result = validate_c985_d20_signature_residual_cell_complex()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_residual_cell_complex@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def finish(result: dict[str, Any], pretty: bool) -> int:
     emit(result, pretty)
     return 0 if result.get("status") == "PASS" else 1
@@ -1514,6 +2103,41 @@ def main() -> None:
         "talagrand-handoff",
         "talagrand-chain-audit",
         "talagrand-kkt-obligation",
+        "c985-registry",
+        "c985-fusion",
+        "c985-associator",
+        "c985-unit",
+        "c985-triangle",
+        "c985-duality",
+        "c985-pentagon",
+        "c985-zigzag",
+        "c985-final",
+        "c985-geometry",
+        "c985-d20-atlas",
+        "c985-hyperbolic-graph",
+        "c985-poincare",
+        "c985-filtration",
+        "c985-nerve",
+        "c985-chart-atlas",
+        "c985-transition-groupoid",
+        "c985-normal-words",
+        "c985-symbolic-rewrites",
+        "c985-symbolic-associativity",
+        "c985-rewrite-complex",
+        "c985-interval-sheaf",
+        "c985-preserved-core",
+        "c985-chamber-spine",
+        "c985-morse-reeb",
+        "c985-boundary-transfer",
+        "c985-atom-flow",
+        "c985-signature-subboundary",
+        "c985-signature-transfer",
+        "c985-signature-spectral-cut",
+        "c985-signature-quotient",
+        "c985-signature-geometry",
+        "c985-signature-geodesic",
+        "c985-signature-residual-chart",
+        "c985-signature-cell-complex",
         "token-burn",
         "tamper",
     ):
@@ -1559,6 +2183,76 @@ def main() -> None:
         raise SystemExit(talagrand_chain_audit(pretty=args.pretty))
     if args.command == "talagrand-kkt-obligation":
         raise SystemExit(talagrand_kkt_obligation(pretty=args.pretty))
+    if args.command == "c985-registry":
+        raise SystemExit(c985_registry(pretty=args.pretty))
+    if args.command == "c985-fusion":
+        raise SystemExit(c985_fusion(pretty=args.pretty))
+    if args.command == "c985-associator":
+        raise SystemExit(c985_associator(pretty=args.pretty))
+    if args.command == "c985-unit":
+        raise SystemExit(c985_unit(pretty=args.pretty))
+    if args.command == "c985-triangle":
+        raise SystemExit(c985_triangle(pretty=args.pretty))
+    if args.command == "c985-duality":
+        raise SystemExit(c985_duality(pretty=args.pretty))
+    if args.command == "c985-pentagon":
+        raise SystemExit(c985_pentagon(pretty=args.pretty))
+    if args.command == "c985-zigzag":
+        raise SystemExit(c985_zigzag(pretty=args.pretty))
+    if args.command == "c985-final":
+        raise SystemExit(c985_final(pretty=args.pretty))
+    if args.command == "c985-geometry":
+        raise SystemExit(c985_geometry(pretty=args.pretty))
+    if args.command == "c985-d20-atlas":
+        raise SystemExit(c985_d20_atlas(pretty=args.pretty))
+    if args.command == "c985-hyperbolic-graph":
+        raise SystemExit(c985_hyperbolic_graph(pretty=args.pretty))
+    if args.command == "c985-poincare":
+        raise SystemExit(c985_poincare(pretty=args.pretty))
+    if args.command == "c985-filtration":
+        raise SystemExit(c985_filtration(pretty=args.pretty))
+    if args.command == "c985-nerve":
+        raise SystemExit(c985_nerve(pretty=args.pretty))
+    if args.command == "c985-chart-atlas":
+        raise SystemExit(c985_chart_atlas(pretty=args.pretty))
+    if args.command == "c985-transition-groupoid":
+        raise SystemExit(c985_transition_groupoid(pretty=args.pretty))
+    if args.command == "c985-normal-words":
+        raise SystemExit(c985_normal_words(pretty=args.pretty))
+    if args.command == "c985-symbolic-rewrites":
+        raise SystemExit(c985_symbolic_rewrites(pretty=args.pretty))
+    if args.command == "c985-symbolic-associativity":
+        raise SystemExit(c985_symbolic_associativity(pretty=args.pretty))
+    if args.command == "c985-rewrite-complex":
+        raise SystemExit(c985_rewrite_complex(pretty=args.pretty))
+    if args.command == "c985-interval-sheaf":
+        raise SystemExit(c985_interval_sheaf(pretty=args.pretty))
+    if args.command == "c985-preserved-core":
+        raise SystemExit(c985_preserved_core(pretty=args.pretty))
+    if args.command == "c985-chamber-spine":
+        raise SystemExit(c985_chamber_spine(pretty=args.pretty))
+    if args.command == "c985-morse-reeb":
+        raise SystemExit(c985_morse_reeb(pretty=args.pretty))
+    if args.command == "c985-boundary-transfer":
+        raise SystemExit(c985_boundary_transfer(pretty=args.pretty))
+    if args.command == "c985-atom-flow":
+        raise SystemExit(c985_atom_flow(pretty=args.pretty))
+    if args.command == "c985-signature-subboundary":
+        raise SystemExit(c985_signature_subboundary(pretty=args.pretty))
+    if args.command == "c985-signature-transfer":
+        raise SystemExit(c985_signature_transfer(pretty=args.pretty))
+    if args.command == "c985-signature-spectral-cut":
+        raise SystemExit(c985_signature_spectral_cut(pretty=args.pretty))
+    if args.command == "c985-signature-quotient":
+        raise SystemExit(c985_signature_quotient(pretty=args.pretty))
+    if args.command == "c985-signature-geometry":
+        raise SystemExit(c985_signature_geometry(pretty=args.pretty))
+    if args.command == "c985-signature-geodesic":
+        raise SystemExit(c985_signature_geodesic(pretty=args.pretty))
+    if args.command == "c985-signature-residual-chart":
+        raise SystemExit(c985_signature_residual_chart(pretty=args.pretty))
+    if args.command == "c985-signature-cell-complex":
+        raise SystemExit(c985_signature_cell_complex(pretty=args.pretty))
     raise SystemExit(run(args.command, pretty=args.pretty))
 
 

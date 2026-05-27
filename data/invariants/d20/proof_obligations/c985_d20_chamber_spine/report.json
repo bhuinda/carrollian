@@ -1,0 +1,387 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "eda35ecd01c0e5bb35ba9f44200d17a38f282cc3dd62fe470664e503c51da3ca",
+  "checks": {
+    "all_directed_path_count_is_176": true,
+    "boundary_band_fold_count_is_2": true,
+    "boundary_band_fold_steps_are_36_to_38_and_52_to_43": true,
+    "boundary_band_node_count_is_52": true,
+    "clique_complex_euler_characteristic_is_zero": true,
+    "core_edge_count_is_31": true,
+    "core_node_count_is_12": true,
+    "core_retraction_obstruction_count_is_9": true,
+    "core_retraction_obstruction_nodes_are_expected": true,
+    "cyclic_directed_triangle_count_is_zero": true,
+    "directed_adjacency_shape_is_12_by_12": true,
+    "directed_cycle_count_is_zero": true,
+    "directed_orientation_is_acyclic": true,
+    "fold_retraction_has_no_graph_failures": true,
+    "fold_table_shape_is_2_by_8": true,
+    "full_rewrite_complex_fold_count_is_6": true,
+    "full_rewrite_complex_spine_matches_boundary_spine": true,
+    "high_signature_threshold_matches_preserved_core": true,
+    "largest_chamber_is_13_28_38_41_43_44": true,
+    "longest_source_sink_path_is_43_38_13_41_28_34_44": true,
+    "maximal_chamber_count_is_10": true,
+    "maximal_chamber_size_histogram_is_9_triangles_1_six": true,
+    "orientation_reason_histogram_is_30_signature_1_poincare": true,
+    "oriented_edge_count_is_31": true,
+    "oriented_edge_table_shape_is_31_by_11": true,
+    "poincare_flow_histogram_is_23_inward_8_outward": true,
+    "preserved_core_certificate_certified": true,
+    "preserved_core_report_certified": true,
+    "retraction_table_shape_is_52_by_5": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "sink_is_44": true,
+    "source_sink_path_count_is_42": true,
+    "sources_are_10_43": true,
+    "spine_degree_histogram_is_30_nine_20_fifteen": true,
+    "spine_diameter_is_3": true,
+    "spine_edge_count_is_285": true,
+    "spine_gromov_delta_is_1": true,
+    "spine_has_no_residual_dominated_pairs": true,
+    "spine_node_count_is_50": true,
+    "transitive_reduction_edge_count_is_15": true,
+    "transitive_reduction_table_shape_is_15_by_6": true,
+    "triangle_count_is_29": true,
+    "undirected_cycle_rank_is_20": true
+  },
+  "claim": "The preserved 12-node d20 core carries a deterministic acyclic signature/Poincare chamber orientation, and its 52-node finite boundary band folds to a certified 50-node hyperbolic spine while not retracting directly onto the 12-node core.",
+  "closure_boundary": {
+    "certifies": [
+      "signature/Poincare orientation for all 31 preserved-core edges",
+      "directed acyclicity, source/sink nodes, path counts, and transitive reduction",
+      "maximal clique chambers and directed triangle behavior in the preserved core",
+      "dominated-vertex fold of the 52-node boundary band to a 50-node spine",
+      "spine diameter, exact Gromov-delta witness, and failure of direct core retraction"
+    ],
+    "does_not_certify_because_not_required": [
+      "a continuous topological deformation retract",
+      "an infinite visual boundary or asymptotic Gromov boundary",
+      "arbitrary-length symbolic rewrite confluence",
+      "new C985 associator or pentagon data beyond the existing certificate",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_chamber_spine.py",
+      "sha256": "16df05122c6ab6be342e2e33ff7780c610e8624b64970cee3a77134553f2e8ae"
+    },
+    "preserved_core": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_preserved_core_subcomplex/preserved_core_subcomplex.json",
+      "sha256": "32d7b8a4a79567506b91edbdd5c67eac28c9b6fb4f4597bac31580c9f4ace143"
+    },
+    "preserved_core_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_preserved_core_subcomplex/preserved_core_certificate.json",
+      "sha256": "d40ba72ad4ad6c7f029dad33e03c77285adbf176a8317233867cc3bc42b11572"
+    },
+    "preserved_core_report": {
+      "certificate_sha256": "a6628a60adfcebfedbe43589145339de93a04698bb94eceaf47f5c538f486008",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_preserved_core_subcomplex/report.json",
+      "sha256": "eed22403933938cba2133371659b335daba62de2bd15be7d8fda4871762d8cd2",
+      "status": "C985_D20_PRESERVED_CORE_SUBCOMPLEX_CERTIFIED"
+    },
+    "preserved_core_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_preserved_core_subcomplex/preserved_core_tables.npz",
+      "sha256": "50962996511106ba1a64190244e72f7d1264c34e498c2f82038790de9364b32c"
+    },
+    "rewrite_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+      "sha256": "0d170586487cce586baea14d2da03b700e3688ab2d45a5793094d19ad8b99385"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_chamber_spine.py",
+      "sha256": "297470385d5ea76c68cbcd03c461bd6152ca4428fe4ec5543c725c2274c6dbbd"
+    }
+  },
+  "next_highest_yield_item": "Use the acyclic chamber orientation as a Morse/Reeb quotient: certify the two source basins flowing to sink 44, the basin boundary inside the 50-node spine, and the induced interval category of directed source-sink paths.",
+  "outputs": {
+    "chamber_spine": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine.json",
+    "chamber_spine_certificate": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine_certificate.json",
+    "chamber_spine_tables": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine_tables.npz",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/manifest.json",
+    "maximal_chambers_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/maximal_chambers.csv",
+    "oriented_core_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/oriented_core_edges.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/report.json",
+    "spine_folds_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/spine_folds.csv",
+    "spine_retraction_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/spine_retraction.csv",
+    "transitive_reduction_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/transitive_reduction_edges.csv"
+  },
+  "schema": "c985.proof_obligation.d20_chamber_spine@1",
+  "stage_protocol": {
+    "closure": "certify the chamber orientation and finite boundary-band spine",
+    "coherence": "check acyclicity, sources/sinks, chamber counts, path counts, fold dominance, retraction failures, and spine hyperbolicity",
+    "draft": "orient the preserved-core graph by signature ascent and Poincare tie-flow",
+    "emit": "emit chamber-spine JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize oriented edges, chamber cliques, directed paths, dominated folds, and spine retraction tables"
+  },
+  "status": "C985_D20_CHAMBER_SPINE_CERTIFIED",
+  "witness": {
+    "all_directed_path_count": 176,
+    "all_directed_path_length_histogram": [
+      {
+        "count": 12,
+        "value": 0
+      },
+      {
+        "count": 31,
+        "value": 1
+      },
+      {
+        "count": 49,
+        "value": 2
+      },
+      {
+        "count": 48,
+        "value": 3
+      },
+      {
+        "count": 27,
+        "value": 4
+      },
+      {
+        "count": 8,
+        "value": 5
+      },
+      {
+        "count": 1,
+        "value": 6
+      }
+    ],
+    "boundary_band_fold_count": 2,
+    "boundary_band_fold_steps": [
+      [
+        36,
+        38
+      ],
+      [
+        52,
+        43
+      ]
+    ],
+    "boundary_band_node_count": 52,
+    "chamber_node_potential_table_sha256": "1297663234c5f58347538cbfa35e022256df07232a0e91064b120ea622b54210",
+    "clique_complex_euler_characteristic": 0,
+    "core_edge_count": 31,
+    "core_node_count": 12,
+    "core_retraction_obstruction_count": 9,
+    "core_retraction_obstruction_node_ids": [
+      7,
+      9,
+      12,
+      14,
+      16,
+      27,
+      29,
+      31,
+      50
+    ],
+    "cyclic_directed_triangle_count": 0,
+    "directed_acyclic": true,
+    "directed_adjacency_sha256": "84c95eb826af1482ab595121b28cc1252ce7880b31e55794fb726ad648bf861a",
+    "directed_cycle_count": 0,
+    "fold_retraction_failure_count": 0,
+    "fold_table_sha256": "6b0f47e388f73b49eda876b2ceda948bcd9fe31423a643d22178a8bcdcace02f",
+    "full_fold_table_sha256": "11ab003431f6abed06f06c2f4f703ba2601356f84a196e9120adccbdfbeab04c",
+    "full_rewrite_complex_fold_count": 6,
+    "full_rewrite_complex_spine_matches_boundary_spine": true,
+    "largest_chamber_node_ids": [
+      13,
+      28,
+      38,
+      41,
+      43,
+      44
+    ],
+    "longest_source_sink_path": [
+      43,
+      38,
+      13,
+      41,
+      28,
+      34,
+      44
+    ],
+    "longest_source_sink_path_length": 6,
+    "maximal_chamber_count": 10,
+    "maximal_chamber_size_histogram": [
+      {
+        "count": 9,
+        "value": 3
+      },
+      {
+        "count": 1,
+        "value": 6
+      }
+    ],
+    "maximal_chamber_table_sha256": "13e0f629d2d25f7d9d2b84f114dddd6a01e68a7cea46dbefdf68adb61c5323d6",
+    "orientation_reason_histogram": [
+      {
+        "count": 30,
+        "value": 0
+      },
+      {
+        "count": 1,
+        "value": 1
+      }
+    ],
+    "oriented_edge_count": 31,
+    "oriented_edge_table_sha256": "b5be87b4123c81ead394c3db4a59feae0f948266192e7ed5370ad5847fe2b78e",
+    "poincare_flow_histogram": [
+      {
+        "count": 23,
+        "value": -1
+      },
+      {
+        "count": 8,
+        "value": 1
+      }
+    ],
+    "potential_topological_order": [
+      43,
+      38,
+      13,
+      10,
+      41,
+      28,
+      17,
+      19,
+      32,
+      34,
+      42,
+      44
+    ],
+    "residual_dominated_pair_count": 0,
+    "retraction_table_sha256": "c33817ece6ad402de1e21ce4fb33552f461931ea1237598153dea03b2186e984",
+    "sink_node_ids": [
+      44
+    ],
+    "source_node_ids": [
+      10,
+      43
+    ],
+    "source_sink_path_count": 42,
+    "source_sink_path_length_histogram": [
+      {
+        "count": 1,
+        "value": 1
+      },
+      {
+        "count": 6,
+        "value": 2
+      },
+      {
+        "count": 14,
+        "value": 3
+      },
+      {
+        "count": 14,
+        "value": 4
+      },
+      {
+        "count": 6,
+        "value": 5
+      },
+      {
+        "count": 1,
+        "value": 6
+      }
+    ],
+    "spine_adjacency_sha256": "c8272441da28bb3d9a943a71aa66f6aa537ac3fff4112eae88169a4d5526760c",
+    "spine_degree_histogram": [
+      {
+        "count": 30,
+        "value": 9
+      },
+      {
+        "count": 20,
+        "value": 15
+      }
+    ],
+    "spine_diameter": 3,
+    "spine_distances_sha256": "c5e03f963becc93c3e45b3eb94f93015065e25eabd0b91b3f1473d897f183973",
+    "spine_edge_count": 285,
+    "spine_gromov_delta": 1.0,
+    "spine_gromov_delta_twice": 2,
+    "spine_gromov_delta_witness_nodes": [
+      10,
+      13,
+      19,
+      7
+    ],
+    "spine_node_count": 50,
+    "spine_node_ids": [
+      10,
+      13,
+      17,
+      19,
+      28,
+      32,
+      34,
+      38,
+      41,
+      42,
+      43,
+      44,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      14,
+      15,
+      16,
+      18,
+      20,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      29,
+      30,
+      31,
+      33,
+      35,
+      37,
+      39,
+      40,
+      45,
+      47,
+      48,
+      49,
+      50,
+      51,
+      53,
+      54
+    ],
+    "transitive_reduction_adjacency_sha256": "b9f102a9295c89525401c15346a63e5aedc2ebe881aae620fe9855fa721f1520",
+    "transitive_reduction_edge_count": 15,
+    "transitive_reduction_table_sha256": "7588efc3aa1516422a8ada62002e21a4a3519614914fa24659abf38af40b2d71",
+    "triangle_count": 29,
+    "undirected_cycle_rank": 20
+  }
+}

@@ -225,6 +225,22 @@ def palette_channel_entropies(counts: list[int], palette: list[list[int]]) -> di
     return {"entropy_bits": entropy, "unique_values": unique}
 
 
+def rgba_channel_summary(rgba: np.ndarray) -> dict[str, Any]:
+    channels: dict[str, dict[int, int]] = {}
+    for idx, name in enumerate(("red", "green", "blue", "alpha")):
+        values, counts = np.unique(rgba[:, :, idx], return_counts=True)
+        channels[name] = {
+            int(value): int(count)
+            for value, count in zip(values.tolist(), counts.tolist())
+        }
+    entropy = {
+        name: entropy_from_counts(list(values.values()))
+        for name, values in channels.items()
+    }
+    unique = {name: sorted(values) for name, values in channels.items()}
+    return {"entropy_bits": entropy, "unique_values": unique}
+
+
 def js_round(value: float) -> int:
     return int(math.floor(value + 0.5))
 
@@ -405,6 +421,72 @@ class D20LiftSimulator:
             return 0
         return int(categories[y, x])
 
+    def sample_cell(self, x: int, y: int) -> dict[str, Any]:
+        if x < 0 or y < 0 or x >= self.size or y >= self.size:
+            return {
+                "sum": 0,
+                "hot": False,
+                "signature": 0,
+                "dominant_fiber": 0,
+                "dominant_chips": 0,
+                "mask": 0,
+                "pixel": self.data["pixels"][0],
+            }
+        cell_base = (y * self.size + x) * self.fibers
+        total = 0
+        hot = False
+        dominant_fiber = 0
+        dominant_chips = -1
+        folded = 0
+        signature_terms = {1: 0, 7: 0, 14: 0}
+        for fiber in range(self.fibers):
+            chips = int(self.state[cell_base + fiber])
+            total += chips
+            hot = hot or chips >= 3
+            if chips > dominant_chips:
+                dominant_chips = chips
+                dominant_fiber = fiber
+            folded = (folded + (((fiber + 1) * (chips % 2048)) & 2047)) & 2047
+            if fiber in signature_terms:
+                signature_terms[fiber] = chips
+        signature = (
+            total
+            + 2 * signature_terms[1]
+            + 3 * signature_terms[7]
+            + 5 * signature_terms[14]
+        ) & 3
+        mask = (
+            folded
+            ^ (total & 2047)
+            ^ ((dominant_fiber * 131) & 2047)
+            ^ ((signature & 3) << 9)
+            ^ (1024 if hot else 0)
+        ) & 2047
+        return {
+            "sum": total,
+            "hot": hot,
+            "signature": signature,
+            "dominant_fiber": dominant_fiber,
+            "dominant_chips": dominant_chips,
+            "mask": mask,
+            "pixel": self.data["pixels"][mask],
+        }
+
+    def rgba_atom_from_sample(self, sample: dict[str, Any]) -> list[int]:
+        if not int(sample["sum"]):
+            return [0, 0, 0, 255]
+        pixel = sample["pixel"]
+        red = 255 if sample["hot"] else min(
+            254,
+            int(round(math.log1p(int(sample["sum"])) * 38 + int(sample["signature"]) * 7)),
+        )
+        green = int(round(int(sample["dominant_fiber"]) * 255 / max(1, self.fibers - 1)))
+        order_byte = int(round(int(pixel.get("o", 0)) * 255 / 30))
+        grade_byte = 48 if int(pixel.get("g", 1)) > 0 else 8
+        mixed_byte = 54 if int(pixel.get("x", 0)) else 0
+        blue = max(0, min(255, int(round(order_byte * 0.62 + grade_byte + mixed_byte))))
+        return [red, green, blue, 255]
+
     def bounding_box(self, sums: np.ndarray) -> tuple[float, float, float]:
         ys, xs = np.nonzero(sums > 0)
         if len(xs) == 0:
@@ -462,6 +544,28 @@ class D20LiftSimulator:
                 out[y, x] = self.category_at(categories, sx, sy)
         return out
 
+    def render_rgba_atom(self, sums: np.ndarray) -> np.ndarray:
+        center_x, center_y, half_span = self.bounding_box(sums)
+        out = np.zeros((self.size, self.size, 4), dtype=np.uint8)
+        for y in range(self.size):
+            sy = max(
+                0,
+                min(
+                    self.size - 1,
+                    js_round(center_y - half_span + ((y + 0.5) / self.size) * half_span * 2.0),
+                ),
+            )
+            for x in range(self.size):
+                sx = max(
+                    0,
+                    min(
+                        self.size - 1,
+                        js_round(center_x - half_span + ((x + 0.5) / self.size) * half_span * 2.0),
+                    ),
+                )
+                out[y, x] = self.rgba_atom_from_sample(self.sample_cell(sx, sy))
+        return out
+
     def run(self) -> dict[str, Any]:
         self.seed()
         for _ in range(D20_WARMUP_STEPS):
@@ -470,6 +574,7 @@ class D20LiftSimulator:
         previous_render: np.ndarray | None = None
         final_render = None
         final_hex_render = None
+        final_atom_rgba = None
         final_state_categories = None
         for frame in range(AUDIT_FRAMES + 1):
             if frame > 0:
@@ -477,9 +582,11 @@ class D20LiftSimulator:
             categories, sums = self.state_arrays()
             render = self.render_cooriented(categories, sums)
             hex_render = self.render_hex(categories, sums)
+            atom_rgba = self.render_rgba_atom(sums)
             if frame in SAMPLE_FRAMES:
                 counts = np.bincount(render.ravel(), minlength=5).astype(int).tolist()
                 hex_counts = np.bincount(hex_render.ravel(), minlength=5).astype(int).tolist()
+                atom_channels = rgba_channel_summary(atom_rgba)
                 samples.append(
                     {
                         "frame": frame,
@@ -488,6 +595,10 @@ class D20LiftSimulator:
                         "hot_render_pixels": int(counts[4]),
                         "render_entropy_bits": entropy_from_counts(counts),
                         "hex_render_entropy_bits": entropy_from_counts(hex_counts),
+                        "rgba_atom_red_entropy_bits": atom_channels["entropy_bits"]["red"],
+                        "rgba_atom_green_entropy_bits": atom_channels["entropy_bits"]["green"],
+                        "rgba_atom_blue_entropy_bits": atom_channels["entropy_bits"]["blue"],
+                        "rgba_atom_alpha_entropy_bits": atom_channels["entropy_bits"]["alpha"],
                         "weighted_state_covariance_ratio": weighted_covariance_ratio(sums),
                         "topples": int(self.topples),
                         "boundary_loss": int(self.boundary_loss),
@@ -500,13 +611,16 @@ class D20LiftSimulator:
             previous_render = render.copy()
             final_render = render
             final_hex_render = hex_render
+            final_atom_rgba = atom_rgba
             final_state_categories = categories
         assert final_render is not None
         assert final_hex_render is not None
+        assert final_atom_rgba is not None
         assert final_state_categories is not None
         counts = np.bincount(final_render.ravel(), minlength=5).astype(int).tolist()
         hex_counts = np.bincount(final_hex_render.ravel(), minlength=5).astype(int).tolist()
         state_counts = np.bincount(final_state_categories.ravel(), minlength=5).astype(int).tolist()
+        atom_channels = rgba_channel_summary(final_atom_rgba)
         return {
             "simulation": {
                 "canvas_size": [self.size, self.size],
@@ -532,6 +646,10 @@ class D20LiftSimulator:
                 "hex_render_channels": palette_channel_entropies(hex_counts, D20_PALETTE),
                 "cooriented_render_spectral_null": shuffle_null_metrics(final_render),
                 "hex_render_spectral": spectral_metrics(final_hex_render),
+                "rgba_atom_sha256": hashlib.sha256(final_atom_rgba.tobytes()).hexdigest(),
+                "rgba_atom_channels": atom_channels,
+                "rgba_atom_channel_entropy_bits": atom_channels["entropy_bits"],
+                "rgba_atom_red_spectral": spectral_metrics(final_atom_rgba[:, :, 0]),
             },
             "sample_frames": samples,
         }
@@ -692,10 +810,21 @@ def build_artifact() -> dict[str, Any]:
     d20_z = d20_audit["final"]["cooriented_render_spectral_null"]["z_scores"]
     topple_z = topple_audit["final"]["render_spectral_null"]["z_scores"]
     d20_alpha_entropy = d20_audit["final"]["cooriented_render_channels"]["entropy_bits"]["alpha"]
+    d20_atom_entropy = d20_audit["final"]["rgba_atom_channel_entropy_bits"]
     topple_alpha_entropy = topple_audit["final"]["render_channels"]["entropy_bits"]["alpha"]
 
     checks = {
         "visualization_data_loaded": len(data.get("edges", [])) == 30 and len(data.get("nodes", [])) == 20,
+        "d20_lift_render_grid_is_2_by_2": text.count('class="d20-lift-frame"') == 4,
+        "d20_rgba_atom_canvas_declared": "d20RgbaAtomCanvas" in text,
+        "d20_atlas_tension_canvas_declared": "d20AtlasTensionCanvas" in text,
+        "d20_atlas_tension_uses_certified_stress_graph": "D20_ATLAS_STRESS_GRAPH" in text
+        and "d20AtlasTensionForAtom" in text
+        and "drawD20AtlasTensionMask" in text,
+        "d20_rgba_atom_3d_canvas_declared": "d20RgbaAtom3dCanvas" in text,
+        "d20_rgba_atom_3d_uses_translucent_projection": "globalCompositeOperation = 'lighter'" in text
+        and "drawD20RgbaAtom3dLift" in text
+        and "d20LiftRgbaAtom(sample)" in text,
         "robust_oblongness_theorem_certified": robust.get("status")
         == "D20_VOLTAGE_LIFT_ROBUST_OBLONGNESS_CERTIFIED",
         "intrinsic_ratio_is_31_over_23": intrinsic.get("covariance", {}).get("anisotropy_ratio_exact")
@@ -704,6 +833,10 @@ def build_artifact() -> dict[str, Any]:
         == family.get("survival_summary", {}).get("variants_tested")
         == 5,
         "d20_render_alpha_entropy_zero": d20_alpha_entropy == 0.0,
+        "d20_rgba_atom_alpha_entropy_zero": d20_atom_entropy["alpha"] == 0.0,
+        "d20_rgba_atom_non_alpha_channels_nonzero": all(
+            d20_atom_entropy[channel] > 0.0 for channel in ("red", "green", "blue")
+        ),
         "topple_render_alpha_entropy_zero": topple_alpha_entropy == 0.0,
         "d20_render_state_entropy_nonzero": d20_audit["final"]["cooriented_render_entropy_bits"] > 0.0,
         "topple_height_entropy_nonzero": topple_audit["final"]["height_entropy_bits"] > 0.0,
@@ -762,11 +895,22 @@ def build_artifact() -> dict[str, Any]:
                 "state-channel spectra, not a promoted continuum or physical geon theorem"
             ),
             "rgba_boundary": (
-                "the stored renderer writes RGB state palettes and an opaque alpha channel; "
-                "no current repo artifact stores subpixel or alpha-phase entropy"
+                "the stored renderer writes palette RGB views plus a D20 RGBA atom view whose "
+                "RGB channels encode live height, dominant public atom, and folded mask "
+                "order/grade/mixed invariants; alpha remains canonical opaque"
             ),
         },
         "canvas_source_audit": {
+            "d20_lift_grid": {
+                "layout": "2x2",
+                "frame_count": text.count('class="d20-lift-frame"'),
+                "canvases": [
+                    "d20LiftCanvas",
+                    "d20HexLiftCanvas",
+                    "d20RgbaAtomCanvas",
+                    "d20RgbaAtom3dCanvas",
+                ],
+            },
             "d20_lift_canvas": {
                 "id": "d20LiftCanvas",
                 "rgba_write_rule": "ImageData RGB from D20_LIFT_PALETTE with image.data[offset + 3] = 255",
@@ -775,6 +919,38 @@ def build_artifact() -> dict[str, Any]:
             "d20_hex_lift_canvas": {
                 "id": "d20HexLiftCanvas",
                 "relationship": "same D20 state field, rendered through the regular-hex comparison projection",
+            },
+            "d20_rgba_atom_canvas": {
+                "id": "d20RgbaAtomCanvas",
+                "rgba_write_rule": (
+                    "ImageData RGBA atom: red=height/hotness, green=dominant public atom, "
+                    "blue=certified mask order/tube-grade/mixed status, alpha=255"
+                ),
+                "folded_mask_rule": (
+                    "fold the live 20-fiber cell vector to an 11-bit mask, then dereference "
+                    "DATA.pixels[mask] for certified order, grade, class, and mixed-fiber data"
+                ),
+            },
+            "d20_atlas_tension_canvas": {
+                "id": "d20AtlasTensionCanvas",
+                "relationship": (
+                    "transparent overlay on d20RgbaAtomCanvas; uses the certified C985 D20 "
+                    "boundary-neighborhood stress graph to smooth signed complement-pair tension"
+                ),
+                "claim_boundary": (
+                    "physical boundary mask only; it does not alter canonical RGBA atom bytes"
+                ),
+            },
+            "d20_rgba_atom_3d_canvas": {
+                "id": "d20RgbaAtom3dCanvas",
+                "relationship": (
+                    "transparent 3D projection of the same live RGBA atom samples; it exposes "
+                    "depth as class-order, dominant-fiber, tube-grade, and mixed-fiber offsets"
+                ),
+                "claim_boundary": (
+                    "visual coil projection only; the canonical byte-buffer invariant remains "
+                    "d20RgbaAtomCanvas with alpha fixed at 255"
+                ),
             },
             "square_topple_canvas": {
                 "id": "toppleCanvas",
@@ -799,9 +975,11 @@ def build_artifact() -> dict[str, Any]:
             "certified_here": [
                 "the finite D20 voltage-lift render is a deterministic opaque mask field",
                 "the stored D20 lift is backed by the certified robust-oblongness theorem",
+                "the RGBA atom render carries D20 height, public-atom, class-order, tube-grade, and mixed-fiber invariants in non-alpha channels",
+                "the fourth D20 lift window visualizes the RGBA atom as a transparent 3D coil projection",
                 "rendered D20 and square-grid state fields have nonzero state/RGB entropy",
                 "the final rendered state spectra are far from histogram-preserving shuffles",
-                "alpha/subpixel entropy is absent from the current stored renderer",
+                "alpha/subpixel entropy is absent because alpha remains a constant opaque channel",
             ],
             "not_certified_here": [
                 "a physical geon",
@@ -813,11 +991,11 @@ def build_artifact() -> dict[str, Any]:
         },
         "open_obligations": [
             {
-                "id": "rgba_frame_capture",
+                "id": "live_browser_rgba_capture",
                 "status": "open",
                 "needed_witness": (
-                    "archive real RGBA frame buffers, not just the deterministic HTML renderer, "
-                    "before asserting alpha/subpixel phase entropy"
+                    "compare live browser getImageData buffers against the deterministic RGBA "
+                    "atom replay archive before asserting browser-compositor or subpixel effects"
                 ),
             },
             {
@@ -851,9 +1029,10 @@ def build_report(artifact: dict[str, Any]) -> dict[str, Any]:
         "claim": (
             "The D20 geon candidate is certified here only as a finite deterministic "
             "mask/sandpile audit: robust oblongness is already witnessed, the rendered state "
-            "channels carry nonzero entropy and structured spectra, and the alpha channel is "
-            "constant opaque in the stored renderer. The report explicitly does not promote a "
-            "physical geon, alpha/subpixel entropy, or weight-8 Hamming-coordinate claim."
+            "channels carry nonzero entropy and structured spectra, and the new RGBA atom "
+            "render stores D20 invariants in non-alpha channels while alpha remains constant "
+            "opaque. The report explicitly does not promote a physical geon, alpha/subpixel "
+            "entropy, or weight-8 Hamming-coordinate claim."
         ),
         "stage_protocol": {
             "draft": "treat the geon language as a candidate reading of existing D20 sandpile/lift artifacts",
@@ -889,6 +1068,12 @@ def build_report(artifact: dict[str, Any]) -> dict[str, Any]:
                     "hex_render_entropy_bits": artifact["phase_entropy_witness"]["d20_lift"][
                         "final"
                     ]["hex_render_entropy_bits"],
+                    "rgba_atom_sha256": artifact["phase_entropy_witness"]["d20_lift"]["final"][
+                        "rgba_atom_sha256"
+                    ],
+                    "rgba_atom_channel_entropy_bits": artifact["phase_entropy_witness"][
+                        "d20_lift"
+                    ]["final"]["rgba_atom_channel_entropy_bits"],
                     "alpha_entropy_bits": artifact["phase_entropy_witness"]["d20_lift"]["final"][
                         "cooriented_render_channels"
                     ]["entropy_bits"]["alpha"],
@@ -912,9 +1097,9 @@ def build_report(artifact: dict[str, Any]) -> dict[str, Any]:
         "open_obligations": artifact["open_obligations"],
         "checks": artifact["checks"],
         "next_highest_yield_item": (
-            "Export actual RGBA frame buffers from the D20 lift and square-topple canvases, then "
-            "rerun this audit on saved frame arrays. That is the direct witness needed to test "
-            "the alpha/subpixel phase claim instead of inferring it from the current renderer."
+            "Run a browser getImageData capture against d20RgbaAtomCanvas and compare it to the "
+            "deterministic RGBA atom replay hashes. That is the direct witness needed before "
+            "making any browser-compositor or subpixel claim."
         ),
     }
     report["certificate_sha256"] = sha_json(report)
@@ -929,6 +1114,7 @@ def build_manifest(report: dict[str, Any], artifact: dict[str, Any]) -> dict[str
             "verify the D20 visualization DATA object loads with 20 vertices and 30 edges",
             "verify robust oblongness and intrinsic 31/23 geometry witnesses are certified",
             "replay deterministic D20 lift and square Abelian render simulations",
+            "verify the D20 RGBA atom canvas exists and has nonzero non-alpha channel entropy",
             "verify rendered RGB/state entropy is nonzero while alpha entropy is zero",
             "verify rendered spectra exceed histogram-preserving shuffle baselines",
             "verify physical geon, alpha/subpixel, and Hamming-coordinate claims remain demoted",

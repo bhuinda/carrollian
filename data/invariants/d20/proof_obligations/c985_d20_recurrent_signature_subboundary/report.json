@@ -1,0 +1,447 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "03f35f58040587fc2b60e2416d7043e5440ca036c77f423495a16da24916be7b",
+  "checks": {
+    "active_atom_count_histogram_matches_expected": true,
+    "active_atoms_are_expected": true,
+    "active_signature_count_is_221": true,
+    "atlas_atom_table_shape_is_20_rows": true,
+    "atom_flow_certificate_certified": true,
+    "atom_flow_json_schema_available": true,
+    "atom_flow_report_certified": true,
+    "atom_flow_signature_table_shape_is_233_rows": true,
+    "boundary_atlas_certificate_certified": true,
+    "boundary_atlas_report_certified": true,
+    "carrier_mask_class_table_shape_is_14_by_10": true,
+    "carrier_mask_count_is_14": true,
+    "carrier_mask_histogram_matches_expected": true,
+    "degree_histogram_matches_expected": true,
+    "delta_representative_count_is_56": true,
+    "excluded_signature_active_carrier_count_is_zero": true,
+    "excluded_signature_full_carrier_mask_is_840": true,
+    "excluded_signature_full_carriers_are_3_6_8_9": true,
+    "excluded_signature_table_shape_is_12_by_8": true,
+    "full_johnson_boundary_delta_matches": true,
+    "full_johnson_boundary_diameter_matches": true,
+    "hyperbolic_graph_certificate_certified": true,
+    "hyperbolic_graph_json_schema_available": true,
+    "hyperbolic_graph_report_certified": true,
+    "hyperbolic_tables_johnson_distance_available": true,
+    "inactive_signature_count_is_12": true,
+    "inactive_signature_ids_are_expected": true,
+    "mask_class_adjacency_shape_is_14_by_14": true,
+    "mask_class_distances_shape_is_14_by_14": true,
+    "mask_graph_diameter_is_3": true,
+    "mask_graph_distance_histogram_matches_expected": true,
+    "mask_graph_edge_count_is_44": true,
+    "signature_adjacency_shape_is_221_by_221": true,
+    "signature_distance_histogram_matches_expected": true,
+    "signature_distances_shape_is_221_by_221": true,
+    "signature_edge_table_shape_is_13035_by_6": true,
+    "signature_graph_delta_twice_is_2": true,
+    "signature_graph_delta_witness_is_expected": true,
+    "signature_graph_delta_witness_masks_are_expected": true,
+    "signature_graph_delta_witness_sums_are_expected": true,
+    "signature_graph_diameter_is_3": true,
+    "signature_graph_edge_count_is_13035": true,
+    "signature_graph_is_connected": true,
+    "signature_vertex_table_shape_is_221_by_9": true,
+    "subboundary_matches_full_johnson_delta": true,
+    "subboundary_matches_full_johnson_diameter": true
+  },
+  "claim": "The stationary atom-flow lift induces a certified recurrent signature subboundary: its 221 active relation-signature classes form one connected carrier-intersection graph with diameter 3 and exact four-point Gromov delta 1, matching the unweighted 20-atom Johnson boundary while identifying the 12 excluded classes.",
+  "closure_boundary": {
+    "certifies": [
+      "the induced signature-intersection graph on recurrent signature classes",
+      "all 13,035 shared-active-carrier edges",
+      "exact unweighted shortest-path matrices for the signature graph and carrier-mask quotient",
+      "exact four-point hyperbolicity delta by carrier-mask representative exhaustion",
+      "which signature classes are excluded from recurrent atom-flow support and their full carriers"
+    ],
+    "does_not_certify_because_not_required": [
+      "a canonical transition kernel between individual signature classes",
+      "a continuum boundary measure on relation signatures",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data",
+      "that the 12 excluded classes are impossible in a different transfer law"
+    ]
+  },
+  "inputs": {
+    "boundary_atlas": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.json",
+      "sha256": "b62925995990cf4ae91710a7a74c7e7015f5c5be6c47f0b55365dd959845d844"
+    },
+    "boundary_atlas_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/projection_certificate.json",
+      "sha256": "dad21305446dd39733774ab3d495ad81574503ddcabd4555a624bc417eaf4c4f"
+    },
+    "boundary_atlas_report": {
+      "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json",
+      "sha256": "c4a06fe54ede9305984391a4be10808467321d29003b68efb93b21b672982e95",
+      "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+    },
+    "boundary_atlas_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.npz",
+      "sha256": "9d1d4ce89a4a0cbb982b6571f7c6017038ac9afd8ceb1f9dc62d40c901991615"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_recurrent_signature_subboundary.py",
+      "sha256": "25f54281a4c552f22b35fa3ccb60e92893fb94267afd9fb8bf0810db9c4fbc68"
+    },
+    "hyperbolic_graph": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_graph.json",
+      "sha256": "9e6afb0868aa0863be3be51ad8ee84b3549b9cb0b024080e1824f266e9c76e23"
+    },
+    "hyperbolic_graph_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/hyperbolic_certificate.json",
+      "sha256": "954048b35c291973316d5d706c1239ffae4f55265e6fad23f5f7a8489342527b"
+    },
+    "hyperbolic_graph_report": {
+      "certificate_sha256": "02d8b6aa60935b68b3c5d25d832edf6a07bd8d01c6be80f42236d063ae9e074d",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/report.json",
+      "sha256": "0db6e8089c4cf3fe6bf0a657dd6fa2eef81765e11a1df49d2f8ecceb1c713682",
+      "status": "C985_D20_HYPERBOLIC_BOUNDARY_GRAPH_CERTIFIED"
+    },
+    "hyperbolic_graph_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_metrics.npz",
+      "sha256": "58be0f61cf62ada42ec90d2fcdecc7011f10dbe7766d9e7688b145cf72f6311f"
+    },
+    "relation_geometry_signatures": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+      "sha256": "28406664614db343b98547643f71278e83f9e1537b1f935cde013e32f2e1c694"
+    },
+    "stationary_atom_flow": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_lift.json",
+      "sha256": "44dfaab53f7f32a18178afa549a1ee11dde4cbb4e56d37cb35b7b27f05b13dd1"
+    },
+    "stationary_atom_flow_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_certificate.json",
+      "sha256": "0501a7c58f847764557f92f98d4ddc27d04407aa0989b5cba22e9a3b80231e69"
+    },
+    "stationary_atom_flow_report": {
+      "certificate_sha256": "5eed09e5a61e6689348e4bb9f7f123a24b0f5f91a2fe00e2248d3e7054b1d54b",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/report.json",
+      "sha256": "ddfe24109dcce61c3e06db0c740c800e1e08c3796521a342b6ab6ea3f91c97e5",
+      "status": "C985_D20_STATIONARY_ATOM_FLOW_LIFT_CERTIFIED"
+    },
+    "stationary_atom_flow_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_tables.npz",
+      "sha256": "17a69388924d9827d2f28458c7f7daf87bc905ac10c916b07443894a8eb24583"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_recurrent_signature_subboundary.py",
+      "sha256": "2a214122b31b234491b5a107c1fb5f8903a2916d79fb58f126bd55d4d2806896"
+    }
+  },
+  "next_highest_yield_item": "Put dynamics on the recurrent signature subboundary itself: build a signature-class transfer kernel from shared carrier atoms and signature-flow masses, certify its stationary measure, and compare its spectral gap against the 12-node core transfer operator.",
+  "outputs": {
+    "carrier_mask_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/carrier_mask_classes.csv",
+    "excluded_signature_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/excluded_signature_classes.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/manifest.json",
+    "recurrent_signature_subboundary": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary.json",
+    "recurrent_signature_subboundary_certificate": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary_certificate.json",
+    "recurrent_signature_subboundary_tables": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary_tables.npz",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/report.json",
+    "signature_subboundary_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/signature_subboundary_edges.csv",
+    "signature_subboundary_vertices_csv": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/signature_subboundary_vertices.csv"
+  },
+  "schema": "c985.proof_obligation.d20_recurrent_signature_subboundary@1",
+  "stage_protocol": {
+    "closure": "certify the recurrent signature subboundary without adding new categorical structure",
+    "coherence": "check connectedness, diameter, exact hyperbolicity, quotient metrics, excluded carriers, and full-boundary comparison",
+    "draft": "restrict relation-signature classes to those with recurrent atom-flow mass",
+    "emit": "emit subboundary JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize signature vertices, shared-carrier edges, carrier-mask quotient classes, and excluded signatures"
+  },
+  "status": "C985_D20_RECURRENT_SIGNATURE_SUBBOUNDARY_CERTIFIED",
+  "witness": {
+    "active_atom_ids": [
+      1,
+      4,
+      7,
+      11,
+      12,
+      19
+    ],
+    "active_signature_class_count": 221,
+    "carrier_mask_class_table_sha256": "f15fc13aa080c60ebe54e0777cf382a24718ec2b4ffd1a6c67bb595037c98860",
+    "carrier_mask_count": 14,
+    "carrier_mask_histogram": [
+      {
+        "carrier_atom_ids": [
+          1
+        ],
+        "carrier_atom_mask": 2,
+        "signature_class_count": 10
+      },
+      {
+        "carrier_atom_ids": [
+          4
+        ],
+        "carrier_atom_mask": 16,
+        "signature_class_count": 14
+      },
+      {
+        "carrier_atom_ids": [
+          7
+        ],
+        "carrier_atom_mask": 128,
+        "signature_class_count": 22
+      },
+      {
+        "carrier_atom_ids": [
+          1,
+          4,
+          7
+        ],
+        "carrier_atom_mask": 146,
+        "signature_class_count": 29
+      },
+      {
+        "carrier_atom_ids": [
+          11
+        ],
+        "carrier_atom_mask": 2048,
+        "signature_class_count": 12
+      },
+      {
+        "carrier_atom_ids": [
+          12
+        ],
+        "carrier_atom_mask": 4096,
+        "signature_class_count": 14
+      },
+      {
+        "carrier_atom_ids": [
+          11,
+          12
+        ],
+        "carrier_atom_mask": 6144,
+        "signature_class_count": 6
+      },
+      {
+        "carrier_atom_ids": [
+          1,
+          11,
+          12
+        ],
+        "carrier_atom_mask": 6146,
+        "signature_class_count": 10
+      },
+      {
+        "carrier_atom_ids": [
+          4,
+          11,
+          12
+        ],
+        "carrier_atom_mask": 6160,
+        "signature_class_count": 7
+      },
+      {
+        "carrier_atom_ids": [
+          19
+        ],
+        "carrier_atom_mask": 524288,
+        "signature_class_count": 30
+      },
+      {
+        "carrier_atom_ids": [
+          7,
+          19
+        ],
+        "carrier_atom_mask": 524416,
+        "signature_class_count": 8
+      },
+      {
+        "carrier_atom_ids": [
+          1,
+          4,
+          7,
+          19
+        ],
+        "carrier_atom_mask": 524434,
+        "signature_class_count": 20
+      },
+      {
+        "carrier_atom_ids": [
+          7,
+          11,
+          19
+        ],
+        "carrier_atom_mask": 526464,
+        "signature_class_count": 18
+      },
+      {
+        "carrier_atom_ids": [
+          12,
+          19
+        ],
+        "carrier_atom_mask": 528384,
+        "signature_class_count": 21
+      }
+    ],
+    "delta_representative_count": 56,
+    "delta_representative_indices_sha256": "cb2326b62cca7a21b2a0ac104f57e1e73d116ed5fe2362464661e3faf9a9f56c",
+    "delta_witness_carrier_atom_masks": [
+      146,
+      6146,
+      524416,
+      528384
+    ],
+    "delta_witness_pair_sums": [
+      2,
+      2,
+      4
+    ],
+    "delta_witness_signature_class_ids": [
+      0,
+      48,
+      126,
+      212
+    ],
+    "excluded_full_carrier_atom_ids": [
+      3,
+      6,
+      8,
+      9
+    ],
+    "excluded_full_carrier_atom_mask": 840,
+    "excluded_signature_table_sha256": "a4bf5b1ffa1ad57aaf68deec89daae3995fe5393d5d3c659ea9ae31ff4f869d2",
+    "full_johnson_delta_fraction": [
+      2,
+      2
+    ],
+    "full_johnson_diameter": 3,
+    "inactive_signature_class_count": 12,
+    "inactive_signature_class_ids": [
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189
+    ],
+    "mask_class_adjacency_sha256": "4186267283681180fe0a18bfa75a39cd808f723adafbe100b5f56362926ab74f",
+    "mask_class_distances_sha256": "8552e760fb63541db48b9ab652aeaae6a853ddc885aae23e1b0361955bbd756b",
+    "mask_graph_diameter": 3,
+    "mask_graph_distance_histogram": [
+      {
+        "count": 44,
+        "value": 1
+      },
+      {
+        "count": 46,
+        "value": 2
+      },
+      {
+        "count": 1,
+        "value": 3
+      }
+    ],
+    "mask_graph_edge_count": 44,
+    "signature_active_atom_count_histogram": [
+      {
+        "count": 102,
+        "value": 1
+      },
+      {
+        "count": 35,
+        "value": 2
+      },
+      {
+        "count": 64,
+        "value": 3
+      },
+      {
+        "count": 20,
+        "value": 4
+      }
+    ],
+    "signature_adjacency_sha256": "bb9c672f492c4bb0171596b62e7ed160b5098db4f2d9be19a69c518951d5ba0f",
+    "signature_degree_histogram": [
+      {
+        "count": 12,
+        "value": 52
+      },
+      {
+        "count": 14,
+        "value": 57
+      },
+      {
+        "count": 10,
+        "value": 68
+      },
+      {
+        "count": 14,
+        "value": 69
+      },
+      {
+        "count": 6,
+        "value": 87
+      },
+      {
+        "count": 52,
+        "value": 96
+      },
+      {
+        "count": 21,
+        "value": 133
+      },
+      {
+        "count": 29,
+        "value": 137
+      },
+      {
+        "count": 10,
+        "value": 146
+      },
+      {
+        "count": 8,
+        "value": 147
+      },
+      {
+        "count": 7,
+        "value": 150
+      },
+      {
+        "count": 18,
+        "value": 182
+      },
+      {
+        "count": 20,
+        "value": 188
+      }
+    ],
+    "signature_distance_histogram": [
+      {
+        "count": 13035,
+        "value": 1
+      },
+      {
+        "count": 10967,
+        "value": 2
+      },
+      {
+        "count": 308,
+        "value": 3
+      }
+    ],
+    "signature_distances_sha256": "1a5fa4915d8e311a11a7c9d2c2d2c161db1f59572b7ff78a0b636dc3a5972216",
+    "signature_edge_table_sha256": "8779aff38a7ad669935cac51c96602523375bc121c4eedf136da294666c073b3",
+    "signature_graph_component_count": 1,
+    "signature_graph_delta_fraction": [
+      2,
+      2
+    ],
+    "signature_graph_delta_twice": 2,
+    "signature_graph_diameter": 3,
+    "signature_graph_edge_count": 13035,
+    "signature_vertex_table_sha256": "aa65045ca1b62c7cfa923b4c3477e64d0cd008c3234b3fdd1f9c3d8f7e0a87a4"
+  }
+}

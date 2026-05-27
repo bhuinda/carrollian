@@ -1,0 +1,209 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+  "checks": {
+    "all_poincare_barycenters_inside_open_disk": true,
+    "graph_poincare_distance_correlation_is_0_4851736825": true,
+    "max_edge_poincare_barycenter_distance_is_0_2509641633": true,
+    "poincare_barycenter_metric_diameter_is_0_7423247109": true,
+    "poincare_central_node_is_14": true,
+    "poincare_coordinate_table_shape_is_20_by_10": true,
+    "poincare_diameter_pair_is_0_55": true,
+    "poincare_diameter_pair_is_graph_diameter": true,
+    "poincare_distance_matrix_shape_is_20_by_20": true,
+    "poincare_embedding_report_certified": true,
+    "poincare_outermost_node_is_0": true,
+    "rewrite_complex_connected": true,
+    "rewrite_complex_degree_histogram_is_6_five_30_ten_20_fifteen": true,
+    "rewrite_complex_delta_witness_is_0_6_22_36": true,
+    "rewrite_complex_edge_count_is_315": true,
+    "rewrite_complex_full_sector_node_count_is_14": true,
+    "rewrite_complex_graph_diameter_is_3": true,
+    "rewrite_complex_graph_radius_is_3": true,
+    "rewrite_complex_gromov_delta_is_1": true,
+    "rewrite_complex_max_signature_node_is_44": true,
+    "rewrite_complex_min_signature_node_is_46": true,
+    "rewrite_complex_node_count_is_56": true,
+    "rewrite_complex_sector_coverage_histogram_is_6_three_10_four_26_five_14_six": true,
+    "rewrite_complex_signature_union_max_is_185": true,
+    "rewrite_complex_signature_union_min_is_53": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "symbolic_associativity_table_shape_is_216_by_27": true,
+    "top_20_poincare_pairs_are_graph_diameter": true
+  },
+  "claim": "The 56 canonical length-three symbolic d20 normal forms form a connected higher-order rewrite complex whose one-symbol replacement metric is hyperbolic and whose Poincare barycentric geodesics are consistent with the certified d20 disk chart.",
+  "closure_boundary": {
+    "certifies": [
+      "56-node higher-order rewrite complex from length-three symbolic normal forms",
+      "315 one-symbol replacement edges and exact graph geodesic distances",
+      "exact graph Gromov delta 1 with a certified four-point witness",
+      "Poincare barycenter coordinates and geodesic comparison for every node pair",
+      "agreement that the Poincare diameter pair is a graph-diameter pair"
+    ],
+    "does_not_certify_because_not_required": [
+      "arbitrary-length symbolic rewrite confluence",
+      "a new associator or pentagon proof for C985 beyond the existing certificate",
+      "a packet bridge from d20 atoms to A985/tube coordinates",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_rewrite_complex_hyperbolicity.py",
+      "sha256": "a689dd94dd3ea1c128ef714bc84af40a14a4f06267c8c9f6722bd04b7fa32769"
+    },
+    "poincare_embedding": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.json",
+      "sha256": "bd115f49fdb04f14db50e5b15397ad425c9dce4d538b8fb40d194bbb2a2ffcde"
+    },
+    "poincare_embedding_npz": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.npz",
+      "sha256": "125136c4cd585d9142b0bded86f6455de95f311ba265f756eb5f12f5e9402074"
+    },
+    "poincare_report": {
+      "certificate_sha256": "6c01e4b1a2b65eb962be473f5752cc9ec93c5a273da84ee9ed2240ea8560769e",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/report.json",
+      "sha256": "0a1f0b8197236305d98c6b93e9c8b1b0963ae2d8a89d7661697ac61d1f09ce55",
+      "status": "C985_D20_POINCARE_EMBEDDING_CERTIFIED"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.json",
+      "sha256": "beb6f8e34854ed03a3d3ec052cda9a4ce6f7eca9b8838bcd5623f54f463adf5e"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_rewrite_complex_hyperbolicity.py",
+      "sha256": "6f26b313230e5758716e93405f485b028e57eee241913620bfc8f19877e2bbb2"
+    }
+  },
+  "next_highest_yield_item": "Lift the 56-node rewrite complex into a sheaf of Poincare geodesic intervals, then certify which graph geodesics preserve full-sector coverage and high relation-signature mass.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+    "rewrite_complex": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+    "rewrite_complex_certificate": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+    "rewrite_complex_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+    "rewrite_complex_nodes_csv": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+    "rewrite_complex_tables": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_rewrite_complex_hyperbolicity@1",
+  "stage_protocol": {
+    "closure": "certify a higher-order d20 rewrite-complex geometry without asserting new C985 categorical data",
+    "coherence": "check connectedness, exact Gromov delta, sector/signature summaries, and Poincare geodesic agreement",
+    "draft": "use certified symbolic associativity nodes and certified d20 Poincare coordinates",
+    "emit": "emit rewrite-complex JSON/CSV/NPZ, certificate, report, and next hyperbolic target",
+    "witness": "materialize the 56-node one-symbol replacement complex, graph distances, and Poincare barycenters"
+  },
+  "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED",
+  "witness": {
+    "degree_histogram": [
+      {
+        "count": 6,
+        "value": 5
+      },
+      {
+        "count": 30,
+        "value": 10
+      },
+      {
+        "count": 20,
+        "value": 15
+      }
+    ],
+    "edge_count": 315,
+    "full_sector_node_count": 14,
+    "graph_delta_witness_nodes": [
+      0,
+      6,
+      22,
+      36
+    ],
+    "graph_diameter": 3,
+    "graph_gromov_delta": 1.0,
+    "graph_gromov_delta_twice": 2,
+    "graph_poincare_distance_correlation": 0.4851736825,
+    "graph_radius": 3,
+    "max_edge_poincare_barycenter_distance": 0.2509641633,
+    "max_signature_nodes": [
+      {
+        "canonical_atom_ids": [
+          7,
+          12,
+          19
+        ],
+        "canonical_word": "x2 x4 x5",
+        "node_id": 44
+      }
+    ],
+    "min_signature_nodes": [
+      {
+        "canonical_atom_ids": [
+          11,
+          11,
+          11
+        ],
+        "canonical_word": "x3 x3 x3",
+        "node_id": 46
+      }
+    ],
+    "node_count": 56,
+    "poincare_barycenter_metric_diameter": 0.7423247109,
+    "poincare_barycenter_radius_max": 0.2197384013,
+    "poincare_barycenter_radius_min": 0.0035714826,
+    "poincare_central_node_id": 14,
+    "poincare_diameter_pair_graph_distance": 3,
+    "poincare_diameter_pair_node_ids": [
+      0,
+      55
+    ],
+    "poincare_outermost_node_id": 0,
+    "rewrite_complex_adjacency_sha256": "ffb27a2f0fe27f25c0432597c8f9e36b4c27153522aa02d69ae698e8c14d16d1",
+    "rewrite_complex_edge_table_sha256": "0aa8c612fe40a3964d972f01571557a126b2aac98e4c86320d46236b9a81b588",
+    "rewrite_complex_graph_distances_sha256": "6d4139e2f51c70f6ee8daf589341c846d7682b53af7ee172e4407d708bd247e5",
+    "rewrite_complex_node_table_sha256": "26b4932157432d80e9e1933a6b9fecf2e6ff9972a96e43ae9aa068d063c787c2",
+    "rewrite_complex_poincare_coordinates_sha256": "a0da3021cc4734428b67d78b9eb12fef898120612727f23961b943713dfcfb3f",
+    "rewrite_complex_poincare_distances_sha256": "336c162200cd3ca9e84199c75933f225224fd75f071d12dd559a4e0c71b67300",
+    "sector_coverage_histogram": [
+      {
+        "count": 6,
+        "value": 3
+      },
+      {
+        "count": 10,
+        "value": 4
+      },
+      {
+        "count": 26,
+        "value": 5
+      },
+      {
+        "count": 14,
+        "value": 6
+      }
+    ],
+    "signature_union_count_max": 185,
+    "signature_union_count_min": 53,
+    "source_poincare_coordinate_table_sha256": "d7675bc48a0a7f5412f6d1d84d1e4cc6d5c879fd264e7a105fb58e33223bee5e",
+    "symbolic_associativity_table_sha256": "512d62eb2bb41cad49e572356e7c17e52dcec0be9c5a2d003b4f70d8fa6bcc3e",
+    "top_20_poincare_pairs_graph_distance_histogram": [
+      {
+        "count": 20,
+        "value": 3
+      }
+    ]
+  }
+}

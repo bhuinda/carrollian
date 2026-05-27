@@ -1,0 +1,201 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "75dc84d7a9c0fb030a09ba1ee7829bfa550e45bcef09488a89780209f5b2cfd9",
+  "checks": {
+    "active_signature_count_is_221": true,
+    "atom_stationary_table_shape_is_6_by_7": true,
+    "boundary_transfer_certificate_certified": true,
+    "boundary_transfer_json_schema_available": true,
+    "boundary_transfer_report_certified": true,
+    "boundary_transfer_tables_available": true,
+    "mask_stationary_table_shape_is_14_by_13": true,
+    "observable_table_shape_matches_codebook": true,
+    "row_sum_residual_is_zero_at_x1e12": true,
+    "signature_stationary_table_shape_is_221_by_11": true,
+    "signature_subboundary_certificate_certified": true,
+    "signature_subboundary_report_certified": true,
+    "signature_transfer_edge_table_shape_is_13035_by_11": true,
+    "spectral_gap_delta_matches_expected": true,
+    "spectral_gap_exceeds_core_gap": true,
+    "spectral_gap_matches_expected": true,
+    "spectral_gap_ratio_matches_expected": true,
+    "spectral_second_modulus_matches_expected": true,
+    "spectrum_shape_is_221": true,
+    "stationary_distribution_sums_to_one_x1e12": true,
+    "stationary_flow_correlation_matches_expected": true,
+    "stationary_flow_total_variation_matches_expected": true,
+    "stationary_residual_is_zero_at_x1e12": true,
+    "subboundary_json_schema_available": true,
+    "support_is_connected": true,
+    "support_matches_subboundary_adjacency": true,
+    "top_atom_is_19": true,
+    "top_atom_stationary_mass_matches_expected": true,
+    "top_mask_class_is_11": true,
+    "top_mask_stationary_mass_matches_expected": true,
+    "top_stationary_signature_mass_matches_expected": true,
+    "top_stationary_signatures_are_106_to_115": true,
+    "transfer_edge_count_is_13035": true,
+    "transition_matrix_shape_is_221_by_221": true,
+    "transition_probability_range_matches_expected": true,
+    "transition_rows_sum_to_one_x1e12": true,
+    "undirected_flux_range_matches_expected": true
+  },
+  "claim": "The recurrent signature subboundary carries a certified reversible transfer operator whose edge conductance is shared active carrier count times the two endpoint signature-flow masses. Its stationary measure is exact at scale 1e12, its support is all 221 recurrent signature classes, and its spectral gap exceeds the 12-node core transfer gap.",
+  "closure_boundary": {
+    "certifies": [
+      "a reversible Markov transfer operator on the recurrent signature subboundary",
+      "row-stochastic transition probabilities at exact scale 1e12",
+      "stationary distribution, mask marginal, atom marginal, and flux tables",
+      "spectral gap, second modulus, and comparison to the 12-node core transfer gap",
+      "the shift from top atom-flow signature carriers to top transfer-stationary carriers"
+    ],
+    "does_not_certify_because_not_required": [
+      "a unique physically canonical signature transition law beyond the declared conductance rule",
+      "mixing-time bounds beyond the certified spectral gap comparison",
+      "continuum diffusion, heat kernel limits, or asymptotic boundary measures",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "boundary_transfer": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_operator.json",
+      "sha256": "8efccbafd9948b9716e8b2d949439f8dec7d650048ae4b2ab56bb2aa5b4959b3"
+    },
+    "boundary_transfer_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_certificate.json",
+      "sha256": "dbb3a84214f9e4a8ebad46f21ad55ecabf739c14fa68f538663085ced8744136"
+    },
+    "boundary_transfer_report": {
+      "certificate_sha256": "8ef035c36df37ff44c48b2b6eb1fc4c1b32c4ba27bf5085fa2ca0005d36adcaf",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/report.json",
+      "sha256": "20f97dca34ea6e18c7ae0792831dabb3106b1076f7dd091566eca9a39eca1464",
+      "status": "C985_D20_BOUNDARY_TRANSFER_OPERATOR_CERTIFIED"
+    },
+    "boundary_transfer_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_tables.npz",
+      "sha256": "57be6074878211522726b341fab10843b5d0cdbfa891632b7c68ae901aa0c098"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_subboundary_transfer_operator.py",
+      "sha256": "a6cba39cec0e53f1a663029d52acce4672511b26a08da4d58f33985f931ccc77"
+    },
+    "signature_subboundary": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary.json",
+      "sha256": "f5a9bbf75f35b2b1ec97aa8f7827a3abe7b2c3e8f1209ce435a70245d789e3d5"
+    },
+    "signature_subboundary_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary_certificate.json",
+      "sha256": "ef039bc8be854823414cd33183e43cfc98cbdd70e45a049311d557943f7db9aa"
+    },
+    "signature_subboundary_report": {
+      "certificate_sha256": "03f35f58040587fc2b60e2416d7043e5440ca036c77f423495a16da24916be7b",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/report.json",
+      "sha256": "8c53d37b0c38bce09505b9991264b569c0deef5bc019c3811a1fd63a7656da94",
+      "status": "C985_D20_RECURRENT_SIGNATURE_SUBBOUNDARY_CERTIFIED"
+    },
+    "signature_subboundary_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary_tables.npz",
+      "sha256": "70e0a47990b55943c6ad8ac4c64325ad18e61d1f63cc398a8bfc6471f97a1018"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_subboundary_transfer_operator.py",
+      "sha256": "284fffe26eecaa8605515cb2a13ef556b94e77ca9fcf7c3b294f27bc8a304639"
+    }
+  },
+  "next_highest_yield_item": "Read the transfer operator spectrally: certify the second eigenmode and its nodal cut on the 221-node signature subboundary, then compare that metastable split with the carrier-mask quotient and the original core source lobes.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/report.json",
+    "signature_atom_stationary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_atom_stationary.csv",
+    "signature_mask_stationary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_mask_stationary.csv",
+    "signature_stationary_distribution_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_stationary_distribution.csv",
+    "signature_transfer_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_certificate.json",
+    "signature_transfer_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_edges.csv",
+    "signature_transfer_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_observables.csv",
+    "signature_transfer_operator": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_operator.json",
+    "signature_transfer_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_subboundary_transfer_operator@1",
+  "stage_protocol": {
+    "closure": "certify the signature-subboundary transfer operator without claiming continuum diffusion or new categorical data",
+    "coherence": "check reversibility, support equality, stochasticity, stationarity, spectral gap comparison, and table reproducibility",
+    "draft": "put a local shared-carrier conductance on the certified recurrent signature graph",
+    "emit": "emit transfer JSON/CSV/NPZ, certificate, report, verifier command, and next spectral target",
+    "witness": "materialize transition edges, row-stochastic matrix, stationary law, mask/atom marginals, and spectral observables"
+  },
+  "status": "C985_D20_SIGNATURE_SUBBOUNDARY_TRANSFER_OPERATOR_CERTIFIED",
+  "witness": {
+    "active_signature_class_count": 221,
+    "atom_stationary_table_sha256": "2307a6b06ecbfe89c89dded8f8da79b4fc8e9686b68f75cfc7dc4ee212f297a3",
+    "carrier_mask_count": 14,
+    "core_spectral_gap_x1e12": 173671525179,
+    "mask_stationary_table_sha256": "51c9f5a93cbd09f6704115d17b40051a74f943a7914f8b70b1e401215b679697",
+    "minimum_stationary_mass_x1e12": 333457905,
+    "minimum_stationary_signature_class_ids": [
+      63,
+      64,
+      65,
+      66,
+      67,
+      89,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150
+    ],
+    "observable_table_sha256": "ffaec28577312732a24994c0c0f35840099f20d52da52e032c4ff4479dbeec9f",
+    "row_entropy_max_x1e12": 4950509203807,
+    "row_entropy_mean_x1e12": 4516002566612,
+    "row_entropy_min_x1e12": 3822657313037,
+    "row_entropy_stationary_mean_x1e12": 4712025808863,
+    "spectral_gap_delta_vs_core_x1e12": 239075938607,
+    "spectral_gap_ratio_to_core_x1e12": 2376598370750,
+    "spectral_gap_x1e12": 412747463786,
+    "spectral_second_modulus_x1e12": 587252536214,
+    "stationary_atom_order": [
+      19,
+      7,
+      12,
+      1,
+      4,
+      11
+    ],
+    "stationary_entropy_x1e12": 5041380484971,
+    "stationary_flow_correlation_x1e12": 869103997875,
+    "stationary_flow_total_variation_x1e12": 164666435075,
+    "stationary_mass_sum_x1e12": 1000000000000,
+    "stationary_perplexity_x1e12": 154683405817640,
+    "stationary_table_sha256": "e6a092add15b59de1ed2f37020ae6e8ccfa2fcd52b8b06f154ed4d8c00ebcb0b",
+    "symmetric_similarity_spectrum_x1e12_sha256": "1e314991602ea041181d997de8bc4cba6ad3ed9bba711518ba47ff7c0e9fc429",
+    "top_atom_ids": [
+      19
+    ],
+    "top_atom_stationary_mass_x1e12": 215486440125,
+    "top_mask_class_ids": [
+      11
+    ],
+    "top_mask_stationary_mass_x1e12": 235667754700,
+    "top_stationary_signature_class_ids": [
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115
+    ],
+    "top_stationary_signature_mass_x1e12": 11783387736,
+    "transfer_edge_count": 13035,
+    "transfer_edge_table_sha256": "4f07db204d9785adf8c36fcb2dae59ae80a125169f13aeeb895903319f6a0dc8",
+    "transition_matrix_x1e12_sha256": "1de83ee2cb1e8837cd8c256c2214c377a2b76b51f0f2366d03ef962f9d58011e",
+    "transition_probability_max_x1e12": 27508677866,
+    "transition_probability_min_x1e12": 661404733,
+    "undirected_stationary_flux_max_x1e12": 390010460,
+    "undirected_stationary_flux_min_x1e12": 2517490
+  }
+}

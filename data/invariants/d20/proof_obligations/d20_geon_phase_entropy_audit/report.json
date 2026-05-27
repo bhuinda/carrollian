@@ -1,11 +1,19 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "ccf95337af0ba527a6c52fa1973a8d19cd1d1d931444cc6cf90e9d6e695ce56d",
+  "certificate_sha256": "59a316d08f94cf5ad19dfada80f2f8242e74dc31fd4b29f2ad59cdb0473100da",
   "checks": {
     "all_named_voltage_lifts_oblong": true,
+    "d20_atlas_tension_canvas_declared": true,
+    "d20_atlas_tension_uses_certified_stress_graph": true,
+    "d20_lift_render_grid_is_2_by_2": true,
     "d20_render_alpha_entropy_zero": true,
     "d20_render_spectrum_exceeds_histogram_shuffle": true,
     "d20_render_state_entropy_nonzero": true,
+    "d20_rgba_atom_3d_canvas_declared": true,
+    "d20_rgba_atom_3d_uses_translucent_projection": true,
+    "d20_rgba_atom_alpha_entropy_zero": true,
+    "d20_rgba_atom_canvas_declared": true,
+    "d20_rgba_atom_non_alpha_channels_nonzero": true,
     "golay_hamming_coordinate_claim_remains_open": true,
     "intrinsic_ratio_is_31_over_23": true,
     "physical_geon_claim_not_promoted": true,
@@ -15,14 +23,16 @@
     "topple_render_spectrum_exceeds_histogram_shuffle": true,
     "visualization_data_loaded": true
   },
-  "claim": "The D20 geon candidate is certified here only as a finite deterministic mask/sandpile audit: robust oblongness is already witnessed, the rendered state channels carry nonzero entropy and structured spectra, and the alpha channel is constant opaque in the stored renderer. The report explicitly does not promote a physical geon, alpha/subpixel entropy, or weight-8 Hamming-coordinate claim.",
+  "claim": "The D20 geon candidate is certified here only as a finite deterministic mask/sandpile audit: robust oblongness is already witnessed, the rendered state channels carry nonzero entropy and structured spectra, and the new RGBA atom render stores D20 invariants in non-alpha channels while alpha remains constant opaque. The report explicitly does not promote a physical geon, alpha/subpixel entropy, or weight-8 Hamming-coordinate claim.",
   "closure_boundary": {
     "certified_here": [
       "the finite D20 voltage-lift render is a deterministic opaque mask field",
       "the stored D20 lift is backed by the certified robust-oblongness theorem",
+      "the RGBA atom render carries D20 height, public-atom, class-order, tube-grade, and mixed-fiber invariants in non-alpha channels",
+      "the fourth D20 lift window visualizes the RGBA atom as a transparent 3D coil projection",
       "rendered D20 and square-grid state fields have nonzero state/RGB entropy",
       "the final rendered state spectra are far from histogram-preserving shuffles",
-      "alpha/subpixel entropy is absent from the current stored renderer"
+      "alpha/subpixel entropy is absent because alpha remains a constant opaque channel"
     ],
     "not_certified_here": [
       "a physical geon",
@@ -35,19 +45,19 @@
   "definition": {
     "geon_candidate_reading": "a finite coherent mask/sandpile candidate: robust oblongness plus structured state-channel spectra, not a promoted continuum or physical geon theorem",
     "object_under_audit": "the finite D20 voltage-lift sandpile render and its square-grid Abelian comparison embedded in generated/d20_sandpile_visualization.html",
-    "rgba_boundary": "the stored renderer writes RGB state palettes and an opaque alpha channel; no current repo artifact stores subpixel or alpha-phase entropy"
+    "rgba_boundary": "the stored renderer writes palette RGB views plus a D20 RGBA atom view whose RGB channels encode live height, dominant public atom, and folded mask order/grade/mixed invariants; alpha remains canonical opaque"
   },
   "inputs": {
     "artifact": {
-      "artifact_sha256_excluding_this_field": "6743825bb5c2882eed181114db1ebcd1ce95c8fc6765587375fda7f6a9e446ec",
+      "artifact_sha256_excluding_this_field": "f90d41724054669e2a8ef2cb4025301a7788d9d9661aaa1e76fe7ee5ed29f794",
       "path": "generated/d20_geon_phase_entropy_audit.json",
       "schema": "d20.proof_obligation.geon_phase_entropy_audit.artifact@1",
-      "sha256": "8903c80c5a421ad65a7d4e40d21170f3e56a7cf7837dd18ef5e6b450cbad1ba3",
+      "sha256": "c1d33c8a355734d39297234b680468b21dc6dec0fd7c2e1dfdaa033732d95b8b",
       "status": "D20_GEON_PHASE_ENTROPY_AUDIT_DERIVED"
     },
     "derive_script": {
       "path": "src/derive_d20_geon_phase_entropy_audit.py",
-      "sha256": "8511b3708471d1656449f269c76a3368f5b0bf6078aa15baf453a0165c49757e"
+      "sha256": "ad1954bca1d0488c7ec4aea8844cead392680cb9f3b7642f47a6caeb941d6b5a"
     },
     "edge_steps": {
       "path": "generated/d20_voltage_lift_edge_steps.json",
@@ -99,18 +109,18 @@
     },
     "validator": {
       "path": "src/certify_d20_geon_phase_entropy_audit.py",
-      "sha256": "d56982fffa409cc9824bc81680fc491d985dc6b47df05e0dc890f8fd108a1c4d"
+      "sha256": "23c92ae070f94ce72e119a574e33d202398cc674dad776895cfad9e7d067aa19"
     },
     "visualization": {
       "path": "generated/d20_sandpile_visualization.html",
-      "sha256": "28c0832f388bfb6e0485afeb06a02f356e10104c2a5b4871f678a5ec7de64e82"
+      "sha256": "05ac9d6bd27611175df8cd1fbf36009d784c5b2c1a88f71b306279518109a2f6"
     }
   },
-  "next_highest_yield_item": "Export actual RGBA frame buffers from the D20 lift and square-topple canvases, then rerun this audit on saved frame arrays. That is the direct witness needed to test the alpha/subpixel phase claim instead of inferring it from the current renderer.",
+  "next_highest_yield_item": "Run a browser getImageData capture against d20RgbaAtomCanvas and compare it to the deterministic RGBA atom replay hashes. That is the direct witness needed before making any browser-compositor or subpixel claim.",
   "open_obligations": [
     {
-      "id": "rgba_frame_capture",
-      "needed_witness": "archive real RGBA frame buffers, not just the deterministic HTML renderer, before asserting alpha/subpixel phase entropy",
+      "id": "live_browser_rgba_capture",
+      "needed_witness": "compare live browser getImageData buffers against the deterministic RGBA atom replay archive before asserting browser-compositor or subpixel effects",
       "status": "open"
     },
     {
@@ -135,6 +145,11 @@
   "status": "D20_GEON_PHASE_ENTROPY_AUDIT_CERTIFIED",
   "witness": {
     "canvas_source_audit": {
+      "d20_atlas_tension_canvas": {
+        "claim_boundary": "physical boundary mask only; it does not alter canonical RGBA atom bytes",
+        "id": "d20AtlasTensionCanvas",
+        "relationship": "transparent overlay on d20RgbaAtomCanvas; uses the certified C985 D20 boundary-neighborhood stress graph to smooth signed complement-pair tension"
+      },
       "d20_hex_lift_canvas": {
         "id": "d20HexLiftCanvas",
         "relationship": "same D20 state field, rendered through the regular-hex comparison projection"
@@ -143,6 +158,26 @@
         "alpha_255_assignments_in_visualization": 2,
         "id": "d20LiftCanvas",
         "rgba_write_rule": "ImageData RGB from D20_LIFT_PALETTE with image.data[offset + 3] = 255"
+      },
+      "d20_lift_grid": {
+        "canvases": [
+          "d20LiftCanvas",
+          "d20HexLiftCanvas",
+          "d20RgbaAtomCanvas",
+          "d20RgbaAtom3dCanvas"
+        ],
+        "frame_count": 4,
+        "layout": "2x2"
+      },
+      "d20_rgba_atom_3d_canvas": {
+        "claim_boundary": "visual coil projection only; the canonical byte-buffer invariant remains d20RgbaAtomCanvas with alpha fixed at 255",
+        "id": "d20RgbaAtom3dCanvas",
+        "relationship": "transparent 3D projection of the same live RGBA atom samples; it exposes depth as class-order, dominant-fiber, tube-grade, and mixed-fiber offsets"
+      },
+      "d20_rgba_atom_canvas": {
+        "folded_mask_rule": "fold the live 20-fiber cell vector to an 11-bit mask, then dereference DATA.pixels[mask] for certified order, grade, class, and mixed-fiber data",
+        "id": "d20RgbaAtomCanvas",
+        "rgba_write_rule": "ImageData RGBA atom: red=height/hotness, green=dominant public atom, blue=certified mask order/tube-grade/mixed status, alpha=255"
       },
       "square_topple_canvas": {
         "id": "toppleCanvas",
@@ -217,6 +252,13 @@
         "alpha_entropy_bits": 0.0,
         "cooriented_render_entropy_bits": 1.5974973234546976,
         "hex_render_entropy_bits": 1.0145718668884904,
+        "rgba_atom_channel_entropy_bits": {
+          "alpha": 0.0,
+          "blue": 2.1896480481223106,
+          "green": 1.710804341359782,
+          "red": 3.9953207997693023
+        },
+        "rgba_atom_sha256": "dfb37a7f0cff8b4898e84d669074acbacc6ae74b4483f027ef20e274ddc82422",
         "spectral_z_scores": {
           "dominant_non_dc_power_fraction": 948.0872354978244,
           "spectral_entropy_normalized": -616.8947852625652

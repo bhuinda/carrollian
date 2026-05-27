@@ -1,0 +1,158 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d535c1a91c038c94f5f49c2a8a8a8d1f0e617c3afc0f258cabe910bb48c4d1e3",
+  "checks": {
+    "atom_count_is_20": true,
+    "atom_signature_counts_match_atlas": true,
+    "boundary_atlas_report_certified": true,
+    "coverage_matrix_shape_is_20_by_20": true,
+    "every_seed_reaches_full_signature_coverage": true,
+    "filtration_record_count_is_400": true,
+    "gateway_seed_first_seven_novelty_sums_to_233": true,
+    "heaviest_seed_first_five_covers_203_signature_classes": true,
+    "heaviest_seed_full_coverage_radius_is_0_5561031147": true,
+    "heaviest_seed_full_coverage_size_is_11": true,
+    "minimum_full_coverage_ball_contains_heaviest_atom": true,
+    "minimum_full_coverage_ball_contains_most_central_atom": true,
+    "minimum_full_coverage_ball_count_at_size_7_is_2": true,
+    "minimum_full_coverage_ball_mass_is_below_half_total": true,
+    "minimum_full_coverage_ball_size_is_7": true,
+    "minimum_full_coverage_radius_is_0_557922089": true,
+    "minimum_full_coverage_seed_is_11": true,
+    "no_ball_smaller_than_7_has_full_coverage": true,
+    "poincare_distance_matrix_is_20_by_20": true,
+    "poincare_report_certified": true,
+    "relation_signature_class_domain_is_233": true,
+    "richest_signature_seed_full_coverage_size_is_12": true,
+    "signature_incidence_shape_is_20_by_233": true,
+    "stored_relation_signature_classes_match_recomputed": true,
+    "tensor_geometry_report_certified": true
+  },
+  "claim": "The certified d20 Poincare chart induces a landmark-centered geodesic filtration whose cumulative balls can be compared directly with the 233 C985 relation-signature classes; the first full-coverage ball has seven atoms.",
+  "closure_boundary": {
+    "certifies": [
+      "all 400 seed/rank Poincare geodesic filtration records",
+      "20-by-233 atom-to-relation-signature incidence matrix",
+      "coverage, novelty, mass, threshold, and entry-order matrices",
+      "minimal full relation-signature coverage ball and its seed",
+      "landmark full-coverage thresholds for central, mass, and signature seeds"
+    ],
+    "does_not_certify_because_not_required": [
+      "optimality among non-Poincare embeddings",
+      "a packet bridge from d20 atoms to A985/tube coordinates",
+      "a packet normalization killing known boundary torsion",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "boundary_atlas": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.json",
+      "sha256": "b62925995990cf4ae91710a7a74c7e7015f5c5be6c47f0b55365dd959845d844"
+    },
+    "boundary_atlas_npz": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.npz",
+      "sha256": "9d1d4ce89a4a0cbb982b6571f7c6017038ac9afd8ceb1f9dc62d40c901991615"
+    },
+    "boundary_atlas_report": {
+      "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json",
+      "sha256": "c4a06fe54ede9305984391a4be10808467321d29003b68efb93b21b672982e95",
+      "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_poincare_landmark_filtration.py",
+      "sha256": "5b94e3efa1783b9991f3af0d6033ca81e1e0790e0628b285be5e4ea81b4108ab"
+    },
+    "poincare_embedding": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.json",
+      "sha256": "bd115f49fdb04f14db50e5b15397ad425c9dce4d538b8fb40d194bbb2a2ffcde"
+    },
+    "poincare_npz": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.npz",
+      "sha256": "125136c4cd585d9142b0bded86f6455de95f311ba265f756eb5f12f5e9402074"
+    },
+    "poincare_report": {
+      "certificate_sha256": "6c01e4b1a2b65eb962be473f5752cc9ec93c5a273da84ee9ed2240ea8560769e",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/report.json",
+      "sha256": "0a1f0b8197236305d98c6b93e9c8b1b0963ae2d8a89d7661697ac61d1f09ce55",
+      "status": "C985_D20_POINCARE_EMBEDDING_CERTIFIED"
+    },
+    "relation_geometry_signatures": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+      "sha256": "28406664614db343b98547643f71278e83f9e1537b1f935cde013e32f2e1c694"
+    },
+    "tensor_geometry_report": {
+      "certificate_sha256": "de1650d0232ec6bbd4a57721e37784cfc87ebcafead5b00f508463035cd2ecef",
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/report.json",
+      "sha256": "7c77dcdbf747487520764cbc8b5eb7c027c124b4673336d1f1986ba1184018f7",
+      "status": "C985_TENSOR_GEOMETRY_INVARIANTS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_poincare_landmark_filtration.py",
+      "sha256": "94466b9c98d739bbf1b29cfba825f2fb28054d323cc85a24ba427afbaa25cc7b"
+    }
+  },
+  "next_highest_yield_item": "Use the full-coverage filtration balls as charts for a signature-class nerve, then measure whether its intersections recover the hyperbolic four-point witnesses.",
+  "outputs": {
+    "filtration_certificate": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/filtration_certificate.json",
+    "filtration_records_csv": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/filtration_records.csv",
+    "filtration_tables_npz": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/filtration_tables.npz",
+    "landmark_filtration": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/landmark_filtration.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/report.json"
+  },
+  "schema": "c985.proof_obligation.d20_poincare_landmark_filtration@1",
+  "stage_protocol": {
+    "closure": "certify a filtration readout without claiming embedding optimality or packet normalization",
+    "coherence": "check signature incidence against atlas counts and prove the minimal full-coverage ball",
+    "draft": "start from the certified Poincare disk chart and relation-signature atlas",
+    "emit": "emit filtration JSON/CSV/NPZ, certificate, report, and next hyperbolic invariant target",
+    "witness": "materialize every seed atom's geodesic shell order and cumulative signature-class coverage"
+  },
+  "status": "C985_D20_POINCARE_LANDMARK_FILTRATION_CERTIFIED",
+  "witness": {
+    "atom_count": 20,
+    "coverage_matrix_sha256": "e47edbf13114700ab4284f7ece438d8912d5efbd48b17b6a593e5d7eb21359e1",
+    "entry_order_sha256": "b634753e7c4f21507ed3a96c17128516f782751b5537e9980032ed470a478faf",
+    "filtration_int_table_sha256": "e8066713fb7bbf8ec3c827e3842864dfa2b068515a1e8e1585cb6e0b8ac6f484",
+    "filtration_record_count": 400,
+    "heaviest_seed": 19,
+    "heaviest_seed_first_five_signature_coverage": 203,
+    "heaviest_seed_full_coverage_ball_size": 11,
+    "heaviest_seed_full_coverage_threshold": 0.5561031147,
+    "landmark_atom_ids": [
+      0,
+      7,
+      8,
+      9,
+      11,
+      15,
+      17,
+      19
+    ],
+    "mass_matrix_sha256": "86ce07e0cec06a0d0555db30110d970eca5ec375c33761f1ffb01b1571ee4291",
+    "minimum_full_coverage_atom_ids": [
+      11,
+      4,
+      1,
+      7,
+      12,
+      8,
+      19
+    ],
+    "minimum_full_coverage_ball_size": 7,
+    "minimum_full_coverage_mass": 467456,
+    "minimum_full_coverage_seed": 11,
+    "minimum_full_coverage_seed_label": "{B+,V-,S-}",
+    "minimum_full_coverage_threshold": 0.557922089,
+    "minimum_size_full_coverage_ball_count": 2,
+    "novelty_matrix_sha256": "28ff0ea5b87172bbd6cdb9044b806a78297980a4f36df2b39178b271c7cd6710",
+    "richest_signature_seed": 9,
+    "richest_signature_seed_full_coverage_ball_size": 12,
+    "signature_class_count": 233,
+    "signature_incidence_sha256": "0ce71e288f5bb5b9917ce3563bd4abc175a1157b074d619f7d74be8ed6df2be4",
+    "smaller_ball_max_signature_coverage": 213,
+    "threshold_matrix_sha256": "63377ed97c9afe2404b3d5b69ac857b2bf2ec61eaa0873cc76f7edd5fad716e2",
+    "total_tensor_path_coefficient_mass": 1067072
+  }
+}

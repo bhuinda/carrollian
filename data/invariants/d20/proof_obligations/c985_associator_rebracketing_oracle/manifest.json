@@ -1,0 +1,64 @@
+{
+  "certification_tests": [
+    "build a least-group-index transport section for every ordered pair",
+    "verify the recovered action orbit of every representative pair equals the stored orbital segment",
+    "verify the section sends representative pairs to every ordered pair in its relation",
+    "compute exact left and right associator address-space sizes from the certified fusion tensor",
+    "sample first/last left-bracketing rows for every intermediate delta and map them through length-three chains"
+  ],
+  "inputs": {
+    "be3_action": {
+      "path": "generated/be3_action_words_from_absolute_presentation.npz",
+      "sha256": "df0e332be5b732e108dec6fbd08c0f545d51fb6ba8829fed5ef8be87fb3efe3b"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_associator_rebracketing_oracle.py",
+      "sha256": "94646192055276b8f1cb7909b7d0194abcb0d6a356eb42729e4da29c6554909f"
+    },
+    "fusion_basis_index": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_index.npz",
+      "sha256": "7c0e6e1e161e82b620f2bb2750b2a109bdc950c40f4848d3293e19790d3f66c8"
+    },
+    "fusion_basis_points": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_points.npz",
+      "sha256": "3805a6cf6e7fdd178decc70f5f2ab4e81ba25d03b9db015bc12efe1dd0fbfacd"
+    },
+    "fusion_report": {
+      "certificate_sha256": "dad6709e91e16cf434b121aa2eb0fe26b318d2e05a5fc800b30f7f9d7fdb2dc7",
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/report.json",
+      "sha256": "2eb666d526750e5ba7812c22b685a81f7391c2a7d13fdf2242ba054ac8e92d35",
+      "status": "C985_FUSION_MULTIPLICITY_TYPING_CERTIFIED"
+    },
+    "fusion_tensor": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/fusion_tensor_coo.npz",
+      "sha256": "05b5b5ed0d000238934e64ca42c2a66ad48de5e2e5e39bd985a4f2a9b2b11fd7"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "typed_registry_report": {
+      "certificate_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+      "sha256": "28855e8904a1fd21aac84bb922a33442c4c58e49413f49a5e891f0f5001813a4",
+      "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_associator_rebracketing_oracle.py",
+      "sha256": "93ef3e3b018c0773110750a357042e5c97dc339f321b7fe44431996b90c8a2f5"
+    }
+  },
+  "manifest_sha256": "51d8ae2981fde26b5e70cee8b4fc2a85b40d08b183dbf1deb0ab5a922c5b6c15",
+  "name": "c985_associator_rebracketing_oracle",
+  "outputs": {
+    "associator_certificate": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/associator_certificate.json",
+    "associator_oracle": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/associator_oracle.json",
+    "associator_sample_witnesses": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/associator_sample_witnesses.npz",
+    "manifest": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/manifest.json",
+    "pair_transport_section": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/pair_transport_section.npz",
+    "report": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/report.json"
+  },
+  "report_sha256": "75800317a741e0842706832853b8ea0d60dd4aedfb24f3556082a23957a42e80",
+  "schema": "c985.proof_obligation.associator_rebracketing_oracle_manifest@1",
+  "status": "C985_ASSOCIATOR_REBRACKETING_ORACLE_CERTIFIED"
+}

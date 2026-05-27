@@ -1,0 +1,69 @@
+{
+  "certification_tests": [
+    "load certified rewrite-complex and chamber-spine artifacts",
+    "derive source reachability, exclusive lobes, and overlap/rejoin nodes",
+    "enumerate every directed path, interval, and composable path pair",
+    "check category identity and associativity laws by finite exhaustive composition",
+    "classify the 50-node spine into two source basins and a connected basin boundary",
+    "check source hashes and proof-obligation registry consistency"
+  ],
+  "inputs": {
+    "chamber_spine": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine.json",
+      "sha256": "d238d30efe5683de3176ce632cb48dad88f7d749d74f37400d089508933c7e72"
+    },
+    "chamber_spine_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine_certificate.json",
+      "sha256": "37e8341072b2439d731ff00fd86d581fb8d067eb3dcef936b28bd3c0d5cc921c"
+    },
+    "chamber_spine_report": {
+      "certificate_sha256": "eda35ecd01c0e5bb35ba9f44200d17a38f282cc3dd62fe470664e503c51da3ca",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/report.json",
+      "sha256": "065dc2b950f643152e7b460d73dd237f35a21868c2e9aac8252fff49468df540",
+      "status": "C985_D20_CHAMBER_SPINE_CERTIFIED"
+    },
+    "chamber_spine_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine_tables.npz",
+      "sha256": "5df4fd9ebf6f1da4bdfccc16b2c40ebb28f16aaa24314bce143735bb1f7cff75"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_morse_reeb_quotient.py",
+      "sha256": "efaab009a9832eaec5762cb22ba6f45418758b4a929f6ef23e3c8dfb0d1085d6"
+    },
+    "rewrite_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+      "sha256": "0d170586487cce586baea14d2da03b700e3688ab2d45a5793094d19ad8b99385"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_morse_reeb_quotient.py",
+      "sha256": "e08ac807112cfaf85ada6d870aad4346b96484e7e85476c5bccae50b561218ea"
+    }
+  },
+  "manifest_sha256": "aa450aed3cd9de6e328169871e6ef93f6591e2583af467616e96322ba89ac257",
+  "name": "c985_d20_morse_reeb_quotient",
+  "outputs": {
+    "core_basin_nodes_csv": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/core_basin_nodes.csv",
+    "directed_compositions_csv": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/directed_compositions.csv",
+    "directed_interval_paths_csv": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/directed_interval_paths.csv",
+    "directed_intervals_csv": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/directed_intervals.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/manifest.json",
+    "morse_reeb_certificate": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_certificate.json",
+    "morse_reeb_quotient": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_quotient.json",
+    "morse_reeb_tables": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_tables.npz",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/report.json",
+    "spine_basin_nodes_csv": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/spine_basin_nodes.csv"
+  },
+  "report_sha256": "82b03fe85d221bea4ba21aec461bb069269c2ee7392dc47cc7443c94b8462fcb",
+  "schema": "c985.proof_obligation.d20_morse_reeb_quotient_manifest@1",
+  "status": "C985_D20_MORSE_REEB_QUOTIENT_CERTIFIED"
+}

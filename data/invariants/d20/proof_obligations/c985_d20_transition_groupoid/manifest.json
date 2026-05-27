@@ -1,0 +1,74 @@
+{
+  "certification_tests": [
+    "load the certified chart atlas and C985 associator/pentagon reports",
+    "verify all transition arrows have inverse arrows with opposite rank delta",
+    "verify direct-vs-composed transition equality on every triple-overlap atom",
+    "verify directed chart-cycle zero holonomy",
+    "compare groupoid path independence with C985 associator and pentagon normal-form metadata"
+  ],
+  "inputs": {
+    "associator_oracle": {
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/associator_oracle.json",
+      "sha256": "dda6222f74e8e4ea1fbe0846676c1321f1b4864001caeef0ae61d2215982d92c"
+    },
+    "associator_report": {
+      "certificate_sha256": "75800317a741e0842706832853b8ea0d60dd4aedfb24f3556082a23957a42e80",
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/report.json",
+      "sha256": "6f4c3d59b55b285e10343506770412484b2f13381b06dd0421de5c9ecb15c16b",
+      "status": "C985_ASSOCIATOR_REBRACKETING_ORACLE_CERTIFIED"
+    },
+    "associator_samples": {
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/associator_sample_witnesses.npz",
+      "sha256": "fd767cf34d72970dbe71fc46eb7e8a3038cae7a117f98abb5c50b67bcaab0f71"
+    },
+    "chart_atlas": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/hyperbolic_chart_atlas.json",
+      "sha256": "49a8b55d65c0503b531ca9af0e498bfff1051d9e8ab9ebc276da1b2b060d6e5e"
+    },
+    "chart_atlas_report": {
+      "certificate_sha256": "9c46d7c40ea4c280fc7899c9864cb175c3cdc956946cbb8c096a63a3369e9790",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/report.json",
+      "sha256": "9f0658ce64288473f6814b1e9337b861b1c20e593327b9b041dc89fdd1a0d739",
+      "status": "C985_D20_HYPERBOLIC_CHART_ATLAS_CERTIFIED"
+    },
+    "chart_atlas_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/hyperbolic_chart_atlas_tables.npz",
+      "sha256": "f575fb6038ab330c0273aa72780e9d0cb1fd94025162de69d762c92b19e64e2c"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_transition_groupoid.py",
+      "sha256": "c81aa7d752f5e48df48057b14b33e1bebbf5a4acec082bf38e6b8db192765543"
+    },
+    "pentagon_normal_form": {
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/pentagon_normal_form.json",
+      "sha256": "21acc3f2c9160f308743e61acbd78c8f6590a83b6f7527d7e7beddf269e6b036"
+    },
+    "pentagon_report": {
+      "certificate_sha256": "764ec93e334b468f6338dcb74f530b09348a7f536489f62a945fdf74a2abb5c2",
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/report.json",
+      "sha256": "e7dfab8f2eb1262d32ff7abb10ae52f0bf5bffeeae1dfcf13b6736e41f9395de",
+      "status": "C985_PENTAGON_CHAIN_NORMAL_FORM_CERTIFIED"
+    },
+    "pentagon_samples": {
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/pentagon_sample_chains.npz",
+      "sha256": "c58a2213f240b79daa90354b2c9e0e9be751235e1930ca0ee6e213c14c2e367d"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_transition_groupoid.py",
+      "sha256": "bab723425339c6e886162818f5f63fd6282cb0f91e113d97b9747055573ef4ed"
+    }
+  },
+  "manifest_sha256": "f6d5fe3eccb4d23311b01010ff3d0e3a40e413b18b08d2b9bf8c95c78e9895fa",
+  "name": "c985_d20_transition_groupoid",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/report.json",
+    "transition_groupoid": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/transition_groupoid.json",
+    "transition_groupoid_certificate": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/transition_groupoid_certificate.json",
+    "transition_groupoid_cycles_csv": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/transition_groupoid_cycles.csv",
+    "transition_groupoid_tables": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/transition_groupoid_tables.npz"
+  },
+  "report_sha256": "4cc895928f5a2a01b8c690875a0ffd5a2e669e15a9e515d82378b343aee27630",
+  "schema": "c985.proof_obligation.d20_transition_groupoid_manifest@1",
+  "status": "C985_D20_TRANSITION_GROUPOID_CERTIFIED"
+}

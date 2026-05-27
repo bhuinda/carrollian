@@ -1,0 +1,187 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "57f13ced19f11cbf71901254fd9fc3c906ba07b9e7b2db2a2fe7a4e6b31f4705",
+  "checks": {
+    "basin_table_shape_is_3_by_10": true,
+    "boundary_transfer_certificate_certified": true,
+    "boundary_transfer_json_schema_available": true,
+    "boundary_transfer_report_certified": true,
+    "boundary_transfer_tables_available": true,
+    "core_basin_masses_match_boundary_transfer": true,
+    "core_induced_tv_twice_matches_expected": true,
+    "core_negative_tv_twice_matches_expected": true,
+    "core_positive_tv_twice_matches_expected": true,
+    "cut_flux_matches_spectral_cut": true,
+    "exact_stationary_law_holds": true,
+    "induced_basin_masses_match_spectral_cut": true,
+    "mask_edge_counts_match_spectral_cut": true,
+    "negative_exit_probability_matches_expected": true,
+    "observable_table_shape_matches_codebook": true,
+    "positive_exit_probability_matches_expected": true,
+    "quotient_lambda_2_matches_expected": true,
+    "quotient_spectral_gap_matches_expected": true,
+    "signature_edge_counts_match_spectral_cut": true,
+    "signature_lambda_2_drop_matches_expected": true,
+    "signature_transfer_certificate_certified": true,
+    "signature_transfer_json_schema_available": true,
+    "signature_transfer_report_certified": true,
+    "signature_transfer_tables_available": true,
+    "spectral_cut_certificate_certified": true,
+    "spectral_cut_json_schema_available": true,
+    "spectral_cut_report_certified": true,
+    "state_count_is_2": true,
+    "state_masses_match_spectral_cut": true,
+    "state_masses_sum_to_one": true,
+    "state_table_shape_is_2_by_13": true,
+    "stationary_stay_probability_matches_expected": true,
+    "transition_matrix_matches_expected": true,
+    "transition_rows_sum_to_one": true,
+    "transition_table_shape_is_4_by_7": true
+  },
+  "claim": "The certified second-eigenmode nodal cut of the 221-state signature transfer operator collapses to a verified reversible two-state quotient dynamics, with exact cut flux, row-stochastic transition probabilities, and a basin-mass comparison against the original 10/43/boundary core transfer readout.",
+  "closure_boundary": {
+    "certifies": [
+      "the two-state Markov quotient induced by the certified nodal cut",
+      "exact twice-flow accounting for the odd scaled cut flux",
+      "row-stochastic transition probabilities and exact stationary law",
+      "quotient spectrum, entropy rate, and return/exit probabilities",
+      "comparison between quotient-induced basin participation and the original core transfer basin masses"
+    ],
+    "does_not_certify_because_not_required": [
+      "that this is the only meaningful coarse graining of the 221-state operator",
+      "continuum metastability or asymptotic mixing-time bounds",
+      "higher-order quotients from eigenmodes beyond the second",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "boundary_transfer": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_operator.json",
+      "sha256": "8efccbafd9948b9716e8b2d949439f8dec7d650048ae4b2ab56bb2aa5b4959b3"
+    },
+    "boundary_transfer_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_certificate.json",
+      "sha256": "dbb3a84214f9e4a8ebad46f21ad55ecabf739c14fa68f538663085ced8744136"
+    },
+    "boundary_transfer_report": {
+      "certificate_sha256": "8ef035c36df37ff44c48b2b6eb1fc4c1b32c4ba27bf5085fa2ca0005d36adcaf",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/report.json",
+      "sha256": "20f97dca34ea6e18c7ae0792831dabb3106b1076f7dd091566eca9a39eca1464",
+      "status": "C985_D20_BOUNDARY_TRANSFER_OPERATOR_CERTIFIED"
+    },
+    "boundary_transfer_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_tables.npz",
+      "sha256": "57be6074878211522726b341fab10843b5d0cdbfa891632b7c68ae901aa0c098"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_spectral_quotient_dynamics.py",
+      "sha256": "a12e7aedeb7b6b1ed57f37f918aa219b7f5bc3a649ee6f399d1beea0f304463b"
+    },
+    "signature_transfer": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_operator.json",
+      "sha256": "59428d663224f3db16cf54cd02302eb5c87182d172f9d6d920cb49eddba3ea51"
+    },
+    "signature_transfer_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_certificate.json",
+      "sha256": "eea448687f629a2e45cd03605f8c60b04e2845c191f1bb664680424bee32ff31"
+    },
+    "signature_transfer_report": {
+      "certificate_sha256": "75dc84d7a9c0fb030a09ba1ee7829bfa550e45bcef09488a89780209f5b2cfd9",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/report.json",
+      "sha256": "618e8046913178a0698a4ac016d3b4ccf04fe00a2979b8466ecf25b7ddcd1330",
+      "status": "C985_D20_SIGNATURE_SUBBOUNDARY_TRANSFER_OPERATOR_CERTIFIED"
+    },
+    "signature_transfer_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_tables.npz",
+      "sha256": "ba0d9fbb4b180ed229a31ed1e06f430aa0059a81e3c3872a52b7d96a5c533ec8"
+    },
+    "spectral_cut": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut.json",
+      "sha256": "435c8233b464732a4aac1a2b1a8b7a608ed13d7a3ee73a7881d40c613e289af5"
+    },
+    "spectral_cut_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut_certificate.json",
+      "sha256": "efb9a28b31c59179c8a3b4583ca56c35469d5609b18691117a5118295126c80d"
+    },
+    "spectral_cut_report": {
+      "certificate_sha256": "ec2a663266d278f04ca1654089ca1d9910cd9975025286bee2da6057fb9db278",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/report.json",
+      "sha256": "8ea1a4332205926dc855a4534337ab3b1f0938e123d131d70be1554a20d31408",
+      "status": "C985_D20_SIGNATURE_TRANSFER_SPECTRAL_CUT_CERTIFIED"
+    },
+    "spectral_cut_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut_tables.npz",
+      "sha256": "111780d9d44f50c013b6b56c119fe397eed0268f2eb3c62cd4420a11af05fdd6"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_spectral_quotient_dynamics.py",
+      "sha256": "7acb473e922212b7c4c817301b042f44163cdf1ee7b4eed7b29f10403d48c9f2"
+    }
+  },
+  "next_highest_yield_item": "Lift the two-state quotient back into geometry: assign the positive and negative spectral states to Poincare atom coordinates and certify their hyperbolic barycenters, separation, and relation to the original stationary core center.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/manifest.json",
+    "quotient_basin_comparison_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/quotient_basin_comparison.csv",
+    "quotient_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/quotient_observables.csv",
+    "quotient_states_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/quotient_states.csv",
+    "quotient_transitions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/quotient_transitions.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/report.json",
+    "signature_spectral_quotient_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_certificate.json",
+    "signature_spectral_quotient_dynamics": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_dynamics.json",
+    "signature_spectral_quotient_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_spectral_quotient_dynamics@1",
+  "stage_protocol": {
+    "closure": "certify the two-state quotient without claiming a unique physical coarse graining beyond the declared spectral cut",
+    "coherence": "check row sums, exact stationary law, quotient spectrum, cut flux, and basin-distance observables",
+    "draft": "collapse the 221-state transfer operator along the certified positive/negative spectral cut",
+    "emit": "emit quotient JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize quotient states, transition probabilities, exact twice-flow fluxes, and core-basin comparisons"
+  },
+  "status": "C985_D20_SIGNATURE_SPECTRAL_QUOTIENT_DYNAMICS_CERTIFIED",
+  "witness": {
+    "core_basin_masses_x1e12": {
+      "10": 121358270826,
+      "43": 488349486805,
+      "boundary": 390292242370
+    },
+    "core_induced_tv_twice_x1e12": 163164463191,
+    "core_negative_composition_tv_twice_x1e12": 158720315577,
+    "core_positive_composition_tv_twice_x1e12": 194971099061,
+    "directed_cross_flux_twice_x1e12": 238962451389,
+    "entropy_rate_x1e12": 539439395042,
+    "induced_basin_masses_x1e12": {
+      "10": 200037326277,
+      "43": 406767255209,
+      "boundary": 393195418514
+    },
+    "negative_row_entropy_x1e12": 626537379689,
+    "negative_stationary_mass_x1e12": 373892891791,
+    "negative_to_positive_probability_x1e12": 319560035288,
+    "positive_row_entropy_x1e12": 487427020606,
+    "positive_stationary_mass_x1e12": 626107108209,
+    "positive_to_negative_probability_x1e12": 190831926563,
+    "quotient_basin_table_sha256": "9476b2d811febc31e09f24bc1afa9b0737946f66d5835bac261957142d689597",
+    "quotient_lambda_2_x1e12": 489608038149,
+    "quotient_observable_table_sha256": "f7bda2989b3ddfbc397db9a409bfc0d54b2591ddef018ae6734869ae535fcf9a",
+    "quotient_spectral_gap_x1e12": 510391961851,
+    "quotient_state_table_sha256": "0a5d1a4bf2cbbd2e6a4f499a98651914780105c72151f964a1e0a95e52dd9452",
+    "quotient_stationary_vector_sha256": "5132e7457ece58ebd2c4ae82f2f257f77a007d3edccf73faa5835c3d56af2cdc",
+    "quotient_transition_matrix_sha256": "84dd62e70a5be2ba77e81a0dfce8c7fe47ef27a96885f8c764864aeb07759913",
+    "quotient_transition_table_sha256": "e3ed68de298ae3b6bf57b569a9e1306ac77bb1319677290cf545e2d9f3207475",
+    "signature_lambda_2_minus_quotient_lambda_2_x1e12": 97644498065,
+    "signature_lambda_2_x1e12": 587252536214,
+    "stationary_stay_probability_x1e12": 761037548611,
+    "transition_matrix_x1e12": [
+      [
+        809168073437,
+        190831926563
+      ],
+      [
+        319560035288,
+        680439964712
+      ]
+    ],
+    "undirected_cut_flux_x1e12": 238962451389
+  }
+}

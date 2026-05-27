@@ -1,0 +1,291 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4c815f152073442eccd604ec8e6e00a561b53303550f5037ed5a243eca0272f2",
+  "checks": {
+    "adjacency_shape_is_56_by_56": true,
+    "all_interval_stalks_nonempty": true,
+    "edge_table_shape_is_315_by_13": true,
+    "full_high_preserving_distance_histogram_is_12_zero_31_one_3_two": true,
+    "full_high_preserving_interval_count_is_46": true,
+    "full_sector_preserving_interval_count_is_59": true,
+    "graph_distance_shape_is_56_by_56": true,
+    "high_signature_preserving_interval_count_is_69": true,
+    "high_signature_threshold_matches_binary_rewrite_max": true,
+    "interval_count_is_1596": true,
+    "interval_distance_histogram_is_56_315_720_505": true,
+    "interval_membership_counts_match_table": true,
+    "interval_membership_shape_is_1596_by_56": true,
+    "interval_node_count_histogram_matches": true,
+    "interval_table_shape_is_1596_by_18": true,
+    "longest_full_high_graph_distance_is_2": true,
+    "longest_full_high_interval_count_is_3": true,
+    "max_interval_node_count_is_20": true,
+    "max_shortest_path_count_is_36": true,
+    "node_poincare_coordinate_shape_is_56_by_7": true,
+    "node_poincare_distance_shape_is_56_by_56": true,
+    "node_table_shape_is_56_by_17": true,
+    "poincare_diameter_interval_graph_distance_is_3": true,
+    "poincare_diameter_interval_is_0_55": true,
+    "poincare_diameter_interval_not_full_or_high_preserving": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "shortest_path_count_histogram_matches": true,
+    "symbolic_rewrite_report_certified": true,
+    "top_full_high_poincare_distance_is_0_2453959784": true,
+    "top_full_high_poincare_interval_is_13_44": true
+  },
+  "claim": "The certified 56-node d20 rewrite complex admits a geodesic interval sheaf over all unordered node pairs, and the intervals preserving full-sector coverage plus high relation-signature support are exactly identified.",
+  "closure_boundary": {
+    "certifies": [
+      "geodesic interval stalks for all unordered node pairs of the 56-node rewrite complex",
+      "shortest-path counts and interval-node membership tables",
+      "full-sector and high-signature preservation flags for every interval",
+      "the exact 46 intervals preserving both full-sector coverage and high-signature support",
+      "Poincare endpoint and interval-diameter comparisons for the interval sheaf"
+    ],
+    "does_not_certify_because_not_required": [
+      "arbitrary-length symbolic rewrite confluence",
+      "new C985 associator or pentagon data beyond the existing certificate",
+      "a packet bridge from d20 atoms to A985/tube coordinates",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_geodesic_interval_sheaf.py",
+      "sha256": "bdb2967d063531986cba1cc9c91bf3f07b32080864c93c4036921f0e56009a6f"
+    },
+    "rewrite_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+      "sha256": "0d170586487cce586baea14d2da03b700e3688ab2d45a5793094d19ad8b99385"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbolic_rewrite_report": {
+      "certificate_sha256": "50289c4e654353e3fa68666987b74fdfd2c796e810afd7a1a7fbbcd02195bef8",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/report.json",
+      "sha256": "38fcc3ecd2fba6e0656f6b2b7171174a936ce71a808e75b60bfafef7258592e5",
+      "status": "C985_D20_SYMBOLIC_REWRITE_RULES_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_geodesic_interval_sheaf.py",
+      "sha256": "332e86cba7e5597e88968d8f51d6e17c78ed0158f1eb53ac2a228f64039e23c8"
+    }
+  },
+  "next_highest_yield_item": "Collapse the 46 full-high geodesic intervals into a preserved-core subcomplex, then certify its connected components and hyperbolic boundary inside the 56-node rewrite complex.",
+  "outputs": {
+    "geodesic_interval_certificate": "data/invariants/d20/proof_obligations/c985_d20_geodesic_interval_sheaf/geodesic_interval_certificate.json",
+    "geodesic_interval_sheaf": "data/invariants/d20/proof_obligations/c985_d20_geodesic_interval_sheaf/geodesic_interval_sheaf.json",
+    "geodesic_interval_tables": "data/invariants/d20/proof_obligations/c985_d20_geodesic_interval_sheaf/geodesic_interval_tables.npz",
+    "geodesic_intervals_csv": "data/invariants/d20/proof_obligations/c985_d20_geodesic_interval_sheaf/geodesic_intervals.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_geodesic_interval_sheaf/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_geodesic_interval_sheaf/report.json"
+  },
+  "schema": "c985.proof_obligation.d20_geodesic_interval_sheaf@1",
+  "stage_protocol": {
+    "closure": "certify geodesic interval preservation at the d20 rewrite-complex readout level",
+    "coherence": "check interval membership, shortest-path counts, full-sector preservation, high-signature preservation, and Poincare diameter behavior",
+    "draft": "use certified rewrite-complex graph distances and Poincare barycenter distances",
+    "emit": "emit interval-sheaf JSON/CSV/NPZ, certificate, report, and next hyperbolic target",
+    "witness": "materialize all unordered geodesic interval stalks and preservation flags"
+  },
+  "status": "C985_D20_GEODESIC_INTERVAL_SHEAF_CERTIFIED",
+  "witness": {
+    "distance_histogram": [
+      {
+        "count": 56,
+        "value": 0
+      },
+      {
+        "count": 315,
+        "value": 1
+      },
+      {
+        "count": 720,
+        "value": 2
+      },
+      {
+        "count": 505,
+        "value": 3
+      }
+    ],
+    "full_high_preserving_distance_histogram": [
+      {
+        "count": 12,
+        "value": 0
+      },
+      {
+        "count": 31,
+        "value": 1
+      },
+      {
+        "count": 3,
+        "value": 2
+      }
+    ],
+    "full_high_preserving_interval_count": 46,
+    "full_sector_preserving_interval_count": 59,
+    "high_signature_preserving_interval_count": 69,
+    "high_signature_threshold": 155,
+    "interval_count": 1596,
+    "interval_membership_sha256": "3b64e98919dc341ba84398dd7fc72df101565d8fd604eedba40754535c3d66be",
+    "interval_node_count_histogram": [
+      {
+        "count": 56,
+        "value": 1
+      },
+      {
+        "count": 315,
+        "value": 2
+      },
+      {
+        "count": 90,
+        "value": 3
+      },
+      {
+        "count": 375,
+        "value": 4
+      },
+      {
+        "count": 390,
+        "value": 6
+      },
+      {
+        "count": 60,
+        "value": 8
+      },
+      {
+        "count": 180,
+        "value": 10
+      },
+      {
+        "count": 120,
+        "value": 14
+      },
+      {
+        "count": 10,
+        "value": 20
+      }
+    ],
+    "interval_table_sha256": "2854f28cb2347409c841609e08b544bb8a017ee69a728f544c7af9d14dabf945",
+    "longest_full_high_graph_distance": 2,
+    "longest_full_high_intervals": [
+      {
+        "endpoint_poincare_distance": 0.1557400513,
+        "graph_distance": 2,
+        "interval_node_ids": [
+          13,
+          19,
+          38,
+          44
+        ],
+        "min_signature_union_count": 155,
+        "source_node_id": 19,
+        "source_word": "x0 x4 x5",
+        "target_node_id": 38,
+        "target_word": "x2 x2 x4"
+      },
+      {
+        "endpoint_poincare_distance": 0.1433954616,
+        "graph_distance": 2,
+        "interval_node_ids": [
+          28,
+          34,
+          38,
+          44
+        ],
+        "min_signature_union_count": 155,
+        "source_node_id": 34,
+        "source_word": "x1 x4 x5",
+        "target_node_id": 38,
+        "target_word": "x2 x2 x4"
+      },
+      {
+        "endpoint_poincare_distance": 0.2317443114,
+        "graph_distance": 2,
+        "interval_node_ids": [
+          41,
+          42,
+          43,
+          44
+        ],
+        "min_signature_union_count": 155,
+        "source_node_id": 42,
+        "source_word": "x2 x3 x5",
+        "target_node_id": 43,
+        "target_word": "x2 x4 x4"
+      }
+    ],
+    "max_interval_node_count": 20,
+    "max_shortest_path_count": 36,
+    "node_count": 56,
+    "poincare_diameter_interval": {
+      "endpoint_poincare_distance": 0.7423247109,
+      "full_sector_preserved": 0,
+      "graph_distance": 3,
+      "high_signature_preserved": 0,
+      "interval_node_count": 4,
+      "source_node_id": 0,
+      "target_node_id": 55
+    },
+    "shortest_path_count_histogram": [
+      {
+        "count": 476,
+        "value": 1
+      },
+      {
+        "count": 360,
+        "value": 2
+      },
+      {
+        "count": 120,
+        "value": 3
+      },
+      {
+        "count": 270,
+        "value": 4
+      },
+      {
+        "count": 60,
+        "value": 6
+      },
+      {
+        "count": 180,
+        "value": 9
+      },
+      {
+        "count": 120,
+        "value": 18
+      },
+      {
+        "count": 10,
+        "value": 36
+      }
+    ],
+    "source_graph_distances_sha256": "6d4139e2f51c70f6ee8daf589341c846d7682b53af7ee172e4407d708bd247e5",
+    "source_node_poincare_distances_sha256": "336c162200cd3ca9e84199c75933f225224fd75f071d12dd559a4e0c71b67300",
+    "top_full_high_poincare_interval": {
+      "endpoint_poincare_distance": 0.2453959784,
+      "graph_distance": 1,
+      "interval_node_ids": [
+        13,
+        44
+      ],
+      "min_signature_union_count": 165,
+      "source_node_id": 13,
+      "target_node_id": 44
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+  "checks": {
+    "core_a985_certificate_exists": true,
+    "group_order_is_9216": true,
+    "identity_relation_count_is_6": true,
+    "identity_relations_match_closed_loop_units": true,
+    "object_count_is_6": true,
+    "object_sizes_match_core": true,
+    "offset_count_is_relation_count_plus_one": true,
+    "ordered_pair_partition_covers_points_squared": true,
+    "point_count_is_2576": true,
+    "relation_count_is_985": true,
+    "relation_count_matrix_matches_core_relations": true,
+    "relation_count_matrix_matches_finite_algebra": true,
+    "relation_count_matrix_sums_to_985": true,
+    "segments_are_source_target_typed": true,
+    "semisimple_skeleton_declares_coherence_open": true,
+    "source_relation_npz_exists": true,
+    "transpose_flips_source_target": true,
+    "transpose_is_involution": true
+  },
+  "claim": "The 985 A985 relations are typed as simple C985 generators over the six H6 object sectors, with source/target registry, transpose involution, and six identity orbitals certified from the relation-membership table.",
+  "closure_boundary": {
+    "certifies": [
+      "typed simple-object registry for 985 C985 simple generators",
+      "six H6 object sectors and their identity orbitals",
+      "orbital transpose involution as the expected dual-object map",
+      "formal semisimple skeletal C-linear category before tensor coherence"
+    ],
+    "does_not_certify": [
+      "associator/F-symbols",
+      "pentagon coherence",
+      "unit triangle coherence",
+      "duality evaluation and coevaluation maps",
+      "zig-zag identities",
+      "full finite semisimple multi-fusion category status"
+    ]
+  },
+  "inputs": {
+    "core_a985": {
+      "certificate_sha256": "ecabb7c00b57913f13d10f999cb1755d42a28449650685a59642945a7a8ccc59",
+      "path": "data/core/a985.json",
+      "sha256": "b2caee558395078c39d984fcd3d8c9d9a625d81924aa122aa3c10b36daddfc5d",
+      "status": "PASS"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_typed_simple_object_registry.py",
+      "sha256": "58c721d5e19dcf53d97ed796037a4ab213b5b3f5bae4fadb72de3cac00934168"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "validator": {
+      "path": "src/certify_c985_typed_simple_object_registry.py",
+      "sha256": "1e1f8d5dbedd97e1f908fed611ad4fc924f0cc63d0b250d7c29bce0bdb169730"
+    }
+  },
+  "next_highest_yield_item": "Construct the fusion multiplicity spaces from incidence-chain bases and verify that their dimensions match the A985 tensor coefficients with source/target typing failures equal to zero.",
+  "outputs": {
+    "identity_orbitals": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/identity_orbitals.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/manifest.json",
+    "objects": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/objects.json",
+    "orbitals": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/orbitals.json",
+    "report": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+    "semisimple_category_certificate": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/semisimple_category_certificate.json",
+    "source_target": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+    "transpose": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/transpose.npy"
+  },
+  "schema": "c985.proof_obligation.typed_simple_object_registry@1",
+  "stage_protocol": {
+    "closure": "certify the typed registry while leaving monoidal coherence open",
+    "coherence": "check typed segments, matrix counts, transpose involution, identity orbitals, and formal semisimplicity boundary",
+    "draft": "derive the C985 simple-object typing from the existing A985 relation membership table",
+    "emit": "emit the first C985 proof-obligation artifacts and next target",
+    "witness": "materialize objects, orbitals, source_target.npy, transpose.npy, identity orbitals, and semisimple skeleton certificate"
+  },
+  "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED",
+  "witness": {
+    "group_order": 9216,
+    "identity_relations": [
+      6,
+      163,
+      227,
+      349,
+      618,
+      893
+    ],
+    "object_labels": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
+    ],
+    "object_of_point_sha256": "b93902a7f846379c5fc7f7b853ef831f547fee70e7b97fb378b0f03638e10709",
+    "object_pair_relation_matrix": [
+      [
+        33,
+        12,
+        8,
+        24,
+        30,
+        32
+      ],
+      [
+        12,
+        16,
+        4,
+        12,
+        12,
+        20
+      ],
+      [
+        8,
+        4,
+        14,
+        22,
+        8,
+        20
+      ],
+      [
+        24,
+        12,
+        22,
+        86,
+        32,
+        64
+      ],
+      [
+        30,
+        12,
+        8,
+        32,
+        44,
+        44
+      ],
+      [
+        32,
+        20,
+        20,
+        64,
+        44,
+        104
+      ]
+    ],
+    "object_sizes": [
+      384,
+      192,
+      144,
+      576,
+      512,
+      768
+    ],
+    "points": 2576,
+    "relation_count": 985,
+    "relation_size_max": 9216,
+    "relation_size_min": 144,
+    "relation_size_total": 6635776,
+    "source_target_sha256": "6cd8342f8dd6e31f9bc5e61101915862c3d19abc1efddf97398a918cfe9b43df",
+    "transpose_sha256": "8728830614c91d0e3470d46863bc7d1042bae0787250b6b51fe39a7d627f9a55"
+  }
+}

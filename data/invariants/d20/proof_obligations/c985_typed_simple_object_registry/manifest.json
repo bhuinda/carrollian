@@ -1,0 +1,45 @@
+{
+  "certification_tests": [
+    "derive s,t:{1,...,985}->H6 from relation_memberships.npz block_i/block_j",
+    "check object-pair relation counts against data/core/a985.json",
+    "check every relation segment is contained in the declared source/target object product",
+    "derive transpose.npy from reversed representative pairs and check involution",
+    "derive six identity orbitals from diagonal pairs and check against closed-loop unit relations",
+    "record formal semisimple skeletal category while keeping monoidal coherence open"
+  ],
+  "inputs": {
+    "core_a985": {
+      "certificate_sha256": "ecabb7c00b57913f13d10f999cb1755d42a28449650685a59642945a7a8ccc59",
+      "path": "data/core/a985.json",
+      "sha256": "b2caee558395078c39d984fcd3d8c9d9a625d81924aa122aa3c10b36daddfc5d",
+      "status": "PASS"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_typed_simple_object_registry.py",
+      "sha256": "58c721d5e19dcf53d97ed796037a4ab213b5b3f5bae4fadb72de3cac00934168"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "validator": {
+      "path": "src/certify_c985_typed_simple_object_registry.py",
+      "sha256": "1e1f8d5dbedd97e1f908fed611ad4fc924f0cc63d0b250d7c29bce0bdb169730"
+    }
+  },
+  "manifest_sha256": "e8da524601421af83863eea511a234515eaed380c94bf6b21999c729467f152a",
+  "name": "c985_typed_simple_object_registry",
+  "outputs": {
+    "identity_orbitals": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/identity_orbitals.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/manifest.json",
+    "objects": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/objects.json",
+    "orbitals": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/orbitals.json",
+    "report": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+    "semisimple_category_certificate": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/semisimple_category_certificate.json",
+    "source_target": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+    "transpose": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/transpose.npy"
+  },
+  "report_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+  "schema": "c985.proof_obligation.typed_simple_object_registry_manifest@1",
+  "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+}

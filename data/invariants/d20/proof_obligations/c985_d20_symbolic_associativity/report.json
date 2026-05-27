@@ -1,0 +1,188 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+  "checks": {
+    "all_left_reductions_equal_right_reductions": true,
+    "all_reductions_match_direct_sorted_normal_form": true,
+    "alphabet_signature_membership_shape_is_6_by_233": true,
+    "alphabet_table_shape_is_6_by_9": true,
+    "binary_rewrite_table_shape_is_36_by_22": true,
+    "canonical_symbolic_triple_count_is_56": true,
+    "each_symbolic_triple_has_216_normal_word_lifts": true,
+    "full_sector_normal_word_triple_count_is_16848": true,
+    "full_sector_symbolic_triple_count_is_78": true,
+    "left_and_right_paths_have_equal_swap_counts": true,
+    "left_and_right_paths_use_all_36_binary_rules": true,
+    "max_signature_union_triples_are_atoms_7_12_19_permutations": true,
+    "min_signature_union_triple_is_atom_11_repeated": true,
+    "noncanonical_symbolic_triple_count_is_160": true,
+    "normal_word_triple_count_is_46656": true,
+    "pentagon_certificate_certified": true,
+    "pentagon_normal_form_is_typed_length_four_chain": true,
+    "pentagon_report_certified": true,
+    "pentagon_report_exact_chain_count_matches": true,
+    "pentagon_top_and_bottom_normal_forms_match": true,
+    "symbolic_rewrite_certificate_certified": true,
+    "symbolic_rewrite_report_certified": true,
+    "symbolic_triple_count_is_216": true,
+    "symbolic_triple_sector_coverage_histogram_is_6_three_30_four_102_five_78_six": true,
+    "symbolic_triple_signature_union_count_max_is_185": true,
+    "symbolic_triple_signature_union_count_min_is_53": true,
+    "word_concatenation_table_shape_is_1296_by_13": true
+  },
+  "claim": "The certified six-symbol d20 rewrite alphabet has a length-three associativity diamond: both binary-rewrite reduction paths send every ordered symbolic triple to the same sorted normal form while preserving sector, signature, and tensor-mass readouts.",
+  "closure_boundary": {
+    "certifies": [
+      "length-three symbolic associativity for the six d20 normal-form atoms",
+      "left and right binary-rewrite reduction paths agree on all 216 ordered triples",
+      "46,656 lifted normal-form word triples accounted for by certified multiplicity",
+      "sector-mask, relation-signature, tensor-support, and tensor-mass invariance under triple normalization",
+      "readout-level comparison with the certified C985 pentagon chain normal form"
+    ],
+    "does_not_certify_because_not_required": [
+      "a new associator or pentagon proof for C985 beyond the existing certificate",
+      "a confluent rewrite system for arbitrary-length symbolic words",
+      "a packet bridge from d20 atoms to A985/tube coordinates",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_symbolic_associativity.py",
+      "sha256": "b4930d363ee310c41267d5f23851093643a39aa5ad2b114c962c9d45b48cdf52"
+    },
+    "pentagon_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/pentagon_certificate.json",
+      "sha256": "d902e425aad3333056d5a48bd28622d591631c62316b706b07ef5b3e5a987693"
+    },
+    "pentagon_normal_form": {
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/pentagon_normal_form.json",
+      "sha256": "21acc3f2c9160f308743e61acbd78c8f6590a83b6f7527d7e7beddf269e6b036"
+    },
+    "pentagon_report": {
+      "certificate_sha256": "764ec93e334b468f6338dcb74f530b09348a7f536489f62a945fdf74a2abb5c2",
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/report.json",
+      "sha256": "e7dfab8f2eb1262d32ff7abb10ae52f0bf5bffeeae1dfcf13b6736e41f9395de",
+      "status": "C985_PENTAGON_CHAIN_NORMAL_FORM_CERTIFIED"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.json",
+      "sha256": "49a24bf8ab89cc2e92c358376b4435f2e424c64f4746985f3f9d44da035f81d9"
+    },
+    "symbolic_rewrite_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_rewrite_certificate.json",
+      "sha256": "8e60f4057257e881100c8d5d0dc54c7d10ab8d3e72436f59cc355ca138df42e1"
+    },
+    "symbolic_rewrite_report": {
+      "certificate_sha256": "50289c4e654353e3fa68666987b74fdfd2c796e810afd7a1a7fbbcd02195bef8",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/report.json",
+      "sha256": "38fcc3ecd2fba6e0656f6b2b7171174a936ce71a808e75b60bfafef7258592e5",
+      "status": "C985_D20_SYMBOLIC_REWRITE_RULES_CERTIFIED"
+    },
+    "symbolic_rewrite_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_rewrite_tables.npz",
+      "sha256": "ec166ccc392e7d6239bfe95d845c54ea90745d9ca4fb02b27fcd834d9a3404c5"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_symbolic_associativity.py",
+      "sha256": "00b38ba1f9fe291fb81aec7633c10871e49adbec25adad696a2ef847c89ba4d0"
+    }
+  },
+  "next_highest_yield_item": "Use the length-three symbolic normal forms as 56 nodes of a higher-order rewrite complex, then measure its hyperbolicity and compare its geodesics with the certified d20 Poincare chart.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+    "symbolic_associativity": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.json",
+    "symbolic_associativity_certificate": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+    "symbolic_associativity_csv": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+    "symbolic_associativity_tables": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_symbolic_associativity@1",
+  "stage_protocol": {
+    "closure": "certify symbolic associativity at the d20 readout level without asserting a new C985 monoidal product",
+    "coherence": "check left and right reductions agree, match direct sorted normal form, and preserve readout invariants",
+    "draft": "use certified binary symbolic rewrites and certified C985 pentagon normal-form metadata",
+    "emit": "emit length-three associativity JSON/CSV/NPZ, certificate, report, and next hyperbolic target",
+    "witness": "materialize all 216 ordered symbolic triples and both three-step reduction paths"
+  },
+  "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED",
+  "witness": {
+    "alphabet_table_sha256": "530b445e7241650b2bd14b955a50460f0214f745e542481dfef5869cbbc64c6d",
+    "canonical_symbolic_triple_count": 56,
+    "full_sector_normal_word_triple_count": 16848,
+    "full_sector_symbolic_triple_count": 78,
+    "left_path_distinct_binary_rule_count": 36,
+    "left_path_swap_count": 270,
+    "max_signature_union_atom_triples": [
+      [
+        7,
+        12,
+        19
+      ],
+      [
+        7,
+        19,
+        12
+      ],
+      [
+        12,
+        7,
+        19
+      ],
+      [
+        12,
+        19,
+        7
+      ],
+      [
+        19,
+        7,
+        12
+      ],
+      [
+        19,
+        12,
+        7
+      ]
+    ],
+    "min_signature_union_atom_triples": [
+      [
+        11,
+        11,
+        11
+      ]
+    ],
+    "noncanonical_symbolic_triple_count": 160,
+    "pentagon_chain_normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)",
+    "pentagon_exact_length_four_chain_count": 16837352591360,
+    "rewrite_rule_table_sha256": "42ea3b91d128feba0f184d7fe10d4fdd597ab0c19e27525c2872468e63248b85",
+    "right_path_distinct_binary_rule_count": 36,
+    "right_path_swap_count": 270,
+    "symbolic_associativity_normal_form": "sorted_length_three_symbol_word(x_i,x_j,x_k)",
+    "symbolic_triple_count": 216,
+    "symbolic_triple_sector_coverage_histogram": [
+      {
+        "count": 6,
+        "value": 3
+      },
+      {
+        "count": 30,
+        "value": 4
+      },
+      {
+        "count": 102,
+        "value": 5
+      },
+      {
+        "count": 78,
+        "value": 6
+      }
+    ],
+    "symbolic_triple_signature_union_count_max": 185,
+    "symbolic_triple_signature_union_count_min": 53,
+    "total_normal_word_triple_count": 46656,
+    "triple_associativity_table_sha256": "512d62eb2bb41cad49e572356e7c17e52dcec0be9c5a2d003b4f70d8fa6bcc3e",
+    "word_concatenation_rewrite_table_sha256": "b9a6711e036246c87cc46295df0d562177b211231073dc6b50045757575d2152",
+    "word_triple_multiplicity_per_symbolic_triple": 216
+  }
+}

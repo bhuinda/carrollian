@@ -1,0 +1,710 @@
+{
+  "artifact_sha256_excluding_this_field": "5bd822ddda121407977177b980fab93a3e210fd833c4dbc076e35cd4701c1cd4",
+  "checks": {
+    "all_nodes_have_five_neighbors": true,
+    "atlas_report_passed": true,
+    "atom_table_shape_is_20_by_15": true,
+    "complement_map_is_involutive": true,
+    "graph_rows_are_stochastic": true,
+    "signed_tension_has_two_polarities": true
+  },
+  "definition": {
+    "edge_weight": "row-normalized feature-neighborhood similarity from NPZ atom_table columns, with complement-pair boost and complement-tension compatibility",
+    "node": "one C985 atlas-projected D20 boundary atom",
+    "object": "D20 boundary-neighborhood stress graph",
+    "renderer_use": "smooth physical mask over the RGBA atom without changing canonical RGBA bytes",
+    "stress": "signed complement-pair tension from tensor mass/support imbalance; positive and negative signs distinguish the two atoms in each complement pair"
+  },
+  "schema": "c985.d20_boundary_neighborhood_stress_graph.artifact@1",
+  "source": {
+    "atlas_npz": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.npz",
+      "sha256": "9d1d4ce89a4a0cbb982b6571f7c6017038ac9afd8ceb1f9dc62d40c901991615"
+    },
+    "atlas_report": {
+      "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json",
+      "sha256": "c4a06fe54ede9305984391a4be10808467321d29003b68efb93b21b672982e95",
+      "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_boundary_neighborhood_stress_graph.py",
+      "sha256": "d34602139bca75d1c7000b03b4a4554ee3489893c99921cf9aeed0e6feb45e4a"
+    }
+  },
+  "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED",
+  "witness": {
+    "graph_rows": [
+      {
+        "atom_id": 0,
+        "complement_atom_id": 19,
+        "neighbors": [
+          {
+            "atom_id": 11,
+            "signed_tension": -0.7465207748,
+            "weight": 0.2482386484
+          },
+          {
+            "atom_id": 19,
+            "signed_tension": -1.0,
+            "weight": 0.1627463138
+          },
+          {
+            "atom_id": 10,
+            "signed_tension": -0.6047383004,
+            "weight": 0.1461206588
+          },
+          {
+            "atom_id": 5,
+            "signed_tension": 0.2807949144,
+            "weight": 0.0924978992
+          },
+          {
+            "atom_id": 12,
+            "signed_tension": -0.4054536444,
+            "weight": 0.0798074594
+          }
+        ],
+        "signed_tension": 1.0,
+        "tension": 1.0
+      },
+      {
+        "atom_id": 1,
+        "complement_atom_id": 18,
+        "neighbors": [
+          {
+            "atom_id": 18,
+            "signed_tension": -0.0812412783,
+            "weight": 0.1102058093
+          },
+          {
+            "atom_id": 4,
+            "signed_tension": 0.1464034193,
+            "weight": 0.0785753363
+          },
+          {
+            "atom_id": 13,
+            "signed_tension": -0.0141468728,
+            "weight": 0.0754277662
+          },
+          {
+            "atom_id": 16,
+            "signed_tension": -0.0338229093,
+            "weight": 0.0753839884
+          },
+          {
+            "atom_id": 6,
+            "signed_tension": 0.0141468728,
+            "weight": 0.0741864259
+          }
+        ],
+        "signed_tension": 0.0812412783,
+        "tension": 0.0812412783
+      },
+      {
+        "atom_id": 2,
+        "complement_atom_id": 17,
+        "neighbors": [
+          {
+            "atom_id": 5,
+            "signed_tension": 0.2807949144,
+            "weight": 0.0861278014
+          },
+          {
+            "atom_id": 17,
+            "signed_tension": -0.2323258234,
+            "weight": 0.0852247459
+          },
+          {
+            "atom_id": 4,
+            "signed_tension": 0.1464034193,
+            "weight": 0.0814902001
+          },
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.0796288246
+          },
+          {
+            "atom_id": 12,
+            "signed_tension": -0.4054536444,
+            "weight": 0.0698772247
+          }
+        ],
+        "signed_tension": 0.2323258234,
+        "tension": 0.2323258234
+      },
+      {
+        "atom_id": 3,
+        "complement_atom_id": 16,
+        "neighbors": [
+          {
+            "atom_id": 16,
+            "signed_tension": -0.0338229093,
+            "weight": 0.1177033227
+          },
+          {
+            "atom_id": 6,
+            "signed_tension": 0.0141468728,
+            "weight": 0.0768235317
+          },
+          {
+            "atom_id": 13,
+            "signed_tension": -0.0141468728,
+            "weight": 0.076241219
+          },
+          {
+            "atom_id": 18,
+            "signed_tension": -0.0812412783,
+            "weight": 0.0752009486
+          },
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.0697328966
+          }
+        ],
+        "signed_tension": 0.0338229093,
+        "tension": 0.0338229093
+      },
+      {
+        "atom_id": 4,
+        "complement_atom_id": 15,
+        "neighbors": [
+          {
+            "atom_id": 15,
+            "signed_tension": -0.1464034193,
+            "weight": 0.1005170621
+          },
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.0792834141
+          },
+          {
+            "atom_id": 16,
+            "signed_tension": -0.0338229093,
+            "weight": 0.0733797177
+          },
+          {
+            "atom_id": 13,
+            "signed_tension": -0.0141468728,
+            "weight": 0.0727982771
+          },
+          {
+            "atom_id": 2,
+            "signed_tension": 0.2323258234,
+            "weight": 0.0718397382
+          }
+        ],
+        "signed_tension": 0.1464034193,
+        "tension": 0.1464034193
+      },
+      {
+        "atom_id": 5,
+        "complement_atom_id": 14,
+        "neighbors": [
+          {
+            "atom_id": 2,
+            "signed_tension": 0.2323258234,
+            "weight": 0.0903212908
+          },
+          {
+            "atom_id": 12,
+            "signed_tension": -0.4054536444,
+            "weight": 0.0836644313
+          },
+          {
+            "atom_id": 4,
+            "signed_tension": 0.1464034193,
+            "weight": 0.0822179257
+          },
+          {
+            "atom_id": 14,
+            "signed_tension": -0.2807949144,
+            "weight": 0.0816118138
+          },
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.0801463641
+          }
+        ],
+        "signed_tension": 0.2807949144,
+        "tension": 0.2807949144
+      },
+      {
+        "atom_id": 6,
+        "complement_atom_id": 13,
+        "neighbors": [
+          {
+            "atom_id": 13,
+            "signed_tension": -0.0141468728,
+            "weight": 0.1222119331
+          },
+          {
+            "atom_id": 3,
+            "signed_tension": 0.0338229093,
+            "weight": 0.0778073728
+          },
+          {
+            "atom_id": 16,
+            "signed_tension": -0.0338229093,
+            "weight": 0.0771508623
+          },
+          {
+            "atom_id": 18,
+            "signed_tension": -0.0812412783,
+            "weight": 0.072989302
+          },
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.072868197
+          }
+        ],
+        "signed_tension": 0.0141468728,
+        "tension": 0.0141468728
+      },
+      {
+        "atom_id": 7,
+        "complement_atom_id": 12,
+        "neighbors": [
+          {
+            "atom_id": 12,
+            "signed_tension": -0.4054536444,
+            "weight": 0.0824613524
+          },
+          {
+            "atom_id": 15,
+            "signed_tension": -0.1464034193,
+            "weight": 0.0822990562
+          },
+          {
+            "atom_id": 9,
+            "signed_tension": 0.6047383004,
+            "weight": 0.0813281384
+          },
+          {
+            "atom_id": 14,
+            "signed_tension": -0.2807949144,
+            "weight": 0.0762645989
+          },
+          {
+            "atom_id": 17,
+            "signed_tension": -0.2323258234,
+            "weight": 0.0728066834
+          }
+        ],
+        "signed_tension": 0.4054536444,
+        "tension": 0.4054536444
+      },
+      {
+        "atom_id": 8,
+        "complement_atom_id": 11,
+        "neighbors": [
+          {
+            "atom_id": 19,
+            "signed_tension": -1.0,
+            "weight": 0.1153357978
+          },
+          {
+            "atom_id": 9,
+            "signed_tension": 0.6047383004,
+            "weight": 0.1126064767
+          },
+          {
+            "atom_id": 7,
+            "signed_tension": 0.4054536444,
+            "weight": 0.0956181337
+          },
+          {
+            "atom_id": 14,
+            "signed_tension": -0.2807949144,
+            "weight": 0.0915084768
+          },
+          {
+            "atom_id": 17,
+            "signed_tension": -0.2323258234,
+            "weight": 0.0869172796
+          }
+        ],
+        "signed_tension": 0.7465207748,
+        "tension": 0.7465207748
+      },
+      {
+        "atom_id": 9,
+        "complement_atom_id": 10,
+        "neighbors": [
+          {
+            "atom_id": 8,
+            "signed_tension": 0.7465207748,
+            "weight": 0.1055384939
+          },
+          {
+            "atom_id": 7,
+            "signed_tension": 0.4054536444,
+            "weight": 0.1054428363
+          },
+          {
+            "atom_id": 19,
+            "signed_tension": -1.0,
+            "weight": 0.0899196087
+          },
+          {
+            "atom_id": 15,
+            "signed_tension": -0.1464034193,
+            "weight": 0.0833124425
+          },
+          {
+            "atom_id": 14,
+            "signed_tension": -0.2807949144,
+            "weight": 0.0797327211
+          }
+        ],
+        "signed_tension": 0.6047383004,
+        "tension": 0.6047383004
+      },
+      {
+        "atom_id": 10,
+        "complement_atom_id": 9,
+        "neighbors": [
+          {
+            "atom_id": 12,
+            "signed_tension": -0.4054536444,
+            "weight": 0.1025293292
+          },
+          {
+            "atom_id": 5,
+            "signed_tension": 0.2807949144,
+            "weight": 0.0935822118
+          },
+          {
+            "atom_id": 11,
+            "signed_tension": -0.7465207748,
+            "weight": 0.089948436
+          },
+          {
+            "atom_id": 4,
+            "signed_tension": 0.1464034193,
+            "weight": 0.0778513734
+          },
+          {
+            "atom_id": 9,
+            "signed_tension": 0.6047383004,
+            "weight": 0.0763829382
+          }
+        ],
+        "signed_tension": -0.6047383004,
+        "tension": 0.6047383004
+      },
+      {
+        "atom_id": 11,
+        "complement_atom_id": 8,
+        "neighbors": [
+          {
+            "atom_id": 0,
+            "signed_tension": 1.0,
+            "weight": 0.1676528067
+          },
+          {
+            "atom_id": 10,
+            "signed_tension": -0.6047383004,
+            "weight": 0.1457861554
+          },
+          {
+            "atom_id": 8,
+            "signed_tension": 0.7465207748,
+            "weight": 0.1116780045
+          },
+          {
+            "atom_id": 5,
+            "signed_tension": 0.2807949144,
+            "weight": 0.1021663347
+          },
+          {
+            "atom_id": 12,
+            "signed_tension": -0.4054536444,
+            "weight": 0.0950629042
+          }
+        ],
+        "signed_tension": -0.7465207748,
+        "tension": 0.7465207748
+      },
+      {
+        "atom_id": 12,
+        "complement_atom_id": 7,
+        "neighbors": [
+          {
+            "atom_id": 7,
+            "signed_tension": 0.4054536444,
+            "weight": 0.0827163159
+          },
+          {
+            "atom_id": 5,
+            "signed_tension": 0.2807949144,
+            "weight": 0.0817936121
+          },
+          {
+            "atom_id": 10,
+            "signed_tension": -0.6047383004,
+            "weight": 0.0791735858
+          },
+          {
+            "atom_id": 4,
+            "signed_tension": 0.1464034193,
+            "weight": 0.0789684262
+          },
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.0766790346
+          }
+        ],
+        "signed_tension": -0.4054536444,
+        "tension": 0.4054536444
+      },
+      {
+        "atom_id": 13,
+        "complement_atom_id": 6,
+        "neighbors": [
+          {
+            "atom_id": 6,
+            "signed_tension": 0.0141468728,
+            "weight": 0.1213677768
+          },
+          {
+            "atom_id": 16,
+            "signed_tension": -0.0338229093,
+            "weight": 0.0769058776
+          },
+          {
+            "atom_id": 3,
+            "signed_tension": 0.0338229093,
+            "weight": 0.0766842365
+          },
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.0735757342
+          },
+          {
+            "atom_id": 18,
+            "signed_tension": -0.0812412783,
+            "weight": 0.0725222376
+          }
+        ],
+        "signed_tension": -0.0141468728,
+        "tension": 0.0141468728
+      },
+      {
+        "atom_id": 14,
+        "complement_atom_id": 5,
+        "neighbors": [
+          {
+            "atom_id": 17,
+            "signed_tension": -0.2323258234,
+            "weight": 0.0897503723
+          },
+          {
+            "atom_id": 5,
+            "signed_tension": 0.2807949144,
+            "weight": 0.0774097737
+          },
+          {
+            "atom_id": 18,
+            "signed_tension": -0.0812412783,
+            "weight": 0.076068008
+          },
+          {
+            "atom_id": 15,
+            "signed_tension": -0.1464034193,
+            "weight": 0.075857271
+          },
+          {
+            "atom_id": 7,
+            "signed_tension": 0.4054536444,
+            "weight": 0.0742211987
+          }
+        ],
+        "signed_tension": -0.2807949144,
+        "tension": 0.2807949144
+      },
+      {
+        "atom_id": 15,
+        "complement_atom_id": 4,
+        "neighbors": [
+          {
+            "atom_id": 4,
+            "signed_tension": 0.1464034193,
+            "weight": 0.1029629633
+          },
+          {
+            "atom_id": 18,
+            "signed_tension": -0.0812412783,
+            "weight": 0.0785145539
+          },
+          {
+            "atom_id": 7,
+            "signed_tension": 0.4054536444,
+            "weight": 0.0727128035
+          },
+          {
+            "atom_id": 3,
+            "signed_tension": 0.0338229093,
+            "weight": 0.0725236241
+          },
+          {
+            "atom_id": 14,
+            "signed_tension": -0.2807949144,
+            "weight": 0.0688665419
+          }
+        ],
+        "signed_tension": -0.1464034193,
+        "tension": 0.1464034193
+      },
+      {
+        "atom_id": 16,
+        "complement_atom_id": 3,
+        "neighbors": [
+          {
+            "atom_id": 3,
+            "signed_tension": 0.0338229093,
+            "weight": 0.1208025639
+          },
+          {
+            "atom_id": 13,
+            "signed_tension": -0.0141468728,
+            "weight": 0.0784748863
+          },
+          {
+            "atom_id": 6,
+            "signed_tension": 0.0141468728,
+            "weight": 0.0781810916
+          },
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.0750332283
+          },
+          {
+            "atom_id": 4,
+            "signed_tension": 0.1464034193,
+            "weight": 0.0723859806
+          }
+        ],
+        "signed_tension": -0.0338229093,
+        "tension": 0.0338229093
+      },
+      {
+        "atom_id": 17,
+        "complement_atom_id": 2,
+        "neighbors": [
+          {
+            "atom_id": 14,
+            "signed_tension": -0.2807949144,
+            "weight": 0.0901943407
+          },
+          {
+            "atom_id": 2,
+            "signed_tension": 0.2323258234,
+            "weight": 0.0851918966
+          },
+          {
+            "atom_id": 18,
+            "signed_tension": -0.0812412783,
+            "weight": 0.0767576987
+          },
+          {
+            "atom_id": 15,
+            "signed_tension": -0.1464034193,
+            "weight": 0.0759161281
+          },
+          {
+            "atom_id": 7,
+            "signed_tension": 0.4054536444,
+            "weight": 0.0712064363
+          }
+        ],
+        "signed_tension": -0.2323258234,
+        "tension": 0.2323258234
+      },
+      {
+        "atom_id": 18,
+        "complement_atom_id": 1,
+        "neighbors": [
+          {
+            "atom_id": 1,
+            "signed_tension": 0.0812412783,
+            "weight": 0.1081202338
+          },
+          {
+            "atom_id": 3,
+            "signed_tension": 0.0338229093,
+            "weight": 0.0760744314
+          },
+          {
+            "atom_id": 15,
+            "signed_tension": -0.1464034193,
+            "weight": 0.0745272872
+          },
+          {
+            "atom_id": 13,
+            "signed_tension": -0.0141468728,
+            "weight": 0.0729407669
+          },
+          {
+            "atom_id": 6,
+            "signed_tension": 0.0141468728,
+            "weight": 0.0729034571
+          }
+        ],
+        "signed_tension": -0.0812412783,
+        "tension": 0.0812412783
+      },
+      {
+        "atom_id": 19,
+        "complement_atom_id": 0,
+        "neighbors": [
+          {
+            "atom_id": 8,
+            "signed_tension": 0.7465207748,
+            "weight": 0.1557393801
+          },
+          {
+            "atom_id": 9,
+            "signed_tension": 0.6047383004,
+            "weight": 0.1295511294
+          },
+          {
+            "atom_id": 7,
+            "signed_tension": 0.4054536444,
+            "weight": 0.09752331
+          },
+          {
+            "atom_id": 0,
+            "signed_tension": 1.0,
+            "weight": 0.0975179216
+          },
+          {
+            "atom_id": 14,
+            "signed_tension": -0.2807949144,
+            "weight": 0.090218779
+          }
+        ],
+        "signed_tension": -1.0,
+        "tension": 1.0
+      }
+    ],
+    "summary": {
+      "mean_abs_signed_tension": 0.3545447937169174,
+      "neighbor_count_per_node": 5,
+      "node_count": 20,
+      "row_sum_max": 1.0000000000000002,
+      "row_sum_min": 0.9999999999999998,
+      "signed_tension_max": 1.0,
+      "signed_tension_min": -1.0,
+      "weight_matrix_sha256": "5b7fd449244a66444958c5d20b70a12d6931fbdbaf506713cfabb32197bb301b"
+    }
+  }
+}

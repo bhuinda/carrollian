@@ -1,0 +1,201 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "17655b944957b93ab508372968684bfb57304901b25e64a94123002efe9b6f82",
+  "checks": {
+    "active_atom_count_is_6": true,
+    "atom_geometry_table_shape_is_6_by_12": true,
+    "boundary_transfer_certificate_certified": true,
+    "boundary_transfer_json_schema_available": true,
+    "boundary_transfer_report_certified": true,
+    "boundary_transfer_tables_available": true,
+    "core_center_matches_boundary_transfer": true,
+    "mean_hyperbolic_atom_distances_match_expected": true,
+    "negative_center_is_closer_to_core_than_positive": true,
+    "negative_center_matches_expected": true,
+    "negative_core_distance_matches_expected": true,
+    "observable_table_shape_matches_codebook": true,
+    "poincare_certificate_certified": true,
+    "poincare_coordinate_count_is_20": true,
+    "poincare_json_schema_available": true,
+    "poincare_report_certified": true,
+    "poincare_tables_available": true,
+    "positive_center_matches_expected": true,
+    "positive_core_distance_matches_expected": true,
+    "positive_negative_separation_matches_expected": true,
+    "quotient_certificate_certified": true,
+    "quotient_json_schema_available": true,
+    "quotient_report_certified": true,
+    "quotient_tables_available": true,
+    "recomposition_center_matches_total_center": true,
+    "spectral_cut_certificate_certified": true,
+    "spectral_cut_json_schema_available": true,
+    "spectral_cut_report_certified": true,
+    "spectral_cut_tables_available": true,
+    "state_geometry_table_shape_is_3_by_15": true,
+    "state_masses_match_quotient": true,
+    "top_atoms_match_spectral_cut_reading": true,
+    "total_center_matches_expected": true,
+    "total_core_distance_matches_expected": true
+  },
+  "claim": "The certified two-state spectral quotient lifts to the certified Poincare atom embedding as two weighted disk centers whose hyperbolic separation, distance to the original stationary core center, and recomposition center are reproducible.",
+  "closure_boundary": {
+    "certifies": [
+      "weighted Poincare disk centers for positive, negative, and total spectral quotient atom participation",
+      "Poincare hyperbolic separation between positive and negative quotient centers",
+      "distance of each quotient center to the original stationary core center",
+      "atom-level distances to both quotient centers",
+      "exact recomposition of the total atom center from positive and negative quotient centers"
+    ],
+    "does_not_certify_because_not_required": [
+      "Karcher/Frechet barycenters in the hyperbolic metric",
+      "a continuum boundary or asymptotic visual measure",
+      "a unique physical interpretation of the quotient states",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "boundary_transfer": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_operator.json",
+      "sha256": "8efccbafd9948b9716e8b2d949439f8dec7d650048ae4b2ab56bb2aa5b4959b3"
+    },
+    "boundary_transfer_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_certificate.json",
+      "sha256": "dbb3a84214f9e4a8ebad46f21ad55ecabf739c14fa68f538663085ced8744136"
+    },
+    "boundary_transfer_report": {
+      "certificate_sha256": "8ef035c36df37ff44c48b2b6eb1fc4c1b32c4ba27bf5085fa2ca0005d36adcaf",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/report.json",
+      "sha256": "20f97dca34ea6e18c7ae0792831dabb3106b1076f7dd091566eca9a39eca1464",
+      "status": "C985_D20_BOUNDARY_TRANSFER_OPERATOR_CERTIFIED"
+    },
+    "boundary_transfer_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_tables.npz",
+      "sha256": "57be6074878211522726b341fab10843b5d0cdbfa891632b7c68ae901aa0c098"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_quotient_poincare_geometry.py",
+      "sha256": "503631eeb2220e7c2b2a6c9cc8023aefa08fe3f1f441f6e5c1931bf68463bda0"
+    },
+    "poincare_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/embedding_certificate.json",
+      "sha256": "2a9fa989e27dcbd72cc3ab30ec4e6a4d4675610ddaafb5e8171a7adf3c614032"
+    },
+    "poincare_embedding": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.json",
+      "sha256": "bd115f49fdb04f14db50e5b15397ad425c9dce4d538b8fb40d194bbb2a2ffcde"
+    },
+    "poincare_report": {
+      "certificate_sha256": "6c01e4b1a2b65eb962be473f5752cc9ec93c5a273da84ee9ed2240ea8560769e",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/report.json",
+      "sha256": "0a1f0b8197236305d98c6b93e9c8b1b0963ae2d8a89d7661697ac61d1f09ce55",
+      "status": "C985_D20_POINCARE_EMBEDDING_CERTIFIED"
+    },
+    "poincare_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.npz",
+      "sha256": "125136c4cd585d9142b0bded86f6455de95f311ba265f756eb5f12f5e9402074"
+    },
+    "quotient": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_dynamics.json",
+      "sha256": "4db87c66a39d041948d2e066e3d535c16f080a016d0a97333d3a3cf13c0112b5"
+    },
+    "quotient_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_certificate.json",
+      "sha256": "130962fc5f79898079e8c95b38c8e3e32eebf18f733ffed5096adc153b805cfb"
+    },
+    "quotient_report": {
+      "certificate_sha256": "57f13ced19f11cbf71901254fd9fc3c906ba07b9e7b2db2a2fe7a4e6b31f4705",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/report.json",
+      "sha256": "a432660773ecbd3dea50d8353001349fb3d3db56be30c893be04b1b444684bfb",
+      "status": "C985_D20_SIGNATURE_SPECTRAL_QUOTIENT_DYNAMICS_CERTIFIED"
+    },
+    "quotient_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_tables.npz",
+      "sha256": "3b115dc788f68714b19db9c8751dda058354ed0a34a9a5b6615019296f5f40c4"
+    },
+    "spectral_cut": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut.json",
+      "sha256": "435c8233b464732a4aac1a2b1a8b7a608ed13d7a3ee73a7881d40c613e289af5"
+    },
+    "spectral_cut_atom_summary": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/atom_eigenmode_summary.csv",
+      "sha256": "e024b3de958a1fb935211bd25fa6a1f7c9627b8ea188765fafb1c09a7f5f0715"
+    },
+    "spectral_cut_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut_certificate.json",
+      "sha256": "efb9a28b31c59179c8a3b4583ca56c35469d5609b18691117a5118295126c80d"
+    },
+    "spectral_cut_report": {
+      "certificate_sha256": "ec2a663266d278f04ca1654089ca1d9910cd9975025286bee2da6057fb9db278",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/report.json",
+      "sha256": "8ea1a4332205926dc855a4534337ab3b1f0938e123d131d70be1554a20d31408",
+      "status": "C985_D20_SIGNATURE_TRANSFER_SPECTRAL_CUT_CERTIFIED"
+    },
+    "spectral_cut_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut_tables.npz",
+      "sha256": "111780d9d44f50c013b6b56c119fe397eed0268f2eb3c62cd4420a11af05fdd6"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_quotient_poincare_geometry.py",
+      "sha256": "62003f42f45c8c9dc6462fd28d1768b267f1b2a0461a54d83a6a2d6e83afc5d9"
+    }
+  },
+  "next_highest_yield_item": "Use the certified quotient centers as poles for a signed hyperbolic coordinate on the active atoms: project each recurrent signature class onto the positive-negative center geodesic and certify a one-dimensional order compatible with the spectral nodal signs.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_quotient_poincare_geometry/manifest.json",
+    "quotient_atom_geometry_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_quotient_poincare_geometry/quotient_atom_geometry.csv",
+    "quotient_geometry_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_quotient_poincare_geometry/quotient_geometry_observables.csv",
+    "quotient_state_geometry_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_quotient_poincare_geometry/quotient_state_geometry.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_quotient_poincare_geometry/report.json",
+    "signature_quotient_poincare_geometry": "data/invariants/d20/proof_obligations/c985_d20_signature_quotient_poincare_geometry/signature_quotient_poincare_geometry.json",
+    "signature_quotient_poincare_geometry_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_quotient_poincare_geometry/signature_quotient_poincare_geometry_certificate.json",
+    "signature_quotient_poincare_geometry_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_quotient_poincare_geometry/signature_quotient_poincare_geometry_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_quotient_poincare_geometry@1",
+  "stage_protocol": {
+    "closure": "certify quotient Poincare geometry without claiming a continuum or Karcher barycenter",
+    "coherence": "check expected centers, separation, recomposition, top atoms, and source artifact certification",
+    "draft": "assign positive, negative, and total quotient atom participation masses to certified Poincare atom coordinates",
+    "emit": "emit geometry JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize state centers, atom distances to centers, hyperbolic separations, and core-center distances"
+  },
+  "status": "C985_D20_SIGNATURE_QUOTIENT_POINCARE_GEOMETRY_CERTIFIED",
+  "witness": {
+    "atom_geometry_table_sha256": "497282582d1ae7a9ad65986ee428850cd92c6f98a898aacc1a227fe90d99b993",
+    "core_center_x1e12": {
+      "radius": 50308637915,
+      "x": -50213137809,
+      "y": -3098360902
+    },
+    "geometry_observable_table_sha256": "2fad93077d276eca7aee5f621e51f9fe2901aa7af7f2c00934b5d9c739f6e0d5",
+    "negative_center_x1e12": {
+      "radius": 68720463300,
+      "x": -64414008159,
+      "y": -23944469697
+    },
+    "negative_core_distance_advantage_x1e12": 103584164306,
+    "negative_core_hyperbolic_distance_x1e12": 50625248627,
+    "negative_mean_hyperbolic_atom_distance_x1e12": 286772503879,
+    "negative_top_atom_id": 12,
+    "positive_center_x1e12": {
+      "radius": 39199258542,
+      "x": 20629332981,
+      "y": -33331853999
+    },
+    "positive_core_hyperbolic_distance_x1e12": 154209412933,
+    "positive_mean_hyperbolic_atom_distance_x1e12": 305140715396,
+    "positive_negative_euclidean_separation_x1e12": 85559878776,
+    "positive_negative_hyperbolic_separation_x1e12": 171447126521,
+    "positive_top_atom_id": 7,
+    "recomposition_delta_abs_x_x1e12": 0,
+    "recomposition_delta_abs_y_x1e12": 0,
+    "state_geometry_table_sha256": "af82a7d68576bb43a041e43713d3300d86241017d0487038e66a978969f43ca5",
+    "total_center_x1e12": {
+      "radius": 31844456235,
+      "x": -11167767766,
+      "y": -29821977736
+    },
+    "total_core_hyperbolic_distance_x1e12": 94762246226,
+    "total_mean_hyperbolic_atom_distance_x1e12": 311069149257,
+    "total_top_atom_id": 19
+  }
+}

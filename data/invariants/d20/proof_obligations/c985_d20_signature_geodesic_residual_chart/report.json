@@ -1,0 +1,148 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "788481496c23354042c2dfca29ff6abccf9afeb29c6d71cd52f311bc27d7b6fa",
+  "checks": {
+    "carrier_coordinates_are_distinct": true,
+    "carrier_count_is_14": true,
+    "carrier_table_shape_is_14_by_25": true,
+    "elbow_classifier_separates_all_carriers": true,
+    "elbow_classifier_separates_all_signatures": true,
+    "elbow_threshold_search_is_perfect": true,
+    "geodesic_order_certificate_certified": true,
+    "geodesic_order_json_schema_available": true,
+    "geodesic_order_report_certified": true,
+    "geodesic_order_tables_available": true,
+    "high_axis_threshold_matches_expected": true,
+    "low_axis_threshold_matches_geodesic_best": true,
+    "observable_table_shape_matches_codebook": true,
+    "perpendicular_direction_matches_expected": true,
+    "previous_obstruction_mass_matches_expected": true,
+    "previous_obstruction_resolved_by_residual_gate": true,
+    "region_ids_match_expected": true,
+    "region_masses_match_expected": true,
+    "residual_gate_threshold_matches_expected": true,
+    "signature_count_is_221": true,
+    "signature_table_shape_is_221_by_16": true,
+    "signed_residuals_match_axis_residual_magnitudes": true
+  },
+  "claim": "Adding the signed perpendicular residual coordinate to the certified quotient-center geodesic gives a two-coordinate hyperbolic chart whose elbow rule separates the spectral nodal split exactly while preserving all 14 active carrier-mask coordinates.",
+  "closure_boundary": {
+    "certifies": [
+      "signed perpendicular residual coordinates for the carrier-mask and signature geodesic chart",
+      "the unique fixed-low-axis elbow rule with perfect nodal-sign agreement",
+      "exact resolution of the one-dimensional obstruction masks 4, 7, and 8",
+      "distinct two-coordinate chart positions for all 14 carrier masks"
+    ],
+    "does_not_certify_because_not_required": [
+      "a linear separator in the two-coordinate chart",
+      "uniqueness among all possible nonlinear finite classifiers",
+      "Karcher/Frechet barycenter coordinates",
+      "continuum boundary dynamics or asymptotic mixing theory",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_geodesic_residual_chart.py",
+      "sha256": "d1eb61d40a81fc087e71ffacb59e3373728024a01918fba5393a182ea16c932c"
+    },
+    "geodesic_order": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_order/signature_geodesic_order.json",
+      "sha256": "3f75e47d2809fd74afd2b482f7dd302d0b9334bf7382de85018165895fb61bf0"
+    },
+    "geodesic_order_carrier_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_order/carrier_geodesic_order.csv",
+      "sha256": "f4d406743d495f6e909f294b295b9ca2edf47870d613bcfbdfeec1bcf49cb95c"
+    },
+    "geodesic_order_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_order/signature_geodesic_order_certificate.json",
+      "sha256": "e0192208c63f1abd13f9c985d22e982787bbea6ead2aeea63b8e6745c2fc286a"
+    },
+    "geodesic_order_report": {
+      "certificate_sha256": "0f1b41dc1066d858f0938f988e035257011b0af79f48659caa1210a8538c4f55",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_order/report.json",
+      "sha256": "3d66ef5e16b10c2d54771216e3be76c186da927cd4593344e9a97ea2effcc0a7",
+      "status": "C985_D20_SIGNATURE_GEODESIC_ORDER_CERTIFIED"
+    },
+    "geodesic_order_signature_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_order/signature_geodesic_order.csv",
+      "sha256": "50c46c0266df2f0ffbe789a4ff5473f831d03e8f9e9b77772b76d3045c317166"
+    },
+    "geodesic_order_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_order/signature_geodesic_order_tables.npz",
+      "sha256": "bdabc58827961113fc83a8a51ccefe5eaa36e466de2fa2e07cea798174f71687"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_geodesic_residual_chart.py",
+      "sha256": "025144290e0b48531720ae18638ed1178b574da4aa1688b09104822ccf077fea"
+    }
+  },
+  "next_highest_yield_item": "Promote the exact two-coordinate chart into a finite cell complex: certify the adjacency of the high-cap, central-gate, and negative regions, then compare its boundary cells with the 16 carrier-mask crossing edges from the spectral cut.",
+  "outputs": {
+    "carrier_residual_chart_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/carrier_residual_chart.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/report.json",
+    "residual_chart_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/residual_chart_observables.csv",
+    "signature_geodesic_residual_chart": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart.json",
+    "signature_geodesic_residual_chart_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart_certificate.json",
+    "signature_geodesic_residual_chart_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart_tables.npz",
+    "signature_residual_chart_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_residual_chart.csv"
+  },
+  "schema": "c985.proof_obligation.d20_signature_geodesic_residual_chart@1",
+  "stage_protocol": {
+    "closure": "certify two-coordinate separation without claiming a linear separator or continuum boundary",
+    "coherence": "search residual/high-axis thresholds and prove exact elbow separation with no carrier-coordinate collisions",
+    "draft": "construct the perpendicular Lorentz-frame coordinate to the quotient-center geodesic",
+    "emit": "emit residual-chart JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize carrier-mask and signature-class two-coordinate chart records"
+  },
+  "status": "C985_D20_SIGNATURE_GEODESIC_RESIDUAL_CHART_CERTIFIED",
+  "witness": {
+    "carrier_coordinate_collision_count": 0,
+    "carrier_residual_chart_table_sha256": "5d079b8c4aaf2d25112b3575487006038c33bbb7719cf061bc29b787ef196b7b",
+    "central_gate_mask_class_ids": [
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "distinct_chart_coordinate_count": 14,
+    "elbow_agreement_count": 221,
+    "elbow_agreement_mass_x1e12": 1000000000000,
+    "elbow_misclassified_count": 0,
+    "elbow_misclassified_mass_x1e12": 0,
+    "high_axis_threshold_x1e12": 178625198443,
+    "high_cap_mask_class_ids": [
+      0,
+      1
+    ],
+    "low_axis_threshold_x1e12": -51543783679,
+    "negative_region_mask_class_ids": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13
+    ],
+    "one_dimensional_agreement_count": 192,
+    "one_dimensional_agreement_mass_x1e12": 852128653272,
+    "perpendicular_direction_x1e12": {
+      "t": -61701506611,
+      "x": 111067537516,
+      "y": 995726407216
+    },
+    "previous_obstruction_mask_class_ids": [
+      4,
+      7,
+      8
+    ],
+    "previous_obstruction_signature_count": 29,
+    "previous_obstruction_stationary_mass_x1e12": 147871346728,
+    "residual_chart_observable_table_sha256": "8f77aa568afeacdaa7aa0083a5b24d383f8a189528873373a759b440385b33f8",
+    "residual_gate_threshold_x1e12": -149928684557,
+    "signature_residual_chart_table_sha256": "355cf8d78e058467c185ee64148052ad75af830c8fa0b6a2ac9a4953b886fc71"
+  }
+}

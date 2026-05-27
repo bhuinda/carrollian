@@ -1,0 +1,353 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8ef035c36df37ff44c48b2b6eb1fc4c1b32c4ba27bf5085fa2ca0005d36adcaf",
+  "checks": {
+    "flow_edge_count_is_31": true,
+    "morse_reeb_certificate_certified": true,
+    "morse_reeb_report_certified": true,
+    "morse_reeb_tables_available": true,
+    "observable_table_shape_matches_codebook": true,
+    "path_entropy_perplexity_is_broad": true,
+    "path_weight_table_shape_is_42_by_17": true,
+    "poincare_certificate_certified": true,
+    "poincare_report_certified": true,
+    "poincare_tables_available": true,
+    "recurrent_support_is_all_12_core_nodes": true,
+    "return_edge_count_is_2": true,
+    "return_probabilities_match": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "source_path_counts_are_10_and_32": true,
+    "source_sink_path_count_is_42": true,
+    "spectral_gap_matches_expected": true,
+    "stationary_basin_masses_match_expected": true,
+    "stationary_distribution_sums_to_one": true,
+    "stationary_distribution_table_shape_is_12_by_9": true,
+    "stationary_max_node_is_44": true,
+    "stationary_mean_radius_above_uniform_mean_radius": true,
+    "stationary_min_node_is_32": true,
+    "stationary_negative_radius_correlation_is_negative": true,
+    "stationary_vector_matches_expected": true,
+    "support_is_strongly_connected": true,
+    "transfer_edge_count_is_33": true,
+    "transfer_edge_table_shape_is_33_by_9": true,
+    "transfer_matrix_shape_is_12_by_12": true,
+    "transfer_row_sums_are_stochastic": true,
+    "weighted_center_radius_below_uniform_mean_radius": true,
+    "weighted_poincare_center_matches_expected": true
+  },
+  "claim": "The 42 source-sink morphisms in the certified d20 Morse/Reeb quotient induce a tensor/Poincare-weighted boundary transfer operator whose closed support is recurrent on all 12 core nodes and whose stationary measure has certified hyperbolic geometry observables.",
+  "closure_boundary": {
+    "certifies": [
+      "tensor/Poincare weights for all 42 source-sink morphisms",
+      "the 33-edge closed transfer support: 31 flow edges plus two return edges",
+      "row-stochasticity, strong connectivity, and recurrence of all 12 core nodes",
+      "the unique stationary distribution and spectral gap of the transfer operator",
+      "Poincare barycenter observables of the stationary flow measure"
+    ],
+    "does_not_certify_because_not_required": [
+      "a continuum heat kernel or diffusion limit",
+      "a canonical physical probability law beyond the declared weighting rule",
+      "mixing-time bounds stronger than the certified spectral gap",
+      "an infinite visual boundary or asymptotic Gromov boundary",
+      "new C985 associator or pentagon data beyond the existing certificate"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_boundary_transfer_operator.py",
+      "sha256": "eb6446ab081cfebd644726a84814563ac7b670f96f4dd76102e06d3b55c92de4"
+    },
+    "morse_reeb": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_quotient.json",
+      "sha256": "4592dcfedf7c27eb33aa40a24ec205bb8aa62d3773ff34027472e7f528e4d5f0"
+    },
+    "morse_reeb_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_certificate.json",
+      "sha256": "0547e7df6a0a4b537f67140a536a75f8dc7398f068b2a84c2417651be59859ce"
+    },
+    "morse_reeb_directed_paths_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/directed_interval_paths.csv",
+      "sha256": "a92da9e8dfa558228e33463add5668398f97cb74676c6906034a22865ccffdf1"
+    },
+    "morse_reeb_report": {
+      "certificate_sha256": "82b03fe85d221bea4ba21aec461bb069269c2ee7392dc47cc7443c94b8462fcb",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/report.json",
+      "sha256": "226f382ee7d075e7430e7bcf22f0c02e2c03058711639332cf87a22d0870a8b0",
+      "status": "C985_D20_MORSE_REEB_QUOTIENT_CERTIFIED"
+    },
+    "morse_reeb_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_tables.npz",
+      "sha256": "100ddc3acd3c45e2baaab2c1a51818f74a554db365c0b29971512fa01671f185"
+    },
+    "poincare_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/embedding_certificate.json",
+      "sha256": "2a9fa989e27dcbd72cc3ab30ec4e6a4d4675610ddaafb5e8171a7adf3c614032"
+    },
+    "poincare_embedding": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.json",
+      "sha256": "bd115f49fdb04f14db50e5b15397ad425c9dce4d538b8fb40d194bbb2a2ffcde"
+    },
+    "poincare_report": {
+      "certificate_sha256": "6c01e4b1a2b65eb962be473f5752cc9ec93c5a273da84ee9ed2240ea8560769e",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/report.json",
+      "sha256": "0a1f0b8197236305d98c6b93e9c8b1b0963ae2d8a89d7661697ac61d1f09ce55",
+      "status": "C985_D20_POINCARE_EMBEDDING_CERTIFIED"
+    },
+    "poincare_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.npz",
+      "sha256": "125136c4cd585d9142b0bded86f6455de95f311ba265f756eb5f12f5e9402074"
+    },
+    "rewrite_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+      "sha256": "0d170586487cce586baea14d2da03b700e3688ab2d45a5793094d19ad8b99385"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_boundary_transfer_operator.py",
+      "sha256": "516ea4691ebf3b4bd60e0d8906fe3ad8b9d1bad1daee2a67cac68dd77e8c7358"
+    }
+  },
+  "next_highest_yield_item": "Lift the stationary boundary transfer measure from the 12-node core back to the 20-atom Poincare boundary: push mass through each normal word's three atom coordinates, then certify which d20 atoms, sectors, and signature classes carry the recurrent flow.",
+  "outputs": {
+    "boundary_flow_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_flow_observables.csv",
+    "boundary_transfer_certificate": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_certificate.json",
+    "boundary_transfer_operator": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_operator.json",
+    "boundary_transfer_tables": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_tables.npz",
+    "core_transfer_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/core_transfer_edges.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/report.json",
+    "source_sink_path_weights_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/source_sink_path_weights.csv",
+    "stationary_distribution_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/stationary_distribution.csv"
+  },
+  "schema": "c985.proof_obligation.d20_boundary_transfer_operator@1",
+  "stage_protocol": {
+    "closure": "certify the boundary transfer operator and its stationary hyperbolic readout",
+    "coherence": "check row-stochasticity, strong connectivity, stationary recurrence, spectral gap, and Poincare observables",
+    "draft": "weight source-sink paths by tensor mass and Poincare hyperbolic length",
+    "emit": "emit transfer JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize path weights, transfer edges, stationary distribution, and flow observables"
+  },
+  "status": "C985_D20_BOUNDARY_TRANSFER_OPERATOR_CERTIFIED",
+  "witness": {
+    "edge_flux_matrix_sha256": "f2870bd372398a45b6db0516119a7cb3587e72c84fa9c8faaae3440fb9689d5e",
+    "flow_edge_count": 31,
+    "flow_observable_table_sha256": "f0b2b10d30d6783ee336273030cfe0f8031daec8daa0b2bf77f4c0c964aebda7",
+    "geometric_observables": {
+      "stationary_mean_poincare_radius": 0.077074179753,
+      "stationary_mean_poincare_radius_x1e12": 77074179753,
+      "stationary_negative_radius_correlation": -0.623028340954,
+      "stationary_negative_radius_correlation_x1e12": -623028340954,
+      "stationary_signature_correlation": -0.001037362606,
+      "stationary_signature_correlation_x1e12": -1037362606,
+      "stationary_tensor_mass_correlation": -0.034223439764,
+      "stationary_tensor_mass_correlation_x1e12": -34223439764,
+      "uniform_mean_poincare_radius": 0.068295982075,
+      "uniform_mean_poincare_radius_x1e12": 68295982075,
+      "weighted_poincare_center": {
+        "radius": 0.050308637915,
+        "radius_x1e12": 50308637915,
+        "x": -0.050213137809,
+        "x_x1e12": -50213137809,
+        "y": -0.003098360902,
+        "y_x1e12": -3098360902
+      }
+    },
+    "global_probability_rounding_error_x1e12": 0,
+    "path_entropy": {
+      "global_entropy": 3.715957275188,
+      "global_entropy_x1e12": 3715957275188,
+      "global_perplexity": 41.097910269603,
+      "global_perplexity_x1e12": 41097910269603,
+      "source_summaries": [
+        {
+          "entropy": 2.290821871216,
+          "entropy_x1e12": 2290821871216,
+          "perplexity": 9.883056944254,
+          "perplexity_x1e12": 9883056944254,
+          "source_node_id": 10
+        },
+        {
+          "entropy": 3.447565359872,
+          "entropy_x1e12": 3447565359872,
+          "perplexity": 31.423793472719,
+          "perplexity_x1e12": 31423793472719,
+          "source_node_id": 43
+        }
+      ]
+    },
+    "path_weight_table_sha256": "9df69d1d7f67e3c53e84a2846594335a00d5b061e4081c62a0bd96ed9745b20c",
+    "raw_weight_total_x1e9": 24100904524057471,
+    "recurrent_support_node_count": 12,
+    "return_edge_count": 2,
+    "return_probabilities_x1e12": {
+      "10": 283062070620,
+      "43": 716937929380
+    },
+    "source_path_count": {
+      "10": 10,
+      "43": 32
+    },
+    "source_probability_rounding_error_x1e12": {
+      "10": 0,
+      "43": -3
+    },
+    "source_raw_weight_x1e9": {
+      "10": 6822051938383797,
+      "43": 17278852585673674
+    },
+    "source_sink_path_count": 42,
+    "spectral_gap_x1e12": 173671525179,
+    "spectral_second_modulus_x1e12": 826328474821,
+    "stationary_basin_masses_x1e12": {
+      "10": 121358270826,
+      "43": 488349486805,
+      "boundary": 390292242370
+    },
+    "stationary_distribution_sha256": "5474205d049786264d9fbbf23f7e555ecfe83e6cdf47579bf33ed529bb0906b6",
+    "stationary_distribution_table_sha256": "340c8a7b9b1087390d87cf0236776d8e5cd041c32c5e566ee10ae91bb3877f6a",
+    "stationary_distribution_x1e12": {
+      "10": 60964383817,
+      "13": 91448650143,
+      "17": 33776644764,
+      "19": 45863301091,
+      "28": 79786909943,
+      "32": 26617242245,
+      "34": 88173593812,
+      "38": 83222089120,
+      "41": 79481608761,
+      "42": 40880734813,
+      "43": 154410228837,
+      "44": 215374612654
+    },
+    "stationary_mass_sum_x1e12": 1000000000000,
+    "stationary_max_node_id": 44,
+    "stationary_min_node_id": 32,
+    "support_strongly_connected": true,
+    "top_path_weights": [
+      {
+        "morphism_id": 10,
+        "node_ids": [
+          10,
+          17,
+          32,
+          42,
+          44
+        ],
+        "path_hyperbolic_length_x1e12": 419887463017,
+        "path_length": 4,
+        "path_tensor_mass_sum": 1176320,
+        "raw_weight_x1e9": 828460022810756,
+        "source_node_id": 10
+      },
+      {
+        "morphism_id": 4,
+        "node_ids": [
+          10,
+          17,
+          19,
+          34,
+          44
+        ],
+        "path_hyperbolic_length_x1e12": 420227438023,
+        "path_length": 4,
+        "path_tensor_mass_sum": 1142784,
+        "raw_weight_x1e9": 804648586138249,
+        "source_node_id": 10
+      },
+      {
+        "morphism_id": 8,
+        "node_ids": [
+          10,
+          17,
+          32,
+          34,
+          44
+        ],
+        "path_hyperbolic_length_x1e12": 420121576361,
+        "path_length": 4,
+        "path_tensor_mass_sum": 1134592,
+        "raw_weight_x1e9": 798940047729813,
+        "source_node_id": 10
+      },
+      {
+        "morphism_id": 138,
+        "node_ids": [
+          43,
+          38,
+          13,
+          19,
+          34,
+          44
+        ],
+        "path_hyperbolic_length_x1e12": 584795549700,
+        "path_length": 5,
+        "path_tensor_mass_sum": 1149312,
+        "raw_weight_x1e9": 725211526633668,
+        "source_node_id": 43
+      },
+      {
+        "morphism_id": 147,
+        "node_ids": [
+          43,
+          38,
+          13,
+          41,
+          28,
+          34,
+          44
+        ],
+        "path_hyperbolic_length_x1e12": 666215980807,
+        "path_length": 6,
+        "path_tensor_mass_sum": 1182336,
+        "raw_weight_x1e9": 709593482248932,
+        "source_node_id": 43
+      }
+    ],
+    "top_stationary_edge_flows": [
+      {
+        "edge_kind": "return",
+        "source_node_id": 44,
+        "stationary_edge_flow_x1e12": 154410228837,
+        "target_node_id": 43
+      },
+      {
+        "edge_kind": "flow",
+        "source_node_id": 34,
+        "stationary_edge_flow_x1e12": 88173593812,
+        "target_node_id": 44
+      },
+      {
+        "edge_kind": "flow",
+        "source_node_id": 43,
+        "stationary_edge_flow_x1e12": 83222089120,
+        "target_node_id": 38
+      },
+      {
+        "edge_kind": "return",
+        "source_node_id": 44,
+        "stationary_edge_flow_x1e12": 60964383817,
+        "target_node_id": 10
+      },
+      {
+        "edge_kind": "flow",
+        "source_node_id": 38,
+        "stationary_edge_flow_x1e12": 48690552820,
+        "target_node_id": 13
+      }
+    ],
+    "transfer_edge_count": 33,
+    "transfer_edge_table_sha256": "e2109dcd64cc9f0fc17b3b7902626f950010721b401c38d659eafc083ee1ca80",
+    "transition_matrix_sha256": "fd3c456987f40ea786c0d16689f289dc40d0580565adf057dca0da100e7e631a",
+    "transition_support_sha256": "880eb715cfa25a5e87a2bbf387884a9544268e4215561d5fec26ed8a675c4ba5"
+  }
+}

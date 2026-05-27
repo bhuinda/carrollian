@@ -1,0 +1,142 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9c46d7c40ea4c280fc7899c9864cb175c3cdc956946cbb8c096a63a3369e9790",
+  "checks": {
+    "atom_cover_histogram_is_7_7_6": true,
+    "exact_minimum_atom_cover_count_is_4": true,
+    "exact_minimum_atom_cover_size_is_3": true,
+    "landmark_filtration_report_certified": true,
+    "ordered_transition_record_count_is_50": true,
+    "selected_atlas_covers_all_20_atoms": true,
+    "selected_chart_ids_are_0_2_10": true,
+    "selected_chart_size_sum_is_39": true,
+    "selected_pair_count_is_3": true,
+    "selected_pair_full_signature_intersection_count_is_2": true,
+    "selected_pair_min_atom_intersection_is_6": true,
+    "selected_pair_min_signature_intersection_is_221": true,
+    "signature_class_nerve_report_certified": true,
+    "source_chart_count_is_20": true,
+    "transition_cocycle_failure_count_is_0": true,
+    "transition_rank_displacement_l1_sum_is_125": true,
+    "transition_rank_displacement_max_is_12": true,
+    "triple_overlap_atom_count_is_6": true,
+    "triple_overlap_mass_is_344576": true,
+    "triple_overlap_signature_count_is_221": true,
+    "undirected_transition_atom_count_is_25": true,
+    "unique_atom_count_is_7": true
+  },
+  "claim": "The certified signature-class nerve admits a canonical three-chart hyperbolic atlas covering all 20 d20 atoms, with reproducible rank-transition maps on overlaps and a zero transition cocycle on the triple overlap.",
+  "closure_boundary": {
+    "certifies": [
+      "exact minimum full-coverage chart cover size and canonical selected cover",
+      "selected chart incidence and atom cover counts",
+      "all ordered local-rank transition records on selected chart overlaps",
+      "selected pair overlap signature/mass/rank-displacement summaries",
+      "zero transition cocycle on the selected triple overlap"
+    ],
+    "does_not_certify_because_not_required": [
+      "transition maps between non-selected charts",
+      "optimality among non-Poincare or non-full-coverage charts",
+      "a packet bridge from d20 atoms to A985/tube coordinates",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "boundary_atlas": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.json",
+      "sha256": "b62925995990cf4ae91710a7a74c7e7015f5c5be6c47f0b55365dd959845d844"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_hyperbolic_chart_atlas.py",
+      "sha256": "f1c301f8596f203cfe331ae6c88b73bd347f3aa36f07d98f6b2a8b08d400f31a"
+    },
+    "filtration_report": {
+      "certificate_sha256": "d535c1a91c038c94f5f49c2a8a8a8d1f0e617c3afc0f258cabe910bb48c4d1e3",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/report.json",
+      "sha256": "0c5b8b6a1897c56dd5f6290e075cd80ef08f3cc7a447c866910c958ad0a4d91d",
+      "status": "C985_D20_POINCARE_LANDMARK_FILTRATION_CERTIFIED"
+    },
+    "filtration_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/filtration_tables.npz",
+      "sha256": "c056844c7c75d56155bffd64caa896e79b8b2af8ca94cacd67e0d90ae221bdba"
+    },
+    "relation_geometry_signatures": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+      "sha256": "28406664614db343b98547643f71278e83f9e1537b1f935cde013e32f2e1c694"
+    },
+    "signature_class_nerve": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/signature_class_nerve.json",
+      "sha256": "47994d02f53e8d6245d0513bbb37f6b53ac7f35f961366f6e2e6ecceb7bc953b"
+    },
+    "signature_class_nerve_report": {
+      "certificate_sha256": "068b0b49bdae77a7d41daba01dd3779890ece590e7a912c4fdc15056a7181389",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/report.json",
+      "sha256": "9288f24d67d4e0c0ae612d5e33e185e3db9d7f1333a366ebdc0d96ddf0e65ef0",
+      "status": "C985_D20_SIGNATURE_CLASS_NERVE_CERTIFIED"
+    },
+    "signature_class_nerve_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/signature_class_nerve_tables.npz",
+      "sha256": "39eea425200d37493c58119401c5fd999b6ec0f123f68e56f6bcf3ad93566118"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_hyperbolic_chart_atlas.py",
+      "sha256": "2c8126a1ca5a373a12cce6d70d1c745f406cd59c366ec3fe712c749d038056a5"
+    }
+  },
+  "next_highest_yield_item": "Use the three-chart atlas transition maps to build a transition groupoid, then compare its cycles with the C985 associator and pentagon normal-form data.",
+  "outputs": {
+    "atlas_certificate": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/atlas_certificate.json",
+    "atlas_transition_maps_csv": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/atlas_transition_maps.csv",
+    "hyperbolic_chart_atlas": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/hyperbolic_chart_atlas.json",
+    "hyperbolic_chart_atlas_tables": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/hyperbolic_chart_atlas_tables.npz",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/report.json"
+  },
+  "schema": "c985.proof_obligation.d20_hyperbolic_chart_atlas@1",
+  "stage_protocol": {
+    "closure": "certify a small hyperbolic chart atlas without claiming a packet bridge or categorical enrichment",
+    "coherence": "check cover minimality, overlap signature floors, rank displacement, and triple-overlap cocycle",
+    "draft": "use the certified signature-class nerve charts as atlas candidates",
+    "emit": "emit atlas JSON/CSV/NPZ, certificate, report, and next transition-deepening target",
+    "witness": "solve the exact chart set-cover problem and materialize overlap transition maps"
+  },
+  "status": "C985_D20_HYPERBOLIC_CHART_ATLAS_CERTIFIED",
+  "witness": {
+    "atom_cover_counts_sha256": "d9fe5dc561062c7ba1734685335c78efbf9f237e64570a0cc444eba05bff7719",
+    "minimum_atom_cover_count": 4,
+    "minimum_atom_cover_size": 3,
+    "ordered_transition_record_count": 50,
+    "ordered_transition_records_sha256": "6a76c5374f70cbe784e182dfd7edde10048cc0aaf3b8a4641268d4f4f0a8fc9e",
+    "selected_chart_ids": [
+      0,
+      2,
+      10
+    ],
+    "selected_chart_ids_sha256": "11222a540ff5ee01bd7ea364c6e15773641ed189e8c0df555a2f962e5982edf0",
+    "selected_chart_size_sum": 39,
+    "selected_incidence_sha256": "491f1b84c1e21af5867109eb20650602fbf9a3ccb1537e7c319e927871c09458",
+    "selected_pair_atom_intersection_min": 6,
+    "selected_pair_count": 3,
+    "selected_pair_full_signature_intersection_count": 2,
+    "selected_pair_signature_intersection_min": 221,
+    "selected_union_atom_count": 20,
+    "source_chart_count": 20,
+    "transition_cocycle_failure_count": 0,
+    "transition_cocycle_records_sha256": "8c2ff29de088ba4e9191bee4ade766316a24aa27664b159018cb746140178bdd",
+    "transition_pair_records_sha256": "3df5250964774fef78265bd40b9c5fe1a97151d39bce54c55f7af047fef52875",
+    "transition_rank_displacement_l1_sum": 125,
+    "transition_rank_displacement_max": 12,
+    "triple_overlap_atom_ids": [
+      1,
+      4,
+      7,
+      11,
+      12,
+      19
+    ],
+    "triple_overlap_mass": 344576,
+    "triple_overlap_signature_count": 221,
+    "undirected_transition_atom_count": 25,
+    "unique_atom_count": 7
+  }
+}

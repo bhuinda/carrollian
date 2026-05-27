@@ -1,0 +1,51 @@
+{
+  "certification_tests": [
+    "rebuild multiplicity bases from relation representative pairs and intermediate points",
+    "derive sparse fusion tensor coefficients from basis counts",
+    "compare derived tensor with generated/tensor_from_source_coorient.npz",
+    "verify every nonzero coefficient is source/target typed",
+    "verify index counts sum to the multiplicity basis archive row count"
+  ],
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_fusion_multiplicity_typing.py",
+      "sha256": "1a67044903cc7c0cd96940799980977dc1417d577d382f81d0138ae4f4778d28"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "source_target": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+      "sha256": "69d649e5a876fc3d90ef5f804c91081224b44c7619524a0735ed1c44e2bd60ec"
+    },
+    "source_tensor": {
+      "path": "generated/tensor_from_source_coorient.npz",
+      "sha256": "0c682d08fc7367e594fda00e450957f89d08c40954d925521e1558f07148b9c6"
+    },
+    "typed_registry_report": {
+      "certificate_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+      "sha256": "28855e8904a1fd21aac84bb922a33442c4c58e49413f49a5e891f0f5001813a4",
+      "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_fusion_multiplicity_typing.py",
+      "sha256": "605e8f01473b1e932b5e01cf66179437a00e8477da411f6042591e1a96a38272"
+    }
+  },
+  "manifest_sha256": "ca31e35b8e9a4adc893de8cad37924df4edd867f9ef0092327b7e650da5778ac",
+  "name": "c985_fusion_multiplicity_typing",
+  "outputs": {
+    "fusion_tensor_coo": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/fusion_tensor_coo.npz",
+    "fusion_typing_certificate": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/fusion_typing_certificate.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/manifest.json",
+    "multiplicity_basis_index": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_index.json",
+    "multiplicity_basis_index_npz": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_index.npz",
+    "multiplicity_basis_points": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_points.npz",
+    "report": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/report.json"
+  },
+  "report_sha256": "dad6709e91e16cf434b121aa2eb0fe26b318d2e05a5fc800b30f7f9d7fdb2dc7",
+  "schema": "c985.proof_obligation.fusion_multiplicity_typing_manifest@1",
+  "status": "C985_FUSION_MULTIPLICITY_TYPING_CERTIFIED"
+}

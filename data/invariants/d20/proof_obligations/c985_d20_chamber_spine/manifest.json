@@ -1,0 +1,72 @@
+{
+  "certification_tests": [
+    "load certified rewrite-complex and preserved-core artifacts",
+    "orient every preserved-core edge by the signature/Poincare potential",
+    "check directed acyclicity, source/sink nodes, directed path counts, and maximal chamber cliques",
+    "fold dominated boundary-band vertices and verify the graph retraction to the 50-node spine",
+    "check source hashes and proof-obligation registry consistency"
+  ],
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_chamber_spine.py",
+      "sha256": "16df05122c6ab6be342e2e33ff7780c610e8624b64970cee3a77134553f2e8ae"
+    },
+    "preserved_core": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_preserved_core_subcomplex/preserved_core_subcomplex.json",
+      "sha256": "32d7b8a4a79567506b91edbdd5c67eac28c9b6fb4f4597bac31580c9f4ace143"
+    },
+    "preserved_core_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_preserved_core_subcomplex/preserved_core_certificate.json",
+      "sha256": "d40ba72ad4ad6c7f029dad33e03c77285adbf176a8317233867cc3bc42b11572"
+    },
+    "preserved_core_report": {
+      "certificate_sha256": "a6628a60adfcebfedbe43589145339de93a04698bb94eceaf47f5c538f486008",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_preserved_core_subcomplex/report.json",
+      "sha256": "eed22403933938cba2133371659b335daba62de2bd15be7d8fda4871762d8cd2",
+      "status": "C985_D20_PRESERVED_CORE_SUBCOMPLEX_CERTIFIED"
+    },
+    "preserved_core_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_preserved_core_subcomplex/preserved_core_tables.npz",
+      "sha256": "50962996511106ba1a64190244e72f7d1264c34e498c2f82038790de9364b32c"
+    },
+    "rewrite_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+      "sha256": "0d170586487cce586baea14d2da03b700e3688ab2d45a5793094d19ad8b99385"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_chamber_spine.py",
+      "sha256": "297470385d5ea76c68cbcd03c461bd6152ca4428fe4ec5543c725c2274c6dbbd"
+    }
+  },
+  "manifest_sha256": "4a8f62581ac6e6f032e9d240decc86e506605a1d4fcac195787b2c830705cab6",
+  "name": "c985_d20_chamber_spine",
+  "outputs": {
+    "chamber_spine": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine.json",
+    "chamber_spine_certificate": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine_certificate.json",
+    "chamber_spine_tables": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/chamber_spine_tables.npz",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/manifest.json",
+    "maximal_chambers_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/maximal_chambers.csv",
+    "oriented_core_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/oriented_core_edges.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/report.json",
+    "spine_folds_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/spine_folds.csv",
+    "spine_retraction_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/spine_retraction.csv",
+    "transitive_reduction_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_chamber_spine/transitive_reduction_edges.csv"
+  },
+  "report_sha256": "eda35ecd01c0e5bb35ba9f44200d17a38f282cc3dd62fe470664e503c51da3ca",
+  "schema": "c985.proof_obligation.d20_chamber_spine_manifest@1",
+  "status": "C985_D20_CHAMBER_SPINE_CERTIFIED"
+}

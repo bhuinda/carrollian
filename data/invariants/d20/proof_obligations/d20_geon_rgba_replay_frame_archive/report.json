@@ -1,13 +1,13 @@
 {
   "all_checks_pass": true,
-  "certificate_sha256": "335ef66b62381b0e99f27a48985d819aa437a8c88aac9f6d66c9234795591cc6",
+  "certificate_sha256": "86f7a2a0847f67bbd721a0234d7ac99dd40fe54328236ba5cc67345d2ce1156d",
   "checks": {
     "all_alpha_channels_constant_opaque": true,
-    "all_three_canvases_present": true,
+    "all_four_canvases_present": true,
     "browser_capture_blocked_not_claimed": true,
     "every_frame_byte_length_matches_rgba_shape": true,
     "every_frame_hash_matches_base64_payload": true,
-    "frame_count_is_18": true,
+    "frame_count_is_24": true,
     "phase_audit_certified": true,
     "sample_frames_match_phase_audit": true,
     "some_non_alpha_state_entropy_present": true,
@@ -20,6 +20,7 @@
       "all archived frames have byte length width * height * 4",
       "all archived frame hashes match their base64 RGBA payloads",
       "all archived alpha channels are constant opaque",
+      "the D20 RGBA atom frames are archived as raw invariant-bearing byte buffers",
       "non-alpha state channels carry entropy in the archived frame set"
     ],
     "does_not_certify": [
@@ -31,29 +32,29 @@
   },
   "inputs": {
     "artifact": {
-      "artifact_sha256_excluding_this_field": "d2974e83159844fdfd080390ce7d67237fbd9efa328ba18c3f9ac78e3c8e2563",
+      "artifact_sha256_excluding_this_field": "a3e6c596b65d60ee98deed1c0d91779d9aeb19f85b5ddf20bd73adfea8a7d2de",
       "path": "generated/d20_geon_rgba_replay_frame_archive.json",
       "schema": "d20.proof_obligation.geon_rgba_replay_frame_archive.artifact@1",
-      "sha256": "09fa81a97d79061a505efd976319932f68a091bb3878db3649f4897dd44fe23e",
+      "sha256": "096266cd01b175c0cf71af1d27fc30d0e7f5718d850d2c6d6c49285b00f21901",
       "status": "D20_GEON_RGBA_REPLAY_FRAME_ARCHIVE_DERIVED"
     },
     "derive_script": {
       "path": "src/derive_d20_geon_rgba_replay_frame_archive.py",
-      "sha256": "ddea568e7e4de759c9e2c399105bec807bf6ddc23136426f57a009dc29438a73"
+      "sha256": "8ae0f1179931c349a44039e293a15b2f85d81bbd4262fad29135dc6cc0b5f638"
     },
     "phase_entropy_audit_report": {
-      "certificate_sha256": "ccf95337af0ba527a6c52fa1973a8d19cd1d1d931444cc6cf90e9d6e695ce56d",
+      "certificate_sha256": "f587b58a8211c96f53d48e4498109462111714edae4030409375a522d2cb9bf3",
       "path": "data/invariants/d20/proof_obligations/d20_geon_phase_entropy_audit/report.json",
-      "sha256": "ae2987f6467a7d08c094276c4337f3f4d534c4315726e86bce517fb4f53b384f",
+      "sha256": "92f77c18e9451929d6758c53740645909584da13e80c07fd53f400ff74693cc8",
       "status": "D20_GEON_PHASE_ENTROPY_AUDIT_CERTIFIED"
     },
     "validator": {
       "path": "src/certify_d20_geon_rgba_replay_frame_archive.py",
-      "sha256": "9b93e480154971edeeb51194615c7de2bb09e278324a95ed59287c737dbdaeed"
+      "sha256": "fa9adb21652ca1abb6b8817cf5027b3604561267411deb88f37cf5f2f8cc9729"
     },
     "visualization": {
       "path": "generated/d20_sandpile_visualization.html",
-      "sha256": "28c0832f388bfb6e0485afeb06a02f356e10104c2a5b4871f678a5ec7de64e82"
+      "sha256": "d63454ced9b99135543437bb23398f3a2b89387b2bf81e3a3410a619d80b2cf2"
     }
   },
   "next_highest_yield_item": "Run the same frame-buffer capture in an environment where the browser can load the local visualization, then compare the live getImageData hashes against this replay archive frame-by-frame.",
@@ -72,6 +73,7 @@
       "canvases": [
         "d20LiftCanvas",
         "d20HexLiftCanvas",
+        "d20RgbaAtomCanvas",
         "toppleCanvas"
       ],
       "engine": "repo-local deterministic replay of the exact D20 canvas render rules",
@@ -85,13 +87,13 @@
         96
       ]
     },
-    "frame_count": 18,
+    "frame_count": 24,
     "summary": {
       "alpha_entropy_bits_max": 0.0,
       "alpha_entropy_bits_min": 0.0,
-      "non_alpha_category_entropy_bits_max": 1.703736293051497,
+      "non_alpha_category_entropy_bits_max": 3.9956007052670652,
       "non_alpha_category_entropy_bits_min": 0.03178552071785978,
-      "total_rgba_bytes": 910848
+      "total_rgba_bytes": 1304064
     }
   }
 }

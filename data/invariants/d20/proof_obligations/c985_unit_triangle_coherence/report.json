@@ -1,0 +1,297 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bbbd80fdb7846feeb6f4f11dec6515f0a9810c82d831cc1aa855abd1002ae5c8",
+  "checks": {
+    "all_fusion_basis_rows_checked": true,
+    "associator_oracle_certified": true,
+    "basis_typing_mismatches_are_zero": true,
+    "fusion_multiplicity_typing_certified": true,
+    "middle_object_mismatches_are_zero": true,
+    "transport_failures_are_zero": true,
+    "triangle_failures_are_zero": true,
+    "typed_registry_certified": true,
+    "unit_basis_mismatches_are_zero": true,
+    "unit_record_mismatches_are_zero": true,
+    "unit_tensor_laws_certified": true
+  },
+  "claim": "The C985 unit triangle equations hold on every certified fusion multiplicity basis row under the deterministic associator oracle.",
+  "closure_boundary": {
+    "certifies": [
+      "unit triangle coherence on every one of the 2,537,360 fusion basis rows",
+      "right-unit and left-unit singleton bases agree through the associator oracle",
+      "no middle-object, unit-record, basis-typing, or transport failures"
+    ],
+    "does_not_certify": [
+      "pentagon coherence",
+      "duality evaluation and coevaluation maps",
+      "zig-zag identities",
+      "full finite semisimple multi-fusion category status"
+    ]
+  },
+  "inputs": {
+    "associator_report": {
+      "certificate_sha256": "75800317a741e0842706832853b8ea0d60dd4aedfb24f3556082a23957a42e80",
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/report.json",
+      "sha256": "6f4c3d59b55b285e10343506770412484b2f13381b06dd0421de5c9ecb15c16b",
+      "status": "C985_ASSOCIATOR_REBRACKETING_ORACLE_CERTIFIED"
+    },
+    "be3_action": {
+      "path": "generated/be3_action_words_from_absolute_presentation.npz",
+      "sha256": "df0e332be5b732e108dec6fbd08c0f545d51fb6ba8829fed5ef8be87fb3efe3b"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_unit_triangle_coherence.py",
+      "sha256": "41480c0ff95765fe71662eb8293e75fa2aa3a895935597fa101f3b5764bb49cf"
+    },
+    "fusion_basis_points": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_points.npz",
+      "sha256": "3805a6cf6e7fdd178decc70f5f2ab4e81ba25d03b9db015bc12efe1dd0fbfacd"
+    },
+    "fusion_report": {
+      "certificate_sha256": "dad6709e91e16cf434b121aa2eb0fe26b318d2e05a5fc800b30f7f9d7fdb2dc7",
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/report.json",
+      "sha256": "2eb666d526750e5ba7812c22b685a81f7391c2a7d13fdf2242ba054ac8e92d35",
+      "status": "C985_FUSION_MULTIPLICITY_TYPING_CERTIFIED"
+    },
+    "identity_orbitals": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/identity_orbitals.json",
+      "sha256": "59c5b2235998b3cd7605183da0cfd1d9d94856fb136cb646cdc2f9e0402596e2"
+    },
+    "pair_transport_section": {
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/pair_transport_section.npz",
+      "sha256": "83b6c65ad726229ba7399c0a12a871b64561d30440d5bc5f382bf2a40c16c341"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "source_target": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+      "sha256": "69d649e5a876fc3d90ef5f804c91081224b44c7619524a0735ed1c44e2bd60ec"
+    },
+    "typed_registry_report": {
+      "certificate_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+      "sha256": "28855e8904a1fd21aac84bb922a33442c4c58e49413f49a5e891f0f5001813a4",
+      "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+    },
+    "unit_action_records": {
+      "path": "data/invariants/d20/proof_obligations/c985_unit_tensor_laws/unit_action_records.npz",
+      "sha256": "4c1b148f9d9b0768b60d07c4eab809eb9514f1db7b376f805fa49d9cec928a31"
+    },
+    "unit_report": {
+      "certificate_sha256": "a60ffe5dd0688a705f507b6731d476c903a6f48a5ae96c75e2535a556dfca828",
+      "path": "data/invariants/d20/proof_obligations/c985_unit_tensor_laws/report.json",
+      "sha256": "53afdb989fb3e13a5564cbb3c99a71f41a697eae0b2e082d422d9108796d01a8",
+      "status": "C985_UNIT_TENSOR_LAWS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_unit_triangle_coherence.py",
+      "sha256": "07870a7d3298c340dd7f4aa2e4c5f91002bed32011020e009d27fa021c43d534"
+    }
+  },
+  "next_highest_yield_item": "Verify pentagon coherence by checking that all five associator paths normalize to the same typed length-four incidence-chain basis, then build dual evaluation/coevaluation zig-zag checks.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_unit_triangle_coherence/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_unit_triangle_coherence/report.json",
+    "triangle_certificate": "data/invariants/d20/proof_obligations/c985_unit_triangle_coherence/triangle_certificate.json",
+    "unit_triangle_witness": "data/invariants/d20/proof_obligations/c985_unit_triangle_coherence/unit_triangle_witness.npz"
+  },
+  "schema": "c985.proof_obligation.unit_triangle_coherence@1",
+  "stage_protocol": {
+    "closure": "certify unit triangle coherence while leaving pentagon and rigidity open",
+    "coherence": "check every fusion basis row against the unit triangle normalization",
+    "draft": "use certified unit singleton bases and associator transport",
+    "emit": "emit triangle certificate and next C985 pentagon target",
+    "witness": "materialize unit_triangle_witness.npz and triangle certificate"
+  },
+  "status": "C985_UNIT_TRIANGLE_COHERENCE_CERTIFIED",
+  "witness": {
+    "basis_rows_checked": 2537360,
+    "check_counts": {
+      "basis_typing_mismatches": 0,
+      "left_transport_failures": 0,
+      "left_unit_basis_mismatches": 0,
+      "left_unit_record_mismatches": 0,
+      "middle_object_mismatches": 0,
+      "right_transport_failures": 0,
+      "right_unit_basis_mismatches": 0,
+      "right_unit_record_mismatches": 0,
+      "triangle_failures": 0
+    },
+    "failure_indices_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "first_16_triangle_samples": [
+      [
+        0,
+        0,
+        0,
+        0,
+        100,
+        6,
+        8,
+        5253
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        2100,
+        6,
+        1,
+        3105
+      ],
+      [
+        2,
+        0,
+        0,
+        4,
+        115,
+        6,
+        6,
+        7537
+      ],
+      [
+        3,
+        0,
+        0,
+        4,
+        2096,
+        6,
+        0,
+        3532
+      ],
+      [
+        4,
+        0,
+        0,
+        5,
+        115,
+        6,
+        6,
+        4957
+      ],
+      [
+        5,
+        0,
+        0,
+        5,
+        2100,
+        6,
+        1,
+        1927
+      ],
+      [
+        6,
+        0,
+        0,
+        6,
+        100,
+        6,
+        8,
+        2118
+      ],
+      [
+        7,
+        0,
+        0,
+        6,
+        115,
+        6,
+        6,
+        4046
+      ],
+      [
+        8,
+        0,
+        0,
+        6,
+        457,
+        6,
+        2,
+        4047
+      ],
+      [
+        9,
+        0,
+        0,
+        6,
+        474,
+        6,
+        3,
+        1727
+      ],
+      [
+        10,
+        0,
+        0,
+        6,
+        2096,
+        6,
+        0,
+        3439
+      ],
+      [
+        11,
+        0,
+        0,
+        6,
+        2100,
+        6,
+        1,
+        3440
+      ],
+      [
+        12,
+        0,
+        1,
+        2,
+        100,
+        6,
+        8,
+        3251
+      ],
+      [
+        13,
+        0,
+        1,
+        3,
+        115,
+        6,
+        6,
+        4046
+      ],
+      [
+        14,
+        0,
+        1,
+        3,
+        2096,
+        6,
+        0,
+        3191
+      ],
+      [
+        15,
+        0,
+        2,
+        1,
+        100,
+        6,
+        8,
+        5940
+      ]
+    ],
+    "first_failure_indices": [],
+    "identity_relations": [
+      6,
+      163,
+      227,
+      349,
+      618,
+      893
+    ],
+    "sample_records_sha256": "8a4681d61062f33850b656d55f32994a61eb55199f70704a5af0f4d550e18d39",
+    "transport_groups_sha256": "0425d06f284e584e5edc8fbb10fe65bb7d63614e5edc4f17c440155254f1fa21"
+  }
+}

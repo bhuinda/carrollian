@@ -1,0 +1,94 @@
+{
+  "certification_tests": [
+    "load certified atom-flow, hyperbolic-boundary, and atlas artifacts",
+    "restrict to the 221 signature classes with recurrent atom-flow mass",
+    "materialize the induced signature-intersection graph and carrier-mask quotient",
+    "verify connectedness, diameter, degree distribution, distance distribution, and exact delta",
+    "verify excluded signature carriers against the full 20-atom relation-signature atlas",
+    "check source hashes, artifact reproducibility, and proof-obligation registry consistency"
+  ],
+  "inputs": {
+    "boundary_atlas": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.json",
+      "sha256": "b62925995990cf4ae91710a7a74c7e7015f5c5be6c47f0b55365dd959845d844"
+    },
+    "boundary_atlas_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/projection_certificate.json",
+      "sha256": "dad21305446dd39733774ab3d495ad81574503ddcabd4555a624bc417eaf4c4f"
+    },
+    "boundary_atlas_report": {
+      "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json",
+      "sha256": "c4a06fe54ede9305984391a4be10808467321d29003b68efb93b21b672982e95",
+      "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+    },
+    "boundary_atlas_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.npz",
+      "sha256": "9d1d4ce89a4a0cbb982b6571f7c6017038ac9afd8ceb1f9dc62d40c901991615"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_recurrent_signature_subboundary.py",
+      "sha256": "25f54281a4c552f22b35fa3ccb60e92893fb94267afd9fb8bf0810db9c4fbc68"
+    },
+    "hyperbolic_graph": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_graph.json",
+      "sha256": "9e6afb0868aa0863be3be51ad8ee84b3549b9cb0b024080e1824f266e9c76e23"
+    },
+    "hyperbolic_graph_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/hyperbolic_certificate.json",
+      "sha256": "954048b35c291973316d5d706c1239ffae4f55265e6fad23f5f7a8489342527b"
+    },
+    "hyperbolic_graph_report": {
+      "certificate_sha256": "02d8b6aa60935b68b3c5d25d832edf6a07bd8d01c6be80f42236d063ae9e074d",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/report.json",
+      "sha256": "0db6e8089c4cf3fe6bf0a657dd6fa2eef81765e11a1df49d2f8ecceb1c713682",
+      "status": "C985_D20_HYPERBOLIC_BOUNDARY_GRAPH_CERTIFIED"
+    },
+    "hyperbolic_graph_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_metrics.npz",
+      "sha256": "58be0f61cf62ada42ec90d2fcdecc7011f10dbe7766d9e7688b145cf72f6311f"
+    },
+    "relation_geometry_signatures": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+      "sha256": "28406664614db343b98547643f71278e83f9e1537b1f935cde013e32f2e1c694"
+    },
+    "stationary_atom_flow": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_lift.json",
+      "sha256": "44dfaab53f7f32a18178afa549a1ee11dde4cbb4e56d37cb35b7b27f05b13dd1"
+    },
+    "stationary_atom_flow_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_certificate.json",
+      "sha256": "0501a7c58f847764557f92f98d4ddc27d04407aa0989b5cba22e9a3b80231e69"
+    },
+    "stationary_atom_flow_report": {
+      "certificate_sha256": "5eed09e5a61e6689348e4bb9f7f123a24b0f5f91a2fe00e2248d3e7054b1d54b",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/report.json",
+      "sha256": "ddfe24109dcce61c3e06db0c740c800e1e08c3796521a342b6ab6ea3f91c97e5",
+      "status": "C985_D20_STATIONARY_ATOM_FLOW_LIFT_CERTIFIED"
+    },
+    "stationary_atom_flow_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_tables.npz",
+      "sha256": "17a69388924d9827d2f28458c7f7daf87bc905ac10c916b07443894a8eb24583"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_recurrent_signature_subboundary.py",
+      "sha256": "2a214122b31b234491b5a107c1fb5f8903a2916d79fb58f126bd55d4d2806896"
+    }
+  },
+  "manifest_sha256": "94ac8c745e3a6c6b59b021c298104aa4f540f96ba9ce14d4e990c2948266f02a",
+  "name": "c985_d20_recurrent_signature_subboundary",
+  "outputs": {
+    "carrier_mask_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/carrier_mask_classes.csv",
+    "excluded_signature_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/excluded_signature_classes.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/manifest.json",
+    "recurrent_signature_subboundary": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary.json",
+    "recurrent_signature_subboundary_certificate": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary_certificate.json",
+    "recurrent_signature_subboundary_tables": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary_tables.npz",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/report.json",
+    "signature_subboundary_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/signature_subboundary_edges.csv",
+    "signature_subboundary_vertices_csv": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/signature_subboundary_vertices.csv"
+  },
+  "report_sha256": "03f35f58040587fc2b60e2416d7043e5440ca036c77f423495a16da24916be7b",
+  "schema": "c985.proof_obligation.d20_recurrent_signature_subboundary_manifest@1",
+  "status": "C985_D20_RECURRENT_SIGNATURE_SUBBOUNDARY_CERTIFIED"
+}

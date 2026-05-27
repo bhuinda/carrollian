@@ -1,0 +1,222 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ec2a663266d278f04ca1654089ca1d9910cd9975025286bee2da6057fb9db278",
+  "checks": {
+    "all_mask_classes_are_pure_sign": true,
+    "atom_12_is_pure_negative": true,
+    "atom_7_is_pure_positive": true,
+    "atom_flow_certificate_certified": true,
+    "atom_flow_json_schema_available": true,
+    "atom_flow_report_certified": true,
+    "atom_flow_signature_table_available": true,
+    "atom_table_shape_is_6_by_7": true,
+    "basin_positive_fractions_match_expected": true,
+    "basin_table_shape_is_3_by_7": true,
+    "cut_conductance_matches_expected": true,
+    "cut_edge_count_is_4007": true,
+    "cut_edge_table_shape_is_4007_by_12": true,
+    "cut_flux_matches_expected": true,
+    "eigen_residual_is_zero_at_x1e12": true,
+    "lambda_2_matches_expected": true,
+    "lambda_2_matches_transfer_second_modulus": true,
+    "lambda_2_minus_lambda_3_matches_expected": true,
+    "lambda_3_matches_expected": true,
+    "lambda_min_matches_expected": true,
+    "mask_cut_edges_match_expected": true,
+    "mask_table_shape_is_14_by_16": true,
+    "mask_within_edges_match_expected": true,
+    "negative_mask_classes_match_expected": true,
+    "negative_stationary_mass_matches_expected": true,
+    "negative_vertex_count_is_100": true,
+    "nodal_sign_shape_is_221": true,
+    "observable_table_shape_matches_codebook": true,
+    "one_way_cut_flux_matches_expected": true,
+    "positive_mask_classes_match_expected": true,
+    "positive_stationary_mass_matches_expected": true,
+    "positive_vertex_count_is_121": true,
+    "second_eigenfunction_shape_is_221": true,
+    "signature_subboundary_certificate_certified": true,
+    "signature_subboundary_report_certified": true,
+    "signature_transfer_certificate_certified": true,
+    "signature_transfer_report_certified": true,
+    "spectral_gap_matches_transfer": true,
+    "stationary_norm_residual_is_zero_at_x1e12": true,
+    "stationary_orthogonality_is_zero_at_x1e12": true,
+    "subboundary_json_schema_available": true,
+    "top_negative_atom_is_12": true,
+    "top_positive_atom_is_7": true,
+    "transfer_json_schema_available": true,
+    "vertex_table_shape_is_221_by_10": true,
+    "within_edge_counts_match_expected": true
+  },
+  "claim": "The certified signature-subboundary transfer operator has a verified second eigenmode whose nodal cut is a clean carrier-mask quotient split, with 121 positive and 100 negative signature classes, 4,007 crossing signature edges, and a documented comparison to the original core basin labels.",
+  "closure_boundary": {
+    "certifies": [
+      "the second eigenfunction and nodal sign split of the signature transfer operator",
+      "crossing-edge, cut-flux, and conductance observables for the nodal cut",
+      "the pure-sign carrier-mask quotient split induced by the eigenmode",
+      "atom-level participation of the eigenmode split",
+      "comparison of the split to the original core basin labels through atom-flow contributions"
+    ],
+    "does_not_certify_because_not_required": [
+      "a continuum Laplacian or geometric limit",
+      "a physically canonical choice among other possible transfer laws",
+      "higher eigenmode clustering beyond the second eigenmode",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "atom_flow": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_lift.json",
+      "sha256": "44dfaab53f7f32a18178afa549a1ee11dde4cbb4e56d37cb35b7b27f05b13dd1"
+    },
+    "atom_flow_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_certificate.json",
+      "sha256": "0501a7c58f847764557f92f98d4ddc27d04407aa0989b5cba22e9a3b80231e69"
+    },
+    "atom_flow_node_contributions": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/node_atom_contributions.csv",
+      "sha256": "ee4eff222e8206033603252f9fd13e48fcc70764670681463f16979e52dd6927"
+    },
+    "atom_flow_report": {
+      "certificate_sha256": "5eed09e5a61e6689348e4bb9f7f123a24b0f5f91a2fe00e2248d3e7054b1d54b",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/report.json",
+      "sha256": "ddfe24109dcce61c3e06db0c740c800e1e08c3796521a342b6ab6ea3f91c97e5",
+      "status": "C985_D20_STATIONARY_ATOM_FLOW_LIFT_CERTIFIED"
+    },
+    "atom_flow_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_stationary_atom_flow_lift/stationary_atom_flow_tables.npz",
+      "sha256": "17a69388924d9827d2f28458c7f7daf87bc905ac10c916b07443894a8eb24583"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_transfer_spectral_cut.py",
+      "sha256": "c6ff22477c63cb61b4ff79c1c41fbcad78451f2e1ddab5653375ec122e220b7e"
+    },
+    "signature_subboundary": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary.json",
+      "sha256": "f5a9bbf75f35b2b1ec97aa8f7827a3abe7b2c3e8f1209ce435a70245d789e3d5"
+    },
+    "signature_subboundary_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary_certificate.json",
+      "sha256": "ef039bc8be854823414cd33183e43cfc98cbdd70e45a049311d557943f7db9aa"
+    },
+    "signature_subboundary_report": {
+      "certificate_sha256": "03f35f58040587fc2b60e2416d7043e5440ca036c77f423495a16da24916be7b",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/report.json",
+      "sha256": "8c53d37b0c38bce09505b9991264b569c0deef5bc019c3811a1fd63a7656da94",
+      "status": "C985_D20_RECURRENT_SIGNATURE_SUBBOUNDARY_CERTIFIED"
+    },
+    "signature_subboundary_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_recurrent_signature_subboundary/recurrent_signature_subboundary_tables.npz",
+      "sha256": "70e0a47990b55943c6ad8ac4c64325ad18e61d1f63cc398a8bfc6471f97a1018"
+    },
+    "signature_transfer": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_operator.json",
+      "sha256": "59428d663224f3db16cf54cd02302eb5c87182d172f9d6d920cb49eddba3ea51"
+    },
+    "signature_transfer_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_certificate.json",
+      "sha256": "eea448687f629a2e45cd03605f8c60b04e2845c191f1bb664680424bee32ff31"
+    },
+    "signature_transfer_report": {
+      "certificate_sha256": "75dc84d7a9c0fb030a09ba1ee7829bfa550e45bcef09488a89780209f5b2cfd9",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/report.json",
+      "sha256": "618e8046913178a0698a4ac016d3b4ccf04fe00a2979b8466ecf25b7ddcd1330",
+      "status": "C985_D20_SIGNATURE_SUBBOUNDARY_TRANSFER_OPERATOR_CERTIFIED"
+    },
+    "signature_transfer_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_subboundary_transfer_operator/signature_transfer_tables.npz",
+      "sha256": "ba0d9fbb4b180ed229a31ed1e06f430aa0059a81e3c3872a52b7d96a5c533ec8"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_transfer_spectral_cut.py",
+      "sha256": "17db3d77df34f72f47a82fa9b45df5ad1dfcf1ea03634869dce5afaf7a30c0d9"
+    }
+  },
+  "next_highest_yield_item": "Promote the pure carrier-mask spectral split to a two-state quotient dynamics: collapse the 221-node transfer operator along the nodal cut, certify the exact two-state flux/return law, and compare it to the 10/43/boundary core basin masses.",
+  "outputs": {
+    "atom_eigenmode_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/atom_eigenmode_summary.csv",
+    "carrier_mask_eigenmode_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/carrier_mask_eigenmode_summary.csv",
+    "core_basin_eigenmode_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/core_basin_eigenmode_summary.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/report.json",
+    "signature_eigenmode_cut_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_eigenmode_cut_edges.csv",
+    "signature_eigenmode_vertices_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_eigenmode_vertices.csv",
+    "signature_transfer_spectral_cut": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut.json",
+    "signature_transfer_spectral_cut_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut_certificate.json",
+    "signature_transfer_spectral_cut_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut_tables.npz",
+    "signature_transfer_spectral_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_observables.csv"
+  },
+  "schema": "c985.proof_obligation.d20_signature_transfer_spectral_cut@1",
+  "stage_protocol": {
+    "closure": "certify the spectral cut without claiming a continuum boundary or a unique physical transition law",
+    "coherence": "check eigen residuals, eigengap, cut masses, cut flux, pure mask-class split, and basin comparison",
+    "draft": "compute the second eigenfunction of the reversible signature transfer similarity",
+    "emit": "emit spectral-cut JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize eigenmode values, nodal signs, crossing edges, carrier-mask signs, atom participation, and core-basin comparison"
+  },
+  "status": "C985_D20_SIGNATURE_TRANSFER_SPECTRAL_CUT_CERTIFIED",
+  "witness": {
+    "atom_eigenmode_table_sha256": "e29f4aa68c74c1461aa10c44133b66cea1f96ec69ccf89ab24dbe89e21e91621",
+    "basin_eigenmode_table_sha256": "49ced4f5966fd495923c8d901a5d8a42f17d0d23758a53b3b39b9fe5c0eb9645",
+    "basin_negative_composition_x1e12": {
+      "0": 422465999106,
+      "10": 168544671878,
+      "43": 408989329016
+    },
+    "basin_positive_composition_x1e12": {
+      "0": 375715882061,
+      "10": 218843820356,
+      "43": 405440297583
+    },
+    "basin_positive_fraction_x1e12": {
+      "0": 598273462377,
+      "10": 684970520566,
+      "43": 624064619314
+    },
+    "cut_conductance_x1e12": 319560035288,
+    "cut_edge_count": 4007,
+    "eigenmode_cut_edge_table_sha256": "2e65393fd9c0cfa8a03cdba4847302b89eae0e937b492d9c9afe92b42624fbab",
+    "eigenmode_observable_table_sha256": "3b1e1f3c1c39258f40d897baddc3fa97bc708a573f5303e20a76dea65fd69ae2",
+    "eigenmode_vertex_table_sha256": "cd4e6f7b4800c26eb0de483046ea0751e14145a305b84324c9351e997a648a38",
+    "lambda_2_minus_lambda_3_x1e12": 238422741021,
+    "lambda_2_x1e12": 587252536214,
+    "lambda_3_x1e12": 348829795192,
+    "lambda_min_x1e12": -23107307402,
+    "mask_cut_edge_count": 16,
+    "mask_eigenmode_table_sha256": "d4a3b32cb15004477c45a457c0b735a9ccfe93c1e3371c8927477eaef1f7e9de",
+    "mask_within_negative_edge_count": 14,
+    "mask_within_positive_edge_count": 14,
+    "negative_mask_class_ids": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13
+    ],
+    "negative_stationary_mass_x1e12": 373892891791,
+    "negative_vertex_count": 100,
+    "nodal_signs_sha256": "f4c5fbb919a1983c1811cf2fa7862498082c75c6696df0ab822ca99397e0ac33",
+    "one_way_cut_flux_x1e12": 119481225694,
+    "positive_mask_class_ids": [
+      0,
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "positive_stationary_mass_x1e12": 626107108209,
+    "positive_vertex_count": 121,
+    "second_eigenfunction_x1e12_sha256": "adac8a980dfd561c1428334b30006d6a6d1db9b4718bb252c676684e4ff78de6",
+    "spectral_gap_x1e12": 412747463786,
+    "top_negative_atom_id": 12,
+    "top_positive_atom_id": 7,
+    "undirected_cut_flux_x1e12": 238962451389,
+    "within_negative_edge_count": 3060,
+    "within_positive_edge_count": 5968
+  }
+}

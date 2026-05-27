@@ -1,0 +1,159 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "068b0b49bdae77a7d41daba01dd3779890ece590e7a912c4fdc15056a7181389",
+  "checks": {
+    "affinity_witness_centered_intersection_signature_coverage_is_197": true,
+    "affinity_witness_centered_signature_coverage_hits_pairwise_floor": true,
+    "affinity_witness_common_chart_count_is_0": true,
+    "atom_count_is_20": true,
+    "atom_deficit_delta_numerator_is_4": true,
+    "atom_deficit_metric_triangle_holds": true,
+    "atom_deficit_witness_is_0_4_10_14": true,
+    "atom_deficit_witness_overlaps_affinity_witness_in_3_atoms": true,
+    "chart_atom_incidence_shape_is_20_by_20": true,
+    "chart_count_is_20": true,
+    "chart_pair_atom_intersection_min_is_4": true,
+    "chart_pair_signature_intersection_max_is_233": true,
+    "chart_pair_signature_intersection_min_is_197": true,
+    "chart_size_max_is_14": true,
+    "chart_size_min_is_7": true,
+    "chart_size_sum_is_240": true,
+    "every_chart_has_full_signature_coverage": true,
+    "filtration_report_certified": true,
+    "hyperbolic_graph_report_certified": true,
+    "johnson_witness_centered_intersection_signature_coverage_is_207": true,
+    "johnson_witness_common_chart_count_is_1": true,
+    "landmark_filtration_signature_class_count_is_233": true,
+    "membership_hamming_delta_numerator_is_16": true,
+    "membership_hamming_metric_triangle_holds": true,
+    "membership_hamming_witness_is_1_7_10_14": true,
+    "minimum_signature_intersection_pair_count_is_4": true,
+    "nerve_pair_record_count_is_190": true,
+    "signature_distance_witness_common_chart_count_is_1": true,
+    "signature_witness_centered_intersection_signature_coverage_is_203": true
+  },
+  "claim": "The full-coverage Poincare filtration balls form a reproducible signature-class nerve whose chart-overlap metrics retain hyperbolic four-point structure and expose the signature-affinity witness at the pairwise signature-coverage floor.",
+  "closure_boundary": {
+    "certifies": [
+      "20 full-coverage Poincare filtration charts",
+      "all 190 chart-pair atom/signature/mass intersection records",
+      "chart atom-incidence and atom chart-membership matrices",
+      "chart atom-deficit and membership-code Hamming metrics",
+      "overlay of certified hyperbolic graph witnesses with the chart nerve"
+    ],
+    "does_not_certify_because_not_required": [
+      "optimality among all possible nerves or covers",
+      "a packet bridge from d20 atoms to A985/tube coordinates",
+      "a packet normalization killing known boundary torsion",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "boundary_atlas": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.json",
+      "sha256": "b62925995990cf4ae91710a7a74c7e7015f5c5be6c47f0b55365dd959845d844"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_class_nerve.py",
+      "sha256": "653f45e2cf39912f28e371d7bd3fb07b604c777bf105a17adf465b98cebe3c61"
+    },
+    "filtration_report": {
+      "certificate_sha256": "d535c1a91c038c94f5f49c2a8a8a8d1f0e617c3afc0f258cabe910bb48c4d1e3",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/report.json",
+      "sha256": "0c5b8b6a1897c56dd5f6290e075cd80ef08f3cc7a447c866910c958ad0a4d91d",
+      "status": "C985_D20_POINCARE_LANDMARK_FILTRATION_CERTIFIED"
+    },
+    "filtration_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/filtration_tables.npz",
+      "sha256": "c056844c7c75d56155bffd64caa896e79b8b2af8ca94cacd67e0d90ae221bdba"
+    },
+    "hyperbolic_graph": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_graph.json",
+      "sha256": "9e6afb0868aa0863be3be51ad8ee84b3549b9cb0b024080e1824f266e9c76e23"
+    },
+    "hyperbolic_graph_report": {
+      "certificate_sha256": "02d8b6aa60935b68b3c5d25d832edf6a07bd8d01c6be80f42236d063ae9e074d",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/report.json",
+      "sha256": "0db6e8089c4cf3fe6bf0a657dd6fa2eef81765e11a1df49d2f8ecceb1c713682",
+      "status": "C985_D20_HYPERBOLIC_BOUNDARY_GRAPH_CERTIFIED"
+    },
+    "hyperbolic_metrics": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/boundary_hyperbolic_metrics.npz",
+      "sha256": "58be0f61cf62ada42ec90d2fcdecc7011f10dbe7766d9e7688b145cf72f6311f"
+    },
+    "landmark_filtration": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_landmark_filtration/landmark_filtration.json",
+      "sha256": "bee231b9d217773425adaa8c2be289370b8a3d88634059cf85e1c42f15d9a7c1"
+    },
+    "relation_geometry_signatures": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+      "sha256": "28406664614db343b98547643f71278e83f9e1537b1f935cde013e32f2e1c694"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_class_nerve.py",
+      "sha256": "803021538d0f0cdd29769ae44e283e3f406016a793a10486be59e283f73b94e2"
+    }
+  },
+  "next_highest_yield_item": "Use the signature-class nerve to choose a small hyperbolic atlas of charts, then compute transition maps between overlapping full-coverage balls.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/manifest.json",
+    "nerve_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/nerve_certificate.json",
+    "nerve_pair_records_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/nerve_pair_records.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/report.json",
+    "signature_class_nerve": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/signature_class_nerve.json",
+    "signature_class_nerve_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_class_nerve/signature_class_nerve_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_class_nerve@1",
+  "stage_protocol": {
+    "closure": "certify a signature-class nerve readout without claiming a packet bridge or optional categorical enrichment",
+    "coherence": "check nerve pair counts, intersection floors, metric triangle laws, and four-point witnesses",
+    "draft": "use the certified full-coverage filtration balls as chart vertices",
+    "emit": "emit nerve JSON/CSV/NPZ, certificate, report, and next nerve-deepening target",
+    "witness": "materialize chart incidence, chart intersections, atom-deficit and membership-code metrics"
+  },
+  "status": "C985_D20_SIGNATURE_CLASS_NERVE_CERTIFIED",
+  "witness": {
+    "affinity_overlap_with_atom_deficit_witness_count": 3,
+    "affinity_witness_centered_intersection_signature_coverage": 197,
+    "affinity_witness_common_chart_count": 0,
+    "atom_count": 20,
+    "atom_deficit_delta_fraction": [
+      4,
+      2
+    ],
+    "atom_deficit_diameter": 16,
+    "atom_deficit_distances_sha256": "f38a60ce4373847f8310f8fcf6bbf9c8116b8940499b23b91a59bf1c26cf92a2",
+    "atom_deficit_witness_atom_ids": [
+      0,
+      4,
+      10,
+      14
+    ],
+    "chart_atom_incidence_sha256": "13348ab2fae9745cdb9b742c24a59e18cb895750cf155dcc3328067b819640e6",
+    "chart_count": 20,
+    "chart_intersection_atom_counts_sha256": "33a85ccf47b6d1973790189ba0105513213baffcc670f480b076147c4d712659",
+    "chart_intersection_signature_counts_sha256": "12fcfa86f63853f193f6db93d011dca363d9841c85736129b4f94063288b4d09",
+    "chart_rows_sha256": "1ace8807d11324a5ae39098dfcbb7ea9b6176b3e478dd94fabae0c0add710d16",
+    "chart_size_max": 14,
+    "chart_size_min": 7,
+    "chart_size_sum": 240,
+    "membership_hamming_delta_fraction": [
+      16,
+      2
+    ],
+    "membership_hamming_diameter": 20,
+    "membership_hamming_distances_sha256": "1d680ac105eb0584ac332ef79d406061fa83026067b46c0bf25a4e93f6d046c9",
+    "membership_hamming_witness_atom_ids": [
+      1,
+      7,
+      10,
+      14
+    ],
+    "minimum_signature_intersection_pair_count": 4,
+    "nerve_pair_count": 190,
+    "nerve_pair_records_sha256": "f2b645933d408e1af8f6407df2104a46206fb14608cf1b7b96362ad356324a95",
+    "pair_signature_intersection_max": 233,
+    "pair_signature_intersection_min": 197,
+    "signature_class_count": 233
+  }
+}

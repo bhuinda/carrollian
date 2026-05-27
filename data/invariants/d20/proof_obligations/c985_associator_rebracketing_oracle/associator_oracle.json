@@ -1,0 +1,57 @@
+{
+  "address_counts": {
+    "left_multiplicity_basis_vectors": 6536239360,
+    "left_support_address_rows": 2367375223,
+    "multiplicity_basis_vectors": 2537360,
+    "right_multiplicity_basis_vectors": 6536239360,
+    "right_support_address_rows": 2367375223,
+    "support_first_sha256": "b7422a6d1e9fb3f8abf98b974a737724a86f5d4a21899f7840c27bf9dca62a22",
+    "support_in_sha256": "b7422a6d1e9fb3f8abf98b974a737724a86f5d4a21899f7840c27bf9dca62a22",
+    "support_second_sha256": "b7422a6d1e9fb3f8abf98b974a737724a86f5d4a21899f7840c27bf9dca62a22",
+    "weight_first_sha256": "9da2b42968e4ade63f68fad80b3e9fe8c4cdccf6e7521e2922588a81b21b076a",
+    "weight_in_sha256": "bf4c1ccf994df2e78e25ff2bd4c8b0448c049ac6d94814220f829c4beb57a129",
+    "weight_second_sha256": "fee235f38e467e11281d72f3a6248e73d9e8328b151984d019e63caa05fd0f97"
+  },
+  "basis_model": {
+    "chain_record_columns": [
+      "x",
+      "z",
+      "w",
+      "y"
+    ],
+    "left_record_columns": [
+      "alpha",
+      "beta",
+      "delta",
+      "inner_point_z0",
+      "chi",
+      "epsilon",
+      "outer_point_w"
+    ],
+    "right_record_columns": [
+      "beta",
+      "chi",
+      "eta",
+      "inner_point_w0",
+      "alpha",
+      "epsilon",
+      "outer_point_z"
+    ],
+    "sample_witnesses": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/associator_sample_witnesses.npz",
+    "transport_section": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/pair_transport_section.npz"
+  },
+  "chain_to_right_algorithm": [
+    "set eta to the relation label of (z,y)",
+    "pair_transport_section chooses the least group element sending rep(eta) to (z,y)",
+    "pull w back by the inverse point permutation to obtain w0",
+    "use w0 as the M_{beta,chi}^{eta} basis point and z as the M_{alpha,eta}^{epsilon} basis point"
+  ],
+  "left_to_chain_algorithm": [
+    "for epsilon choose its representative pair (x,y)",
+    "outer left basis row gives w with (x,w) in R_delta and (w,y) in R_chi",
+    "pair_transport_section[x,y,w] chooses the least group element sending rep(delta) to (x,w)",
+    "transport the inner basis point z0 by that group element to obtain z",
+    "the chain is (x,z,w,y)"
+  ],
+  "schema": "c985.associator_rebracketing_oracle@1"
+}

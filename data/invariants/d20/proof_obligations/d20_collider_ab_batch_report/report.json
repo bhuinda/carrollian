@@ -1,0 +1,198 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7db56b129523d65aef39c8b7798bed100c13c8f46dec0956c96b65db18c05894",
+  "checks": {
+    "capture_activity_observed": true,
+    "clump_values_in_unit_interval": true,
+    "contact_activity_observed": true,
+    "finite_batch_values": true,
+    "null_assignment_is_permutation": true,
+    "renderer_embeds_collider_batch_harness": true,
+    "residue_values_in_unit_interval": true,
+    "shot_count_matches_renderer": true,
+    "stress_graph_certified": true
+  },
+  "claim": "The renderer's D20 RGBA-horizon collider can be replayed as a deterministic A/B batch comparing certified atlas polarity assignment against a shuffled null. The report records whether contact, capture, residue, and clump metrics differ.",
+  "closure_boundary": {
+    "certifies": [
+      "matched fixed-seed collider A/B replay",
+      "real-vs-null capture, contact, escape, residue, and clump metrics",
+      "deterministic null-shuffle comparison against certified atlas stress input"
+    ],
+    "does_not_certify": [
+      "literal particle collisions",
+      "magnetic control",
+      "physical black-hole or gravitational dynamics",
+      "browser compositor pixel output"
+    ]
+  },
+  "definition": {
+    "claim_boundary": "certifies this finite collider simulator's real-vs-null statistics only; it does not certify literal electromagnetic, particle, or gravitational physics",
+    "measured_quantities": [
+      "hard contacts",
+      "capture contacts",
+      "escapes",
+      "signed residue memory",
+      "final clump compactness"
+    ],
+    "null_mode": "same simulator with deterministic atom-to-tension shuffle i -> (7*i + 11) mod 20",
+    "object": "fixed-seed D20 RGBA-horizon collider A/B batch",
+    "real_mode": "projectiles use each atom's certified graph-smoothed atlas tension"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "6604fe127ba2c28ef3e59eb166b661521d45c38c66dc338e4bcc5fe2c1576e73",
+      "path": "generated/d20_collider_ab_batch_report.json",
+      "schema": "d20.collider_ab_batch_report.artifact@1",
+      "sha256": "45e9575939f835d1ebcba16f062c6c9d7a9361c1242331476aa6f7e904d58982",
+      "status": "D20_COLLIDER_AB_BATCH_REPORT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_collider_ab_batch_report.py",
+      "sha256": "88a04da1e3dbd097820b85faeaaa9b8aae71e77a152fc298b717c28aa3b9bc7c"
+    },
+    "stress_graph_artifact": {
+      "artifact_sha256_excluding_this_field": "5bd822ddda121407977177b980fab93a3e210fd833c4dbc076e35cd4701c1cd4",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/artifact.json",
+      "schema": "c985.d20_boundary_neighborhood_stress_graph.artifact@1",
+      "sha256": "8b0fa599e688122a5c1d31fb1ce2f7774af2b090212a2587be4d62f9b068f0fc",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "stress_graph_report": {
+      "certificate_sha256": "e52211930ae30a3a9e0e3285905f355f418f726165903178b1975d3a7c1f4930",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/report.json",
+      "sha256": "8e04b2a9a97b0b86ed29586e35678698652c72dce71ab4288d4bc1ffc9f5bc87",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_collider_ab_batch_report.py",
+      "sha256": "4af73a498b13fce338f503984b667aad1c395ece003b011205e8aa5574444ba7"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "05ac9d6bd27611175df8cd1fbf36009d784c5b2c1a88f71b306279518109a2f6"
+    }
+  },
+  "interpretation": {
+    "captures_delta": -2130.375,
+    "clump_delta": -0.14872341681699974,
+    "residue_delta": 0.0,
+    "support_status": "NULL_WINS"
+  },
+  "next_highest_yield_item": "Run a parameter sweep over damping, attraction strength, and residue feedback to separate robust atlas effects from simulator-tuned clumping.",
+  "schema": "d20.collider_ab_batch_report@1",
+  "stage_protocol": {
+    "closure": "emit real-minus-null deltas without promoting physical-particle claims",
+    "coherence": "verify certified stress graph input, null permutation, finite values, and active contacts",
+    "draft": "treat collider clumping as a real-vs-null finite-simulator question",
+    "emit": "publish artifact, report, manifest, and registry entry",
+    "witness": "run matched fixed-seed real and null collider batches"
+  },
+  "status": "D20_COLLIDER_AB_BATCH_REPORT_CERTIFIED",
+  "witness": {
+    "deltas_real_minus_null": {
+      "captures": -2130.375,
+      "clump": -0.14872341681699974,
+      "contacts": -2612.5,
+      "escapes": 1.125,
+      "residue": 0.0
+    },
+    "null_averages": {
+      "captures": 5952.125,
+      "clump": 0.5168655535769919,
+      "contacts": 8081.75,
+      "escapes": 0.75,
+      "residue": 1.0
+    },
+    "real_averages": {
+      "captures": 3821.75,
+      "clump": 0.3681421367599922,
+      "contacts": 5469.25,
+      "escapes": 1.875,
+      "residue": 1.0
+    },
+    "sample_null_shots": [
+      {
+        "captures": 6656,
+        "clump": 0.5347159767481962,
+        "contacts": 9108,
+        "escapes": 0,
+        "final_coupling": 0.14437600153178232,
+        "final_fusion": 0.2620244895384336,
+        "final_overlap": 1.0,
+        "final_scatter": 0.11482499747466388,
+        "residue": 1.0,
+        "seed": 3,
+        "shot": 0
+      },
+      {
+        "captures": 5406,
+        "clump": 0.5112751947441627,
+        "contacts": 7356,
+        "escapes": 3,
+        "final_coupling": 0.14001068328042587,
+        "final_fusion": 0.23627567007235106,
+        "final_overlap": 1.0,
+        "final_scatter": 0.12340512990122797,
+        "residue": 1.0,
+        "seed": 10,
+        "shot": 1
+      },
+      {
+        "captures": 5784,
+        "clump": 0.5157210455036196,
+        "contacts": 7737,
+        "escapes": 2,
+        "final_coupling": 0.14031354026622986,
+        "final_fusion": 0.24908481167291466,
+        "final_overlap": 1.0,
+        "final_scatter": 0.11114424385211388,
+        "residue": 1.0,
+        "seed": 17,
+        "shot": 2
+      }
+    ],
+    "sample_real_shots": [
+      {
+        "captures": 3932,
+        "clump": 0.28546386859069695,
+        "contacts": 5350,
+        "escapes": 0,
+        "final_coupling": 0.14207797699941316,
+        "final_fusion": 0.2713579928823797,
+        "final_overlap": 1.0,
+        "final_scatter": 0.1147260126929144,
+        "residue": 1.0,
+        "seed": 3,
+        "shot": 0
+      },
+      {
+        "captures": 3246,
+        "clump": 0.3690151153716602,
+        "contacts": 5246,
+        "escapes": 12,
+        "final_coupling": 0.11515980266812183,
+        "final_fusion": 0.19778086092398933,
+        "final_overlap": 1.0,
+        "final_scatter": 0.14977149409791102,
+        "residue": 1.0,
+        "seed": 10,
+        "shot": 1
+      },
+      {
+        "captures": 3588,
+        "clump": 0.315182485891798,
+        "contacts": 5049,
+        "escapes": 1,
+        "final_coupling": 0.13778021966411816,
+        "final_fusion": 0.2528659730694652,
+        "final_overlap": 1.0,
+        "final_scatter": 0.11734571732918879,
+        "residue": 1.0,
+        "seed": 17,
+        "shot": 2
+      }
+    ],
+    "verdict": "NULL_WINS"
+  }
+}

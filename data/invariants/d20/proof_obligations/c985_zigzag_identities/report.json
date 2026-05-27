@@ -1,0 +1,412 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9da0a27e759f32f18a724a5fab80e9f3edb3e646c36da8fb1e7541bd1e621108",
+  "checks": {
+    "all_985_simples_checked": true,
+    "associator_oracle_certified": true,
+    "coevaluation_terms_match_duality_support_total": true,
+    "duality_support_certified": true,
+    "each_simple_has_evaluation_solution": true,
+    "evaluation_coefficients_are_integral": true,
+    "fusion_multiplicity_typing_certified": true,
+    "pentagon_chain_normal_form_certified": true,
+    "right_and_left_zigzag_counts_are_nonzero": true,
+    "typed_registry_certified": true,
+    "unit_tensor_laws_certified": true,
+    "unit_triangle_coherence_certified": true,
+    "zigzag_failures_are_zero": true
+  },
+  "claim": "The transpose duality data admits explicit C-linear evaluation and coevaluation maps satisfying both zig-zag identities for all 985 simple generators.",
+  "closure_boundary": {
+    "certifies": [
+      "explicit evaluation maps for all 985 transpose-dual pairs",
+      "explicit coevaluation maps for all 985 transpose-dual pairs",
+      "both zig-zag identities for every simple generator",
+      "rigidity of the certified semisimple monoidal C985 skeleton"
+    ],
+    "does_not_certify": [
+      "spherical structure",
+      "pivotal structure",
+      "unitarity",
+      "braiding",
+      "full Drinfeld center or modular data"
+    ]
+  },
+  "inputs": {
+    "associator_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/report.json",
+      "sha256": "6f4c3d59b55b285e10343506770412484b2f13381b06dd0421de5c9ecb15c16b",
+      "status": "C985_ASSOCIATOR_REBRACKETING_ORACLE_CERTIFIED"
+    },
+    "be3_action": {
+      "path": "generated/be3_action_words_from_absolute_presentation.npz",
+      "sha256": "df0e332be5b732e108dec6fbd08c0f545d51fb6ba8829fed5ef8be87fb3efe3b"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_zigzag_identities.py",
+      "sha256": "89ff01a7eba7cd53b371eac71b475aaa36fa2adb2c61617fedb4bfba53bf22bf"
+    },
+    "duality_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_duality_support/report.json",
+      "sha256": "19cd4666191f01e72282ba75bc9ae92b205ad653cfbec475d7e957ccb905fc18",
+      "status": "C985_DUALITY_SUPPORT_CERTIFIED"
+    },
+    "fusion_basis_index": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_index.npz",
+      "sha256": "7c0e6e1e161e82b620f2bb2750b2a109bdc950c40f4848d3293e19790d3f66c8"
+    },
+    "fusion_basis_points": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/multiplicity_basis_points.npz",
+      "sha256": "3805a6cf6e7fdd178decc70f5f2ab4e81ba25d03b9db015bc12efe1dd0fbfacd"
+    },
+    "fusion_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/report.json",
+      "sha256": "2eb666d526750e5ba7812c22b685a81f7391c2a7d13fdf2242ba054ac8e92d35",
+      "status": "C985_FUSION_MULTIPLICITY_TYPING_CERTIFIED"
+    },
+    "identity_orbitals": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/identity_orbitals.json",
+      "sha256": "59c5b2235998b3cd7605183da0cfd1d9d94856fb136cb646cdc2f9e0402596e2"
+    },
+    "pair_transport_section": {
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/pair_transport_section.npz",
+      "sha256": "83b6c65ad726229ba7399c0a12a871b64561d30440d5bc5f382bf2a40c16c341"
+    },
+    "pentagon_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/report.json",
+      "sha256": "e7dfab8f2eb1262d32ff7abb10ae52f0bf5bffeeae1dfcf13b6736e41f9395de",
+      "status": "C985_PENTAGON_CHAIN_NORMAL_FORM_CERTIFIED"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "source_target": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+      "sha256": "69d649e5a876fc3d90ef5f804c91081224b44c7619524a0735ed1c44e2bd60ec"
+    },
+    "transpose": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/transpose.npy",
+      "sha256": "da4b67de1f267cb6406e4df497d470fdb870bf4ecaed4ef31f20e929b81d070b"
+    },
+    "triangle_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_unit_triangle_coherence/report.json",
+      "sha256": "bad8fc71dad5f97773d423f32f471ebd5511d04641071f309bc2214d22291623",
+      "status": "C985_UNIT_TRIANGLE_COHERENCE_CERTIFIED"
+    },
+    "typed_registry_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+      "sha256": "28855e8904a1fd21aac84bb922a33442c4c58e49413f49a5e891f0f5001813a4",
+      "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+    },
+    "unit_action_records": {
+      "path": "data/invariants/d20/proof_obligations/c985_unit_tensor_laws/unit_action_records.npz",
+      "sha256": "4c1b148f9d9b0768b60d07c4eab809eb9514f1db7b376f805fa49d9cec928a31"
+    },
+    "unit_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_unit_tensor_laws/report.json",
+      "sha256": "53afdb989fb3e13a5564cbb3c99a71f41a697eae0b2e082d422d9108796d01a8",
+      "status": "C985_UNIT_TENSOR_LAWS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_zigzag_identities.py",
+      "sha256": "12c42d5c82d4becadd63b7986af02e5e46e482fd7e626fcc60989b9c82ad9704"
+    }
+  },
+  "next_highest_yield_item": "Emit the final C985 multi-fusion checklist tying finite semisimplicity, tensor coherence, decomposable unit, and rigidity to K0(C985) ~= A985.",
+  "outputs": {
+    "coevaluation_maps": "data/invariants/d20/proof_obligations/c985_zigzag_identities/coevaluation_maps.npz",
+    "evaluation_maps": "data/invariants/d20/proof_obligations/c985_zigzag_identities/evaluation_maps.npz",
+    "manifest": "data/invariants/d20/proof_obligations/c985_zigzag_identities/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_zigzag_identities/report.json",
+    "zigzag_certificate": "data/invariants/d20/proof_obligations/c985_zigzag_identities/zigzag_certificate.json",
+    "zigzag_counts": "data/invariants/d20/proof_obligations/c985_zigzag_identities/zigzag_counts.npz"
+  },
+  "schema": "c985.proof_obligation.zigzag_identities@1",
+  "stage_protocol": {
+    "closure": "certify rigidity of the semisimple monoidal C985 skeleton",
+    "coherence": "solve and verify the two zig-zag scalar equations for every simple",
+    "draft": "use certified duality support, unit triangle, and pentagon-normal associator",
+    "emit": "emit zig-zag certificate and final C985 multi-fusion checklist target",
+    "witness": "materialize evaluation/coevaluation maps and zig-zag count rows"
+  },
+  "status": "C985_ZIGZAG_IDENTITIES_CERTIFIED",
+  "witness": {
+    "coevaluation_maps_sha256": "292df79a9d977323a108d75acbea6fa949cdf09991d44ee9a067dc87dec75894",
+    "coevaluation_nonzero_terms": 15456,
+    "evaluation_maps_sha256": "286f635818c2253282127b276515170e2aa0bef66e32a0fe5c22565b6c33021d",
+    "evaluation_nonzero_terms": 1837,
+    "first_16_evaluation_rows": [
+      [
+        0,
+        474,
+        1,
+        1
+      ],
+      [
+        0,
+        2096,
+        1,
+        1
+      ],
+      [
+        1,
+        460,
+        1,
+        1
+      ],
+      [
+        1,
+        2097,
+        1,
+        1
+      ],
+      [
+        2,
+        475,
+        1,
+        1
+      ],
+      [
+        2,
+        2101,
+        1,
+        1
+      ],
+      [
+        3,
+        101,
+        1,
+        1
+      ],
+      [
+        3,
+        2114,
+        1,
+        1
+      ],
+      [
+        4,
+        2115,
+        1,
+        1
+      ],
+      [
+        5,
+        2119,
+        1,
+        1
+      ],
+      [
+        5,
+        2478,
+        1,
+        1
+      ],
+      [
+        6,
+        96,
+        1,
+        1
+      ],
+      [
+        7,
+        1066,
+        1,
+        1
+      ],
+      [
+        7,
+        2192,
+        1,
+        1
+      ],
+      [
+        8,
+        2191,
+        1,
+        1
+      ],
+      [
+        8,
+        2362,
+        1,
+        1
+      ]
+    ],
+    "first_16_summary_rows": [
+      [
+        0,
+        0,
+        6,
+        6,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        1,
+        3,
+        3,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        6,
+        6,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        3,
+        3,
+        6,
+        6,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        4,
+        4,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        5,
+        5,
+        6,
+        6,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        6,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        7,
+        8,
+        24,
+        24,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        8,
+        7,
+        24,
+        24,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        9,
+        13,
+        12,
+        12,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        10,
+        10,
+        24,
+        24,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        11,
+        12,
+        24,
+        24,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        12,
+        11,
+        24,
+        24,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        13,
+        9,
+        12,
+        12,
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        14,
+        14,
+        12,
+        12,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        15,
+        15,
+        24,
+        24,
+        1,
+        1,
+        2,
+        1
+      ]
+    ],
+    "first_zigzag_failures": [],
+    "inverse_cache_size": 6593,
+    "left_zigzag_count_sum": 985,
+    "max_denominator": 1,
+    "right_zigzag_count_sum": 985,
+    "simple_count": 985,
+    "solution_terms_max": 2,
+    "solution_terms_min": 1,
+    "zigzag_count_rows": 1837,
+    "zigzag_count_rows_sha256": "19047db53df84a40f0109d7c76870741c967eaf320acbf4e1da0793cc7da60b9",
+    "zigzag_failure_count": 0,
+    "zigzag_summary_rows_sha256": "7bf14fea87743d552fe22e3849c5af8176d56a516f1fe310e0cbbfd7e6027e76"
+  }
+}

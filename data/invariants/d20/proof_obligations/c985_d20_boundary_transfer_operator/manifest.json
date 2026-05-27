@@ -1,0 +1,90 @@
+{
+  "certification_tests": [
+    "load certified rewrite-complex, Poincare, and Morse/Reeb artifacts",
+    "compute tensor/Poincare weights for the 42 source-sink morphisms",
+    "build the closed row-stochastic transfer matrix with source-weighted return kernel",
+    "solve and verify the stationary distribution and recurrent support",
+    "compare stationary flow against Poincare barycenter observables",
+    "check source hashes and proof-obligation registry consistency"
+  ],
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_boundary_transfer_operator.py",
+      "sha256": "eb6446ab081cfebd644726a84814563ac7b670f96f4dd76102e06d3b55c92de4"
+    },
+    "morse_reeb": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_quotient.json",
+      "sha256": "4592dcfedf7c27eb33aa40a24ec205bb8aa62d3773ff34027472e7f528e4d5f0"
+    },
+    "morse_reeb_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_certificate.json",
+      "sha256": "0547e7df6a0a4b537f67140a536a75f8dc7398f068b2a84c2417651be59859ce"
+    },
+    "morse_reeb_directed_paths_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/directed_interval_paths.csv",
+      "sha256": "a92da9e8dfa558228e33463add5668398f97cb74676c6906034a22865ccffdf1"
+    },
+    "morse_reeb_report": {
+      "certificate_sha256": "82b03fe85d221bea4ba21aec461bb069269c2ee7392dc47cc7443c94b8462fcb",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/report.json",
+      "sha256": "226f382ee7d075e7430e7bcf22f0c02e2c03058711639332cf87a22d0870a8b0",
+      "status": "C985_D20_MORSE_REEB_QUOTIENT_CERTIFIED"
+    },
+    "morse_reeb_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_morse_reeb_quotient/morse_reeb_tables.npz",
+      "sha256": "100ddc3acd3c45e2baaab2c1a51818f74a554db365c0b29971512fa01671f185"
+    },
+    "poincare_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/embedding_certificate.json",
+      "sha256": "2a9fa989e27dcbd72cc3ab30ec4e6a4d4675610ddaafb5e8171a7adf3c614032"
+    },
+    "poincare_embedding": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.json",
+      "sha256": "bd115f49fdb04f14db50e5b15397ad425c9dce4d538b8fb40d194bbb2a2ffcde"
+    },
+    "poincare_report": {
+      "certificate_sha256": "6c01e4b1a2b65eb962be473f5752cc9ec93c5a273da84ee9ed2240ea8560769e",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/report.json",
+      "sha256": "0a1f0b8197236305d98c6b93e9c8b1b0963ae2d8a89d7661697ac61d1f09ce55",
+      "status": "C985_D20_POINCARE_EMBEDDING_CERTIFIED"
+    },
+    "poincare_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/poincare_embedding.npz",
+      "sha256": "125136c4cd585d9142b0bded86f6455de95f311ba265f756eb5f12f5e9402074"
+    },
+    "rewrite_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+      "sha256": "0d170586487cce586baea14d2da03b700e3688ab2d45a5793094d19ad8b99385"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_boundary_transfer_operator.py",
+      "sha256": "516ea4691ebf3b4bd60e0d8906fe3ad8b9d1bad1daee2a67cac68dd77e8c7358"
+    }
+  },
+  "manifest_sha256": "2a8c216e0582b45af9923860241f01aaffa6b42409405e25995de76e79eb2780",
+  "name": "c985_d20_boundary_transfer_operator",
+  "outputs": {
+    "boundary_flow_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_flow_observables.csv",
+    "boundary_transfer_certificate": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_certificate.json",
+    "boundary_transfer_operator": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_operator.json",
+    "boundary_transfer_tables": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/boundary_transfer_tables.npz",
+    "core_transfer_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/core_transfer_edges.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/report.json",
+    "source_sink_path_weights_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/source_sink_path_weights.csv",
+    "stationary_distribution_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_transfer_operator/stationary_distribution.csv"
+  },
+  "report_sha256": "8ef035c36df37ff44c48b2b6eb1fc4c1b32c4ba27bf5085fa2ca0005d36adcaf",
+  "schema": "c985.proof_obligation.d20_boundary_transfer_operator_manifest@1",
+  "status": "C985_D20_BOUNDARY_TRANSFER_OPERATOR_CERTIFIED"
+}

@@ -1,0 +1,60 @@
+{
+  "bottom_path": [
+    "P0_to_P2",
+    "P2_to_P4"
+  ],
+  "bottom_path_normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)",
+  "edges": [
+    {
+      "associator": "a_{a,b,c} tensor id_d",
+      "edge": "P0_to_P1",
+      "normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)",
+      "source": "(((ab)c)d)",
+      "target": "((a(bc))d)"
+    },
+    {
+      "associator": "a_{a,bc,d}",
+      "edge": "P1_to_P3",
+      "normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)",
+      "source": "((a(bc))d)",
+      "target": "(a((bc)d))"
+    },
+    {
+      "associator": "id_a tensor a_{b,c,d}",
+      "edge": "P3_to_P4",
+      "normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)",
+      "source": "(a((bc)d))",
+      "target": "(a(b(cd)))"
+    },
+    {
+      "associator": "a_{ab,c,d}",
+      "edge": "P0_to_P2",
+      "normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)",
+      "source": "(((ab)c)d)",
+      "target": "((ab)(cd))"
+    },
+    {
+      "associator": "a_{a,b,cd}",
+      "edge": "P2_to_P4",
+      "normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)",
+      "source": "((ab)(cd))",
+      "target": "(a(b(cd)))"
+    }
+  ],
+  "normal_form_sha256": "c3ed766d9729cc782df48f548013c4f68c8dee376c5f01246f666838c81ad374",
+  "parenthesizations": [
+    "(((ab)c)d)",
+    "((a(bc))d)",
+    "((ab)(cd))",
+    "(a((bc)d))",
+    "(a(b(cd)))"
+  ],
+  "path_equality_reason": "Every edge is the associator oracle's change of bracketing through the same typed length-four incidence chain; therefore both pentagon paths act as identity on chain normal form.",
+  "schema": "c985.pentagon_chain_normal_form@1",
+  "top_path": [
+    "P0_to_P1",
+    "P1_to_P3",
+    "P3_to_P4"
+  ],
+  "top_path_normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)"
+}

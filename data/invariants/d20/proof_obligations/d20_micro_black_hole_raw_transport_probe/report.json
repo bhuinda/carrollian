@@ -1,0 +1,183 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "276a2dd94133742bf5a7cc1b093700b91caaeadeff0773439c320785ab8a009d",
+  "checks": {
+    "lensed_reference_bends_toward_horizon": true,
+    "lensed_transport_delta_matches_source_summary": true,
+    "micro_backreaction_probe_is_certified": true,
+    "raw_and_lensed_measurements_are_distinct": true,
+    "raw_astar_shadow_fields_are_present": true,
+    "raw_transport_bends_toward_horizon_without_lens": true,
+    "raw_transport_delta_matches_source_summary": true
+  },
+  "claim": "The current D20 micro-horizon backreaction also bends raw, no-lens A* transport toward the inner shell band.",
+  "closure_boundary": {
+    "certifies": [
+      "the current raw no-lens A* shadow metric against the certified micro-horizon artifact",
+      "whether raw transport is positive independently of the engineered horizon lens"
+    ],
+    "does_not_certify": [
+      "physical black-hole behavior",
+      "raw unaided lensing when status is NEGATIVE",
+      "any absorption-law variant not present in the source micro-horizon artifact"
+    ]
+  },
+  "definition": {
+    "no_lens_constraint": "uses the raw_astar_* shadow measurements recorded before horizon_lensed_cost is applied; the engineered horizon-mass lens is used only as a reference column",
+    "object": "no-lens raw A* transport test for the D20 micro-horizon analog",
+    "physical_boundary": "finite sandpile transport witness only; a negative result means the current absorption law does not produce unaided path bending",
+    "positive_signature": "raw backreacting A* paths spend more of their route in the inner shell band than the no-backreaction baseline"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "f9f3c19ac586fe732d3f205eb26c39e1895b20da1709aaf62fb705f68d004265",
+      "path": "generated/d20_micro_black_hole_raw_transport_probe.json",
+      "schema": "d20.proof_obligation.micro_black_hole_raw_transport_probe.artifact@1",
+      "sha256": "edd0619816466d541d341882cb056ccde6b1dbf3a45ac42602daf36117cbc5a5",
+      "status": "D20_MICRO_BLACK_HOLE_RAW_TRANSPORT_PROBE_CERTIFIED_RAW_POSITIVE"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_micro_black_hole_raw_transport_probe.py",
+      "sha256": "f5ce3822a9a6c5f00c4b4f0cb329a8a1f45510627399fad7c97be95333a8536e"
+    },
+    "micro_black_hole_backreaction_artifact": {
+      "artifact_sha256_excluding_this_field": "fe3fe8809cc07b4004e3441794d833f85db7ac6672cce86eda755608bd4e8e1c",
+      "path": "generated/d20_micro_black_hole_backreaction_probe.json",
+      "sha256": "75e64dfe8cd96b218cce545f346f7403ae56d0caad70ede8cc913554e1236339",
+      "status": "D20_MICRO_BLACK_HOLE_BACKREACTION_PROBE_CERTIFIED"
+    },
+    "micro_black_hole_backreaction_report": {
+      "certificate_sha256": "3b8b6a8e376d5c22a13e98443bfafe2746ce6b096be53c42aec91ddcdfca0bc1",
+      "path": "data/invariants/d20/proof_obligations/d20_micro_black_hole_backreaction_probe/report.json",
+      "sha256": "956df51674b296560116defe5d68420e672a92c6c2a2ab0439e15600db49f1a4",
+      "status": "D20_MICRO_BLACK_HOLE_BACKREACTION_PROBE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_micro_black_hole_raw_transport_probe.py",
+      "sha256": "e8669adb6919bdbe981e1d3ecd62a0a0120514c00bba9c5bd8fff3748943879e"
+    }
+  },
+  "next_highest_yield_item": "If raw transport remains negative, tune only the explicit absorption law and keep horizon_lensed_cost disabled for the primary A* pass until raw inner-band delta is positive.",
+  "schema": "d20.proof_obligation.micro_black_hole_raw_transport_probe@1",
+  "stages": {
+    "closure": "emit negative or raw-positive status without changing the source simulation",
+    "coherence": "compare raw and lensed deltas against source summary",
+    "draft": "define no-lens raw A* horizon-bending test",
+    "emit": "publish frame deltas and explicit claim boundary",
+    "witness": "read certified backreaction artifact raw_astar shadow fields"
+  },
+  "status": "D20_MICRO_BLACK_HOLE_RAW_TRANSPORT_PROBE_CERTIFIED_RAW_POSITIVE",
+  "witness": {
+    "frame_deltas": [
+      {
+        "frame": 0,
+        "horizon_mass": 133,
+        "lens_factor": 0.5214492318366724,
+        "lensed_backreaction_inner_band_fraction": 0.6773809523809524,
+        "lensed_baseline_inner_band_fraction": 0.5513392857142857,
+        "lensed_delta": 0.12604166666666672,
+        "raw_backreaction_inner_band_fraction": 0.5023809523809524,
+        "raw_baseline_inner_band_fraction": 0.5513392857142857,
+        "raw_delta": -0.048958333333333326
+      },
+      {
+        "frame": 12,
+        "horizon_mass": 1840,
+        "lens_factor": 0.8004118044534819,
+        "lensed_backreaction_inner_band_fraction": 0.7245098039215686,
+        "lensed_baseline_inner_band_fraction": 0.6052696078431372,
+        "lensed_delta": 0.11924019607843139,
+        "raw_backreaction_inner_band_fraction": 0.6846813725490196,
+        "raw_baseline_inner_band_fraction": 0.6052696078431372,
+        "raw_delta": 0.0794117647058824
+      },
+      {
+        "frame": 24,
+        "horizon_mass": 3468,
+        "lens_factor": 0.8678635928594822,
+        "lensed_backreaction_inner_band_fraction": 0.7512254901960784,
+        "lensed_baseline_inner_band_fraction": 0.6625,
+        "lensed_delta": 0.08872549019607845,
+        "raw_backreaction_inner_band_fraction": 0.5923202614379085,
+        "raw_baseline_inner_band_fraction": 0.6625,
+        "raw_delta": -0.07017973856209148
+      },
+      {
+        "frame": 36,
+        "horizon_mass": 4855,
+        "lens_factor": 0.9036730049651175,
+        "lensed_backreaction_inner_band_fraction": 0.759313725490196,
+        "lensed_baseline_inner_band_fraction": 0.6263329893360853,
+        "lensed_delta": 0.13298073615411077,
+        "raw_backreaction_inner_band_fraction": 0.6498366013071895,
+        "raw_baseline_inner_band_fraction": 0.6263329893360853,
+        "raw_delta": 0.023503611971104177
+      },
+      {
+        "frame": 48,
+        "horizon_mass": 6387,
+        "lens_factor": 0.9328664057276462,
+        "lensed_backreaction_inner_band_fraction": 0.7870710784313726,
+        "lensed_baseline_inner_band_fraction": 0.5734004127966976,
+        "lensed_delta": 0.21367066563467496,
+        "raw_backreaction_inner_band_fraction": 0.6585171568627451,
+        "raw_baseline_inner_band_fraction": 0.5734004127966976,
+        "raw_delta": 0.08511674406604752
+      },
+      {
+        "frame": 60,
+        "horizon_mass": 7921,
+        "lens_factor": 0.9557800974035894,
+        "lensed_backreaction_inner_band_fraction": 0.7848958333333332,
+        "lensed_baseline_inner_band_fraction": 0.6004471964224286,
+        "lensed_delta": 0.18444863691090463,
+        "raw_backreaction_inner_band_fraction": 0.6585171568627451,
+        "raw_baseline_inner_band_fraction": 0.6004471964224286,
+        "raw_delta": 0.05806996044031654
+      },
+      {
+        "frame": 72,
+        "horizon_mass": 9472,
+        "lens_factor": 0.9748162729593316,
+        "lensed_backreaction_inner_band_fraction": 0.767892156862745,
+        "lensed_baseline_inner_band_fraction": 0.6184640522875817,
+        "lensed_delta": 0.1494281045751633,
+        "raw_backreaction_inner_band_fraction": 0.6188725490196079,
+        "raw_baseline_inner_band_fraction": 0.6184640522875817,
+        "raw_delta": 0.00040849673202614234
+      },
+      {
+        "frame": 84,
+        "horizon_mass": 10899,
+        "lens_factor": 0.9897551580752413,
+        "lensed_backreaction_inner_band_fraction": 0.789828431372549,
+        "lensed_baseline_inner_band_fraction": 0.6796267629858961,
+        "lensed_delta": 0.1102016683866529,
+        "raw_backreaction_inner_band_fraction": 0.6312091503267974,
+        "raw_baseline_inner_band_fraction": 0.6796267629858961,
+        "raw_delta": -0.04841761265909872
+      },
+      {
+        "frame": 96,
+        "horizon_mass": 12304,
+        "lens_factor": 1.0,
+        "lensed_backreaction_inner_band_fraction": 0.7669934640522875,
+        "lensed_baseline_inner_band_fraction": 0.6188080495356036,
+        "lensed_delta": 0.14818541451668388,
+        "raw_backreaction_inner_band_fraction": 0.6803921568627451,
+        "raw_baseline_inner_band_fraction": 0.6188080495356036,
+        "raw_delta": 0.06158410732714148
+      }
+    ],
+    "summary": {
+      "astar_sample_count": 9,
+      "final_horizon_mass": 12304,
+      "horizon_lens_factor_mean": 0.8829572853645069,
+      "lensed_astar_inner_band_delta_vs_baseline_mean": 0.1414358421243741,
+      "lensed_positive_frame_count": 9,
+      "raw_astar_inner_band_delta_vs_baseline_mean": 0.015615444520888304,
+      "raw_positive_frame_count": 6,
+      "source_micro_status": "D20_MICRO_BLACK_HOLE_BACKREACTION_PROBE_CERTIFIED"
+    }
+  }
+}

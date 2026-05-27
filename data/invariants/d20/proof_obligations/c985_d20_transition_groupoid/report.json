@@ -1,0 +1,145 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4cc895928f5a2a01b8c690875a0ffd5a2e669e15a9e515d82378b343aee27630",
+  "checks": {
+    "associator_oracle_report_certified": true,
+    "associator_sample_rebracketing_count_is_1970": true,
+    "associator_sample_rebracketing_failures_are_zero": true,
+    "atlas_cocycle_failures_are_zero": true,
+    "chart_atlas_report_certified": true,
+    "composition_failures_are_zero": true,
+    "composition_record_count_is_36": true,
+    "cycle_holonomy_failures_are_zero": true,
+    "cycle_record_count_is_36": true,
+    "groupoid_and_pentagon_both_have_zero_path_defects": true,
+    "inverse_loop_failures_are_zero": true,
+    "inverse_loop_record_count_is_50": true,
+    "pentagon_chain_normal_form_is_typed_length_four": true,
+    "pentagon_exact_chain_count_matches_final_certificate": true,
+    "pentagon_normal_form_report_certified": true,
+    "pentagon_top_and_bottom_paths_share_normal_form": true,
+    "selected_chart_ids_are_0_2_10": true,
+    "transition_arrow_count_is_50": true,
+    "transition_pair_count_is_3": true,
+    "triple_overlap_atom_count_is_6": true
+  },
+  "claim": "The verified three-chart hyperbolic atlas carries a finite transition groupoid whose local-rank arrows are invertible and path-independent on the triple overlap, matching the normal-form discipline of the certified C985 associator and pentagon data at the readout level.",
+  "closure_boundary": {
+    "certifies": [
+      "finite transition groupoid records for the selected three-chart d20 atlas",
+      "inverse-loop zero defects for all ordered transition arrows",
+      "triple-overlap direct-vs-composed transition equality",
+      "directed chart-cycle zero rank holonomy",
+      "readout-level comparison with certified C985 associator and pentagon normal-form metadata"
+    ],
+    "does_not_certify_because_not_required": [
+      "new C985 associator or pentagon coherence beyond the already certified reports",
+      "transition groupoids for non-selected chart covers",
+      "a packet bridge from d20 atoms to A985/tube coordinates",
+      "pivotal, spherical, unitary, braiding, ribbon, or Drinfeld-center data"
+    ]
+  },
+  "inputs": {
+    "associator_oracle": {
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/associator_oracle.json",
+      "sha256": "dda6222f74e8e4ea1fbe0846676c1321f1b4864001caeef0ae61d2215982d92c"
+    },
+    "associator_report": {
+      "certificate_sha256": "75800317a741e0842706832853b8ea0d60dd4aedfb24f3556082a23957a42e80",
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/report.json",
+      "sha256": "6f4c3d59b55b285e10343506770412484b2f13381b06dd0421de5c9ecb15c16b",
+      "status": "C985_ASSOCIATOR_REBRACKETING_ORACLE_CERTIFIED"
+    },
+    "associator_samples": {
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/associator_sample_witnesses.npz",
+      "sha256": "fd767cf34d72970dbe71fc46eb7e8a3038cae7a117f98abb5c50b67bcaab0f71"
+    },
+    "chart_atlas": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/hyperbolic_chart_atlas.json",
+      "sha256": "49a8b55d65c0503b531ca9af0e498bfff1051d9e8ab9ebc276da1b2b060d6e5e"
+    },
+    "chart_atlas_report": {
+      "certificate_sha256": "9c46d7c40ea4c280fc7899c9864cb175c3cdc956946cbb8c096a63a3369e9790",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/report.json",
+      "sha256": "9f0658ce64288473f6814b1e9337b861b1c20e593327b9b041dc89fdd1a0d739",
+      "status": "C985_D20_HYPERBOLIC_CHART_ATLAS_CERTIFIED"
+    },
+    "chart_atlas_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_chart_atlas/hyperbolic_chart_atlas_tables.npz",
+      "sha256": "f575fb6038ab330c0273aa72780e9d0cb1fd94025162de69d762c92b19e64e2c"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_transition_groupoid.py",
+      "sha256": "c81aa7d752f5e48df48057b14b33e1bebbf5a4acec082bf38e6b8db192765543"
+    },
+    "pentagon_normal_form": {
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/pentagon_normal_form.json",
+      "sha256": "21acc3f2c9160f308743e61acbd78c8f6590a83b6f7527d7e7beddf269e6b036"
+    },
+    "pentagon_report": {
+      "certificate_sha256": "764ec93e334b468f6338dcb74f530b09348a7f536489f62a945fdf74a2abb5c2",
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/report.json",
+      "sha256": "e7dfab8f2eb1262d32ff7abb10ae52f0bf5bffeeae1dfcf13b6736e41f9395de",
+      "status": "C985_PENTAGON_CHAIN_NORMAL_FORM_CERTIFIED"
+    },
+    "pentagon_samples": {
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/pentagon_sample_chains.npz",
+      "sha256": "c58a2213f240b79daa90354b2c9e0e9be751235e1930ca0ee6e213c14c2e367d"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_transition_groupoid.py",
+      "sha256": "bab723425339c6e886162818f5f63fd6282cb0f91e113d97b9747055573ef4ed"
+    }
+  },
+  "next_highest_yield_item": "Use the transition groupoid cycles to choose explicit d20 normal-form words, then compare their atom paths with the certified tensor-sector geometry signatures.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/report.json",
+    "transition_groupoid": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/transition_groupoid.json",
+    "transition_groupoid_certificate": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/transition_groupoid_certificate.json",
+    "transition_groupoid_cycles_csv": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/transition_groupoid_cycles.csv",
+    "transition_groupoid_tables": "data/invariants/d20/proof_obligations/c985_d20_transition_groupoid/transition_groupoid_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_transition_groupoid@1",
+  "stage_protocol": {
+    "closure": "certify the d20 transition groupoid as a readout comparison without re-proving C985 coherence",
+    "coherence": "check zero inverse defects, zero composition defects, zero cycle holonomy, and upstream normal-form certificates",
+    "draft": "start from the certified three-chart hyperbolic atlas and C985 associator/pentagon reports",
+    "emit": "emit groupoid JSON/CSV/NPZ, certificate, report, and next cycle-deepening target",
+    "witness": "materialize inverse loops, triple-overlap compositions, and directed chart cycles"
+  },
+  "status": "C985_D20_TRANSITION_GROUPOID_CERTIFIED",
+  "witness": {
+    "arrow_count": 50,
+    "associator_sample_rebracketing_count": 1970,
+    "associator_sample_rebracketing_failures": 0,
+    "associator_samples_sha256": "50c2da08725ca3a50fdfa7c5f0ad09ce51e93ab040b15f91a4ee4a4d4b9c6d07",
+    "composition_failure_count": 0,
+    "composition_record_count": 36,
+    "composition_records_sha256": "4738df2906fe464df9fb5f0512c0daf0e7773ecf17c2b057b0a0ca56e1294b24",
+    "cycle_holonomy_failure_count": 0,
+    "cycle_record_count": 36,
+    "cycle_records_sha256": "4ca03594e201e5814a300f838d10076a940825ca123460220ffbac3aeee6d814",
+    "inverse_loop_failure_count": 0,
+    "inverse_loop_record_count": 50,
+    "inverse_loop_records_sha256": "be33f1ad3bdec2dcef61667c7b9664eb05aadb27d5cfa997616d6ff680b5ddaa",
+    "object_count": 3,
+    "ordered_transition_records_sha256": "6a76c5374f70cbe784e182dfd7edde10048cc0aaf3b8a4641268d4f4f0a8fc9e",
+    "pentagon_chain_normal_form": "typed_length_four_chain(x0,x1,x2,x3,x4)",
+    "pentagon_exact_length_four_chain_count": 16837352591360,
+    "pentagon_normal_form_sha256": "c3ed766d9729cc782df48f548013c4f68c8dee376c5f01246f666838c81ad374",
+    "selected_chart_ids": [
+      0,
+      2,
+      10
+    ],
+    "triple_overlap_atom_ids": [
+      1,
+      4,
+      7,
+      11,
+      12,
+      19
+    ]
+  }
+}

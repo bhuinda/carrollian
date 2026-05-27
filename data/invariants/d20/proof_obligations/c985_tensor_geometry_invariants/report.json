@@ -1,0 +1,125 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "de1650d0232ec6bbd4a57721e37784cfc87ebcafead5b00f508463035cd2ecef",
+  "checks": {
+    "coefficient_cube_sum_matches_tensor_mass": true,
+    "every_output_relation_has_point_mass_2576": true,
+    "final_c985_certificate_present": true,
+    "fusion_certified": true,
+    "fusion_coefficient_total_is_2537360": true,
+    "fusion_tensor_shape_is_1414965_by_4": true,
+    "histogram_mass_total_matches_tensor_mass": true,
+    "histogram_support_total_matches_tensor_support": true,
+    "left_mass_matches_right_mass_under_transpose": true,
+    "left_support_matches_right_support_under_transpose": true,
+    "object_sector_support_cube_has_all_216_cells": true,
+    "output_support_matches_transpose_output_support": true,
+    "registry_certified": true,
+    "relation_geometry_records_shape_is_985_by_12": true,
+    "source_target_shape_is_985_by_2": true,
+    "support_cube_sum_matches_tensor_support": true,
+    "transpose_preserves_relation_size": true,
+    "transpose_symmetry_failure_count_is_zero": true
+  },
+  "claim": "The certified C985 fusion tensor has reproducible geometric readouts: full six-sector object-cube support, constant output mass 2576, exact transpose symmetry, coefficient strata, and relation-level degree signatures.",
+  "closure_boundary": {
+    "certifies": [
+      "object-sector cube aggregation of the C985 fusion tensor",
+      "relation-level tensor degree and coefficient-mass signatures",
+      "constant output coefficient mass across all 985 simple outputs",
+      "exact transpose-dual symmetry of the sparse tensor",
+      "coefficient spectrum and extremal tensor-row witnesses for invariant discovery"
+    ],
+    "does_not_certify_because_not_required": [
+      "new categorical coherence beyond the existing C985 final certificate",
+      "pivotal or spherical normalization",
+      "unitarity",
+      "braiding or ribbon data",
+      "Drinfeld-center modular data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_tensor_geometry_invariants.py",
+      "sha256": "5f1072937c7065f1234f78e5ce9ac699443f2bbe9a5b20449e7fe5cb61dc1b00"
+    },
+    "final_c985_report": {
+      "certificate_sha256": "7f6955abac6105ed7b8eeb400f0f1a99e1c9a58358d1475df5122e25535eadb4",
+      "path": "data/invariants/d20/proof_obligations/c985_final_multifusion_certificate/report.json",
+      "sha256": "e530ad66bd4cb785e9a1fe33b7d5faf3102ba042a32f0be2c5b5d478a92158be",
+      "status": "C985_FINITE_SEMISIMPLE_MULTIFUSION_CATEGORY_CERTIFIED"
+    },
+    "fusion_report": {
+      "certificate_sha256": "dad6709e91e16cf434b121aa2eb0fe26b318d2e05a5fc800b30f7f9d7fdb2dc7",
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/report.json",
+      "sha256": "2eb666d526750e5ba7812c22b685a81f7391c2a7d13fdf2242ba054ac8e92d35",
+      "status": "C985_FUSION_MULTIPLICITY_TYPING_CERTIFIED"
+    },
+    "fusion_tensor": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/fusion_tensor_coo.npz",
+      "sha256": "05b5b5ed0d000238934e64ca42c2a66ad48de5e2e5e39bd985a4f2a9b2b11fd7"
+    },
+    "orbitals": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/orbitals.json",
+      "sha256": "4c6460d83f4f9b0553f09551ec5f7dfc4514404ebaf52580a43be2d4f6aff818"
+    },
+    "source_target": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+      "sha256": "69d649e5a876fc3d90ef5f804c91081224b44c7619524a0735ed1c44e2bd60ec"
+    },
+    "transpose": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/transpose.npy",
+      "sha256": "da4b67de1f267cb6406e4df497d470fdb870bf4ecaed4ef31f20e929b81d070b"
+    },
+    "typed_registry_report": {
+      "certificate_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+      "sha256": "28855e8904a1fd21aac84bb922a33442c4c58e49413f49a5e891f0f5001813a4",
+      "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_tensor_geometry_invariants.py",
+      "sha256": "5b65b78ae87fd56bd79b312462df0f36fb49879fe36f5be911c7225d2dac4074"
+    }
+  },
+  "next_highest_yield_item": "Use relation_geometry_signatures.npz to choose geometric landmarks and project them onto the d20 boundary/readout as a navigable invariant atlas.",
+  "outputs": {
+    "geometry_certificate": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/geometry_certificate.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/manifest.json",
+    "object_sector_cubes": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/object_sector_cubes.npz",
+    "relation_geometry_signatures": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+    "report": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/report.json",
+    "tensor_geometry_summary": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/tensor_geometry_summary.json"
+  },
+  "schema": "c985.proof_obligation.tensor_geometry_invariants@1",
+  "stage_protocol": {
+    "closure": "certify the invariant-discovery readout layer without adding optional categorical structure",
+    "coherence": "check tensor totals, transpose symmetry, output mass balance, and signature reproducibility",
+    "draft": "mine the certified C985 sparse fusion tensor for geometry-oriented invariants",
+    "emit": "emit a compact geometry summary and NPZ tables for downstream visualization/search",
+    "witness": "materialize object-sector cubes, relation degree signatures, coefficient strata, and extremal rows"
+  },
+  "status": "C985_TENSOR_GEOMETRY_INVARIANTS_CERTIFIED",
+  "witness": {
+    "coefficient_max": 64,
+    "coefficient_min": 1,
+    "coefficient_total": 2537360,
+    "coefficient_value_count": 17,
+    "object_count": 6,
+    "object_sector_cubes_sha256": "93b8d59b75f2aaf670259c4b5ea697a29f09425a42e478bc2b66658a513ca61f",
+    "object_sector_mass_max": 79872,
+    "object_sector_mass_min": 576,
+    "object_sector_nonzero_cells": 216,
+    "object_sector_support_max": 46256,
+    "object_sector_support_min": 112,
+    "output_coefficient_mass_max": 2576,
+    "output_coefficient_mass_min": 2576,
+    "relation_count": 985,
+    "relation_geometry_records_sha256": "eafdafb46c2e846694cb4a1a621c05ef08d896247438c059372362f0eb4152b1",
+    "relation_signature_matrix_sha256": "229668f198b3ee6e82719318093dd836ee72b697cdec7f941d6b385612d766d6",
+    "self_transpose_relation_count": 159,
+    "tensor_support": 1414965,
+    "transpose_symmetry_failure_count": 0,
+    "unique_relation_signature_count": 233
+  }
+}

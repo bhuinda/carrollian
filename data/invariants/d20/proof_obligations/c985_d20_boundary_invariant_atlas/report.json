@@ -1,0 +1,120 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+  "checks": {
+    "all_atoms_have_positive_internal_relation_count": true,
+    "all_atoms_have_positive_tensor_support": true,
+    "all_relation_signature_classes_seen_by_atoms": true,
+    "atom_distinct_path_mass_sums_match_cube": true,
+    "atom_distinct_path_support_sums_match_cube": true,
+    "atom_domain_has_20_rows": true,
+    "atom_domain_is_c_h6_3": true,
+    "atom_ids_are_contiguous": true,
+    "complement_pair_count_is_10": true,
+    "degenerate_and_distinct_mass_partition_tensor": true,
+    "degenerate_and_distinct_support_partition_tensor": true,
+    "object_sector_cube_shape_is_6_by_6_by_6": true,
+    "ordered_distinct_path_count_is_6_per_atom": true,
+    "relation_atom_incidence_total_matches_source_target_formula": true,
+    "relation_records_shape_is_985_by_12": true,
+    "signature_matrix_reproducible": true,
+    "tensor_geometry_report_certified": true,
+    "tiny_pointer_atom_domain_certified": true
+  },
+  "claim": "The certified C985 tensor geometry projects to a reproducible d20 boundary atlas over the 20 C(H6,3) atoms by aggregating distinct three-sector tensor paths and atom-internal relation signatures.",
+  "closure_boundary": {
+    "certifies": [
+      "projection of distinct C985 object-sector tensor paths onto the 20 d20 atoms",
+      "explicit accounting of repeated-sector tensor paths outside Lambda^3 H6",
+      "atom-internal aggregation of C985 relation-signature classes",
+      "complement-pair atlas over the 20 d20 atoms",
+      "machine-readable atlas table for invariant search and visualization"
+    ],
+    "does_not_certify_because_not_required": [
+      "a full packet bridge from d20 atoms to A985/tube coordinates",
+      "a packet normalization killing known boundary torsion",
+      "pivotal or spherical normalization",
+      "unitarity, braiding, ribbon, or Drinfeld-center modular data"
+    ]
+  },
+  "inputs": {
+    "d20_atom_domain": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/d20_atom_domain.csv",
+      "sha256": "79545f23224cf1834c79e495c0cc1718ce91b44880b98ac94f3c6a81304ae77d"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_boundary_invariant_atlas.py",
+      "sha256": "05268dd855e70866ec032331e9fb0aae9c1230ea38790b53306f048ab086c656"
+    },
+    "object_sector_cubes": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/object_sector_cubes.npz",
+      "sha256": "fee2031d4f16790455274933a35d186440eef27b3f8c5a2011753ce2285d3a9a"
+    },
+    "relation_geometry_signatures": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/relation_geometry_signatures.npz",
+      "sha256": "28406664614db343b98547643f71278e83f9e1537b1f935cde013e32f2e1c694"
+    },
+    "tensor_geometry_report": {
+      "certificate_sha256": "de1650d0232ec6bbd4a57721e37784cfc87ebcafead5b00f508463035cd2ecef",
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/report.json",
+      "sha256": "7c77dcdbf747487520764cbc8b5eb7c027c124b4673336d1f1986ba1184018f7",
+      "status": "C985_TENSOR_GEOMETRY_INVARIANTS_CERTIFIED"
+    },
+    "tensor_geometry_summary": {
+      "path": "data/invariants/d20/proof_obligations/c985_tensor_geometry_invariants/tensor_geometry_summary.json",
+      "sha256": "ed3f3e8346c6e6339ee38e2209d43bc3782207ccfa519339818e900d499b5990"
+    },
+    "tiny_pointer_report": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/report.json",
+      "sha256": "4bf79809955a15d19250fe0d5283c2235e76afd034c3b8ad0ce0f3ed3aa80918",
+      "status": "D20_TINY_POINTER_A985_SECTOR_LABEL_ALIAS_REGISTRY_CERTIFIED"
+    },
+    "tiny_pointer_schema": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector_label_alias_registry/tiny_pointer_d20_atom_primitive_schema.json",
+      "sha256": "fee05ef4624bd587b200f9885223ae99a3b67943ed8a26c87df9db7596d91368"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_boundary_invariant_atlas.py",
+      "sha256": "68dfe04040eb0600f901e0104f65dc805b3aa16d1822d429de01107556cd9590"
+    }
+  },
+  "next_highest_yield_item": "Use d20_boundary_invariant_atlas.npz to choose landmark atoms and build a boundary-neighborhood graph weighted by tensor mass, signature overlap, and complement-pair contrast.",
+  "outputs": {
+    "d20_boundary_invariant_atlas": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.json",
+    "d20_boundary_invariant_atlas_csv": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.csv",
+    "d20_boundary_invariant_atlas_npz": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.npz",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/manifest.json",
+    "projection_certificate": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/projection_certificate.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json"
+  },
+  "schema": "c985.proof_obligation.d20_boundary_invariant_atlas@1",
+  "stage_protocol": {
+    "closure": "certify a boundary invariant atlas without claiming optional categorical enrichment",
+    "coherence": "check C(H6,3), tensor path partitioning, relation incidence totals, and signature coverage",
+    "draft": "use the certified tensor geometry readout and tiny-pointer d20 atom domain",
+    "emit": "emit atlas CSV/JSON/NPZ and the next invariant-discovery target",
+    "witness": "materialize the 20-row d20 atom atlas plus machine numeric table"
+  },
+  "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED",
+  "witness": {
+    "atlas_table_sha256": "af15cde609556ea4168291a68aedb188eef2e180d2e1eae518fc84debe9d3360",
+    "atom_count": 20,
+    "atom_internal_relation_count_max": 514,
+    "atom_internal_relation_count_min": 111,
+    "atom_internal_signature_class_count_max": 110,
+    "atom_internal_signature_class_count_min": 50,
+    "atom_tensor_mass_max": 165376,
+    "atom_tensor_mass_min": 9600,
+    "atom_tensor_support_max": 125952,
+    "atom_tensor_support_min": 2112,
+    "complement_pair_count": 10,
+    "degenerate_object_path_coefficient_mass": 1470288,
+    "degenerate_object_path_support": 783285,
+    "distinct_object_path_coefficient_mass": 1067072,
+    "distinct_object_path_support": 631680,
+    "relation_atom_incidence_total": 5722,
+    "relation_count": 985,
+    "relation_signature_class_ids_sha256": "d5987b5f405c62a4f592176f1915965a8265553ed28994fa9fbb89fe63eb27f6",
+    "signature_class_count": 233
+  }
+}
