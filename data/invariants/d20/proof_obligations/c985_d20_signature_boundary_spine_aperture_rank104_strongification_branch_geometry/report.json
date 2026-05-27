@@ -1,0 +1,291 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c1e12c88b4ec921f398189da0913edc4e143f6038e9c6df541af65ca243eb394",
+  "checks": {
+    "anchor_table_shape_matches_codebook": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "both_branches_are_strong_and_closed": true,
+    "branch_table_shape_matches_codebook": true,
+    "branch_transition_edit_shape_matches": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "comparison_table_shape_matches_codebook": true,
+    "gap_witness_table_shape_is_24": true,
+    "observable_table_shape_matches_codebook": true,
+    "rank104_gains_twenty_six_variation": true,
+    "rank104_has_five_more_closed_paths": true,
+    "rank104_pays_three_extra_edges": true,
+    "rank104_preserves_valley_and_delta": true,
+    "rank104_strong_is_hybrid_anchor_trace": true,
+    "rank104_strong_trace_matches_expected": true,
+    "rank104_word_matches_gap_best_witness": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "shortcut_savings_equal_trace_overheads": true,
+    "strongification_gap_certificate_certified": true,
+    "strongification_gap_report_certified": true,
+    "strongification_gap_schema_available": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "target1_trace_matches_quotient_branch": true,
+    "trace_class_table_shape_is_7_by_codebook": true,
+    "trace_quotient_certificate_certified": true,
+    "trace_quotient_report_certified": true
+  },
+  "claim": "The rank-104 best strongification word is a genuine new branch rather than a disguised target1 replay. It pays three additional trace edges compared with target1, but keeps the same valley depth and delta while lowering signature variation by 26 and increasing first-return closed carrier witnesses from 3 to 8. Its detour is hybrid: rank104 node31, target1 node29, and baseline nodes28/34 all occur before the final aperture.",
+  "closure_boundary": {
+    "certifies": [
+      "the trace and score of the rank-104 best strongification branch",
+      "the branch comparison against the original target1 branch",
+      "the shared ambient 42->44 shortcut savings for each branch",
+      "the rank104 overhead/variation tradeoff",
+      "the hybrid anchor-node composition of the rank104 strongification trace"
+    ],
+    "does_not_certify_because_not_required": [
+      "all cost-three strongification witnesses beyond the already-certified gap table",
+      "bounded first-return ranking for the length-ten strongification word",
+      "deletions or moving the final promoted x5 suffix",
+      "categorical pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry.py",
+      "sha256": "7faa8b345189c03865cc2b19dc2078edba69c0210a947e7fe0512ccc10887a87"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "strongification_gap_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap/signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap_certificate.json",
+      "sha256": "b15e843220a8f0f701d30b30d00cb272fdfc983aca921f2209393caf638c8f85"
+    },
+    "strongification_gap_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap/signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap.json",
+      "sha256": "d9167c9c8ae7242b2a249f984f4df3b1c02003b948bb57d60c93bd63a0ac7942"
+    },
+    "strongification_gap_report": {
+      "certificate_sha256": "d8f833d801d87679c37bc1364c0a19513a82677e9305be6d7ef591e968eb15d3",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap/report.json",
+      "sha256": "285d03760827b172caf27ffc35b50c6a347ea80a3b2ed44d69f5ace9c9760d11",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD3_PRE_NODE44_STRONGIFICATION_GAP_CERTIFIED"
+    },
+    "strongification_gap_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap/signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap_tables.npz",
+      "sha256": "40d7a0fd5f6104c22d5c073571096b8e15492f3dec42098899ad9ed2ba6b7b28"
+    },
+    "strongification_gap_witnesses": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap/aperture_overhead3_strongification_witnesses.csv",
+      "sha256": "e6d00c458f1409edcf82f76546a98893ea432583bfc1b3098d7165401eccbd0a"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "trace_quotient_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/signature_boundary_spine_aperture_overhead3_trace_class_quotient_certificate.json",
+      "sha256": "05d0ca56dc735a212ec63784a02a807967f1019a6e51833a4e50b27a652041aa"
+    },
+    "trace_quotient_classes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/aperture_overhead3_trace_classes.csv",
+      "sha256": "49f5d6500f46bc17ab105c28767c2ccca935528cd360c127f78a318e1675def3"
+    },
+    "trace_quotient_report": {
+      "certificate_sha256": "74cc3a127d907e7692cd530d0eb35697aaec53863b870d204ac4cb3efe82ce3c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/report.json",
+      "sha256": "041d88b8815343ff752df0bf6c8e0dcc6bad73c31b51f7dde3f297f6906856b0",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD3_TRACE_CLASS_QUOTIENT_CERTIFIED"
+    },
+    "trace_quotient_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/signature_boundary_spine_aperture_overhead3_trace_class_quotient_tables.npz",
+      "sha256": "4f04c225335072c5452d4b635691eb2de75cc5bd739ee266f9bcd357b9e199bb"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry.py",
+      "sha256": "7218b3869be7a2d08b1cc0e9c732928bb7034ddfd681374ae3c4b50e2a1afff9"
+    }
+  },
+  "next_highest_yield_item": "Rank all 24 cost-three strongification witnesses by this same branch-geometry score to see whether rank-104's best word is a global Pareto point or merely the best representative of its prefix class.",
+  "outputs": {
+    "aperture_rank104_strongification_anchor_nodes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/aperture_rank104_strongification_anchor_nodes.csv",
+    "aperture_rank104_strongification_branch_comparison_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/aperture_rank104_strongification_branch_comparison.csv",
+    "aperture_rank104_strongification_branch_profiles_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/aperture_rank104_strongification_branch_profiles.csv",
+    "aperture_rank104_strongification_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/aperture_rank104_strongification_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/report.json",
+    "signature_boundary_spine_aperture_rank104_strongification_branch_geometry": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/signature_boundary_spine_aperture_rank104_strongification_branch_geometry.json",
+    "signature_boundary_spine_aperture_rank104_strongification_branch_geometry_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/signature_boundary_spine_aperture_rank104_strongification_branch_geometry_certificate.json",
+    "signature_boundary_spine_aperture_rank104_strongification_branch_geometry_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry/signature_boundary_spine_aperture_rank104_strongification_branch_geometry_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry@1",
+  "stage_protocol": {
+    "closure": "certify the overhead/variation tradeoff and hybrid branch-node composition",
+    "coherence": "compare both traces against the same ambient 48->42->44 geodesic shortcut",
+    "draft": "read the rank-104 best strongification word from the pre-node44 gap layer",
+    "emit": "emit branch-geometry JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize target1 and rank104 branch traces, scores, shortcuts, and hybrid anchor-node occurrences"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_RANK104_STRONGIFICATION_BRANCH_GEOMETRY_CERTIFIED",
+  "witness": {
+    "anchor_node_occurrences": {
+      "28": 1,
+      "29": 1,
+      "31": 1,
+      "34": 2,
+      "45": 0,
+      "50": 0
+    },
+    "anchor_table_sha256": "7bf92cdebf59cd542ef03efb02c4a1e4752a78d002a6556cdbb3a6367888bcd3",
+    "branch_table_sha256": "fe72e16fa60db7d67e5a620076e26ff2aeadc30a45292d680817c8f117470411",
+    "comparison": {
+      "common_prefix_node_count": 3,
+      "common_suffix_node_count": 1,
+      "comparison_id": 0,
+      "same_gromov_delta_flag": 1,
+      "same_valley_depth_flag": 1,
+      "source_branch_id": 0,
+      "source_divergent_node_0_id": 29,
+      "source_divergent_node_1_id": 45,
+      "source_divergent_node_count": 2,
+      "target_branch_id": 1,
+      "target_closed_path_advantage": 5,
+      "target_divergent_node_0_id": 31,
+      "target_divergent_node_1_id": 34,
+      "target_divergent_node_2_id": 29,
+      "target_divergent_node_3_id": 28,
+      "target_divergent_node_4_id": 34,
+      "target_divergent_node_count": 5,
+      "target_extra_trace_edge_count": 3,
+      "target_overhead_gap": 3,
+      "target_variation_advantage": 26,
+      "trace_edge_edit_distance": 6,
+      "trace_node_edit_distance": 4
+    },
+    "comparison_table_sha256": "209a1d9e9c507accdfc2248e892db75f1bed97b4ae9d442a80b7ff92e036d005",
+    "observable_table_sha256": "a61c0193042257a61cdc3d4e46fd8cbd54ab6772e64d488fbd119022b6e37759",
+    "rank104_strongification_branch": {
+      "closed_path_count": 8,
+      "score": [
+        6,
+        37,
+        1,
+        143
+      ],
+      "shortcut_skipped_nodes": [
+        27,
+        31,
+        34,
+        29,
+        28,
+        34
+      ],
+      "trace": [
+        48,
+        42,
+        27,
+        31,
+        34,
+        29,
+        28,
+        34,
+        44
+      ],
+      "word": [
+        2,
+        1,
+        3,
+        4,
+        1,
+        5,
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    "target1_branch": {
+      "closed_path_count": 3,
+      "score": [
+        3,
+        37,
+        1,
+        169
+      ],
+      "shortcut_skipped_nodes": [
+        27,
+        29,
+        45
+      ],
+      "trace": [
+        48,
+        42,
+        27,
+        29,
+        45,
+        44
+      ],
+      "word": [
+        2,
+        1,
+        5,
+        2,
+        5,
+        4,
+        3
+      ]
+    }
+  }
+}

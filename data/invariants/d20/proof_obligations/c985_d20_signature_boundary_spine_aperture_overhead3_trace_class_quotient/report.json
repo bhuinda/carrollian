@@ -1,0 +1,510 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "74cc3a127d907e7692cd530d0eb35697aaec53863b870d204ac4cb3efe82ce3c",
+  "checks": {
+    "all_overhead3_metrics_recompute": true,
+    "all_trace_classes_share_forced_prefix_and_aperture": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "baseline_class_is_first_and_broad": true,
+    "baseline_to_target_ambient_substitution_cost_is_three": true,
+    "baseline_to_target_closed_repair_edit_is_three": true,
+    "baseline_to_target_edge_edit_is_three": true,
+    "baseline_to_target_symbol_edit_is_three": true,
+    "baseline_to_target_trace_edit_is_two": true,
+    "bounded_backtrack_certificate_certified": true,
+    "bounded_backtrack_report_certified": true,
+    "bounded_backtrack_schema_available": true,
+    "bounded_candidate_table_shape_is_1287_by_codebook": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "closed_repair_certificate_certified": true,
+    "closed_repair_class_table_has_two_rows": true,
+    "closed_repair_report_certified": true,
+    "closed_repair_schema_available": true,
+    "node_readout_table_shape_matches_codebook": true,
+    "observable_table_shape_matches_codebook": true,
+    "overhead3_candidate_count_is_240": true,
+    "overhead3_trace_class_count_is_7": true,
+    "pairwise_trace_edit_table_shape_matches_codebook": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "rewrite_node_table_shape_is_56_by_17": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "target1_class_is_third_and_small": true,
+    "target1_rank_interval_is_122_to_124": true,
+    "trace_class_counts_match": true,
+    "trace_class_rank_maxes_match": true,
+    "trace_class_rank_mins_match": true,
+    "trace_class_table_shape_matches_codebook": true,
+    "transition_table_shape_matches_codebook": true
+  },
+  "claim": "The bounded overhead-3 search has seven trace classes. The baseline alias is a broad 103-candidate basin, while the closed target1 repair is a small three-candidate branch reached from the baseline trace by two node substitutions over a shared 48->42->27 prefix and node44 endpoint.",
+  "closure_boundary": {
+    "certifies": [
+      "the trace-node quotient of bounded overhead-3 candidates",
+      "rank intervals, symbol-word breadth, and node-signature readouts for each trace class",
+      "the baseline-to-target1 transition edit inside this quotient",
+      "that the target1 closed repair is a distinct overhead-3 trace branch rather than a baseline alias"
+    ],
+    "does_not_certify_because_not_required": [
+      "bounded candidates with overhead other than 3",
+      "walks longer than the already-certified bounded search",
+      "why the rank-104 nonbaseline class is not a closed repair target",
+      "new categorical F-symbols, pivotality, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "bounded_backtrack_candidates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/aperture_bounded_backtrack_candidates.csv",
+      "sha256": "4eeaafa2ecf7f83348859fe14e188342bf7a055a8ff8421d49c24e2ce72555d2"
+    },
+    "bounded_backtrack_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/signature_boundary_spine_aperture_bounded_backtrack_search_certificate.json",
+      "sha256": "72dcc1018f6f62c309ab1bebcd31e7595b03a2af15e80b35e516c01ae9435bb5"
+    },
+    "bounded_backtrack_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/signature_boundary_spine_aperture_bounded_backtrack_search.json",
+      "sha256": "b5c90fd94f2da1b86abbf06683f55ceab2673bdad7485023a69d890532302838"
+    },
+    "bounded_backtrack_report": {
+      "certificate_sha256": "6d6e1665edffb6a6698d456d58d9c9f55771090c6f446e553a5d3244b8be75b9",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/report.json",
+      "sha256": "4e53d9fabbe1696024f39db2cf6129f6f2fb75f2eacfd169e49001a7782c16b1",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_BOUNDED_BACKTRACK_SEARCH_CERTIFIED"
+    },
+    "bounded_backtrack_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/signature_boundary_spine_aperture_bounded_backtrack_search_tables.npz",
+      "sha256": "ea4bc28097fa6830db938b61dc09af7b5447cad24de5f8923a83b325115fc6eb"
+    },
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "closed_repair_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking/signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking_certificate.json",
+      "sha256": "143f2438ea7b44f46a577a034620c02342190fea810b2c7fc418336e975fccee"
+    },
+    "closed_repair_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking/signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking.json",
+      "sha256": "dcf9ba7eeb3ccb1a4c93a8b6984c6fb4685ef1646b72d555c07d4d06810a85e7"
+    },
+    "closed_repair_report": {
+      "certificate_sha256": "14f4eb0aa5c8805569285497adce7414e5610ef30851135ba0d97e68d8ef7574",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking/report.json",
+      "sha256": "ac6908785f0455318c8f3f424fba6516cbd558ab462509bc4a3130dca7fb16ec",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD2_CLOSED_REPAIR_CYCLE_RANKING_CERTIFIED"
+    },
+    "closed_repair_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking/signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking_tables.npz",
+      "sha256": "4c2223046377b203891e24999ebdf54fede2d2a923a4e9f10ee1cff04586ee99"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient.py",
+      "sha256": "a793ddfc7e06cb19cf8bb93440a181c895983468d0ec47e2b72bdc13232b879a"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient.py",
+      "sha256": "ef427bbc25d016a5985d68a3d11d764ac53ef3ad0f6b1b83033a9ecea3d857d2"
+    }
+  },
+  "next_highest_yield_item": "Audit the rank-104 nonbaseline valley-37 class 48->42->27->31->50->44: it beats the target1 branch by rank and variation, but did not appear in the closed repair classes. Test whether it is outside the overhead-2 target language or exposes a new repair family.",
+  "outputs": {
+    "aperture_overhead3_pairwise_trace_edits_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/aperture_overhead3_pairwise_trace_edits.csv",
+    "aperture_overhead3_trace_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/aperture_overhead3_trace_classes.csv",
+    "aperture_overhead3_trace_node_readout_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/aperture_overhead3_trace_node_readout.csv",
+    "aperture_overhead3_trace_quotient_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/aperture_overhead3_trace_quotient_observables.csv",
+    "aperture_overhead3_transition_edits_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/aperture_overhead3_transition_edits.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/report.json",
+    "signature_boundary_spine_aperture_overhead3_trace_class_quotient": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/signature_boundary_spine_aperture_overhead3_trace_class_quotient.json",
+    "signature_boundary_spine_aperture_overhead3_trace_class_quotient_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/signature_boundary_spine_aperture_overhead3_trace_class_quotient_certificate.json",
+    "signature_boundary_spine_aperture_overhead3_trace_class_quotient_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/signature_boundary_spine_aperture_overhead3_trace_class_quotient_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient@1",
+  "stage_protocol": {
+    "closure": "certify the minimal baseline-to-target1 trace and selected-symbol transition edits inside the bounded quotient",
+    "coherence": "separate the broad baseline alias basin from the small target1 repair branch",
+    "draft": "quotient all bounded overhead-3 candidates by collapsed anchored trace nodes",
+    "emit": "emit trace-class quotient JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize trace class counts, rank intervals, node signatures, and pairwise trace edits"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD3_TRACE_CLASS_QUOTIENT_CERTIFIED",
+  "witness": {
+    "baseline_to_target1_transition": {
+      "atom_word_min_edit_distance": 3,
+      "carrier_path_min_edit_distance": 3,
+      "cell_edge_path_min_edit_distance": 5,
+      "closed_repair_word_edit_distance": 3,
+      "common_prefix_node_count": 3,
+      "common_suffix_node_count": 1,
+      "source_best_symbol_edit_candidate_id": 4,
+      "source_divergent_node_0_id": 28,
+      "source_divergent_node_1_id": 34,
+      "source_divergent_node_count": 2,
+      "symbol_word_min_edit_distance": 3,
+      "target_best_symbol_edit_candidate_id": 121,
+      "target_divergent_node_0_id": 29,
+      "target_divergent_node_1_id": 45,
+      "target_divergent_node_count": 2,
+      "trace_ambient_aligned_substitution_cost": 3,
+      "trace_edge_edit_distance": 3,
+      "trace_node_edit_distance": 2
+    },
+    "node_readout_table_sha256": "3cbb36e4c896f81d63faeef1aac7afd6878873532a636a730fabbec08a128f31",
+    "observable_table_sha256": "f6800f171285b4ebfa0ac5cc069d980bd4d10fcde3eb587472a3f8c0acc53c13",
+    "overhead3_candidate_count": 240,
+    "pairwise_trace_edit_table_sha256": "5cbc1d37e93cf294977d911971144714f1f7b211ddca4dc374d64c9212a6d656",
+    "trace_class_count": 7,
+    "trace_class_table_sha256": "f12181b0c0a04b38f041d6c28db24db2e4dbd712e3550557210ec9fcd9feba07",
+    "trace_classes": {
+      "0": {
+        "baseline_alias": true,
+        "candidate_count": 103,
+        "distinct_symbol_word_count": 14,
+        "rank_gap_count": 0,
+        "rank_interval": [
+          1,
+          103
+        ],
+        "representative_word": [
+          2,
+          1,
+          4,
+          5,
+          2
+        ],
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 37,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 127
+        },
+        "target1_branch": false,
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          28,
+          34,
+          44
+        ],
+        "trace_signatures": [
+          132,
+          183,
+          146,
+          169,
+          177,
+          185
+        ]
+      },
+      "1": {
+        "baseline_alias": false,
+        "candidate_count": 18,
+        "distinct_symbol_word_count": 3,
+        "rank_gap_count": 0,
+        "rank_interval": [
+          104,
+          121
+        ],
+        "representative_word": [
+          2,
+          1,
+          3,
+          4,
+          5,
+          2
+        ],
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 37,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 137
+        },
+        "target1_branch": false,
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          31,
+          50,
+          44
+        ],
+        "trace_signatures": [
+          132,
+          183,
+          146,
+          151,
+          146,
+          185
+        ]
+      },
+      "2": {
+        "baseline_alias": false,
+        "candidate_count": 3,
+        "distinct_symbol_word_count": 1,
+        "rank_gap_count": 0,
+        "rank_interval": [
+          122,
+          124
+        ],
+        "representative_word": [
+          2,
+          1,
+          5,
+          2,
+          5,
+          4,
+          3
+        ],
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 37,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 169
+        },
+        "target1_branch": true,
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          29,
+          45,
+          44
+        ],
+        "trace_signatures": [
+          132,
+          183,
+          146,
+          169,
+          148,
+          185
+        ]
+      },
+      "3": {
+        "baseline_alias": false,
+        "candidate_count": 9,
+        "distinct_symbol_word_count": 1,
+        "rank_gap_count": 0,
+        "rank_interval": [
+          125,
+          133
+        ],
+        "representative_word": [
+          2,
+          1,
+          0,
+          2,
+          5,
+          4,
+          3
+        ],
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 45,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 143
+        },
+        "target1_branch": false,
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          7,
+          14,
+          44
+        ],
+        "trace_signatures": [
+          132,
+          183,
+          146,
+          138,
+          168,
+          185
+        ]
+      },
+      "4": {
+        "baseline_alias": false,
+        "candidate_count": 51,
+        "distinct_symbol_word_count": 8,
+        "rank_gap_count": 49,
+        "rank_interval": [
+          134,
+          233
+        ],
+        "representative_word": [
+          2,
+          1,
+          2,
+          5,
+          4,
+          3
+        ],
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 65,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 183
+        },
+        "target1_branch": false,
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          26,
+          29,
+          44
+        ],
+        "trace_signatures": [
+          132,
+          183,
+          146,
+          118,
+          169,
+          185
+        ]
+      },
+      "5": {
+        "baseline_alias": false,
+        "candidate_count": 35,
+        "distinct_symbol_word_count": 1,
+        "rank_gap_count": 69,
+        "rank_interval": [
+          137,
+          240
+        ],
+        "representative_word": [
+          2,
+          1,
+          1,
+          2,
+          5,
+          4,
+          3
+        ],
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 65,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 183
+        },
+        "target1_branch": false,
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          22,
+          29,
+          44
+        ],
+        "trace_signatures": [
+          132,
+          183,
+          146,
+          118,
+          169,
+          185
+        ]
+      },
+      "6": {
+        "baseline_alias": false,
+        "candidate_count": 21,
+        "distinct_symbol_word_count": 1,
+        "rank_gap_count": 35,
+        "rank_interval": [
+          150,
+          205
+        ],
+        "representative_word": [
+          2,
+          1,
+          2,
+          2,
+          5,
+          4,
+          3
+        ],
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 65,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 183
+        },
+        "target1_branch": false,
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          26,
+          39,
+          44
+        ],
+        "trace_signatures": [
+          132,
+          183,
+          146,
+          118,
+          148,
+          185
+        ]
+      }
+    },
+    "transition_table_sha256": "b545f04c9345b14e19435264423d49f288f35a1ec064406ef9294c5a9e8dba9d"
+  }
+}

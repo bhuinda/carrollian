@@ -1,0 +1,238 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "0fbd90978a6fc50ec28c6cc1e91ce38b0a338e21311fbdc13b4c195125823473",
+  "checks": {
+    "all_incident_x4_edges_are_internal": true,
+    "aperture_completion_path_table_shape_is_8_by_20": true,
+    "aperture_signature_is_185": true,
+    "aperture_word_x2_x4_x5_is_node44": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "cell_complex_schema_available": true,
+    "clean_choice_table_shape_is_2_by_23": true,
+    "clean_detour_certificate_certified": true,
+    "clean_detour_report_certified": true,
+    "clean_detour_schema_available": true,
+    "completion_cycle_edges_match_expected": true,
+    "completion_cycle_symbols_match_expected": true,
+    "direct_boundary_x4_completion_count_is_zero": true,
+    "incident_x4_edges_from_negative8_match_expected": true,
+    "node44_completion_count_is_3": true,
+    "node44_completions_are_edge33_then_x5_returns": true,
+    "observable_table_shape_matches_codebook": true,
+    "origin_returning_completion_unique": true,
+    "selected_clean_choice_is_x2_edge14_return_edge11": true,
+    "selected_clean_choice_returns_to_negative8_x1": true,
+    "selected_completion_is_edge33_then_edge43": true,
+    "selected_completion_realizes_node44": true,
+    "selected_completion_returns_to_origin_positive12": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "two_step_boundary_return_count_is_8": true,
+    "typed_corridor_certificate_certified": true,
+    "typed_corridor_report_certified": true,
+    "typed_edge_table_shape_is_16_by_23": true,
+    "x4_edge33_targets_negative13": true,
+    "x4_first_edge_table_shape_is_4_by_14": true
+  },
+  "claim": "The selected clean x2,x1 continuation has no direct boundary x4 contact, but it does have a certified two-step aperture completion: edge 33 supplies x4 to carrier 13, then edge 43 returns by x5 to the origin positive carrier 12, realizing canonical node 44.",
+  "closure_boundary": {
+    "certifies": [
+      "the direct x4 boundary obstruction after the selected negative-8 return",
+      "all one- and two-step local x4 boundary-return paths from carrier 8",
+      "the three two-step node-44 aperture completions through carrier 13",
+      "the unique origin-returning completion cycle using edges 14, 11, 33, and 43"
+    ],
+    "does_not_certify_because_not_required": [
+      "that the origin-returning cycle is globally optimal among longer detours",
+      "that the completion preserves the complete original typed tail after the cycle",
+      "mixed x3/x4 first-contact disambiguation beyond the finite local table",
+      "new categorical F-symbols, braiding, pivotality, or center data"
+    ]
+  },
+  "inputs": {
+    "cell_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex.json",
+      "sha256": "88fedc4518455bbe017f962294fe334096da7366e80925da41c2dbe8e657d5b8"
+    },
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "clean_detour_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice_certificate.json",
+      "sha256": "8abed84397e0e493982f25c9da6a51da50b0a2d8098b5c3c47a55c0393ce282c"
+    },
+    "clean_detour_choice": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice.json",
+      "sha256": "4d88041041b28d2afb01fba7a2de3c66cc0bd729c6d3f3fad349cdf5bf3070b0"
+    },
+    "clean_detour_choices": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/x2_clean_detour_return_choices.csv",
+      "sha256": "122bfe670c9b07984f592014e16fb8f678d46a3bfb85b94e62381fd055757fd5"
+    },
+    "clean_detour_report": {
+      "certificate_sha256": "e7744e48d48ebd64d7d40c1563b8abd2e2d7feb68688117d18ee778f559d124d",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/report.json",
+      "sha256": "a237d353b1a5faa966ed49904b40ad53708b53a7813151d51dcb3cd01c3768bb",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_CLEAN_DETOUR_CHOICE_CERTIFIED"
+    },
+    "clean_detour_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice_tables.npz",
+      "sha256": "0af003e3fe92ddaebcee935dd7780e7e435726882d96d282b938a8788a8c9b74"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_x2_x4_aperture_completion.py",
+      "sha256": "a9a30e2bcd505549e0cc7d13a3b049f496646ba2c3598e23124b21f23181d589"
+    },
+    "residual_chart_carriers": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/carrier_residual_chart.csv",
+      "sha256": "f90daabada64878fef38a913d18ba88448a9dfeb44fdb3fafcb061664caad0e0"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "typed_corridor_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_certificate.json",
+      "sha256": "39c6a12a055ae0fae9d2324bba9bd599233bb31888d8f1cd7f63ceeb62e5bc8c"
+    },
+    "typed_corridor_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/corridor_edge_symbols.csv",
+      "sha256": "2a923d6c7f0c3acc1f6d74bf8cd1f220f9d8cecbbe66387fe4de9d92222d3969"
+    },
+    "typed_corridor_report": {
+      "certificate_sha256": "38a1f0ee65b67ef345a94d0914b3394e6b838eef76966f53e087aafbad688608",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/report.json",
+      "sha256": "7a79fff3f22357e0583814ad7dd7511f1b16e3d8986394b5147c5fdd415dec6a",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_TYPED_CORRIDORS_CERTIFIED"
+    },
+    "typed_corridor_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_tables.npz",
+      "sha256": "a94c2612d76f6fcee8f57a36c4f1cb141ad62bd09cd6c8d9d84b0eac86c8de38"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_x2_x4_aperture_completion.py",
+      "sha256": "cfb6b65382701dbd05d5386d1f560feabf1ce9c15cfbd1a4834e04474c4ecf92"
+    }
+  },
+  "next_highest_yield_item": "Promote the local aperture completion into a carrier-cycle language certificate: compute the metric and rewrite-window effects of the cycle 12-3-8-13-12 with symbols x2,x1,x4,x5, and compare it to the ambient language-graph geodesic 48-42-44.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/report.json",
+    "signature_boundary_spine_x2_x4_aperture_completion": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/signature_boundary_spine_x2_x4_aperture_completion.json",
+    "signature_boundary_spine_x2_x4_aperture_completion_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/signature_boundary_spine_x2_x4_aperture_completion_certificate.json",
+    "signature_boundary_spine_x2_x4_aperture_completion_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/signature_boundary_spine_x2_x4_aperture_completion_tables.npz",
+    "x2_x4_aperture_completion_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/x2_x4_aperture_completion_observables.csv",
+    "x2_x4_aperture_completion_paths_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/x2_x4_aperture_completion_paths.csv",
+    "x2_x4_aperture_first_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/x2_x4_aperture_first_edges.csv"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_x2_x4_aperture_completion@1",
+  "stage_protocol": {
+    "closure": "certify a local aperture completion without claiming it preserves the full typed tail globally",
+    "coherence": "check direct x4 obstruction, two-step x4/x5 completions, typed-boundary matches, and symbolic node 44",
+    "draft": "start from the certified clean return to negative carrier 8 and enumerate local x4 contacts",
+    "emit": "emit x2-x4 aperture-completion JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize x4 first edges, boundary-return paths, node-44 completions, and the origin-returning cycle"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_X4_APERTURE_COMPLETION_CERTIFIED",
+  "witness": {
+    "aperture_canonical_triple_id": 44,
+    "aperture_completion_path_table_sha256": "c0d6a86cd92f1d9f9e1c06c43412e3842e0ab6c0360005684cc5f2b7da8826e2",
+    "aperture_signature_union_count": 185,
+    "aperture_word": [
+      2,
+      4,
+      5
+    ],
+    "completion_cycle": {
+      "carrier_ids": [
+        12,
+        3,
+        8,
+        13,
+        12
+      ],
+      "cell_edge_ids": [
+        14,
+        11,
+        33,
+        43
+      ],
+      "symbol_ids": [
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    "direct_boundary_x4_edge_count": 0,
+    "incident_x4_edge_ids": [
+      21,
+      24,
+      27,
+      33
+    ],
+    "node44_completion_paths": [
+      [
+        33,
+        40
+      ],
+      [
+        33,
+        42
+      ],
+      [
+        33,
+        43
+      ]
+    ],
+    "observable_table_sha256": "9ebb667e3c6b7a8fd428f72dfaac80a589c575a3f560b09452dedfa2e17ccea4",
+    "post_return_carrier_id": 8,
+    "selected_clean_return_path": [
+      14,
+      11
+    ],
+    "selected_completion_positive_return_carrier_id": 12,
+    "selected_origin_returning_completion": [
+      33,
+      43
+    ],
+    "two_step_boundary_return_count": 8,
+    "x4_first_edge_table_sha256": "399408333d1d3885393c32516a94ae2fa9388d8b71bb166559b51699861acbad"
+  }
+}

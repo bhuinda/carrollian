@@ -1,0 +1,110 @@
+{
+  "certified_reading": [
+    "the 16 residual positive-negative boundary edges form a directed reversible conductance spine",
+    "edge 14, from positive carrier mask 11 to negative carrier mask 13, is the dominant entropy edge",
+    "the top five spine edges are [14, 15, 2, 6, 3] and carry 0.581986815772 of cut flux",
+    "central-negative boundary edges carry 0.975093779736 of edge-level crossing entropy",
+    "refining the boundary-rate alphabet from two contact types to 16 edges raises entropy rate to 1.137598297346"
+  ],
+  "checks": {
+    "boundary_edge_count_is_16": true,
+    "boundary_flux_certificate_certified": true,
+    "boundary_flux_json_schema_available": true,
+    "boundary_flux_report_certified": true,
+    "boundary_flux_tables_available": true,
+    "boundary_rate_certificate_certified": true,
+    "boundary_rate_json_schema_available": true,
+    "boundary_rate_report_certified": true,
+    "boundary_rate_tables_available": true,
+    "central_entropy_fraction_matches_expected": true,
+    "directed_boundary_edge_count_is_32": true,
+    "directed_edge_table_shape_is_32_by_13": true,
+    "directed_twice_flow_sum_matches_cut_twice": true,
+    "directed_twice_flows_are_reversible_by_edge": true,
+    "edge_entropy_refines_partition_entropy": true,
+    "edge_entropy_surplus_over_partition_matches_expected": true,
+    "edge_entropy_surplus_over_quotient_matches_expected": true,
+    "edge_refined_entropy_rate_matches_expected": true,
+    "entropy_rounding_delta_within_one": true,
+    "high_and_central_edge_counts_match": true,
+    "negative_boundary_probabilities_sum_to_upstream_exit": true,
+    "observable_table_shape_matches_codebook": true,
+    "partition_edge_entropy_totals_match_expected": true,
+    "positive_boundary_probabilities_sum_to_upstream_exit": true,
+    "spine_edge_table_shape_is_16_by_19": true,
+    "spine_order_matches_expected": true,
+    "top_five_entropy_fraction_matches_expected": true,
+    "top_five_flux_fraction_matches_expected": true,
+    "top_five_spine_matches_expected": true,
+    "top_spine_edge_matches_expected": true,
+    "total_flux_matches_boundary_rate": true
+  },
+  "schema": "c985.d20_signature_boundary_conductance_spine_certificate@1",
+  "status": "C985_D20_SIGNATURE_BOUNDARY_CONDUCTANCE_SPINE_CERTIFIED",
+  "witness": {
+    "boundary_edge_count": 16,
+    "boundary_edge_entropy_contribution_sum_x1e12": 932368479926,
+    "conductance_directed_edge_table_sha256": "e2931deac7171d7349117171982b9f7f305ced60e96406b9b393f6cb50439a72",
+    "conductance_observable_table_sha256": "d6336a67c1610bdde15850d99c7deb8f0743f6182173bc40cb8d23f40b81cff7",
+    "conductance_spine_edge_table_sha256": "dfee9e68b0fcf7615ce1065797f8a2de8062b8e66344b800f8012b7a665c49e1",
+    "directed_boundary_edge_count": 32,
+    "edge_entropy_surplus_over_partition_x1e12": 579016158147,
+    "edge_entropy_surplus_over_quotient_x1e12": 598158902304,
+    "edge_refined_entropy_rate_x1e12": 1137598297346,
+    "entropy_rounding_delta_x1e12": 1,
+    "negative_boundary_probability_sum_x1e12": 319560035288,
+    "negative_edge_refined_row_entropy_x1e12": 1426444138331,
+    "partition_edge_entropy_fraction_x1e12": {
+      "central_negative": 975093779736,
+      "high_negative": 24906220264
+    },
+    "partition_edge_entropy_x1e12": {
+      "central_negative": 909146705198,
+      "high_negative": 23221774728
+    },
+    "partition_refined_entropy_rate_x1e12": 558582139199,
+    "positive_boundary_probability_sum_x1e12": 190831926563,
+    "positive_edge_refined_row_entropy_x1e12": 965107991211,
+    "quotient_entropy_rate_x1e12": 539439395042,
+    "self_entropy_contribution_x1e12": 205229817421,
+    "spine_order_boundary_mask_edge_ids": [
+      14,
+      15,
+      2,
+      6,
+      3,
+      7,
+      8,
+      11,
+      9,
+      13,
+      12,
+      5,
+      10,
+      4,
+      1,
+      0
+    ],
+    "top_five_spine": {
+      "boundary_mask_edge_ids": [
+        14,
+        15,
+        2,
+        6,
+        3
+      ],
+      "entropy_fraction_of_boundary_crossing_x1e12": 521357092366,
+      "flux_fraction_x1e12": 581986815772,
+      "total_entropy_contribution_x1e12": 486096919708,
+      "undirected_stationary_flux_x1e12": 139072996173
+    },
+    "top_spine_edge": {
+      "boundary_mask_edge_id": 14,
+      "negative_carrier_mask_class_id": 13,
+      "positive_carrier_mask_class_id": 11,
+      "total_entropy_contribution_x1e12": 135084234325,
+      "undirected_stationary_flux_x1e12": 43567340880
+    },
+    "total_undirected_cut_flux_x1e12": 238962451389
+  }
+}

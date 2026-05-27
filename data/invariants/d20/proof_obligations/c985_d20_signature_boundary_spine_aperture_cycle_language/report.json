@@ -1,0 +1,309 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "cc0415a30de266e0fb7c84acdebd057295d1b9b1a4366be7f9b7f5ef25fa322b",
+  "checks": {
+    "ambient_geodesic_length_is_2": true,
+    "ambient_signature_variation_is_53": true,
+    "aperture_completion_certificate_certified": true,
+    "aperture_completion_report_certified": true,
+    "aperture_completion_schema_available": true,
+    "aperture_fan_certificate_certified": true,
+    "aperture_fan_report_certified": true,
+    "aperture_path_table_shape_is_6_by_17": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "carrier_trace_edges_exist_in_rewrite_complex": true,
+    "carrier_trace_nodes_match_expected": true,
+    "carrier_trace_window_nodes_match_expected": true,
+    "carrier_trace_window_signatures_match_expected": true,
+    "completion_cycle_carriers_match_expected": true,
+    "completion_cycle_edges_match_expected": true,
+    "completion_cycle_symbols_match_expected": true,
+    "completion_path_table_shape_is_8_by_20": true,
+    "completion_subsequence_also_realizes_node44": true,
+    "geodesic_min_after_node42_is_183": true,
+    "geodesic_shortcut_edge_42_44_exists": true,
+    "language_edge_table_shape_is_7_by_10": true,
+    "language_graph_certificate_certified": true,
+    "language_graph_report_certified": true,
+    "language_node_table_shape_is_8_by_14": true,
+    "metric_node_table_shape_is_6_by_8": true,
+    "metric_subgraph_delta_is_one_half": true,
+    "metric_subgraph_diameter_is_3": true,
+    "metric_subgraph_radius_is_2": true,
+    "observable_table_shape_matches_codebook": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "rewrite_node_table_shape_is_56_by_17": true,
+    "signature_variation_overhead_is_74": true,
+    "strict_ambient_geodesic_is_48_42_44": true,
+    "strict_ambient_geodesic_restores_x2_then_x4": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "trace_contains_geodesic_nodes_48_42_44": true,
+    "trace_detour_overhead_is_3": true,
+    "trace_edge_table_shape_is_6_by_14": true,
+    "trace_first_edge_matches_geodesic_entry": true,
+    "trace_length_is_5": true,
+    "trace_min_after_node42_is_146": true,
+    "trace_signature_variation_is_127": true,
+    "trace_terminal_node_is_aperture_44": true,
+    "window_table_shape_is_7_by_17": true
+  },
+  "claim": "The local carrier aperture cycle realizes node 44 as a typed hyperbolic detour: it expands the ambient geodesic 48 -> 42 -> 44 into the carrier-trace path 48 -> 42 -> 27 -> 28 -> 34 -> 44, with exact detour overhead 3 and subgraph Gromov delta 0.5.",
+  "closure_boundary": {
+    "certifies": [
+      "the rewrite-window trace induced by the origin-returning carrier cycle",
+      "the comparison between carrier trace 48-42-27-28-34-44 and ambient geodesic 48-42-44",
+      "trace length overhead, signature variation overhead, and the node-27 signature valley",
+      "exact metric diameter, radius, and Gromov delta of the trace plus shortcut subgraph"
+    ],
+    "does_not_certify_because_not_required": [
+      "global optimality among all possible carrier cycles",
+      "a new typed-tail preservation theorem after the full aperture cycle",
+      "new categorical F-symbols, braiding, pivotality, or Drinfeld-center data",
+      "that the cognitive/playable interface is complete"
+    ]
+  },
+  "inputs": {
+    "aperture_completion": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/signature_boundary_spine_x2_x4_aperture_completion.json",
+      "sha256": "f006d0dff84b5ef9e73cc108b581fb1a1274c974b0e1bd6ec58e9993d9f35ceb"
+    },
+    "aperture_completion_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/signature_boundary_spine_x2_x4_aperture_completion_certificate.json",
+      "sha256": "034f9971fbb36141eab02ba2cf994e885b8013002a168eee8bc1e812ac733502"
+    },
+    "aperture_completion_paths": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/x2_x4_aperture_completion_paths.csv",
+      "sha256": "b0f3e11ed42c6331f81075b9e5e62b9b839726b4ce47a1b59fb4eda005a1fd5d"
+    },
+    "aperture_completion_report": {
+      "certificate_sha256": "0fbd90978a6fc50ec28c6cc1e91ce38b0a338e21311fbdc13b4c195125823473",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/report.json",
+      "sha256": "542c6bd79835d1bc8c6335b90124b510aa318d6d966bedd69c58d93727070ad8",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_X4_APERTURE_COMPLETION_CERTIFIED"
+    },
+    "aperture_completion_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_x4_aperture_completion/signature_boundary_spine_x2_x4_aperture_completion_tables.npz",
+      "sha256": "3c743d89df9f7608f9f2975880e4c1ea60e2bd6f65bed8882ba28807c5f4d4f8"
+    },
+    "aperture_fan_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/signature_boundary_spine_aperture_geodesic_fan_certificate.json",
+      "sha256": "1aea9ed50845aec7876bfa7e6dc6013bb50281d6a01e0051bb50dc2459c580fb"
+    },
+    "aperture_fan_paths": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/aperture_geodesic_paths.csv",
+      "sha256": "86a333e537ff5250db157fb1c246477317d4f3b13ef94a1b633ebb06a7230824"
+    },
+    "aperture_fan_report": {
+      "certificate_sha256": "ce548d829fc9ea8e9c1b2feffc4021f888784d6cb8436314bed6b84916d8e22d",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/report.json",
+      "sha256": "b92f9f1721ec2bd534ffb933a9f902a37efd37a95f89c951497ade1943773b48",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_GEODESIC_FAN_CERTIFIED"
+    },
+    "aperture_fan_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/signature_boundary_spine_aperture_geodesic_fan_tables.npz",
+      "sha256": "b9adec69cf5fd52eb13e796077973b88bd7693f9cea10ebc4363bc053698a9be"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_cycle_language.py",
+      "sha256": "c5b78c06fb074af6c20bdb5760863f44d3c0bb0013ccd318248d49475d55bf86"
+    },
+    "language_graph_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/signature_boundary_spine_language_graph_certificate.json",
+      "sha256": "6050a96dd1908f95f1a70bafbba94d4417d390d8877b53ceb74c6fd5bbc5a06f"
+    },
+    "language_graph_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_graph_edges.csv",
+      "sha256": "3254ff54e82614e18ea6334dd1d30caddf788ca14aee3dc6a429db5ce5fe729a"
+    },
+    "language_graph_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_graph_nodes.csv",
+      "sha256": "27649b2f596afbda1744b49c3a29695e3cbcd69bf3e023eb9b96ba49e981c8e2"
+    },
+    "language_graph_report": {
+      "certificate_sha256": "43437c9da6a4aa1fd1a9d014a70b65569b81b1142ea433cee45ed038ac508469",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/report.json",
+      "sha256": "e53463c2b1c056f6b8409b25d62cc2e47ec911f0b6cfcf047bcb13203a1abf82",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_LANGUAGE_GRAPH_CERTIFIED"
+    },
+    "language_graph_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/signature_boundary_spine_language_graph_tables.npz",
+      "sha256": "3aaba159e15a9baa673b788dcee36fd7fbf16394347f1a153800a366b4ff7e5f"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_cycle_language.py",
+      "sha256": "205f94e2018c50cf48f856d8cb91a4a473df26f6560a51350fc2494d6818a6ab"
+    }
+  },
+  "next_highest_yield_item": "Enumerate all origin-returning carrier cycles of comparable length that realize node 44, then rank them by trace overhead, signature valley depth, and Gromov delta against the ambient aperture geodesic.",
+  "outputs": {
+    "aperture_cycle_metric_nodes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/aperture_cycle_metric_nodes.csv",
+    "aperture_cycle_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/aperture_cycle_observables.csv",
+    "aperture_cycle_trace_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/aperture_cycle_trace_edges.csv",
+    "aperture_cycle_trace_windows_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/aperture_cycle_trace_windows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/report.json",
+    "signature_boundary_spine_aperture_cycle_language": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/signature_boundary_spine_aperture_cycle_language.json",
+    "signature_boundary_spine_aperture_cycle_language_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/signature_boundary_spine_aperture_cycle_language_certificate.json",
+    "signature_boundary_spine_aperture_cycle_language_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/signature_boundary_spine_aperture_cycle_language_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_cycle_language@1",
+  "stage_protocol": {
+    "closure": "certify the cycle language geometry without claiming global optimality among all carrier cycles",
+    "coherence": "compare trace length, signature variation, metric distances, and Gromov delta against the geodesic 48-42-44",
+    "draft": "read the origin-returning carrier cycle as a cyclic symbolic word",
+    "emit": "emit aperture-cycle language JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize contiguous and cyclic rewrite windows plus the ambient geodesic shortcut"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CYCLE_LANGUAGE_CERTIFIED",
+  "witness": {
+    "ambient_geodesic_length_48_to_44": 2,
+    "ambient_geodesic_nodes": [
+      48,
+      42,
+      44
+    ],
+    "ambient_shortcut_edge": [
+      42,
+      44
+    ],
+    "ambient_signature_total_variation": 53,
+    "carrier_cycle": {
+      "carrier_ids": [
+        12,
+        3,
+        8,
+        13,
+        12
+      ],
+      "cell_edge_ids": [
+        14,
+        11,
+        33,
+        43
+      ],
+      "symbol_ids": [
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    "carrier_trace_edges": [
+      [
+        48,
+        42
+      ],
+      [
+        42,
+        27
+      ],
+      [
+        27,
+        28
+      ],
+      [
+        28,
+        34
+      ],
+      [
+        34,
+        44
+      ]
+    ],
+    "carrier_trace_nodes": [
+      48,
+      42,
+      27,
+      28,
+      34,
+      44
+    ],
+    "carrier_trace_window_nodes": [
+      48,
+      42,
+      27,
+      28,
+      34,
+      44
+    ],
+    "carrier_trace_window_signatures": [
+      132,
+      183,
+      146,
+      169,
+      177,
+      185
+    ],
+    "completion_subsequence_node": 44,
+    "completion_subsequence_word": [
+      2,
+      4,
+      5
+    ],
+    "cycle_adjacency_sha256": "e027231ebd7edb85e6056a46331a842c4b37a77960a49419bdb449e0801d49b6",
+    "cycle_distance_table_sha256": "cde5a2f545f7a9d70eae9edf82dc20bf6187054d6f39164b19ddf4142adb5296",
+    "cycle_metric_delta_witness_node_ids": [
+      48,
+      27,
+      28,
+      34
+    ],
+    "cycle_metric_diameter": 3,
+    "cycle_metric_gromov_delta": 0.5,
+    "cycle_metric_gromov_delta_twice": 1,
+    "cycle_metric_radius": 2,
+    "geodesic_min_signature_after_node42": 183,
+    "metric_node_table_sha256": "7a6ed52204dfba35f1899a003ee50877898f855f0de0c60286117fa7a4563989",
+    "observable_table_sha256": "60962c88c831e9d51195cac9cdb0cc4f3ea7857a4b90b2969528aef9ec120621",
+    "signature_variation_overhead": 74,
+    "trace_detour_overhead": 3,
+    "trace_edge_table_sha256": "7d9f25485c3e2668db8f97ba42ac1be71f2e4e4f70ceb4274785e3227dd2dd8a",
+    "trace_length_48_to_44": 5,
+    "trace_min_signature_after_node42": 146,
+    "trace_signature_total_variation": 127,
+    "window_table_sha256": "cc5f25e620c85645a4ac663ca3ee1f0f7e32bee83a3154bfae7bb1a6953c89b8"
+  }
+}

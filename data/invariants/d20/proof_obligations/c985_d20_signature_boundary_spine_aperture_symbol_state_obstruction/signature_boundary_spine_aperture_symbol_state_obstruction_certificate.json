@@ -1,0 +1,159 @@
+{
+  "certified_reading": [
+    "the bounded carrier quotient has 89 anchored symbol states and 169 observed transitions",
+    "from the post-x2 state, the immediate x1 transition is the only bounded observed outgoing transition and it deterministically lands at node27",
+    "the ambient geodesic edge 42 -> 44 exists, but its rewrite label adds x4 rather than the required x1 tail symbol",
+    "the pure symbol automaton has two x1-tail overhead-2 completions, but the bounded carrier quotient realizes neither; the earliest missing move is the duplicate node28 transition labelled x2 after x2,x1,x4"
+  ],
+  "checks": {
+    "ambient_42_to_44_edge_exists_but_requires_x4_addition": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "bounded_backtrack_certificate_certified": true,
+    "bounded_backtrack_report_certified": true,
+    "bounded_backtrack_schema_available": true,
+    "bounded_candidate_table_shape_is_1287_by_60": true,
+    "carrier_bounded_search_realizes_no_symbolic_overhead2_path": true,
+    "completion_table_shape_is_8_by_codebook": true,
+    "first_forbidden_transition_is_duplicate_node28_x2": true,
+    "forbidden_table_shape_is_2_by_codebook": true,
+    "minimal_forbidden_transition_count_is_2": true,
+    "no_tail_symbolic_min_length_is_2_with_two_paths": true,
+    "no_x1_labeled_skip_transition_exists": true,
+    "observable_table_shape_matches_codebook": true,
+    "observed_state_count_is_89": true,
+    "observed_symbol_word_count_is_126": true,
+    "observed_trace_sequence_count_is_85": true,
+    "observed_transition_count_is_169": true,
+    "post_x2_outgoing_table_shape_is_6_by_codebook": true,
+    "post_x2_source_has_only_x1_observed_in_bounded_search": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "state_table_shape_is_89_by_codebook": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "symbolic_x1_tail_has_two_overhead2_paths": true,
+    "transition_table_shape_is_169_by_codebook": true,
+    "x1_tail_symbolic_min_length_is_4_with_six_paths": true,
+    "x1_transition_forces_node27": true
+  },
+  "schema": "c985.d20_signature_boundary_spine_aperture_symbol_state_obstruction_certificate@1",
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_SYMBOL_STATE_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "ambient_42_to_44_edge": {
+      "exists": true,
+      "required_tail_symbol_id": 1,
+      "target_added_symbol_id": 4
+    },
+    "bounded_candidate_count": 1287,
+    "completion_table_sha256": "90cf1e0041abf3173fd22dce3512d7abe362f0790503709e986700897f25b386",
+    "forbidden_table_sha256": "f150404e08ae3bf9ee0db4283f0dba29ee8eb5c8519e53e85e67ddb47c7aca8b",
+    "minimal_forbidden_transitions": [
+      {
+        "bounded_exact_word_count": 0,
+        "bounded_prefix_word_count": 0,
+        "duplicate_trace_flag": 1,
+        "first_missing_transition_rank": 3,
+        "forbidden_id": 0,
+        "label_symbol_id": 2,
+        "observed_transition_count": 0,
+        "raw_target_node_id": 28,
+        "signature_valley_depth": 37,
+        "source_state_observed_count": 410,
+        "source_suffix_left_symbol_id": 1,
+        "source_suffix_right_symbol_id": 4,
+        "source_trace_node_id": 28,
+        "target_suffix_left_symbol_id": 4,
+        "target_suffix_right_symbol_id": 2,
+        "target_trace_node_id": 28,
+        "trace_detour_overhead": 2,
+        "word_symbol_0_id": 2,
+        "word_symbol_1_id": 1,
+        "word_symbol_2_id": 4,
+        "word_symbol_3_id": 2,
+        "word_symbol_4_id": 5
+      },
+      {
+        "bounded_exact_word_count": 0,
+        "bounded_prefix_word_count": 0,
+        "duplicate_trace_flag": 0,
+        "first_missing_transition_rank": 4,
+        "forbidden_id": 1,
+        "label_symbol_id": 4,
+        "observed_transition_count": 0,
+        "raw_target_node_id": 44,
+        "signature_valley_depth": 37,
+        "source_state_observed_count": 7,
+        "source_suffix_left_symbol_id": 5,
+        "source_suffix_right_symbol_id": 2,
+        "source_trace_node_id": 29,
+        "target_suffix_left_symbol_id": 2,
+        "target_suffix_right_symbol_id": 4,
+        "target_trace_node_id": 44,
+        "trace_detour_overhead": 2,
+        "word_symbol_0_id": 2,
+        "word_symbol_1_id": 1,
+        "word_symbol_2_id": 5,
+        "word_symbol_3_id": 2,
+        "word_symbol_4_id": 4
+      }
+    ],
+    "node27_skip_possible_with_immediate_x1": false,
+    "observable_table_sha256": "918161b1e96fe2a5756be8ec4ef2b0f3caf575ec09ab82bc1323a618896d9f8d",
+    "observed_state_count": 89,
+    "observed_symbol_word_count": 126,
+    "observed_trace_sequence_count": 85,
+    "observed_transition_count": 169,
+    "post_x2_outgoing": {
+      "0": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 12,
+        "signature_union_count": 142
+      },
+      "1": {
+        "observed_bounded_transition_count": 1287,
+        "raw_target_node_id": 27,
+        "signature_union_count": 146
+      },
+      "2": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 37,
+        "signature_union_count": 132
+      },
+      "3": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 40,
+        "signature_union_count": 132
+      },
+      "4": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 41,
+        "signature_union_count": 167
+      },
+      "5": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 42,
+        "signature_union_count": 183
+      }
+    },
+    "post_x2_outgoing_table_sha256": "a197c37b2ea8015c87ed1082532f271c0d2f826c36739f7991c5935312aaf9b8",
+    "state_table_sha256": "9e63779d81d183e0935e47664c2ba13cbc489e4bce2ecbcb43148aad75295c62",
+    "symbolic_x1_tail_overhead2_words": [
+      [
+        2,
+        1,
+        4,
+        2,
+        5
+      ],
+      [
+        2,
+        1,
+        5,
+        2,
+        4
+      ]
+    ],
+    "transition_table_sha256": "d04cee2b7b3cc91d89b82994aed7adc3293d6f5322efce93ee6c6e07de83d200"
+  }
+}

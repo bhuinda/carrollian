@@ -1,0 +1,278 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "38a1f0ee65b67ef345a94d0914b3394e6b838eef76966f53e087aafbad688608",
+  "checks": {
+    "all_corridor_edges_have_single_shared_atom": true,
+    "all_shared_atoms_map_to_alphabet_symbols": true,
+    "branch_corridor_counts_match_expected": true,
+    "branch_corridor_table_shape_is_6_by_22": true,
+    "branching_law_report_certified": true,
+    "branching_law_schema_available": true,
+    "branching_law_tables_available": true,
+    "corridor_carriers_cover_full_six_symbol_alphabet": true,
+    "corridor_edge_table_shape_is_16_by_23": true,
+    "delayed_obstruction_gate_is_x3": true,
+    "first_non_full_branch_is_flip_mask_9": true,
+    "gate_missing_symbols_are_x2_x4": true,
+    "gate_symbol_histogram_matches_expected": true,
+    "gate_symbol_sequence_matches_expected": true,
+    "missing_gate_pair_is_full_sector_max_rewrite_pair": true,
+    "observable_table_shape_matches_codebook": true,
+    "obstruction_gate_symbols_match_expected": true,
+    "pre_flip_branches_have_full_alphabet": true,
+    "residual_chart_report_certified": true,
+    "residual_chart_tables_available": true,
+    "spine_path_report_certified": true,
+    "spine_path_tables_available": true,
+    "symbolic_alphabet_schema_available": true,
+    "symbolic_rewrite_report_certified": true,
+    "symbolic_rewrite_tables_available": true
+  },
+  "claim": "The negative-branch spine has a typed corridor grammar: every boundary contact is delivered by one shared six-symbol alphabet letter, the gate letters are x0, x1, x3, and x5, and the missing gate pair x2/x4 is exactly the full-sector max-signature binary rewrite pair.",
+  "closure_boundary": {
+    "certifies": [
+      "positive and negative carrier-mask corridors for each negative branch",
+      "the unique shared active atom and symbolic gate letter for every boundary-spine contact",
+      "that the corridor carriers cover the full six-symbol alphabet while the gate letters omit x2 and x4",
+      "that the omitted gate pair x2/x4 is the certified full-sector max-signature binary rewrite pair"
+    ],
+    "does_not_certify_because_not_required": [
+      "a new product or rewrite rule beyond the existing six-symbol alphabet",
+      "that the corridor grammar is invariant under alternative spine rankings",
+      "higher-eigenmode corridor grammars",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "branching_law": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/signature_boundary_spine_branching_law.json",
+      "sha256": "689405dbb6dbe29fd01fa6b94113f50a7bcdcf1415df619ddffb07c0e2e65889"
+    },
+    "branching_law_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/signature_boundary_spine_branching_law_certificate.json",
+      "sha256": "4cd3f6305459e1219fb582c7bd49cec0d74b7bbc6b7482cac1c8b3aed59d58b7"
+    },
+    "branching_law_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/negative_branch_order.csv",
+      "sha256": "79f48fa41983fc64f7169f17c52a7a254ac861d28063c2ad58765dd1a0e0612c"
+    },
+    "branching_law_report": {
+      "certificate_sha256": "bb279384ec1e8d6dca2982275405fb30cac91c0db5889270b5c5d5e5dd874030",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/report.json",
+      "sha256": "7a96eeecb090fbd8bd6524175e4830c976881b78ccad411fbb1fac293e6ed998",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_BRANCHING_LAW_CERTIFIED"
+    },
+    "branching_law_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/signature_boundary_spine_branching_law_tables.npz",
+      "sha256": "e05f82f726b420fca8ad1b71dd382159d81987ad79234154b5ee87438f364deb"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_typed_corridors.py",
+      "sha256": "a6eef658707043ffa131901ac53d1017fb7d970130a57298f9911bfeedf795d8"
+    },
+    "residual_chart_carriers": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/carrier_residual_chart.csv",
+      "sha256": "f90daabada64878fef38a913d18ba88448a9dfeb44fdb3fafcb061664caad0e0"
+    },
+    "residual_chart_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart_certificate.json",
+      "sha256": "f990a274ad892abb12baff94c02a70a09d99c159e8a63ea9c3565a41d7880511"
+    },
+    "residual_chart_report": {
+      "certificate_sha256": "788481496c23354042c2dfca29ff6abccf9afeb29c6d71cd52f311bc27d7b6fa",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/report.json",
+      "sha256": "dd555b3909314e9c4ae9e79be0b2c146ae007e8b99cbce52eecdb1710a4a3ee9",
+      "status": "C985_D20_SIGNATURE_GEODESIC_RESIDUAL_CHART_CERTIFIED"
+    },
+    "residual_chart_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart_tables.npz",
+      "sha256": "5ab416366dda0d9cc55317e196d4b9126eb19b3abcb63c4a40923848a6e881d2"
+    },
+    "spine_path_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path_certificate.json",
+      "sha256": "12cb4663c26c94956ee804700d0b5578c8325fc5129f2a552dc455c74de6afd0"
+    },
+    "spine_path_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/boundary_spine_poincare_edges.csv",
+      "sha256": "629cc4f143095117aa10eff2e1a5cf0d97b57cf85f361a38459bf43b8296e40a"
+    },
+    "spine_path_report": {
+      "certificate_sha256": "8fc2233df1c9a8672f002aa029aeb93af6a0dc3a245fa3bfcb4615d03db97158",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/report.json",
+      "sha256": "15e74ef1db99f024291913cf148ea88da742efe059964831170bbc7be845082c",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_POINCARE_PATH_CERTIFIED"
+    },
+    "spine_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path_tables.npz",
+      "sha256": "a00b0169f35270b4fa76cd2a7c839d594c7903bf9abde0b2f89884a27c95e73a"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.json",
+      "sha256": "49a24bf8ab89cc2e92c358376b4435f2e424c64f4746985f3f9d44da035f81d9"
+    },
+    "symbolic_alphabet_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_rewrite_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_rewrite_certificate.json",
+      "sha256": "8e60f4057257e881100c8d5d0dc54c7d10ab8d3e72436f59cc355ca138df42e1"
+    },
+    "symbolic_rewrite_report": {
+      "certificate_sha256": "50289c4e654353e3fa68666987b74fdfd2c796e810afd7a1a7fbbcd02195bef8",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/report.json",
+      "sha256": "38fcc3ecd2fba6e0656f6b2b7171174a936ce71a808e75b60bfafef7258592e5",
+      "status": "C985_D20_SYMBOLIC_REWRITE_RULES_CERTIFIED"
+    },
+    "symbolic_rewrite_rules": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/rewrite_rules.csv",
+      "sha256": "82b07cb08e214b060bb62bdecf77b72db73a8812ac7e78a11ba9bf1296415e13"
+    },
+    "symbolic_rewrite_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_rewrite_tables.npz",
+      "sha256": "ec166ccc392e7d6239bfe95d845c54ea90745d9ca4fb02b27fcd834d9a3404c5"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_typed_corridors.py",
+      "sha256": "1d9f0d44adb9c0f022d86445f3cec743914b0f36713cf3380216acf7363dc90d"
+    }
+  },
+  "next_highest_yield_item": "Lift the typed corridor grammar into a finite transition automaton: certify which gate-letter words occur along source-to-branch paths, then compare those words with the length-three symbolic associativity diamonds.",
+  "outputs": {
+    "branch_corridor_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/branch_corridor_summary.csv",
+    "corridor_edge_symbols_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/corridor_edge_symbols.csv",
+    "corridor_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/corridor_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/report.json",
+    "signature_boundary_spine_typed_corridors": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors.json",
+    "signature_boundary_spine_typed_corridors_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_certificate.json",
+    "signature_boundary_spine_typed_corridors_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_typed_corridors@1",
+  "stage_protocol": {
+    "closure": "certify finite typed corridors without claiming a new symbolic product",
+    "coherence": "compare corridor gate letters with the certified six-symbol rewrite alphabet",
+    "draft": "attach positive and negative carrier masks to each branch corridor",
+    "emit": "emit typed-corridor JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize carrier atom sets, shared gate atoms, and symbolic gate letters"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_TYPED_CORRIDORS_CERTIFIED",
+  "witness": {
+    "at_flip_full_alphabet_branch_count": 0,
+    "branch_corridor_symbol_counts": [
+      6,
+      6,
+      6,
+      5,
+      4,
+      3
+    ],
+    "branch_corridor_table_sha256": "7df1929896411fbb5602e5e975cebd595ed21bdb85bb0df2a62853faaf168491",
+    "branch_first_shared_symbols": [
+      5,
+      0,
+      1,
+      5,
+      3,
+      3
+    ],
+    "branch_positive_carrier_bitsets": [
+      7168,
+      6153,
+      6154,
+      7168,
+      4096,
+      4096
+    ],
+    "corridor_edge_table_sha256": "9835b55d2747117f7a867a3c10e5b23be9fe8c8d40ee47285dd0122b19709ce6",
+    "corridor_observable_table_sha256": "382cd6524ba9e3cc4f333849bb508c5b7376c8aca36f8b9a80b0c4f8dd8629fc",
+    "delayed_obstruction_shared_symbol_id": 3,
+    "first_non_full_alphabet_branch": {
+      "corridor_symbol_count": 5,
+      "missing_symbol_ids": [
+        4
+      ],
+      "negative_carrier_mask_class_id": 9,
+      "prefix_length": 8
+    },
+    "gate_symbol_histogram": [
+      {
+        "count": 3,
+        "symbol_id": 0
+      },
+      {
+        "count": 3,
+        "symbol_id": 1
+      },
+      {
+        "count": 0,
+        "symbol_id": 2
+      },
+      {
+        "count": 4,
+        "symbol_id": 3
+      },
+      {
+        "count": 0,
+        "symbol_id": 4
+      },
+      {
+        "count": 6,
+        "symbol_id": 5
+      }
+    ],
+    "gate_symbol_ids": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "gate_symbol_sequence": [
+      5,
+      5,
+      0,
+      0,
+      1,
+      3,
+      1,
+      5,
+      3,
+      5,
+      5,
+      3,
+      5,
+      3,
+      1,
+      0
+    ],
+    "missing_gate_rewrite_rules": [
+      {
+        "canonical_pair_id": 13,
+        "left_symbol_id": 2,
+        "right_symbol_id": 4,
+        "rule_id": 16,
+        "sector_coverage_count": 6,
+        "signature_union_count": 155
+      },
+      {
+        "canonical_pair_id": 13,
+        "left_symbol_id": 4,
+        "right_symbol_id": 2,
+        "rule_id": 26,
+        "sector_coverage_count": 6,
+        "signature_union_count": 155
+      }
+    ],
+    "missing_gate_symbol_ids": [
+      2,
+      4
+    ],
+    "obstruction_first_gate_symbol_ids": [
+      0,
+      1,
+      3
+    ],
+    "post_flip_full_alphabet_branch_count": 0,
+    "pre_flip_full_alphabet_branch_count": 3
+  }
+}

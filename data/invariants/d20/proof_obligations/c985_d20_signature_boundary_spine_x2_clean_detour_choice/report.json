@@ -1,0 +1,273 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e7744e48d48ebd64d7d40c1563b8abd2e2d7feb68688117d18ee778f559d124d",
+  "checks": {
+    "all_choices_match_existing_typed_boundary_edges": true,
+    "alternative_return_edge_10_disturbs_one_tail_contact": true,
+    "alternative_return_edge_10_preserves_one_tail_contact": true,
+    "aperture_insertion_certificate_certified": true,
+    "aperture_insertion_report_certified": true,
+    "aperture_insertion_schema_available": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "branch_order_table_shape_is_6_by_21": true,
+    "branching_law_certificate_certified": true,
+    "branching_law_report_certified": true,
+    "clean_return_choice_count_is_2": true,
+    "clean_return_choices_are_edges_10_11": true,
+    "clean_return_choices_are_to_negatives_7_8": true,
+    "clean_return_choices_share_x2_edge_14": true,
+    "clean_return_choices_use_detour_carrier_3": true,
+    "detour_return_table_shape_is_8_by_13": true,
+    "least_disturbance_choice_disturbs_zero_tail_contacts": true,
+    "least_disturbance_choice_has_immediate_tail_match": true,
+    "least_disturbance_choice_has_min_branch_rewind": true,
+    "least_disturbance_choice_is_return_edge_11": true,
+    "least_disturbance_choice_preserves_two_tail_contacts": true,
+    "least_disturbance_choice_returns_to_negative_8": true,
+    "least_disturbance_choice_unique": true,
+    "least_disturbance_choice_uses_x1": true,
+    "observable_table_shape_matches_codebook": true,
+    "return_choice_table_shape_is_2_by_23": true,
+    "selected_post_return_signature_is_146": true,
+    "selected_post_return_window_is_3_2_1_canonical_27": true,
+    "selected_sequence_ends_with_x5_x3_x2": true,
+    "selected_sequence_table_shape_is_15_by_6": true,
+    "selected_terminal_window_is_node42": true,
+    "selected_terminal_window_signature_is_183": true,
+    "slot_row_is_rank_14_negative4_positive12_x3": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "tail_order_after_slot_is_neg8_x1_then_neg7_x0": true,
+    "tail_simulation_table_shape_is_4_by_10": true,
+    "typed_corridor_certificate_certified": true,
+    "typed_corridor_report_certified": true,
+    "typed_edge_table_shape_is_16_by_23": true,
+    "x2_detour_certificate_certified": true,
+    "x2_detour_report_certified": true,
+    "x2_detour_schema_available": true
+  },
+  "claim": "The clean x2 detour through carrier 3 has a unique least-disturbing typed return: after x2 edge 14, return on carrier edge 11 to negative carrier 8 through x1, preserving the post-slot tail order.",
+  "closure_boundary": {
+    "certifies": [
+      "the two clean return choices available after the carrier-3 x2 detour",
+      "their typed boundary matches against the certified corridor table",
+      "tail-order preservation and branch-order rewind for each choice",
+      "the unique least-disturbing clean return through edge 11 to negative carrier 8"
+    ],
+    "does_not_certify_because_not_required": [
+      "a raw positive/negative boundary x2 splice at the original slot",
+      "that mixed x2/x5 detour returns are usable",
+      "the subsequent x4 contact needed for aperture node 44",
+      "global optimality among multi-step detours not enumerated in this finite choice layer"
+    ]
+  },
+  "inputs": {
+    "aperture_insertion": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/signature_boundary_spine_aperture_corridor_insertion.json",
+      "sha256": "4788da73212aa361141a68ebe17a6849b8badf1649dca85e33894bba5da3d38e"
+    },
+    "aperture_insertion_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/signature_boundary_spine_aperture_corridor_insertion_certificate.json",
+      "sha256": "62b52e090139fca6395d08dc0266fe4943c03531d3436047a2e0e5689aa51f34"
+    },
+    "aperture_insertion_report": {
+      "certificate_sha256": "9acf8d3abc43f7c18795884d2b3c04f4698654da82e8bf40dc62741f4e934bdf",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/report.json",
+      "sha256": "e06b6215e919b02dab582fea6ad554f3f0d3da2d66e0231bc680ff7dae5effbd",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CORRIDOR_INSERTION_CERTIFIED"
+    },
+    "aperture_insertion_sequence": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/aperture_corridor_selected_sequence.csv",
+      "sha256": "6cd36b8d77451e47e1e24d881fd5fa3fbf1d61698043534f04a7248b1f9d72e5"
+    },
+    "aperture_insertion_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/signature_boundary_spine_aperture_corridor_insertion_tables.npz",
+      "sha256": "209b36eec36774e4227191d77b0b343ea0ebbee91a0d2e9ebd942135558dd598"
+    },
+    "aperture_insertion_windows": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/aperture_corridor_inserted_windows.csv",
+      "sha256": "5e875854b036607490e334f394e67f594f5499ebd1769654a01fafb6a897a483"
+    },
+    "branching_law_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/signature_boundary_spine_branching_law_certificate.json",
+      "sha256": "4cd3f6305459e1219fb582c7bd49cec0d74b7bbc6b7482cac1c8b3aed59d58b7"
+    },
+    "branching_law_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/negative_branch_order.csv",
+      "sha256": "79f48fa41983fc64f7169f17c52a7a254ac861d28063c2ad58765dd1a0e0612c"
+    },
+    "branching_law_report": {
+      "certificate_sha256": "bb279384ec1e8d6dca2982275405fb30cac91c0db5889270b5c5d5e5dd874030",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/report.json",
+      "sha256": "7a96eeecb090fbd8bd6524175e4830c976881b78ccad411fbb1fac293e6ed998",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_BRANCHING_LAW_CERTIFIED"
+    },
+    "branching_law_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/signature_boundary_spine_branching_law_tables.npz",
+      "sha256": "e05f82f726b420fca8ad1b71dd382159d81987ad79234154b5ee87438f364deb"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_x2_clean_detour_choice.py",
+      "sha256": "ef12f03de00873763385b6557db7218db312d9ea3f54a647fb43c3646ecc26dd"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "typed_corridor_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_certificate.json",
+      "sha256": "39c6a12a055ae0fae9d2324bba9bd599233bb31888d8f1cd7f63ceeb62e5bc8c"
+    },
+    "typed_corridor_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/corridor_edge_symbols.csv",
+      "sha256": "2a923d6c7f0c3acc1f6d74bf8cd1f220f9d8cecbbe66387fe4de9d92222d3969"
+    },
+    "typed_corridor_report": {
+      "certificate_sha256": "38a1f0ee65b67ef345a94d0914b3394e6b838eef76966f53e087aafbad688608",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/report.json",
+      "sha256": "7a79fff3f22357e0583814ad7dd7511f1b16e3d8986394b5147c5fdd415dec6a",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_TYPED_CORRIDORS_CERTIFIED"
+    },
+    "typed_corridor_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_tables.npz",
+      "sha256": "a94c2612d76f6fcee8f57a36c4f1cb141ad62bd09cd6c8d9d84b0eac86c8de38"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_x2_clean_detour_choice.py",
+      "sha256": "87c75bd1384e906b9e4fb4c3eda2ec6069b47e8aa67dd07df94841d4899974cd"
+    },
+    "x2_detour_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/signature_boundary_spine_x2_detour_fan_certificate.json",
+      "sha256": "3776fc052368fedb8a5f5afbb591ba773ccc3e6b2fbd1186ed499cfb01e7be30"
+    },
+    "x2_detour_fan": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/signature_boundary_spine_x2_detour_fan.json",
+      "sha256": "9860641d69e411afa6b12538f6cff79a2956e1139cb3aea43d7eca1be10e66e3"
+    },
+    "x2_detour_report": {
+      "certificate_sha256": "0641917fafb69c497efbbd2526a8d397b31d376f52e25b9cc59c0aee086e85be",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/report.json",
+      "sha256": "f09fc7c73c4c779a1e62f93eca32e6cc45a4fb95c8bc556ae201c854f15aeb32",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_DETOUR_FAN_CERTIFIED"
+    },
+    "x2_detour_returns": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/x2_detour_return_paths.csv",
+      "sha256": "247c1274ca90c9cc234ad369c8eec8b06802e2ecda34bb5f5444acf14d5f3732"
+    },
+    "x2_detour_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/signature_boundary_spine_x2_detour_fan_tables.npz",
+      "sha256": "1e8655732738ad0ccd3588363ad17dfffe4c86ec4423285a95027eb2d98bfdba"
+    }
+  },
+  "next_highest_yield_item": "Search the selected clean continuation x2 then x1 for an x4 aperture completion: enumerate one- and two-step carrier contacts after the negative-8 return and either realize node 44 or certify the local x4 obstruction.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/report.json",
+    "signature_boundary_spine_x2_clean_detour_choice": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice.json",
+    "signature_boundary_spine_x2_clean_detour_choice_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice_certificate.json",
+    "signature_boundary_spine_x2_clean_detour_choice_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice_tables.npz",
+    "x2_clean_detour_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/x2_clean_detour_observables.csv",
+    "x2_clean_detour_return_choices_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/x2_clean_detour_return_choices.csv",
+    "x2_clean_detour_tail_simulation_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/x2_clean_detour_tail_simulation.csv"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_x2_clean_detour_choice@1",
+  "stage_protocol": {
+    "closure": "certify the least-disturbing clean return without asserting an x4 aperture completion",
+    "coherence": "score choices by tail preservation, branch-order rewind, spine-rank rewind, and symbolic signature",
+    "draft": "treat the two clean x2 detour returns as competing corridor continuations",
+    "emit": "emit clean-detour-choice JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize their typed-boundary matches, tail-order effects, and post-return symbolic windows"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_CLEAN_DETOUR_CHOICE_CERTIFIED",
+  "witness": {
+    "clean_return_choices": [
+      [
+        14,
+        10,
+        7,
+        0
+      ],
+      [
+        14,
+        11,
+        8,
+        1
+      ]
+    ],
+    "observable_table_sha256": "beda7048cd30dff6caac56377829937b266a89aad6a314c25388ccd168ffbd13",
+    "post_return_windows": [
+      {
+        "canonical_triple_id": 12,
+        "ordered_symbols": [
+          3,
+          2,
+          0
+        ],
+        "return_negative_carrier_id": 7,
+        "sector_coverage_count": 5,
+        "signature_union_count": 142
+      },
+      {
+        "canonical_triple_id": 27,
+        "ordered_symbols": [
+          3,
+          2,
+          1
+        ],
+        "return_negative_carrier_id": 8,
+        "sector_coverage_count": 5,
+        "signature_union_count": 146
+      }
+    ],
+    "return_choice_table_sha256": "be1acd6ee47ddc107231ff1e9b1217f9cf2aa784fdcc8b67c621e1eab8c34110",
+    "selected_branch_order_rewind": 3,
+    "selected_return_choice_id": 1,
+    "selected_return_negative_carrier_id": 8,
+    "selected_return_path": [
+      14,
+      11
+    ],
+    "selected_return_shared_symbol_id": 1,
+    "selected_spine_rank_rewind": 9,
+    "selected_tail_contacts_preserved_count": 2,
+    "selected_tail_order_disturbance_count": 0,
+    "slot_context": {
+      "boundary_mask_edge_id": 4,
+      "boundary_spine_rank": 14,
+      "negative_carrier_id": 4,
+      "positive_carrier_id": 12,
+      "selected_terminal_canonical_triple_id": 42,
+      "selected_terminal_window": [
+        5,
+        3,
+        2
+      ],
+      "shared_symbol_id": 3
+    },
+    "tail_order_after_slot": [
+      [
+        8,
+        1
+      ],
+      [
+        7,
+        0
+      ]
+    ],
+    "tail_simulation_table_sha256": "8e108abd9776e3d8d8e9698e3bd9ce2010e1e454428d32f5d5655e264ad8f24f"
+  }
+}

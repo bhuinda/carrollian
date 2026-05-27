@@ -1,0 +1,254 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6f594adf50baedc1fc4ce7d0587de7707c51b78f4d1b54dc0512db5454d292a9",
+  "checks": {
+    "associativity_table_shape_is_216_by_27": true,
+    "candidate_table_shape_is_596_by_codebook": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "exact_overhead2_words_have_no_weak_repair": true,
+    "minimal_strong_repairs_are_two_and_one": true,
+    "minimal_weak_repairs_are_unique": true,
+    "minimum_table_shape_is_4_by_codebook": true,
+    "no_repair_beats_baseline_overhead": true,
+    "observable_table_shape_matches_codebook": true,
+    "overhead2_carrier_certificate_certified": true,
+    "overhead2_carrier_report_certified": true,
+    "overhead2_carrier_schema_available": true,
+    "overhead2_word_table_shape_is_2_by_14": true,
+    "repair_counts_within_bound_are_stable": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "strong_min_edit_distances_are_two_and_one": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "target0_strong_best_overhead_is_five": true,
+    "target0_strong_best_word_matches_expected": true,
+    "target0_weak_best_is_post_aperture_tail": true,
+    "target0_weak_best_word_matches_expected": true,
+    "target1_strong_best_overhead_matches_baseline": true,
+    "target1_weak_best_is_also_strong": true,
+    "target1_weak_best_word_matches_expected": true,
+    "weak_best_overheads_match_baseline": true,
+    "weak_min_edit_distances_are_one_and_one": true
+  },
+  "claim": "The carrier obstruction is repaired by insertion, not by a lower trace overhead. Each abstract overhead-2 word is one carrier contact away from a rooted node44 trace, but no repaired word within the certified edit bound improves on the existing overhead-3 x1-tail class.",
+  "closure_boundary": {
+    "certifies": [
+      "all insertion-only edited words through two inserted symbols, preserving the initial x2,x1 prefix",
+      "rooted carrier realizability from carrier 12 for each edited word",
+      "first node44 trace metrics for each edited word that reaches the aperture",
+      "minimal weak and strong edit distances for the two overhead-2 target words through the two-contact bound",
+      "that no repaired word in this bound improves below overhead 3"
+    ],
+    "does_not_certify_because_not_required": [
+      "deletions, substitutions, or insertions before the x2,x1 tail prefix",
+      "carrier repairs requiring more than two inserted contacts",
+      "closed first-return cycle repair after the first node44 hit",
+      "changing the residual carrier-mask cell complex or symbolic canonicalization"
+    ]
+  },
+  "inputs": {
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair.py",
+      "sha256": "526faef19ab9649701d896ecf25dd166d42a46c03c93d2644314eea83e8ed281"
+    },
+    "overhead2_carrier_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/signature_boundary_spine_aperture_overhead2_carrier_realizability_certificate.json",
+      "sha256": "1117e6564c17ca7f2c2a7221bc636bc1c0de11c714bd547022eeebecb7788c56"
+    },
+    "overhead2_carrier_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/signature_boundary_spine_aperture_overhead2_carrier_realizability.json",
+      "sha256": "7a50c2675cc98bc2645db042eb83416f819827abea636be1dc6c06edf2b9311e"
+    },
+    "overhead2_carrier_report": {
+      "certificate_sha256": "d637d47851f83a5581146cc68d50db3340891dda80efd466ba332cefad80585d",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/report.json",
+      "sha256": "766f0fdddc3f224392a7e5cde5d19b104a80ca22c5464936f73a8b62826227e3",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD2_CARRIER_REALIZABILITY_CERTIFIED"
+    },
+    "overhead2_carrier_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/signature_boundary_spine_aperture_overhead2_carrier_realizability_tables.npz",
+      "sha256": "bc60b8a40a5dc043701fd832c98f83bef66252e2bb770544e7405e8b2b05d5b8"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair.py",
+      "sha256": "29dcd242965c25c44409cda75ae34920d144ad81aec43d8d6bbcf348cedf8a2d"
+    }
+  },
+  "next_highest_yield_item": "Classify the post-aperture tails of the one-contact weak repairs: separate repairs that merely hit node44 early from repairs that close a carrier cycle after consuming the whole target word.",
+  "outputs": {
+    "aperture_overhead2_edit_repair_candidates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/aperture_overhead2_edit_repair_candidates.csv",
+    "aperture_overhead2_edit_repair_minima_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/aperture_overhead2_edit_repair_minima.csv",
+    "aperture_overhead2_edit_repair_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/aperture_overhead2_edit_repair_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/report.json",
+    "signature_boundary_spine_aperture_overhead2_edit_repair": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/signature_boundary_spine_aperture_overhead2_edit_repair.json",
+    "signature_boundary_spine_aperture_overhead2_edit_repair_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/signature_boundary_spine_aperture_overhead2_edit_repair_certificate.json",
+    "signature_boundary_spine_aperture_overhead2_edit_repair_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/signature_boundary_spine_aperture_overhead2_edit_repair_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_overhead2_edit_repair@1",
+  "stage_protocol": {
+    "closure": "certify per-word minimal edit distances under weak and strong repair criteria through the two-contact bound",
+    "coherence": "compare minimal repairs with the existing overhead-3 tail baseline and expose the target0 post-aperture tail seam",
+    "draft": "enumerate insertion-only x1-tail repairs through two inserted selected-symbol contacts",
+    "emit": "emit edit-repair JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize carrier path counts, first node44 trace metrics, and weak versus strong repair flags"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD2_EDIT_REPAIR_CERTIFIED",
+  "witness": {
+    "candidate_table_sha256": "fff9e9ab60160e35dfd9cf2fc64fe5f92e16a55c027077cb0066e67d74b27ba2",
+    "criteria": {
+      "strong": "weak repair whose first node44 trace hit occurs after the original target word is fully consumed",
+      "weak": "rooted carrier path for the full edited word and first node44 trace hit"
+    },
+    "minimum_repairs": {
+      "0:0": {
+        "best_signature_valley_depth": 37,
+        "best_target_consumed_before_node44": false,
+        "best_trace_detour_overhead": 3,
+        "best_word": [
+          2,
+          1,
+          4,
+          5,
+          2,
+          5
+        ],
+        "minimal_edit_distance": 1,
+        "minimal_repair_count": 1
+      },
+      "0:1": {
+        "best_signature_valley_depth": 37,
+        "best_target_consumed_before_node44": true,
+        "best_trace_detour_overhead": 5,
+        "best_word": [
+          2,
+          1,
+          4,
+          3,
+          2,
+          5,
+          4
+        ],
+        "minimal_edit_distance": 2,
+        "minimal_repair_count": 2
+      },
+      "1:0": {
+        "best_signature_valley_depth": 37,
+        "best_target_consumed_before_node44": true,
+        "best_trace_detour_overhead": 3,
+        "best_word": [
+          2,
+          1,
+          5,
+          2,
+          5,
+          4
+        ],
+        "minimal_edit_distance": 1,
+        "minimal_repair_count": 1
+      },
+      "1:1": {
+        "best_signature_valley_depth": 37,
+        "best_target_consumed_before_node44": true,
+        "best_trace_detour_overhead": 3,
+        "best_word": [
+          2,
+          1,
+          5,
+          2,
+          5,
+          4
+        ],
+        "minimal_edit_distance": 1,
+        "minimal_repair_count": 1
+      }
+    },
+    "minimum_table_sha256": "b42b15052c0541aba1da3d3dc85c22f47a1970100b8cfa27103f8141a0bc94a0",
+    "observable_table_sha256": "efa2fa848102d4fb8932d6b1a072e8d9423405096f1aa80e19369e7a232025cd",
+    "search_bound": {
+      "allowed_insertions": "after the fixed x2,x1 tail prefix only",
+      "candidate_word_count": 596,
+      "max_insertions": 2
+    },
+    "strong_repairs_beating_baseline_count": 0,
+    "target_words": [
+      [
+        2,
+        1,
+        4,
+        2,
+        5
+      ],
+      [
+        2,
+        1,
+        5,
+        2,
+        4
+      ]
+    ],
+    "weak_repairs_beating_baseline_count": 0
+  }
+}

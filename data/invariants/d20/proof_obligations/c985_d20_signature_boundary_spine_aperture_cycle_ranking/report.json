@@ -1,0 +1,249 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6914576663db54e615d1e85c57356d08bea1e787779a1ce48e193d365b69dbfd",
+  "checks": {
+    "all_candidates_realize_node44": true,
+    "aperture_cycle_certificate_certified": true,
+    "aperture_cycle_report_certified": true,
+    "aperture_cycle_schema_available": true,
+    "aperture_cycle_window_table_shape_is_7_by_17": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "best_cycles_have_zero_delta": true,
+    "best_cycles_have_zero_overhead": true,
+    "best_cycles_have_zero_valley_depth": true,
+    "candidate_table_shape_is_10_by_34": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "distinct_symbol_cycle_count_is_3": true,
+    "geodesic_equivalent_cycle_count_is_6": true,
+    "observable_table_shape_matches_codebook": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "rewrite_node_table_shape_is_56_by_17": true,
+    "rooted_x2_cycle_count_is_10": true,
+    "selected_cycle_delta_is_one_half": true,
+    "selected_cycle_matches_prior_carriers": true,
+    "selected_cycle_matches_prior_edges": true,
+    "selected_cycle_matches_prior_symbols": true,
+    "selected_cycle_valley_depth_is_37": true,
+    "selected_tail_cycle_overhead_is_3": true,
+    "selected_tail_cycle_rank_order_is_7": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "tail_preserving_cycle_count_is_2": true,
+    "trace_window_table_has_38_rows": true,
+    "worst_valley_depth_is_41": true
+  },
+  "claim": "Among all x2-rooted simple four-edge origin-returning carrier cycles that realize aperture node 44, six collapse to the ambient geodesic with zero overhead; the previously certified tail-preserving cycle is the best x1-tail family member but ranks seventh globally because it pays a node-27 signature valley.",
+  "closure_boundary": {
+    "certifies": [
+      "all x2-rooted simple four-edge carrier cycles from carrier 12 that realize node 44",
+      "the anchored rewrite trace and node-44 hit for each candidate",
+      "cycle ranking by trace overhead, signature valley depth, Gromov delta, and signature variation",
+      "the global rank of the previously certified tail-preserving cycle within this comparable class"
+    ],
+    "does_not_certify_because_not_required": [
+      "cycles longer than four carrier edges",
+      "cycles not rooted at carrier 12 or not anchored by the x2 insertion",
+      "global optimality across arbitrary mixed-symbol disambiguations outside this finite class",
+      "new categorical F-symbols, braiding, pivotality, or center data"
+    ]
+  },
+  "inputs": {
+    "aperture_cycle_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/signature_boundary_spine_aperture_cycle_language_certificate.json",
+      "sha256": "ed21e4bc9b462328ac4428a090cabd44e03502dfb063501669248ec805968f8d"
+    },
+    "aperture_cycle_language": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/signature_boundary_spine_aperture_cycle_language.json",
+      "sha256": "63d5e5588258a16e66105b4188c116288aa29e29874bea4515936944044055c8"
+    },
+    "aperture_cycle_report": {
+      "certificate_sha256": "cc0415a30de266e0fb7c84acdebd057295d1b9b1a4366be7f9b7f5ef25fa322b",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/report.json",
+      "sha256": "889742c2c687e8dfe7df1a424c0794de12ff05fce79705859de4ecc762bf067e",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CYCLE_LANGUAGE_CERTIFIED"
+    },
+    "aperture_cycle_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_language/signature_boundary_spine_aperture_cycle_language_tables.npz",
+      "sha256": "f2a7278f21564951e85e7766e7c018441ef8cc00735e2fd8d0af1471176775a7"
+    },
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_cycle_ranking.py",
+      "sha256": "0431f5d5319f04855dd04a36c5969a80441835b82223e00e5d14eceab3f8ac82"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_cycle_ranking.py",
+      "sha256": "21f859599c7396f3a4c70ad6511114e101c1cf1cdbe960a22b3d9b24dec67001"
+    }
+  },
+  "next_highest_yield_item": "Separate the six zero-overhead mixed cycles by typed-boundary cost: audit which require mixed x2/x5 contacts or abandon the certified x1 tail, then certify the Pareto frontier of geodesic optimality versus typed-tail preservation.",
+  "outputs": {
+    "aperture_cycle_candidate_trace_windows_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/aperture_cycle_candidate_trace_windows.csv",
+    "aperture_cycle_ranked_candidates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/aperture_cycle_ranked_candidates.csv",
+    "aperture_cycle_ranking_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/aperture_cycle_ranking_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/report.json",
+    "signature_boundary_spine_aperture_cycle_ranking": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/signature_boundary_spine_aperture_cycle_ranking.json",
+    "signature_boundary_spine_aperture_cycle_ranking_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/signature_boundary_spine_aperture_cycle_ranking_certificate.json",
+    "signature_boundary_spine_aperture_cycle_ranking_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/signature_boundary_spine_aperture_cycle_ranking_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_cycle_ranking@1",
+  "stage_protocol": {
+    "closure": "certify the finite comparable-cycle ranking without claiming longer-cycle optimality",
+    "coherence": "rank by trace overhead, signature valley depth, Gromov delta, and signature variation",
+    "draft": "enumerate simple carrier cycles rooted at carrier 12 with first label x2",
+    "emit": "emit aperture-cycle ranking JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize each cycle, edge-label word, anchored rewrite trace, and node-44 hit"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CYCLE_RANKING_CERTIFIED",
+  "witness": {
+    "best_candidate_count": 6,
+    "best_candidate_edge_cycles": [
+      [
+        39,
+        40,
+        26,
+        25
+      ],
+      [
+        39,
+        40,
+        30,
+        29
+      ],
+      [
+        39,
+        40,
+        33,
+        32
+      ],
+      [
+        41,
+        42,
+        26,
+        25
+      ],
+      [
+        41,
+        42,
+        30,
+        29
+      ],
+      [
+        41,
+        42,
+        33,
+        32
+      ]
+    ],
+    "best_candidate_symbol_cycle": [
+      2,
+      5,
+      4,
+      3
+    ],
+    "candidate_table_sha256": "4e4290a6cf68f51f0f02a8ef3b4e1a2c77278861e90cae4573a5775ec91cd4aa",
+    "distinct_symbol_cycles": [
+      [
+        2,
+        0,
+        4,
+        5
+      ],
+      [
+        2,
+        1,
+        4,
+        5
+      ],
+      [
+        2,
+        5,
+        4,
+        3
+      ]
+    ],
+    "observable_table_sha256": "38146ec280cae00836af1ad5261299b6747110df6b7004770d06c2eac1f76c16",
+    "ranking_key": [
+      "trace_detour_overhead",
+      "signature_valley_depth",
+      "metric_gromov_delta_twice",
+      "trace_signature_total_variation",
+      "cell_edge_ids"
+    ],
+    "rooted_x2_cycle_count": 10,
+    "selected_tail_cycle_metrics": {
+      "metric_gromov_delta": 0.5,
+      "signature_valley_depth": 37,
+      "trace_detour_overhead": 3,
+      "trace_signature_total_variation": 127
+    },
+    "selected_tail_cycle_rank_order": 7,
+    "trace_window_table_sha256": "3da78050866ce876b4d770c520f64cbaf89105d33bbad56bbbaf2a7a05728867"
+  }
+}

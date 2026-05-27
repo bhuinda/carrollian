@@ -1,0 +1,234 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bb279384ec1e8d6dca2982275405fb30cac91c0db5889270b5c5d5e5dd874030",
+  "checks": {
+    "all_boundary_active_negative_reached_before_high_contact": true,
+    "branch_first_prefixes_match_expected": true,
+    "branch_order_matches_expected": true,
+    "branch_table_shape_is_6_by_21": true,
+    "delayed_obstruction_is_mask_4": true,
+    "flip_new_mask_is_non_obstruction_9": true,
+    "inactive_negative_region_is_mask_5": true,
+    "observable_table_shape_matches_codebook": true,
+    "obstruction_branch_order_matches_expected": true,
+    "obstruction_phase_counts_match_expected": true,
+    "phase_edge_counts_match_expected": true,
+    "phase_new_bitsets_match_expected": true,
+    "phase_table_shape_is_3_by_16": true,
+    "residual_chart_certificate_available": true,
+    "residual_chart_report_certified": true,
+    "residual_chart_schema_available": true,
+    "residual_chart_tables_available": true,
+    "routing_prefix_certificate_available": true,
+    "routing_prefix_report_certified": true,
+    "routing_prefix_schema_available": true,
+    "routing_prefix_tables_available": true,
+    "spine_path_certificate_available": true,
+    "spine_path_report_certified": true,
+    "spine_path_tables_available": true
+  },
+  "claim": "The prefix-8 residual flip induces a finite branch law on negative carrier masks: 13, 7, and 8 enter before the flip, 9 enters at the flip, and 6 then 4 enter after it, so the old one-dimensional obstruction masks split as early 7,8 and delayed 4.",
+  "closure_boundary": {
+    "certifies": [
+      "first-arrival order of boundary-active negative carrier masks along the entropy spine",
+      "pre-flip, at-flip, and post-flip carrier phases around the prefix-8 residual crossing",
+      "the branch-order placement of the previous obstruction masks 4, 7, and 8",
+      "that all boundary-active negative masks enter before the first high-negative boundary contact"
+    ],
+    "does_not_certify_because_not_required": [
+      "that this branch order is invariant under alternative spine rankings",
+      "a stochastic branching process, continuum geodesic flow, or mixing-time estimate",
+      "higher-eigenmode branch laws",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_branching_law.py",
+      "sha256": "20628d132afef8672dbe160819ba5e496c30e50f344eedb0e4f5a84578e197a5"
+    },
+    "residual_chart": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart.json",
+      "sha256": "5e9bd8bc70b1cffb6ab73dd1989bb6ef70b8e6b167e455d66f819205f1926f84"
+    },
+    "residual_chart_carriers": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/carrier_residual_chart.csv",
+      "sha256": "f90daabada64878fef38a913d18ba88448a9dfeb44fdb3fafcb061664caad0e0"
+    },
+    "residual_chart_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart_certificate.json",
+      "sha256": "f990a274ad892abb12baff94c02a70a09d99c159e8a63ea9c3565a41d7880511"
+    },
+    "residual_chart_report": {
+      "certificate_sha256": "788481496c23354042c2dfca29ff6abccf9afeb29c6d71cd52f311bc27d7b6fa",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/report.json",
+      "sha256": "dd555b3909314e9c4ae9e79be0b2c146ae007e8b99cbce52eecdb1710a4a3ee9",
+      "status": "C985_D20_SIGNATURE_GEODESIC_RESIDUAL_CHART_CERTIFIED"
+    },
+    "residual_chart_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart_tables.npz",
+      "sha256": "5ab416366dda0d9cc55317e196d4b9126eb19b3abcb63c4a40923848a6e881d2"
+    },
+    "routing_prefix": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/signature_boundary_spine_routing_prefix.json",
+      "sha256": "704f2cc9003cf18b264be9e0ee914bd1ec6e5406b68ca21e2891febbeff55694"
+    },
+    "routing_prefix_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/signature_boundary_spine_routing_prefix_certificate.json",
+      "sha256": "e1127a9c6f6d31ec93d7c70735ac102f5cb0cf91b73fe7280d182c26a26aea3b"
+    },
+    "routing_prefix_report": {
+      "certificate_sha256": "05ed9e77b0ac8b54be8c71fa1658a8f7f56d7171d09ae8d47a6d9937a2535d85",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/report.json",
+      "sha256": "8f1567f5baa11bd473a67f653cee17e71af59bf78e2beebf36eaa5f6a0088fa5",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_ROUTING_PREFIX_CERTIFIED"
+    },
+    "routing_prefix_summary": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/routing_prefix_summary.csv",
+      "sha256": "f5fd050d2283e23724749004f1522595b6fa9c10962b59281c45f3f3e5e752b2"
+    },
+    "routing_prefix_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/signature_boundary_spine_routing_prefix_tables.npz",
+      "sha256": "ebe0a167b9b3c4966a6ae22a3be0b145b844281c4f94ee90a08284650b0b093b"
+    },
+    "spine_path_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path_certificate.json",
+      "sha256": "12cb4663c26c94956ee804700d0b5578c8325fc5129f2a552dc455c74de6afd0"
+    },
+    "spine_path_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/boundary_spine_poincare_edges.csv",
+      "sha256": "629cc4f143095117aa10eff2e1a5cf0d97b57cf85f361a38459bf43b8296e40a"
+    },
+    "spine_path_report": {
+      "certificate_sha256": "8fc2233df1c9a8672f002aa029aeb93af6a0dc3a245fa3bfcb4615d03db97158",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/report.json",
+      "sha256": "15e74ef1db99f024291913cf148ea88da742efe059964831170bbc7be845082c",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_POINCARE_PATH_CERTIFIED"
+    },
+    "spine_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path_tables.npz",
+      "sha256": "a00b0169f35270b4fa76cd2a7c839d594c7903bf9abde0b2f89884a27c95e73a"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_branching_law.py",
+      "sha256": "33decc310a694eee6396fe9bc8c67d94578d9a2b61b351958572de4bcfa1274b"
+    }
+  },
+  "next_highest_yield_item": "Promote the branch law into a typed corridor certificate: for each new negative carrier branch, certify the positive carrier masks and active atoms that deliver it, then compare that corridor grammar with the six-symbol rewrite alphabet.",
+  "outputs": {
+    "branch_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/branch_observables.csv",
+    "branch_phase_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/branch_phase_summary.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/manifest.json",
+    "negative_branch_order_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/negative_branch_order.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/report.json",
+    "signature_boundary_spine_branching_law": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/signature_boundary_spine_branching_law.json",
+    "signature_boundary_spine_branching_law_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/signature_boundary_spine_branching_law_certificate.json",
+    "signature_boundary_spine_branching_law_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_branching_law/signature_boundary_spine_branching_law_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_branching_law@1",
+  "stage_protocol": {
+    "closure": "certify a finite branch law without claiming an alternative ordering or continuum flow",
+    "coherence": "compare the first-arrival phases with the previous one-dimensional obstruction masks",
+    "draft": "read the entropy spine as a first-arrival order on negative carrier masks",
+    "emit": "emit branch-law JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize branch-order and phase-summary tables around the prefix-8 residual flip"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_BRANCHING_LAW_CERTIFIED",
+  "witness": {
+    "all_boundary_active_negative_reached_prefix": 14,
+    "at_flip_new_negative_mask_ids": [
+      9
+    ],
+    "at_flip_obstruction_mask_ids": [],
+    "boundary_active_negative_mask_ids": [
+      4,
+      6,
+      7,
+      8,
+      9,
+      13
+    ],
+    "branch_observable_table_sha256": "6eb1cdeb037cb43f529b9d2bb8e90cf2bcb02e32d8dd7877604411f6fc6288f7",
+    "branch_phase_summary_table_sha256": "176d2cf27b31745d4155f68469363f910f9592bd235d3f75d9a3d1f006ead36e",
+    "delayed_obstruction_mask_id": 4,
+    "first_high_negative_prefix": 15,
+    "flip_new_negative_mask_id": 9,
+    "inactive_negative_region_mask_ids": [
+      5
+    ],
+    "negative_branch_first_edge_ids": [
+      14,
+      2,
+      3,
+      11,
+      5,
+      4
+    ],
+    "negative_branch_first_prefixes": [
+      1,
+      3,
+      5,
+      8,
+      12,
+      14
+    ],
+    "negative_branch_order": [
+      13,
+      7,
+      8,
+      9,
+      6,
+      4
+    ],
+    "negative_branch_order_table_sha256": "ff45eb9a44d769532f8a7e088dc8e75bb00601eb4bb18c2877b49ed09d92f597",
+    "obstruction_branch_first_prefixes": [
+      3,
+      5,
+      14
+    ],
+    "obstruction_branch_order": [
+      7,
+      8,
+      4
+    ],
+    "phase_flux_entropy": {
+      "at_flip": {
+        "edge_count": 1,
+        "entropy_fraction_x1e12": 65906103683,
+        "flux_fraction_x1e12": 61383643810
+      },
+      "post_flip": {
+        "edge_count": 8,
+        "entropy_fraction_x1e12": 271431548910,
+        "flux_fraction_x1e12": 222063051946
+      },
+      "pre_flip": {
+        "edge_count": 7,
+        "entropy_fraction_x1e12": 662662347407,
+        "flux_fraction_x1e12": 716553304244
+      }
+    },
+    "post_flip_new_negative_mask_ids": [
+      4,
+      6
+    ],
+    "post_flip_obstruction_mask_ids": [
+      4
+    ],
+    "pre_flip_new_negative_mask_ids": [
+      7,
+      8,
+      13
+    ],
+    "pre_flip_obstruction_mask_ids": [
+      7,
+      8
+    ],
+    "previous_obstruction_mask_class_ids": [
+      4,
+      7,
+      8
+    ],
+    "residual_flip_prefix_length": 8
+  }
+}

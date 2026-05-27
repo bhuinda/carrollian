@@ -1,0 +1,229 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "0641917fafb69c497efbbd2526a8d397b31d376f52e25b9cc59c0aee086e85be",
+  "checks": {
+    "all_return_paths_realize_node42_context": true,
+    "boundary_return_edge_count_is_8": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "cell_complex_schema_available": true,
+    "clean_single_x2_return_path_count_is_2": true,
+    "clean_single_x2_return_paths_use_edge_14": true,
+    "dead_end_x2_detour_edge_is_9": true,
+    "detour_delta_witness_carriers_match_expected": true,
+    "detour_edge_count_is_13": true,
+    "detour_graph_connected": true,
+    "detour_graph_diameter_is_3": true,
+    "detour_graph_radius_is_2": true,
+    "detour_gromov_delta_is_1": true,
+    "detour_node_count_is_10": true,
+    "detour_target_carriers_match_expected": true,
+    "edge_table_shape_is_13_by_15": true,
+    "incident_x2_detour_edges_match_expected": true,
+    "mixed_x2_return_path_count_is_6": true,
+    "mixed_x2_return_paths_use_edges_39_41": true,
+    "node_table_shape_is_10_by_12": true,
+    "observable_table_shape_matches_codebook": true,
+    "origin_carrier_is_12": true,
+    "return_negative_carriers_match_expected": true,
+    "return_path_count_is_8": true,
+    "return_path_table_shape_is_8_by_13": true,
+    "slot_negative_carrier_is_4": true,
+    "x2_detour_edge_count_is_4": true,
+    "x2_splice_certificate_certified": true,
+    "x2_splice_near_miss_table_shape_is_10_by_14": true,
+    "x2_splice_report_certified": true,
+    "x2_splice_schema_available": true
+  },
+  "claim": "The x2 obstruction opens a controlled positive-internal detour fan: carrier 12 has four x2 exits, three can return to the typed boundary in one step, and only the detour through carrier 3 gives clean single-x2 boundary-return paths.",
+  "closure_boundary": {
+    "certifies": [
+      "the finite off-boundary x2 detour fan incident to carrier 12",
+      "one-step positive/negative boundary returns from detour carriers",
+      "which returns are clean single-x2 and which are mixed x2/x5",
+      "exact fan distances, diameter, radius, and Gromov delta"
+    ],
+    "does_not_certify_because_not_required": [
+      "splicing the detour fan into the certified typed-spine order",
+      "that mixed x2/x5 contacts can be disambiguated without extra data",
+      "a subsequent x4 route to aperture node 44",
+      "new carrier classes or raw relations outside the certified cell complex"
+    ]
+  },
+  "inputs": {
+    "cell_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex.json",
+      "sha256": "88fedc4518455bbe017f962294fe334096da7366e80925da41c2dbe8e657d5b8"
+    },
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_x2_detour_fan.py",
+      "sha256": "1089aa75b117ac1b8e10c38de03a22c56bfffb002e688375275b76ddfb1cd81b"
+    },
+    "residual_chart_carriers": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/carrier_residual_chart.csv",
+      "sha256": "f90daabada64878fef38a913d18ba88448a9dfeb44fdb3fafcb061664caad0e0"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_x2_detour_fan.py",
+      "sha256": "fa452ddbbadd376f5d48cd326f7c8a1a72231618901fc78dc6527f68f2837457"
+    },
+    "x2_splice_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/signature_boundary_spine_x2_splice_obstruction_certificate.json",
+      "sha256": "3816a29ceb1dcc472f45f0aa525e9475e09550491043cf29c24c6b3e3b3311d8"
+    },
+    "x2_splice_near_misses": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/x2_splice_near_misses.csv",
+      "sha256": "593ba74e785ada4c818358606d2a3e54bf94b559972ead21495eeb0ebf534d57"
+    },
+    "x2_splice_obstruction": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/signature_boundary_spine_x2_splice_obstruction.json",
+      "sha256": "3dc1529ab085b53864d47dfa99543a5d7241f532e022da974d54ee98629f45d6"
+    },
+    "x2_splice_report": {
+      "certificate_sha256": "0bd2e0f752aad121ccb1f82021c2e257e4698aa21b9055fe471fcf0d20ca7437",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/report.json",
+      "sha256": "fa1a41bfbf03e2d8d417c525c29b7fa0ec6142e7983c5e24f04bf56bde7dab3d",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_SPLICE_OBSTRUCTION_CERTIFIED"
+    },
+    "x2_splice_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/signature_boundary_spine_x2_splice_obstruction_tables.npz",
+      "sha256": "42ecb22a99beb1a6d5b0c0046ce0d929206808c5fb941580c72e0d1590c5f96e"
+    }
+  },
+  "next_highest_yield_item": "Certify the clean x2 detour corridor through carrier 3: compare the two return choices to negative carriers 7 and 8 against the existing branch order and determine which return least disturbs the typed boundary sequence.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/report.json",
+    "signature_boundary_spine_x2_detour_fan": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/signature_boundary_spine_x2_detour_fan.json",
+    "signature_boundary_spine_x2_detour_fan_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/signature_boundary_spine_x2_detour_fan_certificate.json",
+    "signature_boundary_spine_x2_detour_fan_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/signature_boundary_spine_x2_detour_fan_tables.npz",
+    "x2_detour_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/x2_detour_edges.csv",
+    "x2_detour_nodes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/x2_detour_nodes.csv",
+    "x2_detour_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/x2_detour_observables.csv",
+    "x2_detour_return_paths_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/x2_detour_return_paths.csv"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_x2_detour_fan@1",
+  "stage_protocol": {
+    "closure": "certify a finite off-boundary detour fan without claiming it is already part of the typed spine",
+    "coherence": "check clean versus mixed x2 contacts, dead ends, boundary returns, and exact hyperbolicity",
+    "draft": "use the certified x2 near misses incident to carrier 12 as off-boundary detour exits",
+    "emit": "emit detour-fan JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize detour nodes, x2 exits, boundary returns, return paths, and fan metric"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_DETOUR_FAN_CERTIFIED",
+  "witness": {
+    "adjacency_sha256": "c1c6ffcd31363bfe33f3bb45f13d72e62de74f9b6c3a5a832a81e597978c0f5f",
+    "clean_single_x2_return_paths": [
+      [
+        14,
+        10
+      ],
+      [
+        14,
+        11
+      ]
+    ],
+    "dead_end_x2_detour_edge_ids": [
+      9
+    ],
+    "detour_delta_witness_carrier_ids": [
+      12,
+      3,
+      11,
+      7
+    ],
+    "detour_distance_histogram": [
+      {
+        "count": 13,
+        "value": 1
+      },
+      {
+        "count": 20,
+        "value": 2
+      },
+      {
+        "count": 12,
+        "value": 3
+      }
+    ],
+    "detour_graph_diameter": 3,
+    "detour_graph_radius": 2,
+    "detour_gromov_delta": 1.0,
+    "detour_gromov_delta_twice": 2,
+    "distance_table_sha256": "75b175da83715489c702a0adc900a4ad1a59052c0bf9d5d5a536aeabef2415f4",
+    "edge_table_sha256": "ef384ff9a47cba92e3e1d3120ab9cd3728791a4d6c3760b6b04b8889f8b6f3a1",
+    "mixed_x2_return_paths": [
+      [
+        39,
+        34
+      ],
+      [
+        39,
+        40
+      ],
+      [
+        41,
+        28
+      ],
+      [
+        41,
+        31
+      ],
+      [
+        41,
+        35
+      ],
+      [
+        41,
+        42
+      ]
+    ],
+    "node_table_sha256": "1fbf0cbf0eff1524c2406deef1533f11cda5f5928b382ce3ea9d1f460260058d",
+    "observable_table_sha256": "f020e7d1b2d008de8764389920b4035226456535b225216ab4d4412f06376808",
+    "origin_carrier_id": 12,
+    "return_negative_carrier_ids": [
+      7,
+      8,
+      9,
+      13
+    ],
+    "return_path_count": 8,
+    "return_path_table_sha256": "652f152bf9be68c29cee7f719015adc83e38072032a20d487b7850f22a686d5d",
+    "slot_negative_carrier_id": 4,
+    "x2_detour_edge_ids": [
+      9,
+      14,
+      39,
+      41
+    ],
+    "x2_detour_target_ids": [
+      2,
+      3,
+      10,
+      11
+    ]
+  }
+}

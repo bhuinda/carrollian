@@ -1,0 +1,160 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "20b0169d23349ff5e9160ed15353b75b187e48c5b0a3f39201f2c6e3722589d0",
+  "checks": {
+    "all_signature_cut_edges_have_shared_active_atom_one": true,
+    "boundary_degrees_match_spectral_mask_summary": true,
+    "boundary_pair_flux_rows_match_expected": true,
+    "boundary_pair_set_matches_cell_complex": true,
+    "carrier_boundary_edge_count_is_16": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_json_schema_available": true,
+    "cell_complex_report_certified": true,
+    "cell_complex_tables_available": true,
+    "central_negative_carries_flux_majority": true,
+    "central_negative_partition_matches_expected": true,
+    "high_negative_partition_matches_expected": true,
+    "mask_edge_table_shape_is_16_by_12": true,
+    "observable_table_shape_matches_codebook": true,
+    "partition_table_shape_is_2_by_9": true,
+    "shared_active_atom_sum_matches_cut_edge_count": true,
+    "signature_cut_edge_count_is_4007": true,
+    "signature_edge_table_shape_is_4007_by_13": true,
+    "spectral_cut_certificate_certified": true,
+    "spectral_cut_json_schema_available": true,
+    "spectral_cut_report_certified": true,
+    "spectral_cut_tables_available": true,
+    "top_boundary_pair_matches_expected": true,
+    "total_cut_flux_matches_spectral_cut": true,
+    "unexpected_boundary_partition_count_is_zero": true
+  },
+  "claim": "The residual cell-complex boundary lifts exactly to the 4,007 spectral crossing signature edges, and almost all cut conductance is carried by central-negative rather than high-negative boundary cells.",
+  "closure_boundary": {
+    "certifies": [
+      "assignment of every spectral crossing signature edge to a residual boundary cell",
+      "flux and count aggregation by high-negative and central-negative boundary partitions",
+      "exact equality between flux boundary pairs and residual cell-complex positive-negative boundary pairs",
+      "the dominant central-negative carrier of spectral cut conductance"
+    ],
+    "does_not_certify_because_not_required": [
+      "mixing-time bounds or continuum conductance estimates",
+      "a physical law selecting the declared transfer conductance",
+      "higher-eigenmode boundary flux",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "cell_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex.json",
+      "sha256": "88fedc4518455bbe017f962294fe334096da7366e80925da41c2dbe8e657d5b8"
+    },
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "cell_complex_vertices": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_vertices.csv",
+      "sha256": "6c8bf9d2be494dcba1916b5d0ddd15bd9d45a022ac8f3ff8a7d8cc4691a1dee0"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_flux_cells.py",
+      "sha256": "55b72316e5d267fdc1cf15350dbf0547de44f64d17968ba28f7e407d2039fe46"
+    },
+    "spectral_cut": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut.json",
+      "sha256": "435c8233b464732a4aac1a2b1a8b7a608ed13d7a3ee73a7881d40c613e289af5"
+    },
+    "spectral_cut_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut_certificate.json",
+      "sha256": "efb9a28b31c59179c8a3b4583ca56c35469d5609b18691117a5118295126c80d"
+    },
+    "spectral_cut_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_eigenmode_cut_edges.csv",
+      "sha256": "a28498bcb845198142cd1b8ba9370d85aebd7fb4a8f5a9bcfaa72854eae91b9e"
+    },
+    "spectral_cut_report": {
+      "certificate_sha256": "ec2a663266d278f04ca1654089ca1d9910cd9975025286bee2da6057fb9db278",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/report.json",
+      "sha256": "8ea1a4332205926dc855a4534337ab3b1f0938e123d131d70be1554a20d31408",
+      "status": "C985_D20_SIGNATURE_TRANSFER_SPECTRAL_CUT_CERTIFIED"
+    },
+    "spectral_cut_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/signature_transfer_spectral_cut_tables.npz",
+      "sha256": "111780d9d44f50c013b6b56c119fe397eed0268f2eb3c62cd4420a11af05fdd6"
+    },
+    "spectral_mask_summary": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_transfer_spectral_cut/carrier_mask_eigenmode_summary.csv",
+      "sha256": "9da1dee37861cb75cb2ad09864121dc83fe2369fa65fe448500dfbd350c448d7"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_flux_cells.py",
+      "sha256": "16589114cb416ac446abc8c1f22a4531a305dbe7ebeba81e55a8b0238babaff2"
+    }
+  },
+  "next_highest_yield_item": "Push the boundary flux through the two-state quotient dynamics: certify how the central-negative conductance accounts for the positive-to-negative and negative-to-positive transition rates, then compare it with the quotient entropy rate.",
+  "outputs": {
+    "boundary_flux_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/boundary_flux_observables.csv",
+    "boundary_mask_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/boundary_mask_edges.csv",
+    "boundary_partition_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/boundary_partition_summary.csv",
+    "boundary_signature_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/boundary_signature_edges.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/report.json",
+    "signature_boundary_flux_cells": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells.json",
+    "signature_boundary_flux_cells_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells_certificate.json",
+    "signature_boundary_flux_cells_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_flux_cells@1",
+  "stage_protocol": {
+    "closure": "certify finite boundary-cell flux without claiming a continuum conductance law",
+    "coherence": "check totals against the spectral cut and boundary pairs against the residual cell complex",
+    "draft": "map spectral crossing signature edges to residual carrier boundary cells",
+    "emit": "emit boundary-flux JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "aggregate signature-edge counts, shared-carrier counts, and undirected stationary flux by boundary cell"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_FLUX_CELLS_CERTIFIED",
+  "witness": {
+    "boundary_degree_l1_delta": 0,
+    "boundary_flux_observable_table_sha256": "9fc5e0782e1378a799b655480cf9dbcfe459be3632b263e385d25f93f9d2666b",
+    "boundary_mask_edge_table_sha256": "e769eed77d39832eff20f15fb1f8ab1df0d096e3f5d301d1437ca41e3b22fa9e",
+    "boundary_partition_table_sha256": "a307d267447c322a303a45010edb6e44b708f5f226ea50ce9ca79dfcd749ef0e",
+    "boundary_signature_edge_table_sha256": "7387d0797b18406f514e21e6dcf824f285ae1989a4f5102e191269727c7d098b",
+    "carrier_boundary_edge_count": 16,
+    "central_negative": {
+      "flux_fraction_x1e12": 984465950050,
+      "mask_edge_count": 14,
+      "signature_cut_edge_count": 3809,
+      "undirected_cut_flux_x1e12": 235250396733
+    },
+    "high_negative": {
+      "flux_fraction_x1e12": 15534049950,
+      "mask_edge_count": 2,
+      "signature_cut_edge_count": 198,
+      "undirected_cut_flux_x1e12": 3712054656
+    },
+    "shared_active_atom_sum": 4007,
+    "signature_cut_edge_count": 4007,
+    "top_boundary_pair": {
+      "boundary_partition_code": 5,
+      "flux_fraction_of_total_cut_x1e12": 182318772789,
+      "signature_cut_edge_count": 420,
+      "source_carrier_mask_class_id": 11,
+      "target_carrier_mask_class_id": 13,
+      "undirected_stationary_flux_x1e12": 43567340880
+    },
+    "total_undirected_cut_flux_x1e12": 238962451389
+  }
+}

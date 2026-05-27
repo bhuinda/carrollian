@@ -1,0 +1,40 @@
+{
+  "class_names": {
+    "0": "geodesic_mixed_x5_tail",
+    "1": "clean_x1_tail",
+    "2": "mixed_x1_tail",
+    "3": "clean_x0_tail",
+    "4": "mixed_x0_tail"
+  },
+  "cost_model": {
+    "dominance_rule": "a candidate dominates another when it is no worse in trace overhead, typed-boundary cost, valley depth, Gromov delta twice, and signature variation, and strictly better in at least one",
+    "geometry_cost_vector": [
+      "trace_detour_overhead",
+      "signature_valley_depth",
+      "metric_gromov_delta_twice",
+      "trace_signature_total_variation"
+    ],
+    "typed_boundary_cost": "mixed_x2_x5_first_contact_flag + typed_tail_abandonment_flag"
+  },
+  "dominated_candidate_ids": [
+    7,
+    8,
+    9
+  ],
+  "object": "d20",
+  "pareto_candidate_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "schema": "c985.d20_signature_boundary_spine_aperture_cycle_pareto_frontier@1",
+  "summary": {
+    "geodesic_optimal_mixed_candidate_count": 6,
+    "pareto_class_count": 2,
+    "typed_optimal_clean_x1_candidate_id": 6
+  }
+}

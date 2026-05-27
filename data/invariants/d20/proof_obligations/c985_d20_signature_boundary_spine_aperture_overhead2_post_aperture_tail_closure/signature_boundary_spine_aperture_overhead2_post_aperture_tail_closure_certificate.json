@@ -1,0 +1,100 @@
+{
+  "certified_reading": [
+    "target0's one-contact repair reaches node44 before the final target x5, but that post-aperture x5 tail consumes the target and closes 8 carrier cycles",
+    "target1's one-contact repair consumes the target at node44 but has zero closed full-word carrier paths",
+    "target1 closes after one extra post-target x3 contact, producing 12 closed carrier paths",
+    "there is no one-contact weak repair that is merely an early node44 hit with a dead post-aperture tail within the certified closure bound"
+  ],
+  "checks": {
+    "associativity_table_shape_is_216_by_27": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "closed_path_rows_split_8_and_12": true,
+    "closed_path_table_shape_is_20_by_codebook": true,
+    "edit_candidate_table_shape_is_596_by_35": true,
+    "edit_repair_certificate_certified": true,
+    "edit_repair_report_certified": true,
+    "edit_repair_schema_available": true,
+    "no_early_hit_has_dead_post_aperture_tail": true,
+    "observable_table_shape_matches_codebook": true,
+    "one_contact_weak_repair_count_is_two": true,
+    "one_repair_consumes_target_at_node44": true,
+    "one_repair_hits_node44_before_target_consumption": true,
+    "repair_table_shape_is_2_by_codebook": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "target0_post_tail_closes_eight_full_cycles": true,
+    "target0_word_has_post_aperture_x5_tail": true,
+    "target1_needs_one_x3_closure_contact": true,
+    "target1_word_has_no_post_aperture_tail": true,
+    "target1_x3_closure_has_twelve_closed_paths": true
+  },
+  "schema": "c985.d20_signature_boundary_spine_aperture_overhead2_post_aperture_tail_closure_certificate@1",
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD2_POST_APERTURE_TAIL_CLOSURE_CERTIFIED",
+  "witness": {
+    "closed_path_count_by_repair": {
+      "0": 8,
+      "1": 12
+    },
+    "closed_path_table_sha256": "31f7729f08521bd7c78e8bcfe0ce3fad1374518038bff9846e09b267b811fa31",
+    "observable_table_sha256": "06fb7f4cae5e0ad84d18141054830c98233a7b7913b161f01858f39667b1f6b5",
+    "one_contact_weak_repairs": {
+      "0": {
+        "best_closure_suffix": [],
+        "closure_closed_path_count": 8,
+        "first_node44_consumed_symbol_count": 5,
+        "full_end_carrier_histogram": {
+          "10": 8,
+          "11": 8,
+          "12": 8,
+          "13": 12,
+          "9": 12
+        },
+        "full_repair_closed_path_count": 8,
+        "full_repair_path_count": 48,
+        "minimal_extra_closure_length": 0,
+        "post_aperture_tail_length": 1,
+        "post_aperture_tail_symbol_0_id": 5,
+        "repair_word": [
+          2,
+          1,
+          4,
+          5,
+          2,
+          5
+        ]
+      },
+      "1": {
+        "best_closure_suffix": [
+          3
+        ],
+        "closure_closed_path_count": 12,
+        "first_node44_consumed_symbol_count": 6,
+        "full_end_carrier_histogram": {
+          "5": 4,
+          "6": 4,
+          "7": 4,
+          "8": 4
+        },
+        "full_repair_closed_path_count": 0,
+        "full_repair_path_count": 16,
+        "minimal_extra_closure_length": 1,
+        "post_aperture_tail_length": 0,
+        "post_aperture_tail_symbol_0_id": -1,
+        "repair_word": [
+          2,
+          1,
+          5,
+          2,
+          5,
+          4
+        ]
+      }
+    },
+    "repair_table_sha256": "7a77c7d7cbbd0cb14445d20a778b29130a0fa1572df745d8ec75064d2424e3df"
+  }
+}

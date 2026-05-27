@@ -1,0 +1,138 @@
+{
+  "certified_reading": [
+    "target0's closed repair class has 8 closed carrier paths; 2 are exact bounded-candidate aliases and they sit in the baseline score class",
+    "target0's remaining 6 closed paths are outside the bounded non-simple first-return scope because 2 are simple and 4 revisit the origin before final closure",
+    "target1's x3-return class has 12 closed carrier paths; 3 are exact bounded candidates ranked 122..124 with score (3,37,1,169)",
+    "target1 is an overhead-3 carrier class but not a baseline-score alias: 121 bounded candidates rank ahead of it and its trace branch is 48->42->27->29->45->44",
+    "every closed repair path that satisfies the bounded non-simple first-return scope has an exact bounded candidate match"
+  ],
+  "checks": {
+    "all_bounded_scope_eligible_paths_match_exactly": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "bounded_backtrack_certificate_certified": true,
+    "bounded_backtrack_report_certified": true,
+    "bounded_backtrack_schema_available": true,
+    "bounded_candidate_table_shape_is_1287_by_codebook": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "exact_bounded_match_split_is_2_and_3": true,
+    "observable_table_shape_matches_codebook": true,
+    "outside_bounded_split_is_6_and_9": true,
+    "outside_reasons_are_only_simple_or_intermediate_origin": true,
+    "path_match_table_shape_is_20_by_codebook": true,
+    "repair_class_table_shape_is_2_by_codebook": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "tail_closed_path_table_shape_is_20_by_codebook": true,
+    "tail_closure_certificate_certified": true,
+    "tail_closure_report_certified": true,
+    "tail_closure_schema_available": true,
+    "tail_repair_table_shape_is_2_by_codebook": true,
+    "target0_exact_bounded_ranks_are_5_to_9": true,
+    "target0_is_baseline_score_alias": true,
+    "target0_trace_matches_baseline_trace": true,
+    "target1_exact_bounded_ranks_are_122_to_124": true,
+    "target1_is_nonbaseline_overhead3_class": true,
+    "target1_score_class_is_three_with_121_better": true,
+    "target1_trace_is_distinct_overhead3_branch": true
+  },
+  "schema": "c985.d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking_certificate@1",
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD2_CLOSED_REPAIR_CYCLE_RANKING_CERTIFIED",
+  "witness": {
+    "observable_table_sha256": "284a96f00274ec7491251f1d5b72eddec2f0152583efc3606ae56ea8d2b7ff21",
+    "outside_reason_counts": {
+      "intermediate_origin": 13,
+      "simple": 2,
+      "unexplained": 0
+    },
+    "path_match_table_sha256": "1504b1820d76bf808650ad7291566031d956885c661fc07900ae328023f7dabf",
+    "repair_class_table_sha256": "f374f02a3f2c40b2c861c64bdb9c052a64963efeddefb299a57dd84b1f69eaf5",
+    "repair_classes": {
+      "0": {
+        "baseline_score_alias": true,
+        "closed_path_count": 8,
+        "exact_bounded_match_count": 2,
+        "exact_bounded_rank_interval": [
+          5,
+          9
+        ],
+        "intermediate_origin_outside_count": 4,
+        "nonbaseline_overhead3_class": false,
+        "outside_bounded_path_count": 6,
+        "repair_id": 0,
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 37,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 127
+        },
+        "score_rank_interval": [
+          1,
+          103
+        ],
+        "simple_outside_count": 2,
+        "symbol_word": [
+          2,
+          1,
+          4,
+          5,
+          2,
+          5
+        ],
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          28,
+          34,
+          44
+        ]
+      },
+      "1": {
+        "baseline_score_alias": false,
+        "closed_path_count": 12,
+        "exact_bounded_match_count": 3,
+        "exact_bounded_rank_interval": [
+          122,
+          124
+        ],
+        "intermediate_origin_outside_count": 9,
+        "nonbaseline_overhead3_class": true,
+        "outside_bounded_path_count": 9,
+        "repair_id": 1,
+        "score": {
+          "metric_gromov_delta_twice": 1,
+          "signature_valley_depth": 37,
+          "trace_detour_overhead": 3,
+          "trace_signature_total_variation": 169
+        },
+        "score_rank_interval": [
+          122,
+          124
+        ],
+        "simple_outside_count": 0,
+        "symbol_word": [
+          2,
+          1,
+          5,
+          2,
+          5,
+          4,
+          3
+        ],
+        "trace_nodes": [
+          48,
+          42,
+          27,
+          29,
+          45,
+          44
+        ]
+      }
+    }
+  }
+}

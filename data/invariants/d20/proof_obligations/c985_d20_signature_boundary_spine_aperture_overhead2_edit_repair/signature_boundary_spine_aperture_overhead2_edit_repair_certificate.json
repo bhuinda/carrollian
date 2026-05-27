@@ -1,0 +1,139 @@
+{
+  "certified_reading": [
+    "both abstract overhead-2 words are one inserted contact away from a rooted carrier-realizable node44 trace",
+    "neither one-contact repair beats the existing overhead-3 x1-tail class; both tie its trace overhead",
+    "for x2,x1,x4,x2,x5, the unique one-contact repair x2,x1,x4,x5,x2,x5 reaches node44 before the final target x5 is consumed",
+    "requiring full target consumption before the first node44 hit raises x2,x1,x4,x2,x5 to two inserted contacts, with best repair x2,x1,x4,x3,x2,x5,x4 and overhead 5",
+    "for x2,x1,x5,x2,x4, the one-contact repair x2,x1,x5,x2,x5,x4 is already strong and has overhead 3"
+  ],
+  "checks": {
+    "associativity_table_shape_is_216_by_27": true,
+    "candidate_table_shape_is_596_by_codebook": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "exact_overhead2_words_have_no_weak_repair": true,
+    "minimal_strong_repairs_are_two_and_one": true,
+    "minimal_weak_repairs_are_unique": true,
+    "minimum_table_shape_is_4_by_codebook": true,
+    "no_repair_beats_baseline_overhead": true,
+    "observable_table_shape_matches_codebook": true,
+    "overhead2_carrier_certificate_certified": true,
+    "overhead2_carrier_report_certified": true,
+    "overhead2_carrier_schema_available": true,
+    "overhead2_word_table_shape_is_2_by_14": true,
+    "repair_counts_within_bound_are_stable": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "strong_min_edit_distances_are_two_and_one": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "target0_strong_best_overhead_is_five": true,
+    "target0_strong_best_word_matches_expected": true,
+    "target0_weak_best_is_post_aperture_tail": true,
+    "target0_weak_best_word_matches_expected": true,
+    "target1_strong_best_overhead_matches_baseline": true,
+    "target1_weak_best_is_also_strong": true,
+    "target1_weak_best_word_matches_expected": true,
+    "weak_best_overheads_match_baseline": true,
+    "weak_min_edit_distances_are_one_and_one": true
+  },
+  "schema": "c985.d20_signature_boundary_spine_aperture_overhead2_edit_repair_certificate@1",
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD2_EDIT_REPAIR_CERTIFIED",
+  "witness": {
+    "candidate_table_sha256": "fff9e9ab60160e35dfd9cf2fc64fe5f92e16a55c027077cb0066e67d74b27ba2",
+    "criteria": {
+      "strong": "weak repair whose first node44 trace hit occurs after the original target word is fully consumed",
+      "weak": "rooted carrier path for the full edited word and first node44 trace hit"
+    },
+    "minimum_repairs": {
+      "0:0": {
+        "best_signature_valley_depth": 37,
+        "best_target_consumed_before_node44": false,
+        "best_trace_detour_overhead": 3,
+        "best_word": [
+          2,
+          1,
+          4,
+          5,
+          2,
+          5
+        ],
+        "minimal_edit_distance": 1,
+        "minimal_repair_count": 1
+      },
+      "0:1": {
+        "best_signature_valley_depth": 37,
+        "best_target_consumed_before_node44": true,
+        "best_trace_detour_overhead": 5,
+        "best_word": [
+          2,
+          1,
+          4,
+          3,
+          2,
+          5,
+          4
+        ],
+        "minimal_edit_distance": 2,
+        "minimal_repair_count": 2
+      },
+      "1:0": {
+        "best_signature_valley_depth": 37,
+        "best_target_consumed_before_node44": true,
+        "best_trace_detour_overhead": 3,
+        "best_word": [
+          2,
+          1,
+          5,
+          2,
+          5,
+          4
+        ],
+        "minimal_edit_distance": 1,
+        "minimal_repair_count": 1
+      },
+      "1:1": {
+        "best_signature_valley_depth": 37,
+        "best_target_consumed_before_node44": true,
+        "best_trace_detour_overhead": 3,
+        "best_word": [
+          2,
+          1,
+          5,
+          2,
+          5,
+          4
+        ],
+        "minimal_edit_distance": 1,
+        "minimal_repair_count": 1
+      }
+    },
+    "minimum_table_sha256": "b42b15052c0541aba1da3d3dc85c22f47a1970100b8cfa27103f8141a0bc94a0",
+    "observable_table_sha256": "efa2fa848102d4fb8932d6b1a072e8d9423405096f1aa80e19369e7a232025cd",
+    "search_bound": {
+      "allowed_insertions": "after the fixed x2,x1 tail prefix only",
+      "candidate_word_count": 596,
+      "max_insertions": 2
+    },
+    "strong_repairs_beating_baseline_count": 0,
+    "target_words": [
+      [
+        2,
+        1,
+        4,
+        2,
+        5
+      ],
+      [
+        2,
+        1,
+        5,
+        2,
+        4
+      ]
+    ],
+    "weak_repairs_beating_baseline_count": 0
+  }
+}

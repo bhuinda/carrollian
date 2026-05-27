@@ -1,0 +1,351 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ff3c69b3855ef861227e8b15a8ea5defedfa712fbf215286cb0380433649421a",
+  "checks": {
+    "accepting_states_match_branch_prefixes": true,
+    "all_source_to_branch_trigrams_are_associativity_certified": true,
+    "branch_word_lengths_match_expected": true,
+    "branch_word_table_shape_is_6_by_14": true,
+    "full_sector_windows_use_canonical_triple_32": true,
+    "gate_sequence_matches_typed_corridors": true,
+    "observable_table_shape_matches_codebook": true,
+    "observed_max_below_global_associativity_max": true,
+    "post_branch_tail_count_is_2": true,
+    "source_to_branch_canonical_triples_match_expected": true,
+    "source_to_branch_gate_symbols_omit_x2_x4": true,
+    "source_to_branch_prefix_is_14": true,
+    "source_to_branch_sector_coverage_histogram_matches_expected": true,
+    "source_to_branch_signature_range_matches_expected": true,
+    "source_to_branch_unique_trigram_count_is_11": true,
+    "source_to_branch_windows_match_expected": true,
+    "symbolic_associativity_report_certified": true,
+    "symbolic_associativity_schema_available": true,
+    "symbolic_associativity_tables_available": true,
+    "transition_count_is_16": true,
+    "transition_table_shape_is_16_by_16": true,
+    "trigram_table_shape_is_12_by_20": true,
+    "typed_corridor_report_certified": true,
+    "typed_corridor_schema_available": true,
+    "typed_corridor_tables_available": true
+  },
+  "claim": "The typed corridor grammar lifts to a finite gate automaton whose six source-to-branch paths have 12 length-three gate windows, all certified by the symbolic associativity diamond; its observed triple readout reaches signature union 175 but not the global symbolic maximum 185 because x2 and x4 never appear as gate letters.",
+  "closure_boundary": {
+    "certifies": [
+      "the finite gate automaton induced by the typed-corridor sequence",
+      "source-to-branch gate words for all six negative carrier branches",
+      "associativity-diamond certification for all length-three source-to-branch gate windows",
+      "the gap between observed gate-triple signature union 175 and global symbolic-associativity maximum 185"
+    ],
+    "does_not_certify_because_not_required": [
+      "confluence or language recognition for arbitrary gate-letter words",
+      "that the automaton is invariant under alternative spine rankings",
+      "higher-eigenmode automata",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_gate_automaton.py",
+      "sha256": "c9010debbb7c508b75a10f0979dbc5952d74f62e949601a316427e2177472506"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.json",
+      "sha256": "beb6f8e34854ed03a3d3ec052cda9a4ce6f7eca9b8838bcd5623f54f463adf5e"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "typed_corridor_branches": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/branch_corridor_summary.csv",
+      "sha256": "40a4284a5ecf5a2acd7a810ef9d8f978e257425cb36c3bf0f69050cc41c6121c"
+    },
+    "typed_corridor_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_certificate.json",
+      "sha256": "39c6a12a055ae0fae9d2324bba9bd599233bb31888d8f1cd7f63ceeb62e5bc8c"
+    },
+    "typed_corridor_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/corridor_edge_symbols.csv",
+      "sha256": "2a923d6c7f0c3acc1f6d74bf8cd1f220f9d8cecbbe66387fe4de9d92222d3969"
+    },
+    "typed_corridor_report": {
+      "certificate_sha256": "38a1f0ee65b67ef345a94d0914b3394e6b838eef76966f53e087aafbad688608",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/report.json",
+      "sha256": "7a79fff3f22357e0583814ad7dd7511f1b16e3d8986394b5147c5fdd415dec6a",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_TYPED_CORRIDORS_CERTIFIED"
+    },
+    "typed_corridor_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_tables.npz",
+      "sha256": "a94c2612d76f6fcee8f57a36c4f1cb141ad62bd09cd6c8d9d84b0eac86c8de38"
+    },
+    "typed_corridors": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors.json",
+      "sha256": "9d82c92ce8d26405c12b5e5ea9e9047e5c39afdfd556c32a4e45ec799eb9ba6e"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_gate_automaton.py",
+      "sha256": "9fee3a48d8a59580f97db38a855625d3fb932c5a4ca2170cf52315e5362b9fb5"
+    }
+  },
+  "next_highest_yield_item": "Turn the gate automaton into a hyperbolic language graph: build the prefix/trigram state graph of observed gate words, measure its finite metric boundary, and compare its missing x2/x4 aperture with the full 56-node symbolic rewrite complex.",
+  "outputs": {
+    "gate_automaton_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/gate_automaton_observables.csv",
+    "gate_automaton_transitions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/gate_automaton_transitions.csv",
+    "gate_branch_words_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/gate_branch_words.csv",
+    "gate_trigram_windows_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/gate_trigram_windows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/report.json",
+    "signature_boundary_spine_gate_automaton": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/signature_boundary_spine_gate_automaton.json",
+    "signature_boundary_spine_gate_automaton_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/signature_boundary_spine_gate_automaton_certificate.json",
+    "signature_boundary_spine_gate_automaton_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/signature_boundary_spine_gate_automaton_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_gate_automaton@1",
+  "stage_protocol": {
+    "closure": "certify the finite gate automaton without claiming arbitrary-word confluence",
+    "coherence": "check every source-to-branch window against symbolic associativity diamonds",
+    "draft": "view the typed-corridor gate sequence as a finite path automaton",
+    "emit": "emit gate-automaton JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize branch-accepting states and length-three gate windows"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_GATE_AUTOMATON_CERTIFIED",
+  "witness": {
+    "accepting_state_ids": [
+      1,
+      3,
+      5,
+      8,
+      12,
+      14
+    ],
+    "branch_word_table_sha256": "168a7543eb43f156c62e57f5b23675fa523e7df10acc98aea965f4e746d8a264",
+    "branch_words": [
+      {
+        "accept_state_id": 1,
+        "gate_symbol_word": [
+          5
+        ],
+        "negative_carrier_mask_class_id": 13
+      },
+      {
+        "accept_state_id": 3,
+        "gate_symbol_word": [
+          5,
+          5,
+          0
+        ],
+        "negative_carrier_mask_class_id": 7
+      },
+      {
+        "accept_state_id": 5,
+        "gate_symbol_word": [
+          5,
+          5,
+          0,
+          0,
+          1
+        ],
+        "negative_carrier_mask_class_id": 8
+      },
+      {
+        "accept_state_id": 8,
+        "gate_symbol_word": [
+          5,
+          5,
+          0,
+          0,
+          1,
+          3,
+          1,
+          5
+        ],
+        "negative_carrier_mask_class_id": 9
+      },
+      {
+        "accept_state_id": 12,
+        "gate_symbol_word": [
+          5,
+          5,
+          0,
+          0,
+          1,
+          3,
+          1,
+          5,
+          3,
+          5,
+          5,
+          3
+        ],
+        "negative_carrier_mask_class_id": 6
+      },
+      {
+        "accept_state_id": 14,
+        "gate_symbol_word": [
+          5,
+          5,
+          0,
+          0,
+          1,
+          3,
+          1,
+          5,
+          3,
+          5,
+          5,
+          3,
+          5,
+          3
+        ],
+        "negative_carrier_mask_class_id": 4
+      }
+    ],
+    "full_sector_trigram_windows": [
+      [
+        3,
+        1,
+        5
+      ],
+      [
+        1,
+        5,
+        3
+      ]
+    ],
+    "gate_automaton_observable_table_sha256": "2b2e303c8e8c9873b5321d13960a809c59cd3312871ccc295478bc412007e591",
+    "gate_symbol_sequence": [
+      5,
+      5,
+      0,
+      0,
+      1,
+      3,
+      1,
+      5,
+      3,
+      5,
+      5,
+      3,
+      5,
+      3,
+      1,
+      0
+    ],
+    "missing_gate_symbol_ids": [
+      2,
+      4
+    ],
+    "source_to_branch_canonical_triple_ids": [
+      1,
+      5,
+      8,
+      20,
+      23,
+      32,
+      48,
+      51
+    ],
+    "source_to_branch_sector_coverage_histogram": [
+      {
+        "count": 0,
+        "value": 3
+      },
+      {
+        "count": 1,
+        "value": 4
+      },
+      {
+        "count": 9,
+        "value": 5
+      },
+      {
+        "count": 2,
+        "value": 6
+      }
+    ],
+    "source_to_branch_signature_union_range": {
+      "gap_to_global_max": 10,
+      "global_symbolic_associativity_max": 185,
+      "max": 175,
+      "min": 90
+    },
+    "source_to_branch_trigram_windows": [
+      [
+        5,
+        5,
+        0
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        5
+      ],
+      [
+        1,
+        5,
+        3
+      ],
+      [
+        5,
+        3,
+        5
+      ],
+      [
+        3,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        3
+      ],
+      [
+        5,
+        3,
+        5
+      ],
+      [
+        3,
+        5,
+        3
+      ]
+    ],
+    "source_to_branch_unique_trigram_count": 11,
+    "transition_table_sha256": "b53ef7359fbfdbcf50af6ebfad0d90718f8790c1d34014767a3e3b4e6821ee23",
+    "trigram_window_table_sha256": "22457e40bd893f18a06b96a5f8674f2d65d2439061a960108fc958bbacef2fd3"
+  }
+}

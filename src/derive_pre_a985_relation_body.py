@@ -5,6 +5,7 @@ import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # 
 import argparse
 import hashlib
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -72,17 +73,33 @@ def compute_pre_a985_tensor() -> None:
     )
 
 
+def ensure_aligned_pre_a985_relation_npz() -> Path:
+    if PRE_A985_ALIGNED_RELATION_NPZ.exists():
+        return PRE_A985_ALIGNED_RELATION_NPZ
+    if PRE_A985_RELATION_NPZ.exists():
+        PRE_A985_ALIGNED_RELATION_NPZ.parent.mkdir(exist_ok=True)
+        shutil.copy2(PRE_A985_RELATION_NPZ, PRE_A985_ALIGNED_RELATION_NPZ)
+        return PRE_A985_ALIGNED_RELATION_NPZ
+    raise FileNotFoundError(
+        f"Missing required aligned file: {PRE_A985_ALIGNED_RELATION_NPZ} "
+        f"(and fallback {PRE_A985_RELATION_NPZ} is also missing)."
+    )
+
+
 def derive(regenerate: bool = False, regenerate_tensor: bool = False) -> dict[str, Any]:
     GENERATED.mkdir(exist_ok=True)
+    relation_npz = PRE_A985_ALIGNED_RELATION_NPZ
 
     if regenerate or not PRE_A985_ALIGNED_RELATION_NPZ.exists():
         construct_be3_from_source_coorient(
             ROOT / "data/coorient/be3_coorient_generators.npz",
             PRE_A985_BE3_REPORT,
             PRE_A985_RELATION_NPZ,
-            PRE_A985_ALIGNED_RELATION_NPZ,
+            relation_npz,
             ROOT / "data/raw/relation_memberships.npz",
         )
+    else:
+        relation_npz = ensure_aligned_pre_a985_relation_npz()
     tensor_refresh_error = None
     if regenerate_tensor or (regenerate and PRE_A985_TENSOR_NPZ.exists()):
         try:
@@ -90,7 +107,7 @@ def derive(regenerate: bool = False, regenerate_tensor: bool = False) -> dict[st
         except ModuleNotFoundError as exc:
             tensor_refresh_error = str(exc)
 
-    generated_relation = load_relation_manifest(PRE_A985_ALIGNED_RELATION_NPZ)
+    generated_relation = load_relation_manifest(relation_npz)
     canonical_relation = load_relation_manifest(ROOT / "data/raw/relation_memberships.npz")
     tensor_rel = raw_tensor_relpath()
     canonical_tensor = load_tensor_manifest(ROOT / tensor_rel)

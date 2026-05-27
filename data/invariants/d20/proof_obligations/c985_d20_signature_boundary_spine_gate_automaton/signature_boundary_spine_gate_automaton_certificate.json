@@ -1,0 +1,264 @@
+{
+  "certified_reading": [
+    "the typed corridor spine gives a 16-transition gate automaton with six accepting branch states",
+    "source-to-branch paths end at states 1, 3, 5, 8, 12, and 14",
+    "all 12 length-three gate windows on source-to-branch paths are certified symbolic associativity diamonds",
+    "the source-to-branch windows use eight canonical symbolic triples and two full-sector windows",
+    "the gate automaton misses the global length-three max-signature triple because gate letters omit x2 and x4"
+  ],
+  "checks": {
+    "accepting_states_match_branch_prefixes": true,
+    "all_source_to_branch_trigrams_are_associativity_certified": true,
+    "branch_word_lengths_match_expected": true,
+    "branch_word_table_shape_is_6_by_14": true,
+    "full_sector_windows_use_canonical_triple_32": true,
+    "gate_sequence_matches_typed_corridors": true,
+    "observable_table_shape_matches_codebook": true,
+    "observed_max_below_global_associativity_max": true,
+    "post_branch_tail_count_is_2": true,
+    "source_to_branch_canonical_triples_match_expected": true,
+    "source_to_branch_gate_symbols_omit_x2_x4": true,
+    "source_to_branch_prefix_is_14": true,
+    "source_to_branch_sector_coverage_histogram_matches_expected": true,
+    "source_to_branch_signature_range_matches_expected": true,
+    "source_to_branch_unique_trigram_count_is_11": true,
+    "source_to_branch_windows_match_expected": true,
+    "symbolic_associativity_report_certified": true,
+    "symbolic_associativity_schema_available": true,
+    "symbolic_associativity_tables_available": true,
+    "transition_count_is_16": true,
+    "transition_table_shape_is_16_by_16": true,
+    "trigram_table_shape_is_12_by_20": true,
+    "typed_corridor_report_certified": true,
+    "typed_corridor_schema_available": true,
+    "typed_corridor_tables_available": true
+  },
+  "schema": "c985.d20_signature_boundary_spine_gate_automaton_certificate@1",
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_GATE_AUTOMATON_CERTIFIED",
+  "witness": {
+    "accepting_state_ids": [
+      1,
+      3,
+      5,
+      8,
+      12,
+      14
+    ],
+    "branch_word_table_sha256": "168a7543eb43f156c62e57f5b23675fa523e7df10acc98aea965f4e746d8a264",
+    "branch_words": [
+      {
+        "accept_state_id": 1,
+        "gate_symbol_word": [
+          5
+        ],
+        "negative_carrier_mask_class_id": 13
+      },
+      {
+        "accept_state_id": 3,
+        "gate_symbol_word": [
+          5,
+          5,
+          0
+        ],
+        "negative_carrier_mask_class_id": 7
+      },
+      {
+        "accept_state_id": 5,
+        "gate_symbol_word": [
+          5,
+          5,
+          0,
+          0,
+          1
+        ],
+        "negative_carrier_mask_class_id": 8
+      },
+      {
+        "accept_state_id": 8,
+        "gate_symbol_word": [
+          5,
+          5,
+          0,
+          0,
+          1,
+          3,
+          1,
+          5
+        ],
+        "negative_carrier_mask_class_id": 9
+      },
+      {
+        "accept_state_id": 12,
+        "gate_symbol_word": [
+          5,
+          5,
+          0,
+          0,
+          1,
+          3,
+          1,
+          5,
+          3,
+          5,
+          5,
+          3
+        ],
+        "negative_carrier_mask_class_id": 6
+      },
+      {
+        "accept_state_id": 14,
+        "gate_symbol_word": [
+          5,
+          5,
+          0,
+          0,
+          1,
+          3,
+          1,
+          5,
+          3,
+          5,
+          5,
+          3,
+          5,
+          3
+        ],
+        "negative_carrier_mask_class_id": 4
+      }
+    ],
+    "full_sector_trigram_windows": [
+      [
+        3,
+        1,
+        5
+      ],
+      [
+        1,
+        5,
+        3
+      ]
+    ],
+    "gate_automaton_observable_table_sha256": "2b2e303c8e8c9873b5321d13960a809c59cd3312871ccc295478bc412007e591",
+    "gate_symbol_sequence": [
+      5,
+      5,
+      0,
+      0,
+      1,
+      3,
+      1,
+      5,
+      3,
+      5,
+      5,
+      3,
+      5,
+      3,
+      1,
+      0
+    ],
+    "missing_gate_symbol_ids": [
+      2,
+      4
+    ],
+    "source_to_branch_canonical_triple_ids": [
+      1,
+      5,
+      8,
+      20,
+      23,
+      32,
+      48,
+      51
+    ],
+    "source_to_branch_sector_coverage_histogram": [
+      {
+        "count": 0,
+        "value": 3
+      },
+      {
+        "count": 1,
+        "value": 4
+      },
+      {
+        "count": 9,
+        "value": 5
+      },
+      {
+        "count": 2,
+        "value": 6
+      }
+    ],
+    "source_to_branch_signature_union_range": {
+      "gap_to_global_max": 10,
+      "global_symbolic_associativity_max": 185,
+      "max": 175,
+      "min": 90
+    },
+    "source_to_branch_trigram_windows": [
+      [
+        5,
+        5,
+        0
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        5
+      ],
+      [
+        1,
+        5,
+        3
+      ],
+      [
+        5,
+        3,
+        5
+      ],
+      [
+        3,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        3
+      ],
+      [
+        5,
+        3,
+        5
+      ],
+      [
+        3,
+        5,
+        3
+      ]
+    ],
+    "source_to_branch_unique_trigram_count": 11,
+    "transition_table_sha256": "b53ef7359fbfdbcf50af6ebfad0d90718f8790c1d34014767a3e3b4e6821ee23",
+    "trigram_window_table_sha256": "22457e40bd893f18a06b96a5f8674f2d65d2439061a960108fc958bbacef2fd3"
+  }
+}

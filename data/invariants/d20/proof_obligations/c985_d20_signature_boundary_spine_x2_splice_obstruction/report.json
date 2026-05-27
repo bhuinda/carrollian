@@ -1,0 +1,258 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "0bd2e0f752aad121ccb1f82021c2e257e4698aa21b9055fe471fcf0d20ca7437",
+  "checks": {
+    "all_x2_near_misses_are_within_central_positive_region": true,
+    "aperture_insertion_certificate_certified": true,
+    "aperture_insertion_report_certified": true,
+    "aperture_insertion_schema_available": true,
+    "boundary_shared_x2_edge_count_is_0": true,
+    "candidate_table_shape_is_44_by_20": true,
+    "carrier_pair_edge_count_is_44": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "cell_complex_schema_available": true,
+    "existing_spine_x2_gate_count_is_0": true,
+    "insertion_candidate_table_shape_is_15_by_15": true,
+    "near_miss_table_shape_is_10_by_14": true,
+    "observable_table_shape_matches_codebook": true,
+    "positive_internal_x2_edge_count_is_10": true,
+    "positive_negative_boundary_edge_count_is_16": true,
+    "post_branch_tail_symbols_are_x1_x0": true,
+    "post_branch_tail_x2_contact_count_is_0": true,
+    "selected_insertion_is_after_state_14": true,
+    "selected_virtual_window_is_node_42": true,
+    "shared_x2_edge_count_is_10": true,
+    "single_shared_x2_edge_count_is_6": true,
+    "slot_audit_table_shape_is_3_by_9": true,
+    "slot_contact_is_positive_12_negative_4": true,
+    "slot_contact_shared_symbol_is_x3": true,
+    "slot_eligible_x2_edge_count_is_0": true,
+    "slot_negative_incident_x2_edge_count_is_0": true,
+    "slot_positive_incident_near_miss_edges_match_expected": true,
+    "slot_positive_incident_x2_edge_count_is_4": true,
+    "typed_corridor_certificate_certified": true,
+    "typed_corridor_edge_table_shape_is_16_by_23": true,
+    "typed_corridor_report_certified": true,
+    "typed_corridor_schema_available": true,
+    "x2_near_miss_edges_match_expected": true
+  },
+  "claim": "The virtual x2 aperture insertion cannot be realized as an actual carrier-pair boundary splice in the current certified finite boundary: every x2 carrier-pair contact is internal to the positive central region, and the positive/negative boundary has zero shared-x2 edges.",
+  "closure_boundary": {
+    "certifies": [
+      "the finite search over all 44 carrier-pair edges in the certified residual cell complex",
+      "that no positive/negative carrier-boundary edge shares x2",
+      "that no existing typed-spine or post-branch-tail contact has shared gate x2",
+      "the four central-positive x2 near misses incident to slot positive carrier 12"
+    ],
+    "does_not_certify_because_not_required": [
+      "nonexistence of x2 contacts outside the current 14-carrier mask quotient",
+      "a positive-internal detour that leaves and later returns to the boundary spine",
+      "a new carrier mask class or new raw relation outside the certified residual cell complex",
+      "the subsequent x4 insertion needed to reach aperture node 44"
+    ]
+  },
+  "inputs": {
+    "aperture_insertion": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/signature_boundary_spine_aperture_corridor_insertion.json",
+      "sha256": "4788da73212aa361141a68ebe17a6849b8badf1649dca85e33894bba5da3d38e"
+    },
+    "aperture_insertion_candidates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/aperture_corridor_insertion_candidates.csv",
+      "sha256": "dd34f73aa9204066d27048484bea61a1a5a25648d41b1b4208207a8613f64d94"
+    },
+    "aperture_insertion_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/signature_boundary_spine_aperture_corridor_insertion_certificate.json",
+      "sha256": "62b52e090139fca6395d08dc0266fe4943c03531d3436047a2e0e5689aa51f34"
+    },
+    "aperture_insertion_report": {
+      "certificate_sha256": "9acf8d3abc43f7c18795884d2b3c04f4698654da82e8bf40dc62741f4e934bdf",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/report.json",
+      "sha256": "e06b6215e919b02dab582fea6ad554f3f0d3da2d66e0231bc680ff7dae5effbd",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CORRIDOR_INSERTION_CERTIFIED"
+    },
+    "aperture_insertion_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_corridor_insertion/signature_boundary_spine_aperture_corridor_insertion_tables.npz",
+      "sha256": "209b36eec36774e4227191d77b0b343ea0ebbee91a0d2e9ebd942135558dd598"
+    },
+    "cell_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex.json",
+      "sha256": "88fedc4518455bbe017f962294fe334096da7366e80925da41c2dbe8e657d5b8"
+    },
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_x2_splice_obstruction.py",
+      "sha256": "472d64b2a589468786fe631826fd067a738a10c1dd7eb2ecb18e13986d32c7d8"
+    },
+    "residual_chart_carriers": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/carrier_residual_chart.csv",
+      "sha256": "f90daabada64878fef38a913d18ba88448a9dfeb44fdb3fafcb061664caad0e0"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "typed_corridor_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_certificate.json",
+      "sha256": "39c6a12a055ae0fae9d2324bba9bd599233bb31888d8f1cd7f63ceeb62e5bc8c"
+    },
+    "typed_corridor_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/corridor_edge_symbols.csv",
+      "sha256": "2a923d6c7f0c3acc1f6d74bf8cd1f220f9d8cecbbe66387fe4de9d92222d3969"
+    },
+    "typed_corridor_report": {
+      "certificate_sha256": "38a1f0ee65b67ef345a94d0914b3394e6b838eef76966f53e087aafbad688608",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/report.json",
+      "sha256": "7a79fff3f22357e0583814ad7dd7511f1b16e3d8986394b5147c5fdd415dec6a",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_TYPED_CORRIDORS_CERTIFIED"
+    },
+    "typed_corridor_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_tables.npz",
+      "sha256": "a94c2612d76f6fcee8f57a36c4f1cb141ad62bd09cd6c8d9d84b0eac86c8de38"
+    },
+    "typed_corridors": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors.json",
+      "sha256": "9d82c92ce8d26405c12b5e5ea9e9047e5c39afdfd556c32a4e45ec799eb9ba6e"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_x2_splice_obstruction.py",
+      "sha256": "9813429c4e403c4c236eebad9f753da73db509de7289538ad9acbaabd10eab12"
+    }
+  },
+  "next_highest_yield_item": "Certify the positive-internal x2 detour fan incident to carrier 12: measure whether edges 9, 14, 39, and 41 can form a controlled off-boundary excursion that realizes node 42 before returning to the typed boundary.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/report.json",
+    "signature_boundary_spine_x2_splice_obstruction": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/signature_boundary_spine_x2_splice_obstruction.json",
+    "signature_boundary_spine_x2_splice_obstruction_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/signature_boundary_spine_x2_splice_obstruction_certificate.json",
+    "signature_boundary_spine_x2_splice_obstruction_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/signature_boundary_spine_x2_splice_obstruction_tables.npz",
+    "x2_splice_candidate_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/x2_splice_candidate_edges.csv",
+    "x2_splice_near_misses_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/x2_splice_near_misses.csv",
+    "x2_splice_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/x2_splice_observables.csv",
+    "x2_splice_slot_audit_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_splice_obstruction/x2_splice_slot_audit.csv"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_x2_splice_obstruction@1",
+  "stage_protocol": {
+    "closure": "certify the finite obstruction without claiming there is no x2 contact outside the current carrier-mask boundary model",
+    "coherence": "check boundary membership, slot incidence, post-tail symbols, and typed-spine x2 absence",
+    "draft": "treat the selected virtual x2 insertion as a request for a real carrier-pair boundary contact",
+    "emit": "emit x2-splice obstruction JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "enumerate all 44 carrier-pair cell-complex edges and all shared-x2 near misses"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_SPLICE_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "actual_splice_possible": false,
+    "boundary_shared_x2_edge_count": 0,
+    "candidate_table_sha256": "deb36b4064b16d35ee4bee6478092807b5aa84db7b59139cbed6b0ca7932db8c",
+    "carrier_pair_edge_count": 44,
+    "near_miss_table_sha256": "7e0f95ef005188870e71e491d806dbfb7d550ec8fb475dbaf246a7e1f49bc594",
+    "observable_table_sha256": "ee7ef4be9b8f0363d8ff96c59f284f570ddda97958be9c8ed39e40a87ea86c61",
+    "positive_negative_boundary_edge_count": 16,
+    "positive_negative_boundary_shared_symbol_histogram": [
+      {
+        "count": 3,
+        "value": 1
+      },
+      {
+        "count": 3,
+        "value": 2
+      },
+      {
+        "count": 4,
+        "value": 8
+      },
+      {
+        "count": 6,
+        "value": 32
+      }
+    ],
+    "selected_virtual_insertion": {
+      "candidate_id": 14,
+      "required_symbol_id": 2,
+      "slot_after_state": 14,
+      "slot_negative_carrier_mask_class_id": 4,
+      "slot_positive_carrier_mask_class_id": 12
+    },
+    "shared_x2_edge_count": 10,
+    "slot_audit_rows": [
+      {
+        "boundary_mask_edge_id": 4,
+        "boundary_spine_rank": 14,
+        "negative_carrier_mask_class_id": 4,
+        "positive_carrier_mask_class_id": 12,
+        "post_branch_tail_flag": 0,
+        "selected_slot_boundary_flag": 1,
+        "shared_symbol_id": 3,
+        "slot_audit_id": 0,
+        "x2_contact_flag": 0
+      },
+      {
+        "boundary_mask_edge_id": 1,
+        "boundary_spine_rank": 15,
+        "negative_carrier_mask_class_id": 8,
+        "positive_carrier_mask_class_id": 1,
+        "post_branch_tail_flag": 1,
+        "selected_slot_boundary_flag": 0,
+        "shared_symbol_id": 1,
+        "slot_audit_id": 1,
+        "x2_contact_flag": 0
+      },
+      {
+        "boundary_mask_edge_id": 0,
+        "boundary_spine_rank": 16,
+        "negative_carrier_mask_class_id": 7,
+        "positive_carrier_mask_class_id": 0,
+        "post_branch_tail_flag": 1,
+        "selected_slot_boundary_flag": 0,
+        "shared_symbol_id": 0,
+        "slot_audit_id": 2,
+        "x2_contact_flag": 0
+      }
+    ],
+    "slot_audit_table_sha256": "f5729bccb82257f7cc1b769f490f33abb9cb5b1b34824fa9174ac91d833d7c30",
+    "slot_eligible_x2_edge_count": 0,
+    "slot_negative_incident_x2_edge_ids": [],
+    "slot_positive_incident_x2_edge_ids": [
+      9,
+      14,
+      39,
+      41
+    ],
+    "x2_near_miss_edge_ids": [
+      6,
+      7,
+      8,
+      9,
+      12,
+      13,
+      14,
+      38,
+      39,
+      41
+    ],
+    "x2_near_miss_partition_histogram": [
+      {
+        "count": 10,
+        "value": 1
+      }
+    ]
+  }
+}

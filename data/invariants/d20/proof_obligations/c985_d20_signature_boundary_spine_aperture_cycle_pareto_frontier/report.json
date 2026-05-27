@@ -1,0 +1,275 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "209c3bc28848054b2570a53ec2738990e2986c6c9677dc933c5e5f1cd9e58839",
+  "checks": {
+    "candidate_7_dominated_by_selected_candidate": true,
+    "candidate_8_dominated_by_selected_candidate": true,
+    "candidate_9_is_dominated": true,
+    "candidate_count_is_10": true,
+    "candidate_table_shape_is_10_by_25": true,
+    "class_table_has_5_rows": true,
+    "class_table_shape_is_5_by_15": true,
+    "clean_choice_table_shape_is_2_choices": true,
+    "clean_detour_certificate_certified": true,
+    "clean_detour_report_certified": true,
+    "clean_detour_schema_available": true,
+    "clean_x1_class_is_selected_and_typed_cost_0": true,
+    "dominated_candidate_ids_match": true,
+    "first_contact_flags_match_expected": true,
+    "geodesic_class_has_6_candidates_and_typed_cost_2": true,
+    "geodesic_mixed_candidate_ids_match": true,
+    "observable_table_shape_matches_codebook": true,
+    "pareto_candidate_ids_match": true,
+    "pareto_class_count_is_2": true,
+    "ranking_candidate_table_shape_is_10_by_34": true,
+    "ranking_certificate_certified": true,
+    "ranking_report_certified": true,
+    "ranking_schema_available": true,
+    "selected_candidate_is_clean_x1_tail": true,
+    "selected_candidate_matches_prior_clean_choice": true,
+    "typed_corridor_certificate_certified": true,
+    "typed_corridor_report_certified": true,
+    "typed_corridor_table_has_16_edges": true,
+    "typed_cost_zero_is_unique_selected_candidate": true,
+    "typed_tail_witnesses_exist": true,
+    "x2_detour_certificate_certified": true,
+    "x2_detour_edge_table_shape_is_13_by_15": true,
+    "x2_detour_report_certified": true,
+    "zero_overhead_abandons_x1_tail": true,
+    "zero_overhead_requires_mixed_first_contact": true
+  },
+  "claim": "The comparable aperture-cycle family has a two-class Pareto frontier: zero-overhead mixed x2/x5 cycles minimize geometry but pay typed-boundary cost 2, while the selected clean x1-tail cycle minimizes typed-boundary cost at 0 and pays overhead 3.",
+  "closure_boundary": {
+    "certifies": [
+      "typed-boundary costs for the 10 already ranked x2-rooted aperture cycles",
+      "which zero-overhead cycles require mixed x2/x5 first contacts",
+      "which cycles preserve or abandon the certified x1 tail",
+      "the finite Pareto frontier under the stated geometry/typed cost vector"
+    ],
+    "does_not_certify_because_not_required": [
+      "optimality among carrier cycles longer than four edges",
+      "disambiguation of mixed x2/x5 contacts into atom-level x2-only data",
+      "new aperture routes outside the ranked comparable class",
+      "new categorical F-symbols, pivotality, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "clean_detour_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice_certificate.json",
+      "sha256": "8abed84397e0e493982f25c9da6a51da50b0a2d8098b5c3c47a55c0393ce282c"
+    },
+    "clean_detour_choices": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/x2_clean_detour_return_choices.csv",
+      "sha256": "122bfe670c9b07984f592014e16fb8f678d46a3bfb85b94e62381fd055757fd5"
+    },
+    "clean_detour_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice.json",
+      "sha256": "4d88041041b28d2afb01fba7a2de3c66cc0bd729c6d3f3fad349cdf5bf3070b0"
+    },
+    "clean_detour_report": {
+      "certificate_sha256": "e7744e48d48ebd64d7d40c1563b8abd2e2d7feb68688117d18ee778f559d124d",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/report.json",
+      "sha256": "a237d353b1a5faa966ed49904b40ad53708b53a7813151d51dcb3cd01c3768bb",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_CLEAN_DETOUR_CHOICE_CERTIFIED"
+    },
+    "clean_detour_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_clean_detour_choice/signature_boundary_spine_x2_clean_detour_choice_tables.npz",
+      "sha256": "0af003e3fe92ddaebcee935dd7780e7e435726882d96d282b938a8788a8c9b74"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier.py",
+      "sha256": "bdbf459a6a7c3704fa13d75a8d326c017db51fecc33d71f814e5d8f013c21672"
+    },
+    "ranking_candidates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/aperture_cycle_ranked_candidates.csv",
+      "sha256": "872e104b32003bfb533daa087efa2591f1ef0b24f3a6a5a6ec686dfed2e8aa58"
+    },
+    "ranking_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/signature_boundary_spine_aperture_cycle_ranking_certificate.json",
+      "sha256": "fabc8186e2b06091a0a8897b24889fc42cf7d0370b3385e419a7092b54331a0d"
+    },
+    "ranking_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/signature_boundary_spine_aperture_cycle_ranking.json",
+      "sha256": "a6f2843660ec114c2c075d70629c6549eb851123620a38de09950056c5708b4b"
+    },
+    "ranking_observables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/aperture_cycle_ranking_observables.csv",
+      "sha256": "36fa9afacc41431c044035ce31b4107abdc27ba56a52697f083daac2695bc5de"
+    },
+    "ranking_report": {
+      "certificate_sha256": "6914576663db54e615d1e85c57356d08bea1e787779a1ce48e193d365b69dbfd",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/report.json",
+      "sha256": "bf1ec55f640c602c1251e5bcd000e240fe3c73453ff2bdb7ced27b9980d8e271",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CYCLE_RANKING_CERTIFIED"
+    },
+    "ranking_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_ranking/signature_boundary_spine_aperture_cycle_ranking_tables.npz",
+      "sha256": "d3d7f7cecb15cb1498c509c676530dc182ac7631db8e810e32c329baa31ebe0d"
+    },
+    "typed_corridor_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_certificate.json",
+      "sha256": "39c6a12a055ae0fae9d2324bba9bd599233bb31888d8f1cd7f63ceeb62e5bc8c"
+    },
+    "typed_corridor_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/corridor_edge_symbols.csv",
+      "sha256": "2a923d6c7f0c3acc1f6d74bf8cd1f220f9d8cecbbe66387fe4de9d92222d3969"
+    },
+    "typed_corridor_report": {
+      "certificate_sha256": "38a1f0ee65b67ef345a94d0914b3394e6b838eef76966f53e087aafbad688608",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/report.json",
+      "sha256": "7a79fff3f22357e0583814ad7dd7511f1b16e3d8986394b5147c5fdd415dec6a",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_TYPED_CORRIDORS_CERTIFIED"
+    },
+    "typed_corridor_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_typed_corridors/signature_boundary_spine_typed_corridors_tables.npz",
+      "sha256": "a94c2612d76f6fcee8f57a36c4f1cb141ad62bd09cd6c8d9d84b0eac86c8de38"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier.py",
+      "sha256": "db8466c24343c41e20fd955e4287d4d0a4fff584658d6a8dd7b8c016e64786a9"
+    },
+    "x2_detour_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/signature_boundary_spine_x2_detour_fan_certificate.json",
+      "sha256": "3776fc052368fedb8a5f5afbb591ba773ccc3e6b2fbd1186ed499cfb01e7be30"
+    },
+    "x2_detour_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/x2_detour_edges.csv",
+      "sha256": "b3c5c8c14173f4fb4d9b3098266147ee4a906dec7919269ca64c2b0272fca6f8"
+    },
+    "x2_detour_report": {
+      "certificate_sha256": "0641917fafb69c497efbbd2526a8d397b31d376f52e25b9cc59c0aee086e85be",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/report.json",
+      "sha256": "f09fc7c73c4c779a1e62f93eca32e6cc45a4fb95c8bc556ae201c854f15aeb32",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_X2_DETOUR_FAN_CERTIFIED"
+    },
+    "x2_detour_returns": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/x2_detour_return_paths.csv",
+      "sha256": "247c1274ca90c9cc234ad369c8eec8b06802e2ecda34bb5f5444acf14d5f3732"
+    },
+    "x2_detour_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_x2_detour_fan/signature_boundary_spine_x2_detour_fan_tables.npz",
+      "sha256": "1e8655732738ad0ccd3588363ad17dfffe4c86ec4423285a95027eb2d98bfdba"
+    }
+  },
+  "next_highest_yield_item": "Drill into the zero-overhead mixed cycles at atom level: certify whether mixed x2/x5 first contacts on edges 39 and 41 can be resolved to pure x2 witnesses, or prove that the ambiguity is intrinsic to this carrier-mask quotient.",
+  "outputs": {
+    "aperture_cycle_pareto_candidates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier/aperture_cycle_pareto_candidates.csv",
+    "aperture_cycle_pareto_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier/aperture_cycle_pareto_classes.csv",
+    "aperture_cycle_pareto_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier/aperture_cycle_pareto_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier/report.json",
+    "signature_boundary_spine_aperture_cycle_pareto_frontier": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier/signature_boundary_spine_aperture_cycle_pareto_frontier.json",
+    "signature_boundary_spine_aperture_cycle_pareto_frontier_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier/signature_boundary_spine_aperture_cycle_pareto_frontier_certificate.json",
+    "signature_boundary_spine_aperture_cycle_pareto_frontier_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier/signature_boundary_spine_aperture_cycle_pareto_frontier_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_cycle_pareto_frontier@1",
+  "stage_protocol": {
+    "closure": "certify the Pareto frontier within the existing 10-cycle comparable class only",
+    "coherence": "compute finite nondomination under trace overhead, typed cost, valley depth, delta, and variation",
+    "draft": "lift ranked aperture cycles into a two-axis geometry/typing cost model",
+    "emit": "emit Pareto JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize clean versus mixed first-contact flags, x1-tail preservation, and typed costs"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CYCLE_PARETO_FRONTIER_CERTIFIED",
+  "witness": {
+    "candidate_count": 10,
+    "candidate_table_sha256": "b20f8b774da9e8fc01ec5a80aac9f532f371726a79f92d5d8c60d71cb22cbab8",
+    "class_table_sha256": "1dd1d151f35116b918f37a020aee3315fd6f93295f8a517339bb7ef261006b97",
+    "dominated_candidate_ids": [
+      7,
+      8,
+      9
+    ],
+    "observable_table_sha256": "0a018cfdb99679b97e7b27e4148fa89f1f27e506c8dab8cce9be7c483bc0451a",
+    "pareto_candidate_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "pareto_classes": [
+      {
+        "candidate_count": 6,
+        "class_code": 0,
+        "class_name": "geodesic_mixed_x5_tail",
+        "metric_gromov_delta": 0.0,
+        "pareto_frontier_class": true,
+        "representative_candidate_id": 0,
+        "signature_valley_depth": 0,
+        "trace_detour_overhead": 0,
+        "trace_signature_total_variation": 53,
+        "typed_boundary_cost": 2
+      },
+      {
+        "candidate_count": 1,
+        "class_code": 1,
+        "class_name": "clean_x1_tail",
+        "metric_gromov_delta": 0.5,
+        "pareto_frontier_class": true,
+        "representative_candidate_id": 6,
+        "signature_valley_depth": 37,
+        "trace_detour_overhead": 3,
+        "trace_signature_total_variation": 127,
+        "typed_boundary_cost": 0
+      },
+      {
+        "candidate_count": 1,
+        "class_code": 2,
+        "class_name": "mixed_x1_tail",
+        "metric_gromov_delta": 0.5,
+        "pareto_frontier_class": false,
+        "representative_candidate_id": 7,
+        "signature_valley_depth": 37,
+        "trace_detour_overhead": 3,
+        "trace_signature_total_variation": 127,
+        "typed_boundary_cost": 1
+      },
+      {
+        "candidate_count": 1,
+        "class_code": 3,
+        "class_name": "clean_x0_tail",
+        "metric_gromov_delta": 0.5,
+        "pareto_frontier_class": false,
+        "representative_candidate_id": 8,
+        "signature_valley_depth": 41,
+        "trace_detour_overhead": 3,
+        "trace_signature_total_variation": 135,
+        "typed_boundary_cost": 1
+      },
+      {
+        "candidate_count": 1,
+        "class_code": 4,
+        "class_name": "mixed_x0_tail",
+        "metric_gromov_delta": 0.5,
+        "pareto_frontier_class": false,
+        "representative_candidate_id": 9,
+        "signature_valley_depth": 41,
+        "trace_detour_overhead": 3,
+        "trace_signature_total_variation": 135,
+        "typed_boundary_cost": 2
+      }
+    ],
+    "selected_candidate": {
+      "candidate_id": 6,
+      "edge_cycle": [
+        14,
+        11,
+        33,
+        43
+      ],
+      "metric_gromov_delta": 0.5,
+      "signature_valley_depth": 37,
+      "symbol_cycle": [
+        2,
+        1,
+        4,
+        5
+      ],
+      "trace_detour_overhead": 3,
+      "typed_boundary_cost": 0
+    }
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ce548d829fc9ea8e9c1b2feffc4021f888784d6cb8436314bed6b84916d8e22d",
+  "checks": {
+    "all_fan_edges_are_rewrite_complex_edges": true,
+    "all_geodesic_paths_have_length_2": true,
+    "all_paths_restore_x2_and_x4_once": true,
+    "aperture_word_is_x2_x4_x5": true,
+    "boundary_endpoints_are_ambient_distance_2": true,
+    "fan_degree_histogram_matches_expected": true,
+    "fan_delta_witness_nodes_match_expected": true,
+    "fan_edge_count_is_12": true,
+    "fan_edge_table_shape_is_12_by_12": true,
+    "fan_graph_connected": true,
+    "fan_graph_diameter_is_4": true,
+    "fan_graph_radius_is_2": true,
+    "fan_gromov_delta_is_1": true,
+    "fan_node_count_is_9": true,
+    "fan_node_table_shape_is_9_by_17": true,
+    "fan_observable_table_shape_matches_codebook": true,
+    "full_sector_intermediate_path_count_is_2": true,
+    "geodesic_path_count_is_6": true,
+    "geodesic_path_table_shape_is_6_by_17": true,
+    "geodesic_paths_match_expected": true,
+    "high_signature_intermediate_path_count_is_1": true,
+    "intermediate_signature_range_is_134_183": true,
+    "language_aperture_node_matches_expected": true,
+    "language_aperture_table_shape_is_8_by_9": true,
+    "language_boundary_endpoints_match_expected": true,
+    "language_edge_table_shape_is_7_by_10": true,
+    "language_graph_certificate_certified": true,
+    "language_graph_report_certified": true,
+    "language_graph_schema_available": true,
+    "language_graph_tables_available": true,
+    "language_node_table_shape_is_8_by_14": true,
+    "restoration_summary_table_shape_is_2_by_10": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_complex_schema_available": true,
+    "rewrite_complex_tables_available": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "rewrite_node_table_shape_is_56_by_17": true,
+    "strict_full_sector_high_signature_path_count_is_1": true,
+    "strict_path_is_48_42_44": true,
+    "x2_first_and_x4_first_paths_are_balanced": true
+  },
+  "claim": "The finite language-boundary aperture has a certified ambient rewrite geodesic fan: six shortest two-step paths restore x2/x4 from boundary endpoints into node 44, and exactly one path preserves both full-sector coverage and the observed high-signature threshold.",
+  "closure_boundary": {
+    "certifies": [
+      "all ambient shortest rewrite paths from language-boundary endpoints 20 and 48 to aperture node 44",
+      "the x2/x4 restoration order for every shortest path",
+      "full-sector and high-signature preservation flags for the fan",
+      "exact fan distances, diameter, radius, and Gromov delta",
+      "the unique strict preserving path 48 -> 42 -> 44 at threshold 175"
+    ],
+    "does_not_certify_because_not_required": [
+      "geodesic fans from non-boundary language nodes",
+      "arbitrary-length rewrite geodesic uniqueness",
+      "new categorical associator, pentagon, braiding, center, or tube-algebra data",
+      "that threshold 175 is the only possible notion of high signature mass"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_geodesic_fan.py",
+      "sha256": "604df6da7bd2ed41cd9d5d778ef2a8aaddc36e0620e8eab3927569e468391025"
+    },
+    "language_aperture_distances": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_aperture_distances.csv",
+      "sha256": "bced05d69e9a1c3ec60ecb65c21d0e519bf82e3661d5e4183891fd3e5f24d9fd"
+    },
+    "language_graph": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/signature_boundary_spine_language_graph.json",
+      "sha256": "c926ff5ae8131c54c4a88d71e104f09c52ec42fa0ede041ab614d73b075fce49"
+    },
+    "language_graph_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/signature_boundary_spine_language_graph_certificate.json",
+      "sha256": "6050a96dd1908f95f1a70bafbba94d4417d390d8877b53ceb74c6fd5bbc5a06f"
+    },
+    "language_graph_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_graph_edges.csv",
+      "sha256": "3254ff54e82614e18ea6334dd1d30caddf788ca14aee3dc6a429db5ce5fe729a"
+    },
+    "language_graph_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_graph_nodes.csv",
+      "sha256": "27649b2f596afbda1744b49c3a29695e3cbcd69bf3e023eb9b96ba49e981c8e2"
+    },
+    "language_graph_report": {
+      "certificate_sha256": "43437c9da6a4aa1fd1a9d014a70b65569b81b1142ea433cee45ed038ac508469",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/report.json",
+      "sha256": "e53463c2b1c056f6b8409b25d62cc2e47ec911f0b6cfcf047bcb13203a1abf82",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_LANGUAGE_GRAPH_CERTIFIED"
+    },
+    "language_graph_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/signature_boundary_spine_language_graph_tables.npz",
+      "sha256": "3aaba159e15a9baa673b788dcee36fd7fbf16394347f1a153800a366b4ff7e5f"
+    },
+    "rewrite_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+      "sha256": "0d170586487cce586baea14d2da03b700e3688ab2d45a5793094d19ad8b99385"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_geodesic_fan.py",
+      "sha256": "cfe0e6dc6e8aba6b89b2706b486055ee7c185ad0e952c2a537a85f1d3fe99e20"
+    }
+  },
+  "next_highest_yield_item": "Lift the unique strict aperture path 48 -> 42 -> 44 back through the gate language and boundary-spine order, then certify the minimal corridor edit that would introduce x2 before the aperture without losing the existing typed contacts.",
+  "outputs": {
+    "aperture_geodesic_fan_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/aperture_geodesic_fan_edges.csv",
+    "aperture_geodesic_fan_nodes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/aperture_geodesic_fan_nodes.csv",
+    "aperture_geodesic_fan_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/aperture_geodesic_fan_observables.csv",
+    "aperture_geodesic_paths_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/aperture_geodesic_paths.csv",
+    "aperture_restoration_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/aperture_restoration_summary.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/report.json",
+    "signature_boundary_spine_aperture_geodesic_fan": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/signature_boundary_spine_aperture_geodesic_fan.json",
+    "signature_boundary_spine_aperture_geodesic_fan_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/signature_boundary_spine_aperture_geodesic_fan_certificate.json",
+    "signature_boundary_spine_aperture_geodesic_fan_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_geodesic_fan/signature_boundary_spine_aperture_geodesic_fan_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_geodesic_fan@1",
+  "stage_protocol": {
+    "closure": "certify the finite aperture fan without claiming arbitrary ambient geodesic uniqueness",
+    "coherence": "check restoration order, full-sector flags, signature thresholds, and fan hyperbolicity",
+    "draft": "treat node 44 as the missing x2/x4 aperture adjacent to the language boundary",
+    "emit": "emit geodesic-fan JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "enumerate every shortest ambient rewrite path from boundary endpoints 20 and 48 to node 44"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_GEODESIC_FAN_CERTIFIED",
+  "witness": {
+    "aperture_node": {
+      "canonical_atom_ids": [
+        7,
+        12,
+        19
+      ],
+      "canonical_word": "x2 x4 x5",
+      "node_id": 44,
+      "sector_coverage_count": 6,
+      "signature_union_count": 185
+    },
+    "boundary_endpoint_node_ids": [
+      20,
+      48
+    ],
+    "endpoint_restoration_summary": [
+      {
+        "boundary_node_id": 20,
+        "full_sector_and_high_signature_path_count": 0,
+        "full_sector_path_count": 1,
+        "geodesic_path_count": 4,
+        "high_signature_path_count": 0,
+        "max_intermediate_signature_union_count": 173,
+        "min_intermediate_signature_union_count": 134,
+        "strict_best_path_id": -1,
+        "x2_first_path_count": 2,
+        "x4_first_path_count": 2
+      },
+      {
+        "boundary_node_id": 48,
+        "full_sector_and_high_signature_path_count": 1,
+        "full_sector_path_count": 1,
+        "geodesic_path_count": 2,
+        "high_signature_path_count": 1,
+        "max_intermediate_signature_union_count": 183,
+        "min_intermediate_signature_union_count": 146,
+        "strict_best_path_id": 4,
+        "x2_first_path_count": 1,
+        "x4_first_path_count": 1
+      }
+    ],
+    "fan_adjacency_sha256": "713766ca028f44b1326c1bd71c55870ce1b2996a6d081cdbb0a361c10b293799",
+    "fan_degree_histogram": [
+      {
+        "count": 7,
+        "value": 2
+      },
+      {
+        "count": 1,
+        "value": 4
+      },
+      {
+        "count": 1,
+        "value": 6
+      }
+    ],
+    "fan_delta_witness_node_ids": [
+      20,
+      48,
+      14,
+      19
+    ],
+    "fan_distance_histogram": [
+      {
+        "count": 12,
+        "value": 1
+      },
+      {
+        "count": 17,
+        "value": 2
+      },
+      {
+        "count": 6,
+        "value": 3
+      },
+      {
+        "count": 1,
+        "value": 4
+      }
+    ],
+    "fan_distances_sha256": "f3bd2f28f3421050a2616069e71718377ffe92d382aaf6391873cecec91a03c7",
+    "fan_edge_node_pairs": [
+      [
+        14,
+        20
+      ],
+      [
+        14,
+        44
+      ],
+      [
+        19,
+        20
+      ],
+      [
+        19,
+        44
+      ],
+      [
+        20,
+        45
+      ],
+      [
+        20,
+        54
+      ],
+      [
+        42,
+        44
+      ],
+      [
+        42,
+        48
+      ],
+      [
+        44,
+        45
+      ],
+      [
+        44,
+        50
+      ],
+      [
+        44,
+        54
+      ],
+      [
+        48,
+        50
+      ]
+    ],
+    "fan_edge_table_sha256": "ec15285f1c65f0f827e1366ef2db1e1696168c659325693c535a67a67be4538b",
+    "fan_graph_diameter": 4,
+    "fan_graph_radius": 2,
+    "fan_gromov_delta": 1.0,
+    "fan_gromov_delta_twice": 2,
+    "fan_node_ids": [
+      20,
+      48,
+      14,
+      19,
+      42,
+      45,
+      50,
+      54,
+      44
+    ],
+    "fan_node_table_sha256": "fb32e0e58384189084123e9e54d414f955a651cfa824c351a2497bf37ecc6b8f",
+    "fan_observable_table_sha256": "ec57c70cdd012850ff832b594ef7c320933b0cbaf9324de4de9fd05accfcaa61",
+    "full_sector_and_high_signature_path_count": 1,
+    "full_sector_intermediate_path_count": 2,
+    "geodesic_path_count": 6,
+    "geodesic_path_node_triples": [
+      [
+        20,
+        14,
+        44
+      ],
+      [
+        20,
+        19,
+        44
+      ],
+      [
+        20,
+        45,
+        44
+      ],
+      [
+        20,
+        54,
+        44
+      ],
+      [
+        48,
+        42,
+        44
+      ],
+      [
+        48,
+        50,
+        44
+      ]
+    ],
+    "geodesic_path_table_sha256": "bac681276c8d905870dd1f482233b1737c4cd2ba4f87182f2be65645d5fa5e52",
+    "high_signature_intermediate_path_count": 1,
+    "intermediate_signature_range": {
+      "max": 183,
+      "min": 134
+    },
+    "observed_signature_threshold": 175,
+    "restoration_summary_table_sha256": "00fd6988a931bbc81650671bb1456c14bfc6ebdf74f6d53729df372d0dae4b41",
+    "strict_full_sector_high_signature_paths": [
+      [
+        48,
+        42,
+        44
+      ]
+    ],
+    "x2_first_path_count": 3,
+    "x4_first_path_count": 3
+  }
+}

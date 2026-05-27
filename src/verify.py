@@ -58,6 +58,42 @@ the practical verification modes without hiding file writes behind a default:
 * c985-signature-geodesic: validate the C985-derived d20 signature geodesic order;
 * c985-signature-residual-chart: validate the C985-derived d20 signature geodesic residual chart;
 * c985-signature-cell-complex: validate the C985-derived d20 signature residual cell complex;
+* c985-signature-boundary-flux: validate the C985-derived d20 signature boundary flux cells;
+* c985-signature-boundary-rates: validate the C985-derived d20 signature boundary flux quotient rates;
+* c985-signature-conductance-spine: validate the C985-derived d20 signature boundary conductance spine;
+* c985-signature-spine-poincare: validate the C985-derived d20 signature conductance-spine Poincare path;
+* c985-signature-routing-prefix: validate the C985-derived d20 signature Poincare spine routing prefix;
+* c985-signature-branching-law: validate the C985-derived d20 signature Poincare spine branching law;
+* c985-signature-typed-corridors: validate the C985-derived d20 signature typed corridor grammar;
+* c985-signature-gate-automaton: validate the C985-derived d20 signature gate automaton;
+* c985-signature-language-graph: validate the C985-derived d20 signature language graph;
+* c985-signature-aperture-fan: validate the C985-derived d20 signature aperture geodesic fan;
+* c985-signature-aperture-insertion: validate the C985-derived d20 signature aperture corridor insertion;
+* c985-signature-x2-splice: validate the C985-derived d20 signature x2 splice obstruction;
+* c985-signature-x2-detour: validate the C985-derived d20 signature x2 detour fan;
+* c985-signature-x2-clean-detour: validate the C985-derived d20 signature x2 clean detour choice;
+* c985-signature-x2-x4-aperture: validate the C985-derived d20 signature x2/x4 aperture completion;
+* c985-signature-aperture-cycle: validate the C985-derived d20 signature aperture carrier-cycle language;
+* c985-signature-aperture-cycle-ranking: validate the C985-derived d20 signature aperture carrier-cycle ranking;
+* c985-signature-aperture-cycle-pareto: validate the C985-derived d20 signature aperture-cycle Pareto frontier;
+* c985-signature-aperture-mixed-contact: validate the C985-derived d20 signature aperture mixed-contact atom audit;
+* c985-signature-aperture-atom-selector: validate the C985-derived d20 signature aperture atom-selector refinement;
+* c985-signature-aperture-atom-tradeoff: validate the C985-derived d20 signature aperture atom-selected tradeoff;
+* c985-signature-aperture-tail-hybrid: validate the C985-derived d20 signature aperture x1-tail hybrid search;
+* c985-signature-aperture-bounded-backtrack: validate the C985-derived d20 signature aperture bounded backtrack search;
+* c985-signature-aperture-symbol-state: validate the C985-derived d20 signature aperture symbol-state obstruction;
+* c985-signature-aperture-overhead2-carrier: validate the C985-derived d20 signature aperture overhead-2 carrier realizability obstruction;
+* c985-signature-aperture-overhead2-repair: validate the C985-derived d20 signature aperture overhead-2 edit-repair layer;
+* c985-signature-aperture-overhead2-tail: validate the C985-derived d20 signature aperture overhead-2 post-aperture tail closure layer;
+* c985-signature-aperture-overhead2-cycle-rank: validate the C985-derived d20 signature aperture overhead-2 closed-repair cycle ranking layer;
+* c985-signature-aperture-overhead3-trace-quotient: validate the C985-derived d20 signature aperture overhead-3 trace-class quotient layer;
+* c985-signature-aperture-rank104-audit: validate the C985-derived d20 signature aperture rank-104 branch audit layer;
+* c985-signature-aperture-overhead3-weak-promotion: validate the C985-derived d20 signature aperture overhead-3 weak-repair promotion audit layer;
+* c985-signature-aperture-overhead3-strongification-gap: validate the C985-derived d20 signature aperture overhead-3 pre-node44 strongification gap layer;
+* c985-signature-aperture-rank104-strongification-geometry: validate the C985-derived d20 signature aperture rank-104 strongification branch geometry layer;
+* c985-signature-aperture-cost3-strongification-ranking: validate the C985-derived d20 signature aperture cost-three strongification geometry ranking layer;
+* c985-signature-aperture-closure-outlier-geometry: validate the C985-derived d20 signature aperture closure-rich outlier geometry layer;
+* c985-signature-aperture-closure-tail-endpoint-split: validate the C985-derived d20 signature aperture closure-tail carrier endpoint split layer;
 * token-burn: validate bounded-output guard coverage for repo-defined runners;
 * tamper: mutate certified evidence in memory and require verification failure.
 """
@@ -2075,6 +2111,590 @@ def c985_signature_cell_complex(*, pretty: bool) -> int:
     return finish(result, pretty)
 
 
+def c985_signature_boundary_flux(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_flux_cells import (
+        validate_c985_d20_signature_boundary_flux_cells,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_flux_cells()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_flux_cells@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_boundary_rates(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_flux_quotient_rates import (
+        validate_c985_d20_signature_boundary_flux_quotient_rates,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_flux_quotient_rates()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_flux_quotient_rates@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_conductance_spine(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_conductance_spine import (
+        validate_c985_d20_signature_boundary_conductance_spine,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_conductance_spine()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_conductance_spine@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_spine_poincare(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_poincare_path import (
+        validate_c985_d20_signature_boundary_spine_poincare_path,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_poincare_path()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_poincare_path@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_routing_prefix(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_routing_prefix import (
+        validate_c985_d20_signature_boundary_spine_routing_prefix,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_routing_prefix()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_routing_prefix@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_branching_law(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_branching_law import (
+        validate_c985_d20_signature_boundary_spine_branching_law,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_branching_law()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_branching_law@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_typed_corridors(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_typed_corridors import (
+        validate_c985_d20_signature_boundary_spine_typed_corridors,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_typed_corridors()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_typed_corridors@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_gate_automaton(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_gate_automaton import (
+        validate_c985_d20_signature_boundary_spine_gate_automaton,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_gate_automaton()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_gate_automaton@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_language_graph(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_language_graph import (
+        validate_c985_d20_signature_boundary_spine_language_graph,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_language_graph()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_language_graph@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_fan(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_geodesic_fan import (
+        validate_c985_d20_signature_boundary_spine_aperture_geodesic_fan,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_geodesic_fan()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_geodesic_fan@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_insertion(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_corridor_insertion import (
+        validate_c985_d20_signature_boundary_spine_aperture_corridor_insertion,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_corridor_insertion()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_corridor_insertion@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_x2_splice(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_x2_splice_obstruction import (
+        validate_c985_d20_signature_boundary_spine_x2_splice_obstruction,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_x2_splice_obstruction()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_x2_splice_obstruction@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_x2_detour(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_x2_detour_fan import (
+        validate_c985_d20_signature_boundary_spine_x2_detour_fan,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_x2_detour_fan()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_x2_detour_fan@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_x2_clean_detour(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_x2_clean_detour_choice import (
+        validate_c985_d20_signature_boundary_spine_x2_clean_detour_choice,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_x2_clean_detour_choice()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_x2_clean_detour_choice@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_x2_x4_aperture(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_x2_x4_aperture_completion import (
+        validate_c985_d20_signature_boundary_spine_x2_x4_aperture_completion,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_x2_x4_aperture_completion()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_x2_x4_aperture_completion@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_cycle(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_cycle_language import (
+        validate_c985_d20_signature_boundary_spine_aperture_cycle_language,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_cycle_language()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_cycle_language@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_cycle_ranking(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_cycle_ranking import (
+        validate_c985_d20_signature_boundary_spine_aperture_cycle_ranking,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_cycle_ranking()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_cycle_ranking@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_cycle_pareto(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier import (
+        validate_c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_cycle_pareto_frontier()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_cycle_pareto_frontier@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_mixed_contact(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_mixed_contact_atoms import (
+        validate_c985_d20_signature_boundary_spine_aperture_mixed_contact_atoms,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_mixed_contact_atoms()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_mixed_contact_atoms@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_atom_selector(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_atom_selector_refinement import (
+        validate_c985_d20_signature_boundary_spine_aperture_atom_selector_refinement,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_atom_selector_refinement()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_atom_selector_refinement@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_atom_tradeoff(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_atom_selected_tradeoff import (
+        validate_c985_d20_signature_boundary_spine_aperture_atom_selected_tradeoff,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_atom_selected_tradeoff()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_atom_selected_tradeoff@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_tail_hybrid(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_tail_hybrid_search import (
+        validate_c985_d20_signature_boundary_spine_aperture_tail_hybrid_search,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_tail_hybrid_search()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_tail_hybrid_search@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_bounded_backtrack(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search import (
+        validate_c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_bounded_backtrack_search@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_symbol_state(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction import (
+        validate_c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_symbol_state_obstruction@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_overhead2_carrier(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability import (
+        validate_c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_overhead2_carrier_realizability@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_overhead2_repair(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair import (
+        validate_c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_overhead2_edit_repair@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_overhead2_tail(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_overhead2_post_aperture_tail_closure import (
+        validate_c985_d20_signature_boundary_spine_aperture_overhead2_post_aperture_tail_closure,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_overhead2_post_aperture_tail_closure()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_overhead2_post_aperture_tail_closure@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_overhead2_cycle_rank(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking import (
+        validate_c985_d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_overhead2_closed_repair_cycle_ranking@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_overhead3_trace_quotient(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient import (
+        validate_c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_rank104_audit(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_rank104_branch_audit import (
+        validate_c985_d20_signature_boundary_spine_aperture_rank104_branch_audit,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_rank104_branch_audit()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_rank104_branch_audit@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_overhead3_weak_promotion(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit import (
+        validate_c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_overhead3_strongification_gap(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap import (
+        validate_c985_d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap,
+    )
+
+    try:
+        result = validate_c985_d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap()
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_overhead3_pre_node44_strongification_gap@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_rank104_strongification_geometry(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry import (
+        validate_c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_rank104_strongification_branch_geometry@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_cost3_strongification_ranking(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_cost3_strongification_geometry_ranking import (
+        validate_c985_d20_signature_boundary_spine_aperture_cost3_strongification_geometry_ranking,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_cost3_strongification_geometry_ranking()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_cost3_strongification_geometry_ranking@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_outlier_geometry(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_endpoint_split(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_endpoint_split@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def finish(result: dict[str, Any], pretty: bool) -> int:
     emit(result, pretty)
     return 0 if result.get("status") == "PASS" else 1
@@ -2138,6 +2758,42 @@ def main() -> None:
         "c985-signature-geodesic",
         "c985-signature-residual-chart",
         "c985-signature-cell-complex",
+        "c985-signature-boundary-flux",
+        "c985-signature-boundary-rates",
+        "c985-signature-conductance-spine",
+        "c985-signature-spine-poincare",
+        "c985-signature-routing-prefix",
+        "c985-signature-branching-law",
+        "c985-signature-typed-corridors",
+        "c985-signature-gate-automaton",
+        "c985-signature-language-graph",
+        "c985-signature-aperture-fan",
+        "c985-signature-aperture-insertion",
+        "c985-signature-x2-splice",
+        "c985-signature-x2-detour",
+        "c985-signature-x2-clean-detour",
+        "c985-signature-x2-x4-aperture",
+        "c985-signature-aperture-cycle",
+        "c985-signature-aperture-cycle-ranking",
+        "c985-signature-aperture-cycle-pareto",
+        "c985-signature-aperture-mixed-contact",
+        "c985-signature-aperture-atom-selector",
+        "c985-signature-aperture-atom-tradeoff",
+        "c985-signature-aperture-tail-hybrid",
+        "c985-signature-aperture-bounded-backtrack",
+        "c985-signature-aperture-symbol-state",
+        "c985-signature-aperture-overhead2-carrier",
+        "c985-signature-aperture-overhead2-repair",
+        "c985-signature-aperture-overhead2-tail",
+        "c985-signature-aperture-overhead2-cycle-rank",
+        "c985-signature-aperture-overhead3-trace-quotient",
+        "c985-signature-aperture-rank104-audit",
+        "c985-signature-aperture-overhead3-weak-promotion",
+        "c985-signature-aperture-overhead3-strongification-gap",
+        "c985-signature-aperture-rank104-strongification-geometry",
+        "c985-signature-aperture-cost3-strongification-ranking",
+        "c985-signature-aperture-closure-outlier-geometry",
+        "c985-signature-aperture-closure-tail-endpoint-split",
         "token-burn",
         "tamper",
     ):
@@ -2253,6 +2909,86 @@ def main() -> None:
         raise SystemExit(c985_signature_residual_chart(pretty=args.pretty))
     if args.command == "c985-signature-cell-complex":
         raise SystemExit(c985_signature_cell_complex(pretty=args.pretty))
+    if args.command == "c985-signature-boundary-flux":
+        raise SystemExit(c985_signature_boundary_flux(pretty=args.pretty))
+    if args.command == "c985-signature-boundary-rates":
+        raise SystemExit(c985_signature_boundary_rates(pretty=args.pretty))
+    if args.command == "c985-signature-conductance-spine":
+        raise SystemExit(c985_signature_conductance_spine(pretty=args.pretty))
+    if args.command == "c985-signature-spine-poincare":
+        raise SystemExit(c985_signature_spine_poincare(pretty=args.pretty))
+    if args.command == "c985-signature-routing-prefix":
+        raise SystemExit(c985_signature_routing_prefix(pretty=args.pretty))
+    if args.command == "c985-signature-branching-law":
+        raise SystemExit(c985_signature_branching_law(pretty=args.pretty))
+    if args.command == "c985-signature-typed-corridors":
+        raise SystemExit(c985_signature_typed_corridors(pretty=args.pretty))
+    if args.command == "c985-signature-gate-automaton":
+        raise SystemExit(c985_signature_gate_automaton(pretty=args.pretty))
+    if args.command == "c985-signature-language-graph":
+        raise SystemExit(c985_signature_language_graph(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-fan":
+        raise SystemExit(c985_signature_aperture_fan(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-insertion":
+        raise SystemExit(c985_signature_aperture_insertion(pretty=args.pretty))
+    if args.command == "c985-signature-x2-splice":
+        raise SystemExit(c985_signature_x2_splice(pretty=args.pretty))
+    if args.command == "c985-signature-x2-detour":
+        raise SystemExit(c985_signature_x2_detour(pretty=args.pretty))
+    if args.command == "c985-signature-x2-clean-detour":
+        raise SystemExit(c985_signature_x2_clean_detour(pretty=args.pretty))
+    if args.command == "c985-signature-x2-x4-aperture":
+        raise SystemExit(c985_signature_x2_x4_aperture(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-cycle":
+        raise SystemExit(c985_signature_aperture_cycle(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-cycle-ranking":
+        raise SystemExit(c985_signature_aperture_cycle_ranking(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-cycle-pareto":
+        raise SystemExit(c985_signature_aperture_cycle_pareto(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-mixed-contact":
+        raise SystemExit(c985_signature_aperture_mixed_contact(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-atom-selector":
+        raise SystemExit(c985_signature_aperture_atom_selector(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-atom-tradeoff":
+        raise SystemExit(c985_signature_aperture_atom_tradeoff(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-tail-hybrid":
+        raise SystemExit(c985_signature_aperture_tail_hybrid(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-bounded-backtrack":
+        raise SystemExit(c985_signature_aperture_bounded_backtrack(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-symbol-state":
+        raise SystemExit(c985_signature_aperture_symbol_state(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-overhead2-carrier":
+        raise SystemExit(c985_signature_aperture_overhead2_carrier(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-overhead2-repair":
+        raise SystemExit(c985_signature_aperture_overhead2_repair(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-overhead2-tail":
+        raise SystemExit(c985_signature_aperture_overhead2_tail(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-overhead2-cycle-rank":
+        raise SystemExit(c985_signature_aperture_overhead2_cycle_rank(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-overhead3-trace-quotient":
+        raise SystemExit(c985_signature_aperture_overhead3_trace_quotient(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-rank104-audit":
+        raise SystemExit(c985_signature_aperture_rank104_audit(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-overhead3-weak-promotion":
+        raise SystemExit(c985_signature_aperture_overhead3_weak_promotion(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-overhead3-strongification-gap":
+        raise SystemExit(c985_signature_aperture_overhead3_strongification_gap(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-rank104-strongification-geometry":
+        raise SystemExit(
+            c985_signature_aperture_rank104_strongification_geometry(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-cost3-strongification-ranking":
+        raise SystemExit(
+            c985_signature_aperture_cost3_strongification_ranking(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-outlier-geometry":
+        raise SystemExit(
+            c985_signature_aperture_closure_outlier_geometry(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-endpoint-split":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_endpoint_split(pretty=args.pretty)
+        )
     raise SystemExit(run(args.command, pretty=args.pretty))
 
 

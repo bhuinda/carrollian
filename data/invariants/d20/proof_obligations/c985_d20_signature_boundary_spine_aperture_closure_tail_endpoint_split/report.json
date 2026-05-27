@@ -1,0 +1,314 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9eea56530ed6e67b48789352526768a2a76c2fe5a655b2d1a917544b62e82147",
+  "checks": {
+    "all_closed_paths_are_first_return_and_finish_through_carrier13": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_report_certified": true,
+    "closed_path_counts_match_parent_12_and_24": true,
+    "closed_path_table_shape_matches_codebook": true,
+    "closure_outlier_certificate_certified": true,
+    "closure_outlier_report_certified": true,
+    "closure_outlier_schema_available": true,
+    "endpoint_table_shape_matches_codebook": true,
+    "fixed_tail_atom_sequence_is_19_7_4_12_19": true,
+    "full_path_counts_are_120_and_240": true,
+    "observable_table_shape_matches_codebook": true,
+    "selected_branch_table_shape_matches_parent": true,
+    "selected_words_have_shared_tail_at_expected_indices": true,
+    "six_normalized_tail_templates": true,
+    "summary_table_shape_matches_codebook": true,
+    "tail_entry_endpoint_counts_double": true,
+    "tail_template_sets_are_identical": true,
+    "template_lift_counts_double_uniformly": true,
+    "template_table_shape_matches_codebook": true
+  },
+  "claim": "The 12/24 closure multiplicity split is a prefix-lift split over the same six carrier-tail templates. Both closure-rich outliers share the tail word x5,x2,x1,x4,x5, the same tail atom sequence 19,7,4,12,19, and the same return through carrier 13 into origin carrier 12. Witness 9 lifts each normalized tail template twice; witness 23 lifts each one four times. The tail-entry endpoint counts therefore double uniformly across carriers 9, 10, and 11.",
+  "closure_boundary": {
+    "certifies": [
+      "the first-return closed carrier paths for witnesses 9 and 23",
+      "the six normalized carrier-tail templates for the shared tail word",
+      "the uniform two-versus-four lift count per normalized template",
+      "the doubled endpoint counts across tail-entry carriers 9, 10, and 11",
+      "the fixed tail atom sequence and final carrier13-to-origin closure"
+    ],
+    "does_not_certify_because_not_required": [
+      "non-first-return carrier paths ending away from origin",
+      "closure-rich outliers outside witnesses 9 and 23",
+      "edit costs above three",
+      "categorical pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "closure_outlier_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry/signature_boundary_spine_aperture_closure_rich_outlier_geometry_certificate.json",
+      "sha256": "ed01e3a8baebb53ffd81ad7e0b41a16db0c005e5337252c833f3d0b055304989"
+    },
+    "closure_outlier_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry/signature_boundary_spine_aperture_closure_rich_outlier_geometry.json",
+      "sha256": "531e8062330ea016466511d5d025fe134b891de44ad9c661123b2e651e2e7658"
+    },
+    "closure_outlier_report": {
+      "certificate_sha256": "1a60362801c0de071f42cdbc986f1b22d6836b90cfe4912d2a4c77898874edd1",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry/report.json",
+      "sha256": "a40755a1be7489f74a589836d46fa3b9eb0c500079637fc693785d7502086ba4",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_RICH_OUTLIER_GEOMETRY_CERTIFIED"
+    },
+    "closure_outlier_selected_branches": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry/aperture_closure_outlier_selected_branches.csv",
+      "sha256": "77564167caf98cedf83f69ede6593f29fc4370d8f61e5ec8e4f3e99fc190751f"
+    },
+    "closure_outlier_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry/signature_boundary_spine_aperture_closure_rich_outlier_geometry_tables.npz",
+      "sha256": "b654b0f83517f343a71fc12be119f7f4a6421093b1c4ec3e58e0cec1626cfc41"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split.py",
+      "sha256": "eb64e0b1c8e6402977a1ace9db4033c057c81e04f166172a132f1abaca8b7941"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split.py",
+      "sha256": "d1d561c5512e5dcd607c91e2b3aec0129f64a800017066b8fc475e36d1e81f6b"
+    }
+  },
+  "next_highest_yield_item": "Lift the six normalized tail templates back to rewrite nodes 54 and 45: identify which carrier-tail templates are responsible for the delta_twice increase in witness 23 despite its lower signature variation.",
+  "outputs": {
+    "aperture_closure_tail_closed_paths_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/aperture_closure_tail_closed_paths.csv",
+    "aperture_closure_tail_endpoint_counts_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/aperture_closure_tail_endpoint_counts.csv",
+    "aperture_closure_tail_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/aperture_closure_tail_observables.csv",
+    "aperture_closure_tail_templates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/aperture_closure_tail_templates.csv",
+    "aperture_closure_tail_witness_summaries_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/aperture_closure_tail_witness_summaries.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/report.json",
+    "signature_boundary_spine_aperture_closure_tail_endpoint_split": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/signature_boundary_spine_aperture_closure_tail_endpoint_split.json",
+    "signature_boundary_spine_aperture_closure_tail_endpoint_split_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/signature_boundary_spine_aperture_closure_tail_endpoint_split_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_endpoint_split_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/signature_boundary_spine_aperture_closure_tail_endpoint_split_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_endpoint_split@1",
+  "stage_protocol": {
+    "closure": "certify that the 12/24 split is uniform doubling of template lifts and endpoint counts",
+    "coherence": "normalize carrier/edge/atom suffix templates for the shared tail word",
+    "draft": "take the shared closure tail from the closure-rich outlier certificate",
+    "emit": "emit summaries, closed paths, normalized templates, endpoint counts, certificate, report, verifier command, and next target",
+    "witness": "enumerate first-return closed carrier paths for witnesses 9 and 23"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ENDPOINT_SPLIT_CERTIFIED",
+  "witness": {
+    "baseline_outlier": {
+      "closed_path_count": 12,
+      "normalized_tail_template_count": 6,
+      "shared_tail_start_symbol_index": 4,
+      "tail_entry_counts": {
+        "10": 2,
+        "11": 4,
+        "9": 6
+      },
+      "template_lift_count": 2,
+      "witness_id": 9,
+      "word": [
+        2,
+        1,
+        4,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    "closed_path_table_sha256": "c7048de699987b6675ebb9b7dcbad811299bc1563420a52bcb137c80863e2b69",
+    "endpoint_table_sha256": "98b3b5a1c931a8ebd1c2502bdd6fab3f2b8166c4e03025b460fe9c5362c887f5",
+    "fixed_tail_atom_sequence": [
+      19,
+      7,
+      4,
+      12,
+      19
+    ],
+    "normalized_tail_templates": [
+      {
+        "baseline_count": 2,
+        "carrier_tail": [
+          9,
+          10,
+          3,
+          8,
+          13,
+          12
+        ],
+        "edge_tail": [
+          34,
+          12,
+          11,
+          33,
+          43
+        ],
+        "rank104_count": 4,
+        "tail_entry_carrier_id": 9,
+        "template_id": 0
+      },
+      {
+        "baseline_count": 2,
+        "carrier_tail": [
+          9,
+          10,
+          11,
+          8,
+          13,
+          12
+        ],
+        "edge_tail": [
+          34,
+          38,
+          31,
+          33,
+          43
+        ],
+        "rank104_count": 4,
+        "tail_entry_carrier_id": 9,
+        "template_id": 1
+      },
+      {
+        "baseline_count": 2,
+        "carrier_tail": [
+          9,
+          11,
+          3,
+          8,
+          13,
+          12
+        ],
+        "edge_tail": [
+          35,
+          13,
+          11,
+          33,
+          43
+        ],
+        "rank104_count": 4,
+        "tail_entry_carrier_id": 9,
+        "template_id": 2
+      },
+      {
+        "baseline_count": 2,
+        "carrier_tail": [
+          10,
+          11,
+          3,
+          8,
+          13,
+          12
+        ],
+        "edge_tail": [
+          38,
+          13,
+          11,
+          33,
+          43
+        ],
+        "rank104_count": 4,
+        "tail_entry_carrier_id": 10,
+        "template_id": 3
+      },
+      {
+        "baseline_count": 2,
+        "carrier_tail": [
+          11,
+          10,
+          3,
+          8,
+          13,
+          12
+        ],
+        "edge_tail": [
+          38,
+          12,
+          11,
+          33,
+          43
+        ],
+        "rank104_count": 4,
+        "tail_entry_carrier_id": 11,
+        "template_id": 4
+      },
+      {
+        "baseline_count": 2,
+        "carrier_tail": [
+          11,
+          10,
+          11,
+          8,
+          13,
+          12
+        ],
+        "edge_tail": [
+          38,
+          38,
+          31,
+          33,
+          43
+        ],
+        "rank104_count": 4,
+        "tail_entry_carrier_id": 11,
+        "template_id": 5
+      }
+    ],
+    "observable_table_sha256": "fef9a0da9b6eb7ade6f9c17d306bed22a0b2f39187b01b319c6736d85d0e6e36",
+    "rank104_outlier": {
+      "closed_path_count": 24,
+      "normalized_tail_template_count": 6,
+      "shared_tail_start_symbol_index": 5,
+      "tail_entry_counts": {
+        "10": 4,
+        "11": 8,
+        "9": 12
+      },
+      "template_lift_count": 4,
+      "witness_id": 23,
+      "word": [
+        2,
+        1,
+        3,
+        4,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    "shared_tail_word": [
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "summary_table_sha256": "6f336ca0dd2a3e455c9d735325006aa4b4538f2fad4b0ae1617a5581eff9ac34",
+    "template_table_sha256": "c2bcf8cc49cf6fc2401707d1733f9abc4ac63cb00962c27aa5de53c145b10d31"
+  }
+}

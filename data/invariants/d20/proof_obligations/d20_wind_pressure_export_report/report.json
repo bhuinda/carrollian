@@ -1,0 +1,468 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7d4536b9dc9196165bf04456bcb8031dac3151a5b9646f184e28cf571fd089aa",
+  "checks": {
+    "all_nonidentity_null_permutations_exported": true,
+    "all_six_inlets_exported": true,
+    "finite_state_wind_tunnel_certified": true,
+    "finite_values": true,
+    "gate_automaton_certified": true,
+    "identity_rows_exported": true,
+    "pressure_vectors_are_d20_atoms": true,
+    "renderer_embeds_wind_tunnel": true
+  },
+  "claim": "The D20 wind tunnel exports a deterministic per-atom pressure vector for every H6 inlet under the certified identity alphabet and every non-identity six-letter null permutation.",
+  "closure_boundary": {
+    "certifies": [
+      "complete six-inlet identity pressure export",
+      "complete six-inlet export across all 719 non-identity six-symbol null permutations",
+      "20-atom pressure vector shape for every run",
+      "deterministic finite wind-pressure summaries"
+    ],
+    "does_not_certify": [
+      "continuum fluid dynamics",
+      "Navier-Stokes behavior",
+      "physical aerodynamics",
+      "literal mass or force fields"
+    ]
+  },
+  "definition": {
+    "claim_boundary": "exports finite symbolic pressure vectors only; does not claim continuum fluid dynamics",
+    "finite_boundary": "20 d20 atoms are C(H6,3) triples over six H6 sectors",
+    "null_mode": "all 719 non-identity permutations of the six-letter alphabet",
+    "object": "exhaustive finite D20 wind-pressure export",
+    "pressure_rule": "inlet atoms receive base pressure; outlet atoms receive accepted/rejected/aperture pressure under the certified gate automaton",
+    "real_mode": "identity six-letter alphabet map"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "42fc077d6696a8d4defa3348b1b4124532576f136f6bf9bd9eec4a41ec93c4ee",
+      "path": "generated/d20_wind_pressure_export_report.json",
+      "schema": "d20.wind_pressure_export_report.artifact@1",
+      "sha256": "80ca913aff50aa87a643535103619fd4adc64f603e485f321b53107459e958ef",
+      "status": "D20_WIND_PRESSURE_EXPORT_REPORT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_wind_pressure_export_report.py",
+      "sha256": "cf43b5d3e7fc1e13c9a359f3789be6f9d80c2934f128e88c151ff128ed71f4b2"
+    },
+    "finite_state_report": {
+      "certificate_sha256": "ef161149c20e5b8ca69c2e6a9c10e024057419c35be99fb65a186d3661b8e571",
+      "path": "data/invariants/d20/proof_obligations/d20_finite_state_collider_report/report.json",
+      "sha256": "eaa11a2e26453a9236ef3b50c13f0232609c3085697f04886e5637bf7f95f7be",
+      "status": "D20_FINITE_STATE_COLLIDER_REPORT_CERTIFIED"
+    },
+    "gate_automaton_report": {
+      "certificate_sha256": "ff3c69b3855ef861227e8b15a8ea5defedfa712fbf215286cb0380433649421a",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/report.json",
+      "sha256": "7bfdd2820083e90c1daf75ae299c2b03a6c861e8272fa1dfaf5d2decd59077c6",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_GATE_AUTOMATON_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_wind_pressure_export_report.py",
+      "sha256": "5ff9cfd142725690eed98279e8b6209f1fc3a0e87b1bdfda3e30feac54490463"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "d3411c3d5b8057682272084625e727d5fa660e00b99ecc5b5061a3bbe7772dfd"
+    }
+  },
+  "next_highest_yield_item": "Render the exported six-inlet pressure atlas as a small multiples panel so high-pressure d20 atoms can be inspected without opening the JSON artifact.",
+  "schema": "d20.wind_pressure_export_report@1",
+  "stage_protocol": {
+    "closure": "emit pressure vectors and summaries without continuum-fluid claims",
+    "coherence": "verify certified gate input, finite-state renderer support, complete permutation coverage, and finite 20-atom pressure vectors",
+    "draft": "treat wind as finite symbolic transport over C(H6,3) atoms",
+    "emit": "publish artifact, report, manifest, and registry entry",
+    "witness": "simulate all six inlets under identity and all non-identity alphabet permutations"
+  },
+  "status": "D20_WIND_PRESSURE_EXPORT_REPORT_CERTIFIED",
+  "witness_summary": {
+    "identity_minus_null_mean": {
+      "alignment_rate": 0.685398592,
+      "aperture_loss_rate": -0.33379694,
+      "branch_accept_rate": 0.226399513,
+      "pressure": 0.0,
+      "recirc_rate": -0.769598255,
+      "throughput_rate": 0.769598255,
+      "total_pressure": 0.0
+    },
+    "identity_summary": {
+      "alignment_rate": 0.75,
+      "aperture_loss_rate": 0.0,
+      "branch_accept_rate": 0.368489583,
+      "mean_pressure_vector": [
+        26.522691487,
+        39.262581369,
+        26.522691487,
+        46.424427831,
+        29.739564675,
+        16.999674793,
+        36.901411137,
+        29.739564675,
+        49.641301018,
+        36.901411137,
+        29.280137512,
+        16.54024763,
+        36.441983973,
+        29.280137512,
+        49.181873855,
+        36.441983974,
+        19.757120818,
+        39.658857161,
+        26.918967279,
+        39.658857161
+      ],
+      "pressure": 1.0,
+      "recirc_rate": 0.057291667,
+      "throughput_rate": 0.942708333,
+      "top_mean_pressure_atoms": [
+        {
+          "atom": 8,
+          "pressure": 49.641301018,
+          "sectors": [
+            "B-",
+            "V+",
+            "S+"
+          ],
+          "triple": [
+            0,
+            3,
+            5
+          ]
+        },
+        {
+          "atom": 14,
+          "pressure": 49.181873855,
+          "sectors": [
+            "B+",
+            "V+",
+            "S+"
+          ],
+          "triple": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "atom": 3,
+          "pressure": 46.424427831,
+          "sectors": [
+            "B-",
+            "B+",
+            "S+"
+          ],
+          "triple": [
+            0,
+            1,
+            5
+          ]
+        },
+        {
+          "atom": 17,
+          "pressure": 39.658857161,
+          "sectors": [
+            "V-",
+            "V+",
+            "S+"
+          ],
+          "triple": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "atom": 19,
+          "pressure": 39.658857161,
+          "sectors": [
+            "V+",
+            "S-",
+            "S+"
+          ],
+          "triple": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "atom": 1,
+          "pressure": 39.262581369,
+          "sectors": [
+            "B-",
+            "B+",
+            "V+"
+          ],
+          "triple": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "atom": 6,
+          "pressure": 36.901411137,
+          "sectors": [
+            "B-",
+            "V-",
+            "S+"
+          ],
+          "triple": [
+            0,
+            2,
+            5
+          ]
+        },
+        {
+          "atom": 9,
+          "pressure": 36.901411137,
+          "sectors": [
+            "B-",
+            "S-",
+            "S+"
+          ],
+          "triple": [
+            0,
+            4,
+            5
+          ]
+        }
+      ],
+      "total_pressure": 1.0
+    },
+    "inlet_summaries": [
+      {
+        "identity_minus_null_mean": {
+          "alignment_rate": 0.696933572,
+          "aperture_loss_rate": -0.33379694,
+          "branch_accept_rate": 0.2331363,
+          "pressure": 0.0,
+          "recirc_rate": -0.826495132,
+          "throughput_rate": 0.826495132,
+          "total_pressure": 0.0
+        },
+        "inlet": 0,
+        "inlet_sector": "B-",
+        "pressure_l1_gap_to_null_mean": 219.749412978
+      },
+      {
+        "identity_minus_null_mean": {
+          "alignment_rate": 0.689582092,
+          "aperture_loss_rate": -0.33379694,
+          "branch_accept_rate": 0.224335014,
+          "pressure": 0.0,
+          "recirc_rate": -0.749000348,
+          "throughput_rate": 0.749000348,
+          "total_pressure": 0.0
+        },
+        "inlet": 1,
+        "inlet_sector": "B+",
+        "pressure_l1_gap_to_null_mean": 214.455476701
+      },
+      {
+        "identity_minus_null_mean": {
+          "alignment_rate": 0.681634545,
+          "aperture_loss_rate": -0.33379694,
+          "branch_accept_rate": 0.217815542,
+          "pressure": 0.0,
+          "recirc_rate": -0.749000348,
+          "throughput_rate": 0.749000348,
+          "total_pressure": 0.0
+        },
+        "inlet": 2,
+        "inlet_sector": "V-",
+        "pressure_l1_gap_to_null_mean": 214.582593384
+      },
+      {
+        "identity_minus_null_mean": {
+          "alignment_rate": 0.681634545,
+          "aperture_loss_rate": -0.33379694,
+          "branch_accept_rate": 0.224335014,
+          "pressure": 0.0,
+          "recirc_rate": -0.756823713,
+          "throughput_rate": 0.756823713,
+          "total_pressure": 0.0
+        },
+        "inlet": 3,
+        "inlet_sector": "V+",
+        "pressure_l1_gap_to_null_mean": 215.028031157
+      },
+      {
+        "identity_minus_null_mean": {
+          "alignment_rate": 0.681303398,
+          "aperture_loss_rate": -0.33379694,
+          "branch_accept_rate": 0.225638908,
+          "pressure": 0.0,
+          "recirc_rate": -0.7643863,
+          "throughput_rate": 0.7643863,
+          "total_pressure": 0.0
+        },
+        "inlet": 4,
+        "inlet_sector": "S-",
+        "pressure_l1_gap_to_null_mean": 215.449474911
+      },
+      {
+        "identity_minus_null_mean": {
+          "alignment_rate": 0.681303398,
+          "aperture_loss_rate": -0.33379694,
+          "branch_accept_rate": 0.2331363,
+          "pressure": 0.0,
+          "recirc_rate": -0.771883693,
+          "throughput_rate": 0.771883693,
+          "total_pressure": 0.0
+        },
+        "inlet": 5,
+        "inlet_sector": "S+",
+        "pressure_l1_gap_to_null_mean": 215.823944639
+      }
+    ],
+    "null_summary": {
+      "alignment_rate": 0.064601408,
+      "aperture_loss_rate": 0.33379694,
+      "branch_accept_rate": 0.14209007,
+      "mean_pressure_vector": [
+        24.325644996,
+        18.806363998,
+        24.325644996,
+        23.648597967,
+        24.316653461,
+        29.835934459,
+        29.158887429,
+        24.316653461,
+        23.639606431,
+        29.158887429,
+        24.095623056,
+        29.614904054,
+        28.937857024,
+        24.095623056,
+        23.418576026,
+        28.937857024,
+        29.605912518,
+        28.928865489,
+        34.448146487,
+        28.928865489
+      ],
+      "pressure": 1.0,
+      "recirc_rate": 0.826889922,
+      "throughput_rate": 0.173110078,
+      "top_mean_pressure_atoms": [
+        {
+          "atom": 18,
+          "pressure": 34.448146487,
+          "sectors": [
+            "V-",
+            "S-",
+            "S+"
+          ],
+          "triple": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "atom": 5,
+          "pressure": 29.835934459,
+          "sectors": [
+            "B-",
+            "V-",
+            "S-"
+          ],
+          "triple": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "atom": 11,
+          "pressure": 29.614904054,
+          "sectors": [
+            "B+",
+            "V-",
+            "S-"
+          ],
+          "triple": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "atom": 16,
+          "pressure": 29.605912518,
+          "sectors": [
+            "V-",
+            "V+",
+            "S-"
+          ],
+          "triple": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "atom": 6,
+          "pressure": 29.158887429,
+          "sectors": [
+            "B-",
+            "V-",
+            "S+"
+          ],
+          "triple": [
+            0,
+            2,
+            5
+          ]
+        },
+        {
+          "atom": 9,
+          "pressure": 29.158887429,
+          "sectors": [
+            "B-",
+            "S-",
+            "S+"
+          ],
+          "triple": [
+            0,
+            4,
+            5
+          ]
+        },
+        {
+          "atom": 12,
+          "pressure": 28.937857024,
+          "sectors": [
+            "B+",
+            "V-",
+            "S+"
+          ],
+          "triple": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "atom": 15,
+          "pressure": 28.937857024,
+          "sectors": [
+            "B+",
+            "S-",
+            "S+"
+          ],
+          "triple": [
+            1,
+            4,
+            5
+          ]
+        }
+      ],
+      "total_pressure": 1.0
+    },
+    "verdict": "FINITE_WIND_PRESSURE_ADVANTAGE"
+  }
+}

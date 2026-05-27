@@ -1,0 +1,202 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d637d47851f83a5581146cc68d50db3340891dda80efd466ba332cefad80585d",
+  "checks": {
+    "associativity_table_shape_is_216_by_27": true,
+    "both_words_are_symbolic_overhead2": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "frontier_table_shape_is_80_by_codebook": true,
+    "global_frontier_counts_are_32_and_32": true,
+    "global_full_realization_count_is_zero": true,
+    "next_symbol_table_shape_is_42_by_codebook": true,
+    "observable_table_shape_matches_codebook": true,
+    "prefix_table_shape_is_20_by_codebook": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "rooted_frontier_counts_are_8_and_8": true,
+    "rooted_full_realization_count_is_zero": true,
+    "symbol_state_certificate_certified": true,
+    "symbol_state_forbidden_table_shape_is_2_by_22": true,
+    "symbol_state_report_certified": true,
+    "symbol_state_schema_available": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "target_words_match_symbol_state_witness": true,
+    "word0_dies_at_fourth_symbol_x2": true,
+    "word1_dies_at_fifth_symbol_x4": true,
+    "word_table_shape_is_2_by_codebook": true
+  },
+  "claim": "The two abstract x1-tail overhead-2 words are not carrier-realizable in the residual cell complex, even as open paths from arbitrary carrier starts. Their absence is a carrier-contact obstruction, not only a bounded first-return artifact.",
+  "closure_boundary": {
+    "certifies": [
+      "all exact selected-symbol carrier paths for the two overhead-2 words starting at carrier 12",
+      "all exact selected-symbol carrier paths for the two overhead-2 words starting at any residual carrier",
+      "the first carrier-contact death frontier for each word",
+      "that both symbolic overhead-2 words have zero carrier realization in the residual cell complex"
+    ],
+    "does_not_certify_because_not_required": [
+      "approximate words that insert extra symbols inside the overhead-2 word",
+      "changing the residual carrier-mask cell complex",
+      "changing the symbolic associativity canonicalization",
+      "new categorical F-symbols, pivotality, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability.py",
+      "sha256": "e1e1c80c4963e136d082dba16f35a34b26a6bf19a36f3c528de5ec6b1e498b39"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbol_state_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/signature_boundary_spine_aperture_symbol_state_obstruction_certificate.json",
+      "sha256": "2d9ebcd8d73feae5c1920cda051de4a462ff3729db02c10ad3fabe07d4d2f2af"
+    },
+    "symbol_state_forbidden_transitions": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/aperture_symbol_state_forbidden_transitions.csv",
+      "sha256": "bc2fc35c6f8d0c1c9a506d5fdffa3b51b79a7d3eda015adc83f651f048880c8e"
+    },
+    "symbol_state_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/signature_boundary_spine_aperture_symbol_state_obstruction.json",
+      "sha256": "7aa87de3987b3a3d2dd377df477136fcd513612a0e85c5d53de3e0e0092d809e"
+    },
+    "symbol_state_report": {
+      "certificate_sha256": "68b6bd504430dc1ff6959e2d68558c0c3e288fb5ad775fa663ec6bc3f5fe0c09",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/report.json",
+      "sha256": "5a3e67e4391f44148bee178b52d6c9530d6c0c7594e4065e5cde0bf360d58e04",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_SYMBOL_STATE_OBSTRUCTION_CERTIFIED"
+    },
+    "symbol_state_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/signature_boundary_spine_aperture_symbol_state_obstruction_tables.npz",
+      "sha256": "85716e610c385ccabcecf18556920d7fab1028be568904b6133e1ac3b32a2330"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability.py",
+      "sha256": "21b4af811b44887a01b8430a6e7caf8bb8615f374279947a3c83e1c338f703e0"
+    }
+  },
+  "next_highest_yield_item": "Compute the minimal carrier-symbol edit distance from each unrealizable overhead-2 word to a realizable x1-tail word, then certify the least extra contact that repairs the dead frontier and compare its trace overhead against the existing overhead-3 tail class.",
+  "outputs": {
+    "aperture_overhead2_carrier_frontier_paths_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/aperture_overhead2_carrier_frontier_paths.csv",
+    "aperture_overhead2_carrier_next_symbols_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/aperture_overhead2_carrier_next_symbols.csv",
+    "aperture_overhead2_carrier_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/aperture_overhead2_carrier_observables.csv",
+    "aperture_overhead2_carrier_prefixes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/aperture_overhead2_carrier_prefixes.csv",
+    "aperture_overhead2_carrier_words_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/aperture_overhead2_carrier_words.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/report.json",
+    "signature_boundary_spine_aperture_overhead2_carrier_realizability": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/signature_boundary_spine_aperture_overhead2_carrier_realizability.json",
+    "signature_boundary_spine_aperture_overhead2_carrier_realizability_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/signature_boundary_spine_aperture_overhead2_carrier_realizability_certificate.json",
+    "signature_boundary_spine_aperture_overhead2_carrier_realizability_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_carrier_realizability/signature_boundary_spine_aperture_overhead2_carrier_realizability_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_overhead2_carrier_realizability@1",
+  "stage_protocol": {
+    "closure": "certify zero rooted and zero global carrier realizations for both symbolic overhead-2 words",
+    "coherence": "compare the required next symbol at each death frontier with all residual carrier contacts",
+    "draft": "enumerate exact symbol-labelled carrier paths for the two overhead-2 words from carrier 12 and from all carriers",
+    "emit": "emit realizability JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize prefix counts, last viable frontier paths, and available next-symbol counts"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD2_CARRIER_REALIZABILITY_CERTIFIED",
+  "witness": {
+    "first_missing_prefix_length_by_word": {
+      "0": 4,
+      "1": 5
+    },
+    "frontier_table_sha256": "f494d3425f72ad4f42fda4e77fd6235232735dbb262c32cb2eb86d234224b257",
+    "global_full_realization_count": 0,
+    "global_last_viable_prefix_count_by_word": {
+      "0": 32,
+      "1": 32
+    },
+    "next_symbol_table_sha256": "a8c2dc159aa71c09d5dcefae895e6cdf39066d197e00d562b01c572a796af0d6",
+    "observable_table_sha256": "a5b5490f94a9f44f4f2799d140b6a248ec0db8b5b1640863cdc4b00ad525aee0",
+    "prefix_table_sha256": "408946c581ddd23144171742a990d2797a34d28f62842f2a30cac1dd51ca38e9",
+    "required_next_symbol_count_by_scope_word": {
+      "0:0": 0,
+      "0:1": 0,
+      "1:0": 0,
+      "1:1": 0
+    },
+    "rooted_full_realization_count": 0,
+    "rooted_last_viable_prefix_count_by_word": {
+      "0": 8,
+      "1": 8
+    },
+    "target_words": [
+      [
+        2,
+        1,
+        4,
+        2,
+        5
+      ],
+      [
+        2,
+        1,
+        5,
+        2,
+        4
+      ]
+    ],
+    "word_table_sha256": "c4942061081d7d7dae710855b6bb9aab2efa44e4f771cc371377c746d44c15dc"
+  }
+}

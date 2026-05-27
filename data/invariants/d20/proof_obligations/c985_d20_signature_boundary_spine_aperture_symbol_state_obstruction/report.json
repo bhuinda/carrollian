@@ -1,0 +1,260 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "68b6bd504430dc1ff6959e2d68558c0c3e288fb5ad775fa663ec6bc3f5fe0c09",
+  "checks": {
+    "ambient_42_to_44_edge_exists_but_requires_x4_addition": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "bounded_backtrack_certificate_certified": true,
+    "bounded_backtrack_report_certified": true,
+    "bounded_backtrack_schema_available": true,
+    "bounded_candidate_table_shape_is_1287_by_60": true,
+    "carrier_bounded_search_realizes_no_symbolic_overhead2_path": true,
+    "completion_table_shape_is_8_by_codebook": true,
+    "first_forbidden_transition_is_duplicate_node28_x2": true,
+    "forbidden_table_shape_is_2_by_codebook": true,
+    "minimal_forbidden_transition_count_is_2": true,
+    "no_tail_symbolic_min_length_is_2_with_two_paths": true,
+    "no_x1_labeled_skip_transition_exists": true,
+    "observable_table_shape_matches_codebook": true,
+    "observed_state_count_is_89": true,
+    "observed_symbol_word_count_is_126": true,
+    "observed_trace_sequence_count_is_85": true,
+    "observed_transition_count_is_169": true,
+    "post_x2_outgoing_table_shape_is_6_by_codebook": true,
+    "post_x2_source_has_only_x1_observed_in_bounded_search": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "state_table_shape_is_89_by_codebook": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "symbolic_x1_tail_has_two_overhead2_paths": true,
+    "transition_table_shape_is_169_by_codebook": true,
+    "x1_tail_symbolic_min_length_is_4_with_six_paths": true,
+    "x1_transition_forces_node27": true
+  },
+  "claim": "The symbol-state quotient proves that immediate x1 after x2 cannot skip node27. A lower-overhead x1-tail symbolic completion exists only in the abstract symbol automaton, and its first needed duplicate-node transition is absent from the bounded carrier quotient.",
+  "closure_boundary": {
+    "certifies": [
+      "the anchored symbol-state quotient of the 1287 bounded carrier candidates",
+      "the six deterministic post-x2 outgoing symbolic alternatives",
+      "that immediate x1 after x2 deterministically enters node27",
+      "that the ambient 42->44 geodesic edge requires x4 rather than x1",
+      "that the two lower-overhead x1-tail symbolic completions are not realized by the bounded carrier quotient"
+    ],
+    "does_not_certify_because_not_required": [
+      "carrier walks beyond the bounded length-seven search",
+      "an unrestricted carrier realization search for the two symbolic overhead-2 words",
+      "changing the symbolic associativity canonicalization",
+      "new categorical F-symbols, pivotality, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "bounded_backtrack_candidates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/aperture_bounded_backtrack_candidates.csv",
+      "sha256": "4eeaafa2ecf7f83348859fe14e188342bf7a055a8ff8421d49c24e2ce72555d2"
+    },
+    "bounded_backtrack_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/signature_boundary_spine_aperture_bounded_backtrack_search_certificate.json",
+      "sha256": "72dcc1018f6f62c309ab1bebcd31e7595b03a2af15e80b35e516c01ae9435bb5"
+    },
+    "bounded_backtrack_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/signature_boundary_spine_aperture_bounded_backtrack_search.json",
+      "sha256": "b5c90fd94f2da1b86abbf06683f55ceab2673bdad7485023a69d890532302838"
+    },
+    "bounded_backtrack_report": {
+      "certificate_sha256": "6d6e1665edffb6a6698d456d58d9c9f55771090c6f446e553a5d3244b8be75b9",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/report.json",
+      "sha256": "4e53d9fabbe1696024f39db2cf6129f6f2fb75f2eacfd169e49001a7782c16b1",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_BOUNDED_BACKTRACK_SEARCH_CERTIFIED"
+    },
+    "bounded_backtrack_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/signature_boundary_spine_aperture_bounded_backtrack_search_tables.npz",
+      "sha256": "ea4bc28097fa6830db938b61dc09af7b5447cad24de5f8923a83b325115fc6eb"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction.py",
+      "sha256": "2e72ff7b715f60eb4c3b25053d0925c112e1d46552154504687d95691f2d39e0"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction.py",
+      "sha256": "9cd354fa1234bf3ab55e5adfd18c094c64b22c63d7290ff2927ce1e938375d61"
+    }
+  },
+  "next_highest_yield_item": "Search carrier realizability for the two abstract overhead-2 tail words x2,x1,x4,x2,x5 and x2,x1,x5,x2,x4 without the bounded first-return restriction; certify whether the missing duplicate-node transition is impossible in the residual cell complex or merely longer-range.",
+  "outputs": {
+    "aperture_symbol_state_completions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/aperture_symbol_state_completions.csv",
+    "aperture_symbol_state_forbidden_transitions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/aperture_symbol_state_forbidden_transitions.csv",
+    "aperture_symbol_state_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/aperture_symbol_state_observables.csv",
+    "aperture_symbol_state_post_x2_outgoing_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/aperture_symbol_state_post_x2_outgoing.csv",
+    "aperture_symbol_state_states_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/aperture_symbol_state_states.csv",
+    "aperture_symbol_state_transitions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/aperture_symbol_state_transitions.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/report.json",
+    "signature_boundary_spine_aperture_symbol_state_obstruction": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/signature_boundary_spine_aperture_symbol_state_obstruction.json",
+    "signature_boundary_spine_aperture_symbol_state_obstruction_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/signature_boundary_spine_aperture_symbol_state_obstruction_certificate.json",
+    "signature_boundary_spine_aperture_symbol_state_obstruction_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_symbol_state_obstruction/signature_boundary_spine_aperture_symbol_state_obstruction_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_symbol_state_obstruction@1",
+  "stage_protocol": {
+    "closure": "certify node27 cannot be skipped by an immediate x1 transition and locate the first carrier-forbidden lower-overhead symbolic transition",
+    "coherence": "compare deterministic symbolic transitions with the ambient rewrite edge 42->44 and bounded carrier realization counts",
+    "draft": "quotient bounded carrier candidates by anchored trace node and selected-symbol suffix",
+    "emit": "emit symbol-state JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize observed symbol-state transitions, post-x2 outgoing alternatives, minimal completions, and missing lower-overhead moves"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_SYMBOL_STATE_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "ambient_42_to_44_edge": {
+      "exists": true,
+      "required_tail_symbol_id": 1,
+      "target_added_symbol_id": 4
+    },
+    "bounded_candidate_count": 1287,
+    "completion_table_sha256": "90cf1e0041abf3173fd22dce3512d7abe362f0790503709e986700897f25b386",
+    "forbidden_table_sha256": "f150404e08ae3bf9ee0db4283f0dba29ee8eb5c8519e53e85e67ddb47c7aca8b",
+    "minimal_forbidden_transitions": [
+      {
+        "bounded_exact_word_count": 0,
+        "bounded_prefix_word_count": 0,
+        "duplicate_trace_flag": 1,
+        "first_missing_transition_rank": 3,
+        "forbidden_id": 0,
+        "label_symbol_id": 2,
+        "observed_transition_count": 0,
+        "raw_target_node_id": 28,
+        "signature_valley_depth": 37,
+        "source_state_observed_count": 410,
+        "source_suffix_left_symbol_id": 1,
+        "source_suffix_right_symbol_id": 4,
+        "source_trace_node_id": 28,
+        "target_suffix_left_symbol_id": 4,
+        "target_suffix_right_symbol_id": 2,
+        "target_trace_node_id": 28,
+        "trace_detour_overhead": 2,
+        "word_symbol_0_id": 2,
+        "word_symbol_1_id": 1,
+        "word_symbol_2_id": 4,
+        "word_symbol_3_id": 2,
+        "word_symbol_4_id": 5
+      },
+      {
+        "bounded_exact_word_count": 0,
+        "bounded_prefix_word_count": 0,
+        "duplicate_trace_flag": 0,
+        "first_missing_transition_rank": 4,
+        "forbidden_id": 1,
+        "label_symbol_id": 4,
+        "observed_transition_count": 0,
+        "raw_target_node_id": 44,
+        "signature_valley_depth": 37,
+        "source_state_observed_count": 7,
+        "source_suffix_left_symbol_id": 5,
+        "source_suffix_right_symbol_id": 2,
+        "source_trace_node_id": 29,
+        "target_suffix_left_symbol_id": 2,
+        "target_suffix_right_symbol_id": 4,
+        "target_trace_node_id": 44,
+        "trace_detour_overhead": 2,
+        "word_symbol_0_id": 2,
+        "word_symbol_1_id": 1,
+        "word_symbol_2_id": 5,
+        "word_symbol_3_id": 2,
+        "word_symbol_4_id": 4
+      }
+    ],
+    "node27_skip_possible_with_immediate_x1": false,
+    "observable_table_sha256": "918161b1e96fe2a5756be8ec4ef2b0f3caf575ec09ab82bc1323a618896d9f8d",
+    "observed_state_count": 89,
+    "observed_symbol_word_count": 126,
+    "observed_trace_sequence_count": 85,
+    "observed_transition_count": 169,
+    "post_x2_outgoing": {
+      "0": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 12,
+        "signature_union_count": 142
+      },
+      "1": {
+        "observed_bounded_transition_count": 1287,
+        "raw_target_node_id": 27,
+        "signature_union_count": 146
+      },
+      "2": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 37,
+        "signature_union_count": 132
+      },
+      "3": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 40,
+        "signature_union_count": 132
+      },
+      "4": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 41,
+        "signature_union_count": 167
+      },
+      "5": {
+        "observed_bounded_transition_count": 0,
+        "raw_target_node_id": 42,
+        "signature_union_count": 183
+      }
+    },
+    "post_x2_outgoing_table_sha256": "a197c37b2ea8015c87ed1082532f271c0d2f826c36739f7991c5935312aaf9b8",
+    "state_table_sha256": "9e63779d81d183e0935e47664c2ba13cbc489e4bce2ecbcb43148aad75295c62",
+    "symbolic_x1_tail_overhead2_words": [
+      [
+        2,
+        1,
+        4,
+        2,
+        5
+      ],
+      [
+        2,
+        1,
+        5,
+        2,
+        4
+      ]
+    ],
+    "transition_table_sha256": "d04cee2b7b3cc91d89b82994aed7adc3293d6f5322efce93ee6c6e07de83d200"
+  }
+}

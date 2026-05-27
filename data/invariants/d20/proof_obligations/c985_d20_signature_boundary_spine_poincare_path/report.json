@@ -1,0 +1,212 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8fc2233df1c9a8672f002aa029aeb93af6a0dc3a245fa3bfcb4615d03db97158",
+  "checks": {
+    "boundary_edge_count_is_16": true,
+    "conductance_spine_certificate_certified": true,
+    "conductance_spine_json_schema_available": true,
+    "conductance_spine_report_certified": true,
+    "conductance_spine_tables_available": true,
+    "edge_table_shape_is_16_by_25": true,
+    "entropy_midpoint_polyline_metrics_match_expected": true,
+    "entropy_midpoint_polyline_residual_bends": true,
+    "full_edge_cloud_metrics_match_expected": true,
+    "full_edge_cloud_residual_bending": true,
+    "observable_table_shape_matches_codebook": true,
+    "polyline_spans_match_expected": true,
+    "polyline_transition_count_is_15": true,
+    "polyline_transition_table_shape_is_15_by_13": true,
+    "polyline_vertex_count_is_16": true,
+    "polyline_vertex_table_shape_is_16_by_9": true,
+    "residual_chart_certificate_certified": true,
+    "residual_chart_json_schema_available": true,
+    "residual_chart_report_certified": true,
+    "residual_chart_tables_available": true,
+    "residual_dominant_edge_set_matches_expected": true,
+    "residual_dominant_entropy_fraction_matches_expected": true,
+    "spine_order_matches_conductance_spine": true,
+    "top_five_edge_cloud_axis_dominant": true,
+    "top_five_edge_cloud_metrics_match_expected": true,
+    "top_five_midpoint_polyline_metrics_match_expected": true,
+    "top_five_midpoint_polyline_residual_bends": true,
+    "top_spine_edge_axis_dominant": true,
+    "top_spine_edge_metrics_match_expected": true
+  },
+  "claim": "The entropy-ordered conductance spine has a certified Poincare pushdown: its dominant edge and top-five edge cloud track the quotient geodesic axis, but the full ordered midpoint polyline bends through the residual coordinate.",
+  "closure_boundary": {
+    "certifies": [
+      "Poincare edge geometry for all 16 entropy-ordered residual boundary conductance edges",
+      "axis-versus-residual bend metrics for the dominant edge, top-five edge cloud, and full edge cloud",
+      "the entropy-ordered midpoint polyline and its residual-bending travel statistics",
+      "the distinction between local axis tracking and global residual bending"
+    ],
+    "does_not_certify_because_not_required": [
+      "that the ranked midpoint polyline is a geodesic or flow trajectory",
+      "a continuum conductance law, diffusion limit, or mixing-time estimate",
+      "higher-eigenmode Poincare spines",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "conductance_spine": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/signature_boundary_conductance_spine.json",
+      "sha256": "a7c89ebd496e0af5fad1f726c6327dc78da7afc46fcd774d5e01139a6c28c959"
+    },
+    "conductance_spine_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/signature_boundary_conductance_spine_certificate.json",
+      "sha256": "0e6d7d098d49e741b0677dded5f99ee40d0815cb2f9deb67d77bf6f115151532"
+    },
+    "conductance_spine_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/boundary_conductance_spine_edges.csv",
+      "sha256": "e558c2264e1a8c9e664fffa3ed3813fe3c0935542c04e520bc9fe5ee0ffb66a4"
+    },
+    "conductance_spine_report": {
+      "certificate_sha256": "1192af9892ae7c5952554fe517b67e69f501a80cd226cd63738a2866ffd32723",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/report.json",
+      "sha256": "54b1b8b806212bfe3c86466ee3a506c25a4cd2daf9009b3c90ade436b146968f",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_CONDUCTANCE_SPINE_CERTIFIED"
+    },
+    "conductance_spine_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/signature_boundary_conductance_spine_tables.npz",
+      "sha256": "64cad3d654d069f1b2c6ed902b2461893487197c0fcb66a6e1980a30a3c37581"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_poincare_path.py",
+      "sha256": "bf91b792db788b31f256c1c0cfd2255faef94566e68215a4eb09a860f415f912"
+    },
+    "residual_chart": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart.json",
+      "sha256": "5e9bd8bc70b1cffb6ab73dd1989bb6ef70b8e6b167e455d66f819205f1926f84"
+    },
+    "residual_chart_carriers": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/carrier_residual_chart.csv",
+      "sha256": "f90daabada64878fef38a913d18ba88448a9dfeb44fdb3fafcb061664caad0e0"
+    },
+    "residual_chart_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart_certificate.json",
+      "sha256": "f990a274ad892abb12baff94c02a70a09d99c159e8a63ea9c3565a41d7880511"
+    },
+    "residual_chart_report": {
+      "certificate_sha256": "788481496c23354042c2dfca29ff6abccf9afeb29c6d71cd52f311bc27d7b6fa",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/report.json",
+      "sha256": "dd555b3909314e9c4ae9e79be0b2c146ae007e8b99cbce52eecdb1710a4a3ee9",
+      "status": "C985_D20_SIGNATURE_GEODESIC_RESIDUAL_CHART_CERTIFIED"
+    },
+    "residual_chart_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_geodesic_residual_chart/signature_geodesic_residual_chart_tables.npz",
+      "sha256": "5ab416366dda0d9cc55317e196d4b9126eb19b3abcb63c4a40923848a6e881d2"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_poincare_path.py",
+      "sha256": "a24d7314fe4826cb53d323c37f3caf46fd2ba52fcfddbb68b4501b236d932aa3"
+    }
+  },
+  "next_highest_yield_item": "Use the residual-bending Poincare spine as a routing object: certify the minimal entropy prefix whose midpoint polyline crosses from axis-tracking to residual-dominant behavior, then compare that prefix with the high/central/negative cell-complex regions.",
+  "outputs": {
+    "boundary_spine_poincare_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/boundary_spine_poincare_edges.csv",
+    "boundary_spine_poincare_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/boundary_spine_poincare_observables.csv",
+    "boundary_spine_poincare_polyline_transitions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/boundary_spine_poincare_polyline_transitions.csv",
+    "boundary_spine_poincare_polyline_vertices_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/boundary_spine_poincare_polyline_vertices.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/report.json",
+    "signature_boundary_spine_poincare_path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path.json",
+    "signature_boundary_spine_poincare_path_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path_certificate.json",
+    "signature_boundary_spine_poincare_path_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_poincare_path@1",
+  "stage_protocol": {
+    "closure": "certify finite Poincare spine geometry without claiming a continuum geodesic-flow law",
+    "coherence": "check spine order, top-edge/top-five/full-spine axis-residual metrics, and table reproducibility",
+    "draft": "attach conductance-spine edges to certified Poincare carrier-mask centers and residual-chart coordinates",
+    "emit": "emit Poincare-spine JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize edge segments, entropy-ordered midpoint vertices, and midpoint transitions"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_POINCARE_PATH_CERTIFIED",
+  "witness": {
+    "boundary_edge_count": 16,
+    "entropy_midpoint_polyline": {
+      "axis_span_x1e12": 257126409278,
+      "axis_travel_x1e12": 950955396598,
+      "hyperbolic_length_x1e12": 2701324116998,
+      "residual_bend_fraction_x1e12": 718858117457,
+      "residual_span_x1e12": 575309726652,
+      "residual_travel_x1e12": 2431519629877
+    },
+    "full_edge_cloud": {
+      "entropy_weighted_axis_delta_x1e12": 127563694032,
+      "entropy_weighted_bend_fraction_x1e12": 554951068607,
+      "entropy_weighted_hyperbolic_length_x1e12": 228645586683,
+      "entropy_weighted_residual_delta_x1e12": 159064775410,
+      "residual_bending": true
+    },
+    "polyline_transition_count": 15,
+    "polyline_vertex_count": 16,
+    "residual_dominant_edges": {
+      "boundary_mask_edge_ids": [
+        6,
+        7,
+        8,
+        11,
+        9,
+        12,
+        5,
+        10,
+        4
+      ],
+      "edge_count": 9,
+      "entropy_fraction_x1e12": 488542794331
+    },
+    "spine_order_boundary_mask_edge_ids": [
+      14,
+      15,
+      2,
+      6,
+      3,
+      7,
+      8,
+      11,
+      9,
+      13,
+      12,
+      5,
+      10,
+      4,
+      1,
+      0
+    ],
+    "spine_poincare_edge_table_sha256": "32e67f88008d6507840c7200b22534f78cc14e24970d09465f261f3f7adc18b4",
+    "spine_poincare_observable_table_sha256": "9f9d846f105fc3e64ada33b7e53f48fba78d2126d1e69885084fb22a298fafeb",
+    "spine_polyline_transition_table_sha256": "aa493d5192c5866cd20e7f91701a06622f4e48c8cc94b4fe7b85fbec3b973c57",
+    "spine_polyline_vertex_table_sha256": "cde7788cc9e5dabf64ed2e3dcb8fb9a00ecf8954b970aad5c1638d3c459f24b6",
+    "top_five_edge_cloud": {
+      "axis_dominant": true,
+      "boundary_mask_edge_ids": [
+        14,
+        15,
+        2,
+        6,
+        3
+      ],
+      "entropy_weighted_axis_delta_x1e12": 169799011239,
+      "entropy_weighted_bend_fraction_x1e12": 357920431149,
+      "entropy_weighted_hyperbolic_length_x1e12": 206224183865,
+      "entropy_weighted_residual_delta_x1e12": 94652654063
+    },
+    "top_five_entropy_midpoint_polyline": {
+      "axis_span_x1e12": 171860556085,
+      "axis_travel_x1e12": 261932815628,
+      "hyperbolic_length_x1e12": 548672938221,
+      "residual_bend_fraction_x1e12": 647321036042,
+      "residual_span_x1e12": 300700062647,
+      "residual_travel_x1e12": 480761936246
+    },
+    "top_spine_edge": {
+      "axis_delta_abs_x1e12": 269936014924,
+      "axis_dominant": true,
+      "boundary_mask_edge_id": 14,
+      "hyperbolic_edge_length_x1e12": 321097465327,
+      "residual_bend_fraction_x1e12": 389782765920,
+      "residual_delta_abs_x1e12": 172424508261
+    }
+  }
+}

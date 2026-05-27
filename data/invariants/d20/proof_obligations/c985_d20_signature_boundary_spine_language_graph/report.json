@@ -1,0 +1,412 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "43437c9da6a4aa1fd1a9d014a70b65569b81b1142ea433cee45ed038ac508469",
+  "checks": {
+    "all_language_edges_are_rewrite_complex_edges": true,
+    "ambient_induced_edge_count_is_10": true,
+    "ambient_shortcut_edge_count_is_3": true,
+    "aperture_absent_from_language_nodes": true,
+    "aperture_min_ambient_distance_is_2": true,
+    "aperture_node_is_44": true,
+    "aperture_signature_gap_is_10": true,
+    "aperture_signature_is_185": true,
+    "boundary_endpoint_ambient_distance_is_2": true,
+    "boundary_endpoint_language_distance_is_7": true,
+    "canonical_window_sequence_matches_expected": true,
+    "gate_automaton_certificate_certified": true,
+    "gate_automaton_report_certified": true,
+    "gate_automaton_schema_available": true,
+    "gate_automaton_tables_available": true,
+    "gate_branch_word_table_shape_is_6_by_14": true,
+    "gate_transition_table_shape_is_16_by_16": true,
+    "gate_trigram_table_shape_is_12_by_20": true,
+    "language_aperture_table_shape_is_8_by_9": true,
+    "language_boundary_endpoints_are_20_48": true,
+    "language_edge_count_is_7": true,
+    "language_edge_table_shape_is_7_by_10": true,
+    "language_graph_connected": true,
+    "language_graph_diameter_is_7": true,
+    "language_graph_radius_is_4": true,
+    "language_gromov_delta_is_0": true,
+    "language_node_count_is_8": true,
+    "language_node_table_shape_is_8_by_14": true,
+    "language_observable_table_shape_matches_codebook": true,
+    "language_path_nodes_match_first_occurrence_order": true,
+    "language_self_loop_transition_count_is_4": true,
+    "language_shortcut_table_shape_is_3_by_10": true,
+    "language_transition_count_is_11": true,
+    "language_transition_table_shape_is_11_by_10": true,
+    "max_language_to_ambient_gap_is_5": true,
+    "nearest_aperture_nodes_match_expected": true,
+    "observed_max_signature_is_175": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_complex_schema_available": true,
+    "rewrite_complex_tables_available": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "rewrite_node_table_shape_is_56_by_17": true,
+    "source_to_branch_gate_symbols_omit_x2_x4": true
+  },
+  "claim": "The gate automaton's accepted trigram readout forms an eight-node hyperbolic language path with exact delta 0. Its finite boundary is compressed by ambient rewrite-complex shortcuts, while the missing x2/x4 max-signature aperture remains at ambient distance 2.",
+  "closure_boundary": {
+    "certifies": [
+      "the finite language graph induced by observed gate-automaton trigram normal forms",
+      "exact shortest-path distances, diameter, radius, and Gromov delta for that language graph",
+      "ambient rewrite-complex distances among observed language nodes",
+      "the distance-2 missing-symbol aperture at node 44",
+      "the signature gap between observed gate language maximum 175 and aperture maximum 185"
+    ],
+    "does_not_certify_because_not_required": [
+      "regular-language recognition for unobserved gate-letter words",
+      "minimal deterministic automata for alternative branch rankings",
+      "ambient geodesic uniqueness in the 56-node rewrite complex",
+      "new associator, pentagon, braiding, center, or tube-algebra data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_language_graph.py",
+      "sha256": "bfdda8aa3e6ee6e876b59bfa8a2d788cf181fac14b196c4d0dccd0f2cdcc749e"
+    },
+    "gate_automaton": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/signature_boundary_spine_gate_automaton.json",
+      "sha256": "6c92c2081a8600edae922145a53bc357dfd86b78f8492508da3e37b891320dd4"
+    },
+    "gate_automaton_branch_words": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/gate_branch_words.csv",
+      "sha256": "7fd94eca0f21cca61e5a90618a8a2f15dfe43121ec72ec3296e55eadf80778de"
+    },
+    "gate_automaton_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/signature_boundary_spine_gate_automaton_certificate.json",
+      "sha256": "45ab22af507a4000555046c7ab251787b2537152bd0c7e7d405cef0ef80ef70d"
+    },
+    "gate_automaton_observables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/gate_automaton_observables.csv",
+      "sha256": "51af57c234d127c847b327c85f5c3f9572a0ead7bf9d1fbb20e3eda6e96a34f3"
+    },
+    "gate_automaton_report": {
+      "certificate_sha256": "ff3c69b3855ef861227e8b15a8ea5defedfa712fbf215286cb0380433649421a",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/report.json",
+      "sha256": "7bfdd2820083e90c1daf75ae299c2b03a6c861e8272fa1dfaf5d2decd59077c6",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_GATE_AUTOMATON_CERTIFIED"
+    },
+    "gate_automaton_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/signature_boundary_spine_gate_automaton_tables.npz",
+      "sha256": "2eb0ba98a70878aa4e08e9e144e98581b6772e6edf16449bdff0224e13493c5c"
+    },
+    "gate_automaton_transitions": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/gate_automaton_transitions.csv",
+      "sha256": "722b874c7f2c3cefbc303e33e819bc772f0132b4f9d5f51b27fe6e766835c06b"
+    },
+    "gate_automaton_trigrams": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/gate_trigram_windows.csv",
+      "sha256": "4861ffaf11f934e0c92641d811b0b2b8357519800ae0a339586a4987cf847063"
+    },
+    "rewrite_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex.json",
+      "sha256": "0d170586487cce586baea14d2da03b700e3688ab2d45a5793094d19ad8b99385"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_language_graph.py",
+      "sha256": "c4bf48509691700b066f7658f18cb8fdbcfc954b9eb33a59240b33948f48bbc5"
+    }
+  },
+  "next_highest_yield_item": "Enumerate the ambient geodesic fan from the language boundary to the aperture node 44, then certify which shortest rewrite paths restore x2/x4 while preserving full-sector coverage and high signature mass.",
+  "outputs": {
+    "language_ambient_shortcuts_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_ambient_shortcuts.csv",
+    "language_aperture_distances_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_aperture_distances.csv",
+    "language_graph_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_graph_edges.csv",
+    "language_graph_nodes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_graph_nodes.csv",
+    "language_graph_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_graph_observables.csv",
+    "language_trigram_transitions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/language_trigram_transitions.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/report.json",
+    "signature_boundary_spine_language_graph": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/signature_boundary_spine_language_graph.json",
+    "signature_boundary_spine_language_graph_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/signature_boundary_spine_language_graph_certificate.json",
+    "signature_boundary_spine_language_graph_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_language_graph/signature_boundary_spine_language_graph_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_language_graph@1",
+  "stage_protocol": {
+    "closure": "certify the finite observed language graph without claiming arbitrary gate-word recognition",
+    "coherence": "check exact path metric, Gromov delta, ambient restriction, and missing-symbol aperture",
+    "draft": "view accepted gate trigrams as a first-occurrence canonical language graph",
+    "emit": "emit language-graph JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize language nodes, transitions, ambient shortcuts, and aperture distances"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_LANGUAGE_GRAPH_CERTIFIED",
+  "witness": {
+    "ambient_induced_edge_count": 10,
+    "ambient_observed_distance_histogram": [
+      {
+        "count": 10,
+        "value": 1
+      },
+      {
+        "count": 14,
+        "value": 2
+      },
+      {
+        "count": 4,
+        "value": 3
+      }
+    ],
+    "ambient_observed_distances_sha256": "5f5ad7908f68af787f2bbe3c4d85f98a5afed4183c52f95cee4bd1acc84126aa",
+    "ambient_shortcut_edges": [
+      {
+        "ambient_rewrite_distance": 1,
+        "language_distance": 2,
+        "language_minus_ambient_distance": 1,
+        "source_rewrite_node_id": 8,
+        "target_rewrite_node_id": 32
+      },
+      {
+        "ambient_rewrite_distance": 1,
+        "language_distance": 6,
+        "language_minus_ambient_distance": 5,
+        "source_rewrite_node_id": 20,
+        "target_rewrite_node_id": 51
+      },
+      {
+        "ambient_rewrite_distance": 1,
+        "language_distance": 2,
+        "language_minus_ambient_distance": 1,
+        "source_rewrite_node_id": 32,
+        "target_rewrite_node_id": 48
+      }
+    ],
+    "aperture_min_ambient_distance": 2,
+    "aperture_nearest_language_node_ids": [
+      20,
+      5,
+      32,
+      51,
+      48
+    ],
+    "aperture_node": {
+      "canonical_atom_ids": [
+        7,
+        12,
+        19
+      ],
+      "canonical_word": "x2 x4 x5",
+      "graph_degree": 15,
+      "node_id": 44,
+      "sector_coverage_count": 6,
+      "signature_union_count": 185
+    },
+    "aperture_signature_gap": 10,
+    "boundary_endpoint_ambient_distance": 2,
+    "boundary_endpoint_language_distance": 7,
+    "canonical_window_sequence": [
+      20,
+      5,
+      1,
+      8,
+      23,
+      32,
+      32,
+      51,
+      51,
+      51,
+      51,
+      48
+    ],
+    "language_adjacency_sha256": "72a770bbc157fd7939153e046f88aca388c73e5ed17e35c9e6be1e23808e11da",
+    "language_aperture_table_sha256": "c5fbc8ebc02e15d4e9a2f7c5e07cc70f5be0c472b4891030e5ae6813cecddebf",
+    "language_boundary_endpoint_node_ids": [
+      20,
+      48
+    ],
+    "language_delta_witness_ranks": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "language_distance_histogram": [
+      {
+        "count": 7,
+        "value": 1
+      },
+      {
+        "count": 6,
+        "value": 2
+      },
+      {
+        "count": 5,
+        "value": 3
+      },
+      {
+        "count": 4,
+        "value": 4
+      },
+      {
+        "count": 3,
+        "value": 5
+      },
+      {
+        "count": 2,
+        "value": 6
+      },
+      {
+        "count": 1,
+        "value": 7
+      }
+    ],
+    "language_distances_sha256": "4764e1a61f9c24657b96ce9281544b428eb893ba77c5c7b549a0b4b6a6b9ee8c",
+    "language_edge_node_pairs": [
+      [
+        20,
+        5
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        8,
+        23
+      ],
+      [
+        23,
+        32
+      ],
+      [
+        32,
+        51
+      ],
+      [
+        51,
+        48
+      ]
+    ],
+    "language_edge_table_sha256": "10ae1542a8f768c3195e39389c67b97294f8fa01da126710dde20f82b574e11b",
+    "language_graph_diameter": 7,
+    "language_graph_radius": 4,
+    "language_gromov_delta": 0.0,
+    "language_gromov_delta_twice": 0,
+    "language_node_table_sha256": "cf2b77c5626a18e3175bf337cf3be14c63aac162d555a228172b354c0ef7acd4",
+    "language_observable_table_sha256": "53a644e00de4b9a69360cf3880a512eb78292306126f60da5d9eb8226d8e92d6",
+    "language_path_node_ids": [
+      20,
+      5,
+      1,
+      8,
+      23,
+      32,
+      51,
+      48
+    ],
+    "language_path_node_words": [
+      "x0 x5 x5",
+      "x0 x0 x5",
+      "x0 x0 x1",
+      "x0 x1 x3",
+      "x1 x1 x3",
+      "x1 x3 x5",
+      "x3 x5 x5",
+      "x3 x3 x5"
+    ],
+    "language_self_loop_transition_count": 4,
+    "language_shortcut_table_sha256": "7800dd246a6a1a5aa4e15f4b6ea95d887f5dc970fd9d3740f0e7bbaa79a42a7f",
+    "language_transition_pair_multiplicities": [
+      {
+        "count": 1,
+        "source_rewrite_node_id": 1,
+        "target_rewrite_node_id": 8
+      },
+      {
+        "count": 1,
+        "source_rewrite_node_id": 5,
+        "target_rewrite_node_id": 1
+      },
+      {
+        "count": 1,
+        "source_rewrite_node_id": 8,
+        "target_rewrite_node_id": 23
+      },
+      {
+        "count": 1,
+        "source_rewrite_node_id": 20,
+        "target_rewrite_node_id": 5
+      },
+      {
+        "count": 1,
+        "source_rewrite_node_id": 23,
+        "target_rewrite_node_id": 32
+      },
+      {
+        "count": 1,
+        "source_rewrite_node_id": 32,
+        "target_rewrite_node_id": 32
+      },
+      {
+        "count": 1,
+        "source_rewrite_node_id": 32,
+        "target_rewrite_node_id": 51
+      },
+      {
+        "count": 1,
+        "source_rewrite_node_id": 51,
+        "target_rewrite_node_id": 48
+      },
+      {
+        "count": 3,
+        "source_rewrite_node_id": 51,
+        "target_rewrite_node_id": 51
+      }
+    ],
+    "language_transition_table_sha256": "cc45e0abc1b3e24d0ef7811bebf598ef0f1f393ccef309fb608134f2aaecad3d",
+    "max_language_to_ambient_gap": 5,
+    "max_language_to_ambient_gap_pairs": [
+      {
+        "ambient_rewrite_distance": 1,
+        "language_distance": 6,
+        "language_minus_ambient_distance": 5,
+        "source_language_node_rank": 0,
+        "source_rewrite_node_id": 20,
+        "target_language_node_rank": 6,
+        "target_rewrite_node_id": 51
+      },
+      {
+        "ambient_rewrite_distance": 2,
+        "language_distance": 7,
+        "language_minus_ambient_distance": 5,
+        "source_language_node_rank": 0,
+        "source_rewrite_node_id": 20,
+        "target_language_node_rank": 7,
+        "target_rewrite_node_id": 48
+      }
+    ],
+    "missing_gate_symbol_bitset": 20,
+    "missing_gate_symbol_count": 2,
+    "observed_gate_symbol_bitset": 43,
+    "observed_signature_union_max": 175
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "certified_reading": [
+    "atom selection removes the selected first-contact x5 leakage penalty from every ranked candidate",
+    "the zero-overhead class drops from typed cost 2 to atom-selected tail cost 1",
+    "the zero-overhead class still abandons the certified x1 tail, so it does not collapse onto the cost-zero x1-tail class",
+    "candidate 7 joins the cost-zero x1-tail frontier at atom level, while x0-tail candidates 8 and 9 remain dominated"
+  ],
+  "checks": {
+    "all_candidates_select_x2_first_atom": true,
+    "atom_selector_candidate_table_shape_is_6_by_37": true,
+    "atom_selector_certificate_certified": true,
+    "atom_selector_report_certified": true,
+    "atom_selector_schema_available": true,
+    "candidate_table_shape_is_10_by_26": true,
+    "class_table_shape_is_3_by_16": true,
+    "clean_x1_candidate_cost_is_0": true,
+    "dominated_candidate_ids_are_8_and_9": true,
+    "frontier_candidate_ids_are_0_through_7": true,
+    "frontier_class_count_is_2": true,
+    "geodesic_class_has_cost_1_and_zero_overhead": true,
+    "mixed_candidate_table_shape_is_10_by_16": true,
+    "mixed_contact_certificate_certified": true,
+    "mixed_contact_report_certified": true,
+    "mixed_x1_candidate_7_enters_frontier": true,
+    "observable_table_shape_matches_codebook": true,
+    "pareto_candidate_table_shape_is_10_by_25": true,
+    "pareto_certificate_certified": true,
+    "pareto_report_certified": true,
+    "pareto_schema_available": true,
+    "selected_first_contact_leakage_is_zero": true,
+    "x0_tail_candidates_are_dominated": true,
+    "x0_tail_class_is_dominated": true,
+    "x1_tail_class_has_cost_0_and_overhead_3": true,
+    "x1_tail_obstruction_survives": true,
+    "zero_overhead_cost_drops_from_2_to_1": true,
+    "zero_overhead_cost_zero_count_is_0": true
+  },
+  "schema": "c985.d20_signature_boundary_spine_aperture_atom_selected_tradeoff_certificate@1",
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_ATOM_SELECTED_TRADEOFF_CERTIFIED",
+  "witness": {
+    "candidate_table_sha256": "e3ef17e18c42c695be3624e0867ad092c5d917424e991aec7635d850f837901f",
+    "class_table_sha256": "af004a602a05e1218d0f1b9be0404171ce155b0dae868aa3450f3df70c1b4b08",
+    "cost_rule": "atom_selected_tail_cost = selected_first_contact_x5_leakage_flag + typed_tail_abandonment_flag",
+    "dominated_candidate_ids": [
+      8,
+      9
+    ],
+    "frontier_candidate_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "frontier_classes": [
+      {
+        "atom_selected_tail_cost": 1,
+        "candidate_count": 6,
+        "class_code": 0,
+        "class_name": "atom_selected_geodesic_tail_abandoned",
+        "clean_carrier_first_contact_count": 0,
+        "frontier_class": true,
+        "metric_gromov_delta": 0.0,
+        "representative_candidate_id": 0,
+        "selector_required_count": 6,
+        "signature_valley_depth": 0,
+        "trace_detour_overhead": 0,
+        "trace_signature_total_variation": 53
+      },
+      {
+        "atom_selected_tail_cost": 0,
+        "candidate_count": 2,
+        "class_code": 1,
+        "class_name": "atom_selected_x1_tail",
+        "clean_carrier_first_contact_count": 1,
+        "frontier_class": true,
+        "metric_gromov_delta": 0.5,
+        "representative_candidate_id": 6,
+        "selector_required_count": 1,
+        "signature_valley_depth": 37,
+        "trace_detour_overhead": 3,
+        "trace_signature_total_variation": 127
+      },
+      {
+        "atom_selected_tail_cost": 1,
+        "candidate_count": 2,
+        "class_code": 2,
+        "class_name": "atom_selected_x0_tail",
+        "clean_carrier_first_contact_count": 1,
+        "frontier_class": false,
+        "metric_gromov_delta": 0.5,
+        "representative_candidate_id": 8,
+        "selector_required_count": 1,
+        "signature_valley_depth": 41,
+        "trace_detour_overhead": 3,
+        "trace_signature_total_variation": 135
+      }
+    ],
+    "observable_table_sha256": "73922f87a642634dad308669332e904b1ebd888b57a1dd275a4a59f123162acc",
+    "x1_tail_class": {
+      "atom_selected_tail_cost": 0,
+      "candidate_ids": [
+        6,
+        7
+      ],
+      "signature_valley_depth": 37,
+      "trace_detour_overhead": 3
+    },
+    "zero_overhead_cost_transition": {
+      "atom_selected_tail_cost": 1,
+      "old_typed_boundary_cost": 2,
+      "reason": "selected first-contact x5 leakage is zero, but x1 tail is still abandoned"
+    }
+  }
+}

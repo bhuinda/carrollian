@@ -1,0 +1,188 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "05ed9e77b0ac8b54be8c71fa1658a8f7f56d7171d09ae8d47a6d9937a2535d85",
+  "checks": {
+    "cell_complex_certificate_certified": true,
+    "cell_complex_json_schema_available": true,
+    "cell_complex_report_certified": true,
+    "cell_complex_tables_available": true,
+    "edge_cloud_crossing_metrics_match_expected": true,
+    "edge_cloud_crossing_prefix_matches_expected": true,
+    "edge_cloud_predecessor_is_axis_tracking": true,
+    "edge_prefix_boundary_active_region_coverage_matches_expected": true,
+    "edge_prefix_is_all_central_negative": true,
+    "edge_prefix_region_bitsets_match_expected": true,
+    "midpoint_polyline_crossing_metrics_match_expected": true,
+    "midpoint_polyline_crossing_prefix_matches_expected": true,
+    "observable_table_shape_matches_codebook": true,
+    "polyline_prefix_boundary_active_region_coverage_matches_expected": true,
+    "polyline_prefix_region_bitsets_match_expected": true,
+    "region_coverage_rows_are_12": true,
+    "region_table_shape_is_12_by_13": true,
+    "spine_path_certificate_certified": true,
+    "spine_path_json_schema_available": true,
+    "spine_path_report_certified": true,
+    "spine_path_tables_available": true,
+    "summary_prefix_count_is_16": true,
+    "summary_table_shape_is_16_by_21": true
+  },
+  "claim": "The residual-bending Poincare spine has two certified routing thresholds: the ordered midpoint route bends residual immediately at prefix 2, while cumulative conductance remains axis-tracking until the all-central-negative prefix 8.",
+  "closure_boundary": {
+    "certifies": [
+      "minimal midpoint-polyline and edge-cloud residual-dominant prefix lengths",
+      "the axis-tracking predecessor to the edge-cloud crossing prefix",
+      "high/central/negative cell-region carrier coverage for both routing prefixes",
+      "that the cumulative conductance crossing happens before any high-negative edge enters the prefix"
+    ],
+    "does_not_certify_because_not_required": [
+      "that these prefixes are unique under alternative edge orderings",
+      "a continuum route, geodesic-flow law, or mixing-time estimate",
+      "higher-eigenmode routing prefixes",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "cell_complex": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex.json",
+      "sha256": "88fedc4518455bbe017f962294fe334096da7366e80925da41c2dbe8e657d5b8"
+    },
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "cell_complex_vertices": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_vertices.csv",
+      "sha256": "6c8bf9d2be494dcba1916b5d0ddd15bd9d45a022ac8f3ff8a7d8cc4691a1dee0"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_routing_prefix.py",
+      "sha256": "890d021750b89011cfae03902c12da7c204b381dcef35ee001a96936795160a1"
+    },
+    "spine_path": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path.json",
+      "sha256": "150ec77af06024b556997523c847026187240792b50fda0ddb48fe8bd25581a1"
+    },
+    "spine_path_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path_certificate.json",
+      "sha256": "12cb4663c26c94956ee804700d0b5578c8325fc5129f2a552dc455c74de6afd0"
+    },
+    "spine_path_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/boundary_spine_poincare_edges.csv",
+      "sha256": "629cc4f143095117aa10eff2e1a5cf0d97b57cf85f361a38459bf43b8296e40a"
+    },
+    "spine_path_report": {
+      "certificate_sha256": "8fc2233df1c9a8672f002aa029aeb93af6a0dc3a245fa3bfcb4615d03db97158",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/report.json",
+      "sha256": "15e74ef1db99f024291913cf148ea88da742efe059964831170bbc7be845082c",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_POINCARE_PATH_CERTIFIED"
+    },
+    "spine_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/signature_boundary_spine_poincare_path_tables.npz",
+      "sha256": "a00b0169f35270b4fa76cd2a7c839d594c7903bf9abde0b2f89884a27c95e73a"
+    },
+    "spine_path_transitions": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_poincare_path/boundary_spine_poincare_polyline_transitions.csv",
+      "sha256": "02000a62362c47aaff82fb360c6ab1c43876835ae8bb1f26dc51554d93a4134e"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_routing_prefix.py",
+      "sha256": "c40d687a38a4f0252e9bc312e78828202ba4fd25af9d6b2a667a40c4b0de435a"
+    }
+  },
+  "next_highest_yield_item": "Turn the prefix threshold into a branching law: certify which negative carrier masks enter before and after the prefix-8 residual flip, and compare that branch order with the original one-dimensional obstruction masks [4, 7, 8].",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/report.json",
+    "routing_prefix_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/routing_prefix_observables.csv",
+    "routing_prefix_region_coverage_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/routing_prefix_region_coverage.csv",
+    "routing_prefix_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/routing_prefix_summary.csv",
+    "signature_boundary_spine_routing_prefix": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/signature_boundary_spine_routing_prefix.json",
+    "signature_boundary_spine_routing_prefix_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/signature_boundary_spine_routing_prefix_certificate.json",
+    "signature_boundary_spine_routing_prefix_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_routing_prefix/signature_boundary_spine_routing_prefix_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_routing_prefix@1",
+  "stage_protocol": {
+    "closure": "certify finite routing-prefix thresholds without claiming a continuum flow route",
+    "coherence": "check minimal crossing indices, predecessor behavior, and cell-region bitset coverage",
+    "draft": "scan ranked Poincare-spine prefixes for residual-dominant crossings",
+    "emit": "emit routing-prefix JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize cumulative prefix metrics and high/central/negative region coverage"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_ROUTING_PREFIX_CERTIFIED",
+  "witness": {
+    "edge_cloud_crossing_predecessor": {
+      "bend_fraction_x1e12": 469550522968,
+      "last_boundary_mask_edge_id": 8,
+      "prefix_length": 7,
+      "residual_dominant": false
+    },
+    "edge_cloud_crossing_prefix": {
+      "axis_delta_x1e12": 141037638590,
+      "bend_fraction_x1e12": 505685061554,
+      "boundary_mask_edge_ids": [
+        14,
+        15,
+        2,
+        6,
+        3,
+        7,
+        8,
+        11
+      ],
+      "central_negative_edge_count": 8,
+      "entropy_fraction_x1e12": 728568451090,
+      "flux_fraction_x1e12": 777936948054,
+      "high_negative_edge_count": 0,
+      "hyperbolic_length_x1e12": 228204173309,
+      "last_boundary_mask_edge_id": 11,
+      "prefix_length": 8,
+      "residual_delta_x1e12": 144281755223
+    },
+    "edge_prefix_region_coverage": {
+      "negative_boundary_active_fraction_x1e12": 666666666667,
+      "negative_carrier_bitset": 9088,
+      "positive_central_boundary_active_fraction_x1e12": 750000000000,
+      "positive_central_carrier_bitset": 6152,
+      "positive_high_boundary_active_fraction_x1e12": 0,
+      "touched_boundary_active_fraction_x1e12": 583333333333
+    },
+    "midpoint_polyline_crossing_prefix": {
+      "axis_travel_x1e12": 35307583361,
+      "bend_fraction_x1e12": 671818556542,
+      "boundary_mask_edge_ids": [
+        14,
+        15
+      ],
+      "entropy_fraction_x1e12": 262985778341,
+      "flux_fraction_x1e12": 318011852725,
+      "hyperbolic_length_x1e12": 80649159853,
+      "last_boundary_mask_edge_id": 15,
+      "prefix_length": 2,
+      "residual_travel_x1e12": 72277973546
+    },
+    "polyline_prefix_region_coverage": {
+      "negative_boundary_active_fraction_x1e12": 166666666667,
+      "negative_carrier_bitset": 8192,
+      "positive_central_boundary_active_fraction_x1e12": 500000000000,
+      "positive_central_carrier_bitset": 6144,
+      "touched_boundary_active_fraction_x1e12": 250000000000
+    },
+    "routing_prefix_observable_table_sha256": "ffce0282b471cbccd6a7869251368f0f7485dbcd3fde879985bb8be387fcafb6",
+    "routing_prefix_region_table_sha256": "d1f3e69281d1a7c3ad45704ae002a0c9772674649455f7ee03cec3e13fe87b96",
+    "routing_prefix_summary_table_sha256": "479bd6dd9249e19511c872da445f8711824b4d16659aa7c7e9ec4b85c8d0d06c"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "certified_reading": [
+    "all 4,007 spectral crossing signature edges lie over the 16 residual cell-complex boundary mask edges",
+    "high-negative boundary contacts carry 198 crossing edges and 0.015534049950 of cut flux",
+    "central-negative boundary contacts carry 3,809 crossing edges and 0.984465950050 of cut flux",
+    "the strongest boundary pair is central-negative mask edge 11-13 with flux 0.043567340880",
+    "every crossing signature edge has exactly one shared active carrier atom"
+  ],
+  "checks": {
+    "all_signature_cut_edges_have_shared_active_atom_one": true,
+    "boundary_degrees_match_spectral_mask_summary": true,
+    "boundary_pair_flux_rows_match_expected": true,
+    "boundary_pair_set_matches_cell_complex": true,
+    "carrier_boundary_edge_count_is_16": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_json_schema_available": true,
+    "cell_complex_report_certified": true,
+    "cell_complex_tables_available": true,
+    "central_negative_carries_flux_majority": true,
+    "central_negative_partition_matches_expected": true,
+    "high_negative_partition_matches_expected": true,
+    "mask_edge_table_shape_is_16_by_12": true,
+    "observable_table_shape_matches_codebook": true,
+    "partition_table_shape_is_2_by_9": true,
+    "shared_active_atom_sum_matches_cut_edge_count": true,
+    "signature_cut_edge_count_is_4007": true,
+    "signature_edge_table_shape_is_4007_by_13": true,
+    "spectral_cut_certificate_certified": true,
+    "spectral_cut_json_schema_available": true,
+    "spectral_cut_report_certified": true,
+    "spectral_cut_tables_available": true,
+    "top_boundary_pair_matches_expected": true,
+    "total_cut_flux_matches_spectral_cut": true,
+    "unexpected_boundary_partition_count_is_zero": true
+  },
+  "schema": "c985.d20_signature_boundary_flux_cells_certificate@1",
+  "status": "C985_D20_SIGNATURE_BOUNDARY_FLUX_CELLS_CERTIFIED",
+  "witness": {
+    "boundary_degree_l1_delta": 0,
+    "boundary_flux_observable_table_sha256": "9fc5e0782e1378a799b655480cf9dbcfe459be3632b263e385d25f93f9d2666b",
+    "boundary_mask_edge_table_sha256": "e769eed77d39832eff20f15fb1f8ab1df0d096e3f5d301d1437ca41e3b22fa9e",
+    "boundary_partition_table_sha256": "a307d267447c322a303a45010edb6e44b708f5f226ea50ce9ca79dfcd749ef0e",
+    "boundary_signature_edge_table_sha256": "7387d0797b18406f514e21e6dcf824f285ae1989a4f5102e191269727c7d098b",
+    "carrier_boundary_edge_count": 16,
+    "central_negative": {
+      "flux_fraction_x1e12": 984465950050,
+      "mask_edge_count": 14,
+      "signature_cut_edge_count": 3809,
+      "undirected_cut_flux_x1e12": 235250396733
+    },
+    "high_negative": {
+      "flux_fraction_x1e12": 15534049950,
+      "mask_edge_count": 2,
+      "signature_cut_edge_count": 198,
+      "undirected_cut_flux_x1e12": 3712054656
+    },
+    "shared_active_atom_sum": 4007,
+    "signature_cut_edge_count": 4007,
+    "top_boundary_pair": {
+      "boundary_partition_code": 5,
+      "flux_fraction_of_total_cut_x1e12": 182318772789,
+      "signature_cut_edge_count": 420,
+      "source_carrier_mask_class_id": 11,
+      "target_carrier_mask_class_id": 13,
+      "undirected_stationary_flux_x1e12": 43567340880
+    },
+    "total_undirected_cut_flux_x1e12": 238962451389
+  }
+}

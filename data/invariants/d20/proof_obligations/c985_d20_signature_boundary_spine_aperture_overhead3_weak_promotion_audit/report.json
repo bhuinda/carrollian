@@ -1,0 +1,307 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b8f0218f8ea46f2ca524acd3c93b30bef25893fef48a74051f03a84c0ecf9d11",
+  "checks": {
+    "all_nonstrong_promotions_are_single_x5": true,
+    "all_promotions_consume_target_and_close": true,
+    "associativity_table_shape_is_216_by_27": true,
+    "bounded_candidate_table_shape_is_1287": true,
+    "bounded_match_totals_match_expected": true,
+    "cell_complex_certificate_certified": true,
+    "cell_complex_edge_table_shape_is_44_by_13": true,
+    "cell_complex_report_certified": true,
+    "closure_counts_match_expected": true,
+    "edit_candidate_table_shape_is_596_by_codebook": true,
+    "edit_repair_certificate_certified": true,
+    "edit_repair_report_certified": true,
+    "edit_repair_schema_available": true,
+    "five_nonstrong_suffixes_have_redundant_post44_symbol": true,
+    "observable_table_shape_matches_codebook": true,
+    "one_selected_row_is_strong_target1": true,
+    "post_node44_suffix_never_strongifies_first_hit": true,
+    "promotion_table_shape_matches_codebook": true,
+    "rank104_certificate_certified": true,
+    "rank104_report_certified": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_edge_table_shape_is_315_by_13": true,
+    "selected_candidate_ids_match_expected": true,
+    "selected_trace_class_distribution_is_6_1_1": true,
+    "seven_selected_rows_are_nonstrong_target0": true,
+    "six_nonstrong_rows_are_nonminimal": true,
+    "strong_target1_needs_x3_closure_return": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "trace_class_table_shape_is_7_by_codebook": true,
+    "trace_quotient_certificate_certified": true,
+    "trace_quotient_report_certified": true,
+    "trace_quotient_schema_available": true
+  },
+  "claim": "Across the seven bounded overhead-3 trace classes, the target-language weak repairs with closed bounded matches reduce to seven nonstrong target0 rows plus one already-strong target1 row. Every nonstrong target0 row has the same minimal post-node44 target-consumption closure: append x5. This promotes carrier closure after the first node44 hit, but it cannot retroactively make the first hit strong.",
+  "closure_boundary": {
+    "certifies": [
+      "which weak overhead-3 edit repairs have exact bounded first-return matches in the seven trace classes",
+      "the minimal post-node44 suffix needed to consume the remaining target symbols and close from the first node44 carrier prefix",
+      "that all selected nonstrong target0 rows share the one-symbol x5 promotion",
+      "that candidate 544 is the only selected already-strong target1 row",
+      "that post-node44 suffixes cannot change the pre-aperture strong/nonstrong classification of the first node44 hit"
+    ],
+    "does_not_certify_because_not_required": [
+      "walks outside the already-certified bounded first-return search",
+      "edit repairs with overhead other than 3",
+      "repairs using deletion or substitution edits",
+      "turning nonstrong first hits into strong first hits by changing pre-node44 symbols",
+      "categorical center, braiding, pivotal, or spherical data"
+    ]
+  },
+  "inputs": {
+    "bounded_backtrack_candidates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/aperture_bounded_backtrack_candidates.csv",
+      "sha256": "4eeaafa2ecf7f83348859fe14e188342bf7a055a8ff8421d49c24e2ce72555d2"
+    },
+    "bounded_backtrack_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_bounded_backtrack_search/signature_boundary_spine_aperture_bounded_backtrack_search_tables.npz",
+      "sha256": "ea4bc28097fa6830db938b61dc09af7b5447cad24de5f8923a83b325115fc6eb"
+    },
+    "cell_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_certificate.json",
+      "sha256": "f9de04595496a5636e6365ac63c545f364aad3e807c9631323b10c9a218b54a2"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "cell_complex_report": {
+      "certificate_sha256": "edf1be00cccdb2611827b1fe58de1863c6f3cbd85d3186e7a8b433ca4ddede2c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/report.json",
+      "sha256": "f53cd07aa1d69fda92b20327b92d4774b889c5b5d62711d7d39f09a8a5e0bcb4",
+      "status": "C985_D20_SIGNATURE_RESIDUAL_CELL_COMPLEX_CERTIFIED"
+    },
+    "cell_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/signature_residual_cell_complex_tables.npz",
+      "sha256": "c786753c408d1eb9172a0f9b55e675eb40bc1c33404098c121ccc6a7df8f59f8"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit.py",
+      "sha256": "34822cd4383733ed6b6dc45d3c3c2c8fd1c71bc9986709c61e75f7cc1f25f4bd"
+    },
+    "edit_repair_candidates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/aperture_overhead2_edit_repair_candidates.csv",
+      "sha256": "5e9cf6369cd1f55654f6574c3a344f9f6dda29c4e6e8ba555edebeb6e5310fe4"
+    },
+    "edit_repair_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/signature_boundary_spine_aperture_overhead2_edit_repair_certificate.json",
+      "sha256": "d29a98e0fd406d780c9b38bf785fc71e2ab850a112b146d7e2352cd7056f445a"
+    },
+    "edit_repair_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/signature_boundary_spine_aperture_overhead2_edit_repair.json",
+      "sha256": "ebc217b327f85508d8f4cd1d7e218590cddf5626532464a243db2c460b4d34e9"
+    },
+    "edit_repair_report": {
+      "certificate_sha256": "6f594adf50baedc1fc4ce7d0587de7707c51b78f4d1b54dc0512db5454d292a9",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/report.json",
+      "sha256": "7d438ec867599efaa5dc7423eac931ff4145b675b869ff2792d2a794f9fa9b96",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD2_EDIT_REPAIR_CERTIFIED"
+    },
+    "edit_repair_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead2_edit_repair/signature_boundary_spine_aperture_overhead2_edit_repair_tables.npz",
+      "sha256": "8de754db377fd7e05529b24af49bd18f34ee394157fd0f3393f8e0ec9f6ad3e9"
+    },
+    "rank104_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_branch_audit/signature_boundary_spine_aperture_rank104_branch_audit_certificate.json",
+      "sha256": "a5599af75e9e784a44c633be9c1cae1cd5d7c75e13f9ca1cf3a873f86faa98f6"
+    },
+    "rank104_report": {
+      "certificate_sha256": "6c5203db6bdaf6840de2cab4903d2e60a24e94cacf3d6fcf7de231fe90c7b4a6",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_rank104_branch_audit/report.json",
+      "sha256": "85a30fa4ec65c69c6e5465adf6e8444521f8fe94eb480eacbb14150f56b5a69d",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_RANK104_BRANCH_AUDIT_CERTIFIED"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "trace_quotient_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/signature_boundary_spine_aperture_overhead3_trace_class_quotient_certificate.json",
+      "sha256": "05d0ca56dc735a212ec63784a02a807967f1019a6e51833a4e50b27a652041aa"
+    },
+    "trace_quotient_classes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/aperture_overhead3_trace_classes.csv",
+      "sha256": "49f5d6500f46bc17ab105c28767c2ccca935528cd360c127f78a318e1675def3"
+    },
+    "trace_quotient_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/signature_boundary_spine_aperture_overhead3_trace_class_quotient.json",
+      "sha256": "9e238a4324ec36472364affef17f06e91c085435c8efc05bd2efb6f66899d4a0"
+    },
+    "trace_quotient_report": {
+      "certificate_sha256": "74cc3a127d907e7692cd530d0eb35697aaec53863b870d204ac4cb3efe82ce3c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/report.json",
+      "sha256": "041d88b8815343ff752df0bf6c8e0dcc6bad73c31b51f7dde3f297f6906856b0",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD3_TRACE_CLASS_QUOTIENT_CERTIFIED"
+    },
+    "trace_quotient_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_trace_class_quotient/signature_boundary_spine_aperture_overhead3_trace_class_quotient_tables.npz",
+      "sha256": "4f04c225335072c5452d4b635691eb2de75cc5bd739ee266f9bcd357b9e199bb"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit.py",
+      "sha256": "93a633456e69514a298cb2c813bb1286556d104ef1c7f97ac3be1c9f8e0fcaeb"
+    }
+  },
+  "next_highest_yield_item": "Collapse the seven nonstrong x5-promoted target0 rows by their pre-node44 trace branch and carrier-prefix endpoint histogram, then ask which pre-node44 symbol substitution is the least edit that turns the shared post-node44 x5 closure into a genuinely strong first-hit repair.",
+  "outputs": {
+    "aperture_overhead3_weak_promotion_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit/aperture_overhead3_weak_promotion_observables.csv",
+    "aperture_overhead3_weak_promotion_repairs_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit/aperture_overhead3_weak_promotion_repairs.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit/report.json",
+    "signature_boundary_spine_aperture_overhead3_weak_promotion_audit": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit/signature_boundary_spine_aperture_overhead3_weak_promotion_audit.json",
+    "signature_boundary_spine_aperture_overhead3_weak_promotion_audit_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit/signature_boundary_spine_aperture_overhead3_weak_promotion_audit_certificate.json",
+    "signature_boundary_spine_aperture_overhead3_weak_promotion_audit_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit/signature_boundary_spine_aperture_overhead3_weak_promotion_audit_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_overhead3_weak_promotion_audit@1",
+  "stage_protocol": {
+    "closure": "certify that all nonstrong selected rows close with one x5 and that suffixes cannot strongify an early hit",
+    "coherence": "separate post-node44 target-consumption closure from pre-aperture strong repair status",
+    "draft": "select weak overhead-3 edit repairs that have exact bounded first-return matches in the seven trace classes",
+    "emit": "emit weak-promotion audit JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize trace-class membership, bounded rank intervals, node44 prefixes, and minimal promotion suffixes"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_OVERHEAD3_WEAK_PROMOTION_AUDIT_CERTIFIED",
+  "witness": {
+    "bounded_rank_interval_by_candidate": {
+      "104": [
+        111,
+        121
+      ],
+      "20": [
+        5,
+        9
+      ],
+      "263": [
+        19,
+        90
+      ],
+      "264": [
+        21,
+        92
+      ],
+      "265": [
+        12,
+        100
+      ],
+      "270": [
+        30,
+        101
+      ],
+      "273": [
+        31,
+        103
+      ],
+      "544": [
+        122,
+        124
+      ]
+    },
+    "nonstrong_candidate_ids": [
+      20,
+      263,
+      264,
+      265,
+      270,
+      273,
+      104
+    ],
+    "observable_table_sha256": "df501200c792cf45677afdd27c8758293975310709f861b55acfa64c669b9ea8",
+    "promotion_closed_path_count_by_candidate": {
+      "104": 8,
+      "20": 4,
+      "263": 4,
+      "264": 4,
+      "265": 4,
+      "270": 4,
+      "273": 4,
+      "544": 3
+    },
+    "promotion_suffix_by_candidate": {
+      "104": [
+        5
+      ],
+      "20": [
+        5
+      ],
+      "263": [
+        5
+      ],
+      "264": [
+        5
+      ],
+      "265": [
+        5
+      ],
+      "270": [
+        5
+      ],
+      "273": [
+        5
+      ],
+      "544": [
+        3
+      ]
+    },
+    "promotion_table_sha256": "7180c2cdb32805537591dc6f9ff6bc1df530c3439341dc20d81199e98cf9a9aa",
+    "selected_edit_repair_candidate_ids": [
+      20,
+      263,
+      264,
+      265,
+      270,
+      273,
+      104,
+      544
+    ],
+    "strong_candidate_ids": [
+      544
+    ],
+    "trace_class_distribution": {
+      "0": 6,
+      "1": 1,
+      "2": 1
+    }
+  }
+}

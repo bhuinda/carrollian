@@ -1,0 +1,133 @@
+{
+  "boundary_partition_rates": [
+    {
+      "boundary_partition_code": 4,
+      "flux_fraction_of_total_cut_x1e12": 15534049950,
+      "mask_edge_count": 2,
+      "negative_entropy_contribution_x1e12": 9847210549,
+      "negative_exit_share_x1e12": 15534049950,
+      "negative_to_positive_probability_contribution_x1e12": 4964061550,
+      "partition_order": 0,
+      "positive_entropy_contribution_x1e12": 10804089307,
+      "positive_exit_share_x1e12": 15534049950,
+      "positive_to_negative_probability_contribution_x1e12": 2964392679,
+      "refined_entropy_contribution_x1e12": 20651299856,
+      "signature_cut_edge_count": 198,
+      "undirected_stationary_flux_x1e12": 3712054656
+    },
+    {
+      "boundary_partition_code": 5,
+      "flux_fraction_of_total_cut_x1e12": 984465950050,
+      "mask_edge_count": 14,
+      "negative_entropy_contribution_x1e12": 136029552826,
+      "negative_exit_share_x1e12": 984465950050,
+      "negative_to_positive_probability_contribution_x1e12": 314595973738,
+      "partition_order": 1,
+      "positive_entropy_contribution_x1e12": 196671469096,
+      "positive_exit_share_x1e12": 984465950050,
+      "positive_to_negative_probability_contribution_x1e12": 187867533884,
+      "refined_entropy_contribution_x1e12": 332701021922,
+      "signature_cut_edge_count": 3809,
+      "undirected_stationary_flux_x1e12": 235250396733
+    }
+  ],
+  "entropy_summary": {
+    "boundary_split_entropy_x1e12": 80107749339,
+    "central_offdiag_entropy_contribution_x1e12": 332701021922,
+    "entropy_refinement_surplus_x1e12": 19142744157,
+    "high_offdiag_entropy_contribution_x1e12": 20651299856,
+    "negative_refined_row_entropy_x1e12": 652136614894,
+    "positive_refined_row_entropy_x1e12": 502714136745,
+    "quotient_entropy_rate_x1e12": 539439395042,
+    "refined_boundary_entropy_rate_x1e12": 558582139199,
+    "self_entropy_contribution_x1e12": 205229817421
+  },
+  "object": "d20",
+  "rate_rule": {
+    "entropy_comparison": "compare the original two-outcome quotient row entropy with the refined self/high/central row entropy",
+    "refinement": "split each off-diagonal quotient transition into high-negative and central-negative boundary contacts",
+    "rounding_boundary": "per-source refined rows use largest-remainder allocation so rows sum exactly to 1e12",
+    "source": "certified boundary flux cells over the certified two-state spectral quotient",
+    "states": "positive and negative nodal sides",
+    "transition_law": "partition twice-flow divided by twice the source stationary mass"
+  },
+  "refined_transition_rows": [
+    {
+      "boundary_partition_code": -1,
+      "event_id": 0,
+      "event_role_code": 0,
+      "is_crossing": 0,
+      "source_nodal_sign": 1,
+      "source_state_id": 0,
+      "stationary_flow_twice_x1e12": 1013251765029,
+      "target_nodal_sign": 1,
+      "target_state_id": 0,
+      "transition_probability_x1e12": 809168073437
+    },
+    {
+      "boundary_partition_code": 4,
+      "event_id": 1,
+      "event_role_code": 4,
+      "is_crossing": 1,
+      "source_nodal_sign": 1,
+      "source_state_id": 0,
+      "stationary_flow_twice_x1e12": 3712054656,
+      "target_nodal_sign": -1,
+      "target_state_id": 1,
+      "transition_probability_x1e12": 2964392679
+    },
+    {
+      "boundary_partition_code": 5,
+      "event_id": 2,
+      "event_role_code": 5,
+      "is_crossing": 1,
+      "source_nodal_sign": 1,
+      "source_state_id": 0,
+      "stationary_flow_twice_x1e12": 235250396733,
+      "target_nodal_sign": -1,
+      "target_state_id": 1,
+      "transition_probability_x1e12": 187867533884
+    },
+    {
+      "boundary_partition_code": 4,
+      "event_id": 3,
+      "event_role_code": 4,
+      "is_crossing": 1,
+      "source_nodal_sign": -1,
+      "source_state_id": 1,
+      "stationary_flow_twice_x1e12": 3712054656,
+      "target_nodal_sign": 1,
+      "target_state_id": 0,
+      "transition_probability_x1e12": 4964061550
+    },
+    {
+      "boundary_partition_code": 5,
+      "event_id": 4,
+      "event_role_code": 5,
+      "is_crossing": 1,
+      "source_nodal_sign": -1,
+      "source_state_id": 1,
+      "stationary_flow_twice_x1e12": 235250396733,
+      "target_nodal_sign": 1,
+      "target_state_id": 0,
+      "transition_probability_x1e12": 314595973738
+    },
+    {
+      "boundary_partition_code": -1,
+      "event_id": 5,
+      "event_role_code": 0,
+      "is_crossing": 0,
+      "source_nodal_sign": -1,
+      "source_state_id": 1,
+      "stationary_flow_twice_x1e12": 508823332193,
+      "target_nodal_sign": -1,
+      "target_state_id": 1,
+      "transition_probability_x1e12": 680439964712
+    }
+  ],
+  "schema": "c985.d20_signature_boundary_flux_quotient_rates@1",
+  "stationary_distribution_x1e12": [
+    626107108209,
+    373892891791
+  ]
+}

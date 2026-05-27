@@ -1,0 +1,164 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "38f8f152503e759aac6952a030b0138fab003372000cdf68a11170e5c6ad6ac7",
+  "checks": {
+    "boundary_flux_certificate_certified": true,
+    "boundary_flux_fractions_match_expected": true,
+    "boundary_flux_json_schema_available": true,
+    "boundary_flux_report_certified": true,
+    "boundary_flux_tables_available": true,
+    "boundary_flux_total_matches_quotient_cut_flux": true,
+    "boundary_partition_codes_match_expected": true,
+    "boundary_partition_count_is_2": true,
+    "central_accounts_for_same_share_both_directions": true,
+    "central_negative_flux_matches_expected": true,
+    "entropy_refinement_surplus_matches_split_formula": true,
+    "entropy_term_table_shape_is_6_by_7": true,
+    "high_negative_flux_matches_expected": true,
+    "negative_partition_exits_sum_to_quotient_exit": true,
+    "negative_refined_row_sums_to_one": true,
+    "observable_table_shape_matches_codebook": true,
+    "partition_flow_reversibility_holds_exactly": true,
+    "partition_table_shape_is_2_by_13": true,
+    "positive_partition_exits_sum_to_quotient_exit": true,
+    "positive_refined_row_sums_to_one": true,
+    "quotient_certificate_certified": true,
+    "quotient_entropy_rate_matches_upstream": true,
+    "quotient_json_schema_available": true,
+    "quotient_report_certified": true,
+    "quotient_tables_available": true,
+    "refined_entropy_exceeds_quotient_entropy": true,
+    "refined_entropy_rate_matches_expected": true,
+    "refined_self_probabilities_match_quotient_returns": true,
+    "refined_transition_table_shape_is_6_by_10": true,
+    "refined_twice_flows_sum_to_source_twice_masses": true,
+    "state_count_is_2": true
+  },
+  "claim": "The certified residual boundary flux refines the two-state spectral quotient transitions: central-negative conductance supplies almost all off-diagonal rate in both directions, while the refined self/high/central event alphabet adds a measured entropy surplus over the binary quotient.",
+  "closure_boundary": {
+    "certifies": [
+      "rate decomposition of both quotient off-diagonal transitions by residual boundary partition",
+      "exact stationarity/reversibility of each partition flow at twice-flow scale",
+      "that central-negative flux supplies the same 0.984465950050 share of both directional exit rates",
+      "entropy comparison between the binary quotient and the refined boundary-contact event alphabet"
+    ],
+    "does_not_certify_because_not_required": [
+      "a continuum conductance equation or mixing-time bound",
+      "that high-negative and central-negative contacts are the only meaningful refinements outside this certified residual chart",
+      "higher-eigenmode rate decompositions",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "boundary_flux": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells.json",
+      "sha256": "020ce3a55ef21fc39620603b2abe49e9774f4ec19992da15c4ad22471f30191a"
+    },
+    "boundary_flux_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells_certificate.json",
+      "sha256": "51099cc72a0c17250e4d01644f70e53d9346af583de1ff6e93a8bb8debff505a"
+    },
+    "boundary_flux_report": {
+      "certificate_sha256": "20b0169d23349ff5e9160ed15353b75b187e48c5b0a3f39201f2c6e3722589d0",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/report.json",
+      "sha256": "ba63eb661b28feca6a13344e352bda819c9669d4fd84acbcdf91f2bb7d2eb701",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_FLUX_CELLS_CERTIFIED"
+    },
+    "boundary_flux_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells_tables.npz",
+      "sha256": "3fa0bad1e05cc81418b9aa5e46f20c26ae2fb4c78cd9ace25151cc8fe2daeb21"
+    },
+    "boundary_partition_summary": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/boundary_partition_summary.csv",
+      "sha256": "37f17d3d08d1d288bf2404779e0a6f69e396b24bba96a56f773e2ef465f7c144"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_flux_quotient_rates.py",
+      "sha256": "100119b7f214a80a5cf51feb11b0fa9a34982f505f90bc630c7e4c9965fc9d92"
+    },
+    "quotient": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_dynamics.json",
+      "sha256": "4db87c66a39d041948d2e066e3d535c16f080a016d0a97333d3a3cf13c0112b5"
+    },
+    "quotient_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_certificate.json",
+      "sha256": "130962fc5f79898079e8c95b38c8e3e32eebf18f733ffed5096adc153b805cfb"
+    },
+    "quotient_report": {
+      "certificate_sha256": "57f13ced19f11cbf71901254fd9fc3c906ba07b9e7b2db2a2fe7a4e6b31f4705",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/report.json",
+      "sha256": "a432660773ecbd3dea50d8353001349fb3d3db56be30c893be04b1b444684bfb",
+      "status": "C985_D20_SIGNATURE_SPECTRAL_QUOTIENT_DYNAMICS_CERTIFIED"
+    },
+    "quotient_states": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/quotient_states.csv",
+      "sha256": "3743d233faa9428711e46f0d0b2420358d18e636a940d487a829de19d8721ca4"
+    },
+    "quotient_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/signature_spectral_quotient_tables.npz",
+      "sha256": "3b115dc788f68714b19db9c8751dda058354ed0a34a9a5b6615019296f5f40c4"
+    },
+    "quotient_transitions": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_spectral_quotient_dynamics/quotient_transitions.csv",
+      "sha256": "8f2a8da23dc50c4c6eb85e199f229a5f3658d0ab33905f0cb9f93825bde058f0"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_flux_quotient_rates.py",
+      "sha256": "66e809f7993d8ebc8762d11a370b1b825797e789471364e5dd1f436e5ec2e0c3"
+    }
+  },
+  "next_highest_yield_item": "Use the refined boundary-rate alphabet as the next geometric read: lift high-negative and central-negative rate mass back onto the residual cell-complex edges and certify a directed conductance spine ordered by entropy contribution.",
+  "outputs": {
+    "boundary_entropy_terms_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/boundary_entropy_terms.csv",
+    "boundary_rate_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/boundary_rate_observables.csv",
+    "boundary_rate_partitions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/boundary_rate_partitions.csv",
+    "boundary_refined_transition_rows_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/boundary_refined_transition_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/report.json",
+    "signature_boundary_flux_quotient_rates": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/signature_boundary_flux_quotient_rates.json",
+    "signature_boundary_flux_quotient_rates_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/signature_boundary_flux_quotient_rates_certificate.json",
+    "signature_boundary_flux_quotient_rates_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/signature_boundary_flux_quotient_rates_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_flux_quotient_rates@1",
+  "stage_protocol": {
+    "closure": "certify the finite boundary-rate refinement without claiming a continuum transition mechanism",
+    "coherence": "check row sums, exact partition reversibility, upstream cut flux, and entropy comparison",
+    "draft": "split quotient off-diagonal transitions by certified high-negative and central-negative boundary flux",
+    "emit": "emit boundary-rate JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize refined transition rows, partition rate contributions, and entropy terms"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_FLUX_QUOTIENT_RATES_CERTIFIED",
+  "witness": {
+    "boundary_entropy_term_table_sha256": "1f89224a4dd1dcc5681e916bcc04ce60dd5bdf88c32adc8a643e5ecb88710466",
+    "boundary_rate_observable_table_sha256": "13de093bdd082115d2bc83a5fd82fd220b9ad33837a97c69c8d534b8f0842a58",
+    "boundary_rate_partition_table_sha256": "31be86b09085f733cd114fa95555055eb2e601209500288920c1c9fb3364f542",
+    "boundary_refined_transition_table_sha256": "b267d5e05537f048e9b9fe657af7c958485d3516481c98eefd3b44dba2e75473",
+    "boundary_split_entropy_x1e12": 80107749339,
+    "central_negative_flux_fraction_x1e12": 984465950050,
+    "central_negative_transition_share_x1e12": 984465950050,
+    "central_negative_undirected_cut_flux_x1e12": 235250396733,
+    "central_offdiag_entropy_contribution_x1e12": 332701021922,
+    "entropy_refinement_surplus_x1e12": 19142744157,
+    "high_negative_flux_fraction_x1e12": 15534049950,
+    "high_negative_undirected_cut_flux_x1e12": 3712054656,
+    "high_offdiag_entropy_contribution_x1e12": 20651299856,
+    "negative_boundary_exit_decomposition_x1e12": {
+      "central_negative": 314595973738,
+      "high_negative": 4964061550,
+      "self": 680439964712
+    },
+    "negative_refined_row_entropy_x1e12": 652136614894,
+    "negative_stationary_mass_x1e12": 373892891791,
+    "positive_boundary_exit_decomposition_x1e12": {
+      "central_negative": 187867533884,
+      "high_negative": 2964392679,
+      "self": 809168073437
+    },
+    "positive_refined_row_entropy_x1e12": 502714136745,
+    "positive_stationary_mass_x1e12": 626107108209,
+    "quotient_entropy_rate_x1e12": 539439395042,
+    "refined_boundary_entropy_rate_x1e12": 558582139199,
+    "self_entropy_contribution_x1e12": 205229817421,
+    "total_undirected_cut_flux_x1e12": 238962451389
+  }
+}

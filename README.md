@@ -23,7 +23,7 @@ Preferred short citation:
 
 # Introduction
 
-`d20` is the given name of the icosahedral boundary algebra of the finite semisimple multifusion category `C985`. In layman's language: `d20` represents every possible way an atom can be arranged in the universe superdetermined by `C985`.
+`d20` is the given name of the icosahedral boundary algebra of the finite semisimple multifusion category `C985`. In the most severe terms currently verifiable by hand: `d20` is to cybernetics what Laplace's Demon is to the Langlands program. In English: `d20` represents every possible arrangement of an atom in the universe superdetermined by `C985`. In Spanish: "Es algo grande". In French: `d20` = `Λ³H₆`​.
 
 It may be intuited by what it *is*, rather than what it is *for*:
 

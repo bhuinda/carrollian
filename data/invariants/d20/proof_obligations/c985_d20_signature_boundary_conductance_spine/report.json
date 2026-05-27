@@ -1,0 +1,192 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1192af9892ae7c5952554fe517b67e69f501a80cd226cd63738a2866ffd32723",
+  "checks": {
+    "boundary_edge_count_is_16": true,
+    "boundary_flux_certificate_certified": true,
+    "boundary_flux_json_schema_available": true,
+    "boundary_flux_report_certified": true,
+    "boundary_flux_tables_available": true,
+    "boundary_rate_certificate_certified": true,
+    "boundary_rate_json_schema_available": true,
+    "boundary_rate_report_certified": true,
+    "boundary_rate_tables_available": true,
+    "central_entropy_fraction_matches_expected": true,
+    "directed_boundary_edge_count_is_32": true,
+    "directed_edge_table_shape_is_32_by_13": true,
+    "directed_twice_flow_sum_matches_cut_twice": true,
+    "directed_twice_flows_are_reversible_by_edge": true,
+    "edge_entropy_refines_partition_entropy": true,
+    "edge_entropy_surplus_over_partition_matches_expected": true,
+    "edge_entropy_surplus_over_quotient_matches_expected": true,
+    "edge_refined_entropy_rate_matches_expected": true,
+    "entropy_rounding_delta_within_one": true,
+    "high_and_central_edge_counts_match": true,
+    "negative_boundary_probabilities_sum_to_upstream_exit": true,
+    "observable_table_shape_matches_codebook": true,
+    "partition_edge_entropy_totals_match_expected": true,
+    "positive_boundary_probabilities_sum_to_upstream_exit": true,
+    "spine_edge_table_shape_is_16_by_19": true,
+    "spine_order_matches_expected": true,
+    "top_five_entropy_fraction_matches_expected": true,
+    "top_five_flux_fraction_matches_expected": true,
+    "top_five_spine_matches_expected": true,
+    "top_spine_edge_matches_expected": true,
+    "total_flux_matches_boundary_rate": true
+  },
+  "claim": "The high/central boundary-rate alphabet lifts to a certified directed conductance spine on the 16 residual positive-negative carrier-mask boundary edges, ordered by edge-level entropy contribution and preserving reversible twice-flow accounting.",
+  "closure_boundary": {
+    "certifies": [
+      "the 16-edge residual boundary conductance spine ordered by edge entropy contribution",
+      "two directed reversible rate rows for every boundary edge",
+      "exact cut-flux preservation and source-exit probability sums at quotient scale",
+      "entropy refinement from binary quotient to partition contacts to individual boundary edges"
+    ],
+    "does_not_certify_because_not_required": [
+      "a continuum conductance law or diffusion limit",
+      "mixing-time bounds from the conductance spine",
+      "higher-eigenmode boundary spines",
+      "new associator, pentagon, pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "boundary_flux": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells.json",
+      "sha256": "020ce3a55ef21fc39620603b2abe49e9774f4ec19992da15c4ad22471f30191a"
+    },
+    "boundary_flux_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells_certificate.json",
+      "sha256": "51099cc72a0c17250e4d01644f70e53d9346af583de1ff6e93a8bb8debff505a"
+    },
+    "boundary_flux_report": {
+      "certificate_sha256": "20b0169d23349ff5e9160ed15353b75b187e48c5b0a3f39201f2c6e3722589d0",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/report.json",
+      "sha256": "ba63eb661b28feca6a13344e352bda819c9669d4fd84acbcdf91f2bb7d2eb701",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_FLUX_CELLS_CERTIFIED"
+    },
+    "boundary_flux_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/signature_boundary_flux_cells_tables.npz",
+      "sha256": "3fa0bad1e05cc81418b9aa5e46f20c26ae2fb4c78cd9ace25151cc8fe2daeb21"
+    },
+    "boundary_mask_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_cells/boundary_mask_edges.csv",
+      "sha256": "66b856f749be01e8914211f14082ec4cb0271fdc4d81eac2080d4318a0d450a1"
+    },
+    "boundary_rate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/signature_boundary_flux_quotient_rates.json",
+      "sha256": "1858287db5ba2cf443a2c1386c574f7e873e133ae37daecbfdc199ad6cc838f1"
+    },
+    "boundary_rate_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/signature_boundary_flux_quotient_rates_certificate.json",
+      "sha256": "ecb76d7792f87d91962ba014d79a48df691e67a1403beac3ddbc5fe253b65681"
+    },
+    "boundary_rate_partitions": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/boundary_rate_partitions.csv",
+      "sha256": "0ee662a55d27180c95a4570463409a964af6bb7db06daf5e19c2ec70f705442f"
+    },
+    "boundary_rate_report": {
+      "certificate_sha256": "38f8f152503e759aac6952a030b0138fab003372000cdf68a11170e5c6ad6ac7",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/report.json",
+      "sha256": "0954771abd384eb80c4946dc7deacd59e8914f3394dde25b6f296d04024a1725",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_FLUX_QUOTIENT_RATES_CERTIFIED"
+    },
+    "boundary_rate_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_flux_quotient_rates/signature_boundary_flux_quotient_rates_tables.npz",
+      "sha256": "c2927dda53be58b639595b6b9ce5123130e5ad06bd60468fbac300a82d022ac0"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_conductance_spine.py",
+      "sha256": "f2bb030b5ea6b42adb0cd9a3483b9ad0338170689af92c65aaccac4ea635898a"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_conductance_spine.py",
+      "sha256": "5c56c6d831c2ec7a8201b814c07ae5d98902e09916118433a5abd2e65a037ec3"
+    }
+  },
+  "next_highest_yield_item": "Push the conductance spine back into the Poincare disk: certify a geometric spine polyline whose edge order follows entropy mass, then measure whether the dominant path tracks the quotient geodesic axis or bends through the residual coordinate.",
+  "outputs": {
+    "boundary_conductance_directed_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/boundary_conductance_directed_edges.csv",
+    "boundary_conductance_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/boundary_conductance_observables.csv",
+    "boundary_conductance_spine_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/boundary_conductance_spine_edges.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/report.json",
+    "signature_boundary_conductance_spine": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/signature_boundary_conductance_spine.json",
+    "signature_boundary_conductance_spine_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/signature_boundary_conductance_spine_certificate.json",
+    "signature_boundary_conductance_spine_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_conductance_spine/signature_boundary_conductance_spine_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_conductance_spine@1",
+  "stage_protocol": {
+    "closure": "certify the finite conductance spine without claiming continuum conductance geometry",
+    "coherence": "check row probability sums, reversible edge twice-flows, flux totals, and entropy refinement",
+    "draft": "lift the partition-level boundary rates onto individual residual boundary-mask edges",
+    "emit": "emit conductance-spine JSON/CSV/NPZ, certificate, report, verifier command, and next target",
+    "witness": "materialize entropy-ordered spine edges, directed rates, and edge-level entropy observables"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_CONDUCTANCE_SPINE_CERTIFIED",
+  "witness": {
+    "boundary_edge_count": 16,
+    "boundary_edge_entropy_contribution_sum_x1e12": 932368479926,
+    "conductance_directed_edge_table_sha256": "e2931deac7171d7349117171982b9f7f305ced60e96406b9b393f6cb50439a72",
+    "conductance_observable_table_sha256": "d6336a67c1610bdde15850d99c7deb8f0743f6182173bc40cb8d23f40b81cff7",
+    "conductance_spine_edge_table_sha256": "dfee9e68b0fcf7615ce1065797f8a2de8062b8e66344b800f8012b7a665c49e1",
+    "directed_boundary_edge_count": 32,
+    "edge_entropy_surplus_over_partition_x1e12": 579016158147,
+    "edge_entropy_surplus_over_quotient_x1e12": 598158902304,
+    "edge_refined_entropy_rate_x1e12": 1137598297346,
+    "entropy_rounding_delta_x1e12": 1,
+    "negative_boundary_probability_sum_x1e12": 319560035288,
+    "negative_edge_refined_row_entropy_x1e12": 1426444138331,
+    "partition_edge_entropy_fraction_x1e12": {
+      "central_negative": 975093779736,
+      "high_negative": 24906220264
+    },
+    "partition_edge_entropy_x1e12": {
+      "central_negative": 909146705198,
+      "high_negative": 23221774728
+    },
+    "partition_refined_entropy_rate_x1e12": 558582139199,
+    "positive_boundary_probability_sum_x1e12": 190831926563,
+    "positive_edge_refined_row_entropy_x1e12": 965107991211,
+    "quotient_entropy_rate_x1e12": 539439395042,
+    "self_entropy_contribution_x1e12": 205229817421,
+    "spine_order_boundary_mask_edge_ids": [
+      14,
+      15,
+      2,
+      6,
+      3,
+      7,
+      8,
+      11,
+      9,
+      13,
+      12,
+      5,
+      10,
+      4,
+      1,
+      0
+    ],
+    "top_five_spine": {
+      "boundary_mask_edge_ids": [
+        14,
+        15,
+        2,
+        6,
+        3
+      ],
+      "entropy_fraction_of_boundary_crossing_x1e12": 521357092366,
+      "flux_fraction_x1e12": 581986815772,
+      "total_entropy_contribution_x1e12": 486096919708,
+      "undirected_stationary_flux_x1e12": 139072996173
+    },
+    "top_spine_edge": {
+      "boundary_mask_edge_id": 14,
+      "negative_carrier_mask_class_id": 13,
+      "positive_carrier_mask_class_id": 11,
+      "total_entropy_contribution_x1e12": 135084234325,
+      "undirected_stationary_flux_x1e12": 43567340880
+    },
+    "total_undirected_cut_flux_x1e12": 238962451389
+  }
+}

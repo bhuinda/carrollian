@@ -1,0 +1,552 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ef161149c20e5b8ca69c2e6a9c10e024057419c35be99fb65a186d3661b8e571",
+  "checks": {
+    "finite_values": true,
+    "gate_automaton_certified": true,
+    "lambda3_h6_boundary_has_20_atoms": true,
+    "null_symbol_map_is_permutation": true,
+    "old_force_solver_removed": true,
+    "real_accepts_certified_word": true,
+    "real_and_null_event_counts_match": true,
+    "renderer_embeds_finite_wind_tunnel": true,
+    "renderer_embeds_finite_word_ledger": true,
+    "renderer_embeds_null_symbol_map": true,
+    "renderer_note_declares_grammar_experiment": true,
+    "renderer_projects_finite_events_to_3d_atom": true,
+    "renderer_routes_to_finite_state_collider": true,
+    "visuals_pause_by_default": true
+  },
+  "claim": "The visible collider and wind tunnel have been reduced to finite alphabet experiments: contact/flow words are scored directly by the certified gate automaton, and the collider pane, finite word ledger, wind pane, and 3D RGBA atom pane visualize symbolic transport rather than force-first physics.",
+  "closure_boundary": {
+    "certifies": [
+      "finite-state collider semantics",
+      "real/null comparison against the certified gate automaton",
+      "renderer routing away from the old force-first collider",
+      "shared finite-event projection into the 3D RGBA atom pane",
+      "on-screen finite word ledger sourced from the collider event history",
+      "finite alphabet wind tunnel over the d20 atom domain",
+      "visual systems open paused by default"
+    ],
+    "does_not_certify": [
+      "spontaneous physical collision dynamics",
+      "electromagnetism",
+      "micro black holes",
+      "gravity"
+    ]
+  },
+  "definition": {
+    "claim_boundary": "certifies a finite grammar experiment only; no electromagnetic, particle, gravitational, or black-hole claim is made",
+    "finite_boundary": "d20 atoms are Lambda^3 H6 triples over six sectors",
+    "horizon_projection": "the 3D RGBA atom pane reads the same finite collision event and visualizes its accepted/rejected/aperture state as a shared horizon pulse",
+    "interaction_law": "contacts are gate letters; accepted prefixes capture, rejected prefixes escape, missing x2/x4 letters add anomaly residue",
+    "null_mode": "uses the same certified word passed through a fixed six-letter permutation",
+    "object": "pure finite-state D20 collider",
+    "real_mode": "uses the certified gate sequence as the emitted contact word",
+    "wind_tunnel": "directional H6 inlet packets route through the same certified gate automaton and accumulate finite pressure over the 20 C(H6,3) atoms",
+    "word_ledger": "the collider panel renders the latest finite contact events from the same state.history stream used by the collider and horizon projection"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "48c034972dbff4caa1e88f8d5c5ebb0ac0316fc3a72069f7777e8599ea4c1fd6",
+      "path": "generated/d20_finite_state_collider_report.json",
+      "schema": "d20.finite_state_collider_report.artifact@1",
+      "sha256": "b17ac4a2b668a4430a614b7e9adfd58ed1c280d7536c5271ef23b3dce11d77eb",
+      "status": "D20_FINITE_STATE_COLLIDER_REPORT_DERIVED"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_finite_state_collider_report.py",
+      "sha256": "77c04a192b3378061713022c8d072d493cdd19ef4f5bc87eaf568ea174acd056"
+    },
+    "gate_automaton_report": {
+      "certificate_sha256": "ff3c69b3855ef861227e8b15a8ea5defedfa712fbf215286cb0380433649421a",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/report.json",
+      "sha256": "7bfdd2820083e90c1daf75ae299c2b03a6c861e8272fa1dfaf5d2decd59077c6",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_GATE_AUTOMATON_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_finite_state_collider_report.py",
+      "sha256": "94dac017b066a641a2fa07a46e837b7dcb11abfe97c9bbc603c63658d3b2c26d"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "d3411c3d5b8057682272084625e727d5fa660e00b99ecc5b5061a3bbe7772dfd"
+    }
+  },
+  "interpretation": {
+    "accept_rate_delta": 0.75,
+    "branch_accept_rate_delta": 0.125,
+    "certified_trigram_rate_delta": 0.5714285714285714,
+    "support_status": "FINITE_GRAMMAR_ADVANTAGE",
+    "wind_throughput_delta": 0.75,
+    "wind_tunnel_verdict": "FINITE_WIND_GRAMMAR_LIFT"
+  },
+  "next_highest_yield_item": "Add a wind-pressure export artifact that records the per-atom pressure vector for every H6 inlet and null permutation.",
+  "schema": "d20.finite_state_collider_report@1",
+  "stage_protocol": {
+    "closure": "emit finite-language real/null deltas and renderer coupling evidence without physical-particle claims",
+    "coherence": "verify certified gate input, Lambda^3 H6 size, null permutation, renderer routing, finite rates, wind-tunnel embedding, and default-paused visuals",
+    "draft": "remove force-first collider behavior from the visible experiment",
+    "emit": "publish artifact, report, manifest, and registry entry",
+    "witness": "run certified gate word against a fixed shuffled six-letter null"
+  },
+  "status": "D20_FINITE_STATE_COLLIDER_REPORT_CERTIFIED",
+  "witness": {
+    "deltas_real_minus_null": {
+      "accept_rate": 0.75,
+      "branch_accept_rate": 0.125,
+      "certified_trigram_rate": 0.5714285714285714,
+      "letter_entropy": 0.0,
+      "missing_aperture_rate": -0.375,
+      "residue": 0.0
+    },
+    "null": {
+      "accept_rate": 0.25,
+      "accepted": 32,
+      "branch_accept_rate": 0.25,
+      "branch_accepts": 32,
+      "captures": 32,
+      "certified_trigram_hits": 24,
+      "certified_trigram_rate": 0.19047619047619047,
+      "completed_words": 0,
+      "contacts": 128,
+      "escapes": 96,
+      "events": 128,
+      "letter_counts": [
+        0,
+        0,
+        24,
+        48,
+        24,
+        32
+      ],
+      "letter_entropy": 0.7490546280338487,
+      "missing_aperture_hits": 48,
+      "missing_aperture_rate": 0.375,
+      "rejected": 96,
+      "residue": 1.0,
+      "sample_events": [
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 0,
+          "expected": 5,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 1,
+          "expected": 5,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 2,
+          "expected": 5,
+          "letter": 2,
+          "missing_aperture": true
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 3,
+          "expected": 5,
+          "letter": 2,
+          "missing_aperture": true
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 4,
+          "expected": 5,
+          "letter": 4,
+          "missing_aperture": true
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 5,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 6,
+          "expected": 5,
+          "letter": 4,
+          "missing_aperture": true
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 7,
+          "expected": 5,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 8,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 9,
+          "expected": 5,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 10,
+          "expected": 5,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 11,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 12,
+          "expected": 5,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 13,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 14,
+          "expected": 5,
+          "letter": 4,
+          "missing_aperture": true
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 15,
+          "expected": 5,
+          "letter": 2,
+          "missing_aperture": true
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 16,
+          "expected": 5,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": false,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 17,
+          "expected": 5,
+          "letter": 3,
+          "missing_aperture": false
+        }
+      ],
+      "uncertified_trigram_hits": 102
+    },
+    "real": {
+      "accept_rate": 1.0,
+      "accepted": 128,
+      "branch_accept_rate": 0.375,
+      "branch_accepts": 48,
+      "captures": 152,
+      "certified_trigram_hits": 96,
+      "certified_trigram_rate": 0.7619047619047619,
+      "completed_words": 8,
+      "contacts": 128,
+      "escapes": 0,
+      "events": 128,
+      "letter_counts": [
+        24,
+        24,
+        0,
+        32,
+        0,
+        48
+      ],
+      "letter_entropy": 0.7490546280338487,
+      "missing_aperture_hits": 0,
+      "missing_aperture_rate": 0.0,
+      "rejected": 0,
+      "residue": 1.0,
+      "sample_events": [
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 0,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 1,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 2,
+          "expected": 0,
+          "letter": 0,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 3,
+          "expected": 0,
+          "letter": 0,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 4,
+          "expected": 1,
+          "letter": 1,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 5,
+          "expected": 3,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 6,
+          "expected": 1,
+          "letter": 1,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 7,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 8,
+          "expected": 3,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 9,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 10,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 11,
+          "expected": 3,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 12,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": true,
+          "completed_word": false,
+          "event": 13,
+          "expected": 3,
+          "letter": 3,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 14,
+          "expected": 1,
+          "letter": 1,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": true,
+          "event": 15,
+          "expected": 0,
+          "letter": 0,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": true,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 16,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        },
+        {
+          "accepted": true,
+          "branch_accepted": false,
+          "certified_trigram": false,
+          "completed_word": false,
+          "event": 17,
+          "expected": 5,
+          "letter": 5,
+          "missing_aperture": false
+        }
+      ],
+      "uncertified_trigram_hits": 30
+    },
+    "verdict": "FINITE_GRAMMAR_ADVANTAGE",
+    "wind_tunnel": {
+      "deltas_real_minus_null": {
+        "alignment_rate": 0.5714285714285714,
+        "aperture_loss_rate": -0.375,
+        "pressure": 0.0,
+        "recirc_rate": -0.75,
+        "throughput_rate": 0.75,
+        "total_pressure": 0.0
+      },
+      "null": {
+        "alignment_rate": 0.19047619047619047,
+        "aperture_loss_rate": 0.375,
+        "packets": 128,
+        "pressure": 1.0,
+        "recirc_rate": 0.75,
+        "throughput_rate": 0.25,
+        "total_pressure": 1.0
+      },
+      "real": {
+        "alignment_rate": 0.7619047619047619,
+        "aperture_loss_rate": 0.0,
+        "packets": 128,
+        "pressure": 1.0,
+        "recirc_rate": 0.0,
+        "throughput_rate": 1.0,
+        "total_pressure": 1.0
+      },
+      "verdict": "FINITE_WIND_GRAMMAR_LIFT"
+    }
+  }
+}

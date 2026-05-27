@@ -1,0 +1,426 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ea97b8fbd6446f7cec7632ce1616e2e9fc76cb36e09b3812681b7fcdbb779b63",
+  "checks": {
+    "accepting_states_match_six_branches": true,
+    "finite_alphabetic_values": true,
+    "gate_automaton_certified": true,
+    "gate_sequence_has_16_symbols": true,
+    "kiss_activity_observed": true,
+    "lambda3_h6_boundary_has_20_atoms": true,
+    "missing_apertures_are_x2_x4": true,
+    "null_assignment_is_permutation": true,
+    "rates_in_unit_interval": true,
+    "renderer_embeds_alphabetic_contact_harness": true,
+    "renderer_embeds_alphabetic_interaction_mask": true,
+    "shot_count_matches_collider_batch": true,
+    "stress_graph_certified": true
+  },
+  "claim": "The D20 collider can be replayed with a finite alphabetic contact layer: hard contacts become Lambda^3 H6 kiss-point exchanges when they differ by one H6 sector, and those letters are scored against the certified gate automaton while accepted/rejected letters also mask capture, elasticity, and residue.",
+  "closure_boundary": {
+    "certifies": [
+      "finite Lambda^3 H6 letterization of collider contacts",
+      "matched real-vs-null alphabetic contact replay",
+      "gate-word acceptance, trigram certification, missing-aperture, and entropy deltas"
+    ],
+    "does_not_certify": [
+      "literal electron paths",
+      "magnetic fields",
+      "micro black holes",
+      "general relativistic horizons",
+      "arbitrary-word confluence beyond the certified gate automaton"
+    ]
+  },
+  "definition": {
+    "accepting_state_ids": [
+      1,
+      3,
+      5,
+      8,
+      12,
+      14
+    ],
+    "certified_gate_word": [
+      5,
+      5,
+      0,
+      0,
+      1,
+      3,
+      1,
+      5,
+      3,
+      5,
+      5,
+      3,
+      5,
+      3,
+      1,
+      0
+    ],
+    "claim_boundary": "certifies finite alphabetic contact statistics for this deterministic collider replay; it does not certify electromagnetism, real particle scattering, gravity, or black-hole behavior",
+    "finite_boundary": "d20 atoms are modeled as lexicographic Lambda^3 H6 triples over six sectors",
+    "h6_sectors": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
+    ],
+    "interaction_mask": "accepted gate-prefix letters add capture and positive residue; rejected kiss-points increase elastic impulse and subtract residue; missing x2/x4 aperture hits add anomaly residue",
+    "kiss_point_rule": "a hard contact is a typed kiss-point only when two d20 triples share exactly two H6 sectors; the directed exchanged sector becomes the gate letter",
+    "missing_gate_symbol_ids": [
+      2,
+      4
+    ],
+    "object": "alphabetic D20 RGBA-horizon collider contact replay"
+  },
+  "inputs": {
+    "artifact": {
+      "artifact_sha256_excluding_this_field": "965414f80c3fe1a7bf791da377ab2ba5884fa6c4487317f0d1f2ae7eed1fa02f",
+      "path": "generated/d20_alphabetic_collider_contact_report.json",
+      "schema": "d20.alphabetic_collider_contact_report.artifact@1",
+      "sha256": "1bc6076fd6fd5f82b828e5a38d6fee2b51b6d98e42c759653a311f13a7f60017",
+      "status": "D20_ALPHABETIC_COLLIDER_CONTACT_REPORT_DERIVED"
+    },
+    "base_collider_derive_script": {
+      "path": "src/derive_d20_collider_ab_batch_report.py",
+      "sha256": "88a04da1e3dbd097820b85faeaaa9b8aae71e77a152fc298b717c28aa3b9bc7c"
+    },
+    "derive_script": {
+      "path": "src/derive_d20_alphabetic_collider_contact_report.py",
+      "sha256": "9d79164a80e8dbc7ac69175ece2f5afd05bfaa658773183ddc0f2c06f38f6768"
+    },
+    "gate_automaton_report": {
+      "certificate_sha256": "ff3c69b3855ef861227e8b15a8ea5defedfa712fbf215286cb0380433649421a",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_gate_automaton/report.json",
+      "sha256": "7bfdd2820083e90c1daf75ae299c2b03a6c861e8272fa1dfaf5d2decd59077c6",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_GATE_AUTOMATON_CERTIFIED"
+    },
+    "stress_graph_artifact": {
+      "artifact_sha256_excluding_this_field": "5bd822ddda121407977177b980fab93a3e210fd833c4dbc076e35cd4701c1cd4",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/artifact.json",
+      "schema": "c985.d20_boundary_neighborhood_stress_graph.artifact@1",
+      "sha256": "8b0fa599e688122a5c1d31fb1ce2f7774af2b090212a2587be4d62f9b068f0fc",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "stress_graph_report": {
+      "certificate_sha256": "e52211930ae30a3a9e0e3285905f355f418f726165903178b1975d3a7c1f4930",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/report.json",
+      "sha256": "8e04b2a9a97b0b86ed29586e35678698652c72dce71ab4288d4bc1ffc9f5bc87",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_d20_alphabetic_collider_contact_report.py",
+      "sha256": "48453a6ffd1abf0665ee267da05e22d60244194faaf7f9d8325d596794e3b172"
+    },
+    "visualization": {
+      "path": "generated/d20_sandpile_visualization.html",
+      "sha256": "2a2ff9500e7f9cd06624225ee82e55ced0436c636f8fab1de2a3cfd5cc32c38e"
+    }
+  },
+  "interpretation": {
+    "accept_rate_delta": -0.018464961356634446,
+    "certified_trigram_rate_delta": 0.010908629363252202,
+    "kiss_rate_delta": -0.16576367593834057,
+    "match_rate_delta": -0.010762139470537946,
+    "missing_aperture_rate_delta": -0.0840900181795225,
+    "support_status": "NULL_LANGUAGE_ADVANTAGE"
+  },
+  "next_highest_yield_item": "Sweep gate-mask strengths and compare real/null acceptance deltas against the previous observer-only baseline to separate alphabetic structure from tuned force gains.",
+  "schema": "d20.alphabetic_collider_contact_report@1",
+  "stage_protocol": {
+    "closure": "emit real-minus-null alphabetic contact deltas and masked-interaction behavior without promoting physical-particle claims",
+    "coherence": "verify certified stress graph, certified gate automaton, Lambda^3 H6 shape, finite rates, and null permutation",
+    "draft": "replace unconstrained collision metaphors with finite typed contact words",
+    "emit": "publish artifact, report, manifest, and registry entry",
+    "witness": "run matched real/null collider batches and letterize every clean kiss-point contact"
+  },
+  "status": "D20_ALPHABETIC_COLLIDER_CONTACT_REPORT_CERTIFIED",
+  "witness": {
+    "deltas_real_minus_null": {
+      "accept_rate": -0.018464961356634446,
+      "certified_trigram_rate": 0.010908629363252202,
+      "kiss_rate": -0.16576367593834057,
+      "letter_entropy": 0.07088758625331049,
+      "match_rate": -0.010762139470537946,
+      "missing_aperture_rate": -0.0840900181795225
+    },
+    "null_averages": {
+      "accept_rate": 0.19258383314642832,
+      "captures": 5611.625,
+      "certified_trigram_rate": 0.0442987873588265,
+      "clump": 0.5171477631685565,
+      "coarse_contacts": 3709.625,
+      "contacts": 8065.875,
+      "escapes": 0.875,
+      "kiss_contacts": 4356.25,
+      "kiss_rate": 0.5397663796246461,
+      "letter_entropy": 0.8928089094203152,
+      "match_rate": 0.22364123024632074,
+      "missing_aperture_rate": 0.4621070444445171,
+      "residue": 1.0
+    },
+    "real_averages": {
+      "accept_rate": 0.17411887178979388,
+      "captures": 3429.5,
+      "certified_trigram_rate": 0.055207416722078705,
+      "clump": 0.35628732823817444,
+      "coarse_contacts": 3290.5,
+      "contacts": 5268.25,
+      "escapes": 1.625,
+      "kiss_contacts": 1977.75,
+      "kiss_rate": 0.37400270368630556,
+      "letter_entropy": 0.9636964956736257,
+      "match_rate": 0.2128790907757828,
+      "missing_aperture_rate": 0.3780170262649946,
+      "residue": 1.0
+    },
+    "sample_null_shots": [
+      {
+        "alphabet": {
+          "accept_rate": 0.181997631267272,
+          "branch_accepts": 922,
+          "certified_trigram_hits": 92,
+          "certified_trigram_rate": 0.018167456556082148,
+          "coarse_contacts": 4059,
+          "completed_words": 0,
+          "final_prefix_state": 0,
+          "kiss_contacts": 5066,
+          "kiss_rate": 0.5551780821917808,
+          "letter_counts": [
+            71,
+            537,
+            1055,
+            540,
+            1799,
+            1064
+          ],
+          "letter_entropy": 0.8698143080554145,
+          "match_rate": 0.2084484800631662,
+          "matched_letters": 1056,
+          "missing_aperture_hits": 2854,
+          "missing_aperture_rate": 0.5633636004737466,
+          "raw_contacts": 9125,
+          "rejected_letters": 4010,
+          "uncertified_trigram_hits": 4972
+        },
+        "captures": 6256,
+        "clump": 0.531947134783905,
+        "contacts": 9125,
+        "escapes": 0,
+        "final_coupling": 0.1448756605390696,
+        "final_fusion": 0.2675489583358629,
+        "final_overlap": 1.0,
+        "final_scatter": 0.11075690554320024,
+        "residue": 1.0,
+        "seed": 3,
+        "shot": 0
+      },
+      {
+        "alphabet": {
+          "accept_rate": 0.163846838824577,
+          "branch_accepts": 736,
+          "certified_trigram_hits": 175,
+          "certified_trigram_rate": 0.03897550111358575,
+          "coarse_contacts": 3124,
+          "completed_words": 0,
+          "final_prefix_state": 0,
+          "kiss_contacts": 4492,
+          "kiss_rate": 0.5898109243697479,
+          "letter_counts": [
+            33,
+            341,
+            817,
+            1098,
+            1404,
+            799
+          ],
+          "letter_entropy": 0.8688636229609399,
+          "match_rate": 0.17787177203918075,
+          "matched_letters": 799,
+          "missing_aperture_hits": 2221,
+          "missing_aperture_rate": 0.49443455031166517,
+          "raw_contacts": 7616,
+          "rejected_letters": 3693,
+          "uncertified_trigram_hits": 4315
+        },
+        "captures": 5340,
+        "clump": 0.5354847677722528,
+        "contacts": 7616,
+        "escapes": 5,
+        "final_coupling": 0.139043024783101,
+        "final_fusion": 0.252550320246744,
+        "final_overlap": 1.0,
+        "final_scatter": 0.12000586188832589,
+        "residue": 1.0,
+        "seed": 10,
+        "shot": 1
+      },
+      {
+        "alphabet": {
+          "accept_rate": 0.17153130287648055,
+          "branch_accepts": 811,
+          "certified_trigram_hits": 243,
+          "certified_trigram_rate": 0.051417689377909435,
+          "coarse_contacts": 3302,
+          "completed_words": 0,
+          "final_prefix_state": 0,
+          "kiss_contacts": 4728,
+          "kiss_rate": 0.5887920298879203,
+          "letter_counts": [
+            111,
+            549,
+            803,
+            806,
+            1336,
+            1123
+          ],
+          "letter_entropy": 0.9149447669505071,
+          "match_rate": 0.23075296108291032,
+          "matched_letters": 1091,
+          "missing_aperture_hits": 2139,
+          "missing_aperture_rate": 0.45241116751269034,
+          "raw_contacts": 8030,
+          "rejected_letters": 3637,
+          "uncertified_trigram_hits": 4483
+        },
+        "captures": 5379,
+        "clump": 0.5269003913088836,
+        "contacts": 8030,
+        "escapes": 2,
+        "final_coupling": 0.13959476845069252,
+        "final_fusion": 0.2647451868366778,
+        "final_overlap": 1.0,
+        "final_scatter": 0.11387869778045366,
+        "residue": 1.0,
+        "seed": 17,
+        "shot": 2
+      }
+    ],
+    "sample_real_shots": [
+      {
+        "alphabet": {
+          "accept_rate": 0.18785471055618616,
+          "branch_accepts": 331,
+          "certified_trigram_hits": 157,
+          "certified_trigram_rate": 0.08920454545454545,
+          "coarse_contacts": 3345,
+          "completed_words": 0,
+          "final_prefix_state": 0,
+          "kiss_contacts": 1762,
+          "kiss_rate": 0.3450166438222048,
+          "letter_counts": [
+            158,
+            147,
+            582,
+            233,
+            167,
+            475
+          ],
+          "letter_entropy": 0.9117310414216205,
+          "match_rate": 0.26787741203178206,
+          "matched_letters": 472,
+          "missing_aperture_hits": 749,
+          "missing_aperture_rate": 0.4250851305334847,
+          "raw_contacts": 5107,
+          "rejected_letters": 1290,
+          "uncertified_trigram_hits": 1603
+        },
+        "captures": 3550,
+        "clump": 0.29314040426740207,
+        "contacts": 5107,
+        "escapes": 0,
+        "final_coupling": 0.1427913513590366,
+        "final_fusion": 0.26658597515646315,
+        "final_overlap": 1.0,
+        "final_scatter": 0.11260728647136783,
+        "residue": 1.0,
+        "seed": 3,
+        "shot": 0
+      },
+      {
+        "alphabet": {
+          "accept_rate": 0.17766497461928935,
+          "branch_accepts": 385,
+          "certified_trigram_hits": 49,
+          "certified_trigram_rate": 0.022632794457274827,
+          "coarse_contacts": 2896,
+          "completed_words": 0,
+          "final_prefix_state": 0,
+          "kiss_contacts": 2167,
+          "kiss_rate": 0.42800711040884853,
+          "letter_counts": [
+            200,
+            223,
+            564,
+            258,
+            403,
+            519
+          ],
+          "letter_entropy": 0.9559054661703815,
+          "match_rate": 0.24734656206737424,
+          "matched_letters": 536,
+          "missing_aperture_hits": 967,
+          "missing_aperture_rate": 0.4462390401476696,
+          "raw_contacts": 5063,
+          "rejected_letters": 1631,
+          "uncertified_trigram_hits": 2116
+        },
+        "captures": 3094,
+        "clump": 0.34016242685722864,
+        "contacts": 5063,
+        "escapes": 11,
+        "final_coupling": 0.12122343968523411,
+        "final_fusion": 0.22772478018108586,
+        "final_overlap": 1.0,
+        "final_scatter": 0.1356658175866888,
+        "residue": 1.0,
+        "seed": 10,
+        "shot": 1
+      },
+      {
+        "alphabet": {
+          "accept_rate": 0.14510609171800137,
+          "branch_accepts": 212,
+          "certified_trigram_hits": 39,
+          "certified_trigram_rate": 0.026730637422892393,
+          "coarse_contacts": 3480,
+          "completed_words": 0,
+          "final_prefix_state": 0,
+          "kiss_contacts": 1461,
+          "kiss_rate": 0.2956891317547055,
+          "letter_counts": [
+            126,
+            375,
+            230,
+            152,
+            343,
+            235
+          ],
+          "letter_entropy": 0.9605253639228272,
+          "match_rate": 0.15879534565366188,
+          "matched_letters": 232,
+          "missing_aperture_hits": 573,
+          "missing_aperture_rate": 0.3921971252566735,
+          "raw_contacts": 4941,
+          "rejected_letters": 1229,
+          "uncertified_trigram_hits": 1420
+        },
+        "captures": 3237,
+        "clump": 0.2960188281553805,
+        "contacts": 4941,
+        "escapes": 1,
+        "final_coupling": 0.1351876851541985,
+        "final_fusion": 0.2525181615159707,
+        "final_overlap": 1.0,
+        "final_scatter": 0.11626618192864815,
+        "residue": 1.0,
+        "seed": 17,
+        "shot": 2
+      }
+    ],
+    "verdict": "NULL_LANGUAGE_ADVANTAGE"
+  }
+}
