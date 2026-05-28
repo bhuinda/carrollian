@@ -1,0 +1,109 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "cab5f3773669737db9be922793b6dd7983eb4d5db6f2b63fcff922e26686da5c",
+  "checks": {
+    "all_precursor_coordinates_stay_inside_unit_disk": true,
+    "base_coordinate_reuses_certified_poincare_mass_center": true,
+    "dini_torsion_report_certified": true,
+    "h4_precursor_coordinate_scope_is_expected": true,
+    "height_coordinate_matches_dini_conductance_descent": true,
+    "residual_coordinate_is_fixed_nonzero_eta6_holonomy": true,
+    "second_window_transfer_report_certified": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The Dini torsion chain now has a finite four-coordinate precursor table. Stage 0 reuses the certified second-window Poincare transfer mass center, stages 1-4 are explicitly symbolic precursor chart points, r is the fixed eta6 holonomy coordinate, and h is the strictly descending conductance coordinate. This does not certify a literal H4 metric embedding.",
+  "closure_boundary": {
+    "certifies": [
+      "a five-stage (x,y,r,h) precursor table for the Dini torsion chain",
+      "reuse of the certified second-window Poincare transfer mass center at stage 0",
+      "fixed nonzero eta6 holonomy residual coordinate through the chain",
+      "strict conductance height descent through the chain"
+    ],
+    "does_not_certify_because_not_required": [
+      "per-intervention Poincare centers for stages 1-4",
+      "an H4 metric tensor or distance law",
+      "curvature or torsion from a smooth embedding",
+      "positive lower asymptote of the conductance relaxation curve"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift.py",
+      "sha256": "c6a7c88136a91119e04681ea7ffb36ca36463be2e1715b93f680cea9134cd977"
+    },
+    "dini_report": {
+      "certificate_sha256": "093600ce720676a177f16bf979a479bbdc49865f64b6aa5f694c62274c4e2226",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_dini_torsion_index/report.json",
+      "sha256": "d9debdb96e8258db9fa2a4d38c1fbcf460b2ac8ada445ab278858e2d9b4779e9",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_DINI_TORSION_INDEX_CERTIFIED"
+    },
+    "dini_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_dini_torsion_index/signature_boundary_spine_aperture_closure_tail_eta6_dini_torsion_index_tables.npz",
+      "sha256": "49c7916d41ff0dc668497a53b46f4ff6b2438940acab55d1909154515994daad"
+    },
+    "second_window_transfer_centers": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_transfer_operator/aperture_closure_tail_second_window_transfer_centers.csv",
+      "sha256": "aa002cde5d1c3b041a52ac15c5432e2423cbb3ce091475b46f53329f92612d2e"
+    },
+    "second_window_transfer_report": {
+      "certificate_sha256": "a6cdb2dc6f006eb7e1a3a6fc625af77fe3dd47926d986d8b1741eaab1cfc846c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_transfer_operator/report.json",
+      "sha256": "1dbebde16401578845b02eec983e96583d1bbb0dc6f6a07a414eb79e86b1b3b7",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SECOND_WINDOW_TRANSFER_OPERATOR_CERTIFIED"
+    },
+    "second_window_transfer_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_transfer_operator/signature_boundary_spine_aperture_closure_tail_second_window_transfer_operator_tables.npz",
+      "sha256": "66efa385cd767022a17eb44c64f6382e61ab6101534f93aab1af26a24636b387"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift.py",
+      "sha256": "92e3fe265ee2300219e6dce2bb93b60759f107ed8df31681c11de76ee787a207"
+    }
+  },
+  "next_highest_yield_item": "Replace the symbolic H4 precursor coordinates for stages 1-4 with fresh per-intervention Poincare centers, then test whether the conductance height descent has a positive lower asymptote at fixed eta6 holonomy.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift_certificate.json",
+    "coordinates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/eta6_h4_precursor_coordinates.csv",
+    "h4_precursor": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/manifest.json",
+    "observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/eta6_h4_precursor_observables.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/report.json",
+    "tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift@1",
+  "stage_protocol": {
+    "closure": "certify the H4 precursor table while leaving metric embedding unclaimed",
+    "coherence": "check base Poincare center, fixed residual coordinate, and strict height descent",
+    "draft": "start from the certified eta6 Dini torsion chain",
+    "emit": "emit H4 precursor coordinate table, certificate, report, verifier command, and next target",
+    "witness": "attach x,y,r,h coordinates with explicit source flags"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_H4_PRECURSOR_LIFT_CERTIFIED",
+  "witness": {
+    "base_poincare_center": {
+      "radius_x1e12": 67723810000,
+      "x_x1e12": 67572661820,
+      "y_x1e12": 4522140858
+    },
+    "coordinate_count": 5,
+    "h4_metric_certified_count": 0,
+    "h4_table_sha256": "4ba02f1ff6dd93f444ecd1917738b763ad4ac0f80d2a15e48f9b4dfc02e01206",
+    "height_chain_x1e12": [
+      4329004000,
+      3649635000,
+      2645503000,
+      2615519000,
+      2610966000
+    ],
+    "observable_table_sha256": "09a1c98605e2f9edb99191607210c63a03a8e5ade300fd0db5c1b919e18f40db",
+    "poincare_available_count": 1,
+    "residual_chain_x1e12": [
+      1000000000000,
+      1000000000000,
+      1000000000000,
+      1000000000000,
+      1000000000000
+    ],
+    "symbolic_precursor_count": 4
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "faaad33b4d1386660953bec7651006e769e41768b426e28ca765810faf69c889",
+  "checks": {
+    "cell_table_shape_matches_codebook": true,
+    "clear_corridor_certificate_certified": true,
+    "clear_corridor_report_certified": true,
+    "component_table_shape_matches_codebook": true,
+    "delta2_variation_le223_word_count_is_1436": true,
+    "gate_path_table_shape_matches_codebook": true,
+    "good_cell_count_is_138": true,
+    "good_components_are_81_55_1_1": true,
+    "good_edge_count_is_377": true,
+    "min_target_variation_is_137": true,
+    "no_repair_gate_profile_is_185_30_9": true,
+    "observable_table_shape_matches_codebook": true,
+    "one_no_repair_gate_path_reaches_each_oversplitter": true,
+    "radius2_total_word_count_is_12754": true,
+    "radius_shell_counts_are_expected": true,
+    "radius_two_adds_eight_exact_targets": true,
+    "selected_and_oversplitter_good_components_are_separate": true,
+    "selected_component_has_all_targets": true,
+    "trace_valid_word_count_is_9625": true
+  },
+  "claim": "The level-two clear-corridor search expands the three aperture anchors to 12,754 prefix-valid words. Under the good-cell filters there are 138 closed-positive delta2 repair-chord cells and 377 good edges. The good graph has four components of sizes 81, 55, 1, and 1; the selected-lift component and oversplitter component remain separate. Radius two adds eight new exact 24-closure, six-template, all-four targets at minimum variation 137, all in the selected component. A one-gate graph that allows a single delta2 variation<=223 no-repair word connects the selected side to each oversplitter, with gate profile variation 185, 30 closures, and 9 templates. The seam is therefore the repair-chord support, not lack of exact targets on the selected side.",
+  "closure_boundary": {
+    "certifies": [
+      "radius-two edits around the selected lift and two oversplitters",
+      "all good cells satisfying delta2, variation <= 223, repair-chord support, and closed positivity in that radius",
+      "that exact 24/six/all-four targets exist at variation 137 in the selected component",
+      "that no good path reaches either oversplitter from the selected component",
+      "that a one no-repair-gate path reaches each oversplitter"
+    ],
+    "does_not_certify_because_not_required": [
+      "radius three or higher from the three-anchor set",
+      "paths using no-closed, bad-metric, or trace-failure gates",
+      "repairing the no-repair gate into a good cell",
+      "global optimality outside the declared level-two corridor"
+    ]
+  },
+  "inputs": {
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "clear_corridor_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/signature_boundary_spine_aperture_closure_tail_clear_corridor_certificate.json",
+      "sha256": "345f9702a132cf656a22d055a70e64678634576b4d66f7eed5020dc9da2b84de"
+    },
+    "clear_corridor_report": {
+      "certificate_sha256": "a220d74a8a031ce20114879ae7a21093f45bf48214a5dcef08a2ebbf0ea77a36",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/report.json",
+      "sha256": "815fb8719a9d8095cb8eb66f70a377d04149655a258e3c98ac01f9370bc43b36",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_CLEAR_CORRIDOR_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2.py",
+      "sha256": "d0f76c5458c52d4b844777242ad1092bab793cf1c2cb60aa6adcf848a2985cbf"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2.py",
+      "sha256": "55642a190657089eabdbee15b1f6c6344da0073f58e0f5c0ddd7e89ba3948b39"
+    }
+  },
+  "next_highest_yield_item": "Repair the no-repair gate: search local replacements of x4,x5,x1,x2,x5,x5,x2,x1,x4,x5 that restore repair-chord support while keeping the level-two variation-137 exact targets in view.",
+  "outputs": {
+    "aperture_closure_tail_clear_corridor_level2_cells_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/aperture_closure_tail_clear_corridor_level2_cells.csv",
+    "aperture_closure_tail_clear_corridor_level2_components_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/aperture_closure_tail_clear_corridor_level2_components.csv",
+    "aperture_closure_tail_clear_corridor_level2_gate_paths_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/aperture_closure_tail_clear_corridor_level2_gate_paths.csv",
+    "aperture_closure_tail_clear_corridor_level2_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/aperture_closure_tail_clear_corridor_level2_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/report.json",
+    "signature_boundary_spine_aperture_closure_tail_clear_corridor_level2": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/signature_boundary_spine_aperture_closure_tail_clear_corridor_level2.json",
+    "signature_boundary_spine_aperture_closure_tail_clear_corridor_level2_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/signature_boundary_spine_aperture_closure_tail_clear_corridor_level2_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_clear_corridor_level2_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/signature_boundary_spine_aperture_closure_tail_clear_corridor_level2_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2@1",
+  "stage_protocol": {
+    "closure": "certify radius-two exact targets and the remaining no-good-path separation from oversplitters",
+    "coherence": "compare good components, exact targets, and one-gate connectivity",
+    "draft": "expand the three clear-corridor anchors to radius two",
+    "emit": "emit level-two cells, components, gate paths, observables, certificate, report, verifier command, and next target",
+    "witness": "evaluate trace metrics, repair support, closures, templates, good cells, and no-repair gate paths"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_CLEAR_CORRIDOR_LEVEL2_CERTIFIED",
+  "witness": {
+    "cell_table_sha256": "cc7f8fe1c82274a97dd92f38a8d7edbcd63306bc69bace3a764c2b3acb5ade4d",
+    "component_table_sha256": "366bc033749b4d0e07a78f3b3ca2c8a371b0418170662c2c98e3dbe7c898e46d",
+    "gate_path_table_sha256": "2ec3518eba52bb2b3813d5054e87073e2686df378298d8ebea0caaa8c456c241",
+    "good_cell_count": 138,
+    "good_component_sizes": [
+      81,
+      55,
+      1,
+      1
+    ],
+    "min_target_variation": 137,
+    "no_repair_gate_profile": {
+      "closed_paths": 30,
+      "endpoint_distribution": {
+        "10": 2,
+        "11": 4,
+        "13": 12,
+        "9": 12
+      },
+      "template_count": 9,
+      "variation": 185
+    },
+    "no_repair_gate_word": [
+      2,
+      1,
+      4,
+      5,
+      1,
+      2,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "observable_table_sha256": "a30163b26b1bb553fb56683db2f582c3dc7335afec52b10c3d61343fb7e18457",
+    "oversplitter_component_id": 1,
+    "radius2_new_target_count": 8,
+    "radius_shell_counts": [
+      3,
+      288,
+      12463
+    ],
+    "selected_component_id": 0,
+    "target_count": 9
+  }
+}

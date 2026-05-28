@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Readable verifier entrypoint for d20.
 
 The `src.commands.certify` entrypoint remains authoritative. This module exposes
@@ -94,6 +94,57 @@ the practical verification modes without hiding file writes behind a default:
 * c985-signature-aperture-cost3-strongification-ranking: validate the C985-derived d20 signature aperture cost-three strongification geometry ranking layer;
 * c985-signature-aperture-closure-outlier-geometry: validate the C985-derived d20 signature aperture closure-rich outlier geometry layer;
 * c985-signature-aperture-closure-tail-endpoint-split: validate the C985-derived d20 signature aperture closure-tail carrier endpoint split layer;
+* c985-signature-aperture-closure-tail-rewrite-lift: validate the C985-derived d20 signature aperture closure-tail rewrite-node lift layer;
+* c985-signature-aperture-closure-tail-prefix-chord: validate the C985-derived d20 signature aperture closure-tail prefix-chord search layer;
+* c985-signature-aperture-closure-tail-carrier-splice: validate the C985-derived d20 signature aperture closure-tail carrier-splice realization layer;
+* c985-signature-aperture-closure-tail-splice-optimality: validate the C985-derived d20 signature aperture closure-tail carrier-splice optimality layer;
+* c985-signature-aperture-closure-tail-lower-lift: validate the C985-derived d20 signature aperture closure-tail lower-variation lift obstruction layer;
+* c985-signature-aperture-closure-tail-partial-splitter: validate the C985-derived d20 signature aperture closure-tail partial-splitter search layer;
+* c985-signature-aperture-closure-tail-trim-neighborhood: validate the C985-derived d20 signature aperture closure-tail trim-neighborhood search layer;
+* c985-signature-aperture-closure-tail-clear-corridor: validate the C985-derived d20 signature aperture closure-tail clear-corridor layer;
+* c985-signature-aperture-closure-tail-clear-corridor-level2: validate the C985-derived d20 signature aperture closure-tail level-two clear-corridor layer;
+* c985-signature-aperture-closure-tail-gate-repair: validate the C985-derived d20 signature aperture closure-tail gate-repair search layer;
+* c985-signature-aperture-closure-tail-boundary-bridge: validate the C985-derived d20 signature aperture closure-tail boundary-pair bridge search layer;
+* c985-signature-aperture-closure-tail-virtual-graft: validate the C985-derived d20 signature aperture closure-tail virtual repair-edge graft layer;
+* c985-signature-aperture-closure-tail-native-insertion: validate the C985-derived d20 signature aperture closure-tail native trace-insertion layer;
+* c985-signature-aperture-closure-tail-symbolic-window: validate the C985-derived d20 signature aperture closure-tail symbolic window-refinement layer;
+* c985-signature-aperture-closure-tail-skip-window-grammar: validate the C985-derived d20 signature aperture closure-tail skip-window grammar layer;
+* c985-signature-aperture-closure-tail-repaired-automaton: validate the C985-derived d20 signature aperture closure-tail repaired automaton layer;
+* c985-signature-aperture-closure-tail-transfer: validate the C985-derived d20 signature aperture closure-tail transfer-operator layer;
+* c985-signature-aperture-closure-tail-flow-window: validate the C985-derived d20 signature aperture closure-tail flow-window lift layer;
+* c985-signature-aperture-closure-tail-promoted-window: validate the C985-derived d20 signature aperture closure-tail promoted-window layer;
+* c985-signature-aperture-closure-tail-promoted-transfer: validate the C985-derived d20 signature aperture closure-tail promoted transfer-operator layer;
+* c985-signature-aperture-closure-tail-second-window: validate the C985-derived d20 signature aperture closure-tail second-window search layer;
+* c985-signature-aperture-closure-tail-second-window-promotion: validate the C985-derived d20 signature aperture closure-tail second-window promotion layer;
+* c985-signature-aperture-closure-tail-second-window-transfer: validate the C985-derived d20 signature aperture closure-tail second-window transfer-operator layer;
+* c985-signature-aperture-closure-tail-sixj-frame: validate the C985-derived d20 signature aperture closure-tail 6j bottleneck frame layer;
+* c985-signature-aperture-closure-tail-sixj-recoupling-pair: validate the C985-derived d20 signature aperture closure-tail 6j recoupling-pair obstruction layer;
+* c985-signature-aperture-closure-tail-sixj-recoupling-triple: validate the C985-derived d20 signature aperture closure-tail 6j recoupling-triple/face obstruction layer;
+* c985-signature-aperture-closure-tail-sixj-recoupling-closure: validate the C985-derived d20 signature aperture closure-tail 6j tetrahedral-closure obstruction layer;
+* c985-signature-aperture-closure-tail-sixj-nonlocal-screen: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal F-symbol candidate screen;
+* c985-signature-aperture-closure-tail-sixj-borromean-hypergraph: validate the C985-derived d20 signature aperture closure-tail 6j Borromean hypergraph screen;
+* c985-signature-aperture-closure-tail-sixj-conductance-preservation: validate the C985-derived d20 signature aperture closure-tail 6j conductance-decreasing aperture-preservation layer;
+* c985-signature-aperture-closure-tail-eta6-charge: validate the C985-derived d20 signature aperture closure-tail eta6 hexagonal support charge layer;
+* c985-signature-aperture-closure-tail-eta6-holonomy: validate the C985-derived d20 signature aperture closure-tail eta6 relative holonomy layer;
+* c985-signature-aperture-closure-tail-eta6-dini-torsion: validate the C985-derived d20 signature aperture closure-tail eta6 Dini torsion index layer;
+* c985-signature-aperture-closure-tail-eta6-h4-precursor: validate the C985-derived d20 signature aperture closure-tail eta6 H4 precursor lift layer;
+* c985-signature-aperture-closure-tail-eta6-graham-throat: validate the C985-derived d20 signature aperture closure-tail eta6 Graham throat screen;
+* c985-signature-aperture-closure-tail-eta6-aperture-polygon: validate the C985-derived d20 signature aperture closure-tail eta6 aperture polygon area layer;
+* c985-signature-aperture-closure-tail-eta6-truncated-skeleton: validate the C985-derived d20 signature aperture closure-tail eta6 truncated-icosahedral boundary skeleton layer;
+* c985-signature-aperture-closure-tail-eta6-hex-face-barycenter: validate the C985-derived d20 signature aperture closure-tail eta6 hex-face barycenter Graham screen;
+* c985-signature-aperture-closure-tail-eta6-nonholonomic-aperture: validate the C985-derived d20 signature aperture closure-tail eta6 nonholonomic aperture layer;
+* eta6-ext-cone: validate the eta6 exterior support cone layer;
+* eta6-gordan: validate the eta6 support-plane Gordan certificate;
+* eta6-aext: validate the eta6 expanded exterior-cell A_ext certificate;
+* eta6-srows: validate the eta6 signed circuit-row certificate;
+* eta6-islack: validate the eta6 intrinsic slack-height degeneracy certificate;
+* eta6-hpol: validate the eta6 holonomy-polarized height certificate;
+* eta6-surg: validate the eta6 hpol first-cut survivor-cone certificate;
+* eta6-repl: validate the eta6 face-31 replacement carrier certificate;
+* eta6-xfer: validate the eta6 face-31 seam transfer certificate;
+* eta6-hit2: validate the second eta6 hit/collapse certificate;
+* c985-signature-aperture-closure-tail-sixj-2114-neighborhood: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal 2114 neighborhood screen;
+* c985-signature-aperture-closure-tail-sixj-2114-triple: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal 2114 triple screen;
 * token-burn: validate bounded-output guard coverage for repo-defined runners;
 * tamper: mutate certified evidence in memory and require verification failure.
 """
@@ -2695,6 +2746,984 @@ def c985_signature_aperture_closure_tail_endpoint_split(*, pretty: bool) -> int:
     return finish(result, pretty)
 
 
+def c985_signature_aperture_closure_tail_rewrite_lift(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_prefix_chord(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_carrier_splice(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_splice_optimality(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_lower_lift(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_lower_variation_lift_obstruction import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_lower_variation_lift_obstruction,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_lower_variation_lift_obstruction()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_lower_variation_lift_obstruction@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_partial_splitter(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_trim_neighborhood(
+    *, pretty: bool
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_clear_corridor(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_clear_corridor@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_clear_corridor_level2(
+    *, pretty: bool
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2 import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_gate_repair(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_boundary_bridge(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_virtual_graft(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_native_insertion(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_symbolic_window(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_skip_window_grammar(
+    *, pretty: bool
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_repaired_automaton(
+    *, pretty: bool
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_transfer(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_transfer_operator@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_flow_window(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_promoted_window(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_promoted_window@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_promoted_transfer(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_second_window(*, pretty: bool) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_second_window_search@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_second_window_promotion(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_second_window_transfer(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_transfer_operator import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_transfer_operator,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_transfer_operator()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_second_window_transfer_operator@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_frame(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_recoupling_pair(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_recoupling_triple(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_triple_face_obstruction import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_triple_face_obstruction,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_triple_face_obstruction()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_triple_face_obstruction@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_recoupling_closure(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_sixj_tetra_closure import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_tetrahedral_closure_obstruction,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_tetrahedral_closure_obstruction()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_tetrahedral_closure_obstruction@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_nonlocal_screen(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_borromean_hypergraph(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_borromean_hypergraph_screen import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_borromean_hypergraph_screen,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_borromean_hypergraph_screen()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_borromean_hypergraph_screen@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_conductance_preservation(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_sixj_conductance import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_conductance_decreasing_aperture_preservation,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_conductance_decreasing_aperture_preservation()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_conductance_decreasing_aperture_preservation@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_charge(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_holonomy(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_dini_torsion(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_dini_torsion_index import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_dini_torsion_index,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_dini_torsion_index()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_dini_torsion_index@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_h4_precursor(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_graham_throat(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_aperture_polygon(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_aperture_polygon_area import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_aperture_polygon_area,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_aperture_polygon_area()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_aperture_polygon_area@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_truncated_skeleton(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_eta6_truncated_skeleton import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_truncated_icosahedral_boundary_skeleton,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_truncated_icosahedral_boundary_skeleton()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_truncated_icosahedral_boundary_skeleton@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_hex_face_barycenter(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hex_face_barycenter_graham_screen import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hex_face_barycenter_graham_screen,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hex_face_barycenter_graham_screen()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_hex_face_barycenter_graham_screen@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_nonholonomic_aperture(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_nonholonomic_aperture import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_nonholonomic_aperture,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_nonholonomic_aperture()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_eta6_nonholonomic_aperture@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_eta6_exterior_cone(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_ext_cone import (
+        validate_eta6_ext_cone,
+    )
+
+    try:
+        result = validate_eta6_ext_cone()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.ext_cone.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_gordan(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_gordan import validate_eta6_gordan
+
+    try:
+        result = validate_eta6_gordan()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.gordan.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_aext(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_aext import validate_eta6_aext
+
+    try:
+        result = validate_eta6_aext()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.aext.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_srows(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_srows import validate_eta6_srows
+
+    try:
+        result = validate_eta6_srows()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.srows.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_islack(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_islack import validate_eta6_islack
+
+    try:
+        result = validate_eta6_islack()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.islack.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_hpol(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_hpol import validate_eta6_hpol
+
+    try:
+        result = validate_eta6_hpol()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.hpol.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_surg(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_surg import validate_eta6_surg
+
+    try:
+        result = validate_eta6_surg()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.surg.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_repl(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_repl import validate_eta6_repl
+
+    try:
+        result = validate_eta6_repl()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.repl.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_xfer(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_xfer import validate_eta6_xfer
+
+    try:
+        result = validate_eta6_xfer()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.xfer.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_hit2(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_hit2 import validate_eta6_hit2
+
+    try:
+        result = validate_eta6_hit2()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.hit2.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_2114_neighborhood(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def c985_signature_aperture_closure_tail_sixj_2114_triple(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen import (
+        validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen,
+    )
+
+    try:
+        result = (
+            validate_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen()
+        )
+    except Exception as exc:
+        result = {
+            "schema": "c985.verification.d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def finish(result: dict[str, Any], pretty: bool) -> int:
     emit(result, pretty)
     return 0 if result.get("status") == "PASS" else 1
@@ -2794,6 +3823,57 @@ def main() -> None:
         "c985-signature-aperture-cost3-strongification-ranking",
         "c985-signature-aperture-closure-outlier-geometry",
         "c985-signature-aperture-closure-tail-endpoint-split",
+        "c985-signature-aperture-closure-tail-rewrite-lift",
+        "c985-signature-aperture-closure-tail-prefix-chord",
+        "c985-signature-aperture-closure-tail-carrier-splice",
+        "c985-signature-aperture-closure-tail-splice-optimality",
+        "c985-signature-aperture-closure-tail-lower-lift",
+        "c985-signature-aperture-closure-tail-partial-splitter",
+        "c985-signature-aperture-closure-tail-trim-neighborhood",
+        "c985-signature-aperture-closure-tail-clear-corridor",
+        "c985-signature-aperture-closure-tail-clear-corridor-level2",
+        "c985-signature-aperture-closure-tail-gate-repair",
+        "c985-signature-aperture-closure-tail-boundary-bridge",
+        "c985-signature-aperture-closure-tail-virtual-graft",
+        "c985-signature-aperture-closure-tail-native-insertion",
+        "c985-signature-aperture-closure-tail-symbolic-window",
+        "c985-signature-aperture-closure-tail-skip-window-grammar",
+        "c985-signature-aperture-closure-tail-repaired-automaton",
+        "c985-signature-aperture-closure-tail-transfer",
+        "c985-signature-aperture-closure-tail-flow-window",
+        "c985-signature-aperture-closure-tail-promoted-window",
+        "c985-signature-aperture-closure-tail-promoted-transfer",
+        "c985-signature-aperture-closure-tail-second-window",
+        "c985-signature-aperture-closure-tail-second-window-promotion",
+        "c985-signature-aperture-closure-tail-second-window-transfer",
+        "c985-signature-aperture-closure-tail-sixj-frame",
+        "c985-signature-aperture-closure-tail-sixj-recoupling-pair",
+        "c985-signature-aperture-closure-tail-sixj-recoupling-triple",
+        "c985-signature-aperture-closure-tail-sixj-recoupling-closure",
+        "c985-signature-aperture-closure-tail-sixj-nonlocal-screen",
+        "c985-signature-aperture-closure-tail-sixj-borromean-hypergraph",
+        "c985-signature-aperture-closure-tail-sixj-conductance-preservation",
+        "c985-signature-aperture-closure-tail-eta6-charge",
+        "c985-signature-aperture-closure-tail-eta6-holonomy",
+        "c985-signature-aperture-closure-tail-eta6-dini-torsion",
+        "c985-signature-aperture-closure-tail-eta6-h4-precursor",
+        "c985-signature-aperture-closure-tail-eta6-graham-throat",
+        "c985-signature-aperture-closure-tail-eta6-aperture-polygon",
+        "c985-signature-aperture-closure-tail-eta6-truncated-skeleton",
+        "c985-signature-aperture-closure-tail-eta6-hex-face-barycenter",
+        "c985-signature-aperture-closure-tail-eta6-nonholonomic-aperture",
+        "eta6-ext-cone",
+        "eta6-gordan",
+        "eta6-aext",
+        "eta6-srows",
+        "eta6-islack",
+        "eta6-hpol",
+        "eta6-surg",
+        "eta6-repl",
+        "eta6-xfer",
+        "eta6-hit2",
+        "c985-signature-aperture-closure-tail-sixj-2114-neighborhood",
+        "c985-signature-aperture-closure-tail-sixj-2114-triple",
         "token-burn",
         "tamper",
     ):
@@ -2988,6 +4068,244 @@ def main() -> None:
     if args.command == "c985-signature-aperture-closure-tail-endpoint-split":
         raise SystemExit(
             c985_signature_aperture_closure_tail_endpoint_split(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-rewrite-lift":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_rewrite_lift(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-prefix-chord":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_prefix_chord(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-carrier-splice":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_carrier_splice(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-splice-optimality":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_splice_optimality(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-lower-lift":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_lower_lift(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-partial-splitter":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_partial_splitter(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-trim-neighborhood":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_trim_neighborhood(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-clear-corridor":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_clear_corridor(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-clear-corridor-level2":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_clear_corridor_level2(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-gate-repair":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_gate_repair(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-boundary-bridge":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_boundary_bridge(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-virtual-graft":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_virtual_graft(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-native-insertion":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_native_insertion(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-symbolic-window":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_symbolic_window(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-skip-window-grammar":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_skip_window_grammar(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-repaired-automaton":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_repaired_automaton(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-transfer":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_transfer(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-flow-window":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_flow_window(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-promoted-window":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_promoted_window(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-promoted-transfer":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_promoted_transfer(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-second-window":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_second_window(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-second-window-promotion":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_second_window_promotion(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-second-window-transfer":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_second_window_transfer(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-sixj-frame":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_frame(pretty=args.pretty)
+        )
+    if args.command == "c985-signature-aperture-closure-tail-sixj-recoupling-pair":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_recoupling_pair(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-sixj-recoupling-triple":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_recoupling_triple(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-sixj-recoupling-closure":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_recoupling_closure(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-sixj-nonlocal-screen":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_nonlocal_screen(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-sixj-borromean-hypergraph":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_borromean_hypergraph(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-sixj-conductance-preservation":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_conductance_preservation(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-charge":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_charge(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-holonomy":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_holonomy(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-dini-torsion":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_dini_torsion(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-h4-precursor":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_h4_precursor(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-graham-throat":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_graham_throat(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-aperture-polygon":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_aperture_polygon(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-truncated-skeleton":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_truncated_skeleton(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-hex-face-barycenter":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_hex_face_barycenter(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-eta6-nonholonomic-aperture":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_nonholonomic_aperture(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "eta6-ext-cone":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_eta6_exterior_cone(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "eta6-gordan":
+        raise SystemExit(eta6_gordan(pretty=args.pretty))
+    if args.command == "eta6-aext":
+        raise SystemExit(eta6_aext(pretty=args.pretty))
+    if args.command == "eta6-srows":
+        raise SystemExit(eta6_srows(pretty=args.pretty))
+    if args.command == "eta6-islack":
+        raise SystemExit(eta6_islack(pretty=args.pretty))
+    if args.command == "eta6-hpol":
+        raise SystemExit(eta6_hpol(pretty=args.pretty))
+    if args.command == "eta6-surg":
+        raise SystemExit(eta6_surg(pretty=args.pretty))
+    if args.command == "eta6-repl":
+        raise SystemExit(eta6_repl(pretty=args.pretty))
+    if args.command == "eta6-xfer":
+        raise SystemExit(eta6_xfer(pretty=args.pretty))
+    if args.command == "eta6-hit2":
+        raise SystemExit(eta6_hit2(pretty=args.pretty))
+    if args.command == "c985-signature-aperture-closure-tail-sixj-2114-neighborhood":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_2114_neighborhood(
+                pretty=args.pretty
+            )
+        )
+    if args.command == "c985-signature-aperture-closure-tail-sixj-2114-triple":
+        raise SystemExit(
+            c985_signature_aperture_closure_tail_sixj_2114_triple(
+                pretty=args.pretty
+            )
         )
     raise SystemExit(run(args.command, pretty=args.pretty))
 

@@ -1,0 +1,226 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8e88495d6aeb1ea00793c61248bb91b427dd2432774c71000fc371fb5790662e",
+  "checks": {
+    "bridge_table_shape_matches_codebook": true,
+    "bridge_uses_single_no_repair_gate": true,
+    "cell_table_shape_matches_codebook": true,
+    "component_table_shape_matches_codebook": true,
+    "delta2_variation_le223_count_is_16842": true,
+    "gate_neighborhood_total_word_count_is_105630": true,
+    "gate_profile_is_185_30_9": true,
+    "good_cell_count_is_91": true,
+    "good_components_are_52_35_1_1_1_1": true,
+    "good_edge_count_is_189": true,
+    "left_and_right_good_components_are_separate": true,
+    "level2_certificate_certified": true,
+    "level2_report_certified": true,
+    "min_target_variation_is_195": true,
+    "no_repair_candidate_count_is_15820": true,
+    "observable_table_shape_matches_codebook": true,
+    "radius_shell_counts_are_expected": true,
+    "repair_chord_candidate_count_is_1022": true,
+    "targets_are_left_component_only": true,
+    "trace_valid_word_count_is_75925": true
+  },
+  "claim": "The radius-three gate-repair search around the no-repair word x2,x1,x4,x5,x1,x2,x5,x5,x2,x1,x4,x5 enumerates 105,630 prefix-valid local replacements. Repair support reappears in 1,022 delta2 variation<=223 candidates, but only 91 are closed-positive good cells. Their one-edit graph has 189 edges and six components of sizes 52, 35, 1, 1, 1, and 1. The left and right repair-boundary cells remain in separate components. The three exact 24-closure, six-template, all-four repaired targets are all in the left component at minimum variation 195. Thus the no-repair gate is not locally repairable through radius three by replacing the gate word while preserving the good-cell criteria.",
+  "closure_boundary": {
+    "certifies": [
+      "radius-three local replacements of the certified no-repair gate word",
+      "good cells satisfying delta2, variation <= 223, repair-chord support, and closed positivity in that ball",
+      "that repaired exact 24/six/all-four targets exist only on the left repair-boundary side",
+      "that no good path connects the left and right repair-boundary components through radius three"
+    ],
+    "does_not_certify_because_not_required": [
+      "radius four or higher around the gate word",
+      "paths using no-closed, bad-metric, or trace-failure gates",
+      "a global no-go theorem outside the declared gate-repair ball",
+      "categorical pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search.py",
+      "sha256": "32bf32021d3e2affffe5dd8dea392c335666c6757b5f08aff8f49182244ee20b"
+    },
+    "level2_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/signature_boundary_spine_aperture_closure_tail_clear_corridor_level2_certificate.json",
+      "sha256": "02db260a3a9962d35f19e6b511292b8a46a4b447761290311f650313d47a851f"
+    },
+    "level2_report": {
+      "certificate_sha256": "faaad33b4d1386660953bec7651006e769e41768b426e28ca765810faf69c889",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor_level2/report.json",
+      "sha256": "fd05eaf6bd8e79d058b907d444cc2063a0c6f0c646ea76d0060c032eb6b3d9ba",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_CLEAR_CORRIDOR_LEVEL2_CERTIFIED"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search.py",
+      "sha256": "cec5409aba4071af6ecd5ca6a1f0bffd27c752f93dd7c5e99da751e8f9f0519d"
+    }
+  },
+  "next_highest_yield_item": "Leave single-word gate replacement and search a two-cell bridge: allow one intermediate word on each side of the no-repair gate, or equivalently graft a repair chord into the left/right boundary pair rather than into the gate word alone.",
+  "outputs": {
+    "aperture_closure_tail_gate_repair_bridge_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/aperture_closure_tail_gate_repair_bridge.csv",
+    "aperture_closure_tail_gate_repair_cells_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/aperture_closure_tail_gate_repair_cells.csv",
+    "aperture_closure_tail_gate_repair_components_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/aperture_closure_tail_gate_repair_components.csv",
+    "aperture_closure_tail_gate_repair_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/aperture_closure_tail_gate_repair_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/report.json",
+    "signature_boundary_spine_aperture_closure_tail_gate_repair_search": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/signature_boundary_spine_aperture_closure_tail_gate_repair_search.json",
+    "signature_boundary_spine_aperture_closure_tail_gate_repair_search_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/signature_boundary_spine_aperture_closure_tail_gate_repair_search_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_gate_repair_search_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/signature_boundary_spine_aperture_closure_tail_gate_repair_search_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search@1",
+  "stage_protocol": {
+    "closure": "certify that radius-three repaired good cells do not bridge the gate",
+    "coherence": "compare left and right repair-boundary components and exact target locations",
+    "draft": "center the search on the certified no-repair gate word",
+    "emit": "emit repaired cells, components, bridge row, observables, certificate, report, verifier command, and next target",
+    "witness": "enumerate radius-three replacements and evaluate repair support, closures, templates, and good-cell connectivity"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_GATE_REPAIR_SEARCH_CERTIFIED",
+  "witness": {
+    "bridge_table_sha256": "c48a27adb4038ec2811e224a1f66e344cd02988e7fc0c5aac4d2a0bb605eb9a7",
+    "cell_table_sha256": "c153a49a49a34c1464bc22a5cc5c26199127b463d25817ba798b0f4487f320a1",
+    "component_table_sha256": "e0fd130996b745068a575c8406cc35110471f9952a048c5781f6f416225eb892",
+    "gate_profile": {
+      "closed_paths": 30,
+      "endpoint_distribution": {
+        "10": 2,
+        "11": 4,
+        "13": 12,
+        "9": 12
+      },
+      "template_count": 9,
+      "variation": 185
+    },
+    "gate_word": [
+      2,
+      1,
+      4,
+      5,
+      1,
+      2,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "good_cell_count": 91,
+    "good_component_sizes": [
+      52,
+      35,
+      1,
+      1,
+      1,
+      1
+    ],
+    "left_boundary_word": [
+      2,
+      1,
+      3,
+      4,
+      5,
+      1,
+      2,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "left_component_id": 0,
+    "min_target_variation": 195,
+    "observable_table_sha256": "8ba66c9f5f507606d66902fb645f6774827f9a6884c1463e6bd1b2d2fccd14c4",
+    "radius_shell_counts": [
+      1,
+      94,
+      3971,
+      101564
+    ],
+    "right_boundary_word": [
+      2,
+      1,
+      4,
+      3,
+      1,
+      2,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "right_component_id": 1,
+    "target_count": 3,
+    "target_words": [
+      [
+        2,
+        1,
+        3,
+        4,
+        5,
+        1,
+        2,
+        5,
+        2,
+        1,
+        4,
+        5,
+        2
+      ],
+      [
+        2,
+        1,
+        3,
+        4,
+        5,
+        1,
+        2,
+        5,
+        2,
+        5,
+        2,
+        1,
+        4,
+        5,
+        2
+      ],
+      [
+        2,
+        1,
+        3,
+        4,
+        5,
+        1,
+        4,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ]
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8ed2a2adf21f2e81bcae29568aae4fa249c80d18ceaa636b5bad3dff2e239a1c",
+  "checks": {
+    "collapsed_faces_are_expected_neighbors": true,
+    "input_certificates_available": true,
+    "naive_second_replacement_collapses_neighbor_faces": true,
+    "post_hit_survivor_cone_stays_positive": true,
+    "second_hit_is_exact_face31_three_vertex_hit": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The next support-discriminant hit after eta6_repl is again on face 31, but it is a three-vertex hit at original vertices 41,52,55. Deleting just those hit support rows leaves all 1,557 survivor support inequalities positive. However, applying the previous simple cap rule would collapse six neighboring faces, so the next step is a three-edge collapse problem, not another same-type cap.",
+  "closure_boundary": {
+    "certifies": [
+      "the exact second support-discriminant hit on eta6_repl",
+      "positive survivor cone after deleting only the three hit support rows",
+      "failure of the previous simple cap rule by neighboring-face collapse"
+    ],
+    "does_not_certify_because_not_required": [
+      "a valid replacement complex for the second hit",
+      "eta6 transfer through the unresolved three-edge collapse",
+      "global automaton closure after repeated surgeries"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_hit2.py",
+      "sha256": "a2012f48316304a9591465c9ac1abfd64c37d3328d00640d5a6922149e944c1a"
+    },
+    "repl_faces": {
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/faces.csv",
+      "sha256": "7d79ce65303eaf46561faa563701c8945392edbf0d05763b0fdb8d5e2e2a7729"
+    },
+    "repl_report": {
+      "certificate_sha256": "571cc28c834a9e525e923766265b8f221b59287e56af721f7c22a5b0bf9e4a78",
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/report.json",
+      "sha256": "ddb485d706634dd7666ef9bc46be249b8a6e593bd70d02d934ad0e8c3826c230",
+      "status": "ETA6_REPL_CERTIFIED"
+    },
+    "repl_supp": {
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/supp.csv",
+      "sha256": "158da6847924a4bac625ddaa58011c14db34511dc70a3ee4f746c8cbbfdca302"
+    },
+    "repl_verts": {
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/verts.csv",
+      "sha256": "b3dbb9cf0d7ba839edd52889cc046810ae5c0a6f9760a9a96defb98f92173e5b"
+    },
+    "validator": {
+      "path": "src/certify_eta6_hit2.py",
+      "sha256": "36a46833cb5b7bf6f5b4f6321a07199430a1e30ba0038ed21b2dec9a18ccf307"
+    },
+    "xfer_report": {
+      "certificate_sha256": "7ab83063b02d3715ed264ef87e386a32d15c5f5c2000672b7e5a5812d2fedcb9",
+      "path": "data/invariants/d20/proof_obligations/eta6_xfer/report.json",
+      "sha256": "a17098a64f5dc425fb59f4a582444fb49ccf287bb10d63387a03fef9339398c3",
+      "status": "ETA6_XFER_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Build a multi-face patch for the three-edge collapse at original vertices 41,52,55, then test support positivity and eta6 transfer.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_hit2/cert.json",
+    "collapse_csv": "data/invariants/d20/proof_obligations/eta6_hit2/collapse.csv",
+    "hit2": "data/invariants/d20/proof_obligations/eta6_hit2/hit2.json",
+    "hits_csv": "data/invariants/d20/proof_obligations/eta6_hit2/hits.csv",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_hit2/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_hit2/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/eta6_hit2/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_hit2/tables.npz"
+  },
+  "schema": "eta6.hit2.report@1",
+  "stage_protocol": {
+    "closure": "certify the second hit as a three-edge collapse obstruction",
+    "coherence": "check survivor positivity and simulate the naive cap replacement",
+    "draft": "start from eta6_repl and eta6_xfer",
+    "emit": "emit short hit2 artifacts, hashes, verifier command, and next target",
+    "witness": "compute the next hpol support-discriminant hit on the replacement carrier"
+  },
+  "status": "ETA6_HIT2_CERTIFIED",
+  "witness": {
+    "classification": "three_edge_collapse_obstruction",
+    "collapse_table_sha256": "41fb3f02d616b8ec19c4f0b36fe9c3dca93c14ecde2f20240138f85b4e16032b",
+    "collapsed_neighbor_faces": [
+      8,
+      10,
+      11,
+      25,
+      29,
+      30
+    ],
+    "first_tau": {
+      "denominator": 512,
+      "numerator": 118940696591
+    },
+    "hit_local_vertices": [
+      41,
+      50,
+      51
+    ],
+    "hit_original_vertices": [
+      41,
+      52,
+      55
+    ],
+    "hit_table_sha256": "c745b5fe05245f6fa67938bdbc41047c5e09473c50bb750fedaed0885d00190d",
+    "observable_table_sha256": "0a805a398ee6009ad0f66737177aff4a8e090a04409a3c1712dbe131c68fbf19",
+    "post_tau": {
+      "denominator": 1024,
+      "numerator": 311390786321
+    }
+  }
+}

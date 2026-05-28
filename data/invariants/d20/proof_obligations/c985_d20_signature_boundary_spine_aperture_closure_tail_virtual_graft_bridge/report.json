@@ -1,0 +1,213 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b03551aa252264cdd76af9f2b2ca57ae20a77487ed7050a40b8ac8532e3ce2fc",
+  "checks": {
+    "boundary_bridge_certificate_certified": true,
+    "boundary_bridge_report_certified": true,
+    "bridge_candidate_counts_are_expected": true,
+    "gate_profile_preserves_closed_template_mass": true,
+    "graft_candidate_target_counts_are_expected": true,
+    "graft_table_shape_matches_codebook": true,
+    "merged_component_composition_is_expected": true,
+    "metric_ok_word_count_is_26197": true,
+    "min_variations_are_expected": true,
+    "mode_table_shape_matches_codebook": true,
+    "native_edges_and_components_are_expected": true,
+    "native_good_cell_count_is_562": true,
+    "native_graph_still_separate": true,
+    "native_no_closed_count_is_11075": true,
+    "no_repair_no_closed_count_is_14138": true,
+    "observable_table_shape_matches_codebook": true,
+    "path_table_shape_matches_codebook": true,
+    "shortest_path_is_direct_gate_graft": true,
+    "single_graft_modes_both_connect": true,
+    "virtual_graft_candidate_count_is_422": true,
+    "virtual_graft_graph_connects_boundaries": true,
+    "virtual_graph_counts_are_expected": true
+  },
+  "claim": "The virtual-graft bridge layer keeps the certified boundary-pair native graph fixed, then admits only no-repair words that still satisfy delta2, variation <= 223, and closed positivity. There are 422 such virtual graft carriers. The native repaired graph has 562 cells, 1,694 edges, and separated left/right components of sizes 347 and 185. Adding either one virtual 31--28 repair edge or one virtual 50--34 repair edge to the closed-positive no-repair carriers yields a 984-node graph with 3,134 edges and 23 components; the boundary components merge into a 925-cell component. The shortest certified graft path is left boundary -> no-repair gate -> right boundary, and the gate preserves 30 closed paths and 9 normalized tail templates.",
+  "closure_boundary": {
+    "certifies": [
+      "all virtual graft carriers inside the certified radius-three boundary-pair union",
+      "single virtual repair-edge modes 31--28 and 50--34",
+      "left/right component merger after virtual graft admission",
+      "closed/template preservation on the shortest gate bridge"
+    ],
+    "does_not_certify_because_not_required": [
+      "that virtual grafting is an actual native rewrite edge",
+      "all-four or endpoint-13-free exactness on the shortest gate",
+      "multi-graft optimization outside the declared radius-three side union",
+      "compiler lowering behavior"
+    ]
+  },
+  "inputs": {
+    "boundary_bridge_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/signature_boundary_spine_aperture_closure_tail_boundary_bridge_search_certificate.json",
+      "sha256": "ba3e7dab15474c251bf1e8e73d657730fba93cea60146a2b9a11f81c350d79b2"
+    },
+    "boundary_bridge_report": {
+      "certificate_sha256": "b27b78d6bd4276b70093e770e0ed44e6dd8b7267e9902a45fef0d61ea6ca140a",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/report.json",
+      "sha256": "e1dfe3451e6e3b44df9179f881eb751a815d43d30e0cb50eb29d3399e28a7eb5",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_BOUNDARY_BRIDGE_SEARCH_CERTIFIED"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge.py",
+      "sha256": "64a5c1caeb30d40b65a02b94b13991f899f3bda658f9dfa3f61813cc3baa8489"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge.py",
+      "sha256": "25c60822cd6d531e097adcf81bd05aeafd9b5dea66b4d5382d873ee04f80234f"
+    }
+  },
+  "next_highest_yield_item": "Realize the virtual repair edge natively: search a minimal word-level or rewrite-complex patch that turns the gate's virtual 31--28/50--34 support into an actual trace edge while retaining the 30-closure, 9-template gate profile.",
+  "outputs": {
+    "aperture_closure_tail_virtual_graft_cells_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/aperture_closure_tail_virtual_graft_cells.csv",
+    "aperture_closure_tail_virtual_graft_modes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/aperture_closure_tail_virtual_graft_modes.csv",
+    "aperture_closure_tail_virtual_graft_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/aperture_closure_tail_virtual_graft_observables.csv",
+    "aperture_closure_tail_virtual_graft_paths_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/aperture_closure_tail_virtual_graft_paths.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/report.json",
+    "signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge.json",
+    "signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge@1",
+  "stage_protocol": {
+    "closure": "certify that each single virtual repair edge mode merges the boundary pair through a closed/template-preserving gate",
+    "coherence": "compare native separation with single-edge 31--28 and 50--34 graft modes",
+    "draft": "hold the boundary-pair native graph fixed and add only virtual repair-edge carriers",
+    "emit": "emit graft cells, mode table, path table, observables, certificate, report, verifier command, and next target",
+    "witness": "enumerate closed-positive no-repair cells and one-edit adjacency to native components"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_VIRTUAL_GRAFT_BRIDGE_CERTIFIED",
+  "witness": {
+    "gate_profile": {
+      "closed_paths": 30,
+      "templates": 9,
+      "variation": 185,
+      "word": [
+        2,
+        1,
+        4,
+        5,
+        1,
+        2,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    "graft_table_sha256": "9ea3c70e84cb06c2c25b93e2d91638169cf5a98cf57257ba39d8cfb59e9a7946",
+    "left_right_graft_bridge_candidate_count": 25,
+    "mode_table_sha256": "4a4cb373507efcae181aa86328665fb6578284e90c75c16fdb5db4b7d28d35ba",
+    "native_component_sizes": [
+      347,
+      185,
+      15,
+      4,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "observable_table_sha256": "8d9fa5cff9d2e19a628ab796a243ac109b2133eb4702b1114dad374c550b40a5",
+    "path_table_sha256": "73454c78d26500873b0e5491b4084140305ba31725eb41c8df238dcf51488789",
+    "shortest_graft_path_length": 2,
+    "shortest_path_words": [
+      [
+        2,
+        1,
+        3,
+        4,
+        5,
+        1,
+        2,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ],
+      [
+        2,
+        1,
+        4,
+        5,
+        1,
+        2,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ],
+      [
+        2,
+        1,
+        4,
+        3,
+        1,
+        2,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ]
+    ],
+    "virtual_component_sizes": [
+      925,
+      15,
+      11,
+      6,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "virtual_graft_candidate_count": 422
+  }
+}

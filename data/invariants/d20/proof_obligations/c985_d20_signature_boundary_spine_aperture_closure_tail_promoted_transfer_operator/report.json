@@ -1,0 +1,194 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c91275c763fbd2a4dcc016ba0d7edbf56804341dc00ea82908547bc64224bab9",
+  "checks": {
+    "boundary_masses_are_expected": true,
+    "center_table_shape_matches_codebook": true,
+    "edge_flux_sums_to_one": true,
+    "edge_table_shape_matches_codebook": true,
+    "flow_center_is_closer_to_right_than_gate": true,
+    "flow_center_is_expected": true,
+    "flow_center_is_farther_from_promoted_cut_than_full_cut": true,
+    "observable_table_shape_matches_codebook": true,
+    "promoted_cut_center_is_expected": true,
+    "promoted_window_certificate_certified": true,
+    "promoted_window_report_certified": true,
+    "side_masses_are_expected": true,
+    "side_table_shape_matches_codebook": true,
+    "state_table_shape_matches_codebook": true,
+    "stationary_mass_sums_to_one": true,
+    "surviving_cut_flux_is_expected": true,
+    "transfer_counts_are_expected": true,
+    "transition_weight_profile_is_expected": true
+  },
+  "claim": "The promoted-window automaton carries the native-biased reversible transfer operator on its 794-state dominant recurrent class. Native edges retain weight 3 and derived-involving edges weight 1, giving 2,513 transfer edges, total edge weight 5,849, and total weighted degree 11,698. The surviving six-edge Fiedler cut carries stationary flux 1025816382/1e12; five promoted-support cut edges carry 854846985/1e12 of that flux. The positive spectral side still carries 883227902219/1e12 of stationary mass. The promoted cut subcenter remains farther from the flow center than the full cut midpoint, so the promotion loads the same aperture rather than opening a new corridor.",
+  "closure_boundary": {
+    "certifies": [
+      "the native-biased reversible transfer operator on the dominant promoted recurrent class",
+      "the exact integer-scaled stationary distribution and undirected edge fluxes",
+      "the spectral-side stationary mass split and surviving cut flux",
+      "old-cut and promoted-cut flow lineage inside the fresh promoted Poincare chart"
+    ],
+    "does_not_certify_because_not_required": [
+      "alternative edge-weight schedules",
+      "stationary flow on smaller promoted recurrent classes",
+      "multi-window promotion closure beyond the certified automaton",
+      "compiler integration of promoted transfer weights"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator.py",
+      "sha256": "ce9c1e4b1a0652fb1d4dbce18ac5d73d14435a629c743dde80e69910f8495cba"
+    },
+    "promoted_window_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/signature_boundary_spine_aperture_closure_tail_promoted_window_certificate.json",
+      "sha256": "6104626a5320821c10a480e7866917c0d07ee9cc4e941c936ec2c5c310f05890"
+    },
+    "promoted_window_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/aperture_closure_tail_promoted_window_edges.csv",
+      "sha256": "debd530ee8203962877a756a58dace4079ea72b490a7dab6011b4a6f9bc16fb1"
+    },
+    "promoted_window_poincare": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/aperture_closure_tail_promoted_window_poincare.csv",
+      "sha256": "e44b71cc392cf6cc0ef1e2322ad2a3eecbdcacb0d822b22f818f76e50712857d"
+    },
+    "promoted_window_report": {
+      "certificate_sha256": "cf8cbf3a1eb6ccfe0af8ad7fff471cbfef330af00c5961d0545ae90aaa2b15b7",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/report.json",
+      "sha256": "2009c17834964a8da4438f5231e13e8a8d78207d4560db6bed5aa12105a50665",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PROMOTED_WINDOW_CERTIFIED"
+    },
+    "promoted_window_spectral_cut": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/aperture_closure_tail_promoted_window_spectral_cut.csv",
+      "sha256": "82e1cb8251758bc108818ac9f558ed2ddef2dd9c2e70da90a3f8799e95f79090"
+    },
+    "promoted_window_states": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/aperture_closure_tail_promoted_window_states.csv",
+      "sha256": "7e1692813709a15fc5a5950e71add23729979092ab35f913ca047d6a44fc8d6c"
+    },
+    "promoted_window_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/signature_boundary_spine_aperture_closure_tail_promoted_window_tables.npz",
+      "sha256": "dec4ea99064bcfb8a027081ba02fb3790235b670f0f4709c762418c90b0f1456"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator.py",
+      "sha256": "28e2cc0b4c798c3fe642d25baa7bd9f9336ae27c9898c00ea6ad433512060020"
+    }
+  },
+  "next_highest_yield_item": "Use the promoted transfer flow to rank the surviving six cut edges and search for a second-window rule that attacks the one old-cut edge not touching promoted support.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/manifest.json",
+    "promoted_transfer_centers_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/aperture_closure_tail_promoted_transfer_centers.csv",
+    "promoted_transfer_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/aperture_closure_tail_promoted_transfer_edges.csv",
+    "promoted_transfer_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/aperture_closure_tail_promoted_transfer_observables.csv",
+    "promoted_transfer_side_flow_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/aperture_closure_tail_promoted_transfer_side_flow.csv",
+    "promoted_transfer_states_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/aperture_closure_tail_promoted_transfer_states.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/report.json",
+    "signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator.json",
+    "signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator@1",
+  "stage_protocol": {
+    "closure": "certify the native-biased promoted stationary flow and its Poincare relation to the surviving cut",
+    "coherence": "check stationary mass, flux, side mass, boundary landmarks, and old/promoted cut lineage",
+    "draft": "weight native and derived transitions on the promoted automaton",
+    "emit": "emit promoted transfer artifacts, certificate, report, verifier command, and next target",
+    "witness": "emit promoted transfer-state, transfer-edge, side-flow, center, and observable tables"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PROMOTED_TRANSFER_OPERATOR_CERTIFIED",
+  "witness": {
+    "boundary_masses": {
+      "gate_mass_x1e12": 769362284,
+      "gate_state_id": 814,
+      "left_mass_x1e12": 2137117456,
+      "left_state_id": 335,
+      "right_mass_x1e12": 1624209267,
+      "right_state_id": 629
+    },
+    "center_table_sha256": "fd94083c21fef3d09a9a51ed8d3eed6168960eae4f4d3077dbb8cfac821284d7",
+    "cut_center": {
+      "center_code": 2,
+      "center_id": 3,
+      "center_radius_x1e12": 56537970000,
+      "center_x_x1e12": -24633024750,
+      "center_y_x1e12": 50889647250,
+      "distance_to_cut_center_x1e12": 0,
+      "distance_to_flow_center_x1e12": 196518833000,
+      "distance_to_gate_x1e12": 123672556000,
+      "distance_to_left_boundary_x1e12": 287542759000,
+      "distance_to_promoted_cut_center_x1e12": 17302382000,
+      "distance_to_right_boundary_x1e12": 269224739000,
+      "support_mass_x1e12": 0,
+      "support_state_count": 0
+    },
+    "edge_profile": {
+      "derived_edge_count": 845,
+      "derived_edge_weight": 845,
+      "native_edge_count": 1668,
+      "native_edge_weight": 5004,
+      "promoted_edge_count": 308,
+      "promoted_edge_weight": 704,
+      "promoted_only_edge_count": 12
+    },
+    "edge_table_sha256": "8c76b63897b98880d62e72ed57fc7534c949ba12319333389d7fb5b94b55c04d",
+    "mass_center": {
+      "center_code": 0,
+      "center_id": 0,
+      "center_radius_x1e12": 60341591000,
+      "center_x_x1e12": 60312974186,
+      "center_y_x1e12": 1858169836,
+      "distance_to_cut_center_x1e12": 196518833000,
+      "distance_to_flow_center_x1e12": 0,
+      "distance_to_gate_x1e12": 133061873000,
+      "distance_to_left_boundary_x1e12": 276856087000,
+      "distance_to_promoted_cut_center_x1e12": 205642834000,
+      "distance_to_right_boundary_x1e12": 97993795000,
+      "support_mass_x1e12": 1000000000000,
+      "support_state_count": 794
+    },
+    "observable_table_sha256": "ea2b33128de14ec52c938e4df524e433fc8c64b7f386a4583b53225740d5b28c",
+    "promoted_cut_center": {
+      "center_code": 4,
+      "center_id": 5,
+      "center_radius_x1e12": 56550082000,
+      "center_x_x1e12": -32092090000,
+      "center_y_x1e12": 46561889300,
+      "distance_to_cut_center_x1e12": 17302382000,
+      "distance_to_flow_center_x1e12": 205642834000,
+      "distance_to_gate_x1e12": 140177969000,
+      "distance_to_left_boundary_x1e12": 304758407000,
+      "distance_to_promoted_cut_center_x1e12": 0,
+      "distance_to_right_boundary_x1e12": 273764193000,
+      "support_mass_x1e12": 0,
+      "support_state_count": 0
+    },
+    "side_masses": {
+      "-1": 116772097781,
+      "1": 883227902219
+    },
+    "side_table_sha256": "0deb37e748985adfbdd386d9cf3719aa5dd4112aacbf9386632277148d4f772f",
+    "state_table_sha256": "45afc704cc43345b8dc84d9bc65eaa2abec3438ad2a4984aa140b8507a5dd7c0",
+    "surviving_cut_flow": {
+      "cut_edge_count": 6,
+      "cut_flux_x1e12": 1025816382,
+      "cut_weight": 6,
+      "old_cut_edge_count": 6,
+      "old_cut_flux_x1e12": 1025816382,
+      "promoted_cut_edge_count": 5,
+      "promoted_cut_flux_x1e12": 854846985,
+      "weighted_cut_conductance_x1e12": 4392387000
+    },
+    "top_stationary_mass_x1e12": 7608138143,
+    "top_stationary_state_id": 446,
+    "total_edge_weight": 5849,
+    "total_weighted_degree": 11698,
+    "transfer_edge_count": 2513,
+    "transfer_state_count": 794,
+    "weight_rule": {
+      "derived_edge_weight": 1,
+      "native_edge_weight": 3
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "717bce81d4057c453adab9a183a3d0e6c30321be0918914d47a047c19b89b4cc",
+  "checks": {
+    "boundary_masses_are_expected": true,
+    "center_table_shape_matches_codebook": true,
+    "edge_flux_sums_to_one": true,
+    "edge_table_shape_matches_codebook": true,
+    "flow_center_is_away_from_cut_center": true,
+    "flow_center_is_closer_to_right_than_gate": true,
+    "flow_center_is_inside_disk": true,
+    "observable_table_shape_matches_codebook": true,
+    "repaired_automaton_certificate_certified": true,
+    "repaired_automaton_report_certified": true,
+    "side_masses_are_expected": true,
+    "side_table_shape_matches_codebook": true,
+    "spectral_cut_flux_is_expected": true,
+    "state_table_shape_matches_codebook": true,
+    "stationary_mass_sums_to_one": true,
+    "transfer_counts_are_expected": true,
+    "transition_weight_profile_is_expected": true
+  },
+  "claim": "The repaired boundary automaton carries a native-biased reversible transfer operator on its 787-state dominant recurrent class. Native edges receive weight 3 and derived-involving edges receive weight 1, giving total edge weight 5,837 and total weighted degree 11,674. The six-edge spectral bottleneck carries undirected stationary flux 1027925304/1e12. Stationary mass is concentrated on the positive spectral side at 884872365946/1e12, while the negative side carries 115127634054/1e12. The Poincare mass center remains near the disk core and is closer to the right boundary than to the derived gate, while still separated from the cut midpoint.",
+  "closure_boundary": {
+    "certifies": [
+      "the native-biased reversible transfer operator on the dominant repaired recurrent class",
+      "the exact integer-scaled stationary distribution and undirected edge fluxes",
+      "the spectral-side stationary mass split and cut flux",
+      "the Poincare mass center comparison against cut, left, gate, and right landmarks"
+    ],
+    "does_not_certify_because_not_required": [
+      "alternative edge-weight schedules",
+      "stationary flow on smaller repaired recurrent classes",
+      "multi-window repair transitions outside the certified automaton",
+      "compiler integration of transfer-operator weights"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator.py",
+      "sha256": "f0c37506546af6b9056ee455c6036241b3300b875727ef4d94a56c2ab6fc06a3"
+    },
+    "repaired_automaton_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/signature_boundary_spine_aperture_closure_tail_repaired_automaton_certificate.json",
+      "sha256": "c0cccc7d56b8cb23d4474046142ed1562a89989a95ee5d2638565fb9b8fd4751"
+    },
+    "repaired_automaton_poincare": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_poincare.csv",
+      "sha256": "44f84939af15b06f92d3a568affa1177e8541f4cc360e721d9b73529b2d70d45"
+    },
+    "repaired_automaton_report": {
+      "certificate_sha256": "8ebee7dfc911d588f598134f2e7e83c39cd16114f9507536d6e4c0c99993311f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/report.json",
+      "sha256": "f9dc0037977c2d0792ed18966aad2c13a238a6a5b7f8627a1d5c46fac1d3c8df",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_REPAIRED_AUTOMATON_CERTIFIED"
+    },
+    "repaired_automaton_spectral_cut": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_spectral_cut.csv",
+      "sha256": "50999db732afa5912eb131e2c03c7282f4c8add3ea58b5c367cb93b035c8f9e4"
+    },
+    "repaired_automaton_states": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_states.csv",
+      "sha256": "37401647767656bba213e7e60e2df28224d14a207719dbc3bb2170d6dc8d71be"
+    },
+    "repaired_automaton_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/signature_boundary_spine_aperture_closure_tail_repaired_automaton_tables.npz",
+      "sha256": "be2c32a75a8f762d4b3771c63adb6c4dc4e35cdefdec2cbbe527a42058fa6bd1"
+    },
+    "repaired_automaton_transitions": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_transitions.csv",
+      "sha256": "fac48e3e591425753fac6941ac2979cb45d8b7c90b0b0b1f9eb1f4e788a313ed"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator.py",
+      "sha256": "fd0a41eb6879dcc0cda9bcc7c2ff1e05a3d722e40c97cda9cdbc350e55c55a7e"
+    }
+  },
+  "next_highest_yield_item": "Lift the transfer flow back to symbolic windows: identify the highest-mass recurrent windows and cut-edge windows, then search for the next local grammar move that reduces bottleneck flux without losing the left/right boundary merge.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/report.json",
+    "signature_boundary_spine_aperture_closure_tail_transfer_operator": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/signature_boundary_spine_aperture_closure_tail_transfer_operator.json",
+    "signature_boundary_spine_aperture_closure_tail_transfer_operator_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/signature_boundary_spine_aperture_closure_tail_transfer_operator_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_transfer_operator_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/signature_boundary_spine_aperture_closure_tail_transfer_operator_tables.npz",
+    "transfer_centers_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/aperture_closure_tail_transfer_centers.csv",
+    "transfer_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/aperture_closure_tail_transfer_edges.csv",
+    "transfer_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/aperture_closure_tail_transfer_observables.csv",
+    "transfer_side_flow_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/aperture_closure_tail_transfer_side_flow.csv",
+    "transfer_states_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/aperture_closure_tail_transfer_states.csv"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_transfer_operator@1",
+  "stage_protocol": {
+    "closure": "certify the native-biased stationary flow and its Poincare relation to the spectral bottleneck",
+    "coherence": "check stationary mass, flux, side mass, and boundary landmark consistency",
+    "draft": "weight native and derived transitions on the repaired automaton",
+    "emit": "emit transfer operator artifacts, certificate, report, verifier command, and next target",
+    "witness": "emit transfer-state, transfer-edge, side-flow, center, and observable tables"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_TRANSFER_OPERATOR_CERTIFIED",
+  "witness": {
+    "boundary_masses": {
+      "gate_mass_x1e12": 770943978,
+      "gate_state_id": 811,
+      "left_mass_x1e12": 2141511051,
+      "left_state_id": 332,
+      "right_mass_x1e12": 1627548398,
+      "right_state_id": 626
+    },
+    "center_table_sha256": "af66e00121a1ca531f6572634f7e2e1e5ada4631c6e6d25e220e02122f6b967e",
+    "cut_center": {
+      "center_code": 2,
+      "center_id": 3,
+      "center_radius_x1e12": 121020638000,
+      "center_x_x1e12": -4400616000,
+      "center_y_x1e12": 120940603250,
+      "distance_to_cut_center_x1e12": 0,
+      "distance_to_flow_center_x1e12": 294814140000,
+      "distance_to_gate_x1e12": 119429420000,
+      "distance_to_left_boundary_x1e12": 219007807000,
+      "distance_to_right_boundary_x1e12": 270334365000,
+      "support_mass_x1e12": 0,
+      "support_state_count": 0
+    },
+    "edge_profile": {
+      "derived_edge_count": 833,
+      "derived_edge_weight": 833,
+      "derived_only_edge_count": 746,
+      "native_edge_count": 1668,
+      "native_edge_weight": 5004
+    },
+    "edge_table_sha256": "d0ef2fdc81f28fbaa40c3c7ae2b0480ad73c391b2a7a770f070a6c7e3789df34",
+    "mass_center": {
+      "center_code": 0,
+      "center_id": 0,
+      "center_radius_x1e12": 49389559000,
+      "center_x_x1e12": 46510986546,
+      "center_y_x1e12": -16614954352,
+      "distance_to_cut_center_x1e12": 294814140000,
+      "distance_to_flow_center_x1e12": 0,
+      "distance_to_gate_x1e12": 192310698000,
+      "distance_to_left_boundary_x1e12": 132863678000,
+      "distance_to_right_boundary_x1e12": 41209484000,
+      "support_mass_x1e12": 1000000000000,
+      "support_state_count": 787
+    },
+    "observable_table_sha256": "7ec493cb38c1cc71ab6a7d6263ffbfa8e7fd696aa479d272505ec1e7093462e4",
+    "side_masses": {
+      "-1": 115127634054,
+      "1": 884872365946
+    },
+    "side_table_sha256": "b37f775d8ff866b85fb3b3696f4eb79a75cbcc0c9a4e94d1d2c178ccc61b2740",
+    "spectral_cut_flow": {
+      "cut_edge_count": 6,
+      "cut_flux_x1e12": 1027925304,
+      "cut_weight": 6,
+      "weighted_cut_conductance_x1e12": 4464286000
+    },
+    "state_table_sha256": "29c5e5771aa2ef7afc39f300c80fcd55cf3cd8776311fef6971636fc095b8122",
+    "top_stationary_mass_x1e12": 7623779339,
+    "top_stationary_state_id": 443,
+    "total_edge_weight": 5837,
+    "total_weighted_degree": 11674,
+    "transfer_edge_count": 2501,
+    "transfer_state_count": 787,
+    "weight_rule": {
+      "derived_edge_weight": 1,
+      "native_edge_weight": 3
+    }
+  }
+}

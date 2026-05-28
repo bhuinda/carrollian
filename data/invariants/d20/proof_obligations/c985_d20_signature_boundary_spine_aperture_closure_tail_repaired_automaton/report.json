@@ -1,0 +1,189 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8ebee7dfc911d588f598134f2e7e83c39cd16114f9507536d6e4c0c99993311f",
+  "checks": {
+    "boundary_path_is_on_one_spectral_side": true,
+    "derived_automaton_merges_native_boundary_classes": true,
+    "derived_transition_counts_are_expected": true,
+    "native_and_derived_state_counts_are_expected": true,
+    "native_recurrent_class_table_shape_matches_codebook": true,
+    "observable_table_shape_matches_codebook": true,
+    "poincare_embedding_is_inside_disk": true,
+    "poincare_table_shape_matches_codebook": true,
+    "recurrent_class_counts_are_expected": true,
+    "recurrent_class_table_shape_matches_codebook": true,
+    "skip_window_certificate_certified": true,
+    "skip_window_report_certified": true,
+    "spectral_cut_is_derived_bottleneck": true,
+    "spectral_cut_table_shape_matches_codebook": true,
+    "spectral_values_are_positive": true,
+    "state_and_transition_counts_are_expected": true,
+    "state_table_shape_matches_codebook": true,
+    "transition_table_shape_matches_codebook": true
+  },
+  "claim": "The skip-window grammar compiles into an explicit repaired boundary automaton with 846 states and 5,098 directed transitions. Native repair support alone has 13 recurrent classes and keeps the left and right boundary cells separated; adding derived repair support produces 22 repaired classes and merges the boundary cells with the derived gate inside a 787-state dominant class. The dominant class has normalized-Laplacian lambda_2 1918266000/1e12 and a six-edge spectral cut, all six edges touching derived-only support. The two-mode Poincare readout stays inside radius 0.85 and gives a finite hyperbolic diameter witness for the repaired boundary language.",
+  "closure_boundary": {
+    "certifies": [
+      "the explicit 846-state repaired boundary automaton for the certified grammar-good language",
+      "native-only and repaired recurrent class decompositions",
+      "the dominant repaired recurrent class spectral cut",
+      "the two-mode Poincare disk readout of the dominant repaired recurrent class"
+    ],
+    "does_not_certify_because_not_required": [
+      "boundary words outside the certified radius-three side union",
+      "multi-window repair closure beyond the skip-window grammar",
+      "compiler integration of repaired automaton transitions",
+      "optimality of the spectral embedding among all hyperbolic embeddings"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton.py",
+      "sha256": "13c150ee9ae6df22778238f64b423acf5df461eab48fa427ec1a0196a0e6ec9f"
+    },
+    "skip_window_cells": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar/aperture_closure_tail_skip_window_cells.csv",
+      "sha256": "566b6e275a43ef483c9f2352f693205f00ef26ca8d178344bf4d4fa3a15e4bf2"
+    },
+    "skip_window_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar/signature_boundary_spine_aperture_closure_tail_skip_window_grammar_certificate.json",
+      "sha256": "b01b0483771c194c62f2cbf00fc712a19c4596579bcb1e12c13e85166777f58c"
+    },
+    "skip_window_components": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar/aperture_closure_tail_skip_window_components.csv",
+      "sha256": "bf3d63b8e783509cf7292f0d9a198fdcf3335b7e6e63a619e9a11fccd20b35ae"
+    },
+    "skip_window_report": {
+      "certificate_sha256": "52f0160c67f04f62410ac320834edd32fe17dbf5b8777e5ae4569d5b54858015",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar/report.json",
+      "sha256": "7ab11e2605a794a1696898a6b052d199e15a3fca1832bc9f855e50ca55b8b3d0",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SKIP_WINDOW_GRAMMAR_CERTIFIED"
+    },
+    "skip_window_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar/signature_boundary_spine_aperture_closure_tail_skip_window_grammar_tables.npz",
+      "sha256": "41bb924e5d2217c1ebec4170da60c35bcd01d81a2387b361d0d56c16a4e23339"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton.py",
+      "sha256": "05e5bb68e8c4188da7ba708c555c697008f47bea437a57c97ca512d30e6ae564"
+    }
+  },
+  "next_highest_yield_item": "Use the repaired automaton as a transfer operator: weight native and derived transitions, compute the stationary flow over the dominant recurrent class, and compare its mass center against the Poincare spectral bottleneck.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/manifest.json",
+    "repaired_automaton_native_recurrent_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_native_recurrent_classes.csv",
+    "repaired_automaton_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_observables.csv",
+    "repaired_automaton_poincare_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_poincare.csv",
+    "repaired_automaton_recurrent_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_recurrent_classes.csv",
+    "repaired_automaton_spectral_cut_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_spectral_cut.csv",
+    "repaired_automaton_states_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_states.csv",
+    "repaired_automaton_transitions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/aperture_closure_tail_repaired_automaton_transitions.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/report.json",
+    "signature_boundary_spine_aperture_closure_tail_repaired_automaton": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/signature_boundary_spine_aperture_closure_tail_repaired_automaton.json",
+    "signature_boundary_spine_aperture_closure_tail_repaired_automaton_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/signature_boundary_spine_aperture_closure_tail_repaired_automaton_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_repaired_automaton_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/signature_boundary_spine_aperture_closure_tail_repaired_automaton_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton@1",
+  "stage_protocol": {
+    "closure": "certify the boundary merge, derived spectral bottleneck, and bounded disk readout",
+    "coherence": "compare native-only recurrence with derived-repaired recurrence",
+    "draft": "compile grammar-good words into an explicit transition automaton",
+    "emit": "emit automaton artifacts, certificate, report, verifier command, and next target",
+    "witness": "emit state, transition, recurrent-class, spectral, and Poincare tables"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_REPAIRED_AUTOMATON_CERTIFIED",
+  "witness": {
+    "boundary_class_profile": {
+      "gate_in_merged_recurrent_class": 1,
+      "gate_state_id": 811,
+      "left_right_same_native_recurrent_class": 0,
+      "left_right_same_repaired_recurrent_class": 1,
+      "left_state_id": 332,
+      "right_state_id": 626
+    },
+    "derived_only_state_count": 284,
+    "directed_transition_count": 5098,
+    "merged_derived_only_state_count": 255,
+    "merged_native_state_count": 532,
+    "merged_recurrent_class_id": 0,
+    "merged_recurrent_class_size": 787,
+    "native_recurrent_class_sizes": [
+      347,
+      185,
+      15,
+      4,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "native_recurrent_class_table_sha256": "8338cf977b6be7e3a5726a0337c27497f631a318d47f5e41925dbde5b0fab17a",
+    "native_state_count": 562,
+    "observable_table_sha256": "10961f3f0741b055e1067b8d43b25a780c08790e7e9159c2a3e76e6c44b4b4f6",
+    "poincare_geometry": {
+      "gate_right_poincare_distance_x1e12": 160588193000,
+      "left_gate_poincare_distance_x1e12": 99585108000,
+      "left_right_poincare_distance_x1e12": 92061502000,
+      "poincare_diameter_state_ids": [
+        19,
+        719
+      ],
+      "poincare_diameter_x1e12": 3715469012000,
+      "poincare_radius_max_x1e12": 850000000000,
+      "point_count": 787
+    },
+    "poincare_table_sha256": "000d9ed829c2ee8b0aeffefe44cd2461d53e675fc948ee8c5ecdf5c068ca1027",
+    "recurrent_class_table_sha256": "b8ba0ff81c80124eb11fe76f6f793a3eceab057987c675d307b0a18beed12c15",
+    "repaired_recurrent_class_sizes": [
+      787,
+      15,
+      11,
+      6,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "spectral_cut": {
+      "cut_conductance_x1e12": 4464286000,
+      "cut_edge_count": 6,
+      "derived_cut_edge_count": 6,
+      "lambda_2_x1e12": 1918266000,
+      "lambda_3_x1e12": 8295102000,
+      "negative_state_count": 194,
+      "negative_volume": 1344,
+      "positive_state_count": 593,
+      "positive_volume": 3658
+    },
+    "spectral_cut_table_sha256": "071ff4f6fa48e038245367c62fe9b9ff651583fdc0918f949afa4a7c944b0335",
+    "state_count": 846,
+    "state_table_sha256": "fa9b0a15a2a2da1ed66c262bd7f1601a807dd85fc50642c07f8071705ae7c221",
+    "transition_edge_profile": {
+      "boundary_path": 2,
+      "derived_involving": 855,
+      "derived_only": 766,
+      "native": 1694
+    },
+    "transition_table_sha256": "a3ec637ce87a1deaa1d840fcd826cc4a6a9564bd45e245e7239a1175904abc8a",
+    "undirected_edge_count": 2549
+  }
+}

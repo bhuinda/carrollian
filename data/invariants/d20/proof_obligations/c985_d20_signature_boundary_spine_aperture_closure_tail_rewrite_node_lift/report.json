@@ -1,0 +1,255 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ca8c936408e47da8f3bb485b41cb79425f20b6bea095a544510ba55d7fae52a4",
+  "checks": {
+    "bridge_table_shape_matches_codebook": true,
+    "closure_outlier_certificate_certified": true,
+    "closure_outlier_report_certified": true,
+    "common_prefix_and_shared_tail_variation_are_identical": true,
+    "delta_penalty_is_rank104_prefix_tail_interaction": true,
+    "delta_table_shape_matches_codebook": true,
+    "endpoint_split_certificate_certified": true,
+    "endpoint_split_report_certified": true,
+    "endpoint_split_schema_available": true,
+    "fixed_tail_atom_sequence_survives_rewrite_lift": true,
+    "observable_table_shape_matches_codebook": true,
+    "rank104_uniformly_doubles_every_template": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "selected_outlier_traces_share_rewrite_tail_54_45_29_28_34_44": true,
+    "six_templates_are_uniform_not_specific_delta_drivers": true,
+    "symbolic_associativity_certificate_certified": true,
+    "symbolic_associativity_report_certified": true,
+    "tail_templates_all_lift_through_node54_node45_windows": true,
+    "template_table_shape_matches_codebook": true,
+    "variation_advantage_localizes_to_pre_node54_bridge": true,
+    "witness_table_shape_matches_codebook": true
+  },
+  "claim": "Lifting the six normalized closure-tail templates back to rewrite nodes 54 and 45 shows that no single tail template explains the rank104 delta_twice increase. All six templates use the same node54/node45 rewrite lift and are uniformly doubled from two to four prefix lifts. The variation advantage of witness 23 is localized to its pre-54 bridge 27->31->50->54, whose signature variation is 22 instead of 74 for witness 9's 27->28->34->54. That low-variation bridge creates the larger prefix-tail four-point hyperbolicity witnesses against the shared tail.",
+  "closure_boundary": {
+    "certifies": [
+      "rewrite-node lift of the six normalized carrier-tail templates through nodes 54 and 45",
+      "variation decomposition into common prefix, divergent pre-54 bridge, and shared tail",
+      "best four-point delta witnesses for the two closure-rich outliers",
+      "the statement that the rank104 delta penalty is prefix-tail geometry, not template-specific tail geometry"
+    ],
+    "does_not_certify_because_not_required": [
+      "closure-rich outliers outside witnesses 9 and 23",
+      "edit costs above three",
+      "non-first-return carrier paths",
+      "categorical pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "closure_outlier_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry/signature_boundary_spine_aperture_closure_rich_outlier_geometry_certificate.json",
+      "sha256": "ed01e3a8baebb53ffd81ad7e0b41a16db0c005e5337252c833f3d0b055304989"
+    },
+    "closure_outlier_report": {
+      "certificate_sha256": "1a60362801c0de071f42cdbc986f1b22d6836b90cfe4912d2a4c77898874edd1",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry/report.json",
+      "sha256": "a40755a1be7489f74a589836d46fa3b9eb0c500079637fc693785d7502086ba4",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_RICH_OUTLIER_GEOMETRY_CERTIFIED"
+    },
+    "closure_outlier_selected_branches": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_rich_outlier_geometry/aperture_closure_outlier_selected_branches.csv",
+      "sha256": "77564167caf98cedf83f69ede6593f29fc4370d8f61e5ec8e4f3e99fc190751f"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift.py",
+      "sha256": "c4f3af73501626c852fdb859477e5958659c38e6487777d369becdcb87677320"
+    },
+    "endpoint_split_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/signature_boundary_spine_aperture_closure_tail_endpoint_split_certificate.json",
+      "sha256": "89593d50402bb69f0524b1d7223f6cddd9dd66e1083b0d601eae6f747e64065a"
+    },
+    "endpoint_split_closed_paths": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/aperture_closure_tail_closed_paths.csv",
+      "sha256": "5bc8e6a9e1407a0565be99f5ba7480520d27b465c4bac3ea38a83a415924ee98"
+    },
+    "endpoint_split_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/signature_boundary_spine_aperture_closure_tail_endpoint_split.json",
+      "sha256": "3f9c9c191522caf8a7fcfaf41f7eda78129cfc31b9d51b43d7cd4ce6ed624d63"
+    },
+    "endpoint_split_report": {
+      "certificate_sha256": "9eea56530ed6e67b48789352526768a2a76c2fe5a655b2d1a917544b62e82147",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/report.json",
+      "sha256": "a32bc0dfeb5d43c117db0c174c6b7d355475620631d995c8b4b21e3112f081fd",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ENDPOINT_SPLIT_CERTIFIED"
+    },
+    "endpoint_split_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/signature_boundary_spine_aperture_closure_tail_endpoint_split_tables.npz",
+      "sha256": "0ef12558d2dd8e510cb33ea26fa3c6b2d9a2840757cc03f16c51de90603056f9"
+    },
+    "endpoint_split_templates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/aperture_closure_tail_templates.csv",
+      "sha256": "286a7e7979eb78b4166c9c8d2d032b2140400123d32c5e3336028d00e4a8cc7f"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "symbolic_associativity_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_certificate.json",
+      "sha256": "4d73dcd883287c2a2a1004a6afde2104aaa70864f3fe5e6b3a76c7270a14efda"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "symbolic_associativity_report": {
+      "certificate_sha256": "99c39a5799106e7c60b6274d43b8e70b49d4a648019857db343ceeba9d29a881",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/report.json",
+      "sha256": "cab2c9c5beaf89df5c2a2c0078dc7efb0fa49e7c5be42710414abde6ee9317a3",
+      "status": "C985_D20_SYMBOLIC_ASSOCIATIVITY_CERTIFIED"
+    },
+    "symbolic_associativity_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity_tables.npz",
+      "sha256": "d619a743793056830ff61a902593ddbdb434ff417775e190a682e68cd4f1cf2f"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift.py",
+      "sha256": "0b96a4fc581fcd444c35fdb039410c4b8d6677a29c2f926ec4f2a7b845c6b3f1"
+    }
+  },
+  "next_highest_yield_item": "Use the prefix-tail diagnosis to search for a rank104 bridge that keeps the 22-variation pre-54 route but inserts a chord equivalent to the baseline 27->28->34 shortcut, aiming to retain 24 closure paths while lowering delta_twice from 4.",
+  "outputs": {
+    "aperture_closure_tail_rewrite_bridges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/aperture_closure_tail_rewrite_bridges.csv",
+    "aperture_closure_tail_rewrite_delta_witnesses_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/aperture_closure_tail_rewrite_delta_witnesses.csv",
+    "aperture_closure_tail_rewrite_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/aperture_closure_tail_rewrite_observables.csv",
+    "aperture_closure_tail_rewrite_templates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/aperture_closure_tail_rewrite_templates.csv",
+    "aperture_closure_tail_rewrite_witness_metrics_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/aperture_closure_tail_rewrite_witness_metrics.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/report.json",
+    "signature_boundary_spine_aperture_closure_tail_rewrite_node_lift": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/signature_boundary_spine_aperture_closure_tail_rewrite_node_lift.json",
+    "signature_boundary_spine_aperture_closure_tail_rewrite_node_lift_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/signature_boundary_spine_aperture_closure_tail_rewrite_node_lift_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_rewrite_node_lift_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/signature_boundary_spine_aperture_closure_tail_rewrite_node_lift_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift@1",
+  "stage_protocol": {
+    "closure": "certify that template-specific delta responsibility is zero and the tradeoff is prefix-tail geometry",
+    "coherence": "compare the common 54->45->29->28->34->44 tail against the divergent pre-54 bridges",
+    "draft": "take the certified six carrier-tail templates and the closure-rich outlier traces",
+    "emit": "emit witness metrics, bridge rows, template lift rows, delta witnesses, certificate, report, verifier command, and next target",
+    "witness": "rebuild trace windows, signatures, bridge variation, and best delta witnesses"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_REWRITE_NODE_LIFT_CERTIFIED",
+  "witness": {
+    "baseline_outlier": {
+      "bridge": [
+        27,
+        28,
+        34,
+        54
+      ],
+      "bridge_variation": 74,
+      "delta_twice": 2,
+      "trace": [
+        48,
+        42,
+        27,
+        28,
+        34,
+        54,
+        45,
+        29,
+        28,
+        34,
+        44
+      ],
+      "trace_signatures": [
+        132,
+        183,
+        146,
+        169,
+        177,
+        134,
+        148,
+        169,
+        169,
+        177,
+        185
+      ],
+      "variation": 213,
+      "witness_id": 9
+    },
+    "bridge_table_sha256": "73a486e50df11779832966da5034da325e05789da42ba5168ddf0021bc65fe41",
+    "delta_witness_table_sha256": "14c08b3a979e649d001dab2a4d4f832f33facbdd4cd48017a5ebc3635ee21c15",
+    "observable_table_sha256": "9cb95102baa62f3c37ce53f312335d1b07855aeb90d7fbae7779ad772198ccdf",
+    "rank104_outlier": {
+      "bridge": [
+        27,
+        31,
+        50,
+        54
+      ],
+      "bridge_variation": 22,
+      "delta_twice": 4,
+      "high_delta_prefix_tail_witness_count": 18,
+      "trace": [
+        48,
+        42,
+        27,
+        31,
+        50,
+        54,
+        45,
+        29,
+        28,
+        34,
+        44
+      ],
+      "trace_signatures": [
+        132,
+        183,
+        146,
+        151,
+        146,
+        134,
+        148,
+        169,
+        169,
+        177,
+        185
+      ],
+      "variation": 161,
+      "witness_id": 23
+    },
+    "shared_rewrite_tail": [
+      54,
+      45,
+      29,
+      28,
+      34,
+      44
+    ],
+    "shared_symbol_tail": [
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "template_specific_delta_driver_count": 0,
+    "template_table_sha256": "a7034bed90e478a2f0d2ed1533d0a5b0a038d3c4306a898522369cc1963a6fd3",
+    "witness_table_sha256": "11b04ee77b31e6a38a2a9cd6d30a9c3bd60f4aae3f7a5e4da2df81a6c48233c2"
+  }
+}

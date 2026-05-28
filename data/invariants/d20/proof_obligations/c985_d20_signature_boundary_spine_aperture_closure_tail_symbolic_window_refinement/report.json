@@ -1,0 +1,200 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b999dfef68fda67102ed796ff5b54fd5c112c90df30fc266b96ea1d0508f09b7",
+  "checks": {
+    "gate_carrier_profile_is_unchanged": true,
+    "gate_window_pair_is_27_to_28": true,
+    "native_trace_insertion_certificate_certified": true,
+    "native_trace_insertion_report_certified": true,
+    "neutral_refinement_preserves_direct_variation": true,
+    "neutral_split_is_node41": true,
+    "observable_table_shape_matches_codebook": true,
+    "selected_refinement_preserves_trace_metrics": true,
+    "selected_repair_split_is_node31": true,
+    "selected_trace_matches_native_insertion": true,
+    "split_table_shape_matches_codebook": true,
+    "subwindow_table_shape_matches_codebook": true,
+    "subwindows_are_expected_nodes": true,
+    "two_skip_windows_both_valid_rewrite_splits": true
+  },
+  "claim": "The symbolic window-refinement layer lifts the native trace insertion to an associativity-window refinement on the fixed gate word. The adjacent gate windows 3,2,1 and 2,1,4 span block 3,2,1,4. Its ordered three-symbol subwindows map to nodes 27, 41, 31, and 28. The two skip windows split 27->28 through existing rewrite edges; 3,2,4 gives neutral node 41, while 3,1,4 gives repair node 31. The selected 31 refinement exactly matches the certified trace insertion 48,42,27,31,28,34,29,45,29,28,34,44, preserves variation 185 and delta_twice 2, and leaves the gate word's 30 closed paths and 9 templates unchanged.",
+  "closure_boundary": {
+    "certifies": [
+      "the fixed gate word's local 27->28 four-symbol span",
+      "all ordered three-symbol subwindows of that span",
+      "valid rewrite splits through the two skip windows",
+      "node31 as the unique repair skip-window refinement"
+    ],
+    "does_not_certify_because_not_required": [
+      "global insertion of derived windows into the normal language compiler",
+      "other four-symbol spans outside the fixed gate seam",
+      "multi-window refinements beyond the declared local block",
+      "compiler lowering behavior"
+    ]
+  },
+  "inputs": {
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement.py",
+      "sha256": "afe6391bb3a6f4aec95d67f6fed372d8df123ffd30944b4f9eec44cfc141e6f8"
+    },
+    "native_trace_insertion_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/signature_boundary_spine_aperture_closure_tail_native_trace_insertion_certificate.json",
+      "sha256": "8b7a08f61b0e71cdb7df67e71378d1b8258b5b1b62a3fdb3e035364ea025912f"
+    },
+    "native_trace_insertion_report": {
+      "certificate_sha256": "8045e1e47e35823b66b4a815ab6b9f3d75ac8d3411862d0758dae27ae867a315",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/report.json",
+      "sha256": "602f70e4c746ccde2a3e42708a8ba46c607f928c6c292aa645f740d2de674e7d",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_NATIVE_TRACE_INSERTION_CERTIFIED"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement.py",
+      "sha256": "adb2718272b0bd669d8105735db56e7ce5d730fb6b211e69bd57bbd296d65dba"
+    }
+  },
+  "next_highest_yield_item": "Promote skip-window refinement into a reusable corridor grammar: enumerate all four-symbol spans whose ordered subwindows contain a repair split, then test whether this derived-window rule closes the boundary path language beyond the gate seam.",
+  "outputs": {
+    "aperture_closure_tail_symbolic_window_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/aperture_closure_tail_symbolic_window_observables.csv",
+    "aperture_closure_tail_symbolic_window_splits_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/aperture_closure_tail_symbolic_window_splits.csv",
+    "aperture_closure_tail_symbolic_window_subwindows_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/aperture_closure_tail_symbolic_window_subwindows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/report.json",
+    "signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement.json",
+    "signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement@1",
+  "stage_protocol": {
+    "closure": "certify node31 as the unique repair skip-window refinement of the 27->28 gate span",
+    "coherence": "compare repair and neutral skip-window refinements against direct variation and gate profile",
+    "draft": "localize the native trace insertion to the overlapping gate windows 27 and 28",
+    "emit": "emit subwindow, split, observable tables, certificate, report, verifier command, and next target",
+    "witness": "enumerate ordered subwindows of the four-symbol block and split the trace through each skip window"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SYMBOLIC_WINDOW_REFINEMENT_CERTIFIED",
+  "witness": {
+    "gate_profile": {
+      "closed_paths": 30,
+      "templates": 9
+    },
+    "gate_trace": [
+      48,
+      42,
+      27,
+      28,
+      34,
+      29,
+      45,
+      29,
+      28,
+      34,
+      44
+    ],
+    "gate_word": [
+      2,
+      1,
+      4,
+      5,
+      1,
+      2,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "local_block": [
+      3,
+      2,
+      1,
+      4
+    ],
+    "local_window_ranks": [
+      1,
+      2
+    ],
+    "neutral_refinement_node": 41,
+    "observable_table_sha256": "304c2220238e33bd1b747fe6db24c8061de7240d0166ed7dcbcfd837a5e7b191",
+    "selected_refinement": {
+      "delta_twice": 2,
+      "node": 31,
+      "symbols": [
+        3,
+        1,
+        4
+      ],
+      "trace": [
+        48,
+        42,
+        27,
+        31,
+        28,
+        34,
+        29,
+        45,
+        29,
+        28,
+        34,
+        44
+      ],
+      "variation": 185
+    },
+    "split_table_sha256": "a0e283e95f186b3a921418a303de2a154f01c67cbac34f3c1ddbf9811f6f0099",
+    "subwindow_nodes": [
+      {
+        "node": 27,
+        "symbols": [
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "node": 41,
+        "symbols": [
+          3,
+          2,
+          4
+        ]
+      },
+      {
+        "node": 31,
+        "symbols": [
+          3,
+          1,
+          4
+        ]
+      },
+      {
+        "node": 28,
+        "symbols": [
+          2,
+          1,
+          4
+        ]
+      }
+    ],
+    "subwindow_table_sha256": "ae56ed0abf60fb5f83d307e351ecbfc2c5a6dcc2b7a41e9564c362547d80463c"
+  }
+}

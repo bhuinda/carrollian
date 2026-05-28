@@ -1,0 +1,163 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8045e1e47e35823b66b4a815ab6b9f3d75ac8d3411862d0758dae27ae867a315",
+  "checks": {
+    "accepted_candidates_are_31_28_only": true,
+    "candidate_table_shape_matches_codebook": true,
+    "gate_profile_is_preserved_target": true,
+    "insertion_search_counts_are_expected": true,
+    "observable_table_shape_matches_codebook": true,
+    "selected_insertion_is_27_31_28": true,
+    "substitution_search_has_no_repair_realization": true,
+    "summary_table_shape_matches_codebook": true,
+    "virtual_graft_certificate_certified": true,
+    "virtual_graft_report_certified": true
+  },
+  "claim": "The native trace-insertion layer realizes the virtual 31--28 repair edge without changing the gate word. The original gate trace has variation 185, delta_twice 2, 30 closed paths, 9 templates, and no native repair edge. Exhausting 495 one-node substitutions gives 49 valid rewrite paths but zero native repair realizations. Exhausting 540 one-node insertions gives 57 valid rewrite paths, 4 native repair candidates, and 3 accepted delta2/variation<=223 candidates. Exactly one insertion preserves variation 185: insert existing rewrite node 31 after trace rank 2, turning 27->28 into 27->31->28. The carrier profile remains 30 closed paths and 9 templates because the word is unchanged.",
+  "closure_boundary": {
+    "certifies": [
+      "the fixed no-repair gate word and its carrier closure/template profile",
+      "all one-node substitutions of internal gate trace nodes",
+      "all one-node insertions into gate trace edges",
+      "native 31--28 trace insertion through existing rewrite-complex edges"
+    ],
+    "does_not_certify_because_not_required": [
+      "a word-level sliding-window realization of the inserted trace node",
+      "multi-node trace insertions",
+      "native 50--34 realization beyond the exhausted one-node insertion space",
+      "compiler lowering behavior"
+    ]
+  },
+  "inputs": {
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion.py",
+      "sha256": "abda4cdc22981a2116f340cb05bcb226d5ca27a6fede5782b6c21ae7a0b2a6a1"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion.py",
+      "sha256": "06a6a9629739c036a6e823016370ec3bd99af4d0015d261efe59c02659407def"
+    },
+    "virtual_graft_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge_certificate.json",
+      "sha256": "f699b2aebfcaee6dce1e7a15813fae67fadf964a86268ba3c2a1ec55f98a5c52"
+    },
+    "virtual_graft_report": {
+      "certificate_sha256": "b03551aa252264cdd76af9f2b2ca57ae20a77487ed7050a40b8ac8532e3ce2fc",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_virtual_graft_bridge/report.json",
+      "sha256": "399fdd62ecbbbe899aff70aa19f35672c51dec5e659cefda07b1d46cc46333a5",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_VIRTUAL_GRAFT_BRIDGE_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Lift the native trace insertion back to symbols: search for the minimal word augmentation or associativity-window refinement that creates canonical node 31 between the gate's 27 and 28 windows while preserving the 30-closure, 9-template carrier profile.",
+  "outputs": {
+    "aperture_closure_tail_native_trace_insertion_candidates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/aperture_closure_tail_native_trace_insertion_candidates.csv",
+    "aperture_closure_tail_native_trace_insertion_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/aperture_closure_tail_native_trace_insertion_observables.csv",
+    "aperture_closure_tail_native_trace_insertion_summary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/aperture_closure_tail_native_trace_insertion_summary.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/report.json",
+    "signature_boundary_spine_aperture_closure_tail_native_trace_insertion": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/signature_boundary_spine_aperture_closure_tail_native_trace_insertion.json",
+    "signature_boundary_spine_aperture_closure_tail_native_trace_insertion_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/signature_boundary_spine_aperture_closure_tail_native_trace_insertion_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_native_trace_insertion_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion/signature_boundary_spine_aperture_closure_tail_native_trace_insertion_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_native_trace_insertion@1",
+  "stage_protocol": {
+    "closure": "certify the unique variation-preserving native 31--28 trace insertion",
+    "coherence": "compare accepted traces against the gate's variation, delta, and closure/template profile",
+    "draft": "treat the virtual repair edge as a trace-level realization problem on the fixed gate word",
+    "emit": "emit operation summaries, accepted candidates, observables, certificate, report, verifier command, and next target",
+    "witness": "enumerate one-node substitutions and insertions against the rewrite-complex edge set"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_NATIVE_TRACE_INSERTION_CERTIFIED",
+  "witness": {
+    "candidate_table_sha256": "18ed7e04785c9faca4e1ebf305240fffaa950e79d53887c7e5da6cafbf172e4b",
+    "gate_profile": {
+      "closed_paths": 30,
+      "delta_twice": 2,
+      "templates": 9,
+      "variation": 185
+    },
+    "gate_trace": [
+      48,
+      42,
+      27,
+      28,
+      34,
+      29,
+      45,
+      29,
+      28,
+      34,
+      44
+    ],
+    "gate_word": [
+      2,
+      1,
+      4,
+      5,
+      1,
+      2,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "insertion_summary": {
+      "attempt_count": 540,
+      "delta2_variation_le223_count": 3,
+      "operation_code": 1,
+      "repair_edge_candidate_count": 4,
+      "selected_realization_count": 1,
+      "valid_rewrite_path_count": 57,
+      "variation185_count": 1
+    },
+    "observable_table_sha256": "fbeb4c40ef6f5fe73ef2cc7326fe17204bcbfc50e57cd04d79d19c4d060ad270",
+    "selected_insert_after_trace_rank": 2,
+    "selected_inserted_node_id": 31,
+    "selected_trace": [
+      48,
+      42,
+      27,
+      31,
+      28,
+      34,
+      29,
+      45,
+      29,
+      28,
+      34,
+      44
+    ],
+    "substitution_summary": {
+      "attempt_count": 495,
+      "delta2_variation_le223_count": 0,
+      "operation_code": 0,
+      "repair_edge_candidate_count": 0,
+      "selected_realization_count": 0,
+      "valid_rewrite_path_count": 49,
+      "variation185_count": 0
+    },
+    "summary_table_sha256": "87307cdba40485aea56c7dcb83364e4e4b70102355edc7b637b15e6696ca52af"
+  }
+}

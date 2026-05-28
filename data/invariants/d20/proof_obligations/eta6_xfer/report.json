@@ -1,0 +1,148 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7ab83063b02d3715ed264ef87e386a32d15c5f5c2000672b7e5a5812d2fedcb9",
+  "checks": {
+    "classification_is_preserved_not_killed": true,
+    "face31_carrier_is_geometrically_transformed": true,
+    "h6_face_source_counts_are_preserved": true,
+    "holonomy_pairing_survives_transfer": true,
+    "input_certificates_available": true,
+    "k4_eta6_chain_transfers_by_identity": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The face-31 replacement preserves the abstract eta6 seam class under the H6/K4 source-label transfer: eta6 remains [1,1,1,1,1,1], the dual holonomy remains [0,0,1,0,1,1], and the pairing remains 1. The geometric carrier is transformed from the old face-31 hexagon to the first-hit cap hexagon, so eta6 is preserved as a class but moved as a carrier. It is not killed.",
+  "closure_boundary": {
+    "certifies": [
+      "eta6 class preservation under the face-31 replacement source-label transfer",
+      "nontrivial holonomy pairing remains 1 after transfer",
+      "the geometric carrier changes from the old face-31 cycle to the cap cycle",
+      "eta6 is not killed by the certified replacement"
+    ],
+    "does_not_certify_because_not_required": [
+      "global automaton closure after repeated surgeries",
+      "C985 associator data on the replacement carrier",
+      "that future cuts preserve eta6"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_xfer.py",
+      "sha256": "65acf8f1b980a13eb6806346cd708fafcf5465fa698b9f09bc0da09f2a9c9606"
+    },
+    "holonomy_report": {
+      "certificate_sha256": "00093a73d4db7fef699e567e76690d4ac062c8ed57c0fb9ed520d971e314a517",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/report.json",
+      "sha256": "59440c50f11713b453d5d6ddef2772460f5c848dba28cd6fffc11f9d4e210737",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_RELATIVE_HOLONOMY_CERTIFIED"
+    },
+    "repl_faces": {
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/faces.csv",
+      "sha256": "7d79ce65303eaf46561faa563701c8945392edbf0d05763b0fdb8d5e2e2a7729"
+    },
+    "repl_report": {
+      "certificate_sha256": "571cc28c834a9e525e923766265b8f221b59287e56af721f7c22a5b0bf9e4a78",
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/report.json",
+      "sha256": "ddb485d706634dd7666ef9bc46be249b8a6e593bd70d02d934ad0e8c3826c230",
+      "status": "ETA6_REPL_CERTIFIED"
+    },
+    "repl_verts": {
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/verts.csv",
+      "sha256": "b3dbb9cf0d7ba839edd52889cc046810ae5c0a6f9760a9a96defb98f92173e5b"
+    },
+    "truncated_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_eta6_truncated_skeleton/eta6_truncated_skeleton_tables.npz",
+      "sha256": "ad99096ae51b0e59eac8236740b5b450edc030aa79a8a235d1e2e35e310f43a2"
+    },
+    "validator": {
+      "path": "src/certify_eta6_xfer.py",
+      "sha256": "931cdf265251634ce4e50498757811d36d10764aff3a7f60be48a41fa4417fbc"
+    }
+  },
+  "next_highest_yield_item": "Iterate the same xfer/repl test on the next support-discriminant hit to see whether eta6 remains class-preserved under repeated cuts.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_xfer/cert.json",
+    "cycles_csv": "data/invariants/d20/proof_obligations/eta6_xfer/cycles.csv",
+    "edges_csv": "data/invariants/d20/proof_obligations/eta6_xfer/edges.csv",
+    "labels_csv": "data/invariants/d20/proof_obligations/eta6_xfer/labels.csv",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_xfer/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_xfer/obs.csv",
+    "patch_csv": "data/invariants/d20/proof_obligations/eta6_xfer/patch.csv",
+    "report": "data/invariants/d20/proof_obligations/eta6_xfer/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_xfer/tables.npz",
+    "xfer": "data/invariants/d20/proof_obligations/eta6_xfer/xfer.json"
+  },
+  "schema": "eta6.xfer.report@1",
+  "stage_protocol": {
+    "closure": "classify the face-31 replacement as class-preserving and carrier-transforming",
+    "coherence": "check identity transfer, holonomy pairing, label counts, and geometric carrier change",
+    "draft": "start from eta6 holonomy and eta6_repl",
+    "emit": "emit short xfer artifacts, hashes, verifier command, and next target",
+    "witness": "compare K4/H6 chain data, source-label counts, and old/new face-31 cycles"
+  },
+  "status": "ETA6_XFER_CERTIFIED",
+  "witness": {
+    "classification": "preserved_class_transformed_carrier",
+    "cycle_table_sha256": "52413c5c9f39f76152baddc02b67c6095b83290785ffe357c2befe479c8329f2",
+    "edge_table_sha256": "f7e1606837a2904690a14b7f19aff783ca5286fe11fdb089f6d3c31e8d6520a7",
+    "eta6_after": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "eta6_before": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "holonomy_after": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "holonomy_before": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "holonomy_eta_pairing_after": 1,
+    "label_table_sha256": "6b718d3907df7a319fc51c3f634a6f0131c60fb6032d534c777a36a620a2cec7",
+    "new_cap_cycle": {
+      "cycle_id": 1,
+      "cycle_type_code": 1,
+      "label_mask": 56,
+      "source_id": 19,
+      "v0": 42,
+      "v1": 40,
+      "v2": 51,
+      "v3": 50,
+      "v4": 56,
+      "v5": 58
+    },
+    "observable_table_sha256": "cbc9d616a2c7f86c1a3d396fc9ddc74e02e8a7f0c0e09c92a96f407beb677a8c",
+    "old_face31_cycle": {
+      "cycle_id": 0,
+      "cycle_type_code": 0,
+      "label_mask": 56,
+      "source_id": 19,
+      "v0": 43,
+      "v1": 53,
+      "v2": 54,
+      "v3": 59,
+      "v4": 57,
+      "v5": 44
+    },
+    "patch_table_sha256": "2af787695773dc7f250158abb54bf18e296d106329804e89587684db2cd82fd4"
+  }
+}

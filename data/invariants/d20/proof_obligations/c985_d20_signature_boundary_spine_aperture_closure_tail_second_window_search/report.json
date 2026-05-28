@@ -1,0 +1,147 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e438ce3e9ae52796cf265fbd62fc222e557dc23e1e406de9787f6efffe9c8c96",
+  "checks": {
+    "candidate_word_witness_is_expected": true,
+    "cut_edge_ranking_is_expected": true,
+    "promoted_transfer_certificate_certified": true,
+    "promoted_transfer_report_certified": true,
+    "promoted_window_certificate_certified": true,
+    "promoted_window_report_certified": true,
+    "selected_second_window_is_expected": true,
+    "table_shapes_match_codebooks": true,
+    "target_candidate_stats_are_expected": true,
+    "target_window_search_counts_are_expected": true
+  },
+  "claim": "Ranking the six surviving promoted-transfer cut edges isolates a single old cut edge not touching 5,5,2,5 support: transfer edge 2447 between states 797 and 828. Its endpoint one-edit neighborhood has 211 virtual words; after metric, closure, and current-support filters, three remain. The best clean negative second-window rule is block 1,4,5,5. It contributes one negative-side virtual word, predicts target-edge cut flux 170969397/1e12 -> 170940171/1e12, and lowers the one-edge negative-side conductance from 732064422/1e12 to 730994152/1e12.",
+  "closure_boundary": {
+    "certifies": [
+      "the ranked six-edge promoted-transfer cut witness",
+      "the unique unpromoted old-cut target edge",
+      "the target endpoint virtual-neighbor metric/closure/support filter",
+      "the selected clean second-window candidate block and predicted local effect"
+    ],
+    "does_not_certify_because_not_required": [
+      "global promotion of the second-window rule",
+      "fresh spectral recomputation after adding block 1,4,5,5",
+      "multi-window interactions with blocks other than the selected target-local block",
+      "compiler integration of the second-window rule"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search.py",
+      "sha256": "8b9fdbbac6ea29a3d003c8eb773cdd83511828d5f386c8a968615bf6491267ee"
+    },
+    "promoted_transfer_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator_certificate.json",
+      "sha256": "0e29facfd4efd22ed3d52ac29bc17e1e0d4126426575976f085c2c35e8b2aeb1"
+    },
+    "promoted_transfer_report": {
+      "certificate_sha256": "c91275c763fbd2a4dcc016ba0d7edbf56804341dc00ea82908547bc64224bab9",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/report.json",
+      "sha256": "03d2cea9a6edf145eb0d0a7826c4cb95d5c6aa83886b2fe66b7d0b401e260ba5",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PROMOTED_TRANSFER_OPERATOR_CERTIFIED"
+    },
+    "promoted_transfer_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator/signature_boundary_spine_aperture_closure_tail_promoted_transfer_operator_tables.npz",
+      "sha256": "801cea9969fab7a6d6464144f6469724769e0e29669cc5eb08e50aaf760e131e"
+    },
+    "promoted_window_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/signature_boundary_spine_aperture_closure_tail_promoted_window_certificate.json",
+      "sha256": "6104626a5320821c10a480e7866917c0d07ee9cc4e941c936ec2c5c310f05890"
+    },
+    "promoted_window_report": {
+      "certificate_sha256": "cf8cbf3a1eb6ccfe0af8ad7fff471cbfef330af00c5961d0545ae90aaa2b15b7",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/report.json",
+      "sha256": "2009c17834964a8da4438f5231e13e8a8d78207d4560db6bed5aa12105a50665",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PROMOTED_WINDOW_CERTIFIED"
+    },
+    "promoted_window_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/signature_boundary_spine_aperture_closure_tail_promoted_window_tables.npz",
+      "sha256": "dec4ea99064bcfb8a027081ba02fb3790235b670f0f4709c762418c90b0f1456"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search.py",
+      "sha256": "302d40537377fb76a53c89702aa04bef9a700fc67350d781a8a73a7ec24982a8"
+    }
+  },
+  "next_highest_yield_item": "Promote the selected 1,4,5,5 second-window rule globally, rebuild the promoted automaton, and test whether the old six-edge cut finally changes support or remains stable.",
+  "outputs": {
+    "candidate_moves_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/aperture_closure_tail_second_window_candidate_moves.csv",
+    "candidate_words_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/aperture_closure_tail_second_window_candidate_words.csv",
+    "certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/signature_boundary_spine_aperture_closure_tail_second_window_search_certificate.json",
+    "cut_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/aperture_closure_tail_second_window_cut_edges.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/manifest.json",
+    "observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/aperture_closure_tail_second_window_observables.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/report.json",
+    "second_window_search": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/signature_boundary_spine_aperture_closure_tail_second_window_search.json",
+    "tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/signature_boundary_spine_aperture_closure_tail_second_window_search_tables.npz",
+    "target_cut_windows_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/aperture_closure_tail_second_window_target_windows.csv"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_second_window_search@1",
+  "stage_protocol": {
+    "closure": "certify the selected second-window block and local flux/conductance prediction",
+    "coherence": "check metric/closure/current-support filters and clean negative-side move ranking",
+    "draft": "rank surviving promoted-transfer cut edges and isolate the unpromoted old-cut edge",
+    "emit": "emit search artifacts, certificate, report, verifier command, and next target",
+    "witness": "emit cut-edge, target-window, candidate-move, candidate-word, and observable tables"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SECOND_WINDOW_SEARCH_CERTIFIED",
+  "witness": {
+    "candidate_move_table_sha256": "623222e809a83609fd3b204ea7151d569b66dc15fbd43223d45ad0c043c2b15b",
+    "candidate_stats": {
+      "target_already_supported_count": 2,
+      "target_bad_metric_count": 138,
+      "target_metric_closed_virtual_count": 3,
+      "target_neighbor_candidate_count": 211,
+      "target_not_closed_count": 22,
+      "target_trace_failure_count": 46
+    },
+    "candidate_word_table_sha256": "dcfa38a82b795b7c0436a253c97a719698d24977e37124d3def8093bf1215259",
+    "cut_edge_table_sha256": "6523769574a620249ccfa254f829b41391de3dd061abfe693b61fcb686595d17",
+    "cut_window_table_sha256": "11b9ae7902f5b3cf57cffae55121ff04b2dc79b4a800bb5393f073bb7e7c100c",
+    "observable_table_sha256": "0e90b819f46ed1b3166de1dca32c72661e851407f6cfb669d39b40b322881c91",
+    "selected_candidate_word": [
+      2,
+      5,
+      1,
+      4,
+      5,
+      5,
+      1,
+      1,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "selected_move": {
+      "block_symbol_0_id": 1,
+      "block_symbol_1_id": 4,
+      "block_symbol_2_id": 5,
+      "block_symbol_3_id": 5,
+      "candidate_move_id": 1,
+      "candidate_word_count": 1,
+      "clean_move_flag": 1,
+      "cross_side_rejected_word_count": 0,
+      "negative_side_edge_count": 1,
+      "new_target_cut_flux_x1e12": 170940171,
+      "new_target_weighted_conductance_x1e12": 730994152,
+      "positive_side_edge_count": 0,
+      "same_side_edge_count": 1,
+      "selected_move_flag": 1,
+      "target_conductance_reduction_x1e12": 1070270,
+      "target_cut_flux_reduction_x1e12": 29226
+    },
+    "selected_second_window_block": [
+      1,
+      4,
+      5,
+      5
+    ],
+    "target_transfer_edge_id": 2447
+  }
+}

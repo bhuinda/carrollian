@@ -8759,10 +8759,15 @@ def build_artifact() -> dict[str, Any]:
 
 def main() -> None:
     artifact = build_artifact()
+    ARTIFACT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    ARTIFACT_PATH.write_text(
+        json.dumps(artifact, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     print(
         json.dumps(
             {
-                "artifact": "not written; recompute with build_artifact()",
+                "artifact": relpath(ARTIFACT_PATH),
                 "status": artifact["status"],
                 "all_checks_pass": artifact["all_checks_pass"],
                 "artifact_sha256": artifact["artifact_sha256"],

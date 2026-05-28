@@ -1,0 +1,178 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "40f5b4b8c852bc3e08cd67c534ffc9d1303f32df4d275f6be149a7f5571bc69a",
+  "checks": {
+    "all_bounded_words_have_valid_trace": true,
+    "all_exact_splices_use_fixed_tail_atoms": true,
+    "both_repair_chords_are_carrier_realizable": true,
+    "bounded_search_space_is_19500": true,
+    "closed_positive_chord_count_is_240": true,
+    "eleven_exact_24_path_delta2_splices_exist": true,
+    "endpoint_split_certificate_certified": true,
+    "endpoint_split_report_certified": true,
+    "exact_table_shape_matches_codebook": true,
+    "observable_table_shape_matches_codebook": true,
+    "one_exact_splice_contains_both_repair_chords": true,
+    "prefix_chord_certificate_certified": true,
+    "prefix_chord_report_certified": true,
+    "repair_chord_trace_count_is_1726": true,
+    "selected_six_template_endpoint_counts_are_12_4_8": true,
+    "selected_six_template_preserves_rank104_tail_distribution": true,
+    "selected_six_template_reaches_delta2_and_24_paths": true,
+    "selected_six_template_trace_is_expected": true,
+    "selected_six_template_word_is_expected_splice": true,
+    "selected_template_table_shape_matches_codebook": true,
+    "unique_exact_splice_retains_six_rank104_tail_templates": true
+  },
+  "claim": "The metric repair is carrier-realizable. In the bounded splice search preserving the symbolic tail x5,x2,x1,x4,x5, there are 11 actual carrier words with 24 first-return closures and delta_twice 2. The unique one that also preserves the six rank104 tail templates inserts x1,x4,x5 before the shared tail: x2,x1,x3,x4,x5,x1,x4,x5,x5,x2,x1,x4,x5. Its trace is 48->42->27->31->50->34->54->45->29->28->34->44, so it realizes the 50--34 repair chord and then rejoins the shared rewrite tail.",
+  "closure_boundary": {
+    "certifies": [
+      "bounded carrier-word realization of the 31--28 and 50--34 repair chords",
+      "existence of 11 bounded splices with 24 first-return closures and delta_twice 2",
+      "the selected x1,x4,x5 insertion that realizes 50--34 and rejoins the shared rewrite tail",
+      "retention of the six rank104 tail templates and 12/4/8 endpoint counts for the selected splice"
+    ],
+    "does_not_certify_because_not_required": [
+      "global optimality outside pre-tail lengths 5 through 8",
+      "variation optimality under the six-template-retention constraint beyond the declared bounded search",
+      "edit costs above three inserted pre-tail symbols",
+      "categorical pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization.py",
+      "sha256": "cc6c64c2592185a400207a53424032bb781c6846e9fda658cbc7e01c1b9cc7b9"
+    },
+    "endpoint_split_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/signature_boundary_spine_aperture_closure_tail_endpoint_split_certificate.json",
+      "sha256": "89593d50402bb69f0524b1d7223f6cddd9dd66e1083b0d601eae6f747e64065a"
+    },
+    "endpoint_split_report": {
+      "certificate_sha256": "9eea56530ed6e67b48789352526768a2a76c2fe5a655b2d1a917544b62e82147",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/report.json",
+      "sha256": "a32bc0dfeb5d43c117db0c174c6b7d355475620631d995c8b4b21e3112f081fd",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ENDPOINT_SPLIT_CERTIFIED"
+    },
+    "endpoint_split_templates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_endpoint_split/aperture_closure_tail_templates.csv",
+      "sha256": "286a7e7979eb78b4166c9c8d2d032b2140400123d32c5e3336028d00e4a8cc7f"
+    },
+    "prefix_chord_candidates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/aperture_closure_tail_prefix_chord_candidates.csv",
+      "sha256": "04cbccf84c64180dc59af6ddd61444b6926baae05f5284ed5ceb449b686eb988"
+    },
+    "prefix_chord_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/signature_boundary_spine_aperture_closure_tail_prefix_chord_search_certificate.json",
+      "sha256": "982f2b7355809f45ec3ea6ed5bf47ef2ee38b818e7af71bc2f8cc13742c931fc"
+    },
+    "prefix_chord_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/signature_boundary_spine_aperture_closure_tail_prefix_chord_search.json",
+      "sha256": "43dec6b7b3720e26fe7751fe4ae88b7b5f728dace81a6a2d3e8da1a18f6713ec"
+    },
+    "prefix_chord_report": {
+      "certificate_sha256": "9cad641c90678e5497759ca9b2dff5f4a2241b55cd73f1a3aadde2aaaeca7862",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/report.json",
+      "sha256": "cc7957db612da7f6bd57bfcc7091c38dc987062f19e583780ec551eb8957ce33",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PREFIX_CHORD_SEARCH_CERTIFIED"
+    },
+    "prefix_chord_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/signature_boundary_spine_aperture_closure_tail_prefix_chord_search_tables.npz",
+      "sha256": "70641b1e51152c595147a4c2d4da20d478c92433520e53453dc6e2203c20109f"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization.py",
+      "sha256": "b9e7e0aec85461d1a84d3c0c464a24750d3040494ddc1edb1d74729a4235ad93"
+    }
+  },
+  "next_highest_yield_item": "Optimize the carrier-realized splice frontier: search whether any six-template-retaining 24-path splice with delta_twice 2 has lower signature variation than 223, or prove 223 is the bounded minimum under the same tail-retention constraints.",
+  "outputs": {
+    "aperture_closure_tail_carrier_splice_exact_witnesses_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/aperture_closure_tail_carrier_splice_exact_witnesses.csv",
+    "aperture_closure_tail_carrier_splice_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/aperture_closure_tail_carrier_splice_observables.csv",
+    "aperture_closure_tail_carrier_splice_selected_templates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/aperture_closure_tail_carrier_splice_selected_templates.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/report.json",
+    "signature_boundary_spine_aperture_closure_tail_carrier_splice_realization": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/signature_boundary_spine_aperture_closure_tail_carrier_splice_realization.json",
+    "signature_boundary_spine_aperture_closure_tail_carrier_splice_realization_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/signature_boundary_spine_aperture_closure_tail_carrier_splice_realization_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_carrier_splice_realization_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/signature_boundary_spine_aperture_closure_tail_carrier_splice_realization_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization@1",
+  "stage_protocol": {
+    "closure": "certify the exact splices with 24 closures and delta_twice 2, including the six-template-retaining splice",
+    "coherence": "recompute rewrite traces, carrier paths, first-return closures, and tail-template counts",
+    "draft": "start from the certified prefix-chord search and demand an actual carrier word",
+    "emit": "emit exact splice witnesses, selected template counts, certificate, report, verifier command, and next target",
+    "witness": "enumerate bounded pre-tail splices with fixed prefix 2,1 and fixed tail 5,2,1,4,5"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_CARRIER_SPLICE_REALIZATION_CERTIFIED",
+  "witness": {
+    "bounded_search_space_count": 19500,
+    "exact_24_path_delta2_splice_count": 11,
+    "exact_31_28_splice_count": 6,
+    "exact_50_34_splice_count": 6,
+    "exact_witness_table_sha256": "7b07cfa25c1ad9cb5d9b079eb442d5658721528d82f8dd1b0b6d8f77ef69a026",
+    "observable_table_sha256": "87022357c7a7462f62ebfe8ee7f168af719b18a39dfb32fc4152ae55bf61c34d",
+    "rank104_outlier_id": 23,
+    "selected_six_template_closed_path_count": 24,
+    "selected_six_template_delta_twice": 2,
+    "selected_six_template_endpoint_counts": {
+      "10": 4,
+      "11": 8,
+      "9": 12
+    },
+    "selected_six_template_full_carrier_path_count": 240,
+    "selected_six_template_inserted_symbols": [
+      1,
+      4,
+      5
+    ],
+    "selected_six_template_splice_witness_id": 2,
+    "selected_six_template_trace": [
+      48,
+      42,
+      27,
+      31,
+      50,
+      34,
+      54,
+      45,
+      29,
+      28,
+      34,
+      44
+    ],
+    "selected_six_template_variation": 223,
+    "selected_six_template_word": [
+      2,
+      1,
+      3,
+      4,
+      5,
+      1,
+      4,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "selected_template_table_sha256": "a742c9623a2ac8e78366ebf27a60cbd662ab3eed43391ca89c20443e11d00eec"
+  }
+}

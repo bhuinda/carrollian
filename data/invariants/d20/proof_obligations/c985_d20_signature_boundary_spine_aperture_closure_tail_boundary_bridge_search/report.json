@@ -1,0 +1,170 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b27b78d6bd4276b70093e770e0ed44e6dd8b7267e9902a45fef0d61ea6ca140a",
+  "checks": {
+    "cell_table_shape_matches_codebook": true,
+    "component_table_shape_matches_codebook": true,
+    "delta2_variation_le223_word_count_is_26197": true,
+    "gate_repair_certificate_certified": true,
+    "gate_repair_report_certified": true,
+    "good_cell_count_is_562": true,
+    "good_components_are_expected": true,
+    "good_edge_count_is_1694": true,
+    "left_and_right_components_are_separate": true,
+    "left_shell_counts_are_expected": true,
+    "min_target_variation_is_137": true,
+    "neighbor_counts_are_8_and_6": true,
+    "observable_table_shape_matches_codebook": true,
+    "repair_chord_candidate_count_is_11637": true,
+    "right_shell_counts_are_expected": true,
+    "strict_table_shape_matches_codebook": true,
+    "strict_two_cell_bridge_count_is_zero": true,
+    "targets_are_left_component_except_one_orphan": true,
+    "trace_valid_word_count_is_166575": true,
+    "union_and_intersection_counts_are_expected": true
+  },
+  "claim": "The boundary-pair bridge search expands radius-three side neighborhoods around the left and right repair-boundary words. The union contains 234,678 prefix-valid words, including 562 closed-positive good cells and 1,694 good edges. The good graph has 13 components; the left and right boundary components have sizes 347 and 185 and remain separate. The strict two-cell bridge left -> A -> B -> right has zero good realizations, despite 8 good left-neighbor cells and 6 good right-neighbor cells. There are 19 exact 24-closure, six-template, all-four targets at minimum variation 137, but 18 lie in the left component and none lie in the right component.",
+  "closure_boundary": {
+    "certifies": [
+      "radius-three side neighborhoods around both repair-boundary words",
+      "all good cells satisfying delta2, variation <= 223, repair-chord support, and closed positivity in the side-neighborhood union",
+      "that no strict two-cell good bridge exists between the boundary words",
+      "that no good path connects the left and right boundary components through radius three"
+    ],
+    "does_not_certify_because_not_required": [
+      "side radius four or higher",
+      "bridges using no-repair, no-closed, bad-metric, or trace-failure gates",
+      "multi-cell grafts longer than the declared strict two-cell bridge",
+      "global optimality outside the declared boundary-pair search"
+    ]
+  },
+  "inputs": {
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search.py",
+      "sha256": "3e6a4c23817254ee1d6fb1695ddf51697ef7811062581a0eb0e9c1612c8f4eb2"
+    },
+    "gate_repair_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/signature_boundary_spine_aperture_closure_tail_gate_repair_search_certificate.json",
+      "sha256": "d738ad54b8eb6cdb8263d48c12720b4725d408188bcf63ace0b2b3b40ec2c364"
+    },
+    "gate_repair_report": {
+      "certificate_sha256": "8e88495d6aeb1ea00793c61248bb91b427dd2432774c71000fc371fb5790662e",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_gate_repair_search/report.json",
+      "sha256": "71e09d2ffaa16ca8ea2cd23a238b618eb90114a13f72bab9b7170c7caec07310",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_GATE_REPAIR_SEARCH_CERTIFIED"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search.py",
+      "sha256": "df820eb49aedde435337ce53ddaef6d9c3568cab47b3688feaa2c5b475523f95"
+    }
+  },
+  "next_highest_yield_item": "Move from word edits to explicit chord grafting: add a virtual 31--28 or 50--34 repair edge to the boundary-pair traces and test which graft changes component membership without destroying closed-path/template counts.",
+  "outputs": {
+    "aperture_closure_tail_boundary_bridge_cells_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/aperture_closure_tail_boundary_bridge_cells.csv",
+    "aperture_closure_tail_boundary_bridge_components_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/aperture_closure_tail_boundary_bridge_components.csv",
+    "aperture_closure_tail_boundary_bridge_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/aperture_closure_tail_boundary_bridge_observables.csv",
+    "aperture_closure_tail_boundary_bridge_strict_candidates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/aperture_closure_tail_boundary_bridge_strict_candidates.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/report.json",
+    "signature_boundary_spine_aperture_closure_tail_boundary_bridge_search": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/signature_boundary_spine_aperture_closure_tail_boundary_bridge_search.json",
+    "signature_boundary_spine_aperture_closure_tail_boundary_bridge_search_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/signature_boundary_spine_aperture_closure_tail_boundary_bridge_search_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_boundary_bridge_search_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search/signature_boundary_spine_aperture_closure_tail_boundary_bridge_search_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_boundary_bridge_search@1",
+  "stage_protocol": {
+    "closure": "certify no strict two-cell good bridge and no left/right good-component merger through radius three",
+    "coherence": "compare left and right boundary components and neighbor bridge candidates",
+    "draft": "expand side neighborhoods around the left and right repair-boundary words",
+    "emit": "emit bridge cells, components, strict bridge table, observables, certificate, report, verifier command, and next target",
+    "witness": "evaluate good cells, strict two-cell candidates, components, and exact target locations"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_BOUNDARY_BRIDGE_SEARCH_CERTIFIED",
+  "witness": {
+    "cell_table_sha256": "2f56a80aa929da9121cd23bd92c2b4a520eb792b1f8a59a3899a55f89bd3b086",
+    "component_table_sha256": "6d377bcd8f92000b04f4ad7f5689d908dfb6f32300c795dd9c0ba1414e79f123",
+    "good_cell_count": 562,
+    "good_component_sizes": [
+      347,
+      185,
+      15,
+      4,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "intersection_word_count": 12738,
+    "left_boundary_word": [
+      2,
+      1,
+      3,
+      4,
+      5,
+      1,
+      2,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "left_component_id": 0,
+    "left_component_target_count": 18,
+    "left_shell_counts": [
+      1,
+      103,
+      4810,
+      136869
+    ],
+    "min_target_variation": 137,
+    "observable_table_sha256": "4bbb04413c700a610a96609877900869fc064c1718aba8b50f71fc4e1673f231",
+    "right_boundary_word": [
+      2,
+      1,
+      4,
+      3,
+      1,
+      2,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "right_component_id": 1,
+    "right_component_target_count": 0,
+    "right_shell_counts": [
+      1,
+      94,
+      3971,
+      101567
+    ],
+    "strict_table_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "strict_two_cell_bridge_count": 0,
+    "target_count": 19,
+    "union_word_count": 234678
+  }
+}

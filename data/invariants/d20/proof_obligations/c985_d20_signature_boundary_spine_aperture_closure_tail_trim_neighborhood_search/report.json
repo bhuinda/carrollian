@@ -1,0 +1,354 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "2680c68299a5f04bfa16c48208185443d1ee9ac80673cf649263627903f6b399",
+  "checks": {
+    "best_all_four_ge24_rows_are_28_by_7": true,
+    "best_six_template_gap_is_32_closures": true,
+    "closed_positive_candidate_count_is_219": true,
+    "exact24_rows_exist_but_never_have_six_templates": true,
+    "frontier_table_shape_matches_codebook": true,
+    "metric_repair_candidate_count_is_10792": true,
+    "neighborhood_total_word_count_is_203866": true,
+    "no_exact24_six_all_four_trim_exists": true,
+    "no_exact24_six_template_trim_exists": true,
+    "observable_table_shape_matches_codebook": true,
+    "partial_splitter_certificate_certified": true,
+    "partial_splitter_declares_seed_oversplitters": true,
+    "partial_splitter_report_certified": true,
+    "partial_splitter_schema_available": true,
+    "profile_table_shape_matches_codebook": true,
+    "radius_shell_counts_are_expected": true,
+    "shell_table_shape_matches_codebook": true,
+    "six_template_rows_exist_but_never_have_24_closures": true,
+    "trace_valid_word_count_is_139238": true
+  },
+  "claim": "The local trim attempt fails through edit radius three around the two certified 28-closure oversplitters. The search covers 203,866 prefix-valid local words, keeps 10,792 sub-223 delta2 repair-chord candidates, and finds 219 closed-positive candidates. Fourteen rows have exactly 24 closures, but none has six templates. Thirty-seven rows have six templates, but none has exactly 24 closures. No row satisfies the exact 24 / six-template / all-four trim target. The nearest all-four rows remain 28-closure seven-template oversplitters; the nearest six-template rows have 32 closures.",
+  "closure_boundary": {
+    "certifies": [
+      "the radius-three local trim neighborhood around the two certified oversplitters",
+      "that no sub-223 delta2 closed-positive row in that neighborhood has exact 24 closures, six templates, and all-four lifts",
+      "that exact-24 rows and six-template rows occur separately but do not coincide",
+      "that the nearest all-four rows remain 28-closure seven-template oversplitters"
+    ],
+    "does_not_certify_because_not_required": [
+      "edit radius four or higher",
+      "words not beginning with x2,x1",
+      "variation 223 or higher",
+      "global optimality outside the declared trim neighborhood"
+    ]
+  },
+  "inputs": {
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search.py",
+      "sha256": "fd95252fb6a93c3165d496bedf74cd70d606a71a92f86ee1bebb174abd4625a9"
+    },
+    "partial_splitter_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/signature_boundary_spine_aperture_closure_tail_partial_splitter_search_certificate.json",
+      "sha256": "c23cabf97983e5863315695692b475d2d04b2950cc2a5b6bf8d7e84aa2c7b466"
+    },
+    "partial_splitter_frontier": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/aperture_closure_tail_partial_splitter_frontier.csv",
+      "sha256": "724cf64d31abb0b78599e069b958c0801115c4da464ebae2f01535facea1e268"
+    },
+    "partial_splitter_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/signature_boundary_spine_aperture_closure_tail_partial_splitter_search.json",
+      "sha256": "9e85ac90ba27ee3cd148b30f447314de20934f1f51ef65e13b026686b9dc6553"
+    },
+    "partial_splitter_observables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/aperture_closure_tail_partial_splitter_observables.csv",
+      "sha256": "f4556e0751a99cac3a03fc2fde8e90fcfc5d234b2a9ff579635a166b65646fb4"
+    },
+    "partial_splitter_profiles": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/aperture_closure_tail_partial_splitter_profiles.csv",
+      "sha256": "1e87f67c1417a1f322f8ba20c30a4c7cea353d199c07e67dacd9e2bf834eab70"
+    },
+    "partial_splitter_report": {
+      "certificate_sha256": "544ea13a172cf8cac92b1ec05e8d3f9acbbf08ee36bdfabd1799cd56c432b9c4",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/report.json",
+      "sha256": "c9180b9edeb4d0ab62e28a5cda6dcb9011e3ef788e92f8ec4d174ce84fb9d2d6",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PARTIAL_SPLITTER_SEARCH_CERTIFIED"
+    },
+    "partial_splitter_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/signature_boundary_spine_aperture_closure_tail_partial_splitter_search_tables.npz",
+      "sha256": "a2d351cbeb3256b65a2d6dee599497c6844f51d1c09b5ce5529d00a9c4dce230"
+    },
+    "partial_splitter_templates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/aperture_closure_tail_partial_splitter_templates.csv",
+      "sha256": "353c175006e173189ed38d6dc6100b48983d8bfce21dad9f47079af72196c58b"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search.py",
+      "sha256": "c2f41d77b1617c09e2bb890fc287a10d0df3a7fb2af9d109f2d9735d4fa8df50"
+    }
+  },
+  "next_highest_yield_item": "Leave local trimming and change the aperture: search radius-one edits of the selected six-template lift and the 28-closure oversplitters together, allowing variation up to 223, to identify the first move that trades endpoint-13 excess for endpoint-11 closure without losing delta2.",
+  "outputs": {
+    "aperture_closure_tail_trim_neighborhood_frontier_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/aperture_closure_tail_trim_neighborhood_frontier.csv",
+    "aperture_closure_tail_trim_neighborhood_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/aperture_closure_tail_trim_neighborhood_observables.csv",
+    "aperture_closure_tail_trim_neighborhood_profiles_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/aperture_closure_tail_trim_neighborhood_profiles.csv",
+    "aperture_closure_tail_trim_neighborhood_shells_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/aperture_closure_tail_trim_neighborhood_shells.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/report.json",
+    "signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search.json",
+    "signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search@1",
+  "stage_protocol": {
+    "closure": "certify that no radius-three local trim reaches exact 24 closures, six templates, and all-four lifts below variation 223",
+    "coherence": "compare exact-24 rows, six-template rows, and all-four ge24 rows against the trim target",
+    "draft": "seed the neighborhood with the two certified 28-closure oversplitters",
+    "emit": "emit shell counts, frontier rows, profile rows, observables, certificate, report, verifier command, and next target",
+    "witness": "enumerate all prefix-valid words through edit radius three and evaluate delta, repair chords, closures, and tail-template lifts"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_TRIM_NEIGHBORHOOD_SEARCH_CERTIFIED",
+  "witness": {
+    "best_all_four_ge24_profiles": [
+      {
+        "closed_paths": 28,
+        "edit_radius": 0,
+        "template_count": 7,
+        "variation": 219,
+        "word": [
+          2,
+          1,
+          4,
+          3,
+          1,
+          5,
+          5,
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "closed_paths": 28,
+        "edit_radius": 0,
+        "template_count": 7,
+        "variation": 217,
+        "word": [
+          2,
+          1,
+          4,
+          3,
+          1,
+          5,
+          2,
+          5,
+          5,
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "closed_paths": 28,
+        "edit_radius": 1,
+        "template_count": 7,
+        "variation": 219,
+        "word": [
+          2,
+          1,
+          4,
+          3,
+          1,
+          5,
+          2,
+          1,
+          5,
+          5,
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "closed_paths": 28,
+        "edit_radius": 3,
+        "template_count": 7,
+        "variation": 219,
+        "word": [
+          2,
+          1,
+          5,
+          2,
+          1,
+          4,
+          3,
+          1,
+          5,
+          5,
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "closed_paths": 28,
+        "edit_radius": 2,
+        "template_count": 7,
+        "variation": 217,
+        "word": [
+          2,
+          1,
+          4,
+          3,
+          1,
+          5,
+          2,
+          5,
+          2,
+          5,
+          5,
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "closed_paths": 28,
+        "edit_radius": 3,
+        "template_count": 7,
+        "variation": 217,
+        "word": [
+          2,
+          1,
+          4,
+          3,
+          1,
+          5,
+          2,
+          1,
+          5,
+          2,
+          5,
+          5,
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "closed_paths": 28,
+        "edit_radius": 3,
+        "template_count": 7,
+        "variation": 221,
+        "word": [
+          2,
+          1,
+          4,
+          3,
+          1,
+          5,
+          4,
+          1,
+          5,
+          2,
+          5,
+          5,
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "closed_paths": 28,
+        "edit_radius": 3,
+        "template_count": 7,
+        "variation": 217,
+        "word": [
+          2,
+          1,
+          5,
+          2,
+          1,
+          4,
+          3,
+          1,
+          5,
+          2,
+          5,
+          5,
+          2,
+          1,
+          4,
+          5
+        ]
+      }
+    ],
+    "best_six_template_closure_excess": 8,
+    "closed_positive_candidate_count": 219,
+    "exact24_count": 14,
+    "exact24_six_all_four_count": 0,
+    "exact24_six_template_count": 0,
+    "frontier_table_sha256": "de43127be8644e95a7b5c7cc63b1d7b898e3e04d41afaba189d9a63ad7bdcf93",
+    "neighborhood_shell_counts": [
+      2,
+      185,
+      7712,
+      195967
+    ],
+    "observable_table_sha256": "d0da3abdf4655c60fec316fac77554a869a9db0d42fd78e36ebfcd7cc4ffb8bc",
+    "profile_table_sha256": "531bb9c9ade284856f62cafd6a2d8884e4ca496f5a9f388c064a34195f09cbd6",
+    "seed_partial_candidate_ids": [
+      19,
+      20
+    ],
+    "seed_words": [
+      [
+        2,
+        1,
+        4,
+        3,
+        1,
+        5,
+        2,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ],
+      [
+        2,
+        1,
+        4,
+        3,
+        1,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ]
+    ],
+    "shell_table_sha256": "80a7ac0554ed85b749fc41a59ada9b1938bbdcc7efa9660dc3b05ccee086321a",
+    "six_template_count": 37
+  }
+}

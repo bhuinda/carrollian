@@ -1,0 +1,169 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9cad641c90678e5497759ca9b2dff5f4a2241b55cd73f1a3aadde2aaaeca7862",
+  "checks": {
+    "best_bridge_to_baseline_shortcut_has_signature_variation_18": true,
+    "chord_table_shape_matches_codebook": true,
+    "five_existing_single_chords_remove_delta_penalty": true,
+    "observable_table_shape_matches_codebook": true,
+    "pre_chord_delta_penalty_reproduced": true,
+    "rank104_closure_count_and_bridge_variation_are_retained": true,
+    "rank104_trace_is_unchanged": true,
+    "rewrite_complex_certificate_certified": true,
+    "rewrite_complex_report_certified": true,
+    "rewrite_lift_certificate_certified": true,
+    "rewrite_lift_report_certified": true,
+    "rewrite_lift_schema_available": true,
+    "single_existing_chord_search_space_has_16_candidates": true,
+    "two_bridge_to_baseline_shortcuts_are_repair_chords": true
+  },
+  "claim": "Searching the full rewrite complex restricted to the rank104 closure-rich trace finds 16 omitted single chords among the local trace nodes. Five already-existing rewrite-complex chords lower the local metric delta_twice from 4 to the baseline value 2 while leaving the rank104 trace, 22-variation bridge, and 24 closed carrier paths unchanged. The two repair chords that splice the rank104 bridge back toward the baseline shortcut are 31--28 and 50--34. This certifies the missing metric chord, not yet a carrier-word replacement.",
+  "closure_boundary": {
+    "certifies": [
+      "single-chord metric repairs inside the existing rewrite complex",
+      "which omitted chords lower rank104 delta_twice from 4 to 2",
+      "the two bridge-to-baseline shortcut repair chords 31--28 and 50--34",
+      "retention of the rank104 trace, 22-variation bridge, and 24 closure paths under metric augmentation"
+    ],
+    "does_not_certify_because_not_required": [
+      "a new carrier-word witness realizing the chord as a selected-symbol splice",
+      "new first-return path enumeration after changing the word",
+      "edit costs above one inserted metric chord",
+      "categorical pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search.py",
+      "sha256": "23b0426bb1efd73ef629fc42adde0606c46142888551772064abb03742ac89cf"
+    },
+    "rewrite_complex_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_certificate.json",
+      "sha256": "d7cbeb302139b0641cab1679dca030a144fd439f3ae5634a5b2c92a856a5ebf3"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "rewrite_complex_nodes": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_nodes.csv",
+      "sha256": "7e2e2d6392ebe545e2703858e585cee472501fadc5607c0ad7f079c12bf8cff5"
+    },
+    "rewrite_complex_report": {
+      "certificate_sha256": "5f9880f3c6b43d842d0e2b8d766d6e94bd9c8344e7952f787059d1a843472438",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/report.json",
+      "sha256": "e799667e11cc1b9abf2d576584c18f93a1f5dcd88a99d30d9260e7e719f21986",
+      "status": "C985_D20_REWRITE_COMPLEX_HYPERBOLICITY_CERTIFIED"
+    },
+    "rewrite_complex_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_tables.npz",
+      "sha256": "26274b4ec8b2d35f30bd98c8d43300412855219f11902b09f214603cdb611fdf"
+    },
+    "rewrite_lift_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/signature_boundary_spine_aperture_closure_tail_rewrite_node_lift_certificate.json",
+      "sha256": "7b4a806cee030aec06b14c6e23069e96acd92d15d0b6fdfce9e6897f7158cd20"
+    },
+    "rewrite_lift_delta_witnesses": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/aperture_closure_tail_rewrite_delta_witnesses.csv",
+      "sha256": "4567cc64d5648d01cd2e8c7631f24611744bf1047d3fd2a4ba61dc4c9b52f430"
+    },
+    "rewrite_lift_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/signature_boundary_spine_aperture_closure_tail_rewrite_node_lift.json",
+      "sha256": "8b6f44f8be3b8d953c380c592b0eb18ecce3673e8c966d7fcdae40e01151214d"
+    },
+    "rewrite_lift_report": {
+      "certificate_sha256": "ca8c936408e47da8f3bb485b41cb79425f20b6bea095a544510ba55d7fae52a4",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/report.json",
+      "sha256": "26af945882fe97dfab5c61ee9c216c789fa2da051667244a6ea15a4885c96c02",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_REWRITE_NODE_LIFT_CERTIFIED"
+    },
+    "rewrite_lift_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_rewrite_node_lift/signature_boundary_spine_aperture_closure_tail_rewrite_node_lift_tables.npz",
+      "sha256": "754aff99ae40b3a54258d85690bf9f12b172f075e0dcdb0934886faf08c928f3"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search.py",
+      "sha256": "5dc049ec986398f8a7fd4d7d257f4f9c91088184c29aa1d96f69faef5ad3f5fc"
+    }
+  },
+  "next_highest_yield_item": "Try to realize one of the two bridge-to-baseline repair chords 31--28 or 50--34 as an actual carrier-preserving word splice, then re-enumerate first-return closure paths to see whether the 24-path rank104 multiplicity survives with delta_twice 2.",
+  "outputs": {
+    "aperture_closure_tail_prefix_chord_candidates_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/aperture_closure_tail_prefix_chord_candidates.csv",
+    "aperture_closure_tail_prefix_chord_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/aperture_closure_tail_prefix_chord_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/report.json",
+    "signature_boundary_spine_aperture_closure_tail_prefix_chord_search": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/signature_boundary_spine_aperture_closure_tail_prefix_chord_search.json",
+    "signature_boundary_spine_aperture_closure_tail_prefix_chord_search_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/signature_boundary_spine_aperture_closure_tail_prefix_chord_search_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_prefix_chord_search_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search/signature_boundary_spine_aperture_closure_tail_prefix_chord_search_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_prefix_chord_search@1",
+  "stage_protocol": {
+    "closure": "certify the single-chord repairs that remove the prefix-tail delta penalty without changing closure count",
+    "coherence": "add each candidate as one undirected chord and recompute exact four-point delta",
+    "draft": "start from the certified rewrite-node lift and keep the rank104 closure-rich trace fixed",
+    "emit": "emit chord candidates, observables, certificate, report, verifier command, and next target",
+    "witness": "enumerate existing rewrite-complex edges among the trace nodes that are absent from the trace metric"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PREFIX_CHORD_SEARCH_CERTIFIED",
+  "witness": {
+    "chord_table_sha256": "f6fb110562a17b15def6061a6d851790036a8b339bfced584d2ce9422a7b4aed",
+    "observable_table_sha256": "1467bcc3b4cb1144dff4e01c61ebc25c8ceced3f90e6d3f545339edb0ca8e5c4",
+    "pre_chord_best_delta_witness_count": 21,
+    "pre_chord_delta_twice": 4,
+    "pre_chord_prefix_tail_best_delta_witness_count": 18,
+    "prefix_to_baseline_repair_chords": [
+      [
+        28,
+        31
+      ],
+      [
+        34,
+        50
+      ]
+    ],
+    "rank104_bridge": [
+      27,
+      31,
+      50,
+      54
+    ],
+    "rank104_bridge_variation_retained": 22,
+    "rank104_closure_path_count_retained": 24,
+    "rank104_outlier_id": 23,
+    "rank104_trace": [
+      48,
+      42,
+      27,
+      31,
+      50,
+      54,
+      45,
+      29,
+      28,
+      34,
+      44
+    ],
+    "repair_chords": [
+      [
+        42,
+        45
+      ],
+      [
+        27,
+        29
+      ],
+      [
+        44,
+        54
+      ],
+      [
+        28,
+        31
+      ],
+      [
+        34,
+        50
+      ]
+    ]
+  }
+}

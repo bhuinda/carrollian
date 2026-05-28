@@ -1,0 +1,130 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "06733b5285afd1c4c7fa2d8ffa341a69315436ff5b6849c3311104652095f9a5",
+  "checks": {
+    "best_2114_centered_triple_is_2114_5255_1521": true,
+    "neighborhood_screen_certificate_certified": true,
+    "neighborhood_screen_report_certified": true,
+    "no_2114_centered_triple_changes_old_cut_support": true,
+    "table_shapes_match_codebooks": true,
+    "triple_scope_matches_2114_centered_anchors": true
+  },
+  "claim": "The bounded 2114-centered triple screen tests 26 triples anchored on 2114+5255 and 2114+1145. The best triple is 2114+5255+1521, which lowers conductance to 2610966000/1e12 while preserving all six old cut edges.",
+  "closure_boundary": {
+    "certifies": [
+      "bounded 2114-centered triple screen anchored on 5255 and 1145",
+      "fresh spectral-cut comparison for every tested triple",
+      "2114+5255+1521 is the best bounded triple and still preserves old six-edge support"
+    ],
+    "does_not_certify_because_not_required": [
+      "all 2114 triples over the full partner set",
+      "quadruple or larger 2114-centered recouplings",
+      "all nonlocal windows beyond the focused 2114 neighborhood",
+      "compiler integration of the screened recoupling rule"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen.py",
+      "sha256": "cf1e8090b33a8547f4bf6063d36102e50d00c1708ac7b249e468eb7b020ba929"
+    },
+    "neighborhood_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen_certificate.json",
+      "sha256": "8187708932f33a68efd4796ce7ab1a8322ef7cde880dbc9a2df95d3319b4412b"
+    },
+    "neighborhood_report": {
+      "certificate_sha256": "d774769291fd714f58ffc364bd79f05d9fa9ce11c469b22c512d508749b75095",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/report.json",
+      "sha256": "a0be8e9747c66fed00bd24ecae364276f09ec6dfd1c075982aef6aabdb5b4383",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SIXJ_NONLOCAL_2114_NEIGHBORHOOD_SCREEN_CERTIFIED"
+    },
+    "neighborhood_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen_tables.npz",
+      "sha256": "6c2d3c7787eab3d959ddc6fa06726da335196ee0701e7b00b0aca7003499486a"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen.py",
+      "sha256": "540fe91af54fcfce45fad444f0f2f00007d8f61760c01227b98d8673fa01a35c"
+    }
+  },
+  "next_highest_yield_item": "Escalate around the new best triple 2114+5255+1521: test one additional local/nonlocal layer or derive why the old six-edge aperture is invariant under this conductance-decreasing chain.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen_certificate.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen/manifest.json",
+    "observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen/sixj_nonlocal_2114_triple_screen_observables.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen/report.json",
+    "tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen_tables.npz",
+    "triple_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen/sixj_nonlocal_2114_triple_screen_interventions.csv",
+    "triple_screen": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen.json"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_triple_screen@1",
+  "stage_protocol": {
+    "closure": "certify the bounded 2114-centered triple screen and selected non-opening best triple",
+    "coherence": "rebuild the promoted grammar and fresh spectral cut for each bounded triple",
+    "draft": "start from the certified focused 2114 pair neighborhood",
+    "emit": "emit triple, observable, certificate, report, verifier command, and next target",
+    "witness": "construct triples using the best local and best adjacent nonlocal anchors"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SIXJ_NONLOCAL_2114_TRIPLE_SCREEN_CERTIFIED",
+  "witness": {
+    "best_local_block_code": 5255,
+    "best_nonlocal_block_code": 1145,
+    "best_triple": {
+      "block_code_a": 2114,
+      "block_code_b": 5255,
+      "block_code_c": 1521,
+      "conductance_reduction_x1e12": 1718038000,
+      "cut_conductance_x1e12": 2610966000,
+      "cut_edge_count": 6,
+      "edge_count": 3063,
+      "lambda_2_x1e12": 1967643000,
+      "new_edge_count": 492,
+      "new_state_count": 97,
+      "old_cut_edge_same_side_count": 0,
+      "old_cut_edge_still_cut_count": 6,
+      "promoted_cut_edge_count": 6,
+      "promoted_only_cut_edge_count": 0,
+      "selected_best_flag": 1,
+      "state_count": 957,
+      "support_changed_flag": 0,
+      "triple_id": 10,
+      "triple_kind": 1
+    },
+    "local_partner_codes": [
+      1451,
+      4512,
+      4552,
+      5125,
+      1255,
+      5255,
+      1252,
+      2145,
+      5252,
+      4511,
+      4551,
+      5115,
+      5511
+    ],
+    "near_nonlocal_partner_codes": [
+      1145,
+      5211,
+      1143,
+      1144,
+      1211,
+      1452,
+      5521,
+      1431,
+      4521,
+      1445,
+      1521,
+      4121,
+      2521,
+      5221
+    ],
+    "observable_table_sha256": "35965958147d650846f3a155d588d4a4362ba4fd0468383a9fef0d66e99a5a6d",
+    "support_changing_triple_count": 0,
+    "target_block_code": 2114,
+    "triple_intervention_count": 26,
+    "triple_table_sha256": "e6d12b166c04dcec8fb2c642cee9821dcd18e9f8bad675960d3aac4f50289e50"
+  }
+}

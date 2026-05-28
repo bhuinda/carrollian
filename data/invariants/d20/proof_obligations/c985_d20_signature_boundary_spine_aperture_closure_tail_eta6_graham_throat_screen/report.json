@@ -1,0 +1,111 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b3a43e461310ee2ffc9026e6c377835b05a26091fe5043e5430f13dbfbe7b5a3",
+  "checks": {
+    "area_certificate_is_explicitly_missing": true,
+    "eta6_support_report_certified": true,
+    "fixed_support_and_height_descent_are_available": true,
+    "graham_ratio_screen_is_currently_negative": true,
+    "h4_precursor_report_certified": true,
+    "k4_is_polyhedral_cubic_constraint_but_not_truncated_icosahedral": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The current eta6/H4 precursor evidence supports the qualitative Graham-like reading: conductance height descends while the fixed six-edge support constraint remains. The quantitative Graham ratio screen is currently negative: no conductance-height ratio falls within the declared tolerance of the user-supplied Graham hexagon inflation ratio.",
+  "closure_boundary": {
+    "certifies": [
+      "fixed eta6 support plus strict conductance-height descent gives a Graham-like qualitative aperture pattern",
+      "the current conductance-height ratios do not match the Graham inflation ratio within the declared tolerance",
+      "the current eta6 support carrier is a K4 polyhedral cubic 3-vertex-connected constraint graph",
+      "the current carrier is not the 60-vertex/90-edge truncated-icosahedral graph"
+    ],
+    "does_not_certify_because_not_required": [
+      "a Euclidean or Poincare polygon area certificate",
+      "convergence to Graham's biggest-little-hexagon area ratio",
+      "a truncated-icosahedral boundary skeleton realization",
+      "replacement of H4 symbolic precursor coordinates with per-intervention Poincare centers"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen.py",
+      "sha256": "859a2223b5192cb4d1845c4ca57a8c7b1acfe014f7c9340d2dc09fbb8fe1fd0b"
+    },
+    "eta6_support_report": {
+      "certificate_sha256": "dda6d374fd2dd86ebc86b1b52e39bd2d34654e7b5f9a20384633febb443c12ce",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/report.json",
+      "sha256": "71aaabe2e29acfce8ec07302d93c684b2b17fbf62545324e48d163f4d15ed7e8",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_HEXAGONAL_SUPPORT_CHARGE_CERTIFIED"
+    },
+    "eta6_support_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge_tables.npz",
+      "sha256": "fd748256fad81d00e696d6e4303bbde468e2512b169608e272d0b6aeef8e9a71"
+    },
+    "h4_precursor_report": {
+      "certificate_sha256": "cab5f3773669737db9be922793b6dd7983eb4d5db6f2b63fcff922e26686da5c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/report.json",
+      "sha256": "e98dfd5978d587693682ccee8dcf8260deac7d69606fcdd31f1380a2ef3c23cf",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_H4_PRECURSOR_LIFT_CERTIFIED"
+    },
+    "h4_precursor_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift/signature_boundary_spine_aperture_closure_tail_eta6_h4_precursor_lift_tables.npz",
+      "sha256": "1c1c7497a9579884309499035d1723dd588da6726b0da6b5fc914c8974cd34d8"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen.py",
+      "sha256": "9bd7640c68fa4860102f67541cd602ab8d2b33f296aec6c8efde404937d941fc"
+    }
+  },
+  "next_highest_yield_item": "Build an actual six-point aperture polygon from per-intervention Poincare centers or cut-edge centers, then compute its area ratio against the regular diameter-one hexagon baseline.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen/signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen_certificate.json",
+    "graham": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen/signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen.json",
+    "graph_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen/eta6_graham_throat_graph_constraints.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen/manifest.json",
+    "observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen/eta6_graham_throat_observables.csv",
+    "ratio_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen/eta6_graham_throat_ratio_pairs.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen/report.json",
+    "tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen/signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_eta6_graham_throat_screen@1",
+  "stage_protocol": {
+    "closure": "certify a diagnostic Graham-throat screen without claiming area convergence",
+    "coherence": "check fixed support, strict height descent, and K4 polyhedral graph constraints",
+    "draft": "start from the certified eta6 H4 precursor and support-charge reports",
+    "emit": "emit ratio, graph, observable, certificate, report, verifier command, and next target",
+    "witness": "compare all conductance-height ratios against the Graham hexagon ratio"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_GRAHAM_THROAT_SCREEN_CERTIFIED",
+  "witness": {
+    "closest_pair": {
+      "from_height_x1e12": 2645503000,
+      "from_stage_id": 2,
+      "graham_ratio_abs_error_x1e12": 25973645375,
+      "height_ratio_x1e12": 1013227671291,
+      "pair_id": 8,
+      "to_height_x1e12": 2610966000,
+      "to_stage_id": 4,
+      "within_graham_tolerance_flag": 0
+    },
+    "graham_area_x1e6": 674981,
+    "graham_ratio_match_count": 0,
+    "graham_ratio_x1e12": 1039201316666,
+    "graph_table_sha256": "6bde849ae69ce5f03415a2a377472a005db04f67f6a8810525a235a9efa5176d",
+    "k4_graph_constraint": {
+      "cubic_flag": 1,
+      "edge_count": 6,
+      "graph_id": 0,
+      "max_degree": 3,
+      "min_degree": 3,
+      "planar_flag": 1,
+      "three_vertex_connected_flag": 1,
+      "truncated_icosahedral_edge_count_flag": 0,
+      "truncated_icosahedral_vertex_count_flag": 0,
+      "vertex_count": 4
+    },
+    "observable_table_sha256": "d54e103fb6da477bd6e6c6af5aa78dc7b85a7dfa4fbd44c3e8e3e7c4219fc682",
+    "pair_table_sha256": "95a9acb739c67ab2fd0447077df0e4f5ea09e2be2a02b7e97174601a9fc26528",
+    "regular_area_x1e6": 649519,
+    "strict_height_descent_flag": 1,
+    "support_fixed_flag": 1
+  }
+}

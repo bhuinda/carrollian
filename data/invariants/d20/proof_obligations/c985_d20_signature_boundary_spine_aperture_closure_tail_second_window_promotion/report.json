@@ -1,0 +1,248 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "607a984c60e849ee38a19ef1d7b730e828942b5d71b01a29e49e30835061b378",
+  "checks": {
+    "boundary_language_counts_are_expected": true,
+    "boundary_pair_remains_merged": true,
+    "combined_promotion_counts_are_expected": true,
+    "parent_cut_lineage_stays_fixed": true,
+    "promoted_window_certificate_certified": true,
+    "promoted_window_report_certified": true,
+    "second_promotion_extends_parent_by_five_cells": true,
+    "second_promotion_hits_all_cut_edges_without_moving_cut": true,
+    "second_window_certificate_certified": true,
+    "second_window_report_certified": true,
+    "selected_second_window_block_is_promoted": true,
+    "spectral_readout_changes_from_parent": true,
+    "spectral_values_are_expected": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "Promoting the second-window block 1,4,5,5 globally alongside 5,5,2,5 adds five closed-positive cells beyond the 855-state parent promoted automaton, giving 860 states and 2,571 undirected one-edit edges. The dominant component grows to 798 states and keeps the left -> gate -> right path at length two. The old six-edge parent cut does not move: all six parent cut edges survive and all six remain on the fresh Fiedler cut. The support gap closes because all six cut edges now touch promoted window support; lambda_2 rises to 2422953000/1e12 and the cut conductance drops to 4329004000/1e12, but the structural six-edge aperture remains.",
+  "closure_boundary": {
+    "certifies": [
+      "the combined 5,5,2,5 and 1,4,5,5 promotion over the certified radius-three boundary-pair union",
+      "the combined-promotion grammar cell/component decomposition",
+      "the rebuilt one-edit automaton and native recurrent classes",
+      "parent promoted spectral-cut lineage under the combined promotion",
+      "the fresh spectral cut and two-mode Poincare disk readout of the combined-promotion dominant class"
+    ],
+    "does_not_certify_because_not_required": [
+      "stationary transfer flow on the combined-promotion automaton",
+      "boundary words outside the certified radius-three side union",
+      "promotion closure beyond the two certified window blocks",
+      "normal JSON compiler wiring for C985 objects"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion.py",
+      "sha256": "1d9de57ed6f8305ee81613a4a1997c48d53db4c5e49ae394fca582d6474d79c3"
+    },
+    "promoted_window_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/signature_boundary_spine_aperture_closure_tail_promoted_window_certificate.json",
+      "sha256": "6104626a5320821c10a480e7866917c0d07ee9cc4e941c936ec2c5c310f05890"
+    },
+    "promoted_window_report": {
+      "certificate_sha256": "cf8cbf3a1eb6ccfe0af8ad7fff471cbfef330af00c5961d0545ae90aaa2b15b7",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/report.json",
+      "sha256": "2009c17834964a8da4438f5231e13e8a8d78207d4560db6bed5aa12105a50665",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PROMOTED_WINDOW_CERTIFIED"
+    },
+    "promoted_window_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_promoted_window/signature_boundary_spine_aperture_closure_tail_promoted_window_tables.npz",
+      "sha256": "dec4ea99064bcfb8a027081ba02fb3790235b670f0f4709c762418c90b0f1456"
+    },
+    "second_window_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/signature_boundary_spine_aperture_closure_tail_second_window_search_certificate.json",
+      "sha256": "31b25e81386d51c21a3f9f4679b37fcac5790e6224e3bc8445d266a82413611a"
+    },
+    "second_window_report": {
+      "certificate_sha256": "e438ce3e9ae52796cf265fbd62fc222e557dc23e1e406de9787f6efffe9c8c96",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/report.json",
+      "sha256": "19a205875bf97d29d9a415c07af3e48dc9c686132381390b4bcddbe6739ca7fc",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SECOND_WINDOW_SEARCH_CERTIFIED"
+    },
+    "second_window_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_search/signature_boundary_spine_aperture_closure_tail_second_window_search_tables.npz",
+      "sha256": "9b89cef0a3fa1b6b82cf4d3c0d346d74fe3ea7e94b1c654cc20ffae62686e10b"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion.py",
+      "sha256": "cdea9beb60caf7efed8c879e91f17a2b58198e004b351deb6dab387f5c363e48"
+    }
+  },
+  "next_highest_yield_item": "Run the native-biased transfer operator on the second-window promoted automaton now that every surviving cut edge touches promoted support, and test whether stationary flow still loads the same six-edge aperture.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/report.json",
+    "second_window_promotion": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/signature_boundary_spine_aperture_closure_tail_second_window_promotion.json",
+    "second_window_promotion_cells_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_cells.csv",
+    "second_window_promotion_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/signature_boundary_spine_aperture_closure_tail_second_window_promotion_certificate.json",
+    "second_window_promotion_components_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_components.csv",
+    "second_window_promotion_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_edges.csv",
+    "second_window_promotion_native_recurrent_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_native_recurrent_classes.csv",
+    "second_window_promotion_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_observables.csv",
+    "second_window_promotion_path_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_path.csv",
+    "second_window_promotion_poincare_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_poincare.csv",
+    "second_window_promotion_recurrent_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_recurrent_classes.csv",
+    "second_window_promotion_spectral_cut_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_spectral_cut.csv",
+    "second_window_promotion_states_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_states.csv",
+    "second_window_promotion_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/signature_boundary_spine_aperture_closure_tail_second_window_promotion_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion@1",
+  "stage_protocol": {
+    "closure": "certify the boundary merge and fresh spectral/Poincare geometry",
+    "coherence": "compare parent promoted edges, parent cut edges, and new spectral support",
+    "draft": "promote the second-window block beside the first promoted block",
+    "emit": "emit second-window promotion artifacts, certificate, report, verifier command, and next target",
+    "witness": "enumerate combined-promotion cells and rebuild the one-edit automaton"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SECOND_WINDOW_PROMOTION_CERTIFIED",
+  "witness": {
+    "cell_table_sha256": "159a0220613709ba142d8f9f335fbdc9b1e55a2331ddf28f0b40523f04758837",
+    "component_sizes": [
+      798,
+      15,
+      11,
+      6,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "component_table_sha256": "7a38c7662834d0313f64380e979bce0a097b9a98fedbfc2b60a2dc7c13231e1b",
+    "edge_table_sha256": "a673e6725df4aa5b5d98693125641d330326de917463574b652b4489a1ccaf6c",
+    "language_stats": {
+      "bad_metric_word_count": 140378,
+      "boundary_union_word_count": 234678,
+      "closed_positive_metric_word_count": 984,
+      "derived_only_closed_cell_count": 298,
+      "metric_ok_word_count": 26197,
+      "native_good_cell_count": 562,
+      "native_repair_metric_count": 11637,
+      "promoted_grammar_good_cell_count": 860,
+      "promoted_only_closed_cell_count": 14,
+      "promoted_window_closed_cell_count": 132,
+      "promoted_window_repair_metric_count": 1884,
+      "skip_derived_closed_cell_count": 846,
+      "skip_derived_only_closed_cell_count": 284,
+      "skip_derived_repair_metric_count": 20744,
+      "trace_failure_word_count": 68103
+    },
+    "native_class_sizes": [
+      347,
+      185,
+      15,
+      4,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "native_recurrent_class_table_sha256": "8338cf977b6be7e3a5726a0337c27497f631a318d47f5e41925dbde5b0fab17a",
+    "observable_table_sha256": "0b0b2470c48df11a141c8b97997fb03bbda6d7751a8cb9dcaa02b6d9a0eb935c",
+    "parent_cut_lineage": {
+      "parent_cut_edge_count": 6,
+      "parent_cut_edge_same_side_count": 0,
+      "parent_cut_edge_still_cut_count": 6,
+      "parent_cut_edge_survival_count": 6
+    },
+    "path_table_sha256": "4c65d29ea9a817a250c07064def75c8d4451ca865819fdabbf13f6df3662997a",
+    "poincare_table_sha256": "d0275fca434320783fe72d7ab011d52f7f81a9f1b4b6bfd68585f17561179f3e",
+    "promotion_blocks": [
+      [
+        5,
+        5,
+        2,
+        5
+      ],
+      [
+        1,
+        4,
+        5,
+        5
+      ]
+    ],
+    "promotion_profile": {
+      "combined_promoted_only_state_count": 14,
+      "combined_promoted_state_count": 132,
+      "new_edge_count_vs_parent": 10,
+      "new_state_count_vs_parent": 5,
+      "parent_edge_count": 2561,
+      "parent_state_count": 855
+    },
+    "recurrent_class_table_sha256": "a007bac8202e4c456b163e1cbc64b038cbaa3ca75234506721ebdc62348fe6ae",
+    "second_window_selection": {
+      "block": [
+        1,
+        4,
+        5,
+        5
+      ],
+      "candidate_word": [
+        2,
+        5,
+        1,
+        4,
+        5,
+        5,
+        1,
+        1,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ],
+      "candidate_word_count": 1,
+      "certificate_sha256": "e438ce3e9ae52796cf265fbd62fc222e557dc23e1e406de9787f6efffe9c8c96",
+      "negative_side_edge_count": 1,
+      "new_target_cut_flux_x1e12": 170940171,
+      "new_target_weighted_conductance_x1e12": 730994152,
+      "same_side_edge_count": 1,
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SECOND_WINDOW_SEARCH_CERTIFIED",
+      "target_transfer_edge_id": 2447
+    },
+    "spectral_cut": {
+      "cut_conductance_x1e12": 4329004000,
+      "cut_edge_count": 6,
+      "derived_cut_edge_count": 6,
+      "lambda_2_x1e12": 2422953000,
+      "negative_state_count": 204,
+      "negative_volume": 1386,
+      "parent_cut_conductance_x1e12": 4392387000,
+      "parent_lambda_2_x1e12": 2246106000,
+      "positive_state_count": 594,
+      "positive_volume": 3660,
+      "promoted_cut_edge_count": 6,
+      "promoted_only_cut_edge_count": 0
+    },
+    "spectral_cut_table_sha256": "493f33225c156a0cb212c8b61941dbfce5eb9933ee913ba7fe2e205c7970a2d0",
+    "state_count": 860,
+    "state_table_sha256": "747916c1a17c21233eb5ec0aa77518aef05008ccfd1b85f96d11480e56b45724",
+    "undirected_edge_count": 2571
+  }
+}

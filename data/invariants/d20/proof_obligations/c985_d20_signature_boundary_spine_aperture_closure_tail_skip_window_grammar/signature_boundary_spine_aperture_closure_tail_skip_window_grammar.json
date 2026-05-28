@@ -1,0 +1,24 @@
+{
+  "comparison_rule": {
+    "global_rule": [
+      "enumerate every four-symbol block over the six-symbol alphabet",
+      "let endpoint windows be indices 012 and 123",
+      "let skip windows be indices 013 and 023",
+      "accept a repair split when both rewrite edges endpoint->skip->endpoint exist and one split edge is 31--28 or 50--34"
+    ],
+    "language_test": [
+      "use the certified radius-three boundary-pair word union",
+      "filter to delta_twice=2, variation<=223, and closed positivity",
+      "admit native repair words or words containing a derived repair split"
+    ],
+    "parent": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_symbolic_window_refinement/report.json"
+  },
+  "object": "d20",
+  "schema": "c985.d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar@1",
+  "summary": {
+    "grammar_good_cell_count": 846,
+    "left_to_right_path_exists": 1,
+    "repair_split_count": 32,
+    "shortest_path_length": 2
+  }
+}

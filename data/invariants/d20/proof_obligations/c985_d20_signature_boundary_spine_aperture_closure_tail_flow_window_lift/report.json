@@ -1,0 +1,143 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "abece50fbdcee5c6f9ae4736811926262a2b1b896fd544fc67c84da40a7b0d40",
+  "checks": {
+    "candidate_move_counts_are_expected": true,
+    "candidate_move_table_shape_matches_codebook": true,
+    "candidate_word_table_shape_matches_codebook": true,
+    "cut_neighbor_search_counts_are_expected": true,
+    "cut_window_flux_is_conserved": true,
+    "cut_window_table_shape_matches_codebook": true,
+    "observable_table_shape_matches_codebook": true,
+    "pressure_table_shape_matches_codebook": true,
+    "repaired_automaton_report_certified": true,
+    "selected_move_is_clean_and_merge_preserving": true,
+    "selected_move_is_expected_window": true,
+    "selected_move_reduces_flux_and_conductance": true,
+    "skip_window_report_certified": true,
+    "transfer_operator_certificate_certified": true,
+    "transfer_operator_report_certified": true,
+    "window_pressure_mass_is_conserved": true
+  },
+  "claim": "The transfer-flow bottleneck lifts to a finite local window search. The twelve cut endpoint states have 1,150 one-edit neighbor words; 26 are metric-valid closed-positive virtual candidates without native or current derived repair support. Among the 15 cut-local four-symbol blocks, the clean selected move is block 5,5,2,5. It promotes 12 negative-side virtual words, adds 12 same-side derived edges, preserves the left/right merge, reduces cut flux from 1027925304/1e12 to 1025816379/1e12, and reduces weighted conductance from 4464285714/1e12 to 4385964912/1e12.",
+  "closure_boundary": {
+    "certifies": [
+      "the transfer-state stationary pressure lifted to four-symbol windows",
+      "the spectral cut flux lifted to edit-local endpoint windows",
+      "the cut-neighborhood virtual candidate search",
+      "the selected clean local block promotion and its flux/conductance effect"
+    ],
+    "does_not_certify_because_not_required": [
+      "global optimality among all non-local grammar moves",
+      "actual mutation of the repaired automaton grammar",
+      "multi-window closure after applying the selected move",
+      "compiler integration of the selected symbolic move"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift.py",
+      "sha256": "85911a40250207b35cebbf11ac7af1548af92b424e00d198a595a33f99fb0048"
+    },
+    "repaired_automaton_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/report.json",
+      "sha256": "f9dc0037977c2d0792ed18966aad2c13a238a6a5b7f8627a1d5c46fac1d3c8df"
+    },
+    "repaired_automaton_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_repaired_automaton/signature_boundary_spine_aperture_closure_tail_repaired_automaton_tables.npz",
+      "sha256": "be2c32a75a8f762d4b3771c63adb6c4dc4e35cdefdec2cbbe527a42058fa6bd1"
+    },
+    "skip_window_report": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar/report.json",
+      "sha256": "7ab11e2605a794a1696898a6b052d199e15a3fca1832bc9f855e50ca55b8b3d0"
+    },
+    "skip_window_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_skip_window_grammar/signature_boundary_spine_aperture_closure_tail_skip_window_grammar_tables.npz",
+      "sha256": "41bb924e5d2217c1ebec4170da60c35bcd01d81a2387b361d0d56c16a4e23339"
+    },
+    "transfer_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/signature_boundary_spine_aperture_closure_tail_transfer_operator_certificate.json",
+      "sha256": "d2f60bfa2993c73d04c181da6c0804b403625887eb9677c09a419457fce651f8"
+    },
+    "transfer_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/aperture_closure_tail_transfer_edges.csv",
+      "sha256": "4cd12d6557256024791935e062a01b5498529a2a528c64c7ff03ccd37c42de67"
+    },
+    "transfer_report": {
+      "certificate_sha256": "717bce81d4057c453adab9a183a3d0e6c30321be0918914d47a047c19b89b4cc",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/report.json",
+      "sha256": "72b8659f1189878d4a2c6dbb5aab0390c10ebaa65f2d9e75b4b4a535835a13b3",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_TRANSFER_OPERATOR_CERTIFIED"
+    },
+    "transfer_states": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/aperture_closure_tail_transfer_states.csv",
+      "sha256": "4ba7a1ad1fb4ffa0960790e7ee291ae40de39b75f6a1f9e217bcf88a09fa4d9e"
+    },
+    "transfer_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_transfer_operator/signature_boundary_spine_aperture_closure_tail_transfer_operator_tables.npz",
+      "sha256": "7724d5cba3e9cf6d1f56683cd2823c8d833a30e32a42ead8bb38ee89335f71e8"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift.py",
+      "sha256": "74b974f7f41b1785e083b6e8bb0ad9e734cbd7da529dc8b990e1e39f293366a7"
+    }
+  },
+  "next_highest_yield_item": "Apply the selected 5,5,2,5 window promotion as a new derived grammar layer, rebuild the repaired automaton, and measure whether the spectral cut moves or dissolves under the expanded boundary language.",
+  "outputs": {
+    "flow_candidate_moves_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/aperture_closure_tail_flow_candidate_moves.csv",
+    "flow_candidate_words_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/aperture_closure_tail_flow_candidate_words.csv",
+    "flow_cut_windows_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/aperture_closure_tail_flow_cut_windows.csv",
+    "flow_window_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/aperture_closure_tail_flow_window_observables.csv",
+    "flow_window_pressure_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/aperture_closure_tail_flow_window_pressure.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/report.json",
+    "signature_boundary_spine_aperture_closure_tail_flow_window_lift": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/signature_boundary_spine_aperture_closure_tail_flow_window_lift.json",
+    "signature_boundary_spine_aperture_closure_tail_flow_window_lift_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/signature_boundary_spine_aperture_closure_tail_flow_window_lift_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_flow_window_lift_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift/signature_boundary_spine_aperture_closure_tail_flow_window_lift_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_flow_window_lift@1",
+  "stage_protocol": {
+    "closure": "certify the selected window move reduces bottleneck flux without losing the boundary merge",
+    "coherence": "rank cut-local moves by clean side attachment, flux reduction, and conductance reduction",
+    "draft": "lift transfer mass and cut flux onto four-symbol windows",
+    "emit": "emit flow-window artifacts, certificate, report, verifier command, and next target",
+    "witness": "emit window-pressure, cut-window, candidate-move, candidate-word, and observable tables"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_FLOW_WINDOW_LIFT_CERTIFIED",
+  "witness": {
+    "candidate_move_count": 15,
+    "candidate_move_table_sha256": "79934cf432867a04c93183dad18ae402238b79d5e61c0ea8ba950c7cfa4e93da",
+    "candidate_stats": {
+      "already_repair_supported_count": 21,
+      "bad_metric_count": 645,
+      "cut_endpoint_neighbor_candidate_count": 1150,
+      "metric_closed_virtual_candidate_count": 26,
+      "not_closed_count": 200,
+      "trace_failure_count": 258
+    },
+    "candidate_word_table_sha256": "61c1065d3e53aab43bee6c567e170a684400bf4fdfbc723453da2ecb3030ac86",
+    "clean_candidate_move_count": 12,
+    "cut_endpoint_neighbor_candidate_count": 1150,
+    "cut_endpoint_state_count": 12,
+    "cut_window_block_count": 15,
+    "cut_window_table_sha256": "456d30850516ef7fa8d67dc95b692847ca8e6139928103318884bdcd62b0a5f4",
+    "metric_closed_virtual_candidate_count": 26,
+    "observable_table_sha256": "75f4ab7f7c45ad5a9cd9456e2a218ace1b37027914ea21fca98d52e781770416",
+    "pressure_table_sha256": "ce44dfe95dae3104798fe0fbc3cfc8f347b2c75781ae75063d88701c5c5f15cf",
+    "selected_move": {
+      "block": [
+        5,
+        5,
+        2,
+        5
+      ],
+      "candidate_word_count": 12,
+      "conductance_reduction_x1e12": 78320802,
+      "cut_flux_reduction_x1e12": 2108925,
+      "negative_side_edge_count": 12,
+      "new_cut_flux_x1e12": 1025816379,
+      "new_weighted_conductance_x1e12": 4385964912,
+      "same_side_edge_count": 12
+    }
+  }
+}

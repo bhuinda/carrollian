@@ -1,0 +1,109 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "00093a73d4db7fef699e567e76690d4ac062c8ed57c0fb9ed520d971e314a517",
+  "checks": {
+    "eta6_is_relative_cycle_not_absolute_cycle": true,
+    "eta6_json_edge_support_matches_k4": true,
+    "eta6_preservation_link_is_current": true,
+    "eta6_relative_class_is_nonzero": true,
+    "eta6_support_charge_report_certified": true,
+    "holonomy_dual_is_nontrivial_and_detects_eta6": true,
+    "opposite_edge_pairs_are_relative_cycles": true,
+    "relative_boundary_complex_has_expected_ranks": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The eta6 support charge has a one-dimensional relative homology and cohomology presentation over F2 after quotienting K4 vertex boundaries by v0+v1+v2+v3. eta6 is a relative cycle, is not a face boundary, and is detected by a nontrivial dual holonomy represented by the vertex-3 star cochain.",
+  "closure_boundary": {
+    "certifies": [
+      "eta6 is a nonzero relative H1 class over F2 in the K4 quotient model",
+      "eta6 is a relative cycle but not an absolute cycle",
+      "eta6 is not in the face-boundary image",
+      "a nontrivial dual holonomy cochain evaluates to 1 on eta6"
+    ],
+    "does_not_certify_because_not_required": [
+      "integer or real-valued cohomology beyond the F2 support class",
+      "Dini torsion or H4 lift coordinates",
+      "cyclic/dihedral six-window intervention closure",
+      "full rigidity under complete associator geometry"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy.py",
+      "sha256": "a8c957619a579f7930c4a83a3752ceb6e5e07804c65b83ab39c3cc5441abe7d5"
+    },
+    "eta6_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge.json",
+      "sha256": "5f1118bb2435722d5faff162241b36a3e8c736ea3c60368d5524fc4ae1ebbabc"
+    },
+    "eta6_report": {
+      "certificate_sha256": "dda6d374fd2dd86ebc86b1b52e39bd2d34654e7b5f9a20384633febb443c12ce",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/report.json",
+      "sha256": "71aaabe2e29acfce8ec07302d93c684b2b17fbf62545324e48d163f4d15ed7e8",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_HEXAGONAL_SUPPORT_CHARGE_CERTIFIED"
+    },
+    "eta6_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge_tables.npz",
+      "sha256": "fd748256fad81d00e696d6e4303bbde468e2512b169608e272d0b6aeef8e9a71"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy.py",
+      "sha256": "926ed0b5c40807fb9188ccba953445cf975d2c46196122a44c07da27f5b0f567"
+    }
+  },
+  "next_highest_yield_item": "Use the eta6 holonomy class as the base for Dini torsion: compare conductance descent against the fixed nontrivial holonomy pairing.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy_certificate.json",
+    "edge_basis_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/eta6_relative_edge_basis.csv",
+    "face_boundary_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/eta6_relative_face_boundaries.csv",
+    "holonomy": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/manifest.json",
+    "observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/eta6_relative_holonomy_observables.csv",
+    "opposite_pair_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/eta6_relative_opposite_pair_cycles.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/report.json",
+    "tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy@1",
+  "stage_protocol": {
+    "closure": "certify eta6 as a nonzero relative class with nontrivial dual holonomy",
+    "coherence": "compute GF(2) ranks, relative cycle status, face-boundary membership, and dual pairing",
+    "draft": "start from the certified eta6 support-charge layer",
+    "emit": "emit relative chain tables, certificate, report, verifier command, and next target",
+    "witness": "construct K4 edge, face, relative-boundary, and dual-holonomy matrices"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_RELATIVE_HOLONOMY_CERTIFIED",
+  "witness": {
+    "edge_basis_codes": [
+      1,
+      2,
+      3,
+      12,
+      13,
+      23
+    ],
+    "edge_table_sha256": "580a9c65ba7635555567abebd9bd7552bc970b0be88f369ff79924173a074fba",
+    "eta6_preserved_rows": 606,
+    "eta6_vector": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "face_table_sha256": "fb15f793520a24550036cf4ba0406d4827d3acabb203ace84f10c242b610e2d8",
+    "holonomy_eta6_pairing": 1,
+    "holonomy_vector": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "observable_table_sha256": "fbaa6e929ea3c191af4bf8215e4080dbc8569c78b36d2cb4b9a1bde2e6be6a0d",
+    "opposite_pair_table_sha256": "4aae74da1cd4949678b48e547ea8c40f0314ae252a1554bd0b1300f63b03e3a1",
+    "relative_cohomology_dimension": 1,
+    "relative_h1_dimension": 1
+  }
+}

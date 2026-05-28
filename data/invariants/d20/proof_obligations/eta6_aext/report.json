@@ -1,0 +1,95 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dfbcac6933be0d6ba358091693751352262004cedbdf42d05a736f6dfeb7044f",
+  "checks": {
+    "aext_exterior_cell_matrix_is_explicit": true,
+    "aext_gordan_dual_is_certified": true,
+    "closure_boundary_is_not_overclaimed": true,
+    "input_reports_are_certified": true,
+    "minimal_affine_circuit_census_is_complete_for_rounded_model": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The eta6 exterior layer now has an explicit expanded exterior-cell matrix A_ext with 1,740 support rows. The one-dimensional height witness h=1 evaluates every row strictly positive, so Gordan's alternative rules out a nonzero nonnegative dependence for this expanded exterior-cell matrix. The same run also enumerates the minimal affine-circuit census of the rounded 60-vertex carrier: 10,635 coplanar 4-circuits and 4,892,880 generic 5-circuits. The full signed circuit-row Gordan test and surgery continuation are kept as open next layers.",
+  "closure_boundary": {
+    "certifies": [
+      "the expanded 1,740-row exterior-cell support matrix A_ext is explicit",
+      "h=1 is strictly positive on every expanded exterior-cell row",
+      "Gordan-dual infeasibility for nonzero nonnegative dependences on this expanded exterior-cell matrix",
+      "a compact full census count and stream hash for minimal affine circuits of the rounded 60-vertex carrier"
+    ],
+    "does_not_certify_because_not_required": [
+      "signed height rows for all 4,903,515 minimal affine circuits",
+      "Gordan infeasibility for the full signed affine-circuit matrix",
+      "a surgery move crossing the eta6 aperture stratum"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_aext.py",
+      "sha256": "3b49b3237b4cbffc25022a3b009305502c01cf6a6155171a8c41084cfc29a75d"
+    },
+    "ext_report": {
+      "certificate_sha256": "0293947491d3709aa5cb7029b9c7d5a59a23e3cd8be04131f23a8868fbe8bd1b",
+      "path": "data/invariants/d20/proof_obligations/eta6_ext_cone/report.json",
+      "sha256": "f5d9bf3cc734bbde6ed53bf821ba1a3de061e0cb1560f582287326d19e6d2cae",
+      "status": "ETA6_EXT_CONE_CERTIFIED"
+    },
+    "ext_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_ext_cone/tables.npz",
+      "sha256": "cd916887e84a8ad68287d65eea79bedab6e85773be6a75deb345f24c398d2c60"
+    },
+    "gordan_report": {
+      "certificate_sha256": "379c41270a0091cc349a6d2bea2a8a91bc45acb4cb7da6a0a40be4303b8b79ca",
+      "path": "data/invariants/d20/proof_obligations/eta6_gordan/report.json",
+      "sha256": "a3505b8e41910ed002ab388691ab086acefb444e4a5b900ec9068029e261df08",
+      "status": "ETA6_GORDAN_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_aext.py",
+      "sha256": "570db1bc92943738bfb3c89e6e8b79bb6fe2c03ea12581ec9ef4345b436567cd"
+    }
+  },
+  "next_highest_yield_item": "Orient the 4,903,515 minimal affine circuits into signed height rows and run the Gordan alternative on that full circuit matrix.",
+  "outputs": {
+    "aext": "data/invariants/d20/proof_obligations/eta6_aext/aext.json",
+    "aext_csv": "data/invariants/d20/proof_obligations/eta6_aext/aext.csv",
+    "c4_csv": "data/invariants/d20/proof_obligations/eta6_aext/c4.csv",
+    "certificate": "data/invariants/d20/proof_obligations/eta6_aext/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_aext/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_aext/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/eta6_aext/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_aext/tables.npz"
+  },
+  "schema": "eta6.aext.report@1",
+  "stage_protocol": {
+    "closure": "apply Gordan to the expanded exterior-cell matrix only",
+    "coherence": "check strict A_ext positivity and determinant gap for the circuit census",
+    "draft": "start from eta6_ext_cone slacks and eta6_gordan",
+    "emit": "emit compact rows, hashes, observables, cert, report, verifier command, and next target",
+    "witness": "expand all 1,740 exterior face/non-face cells and enumerate minimal affine circuits"
+  },
+  "status": "ETA6_AEXT_CERTIFIED",
+  "witness": {
+    "aext_matrix": {
+      "max_test_value_x1e12": 3103251249022,
+      "min_test_value_x1e12": 350487408079,
+      "positive_row_count": 1740,
+      "row_count": 1740,
+      "test_h_x1e12": 1000000000000,
+      "zero_row_count": 0
+    },
+    "aext_table_sha256": "b3d0ba38c3e4b1ba8469e2a347b4362aab431ac86ab420899e013cb022021bac",
+    "c4_table_sha256": "c96a8b45deca05d6383c9ed90f09e064f59b08b97708fbfbde0331e1ae9d3f6c",
+    "minimal_affine_circuits": {
+      "collinear_triple_count": 0,
+      "max_size4_det_abs_x1e15": 5705,
+      "min_non_size4_det_abs_x1e12": 34973033701,
+      "size4_count": 10635,
+      "size4_stream_sha256": "9dfaa8311183ce4fd866dd7abd2080c7a8c5ff4b77b02d4921f9037b14993544",
+      "size5_count": 4892880,
+      "size5_stream_sha256": "d83b4d7d661426e9a2741e185f8e142e27714b61a6ade55793b1a0d03047749d",
+      "total_count": 4903515
+    },
+    "observable_table_sha256": "1f27875d509076de5b2737239b7cff2212d5d8127c6f000974f236ed1a2ee32a"
+  }
+}

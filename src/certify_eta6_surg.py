@@ -1,0 +1,237 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+try:
+    from .certify_io import ROOT, h_file, h_json
+    from .derive_eta6_surg import (
+        CRIT_COLUMNS,
+        DERIVE_SCRIPT,
+        DROP_COLUMNS,
+        EXT_REPORT,
+        EXT_TABLES,
+        HPOL_REPORT,
+        HPOL_WEIGHTS,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        SAMPLE_LIMIT,
+        STATUS,
+        SURVIVOR_COLUMNS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        ext,
+        pair,
+    )
+except ImportError:  # Supports direct script execution.
+    from certify_io import ROOT, h_file, h_json
+    from derive_eta6_surg import (
+        CRIT_COLUMNS,
+        DERIVE_SCRIPT,
+        DROP_COLUMNS,
+        EXT_REPORT,
+        EXT_TABLES,
+        HPOL_REPORT,
+        HPOL_WEIGHTS,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        SAMPLE_LIMIT,
+        STATUS,
+        SURVIVOR_COLUMNS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        ext,
+        pair,
+    )
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise AssertionError(f"{path} is not a JSON object")
+    return payload
+
+
+def assert_file_hash(entry: dict[str, Any], expected_path: Path, label: str) -> None:
+    expected_rel = expected_path.relative_to(ROOT).as_posix()
+    if entry.get("path") != expected_rel:
+        raise AssertionError(f"{label} path mismatch: {entry.get('path')}")
+    if entry.get("sha256") != h_file(expected_path):
+        raise AssertionError(f"{label} sha256 mismatch")
+
+
+def table_rows(table: np.ndarray, columns: list[str]) -> list[dict[str, int]]:
+    return [
+        {column: int(values[index]) for index, column in enumerate(columns)}
+        for values in table
+    ]
+
+
+def validate_eta6_surg() -> dict[str, Any]:
+    expected = build_payloads()
+    report = load_json(OUT_DIR / "report.json")
+    manifest = load_json(OUT_DIR / "manifest.json")
+    surg = load_json(OUT_DIR / "surg.json")
+    cert = load_json(OUT_DIR / "cert.json")
+    crit_csv = (OUT_DIR / "crit.csv").read_text(encoding="utf-8")
+    drop_csv = (OUT_DIR / "drop.csv").read_text(encoding="utf-8")
+    samp_csv = (OUT_DIR / "samp.csv").read_text(encoding="utf-8")
+    obs_csv = (OUT_DIR / "obs.csv").read_text(encoding="utf-8")
+    tables = np.load(OUT_DIR / "tables.npz", allow_pickle=False)
+    index = load_json(ext.nonholonomic.preservation.INDEX_PATH)
+
+    if surg != expected["surg"]:
+        raise AssertionError("eta6_surg JSON mismatch")
+    if cert != expected["cert"]:
+        raise AssertionError("eta6_surg cert mismatch")
+    if crit_csv != expected["crit_csv"]:
+        raise AssertionError("eta6_surg critical CSV mismatch")
+    if drop_csv != expected["drop_csv"]:
+        raise AssertionError("eta6_surg drop CSV mismatch")
+    if samp_csv != expected["samp_csv"]:
+        raise AssertionError("eta6_surg sample CSV mismatch")
+    if obs_csv != expected["obs_csv"]:
+        raise AssertionError("eta6_surg obs CSV mismatch")
+    if not np.array_equal(
+        np.asarray(tables["observable_table"]),
+        expected["obs_table"],
+    ):
+        raise AssertionError("eta6_surg observable table mismatch")
+    if not np.array_equal(
+        np.asarray(tables["critical_table"]),
+        expected["crit_table"],
+    ):
+        raise AssertionError("eta6_surg critical table mismatch")
+    if not np.array_equal(np.asarray(tables["drop_table"]), expected["drop_table"]):
+        raise AssertionError("eta6_surg drop table mismatch")
+    if not np.array_equal(np.asarray(tables["sample_table"]), expected["sample_table"]):
+        raise AssertionError("eta6_surg sample table mismatch")
+
+    if report.get("schema") != "eta6.surg.report@1":
+        raise AssertionError("eta6_surg report schema mismatch")
+    if report.get("status") != STATUS:
+        raise AssertionError("eta6_surg report is not certified")
+    if report.get("all_checks_pass") is not True:
+        raise AssertionError("eta6_surg all_checks_pass is not true")
+    if report.get("checks") != expected["report"]["checks"]:
+        raise AssertionError("eta6_surg checks mismatch")
+    if pair.parent.self_hash(report, "certificate_sha256") != report.get(
+        "certificate_sha256"
+    ):
+        raise AssertionError("eta6_surg report self hash mismatch")
+    if report.get("certificate_sha256") != expected["report"]["certificate_sha256"]:
+        raise AssertionError("eta6_surg report hash mismatch")
+
+    obs_table = np.asarray(tables["observable_table"], dtype=np.int64)
+    crit_table = np.asarray(tables["critical_table"], dtype=np.int64)
+    drop_table = np.asarray(tables["drop_table"], dtype=np.int64)
+    sample_table = np.asarray(tables["sample_table"], dtype=np.int64)
+    if tuple(obs_table.shape) != (len(OBS_CODES), len(OBS_COLUMNS)):
+        raise AssertionError("eta6_surg obs table shape mismatch")
+    if tuple(crit_table.shape) != (870, len(CRIT_COLUMNS)):
+        raise AssertionError("eta6_surg critical table shape mismatch")
+    if tuple(drop_table.shape) != (6, len(DROP_COLUMNS)):
+        raise AssertionError("eta6_surg drop table shape mismatch")
+    if tuple(sample_table.shape) != (SAMPLE_LIMIT, len(SURVIVOR_COLUMNS)):
+        raise AssertionError("eta6_surg sample table shape mismatch")
+
+    obs = {
+        row["observable_code"]: row["value"]
+        for row in table_rows(obs_table, OBS_COLUMNS)
+    }
+    required = {
+        "support_row_count": 1_740,
+        "negative_ray_row_count": 870,
+        "first_hit_row_count": 6,
+        "survivor_row_count": 1_734,
+        "first_tau_numerator": 96_225_044_865,
+        "first_tau_denominator": 256,
+        "next_tau_numerator": 6_415_002_991,
+        "next_tau_denominator": 15,
+        "post_tau_numerator": 3_085_616_438_671,
+        "post_tau_denominator": 7_680,
+        "nonpositive_survivor_count": 0,
+        "positive_survivor_count": 1_734,
+        "min_survivor_slack_numerator": 2_982_976_390_815,
+        "min_survivor_slack_denominator": 128,
+        "removed_negative_post_count": 6,
+        "support_cone_positive_after_cut_flag": 1,
+        "topology_replacement_certified_flag": 0,
+        "eta6_opened_flag": 0,
+    }
+    for key, value in required.items():
+        if obs.get(OBS_CODES[key]) != value:
+            raise AssertionError(f"eta6_surg observable {key} mismatch")
+
+    witness = report.get("witness", {})
+    if witness.get("first_hit_slack_row_ids") != [1726, 1728, 1734, 1735, 1738, 1739]:
+        raise AssertionError("eta6_surg first-hit rows mismatch")
+    if witness.get("first_hit_face_id") != 31:
+        raise AssertionError("eta6_surg first-hit face mismatch")
+    if witness.get("first_hit_vertices") != [40, 42, 50, 51, 56, 58]:
+        raise AssertionError("eta6_surg first-hit vertices mismatch")
+    if witness.get("nonpositive_survivor_count") != 0:
+        raise AssertionError("eta6_surg survivor positivity mismatch")
+    if crit_csv.splitlines()[0].split(",") != CRIT_COLUMNS:
+        raise AssertionError("eta6_surg critical header mismatch")
+    if drop_csv.splitlines()[0].split(",") != DROP_COLUMNS:
+        raise AssertionError("eta6_surg drop header mismatch")
+    if samp_csv.splitlines()[0].split(",") != SURVIVOR_COLUMNS:
+        raise AssertionError("eta6_surg sample header mismatch")
+
+    inputs = report.get("inputs", {})
+    assert_file_hash(inputs.get("ext_report", {}), EXT_REPORT, "ext report")
+    assert_file_hash(inputs.get("ext_tables", {}), EXT_TABLES, "ext tables")
+    assert_file_hash(inputs.get("hpol_report", {}), HPOL_REPORT, "hpol report")
+    assert_file_hash(inputs.get("hpol_weights", {}), HPOL_WEIGHTS, "hpol weights")
+    assert_file_hash(inputs.get("derive_script", {}), DERIVE_SCRIPT, "derive script")
+    assert_file_hash(inputs.get("validator", {}), VALIDATOR_SCRIPT, "validator")
+
+    if manifest.get("schema") != "eta6.surg.manifest@1":
+        raise AssertionError("eta6_surg manifest schema mismatch")
+    if manifest.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_surg manifest report hash mismatch")
+    if pair.parent.self_hash(manifest, "manifest_sha256") != manifest.get(
+        "manifest_sha256"
+    ):
+        raise AssertionError("eta6_surg manifest self hash mismatch")
+    entry = next(
+        (row for row in index.get("obligations", []) if row.get("id") == THEOREM_ID),
+        None,
+    )
+    if entry is None:
+        raise AssertionError("eta6_surg missing from index")
+    if entry.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_surg index report hash mismatch")
+    if entry.get("status") != report.get("status"):
+        raise AssertionError("eta6_surg index status mismatch")
+    index_without_hash = {
+        key: value for key, value in index.items() if key != "registry_sha256"
+    }
+    if h_json(index_without_hash) != index.get("registry_sha256"):
+        raise AssertionError("proof obligation index self hash mismatch")
+
+    return {
+        "schema": "eta6.surg.verification@1",
+        "status": "PASS",
+        "verified_report": (OUT_DIR / "report.json").relative_to(ROOT).as_posix(),
+        "certificate_sha256": report.get("certificate_sha256"),
+        "witness": report.get("witness"),
+        "closure_boundary": report.get("closure_boundary"),
+        "next_highest_yield_item": report.get("next_highest_yield_item"),
+    }
+
+
+def main() -> None:
+    print(json.dumps(validate_eta6_surg(), indent=2, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

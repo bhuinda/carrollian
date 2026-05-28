@@ -23,18 +23,16 @@ Preferred short citation:
 
 # Introduction
 
-`d20` is the given name of the icosahedral boundary algebra of the finite semisimple multifusion category `C985`. In the most severe terms currently verifiable by hand: `d20` is to cybernetics what Laplace's Demon is to the Langlands program. In English: `d20` represents every possible arrangement of an atom in the universe superdetermined by `C985`. In Spanish: "Es algo grande". In French: `d20` = `Λ³H₆`​.
-
-It may be intuited by what it *is*, rather than what it is *for*:
+We study the infinitesimally rigid object with
 
 - `3` Hamming codes
-- `5` atom kernel dimensions
+- `5` kernel atoms
 - `8` alpha dimensions
 - `11` H-cycle homology rank
 - `12` classes in A12
 - `20` faces
 - `24` visible payload channels
-- `27` role-relation kernel dimension
+- `27` relationals
 - `30` edges
 - `42` roots
 - `120` automorphisms
@@ -53,6 +51,12 @@ It may be intuited by what it *is*, rather than what it is *for*:
 - `1,341,849,600` constant of A_d20
 - `16,102,195,200` constant of sum_a_I(a)
 - `15,473,731,112,461,377,280` F-symbol addresses
+
+and denote its condensation, i.e. algebra, as `d20`.
+
+`d20` may be intuited as the icosahedral boundary algebra of the finite semisimple multifusion category `C985`. Pending third-party verification, I recommend that `d20` be geometrically typed as the *Carrollian pseudosphere of indexical torsion* and intuited as a mathematical Fata Morgana: a spectral algebra projected out of a thermal boundary.
+
+An alternative way to think about `d20` is to imagine a shape in your head (the red triangle being mildly iconic): `d20` is the object of study enabling calculus to investigate the physics of **how** you conjured that triangle there, and **where** it exists relative to *hyperspace*. Yes, hyperspace. We're talking about hyperspace in 2026. (Did you forget about [AI 2027](https://ai-2027.com/)?)
 
 As is tradition: the proof is left to the ~~reader~~ verifier.
 
@@ -88,9 +92,23 @@ python src/verify.py strict-replay
 ---
 
 <details>
-<summary>Some light reading</summary>
+<summary>P.S.</summary>
 
-Dear reader, you are cordially invited to explore *why* it is that you should care about `d20`'s combinatorics. Plugging its JSON files (or this README) into a model of your choice and interrogating it with a critical open mind may be the fastest way to learn about, well, anything that doesn't normally appear in the forced perspective of our everyday [flatland](https://youtu.be/hjXyRZP4ITQ).
+Dear reader, you are cordially invited to explore *why* you should care about `d20`'s combinatorics. My own prose does it little service, but I will give you a headstart: It refutes the notion that infinity exists; that is, infinity is a category error. And when you take the big picture of it all, this characterization of infinity dictates the **why** of computation: how electricity self-interacts.
+
+. In the most severe terms currently verifiable by hand: `d20` is to cybernetics what Laplace's Demon is to the Langlands program.
+
+In English, that means: `d20` represents the complete possible arrangement of an atom in the universe superdetermined by `C985`. In Spanish, that means: Es algo grande. In French, that means: `d20 = Λ³H₆`​.
+
+Plugging `d20`'s JSON files (or this README) into a LLM of your choice and interrogating it with an open critical mind may be the fastest way to learn about, well, anything that doesn't normally appear in the forced perspective of our everyday [flatland](https://youtu.be/hjXyRZP4ITQ).
+
+Just as well, agentic programming centered on `d20` as a kernel architecture is its own whole category of joy. 
+
+
+
+But I won't spoil quite yet what that full catalog of goodies looks like when you really take the
+
+ in the file located at `./data/raw/Halloween.npz`
 
 You may find yourself down the rabbit hole most quickly with the following lead-in prompts:
 

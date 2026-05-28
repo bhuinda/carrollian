@@ -1,0 +1,142 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e360f6967af768afb8cdf7b2be95ebe0e30cc266b6e958a7714cf1275a803c7d",
+  "checks": {
+    "all_frontier_rows_are_24_path_delta2": true,
+    "carrier_splice_certificate_certified": true,
+    "carrier_splice_report_certified": true,
+    "carrier_splice_schema_available": true,
+    "class_table_shape_matches_codebook": true,
+    "frontier_table_shape_matches_codebook": true,
+    "lower_variation_rows_are_not_tail_retaining": true,
+    "no_lower_variation_row_retains_six_templates": true,
+    "observable_table_shape_matches_codebook": true,
+    "parent_carrier_splice_boundary_declares_bounded_exhaustive_search": true,
+    "selected_endpoint_distribution_is_12_4_8": true,
+    "selected_six_template_splice_is_witness_2": true,
+    "selected_template_lifts_are_uniform_four": true,
+    "selected_word_and_trace_match_parent": true,
+    "six_template_minimum_variation_is_223": true,
+    "six_template_retention_is_unique": true
+  },
+  "claim": "Within the certified bounded carrier-splice frontier, the six-template-retaining splice is already variation-optimal. The parent layer emits all 11 bounded words with 24 first-return closures and delta_twice 2. Only witness 2 retains all six rank104 tail templates at four lifts each; its variation is 223. The lower-variation exact splices, witnesses 0 and 1 at variation 197 and 199, collapse the tail-template distribution and therefore do not satisfy the retained-tail constraint.",
+  "closure_boundary": {
+    "certifies": [
+      "bounded variation optimality of the six-template-retaining carrier splice",
+      "that witnesses 0 and 1 are the only lower-variation exact splices and both fail six-template retention",
+      "that witness 2 is the unique exact splice retaining six rank104 tail templates at four lifts each",
+      "that variation 223 is the bounded minimum under the declared tail-retention constraints"
+    ],
+    "does_not_certify_because_not_required": [
+      "global optimality outside the parent bounded pre-tail search",
+      "carrier splices that abandon the six-template rank104 tail distribution",
+      "edit costs above the parent three-insertion bound",
+      "categorical pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "carrier_splice_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/signature_boundary_spine_aperture_closure_tail_carrier_splice_realization_certificate.json",
+      "sha256": "db39746b669086e8d0b2c0ba931ccf5a0db31e9b3c6bb40a03a8e8490b35c2bd"
+    },
+    "carrier_splice_exact_witnesses": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/aperture_closure_tail_carrier_splice_exact_witnesses.csv",
+      "sha256": "ac6627c0457bbc6f5f16bd299f74f891486d1a876d8030998daac4f55496668f"
+    },
+    "carrier_splice_json": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/signature_boundary_spine_aperture_closure_tail_carrier_splice_realization.json",
+      "sha256": "f4ed8804dfa68ee3eb7e7c4b49e2b459e9d5445060dc6159bd585f77845c3789"
+    },
+    "carrier_splice_observables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/aperture_closure_tail_carrier_splice_observables.csv",
+      "sha256": "6e1ed99e99176c5430724fa7d6613dda3ddfac49b73bd694d64fb9f97f554fdf"
+    },
+    "carrier_splice_report": {
+      "certificate_sha256": "40f5b4b8c852bc3e08cd67c534ffc9d1303f32df4d275f6be149a7f5571bc69a",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/report.json",
+      "sha256": "5aa6c6ce3a87de385425189f29deb7fc11df60712568469f71ed9efb2646e32c",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_CARRIER_SPLICE_REALIZATION_CERTIFIED"
+    },
+    "carrier_splice_selected_templates": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/aperture_closure_tail_carrier_splice_selected_templates.csv",
+      "sha256": "af1b58e7bfbc5cfa4a69f18dc9d607ee89ce1223fa5983e545025640d6c86da9"
+    },
+    "carrier_splice_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/signature_boundary_spine_aperture_closure_tail_carrier_splice_realization_tables.npz",
+      "sha256": "e3e7f6fb77b50b60807edc5273bd175bc2a00ec3e6190c20fdfaa4131a7900f8"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality.py",
+      "sha256": "50f5cda05dfc278693bd1f11794e0d423d4e063f687b7353ef3aee84ef786d12"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality.py",
+      "sha256": "e707857227d7c704cfb37f81fcec66d3ad1448b1775e5f972f402c5caaaf2cac"
+    }
+  },
+  "next_highest_yield_item": "Relax the tail-retention constraint one notch: characterize the lower-variation exact splices at variation 197 and 199, then test whether their collapsed tail distributions can be lifted back to six templates without reintroducing delta_twice 4.",
+  "outputs": {
+    "aperture_closure_tail_carrier_splice_frontier_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality/aperture_closure_tail_carrier_splice_frontier.csv",
+    "aperture_closure_tail_carrier_splice_optimality_classes_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality/aperture_closure_tail_carrier_splice_optimality_classes.csv",
+    "aperture_closure_tail_carrier_splice_optimality_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality/aperture_closure_tail_carrier_splice_optimality_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality/report.json",
+    "signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality/signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality.json",
+    "signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality/signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality/signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_optimality@1",
+  "stage_protocol": {
+    "closure": "certify that no lower-variation exact splice retains the six rank104 tail templates",
+    "coherence": "compare variation minima by all-exact, rank104-prefix, shared-tail, six-template, and both-chord classes",
+    "draft": "reuse the certified carrier-splice frontier instead of re-running the 19,500-word search",
+    "emit": "emit frontier rows, class rows, observables, certificate, report, verifier command, and next target",
+    "witness": "project all exact 24-path delta2 splices and their tail-retention flags"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_CARRIER_SPLICE_OPTIMALITY_CERTIFIED",
+  "witness": {
+    "bounded_minimum_statement": "witness 2 is the unique six-template-retaining exact splice, therefore variation 223 is the bounded minimum under the declared tail-retention constraints",
+    "class_table_sha256": "1e4626fa3c5df5506a1fe7e157dae7e0f9831c7d23b888ff5f705a1e9f1dd657",
+    "frontier_table_sha256": "087ba2a3f9e23e86145f16c7455656af0caa2982b5bc4fc768c25f0ebc5939ee",
+    "lower_variation_exact_witness_ids": [
+      0,
+      1
+    ],
+    "lower_variation_six_template_count": 0,
+    "observable_table_sha256": "1f99490e9777dca747bf7069d3d756b9377b51a44980242a1308d03175122d1a",
+    "selected_closed_path_count": 24,
+    "selected_delta_twice": 2,
+    "selected_splice_witness_id": 2,
+    "selected_trace": [
+      48,
+      42,
+      27,
+      31,
+      50,
+      34,
+      54,
+      45,
+      29,
+      28,
+      34,
+      44
+    ],
+    "selected_variation": 223,
+    "selected_word": [
+      2,
+      1,
+      3,
+      4,
+      5,
+      1,
+      4,
+      5,
+      5,
+      2,
+      1,
+      4,
+      5
+    ],
+    "six_template_retention_exact_count": 1
+  }
+}

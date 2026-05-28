@@ -1,0 +1,268 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+try:
+    from .certify_io import ROOT, h_file, h_json
+    from .derive_eta6_hpol import (
+        AEXT_REPORT,
+        AEXT_TABLES,
+        DERIVE_SCRIPT,
+        EXT_TABLES,
+        FACE_COLUMNS,
+        HEIGHT_COLUMNS,
+        HOLONOMY_REPORT,
+        ISLACK_REPORT,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        SAMPLE_COLUMNS,
+        SAMPLE_LIMIT,
+        SROWS_REPORT,
+        STATUS,
+        THEOREM_ID,
+        TRUNCATED_REPORT,
+        TRUNCATED_TABLES,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        ext,
+        pair,
+    )
+except ImportError:  # Supports direct script execution.
+    from certify_io import ROOT, h_file, h_json
+    from derive_eta6_hpol import (
+        AEXT_REPORT,
+        AEXT_TABLES,
+        DERIVE_SCRIPT,
+        EXT_TABLES,
+        FACE_COLUMNS,
+        HEIGHT_COLUMNS,
+        HOLONOMY_REPORT,
+        ISLACK_REPORT,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        SAMPLE_COLUMNS,
+        SAMPLE_LIMIT,
+        SROWS_REPORT,
+        STATUS,
+        THEOREM_ID,
+        TRUNCATED_REPORT,
+        TRUNCATED_TABLES,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        ext,
+        pair,
+    )
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise AssertionError(f"{path} is not a JSON object")
+    return payload
+
+
+def assert_file_hash(entry: dict[str, Any], expected_path: Path, label: str) -> None:
+    expected_rel = expected_path.relative_to(ROOT).as_posix()
+    if entry.get("path") != expected_rel:
+        raise AssertionError(f"{label} path mismatch: {entry.get('path')}")
+    if entry.get("sha256") != h_file(expected_path):
+        raise AssertionError(f"{label} sha256 mismatch")
+
+
+def table_rows(table: np.ndarray, columns: list[str]) -> list[dict[str, int]]:
+    return [
+        {column: int(values[index]) for index, column in enumerate(columns)}
+        for values in table
+    ]
+
+
+def validate_eta6_hpol() -> dict[str, Any]:
+    expected = build_payloads()
+    report = load_json(OUT_DIR / "report.json")
+    manifest = load_json(OUT_DIR / "manifest.json")
+    hpol = load_json(OUT_DIR / "hpol.json")
+    cert = load_json(OUT_DIR / "cert.json")
+    weights_csv = (OUT_DIR / "weights.csv").read_text(encoding="utf-8")
+    heights_csv = (OUT_DIR / "heights.csv").read_text(encoding="utf-8")
+    sample_csv = (OUT_DIR / "samp.csv").read_text(encoding="utf-8")
+    obs_csv = (OUT_DIR / "obs.csv").read_text(encoding="utf-8")
+    tables = np.load(OUT_DIR / "tables.npz", allow_pickle=False)
+    index = load_json(ext.nonholonomic.preservation.INDEX_PATH)
+
+    if hpol != expected["hpol"]:
+        raise AssertionError("eta6_hpol JSON mismatch")
+    if cert != expected["cert"]:
+        raise AssertionError("eta6_hpol cert mismatch")
+    if weights_csv != expected["weights_csv"]:
+        raise AssertionError("eta6_hpol weights CSV mismatch")
+    if heights_csv != expected["heights_csv"]:
+        raise AssertionError("eta6_hpol heights CSV mismatch")
+    if sample_csv != expected["samples_csv"]:
+        raise AssertionError("eta6_hpol sample CSV mismatch")
+    if obs_csv != expected["obs_csv"]:
+        raise AssertionError("eta6_hpol obs CSV mismatch")
+    if not np.array_equal(
+        np.asarray(tables["observable_table"]),
+        expected["observable_table"],
+    ):
+        raise AssertionError("eta6_hpol observable table mismatch")
+    if not np.array_equal(np.asarray(tables["face_table"]), expected["face_table"]):
+        raise AssertionError("eta6_hpol face table mismatch")
+    if not np.array_equal(np.asarray(tables["height_table"]), expected["height_table"]):
+        raise AssertionError("eta6_hpol height table mismatch")
+
+    if report.get("schema") != "eta6.hpol.report@1":
+        raise AssertionError("eta6_hpol report schema mismatch")
+    if report.get("status") != STATUS:
+        raise AssertionError("eta6_hpol report is not certified")
+    if report.get("all_checks_pass") is not True:
+        raise AssertionError("eta6_hpol all_checks_pass is not true")
+    if report.get("checks") != expected["report"]["checks"]:
+        raise AssertionError("eta6_hpol checks mismatch")
+    if pair.parent.self_hash(report, "certificate_sha256") != report.get(
+        "certificate_sha256"
+    ):
+        raise AssertionError("eta6_hpol report self hash mismatch")
+    if report.get("certificate_sha256") != expected["report"]["certificate_sha256"]:
+        raise AssertionError("eta6_hpol report hash mismatch")
+
+    obs_table = np.asarray(tables["observable_table"], dtype=np.int64)
+    face_table = np.asarray(tables["face_table"], dtype=np.int64)
+    height_table = np.asarray(tables["height_table"], dtype=np.int64)
+    if tuple(obs_table.shape) != (len(OBS_CODES), len(OBS_COLUMNS)):
+        raise AssertionError("eta6_hpol obs table shape mismatch")
+    if tuple(face_table.shape) != (32, len(FACE_COLUMNS)):
+        raise AssertionError("eta6_hpol face table shape mismatch")
+    if tuple(height_table.shape) != (60, len(HEIGHT_COLUMNS)):
+        raise AssertionError("eta6_hpol height table shape mismatch")
+
+    obs = {
+        row["observable_code"]: row["value"]
+        for row in table_rows(obs_table, OBS_COLUMNS)
+    }
+    required = {
+        "vertex_count": 60,
+        "support_face_count": 32,
+        "positive_face_weight_count": 16,
+        "negative_face_weight_count": 16,
+        "unique_hpol_height_count": 60,
+        "hpol_height_min": -9_418_959_026_769_907,
+        "hpol_height_max": 3_787_234_343_094_179,
+        "signed_row_count": 4_903_515,
+        "zero_pairing_count": 0,
+        "positive_pairing_count": 4_903_515,
+        "zero_c4_pairing_count": 0,
+        "zero_c5_pairing_count": 0,
+        "positive_c4_pairing_count": 10_635,
+        "positive_c5_pairing_count": 4_892_880,
+        "min_positive_pairing": 1,
+        "max_positive_pairing_bit_length": 136,
+        "strict_hpol_orientation_flag": 1,
+        "eta6_holonomy_pairing": 1,
+        "eta6_support_preserved_flag": 1,
+        "topology_changing_surgery_flag": 0,
+        "intrinsic_zero_pairing_count": 4_894_923,
+        "face_square_tiebreaker_flag": 1,
+    }
+    for key, value in required.items():
+        if obs.get(OBS_CODES[key]) != value:
+            raise AssertionError(f"eta6_hpol observable {key} mismatch")
+
+    witness = report.get("witness", {})
+    if witness.get("height_vector_sha256") != (
+        "fb848d73ee26bd925e3c15b0d262323f547332222236b178b815c6b2eb8a5afe"
+    ):
+        raise AssertionError("eta6_hpol height hash mismatch")
+    if witness.get("row_stream_sha256") != (
+        "70a6216673205d9ed0e3df7a67fa9a61f05ea9343246cf06355b9d764eca72f0"
+    ):
+        raise AssertionError("eta6_hpol row stream hash mismatch")
+    if witness.get("pairing_counts", {}).get("max_positive_pairing") != (
+        45_130_138_539_643_069_111_777_154_674_751_995_317_644
+    ):
+        raise AssertionError("eta6_hpol max positive pairing mismatch")
+    sample_lines = sample_csv.splitlines()
+    if sample_lines[0].split(",") != SAMPLE_COLUMNS:
+        raise AssertionError("eta6_hpol sample header mismatch")
+    if len(sample_lines) != SAMPLE_LIMIT + 1:
+        raise AssertionError("eta6_hpol sample count mismatch")
+    if weights_csv.splitlines()[0].split(",") != FACE_COLUMNS:
+        raise AssertionError("eta6_hpol weights header mismatch")
+    if heights_csv.splitlines()[0].split(",") != HEIGHT_COLUMNS:
+        raise AssertionError("eta6_hpol heights header mismatch")
+
+    inputs = report.get("inputs", {})
+    assert_file_hash(inputs.get("aext_report", {}), AEXT_REPORT, "aext report")
+    assert_file_hash(inputs.get("aext_tables", {}), AEXT_TABLES, "aext tables")
+    assert_file_hash(inputs.get("ext_tables", {}), EXT_TABLES, "ext tables")
+    assert_file_hash(inputs.get("srows_report", {}), SROWS_REPORT, "srows report")
+    assert_file_hash(
+        inputs.get("islack_report", {}),
+        ISLACK_REPORT,
+        "islack report",
+    )
+    assert_file_hash(
+        inputs.get("holonomy_report", {}),
+        HOLONOMY_REPORT,
+        "holonomy report",
+    )
+    assert_file_hash(
+        inputs.get("truncated_report", {}),
+        TRUNCATED_REPORT,
+        "truncated report",
+    )
+    assert_file_hash(
+        inputs.get("truncated_tables", {}),
+        TRUNCATED_TABLES,
+        "truncated tables",
+    )
+    assert_file_hash(inputs.get("derive_script", {}), DERIVE_SCRIPT, "derive script")
+    assert_file_hash(inputs.get("validator", {}), VALIDATOR_SCRIPT, "validator")
+
+    if manifest.get("schema") != "eta6.hpol.manifest@1":
+        raise AssertionError("eta6_hpol manifest schema mismatch")
+    if manifest.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_hpol manifest report hash mismatch")
+    if pair.parent.self_hash(manifest, "manifest_sha256") != manifest.get(
+        "manifest_sha256"
+    ):
+        raise AssertionError("eta6_hpol manifest self hash mismatch")
+    entry = next(
+        (row for row in index.get("obligations", []) if row.get("id") == THEOREM_ID),
+        None,
+    )
+    if entry is None:
+        raise AssertionError("eta6_hpol missing from index")
+    if entry.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_hpol index report hash mismatch")
+    if entry.get("status") != report.get("status"):
+        raise AssertionError("eta6_hpol index status mismatch")
+    index_without_hash = {
+        key: value for key, value in index.items() if key != "registry_sha256"
+    }
+    if h_json(index_without_hash) != index.get("registry_sha256"):
+        raise AssertionError("proof obligation index self hash mismatch")
+
+    return {
+        "schema": "eta6.hpol.verification@1",
+        "status": "PASS",
+        "verified_report": (OUT_DIR / "report.json").relative_to(ROOT).as_posix(),
+        "certificate_sha256": report.get("certificate_sha256"),
+        "witness": report.get("witness"),
+        "closure_boundary": report.get("closure_boundary"),
+        "next_highest_yield_item": report.get("next_highest_yield_item"),
+    }
+
+
+def main() -> None:
+    print(json.dumps(validate_eta6_hpol(), indent=2, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

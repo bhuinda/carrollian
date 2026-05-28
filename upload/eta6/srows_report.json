@@ -1,0 +1,86 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "432e549033dd2c6b60f6d8dce9774ecb7c17129c8afef214d832f81b54f139e6",
+  "checks": {
+    "aext_input_is_certified": true,
+    "all_minimal_circuits_are_oriented": true,
+    "closure_boundary_is_not_overclaimed": true,
+    "height_orientation_is_strict": true,
+    "stream_hashes_match_reference": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "All 4,903,515 minimal affine circuits of the rounded eta6 60-vertex carrier now have deterministic signed height rows. Each primitive circuit row is oriented so its pairing with the fixed height vector h_i=(i+1)^3+17(i+1)^2+31(i+1)+7 is strictly positive; the minimum pairing is 146. By Gordan's alternative, this height-oriented full circuit matrix has no nonzero nonnegative dependence annihilating it. The intrinsic exterior surgery orientation remains a separate gate.",
+  "closure_boundary": {
+    "certifies": [
+      "all 4,903,515 minimal affine circuits have deterministic signed rows",
+      "the fixed height vector pairs strictly positively with every signed row",
+      "Gordan-dual infeasibility for the height-oriented full circuit matrix"
+    ],
+    "does_not_certify_because_not_required": [
+      "that this chosen height orientation is the intrinsic surgery orientation",
+      "a surgery move crossing the eta6 aperture stratum"
+    ]
+  },
+  "inputs": {
+    "aext_report": {
+      "certificate_sha256": "dfbcac6933be0d6ba358091693751352262004cedbdf42d05a736f6dfeb7044f",
+      "path": "data/invariants/d20/proof_obligations/eta6_aext/report.json",
+      "sha256": "8248f038dc1b483ad7cfa3d1ad14f017223b4c826ed0a0c909f2429bcfcf4332",
+      "status": "ETA6_AEXT_CERTIFIED"
+    },
+    "aext_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_aext/tables.npz",
+      "sha256": "80aac42aed1644070be055c7bc8abf6c8eb958d5c37f082d0309a2d6d1fd1ba2"
+    },
+    "derive_script": {
+      "path": "src/derive_eta6_srows.py",
+      "sha256": "7384b3fc833f60e72a86a6736edba775fd0036c572944c035af73baa31bd9274"
+    },
+    "ext_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_ext_cone/tables.npz",
+      "sha256": "cd916887e84a8ad68287d65eea79bedab6e85773be6a75deb345f24c398d2c60"
+    },
+    "validator": {
+      "path": "src/certify_eta6_srows.py",
+      "sha256": "6bf7f820a90b01c6922d0c8c439f3ed2c78312e9e19788b82ad2fc0c66e7ac66"
+    }
+  },
+  "next_highest_yield_item": "Replace the chosen height orientation with an intrinsic exterior surgery orientation and test whether it preserves eta6.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_srows/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_srows/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_srows/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/eta6_srows/report.json",
+    "samples_csv": "data/invariants/d20/proof_obligations/eta6_srows/samp.csv",
+    "srows": "data/invariants/d20/proof_obligations/eta6_srows/srows.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_srows/tables.npz"
+  },
+  "schema": "eta6.srows.report@1",
+  "stage_protocol": {
+    "closure": "apply Gordan to the height-oriented full circuit matrix",
+    "coherence": "check every row pairs strictly positively with the deterministic height vector",
+    "draft": "start from eta6_aext circuit census",
+    "emit": "emit stream hashes, samples, observables, cert, report, verifier command, and next target",
+    "witness": "stream primitive signed rows for every size-4 and size-5 minimal affine circuit"
+  },
+  "status": "ETA6_SROWS_CERTIFIED",
+  "witness": {
+    "height_rule": "h_i = (i+1)^3 + 17(i+1)^2 + 31(i+1) + 7",
+    "height_vector_sha256": "3287f972a5b170b1b98212122fc9c71076b80af61ebe55a9ada1027e68190399",
+    "observable_table_sha256": "0a1d418191dc0b31045ba0e5bc2ea5991eb556dce12ff68274ac4a857daed5dd",
+    "row_stream_sha256": "2d4f17d00b4e1408d408e275eabd2c7095641b0544ece528729d86b83c238e84",
+    "signed_rows": {
+      "max_abs_coefficient": 6765881002874089994707122257159202037,
+      "max_height_value": 1785469952977992005725003102734298922128131,
+      "min_height_value": 146,
+      "negative_coefficient_count": 12226284,
+      "positive_coefficient_count": 12280656,
+      "positive_height_row_count": 4903515,
+      "row_count": 4903515,
+      "size4_count": 10635,
+      "size5_count": 4892880,
+      "zero_height_row_count": 0
+    },
+    "support_stream_sha256": "16a3ba24aef7c4b02f306601dd45438ccda18f0257a125a3cc98acd4e523639e"
+  }
+}

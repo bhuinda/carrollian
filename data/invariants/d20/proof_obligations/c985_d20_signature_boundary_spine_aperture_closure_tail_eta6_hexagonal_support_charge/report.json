@@ -1,0 +1,109 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dda6d374fd2dd86ebc86b1b52e39bd2d34654e7b5f9a20384633febb443c12ce",
+  "checks": {
+    "conductance_preservation_report_certified": true,
+    "eta6_has_three_opposite_edge_matchings": true,
+    "eta6_is_complete_k4_edge_support": true,
+    "eta6_is_nonzero_uniform_six_edge_support": true,
+    "eta6_is_not_raw_transfer_or_k4_cycle": true,
+    "eta6_is_preserved_relative_cut_charge": true,
+    "sixj_frame_report_certified": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "eta6 is the nonzero six-edge relative cut/support charge carried by the certified 6j bottleneck. Direct incidence checks show it is not an ordinary graph cycle: the transfer-state boundary has 12 endpoints and the abstract K4 mod-2 boundary has weight 4. The preserved object is therefore the hexagonal support charge, not a naive 1-cycle.",
+  "closure_boundary": {
+    "certifies": [
+      "eta6 is a nonzero six-edge support charge",
+      "eta6 has complete K4 edge support with three opposite-edge matchings",
+      "eta6 is preserved under all currently certified F-symbol/6j rows and every conductance-decreasing row",
+      "eta6 is not a raw transfer-state or abstract K4 graph cycle"
+    ],
+    "does_not_certify_because_not_required": [
+      "a relative cohomology group presentation for eta6",
+      "Dini torsion or H4 lift coordinates",
+      "cyclic/dihedral six-window intervention closure",
+      "full rigidity under the complete associator geometry"
+    ]
+  },
+  "inputs": {
+    "conductance_preservation_report": {
+      "certificate_sha256": "b2edaf392e16d5bfeebe6f61fccb4216481ab85c76496dd14b0d50b2541cddbe",
+      "path": "data/invariants/d20/proof_obligations/c985_sixj_conductance/report.json",
+      "sha256": "a68bd35a82140c1acffd9f676cca2fe061dbb1b670d09deae0bf6b153fd58703",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SIXJ_CONDUCTANCE_DECREASING_APERTURE_PRESERVATION_CERTIFIED"
+    },
+    "conductance_preservation_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_sixj_conductance/sixj_conductance_tables.npz",
+      "sha256": "8af375595f596e08d8afb9f804c00648002445e5c2ff56df6fa2863e5da90503"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge.py",
+      "sha256": "ebdbc7f8ff837b283e70a0da9c57b2b7d1ed37d320ef078b3a8049b4be845406"
+    },
+    "sixj_frame_cut_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame/sixj_bottleneck_cut_edges.csv",
+      "sha256": "aeaaf227373ea61d57eb737d1bc814998a3aeb668abdb457b4c4ee04b69cf165"
+    },
+    "sixj_frame_report": {
+      "certificate_sha256": "93adbb7b4de6e5c233aae8d63b95a79c709bc64a5cd805d8d879f39412c18c8c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame/report.json",
+      "sha256": "81200f04255ad6ae02ba348e045d6376f16ff0598fbe4c7bd73ef01bd1d31fa2",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SIXJ_BOTTLENECK_FRAME_CERTIFIED"
+    },
+    "sixj_frame_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame/signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame_tables.npz",
+      "sha256": "2d548a1b6698690e129d52619dd3bfb5a6d0b68138733971ace3e7b0aea0e866"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge.py",
+      "sha256": "ba606ff72a480b5abbfa27fdeb20d90e3cbb224d4fbbf6b280afe9bcfb1b41b2"
+    }
+  },
+  "next_highest_yield_item": "Compute the relative holonomy/cohomology presentation for eta6, because the direct incidence test shows the preserved object is a cut/support charge rather than an ordinary 1-cycle.",
+  "outputs": {
+    "abstract_vertex_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/eta6_abstract_vertex_incidence.csv",
+    "certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge_certificate.json",
+    "edge_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/eta6_cut_edges.csv",
+    "eta6": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge.json",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/manifest.json",
+    "observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/eta6_hexagonal_support_charge_observables.csv",
+    "opposite_pair_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/eta6_opposite_edge_pairs.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/report.json",
+    "tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge/signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_eta6_hexagonal_support_charge@1",
+  "stage_protocol": {
+    "closure": "certify eta6 as a nonzero preserved relative support charge and reject the naive cycle model",
+    "coherence": "compute transfer incidence, K4 vertex incidence, opposite-edge matching split, and preservation linkage",
+    "draft": "start from the certified six-edge 6j bottleneck frame and conductance-preservation aggregate",
+    "emit": "emit eta6 support, incidence, opposite-pair, observable, certificate, report, verifier command, and next target",
+    "witness": "materialize eta6 as six transfer cut edges with abstract K4 addresses"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_HEXAGONAL_SUPPORT_CHARGE_CERTIFIED",
+  "witness": {
+    "abstract_mod2_boundary_weight": 4,
+    "abstract_vertex_degrees": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "abstract_vertex_table_sha256": "c91ef8e7874a5285046928e41945a6883ff1afc8a3cd8ddfc54927afd88be262",
+    "edge_table_sha256": "115cef6bd3cedb7e5d4d9b91cd6ea335df2199464a8af617cc5892d04effb5fb",
+    "eta6_edge_codes": [
+      1,
+      2,
+      3,
+      12,
+      13,
+      23
+    ],
+    "observable_table_sha256": "68c0ef41024c86f6aec46e354fd195472bf64de5e6dba8e329a4f840d0354845",
+    "opposite_pair_count": 3,
+    "opposite_pair_table_sha256": "cda79f3f620b0ee1066e4754652fedf0db769571e5a5f746444fe66f478893e9",
+    "preserved_under_certified_fsymbol_rows": 606,
+    "preserved_under_conductance_decreasing_rows": 153,
+    "transfer_boundary_vertex_count": 12
+  }
+}

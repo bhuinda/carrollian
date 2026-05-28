@@ -1,0 +1,144 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "418a233521dbfc814709db8b2671c3c78631dde4c0d67fdacf561f8511c8c979",
+  "checks": {
+    "all_intervention_rows_keep_old_cut_edges": true,
+    "base_cut_is_six_edges": true,
+    "best_pair_improves_conductance_but_keeps_six_old_edges": true,
+    "best_pair_is_tail_mirror_pair": true,
+    "candidate_scope_is_k4_local_touch_count_at_least_two": true,
+    "closed_metric_record_count_is_expected": true,
+    "no_single_or_pair_candidate_changes_old_cut_support": true,
+    "second_window_promotion_certificate_certified": true,
+    "second_window_promotion_report_certified": true,
+    "sixj_frame_certificate_certified": true,
+    "sixj_frame_report_certified": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "Within the certified 6j bottleneck frame, every K4-local singleton or unordered pair recoupling made from the nine non-promoted touch blocks with support at least two keeps all six old cut edges on the fresh spectral cut. The best pair, 5,2,5,5 with 5,2,5,2, lowers conductance from 4329004000/1e12 to 3708282000/1e12, but it still leaves the old six-edge aperture intact.",
+  "closure_boundary": {
+    "certifies": [
+      "exhaustive singleton and unordered-pair search over the declared K4-local touch-block scope",
+      "fresh spectral-cut comparison for each tested recoupling intervention",
+      "absence of old-six-edge support change at recoupling rank one or two within that scope",
+      "the best conductance-improving pair still leaves the six old cut edges intact"
+    ],
+    "does_not_certify_because_not_required": [
+      "triple-block or face-level 6j recoupling interventions",
+      "arbitrary blocks that do not touch the current six-edge aperture",
+      "a full C985 numerical F-symbol table",
+      "compiler integration of the tested recoupling rules"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction.py",
+      "sha256": "c24d0b50400291d44f202244c066d8a8f877fa29e6c515acbb6b567ac871589a"
+    },
+    "second_window_promotion_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/signature_boundary_spine_aperture_closure_tail_second_window_promotion_certificate.json",
+      "sha256": "ffd536ac96f97484ef09fea847dd3f43a9036db37389ff19b50e095718aaf02f"
+    },
+    "second_window_promotion_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_edges.csv",
+      "sha256": "085bd927c7a3debb059e5b3fede56e41ebe585b02037d423779860888f01bdd5"
+    },
+    "second_window_promotion_report": {
+      "certificate_sha256": "607a984c60e849ee38a19ef1d7b730e828942b5d71b01a29e49e30835061b378",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/report.json",
+      "sha256": "e304f118e153bf1bd9f0457044c70701c91a1f98ce44e83878fab1ae4a4e49ab",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SECOND_WINDOW_PROMOTION_CERTIFIED"
+    },
+    "second_window_promotion_states": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/aperture_closure_tail_second_window_promotion_states.csv",
+      "sha256": "1b6560d3f8ffeb02cfbdf555bb3d2d5591d14c513a7b208fc0bddc1f04a7f1c1"
+    },
+    "second_window_promotion_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_second_window_promotion/signature_boundary_spine_aperture_closure_tail_second_window_promotion_tables.npz",
+      "sha256": "f7a672f48a51575417f0e7894e9740494619439be0e0d05b92084e15f82506bd"
+    },
+    "sixj_frame_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame/signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame_certificate.json",
+      "sha256": "707a16e85bdaea820f7028d521c1efab081326c9e773960a15cf4b474b3037f9"
+    },
+    "sixj_frame_cut_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame/sixj_bottleneck_cut_edges.csv",
+      "sha256": "aeaaf227373ea61d57eb737d1bc814998a3aeb668abdb457b4c4ee04b69cf165"
+    },
+    "sixj_frame_report": {
+      "certificate_sha256": "93adbb7b4de6e5c233aae8d63b95a79c709bc64a5cd805d8d879f39412c18c8c",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_bottleneck_frame/report.json",
+      "sha256": "81200f04255ad6ae02ba348e045d6376f16ff0598fbe4c7bd73ef01bd1d31fa2",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SIXJ_BOTTLENECK_FRAME_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction.py",
+      "sha256": "19f5d12325734259b0edab55321d072715404867740b4362d6abf372c56481d7"
+    }
+  },
+  "next_highest_yield_item": "Escalate from edge-pair recoupling to tetrahedral face/triple recoupling: test three-block interventions indexed by the four K4 faces, because rank-one and rank-two K4-local moves preserve the old six-edge aperture.",
+  "outputs": {
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction/manifest.json",
+    "recoupling_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction/signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction_certificate.json",
+    "recoupling_interventions_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction/sixj_recoupling_pair_interventions.csv",
+    "recoupling_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction/sixj_recoupling_pair_observables.csv",
+    "recoupling_pair_obstruction": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction/signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction.json",
+    "recoupling_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction/signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction_tables.npz",
+    "recoupling_touch_blocks_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction/sixj_recoupling_touch_blocks.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction/report.json"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_sixj_recoupling_pair_obstruction@1",
+  "stage_protocol": {
+    "closure": "certify the rank-two recoupling obstruction and selected conductance-improving non-solution",
+    "coherence": "rebuild the promoted grammar for each intervention and compare fresh spectral cuts to the old six cut edges",
+    "draft": "use the certified 6j frame and second-window promoted automaton",
+    "emit": "emit block, intervention, observable, certificate, report, verifier command, and next higher-order target",
+    "witness": "enumerate K4-local touch blocks and singleton/pair recoupling interventions"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SIXJ_RECOUPLING_PAIR_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "base_blocks": [
+      "5.5.2.5",
+      "1.4.5.5"
+    ],
+    "best_intervention": {
+      "block_code_a": 5255,
+      "block_code_b": 5252,
+      "candidate_touch_count": 5,
+      "conductance_reduction_x1e12": 620722000,
+      "cut_conductance_x1e12": 3708282000,
+      "cut_edge_count": 6,
+      "cut_edge_touch_count": 5,
+      "edge_count": 2695,
+      "intervention_id": 41,
+      "intervention_size": 2,
+      "lambda_2_x1e12": 2451808000,
+      "new_edge_count": 124,
+      "new_state_count": 34,
+      "old_cut_edge_same_side_count": 0,
+      "old_cut_edge_still_cut_count": 6,
+      "opposite_pair_touch_count": 2,
+      "promoted_cut_edge_count": 6,
+      "promoted_only_cut_edge_count": 0,
+      "selected_best_flag": 1,
+      "state_count": 894,
+      "support_changed_flag": 0
+    },
+    "block_table_sha256": "a44ef45d13f25bc4f2d2162ab0c7e6aaa982040a439177fc84384673f2146eb1",
+    "candidate_block_codes": [
+      1451,
+      4512,
+      4552,
+      5125,
+      1255,
+      5255,
+      1252,
+      2145,
+      5252
+    ],
+    "intervention_count": 45,
+    "intervention_table_sha256": "cd12aa79c5d5b44ebda98da020acc05797aaa4f062b888b8cd5f5cc75ef3a2e7",
+    "observable_table_sha256": "fd0d224e34ad769df24cd5e94fbd9e5ca0ef755184c14bfb0373c59d147159b8",
+    "support_changing_intervention_count": 0
+  }
+}

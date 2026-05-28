@@ -1,0 +1,99 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "24671cb41ef464e4766e92732d6d0c34d486630b990fabf8e1031a38936b5325",
+  "checks": {
+    "eta6_support_is_preserved_but_not_crossed": true,
+    "input_reports_are_certified": true,
+    "intrinsic_slack_height_is_not_strict_surgery_orientation": true,
+    "intrinsic_slack_height_is_symmetric": true,
+    "positive_residuals_match_rounded_c4_layer": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The first intrinsic exterior slack height is completely symmetric on the lifted 60-vertex carrier: every vertex has the same summed support slack. It therefore fails as a strict surgery orientation: 4,894,923 of 4,903,515 minimal affine circuit rows pair to zero. The eta6 holonomy pairing remains 1 because no topology-changing surgery is performed. The next gate must polarize the exterior height by the eta6 holonomy/seam data.",
+  "closure_boundary": {
+    "certifies": [
+      "the summed exterior support-slack height is intrinsic and symmetric on the current carrier",
+      "that intrinsic slack height is too degenerate to be a strict surgery orientation",
+      "eta6 support/holonomy is preserved under this no-surgery identity test"
+    ],
+    "does_not_certify_because_not_required": [
+      "a holonomy-polarized exterior height",
+      "a surgery move crossing the eta6 aperture stratum",
+      "opening or killing eta6"
+    ]
+  },
+  "inputs": {
+    "aext_report": {
+      "certificate_sha256": "dfbcac6933be0d6ba358091693751352262004cedbdf42d05a736f6dfeb7044f",
+      "path": "data/invariants/d20/proof_obligations/eta6_aext/report.json",
+      "sha256": "8248f038dc1b483ad7cfa3d1ad14f017223b4c826ed0a0c909f2429bcfcf4332",
+      "status": "ETA6_AEXT_CERTIFIED"
+    },
+    "aext_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_aext/tables.npz",
+      "sha256": "80aac42aed1644070be055c7bc8abf6c8eb958d5c37f082d0309a2d6d1fd1ba2"
+    },
+    "derive_script": {
+      "path": "src/derive_eta6_islack.py",
+      "sha256": "a9c69554bdaef31a336feddba7c1606d68091b26ecad308611ac9b9d13b5946b"
+    },
+    "ext_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_ext_cone/tables.npz",
+      "sha256": "cd916887e84a8ad68287d65eea79bedab6e85773be6a75deb345f24c398d2c60"
+    },
+    "holonomy_report": {
+      "certificate_sha256": "00093a73d4db7fef699e567e76690d4ac062c8ed57c0fb9ed520d971e314a517",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/report.json",
+      "sha256": "59440c50f11713b453d5d6ddef2772460f5c848dba28cd6fffc11f9d4e210737",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_RELATIVE_HOLONOMY_CERTIFIED"
+    },
+    "srows_report": {
+      "certificate_sha256": "432e549033dd2c6b60f6d8dce9774ecb7c17129c8afef214d832f81b54f139e6",
+      "path": "data/invariants/d20/proof_obligations/eta6_srows/report.json",
+      "sha256": "94ce1f7bc146eabd1c438366c939b069c825db2e04426b3e9d74276e2d20fac0",
+      "status": "ETA6_SROWS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_islack.py",
+      "sha256": "24e27be4347959a384c2092650c8278207aca315e5a20bd59a611ab49825dc2d"
+    }
+  },
+  "next_highest_yield_item": "Build a holonomy-polarized exterior height from the eta6 seam and test whether it gives a strict surgery orientation.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_islack/cert.json",
+    "islack": "data/invariants/d20/proof_obligations/eta6_islack/islack.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_islack/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_islack/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/eta6_islack/report.json",
+    "samples_csv": "data/invariants/d20/proof_obligations/eta6_islack/samp.csv",
+    "tables": "data/invariants/d20/proof_obligations/eta6_islack/tables.npz"
+  },
+  "schema": "eta6.islack.report@1",
+  "stage_protocol": {
+    "closure": "certify the symmetric slack height as a degenerate non-surgery orientation",
+    "coherence": "stream all minimal affine circuits against the intrinsic slack height",
+    "draft": "start from eta6_aext, eta6_srows, and eta6 holonomy",
+    "emit": "emit stream hashes, samples, observables, cert, report, verifier command, and next target",
+    "witness": "sum exterior support slacks at each truncated vertex"
+  },
+  "status": "ETA6_ISLACK_CERTIFIED",
+  "witness": {
+    "eta6": {
+      "holonomy_pairing": 1,
+      "support_preserved_flag": true
+    },
+    "height_value_x1e12": 48849960057179,
+    "height_vector_sha256": "a57d06fdcc1e3946c4ccf770586f8d3a38004305a18bc43d28fe6267e664254e",
+    "intrinsic_height_rule": "h_v = sum of exterior support slacks over all non-incident faces",
+    "observable_table_sha256": "3208044b72ade77952faaebe14323895a24ed60a10486bdebd633012b5357634",
+    "pairing_counts": {
+      "max_positive_pairing": 204605441516922090395524299233846302500,
+      "positive_pairing_count": 8592,
+      "signed_row_count": 4903515,
+      "zero_c4_pairing_count": 2043,
+      "zero_c5_pairing_count": 4892880,
+      "zero_pairing_count": 4894923
+    },
+    "row_stream_sha256": "d2bb71ef191a6360aad4754c53a911975a43cdd831d6a8042adf5db7742cd00e"
+  }
+}

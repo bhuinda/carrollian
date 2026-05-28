@@ -1,0 +1,222 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "a220d74a8a031ce20114879ae7a21093f45bf48214a5dcef08a2ebbf0ea77a36",
+  "checks": {
+    "best_clear_nontarget_is_137_36_9": true,
+    "best_oversplitter_clearing_collapses_to_8_2": true,
+    "carrier_splice_certificate_certified": true,
+    "carrier_splice_report_certified": true,
+    "cell_table_shape_matches_codebook": true,
+    "closed_positive_cell_count_is_25": true,
+    "component_count_is_two": true,
+    "component_table_shape_matches_codebook": true,
+    "corridor_edge_count_is_40": true,
+    "delta2_variation_le223_word_count_is_51": true,
+    "edge_table_shape_matches_codebook": true,
+    "no_non_anchor_exact24_six_all_four_cell": true,
+    "observable_table_shape_matches_codebook": true,
+    "oversplitter_component_has_no_clear_cell": true,
+    "oversplitter_component_has_underclosed_e13_free_cells": true,
+    "partial_splitter_certificate_certified": true,
+    "partial_splitter_report_certified": true,
+    "radius1_total_word_count_is_291": true,
+    "repair_chord_admissible_word_count_is_45": true,
+    "selected_and_oversplitters_are_separate_components": true,
+    "selected_component_has_two_clear_cells": true,
+    "selected_component_has_unique_target": true,
+    "trace_valid_word_count_is_246": true,
+    "trim_neighborhood_certificate_certified": true,
+    "trim_neighborhood_report_certified": true
+  },
+  "claim": "The Angel-style radius-one aperture corridor around the selected six-template lift and the two 28-closure oversplitters has 25 closed-positive delta2 repair-chord cells under variation <= 223. The admissible edit graph has 40 edges and exactly two connected components: a selected-lift component with the unique exact 24-closure, six-template, all-four cell, and an oversplitter component containing both 28-closure endpoint-13-heavy anchors. The selected component has a lower-variation endpoint-13-free clear overshoot at variation 137 with 36 closures and 9 templates. The oversplitter component has no endpoint-13-free all-four cell with at least 24 closures; its best endpoint-13-clearing neighbor collapses to 8 closures and 2 templates. Thus radius-one aperture edits can move endpoint-13 mass, but not into the exact 24/six target.",
+  "closure_boundary": {
+    "certifies": [
+      "radius-one edits around the selected six-template lift and the two certified oversplitters",
+      "delta2, variation <= 223, repair-chord, closed-positive aperture cells in that radius-one graph",
+      "component separation between the selected exact target and the oversplitter anchors",
+      "that endpoint-13-clearing neighbors exist but do not preserve the exact 24/six all-four target"
+    ],
+    "does_not_certify_because_not_required": [
+      "edit radius two or higher",
+      "paths through cells that lose delta2, exceed variation 223, or drop repair-chord support",
+      "a global no-go theorem outside the declared aperture corridor",
+      "categorical pivotal, spherical, braiding, or center data"
+    ]
+  },
+  "inputs": {
+    "carrier_splice_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/signature_boundary_spine_aperture_closure_tail_carrier_splice_realization_certificate.json",
+      "sha256": "db39746b669086e8d0b2c0ba931ccf5a0db31e9b3c6bb40a03a8e8490b35c2bd"
+    },
+    "carrier_splice_report": {
+      "certificate_sha256": "40f5b4b8c852bc3e08cd67c534ffc9d1303f32df4d275f6be149a7f5571bc69a",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_carrier_splice_realization/report.json",
+      "sha256": "5aa6c6ce3a87de385425189f29deb7fc11df60712568469f71ed9efb2646e32c",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_CARRIER_SPLICE_REALIZATION_CERTIFIED"
+    },
+    "cell_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_residual_cell_complex/carrier_region_edges.csv",
+      "sha256": "447e9cfebc061dab3ccccb0154f92e83b644f60663509f68f924037dcb5d2aea"
+    },
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor.py",
+      "sha256": "c21b68d095a2413b767a0f52777633e94f59f806ea7d612fc9d944898c3e23ed"
+    },
+    "partial_splitter_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/signature_boundary_spine_aperture_closure_tail_partial_splitter_search_certificate.json",
+      "sha256": "c23cabf97983e5863315695692b475d2d04b2950cc2a5b6bf8d7e84aa2c7b466"
+    },
+    "partial_splitter_report": {
+      "certificate_sha256": "544ea13a172cf8cac92b1ec05e8d3f9acbbf08ee36bdfabd1799cd56c432b9c4",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_partial_splitter_search/report.json",
+      "sha256": "c9180b9edeb4d0ab62e28a5cda6dcb9011e3ef788e92f8ec4d174ce84fb9d2d6",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_PARTIAL_SPLITTER_SEARCH_CERTIFIED"
+    },
+    "rewrite_complex_edges": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_rewrite_complex_hyperbolicity/rewrite_complex_edges.csv",
+      "sha256": "261325b88e4c18db7d3080b57d5c789c7f41d9909f7c36f6f59e6317102a4c0d"
+    },
+    "symbolic_alphabet": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_rewrite_rules/symbolic_alphabet.csv",
+      "sha256": "13845593b4ec46b8687e76e8f4bead4e6f9197d78cb74f24bde399e14ae123d6"
+    },
+    "symbolic_associativity": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_symbolic_associativity/symbolic_associativity.csv",
+      "sha256": "bef59007075730654f885eb88e5ed28d15534be6e481095cc3c6c233e40a4b60"
+    },
+    "trim_neighborhood_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search_certificate.json",
+      "sha256": "175f9590b879f51dcce05dd64364fd822021cc1ab19a12786d42567088f2735c"
+    },
+    "trim_neighborhood_report": {
+      "certificate_sha256": "2680c68299a5f04bfa16c48208185443d1ee9ac80673cf649263627903f6b399",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_trim_neighborhood_search/report.json",
+      "sha256": "9a3cb9b4f4c6e43813419b27a918312d59d4e1d12406903ed0da113d91441915",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_TRIM_NEIGHBORHOOD_SEARCH_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor.py",
+      "sha256": "9056588f6bf51351437694c2ac794e9ccd7026fb0af61eb0da562ead2ee8e78b"
+    }
+  },
+  "next_highest_yield_item": "Build the level-two clear-corridor search: expand from the two component boundaries through radius-two aperture edits, allow one tracked forbidden gate, and test whether endpoint-13 mass can be routed into endpoint-11 without closure/template blow-up.",
+  "outputs": {
+    "aperture_closure_tail_clear_corridor_cells_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/aperture_closure_tail_clear_corridor_cells.csv",
+    "aperture_closure_tail_clear_corridor_components_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/aperture_closure_tail_clear_corridor_components.csv",
+    "aperture_closure_tail_clear_corridor_edges_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/aperture_closure_tail_clear_corridor_edges.csv",
+    "aperture_closure_tail_clear_corridor_observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/aperture_closure_tail_clear_corridor_observables.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/manifest.json",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/report.json",
+    "signature_boundary_spine_aperture_closure_tail_clear_corridor": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/signature_boundary_spine_aperture_closure_tail_clear_corridor.json",
+    "signature_boundary_spine_aperture_closure_tail_clear_corridor_certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/signature_boundary_spine_aperture_closure_tail_clear_corridor_certificate.json",
+    "signature_boundary_spine_aperture_closure_tail_clear_corridor_tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_clear_corridor/signature_boundary_spine_aperture_closure_tail_clear_corridor_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_clear_corridor@1",
+  "stage_protocol": {
+    "closure": "certify component separation and the absence of an oversplitter-side clear exact target at radius one",
+    "coherence": "build the one-edit cell graph and classify clear cells by endpoint-13 mass, all-four lifts, and closure count",
+    "draft": "seed the aperture corridor with the selected six-template lift and the two certified 28-closure oversplitters",
+    "emit": "emit corridor cells, edit edges, component summaries, observables, certificate, report, verifier command, and next target",
+    "witness": "enumerate radius-one word edits and keep delta2, variation <= 223, repair-chord, closed-positive cells"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_CLEAR_CORRIDOR_CERTIFIED",
+  "witness": {
+    "anchor_words": [
+      [
+        2,
+        1,
+        3,
+        4,
+        5,
+        1,
+        4,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ],
+      [
+        2,
+        1,
+        4,
+        3,
+        1,
+        5,
+        2,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ],
+      [
+        2,
+        1,
+        4,
+        3,
+        1,
+        5,
+        5,
+        2,
+        1,
+        4,
+        5
+      ]
+    ],
+    "best_clear_nontarget": {
+      "closed_paths": 36,
+      "corridor_cell_id": 4,
+      "template_count": 9,
+      "variation": 137,
+      "word": [
+        2,
+        1,
+        3,
+        4,
+        5,
+        1,
+        4,
+        5,
+        2,
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    "best_oversplitter_endpoint13_clearing": {
+      "closed_paths": 8,
+      "corridor_cell_id": 6,
+      "template_count": 2,
+      "variation": 175
+    },
+    "cell_table_sha256": "4a717ed9d2b0f75514771456b65cdec7b695ad4b5f6c5ddf923a831275862db6",
+    "closed_positive_cell_count": 25,
+    "component_sizes": [
+      10,
+      15
+    ],
+    "component_table_sha256": "0aad1ad61adc62d3f0a1efd18e0e6c07f1be262e96e56058532db13ebddbac06",
+    "corridor_edge_count": 40,
+    "edge_table_sha256": "f8566c7adee092f23c3bb5bae2cecc54c5d134547112762f11bce026e4614676",
+    "observable_table_sha256": "9ca5529b415e8df74fb2e67929da834ef756805f03e5a4d876cc6b44bb1798f5",
+    "oversplitter_component_id": 1,
+    "radius1_total_word_count": 291,
+    "selected_component_id": 0,
+    "selected_target_cell": {
+      "closed_paths": 24,
+      "corridor_cell_id": 2,
+      "endpoint_distribution": {
+        "10": 4,
+        "11": 8,
+        "13": 0,
+        "9": 12
+      },
+      "template_count": 6,
+      "variation": 223
+    }
+  }
+}

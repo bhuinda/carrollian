@@ -2,6 +2,7 @@ from __future__ import annotations
 import sitecustomize as _carrollian_token_burn_guard_bootstrap  # noqa: F401  # carrollian-token-burn-guard-bootstrap
 
 import json
+from pathlib import Path
 from typing import Any
 
 try:
@@ -13,6 +14,8 @@ except ImportError:  # Supports direct script execution.
 
 
 ARTIFACT_REL = "generated/d20_hydrogen_sandpile_golay_bridge_probe.json"
+ROOT = Path(__file__).resolve().parents[1]
+ARTIFACT_PATH = ROOT / ARTIFACT_REL
 
 
 def validate_d20_hydrogen_sandpile_golay_bridge_probe() -> dict[str, Any]:
@@ -26,6 +29,17 @@ def validate_d20_hydrogen_sandpile_golay_bridge_probe() -> dict[str, Any]:
     expected_hash = h_json({k: v for k, v in artifact.items() if k != "artifact_sha256"})
     if artifact.get("artifact_sha256") != expected_hash:
         raise AssertionError("bridge probe self hash mismatch")
+    if not ARTIFACT_PATH.exists():
+        raise AssertionError("bridge probe artifact file missing")
+    written_artifact = json.loads(ARTIFACT_PATH.read_text(encoding="utf-8"))
+    if written_artifact.get("schema") != expected_schema:
+        raise AssertionError("bridge probe written artifact schema mismatch")
+    if written_artifact.get("status") != expected_status:
+        raise AssertionError("bridge probe written artifact status mismatch")
+    if written_artifact.get("all_checks_pass") is not True:
+        raise AssertionError("bridge probe written artifact checks mismatch")
+    if not written_artifact.get("artifact_sha256"):
+        raise AssertionError("bridge probe written artifact self hash missing")
     checks = artifact.get("checks", {})
     if not isinstance(checks, dict) or not checks:
         raise AssertionError("bridge probe checks missing")

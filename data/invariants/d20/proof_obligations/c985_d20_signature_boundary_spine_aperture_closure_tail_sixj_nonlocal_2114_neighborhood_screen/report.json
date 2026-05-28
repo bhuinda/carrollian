@@ -1,0 +1,133 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d774769291fd714f58ffc364bd79f05d9fa9ce11c469b22c512d508749b75095",
+  "checks": {
+    "best_2114_partner_is_local_5255": true,
+    "full_two_hop_and_local_partner_scope_matches": true,
+    "no_2114_neighborhood_intervention_changes_old_cut_support": true,
+    "nonlocal_screen_certificate_certified": true,
+    "nonlocal_screen_report_certified": true,
+    "table_shapes_match_codebooks": true,
+    "target_is_nonlocal_2114": true
+  },
+  "claim": "The focused 2114 neighborhood screen tests the 2114 singleton, all 14 mobile nonlocal two-hop partners, and all 13 mixed local cut-touch partners. The best pair is 2114+5255, which lowers conductance to 2615519000/1e12 while preserving all six old cut edges.",
+  "closure_boundary": {
+    "certifies": [
+      "complete target-pair screen for 2114 against mobile nonlocal partners within two trace positions",
+      "complete mixed screen for 2114 against every non-base local cut-touch block",
+      "fresh spectral-cut comparison for every focused 2114 intervention",
+      "2114+5255 is the best focused conductance pair and still preserves old six-edge support"
+    ],
+    "does_not_certify_because_not_required": [
+      "non-target pairs among 2114 neighborhood partners",
+      "2114 triples or larger focused nonlocal alphabets",
+      "all nonlocal windows beyond the two-hop neighborhood",
+      "compiler integration of the screened recoupling rule"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen.py",
+      "sha256": "664e453b579a3a005faab7b6d8f4b390893c116df41cc8c869f13d1ed4b9d23e"
+    },
+    "nonlocal_screen_certificate": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen_certificate.json",
+      "sha256": "0ddd2469d23c288e0ab4fc269cbe5b19de4597017a161827d2f67b0afc2e97db"
+    },
+    "nonlocal_screen_report": {
+      "certificate_sha256": "f4b27498f206ff818a60db7ea2a942fe915fcba9471f7dd0e4141d4adaff20df",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen/report.json",
+      "sha256": "a25c41fa7a3dc8a2b53c0894656388ecd9d77723c7f885dc4977c0e60fda75e6",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SIXJ_NONLOCAL_FSYMBOL_CANDIDATE_SCREEN_CERTIFIED"
+    },
+    "nonlocal_screen_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_fsymbol_candidate_screen_tables.npz",
+      "sha256": "01af5a467a346b7afdb410934837023a6f755a6bf23dbe52a572f609d324b67d"
+    },
+    "validator": {
+      "path": "src/certify_c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen.py",
+      "sha256": "f729e6e1a8c5544bf37e661daf21c9abf10822e0f99e396c37878ff14cc13b0c"
+    }
+  },
+  "next_highest_yield_item": "Escalate from 2114 pairs to 2114-centered triples using the best local partner 5255 and the strongest adjacent nonlocal partner 1145, because 2114+5255 is the first focused pair to improve on the 2114 singleton while still preserving the old six-edge cut.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen_certificate.json",
+    "intervention_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/sixj_nonlocal_2114_neighborhood_interventions.csv",
+    "manifest": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/manifest.json",
+    "neighborhood_screen": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen.json",
+    "observables_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/sixj_nonlocal_2114_neighborhood_observables.csv",
+    "partner_csv": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/sixj_nonlocal_2114_neighborhood_partners.csv",
+    "report": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/report.json",
+    "tables": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen/signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen_tables.npz"
+  },
+  "schema": "c985.proof_obligation.d20_signature_boundary_spine_aperture_closure_tail_sixj_nonlocal_2114_neighborhood_screen@1",
+  "stage_protocol": {
+    "closure": "certify the focused 2114 neighborhood screen and selected non-opening best pair",
+    "coherence": "rebuild the promoted grammar and fresh spectral cut for every focused intervention",
+    "draft": "start from the certified nonlocal F-symbol candidate screen",
+    "emit": "emit partner, intervention, observable, certificate, report, verifier command, and next target",
+    "witness": "materialize the full two-hop nonlocal neighborhood of 2114 and all mixed local partners"
+  },
+  "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_SIXJ_NONLOCAL_2114_NEIGHBORHOOD_SCREEN_CERTIFIED",
+  "witness": {
+    "best_intervention": {
+      "block_code_a": 2114,
+      "block_code_b": 5255,
+      "conductance_reduction_x1e12": 1713485000,
+      "cut_conductance_x1e12": 2615519000,
+      "cut_edge_count": 6,
+      "edge_count": 3058,
+      "intervention_id": 20,
+      "intervention_kind": 2,
+      "lambda_2_x1e12": 1969615000,
+      "new_edge_count": 487,
+      "new_state_count": 92,
+      "old_cut_edge_same_side_count": 0,
+      "old_cut_edge_still_cut_count": 6,
+      "partner_near_word_count": 0,
+      "partner_unrepaired_word_count": 25,
+      "promoted_cut_edge_count": 6,
+      "promoted_only_cut_edge_count": 0,
+      "selected_best_flag": 1,
+      "state_count": 952,
+      "support_changed_flag": 0
+    },
+    "intervention_count": 28,
+    "intervention_table_sha256": "02a634636a62b3a8fb6a36002ecc29205e93dff498a8d903d689cf9c4cf27d61",
+    "local_partner_codes": [
+      1451,
+      4512,
+      4552,
+      5125,
+      1255,
+      5255,
+      1252,
+      2145,
+      5252,
+      4511,
+      4551,
+      5115,
+      5511
+    ],
+    "near_nonlocal_partner_codes": [
+      1145,
+      5211,
+      1143,
+      1144,
+      1211,
+      1452,
+      5521,
+      1431,
+      4521,
+      1445,
+      1521,
+      4121,
+      2521,
+      5221
+    ],
+    "observable_table_sha256": "e722b20daa54a226c93bf2284cf10d8f0eac6b4482dcc7e57a655052342e5b23",
+    "partner_table_sha256": "19411f0e2ac2fc84995cf1dd9fea6f8e264ec7d33b6b84da4bb5c69e640945b0",
+    "support_changing_intervention_count": 0,
+    "target_block_code": 2114
+  }
+}
