@@ -1,0 +1,158 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ac3107db70619d081e5006bd874b260ea1ade4b5285b658f6865dcd8fea14728",
+  "checks": {
+    "carrier_boundaries_are_explicit": true,
+    "input_certificates_available": true,
+    "lift_support_rows_are_positive": true,
+    "lift_vertices_match_hit_triangle_attachment": true,
+    "p22_faces_lift_to_p2_fused_quads": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The p22 symbolic carrier lifts to the existing p2 geometric carrier: faces 12, 22, and 26 are fused quadrilateral faces with masks 30, 45, and 51, and their 132 support rows are strictly positive. This certifies the geometric face lift, not a new C985 associator/pentagon recomputation on the lifted carrier.",
+  "closure_boundary": {
+    "certifies": [
+      "p22 symbolic carrier lifts to p2 fused quadrilateral faces",
+      "lifted faces carry masks [30,45,51]",
+      "lifted faces attach to the p2 hit triangle",
+      "all support rows on the lifted faces are strictly positive"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "new C985 associator data on the lifted geometric carrier",
+      "new pentagon recomputation after the p21/p22 gate",
+      "global automaton closure after repeated geometric lifts"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p23.py",
+      "sha256": "c2839273317e1898e8b9cb3a7cd72919a723688d710090c7fa3fcdd4a0978286"
+    },
+    "p22_report": {
+      "certificate_sha256": "bc978c5fb29d108351dc7119bff01399a3bd080d63ad1828d65c63f03b7e0934",
+      "path": "data/invariants/d20/proof_obligations/eta6_p22/report.json",
+      "sha256": "dc981671ac2abf93d3fe2a07b0d3d33a19d900a5503858f5105efa3930ec8024",
+      "status": "ETA6_P22_CERTIFIED"
+    },
+    "p2_faces": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p2/faces.csv",
+      "sha256": "bd4ee0e7fce9733d988a496a5a2994d65a8123d6725dbe2ce40ec32dd09c2889"
+    },
+    "p2_report": {
+      "certificate_sha256": "34339e63721bc0245199caacc8b86fb25934cd6010d365e7fb2fb03ee6ee40f7",
+      "path": "data/invariants/d20/proof_obligations/eta6_p2/report.json",
+      "sha256": "ccd68d8592dacbba68832ea3b4a7048310b834b28193b14f5ec8b8557ef4f898",
+      "status": "ETA6_P2_CERTIFIED"
+    },
+    "p2_supp": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p2/supp.csv",
+      "sha256": "216224554a09ce6c33546e1c240523addbb3136235df9bc18d848dad43e2142e"
+    },
+    "p2_verts": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p2/verts.csv",
+      "sha256": "a53b751a845ecc0b2de523c16f0fa810e12815e4dce534db1f657efd47a0ddb8"
+    },
+    "t2_fuse": {
+      "path": "data/invariants/d20/proof_obligations/eta6_t2/fuse.csv",
+      "sha256": "0d01d4c129ec2fbae3c00991a2e579035ac4d0dce7b71c22ee924802c385b454"
+    },
+    "t2_report": {
+      "certificate_sha256": "96ac8a05319c7e627a75543ad388177add5a9566b420d3b632d1dc08c856f50c",
+      "path": "data/invariants/d20/proof_obligations/eta6_t2/report.json",
+      "sha256": "5b4ee271dd1246bd3dacf92120049f815a05dddd4b8b7cb75c28db3f132c68cd",
+      "status": "ETA6_T2_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p23.py",
+      "sha256": "41558064767e82f2f58ef2da899744737a3975f0db2ef836aadcd9f3a6fbe1ca"
+    }
+  },
+  "next_highest_yield_item": "Start p24 by recomputing C985 F-address/associator semantics on the p23 lifted geometric carrier.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p23/cert.json",
+    "faces_csv": "data/invariants/d20/proof_obligations/eta6_p23/faces.csv",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p23/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p23/obs.csv",
+    "p23": "data/invariants/d20/proof_obligations/eta6_p23/p23.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p23/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p23/tables.npz"
+  },
+  "schema": "eta6.p23.report@1",
+  "stage_protocol": {
+    "closure": "certify the symbolic-to-geometric face lift",
+    "coherence": "check hit-triangle attachment and strict support positivity",
+    "draft": "start from p22, p2, and t2",
+    "emit": "emit compact p23 artifacts and the next C985 seam",
+    "witness": "match p22 fused masks to p2 fused quadrilateral faces"
+  },
+  "status": "ETA6_P23_CERTIFIED",
+  "witness": {
+    "claim_boundary": {
+      "geometric_face_lift": 1,
+      "new_c985_recompute": 0
+    },
+    "classification": "symbolic_to_geometric_face_lift",
+    "face_table_sha256": "bd1c85e8118b899eb224f9d35c73eb8a079c3a5d233a091c697db099a902ccae",
+    "lift_faces": [
+      {
+        "cycle": [
+          13,
+          14,
+          47,
+          46
+        ],
+        "face_id": 12,
+        "label_mask": 30,
+        "min_slack_x1e12": 363262450397,
+        "original_vertices": [
+          13,
+          14,
+          55,
+          52
+        ]
+      },
+      {
+        "cycle": [
+          28,
+          29,
+          46,
+          40
+        ],
+        "face_id": 22,
+        "label_mask": 45,
+        "min_slack_x1e12": 363262450397,
+        "original_vertices": [
+          28,
+          29,
+          52,
+          41
+        ]
+      },
+      {
+        "cycle": [
+          40,
+          44,
+          45,
+          47
+        ],
+        "face_id": 26,
+        "label_mask": 51,
+        "min_slack_x1e12": 363262450397,
+        "original_vertices": [
+          41,
+          48,
+          49,
+          55
+        ]
+      }
+    ],
+    "observable_table_sha256": "0c4c29e1cf771822f58630dc73ecae3397d5c46f56951af0afb018d7baa74522",
+    "reading": "The p22 symbolic carrier has an explicit p2 geometric face lift: its three fused masks are precisely the three fused quadrilateral faces attached to the hit triangle. Their support rows are all strictly positive. C985 associator data has not yet been recomputed on this lifted geometric carrier.",
+    "support": {
+      "max_slack_x1e12": 2602092146127,
+      "min_slack_x1e12": 363262450397,
+      "positive_support_rows": 132,
+      "support_rows": 132
+    }
+  }
+}

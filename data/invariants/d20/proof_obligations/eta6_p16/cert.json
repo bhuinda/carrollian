@@ -1,0 +1,49 @@
+{
+  "checks": {
+    "carrier_neutral_counts_match": true,
+    "imported_gap_margins_positive_for_neutral_winner": true,
+    "input_certificates_available": true,
+    "mirror_packet_is_closed": true,
+    "p15_input_floor_matches": true,
+    "top16_packet_shape_matches": true,
+    "winner_is_unique_balanced_hex_neutral_row": true
+  },
+  "schema": "eta6.p16.cert@1",
+  "status": "ETA6_P16_CERTIFIED",
+  "witness": {
+    "candidate_construction": "take the p15 top-16 screened sextuples, close them under the P0/P1 and P2/P3 mirror, and import the eta6_gap hpol/repl margins only for carrier-neutral rows",
+    "carrier_neutrality": {
+      "balanced_222_row_count": 1,
+      "carrier_neutral_row_count": 2,
+      "eta6_preserved_row_count": 16,
+      "global_delta_zero_row_count": 2,
+      "per_face_delta_zero_row_count": 2
+    },
+    "classification": "p15_top16_carrier_margin_packet",
+    "mirror_packet": {
+      "mirror_closed_row_count": 16,
+      "mirror_pair_count": 7,
+      "row_count": 16,
+      "self_mirror_row_count": 2
+    },
+    "observable_table_sha256": "48261f80e99671c094d796a1bb72055442682ed35dd8ca2b5d924b8f40c215d9",
+    "p15_winner": {
+      "balanced_222": 1,
+      "carrier_neutral": 1,
+      "hpol_min_margin": 1,
+      "p15_id": 58834,
+      "p5_ids": [
+        1,
+        47,
+        57,
+        79,
+        110,
+        128
+      ],
+      "repl_min_margin": 146,
+      "spread": 492736
+    },
+    "reading": "The p15 winner is the only top-16 row with the full 2+2+2 face/mask carrier balance, zero total F-delta, and zero per-face F-delta. Because this is a carrier-neutral symbolic F-screen, the checked hpol/repl carrier margins remain the imported positive eta6_gap margins.",
+    "row_table_sha256": "3739a004e3f2513bb706fed8953c8963a7814d7266f1df95891b132b0b4ea970"
+  }
+}

@@ -143,6 +143,46 @@ the practical verification modes without hiding file writes behind a default:
 * eta6-repl: validate the eta6 face-31 replacement carrier certificate;
 * eta6-xfer: validate the eta6 face-31 seam transfer certificate;
 * eta6-hit2: validate the second eta6 hit/collapse certificate;
+* eta6-gap: validate the eta6 positive margin/gap certificate;
+* eta6-p2: validate the eta6 second-hit multi-face patch certificate;
+* eta6-t2: validate the eta6 p2 non-cubic transfer certificate;
+* eta6-f4: validate the eta6 fused-face C985 F-address certificate;
+* eta6-p5: validate the eta6 fused-face pentagon extension certificate;
+* eta6-p6: validate the eta6 two-move pentagon support-spread certificate;
+* eta6-p7: validate the eta6 three-move pentagon support-spread certificate;
+* eta6-p8: validate the eta6 four-move pentagon support-spread certificate;
+* eta6-p9: validate the eta6 bounded five-move frontier certificate;
+* eta6-p10: validate the eta6 p8-shadow five-move frontier certificate;
+* eta6-p11: validate the eta6 complete five-move support-spread certificate;
+* eta6-p12: validate the eta6 seeded six-move support-spread certificate;
+* eta6-p13: validate the eta6 p11 top-32 six-move frontier certificate;
+* eta6-p14: validate the eta6 p11-basin exact six-move certificate;
+* eta6-p15: validate the eta6 full-144 centered grid six-move screen;
+* eta6-p16: validate the eta6 p15 top-16 carrier-margin packet;
+* eta6-p17: validate the eta6 exact 2+2+2 face/mask balance-class search;
+* eta6-p18: validate the eta6 wide outside-2+2+2 grid screen;
+* eta6-p19: validate the eta6 expanded outside-2+2+2 grid screen;
+* eta6-p20: validate the eta6 global six-move floor by cell capture;
+* eta6-p21: validate the eta6 exact-floor surgery gate packet;
+* eta6-p22: validate the eta6 exact-floor symbolic carrier rebuild;
+* eta6-p23: validate the eta6 symbolic-to-geometric carrier face lift;
+* eta6-p24: validate the eta6 lifted-face C985 F-address recomputation;
+* eta6-p25: validate the eta6 lifted-face pentagon recomputation;
+* eta6-p26: validate the eta6 finite-horizon margin packet;
+* eta6-p27: validate the eta6 lifted two-move compound screen;
+* eta6-p28: validate the eta6 lifted three-move compound screen;
+* eta6-p29: validate the eta6 lifted four-move compound screen;
+* eta6-p30: validate the eta6 lifted bounded five-move frontier screen;
+* eta6-p31: validate the eta6 lifted complete five-move screen;
+* eta6-p32: validate the eta6 p32 seeded six-move screen;
+* eta6-p33: validate the eta6 p33 basin screen;
+* eta6-p34: validate the eta6 p34 top-128 basin screen;
+* eta6-p35: validate the eta6 p35 top-512 basin screen;
+* eta6-p36: validate the eta6 p36 top-2048 basin screen;
+* eta6-p37: validate the eta6 p37 top-8192 basin screen;
+* eta6-p38: validate the eta6 p38 p37-branch-bound screen;
+* eta6-p39: validate the eta6 p39 packed top-32768 basin screen;
+* eta6-p40: validate the eta6 p40 top-131072 branch envelope;
 * c985-signature-aperture-closure-tail-sixj-2114-neighborhood: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal 2114 neighborhood screen;
 * c985-signature-aperture-closure-tail-sixj-2114-triple: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal 2114 triple screen;
 * token-burn: validate bounded-output guard coverage for repo-defined runners;
@@ -3682,6 +3722,686 @@ def eta6_hit2(
     return finish(result, pretty)
 
 
+def eta6_gap(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_gap import validate_eta6_gap
+
+    try:
+        result = validate_eta6_gap()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.gap.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p2(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p2 import validate_eta6_p2
+
+    try:
+        result = validate_eta6_p2()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p2.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_t2(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_t2 import validate_eta6_t2
+
+    try:
+        result = validate_eta6_t2()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.t2.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_f4(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_f4 import validate_eta6_f4
+
+    try:
+        result = validate_eta6_f4()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.f4.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p5(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p5 import validate_eta6_p5
+
+    try:
+        result = validate_eta6_p5()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p5.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p6(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p6 import validate_eta6_p6
+
+    try:
+        result = validate_eta6_p6()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p6.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p7(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p7 import validate_eta6_p7
+
+    try:
+        result = validate_eta6_p7()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p7.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p8(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p8 import validate_eta6_p8
+
+    try:
+        result = validate_eta6_p8()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p8.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p9(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p9 import validate_eta6_p9
+
+    try:
+        result = validate_eta6_p9()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p9.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p10(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p10 import validate_eta6_p10
+
+    try:
+        result = validate_eta6_p10()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p10.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p11(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p11 import validate_eta6_p11
+
+    try:
+        result = validate_eta6_p11()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p11.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p12(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p12 import validate_eta6_p12
+
+    try:
+        result = validate_eta6_p12()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p12.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p13(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p13 import validate_eta6_p13
+
+    try:
+        result = validate_eta6_p13()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p13.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p14(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p14 import validate_eta6_p14
+
+    try:
+        result = validate_eta6_p14()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p14.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p15(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p15 import validate_eta6_p15
+
+    try:
+        result = validate_eta6_p15()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p15.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p16(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p16 import validate_eta6_p16
+
+    try:
+        result = validate_eta6_p16()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p16.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p17(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p17 import validate_eta6_p17
+
+    try:
+        result = validate_eta6_p17()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p17.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p18(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p18 import validate_eta6_p18
+
+    try:
+        result = validate_eta6_p18()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p18.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p19(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p19 import validate_eta6_p19
+
+    try:
+        result = validate_eta6_p19()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p19.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p20(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p20 import validate_eta6_p20
+
+    try:
+        result = validate_eta6_p20()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p20.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p21(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p21 import validate_eta6_p21
+
+    try:
+        result = validate_eta6_p21()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p21.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p22(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p22 import validate_eta6_p22
+
+    try:
+        result = validate_eta6_p22()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p22.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p23(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p23 import validate_eta6_p23
+
+    try:
+        result = validate_eta6_p23()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p23.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p24(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p24 import validate_eta6_p24
+
+    try:
+        result = validate_eta6_p24()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p24.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p25(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p25 import validate_eta6_p25
+
+    try:
+        result = validate_eta6_p25()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p25.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p26(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p26 import validate_eta6_p26
+
+    try:
+        result = validate_eta6_p26()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p26.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p27(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p27 import validate_eta6_p27
+
+    try:
+        result = validate_eta6_p27()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p27.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p28(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p28 import validate_eta6_p28
+
+    try:
+        result = validate_eta6_p28()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p28.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p29(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p29 import validate_eta6_p29
+
+    try:
+        result = validate_eta6_p29()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p29.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p30(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p30 import validate_eta6_p30
+
+    try:
+        result = validate_eta6_p30()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p30.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p31(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p31 import validate_eta6_p31
+
+    try:
+        result = validate_eta6_p31()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p31.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p32(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p32 import validate_eta6_p32
+
+    try:
+        result = validate_eta6_p32()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p32.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p33(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p33 import validate_eta6_p33
+
+    try:
+        result = validate_eta6_p33()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p33.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p34(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p34 import validate_eta6_p34
+
+    try:
+        result = validate_eta6_p34()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p34.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p35(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p35 import validate_eta6_p35
+
+    try:
+        result = validate_eta6_p35()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p35.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p36(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p36 import validate_eta6_p36
+
+    try:
+        result = validate_eta6_p36()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p36.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p37(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p37 import validate_eta6_p37
+
+    try:
+        result = validate_eta6_p37()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p37.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p38(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p38 import validate_eta6_p38
+
+    try:
+        result = validate_eta6_p38()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p38.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p39(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p39 import validate_eta6_p39
+
+    try:
+        result = validate_eta6_p39()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p39.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def eta6_p40(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_p40 import validate_eta6_p40
+
+    try:
+        result = validate_eta6_p40()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.p40.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def c985_signature_aperture_closure_tail_sixj_2114_neighborhood(
     *,
     pretty: bool,
@@ -3872,6 +4592,46 @@ def main() -> None:
         "eta6-repl",
         "eta6-xfer",
         "eta6-hit2",
+        "eta6-gap",
+        "eta6-p2",
+        "eta6-t2",
+        "eta6-f4",
+        "eta6-p5",
+        "eta6-p6",
+        "eta6-p7",
+        "eta6-p8",
+        "eta6-p9",
+        "eta6-p10",
+        "eta6-p11",
+        "eta6-p12",
+        "eta6-p13",
+        "eta6-p14",
+        "eta6-p15",
+        "eta6-p16",
+        "eta6-p17",
+        "eta6-p18",
+        "eta6-p19",
+        "eta6-p20",
+        "eta6-p21",
+        "eta6-p22",
+        "eta6-p23",
+        "eta6-p24",
+        "eta6-p25",
+        "eta6-p26",
+        "eta6-p27",
+        "eta6-p28",
+        "eta6-p29",
+        "eta6-p30",
+        "eta6-p31",
+        "eta6-p32",
+        "eta6-p33",
+        "eta6-p34",
+        "eta6-p35",
+        "eta6-p36",
+        "eta6-p37",
+        "eta6-p38",
+        "eta6-p39",
+        "eta6-p40",
         "c985-signature-aperture-closure-tail-sixj-2114-neighborhood",
         "c985-signature-aperture-closure-tail-sixj-2114-triple",
         "token-burn",
@@ -4295,6 +5055,86 @@ def main() -> None:
         raise SystemExit(eta6_xfer(pretty=args.pretty))
     if args.command == "eta6-hit2":
         raise SystemExit(eta6_hit2(pretty=args.pretty))
+    if args.command == "eta6-gap":
+        raise SystemExit(eta6_gap(pretty=args.pretty))
+    if args.command == "eta6-p2":
+        raise SystemExit(eta6_p2(pretty=args.pretty))
+    if args.command == "eta6-t2":
+        raise SystemExit(eta6_t2(pretty=args.pretty))
+    if args.command == "eta6-f4":
+        raise SystemExit(eta6_f4(pretty=args.pretty))
+    if args.command == "eta6-p5":
+        raise SystemExit(eta6_p5(pretty=args.pretty))
+    if args.command == "eta6-p6":
+        raise SystemExit(eta6_p6(pretty=args.pretty))
+    if args.command == "eta6-p7":
+        raise SystemExit(eta6_p7(pretty=args.pretty))
+    if args.command == "eta6-p8":
+        raise SystemExit(eta6_p8(pretty=args.pretty))
+    if args.command == "eta6-p9":
+        raise SystemExit(eta6_p9(pretty=args.pretty))
+    if args.command == "eta6-p10":
+        raise SystemExit(eta6_p10(pretty=args.pretty))
+    if args.command == "eta6-p11":
+        raise SystemExit(eta6_p11(pretty=args.pretty))
+    if args.command == "eta6-p12":
+        raise SystemExit(eta6_p12(pretty=args.pretty))
+    if args.command == "eta6-p13":
+        raise SystemExit(eta6_p13(pretty=args.pretty))
+    if args.command == "eta6-p14":
+        raise SystemExit(eta6_p14(pretty=args.pretty))
+    if args.command == "eta6-p15":
+        raise SystemExit(eta6_p15(pretty=args.pretty))
+    if args.command == "eta6-p16":
+        raise SystemExit(eta6_p16(pretty=args.pretty))
+    if args.command == "eta6-p17":
+        raise SystemExit(eta6_p17(pretty=args.pretty))
+    if args.command == "eta6-p18":
+        raise SystemExit(eta6_p18(pretty=args.pretty))
+    if args.command == "eta6-p19":
+        raise SystemExit(eta6_p19(pretty=args.pretty))
+    if args.command == "eta6-p20":
+        raise SystemExit(eta6_p20(pretty=args.pretty))
+    if args.command == "eta6-p21":
+        raise SystemExit(eta6_p21(pretty=args.pretty))
+    if args.command == "eta6-p22":
+        raise SystemExit(eta6_p22(pretty=args.pretty))
+    if args.command == "eta6-p23":
+        raise SystemExit(eta6_p23(pretty=args.pretty))
+    if args.command == "eta6-p24":
+        raise SystemExit(eta6_p24(pretty=args.pretty))
+    if args.command == "eta6-p25":
+        raise SystemExit(eta6_p25(pretty=args.pretty))
+    if args.command == "eta6-p26":
+        raise SystemExit(eta6_p26(pretty=args.pretty))
+    if args.command == "eta6-p27":
+        raise SystemExit(eta6_p27(pretty=args.pretty))
+    if args.command == "eta6-p28":
+        raise SystemExit(eta6_p28(pretty=args.pretty))
+    if args.command == "eta6-p29":
+        raise SystemExit(eta6_p29(pretty=args.pretty))
+    if args.command == "eta6-p30":
+        raise SystemExit(eta6_p30(pretty=args.pretty))
+    if args.command == "eta6-p31":
+        raise SystemExit(eta6_p31(pretty=args.pretty))
+    if args.command == "eta6-p32":
+        raise SystemExit(eta6_p32(pretty=args.pretty))
+    if args.command == "eta6-p33":
+        raise SystemExit(eta6_p33(pretty=args.pretty))
+    if args.command == "eta6-p34":
+        raise SystemExit(eta6_p34(pretty=args.pretty))
+    if args.command == "eta6-p35":
+        raise SystemExit(eta6_p35(pretty=args.pretty))
+    if args.command == "eta6-p36":
+        raise SystemExit(eta6_p36(pretty=args.pretty))
+    if args.command == "eta6-p37":
+        raise SystemExit(eta6_p37(pretty=args.pretty))
+    if args.command == "eta6-p38":
+        raise SystemExit(eta6_p38(pretty=args.pretty))
+    if args.command == "eta6-p39":
+        raise SystemExit(eta6_p39(pretty=args.pretty))
+    if args.command == "eta6-p40":
+        raise SystemExit(eta6_p40(pretty=args.pretty))
     if args.command == "c985-signature-aperture-closure-tail-sixj-2114-neighborhood":
         raise SystemExit(
             c985_signature_aperture_closure_tail_sixj_2114_neighborhood(

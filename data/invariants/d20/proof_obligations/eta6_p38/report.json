@@ -1,0 +1,654 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "83831148cf9f41fc640c3053270d7c10c94a6d7030ef0255e4930537bae46a71",
+  "checks": {
+    "branch_counts_match": true,
+    "branch_floor_matches_p37": true,
+    "branch_size_matches": true,
+    "branch_stats_match": true,
+    "input_certificates_available": true,
+    "p26_horizon_margins_remain_strict": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "p38 checks the exact best extension of each p37 seed branch over 1138688 raw extensions. Branch floor stays 492736; no branch below p37; no equalizer; p26 margin strict.",
+  "closure_boundary": {
+    "certifies": [
+      "p38 branch screen: 8192 seed branches",
+      "p38 raw extension checks: 1138688",
+      "no branch below p37 floor",
+      "p38 branch floor is 492736",
+      "no p38 raw-support equalizer",
+      "p26 margin stays positive"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "complete six-move search over all p25 sextuple compounds",
+      "a global six-move support-spread lower bound",
+      "new simple-object semantics for the lifted carrier",
+      "that eta6 is uncrossable outside the checked row universes"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p38.py",
+      "sha256": "aa0a8230367aa6904153309124597e65dcde6ba4655aaa9ea583ae62be3fe032"
+    },
+    "p25_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p25/report.json",
+      "sha256": "136df60f98b506718df4d7c6383028079b71fe96d37db65fc4e1bfcf4dcdf484",
+      "status": "ETA6_P25_CERTIFIED"
+    },
+    "p25_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p25/tables.npz",
+      "sha256": "295eec89b8b740ac5c1e67617c92bd58c2df9620156997b922ab0d1a36a74363"
+    },
+    "p26_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p26/report.json",
+      "sha256": "2657694f8e5153e0e703b2dc03a7ea612a9b3e0649c23df9121b091ee6ab5f15",
+      "status": "ETA6_P26_CERTIFIED"
+    },
+    "p27_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p27/report.json",
+      "sha256": "4ad38cedde919c85478e3530428d38777aca83ac9c253ad6f04fc353994c2106",
+      "status": "ETA6_P27_CERTIFIED"
+    },
+    "p28_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p28/report.json",
+      "sha256": "f7940db89234b0281fe3235bb23206a1d1ed1f0cf35c73ab4e4285419d3ff487",
+      "status": "ETA6_P28_CERTIFIED"
+    },
+    "p29_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p29/report.json",
+      "sha256": "89889f52fac60d03da0d55f8a25cfc023f4123b876555bc611222a7232f97334",
+      "status": "ETA6_P29_CERTIFIED"
+    },
+    "p30_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p30/report.json",
+      "sha256": "cc5a738e65114a53b17cd8969a949d886a00dd51faec3c051d1e28e7bdbba744",
+      "status": "ETA6_P30_CERTIFIED"
+    },
+    "p31_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p31/report.json",
+      "sha256": "8aee9f0badf9552f08584afc591993a5ac4dbb275224b19f0aaf41aaf797343b",
+      "status": "ETA6_P31_CERTIFIED"
+    },
+    "p32_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p32/report.json",
+      "sha256": "2ff3a856cbf38039fdf665904e1c3e072f16bfcf3c78f4ff770c3885fb412caa",
+      "status": "ETA6_P32_CERTIFIED"
+    },
+    "p33_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p33/report.json",
+      "sha256": "44933defce0c3ecd1929627b3c82f757bbf45691c5d818aec01c61b5309c3143",
+      "status": "ETA6_P33_CERTIFIED"
+    },
+    "p34_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p34/report.json",
+      "sha256": "9b1aaa94b8db388930a45103473af5ca33368a50f66126775078b3ded8a193df",
+      "status": "ETA6_P34_CERTIFIED"
+    },
+    "p35_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p35/report.json",
+      "sha256": "bc96c2ee1e926c3b6fa3fa86d712209c85a94aebecc093cc13a3bbb31bb60b8a",
+      "status": "ETA6_P35_CERTIFIED"
+    },
+    "p36_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p36/report.json",
+      "sha256": "573522cb2ec9658b87bb1b9937a206e6b4680bf82a4ba25c1749c1c34e6786f4",
+      "status": "ETA6_P36_CERTIFIED"
+    },
+    "p37_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p37/report.json",
+      "sha256": "9176ab1544b0ed793ce4f9e6a245c7a624ca687e0b7ee2f10110ca7020ff40e5",
+      "status": "ETA6_P37_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p38.py",
+      "sha256": "2fa60021286b3d4af3877b44d684ee63784f001e783079e465dfb926d70a0e0e"
+    }
+  },
+  "next_highest_yield_item": "p39: widen with packed candidates and prune by the p38 envelope.",
+  "outputs": {
+    "branch_csv": "data/invariants/d20/proof_obligations/eta6_p38/branch.csv",
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p38/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p38/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p38/obs.csv",
+    "p38": "data/invariants/d20/proof_obligations/eta6_p38/p38.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p38/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p38/tables.npz"
+  },
+  "schema": "eta6.p38.report@1",
+  "stage_protocol": {
+    "closure": "certify p37 branch envelope without support crossing",
+    "coherence": "compare branch minima against p37..p25 floors",
+    "draft": "profile each p37 seed branch",
+    "emit": "emit p38 artifacts and p39 seam",
+    "witness": "take exact best p25 extension per seed"
+  },
+  "status": "ETA6_P38_CERTIFIED",
+  "witness": {
+    "best_branches": [
+      {
+        "ext_p25_id": 128,
+        "faces": [
+          12,
+          12,
+          22,
+          22,
+          26,
+          26
+        ],
+        "p25_ids": [
+          1,
+          47,
+          57,
+          79,
+          110,
+          128
+        ],
+        "p31_id": 29509840,
+        "rank": 0,
+        "seed_rank": 4756,
+        "seed_spread": 12025920,
+        "spread": 492736,
+        "support": [
+          1083830080,
+          1083830080,
+          1084205056,
+          1084205056,
+          1084322816
+        ]
+      },
+      {
+        "ext_p25_id": 110,
+        "faces": [
+          12,
+          12,
+          22,
+          22,
+          26,
+          26
+        ],
+        "p25_ids": [
+          1,
+          47,
+          57,
+          79,
+          128,
+          110
+        ],
+        "p31_id": 29509858,
+        "rank": 1,
+        "seed_rank": 4757,
+        "seed_spread": 12025920,
+        "spread": 492736,
+        "support": [
+          1083830080,
+          1083830080,
+          1084205056,
+          1084205056,
+          1084322816
+        ]
+      },
+      {
+        "ext_p25_id": 12,
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          12
+        ],
+        "p25_ids": [
+          6,
+          19,
+          29,
+          94,
+          96,
+          12
+        ],
+        "p31_id": 97818647,
+        "rank": 2,
+        "seed_rank": 3426,
+        "seed_spread": 11117696,
+        "spread": 1164096,
+        "support": [
+          407816896,
+          408980992,
+          408487488,
+          408772096,
+          408123904
+        ]
+      },
+      {
+        "ext_p25_id": 44,
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          12
+        ],
+        "p25_ids": [
+          11,
+          22,
+          37,
+          48,
+          142,
+          44
+        ],
+        "p31_id": 162996435,
+        "rank": 3,
+        "seed_rank": 3427,
+        "seed_spread": 11117696,
+        "spread": 1164096,
+        "support": [
+          408980992,
+          407816896,
+          408772096,
+          408487488,
+          408123904
+        ]
+      },
+      {
+        "ext_p25_id": 110,
+        "faces": [
+          12,
+          12,
+          22,
+          26,
+          26,
+          26
+        ],
+        "p25_ids": [
+          13,
+          26,
+          56,
+          106,
+          126,
+          110
+        ],
+        "p31_id": 187244368,
+        "rank": 4,
+        "seed_rank": 6422,
+        "seed_spread": 13040800,
+        "spread": 1417952,
+        "support": [
+          296906656,
+          295488704,
+          296266752,
+          296479232,
+          296215872
+        ]
+      },
+      {
+        "ext_p25_id": 128,
+        "faces": [
+          12,
+          12,
+          22,
+          26,
+          26,
+          26
+        ],
+        "p25_ids": [
+          20,
+          45,
+          78,
+          104,
+          114,
+          128
+        ],
+        "p31_id": 261280403,
+        "rank": 5,
+        "seed_rank": 6423,
+        "seed_spread": 13040800,
+        "spread": 1417952,
+        "support": [
+          295488704,
+          296906656,
+          296479232,
+          296266752,
+          296215872
+        ]
+      },
+      {
+        "ext_p25_id": 12,
+        "faces": [
+          12,
+          12,
+          22,
+          26,
+          26,
+          12
+        ],
+        "p25_ids": [
+          14,
+          24,
+          62,
+          126,
+          133,
+          12
+        ],
+        "p31_id": 197747910,
+        "rank": 6,
+        "seed_rank": 4068,
+        "seed_spread": 11616256,
+        "spread": 1472256,
+        "support": [
+          614092928,
+          613077312,
+          612694528,
+          612620672,
+          613826688
+        ]
+      },
+      {
+        "ext_p25_id": 44,
+        "faces": [
+          12,
+          12,
+          22,
+          26,
+          26,
+          12
+        ],
+        "p25_ids": [
+          32,
+          40,
+          80,
+          104,
+          125,
+          44
+        ],
+        "p31_id": 348382075,
+        "rank": 7,
+        "seed_rank": 4069,
+        "seed_spread": 11616256,
+        "spread": 1472256,
+        "support": [
+          613077312,
+          614092928,
+          612620672,
+          612694528,
+          613826688
+        ]
+      },
+      {
+        "ext_p25_id": 14,
+        "faces": [
+          12,
+          12,
+          22,
+          26,
+          26,
+          12
+        ],
+        "p25_ids": [
+          12,
+          24,
+          62,
+          126,
+          133,
+          14
+        ],
+        "p31_id": 175379654,
+        "rank": 8,
+        "seed_rank": 5672,
+        "seed_spread": 12611712,
+        "spread": 1472256,
+        "support": [
+          614092928,
+          613077312,
+          612694528,
+          612620672,
+          613826688
+        ]
+      },
+      {
+        "ext_p25_id": 32,
+        "faces": [
+          12,
+          12,
+          22,
+          26,
+          26,
+          12
+        ],
+        "p25_ids": [
+          40,
+          44,
+          80,
+          104,
+          125,
+          32
+        ],
+        "p31_id": 389662436,
+        "rank": 9,
+        "seed_rank": 5673,
+        "seed_spread": 12611712,
+        "spread": 1472256,
+        "support": [
+          613077312,
+          614092928,
+          612620672,
+          612694528,
+          613826688
+        ]
+      },
+      {
+        "ext_p25_id": 2,
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          12
+        ],
+        "p25_ids": [
+          3,
+          4,
+          9,
+          50,
+          102,
+          2
+        ],
+        "p31_id": 48754970,
+        "rank": 10,
+        "seed_rank": 3808,
+        "seed_spread": 11441664,
+        "spread": 1493376,
+        "support": [
+          381030496,
+          382028960,
+          382498688,
+          381064192,
+          381005312
+        ]
+      },
+      {
+        "ext_p25_id": 34,
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          12
+        ],
+        "p25_ids": [
+          31,
+          35,
+          42,
+          82,
+          118,
+          34
+        ],
+        "p31_id": 341327215,
+        "rank": 11,
+        "seed_rank": 3809,
+        "seed_spread": 11441664,
+        "spread": 1493376,
+        "support": [
+          382028960,
+          381030496,
+          381064192,
+          382498688,
+          381005312
+        ]
+      },
+      {
+        "ext_p25_id": 34,
+        "faces": [
+          12,
+          12,
+          22,
+          22,
+          26,
+          12
+        ],
+        "p25_ids": [
+          0,
+          18,
+          66,
+          86,
+          143,
+          34
+        ],
+        "p31_id": 6935563,
+        "rank": 12,
+        "seed_rank": 3022,
+        "seed_spread": 10763040,
+        "spread": 1543136,
+        "support": [
+          681529280,
+          681749184,
+          682452672,
+          682945856,
+          683072416
+        ]
+      },
+      {
+        "ext_p25_id": 2,
+        "faces": [
+          12,
+          12,
+          22,
+          22,
+          26,
+          12
+        ],
+        "p25_ids": [
+          10,
+          46,
+          58,
+          64,
+          97,
+          2
+        ],
+        "p31_id": 156039709,
+        "rank": 13,
+        "seed_rank": 3023,
+        "seed_spread": 10763040,
+        "spread": 1543136,
+        "support": [
+          681749184,
+          681529280,
+          682945856,
+          682452672,
+          683072416
+        ]
+      },
+      {
+        "ext_p25_id": 12,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          26,
+          12
+        ],
+        "p25_ids": [
+          4,
+          10,
+          22,
+          24,
+          136,
+          12
+        ],
+        "p31_id": 66182172,
+        "rank": 14,
+        "seed_rank": 4686,
+        "seed_spread": 11981312,
+        "spread": 1578112,
+        "support": [
+          207418240,
+          206604800,
+          207830144,
+          206252032,
+          206786944
+        ]
+      },
+      {
+        "ext_p25_id": 44,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          26,
+          12
+        ],
+        "p25_ids": [
+          6,
+          18,
+          40,
+          42,
+          120,
+          44
+        ],
+        "p31_id": 97568286,
+        "rank": 15,
+        "seed_rank": 4687,
+        "seed_spread": 11981312,
+        "spread": 1578112,
+        "support": [
+          206604800,
+          207418240,
+          206252032,
+          207830144,
+          206786944
+        ]
+      }
+    ],
+    "branch_min_average_den": 8192,
+    "branch_min_average_num": 77819786816,
+    "branch_min_below_p31_count": 28,
+    "branch_min_below_p35_count": 610,
+    "branch_min_below_p36_count": 16,
+    "branch_min_below_p37_count": 0,
+    "branch_min_equal_p37_count": 2,
+    "branch_min_floor": 492736,
+    "branch_min_max": 19017024,
+    "branch_support_equal_count": 0,
+    "branch_table_sha256": "419c69f2004a2679484b354b5758e30f7aa3d3ea494a66cc5e4b830a42926e4b",
+    "candidate_construction": "p37 seed branches + exact best p25 extension",
+    "claim_boundary": {
+      "branch_below_p37_found": 0,
+      "p26_margin_preserved": 1,
+      "p37_branch_bound_screen": 1,
+      "raw_support_equalizer_found": 0,
+      "universal_completion_claim": 0
+    },
+    "classification": "p38_branch_bound",
+    "compound_horizon_margin": 1,
+    "horizon_reading": "p38 proves the p37 seed-branch lower envelope has no branch below the p37 floor and no raw support equalizer.",
+    "observable_table_sha256": "743ad17fa0a2a861b65461e101601bf3f0f376fec6bddc7bd9020965f5a6a6ab",
+    "p37_basin_floor": 492736,
+    "raw_extension_count": 1138688,
+    "seed_count": 8192
+  }
+}

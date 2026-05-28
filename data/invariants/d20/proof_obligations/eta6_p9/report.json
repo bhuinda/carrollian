@@ -1,0 +1,669 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6f6d205d3cd8919aeb188277ce3c988cbe2bb3ac17216aae71d9f198c306c5e9",
+  "checks": {
+    "best_candidate_matches_expected": true,
+    "best_same_face_and_mask_match": true,
+    "bounded_five_move_stalls_above_p8_floor": true,
+    "bounded_frontier_size_matches": true,
+    "descent_counts_match": true,
+    "input_certificates_available": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The bounded five-move frontier around eta6_p7/p8 top rows does not beat the p8 four-move floor: its best spread is 5601664, with no support equalizer.",
+  "closure_boundary": {
+    "certifies": [
+      "bounded five-move frontier over 316068 deduplicated candidates",
+      "no bounded candidate beats the p8 four-move floor",
+      "best bounded five-move spread is 5601664",
+      "no bounded five-move candidate equalizes raw support"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "complete five-move search over all p5 quintuple compounds",
+      "a global five-move support-spread lower bound",
+      "point-level geometric surgery on the p2 carrier",
+      "global closure under repeated non-cubic surgeries"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p9.py",
+      "sha256": "d2ba3b969a02fe0df8f14388183c61961b5fd0369aedffcc22460b3443f41850"
+    },
+    "p5_report": {
+      "certificate_sha256": "8a6b564bebf04907c0c16ccd059950cb166d9f6bc699d0df09f8f615477ae19d",
+      "path": "data/invariants/d20/proof_obligations/eta6_p5/report.json",
+      "sha256": "f492fe77cf323a296835484382830d5df05c914dfaf849ba46b34f25f7639596",
+      "status": "ETA6_P5_CERTIFIED"
+    },
+    "p5_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p5/tables.npz",
+      "sha256": "a40cf5470c7aeb0c9cbc667464e1981cc426c9a386c6e1d84cd62a6198b3ce68"
+    },
+    "p6_report": {
+      "certificate_sha256": "d47549903b8e295f62fcf2e0f86df0e364ed529c3f3322c8e57f3ef93672dace",
+      "path": "data/invariants/d20/proof_obligations/eta6_p6/report.json",
+      "sha256": "7373911f4aa9925771b5c35c7fb430895640faedeac049063b82f2d395c80fe7",
+      "status": "ETA6_P6_CERTIFIED"
+    },
+    "p7_report": {
+      "certificate_sha256": "807a9e5bc4a3288ae253aa5cfea539e8a19784be975eb472cdc406cd7ee17c16",
+      "path": "data/invariants/d20/proof_obligations/eta6_p7/report.json",
+      "sha256": "717721e017fb49b2fc76df060ad66df53ecb136e0929325875748a430e1ab143",
+      "status": "ETA6_P7_CERTIFIED"
+    },
+    "p7_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p7/tables.npz",
+      "sha256": "0dfbd087dd9928430fb97f04662e7316c42cd0ba92549daa93548300ce159e75"
+    },
+    "p8_report": {
+      "certificate_sha256": "76ee7f9ffc09610626116e1e63116f667cb2c30de6b84b111a35938cb387cf67",
+      "path": "data/invariants/d20/proof_obligations/eta6_p8/report.json",
+      "sha256": "47a3c39907b4e60a4e9235c4f934f1ef170451f7e73fe9e0b827376c5c3e3b1b",
+      "status": "ETA6_P8_CERTIFIED"
+    },
+    "p8_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p8/tables.npz",
+      "sha256": "271e2ca18f9413413d8392fc3acdb42eb990767a8d53f01f7900147591aa0824"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p9.py",
+      "sha256": "6ec5b6fa4468ae30ce6824c19f66e487d90f9b8ae4a1db6c516655e61a8b9e07"
+    }
+  },
+  "next_highest_yield_item": "Use the p9 stall to prune a targeted full five-move search, starting from candidates whose four-subsets intersect the p8 best and top rows.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p9/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p9/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p9/obs.csv",
+    "p9": "data/invariants/d20/proof_obligations/eta6_p9/p9.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p9/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p9/tables.npz",
+    "top_csv": "data/invariants/d20/proof_obligations/eta6_p9/top.csv"
+  },
+  "schema": "eta6.p9.report@1",
+  "stage_protocol": {
+    "closure": "certify a bounded local stall rather than a global five-move theorem",
+    "coherence": "compare bounded five-move spread against p8, p7, p6, and p5 floors",
+    "draft": "start from eta6_p7 and eta6_p8 compact frontiers",
+    "emit": "emit compact p9 artifacts and the next global-search seam",
+    "witness": "deduplicate one-step p8-top and two-step p7-top five-move candidates"
+  },
+  "status": "ETA6_P9_CERTIFIED",
+  "witness": {
+    "below_p5_candidate_count": 128,
+    "below_p6_candidate_count": 88,
+    "below_p7_candidate_count": 0,
+    "below_p8_candidate_count": 0,
+    "best_candidates": [
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          51
+        ],
+        "p5_ids": [
+          2,
+          8,
+          12,
+          30,
+          128
+        ],
+        "p9_id": 10321,
+        "rank": 0,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 5601664,
+        "support": [
+          138646848,
+          137138048,
+          142707456,
+          137105792,
+          138947328
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          51
+        ],
+        "p5_ids": [
+          8,
+          30,
+          34,
+          44,
+          110
+        ],
+        "p9_id": 88144,
+        "rank": 1,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 5601664,
+        "support": [
+          137138048,
+          138646848,
+          137105792,
+          142707456,
+          138947328
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45
+        ],
+        "p5_ids": [
+          11,
+          24,
+          28,
+          32,
+          84
+        ],
+        "p9_id": 111027,
+        "rank": 2,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 5839776,
+        "support": [
+          270049728,
+          270377088,
+          267893888,
+          264537312,
+          268951616
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45
+        ],
+        "p5_ids": [
+          14,
+          19,
+          36,
+          40,
+          76
+        ],
+        "p9_id": 153325,
+        "rank": 3,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 5839776,
+        "support": [
+          270377088,
+          270049728,
+          264537312,
+          267893888,
+          268951616
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51
+        ],
+        "p5_ids": [
+          11,
+          28,
+          40,
+          84,
+          128
+        ],
+        "p9_id": 113237,
+        "rank": 4,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 5858176,
+        "support": [
+          284439936,
+          285189120,
+          279330944,
+          281041120,
+          282965312
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51
+        ],
+        "p5_ids": [
+          19,
+          24,
+          36,
+          76,
+          110
+        ],
+        "p9_id": 234784,
+        "rank": 5,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 5858176,
+        "support": [
+          285189120,
+          284439936,
+          281041120,
+          279330944,
+          282965312
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "p5_ids": [
+          12,
+          14,
+          37,
+          38,
+          44
+        ],
+        "p9_id": 120075,
+        "rank": 6,
+        "same_face": 1,
+        "same_mask": 1,
+        "spread": 5959680,
+        "support": [
+          180864000,
+          186823680,
+          185761344,
+          185275840,
+          186372288
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "p5_ids": [
+          12,
+          16,
+          29,
+          32,
+          44
+        ],
+        "p9_id": 121336,
+        "rank": 7,
+        "same_face": 1,
+        "same_mask": 1,
+        "spread": 5959680,
+        "support": [
+          186823680,
+          180864000,
+          185275840,
+          185761344,
+          186372288
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51
+        ],
+        "p5_ids": [
+          2,
+          10,
+          34,
+          66,
+          124
+        ],
+        "p9_id": 11196,
+        "rank": 8,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 6055040,
+        "support": [
+          191500160,
+          193991808,
+          192551808,
+          187936768,
+          193865024
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51
+        ],
+        "p5_ids": [
+          2,
+          18,
+          34,
+          58,
+          132
+        ],
+        "p9_id": 21639,
+        "rank": 9,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 6055040,
+        "support": [
+          193991808,
+          191500160,
+          187936768,
+          192551808,
+          193865024
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "p5_ids": [
+          12,
+          14,
+          16,
+          29,
+          44
+        ],
+        "p9_id": 119387,
+        "rank": 10,
+        "same_face": 1,
+        "same_mask": 1,
+        "spread": 6313984,
+        "support": [
+          180686848,
+          187000832,
+          186625984,
+          184411200,
+          186372288
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "p5_ids": [
+          12,
+          32,
+          37,
+          38,
+          44
+        ],
+        "p9_id": 133746,
+        "rank": 11,
+        "same_face": 1,
+        "same_mask": 1,
+        "spread": 6313984,
+        "support": [
+          187000832,
+          180686848,
+          184411200,
+          186625984,
+          186372288
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          51
+        ],
+        "p5_ids": [
+          2,
+          8,
+          30,
+          44,
+          128
+        ],
+        "p9_id": 10746,
+        "rank": 12,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 6815616,
+        "support": [
+          140133696,
+          135651200,
+          137346432,
+          142466816,
+          138947328
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          51
+        ],
+        "p5_ids": [
+          8,
+          12,
+          30,
+          34,
+          110
+        ],
+        "p9_id": 66899,
+        "rank": 13,
+        "same_face": 0,
+        "same_mask": 0,
+        "spread": 6815616,
+        "support": [
+          135651200,
+          140133696,
+          142466816,
+          137346432,
+          138947328
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "p5_ids": [
+          2,
+          8,
+          14,
+          30,
+          44
+        ],
+        "p9_id": 10349,
+        "rank": 14,
+        "same_face": 1,
+        "same_mask": 1,
+        "spread": 7148672,
+        "support": [
+          121885184,
+          124697472,
+          129033856,
+          122838528,
+          124933632
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          12
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          30
+        ],
+        "p5_ids": [
+          8,
+          12,
+          30,
+          32,
+          34
+        ],
+        "p9_id": 66604,
+        "rank": 15,
+        "same_face": 1,
+        "same_mask": 1,
+        "spread": 7148672,
+        "support": [
+          124697472,
+          121885184,
+          122838528,
+          129033856,
+          124933632
+        ]
+      }
+    ],
+    "bounded_min_spread": 5601664,
+    "candidate_construction": "deduplicated union of one-step extensions of eta6_p8 top rows and two-step extensions of eta6_p7 top rows",
+    "classification": "bounded_five_move_frontier_stall",
+    "observable_table_sha256": "ea7f99bed82c7e19e6b9eaea6ea83e6b919f09ee61a5ebe1119b67c467f9b9a7",
+    "p8_quad_floor": 2447744,
+    "reading": "The bounded five-move frontier does not continue the p8 descent; it stays above the p8 floor and finds no support equalizer.",
+    "support_equal_candidate_count": 0,
+    "top_table_sha256": "eb1a49339ca1be2b866148d4e0e257367cd1b98526723741ddad0c37265bae8d"
+  }
+}

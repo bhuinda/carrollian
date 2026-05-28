@@ -1,0 +1,242 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+try:
+    from .certify_io import ROOT, h_file, h_json
+    from .derive_eta6_p26 import (
+        DERIVE_SCRIPT,
+        GAP_REPORT,
+        INDEX_PATH,
+        MARGIN_COLUMNS,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        P24_REPORT,
+        P24_TABLES,
+        P25_REPORT,
+        STATUS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        self_hash,
+    )
+except ImportError:  # Supports direct script execution.
+    from certify_io import ROOT, h_file, h_json
+    from derive_eta6_p26 import (
+        DERIVE_SCRIPT,
+        GAP_REPORT,
+        INDEX_PATH,
+        MARGIN_COLUMNS,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        P24_REPORT,
+        P24_TABLES,
+        P25_REPORT,
+        STATUS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        self_hash,
+    )
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise AssertionError(f"{path} is not a JSON object")
+    return payload
+
+
+def assert_file_hash(entry: dict[str, Any], expected_path: Path, label: str) -> None:
+    expected_rel = expected_path.relative_to(ROOT).as_posix()
+    if entry.get("path") != expected_rel:
+        raise AssertionError(f"{label} path mismatch: {entry.get('path')}")
+    if entry.get("sha256") != h_file(expected_path):
+        raise AssertionError(f"{label} sha256 mismatch")
+
+
+def table_rows(table: np.ndarray, columns: list[str]) -> list[dict[str, int]]:
+    return [
+        {column: int(values[index]) for index, column in enumerate(columns)}
+        for values in table
+    ]
+
+
+def validate_eta6_p26() -> dict[str, Any]:
+    expected = build_payloads()
+    report = load_json(OUT_DIR / "report.json")
+    manifest = load_json(OUT_DIR / "manifest.json")
+    p26 = load_json(OUT_DIR / "p26.json")
+    cert = load_json(OUT_DIR / "cert.json")
+    marg_csv = (OUT_DIR / "marg.csv").read_text(encoding="utf-8")
+    obs_csv = (OUT_DIR / "obs.csv").read_text(encoding="utf-8")
+    tables = np.load(OUT_DIR / "tables.npz", allow_pickle=False)
+    index = load_json(INDEX_PATH)
+
+    if p26 != expected["p26"]:
+        raise AssertionError("eta6_p26 JSON mismatch")
+    if cert != expected["cert"]:
+        raise AssertionError("eta6_p26 cert mismatch")
+    if marg_csv != expected["marg_csv"]:
+        raise AssertionError("eta6_p26 margin CSV mismatch")
+    if obs_csv != expected["obs_csv"]:
+        raise AssertionError("eta6_p26 obs CSV mismatch")
+    if not np.array_equal(
+        np.asarray(tables["margin_table"]),
+        expected["margin_table"],
+    ):
+        raise AssertionError("eta6_p26 margin table mismatch")
+    if not np.array_equal(
+        np.asarray(tables["observable_table"]),
+        expected["obs_table"],
+    ):
+        raise AssertionError("eta6_p26 observable table mismatch")
+
+    if report.get("schema") != "eta6.p26.report@1":
+        raise AssertionError("eta6_p26 report schema mismatch")
+    if report.get("status") != STATUS:
+        raise AssertionError("eta6_p26 report is not certified")
+    if report.get("all_checks_pass") is not True:
+        raise AssertionError("eta6_p26 all_checks_pass is not true")
+    if report.get("checks") != expected["report"]["checks"]:
+        raise AssertionError("eta6_p26 checks mismatch")
+    if self_hash(report, "certificate_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_p26 report self hash mismatch")
+    if report.get("certificate_sha256") != expected["report"]["certificate_sha256"]:
+        raise AssertionError("eta6_p26 report hash mismatch")
+
+    margin_table = np.asarray(tables["margin_table"], dtype=np.int64)
+    obs_table = np.asarray(tables["observable_table"], dtype=np.int64)
+    if tuple(margin_table.shape) != (4, len(MARGIN_COLUMNS)):
+        raise AssertionError("eta6_p26 margin table shape mismatch")
+    if tuple(obs_table.shape) != (len(OBS_CODES), len(OBS_COLUMNS)):
+        raise AssertionError("eta6_p26 obs table shape mismatch")
+
+    margins = table_rows(margin_table, MARGIN_COLUMNS)
+    expected_margins = [
+        (0, 0, 1, 4903515, 4903515, 0, 1),
+        (1, 1, 146, 2831367, 2831367, 0, 1),
+        (2, 2, 363262450397, 132, 132, 0, 1),
+        (3, 3, 11213312, 144, 144, 0, 1),
+    ]
+    actual_margins = [
+        (
+            row["component_id"],
+            row["component_code"],
+            row["margin_value"],
+            row["row_count"],
+            row["positive_count"],
+            row["zero_count"],
+            row["strict_flag"],
+        )
+        for row in margins
+    ]
+    if actual_margins != expected_margins:
+        raise AssertionError("eta6_p26 margin rows mismatch")
+
+    obs = {
+        row["observable_code"]: row["value"]
+        for row in table_rows(obs_table, OBS_COLUMNS)
+    }
+    required = {
+        "component_count": 4,
+        "hpol_row_count": 4903515,
+        "hpol_min_margin": 1,
+        "hpol_min_count": 2,
+        "hpol_no_positive_annihilator_flag": 1,
+        "repl_row_count": 2831367,
+        "repl_min_margin": 146,
+        "p24_lift_row_count": 132,
+        "p24_lift_positive_count": 132,
+        "p24_lift_min_slack_x1e12": 363262450397,
+        "p25_extension_count": 144,
+        "p25_support_equal_count": 0,
+        "p25_min_support_spread": 11213312,
+        "p25_max_support_spread": 633114624,
+        "p25_mult_equal_count": 144,
+        "checked_positive_row_total": 7735158,
+        "min_component_margin": 1,
+        "all_components_strict_flag": 1,
+        "support_equalizer_absent_flag": 1,
+        "universal_completion_claim_flag": 0,
+    }
+    for key, value in required.items():
+        if obs.get(OBS_CODES[key]) != value:
+            raise AssertionError(f"eta6_p26 observable {key} mismatch")
+
+    witness = report.get("witness", {})
+    if witness.get("classification") != "finite_horizon_margin_packet":
+        raise AssertionError("eta6_p26 classification mismatch")
+    if witness.get("claim_boundary", {}).get("checked_component_count") != 4:
+        raise AssertionError("eta6_p26 component count mismatch")
+    if witness.get("claim_boundary", {}).get("checked_positive_row_total") != 7735158:
+        raise AssertionError("eta6_p26 row total mismatch")
+    if witness.get("claim_boundary", {}).get("support_equalizer_absent") != 1:
+        raise AssertionError("eta6_p26 support equalizer boundary mismatch")
+    if witness.get("claim_boundary", {}).get("universal_completion_claim") != 0:
+        raise AssertionError("eta6_p26 universal boundary mismatch")
+    components = witness.get("components", [])
+    if [component.get("margin") for component in components] != [
+        1,
+        146,
+        363262450397,
+        11213312,
+    ]:
+        raise AssertionError("eta6_p26 witness component margins mismatch")
+    if marg_csv.splitlines()[0].split(",") != MARGIN_COLUMNS:
+        raise AssertionError("eta6_p26 margin header mismatch")
+
+    inputs = report.get("inputs", {})
+    assert_file_hash(inputs.get("gap_report", {}), GAP_REPORT, "gap report")
+    assert_file_hash(inputs.get("p24_report", {}), P24_REPORT, "p24 report")
+    assert_file_hash(inputs.get("p24_tables", {}), P24_TABLES, "p24 tables")
+    assert_file_hash(inputs.get("p25_report", {}), P25_REPORT, "p25 report")
+    assert_file_hash(inputs.get("derive_script", {}), DERIVE_SCRIPT, "derive script")
+    assert_file_hash(inputs.get("validator", {}), VALIDATOR_SCRIPT, "validator")
+
+    if manifest.get("schema") != "eta6.p26.manifest@1":
+        raise AssertionError("eta6_p26 manifest schema mismatch")
+    if manifest.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_p26 manifest report hash mismatch")
+    if self_hash(manifest, "manifest_sha256") != manifest.get("manifest_sha256"):
+        raise AssertionError("eta6_p26 manifest self hash mismatch")
+
+    entry = next(
+        (row for row in index.get("obligations", []) if row.get("id") == THEOREM_ID),
+        None,
+    )
+    if entry is None:
+        raise AssertionError("eta6_p26 missing from index")
+    if entry.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_p26 index report hash mismatch")
+    if entry.get("status") != report.get("status"):
+        raise AssertionError("eta6_p26 index status mismatch")
+    index_without_hash = {
+        key: value for key, value in index.items() if key != "registry_sha256"
+    }
+    if h_json(index_without_hash) != index.get("registry_sha256"):
+        raise AssertionError("proof obligation index self hash mismatch")
+
+    return {
+        "schema": "eta6.p26.verification@1",
+        "status": "PASS",
+        "verified_report": (OUT_DIR / "report.json").relative_to(ROOT).as_posix(),
+        "certificate_sha256": report.get("certificate_sha256"),
+        "witness": report.get("witness"),
+        "closure_boundary": report.get("closure_boundary"),
+        "next_highest_yield_item": report.get("next_highest_yield_item"),
+    }
+
+
+def main() -> None:
+    print(json.dumps(validate_eta6_p26(), indent=2, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,119 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "19e51905f64c1c8cab3d59d7cc37f6d0378727e174a617fe194d00c7de872a8c",
+  "checks": {
+    "carrier_neutral_counts_match": true,
+    "imported_gap_margins_positive_for_neutral_winner": true,
+    "input_certificates_available": true,
+    "mirror_packet_is_closed": true,
+    "p15_input_floor_matches": true,
+    "top16_packet_shape_matches": true,
+    "winner_is_unique_balanced_hex_neutral_row": true
+  },
+  "claim": "Within the p15 top-16 symmetry packet, the p15 winner is the unique full 2+2+2 face/mask carrier-neutral row. Its symbolic F-screen does not alter the checked carrier row universes, so the imported eta6_gap margins remain positive: hpol margin 1 and replacement margin 146.",
+  "closure_boundary": {
+    "certifies": [
+      "p15 top-16 packet is closed under the P0/P1, P2/P3 mirror",
+      "p15 winner is the unique full 2+2+2 face/mask carrier-neutral row in that packet",
+      "p15 winner has zero total and per-face F-delta over its six moves",
+      "imported hpol and replacement carrier margins remain positive for the carrier-neutral p15 winner"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "a rebuilt geometric carrier after applying the p15 winner as surgery",
+      "complete six-move search over all p5 sextuples",
+      "carrier neutrality for every unscreened or non-top-16 sextuple",
+      "new hpol/replacement row universes beyond eta6_gap"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p16.py",
+      "sha256": "d99b2d2fb3d0d0c23bf2f67067891efe6b4797a5c3e41a7953b6d77832fcfd05"
+    },
+    "gap_report": {
+      "certificate_sha256": "d0db3d7d6282b851830ab53154d43a84affc4db999a2437e3cf946c2e651440b",
+      "path": "data/invariants/d20/proof_obligations/eta6_gap/report.json",
+      "sha256": "ab7401c5dc49441338d6979406316d75c617d1955cfefac8d105b7cf76afb23f",
+      "status": "ETA6_GAP_CERTIFIED"
+    },
+    "p15_report": {
+      "certificate_sha256": "0dca729b6c1643fe6110f80192988e83c4c3fd34367a22636218b54675a08c96",
+      "path": "data/invariants/d20/proof_obligations/eta6_p15/report.json",
+      "sha256": "4064632fd1179a03231faf340558f6330791f943186a7267477e9aeeae32ecf4",
+      "status": "ETA6_P15_CERTIFIED"
+    },
+    "p15_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p15/tables.npz",
+      "sha256": "3918836ecf92318a062a5592fe63d8a6d2c63e0851a10d405b9a253963ab14bf"
+    },
+    "p5_report": {
+      "certificate_sha256": "8a6b564bebf04907c0c16ccd059950cb166d9f6bc699d0df09f8f615477ae19d",
+      "path": "data/invariants/d20/proof_obligations/eta6_p5/report.json",
+      "sha256": "f492fe77cf323a296835484382830d5df05c914dfaf849ba46b34f25f7639596",
+      "status": "ETA6_P5_CERTIFIED"
+    },
+    "p5_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p5/tables.npz",
+      "sha256": "a40cf5470c7aeb0c9cbc667464e1981cc426c9a386c6e1d84cd62a6198b3ce68"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p16.py",
+      "sha256": "6d67353e36342d2db7fd87d4b91bcfd0a613e536e4a856ba8253d4f936a7b4d6"
+    }
+  },
+  "next_highest_yield_item": "Run p17 as a targeted full-144 companion search around the p15 winner's 2+2+2 face/mask balance class.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p16/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p16/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p16/obs.csv",
+    "p16": "data/invariants/d20/proof_obligations/eta6_p16/p16.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p16/report.json",
+    "rows_csv": "data/invariants/d20/proof_obligations/eta6_p16/rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p16/tables.npz"
+  },
+  "schema": "eta6.p16.report@1",
+  "stage_protocol": {
+    "closure": "certify carrier-neutral imported margin positivity for the p15 winner",
+    "coherence": "require the top-16 packet to be mirror-closed and the winner to be carrier-neutral",
+    "draft": "start from p15 top rows and eta6_gap",
+    "emit": "emit compact p16 artifacts and the next seam",
+    "witness": "compute mirror partners, face/mask counts, F-delta balance, and imported margins"
+  },
+  "status": "ETA6_P16_CERTIFIED",
+  "witness": {
+    "candidate_construction": "take the p15 top-16 screened sextuples, close them under the P0/P1 and P2/P3 mirror, and import the eta6_gap hpol/repl margins only for carrier-neutral rows",
+    "carrier_neutrality": {
+      "balanced_222_row_count": 1,
+      "carrier_neutral_row_count": 2,
+      "eta6_preserved_row_count": 16,
+      "global_delta_zero_row_count": 2,
+      "per_face_delta_zero_row_count": 2
+    },
+    "classification": "p15_top16_carrier_margin_packet",
+    "mirror_packet": {
+      "mirror_closed_row_count": 16,
+      "mirror_pair_count": 7,
+      "row_count": 16,
+      "self_mirror_row_count": 2
+    },
+    "observable_table_sha256": "48261f80e99671c094d796a1bb72055442682ed35dd8ca2b5d924b8f40c215d9",
+    "p15_winner": {
+      "balanced_222": 1,
+      "carrier_neutral": 1,
+      "hpol_min_margin": 1,
+      "p15_id": 58834,
+      "p5_ids": [
+        1,
+        47,
+        57,
+        79,
+        110,
+        128
+      ],
+      "repl_min_margin": 146,
+      "spread": 492736
+    },
+    "reading": "The p15 winner is the only top-16 row with the full 2+2+2 face/mask carrier balance, zero total F-delta, and zero per-face F-delta. Because this is a carrier-neutral symbolic F-screen, the checked hpol/repl carrier margins remain the imported positive eta6_gap margins.",
+    "row_table_sha256": "3739a004e3f2513bb706fed8953c8963a7814d7266f1df95891b132b0b4ea970"
+  }
+}

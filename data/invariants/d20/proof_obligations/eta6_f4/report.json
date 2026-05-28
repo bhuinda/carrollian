@@ -1,0 +1,171 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "91dbb1ff08462b26fe419fbdfa4b9e481af5986be6fbf66220f96339f6a979c8",
+  "checks": {
+    "all_72_ordered_quadruples_positive": true,
+    "fused_masks_match_t2": true,
+    "input_certificates_available": true,
+    "minimum_positive_margins_match": true,
+    "multiplicity_balances_orderwise": true,
+    "raw_support_is_not_orderwise_balanced": true,
+    "support_balances_after_24_order_symmetrization": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The eta6_t2 4-label fused faces admit C985 associator semantics at the F-address multiplicity level: every ordered sector quadruple has positive left/right multiplicity and equal left/right multiplicity dimension. Raw support-address cardinality is not balanced order-by-order, but it balances after the 24-order symmetrization of each fused mask.",
+  "closure_boundary": {
+    "certifies": [
+      "positive C985 F-address multiplicity for all 72 ordered sector quadruples",
+      "left/right multiplicity balance for every ordered quadruple",
+      "left/right raw support balance after the 24-order symmetrization of each fused mask",
+      "an explicit ordered-support obstruction: no ordered quadruple has equal raw support cardinality"
+    ],
+    "does_not_certify_because_false_or_open": [
+      "pointwise raw support-address balance for a fixed ordered quadruple",
+      "a numeric 6j scalar or full F-matrix entry",
+      "a new C985 simple object corresponding to a 4-label fused face",
+      "pentagon action for repeated non-cubic surgeries"
+    ]
+  },
+  "inputs": {
+    "associator_report": {
+      "certificate_sha256": "75800317a741e0842706832853b8ea0d60dd4aedfb24f3556082a23957a42e80",
+      "path": "data/invariants/d20/proof_obligations/c985_associator_rebracketing_oracle/report.json",
+      "sha256": "6f4c3d59b55b285e10343506770412484b2f13381b06dd0421de5c9ecb15c16b",
+      "status": "C985_ASSOCIATOR_REBRACKETING_ORACLE_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_eta6_f4.py",
+      "sha256": "42ba80ad1a456f3ee6e251385d42ba2e6fce12dc70915b0402865b60b7a8e87a"
+    },
+    "fusion_report": {
+      "certificate_sha256": "dad6709e91e16cf434b121aa2eb0fe26b318d2e05a5fc800b30f7f9d7fdb2dc7",
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/report.json",
+      "sha256": "2eb666d526750e5ba7812c22b685a81f7391c2a7d13fdf2242ba054ac8e92d35",
+      "status": "C985_FUSION_MULTIPLICITY_TYPING_CERTIFIED"
+    },
+    "fusion_tensor": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/fusion_tensor_coo.npz",
+      "sha256": "05b5b5ed0d000238934e64ca42c2a66ad48de5e2e5e39bd985a4f2a9b2b11fd7"
+    },
+    "source_target": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+      "sha256": "69d649e5a876fc3d90ef5f804c91081224b44c7619524a0735ed1c44e2bd60ec"
+    },
+    "t2_report": {
+      "certificate_sha256": "96ac8a05319c7e627a75543ad388177add5a9566b420d3b632d1dc08c856f50c",
+      "path": "data/invariants/d20/proof_obligations/eta6_t2/report.json",
+      "sha256": "5b4ee271dd1246bd3dacf92120049f815a05dddd4b8b7cb75c28db3f132c68cd",
+      "status": "ETA6_T2_CERTIFIED"
+    },
+    "t2_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_t2/tables.npz",
+      "sha256": "305189f6778b7c7a8e845aa089edaaae5ded95940449f0a99d85c08769dada54"
+    },
+    "typed_registry_report": {
+      "certificate_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+      "sha256": "28855e8904a1fd21aac84bb922a33442c4c58e49413f49a5e891f0f5001813a4",
+      "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_f4.py",
+      "sha256": "55d3be3107b0caa71b38a87fd2090050bb8f416d574b979485ab51fa126a5aff"
+    }
+  },
+  "next_highest_yield_item": "Use the f4 multiplicity pass and support obstruction to search for the shortest pentagon-addressed surgery that preserves eta6 while moving the raw support imbalance.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_f4/cert.json",
+    "f4": "data/invariants/d20/proof_obligations/eta6_f4/f4.json",
+    "face_csv": "data/invariants/d20/proof_obligations/eta6_f4/face.csv",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_f4/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_f4/obs.csv",
+    "ord_csv": "data/invariants/d20/proof_obligations/eta6_f4/ord.csv",
+    "report": "data/invariants/d20/proof_obligations/eta6_f4/report.json",
+    "samp_csv": "data/invariants/d20/proof_obligations/eta6_f4/samp.csv",
+    "tables": "data/invariants/d20/proof_obligations/eta6_f4/tables.npz"
+  },
+  "schema": "eta6.f4.report@1",
+  "stage_protocol": {
+    "closure": "certify the exact f4 pass/obstruction split without asserting a pointwise support bijection",
+    "coherence": "check multiplicity balance orderwise and raw support balance after mask symmetrization",
+    "draft": "start from the short eta6_t2 fused masks [30,45,51]",
+    "emit": "emit compact f4 artifacts and the next C985 seam",
+    "witness": "count C985 left and right F-addresses for all 72 ordered sector quadruples"
+  },
+  "status": "ETA6_F4_CERTIFIED",
+  "witness": {
+    "classification": "multiplicity_balanced_sym_support",
+    "face_mult_sums": [
+      {
+        "face_id": 12,
+        "label_mask": 30,
+        "left": 27967488,
+        "right": 27967488
+      },
+      {
+        "face_id": 22,
+        "label_mask": 45,
+        "left": 93192192,
+        "right": 93192192
+      },
+      {
+        "face_id": 26,
+        "label_mask": 51,
+        "left": 92012544,
+        "right": 92012544
+      }
+    ],
+    "face_support_sums": [
+      {
+        "face_id": 12,
+        "label_mask": 30,
+        "left": 3360512,
+        "right": 3360512
+      },
+      {
+        "face_id": 22,
+        "label_mask": 45,
+        "left": 28257280,
+        "right": 28257280
+      },
+      {
+        "face_id": 26,
+        "label_mask": 51,
+        "left": 25111824,
+        "right": 25111824
+      }
+    ],
+    "face_table_sha256": "ebca9cfdd1b3bd8bcef31c8647ed95d716cc501386f90a4361bfb530eb9e0704",
+    "fused_face_ids": [
+      12,
+      22,
+      26
+    ],
+    "fused_face_masks": [
+      30,
+      45,
+      51
+    ],
+    "h6_labels": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
+    ],
+    "left_mult_total": 213172224,
+    "left_support_total": 56729616,
+    "min_order_mult": 884736,
+    "min_order_support": 59904,
+    "observable_table_sha256": "3af5d2b12f218f45664f3d5a9f69f002821f5a7fc945c82517bddcc40aa8db50",
+    "order_table_sha256": "383f97bcfe9153c12c305e327e8b039b126213f7511f49ad2778acd20c1767e1",
+    "ordered_mult_match_count": 72,
+    "ordered_quadruples": 72,
+    "ordered_support_match_count": 0,
+    "reading": "The three eta6_t2 fused 4-label faces have positive C985 left/right F-address multiplicity on every ordered sector chain. Multiplicity dimensions match order-by-order; raw support row counts only balance after summing over the 24 orderings of each mask.",
+    "right_mult_total": 213172224,
+    "right_support_total": 56729616,
+    "sample_table_sha256": "f189c1fe538192fddebd421ba05b9146baf5ee7a02cdbdd904974358b1d3f260"
+  }
+}

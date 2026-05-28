@@ -1,0 +1,129 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "96ac8a05319c7e627a75543ad388177add5a9566b420d3b632d1dc08c856f50c",
+  "checks": {
+    "holonomy_pairing_survives_extended_transfer": true,
+    "input_certificates_available": true,
+    "known_p2_faces_have_uniform_label_deficit": true,
+    "table_shapes_match_codebooks": true,
+    "unique_best_fused_quadrilateral_assignment_restores_counts": true
+  },
+  "claim": "The eta6_p2 degree-5 triangle is not a transfer obstruction at the H6 label-count level. The 26 known p2 faces contribute count 10 to every H6 label; assigning four labels to each of the three fused quadrilateral faces, while preserving target count 12 and maximizing local endpoint incidence, has a unique optimum with masks [30,45,51]. The extended non-cubic transfer restores all six H6 counts to 12 and keeps eta6/holonomy pairing equal to 1.",
+  "closure_boundary": {
+    "certifies": [
+      "a unique non-cubic fused-face H6 label transfer for eta6_p2 at count level",
+      "preservation of all six H6 label counts at 12",
+      "eta6/holonomy pairing remains 1 under the extended transfer"
+    ],
+    "does_not_certify_because_not_required": [
+      "C985 associator data on 4-label fused faces",
+      "full local F-symbol semantics for the degree-5 triangle",
+      "global automaton closure after repeated non-cubic transfers"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_t2.py",
+      "sha256": "c6379204afb8893ec345d9cadf8b3fb4944e9a8bd1cd64af16d716d2c5db234d"
+    },
+    "holonomy_report": {
+      "certificate_sha256": "00093a73d4db7fef699e567e76690d4ac062c8ed57c0fb9ed520d971e314a517",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_signature_boundary_spine_aperture_closure_tail_eta6_relative_holonomy/report.json",
+      "sha256": "59440c50f11713b453d5d6ddef2772460f5c848dba28cd6fffc11f9d4e210737",
+      "status": "C985_D20_SIGNATURE_BOUNDARY_SPINE_APERTURE_CLOSURE_TAIL_ETA6_RELATIVE_HOLONOMY_CERTIFIED"
+    },
+    "p2_faces": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p2/faces.csv",
+      "sha256": "bd4ee0e7fce9733d988a496a5a2994d65a8123d6725dbe2ce40ec32dd09c2889"
+    },
+    "p2_report": {
+      "certificate_sha256": "34339e63721bc0245199caacc8b86fb25934cd6010d365e7fb2fb03ee6ee40f7",
+      "path": "data/invariants/d20/proof_obligations/eta6_p2/report.json",
+      "sha256": "ccd68d8592dacbba68832ea3b4a7048310b834b28193b14f5ec8b8557ef4f898",
+      "status": "ETA6_P2_CERTIFIED"
+    },
+    "p2_verts": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p2/verts.csv",
+      "sha256": "a53b751a845ecc0b2de523c16f0fa810e12815e4dce534db1f657efd47a0ddb8"
+    },
+    "truncated_tables": {
+      "path": "data/invariants/d20/proof_obligations/c985_eta6_truncated_skeleton/eta6_truncated_skeleton_tables.npz",
+      "sha256": "ad99096ae51b0e59eac8236740b5b450edc030aa79a8a235d1e2e35e310f43a2"
+    },
+    "validator": {
+      "path": "src/certify_eta6_t2.py",
+      "sha256": "3092421abf3f4374dad1a6bde39535910782ca159c9b6071c57b8305b75a839b"
+    },
+    "xfer_report": {
+      "certificate_sha256": "7ab83063b02d3715ed264ef87e386a32d15c5f5c2000672b7e5a5812d2fedcb9",
+      "path": "data/invariants/d20/proof_obligations/eta6_xfer/report.json",
+      "sha256": "a17098a64f5dc425fb59f4a582444fb49ccf287bb10d63387a03fef9339398c3",
+      "status": "ETA6_XFER_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Lift the t2 fused-face masks into explicit F-symbol addresses, then test whether the 4-label faces admit C985 associator semantics.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_t2/cert.json",
+    "fuse_csv": "data/invariants/d20/proof_obligations/eta6_t2/fuse.csv",
+    "labels_csv": "data/invariants/d20/proof_obligations/eta6_t2/labels.csv",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_t2/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_t2/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/eta6_t2/report.json",
+    "t2": "data/invariants/d20/proof_obligations/eta6_t2/t2.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_t2/tables.npz"
+  },
+  "schema": "eta6.t2.report@1",
+  "stage_protocol": {
+    "closure": "certify a non-cubic H6 transfer exists for p2 at the label-count level",
+    "coherence": "select the unique local endpoint-incidence optimum and check eta6/holonomy pairing",
+    "draft": "start from eta6_p2, eta6_xfer, and eta6 holonomy",
+    "emit": "emit compact t2 artifacts, verifier command, and next seam",
+    "witness": "enumerate fused-face 4-label assignments under H6 count preservation"
+  },
+  "status": "ETA6_T2_CERTIFIED",
+  "witness": {
+    "best_assignment_count": 1,
+    "best_score": 57,
+    "candidate_assignment_count": 90,
+    "classification": "noncubic_transfer_exists",
+    "eta6_after": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "fuse_table_sha256": "0d45ec8890439b8265ab9825b2fed0d30a73ac0c5bd1524ef9f7b9db9623c616",
+    "fused_face_ids": [
+      12,
+      22,
+      26
+    ],
+    "fused_face_masks": [
+      30,
+      45,
+      51
+    ],
+    "holonomy_after": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "holonomy_eta_pairing_after": 1,
+    "label_counts": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12
+    ],
+    "label_table_sha256": "d11852750a2d22827fd33e201b2946425a04a8264a0bbede6cb36b531edcee02",
+    "observable_table_sha256": "d7849f81d711bdc60cdfa5f062d030b12770a56afe36361ca84282944dc19089",
+    "reading": "The p2 carrier needs three 4-label fused faces. With global H6 count preservation and local endpoint-incidence maximization, the assignment is unique, so the degree-5 triangle is not yet a transfer obstruction."
+  }
+}

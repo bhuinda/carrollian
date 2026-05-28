@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "gordan_margin_exact": true,
+    "horizon_packet_is_strict_on_checked_components": true,
+    "input_certificates_available": true,
+    "lifted_face_slack_positive": true,
+    "pentagon_spread_floor_positive": true,
+    "replacement_margin_positive": true,
+    "table_shapes_match_codebooks": true
+  },
+  "schema": "eta6.p26.cert@1",
+  "status": "ETA6_P26_CERTIFIED",
+  "witness": {
+    "claim_boundary": {
+      "checked_component_count": 4,
+      "checked_positive_row_total": 7735158,
+      "support_equalizer_absent": 1,
+      "universal_completion_claim": 0
+    },
+    "classification": "finite_horizon_margin_packet",
+    "components": [
+      {
+        "margin": 1,
+        "name": "current hpol Gordan margin",
+        "reading": "strict positive Gordan functional blocks positive annihilator for the current hpol signed-row matrix",
+        "row_count": 4903515
+      },
+      {
+        "margin": 146,
+        "name": "replacement carrier margin",
+        "reading": "already-certified face-31 replacement carrier remains positive",
+        "row_count": 2831367
+      },
+      {
+        "margin": 363262450397,
+        "name": "p24 lifted-face slack",
+        "reading": "the p23-to-p24 lifted geometric faces keep all support rows strictly positive",
+        "row_count": 132
+      },
+      {
+        "margin": 11213312,
+        "name": "p25 pentagon support-spread floor",
+        "reading": "lifted pentagon extensions have no raw-support equalizer",
+        "row_count": 144
+      }
+    ],
+    "horizon_reading": "Across the checked eta6 packet, support-changing collapse is blocked by explicit positive integer floors: hpol Gordan margin 1, replacement margin 146, lifted-face slack 363262450397, and pentagon support-spread floor 11213312.",
+    "margin_table_sha256": "12c2551af7bddeb2785829537b7d9c84c2b3ab34d6621934786357b01e98d84e",
+    "observable_table_sha256": "ba8f44efed3d197693d52bdee71bc17094df425dffe6310a0ccb533da4f320a5"
+  }
+}

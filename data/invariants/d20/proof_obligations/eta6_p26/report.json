@@ -1,0 +1,118 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b39285913cd57422800c4d9db7b3b8d4bb3e49178f6e535b3b70b3b44e8b2533",
+  "checks": {
+    "gordan_margin_exact": true,
+    "horizon_packet_is_strict_on_checked_components": true,
+    "input_certificates_available": true,
+    "lifted_face_slack_positive": true,
+    "pentagon_spread_floor_positive": true,
+    "replacement_margin_positive": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The current checked eta6 packet has a strict finite-horizon margin profile. The hpol Gordan margin is m=1 over 4,903,515 rows; the replacement carrier margin is 146; the p24 lifted-face slack is 363262450397 over 132 rows; and the p25 lifted pentagon support-spread floor is 11213312 over 144 extensions. This certifies gap protection on the checked packet, not every future completion.",
+  "closure_boundary": {
+    "certifies": [
+      "current hpol Gordan margin m = 1",
+      "positive imported replacement margin 146",
+      "positive p24 lifted-face slack 363262450397",
+      "positive p25 lifted pentagon support-spread floor 11213312",
+      "no p25 raw-support equalizer in the checked lifted pentagon screen"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "all future replacement completions",
+      "new simple-object semantics for the lifted carrier",
+      "global automaton closure after repeated geometric lifts",
+      "that eta6 is uncrossable outside the checked row universes"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p26.py",
+      "sha256": "17e4c0e062ea370176f46e688d6775127f47cf8f58fdc132194fd16f9575f16d"
+    },
+    "gap_report": {
+      "certificate_sha256": "d0db3d7d6282b851830ab53154d43a84affc4db999a2437e3cf946c2e651440b",
+      "path": "data/invariants/d20/proof_obligations/eta6_gap/report.json",
+      "sha256": "ab7401c5dc49441338d6979406316d75c617d1955cfefac8d105b7cf76afb23f",
+      "status": "ETA6_GAP_CERTIFIED"
+    },
+    "p24_report": {
+      "certificate_sha256": "0262515fcdf660e563013ab03fc15948391814b2bafdbfaf1d1609a7f032eb26",
+      "path": "data/invariants/d20/proof_obligations/eta6_p24/report.json",
+      "sha256": "7dd657ae30848fd1f7012be63e1280fc249c92bf4371a158b57f38e37f3f6464",
+      "status": "ETA6_P24_CERTIFIED"
+    },
+    "p24_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p24/tables.npz",
+      "sha256": "e8a4ea41a0cc68e30d48bcc3bfe21aaec96d18bc0e130dac6ce18cac25ddd816"
+    },
+    "p25_report": {
+      "certificate_sha256": "63759c423f1d5f135d872623c76f63c6569d4bead0bf53b73a3aee7b43102b7c",
+      "path": "data/invariants/d20/proof_obligations/eta6_p25/report.json",
+      "sha256": "136df60f98b506718df4d7c6383028079b71fe96d37db65fc4e1bfcf4dcdf484",
+      "status": "ETA6_P25_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p26.py",
+      "sha256": "b1e4754ea9f8b95a5ae4b2d0e381e1839ba384cf6aebb2ce95cfc047ee9416f1"
+    }
+  },
+  "next_highest_yield_item": "Start p27 by testing whether any p25 best-extension compound can lower the lifted pentagon support-spread floor without breaking the p26 finite-horizon margins.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p26/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p26/manifest.json",
+    "marg_csv": "data/invariants/d20/proof_obligations/eta6_p26/marg.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p26/obs.csv",
+    "p26": "data/invariants/d20/proof_obligations/eta6_p26/p26.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p26/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p26/tables.npz"
+  },
+  "schema": "eta6.p26.report@1",
+  "stage_protocol": {
+    "closure": "certify the finite-horizon margin packet for the checked eta6 stack",
+    "coherence": "verify all components are positive and no universal completion claim is made",
+    "draft": "start from eta6_gap, eta6_p24, and eta6_p25 certified reports",
+    "emit": "emit compact p26 artifacts and the next recomputation seam",
+    "witness": "extract the strict positive floors and checked row counts"
+  },
+  "status": "ETA6_P26_CERTIFIED",
+  "witness": {
+    "claim_boundary": {
+      "checked_component_count": 4,
+      "checked_positive_row_total": 7735158,
+      "support_equalizer_absent": 1,
+      "universal_completion_claim": 0
+    },
+    "classification": "finite_horizon_margin_packet",
+    "components": [
+      {
+        "margin": 1,
+        "name": "current hpol Gordan margin",
+        "reading": "strict positive Gordan functional blocks positive annihilator for the current hpol signed-row matrix",
+        "row_count": 4903515
+      },
+      {
+        "margin": 146,
+        "name": "replacement carrier margin",
+        "reading": "already-certified face-31 replacement carrier remains positive",
+        "row_count": 2831367
+      },
+      {
+        "margin": 363262450397,
+        "name": "p24 lifted-face slack",
+        "reading": "the p23-to-p24 lifted geometric faces keep all support rows strictly positive",
+        "row_count": 132
+      },
+      {
+        "margin": 11213312,
+        "name": "p25 pentagon support-spread floor",
+        "reading": "lifted pentagon extensions have no raw-support equalizer",
+        "row_count": 144
+      }
+    ],
+    "horizon_reading": "Across the checked eta6 packet, support-changing collapse is blocked by explicit positive integer floors: hpol Gordan margin 1, replacement margin 146, lifted-face slack 363262450397, and pentagon support-spread floor 11213312.",
+    "margin_table_sha256": "12c2551af7bddeb2785829537b7d9c84c2b3ab34d6621934786357b01e98d84e",
+    "observable_table_sha256": "ba8f44efed3d197693d52bdee71bc17094df425dffe6310a0ccb533da4f320a5"
+  }
+}

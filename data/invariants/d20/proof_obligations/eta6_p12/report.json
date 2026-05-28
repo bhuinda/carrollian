@@ -1,0 +1,731 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7b862394612af928210ced025c151f4208a781692b837603e29adb3a3aaa55b8",
+  "checks": {
+    "best_candidate_matches_expected": true,
+    "best_same_face_and_mask_match": true,
+    "carrier_gap_import_matches_eta6_gap": true,
+    "descent_counts_match": true,
+    "input_certificates_available": true,
+    "seeded_screen_size_matches": true,
+    "seeded_six_stalls_above_p11": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The seeded six-move extension screen around the two p11 rows below the p8 floor does not continue the p11 descent: best spread is 10529536, with no support equalizer. The current eta6 carrier gap is imported from eta6_gap with hpol margin 1 and replacement margin 146.",
+  "closure_boundary": {
+    "certifies": [
+      "seeded six-move extension screen over 278 deduplicated candidates",
+      "no seeded six-move candidate beats the p11 five-move floor",
+      "best seeded six-move support spread is 10529536",
+      "no seeded six-move candidate equalizes raw support",
+      "current eta6 carrier gap certificate is still positive via eta6_gap"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "complete six-move search over all p5 sextuples",
+      "a new post-surgery carrier-level eta6 gap",
+      "global closure under repeated non-cubic surgeries",
+      "that metric conductance has reached its final asymptote"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p12.py",
+      "sha256": "a194eaf5af79ad7c029275f9b2982f19791afb7f0b58c3aa12ea0a2198456d45"
+    },
+    "gap_report": {
+      "certificate_sha256": "d0db3d7d6282b851830ab53154d43a84affc4db999a2437e3cf946c2e651440b",
+      "path": "data/invariants/d20/proof_obligations/eta6_gap/report.json",
+      "sha256": "ab7401c5dc49441338d6979406316d75c617d1955cfefac8d105b7cf76afb23f",
+      "status": "ETA6_GAP_CERTIFIED"
+    },
+    "p11_report": {
+      "certificate_sha256": "ad0865cec78e85d6720de4457977828f975ffd1074e8ab77270effa43a694ae4",
+      "path": "data/invariants/d20/proof_obligations/eta6_p11/report.json",
+      "sha256": "170726841acaabcc6795d12ce00b220a7fde2903222b7ff66b2212df9dc1126e",
+      "status": "ETA6_P11_CERTIFIED"
+    },
+    "p11_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p11/tables.npz",
+      "sha256": "acd6a5a9c9b4c20a0832653412dd054ecd5b2eb17332e411354c5c0344f88b44"
+    },
+    "p5_report": {
+      "certificate_sha256": "8a6b564bebf04907c0c16ccd059950cb166d9f6bc699d0df09f8f615477ae19d",
+      "path": "data/invariants/d20/proof_obligations/eta6_p5/report.json",
+      "sha256": "f492fe77cf323a296835484382830d5df05c914dfaf849ba46b34f25f7639596",
+      "status": "ETA6_P5_CERTIFIED"
+    },
+    "p5_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p5/tables.npz",
+      "sha256": "a40cf5470c7aeb0c9cbc667464e1981cc426c9a386c6e1d84cd62a6198b3ce68"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p12.py",
+      "sha256": "12c9fde760d1e5efb7c8d160ed23f8324d95b8c2f54b3ce1c1e33322cc7ee46a"
+    }
+  },
+  "next_highest_yield_item": "Run a broader six-move meet-in-the-middle screen around the p11 top-32 rows, then only build a new carrier if a support-level candidate beats p11.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p12/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p12/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p12/obs.csv",
+    "p12": "data/invariants/d20/proof_obligations/eta6_p12/p12.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p12/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p12/tables.npz",
+    "top_csv": "data/invariants/d20/proof_obligations/eta6_p12/top.csv"
+  },
+  "schema": "eta6.p12.report@1",
+  "stage_protocol": {
+    "closure": "certify seeded six-move stall plus imported carrier gap",
+    "coherence": "compare seeded six-move spread against p11, p8, p7, p6, and p5 floors",
+    "draft": "start from the two p11 quintuples below the p8 floor",
+    "emit": "emit compact p12 artifacts and the next seam",
+    "witness": "extend each seed by every remaining p5 move and deduplicate"
+  },
+  "status": "ETA6_P12_CERTIFIED",
+  "witness": {
+    "below_p11_candidate_count": 0,
+    "below_p5_candidate_count": 2,
+    "below_p8_candidate_count": 0,
+    "best_candidates": [
+      {
+        "extension_p5": 32,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 31,
+        "p5_ids": [
+          1,
+          8,
+          32,
+          41,
+          52,
+          54
+        ],
+        "rank": 0,
+        "seed_p11_id": 67415100,
+        "seed_rank": 0,
+        "spread": 10529536,
+        "support": [
+          360430976,
+          355854208,
+          364858752,
+          365881600,
+          366383744
+        ]
+      },
+      {
+        "extension_p5": 14,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 153,
+        "p5_ids": [
+          14,
+          25,
+          30,
+          47,
+          70,
+          90
+        ],
+        "rank": 1,
+        "seed_p11_id": 98228502,
+        "seed_rank": 1,
+        "spread": 10529536,
+        "support": [
+          355854208,
+          360430976,
+          365881600,
+          364858752,
+          366383744
+        ]
+      },
+      {
+        "extension_p5": 128,
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          22,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          45,
+          51
+        ],
+        "p12_id": 124,
+        "p5_ids": [
+          1,
+          8,
+          41,
+          52,
+          54,
+          128
+        ],
+        "rank": 2,
+        "seed_p11_id": 67415100,
+        "seed_rank": 0,
+        "spread": 11617088,
+        "support": [
+          372542656,
+          372944768,
+          374521472,
+          384159744,
+          380397440
+        ]
+      },
+      {
+        "extension_p5": 110,
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          22,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          45,
+          51
+        ],
+        "p12_id": 244,
+        "p5_ids": [
+          25,
+          30,
+          47,
+          70,
+          90,
+          110
+        ],
+        "rank": 3,
+        "seed_p11_id": 98228502,
+        "seed_rank": 1,
+        "spread": 11617088,
+        "support": [
+          372944768,
+          372542656,
+          384159744,
+          374521472,
+          380397440
+        ]
+      },
+      {
+        "extension_p5": 44,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 42,
+        "p5_ids": [
+          1,
+          8,
+          41,
+          44,
+          52,
+          54
+        ],
+        "rank": 4,
+        "seed_p11_id": 67415100,
+        "seed_rank": 0,
+        "spread": 11678208,
+        "support": [
+          362608000,
+          362681216,
+          362703104,
+          367736832,
+          374286208
+        ]
+      },
+      {
+        "extension_p5": 12,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 151,
+        "p5_ids": [
+          12,
+          25,
+          30,
+          47,
+          70,
+          90
+        ],
+        "rank": 5,
+        "seed_p11_id": 98228502,
+        "seed_rank": 1,
+        "spread": 11678208,
+        "support": [
+          362681216,
+          362608000,
+          367736832,
+          362703104,
+          374286208
+        ]
+      },
+      {
+        "extension_p5": 14,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 13,
+        "p5_ids": [
+          1,
+          8,
+          14,
+          41,
+          52,
+          54
+        ],
+        "rank": 6,
+        "seed_p11_id": 67415100,
+        "seed_rank": 0,
+        "spread": 12089600,
+        "support": [
+          354294144,
+          361991040,
+          366208896,
+          364531456,
+          366383744
+        ]
+      },
+      {
+        "extension_p5": 32,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 169,
+        "p5_ids": [
+          25,
+          30,
+          32,
+          47,
+          70,
+          90
+        ],
+        "rank": 7,
+        "seed_p11_id": 98228502,
+        "seed_rank": 1,
+        "spread": 12089600,
+        "support": [
+          361991040,
+          354294144,
+          364531456,
+          366208896,
+          366383744
+        ]
+      },
+      {
+        "extension_p5": 34,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 33,
+        "p5_ids": [
+          1,
+          8,
+          34,
+          41,
+          52,
+          54
+        ],
+        "rank": 8,
+        "seed_p11_id": 67415100,
+        "seed_rank": 0,
+        "spread": 12496384,
+        "support": [
+          362486656,
+          365884416,
+          355123584,
+          365002496,
+          367619968
+        ]
+      },
+      {
+        "extension_p5": 2,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 141,
+        "p5_ids": [
+          2,
+          25,
+          30,
+          47,
+          70,
+          90
+        ],
+        "rank": 9,
+        "seed_p11_id": 98228502,
+        "seed_rank": 1,
+        "spread": 12496384,
+        "support": [
+          365884416,
+          362486656,
+          365002496,
+          355123584,
+          367619968
+        ]
+      },
+      {
+        "extension_p5": 2,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 2,
+        "p5_ids": [
+          1,
+          2,
+          8,
+          41,
+          52,
+          54
+        ],
+        "rank": 10,
+        "seed_p11_id": 67415100,
+        "seed_rank": 0,
+        "spread": 12823680,
+        "support": [
+          364324352,
+          364046720,
+          365329792,
+          354796288,
+          367619968
+        ]
+      },
+      {
+        "extension_p5": 34,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 171,
+        "p5_ids": [
+          25,
+          30,
+          34,
+          47,
+          70,
+          90
+        ],
+        "rank": 11,
+        "seed_p11_id": 98228502,
+        "seed_rank": 1,
+        "spread": 12823680,
+        "support": [
+          364046720,
+          364324352,
+          354796288,
+          365329792,
+          367619968
+        ]
+      },
+      {
+        "extension_p5": 110,
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          22,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          45,
+          51
+        ],
+        "p12_id": 106,
+        "p5_ids": [
+          1,
+          8,
+          41,
+          52,
+          54,
+          110
+        ],
+        "rank": 12,
+        "seed_p11_id": 67415100,
+        "seed_rank": 0,
+        "spread": 13102336,
+        "support": [
+          371384704,
+          374102720,
+          384487040,
+          374194176,
+          380397440
+        ]
+      },
+      {
+        "extension_p5": 128,
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          22,
+          26
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          45,
+          51
+        ],
+        "p12_id": 262,
+        "p5_ids": [
+          25,
+          30,
+          47,
+          70,
+          90,
+          128
+        ],
+        "rank": 13,
+        "seed_p11_id": 98228502,
+        "seed_rank": 1,
+        "spread": 13102336,
+        "support": [
+          374102720,
+          371384704,
+          374194176,
+          384487040,
+          380397440
+        ]
+      },
+      {
+        "extension_p5": 12,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 11,
+        "p5_ids": [
+          1,
+          8,
+          12,
+          41,
+          52,
+          54
+        ],
+        "rank": 14,
+        "seed_p11_id": 67415100,
+        "seed_rank": 0,
+        "spread": 13165056,
+        "support": [
+          361121152,
+          364168064,
+          368064128,
+          362375808,
+          374286208
+        ]
+      },
+      {
+        "extension_p5": 44,
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          22
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          45
+        ],
+        "p12_id": 181,
+        "p5_ids": [
+          25,
+          30,
+          44,
+          47,
+          70,
+          90
+        ],
+        "rank": 15,
+        "seed_p11_id": 98228502,
+        "seed_rank": 1,
+        "spread": 13165056,
+        "support": [
+          364168064,
+          361121152,
+          362375808,
+          368064128,
+          374286208
+        ]
+      }
+    ],
+    "candidate_construction": "extend the two p11 quintuples below the p8 floor by one additional p5 move",
+    "carrier_gap_import": {
+      "hpol_min_margin": 1,
+      "hpol_row_count": 4903515,
+      "reading": "The current carrier-level eta6 gap remains imported from eta6_gap; p12 does not construct a new post-surgery carrier.",
+      "repl_min_margin": 146,
+      "repl_row_count": 2831367
+    },
+    "classification": "seeded_six_move_extension_stall",
+    "observable_table_sha256": "52bbcb37afc5ba1af02c5acf33ed3b4a49337aadd4b20b7c912aefc3838db07b",
+    "p11_quint_floor": 1815040,
+    "reading": "The direct six-move extensions of the two p8-beating p11 rows do not continue the descent. The current carrier gap certificate is still positive, but no new carrier surgery gap is claimed here.",
+    "seeded_six_min_spread": 10529536,
+    "support_equal_candidate_count": 0,
+    "top_table_sha256": "ce7793836eda6dec5b7d26217c0f1da7bf70fc10f14e71e6cf9096fd2c0efc5a"
+  }
+}

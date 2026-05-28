@@ -1,0 +1,302 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+try:
+    from .certify_io import ROOT, h_file, h_json
+    from .derive_eta6_p25 import (
+        DERIVE_SCRIPT,
+        EXT_COLUMNS,
+        FACE_COLUMNS,
+        FUSION_REPORT,
+        FUSION_TENSOR,
+        INDEX_PATH,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        P24_REPORT,
+        P24_TABLES,
+        PENTAGON_HELPER_SCRIPT,
+        PENTAGON_REPORT,
+        REGISTRY_REPORT,
+        SOURCE_TARGET,
+        STATUS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        self_hash,
+    )
+except ImportError:  # Supports direct script execution.
+    from certify_io import ROOT, h_file, h_json
+    from derive_eta6_p25 import (
+        DERIVE_SCRIPT,
+        EXT_COLUMNS,
+        FACE_COLUMNS,
+        FUSION_REPORT,
+        FUSION_TENSOR,
+        INDEX_PATH,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        P24_REPORT,
+        P24_TABLES,
+        PENTAGON_HELPER_SCRIPT,
+        PENTAGON_REPORT,
+        REGISTRY_REPORT,
+        SOURCE_TARGET,
+        STATUS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        self_hash,
+    )
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise AssertionError(f"{path} is not a JSON object")
+    return payload
+
+
+def assert_file_hash(entry: dict[str, Any], expected_path: Path, label: str) -> None:
+    expected_rel = expected_path.relative_to(ROOT).as_posix()
+    if entry.get("path") != expected_rel:
+        raise AssertionError(f"{label} path mismatch: {entry.get('path')}")
+    if entry.get("sha256") != h_file(expected_path):
+        raise AssertionError(f"{label} sha256 mismatch")
+
+
+def table_rows(table: np.ndarray, columns: list[str]) -> list[dict[str, int]]:
+    return [
+        {column: int(values[index]) for index, column in enumerate(columns)}
+        for values in table
+    ]
+
+
+def validate_eta6_p25() -> dict[str, Any]:
+    expected = build_payloads()
+    report = load_json(OUT_DIR / "report.json")
+    manifest = load_json(OUT_DIR / "manifest.json")
+    p25 = load_json(OUT_DIR / "p25.json")
+    cert = load_json(OUT_DIR / "cert.json")
+    ext_csv = (OUT_DIR / "ext.csv").read_text(encoding="utf-8")
+    face_csv = (OUT_DIR / "face.csv").read_text(encoding="utf-8")
+    obs_csv = (OUT_DIR / "obs.csv").read_text(encoding="utf-8")
+    tables = np.load(OUT_DIR / "tables.npz", allow_pickle=False)
+    index = load_json(INDEX_PATH)
+
+    if p25 != expected["p25"]:
+        raise AssertionError("eta6_p25 JSON mismatch")
+    if cert != expected["cert"]:
+        raise AssertionError("eta6_p25 cert mismatch")
+    if ext_csv != expected["ext_csv"]:
+        raise AssertionError("eta6_p25 ext CSV mismatch")
+    if face_csv != expected["face_csv"]:
+        raise AssertionError("eta6_p25 face CSV mismatch")
+    if obs_csv != expected["obs_csv"]:
+        raise AssertionError("eta6_p25 obs CSV mismatch")
+    if not np.array_equal(np.asarray(tables["ext_table"]), expected["ext_table"]):
+        raise AssertionError("eta6_p25 ext table mismatch")
+    if not np.array_equal(np.asarray(tables["face_table"]), expected["face_table"]):
+        raise AssertionError("eta6_p25 face table mismatch")
+    if not np.array_equal(
+        np.asarray(tables["observable_table"]),
+        expected["obs_table"],
+    ):
+        raise AssertionError("eta6_p25 observable table mismatch")
+
+    if report.get("schema") != "eta6.p25.report@1":
+        raise AssertionError("eta6_p25 report schema mismatch")
+    if report.get("status") != STATUS:
+        raise AssertionError("eta6_p25 report is not certified")
+    if report.get("all_checks_pass") is not True:
+        raise AssertionError("eta6_p25 all_checks_pass is not true")
+    if report.get("checks") != expected["report"]["checks"]:
+        raise AssertionError("eta6_p25 checks mismatch")
+    if self_hash(report, "certificate_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_p25 report self hash mismatch")
+    if report.get("certificate_sha256") != expected["report"]["certificate_sha256"]:
+        raise AssertionError("eta6_p25 report hash mismatch")
+
+    ext_table = np.asarray(tables["ext_table"], dtype=np.int64)
+    face_table = np.asarray(tables["face_table"], dtype=np.int64)
+    obs_table = np.asarray(tables["observable_table"], dtype=np.int64)
+    if tuple(ext_table.shape) != (144, len(EXT_COLUMNS)):
+        raise AssertionError("eta6_p25 ext table shape mismatch")
+    if tuple(face_table.shape) != (3, len(FACE_COLUMNS)):
+        raise AssertionError("eta6_p25 face table shape mismatch")
+    if tuple(obs_table.shape) != (len(OBS_CODES), len(OBS_COLUMNS)):
+        raise AssertionError("eta6_p25 obs table shape mismatch")
+
+    obs = {
+        row["observable_code"]: row["value"]
+        for row in table_rows(obs_table, OBS_COLUMNS)
+    }
+    required = {
+        "lift_face_count": 3,
+        "p24_order_count": 72,
+        "p25_extension_count": 144,
+        "complement_extensions_per_order": 2,
+        "mult_equal_extension_count": 144,
+        "support_equal_extension_count": 0,
+        "support_unique_five_count": 144,
+        "eta6_preserved_extension_count": 144,
+        "min_support_spread": 11213312,
+        "max_support_spread": 633114624,
+        "min_spread_count": 2,
+        "max_spread_count": 2,
+        "total_mult_p0": 145542610944,
+        "total_mult_p1": 145542610944,
+        "total_mult_p2": 145542610944,
+        "total_mult_p3": 145542610944,
+        "total_mult_p4": 145542610944,
+        "total_support_p0": 23211650672,
+        "total_support_p1": 23211650672,
+        "total_support_p2": 26519023584,
+        "total_support_p3": 26519023584,
+        "total_support_p4": 29718149184,
+        "p25_multiplicity_flag": 1,
+        "p25_raw_support_obstruction_flag": 1,
+        "lift_support_row_count": 132,
+        "lift_support_positive_count": 132,
+        "lift_min_slack_x1e12": 363262450397,
+        "p24_lifted_f_address_flag": 1,
+        "new_pentagon_recompute_flag": 1,
+    }
+    for key, value in required.items():
+        if obs.get(OBS_CODES[key]) != value:
+            raise AssertionError(f"eta6_p25 observable {key} mismatch")
+
+    witness = report.get("witness", {})
+    if witness.get("classification") != "lifted_face_pentagon_recompute":
+        raise AssertionError("eta6_p25 classification mismatch")
+    if witness.get("p25_extension_count") != 144:
+        raise AssertionError("eta6_p25 extension count mismatch")
+    if witness.get("total_multiplicity_by_parenthesization") != [145542610944] * 5:
+        raise AssertionError("eta6_p25 total multiplicity mismatch")
+    if witness.get("total_support_by_parenthesization") != [
+        23211650672,
+        23211650672,
+        26519023584,
+        26519023584,
+        29718149184,
+    ]:
+        raise AssertionError("eta6_p25 total support mismatch")
+    if witness.get("min_support_spread") != 11213312:
+        raise AssertionError("eta6_p25 min support spread mismatch")
+    if witness.get("max_support_spread") != 633114624:
+        raise AssertionError("eta6_p25 max support spread mismatch")
+    if witness.get("lifted_margin", {}).get("min_slack_x1e12") != 363262450397:
+        raise AssertionError("eta6_p25 lifted margin mismatch")
+    if witness.get("claim_boundary", {}).get("new_pentagon_recompute") != 1:
+        raise AssertionError("eta6_p25 pentagon boundary mismatch")
+    if witness.get("claim_boundary", {}).get("raw_support_equalizer_found") != 0:
+        raise AssertionError("eta6_p25 support equalizer boundary mismatch")
+    best = witness.get("best_extensions", [])
+    if not best or best[0].get("p25_id") != 14:
+        raise AssertionError("eta6_p25 best extension mismatch")
+    if best[0].get("support_spread") != 11213312:
+        raise AssertionError("eta6_p25 best spread mismatch")
+    if ext_csv.splitlines()[0].split(",") != EXT_COLUMNS:
+        raise AssertionError("eta6_p25 ext header mismatch")
+    if face_csv.splitlines()[0].split(",") != FACE_COLUMNS:
+        raise AssertionError("eta6_p25 face header mismatch")
+
+    face_rows = table_rows(face_table, FACE_COLUMNS)
+    expected_faces = [
+        (0, 12, 30, 48, 11213312, 219877376, 14, 7, 0),
+        (1, 22, 45, 48, 48540672, 633114624, 62, 31, 1),
+        (2, 26, 51, 48, 12400896, 631799712, 110, 55, 2),
+    ]
+    actual_faces = [
+        (
+            row["lift_id"],
+            row["face_id"],
+            row["label_mask"],
+            row["extension_count"],
+            row["min_support_spread"],
+            row["max_support_spread"],
+            row["best_p25_id"],
+            row["best_p24_row_id"],
+            row["best_extension_label"],
+        )
+        for row in face_rows
+    ]
+    if actual_faces != expected_faces:
+        raise AssertionError("eta6_p25 face rows mismatch")
+    if any(row["support_equal_count"] != 0 for row in face_rows):
+        raise AssertionError("eta6_p25 support equality count mismatch")
+    if any(row["mult_equal_count"] != 48 for row in face_rows):
+        raise AssertionError("eta6_p25 multiplicity count mismatch")
+    if any(row["lift_min_slack_x1e12"] != 363262450397 for row in face_rows):
+        raise AssertionError("eta6_p25 face lifted slack mismatch")
+
+    inputs = report.get("inputs", {})
+    assert_file_hash(inputs.get("p24_report", {}), P24_REPORT, "p24 report")
+    assert_file_hash(inputs.get("p24_tables", {}), P24_TABLES, "p24 tables")
+    assert_file_hash(
+        inputs.get("typed_registry_report", {}),
+        REGISTRY_REPORT,
+        "registry report",
+    )
+    assert_file_hash(inputs.get("source_target", {}), SOURCE_TARGET, "source target")
+    assert_file_hash(inputs.get("fusion_report", {}), FUSION_REPORT, "fusion report")
+    assert_file_hash(inputs.get("fusion_tensor", {}), FUSION_TENSOR, "fusion tensor")
+    assert_file_hash(
+        inputs.get("pentagon_report", {}),
+        PENTAGON_REPORT,
+        "pentagon report",
+    )
+    assert_file_hash(
+        inputs.get("pentagon_helper_script", {}),
+        PENTAGON_HELPER_SCRIPT,
+        "pentagon helper script",
+    )
+    assert_file_hash(inputs.get("derive_script", {}), DERIVE_SCRIPT, "derive script")
+    assert_file_hash(inputs.get("validator", {}), VALIDATOR_SCRIPT, "validator")
+
+    if manifest.get("schema") != "eta6.p25.manifest@1":
+        raise AssertionError("eta6_p25 manifest schema mismatch")
+    if manifest.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_p25 manifest report hash mismatch")
+    if self_hash(manifest, "manifest_sha256") != manifest.get("manifest_sha256"):
+        raise AssertionError("eta6_p25 manifest self hash mismatch")
+
+    entry = next(
+        (row for row in index.get("obligations", []) if row.get("id") == THEOREM_ID),
+        None,
+    )
+    if entry is None:
+        raise AssertionError("eta6_p25 missing from index")
+    if entry.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("eta6_p25 index report hash mismatch")
+    if entry.get("status") != report.get("status"):
+        raise AssertionError("eta6_p25 index status mismatch")
+    index_without_hash = {
+        key: value for key, value in index.items() if key != "registry_sha256"
+    }
+    if h_json(index_without_hash) != index.get("registry_sha256"):
+        raise AssertionError("proof obligation index self hash mismatch")
+
+    return {
+        "schema": "eta6.p25.verification@1",
+        "status": "PASS",
+        "verified_report": (OUT_DIR / "report.json").relative_to(ROOT).as_posix(),
+        "certificate_sha256": report.get("certificate_sha256"),
+        "witness": report.get("witness"),
+        "closure_boundary": report.get("closure_boundary"),
+        "next_highest_yield_item": report.get("next_highest_yield_item"),
+    }
+
+
+def main() -> None:
+    print(json.dumps(validate_eta6_p25(), indent=2, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

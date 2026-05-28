@@ -1,0 +1,128 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "34339e63721bc0245199caacc8b86fb25934cd6010d365e7fb2fb03ee6ee40f7",
+  "checks": {
+    "convex_hull_patch_counts_match_second_hit": true,
+    "input_certificates_available": true,
+    "patch_affine_circuit_census_has_gap": true,
+    "patch_face_sources_show_multi_face_fusion": true,
+    "patch_graph_is_polyhedral_but_not_cubic": true,
+    "patch_height_orientation_is_strict": true,
+    "patch_support_cone_is_positive": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The second-hit three-edge collapse has a concrete convex hull patch: delete the six old face-31 vertices and keep the three hit vertices as a central triangle. The resulting carrier has 48 vertices, 75 edges, 29 faces, Euler characteristic 2, 3-vertex-connected graph incidence, all 1,242 support rows strictly positive, and all 1,523,358 minimal affine circuit rows strictly oriented with minimum deterministic margin 146. The patch is not cubic: the three hit vertices have degree 5, so the previous 32-face identity eta6 transfer is no longer applicable without a new transfer law.",
+  "closure_boundary": {
+    "certifies": [
+      "a concrete convex multi-face patch for the second-hit collapse",
+      "positive support cone for the patched carrier",
+      "minimal affine circuit census and strict deterministic row orientation",
+      "the old cubic/32-face eta6 transfer rule is not applicable to this valence-changed patch"
+    ],
+    "does_not_certify_because_not_required": [
+      "eta6 preservation through a new non-cubic transfer law",
+      "C985 associator data on the patched carrier",
+      "global automaton closure after repeated patches"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p2.py",
+      "sha256": "b49c5534c650d4333a4fef3f8034ebbb6ae250b54ca73d0f3a8336376e354db7"
+    },
+    "hit2_report": {
+      "certificate_sha256": "8ed2a2adf21f2e81bcae29568aae4fa249c80d18ceaa636b5bad3dff2e239a1c",
+      "path": "data/invariants/d20/proof_obligations/eta6_hit2/report.json",
+      "sha256": "f73c36d254de33ee9f3f45304a574acc7ab4d2550a19fd90abd6038f8cebc0ae",
+      "status": "ETA6_HIT2_CERTIFIED"
+    },
+    "repl_faces": {
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/faces.csv",
+      "sha256": "7d79ce65303eaf46561faa563701c8945392edbf0d05763b0fdb8d5e2e2a7729"
+    },
+    "repl_report": {
+      "certificate_sha256": "571cc28c834a9e525e923766265b8f221b59287e56af721f7c22a5b0bf9e4a78",
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/report.json",
+      "sha256": "ddb485d706634dd7666ef9bc46be249b8a6e593bd70d02d934ad0e8c3826c230",
+      "status": "ETA6_REPL_CERTIFIED"
+    },
+    "repl_verts": {
+      "path": "data/invariants/d20/proof_obligations/eta6_repl/verts.csv",
+      "sha256": "b3dbb9cf0d7ba839edd52889cc046810ae5c0a6f9760a9a96defb98f92173e5b"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p2.py",
+      "sha256": "5bba63976a716ab0d2f09e8ea5f3e179b529b691e244646b3577c69148012bab"
+    }
+  },
+  "next_highest_yield_item": "Define the eta6 transfer law for the non-cubic 48/75/29 patch, or prove that the degree-5 triangle is a genuine transfer obstruction.",
+  "outputs": {
+    "c4_csv": "data/invariants/d20/proof_obligations/eta6_p2/c4.csv",
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p2/cert.json",
+    "edges_csv": "data/invariants/d20/proof_obligations/eta6_p2/edges.csv",
+    "faces_csv": "data/invariants/d20/proof_obligations/eta6_p2/faces.csv",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p2/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p2/obs.csv",
+    "p2": "data/invariants/d20/proof_obligations/eta6_p2/p2.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p2/report.json",
+    "samp_csv": "data/invariants/d20/proof_obligations/eta6_p2/samp.csv",
+    "supp_csv": "data/invariants/d20/proof_obligations/eta6_p2/supp.csv",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p2/tables.npz",
+    "verts_csv": "data/invariants/d20/proof_obligations/eta6_p2/verts.csv"
+  },
+  "schema": "eta6.p2.report@1",
+  "stage_protocol": {
+    "closure": "certify the multi-face patch as support-positive and record the eta6 transfer boundary",
+    "coherence": "check graph incidence, support positivity, circuit census, and row orientation",
+    "draft": "start from eta6_repl and eta6_hit2",
+    "emit": "emit compact p2 artifacts, verifier command, and next seam",
+    "witness": "delete the second-hit face-31 cycle and compute the convex hull of the remaining vertices"
+  },
+  "status": "ETA6_P2_CERTIFIED",
+  "witness": {
+    "c4_table_sha256": "6568347a6c2d6ef0798465ee71dd28f2eb645900316fded0aaf0194e8df0d46c",
+    "circuits": {
+      "min_positive_pairing": 146,
+      "minimal_c4_count": 4626,
+      "minimal_c5_count": 1518732,
+      "row_stream_sha256": "282b0ae02d1ccd34bca5e8f2f84b9fdc8bfb913108d7a10a2ab6a2e450116f50",
+      "support_stream_sha256": "ce39fd237012c2a5ef57d0cb33b7aa556064878383b082ae625fdb02ebcbaf8e"
+    },
+    "edge_table_sha256": "402d4a01037f4a234d6673e7e727f9a9351e508f82145b1f088dc430c41c00a8",
+    "eta6_transfer_boundary": "The previous identity transfer expects a 32-face cubic carrier. This patch has 29 faces and three degree-5 hit vertices, so eta6 transfer must be reformulated before claiming preservation.",
+    "face_table_sha256": "58e6fd928bc3ac77a4c61d58e2053b27f954959200eae47f62e3e96a7a11a943",
+    "high_degree_original_vertices": [
+      41,
+      52,
+      55
+    ],
+    "hit_old_local_vertices": [
+      41,
+      50,
+      51
+    ],
+    "hit_original_vertices": [
+      41,
+      52,
+      55
+    ],
+    "hull_face_sets_sha256": "d48c8dc86f78e6e1f7872fcdf48f0f7ed44c4e04d9b02315ae9259c65db4196b",
+    "observable_table_sha256": "327b13e144ab8b91c163e39d9d80bbef00492dcaff4dc7736415b656f4a2a0e4",
+    "removed_old_local_vertices": [
+      42,
+      40,
+      49,
+      48,
+      52,
+      53
+    ],
+    "sample_table_sha256": "a16ed2f568749352f34af46bf50acfbfc78ddfc7be45fb794fe8b033eebb403c",
+    "support": {
+      "max_slack_x1e12": 3103251249022,
+      "min_slack_x1e12": 147018786278,
+      "support_rows": 1242
+    },
+    "support_table_sha256": "202474a3a3da83c2bbf5af5e9f385a9f5e9a10bcf53c09bf2b3289150079162e",
+    "vertex_table_sha256": "9be47211a9f29ea440a2eaf46ed7d0b53bdfb92fd24e0187d13cf24d29470c20"
+  }
+}

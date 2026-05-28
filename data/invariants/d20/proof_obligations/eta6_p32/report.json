@@ -1,0 +1,1013 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "73ac3759ff45977dfa4fb8677275580cfbe07d77c9890ac41d74c0dd829a26fc",
+  "checks": {
+    "best_candidate_matches_expected": true,
+    "best_same_face_and_mask_match": true,
+    "descent_counts_match": true,
+    "input_certificates_available": true,
+    "p26_horizon_margins_remain_strict": true,
+    "seeded_screen_size_matches": true,
+    "seeded_six_stalls_above_p31": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "p32 checks 8339 seeded sextuples from the 60 low p31 rows. Best spread 7541600 is above p31 and p30; no equalizer; p26 margin strict.",
+  "closure_boundary": {
+    "certifies": [
+      "p32 screen: 8339 candidates",
+      "no p32 candidate beats p31",
+      "p32 best spread is 7541600",
+      "no p32 raw-support equalizer",
+      "p26 margin stays positive"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "complete six-move search over all p25 sextuple compounds",
+      "a global six-move support-spread lower bound",
+      "new simple-object semantics for the lifted carrier",
+      "that eta6 is uncrossable outside the checked row universes"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p32.py",
+      "sha256": "b40f248996dbb51d52a132343b907a8df1c67279eab8c6a1cda9b07ebb8b4df3"
+    },
+    "p25_report": {
+      "certificate_sha256": "63759c423f1d5f135d872623c76f63c6569d4bead0bf53b73a3aee7b43102b7c",
+      "path": "data/invariants/d20/proof_obligations/eta6_p25/report.json",
+      "sha256": "136df60f98b506718df4d7c6383028079b71fe96d37db65fc4e1bfcf4dcdf484",
+      "status": "ETA6_P25_CERTIFIED"
+    },
+    "p25_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p25/tables.npz",
+      "sha256": "295eec89b8b740ac5c1e67617c92bd58c2df9620156997b922ab0d1a36a74363"
+    },
+    "p26_report": {
+      "certificate_sha256": "b39285913cd57422800c4d9db7b3b8d4bb3e49178f6e535b3b70b3b44e8b2533",
+      "path": "data/invariants/d20/proof_obligations/eta6_p26/report.json",
+      "sha256": "2657694f8e5153e0e703b2dc03a7ea612a9b3e0649c23df9121b091ee6ab5f15",
+      "status": "ETA6_P26_CERTIFIED"
+    },
+    "p27_report": {
+      "certificate_sha256": "d66ff05b0b23580e107e1343677b4f2960d9297084e9cbbc2f2aab71e7be81fd",
+      "path": "data/invariants/d20/proof_obligations/eta6_p27/report.json",
+      "sha256": "4ad38cedde919c85478e3530428d38777aca83ac9c253ad6f04fc353994c2106",
+      "status": "ETA6_P27_CERTIFIED"
+    },
+    "p28_report": {
+      "certificate_sha256": "f5acb91f38b888fc2dd4c6bcfcc5a67401029515aa8f2c2ce568abd4f894ba67",
+      "path": "data/invariants/d20/proof_obligations/eta6_p28/report.json",
+      "sha256": "f7940db89234b0281fe3235bb23206a1d1ed1f0cf35c73ab4e4285419d3ff487",
+      "status": "ETA6_P28_CERTIFIED"
+    },
+    "p29_report": {
+      "certificate_sha256": "9b27208fdc92c235578fa1775bc15c59f6f4c3aa596550888028b1ec27213376",
+      "path": "data/invariants/d20/proof_obligations/eta6_p29/report.json",
+      "sha256": "89889f52fac60d03da0d55f8a25cfc023f4123b876555bc611222a7232f97334",
+      "status": "ETA6_P29_CERTIFIED"
+    },
+    "p30_report": {
+      "certificate_sha256": "5c5f85e3a290442ac6862be7c183fac7981ecc59cb47b27c67d1025755ffd898",
+      "path": "data/invariants/d20/proof_obligations/eta6_p30/report.json",
+      "sha256": "cc5a738e65114a53b17cd8969a949d886a00dd51faec3c051d1e28e7bdbba744",
+      "status": "ETA6_P30_CERTIFIED"
+    },
+    "p31_report": {
+      "certificate_sha256": "b3c1bd496a97f66e891ffa18c94dcad018793ef8cdd2859819f1c48e9eca224c",
+      "path": "data/invariants/d20/proof_obligations/eta6_p31/report.json",
+      "sha256": "8aee9f0badf9552f08584afc591993a5ac4dbb275224b19f0aaf41aaf797343b",
+      "status": "ETA6_P31_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p32.py",
+      "sha256": "ebaa54161cdc2956c328f1d0ae375516947fd246260b3614c9ebb0a846b28bd6"
+    }
+  },
+  "next_highest_yield_item": "p33: p31-top-32 six-move basin, then choose complete or branch-bound six-move.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p32/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p32/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p32/obs.csv",
+    "p32": "data/invariants/d20/proof_obligations/eta6_p32/p32.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p32/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p32/tables.npz",
+    "top_csv": "data/invariants/d20/proof_obligations/eta6_p32/top.csv"
+  },
+  "schema": "eta6.p32.report@1",
+  "stage_protocol": {
+    "closure": "certify p32 stall with no equalizer",
+    "coherence": "compare p32 against p31..p25 floors",
+    "draft": "start from p31 low frontier and p26 margin",
+    "emit": "emit p32 artifacts and p33 seam",
+    "witness": "extend each low p31 row by one p25 row"
+  },
+  "status": "ETA6_P32_CERTIFIED",
+  "witness": {
+    "below_p25_candidate_count": 146,
+    "below_p27_candidate_count": 96,
+    "below_p28_candidate_count": 0,
+    "below_p29_candidate_count": 0,
+    "below_p30_candidate_count": 0,
+    "below_p31_candidate_count": 0,
+    "best_candidates": [
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          51
+        ],
+        "p24_rows": [
+          4,
+          7,
+          9,
+          13,
+          38,
+          54
+        ],
+        "p25_ids": [
+          9,
+          14,
+          18,
+          27,
+          77,
+          108
+        ],
+        "p32_id": 4326,
+        "rank": 0,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 7541600,
+        "support": [
+          641933344,
+          646343808,
+          649043072,
+          647889024,
+          649474944
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          22,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          45,
+          51
+        ],
+        "p24_rows": [
+          5,
+          10,
+          15,
+          16,
+          42,
+          70
+        ],
+        "p25_ids": [
+          10,
+          21,
+          31,
+          32,
+          85,
+          140
+        ],
+        "p32_id": 4782,
+        "rank": 1,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 7541600,
+        "support": [
+          646343808,
+          641933344,
+          647889024,
+          649043072,
+          649474944
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          1,
+          3,
+          10,
+          33,
+          48,
+          61
+        ],
+        "p25_ids": [
+          2,
+          6,
+          20,
+          66,
+          96,
+          122
+        ],
+        "p32_id": 1508,
+        "rank": 2,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 7637632,
+        "support": [
+          237088576,
+          237488672,
+          237490432,
+          231352448,
+          238990080
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          11,
+          13,
+          17,
+          29,
+          58,
+          71
+        ],
+        "p25_ids": [
+          22,
+          26,
+          34,
+          58,
+          116,
+          142
+        ],
+        "p32_id": 7192,
+        "rank": 3,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 7637632,
+        "support": [
+          237488672,
+          237088576,
+          231352448,
+          237490432,
+          238990080
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          22,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          45,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          1,
+          4,
+          26,
+          28,
+          58,
+          70
+        ],
+        "p25_ids": [
+          2,
+          8,
+          52,
+          56,
+          116,
+          141
+        ],
+        "p32_id": 1564,
+        "rank": 4,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 7982592,
+        "support": [
+          800182240,
+          800254272,
+          800511296,
+          793818752,
+          801801344
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          22,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          45,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          15,
+          17,
+          39,
+          45,
+          54,
+          61
+        ],
+        "p25_ids": [
+          30,
+          34,
+          78,
+          90,
+          109,
+          122
+        ],
+        "p32_id": 8124,
+        "rank": 5,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 7982592,
+        "support": [
+          800254272,
+          800182240,
+          793818752,
+          800511296,
+          801801344
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          0,
+          1,
+          3,
+          43,
+          60,
+          66
+        ],
+        "p25_ids": [
+          1,
+          2,
+          6,
+          86,
+          120,
+          133
+        ],
+        "p32_id": 750,
+        "rank": 6,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8314560,
+        "support": [
+          727452160,
+          728407168,
+          729099136,
+          720784576,
+          727972960
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          11,
+          17,
+          23,
+          32,
+          62,
+          68
+        ],
+        "p25_ids": [
+          22,
+          34,
+          47,
+          64,
+          125,
+          136
+        ],
+        "p32_id": 7431,
+        "rank": 7,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8314560,
+        "support": [
+          728407168,
+          727452160,
+          720784576,
+          729099136,
+          727972960
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          30,
+          51
+        ],
+        "p24_rows": [
+          2,
+          6,
+          8,
+          12,
+          21,
+          71
+        ],
+        "p25_ids": [
+          4,
+          12,
+          16,
+          25,
+          43,
+          142
+        ],
+        "p32_id": 2170,
+        "rank": 8,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8481792,
+        "support": [
+          329079232,
+          330544832,
+          333424256,
+          329582400,
+          337561024
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          30,
+          51
+        ],
+        "p24_rows": [
+          2,
+          19,
+          20,
+          21,
+          22,
+          48
+        ],
+        "p25_ids": [
+          5,
+          38,
+          41,
+          42,
+          44,
+          96
+        ],
+        "p32_id": 2653,
+        "rank": 9,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8481792,
+        "support": [
+          330544832,
+          329079232,
+          329582400,
+          333424256,
+          337561024
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          2,
+          9,
+          16,
+          28,
+          62,
+          69
+        ],
+        "p25_ids": [
+          4,
+          19,
+          32,
+          56,
+          125,
+          138
+        ],
+        "p32_id": 2332,
+        "rank": 10,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8612896,
+        "support": [
+          796182720,
+          793192928,
+          801805824,
+          801750656,
+          800677632
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          5,
+          7,
+          21,
+          39,
+          50,
+          66
+        ],
+        "p25_ids": [
+          11,
+          14,
+          42,
+          78,
+          100,
+          133
+        ],
+        "p32_id": 5149,
+        "rank": 11,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8612896,
+        "support": [
+          793192928,
+          796182720,
+          801750656,
+          801805824,
+          800677632
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          51,
+          51
+        ],
+        "p24_rows": [
+          0,
+          3,
+          9,
+          17,
+          55,
+          71
+        ],
+        "p25_ids": [
+          0,
+          6,
+          18,
+          34,
+          110,
+          142
+        ],
+        "p32_id": 603,
+        "rank": 12,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8669952,
+        "support": [
+          210212928,
+          210560384,
+          201890432,
+          209798016,
+          210229120
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          12,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          30,
+          51,
+          51
+        ],
+        "p24_rows": [
+          1,
+          5,
+          11,
+          23,
+          48,
+          64
+        ],
+        "p25_ids": [
+          2,
+          10,
+          22,
+          46,
+          96,
+          128
+        ],
+        "p32_id": 1660,
+        "rank": 13,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8669952,
+        "support": [
+          210560384,
+          210212928,
+          209798016,
+          201890432,
+          210229120
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          0,
+          3,
+          22,
+          43,
+          60,
+          66
+        ],
+        "p25_ids": [
+          1,
+          6,
+          44,
+          86,
+          120,
+          133
+        ],
+        "p32_id": 821,
+        "rank": 14,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8903392,
+        "support": [
+          725735808,
+          727041664,
+          726472448,
+          733725120,
+          734639200
+        ]
+      },
+      {
+        "faces": [
+          12,
+          12,
+          12,
+          22,
+          26,
+          26
+        ],
+        "lifts": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "masks": [
+          30,
+          30,
+          30,
+          45,
+          51,
+          51
+        ],
+        "p24_rows": [
+          6,
+          11,
+          23,
+          32,
+          62,
+          68
+        ],
+        "p25_ids": [
+          12,
+          22,
+          47,
+          64,
+          125,
+          136
+        ],
+        "p32_id": 5434,
+        "rank": 15,
+        "same_face": 0,
+        "same_mask": 0,
+        "source_mask": 2,
+        "spread": 8903392,
+        "support": [
+          727041664,
+          725735808,
+          733725120,
+          726472448,
+          734639200
+        ]
+      }
+    ],
+    "candidate_construction": "p31 below-p30 rows + one p25 row",
+    "candidate_count": 8339,
+    "claim_boundary": {
+      "p26_margin_preserved": 1,
+      "raw_support_equalizer_found": 0,
+      "seeded_six_move_screen": 1,
+      "universal_completion_claim": 0
+    },
+    "classification": "p32_stall",
+    "compound_horizon_margin": 1,
+    "horizon_reading": "p32 stalls above p31; no equalizer; p26 margin stays strict.",
+    "observable_table_sha256": "3b6a6dce5b88b185b938b0545843937bc6726425556f51108e92328360d99690",
+    "p30_bounded_floor": 4213120,
+    "p31_quint_floor": 1815040,
+    "seed_count": 60,
+    "seeded_six_min_spread": 7541600,
+    "support_equal_candidate_count": 0,
+    "top_table_sha256": "ad50d8490da3b4cd4de8f6bfa829731971ef7a2bea43130037028b3b80799d8e"
+  }
+}

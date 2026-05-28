@@ -1,0 +1,412 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "63759c423f1d5f135d872623c76f63c6569d4bead0bf53b73a3aee7b43102b7c",
+  "checks": {
+    "claim_boundary_is_explicit": true,
+    "eta6_mask_is_preserved": true,
+    "input_certificates_available": true,
+    "lifted_margin_is_imported_and_positive": true,
+    "multiplicity_matches_all_five_parenthesizations": true,
+    "raw_support_never_matches_all_five_parenthesizations": true,
+    "screen_size_is_144_lifted_extensions": true,
+    "support_spread_extrema_match": true,
+    "support_totals_show_pentagon_support_imbalance": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "The eta6_p24 lifted geometric F-address packet passes the pentagon extension screen at multiplicity level. For all 144 complement-sector extensions, all five parenthesizations have equal multiplicity. Raw support equality fails for every extension, and the least support spread is 11213312.",
+  "closure_boundary": {
+    "certifies": [
+      "pentagon recomputation on the p24 lifted geometric F-address rows",
+      "all 144 complement-sector lifted pentagon extensions preserve eta6 masks",
+      "multiplicity equality across all five pentagon parenthesizations for every extension",
+      "raw support equality fails for every extension",
+      "the least lifted raw support spread in the pentagon screen is 11213312"
+    ],
+    "does_not_certify_because_false_or_open": [
+      "a raw-support pentagon equalizer on the lifted carrier",
+      "new simple-object semantics for the lifted geometric carrier",
+      "global automaton closure after repeated geometric lifts",
+      "pivotal, spherical, braided, or center data"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_p25.py",
+      "sha256": "d0bff010c82f5811c1058fa80f5ee55b6304fcfdfa927c7c20f6c509086af467"
+    },
+    "fusion_report": {
+      "certificate_sha256": "dad6709e91e16cf434b121aa2eb0fe26b318d2e05a5fc800b30f7f9d7fdb2dc7",
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/report.json",
+      "sha256": "2eb666d526750e5ba7812c22b685a81f7391c2a7d13fdf2242ba054ac8e92d35",
+      "status": "C985_FUSION_MULTIPLICITY_TYPING_CERTIFIED"
+    },
+    "fusion_tensor": {
+      "path": "data/invariants/d20/proof_obligations/c985_fusion_multiplicity_typing/fusion_tensor_coo.npz",
+      "sha256": "05b5b5ed0d000238934e64ca42c2a66ad48de5e2e5e39bd985a4f2a9b2b11fd7"
+    },
+    "p24_report": {
+      "certificate_sha256": "0262515fcdf660e563013ab03fc15948391814b2bafdbfaf1d1609a7f032eb26",
+      "path": "data/invariants/d20/proof_obligations/eta6_p24/report.json",
+      "sha256": "7dd657ae30848fd1f7012be63e1280fc249c92bf4371a158b57f38e37f3f6464",
+      "status": "ETA6_P24_CERTIFIED"
+    },
+    "p24_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p24/tables.npz",
+      "sha256": "e8a4ea41a0cc68e30d48bcc3bfe21aaec96d18bc0e130dac6ce18cac25ddd816"
+    },
+    "pentagon_helper_script": {
+      "path": "src/derive_eta6_p5.py",
+      "sha256": "32779052862c313100161872c077be046b14bb3757e808d757b0659166fbd90f"
+    },
+    "pentagon_report": {
+      "certificate_sha256": "764ec93e334b468f6338dcb74f530b09348a7f536489f62a945fdf74a2abb5c2",
+      "path": "data/invariants/d20/proof_obligations/c985_pentagon_chain_normal_form/report.json",
+      "sha256": "e7dfab8f2eb1262d32ff7abb10ae52f0bf5bffeeae1dfcf13b6736e41f9395de",
+      "status": "C985_PENTAGON_CHAIN_NORMAL_FORM_CERTIFIED"
+    },
+    "source_target": {
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/source_target.npy",
+      "sha256": "69d649e5a876fc3d90ef5f804c91081224b44c7619524a0735ed1c44e2bd60ec"
+    },
+    "typed_registry_report": {
+      "certificate_sha256": "50dddc75181717c95dd173bf635d5c4f14d16af377af257343d2b6403ac346bd",
+      "path": "data/invariants/d20/proof_obligations/c985_typed_simple_object_registry/report.json",
+      "sha256": "28855e8904a1fd21aac84bb922a33442c4c58e49413f49a5e891f0f5001813a4",
+      "status": "C985_TYPED_SIMPLE_OBJECT_REGISTRY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_p25.py",
+      "sha256": "ca781eedc8cad4b7f87815f51979815324274609d631f4056dd9b48383dd82e0"
+    }
+  },
+  "next_highest_yield_item": "Start p26 by combining the eta6_gap Gordan margin, the p24 lifted-face slack, and the p25 pentagon spread floor into a single finite-horizon margin certificate.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_p25/cert.json",
+    "ext_csv": "data/invariants/d20/proof_obligations/eta6_p25/ext.csv",
+    "face_csv": "data/invariants/d20/proof_obligations/eta6_p25/face.csv",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_p25/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_p25/obs.csv",
+    "p25": "data/invariants/d20/proof_obligations/eta6_p25/p25.json",
+    "report": "data/invariants/d20/proof_obligations/eta6_p25/report.json",
+    "tables": "data/invariants/d20/proof_obligations/eta6_p25/tables.npz"
+  },
+  "schema": "eta6.p25.report@1",
+  "stage_protocol": {
+    "closure": "certify lifted-face pentagon multiplicity coherence with explicit raw-support obstruction",
+    "coherence": "check multiplicity equality, support inequality, and lifted positive margin import",
+    "draft": "start from eta6_p24 lifted-face ordered quadruples and certified C985 pentagon normal form",
+    "emit": "emit compact p25 artifacts and the next horizon-margin target",
+    "witness": "append each complementary H6 sector and count all five parenthesization address spaces"
+  },
+  "status": "ETA6_P25_CERTIFIED",
+  "witness": {
+    "best_extensions": [
+      {
+        "face_id": 12,
+        "label_mask": 30,
+        "lift_id": 0,
+        "mult_value": 452984832,
+        "order": [
+          2,
+          1,
+          4,
+          3,
+          0
+        ],
+        "p24_delta": -65088,
+        "p24_row_id": 7,
+        "p25_id": 14,
+        "support": [
+          10621952,
+          16758784,
+          21835264,
+          20485120,
+          20896512
+        ],
+        "support_spread": 11213312
+      },
+      {
+        "face_id": 12,
+        "label_mask": 30,
+        "lift_id": 0,
+        "mult_value": 339738624,
+        "order": [
+          3,
+          4,
+          1,
+          2,
+          0
+        ],
+        "p24_delta": 65088,
+        "p24_row_id": 16,
+        "p25_id": 32,
+        "support": [
+          16758784,
+          10621952,
+          20485120,
+          21835264,
+          20896512
+        ],
+        "support_spread": 11213312
+      },
+      {
+        "face_id": 12,
+        "label_mask": 30,
+        "lift_id": 0,
+        "mult_value": 452984832,
+        "order": [
+          2,
+          1,
+          3,
+          4,
+          0
+        ],
+        "p24_delta": -7744,
+        "p24_row_id": 6,
+        "p25_id": 12,
+        "support": [
+          17448960,
+          18935808,
+          23690496,
+          18329472,
+          28798976
+        ],
+        "support_spread": 11350016
+      },
+      {
+        "face_id": 12,
+        "label_mask": 30,
+        "lift_id": 0,
+        "mult_value": 477757440,
+        "order": [
+          4,
+          3,
+          1,
+          2,
+          0
+        ],
+        "p24_delta": 7744,
+        "p24_row_id": 22,
+        "p25_id": 44,
+        "support": [
+          18935808,
+          17448960,
+          18329472,
+          23690496,
+          28798976
+        ],
+        "support_spread": 11350016
+      },
+      {
+        "face_id": 12,
+        "label_mask": 30,
+        "lift_id": 0,
+        "mult_value": 509607936,
+        "order": [
+          1,
+          2,
+          4,
+          3,
+          0
+        ],
+        "p24_delta": 7744,
+        "p24_row_id": 1,
+        "p25_id": 2,
+        "support": [
+          20652160,
+          18814464,
+          20956160,
+          10749952,
+          22132736
+        ],
+        "support_spread": 11382784
+      },
+      {
+        "face_id": 12,
+        "label_mask": 30,
+        "lift_id": 0,
+        "mult_value": 339738624,
+        "order": [
+          3,
+          4,
+          2,
+          1,
+          0
+        ],
+        "p24_delta": -7744,
+        "p24_row_id": 17,
+        "p25_id": 34,
+        "support": [
+          18814464,
+          20652160,
+          10749952,
+          20956160,
+          22132736
+        ],
+        "support_spread": 11382784
+      },
+      {
+        "face_id": 26,
+        "label_mask": 51,
+        "lift_id": 2,
+        "mult_value": 603979776,
+        "order": [
+          1,
+          0,
+          5,
+          4,
+          2
+        ],
+        "p24_delta": -44896,
+        "p24_row_id": 55,
+        "p25_id": 110,
+        "support": [
+          27712512,
+          28870464,
+          40113408,
+          30147840,
+          34910208
+        ],
+        "support_spread": 12400896
+      },
+      {
+        "face_id": 26,
+        "label_mask": 51,
+        "lift_id": 2,
+        "mult_value": 452984832,
+        "order": [
+          4,
+          5,
+          0,
+          1,
+          2
+        ],
+        "p24_delta": 44896,
+        "p24_row_id": 64,
+        "p25_id": 128,
+        "support": [
+          28870464,
+          27712512,
+          30147840,
+          40113408,
+          34910208
+        ],
+        "support_spread": 12400896
+      }
+    ],
+    "claim_boundary": {
+      "new_pentagon_recompute": 1,
+      "p24_lifted_f_address_recompute": 1,
+      "raw_support_equalizer_found": 0
+    },
+    "classification": "lifted_face_pentagon_recompute",
+    "ext_table_sha256": "ad491aa9e93a76b6414a41675d60e1c10faa26e188712df609dc2dadf0d10578",
+    "face_summaries": [
+      {
+        "best_p25_id": 14,
+        "extension_count": 48,
+        "face_id": 12,
+        "label_mask": 30,
+        "lift_id": 0,
+        "max_support_spread": 219877376,
+        "min_support_spread": 11213312,
+        "mult_totals": [
+          32211468288,
+          32211468288,
+          32211468288,
+          32211468288,
+          32211468288
+        ],
+        "support_totals": [
+          2093366976,
+          2093366976,
+          3167186048,
+          3167186048,
+          4148623744
+        ]
+      },
+      {
+        "best_p25_id": 62,
+        "extension_count": 48,
+        "face_id": 22,
+        "label_mask": 45,
+        "lift_id": 1,
+        "max_support_spread": 633114624,
+        "min_support_spread": 48540672,
+        "mult_totals": [
+          51725205504,
+          51725205504,
+          51725205504,
+          51725205504,
+          51725205504
+        ],
+        "support_totals": [
+          10114089216,
+          10114089216,
+          10322119456,
+          10322119456,
+          10112712384
+        ]
+      },
+      {
+        "best_p25_id": 110,
+        "extension_count": 48,
+        "face_id": 26,
+        "label_mask": 51,
+        "lift_id": 2,
+        "max_support_spread": 631799712,
+        "min_support_spread": 12400896,
+        "mult_totals": [
+          61605937152,
+          61605937152,
+          61605937152,
+          61605937152,
+          61605937152
+        ],
+        "support_totals": [
+          11004194480,
+          11004194480,
+          13029718080,
+          13029718080,
+          15456813056
+        ]
+      }
+    ],
+    "face_table_sha256": "30465e7f3c46b5b02277232da99afec3bf5bc5a55da73c35e6f29ae4216d5f11",
+    "lifted_face_count": 3,
+    "lifted_margin": {
+      "min_slack_x1e12": 363262450397,
+      "positive_support_rows": 132,
+      "support_rows": 132
+    },
+    "max_spread_count": 2,
+    "max_support_spread": 633114624,
+    "min_spread_count": 2,
+    "min_support_spread": 11213312,
+    "observable_table_sha256": "147098134986da51543bcec276b63675a670229fa5ee074080242afa41b8c0b7",
+    "p24_order_count": 72,
+    "p25_extension_count": 144,
+    "parenthesizations": [
+      "P0_(((ab)c)d)",
+      "P1_((a(bc))d)",
+      "P2_((ab)(cd))",
+      "P3_(a((bc)d))",
+      "P4_(a(b(cd)))"
+    ],
+    "reading": "The p24 lifted geometric F-address packet survives the pentagon window at multiplicity level. Raw support cardinality still fails to equalize on every complement-sector extension.",
+    "total_multiplicity_by_parenthesization": [
+      145542610944,
+      145542610944,
+      145542610944,
+      145542610944,
+      145542610944
+    ],
+    "total_support_by_parenthesization": [
+      23211650672,
+      23211650672,
+      26519023584,
+      26519023584,
+      29718149184
+    ]
+  }
+}
