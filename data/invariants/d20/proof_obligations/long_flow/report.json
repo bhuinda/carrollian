@@ -1,0 +1,400 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "f3415710ab67f57def2269353299d1781cfc3d35557b2893b48354888a4a3267",
+  "checks": {
+    "ambient_flow_fingerprint_exact": true,
+    "component_fingerprint_exact": true,
+    "edge_text_sha256_exact": true,
+    "inactive_owner_fingerprint_exact": true,
+    "inputs_certified": true,
+    "owner_text_sha256_exact": true,
+    "shell_fingerprint_exact": true,
+    "table_shapes_match": true,
+    "weak_flow_fingerprint_exact": true
+  },
+  "claim": "long_flow certifies the exact first ambient leakage layer from the long_lap active eta6 owner components into the full long_rec graph: 76 crossing edges, boundary weight 4584, 52 shell-1 inactive owners, two weak classes, and an eight-shell ambient distance profile.",
+  "closure_boundary": {
+    "certifies": [
+      "the exact active-to-inactive leakage edge set in long_rec",
+      "which shell-1 inactive owners receive active eta6 boundary weight",
+      "the weak-class split of the leakage layer",
+      "the full unweighted ambient shell profile out to distance seven"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "harmonic absorption beyond the first inactive shell",
+      "support-changing recouplings outside the long_rec owner graph",
+      "a universal eta6 horizon theorem",
+      "metric completion of the inactive ambient shell graph"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_flow.py",
+      "sha256": "c6dba50a1dd1baa1e66e2ba5fde4a090ec49dc07ddbc61a3e323761e406d1c28"
+    },
+    "long_cut_report": {
+      "path": "data/invariants/d20/proof_obligations/long_cut/report.json",
+      "sha256": "7beac98afbe97acad7ebf1fe8e46867f1651be58b41c28b65c90650a9515b570",
+      "status": "LONG_CUT_CERTIFIED"
+    },
+    "long_lap_report": {
+      "path": "data/invariants/d20/proof_obligations/long_lap/report.json",
+      "sha256": "c7c727f8253eeb0368f50b8fab15d5d8e9e5841486c8d9564243ae738daff214",
+      "status": "LONG_LAP_CERTIFIED"
+    },
+    "long_lap_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_lap/tables.npz",
+      "sha256": "ad5600286fe41ba717b47a1d38342f6714202a66eb0b1ed9721dcd1ee0b01724"
+    },
+    "long_rec_report": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/report.json",
+      "sha256": "1e4b5fbc086a95cd6b9bf929d804e71b483643dfd884355ef75a54248eb9c08b",
+      "status": "LONG_REC_CERTIFIED"
+    },
+    "long_rec_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/tables.npz",
+      "sha256": "2d581742fea434038440cce1d2eb0215e00e71cd31d8e988f0d4b996b81923e0"
+    },
+    "validator": {
+      "path": "src/certify_long_flow.py",
+      "sha256": "4b7b20a802c3fc146d26e28bef225e04541976dcc2bb11441ba28145a6787c5b"
+    }
+  },
+  "next_highest_yield_item": "Build long_absorb: solve exact absorbing/harmonic leakage through the inactive long_rec shell graph to measure how active boundary flow dissipates past shell 1.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_flow/cert.json",
+    "component_csv": "data/invariants/d20/proof_obligations/long_flow/component.csv",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_flow/edge.csv",
+    "flow": "data/invariants/d20/proof_obligations/long_flow/flow.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_flow/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_flow/obs.csv",
+    "owner_csv": "data/invariants/d20/proof_obligations/long_flow/owner.csv",
+    "report": "data/invariants/d20/proof_obligations/long_flow/report.json",
+    "shell_csv": "data/invariants/d20/proof_obligations/long_flow/shell.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_flow/tables.npz",
+    "weak_csv": "data/invariants/d20/proof_obligations/long_flow/weak.csv"
+  },
+  "schema": "long.flow.report@1",
+  "stage_protocol": {
+    "closure": "emit flow, component, edge, owner, weak, shell, table, certificate, manifest, and report artifacts",
+    "coherence": "check component, owner, weak-class, shell, and text-hash fingerprints",
+    "draft": "take long_cut/long_lap as the active eta6 component boundary",
+    "emit": "write long_flow artifacts and verifier hook",
+    "witness": "scan long_rec edges for active-to-inactive crossings and BFS shells"
+  },
+  "status": "LONG_FLOW_CERTIFIED",
+  "witness": {
+    "ambient_flow": {
+      "boundary_count": 4584,
+      "crossing_edge_count": 76,
+      "edge_table_sha256": "ac1dc689659419467db76f253664733f5197568ab2c1c33dcc27e585e031cb04",
+      "edge_text_sha256": "9979cce507e5efc3632e5036288311fadd054cfe4e9d2e236a95ad97b7122af2",
+      "source0_boundary_count": 2407,
+      "source1_boundary_count": 2177
+    },
+    "classification": "long_rec_ambient_leakage_shell_flow",
+    "component_flow": {
+      "component_rows": [
+        {
+          "active_owner_count": 33,
+          "boundary_count": 1342,
+          "component_id": 0,
+          "crossing_edge_count": 47,
+          "external_conductance_reduced_den": 1512,
+          "external_conductance_reduced_num": 671,
+          "inactive_basis_max": 155,
+          "inactive_basis_min": 0,
+          "inactive_basis_square_sum": 177232,
+          "inactive_basis_sum": 1898,
+          "inactive_owner_count": 29,
+          "source0_boundary_count": 128,
+          "source1_boundary_count": 1214
+        },
+        {
+          "active_owner_count": 1,
+          "boundary_count": 864,
+          "component_id": 1,
+          "crossing_edge_count": 4,
+          "external_conductance_reduced_den": 1,
+          "external_conductance_reduced_num": 1,
+          "inactive_basis_max": 11,
+          "inactive_basis_min": 4,
+          "inactive_basis_square_sum": 318,
+          "inactive_basis_sum": 34,
+          "inactive_owner_count": 4,
+          "source0_boundary_count": 733,
+          "source1_boundary_count": 131
+        },
+        {
+          "active_owner_count": 17,
+          "boundary_count": 2378,
+          "component_id": 2,
+          "crossing_edge_count": 25,
+          "external_conductance_reduced_den": 5977,
+          "external_conductance_reduced_num": 1189,
+          "inactive_basis_max": 212,
+          "inactive_basis_min": 25,
+          "inactive_basis_square_sum": 397160,
+          "inactive_basis_sum": 2666,
+          "inactive_owner_count": 21,
+          "source0_boundary_count": 1546,
+          "source1_boundary_count": 832
+        }
+      ],
+      "component_table_sha256": "89e74390e7bcd4b0aac41ba0785fcd9510ce1b8cef1418d52ae688e6488ca23b"
+    },
+    "inactive_owner_flow": {
+      "multi_component_owner_count": 2,
+      "multi_edge_owner_count": 18,
+      "owner_count": 52,
+      "owner_table_sha256": "920f74bbabc505ceaea6545e4c0d828adff20246a92ad0e293a4d629e66bd6af",
+      "owner_text_sha256": "b205bd84e62696bda5b97dea8b2496a35f05471327824225c1ed6e8637bb5a05",
+      "top_leakage_owners": [
+        {
+          "active_neighbor_count": 1,
+          "boundary_count": 732,
+          "component_mask": 2,
+          "crossing_edge_count": 1,
+          "inactive_basis_id": 9,
+          "source0_boundary_count": 732,
+          "source1_boundary_count": 0,
+          "weak_class_code": 11
+        },
+        {
+          "active_neighbor_count": 1,
+          "boundary_count": 732,
+          "component_mask": 4,
+          "crossing_edge_count": 1,
+          "inactive_basis_id": 212,
+          "source0_boundary_count": 732,
+          "source1_boundary_count": 0,
+          "weak_class_code": 12
+        },
+        {
+          "active_neighbor_count": 1,
+          "boundary_count": 731,
+          "component_mask": 4,
+          "crossing_edge_count": 1,
+          "inactive_basis_id": 25,
+          "source0_boundary_count": 731,
+          "source1_boundary_count": 0,
+          "weak_class_code": 11
+        },
+        {
+          "active_neighbor_count": 3,
+          "boundary_count": 290,
+          "component_mask": 4,
+          "crossing_edge_count": 3,
+          "inactive_basis_id": 193,
+          "source0_boundary_count": 20,
+          "source1_boundary_count": 270,
+          "weak_class_code": 12
+        },
+        {
+          "active_neighbor_count": 2,
+          "boundary_count": 256,
+          "component_mask": 3,
+          "crossing_edge_count": 2,
+          "inactive_basis_id": 4,
+          "source0_boundary_count": 0,
+          "source1_boundary_count": 256,
+          "weak_class_code": 11
+        },
+        {
+          "active_neighbor_count": 2,
+          "boundary_count": 235,
+          "component_mask": 1,
+          "crossing_edge_count": 2,
+          "inactive_basis_id": 108,
+          "source0_boundary_count": 0,
+          "source1_boundary_count": 235,
+          "weak_class_code": 11
+        },
+        {
+          "active_neighbor_count": 1,
+          "boundary_count": 220,
+          "component_mask": 4,
+          "crossing_edge_count": 1,
+          "inactive_basis_id": 102,
+          "source0_boundary_count": 0,
+          "source1_boundary_count": 220,
+          "weak_class_code": 11
+        },
+        {
+          "active_neighbor_count": 5,
+          "boundary_count": 210,
+          "component_mask": 1,
+          "crossing_edge_count": 5,
+          "inactive_basis_id": 57,
+          "source0_boundary_count": 64,
+          "source1_boundary_count": 146,
+          "weak_class_code": 11
+        },
+        {
+          "active_neighbor_count": 1,
+          "boundary_count": 200,
+          "component_mask": 1,
+          "crossing_edge_count": 1,
+          "inactive_basis_id": 95,
+          "source0_boundary_count": 0,
+          "source1_boundary_count": 200,
+          "weak_class_code": 11
+        },
+        {
+          "active_neighbor_count": 1,
+          "boundary_count": 164,
+          "component_mask": 4,
+          "crossing_edge_count": 1,
+          "inactive_basis_id": 147,
+          "source0_boundary_count": 0,
+          "source1_boundary_count": 164,
+          "weak_class_code": 11
+        }
+      ],
+      "weight_range": [
+        1,
+        732
+      ],
+      "weight_square_sum": 2031134
+    },
+    "name": "long_flow",
+    "observable_table_sha256": "35c8b3592f8fc634fb0bc65b5be48f368e96c7aea43642e9266fb7cd938cb132",
+    "scope": {
+      "ambient": "long_rec owner transition graph",
+      "rule": "crossing edges are long_rec edges with exactly one active endpoint",
+      "source": "long_lap active owner components"
+    },
+    "shell_flow": {
+      "shell_rows": [
+        {
+          "basis_square_sum": 564022,
+          "basis_sum": 4512,
+          "next_boundary_count": 4584,
+          "next_edge_count": 76,
+          "owner_count": 51,
+          "prev_boundary_count": 0,
+          "prev_edge_count": 0,
+          "shell_id": 0,
+          "within_boundary_count": 5629,
+          "within_edge_count": 91
+        },
+        {
+          "basis_square_sum": 571885,
+          "basis_sum": 4541,
+          "next_boundary_count": 2321,
+          "next_edge_count": 113,
+          "owner_count": 52,
+          "prev_boundary_count": 4584,
+          "prev_edge_count": 76,
+          "shell_id": 1,
+          "within_boundary_count": 3144,
+          "within_edge_count": 59
+        },
+        {
+          "basis_square_sum": 1205487,
+          "basis_sum": 8117,
+          "next_boundary_count": 647,
+          "next_edge_count": 85,
+          "owner_count": 72,
+          "prev_boundary_count": 2321,
+          "prev_edge_count": 113,
+          "shell_id": 2,
+          "within_boundary_count": 499,
+          "within_edge_count": 78
+        },
+        {
+          "basis_square_sum": 1534462,
+          "basis_sum": 8162,
+          "next_boundary_count": 531,
+          "next_edge_count": 32,
+          "owner_count": 49,
+          "prev_boundary_count": 647,
+          "prev_edge_count": 85,
+          "shell_id": 3,
+          "within_boundary_count": 218,
+          "within_edge_count": 45
+        },
+        {
+          "basis_square_sum": 838051,
+          "basis_sum": 3757,
+          "next_boundary_count": 144,
+          "next_edge_count": 17,
+          "owner_count": 17,
+          "prev_boundary_count": 531,
+          "prev_edge_count": 32,
+          "shell_id": 4,
+          "within_boundary_count": 103,
+          "within_edge_count": 16
+        },
+        {
+          "basis_square_sum": 578406,
+          "basis_sum": 2398,
+          "next_boundary_count": 155,
+          "next_edge_count": 11,
+          "owner_count": 10,
+          "prev_boundary_count": 144,
+          "prev_edge_count": 17,
+          "shell_id": 5,
+          "within_boundary_count": 27,
+          "within_edge_count": 9
+        },
+        {
+          "basis_square_sum": 334955,
+          "basis_sum": 1413,
+          "next_boundary_count": 28,
+          "next_edge_count": 4,
+          "owner_count": 6,
+          "prev_boundary_count": 155,
+          "prev_edge_count": 11,
+          "shell_id": 6,
+          "within_boundary_count": 85,
+          "within_edge_count": 5
+        },
+        {
+          "basis_square_sum": 130561,
+          "basis_sum": 511,
+          "next_boundary_count": 0,
+          "next_edge_count": 0,
+          "owner_count": 2,
+          "prev_boundary_count": 28,
+          "prev_edge_count": 4,
+          "shell_id": 7,
+          "within_boundary_count": 2,
+          "within_edge_count": 1
+        }
+      ],
+      "shell_table_sha256": "0239424da9aadfeeb92be3b28301e3a5b593ef1cb393b86136c5ac82cc26399a"
+    },
+    "weak_flow": {
+      "weak_rows": [
+        {
+          "boundary_count": 3541,
+          "component0_boundary_count": 1342,
+          "component1_boundary_count": 864,
+          "component2_boundary_count": 1335,
+          "crossing_edge_count": 69,
+          "inactive_basis_square_sum": 409690,
+          "inactive_basis_sum": 3736,
+          "inactive_owner_count": 48,
+          "source0_boundary_count": 1634,
+          "source1_boundary_count": 1907,
+          "weak_class_code": 11
+        },
+        {
+          "boundary_count": 1043,
+          "component0_boundary_count": 0,
+          "component1_boundary_count": 0,
+          "component2_boundary_count": 1043,
+          "crossing_edge_count": 7,
+          "inactive_basis_square_sum": 162195,
+          "inactive_basis_sum": 805,
+          "inactive_owner_count": 4,
+          "source0_boundary_count": 773,
+          "source1_boundary_count": 270,
+          "weak_class_code": 12
+        }
+      ],
+      "weak_table_sha256": "74c9a52aeb33054d14b5de8772d8e7f84369f63d428e0ed92360e30b25b98d3c"
+    }
+  }
+}

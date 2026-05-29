@@ -1,0 +1,158 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7973903ebb35094e18e23b9a86d13cdb906b1430b65750fcf13ceda9b2b5bf4f",
+  "checks": {
+    "bridge_owner_fingerprint": true,
+    "bridge_projection_is_total_and_closed": true,
+    "bridge_source_fingerprint": true,
+    "bridge_transition_fingerprint": true,
+    "eta6_inputs_certified": true,
+    "gate_ids_match_eta6_core": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_eta certifies a sample-level bridge from the eta6 p21 surgery gate into the long_rec transition kernel: all 24 sampled F-address source-pair cells land inside the long_rec closure, touch 11 owners in one connected component, and expose a small induced transition subgraph.",
+  "closure_boundary": {
+    "certifies": [
+      "the p21 eta6 gate sample F-addresses project into long_rec owner cells",
+      "each sampled source-pair output is inside the long_rec frontier closure",
+      "the projected owners occupy one connected long_rec transition component",
+      "the projected bridge has an exact finite owner/edge fingerprint"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "all eta6 support rows, because this is a sampled F-address bridge",
+      "eta6 invariance under every long_rec transition",
+      "post-surgery rebuilt-carrier semantics",
+      "a universal eta6 horizon theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_eta.py",
+      "sha256": "12937c34782c55fa082e316d0c7aa1311361c43c699e83b6b9adf58592f03a9f"
+    },
+    "eta6_core_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_core/report.json",
+      "sha256": "d05c4d9977c095b1f18d12ed61c804b57d4c3ed447d8d77fb51b6f1d53e66807",
+      "status": "ETA6_CORE_CERTIFIED"
+    },
+    "eta6_f4_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_f4/tables.npz",
+      "sha256": "cf7f06bc7c1237499aaad7fe8fd25274de616d44234318cd06153240504deaaf"
+    },
+    "eta6_p21_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p21/report.json",
+      "sha256": "19d18b9fbc152be0b2da82a9de1050debec446049e99a8545fcdf0aeec686437",
+      "status": "ETA6_P21_CERTIFIED"
+    },
+    "eta6_p21_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p21/tables.npz",
+      "sha256": "e345dfdb43356d04c803ecb099333f6b8cfe73ff250b48914fdf509b5a359933"
+    },
+    "eta6_p5_tables": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p5/tables.npz",
+      "sha256": "a40cf5470c7aeb0c9cbc667464e1981cc426c9a386c6e1d84cd62a6198b3ce68"
+    },
+    "long_rec_report": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/report.json",
+      "sha256": "1e4b5fbc086a95cd6b9bf929d804e71b483643dfd884355ef75a54248eb9c08b",
+      "status": "LONG_REC_CERTIFIED"
+    },
+    "long_rec_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/tables.npz",
+      "sha256": "2d581742fea434038440cce1d2eb0215e00e71cd31d8e988f0d4b996b81923e0"
+    },
+    "validator": {
+      "path": "src/certify_long_eta.py",
+      "sha256": "d5472fd8c35c418c9a50e72576e370713e06de8038a0a914ad3db369de0811cc"
+    }
+  },
+  "next_highest_yield_item": "Build long_eta2: expand from sampled f4 addresses to all p21 gate support fibers, then compare the resulting owner subgraph with eta6_core.",
+  "outputs": {
+    "bridge_csv": "data/invariants/d20/proof_obligations/long_eta/bridge.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_eta/cert.json",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_eta/edge.csv",
+    "eta": "data/invariants/d20/proof_obligations/long_eta/eta.json",
+    "gate_csv": "data/invariants/d20/proof_obligations/long_eta/gate.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_eta/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_eta/obs.csv",
+    "owner_csv": "data/invariants/d20/proof_obligations/long_eta/owner.csv",
+    "report": "data/invariants/d20/proof_obligations/long_eta/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_eta/tables.npz"
+  },
+  "schema": "long.eta.report@1",
+  "stage_protocol": {
+    "closure": "emit the bounded sample bridge with explicit non-universal scope",
+    "coherence": "check closure membership, preserved gate flags, and transition connectivity",
+    "draft": "reuse eta6_core, eta6_p21, eta6_f4/p5 tables, and long_rec",
+    "emit": "write long_eta artifacts and verifier hook",
+    "witness": "project p21 gate sample F-address pairs into long_rec owner cells"
+  },
+  "status": "LONG_ETA_CERTIFIED",
+  "witness": {
+    "bridge_scope": {
+      "kind": "sample_level_f_address_projection",
+      "rule": "for each p21 gate p5 row, use its p5 f4_row_id to read the eta6_f4 sampled C985 relation addresses, then project the four sampled source pairs into long_rec owner cells",
+      "semantic_limit": "this does not claim all eta6 support rows or all future recouplings are covered by the sampled bridge"
+    },
+    "classification": "eta6_gate_sample_bridge_to_long_rec",
+    "gate": {
+      "eta6_preserved_gate_count": 6,
+      "f4_sample_row_count": 6,
+      "face_count": 3,
+      "gate_count": 6,
+      "label_mask_count": 3,
+      "p5_ids": [
+        1,
+        47,
+        57,
+        79,
+        110,
+        128
+      ]
+    },
+    "name": "long_eta",
+    "observable_table_sha256": "a058620b90e4bb6b78c7fd90269f4054c0ec582c66e9047ec7846f9215ee12e6",
+    "owners": {
+      "bridge_owner_ids_sha256": "d87ad6813a14d17741d6b317aceb1f853cf4ed6e2b1ff4ea89daac644012b20c",
+      "component_count": 1,
+      "owner_bridge_table_sha256": "9ec0dacca016a5fee8b44418f961289b62450c7b4ba876455add38e50b4d7be7",
+      "owner_cell_mass": 726003,
+      "unique_owner_count": 11,
+      "weak_class_count": 2,
+      "weak_counts": {
+        "11": 22,
+        "12": 2
+      }
+    },
+    "projection": {
+      "bridge_pair_cell_count": 24,
+      "bridge_table_sha256": "614eaa00a7880b257130ee437d573178e22d928040dad6f92c43dc89537f9964",
+      "closure_pass_count": 24,
+      "closure_slack_range": [
+        0,
+        176
+      ],
+      "closure_slack_sum": 774,
+      "gate_table_sha256": "74a51ddeafe6e0044613b93125ae9a8ac0eb561136ded41ac4eaa26cd0ade0ea",
+      "pair_roles": [
+        "left_inner",
+        "left_outer",
+        "right_inner",
+        "right_outer"
+      ]
+    },
+    "transition": {
+      "gate_span_distance_max": 9,
+      "gate_span_distance_sum": 71,
+      "induced_boundary_count": 2620,
+      "induced_edge_count": 6,
+      "induced_edge_table_sha256": "7d924509f3e29e4f557292c4cc8aeb4d2b41a153d3ee3a8f4a715cd6da6fb63c",
+      "unique_owner_distance_range": [
+        1,
+        10
+      ],
+      "unique_owner_distance_sum": 258,
+      "unique_owner_pair_count": 55
+    }
+  }
+}

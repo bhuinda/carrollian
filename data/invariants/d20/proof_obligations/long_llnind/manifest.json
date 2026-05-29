@@ -1,0 +1,546 @@
+{
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_llnind.py",
+      "sha256": "36c9042a80901f3a5c3b7b572b19fc33c485259ea485c57b89793eba7d9f6209"
+    },
+    "long_gapind_bridge": {
+      "columns": [
+        "bridge_id",
+        "regime_count",
+        "induction_start",
+        "finite_start_sample_count",
+        "finite_end_sample_count",
+        "probe_start_sample_count",
+        "probe_end_sample_count",
+        "tail_start_sample_count",
+        "recurrence_factor",
+        "seed_state_count",
+        "finite_transition_count",
+        "formula_class_count",
+        "formula_count",
+        "probe_state_count",
+        "tail_formula_count",
+        "finite_gap_check_count",
+        "finite_gap_nonnegative_count",
+        "recind_certified_flag",
+        "formind_certified_flag",
+        "domind_certified_flag",
+        "seed_to_finite_seam_flag",
+        "finite_to_probe_seam_flag",
+        "probe_to_tail_seam_flag",
+        "formula_tail_match_flag",
+        "global_gapind_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_gapind/bridge.csv",
+      "sha256": "c8a68fd36ca23126545a9b0f7d1a2c2966f0b3488d0165c77c8178eaaa1b55f3"
+    },
+    "long_gapind_regime": {
+      "columns": [
+        "regime_id",
+        "regime_code",
+        "start_sample_count",
+        "end_sample_count",
+        "state_count",
+        "gap_check_count",
+        "nonnegative_count",
+        "zero_count",
+        "source_certificate_code",
+        "regime_certificate_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_gapind/regime.csv",
+      "sha256": "25910e465fe4b4551e707f486cce0c6ca8c2e8c5e41c8f97bfbec71790f00942"
+    },
+    "long_gapind_report": {
+      "path": "data/invariants/d20/proof_obligations/long_gapind/report.json",
+      "sha256": "534c831c6e27e70e91580d5d40d05eb168859755dc7d37c1bebefe9d18940708",
+      "status": "LONG_GAPIND_CERTIFIED"
+    },
+    "long_gapind_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_gapind/tables.npz",
+      "sha256": "8abed4058eab50058763e4377dfdefa161709050384c6a233526c92e3aa6e773"
+    },
+    "long_lln_addr": {
+      "columns": [
+        "addr",
+        "closed_size",
+        "open_size",
+        "left_count",
+        "mid_count",
+        "right_count",
+        "left_weight",
+        "mid_weight",
+        "right_weight",
+        "total_count",
+        "total_weight"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_lln/addr.csv",
+      "sha256": "6888763754ad0a91880d4a541c8cacba3907bfb70ce29ed8889d41be9bc45483"
+    },
+    "long_lln_lln": {
+      "columns": [
+        "k",
+        "sample_words",
+        "mean_num",
+        "mean_den",
+        "var_num",
+        "var_den",
+        "centered_square_sum",
+        "cheb_eps1_num",
+        "cheb_eps1_den"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_lln/lln.csv",
+      "sha256": "2149da25017c776b8e08577cc8c540a44e3a17e18533b5f5c9dd11ee790004a4"
+    },
+    "long_lln_report": {
+      "path": "data/invariants/d20/proof_obligations/long_lln/report.json",
+      "sha256": "338e184fcb4f749d47a47f121c24030a5b65fefb40b1559df178f1ef4630e24b",
+      "status": "LONG_LLN_CERTIFIED"
+    },
+    "long_lln_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_lln/tables.npz",
+      "sha256": "f31d0fa59bcf74cb0f7fb9fda12acd9725c098f37c5f467a9bf7561bd5de9d8f"
+    },
+    "long_min_basis": {
+      "columns": [
+        "basis_id",
+        "law_id",
+        "square_code",
+        "law_code",
+        "source_id",
+        "target_id",
+        "subtarget_id",
+        "derivation_code",
+        "dependency_count",
+        "equal_flag",
+        "left_num_digits",
+        "left_den_digits",
+        "right_num_digits",
+        "right_den_digits"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_min/basis.csv",
+      "sha256": "5f81540c78084715dbf0b39bb8224b62f7285dd73702b1dc7b8ccd0ebbe0b985"
+    },
+    "long_min_cover": {
+      "columns": [
+        "square_id",
+        "square_code",
+        "square_name",
+        "total_law_count",
+        "basis_count",
+        "forced_count",
+        "equal_count",
+        "violation_count",
+        "minimal_basis_count",
+        "closure_rule_code"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_min/cover.csv",
+      "sha256": "ed2a149ac7bfda37024764ec516cbfae38b1a73fbed1689226c285e9d0eec371"
+    },
+    "long_min_report": {
+      "path": "data/invariants/d20/proof_obligations/long_min/report.json",
+      "sha256": "aae947e587937f1d23d9409af3d6884800f421393b561d515d02804006d0e561",
+      "status": "LONG_MIN_CERTIFIED"
+    },
+    "long_min_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_min/tables.npz",
+      "sha256": "b436e704124d9e31635fd564f43dd4b82f7459794040fdf283e2e8d0ec767a04"
+    },
+    "long_nat_dependency": {
+      "columns": [
+        "edge_id",
+        "from_law_id",
+        "to_law_id",
+        "dependency_kind_code",
+        "source_id",
+        "target_id",
+        "weight_code"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_nat/dependency.csv",
+      "sha256": "6c233e92f4f7f78c3b58b4df7bd3ded6a02be5a6cbb6fedeef56b6372f96bb07"
+    },
+    "long_nat_naturality": {
+      "columns": [
+        "nat_id",
+        "law_id",
+        "square_code",
+        "law_code",
+        "source_id",
+        "target_id",
+        "subtarget_id",
+        "family_code",
+        "carrier_arrow_code",
+        "readout_arrow_code",
+        "comparison_arrow_code",
+        "stage_code",
+        "basis_flag",
+        "forced_flag",
+        "profunctor_control_flag",
+        "external_input_flag",
+        "dependency_count",
+        "law_dependency_count",
+        "external_dependency_count",
+        "equal_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_nat/naturality.csv",
+      "sha256": "cd6dadf28e98306d4058ba72d0e2031de6f7d82d0cc84ccf3fb4fdaf9b8b826f"
+    },
+    "long_nat_report": {
+      "path": "data/invariants/d20/proof_obligations/long_nat/report.json",
+      "sha256": "41c57f662326b705a12da4be22a00ac199ae21e1690c99113418fe2b29b1a636",
+      "status": "LONG_NAT_CERTIFIED"
+    },
+    "long_nat_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_nat/tables.npz",
+      "sha256": "7b72680990ea26e3c7b10b81f70cbaa66db72ba00fcf13346aa577447e65a0e8"
+    },
+    "long_path_path": {
+      "columns": [
+        "path_id",
+        "fiber_row_id",
+        "sample_count",
+        "sum_value",
+        "count_component0",
+        "count_component1",
+        "count_component2",
+        "step_count",
+        "path_component_sum",
+        "component_sum_check_flag",
+        "raw_row_word_exists_flag",
+        "long_tens_gap_flag",
+        "existing_prof_flag",
+        "gap_witness_flag",
+        "support_product_digits",
+        "support_product_mod_1000000007",
+        "support_product_mod_1000000009",
+        "representative_coeff_product_digits",
+        "representative_coeff_product_mod_1000000007",
+        "representative_coeff_product_mod_1000000009"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_step": {
+      "columns": [
+        "step_id",
+        "path_id",
+        "fiber_row_id",
+        "step_index",
+        "component_id",
+        "raw_row_id",
+        "basis_id",
+        "source0_addr",
+        "source1_addr",
+        "target_addr",
+        "coeff"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_path/step.csv",
+      "sha256": "55ff17e7d63c522ac591cc6f044279da14b17f3da0fd14c371168fa2e2d35c76"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "long_prob_dist": {
+      "columns": [
+        "path_id",
+        "fiber_row_id",
+        "sample_count",
+        "sum_value",
+        "average_num",
+        "average_den",
+        "weight_digits",
+        "weight_mod_1000000007",
+        "weight_mod_1000000009",
+        "conditional_prob_num_digits",
+        "conditional_prob_den_digits",
+        "conditional_prob_num_mod_1000000007",
+        "conditional_prob_den_mod_1000000007",
+        "conditional_prob_num_mod_1000000009",
+        "conditional_prob_den_mod_1000000009",
+        "global_prob_num_digits",
+        "global_prob_den_digits",
+        "global_prob_num_mod_1000000007",
+        "global_prob_den_mod_1000000007",
+        "global_prob_num_mod_1000000009",
+        "global_prob_den_mod_1000000009"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_prob/dist.csv",
+      "sha256": "b1126ae487d60a67c859174d19f52dd536bf1f6543953f9dd4d95603ffc225eb"
+    },
+    "long_prob_moment": {
+      "columns": [
+        "sample_count",
+        "path_count",
+        "sum_value_min",
+        "sum_value_max",
+        "weight_total_digits",
+        "weight_total_mod_1000000007",
+        "weight_total_mod_1000000009",
+        "mean_sum_num_digits",
+        "mean_sum_den_digits",
+        "mean_sum_num_mod_1000000007",
+        "mean_sum_den_mod_1000000007",
+        "mean_sum_num_mod_1000000009",
+        "mean_sum_den_mod_1000000009",
+        "variance_sum_num_digits",
+        "variance_sum_den_digits",
+        "variance_sum_num_mod_1000000007",
+        "variance_sum_den_mod_1000000007",
+        "variance_sum_num_mod_1000000009",
+        "variance_sum_den_mod_1000000009",
+        "mean_average_num_digits",
+        "mean_average_den_digits",
+        "mean_average_num_mod_1000000007",
+        "mean_average_den_mod_1000000007",
+        "mean_average_num_mod_1000000009",
+        "mean_average_den_mod_1000000009",
+        "variance_average_num_digits",
+        "variance_average_den_digits",
+        "variance_average_num_mod_1000000007",
+        "variance_average_den_mod_1000000007",
+        "variance_average_num_mod_1000000009",
+        "variance_average_den_mod_1000000009",
+        "variance_shrink_gap_num_digits",
+        "variance_shrink_gap_den_digits",
+        "variance_shrink_gap_num_mod_1000000007",
+        "variance_shrink_gap_den_mod_1000000007",
+        "variance_shrink_gap_num_mod_1000000009",
+        "variance_shrink_gap_den_mod_1000000009",
+        "variance_shrink_from_prev_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_prob/moment.csv",
+      "sha256": "bc4ce8b003c190ab6b5b7c1b180f34238819bc57db0091e3b11a33fb1efb0b14"
+    },
+    "long_prob_report": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/report.json",
+      "sha256": "84305f09785de3171c52d1dcbb2b12bfd021af794b4722ce86c8c187430fe66b",
+      "status": "LONG_PROB_CERTIFIED"
+    },
+    "long_prob_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/tables.npz",
+      "sha256": "2234f299c116acb8badf30c8bc447306f4b51b84c4276f07a720d5222ab6a356"
+    },
+    "long_prof_compose": {
+      "columns": [
+        "law_id",
+        "law_code",
+        "law_name",
+        "source_id",
+        "target_id",
+        "left_num",
+        "left_den",
+        "right_num",
+        "right_den",
+        "diff_num",
+        "diff_den",
+        "equal_flag",
+        "left_num_digits",
+        "left_den_digits",
+        "left_num_mod_1000000007",
+        "left_den_mod_1000000007",
+        "left_num_mod_1000000009",
+        "left_den_mod_1000000009",
+        "right_num_digits",
+        "right_den_digits",
+        "right_num_mod_1000000007",
+        "right_den_mod_1000000007",
+        "right_num_mod_1000000009",
+        "right_den_mod_1000000009"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_prof/compose.csv",
+      "sha256": "d7c5a962aaf58b74ed23395be87d8242891b70cb5f5ea95c4cb24afadb9ac197"
+    },
+    "long_prof_object": {
+      "columns": [
+        "object_id",
+        "object_code",
+        "object_name",
+        "address_count",
+        "tensor_power",
+        "source_object_code"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_prof/object.csv",
+      "sha256": "3d87d220b0ba699a03c822b2ca425c421cfaeb3f5b408e0f6f56023e3f384cd2"
+    },
+    "long_prof_profunctor": {
+      "columns": [
+        "profunctor_id",
+        "profunctor_code",
+        "profunctor_name",
+        "source_object_code",
+        "target_object_code",
+        "source_count",
+        "target_count",
+        "support_entry_count",
+        "positive_entry_count",
+        "total_num",
+        "total_den",
+        "row_sum_one_flag",
+        "deterministic_flag",
+        "source_sha256"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_prof/profunctor.csv",
+      "sha256": "dae61f6e3380e557636f188acb3cf2c1a526b6723b17759b53e02abfd04486ca"
+    },
+    "long_prof_report": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/report.json",
+      "sha256": "ed87bea6bbeff6c91e622b06e2850da2998d098a7ec93a0f01a6ea865e2a4628",
+      "status": "LONG_PROF_CERTIFIED"
+    },
+    "long_prof_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/tables.npz",
+      "sha256": "18c0d408d583cff813d489e2a7590ad76df0f01c6c686dc64757dda0c41fbe1e"
+    },
+    "long_raw_fiber": {
+      "columns": [
+        "fiber_row_id",
+        "sample_count",
+        "sum_value",
+        "component_fiber_path_count",
+        "raw_support_fiber_lift_digits",
+        "raw_support_fiber_lift_mod_1000000007",
+        "raw_support_fiber_lift_mod_1000000009",
+        "raw_coeff_fiber_lift_digits",
+        "raw_coeff_fiber_lift_mod_1000000007",
+        "raw_coeff_fiber_lift_mod_1000000009",
+        "long_tens_gap_flag",
+        "existing_prof_flag",
+        "raw_support_lift_positive_flag",
+        "raw_coeff_lift_positive_flag",
+        "compressed_raw_quotient_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_raw/fiber.csv",
+      "sha256": "ebd51233c7a6f231f47e084a99d3a47d2abc8ccad5b6984875b6d64538f6d8e1"
+    },
+    "long_raw_owner": {
+      "columns": [
+        "basis_id",
+        "component_id",
+        "active_owner_flag",
+        "owner_cell_count",
+        "raw_source_cell_count",
+        "raw_support_count",
+        "raw_coeff_sum",
+        "owner_target_addr",
+        "raw_target_min",
+        "raw_target_max",
+        "raw_target_min_minus_owner_target",
+        "raw_target_max_minus_owner_target",
+        "raw_support_mod_1000000007",
+        "raw_support_mod_1000000009",
+        "raw_coeff_mod_1000000007",
+        "raw_coeff_mod_1000000009"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_raw/owner.csv",
+      "sha256": "1e63dae2e1776aa02567f875427bdc73a59d5998ba10c2747f0a03b484779992"
+    },
+    "long_raw_report": {
+      "path": "data/invariants/d20/proof_obligations/long_raw/report.json",
+      "sha256": "85dfc42d37e6aecd2d094c1ba8c1e77bd8a5d88352a48edea0938eaeed18cd42",
+      "status": "LONG_RAW_CERTIFIED"
+    },
+    "long_raw_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_raw/tables.npz",
+      "sha256": "de59126a6c5a31cda8d674924c8eedef2eb61c4ba0c2f4eb00dcae04a69e0bd3"
+    },
+    "long_univ_arrow": {
+      "columns": [
+        "arrow_id",
+        "arrow_code",
+        "arrow_name",
+        "source_node_code",
+        "target_node_code",
+        "arrow_kind_code",
+        "source_count",
+        "target_count",
+        "support_entry_count",
+        "positive_entry_count",
+        "total_num",
+        "total_den",
+        "row_sum_one_count",
+        "deterministic_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_univ/arrow.csv",
+      "sha256": "2aa5dd444905e2b32c797012161bda107e0350ce4ad9c247b047afe4eab4a10e"
+    },
+    "long_univ_law": {
+      "columns": [
+        "law_id",
+        "square_code",
+        "law_code",
+        "source_id",
+        "target_id",
+        "subtarget_id",
+        "left_num",
+        "left_den",
+        "right_num",
+        "right_den",
+        "diff_num",
+        "diff_den",
+        "equal_flag",
+        "left_num_digits",
+        "left_den_digits",
+        "left_num_mod_1000000007",
+        "left_den_mod_1000000007",
+        "left_num_mod_1000000009",
+        "left_den_mod_1000000009",
+        "right_num_digits",
+        "right_den_digits",
+        "right_num_mod_1000000007",
+        "right_den_mod_1000000007",
+        "right_num_mod_1000000009",
+        "right_den_mod_1000000009"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_univ/law.csv",
+      "sha256": "fd7de0393180f63738e8798ee68223c1c0ed48e3774949bc062eadad4dd07844"
+    },
+    "long_univ_node": {
+      "columns": [
+        "node_id",
+        "node_code",
+        "node_name",
+        "address_count",
+        "tensor_power",
+        "source_node_code",
+        "public_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_univ/node.csv",
+      "sha256": "c66f25e88ea2742ea3ba210ea886ec1d781aa4770775952eec905630de8231d5"
+    },
+    "long_univ_report": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/report.json",
+      "sha256": "b49b6eb3afc79ee72ccd4b108cc31f6f86659a0e2aa0c43638f01c8830df5b74",
+      "status": "LONG_UNIV_CERTIFIED"
+    },
+    "long_univ_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/tables.npz",
+      "sha256": "16eabea2e00152697b7e00ec0299b8aa12f81e19bd7f0fda8ec8142a385d25c1"
+    },
+    "validator": {
+      "path": "src/certify_long_llnind.py",
+      "sha256": "2c8f89bf9aa40b6668e4f32380948e60150f980108cc082cfcb64f44208a0f9c"
+    }
+  },
+  "manifest_sha256": "db3c9ecbc40a566c861a3a056f588811321a24d0c09977d921d44f69af378f73",
+  "name": "long_llnind",
+  "outputs": {
+    "bridge_csv": "data/invariants/d20/proof_obligations/long_llnind/bridge.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_llnind/cert.json",
+    "layer_csv": "data/invariants/d20/proof_obligations/long_llnind/layer.csv",
+    "llnind": "data/invariants/d20/proof_obligations/long_llnind/llnind.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_llnind/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_llnind/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_llnind/report.json",
+    "seam_csv": "data/invariants/d20/proof_obligations/long_llnind/seam.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_llnind/tables.npz"
+  },
+  "report_sha256": "687f75686e4c802a272236ee0a28367f45313a0777b13f2b29700bf4ffd30709",
+  "schema": "long.llnind.manifest@1",
+  "status": "LONG_LLNIND_CERTIFIED"
+}

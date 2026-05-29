@@ -1,0 +1,116 @@
+{
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_domind.py",
+      "sha256": "b967000beb0af6085b88f04b54caa651f65c83f9c4e263d9104f62e7b5f2ab57"
+    },
+    "long_formind_bridge": {
+      "columns": [
+        "bridge_id",
+        "recurrence_factor",
+        "probe_start_sample_count",
+        "probe_end_sample_count",
+        "transition_type_count",
+        "formula_class_count",
+        "formula_count",
+        "term_count",
+        "certified_transition_count",
+        "certified_formula_match_count",
+        "probe_state_count",
+        "probe_formula_nonnegative_count",
+        "long_recind_certified_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/bridge.csv",
+      "sha256": "79f54e3c452dd83878caebf66c9b2203d5ac00cf2351aa6fdcc1537a90570ddd"
+    },
+    "long_formind_check": {
+      "columns": [
+        "formula_id",
+        "class_id",
+        "gap_kind",
+        "term_count",
+        "certified_transition_count",
+        "certified_match_count",
+        "certified_integral_count",
+        "certified_nonnegative_count",
+        "probe_state_count",
+        "probe_integral_count",
+        "probe_nonnegative_count",
+        "probe_zero_count",
+        "probe_min_sign",
+        "probe_min_digits",
+        "probe_min_mod_1000000007",
+        "probe_min_mod_1000000009",
+        "formula_certificate_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/check.csv",
+      "sha256": "49430704dfc2302783293f1d32266c1491d1b95f685eb8385690d2b3f0563db3"
+    },
+    "long_formind_class": {
+      "columns": [
+        "class_id",
+        "transition_type_code",
+        "successor_side_mask",
+        "predecessor_side_mask",
+        "domain_code",
+        "x_min_kind",
+        "x_min_const",
+        "x_max_kind",
+        "x_max_const",
+        "certified_transition_count",
+        "probe_state_count"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/class.csv",
+      "sha256": "04e4dfbd960499f3ed0e944cb8116d70267b81c54054deda0916948fe0aff9a2"
+    },
+    "long_formind_report": {
+      "path": "data/invariants/d20/proof_obligations/long_formind/report.json",
+      "sha256": "3fea3fb53aecde29ff9dc8762a663e6e1f70dff33c1f81c3d64981e85dc0e1a8",
+      "status": "LONG_FORMIND_CERTIFIED"
+    },
+    "long_formind_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_formind/tables.npz",
+      "sha256": "65836005dcb14d304d5d712fabeb30238632ea7cfc70c57a55feaf929031b8d7"
+    },
+    "long_formind_term": {
+      "columns": [
+        "term_id",
+        "class_id",
+        "gap_kind",
+        "coeff_num",
+        "coeff_den",
+        "exp12_n",
+        "exp12_x",
+        "exp12_const",
+        "exp18_n",
+        "exp18_x",
+        "exp18_const",
+        "exp48_n",
+        "exp48_x",
+        "exp48_const"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/term.csv",
+      "sha256": "7e2a9b4e369bde716ab0d06333524bd60ecf7d77c006341cf7f10babbe7175e2"
+    },
+    "validator": {
+      "path": "src/certify_long_domind.py",
+      "sha256": "100776bc4ce50a3b82dac222168ba14c26fcb461aa860e381035556a58f0a48a"
+    }
+  },
+  "manifest_sha256": "17cdb2a0fcc340d0227206dd35aed1f533ad4948df86e03440a2e8ea07110de7",
+  "name": "long_domind",
+  "outputs": {
+    "bridge_csv": "data/invariants/d20/proof_obligations/long_domind/bridge.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_domind/cert.json",
+    "cover_csv": "data/invariants/d20/proof_obligations/long_domind/cover.csv",
+    "domind": "data/invariants/d20/proof_obligations/long_domind/domind.json",
+    "formula_csv": "data/invariants/d20/proof_obligations/long_domind/formula.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_domind/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_domind/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_domind/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_domind/tables.npz"
+  },
+  "report_sha256": "d123901e09d684c7e44430fb265048cea556c7b96f8b0523494d1d81264f14c9",
+  "schema": "long.domind.manifest@1",
+  "status": "LONG_DOMIND_CERTIFIED"
+}

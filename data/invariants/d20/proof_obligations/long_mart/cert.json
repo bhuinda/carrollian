@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "current_representation_exact": true,
+    "drift_profile_exact": true,
+    "input_certified": true,
+    "table_shapes_match": true,
+    "transport_exact": true,
+    "variance_operator_exact": true
+  },
+  "schema": "long.mart.cert@1",
+  "status": "LONG_MART_CERTIFIED",
+  "witness": {
+    "classification": "finite_transport_conditional_expectation_operator",
+    "current_representation": {
+      "eventual_submartingale": true,
+      "global_martingale": false,
+      "transport_operator": true,
+      "variance_supermartingale": true
+    },
+    "drift": {
+      "eventual_submartingale_level_count": 14,
+      "first_level_negative_drift_count": 1,
+      "global_martingale_row_count": 14,
+      "negative_count": 1,
+      "positive_count": 240,
+      "state_table_sha256": "d7f2ba14d9838c2f8fd5c385845a39558454fbcc94a41fd533ff2275d983c454",
+      "state_text_sha256": "a1ffd52e24fa06a6695cd1acbb9150dcf34a503305a5ad454bc124fd8a052cb1",
+      "zero_count": 14
+    },
+    "name": "long_mart",
+    "observable_table_sha256": "4928b5c090ffae33e165cf0ccec17ec3e0f5e231f1830892075bd9a74bbf632c",
+    "transport": {
+      "col_marginal_flag_count": 285,
+      "edge_count": 525,
+      "edge_table_sha256": "2ea3422776d2e3fc83ff5ed332b88d227055dff4aa36a8a7b01d87754961354d",
+      "edge_text_sha256": "3de7fbbacc5185fc75790934273604d2c33d0ac7662f8678dfd8fb2fe6501157",
+      "level_count": 15,
+      "max_outgoing_edge_count": 3,
+      "method": "monotone integer quantile transport between consecutive dual probability fibers",
+      "row_marginal_flag_count": 255,
+      "state_count": 255
+    },
+    "variance": {
+      "conditional_noise_num_mod_sum_1000000007": 139149809,
+      "level_table_sha256": "88837f2633e30bd4465d9d2af338b53862f14ae71a0dec2047f15fe658777e85",
+      "level_text_sha256": "c9e787f0503359662ddbc15260876d68f3f10e5236c205abb9038cecec5820d7",
+      "predicted_variance_num_mod_sum_1000000007": 847852262,
+      "variance_decomp_level_count": 15,
+      "variance_shrink_level_count": 15
+    }
+  }
+}

@@ -60,6 +60,7 @@ EXCLUDED_DIRS = {
     "ingest",
     "terwilliger_local_runner",
     "generated",
+    "upload",
 }
 
 EXCLUDED_DIR_PREFIXES = (

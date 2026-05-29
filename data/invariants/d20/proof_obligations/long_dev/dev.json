@@ -1,0 +1,65 @@
+{
+  "object": "long_markov_finite_path_sum_deviation_kernel",
+  "schema": "long.dev@1",
+  "status": "LONG_DEV_CERTIFIED",
+  "witness": {
+    "chernoff": {
+      "digest_table_sha256": "79043642a7333b922bc2fba8e8c4a35c2a1d42d6b0a8a7a891f63a70a5802da2",
+      "fraction_text_sha256": "d74e1e0c3c973175017decb4e79577445b85fec2f745aa4667994ac2328c3550",
+      "gap_nonnegative": true,
+      "row_count": 16
+    },
+    "classification": "long_markov_finite_path_sum_deviation_kernel",
+    "distribution": {
+      "digest_table_sha256": "2dfea5bee5bb2aa5501818057f6dffcee33d03accb9abf60bbcd9980f82e47e4",
+      "fraction_text_sha256": "9298c8d0100769d65e0432c21d09c37e48ddb718475d5f532bfc65e81ff5b66e",
+      "full_support": true,
+      "row_count": 80,
+      "sum_one": true
+    },
+    "moments": {
+      "digest_table_sha256": "c145a964f9602e23bb6868f078c577279be3de2a8e6a77b7a3ea8b0390121745",
+      "first_moment_linear": true,
+      "fraction_text_sha256": "3a6e0b3831d10559fe27508ca1196a53b72d10d9e2f2e38999eff837a77c0838",
+      "moment_order_max": 4,
+      "row_count": 32
+    },
+    "name": "long_dev",
+    "observable_table_sha256": "162c100b3b0fee01ab2c316855182bc517a0276fe0c374f21506738f9c2f0557",
+    "scope": {
+      "observable": "component_value in {0,1,2}",
+      "sample_horizon": 8,
+      "source": "long_markov reversible boundary kernel",
+      "tail_rules": {
+        "lower_tail": "S_n <= floor(n/2), bounded with q=1/2",
+        "upper_tail": "S_n >= ceil(3n/2), bounded with q=2"
+      }
+    },
+    "tails": {
+      "digest_table_sha256": "767a6639df75318cb05a805a6837cc135b259ed8cac67c4a78bd5d6cf3943cd0",
+      "fraction_text_sha256": "4002870068ef1f0f5989e4765524800e536cdd1b76b55fc6626e4e4bc4487bfb",
+      "row_count": 16
+    },
+    "tilts": {
+      "digest_table_sha256": "6f2d41238c08ff5f98abdd205e2bc23055644e74ceceaebc8eab39980a4b9f0e",
+      "fraction_text_sha256": "7513e77f2b3601a7d26b3cb3d0dea1131f4836975e811225354b02b8b86639ce",
+      "tilt_values": [
+        {
+          "q_den": 2,
+          "q_num": 1,
+          "tilt_id": 0
+        },
+        {
+          "q_den": 1,
+          "q_num": 2,
+          "tilt_id": 1
+        },
+        {
+          "q_den": 1,
+          "q_num": 3,
+          "tilt_id": 2
+        }
+      ]
+    }
+  }
+}

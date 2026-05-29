@@ -1,0 +1,250 @@
+from __future__ import annotations
+
+import csv
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+try:
+    from .certify_io import ROOT, h_file, h_json
+    from .derive_long_domind import (
+        BRIDGE_COLUMNS,
+        BRIDGE_TEXT_HASH,
+        COVER_COLUMNS,
+        COVER_TEXT_HASH,
+        DERIVE_SCRIPT,
+        FORMULA_COLUMNS,
+        FORMULA_TEXT_HASH,
+        INDEX_PATH,
+        LONG_FORMIND_BRIDGE,
+        LONG_FORMIND_CHECK,
+        LONG_FORMIND_CLASS,
+        LONG_FORMIND_REPORT,
+        LONG_FORMIND_TABLES,
+        LONG_FORMIND_TERM,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        STATUS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        digest_text,
+        self_hash,
+    )
+    from .derive_long_raw import rows_from_table
+except ImportError:  # Supports direct script execution.
+    from certify_io import ROOT, h_file, h_json
+    from derive_long_domind import (
+        BRIDGE_COLUMNS,
+        BRIDGE_TEXT_HASH,
+        COVER_COLUMNS,
+        COVER_TEXT_HASH,
+        DERIVE_SCRIPT,
+        FORMULA_COLUMNS,
+        FORMULA_TEXT_HASH,
+        INDEX_PATH,
+        LONG_FORMIND_BRIDGE,
+        LONG_FORMIND_CHECK,
+        LONG_FORMIND_CLASS,
+        LONG_FORMIND_REPORT,
+        LONG_FORMIND_TABLES,
+        LONG_FORMIND_TERM,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        STATUS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        digest_text,
+        self_hash,
+    )
+    from derive_long_raw import rows_from_table
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise AssertionError(f"{path} is not a JSON object")
+    return payload
+
+
+def assert_file_hash(entry: dict[str, Any], expected_path: Path, label: str) -> None:
+    expected_rel = expected_path.relative_to(ROOT).as_posix()
+    if entry.get("path") != expected_rel:
+        raise AssertionError(f"{label} path mismatch: {entry.get('path')}")
+    if entry.get("sha256") != h_file(expected_path):
+        raise AssertionError(f"{label} sha256 mismatch")
+
+
+def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        return list(reader.fieldnames or []), list(reader)
+
+
+def validate_long_domind() -> dict[str, Any]:
+    expected = build_payloads()
+    domind_payload = load_json(OUT_DIR / "domind.json")
+    report = load_json(OUT_DIR / "report.json")
+    manifest = load_json(OUT_DIR / "manifest.json")
+    cert = load_json(OUT_DIR / "cert.json")
+    index = load_json(INDEX_PATH)
+    tables = np.load(OUT_DIR / "tables.npz", allow_pickle=False)
+
+    if domind_payload != expected["domind"]:
+        raise AssertionError("long_domind domind JSON mismatch")
+    if cert != expected["cert"]:
+        raise AssertionError("long_domind cert mismatch")
+    for filename, key in {
+        "formula.csv": "formula_csv",
+        "cover.csv": "cover_csv",
+        "bridge.csv": "bridge_csv",
+        "obs.csv": "obs_csv",
+    }.items():
+        if (OUT_DIR / filename).read_text(encoding="utf-8") != expected[key]:
+            raise AssertionError(f"long_domind {filename} mismatch")
+
+    for key, expected_array in {
+        "formula_table": expected["formula_table"],
+        "cover_table": expected["cover_table"],
+        "bridge_table": expected["bridge_table"],
+        "observable_table": expected["observable_table"],
+    }.items():
+        if not np.array_equal(np.asarray(tables[key]), expected_array):
+            raise AssertionError(f"long_domind table mismatch: {key}")
+
+    if report.get("schema") != "long.domind.report@1":
+        raise AssertionError("long_domind report schema mismatch")
+    if report.get("status") != STATUS:
+        raise AssertionError("long_domind report status mismatch")
+    if report.get("all_checks_pass") is not True:
+        raise AssertionError("long_domind all_checks_pass mismatch")
+    if report.get("checks") != expected["report"]["checks"]:
+        raise AssertionError("long_domind checks mismatch")
+    if self_hash(report, "certificate_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("long_domind report self hash mismatch")
+    if report.get("certificate_sha256") != expected["report"]["certificate_sha256"]:
+        raise AssertionError("long_domind report hash mismatch")
+
+    csv_shapes = [
+        ("formula.csv", FORMULA_COLUMNS, 26),
+        ("cover.csv", COVER_COLUMNS, 306),
+        ("bridge.csv", BRIDGE_COLUMNS, 1),
+        ("obs.csv", OBS_COLUMNS, len(OBS_CODES)),
+    ]
+    csv_rows: dict[str, list[dict[str, str]]] = {}
+    for filename, columns, row_count in csv_shapes:
+        header, rows = read_csv(OUT_DIR / filename)
+        csv_rows[filename] = rows
+        if header != columns or len(rows) != row_count:
+            raise AssertionError(f"long_domind {filename} shape mismatch")
+
+    table_shapes = {
+        "formula_table": (26, len(FORMULA_COLUMNS)),
+        "cover_table": (306, len(COVER_COLUMNS)),
+        "bridge_table": (1, len(BRIDGE_COLUMNS)),
+        "observable_table": (len(OBS_CODES), len(OBS_COLUMNS)),
+    }
+    for key, shape in table_shapes.items():
+        if tuple(np.asarray(tables[key]).shape) != shape:
+            raise AssertionError(f"long_domind {key} shape mismatch")
+
+    obs = {
+        row["observable_code"]: row["value"]
+        for row in rows_from_table(np.asarray(tables["observable_table"]), OBS_COLUMNS)
+    }
+    required = {
+        "tail_start_sample_count": 257,
+        "formind_probe_end_sample_count": 256,
+        "formula_count": 26,
+        "positive_term_count": 290,
+        "negative_term_count": 291,
+        "cover_assignment_count": 306,
+        "covered_negative_term_count": 291,
+        "formula_tail_nonnegative_count": 26,
+        "lower_ray_certificate_count": 306,
+        "upper_ray_certificate_count": 306,
+        "long_formind_certified_flag": 1,
+        "current_dominance_flag": 1,
+    }
+    for key, value in required.items():
+        if obs.get(OBS_CODES[key]) != value:
+            raise AssertionError(f"long_domind observable {key} mismatch")
+
+    if hashlib.sha256(
+        digest_text(FORMULA_COLUMNS, csv_rows["formula.csv"]).encode("ascii")
+    ).hexdigest() != FORMULA_TEXT_HASH:
+        raise AssertionError("long_domind formula hash mismatch")
+    if hashlib.sha256(
+        digest_text(COVER_COLUMNS, csv_rows["cover.csv"]).encode("ascii")
+    ).hexdigest() != COVER_TEXT_HASH:
+        raise AssertionError("long_domind cover hash mismatch")
+    if hashlib.sha256(
+        digest_text(BRIDGE_COLUMNS, csv_rows["bridge.csv"]).encode("ascii")
+    ).hexdigest() != BRIDGE_TEXT_HASH:
+        raise AssertionError("long_domind bridge hash mismatch")
+
+    inputs = report.get("inputs", {})
+    for key, path in {
+        "long_formind_report": LONG_FORMIND_REPORT,
+        "long_formind_class": LONG_FORMIND_CLASS,
+        "long_formind_term": LONG_FORMIND_TERM,
+        "long_formind_check": LONG_FORMIND_CHECK,
+        "long_formind_bridge": LONG_FORMIND_BRIDGE,
+        "long_formind_tables": LONG_FORMIND_TABLES,
+        "derive_script": DERIVE_SCRIPT,
+        "validator": VALIDATOR_SCRIPT,
+    }.items():
+        assert_file_hash(inputs.get(key, {}), path, key)
+
+    if manifest.get("schema") != "long.domind.manifest@1":
+        raise AssertionError("long_domind manifest schema mismatch")
+    if manifest.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("long_domind manifest report hash mismatch")
+    if self_hash(manifest, "manifest_sha256") != manifest.get("manifest_sha256"):
+        raise AssertionError("long_domind manifest self hash mismatch")
+
+    entry = next(
+        (row for row in index.get("obligations", []) if row.get("id") == THEOREM_ID),
+        None,
+    )
+    if entry is None:
+        raise AssertionError("long_domind missing from proof obligation index")
+    if entry.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("long_domind proof obligation index hash mismatch")
+    if entry.get("status") != STATUS:
+        raise AssertionError("long_domind proof obligation index status mismatch")
+    index_without_hash = {
+        key: value for key, value in index.items() if key != "registry_sha256"
+    }
+    if h_json(index_without_hash) != index.get("registry_sha256"):
+        raise AssertionError("proof obligation index self hash mismatch")
+
+    witness = report.get("witness", {})
+    return {
+        "schema": "long.domind.verification@1",
+        "status": "PASS",
+        "verified_report": (OUT_DIR / "report.json").relative_to(ROOT).as_posix(),
+        "certificate_sha256": report["certificate_sha256"],
+        "witness": {
+            "classification": witness.get("classification"),
+            "tail_start_sample_count": witness.get("tail_start_sample_count"),
+            "dominance_surface": witness.get("dominance_surface"),
+            "ray_certificates": witness.get("ray_certificates"),
+        },
+        "closure_boundary": report.get("closure_boundary"),
+        "next_highest_yield_item": report.get("next_highest_yield_item"),
+    }
+
+
+def main() -> None:
+    print(json.dumps(validate_long_domind(), indent=2, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

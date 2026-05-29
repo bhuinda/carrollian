@@ -1,0 +1,114 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b7fc6d1c4ac5b0d6af897d17d1c5b650e62887091d99919aabba273af03d8c39",
+  "checks": {
+    "chernoff_rate_fingerprint_exact": true,
+    "cumulant_fingerprint_exact": true,
+    "inputs_certified": true,
+    "profunctor_distribution_coherent": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_rate extracts exact rational cumulant and log-free Chernoff rate fingerprints from the long_prof path-sum tensor lookup, and checks them against the certified long_dev tilt and Chernoff gaps.",
+  "closure_boundary": {
+    "certifies": [
+      "tilted MGF, first tilted raw moment, second tilted raw moment, tilted mean, and tilted variance for q=1/2,2,3 through horizon eight",
+      "exact agreement between profunctor-composed MGFs and long_dev tilt rows",
+      "exact agreement between profunctor-composed Chernoff bounds/gaps and long_dev chernoff rows",
+      "nonnegative exact tilted variance and Chernoff gap witnesses"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "analytic logarithms of the cumulant generating function",
+      "continuous optimization over all q",
+      "asymptotic large-deviation principles",
+      "a universal eta6 horizon theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_rate.py",
+      "sha256": "78d0892cf8528c919ca5b35d2e0183e0205a6e8a5c383561d2228620393e30ea"
+    },
+    "long_dev_chernoff": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/chernoff.csv",
+      "sha256": "1911046a587f89e2218ccb14a56673df8fd2c755712403ede2e0996b58a674ae"
+    },
+    "long_dev_report": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/report.json",
+      "sha256": "8140f47d42f1484102feaeb0b7bd1bdccfd2d1e65a5592bbc1da8035265d24e0",
+      "status": "LONG_DEV_CERTIFIED"
+    },
+    "long_dev_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/tables.npz",
+      "sha256": "df4105ab04c6598839c94d655e37a67e70ec01df7a660e45614405ed1a306100"
+    },
+    "long_dev_tail": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/tail.csv",
+      "sha256": "533284b5a20dc1c1294d309f4dce2f27eb43f54be7f2b239eede23b6a0a4b543"
+    },
+    "long_dev_tilt": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/tilt.csv",
+      "sha256": "e3a7f07e20da022f4e323d9592397c821b13f2926865c54b90e6259b484a6f0b"
+    },
+    "long_prof_compose": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/compose.csv",
+      "sha256": "d7c5a962aaf58b74ed23395be87d8242891b70cb5f5ea95c4cb24afadb9ac197"
+    },
+    "long_prof_report": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/report.json",
+      "sha256": "ed87bea6bbeff6c91e622b06e2850da2998d098a7ec93a0f01a6ea865e2a4628",
+      "status": "LONG_PROF_CERTIFIED"
+    },
+    "long_prof_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/tables.npz",
+      "sha256": "18c0d408d583cff813d489e2a7590ad76df0f01c6c686dc64757dda0c41fbe1e"
+    },
+    "validator": {
+      "path": "src/certify_long_rate.py",
+      "sha256": "e13d58f0c024c1bcec5ee5d015d8262479f1e82d1ee42ca278785185f84101cc"
+    }
+  },
+  "next_highest_yield_item": "Build long_conv: certify convolution/composition laws for extending the profunctor path-sum distribution horizon beyond eight without leaving exact tensor lookup arithmetic.",
+  "outputs": {
+    "bound_csv": "data/invariants/d20/proof_obligations/long_rate/bound.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_rate/cert.json",
+    "cumulant_csv": "data/invariants/d20/proof_obligations/long_rate/cumulant.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_rate/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_rate/obs.csv",
+    "rate": "data/invariants/d20/proof_obligations/long_rate/rate.json",
+    "report": "data/invariants/d20/proof_obligations/long_rate/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_rate/tables.npz"
+  },
+  "schema": "long.rate.report@1",
+  "stage_protocol": {
+    "closure": "emit cumulant, bound, table, certificate, manifest, and report artifacts",
+    "coherence": "check MGF equality, Chernoff bound/gap equality, nonnegative variance/gap, hashes, and shapes",
+    "draft": "read long_prof deviation composition laws and long_dev tilt/tail/chernoff witnesses",
+    "emit": "write long_rate artifacts and verifier hook",
+    "witness": "compute tilted raw moments, tilted mean/variance, inverse-bound, tightness, and slack fractions"
+  },
+  "status": "LONG_RATE_CERTIFIED",
+  "witness": {
+    "chernoff_rates": {
+      "bound_match_count": 16,
+      "digest_table_sha256": "88a1981f016702264b560e63d015b488d080ac817497ded8149a2330725df254",
+      "fraction_text_sha256": "39262abf492830a6182d9949747ea214a0b46a38f53d8bc7587c1a50ee074395",
+      "gap_match_count": 16,
+      "gap_nonnegative_count": 16,
+      "row_count": 16
+    },
+    "classification": "finite_log_free_rate_cumulant_tensor_lookup",
+    "cumulants": {
+      "digest_table_sha256": "f49d3cf26f5aa2859b18da625b88b9a8601bf08054c4741a73bc9ddc6d41a057",
+      "fraction_text_sha256": "cde28c51746fedb488e6e46f9ede898f6a87a82d78ac16b37cb94b873a8f6653",
+      "mgf_match_count": 24,
+      "row_count": 24,
+      "variance_nonnegative_count": 24
+    },
+    "name": "long_rate",
+    "observable_table_sha256": "5200969b52198add36ee8daf3897ec0cb840954b2a5a85679d5ae896551e54bb",
+    "source": {
+      "comparison": "long_dev tilt/tail/chernoff CSVs",
+      "distribution": "long_prof compose.csv deviation laws"
+    }
+  }
+}

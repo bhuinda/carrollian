@@ -1,0 +1,126 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b1cb279bc3adc366a94370c63833f9912db6ea7ddb0823fb95d6c7485000e9de",
+  "checks": {
+    "bounded_not_universal": true,
+    "finite_margin_packet_strict": true,
+    "gate_is_carrier_neutral": true,
+    "global_six_floor_exact": true,
+    "gordan_gap_strict": true,
+    "input_certificates_available": true,
+    "spine_consensus_matches": true,
+    "table_shapes_match_codebooks": true
+  },
+  "claim": "eta6_core is the compact structural certificate for the current eta6 spine. It certifies bounded horizon behavior across the checked row universes and admissible p/F support screens: positive gap, exact six-move floor, neutral gate, strict margin packet, and no checked support equalizer. It is not a universal completion theorem.",
+  "closure_boundary": {
+    "certifies": [
+      "eta6 hpol rows have margin at least 1 in the checked gap universe",
+      "no positive annihilating dependence exists for the checked hpol signed-row matrix",
+      "the exact p5 six-move floor is 492736 over 11143364232 sextuples",
+      "the floor gate preserves all six eta6 carrier entries and is carrier-neutral",
+      "the p26 packet has strict positive margins across four checked components"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "all future carrier completions",
+      "every possible F-symbol intervention outside the checked admissible screens",
+      "a semantic proof of global C985 associator closure on a rebuilt carrier",
+      "that eta6 is uncrossable outside these finite row and branch universes"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_eta6_core.py",
+      "sha256": "34c8600a9d54968a440529e4a3b3e610579fea7b6162e929d0ebeaa7a7b5c8e8"
+    },
+    "gap_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_gap/report.json",
+      "sha256": "ab7401c5dc49441338d6979406316d75c617d1955cfefac8d105b7cf76afb23f",
+      "status": "ETA6_GAP_CERTIFIED"
+    },
+    "p20_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p20/report.json",
+      "sha256": "d905aeede1d58ab7b7fa8064167dbdc1114646855cef7f344adaa11d8dc3addd",
+      "status": "ETA6_P20_CERTIFIED"
+    },
+    "p21_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p21/report.json",
+      "sha256": "19d18b9fbc152be0b2da82a9de1050debec446049e99a8545fcdf0aeec686437",
+      "status": "ETA6_P21_CERTIFIED"
+    },
+    "p26_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_p26/report.json",
+      "sha256": "2657694f8e5153e0e703b2dc03a7ea612a9b3e0649c23df9121b091ee6ab5f15",
+      "status": "ETA6_P26_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_eta6_core.py",
+      "sha256": "9aebc4e5708c09407b562f2919d24bac8779fe48195d55c26a6b26392de9e0c2"
+    }
+  },
+  "next_highest_yield_item": "Keep eta6_p40 as a stress appendix; next certify a non-pNN recoupling class if a new obstruction family is needed.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/eta6_core/cert.json",
+    "core": "data/invariants/d20/proof_obligations/eta6_core/core.json",
+    "manifest": "data/invariants/d20/proof_obligations/eta6_core/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/eta6_core/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/eta6_core/report.json",
+    "spine_csv": "data/invariants/d20/proof_obligations/eta6_core/spine.csv",
+    "tables": "data/invariants/d20/proof_obligations/eta6_core/tables.npz"
+  },
+  "schema": "eta6.core.report@1",
+  "stage_protocol": {
+    "closure": "emit a bounded horizon certificate with explicit scope",
+    "coherence": "require the floor and gate layers to agree on the same best p5 ids",
+    "draft": "select the compact eta6 evidence spine",
+    "emit": "write eta6_core artifacts and verifier hook",
+    "witness": "read fixed integers from certified reports"
+  },
+  "status": "ETA6_CORE_CERTIFIED",
+  "witness": {
+    "best_p5_ids": [
+      1,
+      47,
+      57,
+      79,
+      110,
+      128
+    ],
+    "claim_boundary": {
+      "bounded_horizon_flag": 1,
+      "checked_global_six_count": 11143364232,
+      "checked_positive_row_total": 7735158,
+      "checked_spine_reports": 4,
+      "universal_completion_claim": 0
+    },
+    "classification": "eta6_core",
+    "core_claim": "bounded_horizon",
+    "gate": {
+      "carrier_neutral": 1,
+      "eta6_preserved_count": 6,
+      "floor": 492736,
+      "rebuilt_carrier_claim": 0
+    },
+    "gordan_gap": {
+      "hpol_margin": 1,
+      "hpol_rows": 4903515,
+      "replacement_margin": 146,
+      "replacement_rows": 2831367
+    },
+    "margin_packet": {
+      "checked_positive_row_total": 7735158,
+      "component_count": 4,
+      "min_margin": 1,
+      "support_equalizer_absent": 1
+    },
+    "observable_table_sha256": "e862de34c53c7f6ce32c00ae1f4dce923bafbccde379dac1e45f78b4bec644f3",
+    "reading": "eta6 behaves as a bounded finite horizon in the checked packet: there is a strict Gordan gap, an exact global six-move floor, a carrier-neutral gate, and a strict margin packet.",
+    "six_floor": {
+      "at_floor_count": 1,
+      "below_floor_count": 0,
+      "floor": 492736,
+      "full_six_count": 11143364232,
+      "support_equalizer_count": 0
+    },
+    "spine_table_sha256": "1b34e690bbfe29d4609a4bbed302ff50794ae4fc33a8d5fe2164093719aa83a1"
+  }
+}

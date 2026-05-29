@@ -1,0 +1,114 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "73fb433b1c2164e2f03b55b52550b27828f99554c2dde7036a0b6755b786d064",
+  "checks": {
+    "current_representation_exact": true,
+    "input_certified": true,
+    "linf_bridge_exact": true,
+    "negative_control_exact": true,
+    "rule_fingerprint_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_ind extracts a finite symbolic drift-margin schema from the canonical witness measure. The eight support-shift regions reduce rowwise nonnegative drift to margins of the form (a*n+b)/(n*(n+1)), all nonnegative from n=16 onward, with two equality boundary rules. The schema is bridged to the exact long_linf horizon-128 lift, and a full-trinomial negative control shows that the canonical one-witness measure is essential.",
+  "closure_boundary": {
+    "certifies": [
+      "the eight-region symbolic drift-margin schema for the canonical witness measure",
+      "nonnegative margin inequalities for n >= 16 under the encoded support-shift template",
+      "exact agreement with the long_linf horizon-128 lifted witness",
+      "a negative control showing full-trinomial component-word measure does not preserve the cone"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "a proof that the support-shift template persists without the encoded rule schema",
+      "the full raw tensor path measure",
+      "semantic C985 associator composition",
+      "a complete infinite-horizon LLN theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_ind.py",
+      "sha256": "d45cfac081339b6841478c9899902eda970f386a0daa82fc6fbc295958112e3f"
+    },
+    "long_linf_cone": {
+      "path": "data/invariants/d20/proof_obligations/long_linf/cone.csv",
+      "sha256": "244188cec5c2f18d1f170ee5f6201d5b0ef8e8535beba2c13ea6165a2f6c4427"
+    },
+    "long_linf_level": {
+      "path": "data/invariants/d20/proof_obligations/long_linf/level.csv",
+      "sha256": "63545bd66fbe913fc279bc3e73e6df49ee31be770be60d015935553ce7dfab9c"
+    },
+    "long_linf_report": {
+      "path": "data/invariants/d20/proof_obligations/long_linf/report.json",
+      "sha256": "3d9c93f15eebfc943651226e44223c7e57a349be9587deaef4c9d982a63b5b26",
+      "status": "LONG_LINF_CERTIFIED"
+    },
+    "long_linf_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_linf/tables.npz",
+      "sha256": "9bf1e7288235e8d792b5469bd71a7b5da3ffdb15e7d88a1fb5c1cac236b4198e"
+    },
+    "validator": {
+      "path": "src/certify_long_ind.py",
+      "sha256": "e8884b2bfec541ab4c6652ec82d444588211eaa2b4230658df6deeee8f9fe0fd"
+    }
+  },
+  "next_highest_yield_item": "Build long_suppind: prove the support-shift template itself from canonical cumulative weight inequalities, removing the remaining template hypothesis.",
+  "outputs": {
+    "bridge_csv": "data/invariants/d20/proof_obligations/long_ind/bridge.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_ind/cert.json",
+    "ind": "data/invariants/d20/proof_obligations/long_ind/ind.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_ind/manifest.json",
+    "margin_csv": "data/invariants/d20/proof_obligations/long_ind/margin.csv",
+    "negative_control_csv": "data/invariants/d20/proof_obligations/long_ind/negative_control.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_ind/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_ind/report.json",
+    "rule_csv": "data/invariants/d20/proof_obligations/long_ind/rule.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_ind/tables.npz"
+  },
+  "schema": "long.ind.report@1",
+  "stage_protocol": {
+    "closure": "emit symbolic drift-margin schema with explicit measure boundary",
+    "coherence": "check symbolic margins, long_linf bridge, negative control, statuses, hashes, and shapes",
+    "draft": "read long_linf lifted cone and canonical component weights",
+    "emit": "write long_ind artifacts and verifier hook",
+    "witness": "encode support-shift drift-margin rules and a full-trinomial negative control"
+  },
+  "status": "LONG_IND_CERTIFIED",
+  "witness": {
+    "classification": "symbolic_drift_margin_schema",
+    "induction_start": 16,
+    "linf_bridge": {
+      "bridge_table_sha256": "b7b1c64f0b9046574156f140b3057cc790cc21f999a3ebdadd1333360d91e5c1",
+      "bridge_text_sha256": "d21350ddbad1e893f6772bdcde38acb34638f876cbad05ef880abecda28a63e9",
+      "extension_negative_count": 0,
+      "lift_horizon": 128,
+      "measure_match_flag": true,
+      "negative_count": 1,
+      "state_count": 16383
+    },
+    "name": "long_ind",
+    "negative_control": {
+      "first_negative": {
+        "drift": "-5/26",
+        "sample_count": 1,
+        "sum_value": 2
+      },
+      "horizon": 64,
+      "negative_control_table_sha256": "28faf53c67d8f37c4b6cdbd46eb8f34f7216b7453f1729c7dfe874add62570c2",
+      "negative_control_text_sha256": "c17e03a6daf6475c51441115bb10c5febe6e5395a39ff2255acf0dc3013ef790",
+      "negative_count": 1115,
+      "state_count": 4095
+    },
+    "observable_table_sha256": "9cd8715e8ba13c7eb53566062c5727e820bdedb36fd64c6e5fe9ad2757ffb836",
+    "rules": {
+      "margin_equality_rule_count": 2,
+      "margin_nonnegative_count": 8,
+      "margin_row_count": 8,
+      "margin_strict_positive_count": 6,
+      "margin_table_sha256": "4b08442212aa13b0326ae9a01bb8cf1863de6cc413b517650670c91cfa384c79",
+      "margin_text_sha256": "76fb406ea657029946c24045c540c36191d87fe75391b2c2d6d066782236843e",
+      "row_count": 8,
+      "rule_table_sha256": "ab232ea82e96c2941cd52694b010b9355f53d1066b68cdebccf929fc2e28bec0",
+      "rule_text_sha256": "71b8a79952e520146414630970e005af0ce380be4756038313db717889481946"
+    }
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4a340aa9ba95f11352f5f0beda34a17924acf974762fa36a52f4c5b91eda3144",
+  "checks": {
+    "current_gapind_exact": true,
+    "gap_counts_exact": true,
+    "inputs_certified": true,
+    "regime_surface_exact": true,
+    "seams_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_gapind assembles the certified support-gap induction into one four-regime certificate: nonnegative n=16 seeds, finite recurrence deltas through n=127, formula-probe recurrence deltas through n=256, and tail dominance for every remaining formula class from n=257 on.",
+  "closure_boundary": {
+    "certifies": [
+      "global symbolic support-gap induction across all encoded recurrence regimes",
+      "nonnegative n=16 seed lower/upper support gaps",
+      "nonnegative recurrence deltas through the finite recind range n=17..127",
+      "nonnegative formula-probe deltas across n=128..256",
+      "tail nonnegativity of every recurrence formula class for n>=257"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "semantic associator composition",
+      "the full component-word measure",
+      "a raw tensor table materialized in the infinite tail",
+      "the final tensor-lookup LLN theorem without the remaining global assembly layer"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_gapind.py",
+      "sha256": "7084bf3a7b649d4fc091853acc08741fff0bc308e9bd8794aeaeceefc781a72a"
+    },
+    "long_domind_bridge": {
+      "columns": [
+        "bridge_id",
+        "tail_start_sample_count",
+        "formind_probe_end_sample_count",
+        "formula_count",
+        "positive_term_count",
+        "negative_term_count",
+        "cover_assignment_count",
+        "covered_negative_term_count",
+        "formula_tail_nonnegative_count",
+        "lower_ray_certificate_count",
+        "upper_ray_certificate_count",
+        "long_formind_certified_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_domind/bridge.csv",
+      "sha256": "56f131c10af1ebf34afaa6ad171935cb7c346e3e1bd2ddbbf426f4a6bc2b72d0"
+    },
+    "long_domind_cover": {
+      "columns": [
+        "assignment_id",
+        "formula_id",
+        "class_id",
+        "gap_kind",
+        "negative_local_index",
+        "positive_local_index",
+        "negative_term_id",
+        "positive_term_id",
+        "share_num_digits",
+        "share_num_mod_1000000007",
+        "share_num_mod_1000000009",
+        "share_den_digits",
+        "share_den_mod_1000000007",
+        "share_den_mod_1000000009",
+        "cost_num_digits",
+        "cost_num_mod_1000000007",
+        "cost_num_mod_1000000009",
+        "cost_den_digits",
+        "cost_den_mod_1000000007",
+        "cost_den_mod_1000000009",
+        "consumption_num_digits",
+        "consumption_num_mod_1000000007",
+        "consumption_num_mod_1000000009",
+        "consumption_den_digits",
+        "consumption_den_mod_1000000007",
+        "consumption_den_mod_1000000009",
+        "lower_ray_le_one_flag",
+        "upper_ray_le_one_flag",
+        "endpoint_code",
+        "assignment_certificate_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_domind/cover.csv",
+      "sha256": "089c1d8d4f0de450a54b80068ff83b26d5bec13875f444daf642be8ffa12b906"
+    },
+    "long_domind_formula": {
+      "columns": [
+        "formula_id",
+        "class_id",
+        "gap_kind",
+        "positive_term_count",
+        "negative_term_count",
+        "assignment_count",
+        "covered_negative_count",
+        "saturated_positive_count",
+        "capacity_over_count",
+        "ray_violation_count",
+        "unassigned_negative_count",
+        "max_capacity_num_digits",
+        "max_capacity_den_digits",
+        "max_capacity_num_mod_1000000007",
+        "max_capacity_den_mod_1000000007",
+        "max_capacity_num_mod_1000000009",
+        "max_capacity_den_mod_1000000009",
+        "tail_nonnegative_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_domind/formula.csv",
+      "sha256": "65e0ac654a7f477f1875589a2c74e81198f7798d098651be6720b72a9ea87d02"
+    },
+    "long_domind_report": {
+      "path": "data/invariants/d20/proof_obligations/long_domind/report.json",
+      "sha256": "d3872b1b3933b182fb041c89d20e2b0929e82c2a33569565bd3f74608f14c764",
+      "status": "LONG_DOMIND_CERTIFIED"
+    },
+    "long_domind_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_domind/tables.npz",
+      "sha256": "e110dadcff8e98f634ad3aab5b39f3da2d9c7b96c39cb697353aef1186a0a6f6"
+    },
+    "long_formind_bridge": {
+      "columns": [
+        "bridge_id",
+        "recurrence_factor",
+        "probe_start_sample_count",
+        "probe_end_sample_count",
+        "transition_type_count",
+        "formula_class_count",
+        "formula_count",
+        "term_count",
+        "certified_transition_count",
+        "certified_formula_match_count",
+        "probe_state_count",
+        "probe_formula_nonnegative_count",
+        "long_recind_certified_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/bridge.csv",
+      "sha256": "79f54e3c452dd83878caebf66c9b2203d5ac00cf2351aa6fdcc1537a90570ddd"
+    },
+    "long_formind_check": {
+      "columns": [
+        "formula_id",
+        "class_id",
+        "gap_kind",
+        "term_count",
+        "certified_transition_count",
+        "certified_match_count",
+        "certified_integral_count",
+        "certified_nonnegative_count",
+        "probe_state_count",
+        "probe_integral_count",
+        "probe_nonnegative_count",
+        "probe_zero_count",
+        "probe_min_sign",
+        "probe_min_digits",
+        "probe_min_mod_1000000007",
+        "probe_min_mod_1000000009",
+        "formula_certificate_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/check.csv",
+      "sha256": "49430704dfc2302783293f1d32266c1491d1b95f685eb8385690d2b3f0563db3"
+    },
+    "long_formind_class": {
+      "columns": [
+        "class_id",
+        "transition_type_code",
+        "successor_side_mask",
+        "predecessor_side_mask",
+        "domain_code",
+        "x_min_kind",
+        "x_min_const",
+        "x_max_kind",
+        "x_max_const",
+        "certified_transition_count",
+        "probe_state_count"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/class.csv",
+      "sha256": "04e4dfbd960499f3ed0e944cb8116d70267b81c54054deda0916948fe0aff9a2"
+    },
+    "long_formind_report": {
+      "path": "data/invariants/d20/proof_obligations/long_formind/report.json",
+      "sha256": "3fea3fb53aecde29ff9dc8762a663e6e1f70dff33c1f81c3d64981e85dc0e1a8",
+      "status": "LONG_FORMIND_CERTIFIED"
+    },
+    "long_formind_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_formind/tables.npz",
+      "sha256": "65836005dcb14d304d5d712fabeb30238632ea7cfc70c57a55feaf929031b8d7"
+    },
+    "long_formind_term": {
+      "columns": [
+        "term_id",
+        "class_id",
+        "gap_kind",
+        "coeff_num",
+        "coeff_den",
+        "exp12_n",
+        "exp12_x",
+        "exp12_const",
+        "exp18_n",
+        "exp18_x",
+        "exp18_const",
+        "exp48_n",
+        "exp48_x",
+        "exp48_const"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/term.csv",
+      "sha256": "7e2a9b4e369bde716ab0d06333524bd60ecf7d77c006341cf7f10babbe7175e2"
+    },
+    "long_recind_bridge": {
+      "columns": [
+        "bridge_id",
+        "induction_start",
+        "source_end_sample_count",
+        "seed_count",
+        "transition_count",
+        "transition_type_count",
+        "seed_certificate_count",
+        "transition_certificate_count",
+        "long_suppind_certified_flag",
+        "support_row_count_match_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_recind/bridge.csv",
+      "sha256": "4e9ff5eac4dc38a1488f4b6ae7e5c081a2c4737241629e9b4b37641bc8bc91c0"
+    },
+    "long_recind_report": {
+      "path": "data/invariants/d20/proof_obligations/long_recind/report.json",
+      "sha256": "50ef2c59f486f49e440410433d0a839a5fbeaf5fb6f963b623bb85cb20ee6417",
+      "status": "LONG_RECIND_CERTIFIED"
+    },
+    "long_recind_seed": {
+      "columns": [
+        "seed_id",
+        "support_id",
+        "sample_count",
+        "sum_value",
+        "rule_id",
+        "lower_gap_sign",
+        "lower_gap_zero_flag",
+        "lower_gap_digits",
+        "lower_gap_mod_1000000007",
+        "lower_gap_mod_1000000009",
+        "upper_gap_sign",
+        "upper_gap_zero_flag",
+        "upper_gap_digits",
+        "upper_gap_mod_1000000007",
+        "upper_gap_mod_1000000009",
+        "seed_certificate_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_recind/seed.csv",
+      "sha256": "b90a5008523d8abe77f8bdb9ddb0ad0275c8fd2e367781c9ffee816bf1e1a713"
+    },
+    "long_recind_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_recind/tables.npz",
+      "sha256": "f859f1d17646f8bffd09ef59ad9965778ad794e731975fb7137d77b7885eb16e"
+    },
+    "long_recind_transition": {
+      "columns": [
+        "transition_id",
+        "predecessor_support_id",
+        "successor_support_id",
+        "predecessor_sample_count",
+        "successor_sample_count",
+        "predecessor_sum_value",
+        "successor_sum_value",
+        "predecessor_rule_id",
+        "successor_rule_id",
+        "transition_type_code",
+        "recurrence_factor",
+        "lower_delta_sign",
+        "lower_delta_zero_flag",
+        "lower_delta_digits",
+        "lower_delta_mod_1000000007",
+        "lower_delta_mod_1000000009",
+        "upper_delta_sign",
+        "upper_delta_zero_flag",
+        "upper_delta_digits",
+        "upper_delta_mod_1000000007",
+        "upper_delta_mod_1000000009",
+        "transition_certificate_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_recind/transition.csv",
+      "sha256": "a641383e10124bf2aa57724141ca1bf7d5da813e03497082c58062c5d61f7e96"
+    },
+    "long_recind_type_summary": {
+      "columns": [
+        "transition_type_code",
+        "predecessor_rule_id",
+        "successor_rule_id",
+        "transition_count",
+        "lower_delta_nonnegative_count",
+        "upper_delta_nonnegative_count",
+        "lower_delta_zero_count",
+        "upper_delta_zero_count",
+        "transition_certificate_count",
+        "lower_min_digits",
+        "lower_min_mod_1000000007",
+        "lower_min_mod_1000000009",
+        "upper_min_digits",
+        "upper_min_mod_1000000007",
+        "upper_min_mod_1000000009",
+        "type_certificate_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_recind/type_summary.csv",
+      "sha256": "58b473673d2ef8ca111d3a166162b8259428f1fd3ef2f3e90bb3c324d7a8ea05"
+    },
+    "validator": {
+      "path": "src/certify_long_gapind.py",
+      "sha256": "f325706f7edb35ab10de008f970eca4a79d98e30b06e9abde1b8f993154f857d"
+    }
+  },
+  "next_highest_yield_item": "Build long_llnind: connect the global support-gap induction back to the finite profunctor tensor-lookup LLN objects as a single theorem-level certificate.",
+  "outputs": {
+    "bridge_csv": "data/invariants/d20/proof_obligations/long_gapind/bridge.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_gapind/cert.json",
+    "gapind": "data/invariants/d20/proof_obligations/long_gapind/gapind.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_gapind/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_gapind/obs.csv",
+    "regime_csv": "data/invariants/d20/proof_obligations/long_gapind/regime.csv",
+    "report": "data/invariants/d20/proof_obligations/long_gapind/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_gapind/tables.npz"
+  },
+  "schema": "long.gapind.report@1",
+  "stage_protocol": {
+    "closure": "emit the global support-gap induction assembly while preserving remaining theorem boundaries",
+    "coherence": "check statuses, counts, nonnegative regimes, seam continuity, hashes, and shapes",
+    "draft": "read recind, formind, and domind certificate regimes",
+    "emit": "write long_gapind artifacts and verifier hook",
+    "witness": "align seed, finite recurrence, formula probe, and infinite tail seams"
+  },
+  "status": "LONG_GAPIND_CERTIFIED",
+  "witness": {
+    "classification": "global_support_gap_induction_assembly",
+    "gap_induction": {
+      "bridge_table_sha256": "ca39a8639108aa672d805f980857d5db7b0e2c67858fa407099b5b68b52447e7",
+      "bridge_text_sha256": "0fc3d55d1817466fd20fda84fa2238fef3b06af27c97dc24141c08dbd741dd67",
+      "finite_gap_check_count": 131586,
+      "finite_gap_nonnegative_count": 131586,
+      "finite_transition_count": 16095,
+      "formula_class_count": 13,
+      "formula_count": 26,
+      "probe_state_count": 49665,
+      "recurrence_factor": 12,
+      "seed_state_count": 33,
+      "tail_formula_nonnegative_count": 26
+    },
+    "name": "long_gapind",
+    "observable_table_sha256": "7dbb8a3589acfecf5a66758f3ac023dd7eda358f11c988dab313143f11d09670",
+    "regimes": {
+      "finite_transition_range": [
+        17,
+        127
+      ],
+      "formula_probe_range": [
+        128,
+        256
+      ],
+      "induction_start": 16,
+      "regime_table_sha256": "b25964db799339dd06bbbae5fc412237fbf218b45ef52254457e782175fbd01b",
+      "regime_text_sha256": "de5fedcabec4b22ebaadd62f60319bb3cbdc9f67f5876b14f2faea176528b389",
+      "tail_start": 257
+    }
+  }
+}

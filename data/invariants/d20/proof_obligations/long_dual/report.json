@@ -1,0 +1,149 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5b7955b2c59bcaa3daa8b6eb39879bd6e458ea8d93f573e76c6d05ab3aa31fc2",
+  "checks": {
+    "component_kernel_exact": true,
+    "edge_dual_composition_exact": true,
+    "input_certified": true,
+    "path_dual_exact": true,
+    "table_shapes_match": true,
+    "witness_step_kernel_exact": true
+  },
+  "claim": "long_dual certifies that the long_orient signed coefficient component is a nonzero finite dual kernel on every long_path witness step and every long_comp witness transition. The signed count component is recorded as insufficient: it vanishes on two of the three representative component intervals and only supports 16 of 288 path products.",
+  "closure_boundary": {
+    "certifies": [
+      "signed coefficient kernel values on the three representative witness intervals",
+      "nonzero signed coefficient dual product for all 288 witness paths",
+      "nonzero signed coefficient composition over all 2,840 zeta-composable witness transitions",
+      "the witness transition graph is a loop/nearest-forward chain on components 0, 1, 2"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "that signed counts alone define a witness-support kernel",
+      "semantic C985 associator composition",
+      "full raw-path composition beyond the selected witnesses",
+      "a signed probability theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_dual.py",
+      "sha256": "620aa19196e1ad54e923b2ebd1b9a770a8bf692fea1a42bf9f12a9b9c1f60384"
+    },
+    "long_comp_report": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/report.json",
+      "sha256": "21ade03b25b96dcb4f5671f60c1842ac419402b521b2d5c82d00c0e406c2313d",
+      "status": "LONG_COMP_CERTIFIED"
+    },
+    "long_comp_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/tables.npz",
+      "sha256": "fa6cf5d38c458c26e718bc37d1e5541b83bf6cc38450400af58e9baec05ca5fe"
+    },
+    "long_comp_transition": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/transition.csv",
+      "sha256": "5e33c219dcb19f8066faedcf2040e8ac4f2e10555b1bbb1c2e9e002a829cb8e2"
+    },
+    "long_orient_pair": {
+      "path": "data/invariants/d20/proof_obligations/long_orient/pair.csv",
+      "sha256": "58e57c7874100e55613edf0d869a1b7841762be9c915a238a7344ed59e9d1584"
+    },
+    "long_orient_report": {
+      "path": "data/invariants/d20/proof_obligations/long_orient/report.json",
+      "sha256": "1b5a95d16d12465c49247486b82083a5f150cf29f519eaf3d88d8aef2ebb3dbc",
+      "status": "LONG_ORIENT_CERTIFIED"
+    },
+    "long_orient_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_orient/tables.npz",
+      "sha256": "a0b343c89a9fee7e5d4182620b9e33b3e76d946ace5ee5887f30475bbff71734"
+    },
+    "long_path_path": {
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "long_sheaf_report": {
+      "path": "data/invariants/d20/proof_obligations/long_sheaf/report.json",
+      "sha256": "864e4b1dd92cb54c5f2084d7cd4b714321927487b33368582d9d5827af45b73f",
+      "status": "LONG_SHEAF_CERTIFIED"
+    },
+    "long_sheaf_section": {
+      "path": "data/invariants/d20/proof_obligations/long_sheaf/section.csv",
+      "sha256": "b871a9350774ac1d98c95b4e5e8fb1731665b5fc5c594c789dfa80a7aabafc0a"
+    },
+    "long_sheaf_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_sheaf/tables.npz",
+      "sha256": "4dbffb78237fc6f97034b0ab0f86dce684a2bcc3b90fbcfacec0d07966ed80b8"
+    },
+    "validator": {
+      "path": "src/certify_long_dual.py",
+      "sha256": "2d28df42c6c46a16d405f4e64c0effd4087a94e3aa922d6fe97abce74f08d9ff"
+    }
+  },
+  "next_highest_yield_item": "Build long_prob: normalize the coefficient-dual kernel into finite path measures and test the LLN variance decomposition on the witness chain.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_dual/cert.json",
+    "component_csv": "data/invariants/d20/proof_obligations/long_dual/component.csv",
+    "dual": "data/invariants/d20/proof_obligations/long_dual/dual.json",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_dual/edge.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_dual/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_dual/obs.csv",
+    "path_csv": "data/invariants/d20/proof_obligations/long_dual/path.csv",
+    "report": "data/invariants/d20/proof_obligations/long_dual/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_dual/tables.npz"
+  },
+  "schema": "long.dual.report@1",
+  "stage_protocol": {
+    "closure": "emit coefficient-dual kernel while recording count-kernel failure",
+    "coherence": "check nonzero path products, transition composition, chain-edge shape, statuses, hashes, and shapes",
+    "draft": "read long_orient pair split, long_sheaf witness sections, long_path paths, and long_comp transitions",
+    "emit": "write long_dual artifacts and verifier hook",
+    "witness": "restrict the signed coefficient component to the three representative path intervals"
+  },
+  "status": "LONG_DUAL_CERTIFIED",
+  "witness": {
+    "classification": "coefficient_dual_kernel_on_witness_paths",
+    "component_table_sha256": "df2c01dcc64494844bfa35e47bc81a288d618ed80f88a7e067a081d06918e489",
+    "component_text_sha256": "1c9ea8852da6f0aad1086cf2a405f988b450d6b794a8ed23c2032321c1be1bc1",
+    "kernel": {
+      "coefficient_kernel_nonzero_on_all_witness_steps": true,
+      "component_signed_coeff_gcd": 6,
+      "component_signed_coeffs": [
+        12,
+        18,
+        48
+      ],
+      "count_kernel_nonzero_on_all_witness_steps": false
+    },
+    "name": "long_dual",
+    "observable_table_sha256": "93115ecf4f75127a438647d8a48bd06d6469ebf988a873e3c6536f425f878921",
+    "path_composition": {
+      "dual_coeff_path_sum_max": 768,
+      "dual_coeff_path_sum_min": 12,
+      "dual_coeff_product_digit_max": 27,
+      "dual_path_coeff_nonzero_count": 288,
+      "dual_path_count_nonzero_count": 16,
+      "dual_path_positive_count": 288,
+      "path_table_sha256": "ff1f3aca649714e7e153db5ef8dfa9f79f9b56abe71761741f61bce2cdd133df",
+      "path_text_sha256": "eaf5b4990be57597ddb7ac1dc5ba9e02e73bab0de938225544132a35165a5b87",
+      "witness_path_count": 288
+    },
+    "transition_composition": {
+      "dual_edge_product_sum": 2196000,
+      "dual_transition_compose_count": 2840,
+      "edge_backward_count": 0,
+      "edge_chain_flag_count": 5,
+      "edge_row_count": 5,
+      "edge_skip_count": 0,
+      "edge_table_sha256": "35d876f39a04cb60afea96ef7b07d1439e5781daf8da152a9c91ee7090db9292",
+      "edge_text_sha256": "de3efed95e3f17d3e03af0037458e5177b9cd44da278520dbaa808bb7d466acc",
+      "transition_count": 2840
+    }
+  }
+}

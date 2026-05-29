@@ -1,0 +1,95 @@
+{
+  "checks": {
+    "finite_lln_moments_exact": true,
+    "frontier_moments_exact": true,
+    "line_size_matches_basis": true,
+    "long_basis_input_certified": true,
+    "owner_frontier_regenerates_long_basis": true,
+    "owner_grid_complete": true,
+    "owner_partition_exact": true,
+    "table_shapes_match": true,
+    "transition_boundary_exact": true,
+    "transition_graph_exact": true,
+    "transition_kernel_is_symmetric_and_total": true,
+    "weak_transition_exact": true
+  },
+  "schema": "long.rec.cert@1",
+  "status": "LONG_REC_CERTIFIED",
+  "witness": {
+    "classification": "finite_alexandrov_line_basis_transition_kernel",
+    "finite_lln": {
+      "edge_event_rule": "for edge boundary count m among B contacts, Var(mean_k)=m*(B-m)/(B^2*k)",
+      "edge_lln_var_den": 328225689,
+      "edge_sample_space": "undirected owner boundary contacts",
+      "owner_event_rule": "for owner count m among N cells, Var(mean_k)=m*(N-m)/(N^2*k)",
+      "owner_lln_var_den": 941336550625,
+      "owner_sample_space": "985^2 source-pair frontier cells"
+    },
+    "frontier_moments": {
+      "frontier_max": 893,
+      "frontier_min": 0,
+      "frontier_square_sum": 233520639830,
+      "frontier_sum": 404111708,
+      "owner_frontier_sha256": "c8a9b0108b6a3fcbbf9e0cfb2313afea2a1228a94e068c4161e90a2bc967b2e0"
+    },
+    "line": {
+      "basis_count": 259,
+      "frontier_cell_count": 970225,
+      "point_count": 985
+    },
+    "name": "long_rec",
+    "observable_table_sha256": "633f96499b97563e43b2fd3f8bd5ae5d3dedd208701a25cc1ebe5a48084ccf5f",
+    "owner_partition": {
+      "active_owner_count": 259,
+      "owner_cell_count_max": 197910,
+      "owner_cell_count_min": 1,
+      "owner_grid_sha256": "608b99831d44e613c6d851e09927b4f927f8ab7d20474736dc25f4eb8a3ca300",
+      "owner_table_sha256": "34da7e2f7c12daaf638e2fba99d4db0138e76ffaca9764d18c59b5db34295e3b",
+      "rule": "each source-pair cell is owned by the lowest-target basis generator covering it; ties keep the lowest basis id"
+    },
+    "transition_kernel": {
+      "boundary_contacts": 18117,
+      "component_count": 1,
+      "component_max_size": 259,
+      "degree_range": [
+        3,
+        13
+      ],
+      "directed_boundary_contacts": 36234,
+      "edge_count": 642,
+      "edge_table_sha256": "f1e9f38637a0b8aea0a96cbec7bd7452c54341763496da6c247d963ca5c4412d",
+      "node_count": 259,
+      "row_positive": true,
+      "rule": "two generators are adjacent when their owned frontier cells share a source0 or source1 grid boundary",
+      "source0_boundary_contacts": 12707,
+      "source1_boundary_contacts": 5410,
+      "symmetric": true,
+      "weighted_degree_range": [
+        3,
+        1736
+      ]
+    },
+    "weak_transition": {
+      "classes": [
+        "eq_abc",
+        "eq_ab_lt_c",
+        "eq_ab_gt_c",
+        "eq_ac_lt_b",
+        "eq_ac_gt_b",
+        "eq_bc_lt_a",
+        "eq_bc_gt_a",
+        "lt_abc",
+        "lt_acb",
+        "lt_bac",
+        "lt_bca",
+        "lt_cab",
+        "lt_cba"
+      ],
+      "owner_cell_count_max": 718941,
+      "owner_class_count": 5,
+      "weak_edge_class_pair_count": 8,
+      "weak_edge_table_sha256": "9b0c66ecf4a5d7c585c536ec3b9e87c7bc79b3174f97ce6596bf807530545a25",
+      "weak_owner_table_sha256": "ce0df090726cc28d5986aa79e8fed3c80aa42ef85418fb47493bf465c487a47e"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "bridge_owner_fingerprint": true,
+    "bridge_projection_is_total_and_closed": true,
+    "bridge_source_fingerprint": true,
+    "bridge_transition_fingerprint": true,
+    "eta6_inputs_certified": true,
+    "gate_ids_match_eta6_core": true,
+    "table_shapes_match": true
+  },
+  "schema": "long.eta.cert@1",
+  "status": "LONG_ETA_CERTIFIED",
+  "witness": {
+    "bridge_scope": {
+      "kind": "sample_level_f_address_projection",
+      "rule": "for each p21 gate p5 row, use its p5 f4_row_id to read the eta6_f4 sampled C985 relation addresses, then project the four sampled source pairs into long_rec owner cells",
+      "semantic_limit": "this does not claim all eta6 support rows or all future recouplings are covered by the sampled bridge"
+    },
+    "classification": "eta6_gate_sample_bridge_to_long_rec",
+    "gate": {
+      "eta6_preserved_gate_count": 6,
+      "f4_sample_row_count": 6,
+      "face_count": 3,
+      "gate_count": 6,
+      "label_mask_count": 3,
+      "p5_ids": [
+        1,
+        47,
+        57,
+        79,
+        110,
+        128
+      ]
+    },
+    "name": "long_eta",
+    "observable_table_sha256": "a058620b90e4bb6b78c7fd90269f4054c0ec582c66e9047ec7846f9215ee12e6",
+    "owners": {
+      "bridge_owner_ids_sha256": "d87ad6813a14d17741d6b317aceb1f853cf4ed6e2b1ff4ea89daac644012b20c",
+      "component_count": 1,
+      "owner_bridge_table_sha256": "9ec0dacca016a5fee8b44418f961289b62450c7b4ba876455add38e50b4d7be7",
+      "owner_cell_mass": 726003,
+      "unique_owner_count": 11,
+      "weak_class_count": 2,
+      "weak_counts": {
+        "11": 22,
+        "12": 2
+      }
+    },
+    "projection": {
+      "bridge_pair_cell_count": 24,
+      "bridge_table_sha256": "614eaa00a7880b257130ee437d573178e22d928040dad6f92c43dc89537f9964",
+      "closure_pass_count": 24,
+      "closure_slack_range": [
+        0,
+        176
+      ],
+      "closure_slack_sum": 774,
+      "gate_table_sha256": "74a51ddeafe6e0044613b93125ae9a8ac0eb561136ded41ac4eaa26cd0ade0ea",
+      "pair_roles": [
+        "left_inner",
+        "left_outer",
+        "right_inner",
+        "right_outer"
+      ]
+    },
+    "transition": {
+      "gate_span_distance_max": 9,
+      "gate_span_distance_sum": 71,
+      "induced_boundary_count": 2620,
+      "induced_edge_count": 6,
+      "induced_edge_table_sha256": "7d924509f3e29e4f557292c4cc8aeb4d2b41a153d3ee3a8f4a715cd6da6fb63c",
+      "unique_owner_distance_range": [
+        1,
+        10
+      ],
+      "unique_owner_distance_sum": 258,
+      "unique_owner_pair_count": 55
+    }
+  }
+}

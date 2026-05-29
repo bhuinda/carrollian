@@ -1,0 +1,138 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "de3a7ac586b3e621e69ec9c45bc3e2d9512e56a7826e6786bdf48d32705ec298",
+  "checks": {
+    "chernoff_fingerprint_exact": true,
+    "distribution_fingerprint_exact": true,
+    "input_certified": true,
+    "moment_fingerprint_exact": true,
+    "table_shapes_match": true,
+    "tail_fingerprint_exact": true,
+    "tilt_fingerprint_exact": true
+  },
+  "claim": "long_dev certifies the exact finite path-sum laws of the long_markov boundary observable through horizon 8, raw moment fingerprints through order 4, tilted moment generating fingerprints for q=1/2,2,3, and explicit finite Chernoff-style tail bounds with nonnegative exact gaps.",
+  "closure_boundary": {
+    "certifies": [
+      "the exact finite distribution of S_n through n=8",
+      "raw moments through order four for each finite horizon",
+      "tilted moment generating fingerprints at q=1/2, q=2, and q=3",
+      "finite Chernoff-style lower and upper tail bounds with exact nonnegative gaps"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "optimized continuous Chernoff rates over all q",
+      "asymptotic large-deviation principles",
+      "support-changing recouplings outside the long_rec owner graph",
+      "a universal eta6 horizon theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_dev.py",
+      "sha256": "1684120b416c7a50d4183a3bdcd705716f2ca9feb90cf3b15f0a4873b491887d"
+    },
+    "long_markov_kernel": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/kernel.csv",
+      "sha256": "28ced368612f1b7608c3116aafc71574b3033229ec979c18c04f699ac37e26b5"
+    },
+    "long_markov_report": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/report.json",
+      "sha256": "afa2bc3e8e131e464d07091af7bcb2b0c705fb2e711371897d7149a5bdb851f2",
+      "status": "LONG_MARKOV_CERTIFIED"
+    },
+    "long_markov_stationary": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/stationary.csv",
+      "sha256": "1bde2deecd1df9ff92f129d5497d88f02c43d1f9d595f8d200cc11ebbcf07e1d"
+    },
+    "long_markov_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/tables.npz",
+      "sha256": "ec3ca047639b909b8ed4566b7f9dd3f4d5f1eaf225cb19178dfe38c9d2217ae6"
+    },
+    "validator": {
+      "path": "src/certify_long_dev.py",
+      "sha256": "c634da157e0de5dbf3932b06de3665e898e670c7290b46e085403ea4e0a5b6e7"
+    }
+  },
+  "next_highest_yield_item": "Build long_prof: package the long-chain kernels as explicit finite profunctors between line, owner, boundary, Markov, and deviation addresses so the LLN derivation can be read as tensor lookup composition.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_dev/cert.json",
+    "chernoff_csv": "data/invariants/d20/proof_obligations/long_dev/chernoff.csv",
+    "dev": "data/invariants/d20/proof_obligations/long_dev/dev.json",
+    "distribution_csv": "data/invariants/d20/proof_obligations/long_dev/distribution.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_dev/manifest.json",
+    "moment_csv": "data/invariants/d20/proof_obligations/long_dev/moment.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_dev/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_dev/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_dev/tables.npz",
+    "tail_csv": "data/invariants/d20/proof_obligations/long_dev/tail.csv",
+    "tilt_csv": "data/invariants/d20/proof_obligations/long_dev/tilt.csv"
+  },
+  "schema": "long.dev.report@1",
+  "stage_protocol": {
+    "closure": "emit distribution, moment, tilt, tail, Chernoff, table, certificate, manifest, and report artifacts",
+    "coherence": "check distribution sums, support, moments, tilts, tails, Chernoff gaps, and hashes",
+    "draft": "take long_markov's exact kernel and stationary law",
+    "emit": "write long_dev artifacts and verifier hook",
+    "witness": "dynamic-program exact distributions for S_n through n=8"
+  },
+  "status": "LONG_DEV_CERTIFIED",
+  "witness": {
+    "chernoff": {
+      "digest_table_sha256": "79043642a7333b922bc2fba8e8c4a35c2a1d42d6b0a8a7a891f63a70a5802da2",
+      "fraction_text_sha256": "d74e1e0c3c973175017decb4e79577445b85fec2f745aa4667994ac2328c3550",
+      "gap_nonnegative": true,
+      "row_count": 16
+    },
+    "classification": "long_markov_finite_path_sum_deviation_kernel",
+    "distribution": {
+      "digest_table_sha256": "2dfea5bee5bb2aa5501818057f6dffcee33d03accb9abf60bbcd9980f82e47e4",
+      "fraction_text_sha256": "9298c8d0100769d65e0432c21d09c37e48ddb718475d5f532bfc65e81ff5b66e",
+      "full_support": true,
+      "row_count": 80,
+      "sum_one": true
+    },
+    "moments": {
+      "digest_table_sha256": "c145a964f9602e23bb6868f078c577279be3de2a8e6a77b7a3ea8b0390121745",
+      "first_moment_linear": true,
+      "fraction_text_sha256": "3a6e0b3831d10559fe27508ca1196a53b72d10d9e2f2e38999eff837a77c0838",
+      "moment_order_max": 4,
+      "row_count": 32
+    },
+    "name": "long_dev",
+    "observable_table_sha256": "162c100b3b0fee01ab2c316855182bc517a0276fe0c374f21506738f9c2f0557",
+    "scope": {
+      "observable": "component_value in {0,1,2}",
+      "sample_horizon": 8,
+      "source": "long_markov reversible boundary kernel",
+      "tail_rules": {
+        "lower_tail": "S_n <= floor(n/2), bounded with q=1/2",
+        "upper_tail": "S_n >= ceil(3n/2), bounded with q=2"
+      }
+    },
+    "tails": {
+      "digest_table_sha256": "767a6639df75318cb05a805a6837cc135b259ed8cac67c4a78bd5d6cf3943cd0",
+      "fraction_text_sha256": "4002870068ef1f0f5989e4765524800e536cdd1b76b55fc6626e4e4bc4487bfb",
+      "row_count": 16
+    },
+    "tilts": {
+      "digest_table_sha256": "6f2d41238c08ff5f98abdd205e2bc23055644e74ceceaebc8eab39980a4b9f0e",
+      "fraction_text_sha256": "7513e77f2b3601a7d26b3cb3d0dea1131f4836975e811225354b02b8b86639ce",
+      "tilt_values": [
+        {
+          "q_den": 2,
+          "q_num": 1,
+          "tilt_id": 0
+        },
+        {
+          "q_den": 1,
+          "q_num": 2,
+          "tilt_id": 1
+        },
+        {
+          "q_den": 1,
+          "q_num": 3,
+          "tilt_id": 2
+        }
+      ]
+    }
+  }
+}

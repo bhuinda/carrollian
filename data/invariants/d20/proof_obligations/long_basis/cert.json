@@ -1,0 +1,100 @@
+{
+  "checks": {
+    "line_size_matches_tensor_addresses": true,
+    "long_kern_input_certified": true,
+    "long_tri_input_certified": true,
+    "pair_basis_is_irredundant": true,
+    "pair_basis_regenerates_pair_closures": true,
+    "raw_tensor_shape": true,
+    "table_shapes_match": true,
+    "tri_basis_exact_fingerprint": true,
+    "tri_basis_is_irredundant": true,
+    "tri_basis_regenerates_full_frontier": true,
+    "tri_closure_matches_long_tri": true
+  },
+  "schema": "long.basis.cert@1",
+  "status": "LONG_BASIS_CERTIFIED",
+  "witness": {
+    "classification": "finite_alexandrov_line_closure_basis",
+    "closure": {
+      "closure_size": 551559917,
+      "frontier_max": 893,
+      "frontier_min": 0,
+      "frontier_pair_count": 970225
+    },
+    "line": {
+      "domain_word_count": 955671625,
+      "point_count": 985,
+      "tensor_support_count": 1414965
+    },
+    "name": "long_basis",
+    "observable_table_sha256": "ab60890cede18bb1c82089d11f653057e71c6d518bd26b485001eccdce5ed157",
+    "pair_basis": {
+      "basis_counts": [
+        6,
+        6,
+        6
+      ],
+      "basis_pair_closures_sha256": "67a372243364c89baf3e22de8a0a678658521b675129687ab29f644e9b2ef47a",
+      "basis_total": 18,
+      "irredundant": true,
+      "pair_basis_table_sha256": "25e7afc90fb8f06270dac2ed945c7356da8ec512a5f05d854b234f5eda815668",
+      "regenerates_pair_closures": true,
+      "rule": "keep observed pair points not dominated by a higher source with a lower-or-equal target"
+    },
+    "ternary_basis": {
+      "basis_count": 259,
+      "basis_frontier_sha256": "c8a9b0108b6a3fcbbf9e0cfb2313afea2a1228a94e068c4161e90a2bc967b2e0",
+      "basis_square_sum": 5366,
+      "basis_weight_sum": 596,
+      "irredundant": true,
+      "output_max_multiplicity": 5,
+      "output_support_count": 164,
+      "regenerates_frontier": true,
+      "rule": "keep support triples not dominated by any larger source pair with an equal-or-lower target",
+      "source0_range": [
+        118,
+        984
+      ],
+      "source1_range": [
+        714,
+        984
+      ],
+      "target_range": [
+        0,
+        893
+      ],
+      "tri_basis_table_sha256": "8f897f36e6dcbb11bae5fbc38e46dadd889f8f606f4820484cca0f7bb58671da",
+      "weak_class_counts": [
+        0,
+        0,
+        1,
+        5,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        185,
+        67
+      ],
+      "weak_classes": [
+        "eq_abc",
+        "eq_ab_lt_c",
+        "eq_ab_gt_c",
+        "eq_ac_lt_b",
+        "eq_ac_gt_b",
+        "eq_bc_lt_a",
+        "eq_bc_gt_a",
+        "lt_abc",
+        "lt_acb",
+        "lt_bac",
+        "lt_bca",
+        "lt_cab",
+        "lt_cba"
+      ]
+    }
+  }
+}

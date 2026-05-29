@@ -183,6 +183,54 @@ the practical verification modes without hiding file writes behind a default:
 * eta6-p38: validate the eta6 p38 p37-branch-bound screen;
 * eta6-p39: validate the eta6 p39 packed top-32768 basin screen;
 * eta6-p40: validate the eta6 p40 top-131072 branch envelope;
+* eta6-core: validate the compact eta6 structural spine certificate;
+* long-lln: validate the finite Alexandrov-line tensor lookup LLN certificate;
+* long-kern: validate finite Alexandrov-line support kernels and principal-open LLN profiles;
+* long-tri: validate the ternary Alexandrov closure and weak-order LLN profiles;
+* long-basis: validate the irredundant closure basis for the finite line lookup;
+* long-rec: validate the basis-owner transition kernel for the finite line lookup;
+* long-eta: validate the eta6 gate sample bridge into the finite line transition kernel;
+* long-eta2: validate the full p21 gate support-fiber projection into the finite line transition kernel;
+* long-lap: validate the eta6 active-owner Laplacian/conductance certificate;
+* long-cut: validate the eta6 active-owner cut/effective-resistance certificate;
+* long-flow: validate the ambient leakage shell-flow certificate around the eta6 active owners;
+* long-absorb: validate the inactive-owner absorbing Dirichlet kernel around the eta6 active owners;
+* long-spec: validate the reduced three-terminal Schur/spectral boundary certificate;
+* long-markov: validate the reversible boundary Markov/finite-LLN certificate;
+* long-dev: validate the finite path-sum deviation/Chernoff certificate;
+* long-prof: validate the finite profunctor tensor-lookup chain certificate;
+* long-rate: validate the finite rational cumulant/rate certificate;
+* long-conv: validate the finite stateful convolution tensor-lookup certificate;
+* long-cls: validate the finite concentration/LLN shrinkage certificate;
+* long-univ: validate the finite universal LLN profunctor diagram certificate;
+* long-min: validate the finite universal LLN forcing-basis certificate;
+* long-nat: validate the finite universal LLN naturality dependency certificate;
+* long-hlim: validate the finite LLN horizon-limit obstruction certificate;
+* long-ext: validate the finite LLN formal profunctor-extension certificate;
+* long-obj: validate the finite LLN tensor-object gap certificate;
+* long-tens: validate the finite LLN component-path tensor expansion gap certificate;
+* long-lift: validate the finite LLN owner/component tensor-lift quotient certificate;
+* long-raw: validate the finite LLN raw-owner support lift certificate;
+* long-path: validate the finite LLN explicit raw product path witness certificate;
+* long-comp: validate the finite LLN Alexandrov-zeta composable path certificate;
+* long-sheaf: validate the finite LLN Alexandrov interval-support sheaf certificate;
+* long-all: validate the finite LLN full raw oriented interval-sheaf certificate;
+* long-orient: validate the finite LLN orientation-duality Mobius split certificate;
+* long-dual: validate the finite LLN coefficient-dual witness-kernel certificate;
+* long-prob: validate the finite LLN dual probability and variance-decomposition certificate;
+* long-mart: validate the finite LLN conditional transport/martingale-boundary certificate;
+* long-stop: validate the finite LLN stopped-tail transport certificate;
+* long-dlim: validate the finite LLN drift-limit obstruction certificate;
+* long-linf: validate the finite LLN lifted eventual-cone certificate;
+* long-ind: validate the finite LLN symbolic drift-margin induction schema;
+* long-suppind: validate the finite LLN support-shift cumulative inequality certificate;
+* long-recind: validate the finite LLN support-gap recurrence graph certificate;
+* long-formind: validate the finite LLN recurrence formula-index certificate;
+* long-domind: validate the finite LLN recurrence tail-dominance certificate;
+* long-gapind: validate the finite LLN global support-gap induction assembly;
+* long-llnind: validate the finite LLN tensor-lookup induction bridge;
+* long-thm: validate the finite LLN theorem-status certificate;
+* long-inv: validate the finite-line invariant inventory certificate;
 * c985-signature-aperture-closure-tail-sixj-2114-neighborhood: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal 2114 neighborhood screen;
 * c985-signature-aperture-closure-tail-sixj-2114-triple: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal 2114 triple screen;
 * token-burn: validate bounded-output guard coverage for repo-defined runners;
@@ -4402,6 +4450,822 @@ def eta6_p40(
     return finish(result, pretty)
 
 
+def eta6_core(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_eta6_core import validate_eta6_core
+
+    try:
+        result = validate_eta6_core()
+    except Exception as exc:
+        result = {
+            "schema": "eta6.core.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_lln(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_lln import validate_long_lln
+
+    try:
+        result = validate_long_lln()
+    except Exception as exc:
+        result = {
+            "schema": "long.lln.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_kern(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_kern import validate_long_kern
+
+    try:
+        result = validate_long_kern()
+    except Exception as exc:
+        result = {
+            "schema": "long.kern.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_tri(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_tri import validate_long_tri
+
+    try:
+        result = validate_long_tri()
+    except Exception as exc:
+        result = {
+            "schema": "long.tri.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_basis(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_basis import validate_long_basis
+
+    try:
+        result = validate_long_basis()
+    except Exception as exc:
+        result = {
+            "schema": "long.basis.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_rec(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_rec import validate_long_rec
+
+    try:
+        result = validate_long_rec()
+    except Exception as exc:
+        result = {
+            "schema": "long.rec.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_eta(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_eta import validate_long_eta
+
+    try:
+        result = validate_long_eta()
+    except Exception as exc:
+        result = {
+            "schema": "long.eta.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_eta2(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_eta2 import validate_long_eta2
+
+    try:
+        result = validate_long_eta2()
+    except Exception as exc:
+        result = {
+            "schema": "long.eta2.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_lap(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_lap import validate_long_lap
+
+    try:
+        result = validate_long_lap()
+    except Exception as exc:
+        result = {
+            "schema": "long.lap.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_cut(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_cut import validate_long_cut
+
+    try:
+        result = validate_long_cut()
+    except Exception as exc:
+        result = {
+            "schema": "long.cut.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_flow(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_flow import validate_long_flow
+
+    try:
+        result = validate_long_flow()
+    except Exception as exc:
+        result = {
+            "schema": "long.flow.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_absorb(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_absorb import validate_long_absorb
+
+    try:
+        result = validate_long_absorb()
+    except Exception as exc:
+        result = {
+            "schema": "long.absorb.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_spec(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_spec import validate_long_spec
+
+    try:
+        result = validate_long_spec()
+    except Exception as exc:
+        result = {
+            "schema": "long.spec.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_markov(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_markov import validate_long_markov
+
+    try:
+        result = validate_long_markov()
+    except Exception as exc:
+        result = {
+            "schema": "long.markov.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_dev(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_dev import validate_long_dev
+
+    try:
+        result = validate_long_dev()
+    except Exception as exc:
+        result = {
+            "schema": "long.dev.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_prof(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_prof import validate_long_prof
+
+    try:
+        result = validate_long_prof()
+    except Exception as exc:
+        result = {
+            "schema": "long.prof.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_rate(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_rate import validate_long_rate
+
+    try:
+        result = validate_long_rate()
+    except Exception as exc:
+        result = {
+            "schema": "long.rate.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_conv(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_conv import validate_long_conv
+
+    try:
+        result = validate_long_conv()
+    except Exception as exc:
+        result = {
+            "schema": "long.conv.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_cls(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_cls import validate_long_cls
+
+    try:
+        result = validate_long_cls()
+    except Exception as exc:
+        result = {
+            "schema": "long.cls.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_univ(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_univ import validate_long_univ
+
+    try:
+        result = validate_long_univ()
+    except Exception as exc:
+        result = {
+            "schema": "long.univ.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_min(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_min import validate_long_min
+
+    try:
+        result = validate_long_min()
+    except Exception as exc:
+        result = {
+            "schema": "long.min.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_nat(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_nat import validate_long_nat
+
+    try:
+        result = validate_long_nat()
+    except Exception as exc:
+        result = {
+            "schema": "long.nat.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hlim(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hlim import validate_long_hlim
+
+    try:
+        result = validate_long_hlim()
+    except Exception as exc:
+        result = {
+            "schema": "long.hlim.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_ext(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_ext import validate_long_ext
+
+    try:
+        result = validate_long_ext()
+    except Exception as exc:
+        result = {
+            "schema": "long.ext.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_obj(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_obj import validate_long_obj
+
+    try:
+        result = validate_long_obj()
+    except Exception as exc:
+        result = {
+            "schema": "long.obj.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_tens(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_tens import validate_long_tens
+
+    try:
+        result = validate_long_tens()
+    except Exception as exc:
+        result = {
+            "schema": "long.tens.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_lift(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_lift import validate_long_lift
+
+    try:
+        result = validate_long_lift()
+    except Exception as exc:
+        result = {
+            "schema": "long.lift.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_raw(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_raw import validate_long_raw
+
+    try:
+        result = validate_long_raw()
+    except Exception as exc:
+        result = {
+            "schema": "long.raw.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_path(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_path import validate_long_path
+
+    try:
+        result = validate_long_path()
+    except Exception as exc:
+        result = {
+            "schema": "long.path.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_comp(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_comp import validate_long_comp
+
+    try:
+        result = validate_long_comp()
+    except Exception as exc:
+        result = {
+            "schema": "long.comp.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_sheaf(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_sheaf import validate_long_sheaf
+
+    try:
+        result = validate_long_sheaf()
+    except Exception as exc:
+        result = {
+            "schema": "long.sheaf.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_all(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_all import validate_long_all
+
+    try:
+        result = validate_long_all()
+    except Exception as exc:
+        result = {
+            "schema": "long.all.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_orient(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_orient import validate_long_orient
+
+    try:
+        result = validate_long_orient()
+    except Exception as exc:
+        result = {
+            "schema": "long.orient.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_dual(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_dual import validate_long_dual
+
+    try:
+        result = validate_long_dual()
+    except Exception as exc:
+        result = {
+            "schema": "long.dual.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_prob(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_prob import validate_long_prob
+
+    try:
+        result = validate_long_prob()
+    except Exception as exc:
+        result = {
+            "schema": "long.prob.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_mart(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_mart import validate_long_mart
+
+    try:
+        result = validate_long_mart()
+    except Exception as exc:
+        result = {
+            "schema": "long.mart.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_stop(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_stop import validate_long_stop
+
+    try:
+        result = validate_long_stop()
+    except Exception as exc:
+        result = {
+            "schema": "long.stop.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_dlim(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_dlim import validate_long_dlim
+
+    try:
+        result = validate_long_dlim()
+    except Exception as exc:
+        result = {
+            "schema": "long.dlim.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_linf(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_linf import validate_long_linf
+
+    try:
+        result = validate_long_linf()
+    except Exception as exc:
+        result = {
+            "schema": "long.linf.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_ind(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_ind import validate_long_ind
+
+    try:
+        result = validate_long_ind()
+    except Exception as exc:
+        result = {
+            "schema": "long.ind.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_suppind(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_suppind import validate_long_suppind
+
+    try:
+        result = validate_long_suppind()
+    except Exception as exc:
+        result = {
+            "schema": "long.suppind.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_recind(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_recind import validate_long_recind
+
+    try:
+        result = validate_long_recind()
+    except Exception as exc:
+        result = {
+            "schema": "long.recind.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_formind(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_formind import validate_long_formind
+
+    try:
+        result = validate_long_formind()
+    except Exception as exc:
+        result = {
+            "schema": "long.formind.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_domind(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_domind import validate_long_domind
+
+    try:
+        result = validate_long_domind()
+    except Exception as exc:
+        result = {
+            "schema": "long.domind.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_gapind(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_gapind import validate_long_gapind
+
+    try:
+        result = validate_long_gapind()
+    except Exception as exc:
+        result = {
+            "schema": "long.gapind.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_llnind(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_llnind import validate_long_llnind
+
+    try:
+        result = validate_long_llnind()
+    except Exception as exc:
+        result = {
+            "schema": "long.llnind.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_thm(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_thm import validate_long_thm
+
+    try:
+        result = validate_long_thm()
+    except Exception as exc:
+        result = {
+            "schema": "long.thm.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_inv(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_inv import validate_long_inv
+
+    try:
+        result = validate_long_inv()
+    except Exception as exc:
+        result = {
+            "schema": "long.inv.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def c985_signature_aperture_closure_tail_sixj_2114_neighborhood(
     *,
     pretty: bool,
@@ -4632,6 +5496,54 @@ def main() -> None:
         "eta6-p38",
         "eta6-p39",
         "eta6-p40",
+        "eta6-core",
+        "long-lln",
+        "long-kern",
+        "long-tri",
+        "long-basis",
+        "long-rec",
+        "long-eta",
+        "long-eta2",
+        "long-lap",
+        "long-cut",
+        "long-flow",
+        "long-absorb",
+        "long-spec",
+        "long-markov",
+        "long-dev",
+        "long-prof",
+        "long-rate",
+        "long-conv",
+        "long-cls",
+        "long-univ",
+        "long-min",
+        "long-nat",
+        "long-hlim",
+        "long-ext",
+        "long-obj",
+        "long-tens",
+        "long-lift",
+        "long-raw",
+        "long-path",
+        "long-comp",
+        "long-sheaf",
+        "long-all",
+        "long-orient",
+        "long-dual",
+        "long-prob",
+        "long-mart",
+        "long-stop",
+        "long-dlim",
+        "long-linf",
+        "long-ind",
+        "long-suppind",
+        "long-recind",
+        "long-formind",
+        "long-domind",
+        "long-gapind",
+        "long-llnind",
+        "long-thm",
+        "long-inv",
         "c985-signature-aperture-closure-tail-sixj-2114-neighborhood",
         "c985-signature-aperture-closure-tail-sixj-2114-triple",
         "token-burn",
@@ -5135,6 +6047,102 @@ def main() -> None:
         raise SystemExit(eta6_p39(pretty=args.pretty))
     if args.command == "eta6-p40":
         raise SystemExit(eta6_p40(pretty=args.pretty))
+    if args.command == "eta6-core":
+        raise SystemExit(eta6_core(pretty=args.pretty))
+    if args.command == "long-lln":
+        raise SystemExit(long_lln(pretty=args.pretty))
+    if args.command == "long-kern":
+        raise SystemExit(long_kern(pretty=args.pretty))
+    if args.command == "long-tri":
+        raise SystemExit(long_tri(pretty=args.pretty))
+    if args.command == "long-basis":
+        raise SystemExit(long_basis(pretty=args.pretty))
+    if args.command == "long-rec":
+        raise SystemExit(long_rec(pretty=args.pretty))
+    if args.command == "long-eta":
+        raise SystemExit(long_eta(pretty=args.pretty))
+    if args.command == "long-eta2":
+        raise SystemExit(long_eta2(pretty=args.pretty))
+    if args.command == "long-lap":
+        raise SystemExit(long_lap(pretty=args.pretty))
+    if args.command == "long-cut":
+        raise SystemExit(long_cut(pretty=args.pretty))
+    if args.command == "long-flow":
+        raise SystemExit(long_flow(pretty=args.pretty))
+    if args.command == "long-absorb":
+        raise SystemExit(long_absorb(pretty=args.pretty))
+    if args.command == "long-spec":
+        raise SystemExit(long_spec(pretty=args.pretty))
+    if args.command == "long-markov":
+        raise SystemExit(long_markov(pretty=args.pretty))
+    if args.command == "long-dev":
+        raise SystemExit(long_dev(pretty=args.pretty))
+    if args.command == "long-prof":
+        raise SystemExit(long_prof(pretty=args.pretty))
+    if args.command == "long-rate":
+        raise SystemExit(long_rate(pretty=args.pretty))
+    if args.command == "long-conv":
+        raise SystemExit(long_conv(pretty=args.pretty))
+    if args.command == "long-cls":
+        raise SystemExit(long_cls(pretty=args.pretty))
+    if args.command == "long-univ":
+        raise SystemExit(long_univ(pretty=args.pretty))
+    if args.command == "long-min":
+        raise SystemExit(long_min(pretty=args.pretty))
+    if args.command == "long-nat":
+        raise SystemExit(long_nat(pretty=args.pretty))
+    if args.command == "long-hlim":
+        raise SystemExit(long_hlim(pretty=args.pretty))
+    if args.command == "long-ext":
+        raise SystemExit(long_ext(pretty=args.pretty))
+    if args.command == "long-obj":
+        raise SystemExit(long_obj(pretty=args.pretty))
+    if args.command == "long-tens":
+        raise SystemExit(long_tens(pretty=args.pretty))
+    if args.command == "long-lift":
+        raise SystemExit(long_lift(pretty=args.pretty))
+    if args.command == "long-raw":
+        raise SystemExit(long_raw(pretty=args.pretty))
+    if args.command == "long-path":
+        raise SystemExit(long_path(pretty=args.pretty))
+    if args.command == "long-comp":
+        raise SystemExit(long_comp(pretty=args.pretty))
+    if args.command == "long-sheaf":
+        raise SystemExit(long_sheaf(pretty=args.pretty))
+    if args.command == "long-all":
+        raise SystemExit(long_all(pretty=args.pretty))
+    if args.command == "long-orient":
+        raise SystemExit(long_orient(pretty=args.pretty))
+    if args.command == "long-dual":
+        raise SystemExit(long_dual(pretty=args.pretty))
+    if args.command == "long-prob":
+        raise SystemExit(long_prob(pretty=args.pretty))
+    if args.command == "long-mart":
+        raise SystemExit(long_mart(pretty=args.pretty))
+    if args.command == "long-stop":
+        raise SystemExit(long_stop(pretty=args.pretty))
+    if args.command == "long-dlim":
+        raise SystemExit(long_dlim(pretty=args.pretty))
+    if args.command == "long-linf":
+        raise SystemExit(long_linf(pretty=args.pretty))
+    if args.command == "long-ind":
+        raise SystemExit(long_ind(pretty=args.pretty))
+    if args.command == "long-suppind":
+        raise SystemExit(long_suppind(pretty=args.pretty))
+    if args.command == "long-recind":
+        raise SystemExit(long_recind(pretty=args.pretty))
+    if args.command == "long-formind":
+        raise SystemExit(long_formind(pretty=args.pretty))
+    if args.command == "long-domind":
+        raise SystemExit(long_domind(pretty=args.pretty))
+    if args.command == "long-gapind":
+        raise SystemExit(long_gapind(pretty=args.pretty))
+    if args.command == "long-llnind":
+        raise SystemExit(long_llnind(pretty=args.pretty))
+    if args.command == "long-thm":
+        raise SystemExit(long_thm(pretty=args.pretty))
+    if args.command == "long-inv":
+        raise SystemExit(long_inv(pretty=args.pretty))
     if args.command == "c985-signature-aperture-closure-tail-sixj-2114-neighborhood":
         raise SystemExit(
             c985_signature_aperture_closure_tail_sixj_2114_neighborhood(

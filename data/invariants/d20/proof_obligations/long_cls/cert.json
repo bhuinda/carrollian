@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "centered_moment_fingerprint_exact": true,
+    "chebyshev_tail_fingerprint_exact": true,
+    "inputs_certified": true,
+    "mean_fingerprint_exact": true,
+    "table_shapes_match": true,
+    "variance_shrink_fingerprint_exact": true
+  },
+  "schema": "long.cls.cert@1",
+  "status": "LONG_CLS_CERTIFIED",
+  "witness": {
+    "centered_moments": {
+      "fraction_text_sha256": "d9c0dc95dad50787fefc365ac68378525abc327cf7db3dfd6459ff250f31e1d8",
+      "order2_nonnegative_count": 16,
+      "order4_nonnegative_count": 16,
+      "orders": [
+        2,
+        3,
+        4
+      ],
+      "row_count": 48,
+      "table_sha256": "567e289ff54d339473314c7caf6c46e5ba15d587e7833ac942a7c695699f284c",
+      "variance_markov_match_count": 8
+    },
+    "chebyshev_tails": {
+      "epsilons": [
+        {
+          "den": 2,
+          "epsilon_id": 0,
+          "num": 1
+        },
+        {
+          "den": 3,
+          "epsilon_id": 1,
+          "num": 1
+        },
+        {
+          "den": 4,
+          "epsilon_id": 2,
+          "num": 1
+        }
+      ],
+      "fraction_text_sha256": "1cd4550f8fd24267fd3d09a65306575927700b7f1049755f3c20b788c81381b0",
+      "gap_nonnegative_count": 48,
+      "row_count": 48,
+      "table_sha256": "4a08950a3b2b9ee997ab7bffc04bef256d2c26effb0bd87f1209236860d67114"
+    },
+    "classification": "finite_concentration_lln_shrinkage_tensor_lookup",
+    "horizon": 16,
+    "means": {
+      "fraction_text_sha256": "c0038ff677c351cc8ac0e0f0a34a7ec72a455d68dd39d4a7132fb3a16069b742",
+      "match_count": 16,
+      "row_count": 16,
+      "table_sha256": "4758019b04f159c943dbe36621ca2d953a9b807bf08f7ed7cbbdb73fa7ef8e3b"
+    },
+    "name": "long_cls",
+    "observable_table_sha256": "6672b0620001b1d606d8144fd5aa720f7ee5a9da853d81f4e7c94ef8a137f2dd",
+    "source": {
+      "comparison": "long_markov mean_variance.csv through horizon eight",
+      "distribution": "long_conv marginal.csv public path-sum laws"
+    },
+    "variance_shrink": {
+      "fraction_text_sha256": "152c2a5404ea7e7b8d0981103a07742b18d1e556356419fdaf8c64afd8c382c8",
+      "nonnegative_count": 15,
+      "row_count": 15,
+      "table_sha256": "0523a772e68b5ef2e7a8f5463abf88321f4d4abd334f12be99453507d0ce2035"
+    }
+  }
+}

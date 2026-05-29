@@ -1,0 +1,48 @@
+{
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_inv.py",
+      "sha256": "2e486a89cb294ac50c29ca6a869ffec3eee7707c640009ceb1cc86ea2d1cabc7"
+    },
+    "long_thm_boundary": {
+      "columns": [
+        "boundary_id",
+        "boundary_code",
+        "scope_code",
+        "resolved_flag",
+        "finite_theorem_required_flag",
+        "future_work_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_thm/boundary.csv",
+      "sha256": "1c33d4c3c2e70a27666a785a919885d31278c227af78141b867c89cc7cccd079"
+    },
+    "long_thm_report": {
+      "path": "data/invariants/d20/proof_obligations/long_thm/report.json",
+      "sha256": "a93d3bac94c44bb742222fa76e0dd8f512ac1f5533194fe61d1caff788119ac0",
+      "status": "LONG_THM_CERTIFIED"
+    },
+    "long_thm_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_thm/tables.npz",
+      "sha256": "48d9faba6398dfe4d727c4baf6a0536b175523970d914fdba35d2ca0e996a808"
+    },
+    "validator": {
+      "path": "src/certify_long_inv.py",
+      "sha256": "fc20dbf0fa856d7f3a047691d794d8f96f4995e6a21107b82525dc3c5c256a53"
+    }
+  },
+  "manifest_sha256": "9001c7c47b3d750a943223dd390ba72176b91ba583a77a19eea96f0e2f6c1ef5",
+  "name": "long_inv",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_inv/cert.json",
+    "family_csv": "data/invariants/d20/proof_obligations/long_inv/family.csv",
+    "inv": "data/invariants/d20/proof_obligations/long_inv/inv.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_inv/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_inv/obs.csv",
+    "rank_csv": "data/invariants/d20/proof_obligations/long_inv/rank.csv",
+    "report": "data/invariants/d20/proof_obligations/long_inv/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_inv/tables.npz"
+  },
+  "report_sha256": "4bb074af7f6ca941700aba1549e2b82809de8e5a08b6016132172c49ef950a01",
+  "schema": "long.inv.manifest@1",
+  "status": "LONG_INV_CERTIFIED"
+}

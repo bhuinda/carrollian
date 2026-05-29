@@ -1,0 +1,114 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9ce8bddcd6df68d4ddcbe66fef8322fc4c0d9464a7b5780c8db40e5978aa7f90",
+  "checks": {
+    "finite_lln_identity": true,
+    "line_counts_match_finite_line": true,
+    "line_size_is_relation_count": true,
+    "marginals_close": true,
+    "raw_tensor_shape": true,
+    "table_shapes_match": true,
+    "tensor_lookup_coeff_sums_match_core": true,
+    "tensor_lookup_coefficients_positive": true,
+    "tensor_lookup_covers_all_line_addresses": true,
+    "zeta_mobius_profunctor_pair": true
+  },
+  "claim": "long_lln certifies the base finite Alexandrov-line address space for the C985 tensor lookup: total-order topology, zeta/Mobius profunctor, tensor support marginals, and the exact finite law-of-large-numbers identity for lookup coefficients.",
+  "closure_boundary": {
+    "certifies": [
+      "the 985 C985 relation addresses carry the finite Alexandrov line topology",
+      "the zeta relation is the line profunctor and the Mobius matrix is its incidence inverse",
+      "the raw tensor lookup covers every line address in all three tensor coordinates",
+      "tensor coefficient moments are exact and reproduce the finite LLN mean and variance/k law"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "all possible profunctors on the line",
+      "a semantic probability limit theorem beyond finite tensor-lookup sample powers",
+      "independence of non-product recoupling samples",
+      "that this exhausts every Alexandrov-line invariant relevant to eta6"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_lln.py",
+      "sha256": "b837b53b4ae3ee1445d87b774933c6d587ea562d365da178407a551b6f6d3bd9"
+    },
+    "raw_tensor": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_lln.py",
+      "sha256": "418c4ffe95230e2398977efdc60253200ebe741b9229b075b7a182dde0fde323"
+    }
+  },
+  "next_highest_yield_item": "Extend long_lln from coefficient moments to support-class observables and monotone recoupling kernels.",
+  "outputs": {
+    "addr_csv": "data/invariants/d20/proof_obligations/long_lln/addr.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_lln/cert.json",
+    "chain_csv": "data/invariants/d20/proof_obligations/long_lln/chain.csv",
+    "line": "data/invariants/d20/proof_obligations/long_lln/line.json",
+    "lln_csv": "data/invariants/d20/proof_obligations/long_lln/lln.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_lln/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_lln/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_lln/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_lln/tables.npz"
+  },
+  "schema": "long.lln.report@1",
+  "stage_protocol": {
+    "closure": "derive finite LLN formulas from exact tensor sums",
+    "coherence": "check zeta/Mobius, marginals, and exact coefficient moments",
+    "draft": "choose the 985 relation addresses as a finite line",
+    "emit": "write line, address, chain, LLN, table, certificate, manifest, and report artifacts",
+    "witness": "read the raw tensor lookup table from data/raw/Halloween.npz"
+  },
+  "status": "LONG_LLN_CERTIFIED",
+  "witness": {
+    "addr_table_sha256": "cc0276cedbcf3085e975c48e36d050db251da6f31a977fdbee172da225fbcd30",
+    "chain_table_sha256": "8ac0a373f0a9e949d5220e338bc82c3ef8a4074f4808acb7fc09d53da8b91eb1",
+    "classification": "finite_alexandrov_line_tensor_lln",
+    "finite_lln": {
+      "checked_k_range": [
+        1,
+        8
+      ],
+      "law": "for k tensor-lookup samples, E(mean_k)=mean and Var(mean_k)=variance/k exactly",
+      "mean_den": 1414965,
+      "mean_num": 2537360,
+      "sample_space": "support rows of the tensor lookup table",
+      "variance_den": 2002125951225,
+      "variance_num": 5051286071240
+    },
+    "line": {
+      "closed_count": 986,
+      "closed_sets": "lower prefixes",
+      "interval_count": 485605,
+      "open_count": 986,
+      "open_sets": "upper suffixes",
+      "order": "0 <= 1 <= ... <= 984",
+      "point_count": 985
+    },
+    "lln_table_sha256": "d3d2915a4cb2e60ce63d905fa4f6f3502e342d6ebf1703de8bdd1eee61b1bf58",
+    "name": "long_lln",
+    "observable_table_sha256": "a126684cbeed2bb149b07ea7c5c87684dfa0d7a269b14e89b3ffadb6df8e364b",
+    "profunctor": {
+      "mobius": "mu(i,i)=1, mu(i,i+1)=-1, otherwise 0",
+      "mobius_inverse": true,
+      "mobius_sha256": "3cab7759aafd7ea048a8e7c0577781add071fa3e8f8af4a7ae18c1b13fc79c56",
+      "zeta": "zeta(i,j)=1 iff i<=j",
+      "zeta_boolean_idempotent": true,
+      "zeta_sha256": "27dc29c7bcdfeb6c2e3774066e3ffd7c59379ecffe06a20aa50eb00b1093456d"
+    },
+    "tensor_lookup": {
+      "coefficient_range": [
+        1,
+        64
+      ],
+      "coefficient_square_sum": 8119976,
+      "coefficient_sum": 2537360,
+      "domain_word_count": 955671625,
+      "source": "data/raw/Halloween.npz",
+      "support_count": 1414965
+    }
+  }
+}

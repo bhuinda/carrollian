@@ -1,0 +1,104 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "216909e05bb2820ac7be4122c25c82fbf701b0f7bca588225d9ed9793a36d420",
+  "checks": {
+    "bridge_exact": true,
+    "current_representation_exact": true,
+    "input_certified": true,
+    "seed_exact": true,
+    "table_shapes_match": true,
+    "transition_exact": true,
+    "type_summary_exact": true
+  },
+  "claim": "long_recind compresses the long_suppind support-gap table into a finite recurrence graph. The 33 n=16 seed states have nonnegative lower and upper gaps, and every later lifted state n=17..127 has a predecessor with lower_gap_new >= 12*lower_gap_old and upper_gap_new >= 12*upper_gap_old.",
+  "closure_boundary": {
+    "certifies": [
+      "finite recurrence propagation of all long_suppind support gaps across n=16..127",
+      "33 nonnegative seed states at n=16",
+      "16,095 nonnegative recurrence transitions with factor 12",
+      "10 recurrence transition types covering all lifted support states"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "closed symbolic positivity of the recurrence deltas for every n >= 128",
+      "the full trinomial component-word measure",
+      "semantic C985 associator composition",
+      "a complete infinite-horizon LLN theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_recind.py",
+      "sha256": "addf27dd39711df2b728b0ab0eec32829a763f5dc5e5fd096cedc12a23364c9f"
+    },
+    "long_suppind_report": {
+      "path": "data/invariants/d20/proof_obligations/long_suppind/report.json",
+      "sha256": "c31da324ef9ccb907511737c75fb3858d112b78f14a6da038971e78949ac86b9",
+      "status": "LONG_SUPPIND_CERTIFIED"
+    },
+    "long_suppind_rule_summary": {
+      "path": "data/invariants/d20/proof_obligations/long_suppind/rule_summary.csv",
+      "sha256": "8d1fc6009c3b54a8eabdbab4d4efc79a9de722656dd7dc151ac87e31920a9fd2"
+    },
+    "long_suppind_support": {
+      "path": "data/invariants/d20/proof_obligations/long_suppind/support.csv",
+      "sha256": "f211600516b3d5be8c55c4add5163e25759d09b0b969f47379ae81ac7983604e"
+    },
+    "long_suppind_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_suppind/tables.npz",
+      "sha256": "45c27be63145b072d254098370414d5e5f6e683a08202c225066f40c0eb39f38"
+    },
+    "validator": {
+      "path": "src/certify_long_recind.py",
+      "sha256": "6a918d405bdfd65e7457560f95dc24c1213702217ec33d4116b722ef91a63557"
+    }
+  },
+  "next_highest_yield_item": "Build long_formind: derive closed affine-exponent formulas for the 10 recurrence transition types and prove their deltas nonnegative for every n beyond the lifted cone.",
+  "outputs": {
+    "bridge_csv": "data/invariants/d20/proof_obligations/long_recind/bridge.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_recind/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_recind/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_recind/obs.csv",
+    "recind": "data/invariants/d20/proof_obligations/long_recind/recind.json",
+    "report": "data/invariants/d20/proof_obligations/long_recind/report.json",
+    "seed_csv": "data/invariants/d20/proof_obligations/long_recind/seed.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_recind/tables.npz",
+    "transition_csv": "data/invariants/d20/proof_obligations/long_recind/transition.csv",
+    "type_summary_csv": "data/invariants/d20/proof_obligations/long_recind/type_summary.csv"
+  },
+  "schema": "long.recind.report@1",
+  "stage_protocol": {
+    "closure": "emit finite recurrence graph for lifted support-gap propagation",
+    "coherence": "check seed signs, recurrence deltas, type counts, input status, hashes, and shapes",
+    "draft": "read long_suppind support rows and exact gap values",
+    "emit": "write long_recind artifacts and verifier hook",
+    "witness": "build seed states, recurrence predecessors, and transition-type summaries"
+  },
+  "status": "LONG_RECIND_CERTIFIED",
+  "witness": {
+    "bridge": {
+      "bridge_table_sha256": "e94127a52cdd081a7e42b19c6961960996291db5870b1a8864f8d93deab9b901",
+      "bridge_text_sha256": "907b24866882575e4875efc92c90ee9f2087ae79a6bdda116b7ad96cc7773bc6",
+      "long_suppind_certified": true,
+      "support_row_count_match": true
+    },
+    "classification": "finite_support_gap_recurrence_graph",
+    "name": "long_recind",
+    "observable_table_sha256": "fdbfb2daedffe560c29c44934b8859748fa88404ec721dca5c5b0e02d374490d",
+    "recurrence": {
+      "factor": 12,
+      "induction_start": 16,
+      "lower_delta_nonnegative_count": 16095,
+      "seed_count": 33,
+      "seed_table_sha256": "134e6770c6a19d922efe1a57cc16c5a0e88b7739c36a1f81a9ad6b7fb3d3518a",
+      "seed_text_sha256": "b683f629cb3500f81847266784a61ccdf89e541a723f70b1cb8cca4a6a42d69f",
+      "source_end_sample_count": 127,
+      "transition_count": 16095,
+      "transition_table_sha256": "7953a3afbe2b376621bc38af5586170d05fa92730797a839b013a81f4e4fd2cc",
+      "transition_text_sha256": "edf63b6cece22d70256b1dd4cd911572a4633eefa8449d98c86ae769c7355cc7",
+      "transition_type_count": 10,
+      "type_summary_table_sha256": "b2683c7e1ec4b6716b5eefc9a6f205d0689b28c117255b71e3d5f25568f5e962",
+      "type_summary_text_sha256": "f4cedd9895accbd4bdc25641489ddef6363a85d82d1d9049b7e0940b38d8ebe3",
+      "upper_delta_nonnegative_count": 16095
+    }
+  }
+}

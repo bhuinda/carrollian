@@ -1,0 +1,115 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4bb074af7f6ca941700aba1549e2b82809de8e5a08b6016132172c49ef950a01",
+  "checks": {
+    "fingerprints_exact": true,
+    "goal_not_overclaimed": true,
+    "input_certified": true,
+    "inventory_split_exact": true,
+    "rank_total_order": true,
+    "source_boundary_match": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_inv certifies an inventory split downstream of long_thm: the finite tensor-lookup theorem is closed, while five broader invariant families remain open and are ranked by immediate value.",
+  "closure_boundary": {
+    "certifies": [
+      "finite theorem closure remains separated from broader invariant discovery",
+      "the five open invariant families are not required for the finite theorem",
+      "the active discovery path has a concrete priority order",
+      "the broader goal is still explicitly open"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "semantic C985 associator composition",
+      "a probability measure on the full raw tensor support",
+      "all raw product paths in each fiber",
+      "a genuine horizon-16 profunctor",
+      "exhaustiveness of every invariant of the finite line address space"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_inv.py",
+      "sha256": "2e486a89cb294ac50c29ca6a869ffec3eee7707c640009ceb1cc86ea2d1cabc7"
+    },
+    "long_thm_boundary": {
+      "columns": [
+        "boundary_id",
+        "boundary_code",
+        "scope_code",
+        "resolved_flag",
+        "finite_theorem_required_flag",
+        "future_work_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_thm/boundary.csv",
+      "sha256": "1c33d4c3c2e70a27666a785a919885d31278c227af78141b867c89cc7cccd079"
+    },
+    "long_thm_report": {
+      "path": "data/invariants/d20/proof_obligations/long_thm/report.json",
+      "sha256": "a93d3bac94c44bb742222fa76e0dd8f512ac1f5533194fe61d1caff788119ac0",
+      "status": "LONG_THM_CERTIFIED"
+    },
+    "long_thm_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_thm/tables.npz",
+      "sha256": "48d9faba6398dfe4d727c4baf6a0536b175523970d914fdba35d2ca0e996a808"
+    },
+    "validator": {
+      "path": "src/certify_long_inv.py",
+      "sha256": "fc20dbf0fa856d7f3a047691d794d8f96f4995e6a21107b82525dc3c5c256a53"
+    }
+  },
+  "next_highest_yield_item": "Build long_pobj: test whether the current finite-line path witnesses upgrade to a closed path object.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_inv/cert.json",
+    "family_csv": "data/invariants/d20/proof_obligations/long_inv/family.csv",
+    "inv": "data/invariants/d20/proof_obligations/long_inv/inv.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_inv/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_inv/obs.csv",
+    "rank_csv": "data/invariants/d20/proof_obligations/long_inv/rank.csv",
+    "report": "data/invariants/d20/proof_obligations/long_inv/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_inv/tables.npz"
+  },
+  "schema": "long.inv.report@1",
+  "stage_protocol": {
+    "closure": "certify inventory status without claiming the open families are solved",
+    "coherence": "check boundary coverage, rank order, table shapes, and hashes",
+    "draft": "read long_thm theorem status and unresolved boundary rows",
+    "emit": "write long_inv artifacts and verifier hook",
+    "witness": "emit invariant-family rows and a total priority order"
+  },
+  "status": "LONG_INV_CERTIFIED",
+  "witness": {
+    "classification": "finite_line_invariant_inventory",
+    "input_theorem": {
+      "input_long_thm_certified_flag": 1,
+      "line_point_count": 985,
+      "source_boundary_count": 5,
+      "tensor_support_count": 1414965
+    },
+    "inventory": {
+      "active_goal_required_remaining_count": 5,
+      "certified_family_count": 1,
+      "family_count": 6,
+      "family_table_sha256": "4ecf99544300080c0c4f714c335cf6261d434662f128cd81f36c47d577728d73",
+      "family_text_sha256": "405ac19106d1988cbfebe180ae42d8d354773d674cd1b0d2623d2c4fe5a78724",
+      "finite_theorem_exploratory_remaining_count": 5,
+      "high_priority_remaining_count": 3,
+      "proof_gap_count": 5,
+      "remaining_family_count": 5,
+      "theorem_critical_remaining_count": 0
+    },
+    "name": "long_inv",
+    "observable_table_sha256": "4e51d17eb92f17a46e423a1fae96053530ccaedb968014f1b264169cdb386de8",
+    "ranking": {
+      "next_codes": {
+        "0": "long_inv_exhaust",
+        "1": "long_assoc",
+        "2": "long_h16",
+        "3": "long_measure",
+        "4": "long_paths"
+      },
+      "rank_row_count": 5,
+      "rank_table_sha256": "156b845311f7b7a34608ed4ebdc53e98c0226a79ad97c5cbb92a4b3982aa2b86",
+      "rank_text_sha256": "52c69e722d4e78f6d38e53f436c5ab2d1a060223960a5b00e4b848f49828d9e3"
+    }
+  }
+}

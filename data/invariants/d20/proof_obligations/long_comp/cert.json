@@ -1,0 +1,62 @@
+{
+  "checks": {
+    "alexandrov_zeta_composability_exact": true,
+    "current_representation_exact": true,
+    "exact_source_target_not_present": true,
+    "input_certified": true,
+    "table_shapes_match": true,
+    "transition_inventory_exact": true
+  },
+  "schema": "long.comp.cert@1",
+  "status": "LONG_COMP_CERTIFIED",
+  "witness": {
+    "classification": "alexandrov_zeta_composable_sample_paths",
+    "current_representation": {
+      "current_alexandrov_zeta_composable_path_flag": 1,
+      "current_c985_semantic_composable_path_flag": 0,
+      "current_exact_source_target_composable_path_flag": 0,
+      "current_lln_product_sample_independence_flag": 1
+    },
+    "exact_composability": {
+      "exact_left_transition_count": 0,
+      "exact_path_count": 0,
+      "exact_right_transition_count": 0
+    },
+    "inventory": {
+      "existing_path_count": 80,
+      "existing_transition_count": 364,
+      "gap_path_count": 208,
+      "gap_transition_count": 2476,
+      "one_step_path_count": 3,
+      "pair_row_count": 5,
+      "path_row_count": 288,
+      "step_row_count": 3128,
+      "transition_row_count": 2840
+    },
+    "name": "long_comp",
+    "observable_table_sha256": "79483e9ab723f3f4aacc1965156602b33f4bc2e2534fbc7bd630c61ff57cd28c",
+    "zeta_composability": {
+      "existing_zeta_path_count": 80,
+      "gap_zeta_path_count": 208,
+      "left_margin_range": [
+        8,
+        171
+      ],
+      "pair_table_sha256": "46cbba0a19c71d63579e60dd22f1b9db5003a10f15494ad8ae333f34cf166173",
+      "pair_text_sha256": "77d97eb5c31a576f4e85661fff2ad19ed39e6fbe914f55efe9d20ad05008d0e5",
+      "path_table_sha256": "3afc29df1b0c9d69c892fbc149e0f22d20a81b3b1d1e37a7e358aac654220c33",
+      "path_text_sha256": "82c34f7eb3d2c4165933c64c868eb5fd0e49684f47caf92e8ebd834c31874ab7",
+      "right_margin_range": [
+        152,
+        708
+      ],
+      "transition_table_sha256": "e11b256132883acc8895877a81e6bb7ade43c846ca078d3c95e7cc34b5d089c9",
+      "transition_text_sha256": "c9637711b0bf9c3fb596027a6fd6cd25f679bcef675deb4fc3455f9e295e1e26",
+      "zeta_both_transition_count": 2840,
+      "zeta_left_transition_count": 2840,
+      "zeta_path_count": 288,
+      "zeta_right_transition_count": 2840
+    },
+    "zeta_rule": "for adjacent raw lookup rows r_i -> r_{i+1}, require target_i <= source0_{i+1} and target_i <= source1_{i+1}"
+  }
+}

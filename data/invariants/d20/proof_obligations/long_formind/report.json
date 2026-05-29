@@ -1,0 +1,110 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "94fdf1f350a96a03b68361597256b9fa798d60bc17114aa60b4390c048fc52a8",
+  "checks": {
+    "certified_match_exact": true,
+    "current_representation_exact": true,
+    "formula_surface_exact": true,
+    "input_certified": true,
+    "probe_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_formind extracts closed affine-exponent formulas for the long_recind recurrence deltas. The 10 recurrence transition types split into 13 formula classes because boundary states use different left/right cumulative-prefix branches. The formulas exactly match all certified recurrence deltas and remain nonnegative on the explicit probe range n=128..256.",
+  "closure_boundary": {
+    "certifies": [
+      "closed affine-exponent formulas for every long_recind recurrence delta class",
+      "exact formula agreement with all 32,190 certified lower/upper recurrence deltas",
+      "the 13-class branch split refining the 10 recurrence transition types",
+      "nonnegative formula evaluations on the explicit extension probe n=128..256"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "global symbolic dominance of mixed-sign formula terms for every n >= 257",
+      "the full component-word measure",
+      "semantic associator composition",
+      "a complete infinite-horizon LLN theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_formind.py",
+      "sha256": "12f391b6051f8d1b35c08a5da030936401ad734359d3283c290699934c1162d9"
+    },
+    "long_recind_report": {
+      "path": "data/invariants/d20/proof_obligations/long_recind/report.json",
+      "sha256": "50ef2c59f486f49e440410433d0a839a5fbeaf5fb6f963b623bb85cb20ee6417",
+      "status": "LONG_RECIND_CERTIFIED"
+    },
+    "long_recind_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_recind/tables.npz",
+      "sha256": "f859f1d17646f8bffd09ef59ad9965778ad794e731975fb7137d77b7885eb16e"
+    },
+    "long_recind_transition": {
+      "path": "data/invariants/d20/proof_obligations/long_recind/transition.csv",
+      "sha256": "a641383e10124bf2aa57724141ca1bf7d5da813e03497082c58062c5d61f7e96"
+    },
+    "long_recind_type_summary": {
+      "path": "data/invariants/d20/proof_obligations/long_recind/type_summary.csv",
+      "sha256": "58b473673d2ef8ca111d3a166162b8259428f1fd3ef2f3e90bb3c324d7a8ea05"
+    },
+    "validator": {
+      "path": "src/certify_long_formind.py",
+      "sha256": "2345fabf31db6aa284eeb67467fdfa0f998d219f137faa41eac07ee3573e8b47"
+    }
+  },
+  "next_highest_yield_item": "Build long_domind: prove dominance/positivity of the 13 mixed-sign formula classes for all remaining n, replacing the finite probe.",
+  "outputs": {
+    "bridge_csv": "data/invariants/d20/proof_obligations/long_formind/bridge.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_formind/cert.json",
+    "check_csv": "data/invariants/d20/proof_obligations/long_formind/check.csv",
+    "class_csv": "data/invariants/d20/proof_obligations/long_formind/class.csv",
+    "formind": "data/invariants/d20/proof_obligations/long_formind/formind.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_formind/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_formind/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_formind/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_formind/tables.npz",
+    "term_csv": "data/invariants/d20/proof_obligations/long_formind/term.csv"
+  },
+  "schema": "long.formind.report@1",
+  "stage_protocol": {
+    "closure": "emit formula-class certificate and keep the global dominance boundary explicit",
+    "coherence": "check formula matches, integrality, probe signs, input status, hashes, and shapes",
+    "draft": "read long_recind recurrence transitions and support-gap formulas",
+    "emit": "write long_formind artifacts and verifier hook",
+    "witness": "derive affine-exponent formula classes from cumulative-prefix branch signatures"
+  },
+  "status": "LONG_FORMIND_CERTIFIED",
+  "witness": {
+    "certified_match": {
+      "check_table_sha256": "aafe07f4a2705044aeeff608a9189ca658c383577cd9db8c39e870216579223d",
+      "check_text_sha256": "e313884f013133defd4c5f39e94cf7c8ec989179804d81b7c5c288525264c59f",
+      "formula_eval_count": 32190,
+      "formula_match_count": 32190,
+      "formula_nonnegative_count": 32190,
+      "transition_count": 16095
+    },
+    "classification": "affine_exponent_recurrence_formula_certificate",
+    "formula_surface": {
+      "class_table_sha256": "b3aa767044bfc227c15a8526d1ed27c85bb3f06b12cb6a7e432782ce502e69ec",
+      "class_text_sha256": "ca7820b210468d197ae2a79ba4c1e76b39671a23a627ee5d254665a68ecdb73c",
+      "formula_class_count": 13,
+      "formula_class_split_count": 3,
+      "formula_count": 26,
+      "term_count": 581,
+      "term_table_sha256": "ad1458657defc876f5d8f01fdec54be1d3eec00adbce325dc36866e92371c657",
+      "term_text_sha256": "74e709d5feddf9b5143b9e6ecea16607f5de68879ac2dc1d35a19f331e562c75",
+      "transition_type_count": 10
+    },
+    "name": "long_formind",
+    "observable_table_sha256": "edb281326a273c9453874ea3685d10cab35d0dfa523519aebbd18c5d14a4748b",
+    "probe": {
+      "bridge_table_sha256": "235fc3e33c2c52b60b6ee1ce503cf5859ed9224203d99fa32638151d5851603f",
+      "bridge_text_sha256": "19f479e174ce7778699532ce76136c9928a3c93ce03004f0b8c6f299a9ef7659",
+      "end_sample_count": 256,
+      "formula_eval_count": 99330,
+      "formula_nonnegative_count": 99330,
+      "probe_zero_count": 258,
+      "start_sample_count": 128,
+      "state_count": 49665
+    }
+  }
+}

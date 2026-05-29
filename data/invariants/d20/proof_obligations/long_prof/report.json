@@ -1,0 +1,163 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "10c47576cc0ebdf9e5924001700b4cd679c06bccbb7df0673753acafd9a8e33f",
+  "checks": {
+    "compose_fingerprint_exact": true,
+    "inputs_certified": true,
+    "object_fingerprint_exact": true,
+    "owner_component_fingerprint_exact": true,
+    "profunctor_fingerprint_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_prof packages the certified finite Alexandrov-line chain as explicit profunctor data: line-pair ownership, weak-class projection, owner-to-boundary hitting, stationary boundary kernel, and finite path-sum deviation readout. The downstream LLN distribution is certified as tensor lookup composition.",
+  "closure_boundary": {
+    "certifies": [
+      "a finite object/profunctor spine from line pairs through owner and boundary addresses",
+      "the exact 259x3 owner-to-boundary hitting profunctor",
+      "stationary and kernel laws from the absorption transfer matrix",
+      "the exact finite path-sum distribution laws through horizon eight as tensor lookup composition"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "all possible profunctor presentations of the Alexandrov line",
+      "asymptotic LLN or large-deviation theorems beyond the finite checked horizon",
+      "support-changing recouplings outside the certified long_rec owner graph",
+      "a universal eta6 horizon theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_prof.py",
+      "sha256": "7bc903e3e8e931dff66e926c2b226d382be0f74b1d682b3ddf6ee79dea2dacd4"
+    },
+    "long_absorb_matrix": {
+      "path": "data/invariants/d20/proof_obligations/long_absorb/matrix.csv",
+      "sha256": "e3c8382fef4b2a41a2bf2f794997dc51e2786f08291d050a130e81d2c07d0311"
+    },
+    "long_absorb_report": {
+      "path": "data/invariants/d20/proof_obligations/long_absorb/report.json",
+      "sha256": "39cf4ec2e99c76c7568d7d1f6f770ced3926fa75ec2a591303ed6bfcb31737d9",
+      "status": "LONG_ABSORB_CERTIFIED"
+    },
+    "long_absorb_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_absorb/tables.npz",
+      "sha256": "d64ab2eb17cf2900c357cbf45d8359f160771f031c52e7d5dcb8820798e98b4f"
+    },
+    "long_dev_distribution": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/distribution.csv",
+      "sha256": "25fa5327531aba62074435e2d38aceb1902a7e6d2fa823c31e52c37aa0cbf228"
+    },
+    "long_dev_report": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/report.json",
+      "sha256": "8140f47d42f1484102feaeb0b7bd1bdccfd2d1e65a5592bbc1da8035265d24e0",
+      "status": "LONG_DEV_CERTIFIED"
+    },
+    "long_dev_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/tables.npz",
+      "sha256": "df4105ab04c6598839c94d655e37a67e70ec01df7a660e45614405ed1a306100"
+    },
+    "long_lap_report": {
+      "path": "data/invariants/d20/proof_obligations/long_lap/report.json",
+      "sha256": "c7c727f8253eeb0368f50b8fab15d5d8e9e5841486c8d9564243ae738daff214",
+      "status": "LONG_LAP_CERTIFIED"
+    },
+    "long_lap_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_lap/tables.npz",
+      "sha256": "ad5600286fe41ba717b47a1d38342f6714202a66eb0b1ed9721dcd1ee0b01724"
+    },
+    "long_markov_kernel": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/kernel.csv",
+      "sha256": "28ced368612f1b7608c3116aafc71574b3033229ec979c18c04f699ac37e26b5"
+    },
+    "long_markov_report": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/report.json",
+      "sha256": "afa2bc3e8e131e464d07091af7bcb2b0c705fb2e711371897d7149a5bdb851f2",
+      "status": "LONG_MARKOV_CERTIFIED"
+    },
+    "long_markov_stationary": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/stationary.csv",
+      "sha256": "1bde2deecd1df9ff92f129d5497d88f02c43d1f9d595f8d200cc11ebbcf07e1d"
+    },
+    "long_rec_report": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/report.json",
+      "sha256": "1e4b5fbc086a95cd6b9bf929d804e71b483643dfd884355ef75a54248eb9c08b",
+      "status": "LONG_REC_CERTIFIED"
+    },
+    "long_rec_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/tables.npz",
+      "sha256": "2d581742fea434038440cce1d2eb0215e00e71cd31d8e988f0d4b996b81923e0"
+    },
+    "validator": {
+      "path": "src/certify_long_prof.py",
+      "sha256": "6478cdd73846d50b3295320bf4339f6787f4733e61d0cd384cb5dbd3dc12ac90"
+    }
+  },
+  "next_highest_yield_item": "Build long_rate: extract finite cumulant/rate-function fingerprints from the profunctor-composed path-sum laws and compare them against the certified long_dev Chernoff gaps.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_prof/cert.json",
+    "compose_csv": "data/invariants/d20/proof_obligations/long_prof/compose.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_prof/manifest.json",
+    "object_csv": "data/invariants/d20/proof_obligations/long_prof/object.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_prof/obs.csv",
+    "owner_component_csv": "data/invariants/d20/proof_obligations/long_prof/owner_component.csv",
+    "prof": "data/invariants/d20/proof_obligations/long_prof/prof.json",
+    "profunctor_csv": "data/invariants/d20/proof_obligations/long_prof/profunctor.csv",
+    "report": "data/invariants/d20/proof_obligations/long_prof/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_prof/tables.npz"
+  },
+  "schema": "long.prof.report@1",
+  "stage_protocol": {
+    "closure": "emit profunctor, CSV, NPZ, certificate, manifest, and report artifacts",
+    "coherence": "check input statuses, row sums, exact equality laws, fixed hashes, and table shapes",
+    "draft": "take the certified long_rec, long_lap, long_absorb, long_markov, and long_dev artifacts",
+    "emit": "write long_prof artifacts and verifier hook",
+    "witness": "emit finite object/profunctor tables plus exact owner-component and composition laws"
+  },
+  "status": "LONG_PROF_CERTIFIED",
+  "witness": {
+    "classification": "finite_alexandrov_line_profunctor_tensor_lookup_chain",
+    "composition": {
+      "digest_table_sha256": "42cb00f80a25ae276032d5a66b4ba5a5828022ae1d060769f3c71c9f423a6bf3",
+      "equal_count": 92,
+      "fraction_text_sha256": "c6a1d262c40ae9f0f2db3955a690948506b9cb7db4599558dff5f5f75cd40514",
+      "law_count": 92,
+      "violation_count": 0
+    },
+    "name": "long_prof",
+    "objects": {
+      "count": 9,
+      "object_table_sha256": "50120679eee2869a56fb3f1405e20998b54cbd33307e7272939186d7c837a605",
+      "object_text_sha256": "71c02d9686d2cbe8630a48124c8b16d59ae9a3805126a4580c07142768ab2b3b"
+    },
+    "observable_table_sha256": "c6b115d157a0b2a47c2e2fe890e564d78d0d4a4db92c8ff4bbc5706adade9e76",
+    "owner_component": {
+      "active_component_counts": [
+        33,
+        1,
+        17
+      ],
+      "digest_table_sha256": "4be78748705c583beba304788b5946a452c6430888b7b0b40ee75be869a08b7e",
+      "dominant_counts": [
+        119,
+        3,
+        137
+      ],
+      "fraction_text_sha256": "4b7bf49854c10856afab47df6569e49712192f942079140f11bdbec9435cb9a6",
+      "positive_count": 675,
+      "row_count": 777,
+      "row_sum_violations": 0
+    },
+    "profunctors": {
+      "chain": [
+        "line_pair -> owner_basis",
+        "owner_basis -> weak_class",
+        "owner_basis -> boundary_component",
+        "unit -> boundary_component",
+        "boundary_component -> boundary_component",
+        "sample_horizon -> deviation_state"
+      ],
+      "count": 8,
+      "profunctor_table_sha256": "e84f978dc458d7155ff28a19b32cfb746d2231ea2c777c5d4d521be20dfd7c32",
+      "profunctor_text_sha256": "dbb2594318edc48bde39bdd13b323a50167c32a42450d046c95a608285db9c54"
+    }
+  }
+}

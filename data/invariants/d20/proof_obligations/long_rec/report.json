@@ -1,0 +1,151 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "70efcdd66a54fd1926d55ae4c4c74b79f8c930bff2c91cb43215f5c5bfc341ae",
+  "checks": {
+    "finite_lln_moments_exact": true,
+    "frontier_moments_exact": true,
+    "line_size_matches_basis": true,
+    "long_basis_input_certified": true,
+    "owner_frontier_regenerates_long_basis": true,
+    "owner_grid_complete": true,
+    "owner_partition_exact": true,
+    "table_shapes_match": true,
+    "transition_boundary_exact": true,
+    "transition_graph_exact": true,
+    "transition_kernel_is_symmetric_and_total": true,
+    "weak_transition_exact": true
+  },
+  "claim": "long_rec certifies the finite transition kernel induced by the long_basis lower-envelope ownership partition: every frontier cell has a basis owner, adjacent cells induce a connected symmetric transition graph, and owner/edge events have exact finite LLN data.",
+  "closure_boundary": {
+    "certifies": [
+      "a complete owner partition of the 985x985 Alexandrov source-pair frontier",
+      "the connected symmetric transition graph induced by adjacent owner cells",
+      "weak-class transition aggregation over the owner graph",
+      "exact finite LLN variance data for owner events and boundary-edge events"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "eta6 preservation, because no canonical eta6-to-long_basis bridge is provided here",
+      "semantic recoupling moves outside the tensor lookup lower envelope",
+      "continuous or asymptotic LLN limits",
+      "a transition kernel for C985 associator addresses beyond the line projection"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_rec.py",
+      "sha256": "3830f88d881e3a586dc4cbdb2c7b415d26372653cdf66ffaf0b11d7d1841c0f8"
+    },
+    "long_basis_report": {
+      "path": "data/invariants/d20/proof_obligations/long_basis/report.json",
+      "sha256": "7693ba7690eeea33b8e13bf5ba05d657c0a38e6729aefb4351ab05b5d57dc8c7",
+      "status": "LONG_BASIS_CERTIFIED"
+    },
+    "long_basis_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_basis/tables.npz",
+      "sha256": "1fe88d7b2c90204d579997872819c05afc7339cf505e82cc5c7c71b15badf145"
+    },
+    "validator": {
+      "path": "src/certify_long_rec.py",
+      "sha256": "3b8486bbbafbfaa286ee5ef9ae0d6b9b4eff80f664b4d097fc834b4aeac76f77"
+    }
+  },
+  "next_highest_yield_item": "Build long_eta: a verified bridge from eta6 carrier ids into long_rec owners, then test eta6 preservation on the transition graph.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_rec/cert.json",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_rec/edge.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_rec/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_rec/obs.csv",
+    "owner_csv": "data/invariants/d20/proof_obligations/long_rec/owner.csv",
+    "rec": "data/invariants/d20/proof_obligations/long_rec/rec.json",
+    "report": "data/invariants/d20/proof_obligations/long_rec/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_rec/tables.npz",
+    "weak_edge_csv": "data/invariants/d20/proof_obligations/long_rec/weak_edge.csv",
+    "weak_owner_csv": "data/invariants/d20/proof_obligations/long_rec/weak_owner.csv"
+  },
+  "schema": "long.rec.report@1",
+  "stage_protocol": {
+    "closure": "check graph connectivity, transition counts, and exact LLN moments",
+    "coherence": "check ownership covers the line square and regenerates the frontier",
+    "draft": "reuse long_basis and its regenerated frontier",
+    "emit": "write long_rec artifacts and verifier hook",
+    "witness": "compute frontier owners and boundary-induced transition edges"
+  },
+  "status": "LONG_REC_CERTIFIED",
+  "witness": {
+    "classification": "finite_alexandrov_line_basis_transition_kernel",
+    "finite_lln": {
+      "edge_event_rule": "for edge boundary count m among B contacts, Var(mean_k)=m*(B-m)/(B^2*k)",
+      "edge_lln_var_den": 328225689,
+      "edge_sample_space": "undirected owner boundary contacts",
+      "owner_event_rule": "for owner count m among N cells, Var(mean_k)=m*(N-m)/(N^2*k)",
+      "owner_lln_var_den": 941336550625,
+      "owner_sample_space": "985^2 source-pair frontier cells"
+    },
+    "frontier_moments": {
+      "frontier_max": 893,
+      "frontier_min": 0,
+      "frontier_square_sum": 233520639830,
+      "frontier_sum": 404111708,
+      "owner_frontier_sha256": "c8a9b0108b6a3fcbbf9e0cfb2313afea2a1228a94e068c4161e90a2bc967b2e0"
+    },
+    "line": {
+      "basis_count": 259,
+      "frontier_cell_count": 970225,
+      "point_count": 985
+    },
+    "name": "long_rec",
+    "observable_table_sha256": "633f96499b97563e43b2fd3f8bd5ae5d3dedd208701a25cc1ebe5a48084ccf5f",
+    "owner_partition": {
+      "active_owner_count": 259,
+      "owner_cell_count_max": 197910,
+      "owner_cell_count_min": 1,
+      "owner_grid_sha256": "608b99831d44e613c6d851e09927b4f927f8ab7d20474736dc25f4eb8a3ca300",
+      "owner_table_sha256": "34da7e2f7c12daaf638e2fba99d4db0138e76ffaca9764d18c59b5db34295e3b",
+      "rule": "each source-pair cell is owned by the lowest-target basis generator covering it; ties keep the lowest basis id"
+    },
+    "transition_kernel": {
+      "boundary_contacts": 18117,
+      "component_count": 1,
+      "component_max_size": 259,
+      "degree_range": [
+        3,
+        13
+      ],
+      "directed_boundary_contacts": 36234,
+      "edge_count": 642,
+      "edge_table_sha256": "f1e9f38637a0b8aea0a96cbec7bd7452c54341763496da6c247d963ca5c4412d",
+      "node_count": 259,
+      "row_positive": true,
+      "rule": "two generators are adjacent when their owned frontier cells share a source0 or source1 grid boundary",
+      "source0_boundary_contacts": 12707,
+      "source1_boundary_contacts": 5410,
+      "symmetric": true,
+      "weighted_degree_range": [
+        3,
+        1736
+      ]
+    },
+    "weak_transition": {
+      "classes": [
+        "eq_abc",
+        "eq_ab_lt_c",
+        "eq_ab_gt_c",
+        "eq_ac_lt_b",
+        "eq_ac_gt_b",
+        "eq_bc_lt_a",
+        "eq_bc_gt_a",
+        "lt_abc",
+        "lt_acb",
+        "lt_bac",
+        "lt_bca",
+        "lt_cab",
+        "lt_cba"
+      ],
+      "owner_cell_count_max": 718941,
+      "owner_class_count": 5,
+      "weak_edge_class_pair_count": 8,
+      "weak_edge_table_sha256": "9b0c66ecf4a5d7c585c536ec3b9e87c7bc79b3174f97ce6596bf807530545a25",
+      "weak_owner_table_sha256": "ce0df090726cc28d5986aa79e8fed3c80aa42ef85418fb47493bf465c487a47e"
+    }
+  }
+}

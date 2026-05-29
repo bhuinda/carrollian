@@ -1,0 +1,120 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1d4da5b381f9f95577dd39c68329c394e9a4c1b337121a14abb1a9ab75563754",
+  "checks": {
+    "current_representation_exact": true,
+    "distribution_exact": true,
+    "input_certified": true,
+    "moment_curve_exact": true,
+    "table_shapes_match": true,
+    "variance_decomposition_exact": true
+  },
+  "claim": "long_prob normalizes the long_dual coefficient kernel into a finite path probability measure. Conditional on sample count, the variance of sum_value/sample_count strictly shrinks across the 1..16 witness chain, and the global variance decomposes exactly into within-sample and between-sample components.",
+  "closure_boundary": {
+    "certifies": [
+      "positive coefficient-dual normalization on all 288 witness paths",
+      "conditional finite LLN shrinkage for the sample-average coordinate over sample counts 1..16",
+      "exact law-of-total-variance decomposition into within-sample and between-sample terms"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "a probability measure on the full raw tensor support",
+      "semantic C985 associator composition",
+      "an infinite-horizon LLN theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_prob.py",
+      "sha256": "e3b5579e5947fbb4a1dff1f0e508164ddbda44bc89b33e3dc7f7efe632863495"
+    },
+    "long_dual_path": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/path.csv",
+      "sha256": "847a87df4cdbbebf1faf74343918b519920adf39cb569818022d6fcdb58895f2"
+    },
+    "long_dual_report": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/report.json",
+      "sha256": "88e5be80162ca873113a4e2abd5473cbe6ae92746708a0f1f167be62bd9a6356",
+      "status": "LONG_DUAL_CERTIFIED"
+    },
+    "long_dual_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/tables.npz",
+      "sha256": "85d1be2c4549979b362c91ce6897167193e458612bb13e52966211242910d90a"
+    },
+    "long_path_path": {
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "validator": {
+      "path": "src/certify_long_prob.py",
+      "sha256": "a2873917d9642c8a8f523cb6ce8a27eb093f3bbbcf22603596fbc28a1ece295a"
+    }
+  },
+  "next_highest_yield_item": "Build long_mart: derive the finite conditional expectation operator behind the dual probability curve and test martingale or supermartingale structure for the sample-average variance.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_prob/cert.json",
+    "decomp_csv": "data/invariants/d20/proof_obligations/long_prob/decomp.csv",
+    "dist_csv": "data/invariants/d20/proof_obligations/long_prob/dist.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_prob/manifest.json",
+    "moment_csv": "data/invariants/d20/proof_obligations/long_prob/moment.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_prob/obs.csv",
+    "prob": "data/invariants/d20/proof_obligations/long_prob/prob.json",
+    "report": "data/invariants/d20/proof_obligations/long_prob/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_prob/tables.npz"
+  },
+  "schema": "long.prob.report@1",
+  "stage_protocol": {
+    "closure": "emit finite probability LLN curve over witness paths",
+    "coherence": "check conditional moment curve, strict variance shrinkage, global variance decomposition, statuses, hashes, and shapes",
+    "draft": "read long_dual path weights and long_path value coordinates",
+    "emit": "write long_prob artifacts and verifier hook",
+    "witness": "normalize positive coefficient-dual products into exact rational path probabilities"
+  },
+  "status": "LONG_PROB_CERTIFIED",
+  "witness": {
+    "classification": "dual_coefficient_probability_lln_curve",
+    "conditional_lln_curve": {
+      "first_variance": "94/169",
+      "last_variance": "97360537417878720520408038935/25961491225691676382763942882432",
+      "moment_row_count": 16,
+      "moment_table_sha256": "473bb44f26b5692e53d91496e6363bd6f472d5283dc8d77ac9148574b2c80294",
+      "moment_text_sha256": "ffcb67a74049913d491a295fb53fe7b39312309feb6f2a2ebbd29f75740f8a31",
+      "variance_shrink_flag_count": 16
+    },
+    "measure": {
+      "component_weights": [
+        12,
+        18,
+        48
+      ],
+      "distribution_table_sha256": "48ce3d28c4e2f406724c16061ea346615996e3f5292e37acabcf1712ba592cd1",
+      "distribution_text_sha256": "7fcd64d08f6cd9aaaf7ecc520d25bd5291f34b3b01857497e8f355e0eba74c27",
+      "path_count": 288,
+      "sample_count_max": 16,
+      "sample_count_min": 1,
+      "total_weight_decimal": "1297547365450144579068292674",
+      "total_weight_mod_1000000007": 497101086,
+      "total_weight_mod_1000000009": 118327119
+    },
+    "name": "long_prob",
+    "observable_table_sha256": "4c368a0d5ab28dd9a7c066cfc9f93443785d63ee75757eac09598d331a57682d",
+    "variance_decomposition": {
+      "between_variance": "1387359268185910154410491648573510288324462293480074959444670692028349321430622699163228359757666200572810731935286827665303464488352790236875300952420684508809168759570638992/10084724295720618201565493264437894925771755689148639601445477016343813724820997159633586755925199113216033915561398995445781237338680623941570279729687637602728935749633926443312125",
+      "decomp_table_sha256": "bdf54c8c13174c5dacaac597555cb0291527a3ba23cc83ddda4f1f4aeb189d61",
+      "decomp_text_sha256": "0dbafa8cf95b7c6a6c4b6d70ea318683b184db67a793dadd376974f84d1638db",
+      "global_mean": "2124094691340999130358457409351/1082370760679662269706134138895",
+      "global_variance": "4406556731836673375506344183962785604362768420243967143084/1171526463574270735272247570017547244018099127622983151821025",
+      "variance_decomp_flag": true,
+      "variance_decomp_gap": "0/1",
+      "within_variance": "175397515734819146639301899956184624011705052349691328824275564229544271176609913837699494687716431991554399230782812808888912419561655998885764682054212/46632860876976294178807270041328567682503051310975516882538059475370035157420176044444712678018123398869451295653239661013139139584547804911362407841380375"
+    }
+  }
+}

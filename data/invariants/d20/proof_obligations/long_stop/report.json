@@ -1,0 +1,178 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "f67d7b0e1521dc30c9b641eb79525167122d8cdcd461af29f791ffde5823aa9b",
+  "checks": {
+    "current_representation_exact": true,
+    "grammar_comparison_exact": true,
+    "input_certified": true,
+    "stopped_tail_fingerprint_exact": true,
+    "table_shapes_match": true,
+    "tail_fingerprint_exact": true
+  },
+  "claim": "long_stop turns the long_mart finite transport operator into dual-measure tail and stopped-tail certificates. For epsilons 1/2, 1/3, and 1/4 through horizon 16, every per-level Chebyshev gap is nonnegative and every stopped hitting event is bounded by the finite union of those Chebyshev bounds. The epsilon/horizon grammar is matched against long_cls, but the measure is the long_prob dual transport law rather than the public long_conv Markov law.",
+  "closure_boundary": {
+    "certifies": [
+      "exact dual per-level tail probabilities under long_prob through horizon 16",
+      "nonnegative Chebyshev gaps for the dual measure on epsilons 1/2, 1/3, and 1/4",
+      "exact stopped hitting probabilities along the long_mart transport",
+      "nonnegative finite union-bound gaps for stopped hitting events",
+      "epsilon/horizon grammar agreement with long_cls tail windows"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "optimal stopping bounds",
+      "a public Markov-law stopped process",
+      "a semantic C985 associator process",
+      "an infinite-horizon optional-stopping theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_stop.py",
+      "sha256": "b7fd0a1c432628ae2906068a9771b80521fdaba99073d0e114e58f5406493b1f"
+    },
+    "long_cls_report": {
+      "path": "data/invariants/d20/proof_obligations/long_cls/report.json",
+      "sha256": "ca9286712df051baf3a49cbf4b7c66677e30ca1c62c5d2989748378683175143",
+      "status": "LONG_CLS_CERTIFIED"
+    },
+    "long_cls_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_cls/tables.npz",
+      "sha256": "e3208493c5f9d52dfbcf526b8435e9f31e3fe61fdf10d44b671905e372be9fb0"
+    },
+    "long_cls_tail": {
+      "path": "data/invariants/d20/proof_obligations/long_cls/tail.csv",
+      "sha256": "70f5a24fb54e58aa419665695714d1110ea8af7068bf4eceffe64bd15a97eea7"
+    },
+    "long_dual_path": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/path.csv",
+      "sha256": "847a87df4cdbbebf1faf74343918b519920adf39cb569818022d6fcdb58895f2"
+    },
+    "long_dual_report": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/report.json",
+      "sha256": "88e5be80162ca873113a4e2abd5473cbe6ae92746708a0f1f167be62bd9a6356",
+      "status": "LONG_DUAL_CERTIFIED"
+    },
+    "long_dual_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/tables.npz",
+      "sha256": "85d1be2c4549979b362c91ce6897167193e458612bb13e52966211242910d90a"
+    },
+    "long_mart_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_mart/edge.csv",
+      "sha256": "2c9ff6529f70187dcedd32240462ba4ad4ba6b70501bf19cef457bbe0cf7f351"
+    },
+    "long_mart_level": {
+      "path": "data/invariants/d20/proof_obligations/long_mart/level.csv",
+      "sha256": "27abe9a0712d2828299c04fa025dbaf45c7b9ac86a742f9744403646047d96f0"
+    },
+    "long_mart_report": {
+      "path": "data/invariants/d20/proof_obligations/long_mart/report.json",
+      "sha256": "2237ce34182fbded049d4f2c43db736575049d389c1aabe93698a6457e9b89c0",
+      "status": "LONG_MART_CERTIFIED"
+    },
+    "long_mart_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_mart/tables.npz",
+      "sha256": "eaee8a580e4c62f63a5eb6887c865d0ae49425194f4b5054d6b95b419f89946a"
+    },
+    "long_path_path": {
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "long_prob_dist": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/dist.csv",
+      "sha256": "b1126ae487d60a67c859174d19f52dd536bf1f6543953f9dd4d95603ffc225eb"
+    },
+    "long_prob_moment": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/moment.csv",
+      "sha256": "bc4ce8b003c190ab6b5b7c1b180f34238819bc57db0091e3b11a33fb1efb0b14"
+    },
+    "long_prob_report": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/report.json",
+      "sha256": "84305f09785de3171c52d1dcbb2b12bfd021af794b4722ce86c8c187430fe66b",
+      "status": "LONG_PROB_CERTIFIED"
+    },
+    "long_prob_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/tables.npz",
+      "sha256": "2234f299c116acb8badf30c8bc447306f4b51b84c4276f07a720d5222ab6a356"
+    },
+    "validator": {
+      "path": "src/certify_long_stop.py",
+      "sha256": "14c1474491e1b6c46624f1b6513431b3ab15f53b1770045ca6861f7d534eb0a0"
+    }
+  },
+  "next_highest_yield_item": "Build long_dlim: extract the finite drift-limit obstruction from long_mart/long_stop, separating the single first-level drift defect from the eventual submartingale regime.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_stop/cert.json",
+    "compare_csv": "data/invariants/d20/proof_obligations/long_stop/compare.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_stop/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_stop/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_stop/report.json",
+    "stop": "data/invariants/d20/proof_obligations/long_stop/stop.json",
+    "stop_csv": "data/invariants/d20/proof_obligations/long_stop/stop.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_stop/tables.npz",
+    "tail_csv": "data/invariants/d20/proof_obligations/long_stop/tail.csv"
+  },
+  "schema": "long.stop.report@1",
+  "stage_protocol": {
+    "closure": "emit dual stopped-tail certificate with measure boundary recorded",
+    "coherence": "check Chebyshev gaps, stopped union-bound gaps, grammar match, statuses, hashes, and shapes",
+    "draft": "read long_prob, long_mart, long_path, and long_cls finite concentration artifacts",
+    "emit": "write long_stop artifacts and verifier hook",
+    "witness": "compute exact dual per-level tails and stopped hitting probabilities along the finite transport"
+  },
+  "status": "LONG_STOP_CERTIFIED",
+  "witness": {
+    "classification": "dual_transport_stopped_tail_certificate",
+    "comparison": {
+      "fraction_text_sha256": "82a89bed16fb1b859b82ea20b79c214d01cad06033c058a8a487bb40d4a78e60",
+      "grammar_match_flag": true,
+      "long_cls_tail_gap_count": 48,
+      "table_sha256": "2ef00094bfb16b843123242f6b4edbf1d999f1aa4026a0165d272ba55de6564f"
+    },
+    "epsilons": [
+      {
+        "den": 2,
+        "epsilon_id": 0,
+        "num": 1
+      },
+      {
+        "den": 3,
+        "epsilon_id": 1,
+        "num": 1
+      },
+      {
+        "den": 4,
+        "epsilon_id": 2,
+        "num": 1
+      }
+    ],
+    "horizon": 16,
+    "name": "long_stop",
+    "observable_table_sha256": "d7650dcf12a27d6dd92c48c59f00c95a62e0a42c8597b4ca5df3e4e1c8eaaba6",
+    "stopped_tail": {
+      "fraction_text_sha256": "97ea048f456eeb860ea290d7db2e437e48c4f8044d0ff02ec37aaf6f23d625e9",
+      "gap_nonnegative_count": 48,
+      "gap_num_mod_sum_1000000007": 543186879,
+      "row_count": 48,
+      "stopped_prob_num_mod_sum_1000000007": 16587,
+      "table_sha256": "9daf5e362dafe459dacb5a58e62635939913f230b18d40e30927f499c1166ac9",
+      "union_bound_num_mod_sum_1000000007": 93091961
+    },
+    "tail": {
+      "fraction_text_sha256": "246f23496f11bbbc0bd9d815247d2d34e91a150d5826007766c5b5f87052a8f2",
+      "gap_nonnegative_count": 48,
+      "gap_num_mod_sum_1000000007": 455837620,
+      "row_count": 48,
+      "table_sha256": "60a365aad5e1eea75153034e45c6470eb646e1465bbdb8a7a0e2bc0176196df2",
+      "tail_prob_num_mod_sum_1000000007": 228485013
+    }
+  }
+}

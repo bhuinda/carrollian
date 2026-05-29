@@ -1,0 +1,141 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "51ddc559d24482e2925d9eb10d787886be840c056b37d73f4fdf595934718576",
+  "checks": {
+    "current_representation_exact": true,
+    "drift_profile_exact": true,
+    "input_certified": true,
+    "table_shapes_match": true,
+    "transport_exact": true,
+    "variance_operator_exact": true
+  },
+  "claim": "long_mart derives the finite conditional expectation operator behind long_prob by monotone integer transport between consecutive sample-count fibers. The sample-average process is not a global martingale because of a single first-level negative drift row, but it is rowwise submartingale from level 2 onward; the variance process strictly decreases at every level and each target variance decomposes exactly into conditional-noise plus predicted-variance terms.",
+  "closure_boundary": {
+    "certifies": [
+      "an exact finite conditional transport operator between consecutive dual probability fibers",
+      "exact row and column marginal preservation for all 15 transitions",
+      "the sample average is not globally martingale and is rowwise submartingale from level 2 onward",
+      "strict variance shrinkage and exact conditional variance decomposition at every level"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "uniqueness of the transport operator",
+      "a transition operator on the full raw tensor support",
+      "semantic C985 associator composition",
+      "an infinite-horizon martingale theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_mart.py",
+      "sha256": "5ff74a06250b03ea732c1d15f3d5ed29f6255027672ca3ee910adabebc1972e6"
+    },
+    "long_dual_path": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/path.csv",
+      "sha256": "847a87df4cdbbebf1faf74343918b519920adf39cb569818022d6fcdb58895f2"
+    },
+    "long_dual_report": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/report.json",
+      "sha256": "88e5be80162ca873113a4e2abd5473cbe6ae92746708a0f1f167be62bd9a6356",
+      "status": "LONG_DUAL_CERTIFIED"
+    },
+    "long_dual_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_dual/tables.npz",
+      "sha256": "85d1be2c4549979b362c91ce6897167193e458612bb13e52966211242910d90a"
+    },
+    "long_path_path": {
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "long_prob_dist": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/dist.csv",
+      "sha256": "b1126ae487d60a67c859174d19f52dd536bf1f6543953f9dd4d95603ffc225eb"
+    },
+    "long_prob_moment": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/moment.csv",
+      "sha256": "bc4ce8b003c190ab6b5b7c1b180f34238819bc57db0091e3b11a33fb1efb0b14"
+    },
+    "long_prob_report": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/report.json",
+      "sha256": "84305f09785de3171c52d1dcbb2b12bfd021af794b4722ce86c8c187430fe66b",
+      "status": "LONG_PROB_CERTIFIED"
+    },
+    "long_prob_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/tables.npz",
+      "sha256": "2234f299c116acb8badf30c8bc447306f4b51b84c4276f07a720d5222ab6a356"
+    },
+    "validator": {
+      "path": "src/certify_long_mart.py",
+      "sha256": "c7fc2ee00310b7fc728809ffe264c4d0dcc616a70a9042fffe882a5dec7b9e8d"
+    }
+  },
+  "next_highest_yield_item": "Build long_stop: turn the finite transport operator into stopping/tail certificates and compare optional-stopping bounds against the existing finite concentration certificates.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_mart/cert.json",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_mart/edge.csv",
+    "level_csv": "data/invariants/d20/proof_obligations/long_mart/level.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_mart/manifest.json",
+    "mart": "data/invariants/d20/proof_obligations/long_mart/mart.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_mart/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_mart/report.json",
+    "state_csv": "data/invariants/d20/proof_obligations/long_mart/state.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_mart/tables.npz"
+  },
+  "schema": "long.mart.report@1",
+  "stage_protocol": {
+    "closure": "emit conditional expectation operator with martingale boundary defect recorded",
+    "coherence": "check row/column marginals, drift profile, variance decomposition, statuses, hashes, and shapes",
+    "draft": "read long_prob probabilities and long_path finite path coordinates",
+    "emit": "write long_mart artifacts and verifier hook",
+    "witness": "construct exact monotone transport between consecutive sample-count fibers"
+  },
+  "status": "LONG_MART_CERTIFIED",
+  "witness": {
+    "classification": "finite_transport_conditional_expectation_operator",
+    "current_representation": {
+      "eventual_submartingale": true,
+      "global_martingale": false,
+      "transport_operator": true,
+      "variance_supermartingale": true
+    },
+    "drift": {
+      "eventual_submartingale_level_count": 14,
+      "first_level_negative_drift_count": 1,
+      "global_martingale_row_count": 14,
+      "negative_count": 1,
+      "positive_count": 240,
+      "state_table_sha256": "d7f2ba14d9838c2f8fd5c385845a39558454fbcc94a41fd533ff2275d983c454",
+      "state_text_sha256": "a1ffd52e24fa06a6695cd1acbb9150dcf34a503305a5ad454bc124fd8a052cb1",
+      "zero_count": 14
+    },
+    "name": "long_mart",
+    "observable_table_sha256": "4928b5c090ffae33e165cf0ccec17ec3e0f5e231f1830892075bd9a74bbf632c",
+    "transport": {
+      "col_marginal_flag_count": 285,
+      "edge_count": 525,
+      "edge_table_sha256": "2ea3422776d2e3fc83ff5ed332b88d227055dff4aa36a8a7b01d87754961354d",
+      "edge_text_sha256": "3de7fbbacc5185fc75790934273604d2c33d0ac7662f8678dfd8fb2fe6501157",
+      "level_count": 15,
+      "max_outgoing_edge_count": 3,
+      "method": "monotone integer quantile transport between consecutive dual probability fibers",
+      "row_marginal_flag_count": 255,
+      "state_count": 255
+    },
+    "variance": {
+      "conditional_noise_num_mod_sum_1000000007": 139149809,
+      "level_table_sha256": "88837f2633e30bd4465d9d2af338b53862f14ae71a0dec2047f15fe658777e85",
+      "level_text_sha256": "c9e787f0503359662ddbc15260876d68f3f10e5236c205abb9038cecec5820d7",
+      "predicted_variance_num_mod_sum_1000000007": 847852262,
+      "variance_decomp_level_count": 15,
+      "variance_shrink_level_count": 15
+    }
+  }
+}

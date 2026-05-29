@@ -1,0 +1,158 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9e557cdcac00abcf28214c540d19e4569ec726400176538a551925584e502a03",
+  "checks": {
+    "diagonal_offdiagonal_exact": true,
+    "digest_hashes_exact": true,
+    "dirichlet_determinant_exact": true,
+    "inactive_owner_shell_exact": true,
+    "inputs_certified": true,
+    "matrix_mod_signature_exact": true,
+    "table_shapes_match": true,
+    "transfer_conservation_exact": true
+  },
+  "claim": "long_absorb certifies the exact absorbing Dirichlet kernel obtained by collapsing the three long_lap active components as boundary terminals inside the full long_rec owner graph. The inactive 208-owner Laplacian is nonsingular, all absorption rows sum to one, and the 3x3 leakage transfer matrix is symmetric with conserved row and column boundary totals 1342, 864, and 2378.",
+  "closure_boundary": {
+    "certifies": [
+      "the inactive long_rec Dirichlet Laplacian is nonsingular",
+      "each inactive owner has exact absorption probabilities summing to one",
+      "the shell-1 leakage induces a symmetric conserved 3x3 component transfer matrix",
+      "the inactive shell dominance profile out to distance seven"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "support-changing recouplings outside long_rec",
+      "continuous-time diffusion or asymptotic stochastic limits",
+      "a universal eta6 horizon theorem",
+      "higher-order tensor repairs beyond the owner transition kernel"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_absorb.py",
+      "sha256": "5dbb553c240046a8f168610d9ac2940076535ca0749546bac96504620a1850c6"
+    },
+    "long_flow_report": {
+      "path": "data/invariants/d20/proof_obligations/long_flow/report.json",
+      "sha256": "908e20dab37949a4ab640af590dccb702cbf5b624f80f65180af2c2075fa48a9",
+      "status": "LONG_FLOW_CERTIFIED"
+    },
+    "long_flow_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_flow/tables.npz",
+      "sha256": "f5e2dc5f30e6dba9ffa8fd587063cd2617d7f5bcb21b6d0e78085e13c93a25a1"
+    },
+    "long_lap_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_lap/tables.npz",
+      "sha256": "ad5600286fe41ba717b47a1d38342f6714202a66eb0b1ed9721dcd1ee0b01724"
+    },
+    "long_rec_report": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/report.json",
+      "sha256": "1e4b5fbc086a95cd6b9bf929d804e71b483643dfd884355ef75a54248eb9c08b",
+      "status": "LONG_REC_CERTIFIED"
+    },
+    "long_rec_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/tables.npz",
+      "sha256": "2d581742fea434038440cce1d2eb0215e00e71cd31d8e988f0d4b996b81923e0"
+    },
+    "validator": {
+      "path": "src/certify_long_absorb.py",
+      "sha256": "9f9a1f5494152dc51396045f2775a6f50a50166cacfa55a7fef8517da7a58e8b"
+    }
+  },
+  "next_highest_yield_item": "Build long_spec: certify the reduced three-terminal Dirichlet/Schur operator and its finite spectral fingerprints, using long_absorb's symmetric transfer matrix as the boundary kernel.",
+  "outputs": {
+    "absorb": "data/invariants/d20/proof_obligations/long_absorb/absorb.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_absorb/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_absorb/manifest.json",
+    "matrix_csv": "data/invariants/d20/proof_obligations/long_absorb/matrix.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_absorb/obs.csv",
+    "owner_csv": "data/invariants/d20/proof_obligations/long_absorb/owner.csv",
+    "report": "data/invariants/d20/proof_obligations/long_absorb/report.json",
+    "shell_csv": "data/invariants/d20/proof_obligations/long_absorb/shell.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_absorb/tables.npz"
+  },
+  "schema": "long.absorb.report@1",
+  "stage_protocol": {
+    "closure": "emit exact transfer matrix, owner/shell digests, tables, certificate, manifest, and report",
+    "coherence": "check determinant, transfer matrix, conservation, dominance, shell, and digest fingerprints",
+    "draft": "collapse active long_lap components to three absorbing terminals",
+    "emit": "write long_absorb artifacts and verifier hook",
+    "witness": "solve the inactive weighted Dirichlet Laplacian exactly over Q"
+  },
+  "status": "LONG_ABSORB_CERTIFIED",
+  "witness": {
+    "classification": "long_rec_inactive_absorbing_dirichlet_kernel",
+    "dirichlet": {
+      "determinant": {
+        "digits": 270,
+        "mod_1000000007": 328173059,
+        "mod_1000000009": 543927589,
+        "sha256": "63e315795445a97c6998b510ff4b0dbdafdf389f20fccb6b6ae8e735c20b8a7e"
+      },
+      "probability_row_sum_violations": 0,
+      "rank": 208
+    },
+    "inactive_owners": {
+      "dominant_counts": [
+        86,
+        2,
+        120
+      ],
+      "owner_count": 208,
+      "owner_digest_sha256": "ea8e86de6b25fa8c775ff22e45c508ad41a41085f4414844b8ff978498c08bdb",
+      "owner_table_sha256": "1540d060fe2ae55cdf9d4af79e096d09e3be58269820e4bf70ff9b32bc490821",
+      "shell1_dominant_counts": [
+        27,
+        2,
+        23
+      ]
+    },
+    "name": "long_absorb",
+    "observable_table_sha256": "54997ead55195355a73d7d8628c659f17b1d64f6b238327395898205420c4c33",
+    "scope": {
+      "absorbing_boundary": "three long_lap active owner components",
+      "interior": "208 inactive long_rec owners",
+      "operator": "weighted Dirichlet Laplacian on inactive owners"
+    },
+    "shells": {
+      "max_distance": 7,
+      "shell_count": 7,
+      "shell_digest_sha256": "99b44a0e967e9ffdc1166568e824c695f4a8ea45c21e8d41a18955da4c7c48f1",
+      "shell_table_sha256": "e918a379dff77f591ead5557ca60276f1de133d2266f91908aba1e8b41d58a46"
+    },
+    "transfer": {
+      "col_sums_match": true,
+      "diagonal_return": {
+        "den": 344515856948862259599448218321133283762099476735535929390815528050733488097979072190043773953176369142065802422162412544621863315865825528432937556374368110766363724995398120284092382851259854210426809038886415137593090585147172976983157828457395687449572,
+        "den_digits": 255,
+        "den_mod_1000000007": 37512555,
+        "den_mod_1000000009": 407042630,
+        "num": 1243686575611247098475686306501886530934056028492253605378203712835011626786860961483296992911451551897800646593680986724129374922045149059868148215465023227858949503789938556669594513192176566651775760407740494958956409669492354947721272015465793845575087799,
+        "num_digits": 259,
+        "num_mod_1000000007": 619430690,
+        "num_mod_1000000009": 152472172,
+        "sha256": "ca8da1e1c9b5d70d70c63f86ef9da5e71bac2e48e550405f195e33f365bc1332"
+      },
+      "matrix_digest_table_sha256": "5d7f681350f1a21d47b10a89913f9d890c26f90f5fa07e2dcdb86be076f01501",
+      "matrix_fraction_text_sha256": "7dde8dfc5c2306b4a5f55b3176ab7e19c2fba7457f2da2ac3cfa00d625cc973b",
+      "offdiagonal_transfer": {
+        "den": 344515856948862259599448218321133283762099476735535929390815528050733488097979072190043773953176369142065802422162412544621863315865825528432937556374368110766363724995398120284092382851259854210426809038886415137593090585147172976983157828457395687449572,
+        "den_digits": 255,
+        "den_mod_1000000007": 37512555,
+        "den_mod_1000000009": 407042630,
+        "num": 335574112642337499528184326282188441831407972863443094949294667749550682654275105435863666889908924249428991709511512380417246517883795162468437542955080191894061811588966426712684969797998605048820732226514832031770317572822285978769523470182907985693750249,
+        "num_digits": 258,
+        "num_mod_1000000007": 338120233,
+        "num_mod_1000000009": 730926963,
+        "sha256": "aeecacdc00b81f37cb0ea08a895059647dbbdbd10af3219b14b7285da89e6411"
+      },
+      "row_sums_match": true,
+      "source_boundaries": [
+        1342,
+        864,
+        2378
+      ],
+      "symmetric": true,
+      "total_boundary": 4584
+    }
+  }
+}

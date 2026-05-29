@@ -1,0 +1,123 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bdf037eba4888113b14a3d37d189423b66123c72ff18b5146bd8b45bc33f4d08",
+  "checks": {
+    "dependency_graph_fingerprint_exact": true,
+    "family_fingerprint_exact": true,
+    "input_certified": true,
+    "naturality_fingerprint_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_nat certifies the finite naturality dependency graph for the long_univ laws relative to the long_min forcing basis: 306 laws are assigned to six naturality families, 808 internal dependency edges are acyclic, 194 laws remain inside the horizon-8 profunctor-controlled sector, and 112 laws are marked as horizon-extension readouts requiring convolution input beyond that profunctor overlap.",
+  "closure_boundary": {
+    "certifies": [
+      "law-to-family naturality assignment for every long_univ law",
+      "explicit acyclic internal dependency graph from long_min basis and row-sum/readout laws",
+      "the 194-law profunctor-controlled sector through horizon 8",
+      "the 112-law horizon-extension boundary that uses long_conv input beyond profunctor overlap"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "profunctor naturality beyond the certified horizon-8 overlap",
+      "absolute minimality of the dependency graph under arbitrary algebraic rewrites",
+      "an infinite-horizon LLN theorem",
+      "all possible line-order maps not represented in the certified artifacts"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_nat.py",
+      "sha256": "739681cfa2133ecb6e3a370070b0ab525d0ed6f3c4315eb8e44bf6e7899ffcbd"
+    },
+    "long_min_basis": {
+      "path": "data/invariants/d20/proof_obligations/long_min/basis.csv",
+      "sha256": "5f81540c78084715dbf0b39bb8224b62f7285dd73702b1dc7b8ccd0ebbe0b985"
+    },
+    "long_min_force": {
+      "path": "data/invariants/d20/proof_obligations/long_min/force.csv",
+      "sha256": "c81f79d635f4f0e845eaf79023862f4412e7cce4a335f8002a1cf6e4f70462fb"
+    },
+    "long_min_report": {
+      "path": "data/invariants/d20/proof_obligations/long_min/report.json",
+      "sha256": "aae947e587937f1d23d9409af3d6884800f421393b561d515d02804006d0e561",
+      "status": "LONG_MIN_CERTIFIED"
+    },
+    "long_min_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_min/tables.npz",
+      "sha256": "b436e704124d9e31635fd564f43dd4b82f7459794040fdf283e2e8d0ec767a04"
+    },
+    "long_univ_arrow": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/arrow.csv",
+      "sha256": "2aa5dd444905e2b32c797012161bda107e0350ce4ad9c247b047afe4eab4a10e"
+    },
+    "long_univ_law": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/law.csv",
+      "sha256": "fd7de0393180f63738e8798ee68223c1c0ed48e3774949bc062eadad4dd07844"
+    },
+    "long_univ_report": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/report.json",
+      "sha256": "b49b6eb3afc79ee72ccd4b108cc31f6f86659a0e2aa0c43638f01c8830df5b74",
+      "status": "LONG_UNIV_CERTIFIED"
+    },
+    "long_univ_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/tables.npz",
+      "sha256": "16eabea2e00152697b7e00ec0299b8aa12f81e19bd7f0fda8ec8142a385d25c1"
+    },
+    "validator": {
+      "path": "src/certify_long_nat.py",
+      "sha256": "157620269d93cc1c4b3aaac3ea29262c9321ce205a953da79ccad1f7edd1d4fe"
+    }
+  },
+  "next_highest_yield_item": "Build long_hlim: certify whether the 112 horizon-extension laws stabilize under the same dependency grammar as the profunctor-controlled sector, or expose the exact finite obstruction to extending profunctor control past horizon eight.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_nat/cert.json",
+    "dependency_csv": "data/invariants/d20/proof_obligations/long_nat/dependency.csv",
+    "family_csv": "data/invariants/d20/proof_obligations/long_nat/family.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_nat/manifest.json",
+    "nat": "data/invariants/d20/proof_obligations/long_nat/nat.json",
+    "naturality_csv": "data/invariants/d20/proof_obligations/long_nat/naturality.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_nat/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_nat/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_nat/tables.npz"
+  },
+  "schema": "long.nat.report@1",
+  "stage_protocol": {
+    "closure": "emit naturality, dependency, family, table, certificate, manifest, and report artifacts",
+    "coherence": "check input status, coverage, acyclicity, control-boundary counts, fixed hashes, and table shapes",
+    "draft": "read the certified long_univ laws and long_min forcing basis",
+    "emit": "write long_nat artifacts and verifier hook",
+    "witness": "build law-family rows and explicit internal dependency edges"
+  },
+  "status": "LONG_NAT_CERTIFIED",
+  "witness": {
+    "classification": "finite_universal_lln_naturality_dependency_graph",
+    "dependency_graph": {
+      "acyclic_edge_count": 808,
+      "bad_edge_count": 0,
+      "dependency_max": 33,
+      "edge_count": 808,
+      "external_dependency_total": 1456,
+      "law_dependency_total": 808,
+      "table_sha256": "0ee0c95b1a4c047c0160abcaa9ff15b7d61b79c2129f27b083fdb342d21693e0",
+      "text_sha256": "2f8952ca7fef0e7bb0c37a16473e3a1a3df228ce400d9fe1fa5bbc8bb858554b"
+    },
+    "families": {
+      "family_count": 6,
+      "readout_dependency_edge_count": 734,
+      "row_sum_dependency_edge_count": 74,
+      "table_sha256": "84bc6d9eb5ae34bde8a86b9b976c20682ebd1a9ae38509a4b39d85ca59b4648a",
+      "text_sha256": "a6b19741389053949b2705d6be06513aaf2e754ac34f21ea6d1badb7b9da1dac",
+      "violation_count": 0
+    },
+    "name": "long_nat",
+    "naturality": {
+      "basis_law_count": 74,
+      "external_input_law_count": 112,
+      "forced_law_count": 232,
+      "law_count": 306,
+      "profunctor_controlled_law_count": 194,
+      "table_sha256": "3a35c3e35c11a633f73f4329a5f95bb0c7c6d9f91928fc7d241aefd7e7d6933e",
+      "text_sha256": "4d48141025b54eed39674bc63a835278eead64505c119423b0efd2469f0cefe3"
+    },
+    "observable_table_sha256": "8f85ad1d073ebf867ee0961d4600f44c6233ec8cc9e9b521683a43fd5f2a3abf"
+  }
+}

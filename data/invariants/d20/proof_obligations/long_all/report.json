@@ -1,0 +1,170 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bee0ad19bdc906c47304c94d486d6bedfc19617fc3c0d03d8ec863f25f1ca699",
+  "checks": {
+    "current_representation_exact": true,
+    "cut_gluing_exact": true,
+    "input_certified": true,
+    "lln_moments_match_exact": true,
+    "orientation_split_exact": true,
+    "stalk_profile_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_all certifies the full raw tensor lookup as an oriented interval sheaf over the finite Alexandrov line. The full support does not form a positive zeta sheaf: it splits into 477,589 positive-zeta rows and 937,376 reversed rows. After retaining orientation, all cut gluing identities hold for count, coefficient sum, and coefficient-square sum, and the global moments exactly match long_lln.",
+  "closure_boundary": {
+    "certifies": [
+      "the full raw tensor support as an oriented interval sheaf over all 1,414,965 rows",
+      "the positive-zeta/reversed split of the raw tensor support",
+      "exact match with long_lln support count, coefficient sum, coefficient-square sum, and variance numerator",
+      "exact gluing of count, coefficient sum, and coefficient-square sum across all 984 finite-line cuts"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "that the full raw tensor support is a positive zeta sheaf",
+      "semantic C985 associator composition",
+      "a genuine long_prof horizon-16 profunctor",
+      "an infinite-horizon LLN theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_all.py",
+      "sha256": "bd03115ea3d31bc42d4fbe032367acd611e7af9a7562f0eaaebbbafde52a6438"
+    },
+    "long_comp_pair": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/pair.csv",
+      "sha256": "dd92ee76d8d9d7465b0d1522e9f292e4ecdd8c8275c71b0303cce6232f341426"
+    },
+    "long_comp_path": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/path.csv",
+      "sha256": "dff936f1f0b4f64a321c8bf41eb30c3e1871eb41f0c2471c0b3e3b88af7985f4"
+    },
+    "long_comp_report": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/report.json",
+      "sha256": "21ade03b25b96dcb4f5671f60c1842ac419402b521b2d5c82d00c0e406c2313d"
+    },
+    "long_comp_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/tables.npz",
+      "sha256": "fa6cf5d38c458c26e718bc37d1e5541b83bf6cc38450400af58e9baec05ca5fe"
+    },
+    "long_comp_transition": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/transition.csv",
+      "sha256": "5e33c219dcb19f8066faedcf2040e8ac4f2e10555b1bbb1c2e9e002a829cb8e2"
+    },
+    "long_lln_report": {
+      "path": "data/invariants/d20/proof_obligations/long_lln/report.json",
+      "sha256": "338e184fcb4f749d47a47f121c24030a5b65fefb40b1559df178f1ef4630e24b",
+      "status": "LONG_LLN_CERTIFIED"
+    },
+    "long_lln_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_lln/tables.npz",
+      "sha256": "f31d0fa59bcf74cb0f7fb9fda12acd9725c098f37c5f467a9bf7561bd5de9d8f"
+    },
+    "long_sheaf_cut": {
+      "path": "data/invariants/d20/proof_obligations/long_sheaf/cut.csv",
+      "sha256": "091064fe28206162157c9a06d511d609b2b0e4f076deec9f9d01036c139d5a3f"
+    },
+    "long_sheaf_report": {
+      "path": "data/invariants/d20/proof_obligations/long_sheaf/report.json",
+      "sha256": "864e4b1dd92cb54c5f2084d7cd4b714321927487b33368582d9d5827af45b73f",
+      "status": "LONG_SHEAF_CERTIFIED"
+    },
+    "long_sheaf_section": {
+      "path": "data/invariants/d20/proof_obligations/long_sheaf/section.csv",
+      "sha256": "b871a9350774ac1d98c95b4e5e8fb1731665b5fc5c594c789dfa80a7aabafc0a"
+    },
+    "long_sheaf_stalk": {
+      "path": "data/invariants/d20/proof_obligations/long_sheaf/stalk.csv",
+      "sha256": "5186e7679dcdab4191ad83158661276c07a64b414dc2d0b60d0679f1368c542c"
+    },
+    "long_sheaf_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_sheaf/tables.npz",
+      "sha256": "4dbffb78237fc6f97034b0ab0f86dce684a2bcc3b90fbcfacec0d07966ed80b8"
+    },
+    "raw_tensor": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_all.py",
+      "sha256": "91b82ac94cff30f018e85f4091e3bdd7342ff012e032e0d24aac69c451905fca"
+    }
+  },
+  "next_highest_yield_item": "Build long_orient: analyze the reversed interval mass as an orientation/duality operator and test whether Mobius inversion separates the positive-zeta and reversed LLN components.",
+  "outputs": {
+    "all": "data/invariants/d20/proof_obligations/long_all/all.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_all/cert.json",
+    "cut_csv": "data/invariants/d20/proof_obligations/long_all/cut.csv",
+    "interval_csv": "data/invariants/d20/proof_obligations/long_all/interval.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_all/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_all/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_all/report.json",
+    "split_csv": "data/invariants/d20/proof_obligations/long_all/split.csv",
+    "stalk_csv": "data/invariants/d20/proof_obligations/long_all/stalk.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_all/tables.npz"
+  },
+  "schema": "long.all.report@1",
+  "stage_protocol": {
+    "closure": "emit full raw oriented interval sheaf and record the positive-zeta obstruction",
+    "coherence": "check orientation split, full LLN moment match, cut gluing, stalk profile, statuses, hashes, and shapes",
+    "draft": "read the raw tensor lookup and the witness-level long_sheaf certificate",
+    "emit": "write long_all artifacts and verifier hook",
+    "witness": "aggregate all raw rows by oriented interval between target and min(source0, source1)"
+  },
+  "status": "LONG_ALL_CERTIFIED",
+  "witness": {
+    "classification": "oriented_full_raw_interval_sheaf",
+    "current_representation": {
+      "current_lln_moment_match_flag": 1,
+      "current_oriented_full_raw_sheaf_flag": 1,
+      "current_positive_zeta_full_raw_sheaf_flag": 0
+    },
+    "cut_gluing": {
+      "closed_count_monotone": true,
+      "coeff_gluing_flag_count": 984,
+      "coeff_square_gluing_flag_count": 984,
+      "count_gluing_flag_count": 984,
+      "crossing_count_max": 451244,
+      "crossing_positive_cut_count": 984,
+      "cut_row_count": 984,
+      "cut_table_sha256": "adf155084dac5777d632c235dfc00535d1fffbec2c0e14368217ccbbc571bb39",
+      "cut_text_sha256": "5970613c00e321d3ad518b9f0498d047b0a783c5c186ca61f7c068c1610137eb",
+      "open_count_monotone": true
+    },
+    "interval_rule": "each raw tensor row uses the oriented interval between target and min(source0, source1)",
+    "lln_moments": {
+      "matches_long_lln": true,
+      "raw_coeff_square_sum": 8119976,
+      "raw_coeff_sum": 2537360,
+      "raw_section_count": 1414965,
+      "variance_num": 5051286071240
+    },
+    "name": "long_all",
+    "observable_table_sha256": "3840659e7104fbc1ba41796284b1bc5df8c59310e060da3db40dc9af93119c60",
+    "orientation_split": {
+      "abs_margin_max": 877,
+      "abs_margin_sum": 257176365,
+      "interval_table_sha256": "be8de04ff8141aaad648df8312e7ff53612f9b15c541ce5c22993513a5d5752d",
+      "interval_text_sha256": "a1f2f0441779bc31e1aa21d766842b7c15662c6d4dd82f6ece9e5f87a7e102e2",
+      "oriented_interval_count": 172396,
+      "positive_zeta_coeff_sum": 915271,
+      "positive_zeta_interval_count": 51980,
+      "positive_zeta_section_count": 477589,
+      "reverse_coeff_sum": 1622089,
+      "reverse_interval_count": 120416,
+      "reverse_section_count": 937376,
+      "split_table_sha256": "3e993d7d51da01edea0298a81914d7a49028e39ac74e9eba5d417c61fc8fb125",
+      "split_text_sha256": "9cddd6280b13e5c7099dd32a8bba7ad7355192054fba7dad1b3f9a615d7131fb",
+      "zero_margin_section_count": 11959
+    },
+    "stalks": {
+      "active_stalk_count": 985,
+      "stalk_coeff_square_sum_max": 2093132,
+      "stalk_coeff_sum_max": 770176,
+      "stalk_row_count": 985,
+      "stalk_section_count_max": 453822,
+      "stalk_table_sha256": "1d461a4b331c67301a26b8d7639ab393cb56169f6f234dd70219ca2668cb5301",
+      "stalk_text_sha256": "fd6f5249a45d6e085e08f72608e7c5e1e6f079c0f0d058ecc529f8e42ef9933c",
+      "width_total": 258591330
+    }
+  }
+}

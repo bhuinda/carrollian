@@ -15,6 +15,7 @@ import numpy as np
 
 from src.certify_io import raw_tensor_relpath
 from src.derive_zero_axiom_coorient import derive as derive_zero_axiom_coorient
+from src.invariant_report_inventory import invariant_report_inventory, invariant_report_rows
 from src.paths import D20_INVARIANTS, HCYCLE_INVARIANTS
 from src.verify_c2_selector_lookup_witness_source_package import (
     PACKAGE_CERTIFICATE as HALLOWEEN_LOOKUP_SOURCE_PACKAGE_CERTIFICATE,
@@ -66,6 +67,7 @@ EXCLUDED_SCAN_DIRS = {
     "generated",
     "ingest",
     "terwilliger_local_runner",
+    "upload",
 }
 
 EXCLUDED_SCAN_DIR_PREFIXES = (
@@ -279,6 +281,8 @@ def sanitize_d20_payload(value: Any, *, key: str | None = None) -> Any:
     if isinstance(value, float):
         if not math.isfinite(value):
             return None
+        if value == 0.0:
+            return 0.0
         return value
     if isinstance(value, dict):
         out: dict[str, Any] = {}
@@ -949,6 +953,54 @@ def certificate_registry() -> dict[str, Any]:
         "path": "data/certificates.json",
         "file_sha256": sha_file(path),
         **payload,
+    }
+
+
+def proof_reports() -> dict[str, Any]:
+    rows = sorted(
+        invariant_report_rows(root=ROOT),
+        key=lambda row: (
+            str(row.get("kind", "")),
+            str(row.get("path", "")),
+            str(row.get("id", "")),
+        ),
+    )
+    inventory = invariant_report_inventory(root=ROOT)
+    certified = [row for row in rows if row.get("classification") == "certified"]
+    provisional = [row for row in rows if row.get("classification") == "provisional"]
+    demoted = [row for row in rows if row.get("classification") == "demoted"]
+    required_ids = [
+        "c985_final_multifusion_certificate",
+        "c985_associator_rebracketing_oracle",
+        "c985_pentagon_chain_normal_form",
+        "eta6_core",
+    ]
+    by_id = {str(row.get("id")): row for row in rows}
+    required_reports = {
+        report_id: by_id.get(report_id, {"present": False})
+        for report_id in required_ids
+    }
+    return {
+        "schema": "d20.proof_reports",
+        "status": "D20_PROOF_REPORTS_INTEGRATED",
+        "policy": (
+            "proof_obligation/theorem reports are indexed by hash as evidence; "
+            "they are not blindly embedded in json_invariants"
+        ),
+        "inventory": inventory,
+        "report_count": len(rows),
+        "certified_report_count": len(certified),
+        "provisional_report_count": len(provisional),
+        "demoted_report_count": len(demoted),
+        "certified_c985_report_count": sum(
+            str(row.get("id", "")).startswith("c985") for row in certified
+        ),
+        "certified_eta6_report_count": sum(
+            str(row.get("id", "")).startswith("eta6") for row in certified
+        ),
+        "required_ids": required_ids,
+        "required_reports": required_reports,
+        "reports": rows,
     }
 
 
@@ -1751,6 +1803,7 @@ def derive() -> dict[str, Any]:
         "final_investigation": final_investigation_status(zero_axiom, universal_uniqueness),
         "certificate_registry": registry,
         "certificates": certificate_payloads(registry),
+        "proof_reports": proof_reports(),
         "json_invariants": json_payloads(),
         "csv_invariants": csv_payloads(),
         "npz_array_manifests": npz_manifests(),

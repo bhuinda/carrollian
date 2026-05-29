@@ -1,0 +1,156 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7072933203eb77da56c486c651ef56821726177f769314ede38d1b732f2adc86",
+  "checks": {
+    "current_representation_exact": true,
+    "defect_exact": true,
+    "drift_partition_exact": true,
+    "eventual_cone_exact": true,
+    "input_certified": true,
+    "stopped_tail_bridge_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_dlim extracts the finite drift-limit obstruction from long_mart and long_stop. The transport has exactly one negative statewise drift, at sample_count=1 and sum_value=2 with drift -3/214 and source probability 8/13. From sample_count 2 through 15, all 252 statewise drifts are nonnegative, while variance continues to shrink and the stopped-tail bridge remains certified.",
+  "closure_boundary": {
+    "certifies": [
+      "the exact single negative statewise drift defect in the finite transport",
+      "the eventual rowwise nonnegative drift cone from sample_count 2 through 15",
+      "strict variance shrinkage across all 15 transport levels",
+      "compatibility with the long_stop stopped-tail bounds"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "an infinite-horizon drift theorem",
+      "uniqueness of the monotone transport operator",
+      "semantic C985 associator composition",
+      "a public Markov-law martingale process"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_dlim.py",
+      "sha256": "bcaa4ce22f785f66cafe42f0fd5354dcb933265a54c0b187d075d6f12c5e9da2"
+    },
+    "long_mart_level": {
+      "path": "data/invariants/d20/proof_obligations/long_mart/level.csv",
+      "sha256": "27abe9a0712d2828299c04fa025dbaf45c7b9ac86a742f9744403646047d96f0"
+    },
+    "long_mart_report": {
+      "path": "data/invariants/d20/proof_obligations/long_mart/report.json",
+      "sha256": "2237ce34182fbded049d4f2c43db736575049d389c1aabe93698a6457e9b89c0",
+      "status": "LONG_MART_CERTIFIED"
+    },
+    "long_mart_state": {
+      "path": "data/invariants/d20/proof_obligations/long_mart/state.csv",
+      "sha256": "719d20729356e4ff853d3c4e1a100de89c635c31c0bc63c3e8ca9e0c862c289b"
+    },
+    "long_mart_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_mart/tables.npz",
+      "sha256": "eaee8a580e4c62f63a5eb6887c865d0ae49425194f4b5054d6b95b419f89946a"
+    },
+    "long_path_path": {
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "long_prob_report": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/report.json",
+      "sha256": "84305f09785de3171c52d1dcbb2b12bfd021af794b4722ce86c8c187430fe66b",
+      "status": "LONG_PROB_CERTIFIED"
+    },
+    "long_prob_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/tables.npz",
+      "sha256": "2234f299c116acb8badf30c8bc447306f4b51b84c4276f07a720d5222ab6a356"
+    },
+    "long_stop_report": {
+      "path": "data/invariants/d20/proof_obligations/long_stop/report.json",
+      "sha256": "35ec38128ffd4565cbdad3769d055dccebf46e5b76ff7030c44dfdbdc4593486",
+      "status": "LONG_STOP_CERTIFIED"
+    },
+    "long_stop_stop": {
+      "path": "data/invariants/d20/proof_obligations/long_stop/stop.csv",
+      "sha256": "0afa90c5d6c9f53ecef09e8467bfc092190c5d542b41c1f7b88f220a4e82687a"
+    },
+    "long_stop_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_stop/tables.npz",
+      "sha256": "44427b41b1dae6e71bc9f47a2b8bc36e8ad6e9f2d23b625b89a08c73fbe9bcc0"
+    },
+    "long_stop_tail": {
+      "path": "data/invariants/d20/proof_obligations/long_stop/tail.csv",
+      "sha256": "81d9471f4ab3f5954d4cdaa26a62333a289d46490ea70923aa096c2aba58e207"
+    },
+    "validator": {
+      "path": "src/certify_long_dlim.py",
+      "sha256": "be00661c26b3dfbc92ce48a069f994a531a7b5a96d726b2d27ca7d3b65813aa4"
+    }
+  },
+  "next_highest_yield_item": "Build long_linf: test whether the eventual nonnegative drift cone extends under the next finite tensor lift, or whether a second boundary defect appears beyond horizon 16.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_dlim/cert.json",
+    "cone_csv": "data/invariants/d20/proof_obligations/long_dlim/cone.csv",
+    "defect_csv": "data/invariants/d20/proof_obligations/long_dlim/defect.csv",
+    "dlim": "data/invariants/d20/proof_obligations/long_dlim/dlim.json",
+    "level_csv": "data/invariants/d20/proof_obligations/long_dlim/level.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_dlim/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_dlim/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_dlim/report.json",
+    "state_csv": "data/invariants/d20/proof_obligations/long_dlim/state.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_dlim/tables.npz"
+  },
+  "schema": "long.dlim.report@1",
+  "stage_protocol": {
+    "closure": "emit finite drift-limit obstruction and eventual cone certificate",
+    "coherence": "check drift partition, defect row, eventual cone, stopped-tail bridge, statuses, hashes, and shapes",
+    "draft": "read long_mart transport, long_prob/path fibers, and long_stop stopped-tail bounds",
+    "emit": "write long_dlim artifacts and verifier hook",
+    "witness": "recompute exact statewise drifts and isolate the single boundary defect"
+  },
+  "status": "LONG_DLIM_CERTIFIED",
+  "witness": {
+    "boundary_defect": {
+      "defect_count": 1,
+      "defect_table_sha256": "18b54ea1d981477ccd27a09a6bb1c236cd87dfc2363b161446a1dfbcd4ab9853",
+      "defect_text_sha256": "0365cdd464ea71f05473a2269cba00262920d157a3bcc6d0ea1ad67651b2fda0",
+      "drift": "-3/214",
+      "sample_count": 1,
+      "source_probability": "8/13",
+      "sum_value": 2
+    },
+    "classification": "finite_drift_limit_obstruction",
+    "drift_partition": {
+      "level_count": 15,
+      "negative_count": 1,
+      "positive_count": 240,
+      "state_count": 255,
+      "state_table_sha256": "6245f41dbba17600892e3234f76aaf5b20e5fbc62d1d383f42c59ccd07dc80ae",
+      "state_text_sha256": "f468740a68c071dae2a2f2accbd81609e356d6c3e1dd6eb0dca624811eee54cd",
+      "zero_count": 14
+    },
+    "eventual_cone": {
+      "cone_table_sha256": "3ae0f4b72ebb243de9739332fb79b7636e982d84326d0e6936a339b4a46afee8",
+      "cone_text_sha256": "5bf07949ef8c9792fd78858ed07fed61085b0356d6382f640cd0db607eac0444",
+      "end_sample_count": 15,
+      "level_count": 14,
+      "level_table_sha256": "97172c8d2515e9617ef2b8622d5109b80fb858b9dfdb0ce1fa1e2d2b15d9b626",
+      "level_text_sha256": "a0678fe4d0502a09f1d33d3095ef9f6898c5677cfc1499dc69031c6bd80e5955",
+      "negative_count": 0,
+      "start_sample_count": 2,
+      "state_count": 252,
+      "variance_shrink_level_count": 15,
+      "zero_count": 14
+    },
+    "name": "long_dlim",
+    "observable_table_sha256": "78a832d868ce7fb7683eb3182a11a7bce3b123780598bef4607b575ca354e4f5",
+    "stopped_tail_bridge": {
+      "stopped_tail_gap_nonnegative_count": 48,
+      "tail_gap_nonnegative_count": 48
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "27906923f107e82870deab32b51b7e952337ee30b12342cb559e33736fced6ca",
+  "checks": {
+    "line_size_matches_tensor_addresses": true,
+    "long_kern_input_certified": true,
+    "raw_tensor_shape": true,
+    "raw_tensor_support_unique": true,
+    "source_pair_profile_matches_long_kern": true,
+    "table_shapes_match": true,
+    "ternary_closure_exact": true,
+    "ternary_closure_is_alexandrov": true,
+    "weak_classes_partition_support_and_closure": true
+  },
+  "claim": "long_tri certifies the full ternary Alexandrov closure of the C985 tensor lookup over the finite line, plus weak-order support classes and exact finite LLN event variances.",
+  "closure_boundary": {
+    "certifies": [
+      "the exact ternary Alexandrov closure volume of the raw tensor support",
+      "the source-pair frontier matrix that determines that closure",
+      "the 13 weak-order support classes induced by the finite line",
+      "finite LLN event-variance numerators for support and closure weak-order classes"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "all non-weak-order support classes",
+      "recoupling dynamics not visible in the raw tensor lookup support",
+      "a minimal generating basis for every possible ternary line profunctor",
+      "a semantic infinite limit theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_tri.py",
+      "sha256": "676d19d0390847ca8ed54407d4d5a7f7ea7d9ce5bf8c5a43545352169154a0e1"
+    },
+    "long_kern_report": {
+      "path": "data/invariants/d20/proof_obligations/long_kern/report.json",
+      "sha256": "616b2cae3f94e0cc1e3f13e82f78a208c0aac93b17e1894e7893affa438e7781",
+      "status": "LONG_KERN_CERTIFIED"
+    },
+    "raw_tensor": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_tri.py",
+      "sha256": "687b36ab6d5d065feacc32db66cf57e28fe3dc673d1a5d7e024e72386536e16f"
+    }
+  },
+  "next_highest_yield_item": "Build long_basis: minimal generators/irreducibles for the line profunctor closure lattice seen by the tensor lookup.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_tri/cert.json",
+    "front_csv": "data/invariants/d20/proof_obligations/long_tri/front.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_tri/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_tri/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_tri/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_tri/tables.npz",
+    "tri": "data/invariants/d20/proof_obligations/long_tri/tri.json",
+    "weak_csv": "data/invariants/d20/proof_obligations/long_tri/weak.csv"
+  },
+  "schema": "long.tri.report@1",
+  "stage_protocol": {
+    "closure": "derive finite LLN event variances for support and closure classes",
+    "coherence": "check closure monotonicity, exact volumes, partitions, and source-pair fibers",
+    "draft": "reuse long_kern and the raw tensor lookup",
+    "emit": "write long_tri artifacts and verifier hook",
+    "witness": "compute source-pair frontiers, ternary closure, and weak-order classes"
+  },
+  "status": "LONG_TRI_CERTIFIED",
+  "witness": {
+    "classification": "finite_alexandrov_line_ternary_closure",
+    "closure": {
+      "closure_domain_gap": 404111708,
+      "closure_extra": 550144952,
+      "closure_size": 551559917,
+      "rule": "closure contains (i,j,k) iff k>=frontier(i,j)",
+      "source_monotone": [
+        true,
+        true
+      ],
+      "target_upward": true
+    },
+    "finite_lln": {
+      "closure_class_event": "weak order class of a sampled line-domain word restricted to the ternary closure",
+      "support_class_event": "weak order class of a sampled tensor support row",
+      "variance_rule": "for event count m in population N, Var(mean_k)=m*(N-m)/(N^2*k)"
+    },
+    "front_table_sha256": "6571722bb9c04bf8aeddfe829d899dd122b52d0a7b7aa537aa7f8e66752f4e53",
+    "frontier": {
+      "frontier_max": 893,
+      "frontier_min": 0,
+      "frontier_none_count": 0,
+      "frontier_pair_count": 970225,
+      "frontier_sha256": "c8a9b0108b6a3fcbbf9e0cfb2313afea2a1228a94e068c4161e90a2bc967b2e0",
+      "rule": "frontier(i,j)=min c among support triples (a,b,c) with i<=a and j<=b"
+    },
+    "line": {
+      "domain_word_count": 955671625,
+      "point_count": 985,
+      "support_count": 1414965
+    },
+    "name": "long_tri",
+    "observable_table_sha256": "5929b95fe6080385d2104b78d52a401535b5ed2f1f24efd306ab639ff47984ff",
+    "source_pair": {
+      "empty_count": 772196,
+      "fiber_max": 48,
+      "fiber_min": 1,
+      "pair_count_sha256": "61792a3848498a5f1be9430565447abb2deb0e347204da1df69016a2d65e313c",
+      "pair_weight_sha256": "ac426039770cac50aaea5bb65c99082ea04474a46be27597efc95b5f3c33f774",
+      "support_count": 198029
+    },
+    "weak_order": {
+      "class_count": 13,
+      "classes": [
+        "eq_abc",
+        "eq_ab_lt_c",
+        "eq_ab_gt_c",
+        "eq_ac_lt_b",
+        "eq_ac_gt_b",
+        "eq_bc_lt_a",
+        "eq_bc_gt_a",
+        "lt_abc",
+        "lt_acb",
+        "lt_bac",
+        "lt_bca",
+        "lt_cab",
+        "lt_cba"
+      ],
+      "closure_counts": [
+        985,
+        484620,
+        67474,
+        362648,
+        484620,
+        98522,
+        484620,
+        158793820,
+        151954496,
+        158793820,
+        52588774,
+        22939917,
+        4505601
+      ],
+      "support_counts": [
+        56,
+        700,
+        762,
+        5948,
+        3675,
+        5955,
+        3668,
+        55286,
+        231065,
+        411924,
+        231058,
+        382541,
+        82327
+      ]
+    },
+    "weak_table_sha256": "fa57c0b26e2e504aedeca63da48a920bdea9775a61fd0a928a852108b3c2b507"
+  }
+}

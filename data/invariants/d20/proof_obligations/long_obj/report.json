@@ -1,0 +1,179 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "70a47914b7c8bb13f201a8d03dc8fcac0c9672f8065c88a13473fba2cfed5fb3",
+  "checks": {
+    "comparison_fingerprint_exact": true,
+    "horizon_fingerprint_exact": true,
+    "input_certified": true,
+    "object_fingerprint_exact": true,
+    "object_gap_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_obj certifies the object-level status of the long_ext extension: the horizon-16 rows satisfy the exact finite line sum-state formula, but only horizons 1-8 are backed by the certified long_dev and long_prof tensor-lookup objects. The remaining 208 rows are a formula-correct convolution shadow.",
+  "closure_boundary": {
+    "certifies": [
+      "the exact finite object law: horizon n has 2n+1 sum states and horizons 1-16 total 288 rows",
+      "horizons 1-8 are backed by long_dev distribution rows and long_prof deviation laws",
+      "horizons 9-16 contribute exactly 208 formula-correct rows with no current tensor-lookup object backing",
+      "the long_ext formal-added flags coincide exactly with the object-gap rows"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "that no future tensor-lookup object extension can be constructed",
+      "a genuine long_prof object for horizons 9-16",
+      "an infinite-horizon LLN theorem",
+      "a categorical universal property for the object gap"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_obj.py",
+      "sha256": "177cbc60b0ef63fbf3d802e404659429faedcae2094c1331c6dd4b985812372f"
+    },
+    "long_conv_marginal": {
+      "path": "data/invariants/d20/proof_obligations/long_conv/marginal.csv",
+      "sha256": "60ccdce39ed0f5fa2accbb2e051824b04ec8570c95c2adf8bb5d4cea55b985dc"
+    },
+    "long_conv_report": {
+      "path": "data/invariants/d20/proof_obligations/long_conv/report.json",
+      "sha256": "c984488b709662e4569b66930942b587250942be76599e331e0f32d379ad6547",
+      "status": "LONG_CONV_CERTIFIED"
+    },
+    "long_conv_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_conv/tables.npz",
+      "sha256": "d4e55867947cfa16925f12d6e1a67b9e317c520ff34a791bd18437bd57cd7e90"
+    },
+    "long_dev_distribution": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/distribution.csv",
+      "sha256": "25fa5327531aba62074435e2d38aceb1902a7e6d2fa823c31e52c37aa0cbf228"
+    },
+    "long_dev_report": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/report.json",
+      "sha256": "8140f47d42f1484102feaeb0b7bd1bdccfd2d1e65a5592bbc1da8035265d24e0",
+      "status": "LONG_DEV_CERTIFIED"
+    },
+    "long_dev_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_dev/tables.npz",
+      "sha256": "df4105ab04c6598839c94d655e37a67e70ec01df7a660e45614405ed1a306100"
+    },
+    "long_ext_extension": {
+      "path": "data/invariants/d20/proof_obligations/long_ext/extension.csv",
+      "sha256": "252c35e0d953fec9af22f206abf723ec64644aba92805927235e1ec322a761a9"
+    },
+    "long_ext_object": {
+      "path": "data/invariants/d20/proof_obligations/long_ext/object.csv",
+      "sha256": "6517cb67bf8194268b09bef124b47ddbbd81da0a9da9d844839e15500c566bbd"
+    },
+    "long_ext_report": {
+      "path": "data/invariants/d20/proof_obligations/long_ext/report.json",
+      "sha256": "eaa6e67856fc28dcd0b19265a639cf2c43595e8f5f49c1e1f52ffac1d95ddd04",
+      "status": "LONG_EXT_CERTIFIED"
+    },
+    "long_ext_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_ext/tables.npz",
+      "sha256": "9c62ffcd09a88c903ba7cbddfce329be54d3ee423c21c55e5b9228f555cfdfe6"
+    },
+    "long_lln_report": {
+      "path": "data/invariants/d20/proof_obligations/long_lln/report.json",
+      "sha256": "338e184fcb4f749d47a47f121c24030a5b65fefb40b1559df178f1ef4630e24b",
+      "status": "LONG_LLN_CERTIFIED"
+    },
+    "long_prof_compose": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/compose.csv",
+      "sha256": "d7c5a962aaf58b74ed23395be87d8242891b70cb5f5ea95c4cb24afadb9ac197"
+    },
+    "long_prof_object": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/object.csv",
+      "sha256": "3d87d220b0ba699a03c822b2ca425c421cfaeb3f5b408e0f6f56023e3f384cd2"
+    },
+    "long_prof_report": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/report.json",
+      "sha256": "ed87bea6bbeff6c91e622b06e2850da2998d098a7ec93a0f01a6ea865e2a4628",
+      "status": "LONG_PROF_CERTIFIED"
+    },
+    "long_prof_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_prof/tables.npz",
+      "sha256": "18c0d408d583cff813d489e2a7590ad76df0f01c6c686dc64757dda0c41fbe1e"
+    },
+    "long_univ_arrow": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/arrow.csv",
+      "sha256": "2aa5dd444905e2b32c797012161bda107e0350ce4ad9c247b047afe4eab4a10e"
+    },
+    "long_univ_node": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/node.csv",
+      "sha256": "c66f25e88ea2742ea3ba210ea886ec1d781aa4770775952eec905630de8231d5"
+    },
+    "long_univ_report": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/report.json",
+      "sha256": "b49b6eb3afc79ee72ccd4b108cc31f6f86659a0e2aa0c43638f01c8830df5b74",
+      "status": "LONG_UNIV_CERTIFIED"
+    },
+    "long_univ_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_univ/tables.npz",
+      "sha256": "16eabea2e00152697b7e00ec0299b8aa12f81e19bd7f0fda8ec8142a385d25c1"
+    },
+    "validator": {
+      "path": "src/certify_long_obj.py",
+      "sha256": "6e3ed62601052af0b90c5059fd046a31150e2803d9a5465313367e8d97bef28d"
+    }
+  },
+  "next_highest_yield_item": "Build long_tens: attempt to construct the missing horizon-16 object from explicit tensor powers or prove the obstruction is not representable by the current finite line tensor lookup.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_obj/cert.json",
+    "comparison_csv": "data/invariants/d20/proof_obligations/long_obj/comparison.csv",
+    "horizon_csv": "data/invariants/d20/proof_obligations/long_obj/horizon.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_obj/manifest.json",
+    "obj": "data/invariants/d20/proof_obligations/long_obj/obj.json",
+    "object_csv": "data/invariants/d20/proof_obligations/long_obj/object.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_obj/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_obj/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_obj/tables.npz"
+  },
+  "schema": "long.obj.report@1",
+  "stage_protocol": {
+    "closure": "emit object, horizon, comparison, table, certificate, manifest, and report artifacts",
+    "coherence": "check input status, object/horizon/comparison fingerprints, gap flags, hashes, and shapes",
+    "draft": "read long_ext, long_conv, long_dev, long_prof, long_univ, and long_lln artifacts",
+    "emit": "write long_obj artifacts and verifier hook",
+    "witness": "compare horizon object laws and row keys against certified tensor-lookup object support"
+  },
+  "status": "LONG_OBJ_CERTIFIED",
+  "witness": {
+    "classification": "finite_line_tensor_object_gap",
+    "comparison": {
+      "comparison_mismatch_count": 0,
+      "comparison_row_count": 288,
+      "conv_marginal_row_count": 288,
+      "long_dev_distribution_row_count": 80,
+      "long_prof_deviation_law_count": 80,
+      "object_gap_row_count": 208,
+      "table_sha256": "c32af158d1dd9e3a3d0090c0ea29321803466fa99b7f70ef3883ce22aa1e3df8",
+      "tensor_lookup_object_row_count": 80,
+      "text_sha256": "2d75c06f6a7b8d6f1f1c8e01aea9f87b379f49427e8be9acb95ce47f33abcc70"
+    },
+    "horizons": {
+      "expected_sum_state_total": 288,
+      "formula_violation_count": 0,
+      "horizon_row_count": 16,
+      "object_gap_horizon_count": 8,
+      "table_sha256": "9a0e72975b6c735740dbfd45aa1cf300b99d4990973ffedf318dc0fd97234db3",
+      "tensor_lookup_object_horizon_count": 8,
+      "text_sha256": "7b1e715d384e28cfba91791d164ceb81f06177768beb4ba50c6af1cc3ef4d29b"
+    },
+    "name": "long_obj",
+    "object_gap": {
+      "current_evidence_genuine_extension_flag": 0,
+      "current_evidence_object_gap_flag": 1,
+      "source_horizon_gap": 8,
+      "target_row_gap": 208
+    },
+    "objects": {
+      "convolution_shadow_object_count": 2,
+      "formal_object_count": 2,
+      "genuine_tensor_lookup_object_count": 2,
+      "object_row_count": 4,
+      "table_sha256": "2343dc759dbc281293e18e954fa7c10ae7977d695fdfa866e3e062a6083ed04d",
+      "text_sha256": "febc2ec027e5a85ade2ed678aea371532a879e7d4561624a9ca1e625d6f643d3"
+    },
+    "observable_table_sha256": "ededb940786112fe3698b1d50dc65bd48da9c5db18a5155d6e37fa18f3f9eec1"
+  }
+}

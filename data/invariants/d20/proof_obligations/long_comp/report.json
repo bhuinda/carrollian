@@ -1,0 +1,138 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "339d408aff50b90c6c5464b1e48206d09dab17299c5830903a1b760f5b07f149",
+  "checks": {
+    "alexandrov_zeta_composability_exact": true,
+    "current_representation_exact": true,
+    "exact_source_target_not_present": true,
+    "input_certified": true,
+    "table_shapes_match": true,
+    "transition_inventory_exact": true
+  },
+  "claim": "long_comp certifies that the explicit long_path raw product witnesses are composable in the Alexandrov-line zeta profunctor: for every adjacent pair of raw lookup rows, the previous target address is below both source addresses of the next row. This supplies a finite profunctorial path structure for the LLN sample witnesses, while exact source/target equality and semantic C985 composition remain unclaimed.",
+  "closure_boundary": {
+    "certifies": [
+      "all adjacent transitions in all 288 long_path witnesses are zeta-composable over the finite Alexandrov line",
+      "all 208 gap-fiber witnesses are zeta-composable over the finite Alexandrov line",
+      "the minimum zeta margins are positive: 8 on source0 and 152 on source1",
+      "exact source/target equality is absent from these witnesses"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "semantic C985 associator composition",
+      "a genuine long_prof horizon-16 profunctor",
+      "all possible raw product paths in each fiber",
+      "an infinite-horizon LLN theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_comp.py",
+      "sha256": "5c58366a0c6ea21ea69e6ede85f98d07ab89226509271a16fdcd3ed5d2d436bc"
+    },
+    "long_lln_report": {
+      "path": "data/invariants/d20/proof_obligations/long_lln/report.json",
+      "sha256": "338e184fcb4f749d47a47f121c24030a5b65fefb40b1559df178f1ef4630e24b",
+      "status": "LONG_LLN_CERTIFIED"
+    },
+    "long_lln_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_lln/tables.npz",
+      "sha256": "f31d0fa59bcf74cb0f7fb9fda12acd9725c098f37c5f467a9bf7561bd5de9d8f"
+    },
+    "long_path_component": {
+      "path": "data/invariants/d20/proof_obligations/long_path/component.csv",
+      "sha256": "127444228cfef288fff85eb82788637f995b85619f153b170fe7eab472234e6a"
+    },
+    "long_path_path": {
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_step": {
+      "path": "data/invariants/d20/proof_obligations/long_path/step.csv",
+      "sha256": "55ff17e7d63c522ac591cc6f044279da14b17f3da0fd14c371168fa2e2d35c76"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "validator": {
+      "path": "src/certify_long_comp.py",
+      "sha256": "b7dc554a238bed9535d11d774ed5052e1a2ae929bb224a8c1c83c4ab54fb8c75"
+    }
+  },
+  "next_highest_yield_item": "Build long_sheaf: turn the zeta-composable sample paths into an Alexandrov open/closed support sheaf and test restriction/gluing for LLN observables.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_comp/cert.json",
+    "comp": "data/invariants/d20/proof_obligations/long_comp/comp.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_comp/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_comp/obs.csv",
+    "pair_csv": "data/invariants/d20/proof_obligations/long_comp/pair.csv",
+    "path_csv": "data/invariants/d20/proof_obligations/long_comp/path.csv",
+    "report": "data/invariants/d20/proof_obligations/long_comp/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_comp/tables.npz",
+    "transition_csv": "data/invariants/d20/proof_obligations/long_comp/transition.csv"
+  },
+  "schema": "long.comp.report@1",
+  "stage_protocol": {
+    "closure": "emit Alexandrov-zeta composability without claiming exact C985 composability",
+    "coherence": "check transition inventory, zeta margins, exact-composition absence, hashes, statuses, and table shapes",
+    "draft": "read long_path step-expanded witnesses and long_lln zeta rule",
+    "emit": "write long_comp artifacts and verifier hook",
+    "witness": "test target_i <= source0_{i+1} and target_i <= source1_{i+1} on every adjacent raw-row transition"
+  },
+  "status": "LONG_COMP_CERTIFIED",
+  "witness": {
+    "classification": "alexandrov_zeta_composable_sample_paths",
+    "current_representation": {
+      "current_alexandrov_zeta_composable_path_flag": 1,
+      "current_c985_semantic_composable_path_flag": 0,
+      "current_exact_source_target_composable_path_flag": 0,
+      "current_lln_product_sample_independence_flag": 1
+    },
+    "exact_composability": {
+      "exact_left_transition_count": 0,
+      "exact_path_count": 0,
+      "exact_right_transition_count": 0
+    },
+    "inventory": {
+      "existing_path_count": 80,
+      "existing_transition_count": 364,
+      "gap_path_count": 208,
+      "gap_transition_count": 2476,
+      "one_step_path_count": 3,
+      "pair_row_count": 5,
+      "path_row_count": 288,
+      "step_row_count": 3128,
+      "transition_row_count": 2840
+    },
+    "name": "long_comp",
+    "observable_table_sha256": "79483e9ab723f3f4aacc1965156602b33f4bc2e2534fbc7bd630c61ff57cd28c",
+    "zeta_composability": {
+      "existing_zeta_path_count": 80,
+      "gap_zeta_path_count": 208,
+      "left_margin_range": [
+        8,
+        171
+      ],
+      "pair_table_sha256": "46cbba0a19c71d63579e60dd22f1b9db5003a10f15494ad8ae333f34cf166173",
+      "pair_text_sha256": "77d97eb5c31a576f4e85661fff2ad19ed39e6fbe914f55efe9d20ad05008d0e5",
+      "path_table_sha256": "3afc29df1b0c9d69c892fbc149e0f22d20a81b3b1d1e37a7e358aac654220c33",
+      "path_text_sha256": "82c34f7eb3d2c4165933c64c868eb5fd0e49684f47caf92e8ebd834c31874ab7",
+      "right_margin_range": [
+        152,
+        708
+      ],
+      "transition_table_sha256": "e11b256132883acc8895877a81e6bb7ade43c846ca078d3c95e7cc34b5d089c9",
+      "transition_text_sha256": "c9637711b0bf9c3fb596027a6fd6cd25f679bcef675deb4fc3455f9e295e1e26",
+      "zeta_both_transition_count": 2840,
+      "zeta_left_transition_count": 2840,
+      "zeta_path_count": 288,
+      "zeta_right_transition_count": 2840
+    },
+    "zeta_rule": "for adjacent raw lookup rows r_i -> r_{i+1}, require target_i <= source0_{i+1} and target_i <= source1_{i+1}"
+  }
+}

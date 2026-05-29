@@ -846,6 +846,75 @@ def verify_root_invariant_reports(root: dict[str, Any], errors: list[str]) -> di
     }
 
 
+def expected_invariant_report_rows() -> list[dict[str, Any]]:
+    return sorted(
+        invariant_report_rows(),
+        key=lambda row: (
+            str(row.get("kind", "")),
+            str(row.get("path", "")),
+            str(row.get("id", "")),
+        ),
+    )
+
+
+def verify_d20_proof_reports(data: dict[str, Any], errors: list[str]) -> dict[str, Any]:
+    section = data.get("proof_reports", {})
+    require(isinstance(section, dict), "d20 proof_reports section missing", errors)
+    if not isinstance(section, dict):
+        return {}
+
+    rows = expected_invariant_report_rows()
+    certified = [row for row in rows if row.get("classification") == "certified"]
+    provisional = [row for row in rows if row.get("classification") == "provisional"]
+    demoted = [row for row in rows if row.get("classification") == "demoted"]
+    inventory = invariant_report_inventory()
+    required_ids = [
+        "c985_final_multifusion_certificate",
+        "c985_associator_rebracketing_oracle",
+        "c985_pentagon_chain_normal_form",
+        "eta6_core",
+    ]
+
+    require_schema(section.get("schema"), "d20.proof_reports", "d20 proof_reports schema mismatch", errors)
+    require(section.get("status") == "D20_PROOF_REPORTS_INTEGRATED", "d20 proof_reports status mismatch", errors)
+    require(section.get("inventory") == inventory, "d20 proof_reports inventory mismatch", errors)
+    require(section.get("report_count") == len(rows), "d20 proof_reports report count mismatch", errors)
+    require(section.get("certified_report_count") == len(certified), "d20 proof_reports certified count mismatch", errors)
+    require(section.get("provisional_report_count") == len(provisional), "d20 proof_reports provisional count mismatch", errors)
+    require(section.get("demoted_report_count") == len(demoted), "d20 proof_reports demoted count mismatch", errors)
+    require(section.get("reports") == rows, "d20 proof_reports rows mismatch", errors)
+    require(section.get("required_ids") == required_ids, "d20 proof_reports required id list mismatch", errors)
+
+    required_reports = section.get("required_reports", {})
+    require(isinstance(required_reports, dict), "d20 proof_reports required map missing", errors)
+    by_id = {str(row.get("id")): row for row in rows}
+    if isinstance(required_reports, dict):
+        for report_id in required_ids:
+            expected = by_id.get(report_id)
+            require(expected is not None, f"d20 proof_reports missing source row: {report_id}", errors)
+            require(
+                required_reports.get(report_id) == expected,
+                f"d20 proof_reports required row mismatch: {report_id}",
+                errors,
+            )
+            if expected is not None:
+                require(
+                    expected.get("classification") == "certified",
+                    f"d20 proof_reports required row not certified: {report_id}",
+                    errors,
+                )
+
+    return {
+        "schema": section.get("schema"),
+        "status": section.get("status"),
+        "report_count": section.get("report_count"),
+        "certified_report_count": section.get("certified_report_count"),
+        "certified_c985_report_count": section.get("certified_c985_report_count"),
+        "certified_eta6_report_count": section.get("certified_eta6_report_count"),
+        "required_ids": required_ids,
+    }
+
+
 def verify_genome(data: dict[str, Any], errors: list[str]) -> dict[str, Any]:
     genome = data.get("genome", {})
     require(isinstance(genome, dict), "d20 genome missing", errors)
@@ -939,6 +1008,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "reproducibility_evidence",
         "certificate_registry",
         "certificates",
+        "proof_reports",
         "json_invariants",
         "npz_array_manifests",
         "source_manifest",
@@ -1156,6 +1226,7 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
     require(len(registry.get("certificates", [])) == len(EXPECTED), "d20 certificate registry entry count mismatch", errors)
     if CERTIFICATE_INDEX.exists():
         require(registry.get("file_sha256") == sha_file(CERTIFICATE_INDEX), "d20 certificate registry file hash mismatch", errors)
+    proof_reports = verify_d20_proof_reports(data, errors)
 
     return {
         "schema": data.get("schema"),
@@ -1169,6 +1240,10 @@ def verify_d20_json(errors: list[str]) -> dict[str, Any]:
         "section_count": len(data),
         "certificate_count": len(data.get("certificates", {})),
         "certificate_registry_entries": len(registry.get("certificates", [])),
+        "proof_report_count": proof_reports.get("report_count"),
+        "proof_report_certified_count": proof_reports.get("certified_report_count"),
+        "proof_report_c985_count": proof_reports.get("certified_c985_report_count"),
+        "proof_report_eta6_count": proof_reports.get("certified_eta6_report_count"),
         "json_invariant_file_count": len(data.get("json_invariants", {})),
         "npz_array_manifest_count": len(data.get("npz_array_manifests", {})),
         "data_registry_domain_count": data_registry.get("domain_count"),

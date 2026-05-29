@@ -1,0 +1,306 @@
+from __future__ import annotations
+
+import csv
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+try:
+    from .certify_io import ROOT, h_file, h_json
+    from .derive_long_all import (
+        CUT_COLUMNS,
+        CUT_TEXT_HASH,
+        DERIVE_SCRIPT,
+        INDEX_PATH,
+        INTERVAL_COLUMNS,
+        INTERVAL_TEXT_HASH,
+        LONG_COMP_PAIR,
+        LONG_COMP_PATH,
+        LONG_COMP_REPORT,
+        LONG_COMP_TABLES,
+        LONG_COMP_TRANSITION,
+        LONG_LLN_REPORT,
+        LONG_LLN_TABLES,
+        LONG_SHEAF_CUT,
+        LONG_SHEAF_REPORT,
+        LONG_SHEAF_SECTION,
+        LONG_SHEAF_STALK,
+        LONG_SHEAF_TABLES,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        RAW_TENSOR,
+        SPLIT_COLUMNS,
+        SPLIT_TEXT_HASH,
+        STALK_COLUMNS,
+        STALK_TEXT_HASH,
+        STATUS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        digest_text,
+        rows_from_table,
+        self_hash,
+    )
+except ImportError:  # Supports direct script execution.
+    from certify_io import ROOT, h_file, h_json
+    from derive_long_all import (
+        CUT_COLUMNS,
+        CUT_TEXT_HASH,
+        DERIVE_SCRIPT,
+        INDEX_PATH,
+        INTERVAL_COLUMNS,
+        INTERVAL_TEXT_HASH,
+        LONG_COMP_PAIR,
+        LONG_COMP_PATH,
+        LONG_COMP_REPORT,
+        LONG_COMP_TABLES,
+        LONG_COMP_TRANSITION,
+        LONG_LLN_REPORT,
+        LONG_LLN_TABLES,
+        LONG_SHEAF_CUT,
+        LONG_SHEAF_REPORT,
+        LONG_SHEAF_SECTION,
+        LONG_SHEAF_STALK,
+        LONG_SHEAF_TABLES,
+        OBS_CODES,
+        OBS_COLUMNS,
+        OUT_DIR,
+        RAW_TENSOR,
+        SPLIT_COLUMNS,
+        SPLIT_TEXT_HASH,
+        STALK_COLUMNS,
+        STALK_TEXT_HASH,
+        STATUS,
+        THEOREM_ID,
+        VALIDATOR_SCRIPT,
+        build_payloads,
+        digest_text,
+        rows_from_table,
+        self_hash,
+    )
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise AssertionError(f"{path} is not a JSON object")
+    return payload
+
+
+def assert_file_hash(entry: dict[str, Any], expected_path: Path, label: str) -> None:
+    expected_rel = expected_path.relative_to(ROOT).as_posix()
+    if entry.get("path") != expected_rel:
+        raise AssertionError(f"{label} path mismatch: {entry.get('path')}")
+    if entry.get("sha256") != h_file(expected_path):
+        raise AssertionError(f"{label} sha256 mismatch")
+
+
+def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        return list(reader.fieldnames or []), list(reader)
+
+
+def validate_long_all() -> dict[str, Any]:
+    expected = build_payloads()
+    all_payload = load_json(OUT_DIR / "all.json")
+    report = load_json(OUT_DIR / "report.json")
+    manifest = load_json(OUT_DIR / "manifest.json")
+    cert = load_json(OUT_DIR / "cert.json")
+    index = load_json(INDEX_PATH)
+    tables = np.load(OUT_DIR / "tables.npz", allow_pickle=False)
+
+    if all_payload != expected["all"]:
+        raise AssertionError("long_all all JSON mismatch")
+    if cert != expected["cert"]:
+        raise AssertionError("long_all cert mismatch")
+    for filename, key in {
+        "split.csv": "split_csv",
+        "interval.csv": "interval_csv",
+        "cut.csv": "cut_csv",
+        "stalk.csv": "stalk_csv",
+        "obs.csv": "obs_csv",
+    }.items():
+        if (OUT_DIR / filename).read_text(encoding="utf-8") != expected[key]:
+            raise AssertionError(f"long_all {filename} mismatch")
+
+    for key, expected_array in {
+        "split_table": expected["split_table"],
+        "interval_table": expected["interval_table"],
+        "cut_table": expected["cut_table"],
+        "stalk_table": expected["stalk_table"],
+        "observable_table": expected["observable_table"],
+    }.items():
+        if not np.array_equal(np.asarray(tables[key]), expected_array):
+            raise AssertionError(f"long_all table mismatch: {key}")
+
+    if report.get("schema") != "long.all.report@1":
+        raise AssertionError("long_all report schema mismatch")
+    if report.get("status") != STATUS:
+        raise AssertionError("long_all report status mismatch")
+    if report.get("all_checks_pass") is not True:
+        raise AssertionError("long_all all_checks_pass mismatch")
+    if report.get("checks") != expected["report"]["checks"]:
+        raise AssertionError("long_all checks mismatch")
+    if self_hash(report, "certificate_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("long_all report self hash mismatch")
+    if report.get("certificate_sha256") != expected["report"]["certificate_sha256"]:
+        raise AssertionError("long_all report hash mismatch")
+
+    csv_shapes = [
+        ("split.csv", SPLIT_COLUMNS, 2),
+        ("interval.csv", INTERVAL_COLUMNS, 172_396),
+        ("cut.csv", CUT_COLUMNS, 984),
+        ("stalk.csv", STALK_COLUMNS, 985),
+    ]
+    csv_rows: dict[str, list[dict[str, str]]] = {}
+    for filename, columns, row_count in csv_shapes:
+        header, rows = read_csv(OUT_DIR / filename)
+        csv_rows[filename] = rows
+        if header != columns or len(rows) != row_count:
+            raise AssertionError(f"long_all {filename} shape mismatch")
+
+    table_shapes = {
+        "split_table": (2, len(SPLIT_COLUMNS)),
+        "interval_table": (172_396, len(INTERVAL_COLUMNS)),
+        "cut_table": (984, len(CUT_COLUMNS)),
+        "stalk_table": (985, len(STALK_COLUMNS)),
+        "observable_table": (len(OBS_CODES), len(OBS_COLUMNS)),
+    }
+    for key, shape in table_shapes.items():
+        if tuple(np.asarray(tables[key]).shape) != shape:
+            raise AssertionError(f"long_all {key} shape mismatch")
+
+    obs = {
+        row["observable_code"]: row["value"]
+        for row in rows_from_table(np.asarray(tables["observable_table"]), OBS_COLUMNS)
+    }
+    required = {
+        "line_point_count": 985,
+        "raw_section_count": 1_414_965,
+        "raw_coeff_sum": 2_537_360,
+        "raw_coeff_square_sum": 8_119_976,
+        "lln_variance_num": 5_051_286_071_240,
+        "oriented_interval_count": 172_396,
+        "positive_zeta_interval_count": 51_980,
+        "reverse_interval_count": 120_416,
+        "positive_zeta_section_count": 477_589,
+        "reverse_section_count": 937_376,
+        "positive_zeta_coeff_sum": 915_271,
+        "reverse_coeff_sum": 1_622_089,
+        "positive_zeta_coeff_square_sum": 3_655_871,
+        "reverse_coeff_square_sum": 4_464_105,
+        "zero_margin_section_count": 11_959,
+        "abs_margin_sum": 257_176_365,
+        "abs_margin_max": 877,
+        "cut_row_count": 984,
+        "cut_count_gluing_flag_count": 984,
+        "cut_coeff_gluing_flag_count": 984,
+        "cut_coeff_square_gluing_flag_count": 984,
+        "closed_count_monotone_flag": 1,
+        "open_count_monotone_flag": 1,
+        "crossing_positive_cut_count": 984,
+        "crossing_count_max": 451_244,
+        "stalk_row_count": 985,
+        "active_stalk_count": 985,
+        "stalk_section_count_max": 453_822,
+        "stalk_coeff_sum_max": 770_176,
+        "stalk_coeff_square_sum_max": 2_093_132,
+        "width_total": 258_591_330,
+        "current_oriented_full_raw_sheaf_flag": 1,
+        "current_positive_zeta_full_raw_sheaf_flag": 0,
+        "current_lln_moment_match_flag": 1,
+    }
+    for key, value in required.items():
+        if obs.get(OBS_CODES[key]) != value:
+            raise AssertionError(f"long_all observable {key} mismatch")
+
+    if hashlib.sha256(
+        digest_text(SPLIT_COLUMNS, csv_rows["split.csv"]).encode("ascii")
+    ).hexdigest() != SPLIT_TEXT_HASH:
+        raise AssertionError("long_all split hash mismatch")
+    if hashlib.sha256(
+        digest_text(INTERVAL_COLUMNS, csv_rows["interval.csv"]).encode("ascii")
+    ).hexdigest() != INTERVAL_TEXT_HASH:
+        raise AssertionError("long_all interval hash mismatch")
+    if hashlib.sha256(
+        digest_text(CUT_COLUMNS, csv_rows["cut.csv"]).encode("ascii")
+    ).hexdigest() != CUT_TEXT_HASH:
+        raise AssertionError("long_all cut hash mismatch")
+    if hashlib.sha256(
+        digest_text(STALK_COLUMNS, csv_rows["stalk.csv"]).encode("ascii")
+    ).hexdigest() != STALK_TEXT_HASH:
+        raise AssertionError("long_all stalk hash mismatch")
+
+    inputs = report.get("inputs", {})
+    for key, path in {
+        "raw_tensor": RAW_TENSOR,
+        "long_lln_report": LONG_LLN_REPORT,
+        "long_lln_tables": LONG_LLN_TABLES,
+        "long_sheaf_report": LONG_SHEAF_REPORT,
+        "long_sheaf_section": LONG_SHEAF_SECTION,
+        "long_sheaf_cut": LONG_SHEAF_CUT,
+        "long_sheaf_stalk": LONG_SHEAF_STALK,
+        "long_sheaf_tables": LONG_SHEAF_TABLES,
+        "long_comp_report": LONG_COMP_REPORT,
+        "long_comp_pair": LONG_COMP_PAIR,
+        "long_comp_path": LONG_COMP_PATH,
+        "long_comp_transition": LONG_COMP_TRANSITION,
+        "long_comp_tables": LONG_COMP_TABLES,
+        "derive_script": DERIVE_SCRIPT,
+        "validator": VALIDATOR_SCRIPT,
+    }.items():
+        assert_file_hash(inputs.get(key, {}), path, key)
+
+    if manifest.get("schema") != "long.all.manifest@1":
+        raise AssertionError("long_all manifest schema mismatch")
+    if manifest.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("long_all manifest report hash mismatch")
+    if self_hash(manifest, "manifest_sha256") != manifest.get("manifest_sha256"):
+        raise AssertionError("long_all manifest self hash mismatch")
+
+    entry = next(
+        (row for row in index.get("obligations", []) if row.get("id") == THEOREM_ID),
+        None,
+    )
+    if entry is None:
+        raise AssertionError("long_all missing from proof obligation index")
+    if entry.get("report_sha256") != report.get("certificate_sha256"):
+        raise AssertionError("long_all proof obligation index hash mismatch")
+    if entry.get("status") != STATUS:
+        raise AssertionError("long_all proof obligation index status mismatch")
+    index_without_hash = {
+        key: value for key, value in index.items() if key != "registry_sha256"
+    }
+    if h_json(index_without_hash) != index.get("registry_sha256"):
+        raise AssertionError("proof obligation index self hash mismatch")
+
+    witness = report.get("witness", {})
+    return {
+        "schema": "long.all.verification@1",
+        "status": "PASS",
+        "verified_report": (OUT_DIR / "report.json").relative_to(ROOT).as_posix(),
+        "certificate_sha256": report["certificate_sha256"],
+        "witness": {
+            "classification": witness.get("classification"),
+            "lln_moments": witness.get("lln_moments"),
+            "orientation_split": witness.get("orientation_split"),
+            "cut_gluing": witness.get("cut_gluing"),
+            "stalks": witness.get("stalks"),
+            "current_representation": witness.get("current_representation"),
+        },
+        "closure_boundary": report.get("closure_boundary"),
+        "next_highest_yield_item": report.get("next_highest_yield_item"),
+    }
+
+
+def main() -> None:
+    print(json.dumps(validate_long_all(), indent=2, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

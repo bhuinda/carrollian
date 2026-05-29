@@ -1,0 +1,181 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c822931e84648ee64c50da7818155ae4cf7e552a7c3ac3a7fb265dfae7a274a1",
+  "checks": {
+    "axis_profiles_are_positive_and_monotone": true,
+    "axis_profiles_close": true,
+    "line_size_matches_tensor_addresses": true,
+    "long_lln_input_certified": true,
+    "pair_closures_are_monotone_profunctors": true,
+    "pair_kernels_close": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_kern certifies the principal-open support observables and pairwise monotone profunctor closures induced by the C985 tensor lookup over the finite Alexandrov line.",
+  "closure_boundary": {
+    "certifies": [
+      "all principal-open suffix events for each tensor coordinate have exact finite Bernoulli LLN data",
+      "each pair projection has a finite boolean/count/weight kernel over the line",
+      "each pair projection has a monotone Alexandrov profunctor closure",
+      "axis and pair marginal totals close back to the raw tensor lookup"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "higher arity monotone closures on all three tensor coordinates",
+      "recoupling kernels outside raw tensor support projections",
+      "that the pair closures are minimal for any semantic process beyond Alexandrov profunctor saturation",
+      "a complete basis for all possible line profunctors"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_kern.py",
+      "sha256": "b93aa9cdcfaa3275eb7379f8feabcb4a9b9d8ba88719f92ef6b9a7cae09fdc53"
+    },
+    "long_lln_report": {
+      "path": "data/invariants/d20/proof_obligations/long_lln/report.json",
+      "sha256": "338e184fcb4f749d47a47f121c24030a5b65fefb40b1559df178f1ef4630e24b",
+      "status": "LONG_LLN_CERTIFIED"
+    },
+    "raw_tensor": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_kern.py",
+      "sha256": "0ee8804b1f11a173109f436c805fd0c450c646c4f33ceccacc142408c8b203ee"
+    }
+  },
+  "next_highest_yield_item": "Build long_tri: the ternary Alexandrov closure and support-class LLN profiles for full tensor triples.",
+  "outputs": {
+    "axis_csv": "data/invariants/d20/proof_obligations/long_kern/axis.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_kern/cert.json",
+    "kernel": "data/invariants/d20/proof_obligations/long_kern/kernel.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_kern/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_kern/obs.csv",
+    "pair_csv": "data/invariants/d20/proof_obligations/long_kern/pair.csv",
+    "report": "data/invariants/d20/proof_obligations/long_kern/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_kern/tables.npz"
+  },
+  "schema": "long.kern.report@1",
+  "stage_protocol": {
+    "closure": "emit monotone profunctor closures and principal-open LLN events",
+    "coherence": "check closure, monotonicity, positivity, and tensor marginal totals",
+    "draft": "reuse the long_lln line and raw tensor lookup",
+    "emit": "write long_kern artifacts and verifier hook",
+    "witness": "compute axis principal-open profiles and pair projection kernels"
+  },
+  "status": "LONG_KERN_CERTIFIED",
+  "witness": {
+    "axis_table_sha256": "14aee22412bf326f858d2d01335c45d6a353534d0cd383d257bd212d6bae3610",
+    "classification": "finite_alexandrov_line_support_kernels",
+    "kernels": {
+      "closure_extra_total": 1789050,
+      "closure_sha256": "67a372243364c89baf3e22de8a0a678658521b675129687ab29f644e9b2ef47a",
+      "pair_count_sha256": "83335941e93ff9fe693138dc0acc4bb7f55ecc8640f2996b5c1885180f70eaf7",
+      "pair_rows": [
+        {
+          "closure_extra": 650224,
+          "closure_flag": 1,
+          "closure_pairs": 848253,
+          "col_degree_max": 284,
+          "col_degree_min": 76,
+          "col_weight_max": 4864,
+          "col_weight_min": 76,
+          "diag_pairs": 297,
+          "diag_weight": 6904,
+          "forward_pairs": 106955,
+          "forward_weight": 1257999,
+          "max_fiber_count": 48,
+          "max_fiber_weight": 688,
+          "pair": 0,
+          "reverse_pairs": 91371,
+          "reverse_weight": 1286265,
+          "row_degree_max": 284,
+          "row_degree_min": 76,
+          "row_weight_max": 4864,
+          "row_weight_min": 76,
+          "source_axis": 0,
+          "support_pairs": 198029,
+          "target_axis": 1,
+          "weighted_sum": 2537360
+        },
+        {
+          "closure_extra": 386098,
+          "closure_flag": 1,
+          "closure_pairs": 584127,
+          "col_degree_max": 284,
+          "col_degree_min": 76,
+          "col_weight_max": 2576,
+          "col_weight_min": 2576,
+          "diag_pairs": 985,
+          "diag_weight": 15456,
+          "forward_pairs": 99507,
+          "forward_weight": 1258647,
+          "max_fiber_count": 48,
+          "max_fiber_weight": 64,
+          "pair": 1,
+          "reverse_pairs": 99507,
+          "reverse_weight": 1294169,
+          "row_degree_max": 284,
+          "row_degree_min": 76,
+          "row_weight_max": 4864,
+          "row_weight_min": 76,
+          "source_axis": 0,
+          "support_pairs": 198029,
+          "target_axis": 2,
+          "weighted_sum": 2537360
+        },
+        {
+          "closure_extra": 752728,
+          "closure_flag": 1,
+          "closure_pairs": 950757,
+          "col_degree_max": 284,
+          "col_degree_min": 76,
+          "col_weight_max": 2576,
+          "col_weight_min": 2576,
+          "diag_pairs": 985,
+          "diag_weight": 15456,
+          "forward_pairs": 99507,
+          "forward_weight": 1258699,
+          "max_fiber_count": 48,
+          "max_fiber_weight": 64,
+          "pair": 2,
+          "reverse_pairs": 99507,
+          "reverse_weight": 1294117,
+          "row_degree_max": 284,
+          "row_degree_min": 76,
+          "row_weight_max": 4864,
+          "row_weight_min": 76,
+          "source_axis": 1,
+          "support_pairs": 198029,
+          "target_axis": 2,
+          "weighted_sum": 2537360
+        }
+      ],
+      "pair_weight_sha256": "e54ff26792c3bcc94230217c107e3bccf6809ebd3d1ea347b5738167b77863bb",
+      "rule": "for observed pair (a,b), its monotone profunctor closure contains all (i,j) with i<=a and b<=j"
+    },
+    "line": {
+      "pair_kernel_count": 3,
+      "point_count": 985,
+      "principal_open_profiles": 2955
+    },
+    "name": "long_kern",
+    "observable_table_sha256": "8f787a10e11f97754af93c188c5be7af85a394d51509661c7a6e781b1a9d7f60",
+    "pair_table_sha256": "97c19df835e86d9ed1d77ef9911aa67f6a7f43b7812c561bc7c8fb567bb196f7",
+    "principal_open_lln": {
+      "all_principal_open_events_checked": true,
+      "event": "coordinate axis lies in upper suffix [addr,984]",
+      "sample_space": "tensor support rows",
+      "variance_rule": "count(open)*(N-count(open))/N^2 for one sample; divide by k for k product samples"
+    },
+    "support": {
+      "axis_point_count_total": 4244895,
+      "pair_diag_total": 2267,
+      "pair_forward_total": 305969,
+      "pair_reverse_total": 290385,
+      "pair_support_total": 594087,
+      "tensor_coeff_sum": 2537360,
+      "tensor_support_count": 1414965
+    }
+  }
+}

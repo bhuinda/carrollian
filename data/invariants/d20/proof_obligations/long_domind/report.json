@@ -1,0 +1,169 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d123901e09d684c7e44430fb265048cea556c7b96f8b0523494d1d81264f14c9",
+  "checks": {
+    "current_dominance_exact": true,
+    "dominance_surface_exact": true,
+    "input_certified": true,
+    "table_shapes_match": true,
+    "tail_bridge_exact": true
+  },
+  "claim": "long_domind proves the long_formind recurrence formulas nonnegative for every state in the tail n>=257. Each negative monomial is fractionally covered by positive monomials whose 2/3-basis ratios are nonincreasing on both domain rays; the worst ratio is therefore attained at the n=257 endpoints.",
+  "closure_boundary": {
+    "certifies": [
+      "tail nonnegativity of all 26 long_formind affine-exponent formulas for n >= 257",
+      "fractional positive-term cover of all 291 negative monomial terms",
+      "nonincreasing 2/3-basis ratio certificates on both domain rays",
+      "the exact seam from the long_formind finite probe ending at n=256"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "semantic associator composition",
+      "the full component-word measure",
+      "a raw tensor table materialized in the infinite tail",
+      "the final tensor-lookup LLN theorem without the remaining global assembly layer"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_domind.py",
+      "sha256": "b967000beb0af6085b88f04b54caa651f65c83f9c4e263d9104f62e7b5f2ab57"
+    },
+    "long_formind_bridge": {
+      "columns": [
+        "bridge_id",
+        "recurrence_factor",
+        "probe_start_sample_count",
+        "probe_end_sample_count",
+        "transition_type_count",
+        "formula_class_count",
+        "formula_count",
+        "term_count",
+        "certified_transition_count",
+        "certified_formula_match_count",
+        "probe_state_count",
+        "probe_formula_nonnegative_count",
+        "long_recind_certified_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/bridge.csv",
+      "sha256": "79f54e3c452dd83878caebf66c9b2203d5ac00cf2351aa6fdcc1537a90570ddd"
+    },
+    "long_formind_check": {
+      "columns": [
+        "formula_id",
+        "class_id",
+        "gap_kind",
+        "term_count",
+        "certified_transition_count",
+        "certified_match_count",
+        "certified_integral_count",
+        "certified_nonnegative_count",
+        "probe_state_count",
+        "probe_integral_count",
+        "probe_nonnegative_count",
+        "probe_zero_count",
+        "probe_min_sign",
+        "probe_min_digits",
+        "probe_min_mod_1000000007",
+        "probe_min_mod_1000000009",
+        "formula_certificate_flag"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/check.csv",
+      "sha256": "49430704dfc2302783293f1d32266c1491d1b95f685eb8385690d2b3f0563db3"
+    },
+    "long_formind_class": {
+      "columns": [
+        "class_id",
+        "transition_type_code",
+        "successor_side_mask",
+        "predecessor_side_mask",
+        "domain_code",
+        "x_min_kind",
+        "x_min_const",
+        "x_max_kind",
+        "x_max_const",
+        "certified_transition_count",
+        "probe_state_count"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/class.csv",
+      "sha256": "04e4dfbd960499f3ed0e944cb8116d70267b81c54054deda0916948fe0aff9a2"
+    },
+    "long_formind_report": {
+      "path": "data/invariants/d20/proof_obligations/long_formind/report.json",
+      "sha256": "3fea3fb53aecde29ff9dc8762a663e6e1f70dff33c1f81c3d64981e85dc0e1a8",
+      "status": "LONG_FORMIND_CERTIFIED"
+    },
+    "long_formind_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_formind/tables.npz",
+      "sha256": "65836005dcb14d304d5d712fabeb30238632ea7cfc70c57a55feaf929031b8d7"
+    },
+    "long_formind_term": {
+      "columns": [
+        "term_id",
+        "class_id",
+        "gap_kind",
+        "coeff_num",
+        "coeff_den",
+        "exp12_n",
+        "exp12_x",
+        "exp12_const",
+        "exp18_n",
+        "exp18_x",
+        "exp18_const",
+        "exp48_n",
+        "exp48_x",
+        "exp48_const"
+      ],
+      "path": "data/invariants/d20/proof_obligations/long_formind/term.csv",
+      "sha256": "7e2a9b4e369bde716ab0d06333524bd60ecf7d77c006341cf7f10babbe7175e2"
+    },
+    "validator": {
+      "path": "src/certify_long_domind.py",
+      "sha256": "100776bc4ce50a3b82dac222168ba14c26fcb461aa860e381035556a58f0a48a"
+    }
+  },
+  "next_highest_yield_item": "Build long_gapind: assemble recind, formind, and domind into one global support-gap induction certificate across the seed, probe, and infinite-tail regimes.",
+  "outputs": {
+    "bridge_csv": "data/invariants/d20/proof_obligations/long_domind/bridge.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_domind/cert.json",
+    "cover_csv": "data/invariants/d20/proof_obligations/long_domind/cover.csv",
+    "domind": "data/invariants/d20/proof_obligations/long_domind/domind.json",
+    "formula_csv": "data/invariants/d20/proof_obligations/long_domind/formula.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_domind/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_domind/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_domind/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_domind/tables.npz"
+  },
+  "schema": "long.domind.report@1",
+  "stage_protocol": {
+    "closure": "emit the tail dominance certificate with the finite-probe seam explicit",
+    "coherence": "check ray monotonicity, endpoint bounds, cover capacities, statuses, hashes, and shapes",
+    "draft": "read the long_formind formula classes and affine-exponent terms",
+    "emit": "write long_domind artifacts and verifier hook",
+    "witness": "construct exact fractional positive-term covers for all negative monomials"
+  },
+  "status": "LONG_DOMIND_CERTIFIED",
+  "witness": {
+    "classification": "tail_monomial_dominance_cover_certificate",
+    "dominance_surface": {
+      "cover_assignment_count": 306,
+      "cover_table_sha256": "dda7955d36b3b18858cf735177500ea8ba5a9614993998e6813d689b0fac71ea",
+      "cover_text_sha256": "c2297ed50fcdb17a80d9c8f246440bb51248f5740b508bf13b4c6cb732c65da6",
+      "covered_negative_term_count": 291,
+      "formula_count": 26,
+      "formula_table_sha256": "d02bb9060344f57c8d7502bad1c0d96ba43f0309ea1fceca0ced5934768f47d0",
+      "formula_tail_nonnegative_count": 26,
+      "formula_text_sha256": "9109f222e514b569df1dfd58ff40eca487c43f5a65e5e7a6d6dd16df6c5c51b4",
+      "negative_term_count": 291,
+      "positive_term_count": 290
+    },
+    "name": "long_domind",
+    "observable_table_sha256": "cf1353164cca8e0b7b08c695b0fe71aa18b4541dbe801e2e90f9a1fb789df1ca",
+    "ray_certificates": {
+      "bridge_table_sha256": "dd288342012ce55548b03250a5cf23341c15d72bd574906ce0c7ccd98a4dce51",
+      "bridge_text_sha256": "a63d23f58d45b84d193f947475b7d27085e1ba0695935c673c2d3ca983dc8dfe",
+      "lower_ray_certificate_count": 306,
+      "upper_ray_certificate_count": 306
+    },
+    "tail_start_sample_count": 257
+  }
+}

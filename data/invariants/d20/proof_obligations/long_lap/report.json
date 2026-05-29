@@ -1,0 +1,213 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "64204be6e6aefde23a1733fe14723ab32291491c17139a227b32e00277dd262f",
+  "checks": {
+    "active_subgraph_fingerprint_exact": true,
+    "component_fingerprint_exact": true,
+    "eta6_margin_context_exact": true,
+    "full_graph_context_exact": true,
+    "inputs_certified": true,
+    "laplacian_rank_and_trace_exact": true,
+    "owner_mass_fingerprint_exact": true,
+    "table_shapes_match": true,
+    "weights_and_leakage_exact": true
+  },
+  "claim": "long_lap certifies the exact weighted Laplacian and conductance data of the 51-owner long_eta2 active subgraph inside the long_rec transition graph: three induced components, rank 48, nullity 3, and positive ambient leakage while internal conductance is zero.",
+  "closure_boundary": {
+    "certifies": [
+      "the exact weighted Laplacian of the long_eta2 active owner subgraph",
+      "the induced subgraph has three components, so internal conductance is zero",
+      "the active set still leaks to the ambient long_rec graph with ratio 2292/7921",
+      "the eta6 margin context attached to this active set is strict in the checked packet"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "a universal eta6 horizon theorem",
+      "all possible active sets outside the p21 full gate fibers",
+      "effective resistance or spectral-gap exact algebraic numbers",
+      "support change under unbounded or rebuilt-carrier recoupling"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_lap.py",
+      "sha256": "f04321309662c469b1b640fa4b215ec60cf0a819901cef86c4b32889150f5e08"
+    },
+    "eta6_core_report": {
+      "path": "data/invariants/d20/proof_obligations/eta6_core/report.json",
+      "sha256": "d05c4d9977c095b1f18d12ed61c804b57d4c3ed447d8d77fb51b6f1d53e66807",
+      "status": "ETA6_CORE_CERTIFIED"
+    },
+    "long_eta2_report": {
+      "path": "data/invariants/d20/proof_obligations/long_eta2/report.json",
+      "sha256": "84ffe68ea152be37b887f489d353b7878e411332c6d0460cb4d8e1f79ca7385c",
+      "status": "LONG_ETA2_CERTIFIED"
+    },
+    "long_eta2_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_eta2/tables.npz",
+      "sha256": "ccd28b577191bd01bb28ce1c4b01bb33f28d07f9ad9d66a88369185869b5657c"
+    },
+    "long_rec_report": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/report.json",
+      "sha256": "1e4b5fbc086a95cd6b9bf929d804e71b483643dfd884355ef75a54248eb9c08b",
+      "status": "LONG_REC_CERTIFIED"
+    },
+    "long_rec_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/tables.npz",
+      "sha256": "2d581742fea434038440cce1d2eb0215e00e71cd31d8e988f0d4b996b81923e0"
+    },
+    "validator": {
+      "path": "src/certify_long_lap.py",
+      "sha256": "f651b9e2db23491a7de4f0b6ebf2a6bbbae5ce162d3f86c41e1b26b9aeb440bb"
+    }
+  },
+  "next_highest_yield_item": "Build long_cut: exact min-cut/effective-resistance fingerprints on the long_lap active set to separate metric relaxation from support crossing.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_lap/cert.json",
+    "component_csv": "data/invariants/d20/proof_obligations/long_lap/component.csv",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_lap/edge.csv",
+    "lap": "data/invariants/d20/proof_obligations/long_lap/lap.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_lap/manifest.json",
+    "node_csv": "data/invariants/d20/proof_obligations/long_lap/node.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_lap/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_lap/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_lap/tables.npz"
+  },
+  "schema": "long.lap.report@1",
+  "stage_protocol": {
+    "closure": "emit weighted Laplacian, conductance, and tree-count fingerprints",
+    "coherence": "check component, leakage, rank, mass, and eta6 margin fingerprints",
+    "draft": "take the full long_eta2 owner fiber as the active set",
+    "emit": "write long_lap artifacts and verifier hook",
+    "witness": "read long_eta2 owner/edge tables and long_rec ambient degrees"
+  },
+  "status": "LONG_LAP_CERTIFIED",
+  "witness": {
+    "active_subgraph": {
+      "active_owner_ids_sha256": "ff3da3383beb0c1d4abf54d25bea71ef91e7486047c2c746321cff0da2ebc9db",
+      "component_count": 3,
+      "component_size_range": [
+        1,
+        33
+      ],
+      "component_table_sha256": "eaad95b9e468ea85c79f6f6afdd90f5e52e86b7c9b6325eb8b7cfa9c2d3ff101",
+      "edge_count": 91,
+      "edge_table_sha256": "c69a72fb1f896471f910084a656eb2285055c2231270a34a84ce11b71d9ad1e9",
+      "node_table_sha256": "7672b1f5d6c03ad8c59bab07adbbf9f41078d210d078e149d437a67913fe52c4",
+      "owner_count": 51
+    },
+    "classification": "long_eta2_induced_laplacian_conductance",
+    "conductance": {
+      "active_external_ratio": [
+        2292,
+        7921
+      ],
+      "ambient_degree": 15842,
+      "component_rows": [
+        {
+          "ambient_degree": 3024,
+          "component_id": 0,
+          "edge_count": 61,
+          "external_boundary": 1342,
+          "external_conductance_den": 3024,
+          "external_conductance_num": 1342,
+          "external_conductance_reduced_den": 1512,
+          "external_conductance_reduced_num": 671,
+          "internal_degree_sum": 1682,
+          "internal_weight": 841,
+          "laplacian_nullity": 1,
+          "laplacian_rank": 32,
+          "mult_occurrence_count": 15292956672,
+          "node_count": 33,
+          "owner_cell_count": 36560,
+          "source0_internal_weight": 502,
+          "source1_internal_weight": 339,
+          "support_occurrence_count": 3175424320,
+          "tree_count_digit_count": 37,
+          "tree_count_mod_1000000007": 556263732,
+          "tree_count_mod_1000000009": 830461248,
+          "tree_count_sha256": "32b87a59b6aa2583aed6d0e62fe5f344d917faa32236a56afa52a68512933b06"
+        },
+        {
+          "ambient_degree": 864,
+          "component_id": 1,
+          "edge_count": 0,
+          "external_boundary": 864,
+          "external_conductance_den": 864,
+          "external_conductance_num": 864,
+          "external_conductance_reduced_den": 1,
+          "external_conductance_reduced_num": 1,
+          "internal_degree_sum": 0,
+          "internal_weight": 0,
+          "laplacian_nullity": 1,
+          "laplacian_rank": 0,
+          "mult_occurrence_count": 9154068480,
+          "node_count": 1,
+          "owner_cell_count": 96023,
+          "source0_internal_weight": 0,
+          "source1_internal_weight": 0,
+          "support_occurrence_count": 1601231360,
+          "tree_count_digit_count": 1,
+          "tree_count_mod_1000000007": 1,
+          "tree_count_mod_1000000009": 1,
+          "tree_count_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "ambient_degree": 11954,
+          "component_id": 2,
+          "edge_count": 30,
+          "external_boundary": 2378,
+          "external_conductance_den": 11954,
+          "external_conductance_num": 2378,
+          "external_conductance_reduced_den": 5977,
+          "external_conductance_reduced_num": 1189,
+          "internal_degree_sum": 9576,
+          "internal_weight": 4788,
+          "laplacian_nullity": 1,
+          "laplacian_rank": 16,
+          "mult_occurrence_count": 63708069888,
+          "node_count": 17,
+          "owner_cell_count": 616656,
+          "source0_internal_weight": 4436,
+          "source1_internal_weight": 352,
+          "support_occurrence_count": 11484523584,
+          "tree_count_digit_count": 29,
+          "tree_count_mod_1000000007": 51265254,
+          "tree_count_mod_1000000009": 419224984,
+          "tree_count_sha256": "a057282ee10c1d8d76fa567151c870672c4b1a141f91cd6ddf0bf36367dc873f"
+        }
+      ],
+      "external_boundary": 4584,
+      "internal_conductance_zero": true,
+      "internal_weight": 5629
+    },
+    "eta6_context": {
+      "gate_floor": 492736,
+      "gate_preserved_count": 6,
+      "hpol_margin": 1,
+      "packet_min_margin": 1
+    },
+    "laplacian": {
+      "component_ids_sha256": "c9cd899a44a06ae94188b78cfb088c896d51f773b7e264f290e9d8e8345af7f5",
+      "laplacian_sha256": "021960ceaf09113aad5631e799fdfa4afd60d852a09507cd92e7543fdbf8e295",
+      "nullity": 3,
+      "rank": 48,
+      "rank_mod_1000000007": 48,
+      "rank_mod_1000000009": 48,
+      "rank_rule": "positive weighted graph Laplacian rank is owner_count minus component_count",
+      "row_sum_zero": true,
+      "trace": 11258
+    },
+    "mass": {
+      "mult_occurrence_total": 88155095040,
+      "owner_cell_mass": 749239,
+      "support_occurrence_total": 16261179264
+    },
+    "name": "long_lap",
+    "observable_table_sha256": "d4d62af28e988aef07e08a79575d27cab25bbc7dc5bacd2b4879a58181fd5b9a",
+    "scope": {
+      "ambient": "long_rec owner transition graph",
+      "kind": "51_owner_induced_subgraph",
+      "source": "long_eta2 full p21 gate support-fiber projection"
+    }
+  }
+}

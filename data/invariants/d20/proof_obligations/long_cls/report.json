@@ -1,0 +1,144 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e7eaaf772b4098a24bcca236243f4a87f05da28852394d7bdba2a713712e9186",
+  "checks": {
+    "centered_moment_fingerprint_exact": true,
+    "chebyshev_tail_fingerprint_exact": true,
+    "inputs_certified": true,
+    "mean_fingerprint_exact": true,
+    "table_shapes_match": true,
+    "variance_shrink_fingerprint_exact": true
+  },
+  "claim": "long_cls certifies finite concentration/shrinkage from the long_conv horizon-16 path-sum laws: every sample mean equals the long_markov stationary mean, centered second/fourth moments are nonnegative, the first eight variances match long_markov exactly, Chebyshev tail-window gaps are nonnegative, and sample-mean variance decreases through horizon 16.",
+  "closure_boundary": {
+    "certifies": [
+      "exact sample-mean equality to the long_markov stationary mean through horizon 16",
+      "centered moments of orders 2, 3, and 4 from long_conv marginals",
+      "exact agreement with long_markov sample-mean variances through horizon eight",
+      "nonnegative Chebyshev tail gaps for epsilon 1/2, 1/3, and 1/4 through horizon 16",
+      "monotone sample-mean variance decrease through horizon 16"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "an infinite-horizon convergence theorem",
+      "optimal exponential concentration bounds",
+      "continuous probability limits beyond finite tensor lookup",
+      "a universal eta6 horizon theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_cls.py",
+      "sha256": "dd1adb446385dd6d6e54b0121cd85f9515dfda0a1296311c834ef3f9655e3286"
+    },
+    "long_conv_marginal": {
+      "path": "data/invariants/d20/proof_obligations/long_conv/marginal.csv",
+      "sha256": "60ccdce39ed0f5fa2accbb2e051824b04ec8570c95c2adf8bb5d4cea55b985dc"
+    },
+    "long_conv_report": {
+      "path": "data/invariants/d20/proof_obligations/long_conv/report.json",
+      "sha256": "c984488b709662e4569b66930942b587250942be76599e331e0f32d379ad6547",
+      "status": "LONG_CONV_CERTIFIED"
+    },
+    "long_conv_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_conv/tables.npz",
+      "sha256": "d4e55867947cfa16925f12d6e1a67b9e317c520ff34a791bd18437bd57cd7e90"
+    },
+    "long_markov_mean_variance": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/mean_variance.csv",
+      "sha256": "836f853d912384b1979c8a54588c3dbc9cb38e6f6a12cf95b6c64f323cbe5cff"
+    },
+    "long_markov_report": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/report.json",
+      "sha256": "afa2bc3e8e131e464d07091af7bcb2b0c705fb2e711371897d7149a5bdb851f2",
+      "status": "LONG_MARKOV_CERTIFIED"
+    },
+    "long_markov_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_markov/tables.npz",
+      "sha256": "ec3ca047639b909b8ed4566b7f9dd3f4d5f1eaf225cb19178dfe38c9d2217ae6"
+    },
+    "validator": {
+      "path": "src/certify_long_cls.py",
+      "sha256": "964aa26ad20fab6c46f54d5479250e1c5c82a21dbc9569eb78491665c7161ff6"
+    }
+  },
+  "next_highest_yield_item": "Build long_univ: certify the commuting profunctor diagram from line-address ownership through Markov convolution to finite LLN concentration windows.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_cls/cert.json",
+    "cls": "data/invariants/d20/proof_obligations/long_cls/cls.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_cls/manifest.json",
+    "mean_csv": "data/invariants/d20/proof_obligations/long_cls/mean.csv",
+    "moment_csv": "data/invariants/d20/proof_obligations/long_cls/moment.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_cls/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_cls/report.json",
+    "shrink_csv": "data/invariants/d20/proof_obligations/long_cls/shrink.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_cls/tables.npz",
+    "tail_csv": "data/invariants/d20/proof_obligations/long_cls/tail.csv"
+  },
+  "schema": "long.cls.report@1",
+  "stage_protocol": {
+    "closure": "emit mean, moment, tail, shrink, table, certificate, manifest, and report artifacts",
+    "coherence": "check mean equality, Markov variance agreement, nonnegative even moments/tail gaps/shrink gaps, hashes, and shapes",
+    "draft": "read long_conv public marginals and long_markov stationary finite-LLN rows",
+    "emit": "write long_cls artifacts and verifier hook",
+    "witness": "compute exact sample means, centered moments, Chebyshev tail gaps, and variance shrink gaps"
+  },
+  "status": "LONG_CLS_CERTIFIED",
+  "witness": {
+    "centered_moments": {
+      "fraction_text_sha256": "d9c0dc95dad50787fefc365ac68378525abc327cf7db3dfd6459ff250f31e1d8",
+      "order2_nonnegative_count": 16,
+      "order4_nonnegative_count": 16,
+      "orders": [
+        2,
+        3,
+        4
+      ],
+      "row_count": 48,
+      "table_sha256": "567e289ff54d339473314c7caf6c46e5ba15d587e7833ac942a7c695699f284c",
+      "variance_markov_match_count": 8
+    },
+    "chebyshev_tails": {
+      "epsilons": [
+        {
+          "den": 2,
+          "epsilon_id": 0,
+          "num": 1
+        },
+        {
+          "den": 3,
+          "epsilon_id": 1,
+          "num": 1
+        },
+        {
+          "den": 4,
+          "epsilon_id": 2,
+          "num": 1
+        }
+      ],
+      "fraction_text_sha256": "1cd4550f8fd24267fd3d09a65306575927700b7f1049755f3c20b788c81381b0",
+      "gap_nonnegative_count": 48,
+      "row_count": 48,
+      "table_sha256": "4a08950a3b2b9ee997ab7bffc04bef256d2c26effb0bd87f1209236860d67114"
+    },
+    "classification": "finite_concentration_lln_shrinkage_tensor_lookup",
+    "horizon": 16,
+    "means": {
+      "fraction_text_sha256": "c0038ff677c351cc8ac0e0f0a34a7ec72a455d68dd39d4a7132fb3a16069b742",
+      "match_count": 16,
+      "row_count": 16,
+      "table_sha256": "4758019b04f159c943dbe36621ca2d953a9b807bf08f7ed7cbbdb73fa7ef8e3b"
+    },
+    "name": "long_cls",
+    "observable_table_sha256": "6672b0620001b1d606d8144fd5aa720f7ee5a9da853d81f4e7c94ef8a137f2dd",
+    "source": {
+      "comparison": "long_markov mean_variance.csv through horizon eight",
+      "distribution": "long_conv marginal.csv public path-sum laws"
+    },
+    "variance_shrink": {
+      "fraction_text_sha256": "152c2a5404ea7e7b8d0981103a07742b18d1e556356419fdaf8c64afd8c382c8",
+      "nonnegative_count": 15,
+      "row_count": 15,
+      "table_sha256": "0523a772e68b5ef2e7a8f5463abf88321f4d4abd334f12be99453507d0ce2035"
+    }
+  }
+}

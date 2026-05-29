@@ -1,0 +1,175 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "abf97353de46ff16d98d552b9819d1e6690215c4d80610dfe43d251d352fd707",
+  "checks": {
+    "digest_hashes_exact": true,
+    "discriminant_fingerprint_exact": true,
+    "input_certified": true,
+    "kernel_signature_exact": true,
+    "kernel_stationary_exact": true,
+    "lln_fingerprint_exact": true,
+    "power_fingerprint_exact": true,
+    "spectral_signature_exact": true,
+    "stationary_signature_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_markov certifies the reversible three-state boundary Markov kernel D^{-1}T induced by long_absorb/long_spec, its stationary law, detailed balance, exact finite powers through horizon 8, and stationary finite-LLN autocovariance and sample-mean variance fingerprints for the component-value observable.",
+  "closure_boundary": {
+    "certifies": [
+      "the exact reversible boundary Markov kernel from long_spec",
+      "stationary distribution and detailed balance",
+      "finite kernel powers through horizon eight",
+      "finite Markov LLN autocovariance and sample-mean variance fingerprints through horizon eight"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "an asymptotic central limit theorem",
+      "continuous-time diffusion beyond the finite kernel",
+      "support-changing recouplings outside the long_rec owner graph",
+      "a universal eta6 horizon theorem"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_markov.py",
+      "sha256": "5f5c206c6ac6867b0d0a52452288fecdd877349964763cb6386fd2cdfd75182d"
+    },
+    "long_absorb_matrix": {
+      "path": "data/invariants/d20/proof_obligations/long_absorb/matrix.csv",
+      "sha256": "e3c8382fef4b2a41a2bf2f794997dc51e2786f08291d050a130e81d2c07d0311"
+    },
+    "long_spec_report": {
+      "path": "data/invariants/d20/proof_obligations/long_spec/report.json",
+      "sha256": "e18337a49b037ab4734115a999ad1ab98b138b382438fef25bb672013ebc4fcf",
+      "status": "LONG_SPEC_CERTIFIED"
+    },
+    "long_spec_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_spec/tables.npz",
+      "sha256": "3e45b8841530dcf56cff65e654ce1d7c83bc042c71ce7d1d7bb5ff7d9c637728"
+    },
+    "validator": {
+      "path": "src/certify_long_markov.py",
+      "sha256": "6b110d9148596e3d8f45eae134b81004ad429097e52880f4e2c0cd23c52afdd9"
+    }
+  },
+  "next_highest_yield_item": "Build long_dev: certify finite large-deviation/Chernoff-style moment fingerprints for the boundary Markov observable, still without leaving exact tensor lookup arithmetic.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_markov/cert.json",
+    "covariance_csv": "data/invariants/d20/proof_obligations/long_markov/covariance.csv",
+    "kernel_csv": "data/invariants/d20/proof_obligations/long_markov/kernel.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_markov/manifest.json",
+    "markov": "data/invariants/d20/proof_obligations/long_markov/markov.json",
+    "mean_variance_csv": "data/invariants/d20/proof_obligations/long_markov/mean_variance.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_markov/obs.csv",
+    "power_csv": "data/invariants/d20/proof_obligations/long_markov/power.csv",
+    "report": "data/invariants/d20/proof_obligations/long_markov/report.json",
+    "spectral_csv": "data/invariants/d20/proof_obligations/long_markov/spectral.csv",
+    "stationary_csv": "data/invariants/d20/proof_obligations/long_markov/stationary.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_markov/tables.npz"
+  },
+  "schema": "long.markov.report@1",
+  "stage_protocol": {
+    "closure": "emit kernel, stationary, spectral, power, covariance, variance, table, certificate, manifest, and report artifacts",
+    "coherence": "check stochasticity, reversibility, power invariance, signatures, and text hashes",
+    "draft": "normalize the symmetric long_absorb transfer matrix by boundary totals",
+    "emit": "write long_markov artifacts and verifier hook",
+    "witness": "derive the stationary law, detailed balance, powers, spectral fingerprints, and LLN autocovariances"
+  },
+  "status": "LONG_MARKOV_CERTIFIED",
+  "witness": {
+    "classification": "long_spec_reversible_boundary_markov_lln",
+    "finite_lln": {
+      "autocovariance_fraction_text_sha256": "d9e86f019666d3161c71d69f7c277320bd6782a0771a58bde1922dd5b3ae723a",
+      "autocovariance_horizon": 8,
+      "covariance_digest_table_sha256": "7dafa508df74b12011bb30ccd065c3a8a6840871cb1a4322f2f01eae76daafdd",
+      "mean": {
+        "den": 1146,
+        "den_digits": 4,
+        "den_mod_1000000007": 1146,
+        "den_mod_1000000009": 1146,
+        "num": 1405,
+        "num_digits": 4,
+        "num_mod_1000000007": 1405,
+        "num_mod_1000000009": 1405,
+        "sha256": "fbb420650e184090e97df2def7192a648ca411c543c733d6c7fee26426f60516"
+      },
+      "mean_variance_digest_table_sha256": "01e6b36ae39355b49db64f8bec44bb75649401c365bca82dabfec5db195e4592",
+      "mean_variance_fraction_text_sha256": "46d3daf5ecb3caf90f29834f98afe7c7a2e90997e68a56ca936bbc47a0e3be47",
+      "mean_variance_monotone_decrease": true,
+      "sample_mean_variance_horizon": 8,
+      "second_moment": {
+        "den": 573,
+        "den_digits": 3,
+        "den_mod_1000000007": 573,
+        "den_mod_1000000009": 573,
+        "num": 1297,
+        "num_digits": 4,
+        "num_mod_1000000007": 1297,
+        "num_mod_1000000009": 1297,
+        "sha256": "ac11c35d28185996093b6c52c26d17ad262c5a926469a5af7d360ca6856bbd90"
+      },
+      "variance": {
+        "den": 1313316,
+        "den_digits": 7,
+        "den_mod_1000000007": 1313316,
+        "den_mod_1000000009": 1313316,
+        "num": 998699,
+        "num_digits": 6,
+        "num_mod_1000000007": 998699,
+        "num_mod_1000000009": 998699,
+        "sha256": "3b62ff17a9558df5ebdb23120fb468d5fd53fd83cb3854db8ef923b273345fbd"
+      }
+    },
+    "kernel": {
+      "kernel_digest_table_sha256": "b4835a0f4a4eed2c3bdaf242be15b460956783c1e2c9409a659c7cc41adfd2d4",
+      "kernel_fraction_text_sha256": "1de86eb4c03287b20e03ad6d38170e08a3398b721ba281a6f8fa61982e83b552",
+      "positive_entry_count": 9,
+      "row_stochastic": true
+    },
+    "name": "long_markov",
+    "observable_table_sha256": "e055fec971eb99f98aceea938efa3568b71ae23f3f96adf342a36411e76f40d8",
+    "powers": {
+      "horizon": 8,
+      "power_digest_table_sha256": "3052c1a99e50e73c671e9ed1546c06c7901411dcf6a129f5a61f8cb94e13de8d",
+      "power_digest_text_sha256": "c3e77932668eb5f83979c6b805f9d456450d02cdceb7a1bd335684633f1aeee6",
+      "row_sum_violation_count": 0,
+      "stationary_fixed_violation_count": 0
+    },
+    "scope": {
+      "kernel": "D^{-1}T with D equal to boundary totals",
+      "observable": "component_value in {0,1,2}",
+      "source": "long_absorb three-terminal transfer matrix"
+    },
+    "spectrum": {
+      "charpoly": "lambda^3 - trace*lambda^2 + principal_minor_sum*lambda - determinant",
+      "nontrivial_discriminant_positive": true,
+      "nontrivial_discriminant_rational_square": false,
+      "nontrivial_factor": "lambda^2 - nontrivial_sum*lambda + nontrivial_product",
+      "spectral_digest_table_sha256": "020461bdb771986721a09b5bb825bb5bddccfe75fae342e63d315839ca9c9559",
+      "spectral_fraction_text_sha256": "0d0f56de3fa6c48d111c5af6d85589ad17077cc97130028390cdb9fd9848a0f7"
+    },
+    "stationary": {
+      "detailed_balance": true,
+      "detailed_balance_text_sha256": "f2cb23a2c33352d0dc40163ff7a1fd241d6ab10668971a0b20cdd6e4d5974899",
+      "fixed": true,
+      "stationary_digest_table_sha256": "111e2d6300bd35408e9b79f1f04d8cb704af2ce26e696cc417b304b555a3329e",
+      "stationary_fraction_text_sha256": "67c0cd6ff0bca3e0575d0136033240098abb705bdeb93812783853f7a20695d2",
+      "weights": [
+        {
+          "component_id": 0,
+          "den": 2292,
+          "num": 671
+        },
+        {
+          "component_id": 1,
+          "den": 191,
+          "num": 36
+        },
+        {
+          "component_id": 2,
+          "den": 2292,
+          "num": 1189
+        }
+      ]
+    }
+  }
+}
