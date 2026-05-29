@@ -297,7 +297,7 @@ def recover_be3_from_orbitals(
         "schema": "d20.constructor.be3_action_from_orbitals@1",
         "constructor_status": "BE3_ACTION_FROM_ORBITALS_PASS" if status_ok else "BE3_ACTION_FROM_ORBITALS_FAIL",
         "construction_method": "recover group action from a regular ordered-pair orbital using two-sided coherent signatures",
-        "input_boundary": "uses supplied ordered-pair orbital partition; still does not construct Be3 from source coorient generators",
+        "input_boundary": "uses supplied ordered-pair orbital partition; still does not construct Gamma from source coorient generators",
         "predicate": "is integral",
         "points": int(seed["points"]),
         "recovered_group_order": int(P.shape[0]),
@@ -316,7 +316,7 @@ def recover_be3_from_orbitals(
         "saved_generators_npz": str(out_generators_npz.relative_to(ROOT)) if out_generators_npz is not None and out_generators_npz.exists() else None,
         "saved_full_action_npz": str(save_full_action_npz.relative_to(ROOT)) if save_full_action_npz is not None and save_full_action_npz.exists() else None,
         "remaining_scratch_boundary": [
-            "derive this same Be3 action directly from generated G24 plus fixed coorient generators",
+            "derive this same Gamma action directly from generated G24 plus fixed coorient generators",
             "remove dependence on the supplied ordered-pair orbital partition",
         ],
     }
@@ -330,7 +330,7 @@ def recover_be3_from_orbitals(
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Recover the Be3 action from the supplied ordered-pair orbital partition.")
+    ap = argparse.ArgumentParser(description="Recover the Gamma action from the supplied ordered-pair orbital partition.")
     ap.add_argument("--relation-seed", default="data/raw/relation_memberships.npz")
     ap.add_argument("--out-json", default="generated/be3_action_from_orbitals.json")
     ap.add_argument("--out-generators-npz", default="generated/be3_generators_from_orbitals.npz")

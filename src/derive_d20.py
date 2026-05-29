@@ -1578,10 +1578,10 @@ def coorient_seed_invariants() -> dict[str, Any]:
             "pre-A985 generated A985 ordered-pair relation body",
             "A0-A5 derived coorient relator profile",
             "canonical coorient marker image triples",
-            "lifted Be3 coorient generator permutations",
+            "lifted Gamma coorient generator permutations",
         ],
         "downstream_derivations": [
-            "lifted Be3 coorient action on 2576 dodecads",
+            "lifted Gamma coorient action on 2576 dodecads",
             "six object orbits",
             "985 ordered-pair orbitals",
             "T985 sparse multiplication tensor",
@@ -1643,13 +1643,13 @@ def final_investigation_status(z: dict[str, Any] | None = None, u: dict[str, Any
         },
         "closed_layers": {
             "source_to_golay_dodecads": "certified constructor",
-            "coorient_marker_to_Be3": "certified constructor",
-            "Be3_to_985_orbitals": "certified constructor",
+            "coorient_marker_to_Gamma": "certified constructor",
+            "Gamma_to_985_orbitals": "certified constructor",
             "orbitals_to_T985": "certified constructor",
             "T985_to_center_idempotents": "certified finite-field constructor",
             "T985_to_A42_A12": "certified quotient constructor",
             "native_A236_formula": "certified d20/D6 representation formula",
-            "packet20_C20": "certified from Be3 stabilizers and D6 divisor rule",
+            "packet20_C20": "certified from Gamma stabilizers and D6 divisor rule",
             "sector33_integrity": "certified finite obstruction",
             "d20_selector": "certified D6 Coxeter-polarity selector",
             "Foam_d20": "certified 1+Lambda^2 H6 chart",
@@ -1720,8 +1720,8 @@ def d20_genome() -> dict[str, Any]:
             {
                 "id": "coorient_lift",
                 "entrypoint": "src.derive_lifted_coorient_generators_formula:derive_formula",
-                "role": "lift the canonical coorient marker to Be3 generator permutations",
-                "outputs": ["Be3 generator action", "coorient orbitals"],
+                "role": "lift the canonical coorient marker to Gamma generator permutations",
+                "outputs": ["Gamma generator action", "coorient orbitals"],
             },
             {
                 "id": "tensor_compiler",
@@ -1744,7 +1744,7 @@ def d20_genome() -> dict[str, Any]:
             {
                 "id": "packet20_selector",
                 "entrypoint": "src.derive_packet20_c20_from_d6_stabilizers:derive",
-                "role": "derive packet-20 control data from Be3 stabilizers and D6 polarity",
+                "role": "derive packet-20 control data from Gamma stabilizers and D6 polarity",
                 "outputs": ["C20 packet data", "terminal selector inputs"],
             },
             {

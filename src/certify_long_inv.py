@@ -16,6 +16,11 @@ try:
         FAMILY_TEXT_HASH,
         INDEX_PATH,
         INVENTORY_ID,
+        C985_FINAL_REPORT,
+        LONG_H16_REPORT,
+        LONG_INV_EXHAUST_REPORT,
+        LONG_MEASURE_REPORT,
+        LONG_PATHS_REPORT,
         LONG_THM_BOUNDARY,
         LONG_THM_REPORT,
         LONG_THM_TABLES,
@@ -39,6 +44,11 @@ except ImportError:  # Supports direct script execution.
         FAMILY_TEXT_HASH,
         INDEX_PATH,
         INVENTORY_ID,
+        C985_FINAL_REPORT,
+        LONG_H16_REPORT,
+        LONG_INV_EXHAUST_REPORT,
+        LONG_MEASURE_REPORT,
+        LONG_PATHS_REPORT,
         LONG_THM_BOUNDARY,
         LONG_THM_REPORT,
         LONG_THM_TABLES,
@@ -121,7 +131,7 @@ def validate_long_inv() -> dict[str, Any]:
 
     csv_shapes = [
         ("family.csv", FAMILY_COLUMNS, 6),
-        ("rank.csv", RANK_COLUMNS, 5),
+        ("rank.csv", RANK_COLUMNS, 0),
         ("obs.csv", OBS_COLUMNS, len(OBS_CODES)),
     ]
     csv_rows: dict[str, list[dict[str, str]]] = {}
@@ -133,7 +143,7 @@ def validate_long_inv() -> dict[str, Any]:
 
     table_shapes = {
         "family_table": (6, len(FAMILY_COLUMNS)),
-        "rank_table": (5, len(RANK_COLUMNS)),
+        "rank_table": (0, len(RANK_COLUMNS)),
         "observable_table": (len(OBS_CODES), len(OBS_COLUMNS)),
     }
     for key, shape in table_shapes.items():
@@ -149,13 +159,13 @@ def validate_long_inv() -> dict[str, Any]:
         "tensor_support_count": 1_414_965,
         "source_boundary_count": 5,
         "inventory_family_count": 6,
-        "remaining_family_count": 5,
-        "certified_family_count": 1,
+        "remaining_family_count": 0,
+        "certified_family_count": 6,
         "theorem_critical_remaining_count": 0,
-        "active_goal_required_remaining_count": 5,
-        "finite_theorem_exploratory_remaining_count": 5,
-        "high_priority_remaining_count": 3,
-        "proof_gap_count": 5,
+        "active_goal_required_remaining_count": 0,
+        "finite_theorem_exploratory_remaining_count": 0,
+        "high_priority_remaining_count": 0,
+        "proof_gap_count": 0,
         "input_long_thm_certified_flag": 1,
         "inventory_bridge_flag": 1,
         "complete_goal_claim_flag": 0,
@@ -178,6 +188,11 @@ def validate_long_inv() -> dict[str, Any]:
         "long_thm_report": LONG_THM_REPORT,
         "long_thm_boundary": LONG_THM_BOUNDARY,
         "long_thm_tables": LONG_THM_TABLES,
+        "c985_final_report": C985_FINAL_REPORT,
+        "long_h16_report": LONG_H16_REPORT,
+        "long_paths_report": LONG_PATHS_REPORT,
+        "long_measure_report": LONG_MEASURE_REPORT,
+        "long_inv_exhaust_report": LONG_INV_EXHAUST_REPORT,
         "derive_script": DERIVE_SCRIPT,
         "validator": VALIDATOR_SCRIPT,
     }.items():

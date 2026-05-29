@@ -162,7 +162,7 @@ def compute_tensor_from_orbitals(
         boundary = "uses generated relation membership from the source/coorient pipeline; compare_npz is used only for equality checking when supplied"
     else:
         method = "representative two-step incidence over supplied ordered-pair orbitals"
-        boundary = "uses supplied ordered-pair orbital partition; does not construct Be3 from coorient generators"
+        boundary = "uses supplied ordered-pair orbital partition; does not construct Gamma from coorient generators"
 
     result = {
         "schema": "d20.constructor.orbitals_to_tensor@1",

@@ -174,7 +174,7 @@ def validate_c985_zigzag_identities() -> dict[str, Any]:
     assert_file_hash(inputs.get("fusion_basis_index", {}), FUSION_INDEX_NPZ, "fusion index input")
     assert_file_hash(inputs.get("pair_transport_section", {}), PAIR_TRANSPORT_NPZ, "transport input")
     assert_file_hash(inputs.get("unit_action_records", {}), UNIT_RECORDS_NPZ, "unit records input")
-    assert_file_hash(inputs.get("be3_action", {}), ACTION_NPZ, "Be3 action input")
+    assert_file_hash(inputs.get("be3_action", {}), ACTION_NPZ, "Gamma action input")
 
     if manifest.get("schema") != "c985.proof_obligation.zigzag_identities_manifest@1":
         raise AssertionError("C985 zig-zag manifest schema mismatch")

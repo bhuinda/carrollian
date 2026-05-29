@@ -211,6 +211,7 @@ the practical verification modes without hiding file writes behind a default:
 * long-tens: validate the finite LLN component-path tensor expansion gap certificate;
 * long-lift: validate the finite LLN owner/component tensor-lift quotient certificate;
 * long-raw: validate the finite LLN raw-owner support lift certificate;
+* long-h16: validate the finite LLN horizon-16 profunctor boundary certificate;
 * long-path: validate the finite LLN explicit raw product path witness certificate;
 * long-comp: validate the finite LLN Alexandrov-zeta composable path certificate;
 * long-sheaf: validate the finite LLN Alexandrov interval-support sheaf certificate;
@@ -231,6 +232,16 @@ the practical verification modes without hiding file writes behind a default:
 * long-llnind: validate the finite LLN tensor-lookup induction bridge;
 * long-thm: validate the finite LLN theorem-status certificate;
 * long-inv: validate the finite-line invariant inventory certificate;
+* long-inv-exhaust: validate the bounded finite-line invariant inventory cover;
+* long-anom: validate the finite anomaly correction oracle certificate;
+* long-mat: validate the finite matrix-theoretic charge-wall oracle boundary;
+* long-auto: validate the finite automorphic/Fourier oracle boundary certificate;
+* long-orac: validate the local oracle/anomaly status split certificate;
+* long-frontier: validate the oracle-driven certificate frontier planner;
+* long-cluster: validate the oracle reopen clustering certificate;
+* long-pobj: validate the selected-witness path-object closure decision;
+* long-paths: validate compressed raw product path-family accounting;
+* long-measure: validate scoped active raw product-family probability laws;
 * c985-signature-aperture-closure-tail-sixj-2114-neighborhood: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal 2114 neighborhood screen;
 * c985-signature-aperture-closure-tail-sixj-2114-triple: validate the C985-derived d20 signature aperture closure-tail 6j nonlocal 2114 triple screen;
 * token-burn: validate bounded-output guard coverage for repo-defined runners;
@@ -4926,6 +4937,23 @@ def long_raw(
     return finish(result, pretty)
 
 
+def long_h16(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_h16 import validate_long_h16
+
+    try:
+        result = validate_long_h16()
+    except Exception as exc:
+        result = {
+            "schema": "long.h16.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def long_path(
     *,
     pretty: bool,
@@ -5266,6 +5294,176 @@ def long_inv(
     return finish(result, pretty)
 
 
+def long_inv_exhaust(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_inv_exhaust import validate_long_inv_exhaust
+
+    try:
+        result = validate_long_inv_exhaust()
+    except Exception as exc:
+        result = {
+            "schema": "long.inv_exhaust.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_anom(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_anom import validate_long_anom
+
+    try:
+        result = validate_long_anom()
+    except Exception as exc:
+        result = {
+            "schema": "long.anom.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_mat(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_mat import validate_long_mat
+
+    try:
+        result = validate_long_mat()
+    except Exception as exc:
+        result = {
+            "schema": "long.mat.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_auto(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_auto import validate_long_auto
+
+    try:
+        result = validate_long_auto()
+    except Exception as exc:
+        result = {
+            "schema": "long.auto.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_orac(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_orac import validate_long_orac
+
+    try:
+        result = validate_long_orac()
+    except Exception as exc:
+        result = {
+            "schema": "long.orac.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_frontier(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_frontier import validate_long_frontier
+
+    try:
+        result = validate_long_frontier()
+    except Exception as exc:
+        result = {
+            "schema": "long.frontier.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_cluster(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_cluster import validate_long_cluster
+
+    try:
+        result = validate_long_cluster()
+    except Exception as exc:
+        result = {
+            "schema": "long.cluster.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_pobj(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_pobj import validate_long_pobj
+
+    try:
+        result = validate_long_pobj()
+    except Exception as exc:
+        result = {
+            "schema": "long.pobj.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_paths(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_paths import validate_long_paths
+
+    try:
+        result = validate_long_paths()
+    except Exception as exc:
+        result = {
+            "schema": "long.paths.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_measure(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_measure import validate_long_measure
+
+    try:
+        result = validate_long_measure()
+    except Exception as exc:
+        result = {
+            "schema": "long.measure.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def c985_signature_aperture_closure_tail_sixj_2114_neighborhood(
     *,
     pretty: bool,
@@ -5524,6 +5722,7 @@ def main() -> None:
         "long-tens",
         "long-lift",
         "long-raw",
+        "long-h16",
         "long-path",
         "long-comp",
         "long-sheaf",
@@ -5544,6 +5743,16 @@ def main() -> None:
         "long-llnind",
         "long-thm",
         "long-inv",
+        "long-inv-exhaust",
+        "long-anom",
+        "long-mat",
+        "long-auto",
+        "long-orac",
+        "long-frontier",
+        "long-cluster",
+        "long-pobj",
+        "long-paths",
+        "long-measure",
         "c985-signature-aperture-closure-tail-sixj-2114-neighborhood",
         "c985-signature-aperture-closure-tail-sixj-2114-triple",
         "token-burn",
@@ -6103,6 +6312,8 @@ def main() -> None:
         raise SystemExit(long_lift(pretty=args.pretty))
     if args.command == "long-raw":
         raise SystemExit(long_raw(pretty=args.pretty))
+    if args.command == "long-h16":
+        raise SystemExit(long_h16(pretty=args.pretty))
     if args.command == "long-path":
         raise SystemExit(long_path(pretty=args.pretty))
     if args.command == "long-comp":
@@ -6143,6 +6354,26 @@ def main() -> None:
         raise SystemExit(long_thm(pretty=args.pretty))
     if args.command == "long-inv":
         raise SystemExit(long_inv(pretty=args.pretty))
+    if args.command == "long-inv-exhaust":
+        raise SystemExit(long_inv_exhaust(pretty=args.pretty))
+    if args.command == "long-anom":
+        raise SystemExit(long_anom(pretty=args.pretty))
+    if args.command == "long-mat":
+        raise SystemExit(long_mat(pretty=args.pretty))
+    if args.command == "long-auto":
+        raise SystemExit(long_auto(pretty=args.pretty))
+    if args.command == "long-orac":
+        raise SystemExit(long_orac(pretty=args.pretty))
+    if args.command == "long-frontier":
+        raise SystemExit(long_frontier(pretty=args.pretty))
+    if args.command == "long-cluster":
+        raise SystemExit(long_cluster(pretty=args.pretty))
+    if args.command == "long-pobj":
+        raise SystemExit(long_pobj(pretty=args.pretty))
+    if args.command == "long-paths":
+        raise SystemExit(long_paths(pretty=args.pretty))
+    if args.command == "long-measure":
+        raise SystemExit(long_measure(pretty=args.pretty))
     if args.command == "c985-signature-aperture-closure-tail-sixj-2114-neighborhood":
         raise SystemExit(
             c985_signature_aperture_closure_tail_sixj_2114_neighborhood(

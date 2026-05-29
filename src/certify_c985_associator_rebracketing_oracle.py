@@ -161,7 +161,7 @@ def validate_c985_associator_rebracketing_oracle() -> dict[str, Any]:
     assert_file_hash(inputs.get("typed_registry_report", {}), REGISTRY_REPORT, "registry report input")
     assert_file_hash(inputs.get("fusion_report", {}), FUSION_REPORT, "fusion report input")
     assert_file_hash(inputs.get("relation_memberships", {}), SOURCE_RELATION_NPZ, "relation input")
-    assert_file_hash(inputs.get("be3_action", {}), ACTION_NPZ, "Be3 action input")
+    assert_file_hash(inputs.get("be3_action", {}), ACTION_NPZ, "Gamma action input")
     assert_file_hash(inputs.get("fusion_basis_points", {}), FUSION_BASIS_NPZ, "fusion basis input")
     assert_file_hash(inputs.get("fusion_basis_index", {}), FUSION_INDEX_NPZ, "fusion index input")
     assert_file_hash(inputs.get("fusion_tensor", {}), FUSION_TENSOR_NPZ, "fusion tensor input")

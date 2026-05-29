@@ -70,7 +70,7 @@ def derive(relation_npz: Path, compare_constants: Path | None, out_npz: Path, ou
             "object_labels": LABELS,
             "object_sizes": object_sizes,
             "stabilizer_orders": stabilizers.astype(int).tolist(),
-            "law": "C20[i,j] = |Stab_{Be3}(i)| / divisor_D6(i,j)",
+            "law": "C20[i,j] = |Stab_{Gamma}(i)| / divisor_D6(i,j)",
             "diagonal_divisors": DIAGONAL_DIVISORS,
             "off_diagonal_half_divisor_pairs_labelled": [[LABELS[i], LABELS[j]] for i,j in sorted(HALF_DIVISOR_PAIRS)],
             "interpretation": "The divisor mask is the marked D6 Coxeter-polarity gate: diagonal D6->D3 sheet collapse plus oriented half-return root gates; C20 entries are stabilizer quotients, not stored coefficients.",

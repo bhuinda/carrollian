@@ -66,7 +66,7 @@ def derive_selector_from_c20(
         if not candidates:
             raise ValueError(f"no diagonal relation for object {obj} has C20 diagonal valency {target_valency}")
         # Deterministic source-coorient order tie-breaker.  This order is produced by the
-        # generated Be3 action on the generated dodecad list; it replaces six stored hashes.
+        # generated Gamma action on the generated dodecad list; it replaces six stored hashes.
         chosen = min(candidates)
         selected.append(chosen)
         if len(candidates) > 1:

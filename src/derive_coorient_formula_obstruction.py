@@ -73,7 +73,7 @@ def derive_obstruction(
         "schema": "d20.constructor.coorient_formula_obstruction@1",
         "constructor_status": "COORIENT_GENERATORS_NOT_M24_COORDINATE_PERMUTATIONS_PASS" if all_obstructed else "COORIENT_GENERATORS_COORDINATE_TEST_INCONCLUSIVE",
         "predicate": "is integral",
-        "claim": "The fixed coorient Be3 generators are not induced by ordinary coordinate permutations of the 24 Golay coordinates; they require an additional coorient action on the dodecad shell.",
+        "claim": "The fixed coorient Gamma generators are not induced by ordinary coordinate permutations of the 24 Golay coordinates; they require an additional coorient action on the dodecad shell.",
         "test": "A coordinate permutation preserves pairwise dodecad intersection cardinalities. Each supplied coorient generator violates this invariant on an explicit pair of generated dodecads.",
         "coorient_npz": str(coorient_npz.relative_to(ROOT)) if coorient_npz.is_relative_to(ROOT) else str(coorient_npz),
         "degree": int(gens.shape[1]),
@@ -81,7 +81,7 @@ def derive_obstruction(
         "sample_window": int(sample_window),
         "rows": rows,
         "remaining_boundary_sharpened": [
-            "do not search only inside M24/sextet coordinate stabilizers for Be3; the missing formula must include a lifted coorient action on the dodecad shell",
+            "do not search only inside M24/sextet coordinate stabilizers for Gamma; the missing formula must include a lifted coorient action on the dodecad shell",
             "derive the four coorient generator permutations from that typed lifted action rather than storing them as 2576-point permutations",
         ],
     }
@@ -93,7 +93,7 @@ def derive_obstruction(
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Show that the fixed coorient Be3 generators are not ordinary M24 coordinate permutations.")
+    ap = argparse.ArgumentParser(description="Show that the fixed coorient Gamma generators are not ordinary M24 coordinate permutations.")
     ap.add_argument("--coorient", default="data/coorient/be3_coorient_generators.npz")
     ap.add_argument("--out-json", default="generated/coorient_formula_obstruction_report.json")
     ap.add_argument("--sample-window", type=int, default=96)

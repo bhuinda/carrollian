@@ -479,7 +479,7 @@ def build_observable_rows(
         "all_spin_one_f_numerator": 1,
         "all_spin_one_f_denominator": 2,
         "w_d6_order": tetra["W_D6_order"],
-        "be3_order": tetra["Be3_order"],
+        "be3_order": tetra["Gamma_order"],
         "mog_k4_vertex_count": len(tetra["tetrahedron_vertices_columns"]),
         "mog_k4_edge_count": len(tetra["tetrahedron_edge_column_pairs"]),
         "final_multifusion_certified": int(final_report["status"].endswith("CERTIFIED")),

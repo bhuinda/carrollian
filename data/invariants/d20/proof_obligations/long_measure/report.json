@@ -1,0 +1,149 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8ac49911d906b3ba7021c42ea5ba8b77015adf2d1e39473dcc2f3ee34efb8146",
+  "checks": {
+    "active_weights_exact": true,
+    "fingerprints_exact": true,
+    "full_raw_gap_exact": true,
+    "inputs_certified": true,
+    "normalization_exact": true,
+    "probability_tables_exact": true,
+    "scope_not_overclaimed": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_measure normalizes the compressed active raw product-family counts from long_paths into two scoped finite probability laws: one weighted by active raw-support counts and one weighted by active raw-coefficient mass. Each law has exact conditional normalization for horizons 1..16, exact mixed-horizon normalization, a strict sample-average variance shrink curve, and an exact law-of-total-variance decomposition. The certificate also records the inactive full-raw-support gap, so it demotes full raw-support measure claims under the current active-product ontology rather than silently upgrading the scoped law.",
+  "closure_boundary": {
+    "certifies": [
+      "support-count and coefficient-mass probability laws on the current compressed active raw product family",
+      "exact conditional normalization for both scoped laws over horizons 1..16",
+      "exact mixed-horizon normalization for both scoped laws",
+      "sample-average variance shrinkage and law-of-total-variance decomposition for both scoped laws",
+      "the full raw-support gap that prevents treating the scoped laws as full raw-support measures in the current ontology"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "a probability measure on the full raw tensor support independent of the current active-product boundary",
+      "materialized rows for every raw address path",
+      "exact C985 source/target composability of all raw paths",
+      "a genuine horizon-16 long_prof profunctor",
+      "completion of the active theorem-discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_measure.py",
+      "sha256": "f1caf478d4a2afa38844ee5bff548e08c47565bc9dc4aca02e1a0ff17654a293"
+    },
+    "long_paths_component": {
+      "path": "data/invariants/d20/proof_obligations/long_paths/component.csv",
+      "sha256": "617d404221c524689ede5c51273f1eb3cbe1facdf926c27bb4828ab2e4026bd5"
+    },
+    "long_paths_fiber": {
+      "path": "data/invariants/d20/proof_obligations/long_paths/fiber.csv",
+      "sha256": "560bdcf441453fdcbc4a23ca687838de1e3ef1322ccabc5d6b72999f12358351"
+    },
+    "long_paths_horizon": {
+      "path": "data/invariants/d20/proof_obligations/long_paths/horizon.csv",
+      "sha256": "f0c7cdbd625e11b4abcc16a18668356bc3b7f8e5249943adf270d4aa7b88bad5"
+    },
+    "long_paths_report": {
+      "certificate_sha256": "6382e1aaff081bf192ec696d3367bd98e03c7d199c44d24ccd561c9fa05cd3a0",
+      "path": "data/invariants/d20/proof_obligations/long_paths/report.json",
+      "sha256": "5b6de8586778a7d08c021ef96509af943aba0f8b5bed5e5a933316181201edb4",
+      "status": "LONG_PATHS_CERTIFIED"
+    },
+    "long_paths_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_paths/tables.npz",
+      "sha256": "c65f832c122d31b5187a866467114e7d9cac30a286a6bd1723569354594ea0b0"
+    },
+    "long_prob_report": {
+      "certificate_sha256": "1d4da5b381f9f95577dd39c68329c394e9a4c1b337121a14abb1a9ab75563754",
+      "path": "data/invariants/d20/proof_obligations/long_prob/report.json",
+      "sha256": "84305f09785de3171c52d1dcbb2b12bfd021af794b4722ce86c8c187430fe66b",
+      "status": "LONG_PROB_CERTIFIED"
+    },
+    "long_prob_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_prob/tables.npz",
+      "sha256": "2234f299c116acb8badf30c8bc447306f4b51b84c4276f07a720d5222ab6a356"
+    },
+    "long_raw_report": {
+      "certificate_sha256": "ff1563f489adae051e8ce737b4697b6feec76b7489b88afa0960d83909dc73fb",
+      "path": "data/invariants/d20/proof_obligations/long_raw/report.json",
+      "sha256": "85dfc42d37e6aecd2d094c1ba8c1e77bd8a5d88352a48edea0938eaeed18cd42",
+      "status": "LONG_RAW_CERTIFIED"
+    },
+    "long_raw_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_raw/tables.npz",
+      "sha256": "de59126a6c5a31cda8d674924c8eedef2eb61c4ba0c2f4eb00dcae04a69e0bd3"
+    },
+    "validator": {
+      "path": "src/certify_long_measure.py",
+      "sha256": "2bf4c5552ed18fed3883029f7c20c3b0bca03611404423c572cbd2cab6d2e96b"
+    }
+  },
+  "next_highest_yield_item": "Return to long_h16: use the scoped measure boundary to test whether a genuine horizon-16 owner/raw profunctor can be materialized or must remain an explicit current-model obstruction.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_measure/cert.json",
+    "decomp_csv": "data/invariants/d20/proof_obligations/long_measure/decomp.csv",
+    "dist_csv": "data/invariants/d20/proof_obligations/long_measure/dist.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_measure/manifest.json",
+    "measure": "data/invariants/d20/proof_obligations/long_measure/measure.json",
+    "measure_csv": "data/invariants/d20/proof_obligations/long_measure/measure.csv",
+    "moment_csv": "data/invariants/d20/proof_obligations/long_measure/moment.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_measure/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_measure/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_measure/tables.npz"
+  },
+  "schema": "long.measure.report@1",
+  "stage_protocol": {
+    "closure": "certify scoped active-product probability laws while preserving the full raw-support boundary",
+    "coherence": "check source statuses, active weights, full raw gap, normalization, variance shrinkage, decomposition, hashes, and table shapes",
+    "draft": "read long_paths compressed product counts, long_raw full-support totals, and long_prob selected-witness probability boundary",
+    "emit": "write long_measure artifacts and verifier hook",
+    "witness": "emit scoped support/count and coefficient-mass measure rows, distributions, moments, variance decompositions, and inactive full-raw gap rows"
+  },
+  "status": "LONG_MEASURE_CERTIFIED",
+  "witness": {
+    "active_scope": {
+      "coeff_component_weight_sum": 1985840,
+      "coeff_mixed_weight_total_digits": 101,
+      "coeff_mixed_weight_total_mod_1000000007": 825448199,
+      "support_component_weight_sum": 1096591,
+      "support_mixed_weight_total_digits": 97,
+      "support_mixed_weight_total_mod_1000000007": 521628264
+    },
+    "classification": "scoped_active_raw_product_probability_boundary",
+    "full_raw_gap": {
+      "full_raw_scope_gap_flag": 1,
+      "inactive_raw_coeff_sum": 551520,
+      "inactive_raw_support_count": 318374,
+      "raw_tensor_coeff_sum": 2537360,
+      "raw_tensor_support_count": 1414965
+    },
+    "hashes": {
+      "decomp_table_sha256": "9ceb768dadf1c5cbb31357b8ed6090365365a06b5e71f4511cc6170d36374daf",
+      "decomp_text_sha256": "11c9ef69d0515777ed65a778107403f2c23020bcb4b2ecdb5207b5f0d5d8169f",
+      "distribution_table_sha256": "544dd9cbf300978c65ba9c790609e83b4625295189a0ec629a3ee968eaba9d25",
+      "distribution_text_sha256": "3adc079fb9278e84114582870dff318bd28cc72dcfaa76323132ec7f16b96d68",
+      "measure_table_sha256": "f9689162ccc65698803115b5c8ead2144eddf7c154deac396b5a71eaa177c0e1",
+      "measure_text_sha256": "2ae41770d26da8de66d7d6f50a2981ee195981b375bce0716d4a3e322b0822c7",
+      "moment_table_sha256": "e19f3893efaeefa5053d488f047a9bf9da86942548b2b549ed0153c138ba2352",
+      "moment_text_sha256": "c2c8c89e1431744be74e085d38e30182e50ce82e3b2fb726003cb2b17c0c1f44",
+      "observable_table_sha256": "901439a74e2eeb4e38358d0962dd2e5a8cad7228834abbcb2f9bfb42a5ddecae"
+    },
+    "name": "long_measure",
+    "summary": {
+      "complete_goal_claim_flag": 0,
+      "conditional_normalization_flag_count": 32,
+      "decomp_row_count": 2,
+      "distribution_row_count": 576,
+      "full_raw_measure_certified_flag": 0,
+      "full_raw_scope_gap_flag": 1,
+      "measure_row_count": 2,
+      "moment_row_count": 32,
+      "next_target": "long_h16",
+      "scoped_probability_law_flag": 1,
+      "variance_decomp_flag_count": 2,
+      "variance_shrink_flag_count": 32
+    }
+  }
+}

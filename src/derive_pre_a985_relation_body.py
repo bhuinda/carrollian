@@ -167,8 +167,8 @@ def derive(regenerate: bool = False, regenerate_tensor: bool = False) -> dict[st
         },
         "logical_form": {
             "pre_A985_source": "H8^3 -> G24 -> G24^(12)",
-            "coorient_action": "unique A985-integral d20-compatible Be3 lift",
-            "relation_body": "ordered-pair orbits of Be3 on G24^(12) x G24^(12)",
+            "coorient_action": "unique A985-integral d20-compatible Gamma lift",
+            "relation_body": "ordered-pair orbits of Gamma on G24^(12) x G24^(12)",
             "tensor_body": "representative two-step incidence over the generated relation body",
         },
         "result": {

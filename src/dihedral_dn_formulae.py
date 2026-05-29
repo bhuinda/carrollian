@@ -92,7 +92,7 @@ def check_dihedral_relations(n: int) -> dict[str, Any]:
 def terminal_valency_formula(object_sizes: np.ndarray) -> dict[str, Any]:
     """D6-lifted terminal diagonal valency formula.
 
-    Let G=Be3 and let H_i be the stabilizer of an object-orbit point in the six signed
+    Let G=Gamma and let H_i be the stabilizer of an object-orbit point in the six signed
     object family.  The D6 model has three terminal axes B,V,S and a central half-turn
     exchanging the sheets.  The terminal diagonal marker is:
 
@@ -178,7 +178,7 @@ def derive_selector_by_dihedral_formula(
         ]
         if not candidates:
             raise ValueError(f"D6 formula produced no diagonal candidate for object {obj} and valency {target}")
-        # The relation order here is the source-coorient order after alignment with the generated Be3 action.
+        # The relation order here is the source-coorient order after alignment with the generated Gamma action.
         # The selector is therefore no longer a stored hash list: it is D6 terminal valency plus coorient order.
         chosen = min(candidates)
         selected.append(chosen)
@@ -274,7 +274,7 @@ def derive_dihedral_formulae(
             "generic D_n rotation/reflection formulae",
             "D6 signed-sector action on B-/B+/V-/V+/S-/S+ via a hexagon order",
             "D3 terminal-sector quotient on B,V,S",
-            "terminal diagonal valency formula from Be3 object stabilizers and D6 axis rules",
+            "terminal diagonal valency formula from Gamma object stabilizers and D6 axis rules",
             "A42/A12 terminal selector without packet20 C20 constants",
         ],
         "D6": d6 | {"object_action_order": len({tuple(p) for p in object_group}), "hex_order_objects": HEX_ORDER_OBJECTS, "hex_order_labels": [OBJECT_LABELS[i] for i in HEX_ORDER_OBJECTS]},

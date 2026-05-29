@@ -193,7 +193,7 @@ def derive_terminal_quotients(
     result: dict[str, Any] = {
         'schema': 'd20.constructor.terminal_quotients@1',
         'constructor_status': 'TERMINAL_QUOTIENTS_PASS' if ok else 'TERMINAL_QUOTIENTS_FAIL',
-        'construction_method': 'derive A42 and A12 maps from generated Be3 relation partition using a six-hash terminal diagonal selector, then aggregate the generated T985 tensor',
+        'construction_method': 'derive A42 and A12 maps from generated Gamma relation partition using a six-hash terminal diagonal selector, then aggregate the generated T985 tensor',
         'predicate': 'is integral',
         'input_boundary': 'uses a small terminal quotient selector containing object-to-sector labels and six diagonal special relation hashes; does not use supplied q42/q12 maps or quotient tensors',
         'relation_npz': str(relation_npz.relative_to(ROOT)) if relation_npz.is_relative_to(ROOT) else str(relation_npz),

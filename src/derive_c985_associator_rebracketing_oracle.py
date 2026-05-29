@@ -481,7 +481,7 @@ def build_payloads() -> dict[str, Any]:
             "length-three incidence chains."
         ),
         "stage_protocol": {
-            "draft": "use the verified typed registry, fusion multiplicity bases, and recovered Be3 action",
+            "draft": "use the verified typed registry, fusion multiplicity bases, and recovered Gamma action",
             "witness": "materialize pair_transport_section.npz, associator oracle metadata, and concrete sample rebracketings",
             "coherence": "check full transport-section coverage, exact left/right basis counts, and sampled left-to-right chain maps",
             "closure": "certify the associator rebracketing oracle while leaving pentagon, units, and rigidity open",

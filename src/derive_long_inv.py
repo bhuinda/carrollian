@@ -46,11 +46,23 @@ INDEX_PATH = D20_INVARIANTS / "proof_obligations" / "index.json"
 LONG_THM_REPORT = LONG_THM_DIR / "report.json"
 LONG_THM_BOUNDARY = LONG_THM_DIR / "boundary.csv"
 LONG_THM_TABLES = LONG_THM_DIR / "tables.npz"
+C985_FINAL_REPORT = (
+    D20_INVARIANTS
+    / "proof_obligations"
+    / "c985_final_multifusion_certificate"
+    / "report.json"
+)
+LONG_H16_REPORT = D20_INVARIANTS / "proof_obligations" / "long_h16" / "report.json"
+LONG_PATHS_REPORT = D20_INVARIANTS / "proof_obligations" / "long_paths" / "report.json"
+LONG_MEASURE_REPORT = D20_INVARIANTS / "proof_obligations" / "long_measure" / "report.json"
+LONG_INV_EXHAUST_REPORT = (
+    D20_INVARIANTS / "proof_obligations" / "long_inv_exhaust" / "report.json"
+)
 DERIVE_SCRIPT = ROOT / "src" / "derive_long_inv.py"
 VALIDATOR_SCRIPT = ROOT / "src" / "certify_long_inv.py"
 
-FAMILY_TEXT_HASH = "405ac19106d1988cbfebe180ae42d8d354773d674cd1b0d2623d2c4fe5a78724"
-RANK_TEXT_HASH = "52c69e722d4e78f6d38e53f436c5ab2d1a060223960a5b00e4b848f49828d9e3"
+FAMILY_TEXT_HASH = "942cb23c67bf44224aa534f208847f9c2e5606fb65cf03a75a88dd885e7296af"
+RANK_TEXT_HASH = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 FAMILY_COLUMNS = [
     "family_id",
@@ -99,12 +111,60 @@ def read_int_csv(path: Any) -> list[dict[str, int]]:
 
 def build_rows() -> dict[str, Any]:
     thm_report = load_json(LONG_THM_REPORT)
+    c985_report = load_json(C985_FINAL_REPORT)
+    h16_report = load_json(LONG_H16_REPORT)
+    paths_report = load_json(LONG_PATHS_REPORT)
+    measure_report = load_json(LONG_MEASURE_REPORT)
+    inv_exhaust_report = load_json(LONG_INV_EXHAUST_REPORT)
     thm_boundary_rows = read_int_csv(LONG_THM_BOUNDARY)
     thm_witness = thm_report.get("witness", {})
     finite_theorem = thm_witness.get("finite_theorem", {})
     input_certified = int(
         thm_report.get("status") == LONG_THM_STATUS
         and thm_report.get("all_checks_pass") is True
+    )
+    assoc_retired = int(
+        c985_report.get("status")
+        == "C985_FINITE_SEMISIMPLE_MULTIFUSION_CATEGORY_CERTIFIED"
+        and c985_report.get("all_checks_pass") is True
+        and "finite semisimple multi-fusion category status for C985"
+        in c985_report.get("closure_boundary", {}).get("certifies", [])
+    )
+    h16_summary = h16_report.get("witness", {}).get("summary", {})
+    h16_retired = int(
+        h16_report.get("status") == "LONG_H16_BOUNDARY_CERTIFIED"
+        and h16_report.get("all_checks_pass") is True
+        and int(h16_summary.get("current_model_obstruction_flag", 0)) == 1
+        and int(h16_summary.get("active_h16_frontier_flag", -1)) == 0
+        and "the current-model h16 active frontier is closed as an obstruction under the certified artifact constraints"
+        in h16_report.get("closure_boundary", {}).get("certifies", [])
+    )
+    paths_retired = int(
+        paths_report.get("status") == "LONG_PATHS_CERTIFIED"
+        and paths_report.get("all_checks_pass") is True
+        and "all 288 current active-component sum fibers have exact compressed raw product-family counts"
+        in paths_report.get("closure_boundary", {}).get("certifies", [])
+    )
+    measure_summary = measure_report.get("witness", {}).get("summary", {})
+    measure_retired = int(
+        measure_report.get("status") == "LONG_MEASURE_CERTIFIED"
+        and measure_report.get("all_checks_pass") is True
+        and int(measure_summary.get("scoped_probability_law_flag", 0)) == 1
+        and int(measure_summary.get("full_raw_scope_gap_flag", 0)) == 1
+        and int(measure_summary.get("full_raw_measure_certified_flag", -1)) == 0
+        and "the full raw-support gap that prevents treating the scoped laws as full raw-support measures in the current ontology"
+        in measure_report.get("closure_boundary", {}).get("certifies", [])
+    )
+    inv_exhaust_summary = inv_exhaust_report.get("witness", {}).get("summary", {})
+    inv_exhaust_retired = int(
+        inv_exhaust_report.get("status") == "LONG_INV_EXHAUST_CERTIFIED"
+        and inv_exhaust_report.get("all_checks_pass") is True
+        and int(inv_exhaust_summary.get("current_inventory_exhaustive_flag", 0)) == 1
+        and int(inv_exhaust_summary.get("active_frontier_remaining_count", -1)) == 0
+        and int(inv_exhaust_summary.get("absolute_exhaustiveness_claim_flag", -1))
+        == 0
+        and "the current finite-line invariant-family inventory has zero active frontier rows under the focused oracle ontology"
+        in inv_exhaust_report.get("closure_boundary", {}).get("certifies", [])
     )
 
     remaining_boundary_codes = [row["boundary_code"] for row in thm_boundary_rows]
@@ -125,13 +185,13 @@ def build_rows() -> dict[str, Any]:
             "family_id": 1,
             "family_code": 4,
             "source_boundary_code": 4,
-            "priority_code": 0,
+            "priority_code": 2,
             "scope_code": 3,
             "theorem_critical_flag": 0,
-            "active_goal_required_flag": 1,
-            "certified_flag": 0,
-            "finite_theorem_exploratory_flag": 1,
-            "proof_gap_count": 1,
+            "active_goal_required_flag": 1 - inv_exhaust_retired,
+            "certified_flag": inv_exhaust_retired,
+            "finite_theorem_exploratory_flag": 1 - inv_exhaust_retired,
+            "proof_gap_count": 1 - inv_exhaust_retired,
         },
         {
             "family_id": 2,
@@ -140,10 +200,10 @@ def build_rows() -> dict[str, Any]:
             "priority_code": 1,
             "scope_code": 0,
             "theorem_critical_flag": 0,
-            "active_goal_required_flag": 1,
-            "certified_flag": 0,
-            "finite_theorem_exploratory_flag": 1,
-            "proof_gap_count": 1,
+            "active_goal_required_flag": 1 - assoc_retired,
+            "certified_flag": assoc_retired,
+            "finite_theorem_exploratory_flag": 1 - assoc_retired,
+            "proof_gap_count": 1 - assoc_retired,
         },
         {
             "family_id": 3,
@@ -152,84 +212,55 @@ def build_rows() -> dict[str, Any]:
             "priority_code": 1,
             "scope_code": 2,
             "theorem_critical_flag": 0,
-            "active_goal_required_flag": 1,
-            "certified_flag": 0,
-            "finite_theorem_exploratory_flag": 1,
-            "proof_gap_count": 1,
+            "active_goal_required_flag": 1 - h16_retired,
+            "certified_flag": h16_retired,
+            "finite_theorem_exploratory_flag": 1 - h16_retired,
+            "proof_gap_count": 1 - h16_retired,
         },
         {
             "family_id": 4,
             "family_code": 1,
             "source_boundary_code": 1,
-            "priority_code": 2,
+            "priority_code": 0,
             "scope_code": 1,
             "theorem_critical_flag": 0,
-            "active_goal_required_flag": 1,
-            "certified_flag": 0,
-            "finite_theorem_exploratory_flag": 1,
-            "proof_gap_count": 1,
+            "active_goal_required_flag": 1 - measure_retired,
+            "certified_flag": measure_retired,
+            "finite_theorem_exploratory_flag": 1 - measure_retired,
+            "proof_gap_count": 1 - measure_retired,
         },
         {
             "family_id": 5,
             "family_code": 2,
             "source_boundary_code": 2,
-            "priority_code": 2,
+            "priority_code": 9,
             "scope_code": 1,
             "theorem_critical_flag": 0,
-            "active_goal_required_flag": 1,
-            "certified_flag": 0,
-            "finite_theorem_exploratory_flag": 1,
-            "proof_gap_count": 1,
+            "active_goal_required_flag": 1 - paths_retired,
+            "certified_flag": paths_retired,
+            "finite_theorem_exploratory_flag": 1 - paths_retired,
+            "proof_gap_count": 1 - paths_retired,
         },
     ]
-    rank_rows = [
-        {
-            "rank_id": 0,
-            "family_id": 1,
-            "priority_code": 0,
-            "blocking_code": 4,
-            "next_action_code": 0,
-            "depends_on_family_code": -1,
-            "emission_order": 0,
-        },
-        {
-            "rank_id": 1,
-            "family_id": 2,
-            "priority_code": 1,
-            "blocking_code": 0,
-            "next_action_code": 1,
-            "depends_on_family_code": 4,
-            "emission_order": 1,
-        },
-        {
-            "rank_id": 2,
-            "family_id": 3,
-            "priority_code": 1,
-            "blocking_code": 3,
-            "next_action_code": 2,
-            "depends_on_family_code": 0,
-            "emission_order": 2,
-        },
-        {
-            "rank_id": 3,
-            "family_id": 4,
-            "priority_code": 2,
-            "blocking_code": 1,
-            "next_action_code": 3,
-            "depends_on_family_code": 0,
-            "emission_order": 3,
-        },
-        {
-            "rank_id": 4,
-            "family_id": 5,
-            "priority_code": 2,
-            "blocking_code": 2,
-            "next_action_code": 4,
-            "depends_on_family_code": 1,
-            "emission_order": 4,
-        },
-    ]
+    rank_rows = []
+    if not inv_exhaust_retired:
+        rank_rows.append(
+            {
+                "rank_id": 0,
+                "family_id": 1,
+                "priority_code": 2,
+                "blocking_code": 4,
+                "next_action_code": 0,
+                "depends_on_family_code": -1,
+                "emission_order": 0,
+            }
+        )
     remaining_rows = [row for row in family_rows if row["certified_flag"] == 0]
+    remaining_boundary_codes = [
+        row["source_boundary_code"]
+        for row in remaining_rows
+        if row["source_boundary_code"] >= 0
+    ]
     obs = {
         "line_point_count": int(finite_theorem.get("line_point_count", 0)),
         "tensor_support_count": int(finite_theorem.get("tensor_support_count", 0)),
@@ -252,8 +283,8 @@ def build_rows() -> dict[str, Any]:
         "proof_gap_count": sum(row["proof_gap_count"] for row in remaining_rows),
         "input_long_thm_certified_flag": input_certified,
         "inventory_bridge_flag": int(
-            sorted(remaining_boundary_codes) == [0, 1, 2, 3, 4]
-            and len(rank_rows) == len(thm_boundary_rows)
+            sorted(remaining_boundary_codes) == []
+            and len(rank_rows) == len(remaining_rows)
         ),
         "complete_goal_claim_flag": 0,
     }
@@ -276,12 +307,21 @@ def build_rows() -> dict[str, Any]:
         "rank_rows": rank_rows,
         "obs_rows": obs_rows,
         "family_table": table_from_rows(FAMILY_COLUMNS, family_rows),
-        "rank_table": table_from_rows(RANK_COLUMNS, rank_rows),
+        "rank_table": table_from_rows(RANK_COLUMNS, rank_rows)
+        if rank_rows
+        else np.zeros((0, len(RANK_COLUMNS)), dtype=np.int64),
         "observable_table": table_from_rows(OBS_COLUMNS, obs_rows),
         "family_hash": family_hash,
         "rank_hash": rank_hash,
         "obs": obs,
-        "input_reports": {"long_thm": thm_report},
+        "input_reports": {
+            "long_thm": thm_report,
+            "c985_final": c985_report,
+            "long_h16": h16_report,
+            "long_paths": paths_report,
+            "long_measure": measure_report,
+            "long_inv_exhaust": inv_exhaust_report,
+        },
         "source_boundary_rows": thm_boundary_rows,
     }
 
@@ -304,11 +344,8 @@ def build_payloads() -> dict[str, Any]:
             obs["theorem_critical_remaining_count"],
             obs["active_goal_required_remaining_count"],
         )
-        == (6, 5, 1, 0, 5),
-        "rank_total_order": (
-            [row["emission_order"] for row in rows["rank_rows"]] == [0, 1, 2, 3, 4]
-            and sorted(row["family_id"] for row in rows["rank_rows"]) == [1, 2, 3, 4, 5]
-        ),
+        == (6, 0, 6, 0, 0),
+        "rank_total_order": rows["rank_rows"] == [],
         "fingerprints_exact": (
             rows["family_hash"] == FAMILY_TEXT_HASH and rows["rank_hash"] == RANK_TEXT_HASH
         ),
@@ -320,7 +357,7 @@ def build_payloads() -> dict[str, Any]:
         )
         == (
             (6, len(FAMILY_COLUMNS)),
-            (5, len(RANK_COLUMNS)),
+            (0, len(RANK_COLUMNS)),
             (len(OBS_CODES), len(OBS_COLUMNS)),
         ),
     }
@@ -355,13 +392,7 @@ def build_payloads() -> dict[str, Any]:
             "rank_row_count": len(rows["rank_rows"]),
             "rank_text_sha256": rows["rank_hash"],
             "rank_table_sha256": sha_array(rows["rank_table"]),
-            "next_codes": {
-                "0": "long_inv_exhaust",
-                "1": "long_assoc",
-                "2": "long_h16",
-                "3": "long_measure",
-                "4": "long_paths",
-            },
+            "next_codes": {},
         },
         "observable_table_sha256": sha_array(rows["observable_table"]),
     }
@@ -377,14 +408,21 @@ def build_payloads() -> dict[str, Any]:
         "all_checks_pass": all(checks.values()),
         "claim": (
             "long_inv certifies an inventory split downstream of long_thm: the "
-            "finite tensor-lookup theorem is closed, while five broader invariant "
-            "families remain open and are ranked by immediate value."
+            "finite tensor-lookup theorem is closed, semantic C985 associator debt "
+            "has been retired by the passing C985 final oracle, the current "
+            "horizon-16 current-model obstruction has been retired by long_h16 "
+            "without claiming absolute nonexistence under changed models, "
+            "compressed active raw product-path accounting "
+            "has been retired by long_paths, scoped active-product measure debt "
+            "has been retired by long_measure as a scoped-law/full-gap boundary, "
+            "and bounded finite-line inventory exhaustiveness has been retired "
+            "by long_inv_exhaust under the focused oracle ontology."
         ),
         "stage_protocol": {
             "draft": "read long_thm theorem status and unresolved boundary rows",
             "witness": "emit invariant-family rows and a total priority order",
             "coherence": "check boundary coverage, rank order, table shapes, and hashes",
-            "closure": "certify inventory status without claiming the open families are solved",
+            "closure": "certify inventory status without claiming absolute invariant omniscience outside the oracle ontology",
             "emit": "write long_inv artifacts and verifier hook",
         },
         "inputs": {
@@ -397,6 +435,30 @@ def build_payloads() -> dict[str, Any]:
                 {"columns": LONG_THM_BOUNDARY_COLUMNS},
             ),
             "long_thm_tables": input_entry(LONG_THM_TABLES),
+            "c985_final_report": input_entry(
+                C985_FINAL_REPORT,
+                {"status": rows["input_reports"]["c985_final"].get("status")},
+            ),
+            "long_h16_report": input_entry(
+                LONG_H16_REPORT,
+                {"status": rows["input_reports"]["long_h16"].get("status")},
+            ),
+            "long_paths_report": input_entry(
+                LONG_PATHS_REPORT,
+                {"status": rows["input_reports"]["long_paths"].get("status")},
+            ),
+            "long_measure_report": input_entry(
+                LONG_MEASURE_REPORT,
+                {"status": rows["input_reports"]["long_measure"].get("status")},
+            ),
+            "long_inv_exhaust_report": input_entry(
+                LONG_INV_EXHAUST_REPORT,
+                {
+                    "status": rows["input_reports"]["long_inv_exhaust"].get(
+                        "status"
+                    )
+                },
+            ),
             "derive_script": input_entry(DERIVE_SCRIPT),
             "validator": input_entry(VALIDATOR_SCRIPT)
             if VALIDATOR_SCRIPT.exists()
@@ -417,21 +479,23 @@ def build_payloads() -> dict[str, Any]:
         "closure_boundary": {
             "certifies": [
                 "finite theorem closure remains separated from broader invariant discovery",
-                "the five open invariant families are not required for the finite theorem",
-                "the active discovery path has a concrete priority order",
+                "semantic C985 associator debt is retired by the focused C985 final certificate",
+                "the current horizon-16 active frontier is retired by the focused current-model obstruction certificate",
+                "compressed active raw product-path accounting is retired by long_paths",
+                "scoped active-product measure debt is retired by long_measure while full raw-support claims remain separated",
+                "bounded finite-line inventory cover is retired by long_inv_exhaust under the focused oracle ontology",
+                "there are zero remaining focused inventory-family rows",
                 "the broader goal is still explicitly open",
             ],
             "does_not_certify_because_out_of_scope": [
-                "semantic C985 associator composition",
-                "a probability measure on the full raw tensor support",
-                "all raw product paths in each fiber",
-                "a genuine horizon-16 profunctor",
-                "exhaustiveness of every invariant of the finite line address space",
+                "materialized raw-address rows for every raw path",
+                "absolute nonexistence of a genuine horizon-16 profunctor under changed object/support models",
+                "absolute exhaustiveness of every conceivable invariant outside the current oracle ontology",
             ],
         },
         "next_highest_yield_item": (
-            "Build long_pobj: test whether the current finite-line path witnesses "
-            "upgrade to a closed path object."
+            "Focused theorem-debt frontier is empty; defer broad integration "
+            "gates until the operator permits long gates."
         ),
     }
     report["certificate_sha256"] = self_hash(report, "certificate_sha256")

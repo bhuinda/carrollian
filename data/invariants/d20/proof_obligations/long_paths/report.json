@@ -1,0 +1,133 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6382e1aaff081bf192ec696d3367bd98e03c7d199c44d24ccd561c9fa05cd3a0",
+  "checks": {
+    "component_path_inventory_exact": true,
+    "component_weights_exact": true,
+    "compressed_raw_products_positive": true,
+    "fiber_inventory_exact": true,
+    "inputs_certified": true,
+    "large_count_boundary_exact": true,
+    "path_family_not_overclaimed": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_paths certifies an exact compressed enumeration of the current active-component raw product path family. For each of the 288 horizon-16 sum fibers it records the full component-path count, active raw-support product count, and active raw-coefficient mass by digits and modular witnesses. This closes the product-family accounting behind the 64,570,080 component paths, including the 64,560,240 gap paths, without materializing every raw address path or claiming exact C985/profunctor composability.",
+  "closure_boundary": {
+    "certifies": [
+      "all 288 current active-component sum fibers have exact compressed raw product-family counts",
+      "the 208 gap fibers are included in the compressed path-family accounting",
+      "the full 64,570,080 component-path family is accounted for by fiber and horizon",
+      "active raw-support path counts and active raw-coefficient masses are reproducible by digits and modular witnesses"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "materialized rows for every raw address path",
+      "exact C985 source/target composability of all raw paths",
+      "a probability measure on the full raw tensor support",
+      "a genuine horizon-16 long_prof profunctor",
+      "completion of the active theorem-discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_paths.py",
+      "sha256": "2bbe581efc7e53f62b68ca43507908eb3bd8103ee8d405ee07dcd6ac8225b962"
+    },
+    "long_path_component": {
+      "path": "data/invariants/d20/proof_obligations/long_path/component.csv",
+      "sha256": "127444228cfef288fff85eb82788637f995b85619f153b170fe7eab472234e6a"
+    },
+    "long_path_path": {
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "certificate_sha256": "04cc5239202e586f0724646d4a903bd6c1e5884f54756c2ea0495e4dacfaf3af",
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "long_pobj_report": {
+      "certificate_sha256": "c937566b5d3149e34511b56d2a4de764394743f7cc5025c426c824d36c621c53",
+      "path": "data/invariants/d20/proof_obligations/long_pobj/report.json",
+      "sha256": "c2647ddc01cd6488866c4dcf6ab3eeb0999cf1b77a68454ba293e5adc8356d59",
+      "status": "LONG_POBJ_CERTIFIED"
+    },
+    "long_pobj_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_pobj/tables.npz",
+      "sha256": "14e993a10f095ff7f1117bd850e9392a7c3ba568625d244a2fb2e19a153fded2"
+    },
+    "long_tens_fiber": {
+      "path": "data/invariants/d20/proof_obligations/long_tens/fiber.csv",
+      "sha256": "5b0f25b601eb5c5e1f1aaff012e39187c9ed605ee81f518e1d0fbcf082ae8005"
+    },
+    "long_tens_horizon": {
+      "path": "data/invariants/d20/proof_obligations/long_tens/horizon.csv",
+      "sha256": "2c16b2f4cdb3c6b0126de5bd6dfb89af8286357dd026f47a95d220b6ce00b371"
+    },
+    "long_tens_report": {
+      "certificate_sha256": "1aa29fbdab6710b5ee623faa882fb240909e86939f34605f20c6e1b8ef08f488",
+      "path": "data/invariants/d20/proof_obligations/long_tens/report.json",
+      "sha256": "97977f3594097d6bbfced152336d9ad6d6da8750f44bf4f3f468e6876dd1f329",
+      "status": "LONG_TENS_CERTIFIED"
+    },
+    "long_tens_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_tens/tables.npz",
+      "sha256": "5276f8818dc12dc3e7e19d83a1ad7b4b984917620ed0c592fea6f7a0354ae74c"
+    },
+    "validator": {
+      "path": "src/certify_long_paths.py",
+      "sha256": "f7e19e978cc281a240f5a3e2c9370d154a26fc250bb9f2ae5c963cee30534fa4"
+    }
+  },
+  "next_highest_yield_item": "Build long_measure: turn the compressed active raw product-family counts into a scoped probability law while keeping full raw-support measure claims separate.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_paths/cert.json",
+    "component_csv": "data/invariants/d20/proof_obligations/long_paths/component.csv",
+    "fiber_csv": "data/invariants/d20/proof_obligations/long_paths/fiber.csv",
+    "horizon_csv": "data/invariants/d20/proof_obligations/long_paths/horizon.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_paths/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_paths/obs.csv",
+    "paths": "data/invariants/d20/proof_obligations/long_paths/paths.json",
+    "report": "data/invariants/d20/proof_obligations/long_paths/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_paths/tables.npz"
+  },
+  "schema": "long.paths.report@1",
+  "stage_protocol": {
+    "closure": "certify compressed product-family accounting without claiming materialized or exact-composable raw paths",
+    "coherence": "check source statuses, component weights, fiber inventory, component-path totals, positivity, large-count boundaries, table shapes, and hashes",
+    "draft": "read long_path, long_pobj, and long_tens witnesses",
+    "emit": "write long_paths artifacts and verifier hook",
+    "witness": "emit active-component weights, per-fiber compressed raw product counts, and per-horizon totals"
+  },
+  "status": "LONG_PATHS_CERTIFIED",
+  "witness": {
+    "classification": "compressed_active_raw_product_path_family",
+    "component_table_sha256": "6e214d1e584d0645f74f1324fb5f27605a8db2ba7ebfce467c7f61e821e6b7d9",
+    "component_text_sha256": "3f095693fdb64858df8c378db2b6a45b9aab0c4d0f5787b64fcda63c1c7afbbb",
+    "fiber_table_sha256": "be2e2f42f75e78b2ac2b5129895a016108b7cc1b36a149ce62fee9e192f3a767",
+    "fiber_text_sha256": "537f3837735f2fae60cdffb3270f4a1ae7927d6f459b51972cf2c21cbfcc69fd",
+    "horizon_table_sha256": "f34254c9cd6d4066e2426d44e4dcd9e024ba3264bc63e3b8967c52e72ba6df8e",
+    "horizon_text_sha256": "8cc46a4ade7a3b09b62e963b2dd226e140e6706c70aecae5abe93e9cf94a1f02",
+    "name": "long_paths",
+    "observable_table_sha256": "834ac1647c1219cdb2f2559c326676397d436f62d9964f457f5ab5e9be8ed082",
+    "summary": {
+      "active_raw_coeff_sum": 1985840,
+      "active_raw_support_count": 1096591,
+      "complete_goal_claim_flag": 0,
+      "component_path_gap_total": 64560240,
+      "component_path_total": 64570080,
+      "compressed_raw_product_family_flag": 1,
+      "exact_composable_raw_path_family_flag": 0,
+      "fiber_row_count": 288,
+      "horizon_row_count": 16,
+      "materialized_raw_path_family_flag": 0,
+      "missing_component_path_count": 64569792,
+      "next_target": "long_measure",
+      "selected_witness_count": 288
+    }
+  }
+}

@@ -155,7 +155,7 @@ def validate_c985_unit_triangle_coherence() -> dict[str, Any]:
     assert_file_hash(inputs.get("identity_orbitals", {}), REGISTRY_IDENTITIES, "identity input")
     assert_file_hash(inputs.get("fusion_basis_points", {}), FUSION_BASIS_NPZ, "fusion basis input")
     assert_file_hash(inputs.get("pair_transport_section", {}), PAIR_TRANSPORT_NPZ, "transport input")
-    assert_file_hash(inputs.get("be3_action", {}), ACTION_NPZ, "Be3 action input")
+    assert_file_hash(inputs.get("be3_action", {}), ACTION_NPZ, "Gamma action input")
     assert_file_hash(inputs.get("unit_action_records", {}), UNIT_RECORDS_NPZ, "unit records input")
 
     if manifest.get("schema") != "c985.proof_obligation.unit_triangle_coherence_manifest@1":

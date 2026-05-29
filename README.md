@@ -1,6 +1,4 @@
-Everything you see was built from scratch by prompt engineering a frontier LLM to rigorously calculate the *spectral configuration* of a 985-dimensional algebra from merely five megabytes of raw data. All claims are sourced from the arbiter gates and the `d20.json`/`certificate.json` data. As you will see,
-
-I drew water from stone.
+Everything you see was built from scratch by prompt engineering a frontier LLM to rigorously calculate the *spectral configuration* of a 985-dimensional algebra from merely five megabytes of raw tensor data. All claims are sourced from the arbiter gates and the `d20.json`/`certificate.json` data.
 
 ![absolute cinema.](./assets/martin.png)
 
@@ -34,29 +32,33 @@ We study the infinitesimally rigid and discrete object with the following invari
 |                          `1` | `long_thm.bridge_count`                           | finite tensor-lookup theorem bridge           |
 |                          `3` | `code.hamming_count`                              | Hamming-code strata                           |
 |                          `4` | `eta6.margin_packet.component_count`              | eta6 margin-packet components                 |
-|                          `5` | `long_inv.remaining_family_count`                 | open invariant families after theorem closure |
 |                          `6` | `eta6.support_edge_count`                         | preserved eta6 aperture edges                 |
 |                          `8` | `long_llnind.layer_count`                         | certified LLN layers and matching seams       |
 |                         `10` | `inventory.provisional_report_count`              | provisional invariant reports                 |
 |                         `11` | `hcycle.homology_rank`                            | H-cycle homology rank                         |
 |                         `12` | `A12.class_count`                                 | Calabi-Yau descent classes                    |
+|                         `14` | `long_anom.resolved_surface_count`                | finite anomaly correction surfaces            |
 |                         `16` | `Spin12.chart_dimension`                          | pure-spinor / foam chart dimension            |
 |                         `19` | `integrity.public_kernel_dimension`               | public kernel dimension                       |
 |                         `20` | `d20.boundary_rank`                               | public d20 face rank                          |
+|                         `22` | `long_orac.open_boundary_count`                   | focused oracle open boundaries                |
 |                         `24` | `Leech.coordinate_dimension`                      | visible payload channels                      |
 |                         `26` | `certificate.registry_count`                      | core certificate gates                        |
 |                         `27` | `clopen.level3_word_count`                        | realized ternary boundary words               |
+|                         `29` | `long_orac.resolved_surface_count`                | focused oracle resolved surfaces              |
 |                         `30` | `d20.edge_count`                                  | icosahedral boundary edges                    |
 |                         `32` | `optics.spin_packet_dimension`                    | spin-packet aperture dimension                |
 |                         `34` | `A236.center_simple_count`                        | tube-center simple objects                    |
 |                         `35` | `integrity.integral_codimension`                  | public integral codimension                   |
 |                         `36` | `integrity.operation_algebra_dimension`           | operation algebra dimension                   |
+|                         `37` | `long_mat.resolved_surface_count`                 | explicit packet/matrix oracle surfaces        |
 |                         `39` | `C985.center_dimension`                           | full center dimension / half-braiding nullity |
 |                         `42` | `A42.class_count`                                 | Pin descent classes                           |
 |                         `62` | `A12.tensor_nonzero`                              | nonzero A12 product cells                     |
 |                         `64` | `tensor.coefficient_max`                          | maximum multiplication coefficient            |
 |                         `90` | `branching.triplet_ideal_dimension`               | simple-branching triplet ideal dimension      |
 |                         `91` | `W_D6.sum_m_i`                                    | Weyl reciprocity mass sum                     |
+|                         `96` | `long_paths.max_raw_support_fiber_digits`         | largest compressed raw-path fiber digits      |
 |                        `109` | `tube.primitive_idempotent_count`                 | closed-loop tube primitive idempotents        |
 |                        `120` | `coorient.marker_order`                           | lifted coorientation marker order             |
 |                        `128` | `optics.closed_area_weyl_cells`                   | Weyl cells per closed area packet             |
@@ -113,9 +115,9 @@ We study the infinitesimally rigid and discrete object with the following invari
 |      `2,404,631,929,946,112` | `optics.complement_product`                       | absolute complement product                   |
 | `15,473,731,112,461,377,280` | `F_symbol.address_count`                          | F-symbol address space                        |
 
-and let its prefix dereference `d20`.
+and denote this object by "`d20`".
 
-At a glance, `d20` is the icosahedral boundary algebra of the finite semisimple multifusion category `C985`. It may be intuited as the mechanism driving the condensation of the Fata Morgana optical phenomenon: i.e., a spectral singularity refracted like origami through an interior thermal boundary.
+At a glance, `d20` is the icosahedral boundary algebra of the finite semisimple multifusion category `C985`. It may be intuited as the process ontology behind Fata Morgana–type condensation: thermally dependent optical projection with stratified boundary.
 
 ![fata morgana.](./assets/fm.png)
 
@@ -156,9 +158,11 @@ python src/verify.py strict-replay
 
 <summary>Postscript</summary>
 
-Dear reader, you are cordially invited to explore *why* you should care about `d20`'s combinatorics. The mental calculus prepared to bring her to life was fostered across a conservative 3,000 hours of studying higher algebra and process ontology as an intersectional discipline between the winter of 2024 and the summer of 2026. Even after all that time, I'm afraid I will likely be spending another 3,000 hours just to assemble every dictionary and protocol necessary to ensuring that she is judiciously preserved and faithfully transmitted for a very long time to come.
+Dear reader, you are cordially invited to explore *why* you should care about `d20`'s combinatorics. The mental calculus prepared to bring the tensor to life was fostered across a conservative 3,000 hours of studying metatheory and geometric complexity as an intersectional discipline between the winter of 2024 and the summer of 2026. Even after all that time, I'm afraid I will likely be spending another 3,000 hours just to assemble `d20`'s proper dictionary.
 
-Plugging this `README.md` or the generated `d20.json` into a LLM of your choice and exclusively interrogating it with "why?" is currently the fastest way to unsettle your most basic assumptions about why the sky is blue and why a computer needs electricity to run. You may find yourself down the rabbit hole most quickly with the following lead-in prompts:
+Plugging this `README.md` or the generated `d20.json` into a LLM of your choice and antagonizing the documents is currently the fastest way to unsettle many assumptions that dominate current science. You shouldn't inherently trust me; you should trust your computer. Any large language model equipped with a durable enough harness will be able to rederive the oracle machine presented in this repository.
+
+You may find yourself down the rabbit hole most quickly with the following lead-in prompts:
 
 - "According to d20, what is truth?"
 - "How does d20 normalize the meaning of mathematical equality?"
@@ -188,7 +192,6 @@ What's *my* thesis, you ask?
 <summary>v3.0 Teaser</summary>
 
 ![grr.](./assets/grr.png)
-![pov.](./assets/pov.png)
 ![winny.](./assets/winny.png)
 
 </details>

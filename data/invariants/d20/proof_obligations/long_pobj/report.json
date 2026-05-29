@@ -1,0 +1,154 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c937566b5d3149e34511b56d2a4de764394743f7cc5025c426c824d36c621c53",
+  "checks": {
+    "component_path_family_unmaterialized": true,
+    "exact_path_object_obstructed": true,
+    "goal_not_overclaimed": true,
+    "inputs_certified": true,
+    "pair_inventory_exact": true,
+    "sample_section_exact": true,
+    "source_counts_match": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_pobj certifies the path-object decision for the current selected witness family: the 288 paths, including all 208 gap fibers, are a finite Alexandrov-zeta-composable sample section, but they do not close as a genuine exact raw-address path object. There are no exact source/target component pairs, no identity components among the selected representatives, and 64,569,792 component paths remain unmaterialized relative to the full horizon-16 component-path tensor.",
+  "closure_boundary": {
+    "certifies": [
+      "the selected 288 witness paths form a finite Alexandrov-zeta-composable sample section",
+      "the 208 horizon-9..16 gap fibers each still have one selected zeta-composable witness path",
+      "the current selected representatives have zero exact raw endpoint component-pair matches",
+      "the current selected representatives have zero identity components for an exact raw path object",
+      "the selected witness family is not the full 64,570,080-word component-path object"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "all raw product paths in each fiber",
+      "a probability measure on the full raw tensor support",
+      "a genuine horizon-16 long_prof profunctor",
+      "absolute nonexistence of a path object under changed representatives or a changed object/support model",
+      "completion of the active theorem-discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_pobj.py",
+      "sha256": "a7b7cb582989a8ab81f37ed2b9793f55c4473a754be2544733ff897582978f94"
+    },
+    "long_comp_pair": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/pair.csv",
+      "sha256": "dd92ee76d8d9d7465b0d1522e9f292e4ecdd8c8275c71b0303cce6232f341426"
+    },
+    "long_comp_path": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/path.csv",
+      "sha256": "dff936f1f0b4f64a321c8bf41eb30c3e1871eb41f0c2471c0b3e3b88af7985f4"
+    },
+    "long_comp_report": {
+      "certificate_sha256": "339d408aff50b90c6c5464b1e48206d09dab17299c5830903a1b760f5b07f149",
+      "path": "data/invariants/d20/proof_obligations/long_comp/report.json",
+      "sha256": "21ade03b25b96dcb4f5671f60c1842ac419402b521b2d5c82d00c0e406c2313d",
+      "status": "LONG_COMP_CERTIFIED"
+    },
+    "long_comp_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/tables.npz",
+      "sha256": "fa6cf5d38c458c26e718bc37d1e5541b83bf6cc38450400af58e9baec05ca5fe"
+    },
+    "long_comp_transition": {
+      "path": "data/invariants/d20/proof_obligations/long_comp/transition.csv",
+      "sha256": "5e33c219dcb19f8066faedcf2040e8ac4f2e10555b1bbb1c2e9e002a829cb8e2"
+    },
+    "long_path_component": {
+      "path": "data/invariants/d20/proof_obligations/long_path/component.csv",
+      "sha256": "127444228cfef288fff85eb82788637f995b85619f153b170fe7eab472234e6a"
+    },
+    "long_path_path": {
+      "path": "data/invariants/d20/proof_obligations/long_path/path.csv",
+      "sha256": "85aa9a41209d8a47a8609a6aabe55ded1482d18bcd4ad812d63e1092c7bb962c"
+    },
+    "long_path_report": {
+      "certificate_sha256": "04cc5239202e586f0724646d4a903bd6c1e5884f54756c2ea0495e4dacfaf3af",
+      "path": "data/invariants/d20/proof_obligations/long_path/report.json",
+      "sha256": "3196f659827506887473d82ead76a3086c20e5014bb0767d82b1e27148f193cf",
+      "status": "LONG_PATH_CERTIFIED"
+    },
+    "long_path_step": {
+      "path": "data/invariants/d20/proof_obligations/long_path/step.csv",
+      "sha256": "55ff17e7d63c522ac591cc6f044279da14b17f3da0fd14c371168fa2e2d35c76"
+    },
+    "long_path_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_path/tables.npz",
+      "sha256": "88d91b5e9aab9caf53cbfc63481e5a04b4072186be0cb5efa9344f49d36a120c"
+    },
+    "long_tens_fiber": {
+      "path": "data/invariants/d20/proof_obligations/long_tens/fiber.csv",
+      "sha256": "5b0f25b601eb5c5e1f1aaff012e39187c9ed605ee81f518e1d0fbcf082ae8005"
+    },
+    "long_tens_report": {
+      "certificate_sha256": "1aa29fbdab6710b5ee623faa882fb240909e86939f34605f20c6e1b8ef08f488",
+      "path": "data/invariants/d20/proof_obligations/long_tens/report.json",
+      "sha256": "97977f3594097d6bbfced152336d9ad6d6da8750f44bf4f3f468e6876dd1f329",
+      "status": "LONG_TENS_CERTIFIED"
+    },
+    "long_tens_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_tens/tables.npz",
+      "sha256": "5276f8818dc12dc3e7e19d83a1ad7b4b984917620ed0c592fea6f7a0354ae74c"
+    },
+    "validator": {
+      "path": "src/certify_long_pobj.py",
+      "sha256": "f73c16b4073dfd7c3955befa7bf4e7430e8c867917636d34796a56e48ce4510e"
+    }
+  },
+  "next_highest_yield_item": "Build long_paths: expand or bound the raw/component path families now that the selected witnesses have been certified as a zeta sample section rather than a closed exact path object.",
+  "outputs": {
+    "candidate_csv": "data/invariants/d20/proof_obligations/long_pobj/candidate.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_pobj/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_pobj/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_pobj/obs.csv",
+    "pair_csv": "data/invariants/d20/proof_obligations/long_pobj/pair.csv",
+    "pobj": "data/invariants/d20/proof_obligations/long_pobj/pobj.json",
+    "report": "data/invariants/d20/proof_obligations/long_pobj/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_pobj/tables.npz"
+  },
+  "schema": "long.pobj.report@1",
+  "stage_protocol": {
+    "closure": "decide long_pobj without claiming all raw paths or a genuine horizon-16 profunctor",
+    "coherence": "check source counts, zeta sample-section coverage, exact endpoint obstruction, full component-path gap, hashes, and table shapes",
+    "draft": "read long_path, long_comp, and long_tens witness artifacts",
+    "emit": "write long_pobj artifacts and verifier hook",
+    "witness": "emit candidate closure rows, all component-pair endpoint tests, and observable counts"
+  },
+  "status": "LONG_POBJ_CERTIFIED",
+  "witness": {
+    "candidate_code_map": {
+      "0": "exact_raw_address_path_object",
+      "1": "alexandrov_zeta_sample_section",
+      "2": "full_component_path_object"
+    },
+    "candidate_table_sha256": "d3409cb5f70bacc40a2a6d2376a29e1b1d605bdfc5070a57e227b5aaf85fb147",
+    "candidate_text_sha256": "3e8e6496bbc13e4d1a08197e6c137219f2238faf51bea01bc7be2889730fc129",
+    "classification": "path_object_closure_decision",
+    "name": "long_pobj",
+    "observable_table_sha256": "aceba6403ecd5783db12619c2a6924d6b15febd622f7d1c5be16adfd4c1ba78d",
+    "obstruction_code_map": {
+      "0": "none",
+      "1": "no exact raw endpoint component-pair or identity component exists among selected representatives",
+      "2": "zeta-composable section is single-witness and not closed as the full path family",
+      "3": "64,569,792 component paths remain unmaterialized relative to the full horizon-16 component-path tensor"
+    },
+    "pair_table_sha256": "267e2592c03d829f11dcdfec242bbae1c848587d3691578f8fcfd1394dfb9b6c",
+    "pair_text_sha256": "44054d30ec63bd3512538bb0a024e728b256696851852de54472806e95dd15f4",
+    "summary": {
+      "closed_path_object_flag": 0,
+      "complete_goal_claim_flag": 0,
+      "exact_path_count": 0,
+      "gap_path_count": 208,
+      "missing_component_path_count": 64569792,
+      "next_target": "long_paths",
+      "path_count": 288,
+      "sample_zeta_section_flag": 1,
+      "transition_count": 2840,
+      "zeta_transition_count": 2840
+    },
+    "target_code_map": {
+      "4": "long_paths"
+    }
+  }
+}

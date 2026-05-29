@@ -208,9 +208,9 @@ def source_constructor_certificate() -> dict[str, Any]:
             "compute sextet profile families, vector fibers, spinor fibers, and balanced scheme valencies",
         ],
         "remaining_full_scratch_steps": [
-            "construct the code-preserving lifted coorient group Be3 from the generated endpoint and fixed coorient data",
-            "compute the six Be3 object orbits on the generated dodecad shell",
-            "compute the 985 ordered-pair orbitals from the generated Be3 action",
+            "construct the code-preserving lifted coorient group Gamma from the generated endpoint and fixed coorient data",
+            "compute the six Gamma object orbits on the generated dodecad shell",
+            "compute the 985 ordered-pair orbitals from the generated Gamma action",
             "compute the full A985 structure tensor T985 by two-step incidence from generated orbitals",
             "derive A236, A42, A12, sector 33, and the integral wall from that freshly generated tensor",
         ],

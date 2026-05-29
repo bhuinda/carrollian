@@ -265,7 +265,7 @@ def construct_be3_from_source_coorient(
     result: dict[str, Any] = {
         "schema": "d20.constructor.source_coorient_to_be3_orbitals@1",
         "constructor_status": "SOURCE_COORIENT_TO_BE3_ORBITALS_PASS" if status_ok else "SOURCE_COORIENT_TO_BE3_ORBITALS_FAIL",
-        "construction_method": "generate G24 dodecads from H8^3, apply fixed coorient dodecad-action generators, close Be3, compute point and ordered-pair orbits",
+        "construction_method": "generate G24 dodecads from H8^3, apply fixed coorient dodecad-action generators, close Gamma, compute point and ordered-pair orbits",
         "input_boundary": "uses fixed coorient generator permutations on the generated 2576 dodecads; does not derive those coorient generators from a smaller formula",
         "predicate": "is integral",
         "source": {
@@ -321,7 +321,7 @@ def construct_be3_from_source_coorient(
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Construct Be3 orbitals from source dodecads plus fixed coorient action generators.")
+    ap = argparse.ArgumentParser(description="Construct Gamma orbitals from source dodecads plus fixed coorient action generators.")
     ap.add_argument("--coorient", default="data/coorient/be3_coorient_generators.npz")
     ap.add_argument("--out-json", default="generated/source_coorient_to_be3_orbitals.json")
     ap.add_argument("--out-relation-npz", default="generated/relation_memberships_from_source_coorient.npz")
