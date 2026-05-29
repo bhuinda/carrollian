@@ -221,7 +221,9 @@ def derive_selector_by_dihedral_formula(
     }
     if out_selector_json is not None:
         out_selector_json.parent.mkdir(parents=True, exist_ok=True)
-        out_selector_json.write_text(json.dumps(selector, indent=2, sort_keys=True), encoding="utf-8")
+        selector_text = json.dumps(selector, indent=2, sort_keys=True)
+        if not out_selector_json.exists() or out_selector_json.read_text(encoding="utf-8") != selector_text:
+            out_selector_json.write_text(selector_text, encoding="utf-8")
     return {
         "selector": selector,
         "selected_relations": rows,
@@ -301,7 +303,9 @@ def derive_dihedral_formulae(
     }
     result["constructor_result_sha256"] = sha_json({k: v for k, v in result.items() if k != "constructor_result_sha256"})
     out_json.parent.mkdir(parents=True, exist_ok=True)
-    out_json.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")
+    result_text = json.dumps(result, indent=2, sort_keys=True)
+    if not out_json.exists() or out_json.read_text(encoding="utf-8") != result_text:
+        out_json.write_text(result_text, encoding="utf-8")
     return result
 
 

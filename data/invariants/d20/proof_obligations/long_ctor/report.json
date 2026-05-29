@@ -1,0 +1,212 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "94248df8335ece986b34823724520121c5de856b99201cfcfc5f161304670ff9",
+  "checks": {
+    "cache_boundary_not_overclaimed": true,
+    "cache_demoted_to_audit_target": true,
+    "finite_object_shape_matches": true,
+    "formula_compression_recorded": true,
+    "hash_references_cover_expected_mismatches": true,
+    "oracle_certificate_is_current": true,
+    "relation_partition_replay_matches": true,
+    "strict_constructor_passes": true,
+    "surface_rows_all_certified": true,
+    "table_shapes_match": true,
+    "tensor_replay_matches": true,
+    "terminal_oracle_replay_matches": true
+  },
+  "claim": "long_ctor certifies that the generated strict-scratch constructor recreates the A985 multiplication tensor as a canonical sparse multiset and recreates the terminal q42/q12 oracle surfaces exactly, while keeping Halloween.npz as an audit target rather than a semantic constructor input. It also records that the current long_orac oracle status split remains certified on top of that surface.",
+  "closure_boundary": {
+    "certifies": [
+      "the strict-scratch constructor passes with zero supplied raw seed boundary",
+      "the 2576-point, 985-relation ordered-pair partition is reconstructed",
+      "the A985 tensor support is 1,414,965 and coefficient mass is 2,537,360",
+      "the generated tensor equals Halloween.npz after canonical sparse-row sorting",
+      "the generated q42/q12 maps and q42/q12 tensors match the raw oracle files exactly",
+      "the current long_orac status split is certified over the same tensor/oracle surface",
+      "Halloween.npz is demoted to audit/cache role for this constructor surface"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "byte-for-byte reproduction of the Halloween.npz zip container",
+      "preservation of the stored raw triples row order",
+      "preservation of the raw representative-row choices in the reps array",
+      "a probability measure on the full raw tensor support beyond long_measure scope",
+      "full raw-path materialization beyond the compressed active-product path surface",
+      "completion of any external or absolute infinite theorem-discovery goal"
+    ]
+  },
+  "inputs": {
+    "coorient_formula": {
+      "path": "data/coorient/lifted_coorient_canonical_marker_formula.json",
+      "sha256": "e13a7f309721f6c161a1b1b66811b730539c890de4109d312c4cc512a90fe8be"
+    },
+    "derive_script": {
+      "path": "src/derive_long_ctor.py",
+      "sha256": "34238bd2f02e45c5bf5ff9597b574adcc1ccc0a9a8e31199476a989703febf68"
+    },
+    "long_orac_report": {
+      "certificate_sha256": "3245c84bb789fc1312ba3003a15e6301ae613e5e974e2abb65bca3a922ae13df",
+      "path": "data/invariants/d20/proof_obligations/long_orac/report.json",
+      "sha256": "63f470297dfda1fc4724d6948a82ec334633f5abe0ec07befe2c63ba3213bfb4",
+      "status": "LONG_ORAC_CERTIFIED"
+    },
+    "raw_quotients": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    },
+    "raw_relations": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "raw_tensor": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "strict_quotients": {
+      "array_sha256": {
+        "q12_map": "b4a83b5d954e59ddba4090e008e6cc1a065b2a76fdb1c077c51691e7bf1a3187",
+        "q12_tensor": "1530a6209b3283dfd4e2a560834f0a42e3b21697270d26dde57c31e65776da00",
+        "q42_map": "05bb7b0b6c4ec3790949321b94b36daadac42bff41501be2b7b6a7e988d24201",
+        "q42_tensor": "84f2200c802b3fdc9218c0037302bd8b2c64883ccf5f28d23182db36606c8461"
+      },
+      "path": "generated/strict_scratch_terminal_quotients_from_dihedral_formula.npz"
+    },
+    "strict_relations": {
+      "array_sha256": {
+        "block_i": "c0ed141748e90511877d2c3e87678e171a0fca2a6b413b780155fd335f9d3d4d",
+        "block_j": "bb2576d9a44b4678638723a1044b4cceb239ada14356c3ceb1bab75147483fcc",
+        "encoded_pairs": "7c0991629653db164aff52b91afcb58e3426fde3d331012e9a7470f59f81c91f",
+        "object_of_point": "b93902a7f846379c5fc7f7b853ef831f547fee70e7b97fb378b0f03638e10709",
+        "offsets": "b536e827fec13d10ab869b5caed9d35e008fcbedc6b05f8b64b5bae66981e216"
+      },
+      "path": "generated/relation_memberships_pre_A985_from_source_aligned.npz"
+    },
+    "strict_tensor": {
+      "array_sha256": {
+        "M": "dc93676f23193afed1832befcb43d6a913a483a9ddd090b489b1a47c81c12282",
+        "reps": "c799028bcb57b6017f1bb4cbfc1b80416427f4aca848c97fbf5894d3737a7a33",
+        "triples": "ae44f85cd8a3f7a4ad58d88023c04534f0494a5294cdceaf90883d4471727328"
+      },
+      "path": "generated/strict_scratch_tensor_from_pre_a985.npz"
+    },
+    "validator": {
+      "path": "src/certify_long_ctor.py",
+      "sha256": "d940da175f7fbee9be2082d5d9771f6d56212dcfcc646cfd4ba35d4ccfd04f9d"
+    }
+  },
+  "next_highest_yield_item": "Use long_ctor as the constructor guardrail, then target the remaining raw cache boundary only if exact npz byte reproduction is operationally needed; otherwise move to broad bundle integration.",
+  "observables": {
+    "audit_target_file_count": 6,
+    "cache_disposable_as_semantic_input_flag": 1,
+    "canonical_tensor_multiset_matches_flag": 1,
+    "complete_goal_claim_flag": 0,
+    "completed_full_scratch_step_count": 21,
+    "constructs_from_supplied_raw_seeds_flag": 0,
+    "coorient_formula_seed_integer_count": 12,
+    "coorient_full_generator_integer_count": 7728,
+    "coorient_generator_compression_ratio_x1000": 644000,
+    "exact_npz_byte_reproduction_claim_flag": 0,
+    "full_scratch_object_constructor_flag": 1,
+    "hash_row_count": 23,
+    "long_orac_certified_flag": 1,
+    "missing_full_scratch_step_count": 0,
+    "object_count": 6,
+    "oracle_input_report_count": 31,
+    "oracle_open_boundary_count": 22,
+    "oracle_resolved_surface_count": 29,
+    "ordered_pair_partition_size": 6635776,
+    "points": 2576,
+    "raw_array_uncompressed_bytes": 22659428,
+    "raw_cache_file_bytes": 5176071,
+    "raw_tensor_reps_match_generated_reps_flag": 0,
+    "relation_partition_matches_flag": 1,
+    "relations": 985,
+    "remaining_boundary_count": 0,
+    "seed_boundary_file_count": 0,
+    "stored_raw_triples_order_matches_generated_flag": 0,
+    "strict_scratch_passed_flag": 1,
+    "surface_row_count": 12,
+    "tensor_coefficient_total": 2537360,
+    "tensor_support": 1414965,
+    "terminal_q12_map_matches_flag": 1,
+    "terminal_q12_tensor_matches_flag": 1,
+    "terminal_q42_map_matches_flag": 1,
+    "terminal_q42_tensor_matches_flag": 1
+  },
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_ctor/cert.json",
+    "ctor": "data/invariants/d20/proof_obligations/long_ctor/ctor.json",
+    "hash_csv": "data/invariants/d20/proof_obligations/long_ctor/hash.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_ctor/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_ctor/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_ctor/report.json",
+    "surface_csv": "data/invariants/d20/proof_obligations/long_ctor/surface.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_ctor/tables.npz"
+  },
+  "schema": "long.ctor.report@1",
+  "stage_protocol": {
+    "closure": "certify algorithmic tensor/oracle replay without claiming byte-for-byte npz reproduction or final goal closure",
+    "coherence": "check strict constructor status, finite object shape, canonical tensor equality, terminal oracle equality, long_orac status, table shapes, and cache-boundary flags",
+    "draft": "read the strict-scratch constructor, raw tensor, generated tensor, relation partition, terminal quotient, and long_orac artifacts",
+    "emit": "write long_ctor artifacts and verifier hook",
+    "witness": "emit constructor surface rows, artifact hashes, exact equality flags, cache-size counts, and formula compression counts"
+  },
+  "status": "LONG_CTOR_CERTIFIED",
+  "witness": {
+    "classification": "strict_scratch_tensor_oracle_constructor",
+    "hash_code_map": {
+      "0": "raw_stored_triples",
+      "1": "raw_canonical_sorted_triples",
+      "10": "strict_relation_offsets",
+      "11": "raw_relation_object_of_point",
+      "12": "strict_relation_object_of_point",
+      "13": "raw_q42_map",
+      "14": "strict_q42_map",
+      "15": "raw_q12_map",
+      "16": "strict_q12_map",
+      "17": "raw_q42_tensor",
+      "18": "strict_q42_tensor",
+      "19": "raw_q12_tensor",
+      "2": "strict_canonical_sorted_triples",
+      "20": "strict_q12_tensor",
+      "21": "strict_constructor_result",
+      "22": "long_orac_certificate",
+      "3": "raw_object_pair_matrix",
+      "4": "strict_object_pair_matrix",
+      "5": "raw_reps",
+      "6": "strict_reps",
+      "7": "raw_relation_encoded_pairs",
+      "8": "strict_relation_encoded_pairs",
+      "9": "raw_relation_offsets"
+    },
+    "long_orac_certificate_sha256": "3245c84bb789fc1312ba3003a15e6301ae613e5e974e2abb65bca3a922ae13df",
+    "name": "long_ctor",
+    "observable_table_sha256": "7cd2f5901a2fb4b8dfdc8b93d3dce26ad04ae3c1a022a328bcdc408eb48d199c",
+    "strict_constructor_result_sha256": "385fbbb6342c06ea4d87e5ef00f3f44ee7242a26be9ba843756cb51b14566339",
+    "summary": {
+      "canonical_tensor_multiset_matches": true,
+      "constructs_from_supplied_raw_seeds": false,
+      "exact_npz_byte_reproduction_claim": false,
+      "long_orac_certified": true,
+      "strict_scratch_passed": true,
+      "tensor_coefficient_total": 2537360,
+      "tensor_support": 1414965,
+      "terminal_oracle_matches": true
+    },
+    "surface_code_map": {
+      "0": "strict_scratch_constructor",
+      "1": "source_to_relation_body",
+      "10": "a236_profunctor",
+      "11": "long_orac_status_split",
+      "2": "coorient_formula_generators",
+      "3": "absolute_word_presentation",
+      "4": "relation_partition",
+      "5": "a985_tensor_canonical_multiset",
+      "6": "terminal_q42_q12_oracle",
+      "7": "center_idempotents",
+      "8": "native_a236_formulae",
+      "9": "a236_branching_boundary"
+    },
+    "surface_table_sha256": "45548f9a210fd857aa8d0f2889fee035a25c4c54d5f4c0f8ecad21d78a12e664"
+  }
+}

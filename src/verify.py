@@ -237,8 +237,26 @@ the practical verification modes without hiding file writes behind a default:
 * long-mat: validate the finite matrix-theoretic charge-wall oracle boundary;
 * long-auto: validate the finite automorphic/Fourier oracle boundary certificate;
 * long-orac: validate the local oracle/anomaly status split certificate;
+* long-gr: validate the A985-to-general-relativity derivation pathway certificate;
+* long-lor: validate the finite Lorentzian time-quotient scaffold certificate;
+* long-time-map: validate the materialized finite normal-form time-map certificate;
+* long-time-sem: validate the semantic edge-operation obstruction certificate;
+* long-metric-gate: validate the guarded finite metric pathway gate certificate;
+* long-contact-lift: validate the owner-boundary contact-lift certificate;
+* long-transition-sem: validate the contact-lift transition semantic obstruction certificate;
+* long-stress20: validate the stress graph versus canonical 20-gon comparison certificate;
+* long-stress-gate: validate the finite stress readout gate certificate;
+* long-stress-couple: validate the stress-transition coupling current-boundary obstruction certificate;
+* long-metric-rank-gate: validate the finite metric rank gate certificate;
+* long-dim4-gate: validate the 1+3 reduction current-boundary obstruction certificate;
 * long-frontier: validate the oracle-driven certificate frontier planner;
 * long-cluster: validate the oracle reopen clustering certificate;
+* long-c2uf: validate the focused C2 univalent-foundation seam certificate;
+* long-psec: validate the focused A985 perennial-sector address seam certificate;
+* long-binc: validate the focused boundary/Loop/packet incidence seam certificate;
+* a985-direct-packet-bridge: validate the direct-label A985 packet-bridge no-go theorem;
+* a985-mat2-hom-boundary: validate the faithful/nonfaithful A985 Mat2 homomorphism boundary;
+* a985-labelled-nonfaithful-packet-hom: validate the labelled nonfaithful A985 packet homomorphism obstruction;
 * long-pobj: validate the selected-witness path-object closure decision;
 * long-paths: validate compressed raw product path-family accounting;
 * long-measure: validate scoped active raw product-family probability laws;
@@ -5379,6 +5397,210 @@ def long_orac(
     return finish(result, pretty)
 
 
+def long_gr(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_gr import validate_long_gr
+
+    try:
+        result = validate_long_gr()
+    except Exception as exc:
+        result = {
+            "schema": "long.gr.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_lor(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_lor import validate_long_lor
+
+    try:
+        result = validate_long_lor()
+    except Exception as exc:
+        result = {
+            "schema": "long.lor.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_time_map(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_time_map import validate_long_time_map
+
+    try:
+        result = validate_long_time_map()
+    except Exception as exc:
+        result = {
+            "schema": "long.time_map.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_time_sem(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_time_sem import validate_long_time_sem
+
+    try:
+        result = validate_long_time_sem()
+    except Exception as exc:
+        result = {
+            "schema": "long.time_sem.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_metric_gate(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_metric_gate import validate_long_metric_gate
+
+    try:
+        result = validate_long_metric_gate()
+    except Exception as exc:
+        result = {
+            "schema": "long.metric_gate.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_contact_lift(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_contact_lift import validate_long_contact_lift
+
+    try:
+        result = validate_long_contact_lift()
+    except Exception as exc:
+        result = {
+            "schema": "long.contact_lift.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_transition_sem(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_transition_sem import validate_long_transition_sem
+
+    try:
+        result = validate_long_transition_sem()
+    except Exception as exc:
+        result = {
+            "schema": "long.transition_sem.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_stress20(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_stress20 import validate_long_stress20
+
+    try:
+        result = validate_long_stress20()
+    except Exception as exc:
+        result = {
+            "schema": "long.stress20.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_stress_gate(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_stress_gate import validate_long_stress_gate
+
+    try:
+        result = validate_long_stress_gate()
+    except Exception as exc:
+        result = {
+            "schema": "long.stress_gate.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_stress_couple(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_stress_couple import validate_long_stress_couple
+
+    try:
+        result = validate_long_stress_couple()
+    except Exception as exc:
+        result = {
+            "schema": "long.stress_couple.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_metric_rank_gate(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_metric_rank_gate import validate_long_metric_rank_gate
+
+    try:
+        result = validate_long_metric_rank_gate()
+    except Exception as exc:
+        result = {
+            "schema": "long.metric_rank_gate.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_dim4_gate(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_dim4_gate import validate_long_dim4_gate
+
+    try:
+        result = validate_long_dim4_gate()
+    except Exception as exc:
+        result = {
+            "schema": "long.dim4_gate.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def long_frontier(
     *,
     pretty: bool,
@@ -5407,6 +5629,171 @@ def long_cluster(
     except Exception as exc:
         result = {
             "schema": "long.cluster.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c2uf(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c2uf import validate_long_c2uf
+
+    try:
+        result = validate_long_c2uf()
+    except Exception as exc:
+        result = {
+            "schema": "long.c2uf.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_psec(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_psec import validate_long_psec
+
+    try:
+        result = validate_long_psec()
+    except Exception as exc:
+        result = {
+            "schema": "long.psec.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_binc(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_binc import validate_long_binc
+
+    try:
+        result = validate_long_binc()
+    except Exception as exc:
+        result = {
+            "schema": "long.binc.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_ctor(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_ctor import validate_long_ctor
+
+    try:
+        result = validate_long_ctor()
+    except Exception as exc:
+        result = {
+            "schema": "long.ctor.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def a985_direct_packet_bridge(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_d20_a985_direct_packet_bridge_obstruction import (
+        validate_d20_a985_direct_packet_bridge_obstruction,
+    )
+
+    try:
+        report = validate_d20_a985_direct_packet_bridge_obstruction()
+        result = {
+            "schema": "d20.a985_direct_packet_bridge_obstruction.verification@1",
+            "status": "PASS",
+            "verified_report": (
+                "data/invariants/d20/theorems/"
+                "d20_a985_direct_packet_bridge_obstruction/report.json"
+            ),
+            "certificate_sha256": report["certificate_sha256"],
+            "summary": report["derived"]["direct_bridge_summary"],
+            "multiplicativity_violation": report["derived"][
+                "multiplicativity_violation"
+            ],
+            "closure_boundary": report["definition"]["scope"],
+            "next_highest_yield_item": report.get("next_highest_yield_item"),
+        }
+    except Exception as exc:
+        result = {
+            "schema": "d20.a985_direct_packet_bridge_obstruction.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def a985_mat2_hom_boundary(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_d20_a985_mat2_hom_boundary import (
+        validate_d20_a985_mat2_hom_boundary,
+    )
+
+    try:
+        report = validate_d20_a985_mat2_hom_boundary()
+        result = {
+            "schema": "d20.a985_mat2_hom_boundary.verification@1",
+            "status": "PASS",
+            "verified_report": (
+                "data/invariants/d20/theorems/d20_a985_mat2_hom_boundary/report.json"
+            ),
+            "certificate_sha256": report["certificate_sha256"],
+            "dimension_summary": report["derived"]["dimension_summary"],
+            "homomorphism_boundary": report["derived"]["homomorphism_boundary"],
+            "closure_boundary": report["closure_boundary"],
+            "next_highest_yield_item": report.get("next_highest_yield_item"),
+        }
+    except Exception as exc:
+        result = {
+            "schema": "d20.a985_mat2_hom_boundary.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def a985_labelled_nonfaithful_packet_hom(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_d20_a985_labelled_nonfaithful_packet_hom_obstruction import (
+        validate_d20_a985_labelled_nonfaithful_packet_hom_obstruction,
+    )
+
+    try:
+        report = validate_d20_a985_labelled_nonfaithful_packet_hom_obstruction()
+        result = {
+            "schema": "d20.a985_labelled_nonfaithful_packet_hom_obstruction.verification@1",
+            "status": "PASS",
+            "verified_report": (
+                "data/invariants/d20/theorems/"
+                "d20_a985_labelled_nonfaithful_packet_hom_obstruction/report.json"
+            ),
+            "certificate_sha256": report["certificate_sha256"],
+            "evaluation_summary": report["derived"]["evaluation_summary"],
+            "per_target_summary": report["derived"]["per_target_summary"],
+            "closure_boundary": report["closure_boundary"],
+            "next_highest_yield_item": report.get("next_highest_yield_item"),
+        }
+    except Exception as exc:
+        result = {
+            "schema": "d20.a985_labelled_nonfaithful_packet_hom_obstruction.verification@1",
             "status": "FAIL",
             "error": str(exc),
         }
@@ -5748,8 +6135,27 @@ def main() -> None:
         "long-mat",
         "long-auto",
         "long-orac",
+        "long-ctor",
+        "long-gr",
+        "long-lor",
+        "long-time-map",
+        "long-time-sem",
+        "long-metric-gate",
+        "long-contact-lift",
+        "long-transition-sem",
+        "long-stress20",
+        "long-stress-gate",
+        "long-stress-couple",
+        "long-metric-rank-gate",
+        "long-dim4-gate",
         "long-frontier",
         "long-cluster",
+        "long-c2uf",
+        "long-psec",
+        "long-binc",
+        "a985-direct-packet-bridge",
+        "a985-mat2-hom-boundary",
+        "a985-labelled-nonfaithful-packet-hom",
         "long-pobj",
         "long-paths",
         "long-measure",
@@ -6364,10 +6770,48 @@ def main() -> None:
         raise SystemExit(long_auto(pretty=args.pretty))
     if args.command == "long-orac":
         raise SystemExit(long_orac(pretty=args.pretty))
+    if args.command == "long-ctor":
+        raise SystemExit(long_ctor(pretty=args.pretty))
+    if args.command == "long-gr":
+        raise SystemExit(long_gr(pretty=args.pretty))
+    if args.command == "long-lor":
+        raise SystemExit(long_lor(pretty=args.pretty))
+    if args.command == "long-time-map":
+        raise SystemExit(long_time_map(pretty=args.pretty))
+    if args.command == "long-time-sem":
+        raise SystemExit(long_time_sem(pretty=args.pretty))
+    if args.command == "long-metric-gate":
+        raise SystemExit(long_metric_gate(pretty=args.pretty))
+    if args.command == "long-contact-lift":
+        raise SystemExit(long_contact_lift(pretty=args.pretty))
+    if args.command == "long-transition-sem":
+        raise SystemExit(long_transition_sem(pretty=args.pretty))
+    if args.command == "long-stress20":
+        raise SystemExit(long_stress20(pretty=args.pretty))
+    if args.command == "long-stress-gate":
+        raise SystemExit(long_stress_gate(pretty=args.pretty))
+    if args.command == "long-stress-couple":
+        raise SystemExit(long_stress_couple(pretty=args.pretty))
+    if args.command == "long-metric-rank-gate":
+        raise SystemExit(long_metric_rank_gate(pretty=args.pretty))
+    if args.command == "long-dim4-gate":
+        raise SystemExit(long_dim4_gate(pretty=args.pretty))
     if args.command == "long-frontier":
         raise SystemExit(long_frontier(pretty=args.pretty))
     if args.command == "long-cluster":
         raise SystemExit(long_cluster(pretty=args.pretty))
+    if args.command == "long-c2uf":
+        raise SystemExit(long_c2uf(pretty=args.pretty))
+    if args.command == "long-psec":
+        raise SystemExit(long_psec(pretty=args.pretty))
+    if args.command == "long-binc":
+        raise SystemExit(long_binc(pretty=args.pretty))
+    if args.command == "a985-direct-packet-bridge":
+        raise SystemExit(a985_direct_packet_bridge(pretty=args.pretty))
+    if args.command == "a985-mat2-hom-boundary":
+        raise SystemExit(a985_mat2_hom_boundary(pretty=args.pretty))
+    if args.command == "a985-labelled-nonfaithful-packet-hom":
+        raise SystemExit(a985_labelled_nonfaithful_packet_hom(pretty=args.pretty))
     if args.command == "long-pobj":
         raise SystemExit(long_pobj(pretty=args.pretty))
     if args.command == "long-paths":

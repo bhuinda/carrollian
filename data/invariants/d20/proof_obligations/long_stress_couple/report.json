@@ -1,0 +1,113 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b2c8d18c8cce9050b455780f46d55b0f0d3f5a6728a0caf85a22ed3ad759abad",
+  "checks": {
+    "current_obstruction_scope_exact": true,
+    "shared_coupling_key_absent": true,
+    "source_surfaces_present": true,
+    "stress_gate_input_certified": true,
+    "stress_schema_lacks_transition_basis_key": true,
+    "table_shapes_match": true,
+    "transition_schema_lacks_stress_atom_key": true
+  },
+  "claim": "long_stress_couple checks the current artifact boundary for a certified coupling from the 642 guarded transitions to the 100 directed stress-neighborhood edges. The transition rows are keyed by basis/raw endpoint data, while the stress-edge rows are keyed by source/target atom data. No shared certified coupling key or materialized transition-to-stress map is present, so physical stress-energy remains uncertified.",
+  "closure_boundary": {
+    "certifies": [
+      "the current focused artifact boundary has 642 guarded transitions and 100 directed stress edges",
+      "transition rows are keyed by basis/raw endpoint columns, not stress atom columns",
+      "stress-edge rows are keyed by source/target atom columns, not transition basis/raw columns",
+      "no shared certified coupling key or materialized transition-to-stress map exists in this boundary",
+      "the stress-transition coupling seam is closed as a current-boundary obstruction"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "absolute nonexistence of every possible mathematical transition-to-stress map",
+      "a physical stress-energy tensor",
+      "a nondegenerate smooth Lorentzian metric tensor",
+      "Riemann/Ricci curvature, Einstein tensor, or Einstein field equations",
+      "a completed derivation of general relativity"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_stress_couple.py",
+      "sha256": "796c3214df07524b11f510bed1ebd550325d352e34512845f3d1f11f3d563352"
+    },
+    "long_stress_edge_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/stress_edge.csv",
+      "row_count": 100,
+      "sha256": "7a25f7a5501af7158311ffa0fc65c2ef9d1cab1cd67d1b3c9ee4d01b514060e1"
+    },
+    "long_stress_gate": {
+      "certificate_sha256": "a31d87700816b5ed5a205c4fbaf2e0774e2132fd550c32242f0988d4e54e4fea",
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/report.json",
+      "sha256": "8c23f384cbb3e5115001e5cf93880d4ba08290c27fbea9e42ecfef70a7c195cb",
+      "status": "LONG_STRESS_GATE_CERTIFIED"
+    },
+    "long_transition_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+      "row_count": 642,
+      "sha256": "c77f941ae6af4d79999a691157030d64eecf9435b3fa708266751d14db9cc630"
+    },
+    "validator": {
+      "path": "src/certify_long_stress_couple.py",
+      "sha256": "38096a7aa3c4eaf6566d2cbb27994ecf18f16d61adf54cd52ef16e720ed40f29"
+    }
+  },
+  "next_highest_yield_item": "Build long_metric_rank_gate: decide what finite rank/signature statement survives from the time quotient, public boundary, guarded transitions, and finite stress readout now that physical stress-energy is blocked in the current boundary.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_stress_couple/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_stress_couple/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_stress_couple/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_stress_couple/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_stress_couple/report.json",
+    "schema_csv": "data/invariants/d20/proof_obligations/long_stress_couple/schema.csv",
+    "stress_couple": "data/invariants/d20/proof_obligations/long_stress_couple/stress_couple.json",
+    "tables": "data/invariants/d20/proof_obligations/long_stress_couple/tables.npz"
+  },
+  "schema": "long.stress_couple.report@1",
+  "stage_protocol": {
+    "closure": "certify the current-boundary transition-to-stress coupling obstruction",
+    "coherence": "check source row counts, schema keys, absent shared coupling key, and table hashes",
+    "draft": "read long_stress_gate, transition rows, and finite stress-edge rows",
+    "emit": "write long_stress_couple artifacts and verifier hook",
+    "witness": "emit schema-seam rows, open gap rows, and observables"
+  },
+  "status": "LONG_STRESS_COUPLE_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "classification": "stress_transition_coupling_current_boundary_obstruction",
+    "gap_code_map": {
+      "0": "stress_transition_coupling_map",
+      "1": "physical_stress_energy_tensor",
+      "2": "nondegenerate_smooth_lorentzian_metric",
+      "3": "curvature_and_einstein_tensor",
+      "4": "gr_derivation"
+    },
+    "gap_table_sha256": "83c364a07910081dab45c88c81d495192d153690d215f0608ee79a29978b3684",
+    "gap_text_sha256": "8b0a165c2f7b453212f4742e01131496f065778568737791214f9329568fb879",
+    "name": "long_stress_couple",
+    "observable_table_sha256": "bfc2643f9e98442b6a27204613109da7b5ba046d1cf4145d87ceacd7c5587bee",
+    "schema_code_map": {
+      "0": "transition_basis_raw_schema_present",
+      "1": "stress_atom_edge_schema_present",
+      "2": "transition_atom_pair_columns_absent",
+      "3": "stress_basis_pair_columns_absent",
+      "4": "shared_certified_coupling_key_absent",
+      "5": "materialized_transition_stress_map_absent"
+    },
+    "schema_table_sha256": "967cfb4c2398922adb7161f6e53623dd48435c83c9f338e9796c2eb1be80f18e",
+    "schema_text_sha256": "1fd6960624c1a2ef9867a9fef64ce57cd7742369ea98d46356ef3d8c3fc09628",
+    "summary": {
+      "coupling_map_certified_flag": 0,
+      "current_boundary_obstruction_flag": 1,
+      "gr_derivation_flag": 0,
+      "materialized_coupling_row_count": 0,
+      "next_gap": "nondegenerate_smooth_lorentzian_metric",
+      "physical_stress_energy_flag": 0,
+      "shared_certified_coupling_key_count": 0,
+      "stress_basis_column_count": 0,
+      "stress_edge_row_count": 100,
+      "transition_atom_column_count": 0,
+      "transition_row_count": 642
+    }
+  }
+}

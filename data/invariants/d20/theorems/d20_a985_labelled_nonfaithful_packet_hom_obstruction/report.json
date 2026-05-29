@@ -1,0 +1,498 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "cd0612940b2a8068c5ab8d86757f185a0290642bd5b0b57acb28a2695221387b",
+  "checks": {
+    "all_2i_matches_are_sector34_scalar": true,
+    "candidate_count_is_1041": true,
+    "canonical_sector_matrix_units_certified": true,
+    "evaluated_candidate_sector_pairs_is_15615": true,
+    "exact_matches_equal_signature_matches": true,
+    "full_matrix_unit_coo_certified": true,
+    "full_packet_matrix_lift_certified": true,
+    "mat2_hom_boundary_certified": true,
+    "matching_2i_relation_ids_are_expected": true,
+    "no_labelled_candidate_realizes_2i_plus_4s": true,
+    "no_labelled_candidate_realizes_4s": true,
+    "no_q42_q12_or_tube_candidate_matches_any_target": true,
+    "only_2i_has_matches": true,
+    "only_raw_relations_match_2i": true,
+    "packet_quotient_action_probe_certified": true,
+    "small_sector_count_is_15": true,
+    "tube_screen0_certified": true
+  },
+  "claim": "Under the current certified A985 source-sector matrix-unit model and the current raw/q42/q12/tube labelled candidate set, no nonfaithful A985-to-Mat_2^10 packet homomorphism can realize the non-diagonal packet actions 4S or 2I+4S. The scan covers every certified 1D/2D source sector available to a 2D target component and every labelled raw relation, q42 class sum, q12 class sum, and screen-0 tube unit candidate. Only nine raw relations match the scalar 2I action, all through source sector 34; no candidate has even the conjugacy-invariant trace/determinant of 4S or 2I+4S in any 1D/2D sector.",
+  "closure_boundary": {
+    "certifies": [
+      "no current-label raw/q42/q12/tube candidate realizes 4S in any certified 1D/2D A985 source sector",
+      "no current-label raw/q42/q12/tube candidate realizes 2I+4S in any certified 1D/2D A985 source sector",
+      "therefore no current-label nonfaithful A985 packet homomorphism can realize the certified non-diagonal packet action"
+    ],
+    "does_not_certify": [
+      "nonexistence of arbitrary unlabelled linear-combination A985 elements that synthesize a 2x2 matrix inside a chosen sector",
+      "a rational Q lift beyond the current finite-field matrix-unit certificate",
+      "future externally supplied label sets or packet-column assignments not present in the current certificates"
+    ]
+  },
+  "definition": {
+    "basis_change_invariant_test": "Trace and determinant of the 2x2 component matrix are invariant under target-basis change; if they do not match a packet target block, no conjugate labelled operator can realize that target block.",
+    "labelled_candidate_set": "The finite current-label set consists of raw A985 relation basis elements, q42 class sums, q12 class sums, the closed-loop tube unit, and the signed screen-0 tube object unit.",
+    "nonfaithful_packet_component_model": "A nonfaithful component Mat_2 target can only see a certified A985 source sector of dimension at most 2; larger source sectors cannot act on a two-dimensional target component."
+  },
+  "derived": {
+    "candidate_family_rows": [
+      {
+        "candidate_count": 12,
+        "candidate_kind": "q12_class_sum"
+      },
+      {
+        "candidate_count": 42,
+        "candidate_kind": "q42_class_sum"
+      },
+      {
+        "candidate_count": 985,
+        "candidate_kind": "raw_relation"
+      },
+      {
+        "candidate_count": 1,
+        "candidate_kind": "tube_closed_loop_unit"
+      },
+      {
+        "candidate_count": 1,
+        "candidate_kind": "tube_signed_object_unit"
+      }
+    ],
+    "candidate_family_rows_sha256": "3691be0b88b4554a0275ba384063101776e014b96fa6668e17675c0f0e0715cc",
+    "evaluation_summary": {
+      "candidate_count": 1041,
+      "evaluated_candidate_sector_pairs": 15615,
+      "exact_match_count": 9,
+      "exact_match_count_by_target": {
+        "2I": 9,
+        "2I+4S": 0,
+        "4S": 0
+      },
+      "non_diagonal_target_signature_match_count": 0,
+      "signature_match_count": 9,
+      "signature_match_count_by_target": {
+        "2I": 9,
+        "2I+4S": 0,
+        "4S": 0
+      },
+      "small_sector_count": 15
+    },
+    "per_target_summary": [
+      {
+        "candidate_kinds_with_signature_match": [
+          "raw_relation"
+        ],
+        "exact_match_count": 9,
+        "signature_match_count": 9,
+        "target": "2I"
+      },
+      {
+        "candidate_kinds_with_signature_match": [],
+        "exact_match_count": 0,
+        "signature_match_count": 0,
+        "target": "4S"
+      },
+      {
+        "candidate_kinds_with_signature_match": [],
+        "exact_match_count": 0,
+        "signature_match_count": 0,
+        "target": "2I+4S"
+      }
+    ],
+    "signature_match_rows": [
+      {
+        "candidate_id": 358,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "candidate_id": 362,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "candidate_id": 369,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "candidate_id": 370,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "candidate_id": 383,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "candidate_id": 385,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "candidate_id": 388,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "candidate_id": 389,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "candidate_id": 427,
+        "candidate_kind": "raw_relation",
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix_mod": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "source_sector": 34,
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      }
+    ],
+    "signature_match_rows_sha256": "fe6c3b0895a0725279da4ca85b5dddce9238ff6679b902134718d566e03db888",
+    "small_sector_rows": [
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.aa5f72ad7400f95b1490aa84",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.9d42d1525738f3767a79c3ba",
+        "source_sector": 5
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.8b0381188ff5b5b5bf854edb",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.404cf670100d6a5f1a2dd250",
+        "source_sector": 6
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.3c87a850283f68ad6e7f5fdd",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.41d0312324b2f0c15d007f6d",
+        "source_sector": 7
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.a7cab8e86acf5d3b7cd959fb",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.6a5e79e5cd51d443d142d532",
+        "source_sector": 10
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.a867de8ab97fae143e663619",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.6cd0c272a8079b2d47dc4ed0",
+        "source_sector": 13
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.4ea5c02ccd7e013e441b327a",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.034e9541a05e71f5bb32c17d",
+        "source_sector": 19
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.2710d2e520d3bd0dd8f76051",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.605336b16161cbfacb8c7451",
+        "source_sector": 20
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.c40efde730c8f02557d7b8a1",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.5e5bfcc366256ec7df15b71c",
+        "source_sector": 21
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.c9a14e2cdc62a74eda2c9824",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.d12a943a54a67bb5ae120747",
+        "source_sector": 22
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.110286a1a8b1f401969b938e",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.b0f0ffa7a70b464fb1c6be3b",
+        "source_sector": 24
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.679dfe35a3ec900ef94e3fee",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.f5c4748a515dca877336eb56",
+        "source_sector": 25
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.90b3dfdbbd10982f7e31ff7f",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.1c291d5534c311edc48123b2",
+        "source_sector": 26
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.3b43e81d41920f044a201f66",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.8cf60f8da9783cf93a08b3c3",
+        "source_sector": 32
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.468ec3c4d550c16c63fa2f3d",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.0f1476a5434aef02bb516590",
+        "source_sector": 33
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.111958fabfcf6eb85501a38d",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.dee5a3615e2ca5e9f7b6d662",
+        "source_sector": 34
+      }
+    ],
+    "small_sector_rows_sha256": "871903949ba5805c89e4e5128e76e442b65837b9ac98ae22c558a591f1aa01d9",
+    "target_signature_rows": [
+      {
+        "determinant_mod": 4,
+        "determinant_signed": 4,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "target": "2I",
+        "trace_mod": 4,
+        "trace_signed": 4
+      },
+      {
+        "determinant_mod": 999987,
+        "determinant_signed": -16,
+        "matrix": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "target": "4S",
+        "trace_mod": 0,
+        "trace_signed": 0
+      },
+      {
+        "determinant_mod": 999991,
+        "determinant_signed": -12,
+        "matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "target": "2I+4S",
+        "trace_mod": 4,
+        "trace_signed": 4
+      }
+    ],
+    "target_signature_rows_sha256": "98c4cddf109376bf360da0189069d4eeb42810c5f7abdadf0463d6541b259eae"
+  },
+  "field_prime": 1000003,
+  "inputs": {
+    "a985_mat2_hom_boundary_report": {
+      "path": "data/invariants/d20/theorems/d20_a985_mat2_hom_boundary/report.json",
+      "sha256": "81929ab98f749194dc4b31c49b3f6d93557a28c15c6d3cdfb007e00b2c81107f"
+    },
+    "canonical_sector_matrix_units_report": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/report.json",
+      "sha256": "17f24baf5ce9387f8da366566693452d7597dc21285ef143bc7f5e0ace303465"
+    },
+    "canonical_sector_summary_csv": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/canonical_source_sector_matrix_unit_summary.csv",
+      "sha256": "13870c6eb0e724fcf6d4c86e58c339b3d1d0e3a8804d28d0b17a50f70b52fe01"
+    },
+    "fourier_screen0_tube_central_element_report": {
+      "path": "data/invariants/d20/theorems/fourier_screen0_tube_central_element/report.json",
+      "sha256": "366ef6d4a81743163b80e6025923b256432dc7b6f0768c927c7a81721e23e278"
+    },
+    "full_matrix_unit_arrays_npz": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/source_sector_matrix_units_raw_orbital_arrays.npz",
+      "sha256": "1e57a9d6f17b377ef1fbf4716be4589ec032b25efeefea1e0d68018e31e2e779"
+    },
+    "full_matrix_unit_coo_report": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
+    },
+    "full_packet_matrix_lift_report": {
+      "path": "data/invariants/d20/theorems/d20_full_packet_matrix_lift/report.json",
+      "sha256": "5c7a8bd31562f50ef1e2a56729002990159040732fe53edeb582b2ba19c55870"
+    },
+    "halloween_npz": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "packet_quotient_action_probe_report": {
+      "path": "data/invariants/d20/theorems/d20_packet_quotient_action_probe/report.json",
+      "sha256": "0178b57fbf154fdac7383928d9c752abb9f3152ed6fb1ea609cb0043133431d5"
+    },
+    "quotients_npz": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    }
+  },
+  "next_highest_yield_item": "If the goal is a fully rational theorem, lift the relevant small-sector matrix-unit traces from the finite-field certificate to a rational row certificate, or explicitly demote rational lift as outside the current labelled packet bridge boundary.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_a985_labelled_nonfaithful_packet_hom_obstruction",
+  "status": "D20_A985_LABELLED_NONFAITHFUL_PACKET_HOM_OBSTRUCTION_CERTIFIED"
+}

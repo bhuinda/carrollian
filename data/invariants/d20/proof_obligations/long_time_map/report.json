@@ -1,0 +1,156 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b40ba13849c68c86d96c8457f1783ed29d5e335093656df680eb560eae17f78a",
+  "checks": {
+    "dimension_inputs_match_long_lor": true,
+    "edge_table_complete": true,
+    "edge_time_compatibility_exact": true,
+    "kernel_annihilation_exact": true,
+    "long_lor_input_certified": true,
+    "long_rec_input_certified": true,
+    "matrix_shapes_exact": true,
+    "normal_form_not_semantic_gr_claim": true,
+    "packet_accounting_exact": true,
+    "rho_surjective_to_public_boundary": true,
+    "table_shapes_match": true,
+    "trace_compatibility_exact": true
+  },
+  "claim": "long_time_map materializes the finite d20 time quotient as explicit integer witnesses: tau_int: O_36 -> T_1, q_pub: D20_20 -> T_1, and rho: O_36 -> D20_20 with q_pub @ rho == tau_int. It also assigns every certified long_rec recurrence edge a normal-form unit time increment, giving 642 finite ticks, 20 complete 32-tick packets, and a remainder of 2. This is a checked normal-form clock map, not a semantic proof that the original A985 transition operation for each edge has been identified.",
+  "closure_boundary": {
+    "certifies": [
+      "a materialized integer tau_int map with shape 1x36",
+      "a materialized integer q_pub map with shape 1x20",
+      "a materialized integer rho readout with shape 20x36 and rank 20",
+      "the exact compatibility identity q_pub @ rho == tau_int",
+      "642 recurrence-edge normal-form time increments with Delta t = 1",
+      "32-unit packet accounting for the 642-tick recurrence clock"
+    ],
+    "does_not_certify_because_open": [
+      "that each normal-form edge vector is the unique semantic A985 operation realizing the recurrence edge",
+      "a nondegenerate smooth Lorentzian metric tensor",
+      "a 3+1 spacetime reduction from the 1+19 public split",
+      "Riemann/Ricci curvature or Einstein tensor",
+      "Einstein field equations or general relativity derived from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_time_map.py",
+      "sha256": "60ed555f9485976614b83d1c91a7ef63fe9ab73a53d44fde1926685c5e32dc84"
+    },
+    "integrity_summary": {
+      "path": "data/integrity/proof_system.summary.json",
+      "sha256": "a0edb0518709042b0c64a9d5c7b4c8c7f244df77f973f1a4309ac6b831ba14a5"
+    },
+    "long_lor": {
+      "certificate_sha256": "08451ad1385ee9ba61a148945131e4222bd12ee3d3e887db92a15dc1c07ee033",
+      "path": "data/invariants/d20/proof_obligations/long_lor/report.json",
+      "sha256": "cdb1b95bddd365de9b7ab2a033a48ebee15b3b048f87fe3290ea1cc6c6318d6f",
+      "status": "LONG_LOR_CERTIFIED"
+    },
+    "long_rec": {
+      "certificate_sha256": "70efcdd66a54fd1926d55ae4c4c74b79f8c930bff2c91cb43215f5c5bfc341ae",
+      "path": "data/invariants/d20/proof_obligations/long_rec/report.json",
+      "sha256": "1e4b5fbc086a95cd6b9bf929d804e71b483643dfd884355ef75a54248eb9c08b",
+      "status": "LONG_REC_CERTIFIED"
+    },
+    "long_rec_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/edge.csv",
+      "row_count": 642,
+      "sha256": "61893f78f1847d01a72f56002a51c694d07120b82676167bf40f2ceb6d49017d"
+    },
+    "validator": {
+      "path": "src/certify_long_time_map.py",
+      "sha256": "e648fa9144aa42f70e90bd06d91b1621ed6b16577b084d9addac8d98f192721d"
+    }
+  },
+  "next_highest_yield_item": "Build long_time_sem: replace the normal-form edge vectors with A985-realized transition operations, or certify the obstruction, before treating the time map as A985-alone semantic input to a metric certificate.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_time_map/cert.json",
+    "clock_csv": "data/invariants/d20/proof_obligations/long_time_map/clock.csv",
+    "edge_time_csv": "data/invariants/d20/proof_obligations/long_time_map/edge_time.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_time_map/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_time_map/manifest.json",
+    "matrix_csv": "data/invariants/d20/proof_obligations/long_time_map/matrix.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_time_map/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_time_map/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_time_map/tables.npz",
+    "time_map": "data/invariants/d20/proof_obligations/long_time_map/time_map.json"
+  },
+  "schema": "long.time_map.report@1",
+  "stage_protocol": {
+    "closure": "certify the finite normal-form time map while reserving semantic A985 edge realization and smooth GR geometry",
+    "coherence": "check q_pub @ rho == tau_int, kernel annihilation, recurrence edge coverage, unit ticks, packet accounting, and table hashes",
+    "draft": "read long_lor, long_rec, long_rec edge witnesses, and integrity summary",
+    "emit": "write long_time_map artifacts and verifier hook",
+    "witness": "emit tau_int, q_pub, rho, edgewise Delta t rows, packet clock rows, and open gap rows"
+  },
+  "status": "LONG_TIME_MAP_CERTIFIED",
+  "witness": {
+    "classification": "finite_normal_form_time_map",
+    "clock_code_map": {
+      "0": "recurrence_edge_count",
+      "1": "unit_delta_edge_count",
+      "10": "edge_compatibility_fail_count",
+      "11": "normal_form_clock_flag",
+      "2": "time_tick_total",
+      "3": "packet_normalization",
+      "4": "full_packet_count",
+      "5": "packet_remainder",
+      "6": "rho_rank",
+      "7": "compatibility_defect_l1",
+      "8": "operation_kernel_column_count",
+      "9": "public_kernel_row_count"
+    },
+    "clock_table_sha256": "0ea18929b6e4d97d2e69ac92bb8e770bead6af4bf0493b1d5f9e549aab63b83f",
+    "clock_text_sha256": "9584a2447895836bd726eff92215456ab24d2ec4c07ef30563504975a825281d",
+    "compatibility_sha256": "2d5565fb483d8ea4525a7a9229677d1038ad34b6e22c8d5152e1d7f7b9817597",
+    "edge_time_table_sha256": "c619cb134eb7ea552ad10441aa96ccedad9b2079e29ebdb36c557a71282d2c1b",
+    "edge_time_text_sha256": "d1b68d2664bd40b691ad93eadc1d702270ca2cb88721cb2f782aa1502b3a1522",
+    "gap_code_map": {
+      "0": "semantic_edge_operation_realization_from_a985",
+      "1": "nondegenerate_smooth_lorentzian_metric",
+      "2": "four_dimensional_spacetime_reduction",
+      "3": "curvature_and_einstein_tensor"
+    },
+    "gap_table_sha256": "3bc42b875885d449d0e9087b9d484855c2e8cd90cd506bb5780549abbee4de05",
+    "gap_text_sha256": "580f463783931f330eb8e23b12c9b77af4dc87ae225e6844e6cea30205d75b06",
+    "matrix_code_map": {
+      "0": "tau_int",
+      "1": "q_pub",
+      "2": "rho"
+    },
+    "matrix_table_sha256": "a8fad8f03af98e7c0f9303916bcfb54be7fc6ecb86e1884b4ed1bb7c404e344f",
+    "matrix_text_sha256": "104a2e1ee90823dcf47cdea8b2d05a2b7028d5bb5884db3f4cbe06a1109c02c0",
+    "name": "long_time_map",
+    "observable_table_sha256": "ad8a4ef8083d4485c0c0b7c4c3c2ab60fac02f1c1ab4dbdb339b13218a024830",
+    "q_pub_sha256": "59cce0536217e6bb7617a68955b7d783322c1a58a79986d2682cb9c92c3bd12e",
+    "rho_sha256": "3dd7e8697aa3200c7e2bef31ffd87872efe9dab6890179a8a4fe9669141afcbf",
+    "summary": {
+      "compatibility_defect_l1": 0,
+      "compatibility_identity": "q_pub @ rho == tau_int",
+      "delta_t_rule": "normal_form_unit_tick_per_long_rec_edge",
+      "edge_time_count": 642,
+      "full_packet_count": 20,
+      "integrity_integral_codimension": 35,
+      "integrity_integral_dimension": 1,
+      "next_gap": "semantic_edge_operation_realization_from_a985",
+      "normal_form_time_map_flag": 1,
+      "operation_algebra_dimension": 36,
+      "packet_normalization": 32,
+      "packet_remainder": 2,
+      "public_kernel_dimension": 19,
+      "public_quotient_dimension": 1,
+      "public_rank": 20,
+      "recurrence_edge_count": 642,
+      "rho_rank": 20,
+      "rho_shape": [
+        20,
+        36
+      ],
+      "semantic_edge_operation_flag": 0,
+      "time_tick_total": 642
+    },
+    "tau_int_sha256": "c6129b3b7b7d0946edebccafa144a9554a8529e5d294ba1bacbea11d4ee5741f"
+  }
+}

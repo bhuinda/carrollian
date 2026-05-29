@@ -41,14 +41,15 @@ PROOF_ROOT = D20_INVARIANTS / "proof_obligations"
 DERIVE_SCRIPT = ROOT / "src" / "derive_long_cluster.py"
 VALIDATOR_SCRIPT = ROOT / "src" / "certify_long_cluster.py"
 
-CLUSTER_TEXT_HASH = "3f31014fdd7e6ec419a496922db973aa93ca4a8db202f67553624cb15532398f"
-SEAM_TEXT_HASH = "8c101941102ce879f3dac79e1e0925cbaea8d7030e760c36ee2d8b40e4c06be4"
-OBS_TEXT_HASH = "2554bc068e23f11c393f42f8b138e6b5c2dd5f97664a0a765262aa99bc68af8a"
+CLUSTER_TEXT_HASH = "e4da4f2ec3c0e30298920d47f1e1d27f1d31e5053f67118f7cfbd9baa7875aa7"
+SEAM_TEXT_HASH = "2af793a59e0fe9f0053f375a9c323c1ad8e0967b6ca37b755e9988fc791256f0"
+OBS_TEXT_HASH = "8448b61dd6557c591b39ef77a8ba7259616e5ec1552f5eb59d3c58c32b6dee98"
 
 FOCUSED_MANIFESTS = {
     "long_anom": PROOF_ROOT / "long_anom" / "manifest.json",
     "long_auto": PROOF_ROOT / "long_auto" / "manifest.json",
-    "long_frontier": PROOF_ROOT / "long_frontier" / "manifest.json",
+    "long_binc": PROOF_ROOT / "long_binc" / "manifest.json",
+    "long_c2uf": PROOF_ROOT / "long_c2uf" / "manifest.json",
     "long_h16": PROOF_ROOT / "long_h16" / "manifest.json",
     "long_inv_exhaust": PROOF_ROOT / "long_inv_exhaust" / "manifest.json",
     "long_mat": PROOF_ROOT / "long_mat" / "manifest.json",
@@ -56,6 +57,7 @@ FOCUSED_MANIFESTS = {
     "long_orac": PROOF_ROOT / "long_orac" / "manifest.json",
     "long_paths": PROOF_ROOT / "long_paths" / "manifest.json",
     "long_pobj": PROOF_ROOT / "long_pobj" / "manifest.json",
+    "long_psec": PROOF_ROOT / "long_psec" / "manifest.json",
 }
 
 FOCUSED_REPORTS = {
@@ -63,7 +65,8 @@ FOCUSED_REPORTS = {
     for name in [
         "long_anom",
         "long_auto",
-        "long_frontier",
+        "long_binc",
+        "long_c2uf",
         "long_h16",
         "long_inv_exhaust",
         "long_mat",
@@ -71,6 +74,7 @@ FOCUSED_REPORTS = {
         "long_orac",
         "long_paths",
         "long_pobj",
+        "long_psec",
     ]
 }
 

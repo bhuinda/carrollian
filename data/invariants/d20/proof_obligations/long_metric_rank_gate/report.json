@@ -1,0 +1,151 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1a7fbfdd031e1b43179ac46aab2ff361e5ccb0959051343901d2dbc8b73ffc65",
+  "checks": {
+    "all_input_reports_certified": true,
+    "finite_rank_split_exact": true,
+    "finite_surfaces_exact": true,
+    "rank_gate_obstructions_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_metric_rank_gate certifies the finite rank statement that survives the current d20 pathway: a one-dimensional time quotient, a 20-rank public boundary, a 19-dimensional public kernel, rho rank 20, 642 normal-form ticks, and a finite stress readout. It does not certify a 3+1 spacetime reduction, a nondegenerate smooth Lorentzian metric signature, a physical stress-energy source, or Einstein equations.",
+  "closure_boundary": {
+    "certifies": [
+      "the finite rank split T_1 plus public kernel rank 19",
+      "the public boundary rank 20 and rho readout rank 20",
+      "642 normal-form time ticks and 642 guarded transitions remain rank-compatible readouts",
+      "a finite 20-node, 100-directed-edge stress readout remains available",
+      "the current rank boundary is 1+19, not certified as 3+1"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "a 3+1 spacetime reduction from the 1+19 public split",
+      "a nondegenerate smooth Lorentzian metric tensor or metric signature",
+      "a physical stress-energy tensor source",
+      "Riemann/Ricci curvature, Einstein tensor, or Einstein field equations",
+      "a completed derivation of general relativity"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_metric_rank_gate.py",
+      "sha256": "abc6c7de0d4844177c23d79bc42e7a936df49d02219869f60dacef1903a8289a"
+    },
+    "long_lor": {
+      "certificate_sha256": "08451ad1385ee9ba61a148945131e4222bd12ee3d3e887db92a15dc1c07ee033",
+      "path": "data/invariants/d20/proof_obligations/long_lor/report.json",
+      "sha256": "cdb1b95bddd365de9b7ab2a033a48ebee15b3b048f87fe3290ea1cc6c6318d6f",
+      "status": "LONG_LOR_CERTIFIED"
+    },
+    "long_metric_gate": {
+      "certificate_sha256": "1be32cf6bb8590659e28589fa2bef3b5846ff5b6de728fe1e34743fb40470224",
+      "path": "data/invariants/d20/proof_obligations/long_metric_gate/report.json",
+      "sha256": "c18755a234061643570d2529dd2c3a51f45eb31c9532a4c7c58a4cf2d03dd5ca",
+      "status": "LONG_METRIC_GATE_CERTIFIED"
+    },
+    "long_stress_couple": {
+      "certificate_sha256": "b2c8d18c8cce9050b455780f46d55b0f0d3f5a6728a0caf85a22ed3ad759abad",
+      "path": "data/invariants/d20/proof_obligations/long_stress_couple/report.json",
+      "sha256": "15f026fa8722999bff062dc35cfbeed6a0e5c0b4c93932bf8060e1fabb00d589",
+      "status": "LONG_STRESS_COUPLE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_stress_gate": {
+      "certificate_sha256": "a31d87700816b5ed5a205c4fbaf2e0774e2132fd550c32242f0988d4e54e4fea",
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/report.json",
+      "sha256": "8c23f384cbb3e5115001e5cf93880d4ba08290c27fbea9e42ecfef70a7c195cb",
+      "status": "LONG_STRESS_GATE_CERTIFIED"
+    },
+    "long_time_map": {
+      "certificate_sha256": "b40ba13849c68c86d96c8457f1783ed29d5e335093656df680eb560eae17f78a",
+      "path": "data/invariants/d20/proof_obligations/long_time_map/report.json",
+      "sha256": "1c56d0252405469cca73c6d73699453494b6dfd66d7eb9f13a4a02ed758a1b51",
+      "status": "LONG_TIME_MAP_CERTIFIED"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_metric_rank_gate.py",
+      "sha256": "9fc20dfb4b3f9f8adbf22287efd77ce497ab5542c8b4e0b2c2f4a5e3c87fc7ff"
+    }
+  },
+  "next_highest_yield_item": "Build long_dim4_gate: decide whether any certified quotient, subboundary, or sector selection reduces the 1+19 rank split to a 1+3 spacetime boundary, or certify that obstruction.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_metric_rank_gate/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_metric_rank_gate/decision.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_metric_rank_gate/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_metric_rank_gate/manifest.json",
+    "metric_rank_gate": "data/invariants/d20/proof_obligations/long_metric_rank_gate/metric_rank_gate.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_metric_rank_gate/obs.csv",
+    "rank_csv": "data/invariants/d20/proof_obligations/long_metric_rank_gate/rank.csv",
+    "report": "data/invariants/d20/proof_obligations/long_metric_rank_gate/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_metric_rank_gate/tables.npz"
+  },
+  "schema": "long.metric_rank_gate.report@1",
+  "stage_protocol": {
+    "closure": "certify the finite 1+19 rank boundary while preserving 3+1 and smooth metric gaps",
+    "coherence": "check quotient ranks, rho rank, transition/stress counts, obstruction flags, and table hashes",
+    "draft": "read long_lor, long_time_map, long_metric_gate, long_transition_sem, long_stress_gate, and long_stress_couple",
+    "emit": "write long_metric_rank_gate artifacts and verifier hook",
+    "witness": "emit rank rows, decision rows, gap rows, and observables"
+  },
+  "status": "LONG_METRIC_RANK_GATE_CERTIFIED",
+  "witness": {
+    "classification": "finite_metric_rank_gate",
+    "decision_code_map": {
+      "0": "finite_rank_split_survives",
+      "1": "one_plus_nineteen_formal_split",
+      "2": "four_dimensional_reduction_certified",
+      "3": "smooth_lorentzian_signature_certified",
+      "4": "stress_energy_source_certified",
+      "5": "gr_derivation_certified"
+    },
+    "decision_table_sha256": "a5c26da0601daff02f6dadf6a620a8de6438d4f23a8996a5b3da009bcaa21969",
+    "decision_text_sha256": "ef25d745a92781a88209278cd679d918931db75e725634c9930743f8ae83daf3",
+    "gap_code_map": {
+      "0": "finite_rank_split",
+      "1": "four_dimensional_spacetime_reduction",
+      "2": "nondegenerate_smooth_lorentzian_metric",
+      "3": "physical_stress_energy_tensor",
+      "4": "curvature_and_einstein_tensor",
+      "5": "gr_derivation"
+    },
+    "gap_table_sha256": "e93ada0d6b359d6e0d5aeb660d7d388aedd260ae4743671c1b7711a1d0f52bd6",
+    "gap_text_sha256": "acc4f7504d43a0fb9abff9831988517d685b90294f31c18e9e04792530a20847",
+    "name": "long_metric_rank_gate",
+    "observable_table_sha256": "589e722a41f15db3ef80cf0fa7eb50a848b277f714b955e38eab0e8418b5ec0a",
+    "rank_code_map": {
+      "0": "operation_integral_trace_rank",
+      "1": "public_integral_trace_rank",
+      "2": "public_kernel_residual_rank",
+      "3": "rho_public_readout_rank",
+      "4": "recurrence_time_line_rank",
+      "5": "finite_stress_readout_rank",
+      "6": "four_dimensional_reduction_candidate",
+      "7": "smooth_lorentzian_signature_candidate"
+    },
+    "rank_table_sha256": "5c248d1aa0ce53da8735d9fa4bb5348d0f06678b6d148d8480f82d628f46ba48",
+    "rank_text_sha256": "c7236aab8129dfde1e9e32e7d1b9b184333ea029c3bdb663bcc7cd9643c39912",
+    "summary": {
+      "finite_rank_split_flag": 1,
+      "finite_stress_edge_count": 100,
+      "finite_stress_node_count": 20,
+      "four_dimensional_spacetime_flag": 0,
+      "gr_derivation_flag": 0,
+      "next_gap": "four_dimensional_spacetime_reduction",
+      "normal_form_tick_count": 642,
+      "one_plus_nineteen_formal_split_flag": 1,
+      "operation_algebra_dimension": 36,
+      "public_kernel_dimension": 19,
+      "public_quotient_dimension": 1,
+      "public_rank": 20,
+      "rho_rank": 20,
+      "smooth_metric_signature_flag": 0,
+      "stress_energy_flag": 0,
+      "time_rank": 1,
+      "transition_row_count": 642
+    }
+  }
+}

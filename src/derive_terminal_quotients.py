@@ -157,18 +157,30 @@ def derive_terminal_quotients(
             q42_to_q12.append(int(vals[0]))
 
     if out_npz is not None:
-        out_npz.parent.mkdir(parents=True, exist_ok=True)
-        np.savez(
-            out_npz,
-            q42_map=q42,
-            q12_map=q12,
-            q42_tensor=q42t,
-            q12_tensor=q12t,
-            block_i=block_i,
-            block_j=block_j,
-            special_relations=np.array([special_by_obj[i] for i in range(6)], dtype=np.int32),
-            object_to_sector=np.array(object_to_sector, dtype=np.int16),
-        )
+        payload = {
+            'q42_map': q42,
+            'q12_map': q12,
+            'q42_tensor': q42t,
+            'q12_tensor': q12t,
+            'block_i': block_i,
+            'block_j': block_j,
+            'special_relations': np.array([special_by_obj[i] for i in range(6)], dtype=np.int32),
+            'object_to_sector': np.array(object_to_sector, dtype=np.int16),
+        }
+        should_write = True
+        if out_npz.exists():
+            with np.load(out_npz, allow_pickle=False) as prior:
+                should_write = any(
+                    key not in prior.files
+                    or not np.array_equal(np.asarray(prior[key]), value)
+                    for key, value in payload.items()
+                )
+        if should_write:
+            out_npz.parent.mkdir(parents=True, exist_ok=True)
+            np.savez(
+                out_npz,
+                **payload,
+            )
 
     comparison: dict[str, Any] = {}
     if compare_npz is not None and compare_npz.exists():

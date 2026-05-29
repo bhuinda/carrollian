@@ -1,0 +1,153 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ee3849c1f565871193f7f72e59ccc2176d43685f53b0017b15f707fb5f68b9d9",
+  "checks": {
+    "all_input_reports_certified": true,
+    "candidate_surfaces_not_dim4": true,
+    "dim4_obstruction_scope_exact": true,
+    "rank_boundary_obstruction_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_dim4_gate checks the current certified quotient, subboundary, and sector-selection surfaces for a reduction from the 1+19 rank boundary to a 1+3 spacetime boundary. The current boundary has 16 extra residual public-kernel directions beyond rank three, and no certified quotient, packet/subboundary bridge, C2 physical selector, or sector-normalized selector supplies a 1+3 reduction.",
+  "closure_boundary": {
+    "certifies": [
+      "the current rank boundary is 1+19, not 1+3",
+      "the 20-atom atlas does not by itself certify a 3-spatial subboundary",
+      "the boundary/packet incidence surface has rank 19 and missing packet bridges",
+      "the C2 quotient seam lacks a certified physical selector axiom",
+      "the perennial-sector seam keeps 30 normalization sectors open",
+      "no certified current-boundary 1+3 spacetime reduction exists"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "absolute nonexistence of every possible future 1+3 quotient",
+      "a nondegenerate smooth Lorentzian metric tensor",
+      "a physical stress-energy tensor",
+      "Riemann/Ricci curvature, Einstein tensor, or Einstein field equations",
+      "a completed derivation of general relativity"
+    ]
+  },
+  "inputs": {
+    "atlas": {
+      "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json",
+      "sha256": "c4a06fe54ede9305984391a4be10808467321d29003b68efb93b21b672982e95",
+      "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_long_dim4_gate.py",
+      "sha256": "02c07a31959e2ae08a9d3fe11b119f8e77298f5842bbd5773e41b261456e55d5"
+    },
+    "long_binc": {
+      "certificate_sha256": "4395335af3820133892cd4a76c31c3a1c51a5490556cc257ca1519b977209e27",
+      "path": "data/invariants/d20/proof_obligations/long_binc/report.json",
+      "sha256": "cdbf5f7ec41fde66c4d463e1bd1c45f586729d7e7e6a30156e58ffc9cc7c3ef8",
+      "status": "LONG_BINC_CERTIFIED"
+    },
+    "long_binc_obs": {
+      "path": "data/invariants/d20/proof_obligations/long_binc/obs.csv",
+      "sha256": "b300b9976fd76bdec2e27cca28e777f771ea7abab76edae90e8edf1217c8ed55"
+    },
+    "long_c2uf": {
+      "certificate_sha256": "3d5be4193299c7ca7c1e794037b34a76a931b1a1f86acdbc4d3205dfc4081f70",
+      "path": "data/invariants/d20/proof_obligations/long_c2uf/report.json",
+      "sha256": "de5effd48dcc0ba3cb3cc179e906cb8e670594a2c9963f57ddf8495aaf15d817",
+      "status": "LONG_C2UF_CERTIFIED"
+    },
+    "long_c2uf_obs": {
+      "path": "data/invariants/d20/proof_obligations/long_c2uf/obs.csv",
+      "sha256": "69ef4340efade983aba68cdd7fa81b8747ec7e9b342bf03a4c641821474bd08e"
+    },
+    "long_metric_rank_gate": {
+      "certificate_sha256": "1a7fbfdd031e1b43179ac46aab2ff361e5ccb0959051343901d2dbc8b73ffc65",
+      "path": "data/invariants/d20/proof_obligations/long_metric_rank_gate/report.json",
+      "sha256": "6eb1ad6dc566b58f97aaf01fe3d1151c8fe87079419aea3706fa180f19ce6c9d",
+      "status": "LONG_METRIC_RANK_GATE_CERTIFIED"
+    },
+    "long_psec": {
+      "certificate_sha256": "36c8393befdec06aa903d093b3c7557ea5bf68f31bf872132f3c296498ad1271",
+      "path": "data/invariants/d20/proof_obligations/long_psec/report.json",
+      "sha256": "eb755bc30566b08c3a479c20a662928367e8822b1e4eb73044ec3c7baa2511d3",
+      "status": "LONG_PSEC_CERTIFIED"
+    },
+    "long_psec_obs": {
+      "path": "data/invariants/d20/proof_obligations/long_psec/obs.csv",
+      "sha256": "65aa0d3a5004608eb6a01c1521e2c0cbdb822cd7726ad882b4e19abe3886a92c"
+    },
+    "validator": {
+      "path": "src/certify_long_dim4_gate.py",
+      "sha256": "b09df28c475ede24643254ee347a5bd854594345d0289be2f5e943e66dda6bd1"
+    }
+  },
+  "next_highest_yield_item": "Build long_signature_gate: with 1+3 blocked in the current boundary, decide whether any finite bilinear/signature form is certified on the 1+19 rank split, or certify that smooth Lorentzian signature is absent.",
+  "outputs": {
+    "candidate_csv": "data/invariants/d20/proof_obligations/long_dim4_gate/candidate.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_dim4_gate/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_dim4_gate/decision.csv",
+    "dim4_gate": "data/invariants/d20/proof_obligations/long_dim4_gate/dim4_gate.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_dim4_gate/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_dim4_gate/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_dim4_gate/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_dim4_gate/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_dim4_gate/tables.npz"
+  },
+  "schema": "long.dim4_gate.report@1",
+  "stage_protocol": {
+    "closure": "certify the current-boundary 1+3 reduction obstruction",
+    "coherence": "check input statuses, rank excess, candidate counts, selector flags, normalization gaps, and table hashes",
+    "draft": "read long_metric_rank_gate, long_binc, long_psec, long_c2uf, and c985_d20_boundary_invariant_atlas",
+    "emit": "write long_dim4_gate artifacts and verifier hook",
+    "witness": "emit candidate rows, decision rows, gap rows, and observables"
+  },
+  "status": "LONG_DIM4_GATE_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "candidate_code_map": {
+      "0": "rank_boundary_one_plus_nineteen",
+      "1": "atlas_twenty_atom_boundary",
+      "2": "boundary_packet_incidence",
+      "3": "c2_quotient_selector",
+      "4": "perennial_sector_selection"
+    },
+    "candidate_table_sha256": "fe4572749804a8c288059e50ea2cad09326eb6874e963cfd2acc1d85070bea93",
+    "candidate_text_sha256": "ead6ff06bf2b0cc825c2a22465766925dbd24c534fff78a3ad58ebd5183f50fe",
+    "classification": "four_dimensional_reduction_current_boundary_obstruction",
+    "decision_code_map": {
+      "0": "rank_boundary_blocks_dim4",
+      "1": "subboundary_dim4_certified",
+      "2": "quotient_dim4_certified",
+      "3": "sector_dim4_certified",
+      "4": "physical_selector_certified",
+      "5": "dim4_reduction_certified"
+    },
+    "decision_table_sha256": "5f8eb6c49c1d87616c90a3f557c407d051a2d8e7de0ab50ac80d369cc745e891",
+    "decision_text_sha256": "5f25a51d2a1f4f964e4653e4669e01cde7e4af07cd23aae8cd089532ab4dfece",
+    "gap_code_map": {
+      "0": "four_dimensional_spacetime_reduction",
+      "1": "physical_selector_or_subboundary_axiom",
+      "2": "nondegenerate_smooth_lorentzian_metric",
+      "3": "physical_stress_energy_tensor",
+      "4": "curvature_and_einstein_tensor",
+      "5": "gr_derivation"
+    },
+    "gap_table_sha256": "e67b65beda219075b87cf6bda74bf98d1f677b93160b9826f812f82f86273426",
+    "gap_text_sha256": "8a7c45dc537e7addc49d5e76c63eb5ab7aa2d00883141469ed0e8dc79d0161eb",
+    "name": "long_dim4_gate",
+    "observable_table_sha256": "b5fb76df2a4fd3f3654031e220720cb845a0ef17cb1aafb141e7371c9d625d35",
+    "summary": {
+      "atlas_atom_count": 20,
+      "binc_incidence_rank_over_q": 19,
+      "c2_physical_selector_axiom_flag": 0,
+      "certified_dim4_candidate_count": 0,
+      "current_boundary_obstruction_flag": 1,
+      "dim4_reduction_certified_flag": 0,
+      "gr_derivation_flag": 0,
+      "next_gap": "nondegenerate_smooth_lorentzian_metric",
+      "psec_open_normalization_sector_count": 30,
+      "public_kernel_dimension": 19,
+      "public_rank": 20,
+      "required_spatial_rank": 3,
+      "residual_rank_excess_over_three": 16,
+      "smooth_metric_signature_flag": 0,
+      "time_rank": 1
+    }
+  }
+}

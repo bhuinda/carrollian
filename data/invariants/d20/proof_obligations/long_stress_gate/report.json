@@ -1,0 +1,133 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "a31d87700816b5ed5a205c4fbaf2e0774e2132fd550c32242f0988d4e54e4fea",
+  "checks": {
+    "finite_stress_surface_exact": true,
+    "stress20_input_certified": true,
+    "stress_gate_scope_exact": true,
+    "stress_graph_input_certified": true,
+    "stress_not_20gon_exact": true,
+    "table_shapes_match": true,
+    "transition_input_certified": true,
+    "transition_surface_exact": true
+  },
+  "claim": "long_stress_gate combines the guarded unit-time transition surface with the certified stress-neighborhood graph as a finite readout gate. It certifies a 20-node finite stress surface with 100 directed stress-neighborhood edges alongside 642 time-backed guarded transitions, but no transition-to-stress coupling map, physical stress-energy tensor, smooth metric, curvature tensor, or Einstein equation is certified.",
+  "closure_boundary": {
+    "certifies": [
+      "the certified stress graph can be used as a finite stress readout surface",
+      "the finite stress readout has 20 nodes, 100 directed stress edges, and 64 undirected stress edges",
+      "the finite stress readout coexists with 642 guarded unit-time transitions",
+      "the stress graph is not treated as a literal 20-gon or physical spacetime circle",
+      "no transition-to-stress coupling law is materialized in the current artifact boundary"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "a map assigning each guarded transition to a stress edge or stress tensor component",
+      "a physical stress-energy tensor",
+      "a nondegenerate smooth Lorentzian metric tensor",
+      "Riemann/Ricci curvature, Einstein tensor, or Einstein field equations",
+      "a completed derivation of general relativity"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_stress_gate.py",
+      "sha256": "de27b2e972fca94ed8ca588f89a0775ffd717b7f4da677820985ba3a6f03568f"
+    },
+    "long_stress20": {
+      "certificate_sha256": "e1687d555e3e1775bc6977a4ea711c9164ba27cbe127f60938dca3cf8ad82b06",
+      "path": "data/invariants/d20/proof_obligations/long_stress20/report.json",
+      "sha256": "5e7a6cecc5a825ff6a42ac638228e5879e09c3744805edf7de3a29f1ef5df71d",
+      "status": "LONG_STRESS20_CERTIFIED"
+    },
+    "long_transition_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+      "row_count": 642,
+      "sha256": "c77f941ae6af4d79999a691157030d64eecf9435b3fa708266751d14db9cc630"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "stress": {
+      "certificate_sha256": "e52211930ae30a3a9e0e3285905f355f418f726165903178b1975d3a7c1f4930",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/report.json",
+      "sha256": "8e04b2a9a97b0b86ed29586e35678698652c72dce71ab4288d4bc1ffc9f5bc87",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "stress_artifact": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/artifact.json",
+      "sha256": "8b0fa599e688122a5c1d31fb1ce2f7774af2b090212a2587be4d62f9b068f0fc",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_stress_gate.py",
+      "sha256": "8f656ed463f24dd3240347a0eb0053e94bc83c6a73e83cfa4be8cff37a65c604"
+    }
+  },
+  "next_highest_yield_item": "Materialize the stress-transition coupling seam: decide whether the 642 guarded transitions can be functorially mapped to the 100 directed stress-neighborhood edges or certify that obstruction.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_stress_gate/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_stress_gate/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_stress_gate/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_stress_gate/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_stress_gate/report.json",
+    "stress_edge_csv": "data/invariants/d20/proof_obligations/long_stress_gate/stress_edge.csv",
+    "stress_gate": "data/invariants/d20/proof_obligations/long_stress_gate/stress_gate.json",
+    "surface_csv": "data/invariants/d20/proof_obligations/long_stress_gate/surface.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_stress_gate/tables.npz"
+  },
+  "schema": "long.stress_gate.report@1",
+  "stage_protocol": {
+    "closure": "certify finite stress readout while preserving the stress-energy and metric gaps",
+    "coherence": "check input statuses, transition counts, stress counts, 20-gon comparison, and table hashes",
+    "draft": "read long_transition_sem, long_stress20, and the certified stress-neighborhood graph",
+    "emit": "write long_stress_gate artifacts and verifier hook",
+    "witness": "emit directed stress-edge rows, surface decision rows, gap rows, and observables"
+  },
+  "status": "LONG_STRESS_GATE_CERTIFIED",
+  "witness": {
+    "classification": "finite_stress_readout_gate",
+    "gap_code_map": {
+      "0": "finite_stress_readout",
+      "1": "stress_transition_coupling_map",
+      "2": "physical_stress_energy_tensor",
+      "3": "nondegenerate_smooth_lorentzian_metric",
+      "4": "curvature_and_einstein_tensor",
+      "5": "gr_derivation"
+    },
+    "gap_table_sha256": "e93ada0d6b359d6e0d5aeb660d7d388aedd260ae4743671c1b7711a1d0f52bd6",
+    "gap_text_sha256": "acc4f7504d43a0fb9abff9831988517d685b90294f31c18e9e04792530a20847",
+    "name": "long_stress_gate",
+    "observable_table_sha256": "e8d09dc622628781c0d59b84b2ca88a4e3e4276af10d85ef4542abfac115d25d",
+    "stress_edge_table_sha256": "f8c8c12672e24225f1f1860e1bc96df60ff25b87d72c99a5a5ab5ae855f2dd76",
+    "stress_edge_text_sha256": "63039b0e7830becd970cf6c0727d1eed751fc1a58f9d595b2c01da808465e42b",
+    "summary": {
+      "finite_stress_readout_flag": 1,
+      "gr_derivation_flag": 0,
+      "next_gap": "stress_transition_coupling_map",
+      "physical_stress_energy_flag": 0,
+      "semantic_transition_realized_count": 0,
+      "stress_complement_pair_count": 10,
+      "stress_directed_edge_count": 100,
+      "stress_equals_20gon_flag": 0,
+      "stress_node_count": 20,
+      "stress_undirected_edge_count": 64,
+      "transition_delta_sum": 642,
+      "transition_row_count": 642,
+      "transition_stress_coupling_flag": 0
+    },
+    "surface_code_map": {
+      "0": "guarded_unit_time_transition_surface",
+      "1": "finite_stress_neighborhood_surface",
+      "2": "stress_complement_surface",
+      "3": "stress_20gon_comparison_surface",
+      "4": "transition_to_stress_coupling_law",
+      "5": "physical_stress_energy_tensor",
+      "6": "smooth_metric_einstein_source"
+    },
+    "surface_table_sha256": "66e6ff6634da4cc661a299652ad87dc381de2a95ef1281f7ea6402ede9eb967d",
+    "surface_text_sha256": "7adf99bcaa775bcf01b0c3828e6be87d7953b2f89286efc33d0bf097fd9c2852"
+  }
+}

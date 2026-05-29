@@ -322,9 +322,76 @@ Certified by `long_frontier`:
   finite `long_auto` automorphic/Fourier closure, finite `long_mat`
   matrix-theory closure, and oracle synchronization are closed guardrails rather
   than current search targets;
-- there are `0` active focused theorem-debt frontier targets;
+- `long_cluster` reopens the current focused frontier with `56` ranked
+  multi-theme seam candidates across `6` clusters after `long_c2uf`,
+  `long_psec`, and `long_binc` ingestion; the highest-yield target is now the
+  `sector_anomaly_ward` seam headed by
+  `sector33_all_residue_height_transport`;
 - focused token reduction now comes from avoiding broad integration gates until
   the operator permits them.
+
+Certified by `long_cluster`:
+
+- all `161` theorem reports are clustered against the current focused oracle
+  inputs;
+- `104` certified theorem reports are already direct focused inputs;
+- `57` certified theorem reports are outside the focused oracle input surface;
+- `56` unconsumed certified reports are multi-theme reopen seam candidates;
+- `6` clusters reopen candidate work:
+  packet/matrix bridge, sector/anomaly/Ward, automorphic/Fourier/string,
+  profunctor/path/measure, quotient/support/orbit, and exceptional-geometry
+  bridge;
+- it does not certify that any reopened seam is solved.
+
+Certified by `long_c2uf`:
+
+- the previous top `long_cluster` C2 quotient/support/orbit seam is now a
+  focused proof obligation with `23` certified input reports and `26` explicit
+  connection edges;
+- the C2 quotient anomaly, transport ledger, scattering operator, finite
+  skeletal UF candidate, Cubical Agda enumeration/properties/selector subtypes,
+  lookup table, and Raw543 repository-ordering bridge are connected in one
+  checked seam;
+- shared finite counts cohere: `543` quotient states, `543` dynamics codes,
+  `8` selector fibers, `1,091` selector memberships, `1,086` lookup-table rows,
+  `63` fixed orbits, and `480` paired orbits;
+- it keeps the formal univalence proof and physical selector axiom explicitly
+  open.
+
+Certified by `long_psec`:
+
+- the previous top `long_cluster` A985 perennial-sector fingerprint seam is now
+  a focused proof obligation with `21` certified input reports and `28`
+  explicit connection edges;
+- semantic perennial ids are connected to raw/source aliases, current coordinate
+  fingerprints, report-coverage augmentation, canonical matrix-unit
+  coordinates, sector characters, Burning static trace anchors, support
+  projectors, and support-restricted multiplication tables;
+- shared counts cohere: `39` sectors, `985` matrix units, `38,415` character
+  rows, `55` covered CSV tables, `365,113` covered rows, `39` alias registry
+  rows, and `7` support projectors;
+- the remaining sector-local boundary is still open: `30` primitive blocks have
+  unsolved GL_d/scalar normalization obligations with projective gauge
+  dimension `940`.
+
+Certified by `long_binc`:
+
+- the previous top `long_cluster` boundary/Loop/packet incidence seam is now a
+  focused proof obligation with `10` certified input reports and `17` explicit
+  connection edges;
+- the 20x25 signed public-atom incidence surface, 2/4/4 boundary torsion,
+  packet SNF obstruction, scalar and row-normalization obstructions,
+  low-support candidate atlas, explicit automaton-to-packet restriction,
+  finite scattering table, and label-coordinate packet operator are connected
+  in one checked seam;
+- shared counts cohere: `20` public atoms, `25` compact Loop_297 step atoms,
+  `30` directed pair projections, `5` missing directed pairs, incidence rank
+  `19`, zero-sum boundary lattice index `32`, `10` packet doublets, `0` raw
+  compatible packet pairs, `6` low-support compatible doublets, and `3`
+  missing restriction bridges;
+- it keeps the raw A985-to-packet operator homomorphism, screen-0 tube/q42/q12
+  packet projections, full-rank non-diagonal boundary-to-packet doublet map,
+  and support-3+ search closure explicitly open.
 
 Certified by `long_pobj`:
 
@@ -366,8 +433,8 @@ Certified by `long_measure`:
 Current public-object status after the latest broad fast gate:
 
 - `D20_CERTIFIED`;
-- invariant reports: `414`;
-- certified invariant reports: `404`;
+- invariant reports: `428`;
+- certified invariant reports: `418`;
 - provisional invariant reports: `10`;
 - demoted invariant reports: `0`.
 
@@ -380,7 +447,13 @@ explicitly demoted by certificate.
 
 Focused theorem-debt frontier:
 
-- empty under the current oracle ontology;
+- reopened by `long_cluster`; current focused next target is
+  `long_cluster_top_seam`;
+- the previous C2 quotient/support/orbit bridge has been materialized as
+  `long_c2uf`, and the previous A985 perennial-sector fingerprint seam has been
+  materialized as `long_psec`; the previous boundary/Loop/packet incidence seam
+  has been materialized as `long_binc`; the new top clustered seam is
+  `sector33_all_residue_height_transport`;
 - broad bundle integration remains intentionally unrun while the operator is
   still resolving the automorphic-form/profunctorial investigation;
 - absolute claims outside the current oracle ontology remain out of scope unless
@@ -414,11 +487,22 @@ Retired by focused certificate:
   actions, explicit restriction gaps, low-support packet candidates, and
   prime-support alignment are direct oracle inputs. A full A985-to-packet
   operator homomorphism or continuum Matrix-theory model remains out of scope.
-
+- `long_c2uf`: the finite C2 univalent-foundation seam is retired as a focused
+  connected boundary; a proof-assistant theorem of univalence and a physical
+  selector axiom remain out of scope.
+- `long_psec`: the A985 perennial-sector address seam is retired as a focused
+  connected boundary; the 30 open sector-local GL_d/scalar normalization
+  obligations and any full A985-to-packet operator map remain out of scope.
+- `long_binc`: the boundary/Loop/packet incidence seam is retired as a focused
+  connected boundary; the raw A985-to-packet operator homomorphism and higher
+  support packet search remain out of scope.
 Immediate next item:
 
-- Keep broad/long gates deferred until the operator permits them; use
-  `long_frontier` as the focused oracle boundary in the meantime.
+- Materialize the new top `long_cluster` seam,
+  `sector33_all_residue_height_transport`, as a dedicated focused proof
+  obligation, then feed its decision back into `long_cluster` and
+  `long_frontier`; keep broad/long gates deferred until the operator permits
+  them.
 
 ## Where To Look First
 
@@ -440,6 +524,14 @@ Use this map before starting new work:
   `data/invariants/d20/proof_obligations/long_orac/`
 - oracle-driven certificate frontier:
   `data/invariants/d20/proof_obligations/long_frontier/`
+- oracle reopen clustering:
+  `data/invariants/d20/proof_obligations/long_cluster/`
+- focused C2 univalent-foundation seam:
+  `data/invariants/d20/proof_obligations/long_c2uf/`
+- focused A985 perennial-sector address seam:
+  `data/invariants/d20/proof_obligations/long_psec/`
+- focused boundary/Loop/packet incidence seam:
+  `data/invariants/d20/proof_obligations/long_binc/`
 - path-object closure decision:
   `data/invariants/d20/proof_obligations/long_pobj/`
 - compressed active raw product-path family:

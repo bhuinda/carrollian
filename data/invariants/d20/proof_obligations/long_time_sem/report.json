@@ -1,0 +1,167 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4b3128bf8c81b3ddfc155e8db7730e07bb3124e9b9b428655d7b684b2c7397b1",
+  "checks": {
+    "a985_core_input_pass": true,
+    "edge_endpoints_are_a985_raw_backed": true,
+    "long_rec_input_certified": true,
+    "long_time_map_input_certified": true,
+    "normal_form_time_map_edges_match": true,
+    "obstruction_boundary_exact": true,
+    "owner_endpoints_are_a985_raw_triples": true,
+    "raw_tensor_mass_exact": true,
+    "raw_tensor_shape_exact": true,
+    "semantic_edge_operation_map_absent": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_time_sem certifies a current-boundary obstruction, not a semantic closure: all 259 long_rec owner basis rows are present as A985 raw tensor triples, and all 642 recurrence edges connect A985-backed endpoint triples, but the current artifact boundary does not contain a certified edge_id-to-A985-operation map. The normal-form Delta t table from long_time_map is therefore not yet an A985-alone semantic transition operation table.",
+  "closure_boundary": {
+    "certifies": [
+      "all long_rec owner endpoints are A985 raw tensor triples",
+      "all 642 long_rec recurrence edges connect A985-backed endpoint triples",
+      "the long_time_map unit ticks are attached to those 642 endpoint-backed edges",
+      "no certified semantic edge_id-to-A985-operation map exists in the current artifact boundary",
+      "the normal-form edge-time table is obstructed as an A985-alone semantic transition-operation table"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "semantic A985 operation realization for the 642 recurrence transitions",
+      "a metric certificate allowed to treat normal-form ticks as A985 semantic transition operations",
+      "a nondegenerate smooth Lorentzian metric tensor",
+      "a 3+1 spacetime reduction from the 1+19 public split",
+      "Riemann/Ricci curvature, Einstein tensor, or Einstein field equations"
+    ]
+  },
+  "inputs": {
+    "core_a985": {
+      "finite_algebra_status": "verified",
+      "path": "data/core/a985.json",
+      "sha256": "b2caee558395078c39d984fcd3d8c9d9a625d81924aa122aa3c10b36daddfc5d",
+      "status": "PASS"
+    },
+    "derive_script": {
+      "path": "src/derive_long_time_sem.py",
+      "sha256": "ec8f302fef376351466d658bbed820ad4b3fa9026c990402b5f6a8b0df71b392"
+    },
+    "long_rec": {
+      "certificate_sha256": "70efcdd66a54fd1926d55ae4c4c74b79f8c930bff2c91cb43215f5c5bfc341ae",
+      "path": "data/invariants/d20/proof_obligations/long_rec/report.json",
+      "sha256": "1e4b5fbc086a95cd6b9bf929d804e71b483643dfd884355ef75a54248eb9c08b",
+      "status": "LONG_REC_CERTIFIED"
+    },
+    "long_rec_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/edge.csv",
+      "row_count": 642,
+      "sha256": "61893f78f1847d01a72f56002a51c694d07120b82676167bf40f2ceb6d49017d"
+    },
+    "long_rec_owner": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/owner.csv",
+      "row_count": 259,
+      "sha256": "11703fdea12e11ff7421a0204c38d92a7bb80f6a56389c2a622d62b78ef83e8d"
+    },
+    "long_time_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_time_map/edge_time.csv",
+      "row_count": 642,
+      "sha256": "f6fc8f4037e9d41dc91c720ad4b487117a82b0ab5aec69d4f0c6f7871eb0cb64"
+    },
+    "long_time_map": {
+      "certificate_sha256": "b40ba13849c68c86d96c8457f1783ed29d5e335093656df680eb560eae17f78a",
+      "path": "data/invariants/d20/proof_obligations/long_time_map/report.json",
+      "sha256": "1c56d0252405469cca73c6d73699453494b6dfd66d7eb9f13a4a02ed758a1b51",
+      "status": "LONG_TIME_MAP_CERTIFIED"
+    },
+    "raw_index": {
+      "path": "data/raw/index.json",
+      "sha256": "421ccdeed11812ed5d2c25efd0858a178b7061eae2f003b8b857d46465bef7c4"
+    },
+    "raw_tensor": {
+      "column_count": 4,
+      "path": "data/raw/Halloween.npz",
+      "row_count": 1414965,
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_time_sem.py",
+      "sha256": "7e850601afc74dbb817ff3510058290ee3b2083a98b1ce220679fcc9dc7f34fd"
+    }
+  },
+  "next_highest_yield_item": "Build long_metric_gate: decide whether the finite metric pathway may use the certified normal-form time map with the semantic edge-operation obstruction preserved, or whether a new owner-boundary contact lift must be materialized first.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_time_sem/cert.json",
+    "edge_sem_csv": "data/invariants/d20/proof_obligations/long_time_sem/edge_sem.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_time_sem/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_time_sem/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_time_sem/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_time_sem/report.json",
+    "schema_gap_csv": "data/invariants/d20/proof_obligations/long_time_sem/schema_gap.csv",
+    "sem": "data/invariants/d20/proof_obligations/long_time_sem/sem.json",
+    "tables": "data/invariants/d20/proof_obligations/long_time_sem/tables.npz"
+  },
+  "schema": "long.time_sem.report@1",
+  "stage_protocol": {
+    "closure": "certify the semantic edge-operation obstruction while preserving endpoint A985 support",
+    "coherence": "check raw tensor shape/mass, owner endpoint raw support, edge endpoint raw support, normal-form time rows, and table hashes",
+    "draft": "read A985 core, raw tensor index, raw tensor, long_rec owner/edge rows, and long_time_map edge-time rows",
+    "emit": "write long_time_sem artifacts and verifier hook",
+    "witness": "emit per-edge endpoint support rows and schema-gap rows for the absent semantic edge-operation map"
+  },
+  "status": "LONG_TIME_SEM_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "classification": "finite_time_semantic_edge_obstruction",
+    "edge_sem_table_sha256": "4d844df2937eea7f4e5a3ee491b07c36a64b6b418b819f91329f3f25f0e3d2d4",
+    "edge_sem_text_sha256": "912c5580f81e4969760f960f16faae9715ba48b9c40d9136c43f8e29ef5203df",
+    "evidence_code_map": {
+      "0": "raw_tensor_present",
+      "1": "a985_core_status_pass",
+      "2": "owner_endpoints_raw_backed",
+      "3": "recurrence_edges_present",
+      "4": "normal_form_edge_time_present",
+      "5": "semantic_edge_operation_map_absent"
+    },
+    "gap_code_map": {
+      "0": "semantic_edge_operation_realization_from_a985",
+      "1": "metric_from_normal_form_time_without_semantic_edge_ops",
+      "2": "nondegenerate_smooth_lorentzian_metric",
+      "3": "four_dimensional_spacetime_reduction",
+      "4": "curvature_and_einstein_tensor"
+    },
+    "gap_table_sha256": "4fba87afe2cc5ee20e06b942119b6b81094f76b6ad16ad2a16bf205fe4b2e25a",
+    "gap_text_sha256": "5ee6983bfc313ca5233c3b55d000b18328fd1aecd5d9c96baf6c78a33b9386d9",
+    "missing_semantic_columns": [
+      "operation_source0_addr",
+      "operation_source1_addr",
+      "operation_target_addr",
+      "operation_coeff"
+    ],
+    "name": "long_time_sem",
+    "observable_table_sha256": "9b9597f75b8af9a324b01fee3c73d098b5a8954d7164a69dbeb371b2fcb304b9",
+    "obstruction_code_map": {
+      "0": "edge_is_owner_adjacency_not_a985_operation_row"
+    },
+    "raw_tensor_sha256": "6d3434bc5a8b5837ca7b8a860d8e8cb1c4e9d871da1982245186adea73bccc11",
+    "required_semantic_columns": [
+      "edge_id",
+      "operation_source0_addr",
+      "operation_source1_addr",
+      "operation_target_addr",
+      "operation_coeff",
+      "operation_time_component"
+    ],
+    "schema_gap_table_sha256": "9b70cc42205384c43649fa5e3a404335d8e07d94febee71c9016cf3dcab28ebd",
+    "schema_gap_text_sha256": "5cfee08ebab552f2874954cc06783c667d78a0d68492002761e4893bba2ede8c",
+    "summary": {
+      "edge_endpoint_raw_backed_count": 642,
+      "endpoint_support_flag": 1,
+      "next_gap": "metric_from_normal_form_time_without_semantic_edge_ops",
+      "normal_form_delta_sum": 642,
+      "obstruction_certified_flag": 1,
+      "owner_endpoint_raw_backed_count": 259,
+      "owner_row_count": 259,
+      "raw_tensor_coeff_mass": 2537360,
+      "raw_tensor_row_count": 1414965,
+      "recurrence_edge_count": 642,
+      "semantic_edge_obstructed_count": 642,
+      "semantic_edge_operation_count": 0,
+      "semantic_edge_operation_flag": 0
+    }
+  }
+}

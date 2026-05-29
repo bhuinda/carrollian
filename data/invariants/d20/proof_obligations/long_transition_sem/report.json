@@ -1,0 +1,153 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+  "checks": {
+    "contact_lift_input_certified": true,
+    "guarded_transition_not_gr_claim": true,
+    "metric_gate_input_certified": true,
+    "raw_endpoint_ids_exact": true,
+    "semantic_operation_obstruction_exact": true,
+    "table_shapes_match": true,
+    "time_map_input_certified": true,
+    "transition_rows_contact_backed": true,
+    "transition_rows_time_backed": true
+  },
+  "claim": "long_transition_sem resolves the contact-lift promotion question under the current artifact boundary. Every contact-lifted recurrence edge is backed by explicit A985 raw row ids for both endpoint basis triples and by the normal-form time tick, but no semantic operation row or transition composition law is present. The contact-lifted edges therefore remain a guarded finite transition surface, not semantic A985 transition operations.",
+  "closure_boundary": {
+    "certifies": [
+      "all 259 contact-lift endpoints have explicit A985 raw tensor row ids",
+      "all 642 recurrence transitions are contact-lift-backed and endpoint-row-backed",
+      "all 642 guarded finite transitions carry the normal-form unit time tick",
+      "no semantic A985 operation row is materialized for the contact-lifted transitions",
+      "contact-lifted transitions remain guarded finite transitions rather than semantic A985 operations"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "semantic A985 transition-operation realization for the 642 recurrence transitions",
+      "a transition composition law promoting owner-boundary contacts to operations",
+      "a physical stress-energy tensor",
+      "a nondegenerate smooth Lorentzian metric tensor",
+      "Riemann/Ricci curvature, Einstein tensor, or Einstein field equations"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_transition_sem.py",
+      "sha256": "94a069caf56f5cbd7238967588cb66874a8ded4917074fb22f7fb03a0be881f9"
+    },
+    "long_contact_contact": {
+      "path": "data/invariants/d20/proof_obligations/long_contact_lift/contact.csv",
+      "row_count": 642,
+      "sha256": "d602639b9777c1955fec7fbfdde741c71263e2e5ba8daba4f538ff6b6ab980fb"
+    },
+    "long_contact_endpoint": {
+      "path": "data/invariants/d20/proof_obligations/long_contact_lift/endpoint.csv",
+      "row_count": 259,
+      "sha256": "b8bb29300df7f1ab5f64f0e92fffdf8e21f19c0eb48b5767719e62e8ef3ce61c"
+    },
+    "long_contact_lift": {
+      "certificate_sha256": "ddae7da581bfbabd509cb9e1804a24b3bb66b422ed20108fe2b9ca410b97db4d",
+      "path": "data/invariants/d20/proof_obligations/long_contact_lift/report.json",
+      "sha256": "6b29c6daad7ffcc3250ef62d01e14242a2465f6e3c96673aad269d86b92b6d93",
+      "status": "LONG_CONTACT_LIFT_CERTIFIED"
+    },
+    "long_metric_gate": {
+      "certificate_sha256": "1be32cf6bb8590659e28589fa2bef3b5846ff5b6de728fe1e34743fb40470224",
+      "path": "data/invariants/d20/proof_obligations/long_metric_gate/report.json",
+      "sha256": "c18755a234061643570d2529dd2c3a51f45eb31c9532a4c7c58a4cf2d03dd5ca",
+      "status": "LONG_METRIC_GATE_CERTIFIED"
+    },
+    "long_time_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_time_map/edge_time.csv",
+      "sha256": "f6fc8f4037e9d41dc91c720ad4b487117a82b0ab5aec69d4f0c6f7871eb0cb64"
+    },
+    "long_time_map": {
+      "certificate_sha256": "b40ba13849c68c86d96c8457f1783ed29d5e335093656df680eb560eae17f78a",
+      "path": "data/invariants/d20/proof_obligations/long_time_map/report.json",
+      "sha256": "1c56d0252405469cca73c6d73699453494b6dfd66d7eb9f13a4a02ed758a1b51",
+      "status": "LONG_TIME_MAP_CERTIFIED"
+    },
+    "raw_index": {
+      "path": "data/raw/index.json",
+      "sha256": "421ccdeed11812ed5d2c25efd0858a178b7061eae2f003b8b857d46465bef7c4"
+    },
+    "raw_tensor": {
+      "column_count": 4,
+      "path": "data/raw/Halloween.npz",
+      "row_count": 1414965,
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_transition_sem.py",
+      "sha256": "5f91689f18671f2a581e07dc54989671acf1c463406a1b411b3232586bab8422"
+    }
+  },
+  "next_highest_yield_item": "Build long_stress_gate: combine the guarded finite transition surface with the certified stress-neighborhood graph and decide what can be called finite stress, while keeping physical stress-energy explicitly open.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_transition_sem/cert.json",
+    "endpoint_raw_csv": "data/invariants/d20/proof_obligations/long_transition_sem/endpoint_raw.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_transition_sem/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_transition_sem/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_transition_sem/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+    "schema_gap_csv": "data/invariants/d20/proof_obligations/long_transition_sem/schema_gap.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_transition_sem/tables.npz",
+    "transition_csv": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+    "transition_sem": "data/invariants/d20/proof_obligations/long_transition_sem/transition_sem.json"
+  },
+  "schema": "long.transition_sem.report@1",
+  "stage_protocol": {
+    "closure": "certify guarded finite transitions while recording the semantic operation-realization obstruction",
+    "coherence": "check raw endpoint ids, contact-lift coverage, normal-form time coverage, semantic-operation absence, and table hashes",
+    "draft": "read raw tensor, long_contact_lift, long_metric_gate, and long_time_map edge-time rows",
+    "emit": "write long_transition_sem artifacts and verifier hook",
+    "witness": "emit raw endpoint row ids, contact-lifted transition rows, schema-gap rows, and open gap rows"
+  },
+  "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "classification": "contact_lift_transition_semantic_obstruction",
+    "endpoint_table_sha256": "36ec61016514ed6b13d646cd9e3a6fc3e5d7b19e81ff1b549ec5118325be06e3",
+    "endpoint_text_sha256": "425ea7b7672f2337ea83cbbded389a9095b22ba10fd4b52fdb05142b1925260c",
+    "evidence_code_map": {
+      "0": "raw_endpoint_row_ids_present",
+      "1": "contact_lift_rows_present",
+      "2": "normal_form_time_rows_present",
+      "3": "semantic_operation_rows_absent",
+      "4": "transition_composition_law_absent"
+    },
+    "gap_code_map": {
+      "0": "owner_boundary_contact_lift",
+      "1": "semantic_operation_from_contact_lift",
+      "2": "physical_stress_energy_tensor",
+      "3": "nondegenerate_smooth_lorentzian_metric",
+      "4": "four_dimensional_spacetime_reduction",
+      "5": "curvature_and_einstein_tensor"
+    },
+    "gap_table_sha256": "68beda8658a9e8da71cb40e0b89f5c17db35525af99b91f972420cb8f8f4b58a",
+    "gap_text_sha256": "f2a8acb3aeaa1caff6193b4f3a0104e70ac932b6d4250360e1fa1e0e9b443851",
+    "name": "long_transition_sem",
+    "observable_table_sha256": "3483496a2ff76c5e0ee7872c3bf8b06a3a7e37c1e3b35bb186200005917320dc",
+    "obstruction_code_map": {
+      "0": "contact_lift_is_boundary_adjacency_not_operation_row"
+    },
+    "raw_tensor_sha256": "6d3434bc5a8b5837ca7b8a860d8e8cb1c4e9d871da1982245186adea73bccc11",
+    "schema_gap_table_sha256": "016302999af0ece694d6ba7b33c5b4b1188fed789b665b71bd18a3433c533fc8",
+    "schema_gap_text_sha256": "dd67c0e6c96c49548bedc485533990a4e7d0bf7ecea52feabb77e8035860e599",
+    "summary": {
+      "contact_edge_count": 642,
+      "contact_lift_edge_count": 642,
+      "endpoint_pair_raw_row_count": 642,
+      "endpoint_raw_row_id_count": 259,
+      "endpoint_row_count": 259,
+      "finite_guard_transition_flag": 1,
+      "next_gap": "physical_stress_energy_tensor",
+      "normal_form_delta_sum": 642,
+      "operation_row_materialized_count": 0,
+      "semantic_transition_obstructed_count": 642,
+      "semantic_transition_operation_flag": 0,
+      "semantic_transition_realized_count": 0,
+      "transition_row_count": 642
+    },
+    "transition_table_sha256": "f7726c8d532fef74fe1fdf50b5085ba91573bc04477e9b451eac4a0c6281161c",
+    "transition_text_sha256": "4cd1c8ede5b8ffcd3c512d3ffc49a8ac3fa87b621c0ebf7eb002746a650ea79d"
+  }
+}

@@ -2,7 +2,7 @@
   "inputs": {
     "derive_script": {
       "path": "src/derive_long_cluster.py",
-      "sha256": "1482c5294c9d44bb7a0b8d170bbef2f84e755a1c7bd58c123c2dd7c0fabc32d2"
+      "sha256": "01178bea372dbf42762db75fbab28c9465333fb571c3a404dae83e7b5f144cb7"
     },
     "focused_manifest_long_anom": {
       "path": "data/invariants/d20/proof_obligations/long_anom/manifest.json",
@@ -12,9 +12,13 @@
       "path": "data/invariants/d20/proof_obligations/long_auto/manifest.json",
       "sha256": "d1ec80e73ab21734989dad3fdf8a1114530aa00ba716305fe3b46fda72026af3"
     },
-    "focused_manifest_long_frontier": {
-      "path": "data/invariants/d20/proof_obligations/long_frontier/manifest.json",
-      "sha256": "eb7f3c4b7bf23b2f2a622ec18c8253846434e95e5c14ceed4211c2d5cd11c9b0"
+    "focused_manifest_long_binc": {
+      "path": "data/invariants/d20/proof_obligations/long_binc/manifest.json",
+      "sha256": "4676a71015ab558306423c57a357f6880f2248552e2273202919bdb5cc4e69e0"
+    },
+    "focused_manifest_long_c2uf": {
+      "path": "data/invariants/d20/proof_obligations/long_c2uf/manifest.json",
+      "sha256": "7493a448a654e423a32ddee57797576e29492e068edbddd00c9856ea018e6223"
     },
     "focused_manifest_long_h16": {
       "path": "data/invariants/d20/proof_obligations/long_h16/manifest.json",
@@ -44,6 +48,14 @@
       "path": "data/invariants/d20/proof_obligations/long_pobj/manifest.json",
       "sha256": "652cf70a1fec9e6f6a1ce1f4f559ebe39c441217a3e3496ece3d8887cfe5b05a"
     },
+    "focused_manifest_long_psec": {
+      "path": "data/invariants/d20/proof_obligations/long_psec/manifest.json",
+      "sha256": "65b707a2e00244839ec92916f4d6cf7326fb1707e71704181894084a2f9c639b"
+    },
+    "focused_manifest_long_s33": {
+      "path": "data/invariants/d20/proof_obligations/long_s33/manifest.json",
+      "sha256": "de6b257580037221439ae9eb6b05854759af3e8b666ce733bbd5d62c39f5db83"
+    },
     "focused_report_long_anom": {
       "certificate_sha256": "7d17d3ccb0b0c8d4c45e19372b4ee45efc1561f1c76b8f8a4877ceb68d6ea986",
       "path": "data/invariants/d20/proof_obligations/long_anom/report.json",
@@ -56,11 +68,17 @@
       "sha256": "d8faf00fadf843931e192f4036a77338c7e6c399ae32dc0ba77cefc37391f0db",
       "status": "LONG_AUTO_CERTIFIED"
     },
-    "focused_report_long_frontier": {
-      "certificate_sha256": "7192827f063fc9cde383abc90dfe8570333b0ec9208b1ec844dc4689404e30ec",
-      "path": "data/invariants/d20/proof_obligations/long_frontier/report.json",
-      "sha256": "fc7e422cca1a9402eef564a248e820d6cf5385438d15e8e9bf32f54a70020ce6",
-      "status": "LONG_FRONTIER_CERTIFIED"
+    "focused_report_long_binc": {
+      "certificate_sha256": "4395335af3820133892cd4a76c31c3a1c51a5490556cc257ca1519b977209e27",
+      "path": "data/invariants/d20/proof_obligations/long_binc/report.json",
+      "sha256": "cdbf5f7ec41fde66c4d463e1bd1c45f586729d7e7e6a30156e58ffc9cc7c3ef8",
+      "status": "LONG_BINC_CERTIFIED"
+    },
+    "focused_report_long_c2uf": {
+      "certificate_sha256": "3d5be4193299c7ca7c1e794037b34a76a931b1a1f86acdbc4d3205dfc4081f70",
+      "path": "data/invariants/d20/proof_obligations/long_c2uf/report.json",
+      "sha256": "de5effd48dcc0ba3cb3cc179e906cb8e670594a2c9963f57ddf8495aaf15d817",
+      "status": "LONG_C2UF_CERTIFIED"
     },
     "focused_report_long_h16": {
       "certificate_sha256": "b0faa33cc6baedcd5146b62850ef6b9e27b024537c1670a775c7d5e64ca63664",
@@ -104,84 +122,96 @@
       "sha256": "c2647ddc01cd6488866c4dcf6ab3eeb0999cf1b77a68454ba293e5adc8356d59",
       "status": "LONG_POBJ_CERTIFIED"
     },
+    "focused_report_long_psec": {
+      "certificate_sha256": "36c8393befdec06aa903d093b3c7557ea5bf68f31bf872132f3c296498ad1271",
+      "path": "data/invariants/d20/proof_obligations/long_psec/report.json",
+      "sha256": "eb755bc30566b08c3a479c20a662928367e8822b1e4eb73044ec3c7baa2511d3",
+      "status": "LONG_PSEC_CERTIFIED"
+    },
+    "focused_report_long_s33": {
+      "certificate_sha256": "f59349de30394df84df8d2a0d7e8b216e928980c48376634dcbbac149998fb4f",
+      "path": "data/invariants/d20/proof_obligations/long_s33/report.json",
+      "sha256": "7e956a66e5679b18ca59cd307653ae9706e07366f59e6a4c9cfa8038eef9ca34",
+      "status": "LONG_S33_CERTIFIED"
+    },
     "top_seam_0": {
-      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_univalent_foundation_bridge/report.json",
-      "primary_cluster": "quotient_support_orbit",
-      "report_id": "full_exposure_zero_pair_sourced_balance_c2_univalent_foundation_bridge",
-      "sha256": "32dd1e7862ab91f8740ff77916fff7e0c8da6722f90b833443ccf85dfb49fb9d"
+      "path": "data/invariants/d20/theorems/d20_raw_transport_3x3_discriminant13_search/report.json",
+      "primary_cluster": "packet_matrix_bridge",
+      "report_id": "d20_raw_transport_3x3_discriminant13_search",
+      "sha256": "5857fe8e23678637cd1a2fbfa12b6cabd80eccddf6a443f229630375c02348e3"
     },
     "top_seam_1": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_perennial_sector_fingerprints/report.json",
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_pilot/report.json",
       "primary_cluster": "sector_anomaly_ward",
-      "report_id": "tiny_pointer_a985_perennial_sector_fingerprints",
-      "sha256": "0e6cb4607e6ba921a1c87ff668bf2059993a620f1cd92ee05579564338754db6"
+      "report_id": "tiny_pointer_a985_sector5_normalization_pilot",
+      "sha256": "cfc3c08fa5360f1ba674804766ceee37c153e24451450eef5eccf6536d51fafe"
     },
     "top_seam_10": {
-      "path": "data/invariants/d20/theorems/canonical_finite_scattering_table/report.json",
+      "path": "data/invariants/d20/theorems/sector33_residual_attachment/report.json",
       "primary_cluster": "sector_anomaly_ward",
-      "report_id": "canonical_finite_scattering_table",
-      "sha256": "3b0cea41366d6972213ad43dd1052a86256a4cfd27249d98072f35c1d804362f"
+      "report_id": "sector33_residual_attachment",
+      "sha256": "1f45285b55ce8cc9564e98acb0700b30c395dfff44c052780a224fa0c291b2fb"
     },
     "top_seam_11": {
-      "path": "data/invariants/d20/theorems/full_exposure_label_coordinate_transition_operator/report.json",
+      "path": "data/invariants/d20/theorems/full_exposure_label_breaking_factorization/report.json",
       "primary_cluster": "sector_anomaly_ward",
-      "report_id": "full_exposure_label_coordinate_transition_operator",
-      "sha256": "70cd9f1687843c0c2440cdb95ad388e20d91859735c7caca76fbc3eb0760eb32"
+      "report_id": "full_exposure_label_breaking_factorization",
+      "sha256": "a56c3317abae53658e3b04852558fabf18512bd936a540b6e3b7e12a7018831e"
     },
     "top_seam_2": {
-      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient/report.json",
-      "primary_cluster": "quotient_support_orbit",
-      "report_id": "full_exposure_zero_pair_sourced_balance_label_relaxed_orbit_quotient",
-      "sha256": "00674f55efbc22e6ce2e32b3b98f0960be7c72a7141f7641063851cd7b66f6b1"
+      "path": "data/invariants/d20/theorems/d20_intrinsic_triple_ordering_clock/report.json",
+      "primary_cluster": "sector_anomaly_ward",
+      "report_id": "d20_intrinsic_triple_ordering_clock",
+      "sha256": "cc674d1259197f44c24f071a82d22af4eb14c8c31f3abb556b873a66fb33439a"
     },
     "top_seam_3": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_support_restricted_multiplication_tables/report.json",
+      "path": "data/invariants/d20/theorems/full_exposure_label_coordinate_green_response/report.json",
       "primary_cluster": "quotient_support_orbit",
-      "report_id": "tiny_pointer_a985_support_restricted_multiplication_tables",
-      "sha256": "0403ba3c2943492f19511a048d2f5cf4f1cdfb7227a811befeab7f15ac11ec0f"
+      "report_id": "full_exposure_label_coordinate_green_response",
+      "sha256": "b9e4fdcb0e873f45ebd91d8698316048383555028a77ec5866f2f33176e137a4"
     },
     "top_seam_4": {
-      "path": "data/invariants/d20/theorems/d20_boundary_loop_step_atom_incidence/report.json",
-      "primary_cluster": "quotient_support_orbit",
-      "report_id": "d20_boundary_loop_step_atom_incidence",
-      "sha256": "fb7c4dbc7789d3ce8477dd2dbd3a7143aeb04e01a433654b7acab2a7409ba5bd"
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture/report.json",
+      "primary_cluster": "sector_anomaly_ward",
+      "report_id": "tiny_pointer_a985_sector5_normalization_solver_nontrivial_fixture",
+      "sha256": "cbd7d59d0f99ef63551813f5f41d6d6e812a0555b2c5f4d2784ce570579a5af0"
     },
     "top_seam_5": {
-      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_all_open_sector_normalization_fixture_atlas/report.json",
       "primary_cluster": "sector_anomaly_ward",
-      "report_id": "sector33_all_residue_height_transport",
-      "sha256": "a9e98422d6c185e3408f3f54c620970c270ce87b2734333c4e070f746dffd07f"
+      "report_id": "tiny_pointer_a985_all_open_sector_normalization_fixture_atlas",
+      "sha256": "1efa8e41024b33146952eab58eda3218a246ff7b66b6513132aec5a584c1fd6d"
     },
     "top_seam_6": {
-      "path": "data/invariants/d20/theorems/tiny_pointer_a985_source_basis_convention/report.json",
-      "primary_cluster": "quotient_support_orbit",
-      "report_id": "tiny_pointer_a985_source_basis_convention",
-      "sha256": "15702298c0baf66900efb7a7873a290b6699215409c273ca51eb7f1324621af5"
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_sector5_normalization_solver_selftest/report.json",
+      "primary_cluster": "sector_anomaly_ward",
+      "report_id": "tiny_pointer_a985_sector5_normalization_solver_selftest",
+      "sha256": "e5277d78a4f8950bc51b94e400641540abf138bee5b4b9e72667751e37df275f"
     },
     "top_seam_7": {
-      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_transport_families/report.json",
-      "primary_cluster": "sector_anomaly_ward",
-      "report_id": "full_exposure_zero_pair_sourced_balance_transport_families",
-      "sha256": "aea8ef5d7ba3013c460ee46aee3baf9b38d6e37cd705c161c5f353aeacf73d80"
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_burning_static_designed_frame_section/report.json",
+      "primary_cluster": "automorphic_fourier_string",
+      "report_id": "tiny_pointer_a985_burning_static_designed_frame_section",
+      "sha256": "a56887befa15260d3c26932ca82e27b4d767db7228f0fcd410065807fa462362"
     },
     "top_seam_8": {
-      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration/report.json",
-      "primary_cluster": "quotient_support_orbit",
-      "report_id": "full_exposure_zero_pair_sourced_balance_c2_cubical_agda_enumeration",
-      "sha256": "0c426ad369f5e7ab10a58fa229c8f710f819a29cde6220d9000190287d547bb8"
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_gl_d_ambiguity_mechanism/report.json",
+      "primary_cluster": "sector_anomaly_ward",
+      "report_id": "tiny_pointer_a985_gl_d_ambiguity_mechanism",
+      "sha256": "1043d52ae5c7efbebf37c4c6766353894361210fb60ea6de3213c3ad0a669ad6"
     },
     "top_seam_9": {
-      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_cone/report.json",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_extension/report.json",
       "primary_cluster": "sector_anomaly_ward",
-      "report_id": "full_exposure_zero_pair_sourced_balance_cone",
-      "sha256": "9b5396f1b17470cd752b698dd8d40b4dae10c6114c11fa89dcca1cf68f9f559f"
+      "report_id": "d20_oriented_matroid_sector33_extension",
+      "sha256": "8f1e954c7dc92b4c9be5c89259c9988f916e276c682cad62ea8f55e43c67e819"
     },
     "validator": {
       "path": "src/certify_long_cluster.py",
       "sha256": "a65c86ca82f6c1e2d8784c46588074fc729da5f36f383d1f2198efdb197df52f"
     }
   },
-  "manifest_sha256": "4cf25a0aefe31e651a412e5b163d44a52d6cf2ae18b2a406764d0b9f5aec9148",
+  "manifest_sha256": "1c7369141b49fd2a63fef5da5db46cbed10b8cdec22bf0c15dc4454b7e93c1c0",
   "name": "long_cluster",
   "outputs": {
     "certificate": "data/invariants/d20/proof_obligations/long_cluster/cert.json",
@@ -193,7 +223,7 @@
     "seam_csv": "data/invariants/d20/proof_obligations/long_cluster/seam.csv",
     "tables": "data/invariants/d20/proof_obligations/long_cluster/tables.npz"
   },
-  "report_sha256": "99eb6d49807e87e4b7c22dbc42652fef66f50363dfeb526c144350f6facd7572",
+  "report_sha256": "560d08a772a73924d2b7eeafc44c8b58d3a89c409cdfc01926c505772896bc00",
   "schema": "long.cluster.manifest@1",
   "status": "LONG_CLUSTER_CERTIFIED"
 }

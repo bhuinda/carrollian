@@ -1,0 +1,345 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "78c8ec79c98c888ec9a4476f2a91ff871477d64d2829771f8f50e23fa556044d",
+  "checks": {
+    "all_985_relations_touch_full_modes": true,
+    "all_nonidentity_relations_leak": true,
+    "direct_compressed_map_fails_multiplicativity": true,
+    "direct_relation_restrictions_do_not_match_target_actions": true,
+    "full_exposure_frame_is_certified": true,
+    "full_mode_count_is_40": true,
+    "only_six_relations_preserve_full_modes": true,
+    "packet_graph_is_certified": true,
+    "preserving_relations_are_tube_object_identities": true,
+    "projective_packet_table_is_certified": true,
+    "q12_preserving_class_is_identity_pair": true,
+    "q42_preserving_classes_are_only_identity_singletons": true,
+    "q42_q12_aggregates_do_not_match_target_actions": true,
+    "tube_input_is_certified": true
+  },
+  "claim": "Under the literal current label hypothesis mode_mask == raw point id, the A985 relation basis does not supply a labelled packet bridge. All 985 relations touch the 40 full-exposure modes, but 979 leak out of that subspace; the only six preserving relations are exactly the tube object identity relations. No direct relation restriction, q42 aggregate, or q12 aggregate equals the certified packet actions 2I, 4S, or 2I+4S, and the compressed relation map fails A985 multiplication on relation product 53*291.",
+  "definition": {
+    "direct_label_hypothesis": "Use each full-exposure packet mode mask as the raw point id with the same integer value, restrict each A985 relation orbital to those 40 raw points, then aggregate the restricted 40-mode action to the 20 packet basis.",
+    "scope": "This is a no-go for the literal current labels only; it does not rule out a future nontrivial point-to-mode relabelling or an externally supplied relation/object/q42/q12-to-packet projection.",
+    "target_actions": [
+      "2I",
+      "4S",
+      "2I+4S"
+    ]
+  },
+  "derived": {
+    "direct_bridge_summary": {
+      "block_landing_relation_count": 28,
+      "direct_compressed_map_is_multiplicative": false,
+      "full_exposure_mode_count": 40,
+      "full_exposure_packet_count": 20,
+      "label_hypothesis": "mode_mask_equals_raw_point_id",
+      "leaking_relation_count": 979,
+      "preserving_relation_ids": [
+        6,
+        163,
+        227,
+        349,
+        618,
+        893
+      ],
+      "q12_preserving_class_ids": [
+        1
+      ],
+      "q42_preserving_class_ids": [
+        2,
+        3
+      ],
+      "quotient_target_action_matches": {
+        "q12": {
+          "2I": [],
+          "2I+4S": [],
+          "4S": []
+        },
+        "q42": {
+          "2I": [],
+          "2I+4S": [],
+          "4S": []
+        }
+      },
+      "raw_relation_count": 985,
+      "relation_target_action_matches": {
+        "2I": [],
+        "2I+4S": [],
+        "4S": []
+      },
+      "relations_preserving_full_packet_modes_on_source": 6,
+      "relations_touching_full_packet_modes": 985,
+      "relations_with_inside_hits": 628,
+      "tube_identity_relation_ids": [
+        6,
+        163,
+        227,
+        349,
+        618,
+        893
+      ],
+      "zero_source_hit_relation_count": 0
+    },
+    "multiplicativity_violation": {
+      "diff_l1": 70,
+      "diff_nonzero_entries": 14,
+      "first_difference": {
+        "col": 6,
+        "diff": -8,
+        "lhs": 0,
+        "rhs": 8,
+        "row": 4
+      },
+      "left_relation_id": 53,
+      "lhs_nonzero_entries": 6,
+      "rhs_nonzero_entries": 8,
+      "rhs_term_count": 1,
+      "rhs_terms_head": [
+        [
+          0,
+          8
+        ]
+      ],
+      "right_relation_id": 291
+    },
+    "preserving_relation_rows": [
+      {
+        "block_i": 0,
+        "block_j": 0,
+        "inside_hits": 11,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 10,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "q12_class": 3,
+        "q42_class": 6,
+        "relation_id": 6,
+        "source_hits": 11,
+        "source_leak": 0,
+        "target_hits": 11,
+        "target_leak": 0
+      },
+      {
+        "block_i": 1,
+        "block_j": 1,
+        "inside_hits": 4,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 4,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "q12_class": 3,
+        "q42_class": 7,
+        "relation_id": 163,
+        "source_hits": 4,
+        "source_leak": 0,
+        "target_hits": 4,
+        "target_leak": 0
+      },
+      {
+        "block_i": 2,
+        "block_j": 2,
+        "inside_hits": 3,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 3,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "q12_class": 1,
+        "q42_class": 2,
+        "relation_id": 227,
+        "source_hits": 3,
+        "source_leak": 0,
+        "target_hits": 3,
+        "target_leak": 0
+      },
+      {
+        "block_i": 3,
+        "block_j": 3,
+        "inside_hits": 8,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 8,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "q12_class": 1,
+        "q42_class": 3,
+        "relation_id": 349,
+        "source_hits": 8,
+        "source_leak": 0,
+        "target_hits": 8,
+        "target_leak": 0
+      },
+      {
+        "block_i": 4,
+        "block_j": 4,
+        "inside_hits": 7,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 6,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "q12_class": 5,
+        "q42_class": 10,
+        "relation_id": 618,
+        "source_hits": 7,
+        "source_leak": 0,
+        "target_hits": 7,
+        "target_leak": 0
+      },
+      {
+        "block_i": 5,
+        "block_j": 5,
+        "inside_hits": 7,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 6,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "q12_class": 5,
+        "q42_class": 11,
+        "relation_id": 893,
+        "source_hits": 7,
+        "source_leak": 0,
+        "target_hits": 7,
+        "target_leak": 0
+      }
+    ],
+    "preserving_relation_rows_sha256": "4cabfb52ff272e4f741d9a4398aaad2950f34b054d6846c296610a8f795ae2b7",
+    "q12_preserving_class_rows": [
+      {
+        "class_id": 1,
+        "inside_hits": 11,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 11,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "quotient": "q12",
+        "relation_count": 2,
+        "relation_ids": [
+          227,
+          349
+        ],
+        "source_hits": 11,
+        "source_leak": 0,
+        "target_action_matches": []
+      }
+    ],
+    "q12_preserving_class_rows_sha256": "47ce2e03241bfc0328ebca51ac522ff3a1b1fdd1a18c396c21b19b9ecc457967",
+    "q42_preserving_class_rows": [
+      {
+        "class_id": 2,
+        "inside_hits": 3,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 3,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "quotient": "q42",
+        "relation_count": 1,
+        "relation_ids": [
+          227
+        ],
+        "source_hits": 3,
+        "source_leak": 0,
+        "target_action_matches": []
+      },
+      {
+        "class_id": 3,
+        "inside_hits": 8,
+        "lands_in_Mat_2_Q_power_10": true,
+        "nonzero_packet_entries": 8,
+        "off_block_mass": 0,
+        "preserves_full_packet_modes_on_source": true,
+        "quotient": "q42",
+        "relation_count": 1,
+        "relation_ids": [
+          349
+        ],
+        "source_hits": 8,
+        "source_leak": 0,
+        "target_action_matches": []
+      }
+    ],
+    "q42_preserving_class_rows_sha256": "6131600a36973bbb4e63f3d35eab8c2f946977104e6ece1a89f2bee88d9019e2",
+    "relation_touch_histogram": {
+      "inside_hit_histogram": {
+        "0": 357,
+        "1": 210,
+        "10": 3,
+        "11": 1,
+        "2": 173,
+        "3": 93,
+        "4": 77,
+        "5": 28,
+        "6": 27,
+        "7": 14,
+        "8": 2
+      },
+      "source_hit_histogram": {
+        "11": 2,
+        "12": 4,
+        "126": 124,
+        "128": 114,
+        "132": 33,
+        "14": 4,
+        "16": 9,
+        "192": 63,
+        "21": 18,
+        "24": 6,
+        "264": 87,
+        "28": 2,
+        "3": 4,
+        "32": 38,
+        "33": 2,
+        "4": 2,
+        "42": 110,
+        "44": 3,
+        "48": 20,
+        "6": 2,
+        "63": 32,
+        "64": 74,
+        "66": 12,
+        "7": 6,
+        "8": 8,
+        "84": 158,
+        "96": 48
+      },
+      "source_leak_zero_count": 6
+    }
+  },
+  "inputs": {
+    "fourier_screen0_tube_central_element_report": {
+      "path": "data/invariants/d20/theorems/fourier_screen0_tube_central_element/report.json",
+      "sha256": "366ef6d4a81743163b80e6025923b256432dc7b6f0768c927c7a81721e23e278"
+    },
+    "full_exposure_canonical_labelled_frame_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_canonical_labelled_frame/report.json",
+      "sha256": "7a08d667b81a7df1e28cc5564c2e7dc5de6273104e02afc20bcb609ce9726cc1"
+    },
+    "full_exposure_packet_propagation_graph_report": {
+      "path": "data/invariants/d20/theorems/full_exposure_packet_propagation_graph/report.json",
+      "sha256": "c115c85c7125e3b89ec5120c55cc6c4db5364bd8a026e20d78fac42af2371b82"
+    },
+    "halloween_npz": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "projective_packet_spectral_charge_table_report": {
+      "path": "data/invariants/d20/theorems/projective_packet_spectral_charge_table/report.json",
+      "sha256": "fc02aab1cb58fe2473cb8c7997ed094c893ce3f0b6979d5f695b8150de610875"
+    },
+    "quotients_npz": {
+      "path": "data/raw/quotients.npz",
+      "sha256": "7017defffeab937e979ddb5c483f34ee77d5308deb6a10f35a4114618e04302a"
+    },
+    "relation_memberships_npz": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    }
+  },
+  "interpretation": {
+    "negative_boundary": "The direct raw-point interpretation of packet mode masks is not the missing A985/tube/q42/q12 bridge.",
+    "next_test_shape": "Any future bridge must provide explicit columns before SNF or A985 multiplication tests can certify a quotient action.",
+    "what_remains_open": "A nontrivial certified point-to-mode relabelling or a separately emitted relation/object/q42/q12 packet projection could still exist."
+  },
+  "next_highest_yield_item": "Search for a nontrivial point-to-mode relabelling using the object and q42/q12 labels; the literal mode-mask/raw-point identification is now certified as a no-go.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_a985_direct_packet_bridge_obstruction",
+  "status": "D20_A985_DIRECT_PACKET_BRIDGE_OBSTRUCTION_CERTIFIED"
+}

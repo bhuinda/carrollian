@@ -1,0 +1,186 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1be32cf6bb8590659e28589fa2bef3b5846ff5b6de728fe1e34743fb40470224",
+  "checks": {
+    "all_input_reports_certified": true,
+    "decision_rows_pass": true,
+    "finite_metric_readouts_certified": true,
+    "guarded_gate_decision_exact": true,
+    "no_surface_claims_gr": true,
+    "table_shapes_match": true,
+    "time_chain_guard_preserved": true
+  },
+  "claim": "long_metric_gate unites the certified finite time chain with the certified finite d20 metric readouts under an explicit guard. The normal-form time map, Lorentzian quotient scaffold, boundary atlas, hyperbolic graph, Poincare chart, and stress-neighborhood graph may be used together as a guarded finite metric pathway. The semantic edge-operation obstruction from long_time_sem remains active, so this gate forbids treating the normal-form ticks as A985-alone semantic transition operations and does not certify a smooth Lorentzian metric or GR.",
+  "closure_boundary": {
+    "certifies": [
+      "the finite time quotient and normal-form clock can be combined with finite boundary metric readouts only under the long_time_sem guard",
+      "the certified d20 boundary atlas, hyperbolic graph, Poincare chart, and stress graph form a guarded finite metric pathway surface",
+      "normal-form ticks are not accepted as A985 semantic transition operations",
+      "semantic edge-operation realization remains obstructed in the current artifact boundary",
+      "an owner-boundary contact lift is the next required semantic bridge before an A985-alone metric certificate"
+    ],
+    "does_not_certify_because_guarded_or_open": [
+      "a semantic A985 operation for each recurrence edge",
+      "a physical stress-energy tensor",
+      "a nondegenerate smooth Lorentzian metric tensor",
+      "a 3+1 spacetime reduction from the 1+19 public split",
+      "Riemann/Ricci curvature, Einstein tensor, or Einstein field equations"
+    ]
+  },
+  "inputs": {
+    "atlas": {
+      "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json",
+      "sha256": "c4a06fe54ede9305984391a4be10808467321d29003b68efb93b21b672982e95",
+      "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_long_metric_gate.py",
+      "sha256": "408172edf787041e5a8f44b2224d737c73651c87a2ef9137f7e6a1634fca73f4"
+    },
+    "hyperbolic": {
+      "certificate_sha256": "02d8b6aa60935b68b3c5d25d832edf6a07bd8d01c6be80f42236d063ae9e074d",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_hyperbolic_boundary_graph/report.json",
+      "sha256": "0db6e8089c4cf3fe6bf0a657dd6fa2eef81765e11a1df49d2f8ecceb1c713682",
+      "status": "C985_D20_HYPERBOLIC_BOUNDARY_GRAPH_CERTIFIED"
+    },
+    "long_gr": {
+      "certificate_sha256": "aecf525a78c91db54de3db8946e270a9ba6f91c5e5a0f443f2d96a1d8f9e7a0a",
+      "path": "data/invariants/d20/proof_obligations/long_gr/report.json",
+      "sha256": "9ede5e034b7a7c3d38e2e506af80691d2719a914d1aadf941f7d64272b846545",
+      "status": "LONG_GR_PATHWAY_CERTIFIED"
+    },
+    "long_lor": {
+      "certificate_sha256": "08451ad1385ee9ba61a148945131e4222bd12ee3d3e887db92a15dc1c07ee033",
+      "path": "data/invariants/d20/proof_obligations/long_lor/report.json",
+      "sha256": "cdb1b95bddd365de9b7ab2a033a48ebee15b3b048f87fe3290ea1cc6c6318d6f",
+      "status": "LONG_LOR_CERTIFIED"
+    },
+    "long_time_map": {
+      "certificate_sha256": "b40ba13849c68c86d96c8457f1783ed29d5e335093656df680eb560eae17f78a",
+      "path": "data/invariants/d20/proof_obligations/long_time_map/report.json",
+      "sha256": "1c56d0252405469cca73c6d73699453494b6dfd66d7eb9f13a4a02ed758a1b51",
+      "status": "LONG_TIME_MAP_CERTIFIED"
+    },
+    "long_time_sem": {
+      "certificate_sha256": "4b3128bf8c81b3ddfc155e8db7730e07bb3124e9b9b428655d7b684b2c7397b1",
+      "path": "data/invariants/d20/proof_obligations/long_time_sem/report.json",
+      "sha256": "e6f7d54580409c8d061440c2ae8b0919172dfd2e67195c9e4b7cb286f2c5dfc1",
+      "status": "LONG_TIME_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "poincare": {
+      "certificate_sha256": "6c01e4b1a2b65eb962be473f5752cc9ec93c5a273da84ee9ed2240ea8560769e",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_poincare_embedding/report.json",
+      "sha256": "0a1f0b8197236305d98c6b93e9c8b1b0963ae2d8a89d7661697ac61d1f09ce55",
+      "status": "C985_D20_POINCARE_EMBEDDING_CERTIFIED"
+    },
+    "stress": {
+      "certificate_sha256": "e52211930ae30a3a9e0e3285905f355f418f726165903178b1975d3a7c1f4930",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/report.json",
+      "sha256": "8e04b2a9a97b0b86ed29586e35678698652c72dce71ab4288d4bc1ffc9f5bc87",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_metric_gate.py",
+      "sha256": "e8534322d08ef4031d2afc7dd764828cb08ea93d59301cfa0724d136072dffbf"
+    }
+  },
+  "next_highest_yield_item": "Build long_contact_lift: materialize owner-boundary contact rows for each recurrence edge, relating the graph adjacency event to explicit A985-backed endpoint/contact data before any stronger semantic metric claim.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_metric_gate/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_metric_gate/decision.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_metric_gate/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_metric_gate/manifest.json",
+    "metric_gate": "data/invariants/d20/proof_obligations/long_metric_gate/metric_gate.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_metric_gate/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_metric_gate/report.json",
+    "surface_csv": "data/invariants/d20/proof_obligations/long_metric_gate/surface.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_metric_gate/tables.npz"
+  },
+  "schema": "long.metric_gate.report@1",
+  "stage_protocol": {
+    "closure": "certify a guarded finite metric pathway gate without claiming A985 semantic metric closure or GR",
+    "coherence": "check input statuses, time obstruction guard, finite metric counts, stress-neighborhood shape, and table hashes",
+    "draft": "read long_gr, long_lor, long_time_map, long_time_sem, atlas, hyperbolic, Poincare, and stress reports",
+    "emit": "write long_metric_gate artifacts and verifier hook",
+    "witness": "emit metric-surface rows, gate-decision rows, and open metric/GR gap rows"
+  },
+  "status": "LONG_METRIC_GATE_CERTIFIED",
+  "witness": {
+    "classification": "guarded_finite_metric_pathway_gate",
+    "decision_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "hyperbolic_johnson_edge_count",
+      "11": "poincare_atom_count",
+      "12": "stress_graph_node_count",
+      "13": "guarded_finite_metric_gate_flag",
+      "14": "a985_semantic_metric_gate_flag",
+      "15": "contact_lift_required_flag",
+      "16": "smooth_lorentzian_metric_flag",
+      "17": "gr_derivation_flag",
+      "2": "formal_metric_surface_count",
+      "3": "semantic_metric_surface_count",
+      "4": "obstruction_surface_count",
+      "5": "recurrence_edge_count",
+      "6": "normal_form_tick_total",
+      "7": "semantic_edge_operation_flag",
+      "8": "semantic_obstruction_flag",
+      "9": "boundary_atom_count"
+    },
+    "decision_table_sha256": "bbcaeb58cd3f2e1d42a4e097eb870489e6edc808e5673f895fd572fcdf345330",
+    "decision_text_sha256": "5d7eb5854f872877f8b16c450e651672aa50ce527407d46259ad5817afbb4b05",
+    "gap_code_map": {
+      "0": "semantic_edge_operation_realization_from_a985",
+      "1": "owner_boundary_contact_lift",
+      "2": "physical_stress_energy_tensor",
+      "3": "nondegenerate_smooth_lorentzian_metric",
+      "4": "four_dimensional_spacetime_reduction",
+      "5": "curvature_and_einstein_tensor"
+    },
+    "gap_table_sha256": "60175eb8535afb6f2ca258086340a066c2c819de1a2ab722c8eee236041d5751",
+    "gap_text_sha256": "bfebfc7b46903332db0f6b5b7a1be69b3f5a009eaf274b6864afbd9950268d54",
+    "name": "long_metric_gate",
+    "observable_table_sha256": "f78d3aa06a71c451f528517f568ef933bfe2701c2e465a7364c0e41ba549f3ca",
+    "role_code_map": {
+      "0": "gr_pathway_boundary",
+      "1": "time_scaffold",
+      "2": "normal_form_clock",
+      "3": "semantic_guard",
+      "4": "boundary_geometry",
+      "5": "finite_metric_readout",
+      "6": "finite_chart_readout",
+      "7": "finite_stress_readout"
+    },
+    "summary": {
+      "a985_semantic_metric_gate_flag": 0,
+      "boundary_atom_count": 20,
+      "contact_lift_required_flag": 1,
+      "formal_metric_surface_count": 6,
+      "gr_derivation_flag": 0,
+      "guarded_finite_metric_gate_flag": 1,
+      "hyperbolic_johnson_edge_count": 90,
+      "input_certified_count": 8,
+      "input_report_count": 8,
+      "next_gap": "owner_boundary_contact_lift",
+      "normal_form_tick_total": 642,
+      "poincare_atom_count": 20,
+      "recurrence_edge_count": 642,
+      "semantic_metric_surface_count": 0,
+      "smooth_lorentzian_metric_flag": 0,
+      "stress_graph_node_count": 20
+    },
+    "surface_code_map": {
+      "0": "a985_gr_pathway",
+      "1": "lorentzian_time_quotient",
+      "2": "normal_form_time_map",
+      "3": "semantic_edge_obstruction",
+      "4": "d20_boundary_atlas",
+      "5": "hyperbolic_boundary_graph",
+      "6": "poincare_disk_chart",
+      "7": "stress_neighborhood_graph"
+    },
+    "surface_table_sha256": "b242d682a29c5edebc127cacaeb5d33100d7e6d681b7a3fe4c3e9fbfb33e0c36",
+    "surface_text_sha256": "8a2edfccd31eabe035edf45b617694a599ce2f8933b3cd9ffbf00d3b26435fbc"
+  }
+}

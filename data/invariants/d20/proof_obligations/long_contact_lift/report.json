@@ -1,0 +1,144 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ddae7da581bfbabd509cb9e1804a24b3bb66b422ed20108fe2b9ca410b97db4d",
+  "checks": {
+    "all_edge_counts_verified": true,
+    "contact_counts_exact": true,
+    "contact_lift_not_semantic_operation": true,
+    "long_rec_input_certified": true,
+    "metric_gate_input_certified": true,
+    "owner_grid_shape_exact": true,
+    "raw_endpoint_support_exact": true,
+    "sample_contacts_match_nonzero_axes": true,
+    "table_shapes_match": true,
+    "time_sem_guard_preserved": true
+  },
+  "claim": "long_contact_lift materializes the owner-boundary contact layer behind the long_rec recurrence graph: every one of the 642 graph edges has exact source0/source1 boundary-contact counts recomputed from the 985x985 owner grid, a representative contact coordinate on every nonzero contact axis, and A985 raw-backed endpoint triples on both sides. This closes the owner-boundary contact lift required by long_metric_gate, while preserving that contacts are not yet semantic A985 transition operations.",
+  "closure_boundary": {
+    "certifies": [
+      "all 259 owner endpoints are A985 raw tensor triples",
+      "all 642 recurrence graph edges have exact owner-grid contact counts",
+      "source0/source1 contact totals are 12,707 and 5,410, summing to 18,117 boundary contacts",
+      "each nonzero contact axis has a representative owner-grid coordinate witness",
+      "the owner-boundary contact lift required by long_metric_gate is closed"
+    ],
+    "does_not_certify_because_open": [
+      "a semantic A985 transition operation for each contact-lifted recurrence edge",
+      "a physical stress-energy tensor",
+      "a nondegenerate smooth Lorentzian metric tensor",
+      "a 3+1 spacetime reduction from the 1+19 public split",
+      "Riemann/Ricci curvature, Einstein tensor, or Einstein field equations"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_contact_lift.py",
+      "sha256": "b01aa264206d3afc4121a88a3cb6e177439346c97e1c128f1979fec298d1c4dd"
+    },
+    "long_metric_gate": {
+      "certificate_sha256": "1be32cf6bb8590659e28589fa2bef3b5846ff5b6de728fe1e34743fb40470224",
+      "path": "data/invariants/d20/proof_obligations/long_metric_gate/report.json",
+      "sha256": "c18755a234061643570d2529dd2c3a51f45eb31c9532a4c7c58a4cf2d03dd5ca",
+      "status": "LONG_METRIC_GATE_CERTIFIED"
+    },
+    "long_rec": {
+      "certificate_sha256": "70efcdd66a54fd1926d55ae4c4c74b79f8c930bff2c91cb43215f5c5bfc341ae",
+      "path": "data/invariants/d20/proof_obligations/long_rec/report.json",
+      "sha256": "1e4b5fbc086a95cd6b9bf929d804e71b483643dfd884355ef75a54248eb9c08b",
+      "status": "LONG_REC_CERTIFIED"
+    },
+    "long_rec_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/edge.csv",
+      "row_count": 642,
+      "sha256": "61893f78f1847d01a72f56002a51c694d07120b82676167bf40f2ceb6d49017d"
+    },
+    "long_rec_owner": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/owner.csv",
+      "row_count": 259,
+      "sha256": "11703fdea12e11ff7421a0204c38d92a7bb80f6a56389c2a622d62b78ef83e8d"
+    },
+    "long_rec_tables": {
+      "path": "data/invariants/d20/proof_obligations/long_rec/tables.npz",
+      "sha256": "2d581742fea434038440cce1d2eb0215e00e71cd31d8e988f0d4b996b81923e0"
+    },
+    "long_time_sem": {
+      "certificate_sha256": "4b3128bf8c81b3ddfc155e8db7730e07bb3124e9b9b428655d7b684b2c7397b1",
+      "path": "data/invariants/d20/proof_obligations/long_time_sem/report.json",
+      "sha256": "e6f7d54580409c8d061440c2ae8b0919172dfd2e67195c9e4b7cb286f2c5dfc1",
+      "status": "LONG_TIME_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "raw_index": {
+      "path": "data/raw/index.json",
+      "sha256": "421ccdeed11812ed5d2c25efd0858a178b7061eae2f003b8b857d46465bef7c4"
+    },
+    "raw_tensor": {
+      "column_count": 4,
+      "path": "data/raw/Halloween.npz",
+      "row_count": 1414965,
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_contact_lift.py",
+      "sha256": "a9ec66b71a87e8c16a967c1445586c1ddc4f9876f8a0d0df79649350aad2b0e6"
+    }
+  },
+  "next_highest_yield_item": "Build long_transition_sem: decide whether owner-boundary contacts can be promoted to semantic A985 transition operations, or certify the remaining obstruction as a distinct operation-realization gap.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_contact_lift/cert.json",
+    "contact_csv": "data/invariants/d20/proof_obligations/long_contact_lift/contact.csv",
+    "contact_lift": "data/invariants/d20/proof_obligations/long_contact_lift/contact_lift.json",
+    "endpoint_csv": "data/invariants/d20/proof_obligations/long_contact_lift/endpoint.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_contact_lift/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_contact_lift/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_contact_lift/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_contact_lift/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_contact_lift/tables.npz"
+  },
+  "schema": "long.contact_lift.report@1",
+  "stage_protocol": {
+    "closure": "certify owner-boundary contact lift without claiming semantic transition operations or GR",
+    "coherence": "check endpoint raw support, owner-grid shape, exact axis contact counts, sample coordinates, and table hashes",
+    "draft": "read long_metric_gate, long_time_sem, long_rec owner/edge rows, owner_grid, and raw tensor",
+    "emit": "write long_contact_lift artifacts and verifier hook",
+    "witness": "emit raw-backed endpoint rows and per-edge owner-boundary contact rows"
+  },
+  "status": "LONG_CONTACT_LIFT_CERTIFIED",
+  "witness": {
+    "classification": "owner_boundary_contact_lift",
+    "contact_table_sha256": "172c344320bffdc160fcedd4fb449887398d96829148e67089424bdf102a3199",
+    "contact_text_sha256": "ff3869e5390ecbadd02a59939c1be0a23a823f4f66d9fe2a9a58be1376dc0ef1",
+    "endpoint_table_sha256": "5e62b562a26bc37f4d5b8e9782f1cb7a5b62619ec10f94da874ff64caae963f4",
+    "endpoint_text_sha256": "4743a1b98ce79d261ca9ae61fb521a3febe4ccbff9b3a6d85d4eb29e5da52723",
+    "gap_code_map": {
+      "0": "owner_boundary_contact_lift",
+      "1": "semantic_operation_from_contact_lift",
+      "2": "physical_stress_energy_tensor",
+      "3": "nondegenerate_smooth_lorentzian_metric",
+      "4": "four_dimensional_spacetime_reduction",
+      "5": "curvature_and_einstein_tensor"
+    },
+    "gap_table_sha256": "9d32beb704d60bfbd66c5e2d8f3f8f04ae6174f85797af444ceadea446f05ac4",
+    "gap_text_sha256": "19d9767ead0bfbeefc0103feb1ec2b1df6f1d85007fecdd94c2981b5a7d076b4",
+    "name": "long_contact_lift",
+    "observable_table_sha256": "192c24dd546eab6a58078768a061df56e27287095f99264989dae38e0a0d041d",
+    "owner_grid_sha256": "3b225d0e85f3bd5bb67f3fc9f658c5da8c99e537432baf902060d773e4bbbddc",
+    "raw_tensor_sha256": "6d3434bc5a8b5837ca7b8a860d8e8cb1c4e9d871da1982245186adea73bccc11",
+    "summary": {
+      "boundary_contact_sum": 18117,
+      "contact_edge_count": 642,
+      "contact_lift_certified_flag": 1,
+      "contact_lift_edge_count": 642,
+      "endpoint_raw_count": 259,
+      "next_gap": "semantic_operation_from_contact_lift",
+      "owner_grid_shape": [
+        985,
+        985
+      ],
+      "owner_row_count": 259,
+      "recurrence_edge_count": 642,
+      "semantic_operation_certified_flag": 0,
+      "source0_contact_sum": 12707,
+      "source1_contact_sum": 5410
+    }
+  }
+}

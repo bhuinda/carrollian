@@ -1,0 +1,98 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e1687d555e3e1775bc6977a4ea711c9164ba27cbe127f60938dca3cf8ad82b06",
+  "checks": {
+    "complement_comparison_exact": true,
+    "cycle_shape_exact": true,
+    "metric_comparison_not_physical_spacetime": true,
+    "stress_cycle_overlap_exact": true,
+    "stress_graph_shape_exact": true,
+    "stress_input_certified": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_stress20 compares the certified 20-node stress-neighborhood graph with the canonical atom-id 20-gon. The stress graph is not the 20-gon: it has 64 undirected edges, contains 10 of the 20 cycle edges, and has undirected diameter 4 rather than 10. It does contain all 10 certified complement pairs, but those complements are not the canonical 20-gon antipodes.",
+  "closure_boundary": {
+    "certifies": [
+      "finite comparison against the canonical atom-id 20-gon",
+      "the stress graph is a connected 20-node graph with 100 directed and 64 undirected stress-neighborhood edges",
+      "the stress graph overlaps 10 of 20 undirected 20-gon cycle edges",
+      "the stress graph contains all 10 complement pairs",
+      "the certified complement pairing is not the 20-gon antipode pairing"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "that the stress graph is the physical spacetime circle",
+      "that the atom-id 20-gon is a physical spatial slice",
+      "a physical stress-energy tensor",
+      "a smooth Lorentzian metric or Einstein equation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_stress20.py",
+      "sha256": "fc809eb533b27bede666d6e729639984d5a99420b13e953b8998610350e33a57"
+    },
+    "stress": {
+      "certificate_sha256": "e52211930ae30a3a9e0e3285905f355f418f726165903178b1975d3a7c1f4930",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/report.json",
+      "sha256": "8e04b2a9a97b0b86ed29586e35678698652c72dce71ab4288d4bc1ffc9f5bc87",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "stress_artifact": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_neighborhood_stress_graph/artifact.json",
+      "sha256": "8b0fa599e688122a5c1d31fb1ce2f7774af2b090212a2587be4d62f9b068f0fc",
+      "status": "C985_D20_BOUNDARY_NEIGHBORHOOD_STRESS_GRAPH_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_stress20.py",
+      "sha256": "3ca525791a496f7a1cca9f3d0a80761c76cdac27c7b3fb8d0d21ac050e0494b5"
+    }
+  },
+  "next_highest_yield_item": "Build long_stress_gate using this comparison: treat the stress graph as a dense finite stress-neighborhood surface, not as a literal 20-gon, and keep physical stress-energy open.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_stress20/cert.json",
+    "complement_csv": "data/invariants/d20/proof_obligations/long_stress20/complement.csv",
+    "cycle_edge_csv": "data/invariants/d20/proof_obligations/long_stress20/cycle_edge.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_stress20/manifest.json",
+    "node_csv": "data/invariants/d20/proof_obligations/long_stress20/node.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_stress20/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_stress20/report.json",
+    "stress20": "data/invariants/d20/proof_obligations/long_stress20/stress20.json",
+    "tables": "data/invariants/d20/proof_obligations/long_stress20/tables.npz"
+  },
+  "schema": "long.stress20.report@1",
+  "stage_protocol": {
+    "closure": "certify the finite graph comparison without claiming physical spacetime cyclicity",
+    "coherence": "check edge counts, overlap counts, complement counts, connectivity, diameter, and table hashes",
+    "draft": "read the certified d20 stress-neighborhood graph",
+    "emit": "write long_stress20 artifacts and verifier hook",
+    "witness": "emit per-node cycle/complement rows, cycle-edge overlap rows, and complement-pair rows"
+  },
+  "status": "LONG_STRESS20_CERTIFIED",
+  "witness": {
+    "classification": "stress_graph_to_canonical_20gon_comparison",
+    "complement_table_sha256": "aa6eb52602bfaa08d638b04e5d2fc2a3816c82f6240a6a7f7a00a865b2e67b28",
+    "complement_text_sha256": "354256430a6be34eccbf044d9b8697e2345f795b5e886d324041f1ce4bbc25ec",
+    "cycle_edge_table_sha256": "a6ce35df23a0495ba8611f8c6caad26001d81f6c42635946fb7e22e7edf3721f",
+    "cycle_edge_text_sha256": "dfe70d53b64cf04ebf7fc99c4ea940d860ebe3a1dd212f95685109afb0022f66",
+    "name": "long_stress20",
+    "node_table_sha256": "6c86e202108163db6515b520e5ba26211ada12ea5871303144b40c29adc4321a",
+    "node_text_sha256": "9aa757d09715b3bd739f52ae94205f83ce199e5788e4c3fda407e03004c5b1d9",
+    "observable_table_sha256": "e0b97ce5a02414b0c2f4c0c882e3f0eda4e0707b190cfca5748a5ed36e92b1bc",
+    "summary": {
+      "complement_cycle_antipode_pair_count": 0,
+      "complement_pair_count": 10,
+      "complement_stress_undirected_overlap_count": 10,
+      "cycle_undirected_edge_count": 20,
+      "cycle_undirected_missing_count": 10,
+      "cycle_undirected_overlap_count": 10,
+      "next_gap": "long_stress_gate",
+      "physical_spacetime_20gon_flag": 0,
+      "stress_contains_all_complements_flag": 1,
+      "stress_directed_edge_count": 100,
+      "stress_equals_20gon_flag": 0,
+      "stress_node_count": 20,
+      "stress_undirected_diameter": 4,
+      "stress_undirected_edge_count": 64
+    }
+  }
+}

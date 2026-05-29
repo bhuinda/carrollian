@@ -1,4 +1,4 @@
-Everything you see was built from scratch by prompt engineering a frontier LLM to rigorously calculate the *spectral configuration* of a 985-dimensional algebra from merely five megabytes of raw tensor data. All claims are sourced from the arbiter gates and the `d20.json`/`certificate.json` data.
+Everything you see was built from scratch by prompt engineering a frontier LLM to calculate the *spectral configuration* of a 985-dimensional algebra from only 5 MB of raw tensor data. All claims are sourced from the arbiter gates and `d20.json`/`certificate.json`.
 
 ![absolute cinema.](./assets/martin.png)
 
@@ -29,36 +29,44 @@ We study the infinitesimally rigid and discrete object with the following invari
 
 | N                            | Canonical type                                    | Mandate                                       |
 | ---------------------------- | ------------------------------------------------- | --------------------------------------------- |
-|                          `1` | `long_thm.bridge_count`                           | finite tensor-lookup theorem bridge           |
-|                          `3` | `code.hamming_count`                              | Hamming-code strata                           |
+|                          `1` | `long_thm.bridge_count`                           | oracle machine                                |
+|                          `3` | `code.hamming_count`                              | RM(1,3) / Hamming codes                       |
 |                          `4` | `eta6.margin_packet.component_count`              | eta6 margin-packet components                 |
 |                          `6` | `eta6.support_edge_count`                         | preserved eta6 aperture edges                 |
-|                          `8` | `long_llnind.layer_count`                         | certified LLN layers and matching seams       |
+|                          `8` | `long_llnind.layer_count`                         | certified LLN layers and seams                |
 |                         `10` | `inventory.provisional_report_count`              | provisional invariant reports                 |
 |                         `11` | `hcycle.homology_rank`                            | H-cycle homology rank                         |
 |                         `12` | `A12.class_count`                                 | Calabi-Yau descent classes                    |
 |                         `14` | `long_anom.resolved_surface_count`                | finite anomaly correction surfaces            |
 |                         `16` | `Spin12.chart_dimension`                          | pure-spinor / foam chart dimension            |
-|                         `19` | `integrity.public_kernel_dimension`               | public kernel dimension                       |
+|                         `17` | `long_binc.connected_edge_count`                  | focused boundary/Loop/packet edges            |
+|                         `19` | `integrity.public_kernel_dimension`               | visible kernel dimension                      |
 |                         `20` | `d20.boundary_rank`                               | public d20 face rank                          |
+|                         `21` | `long_psec.input_report_count`                    | focused A985 perennial-sector seam inputs     |
 |                         `22` | `long_orac.open_boundary_count`                   | focused oracle open boundaries                |
+|                         `23` | `long_c2uf.input_report_count`                    | focused C2UF seam input reports               |
 |                         `24` | `Leech.coordinate_dimension`                      | visible payload channels                      |
+|                         `25` | `long_binc.loop_step_atom_count`                  | compact Loop_297 step atoms                   |
 |                         `26` | `certificate.registry_count`                      | core certificate gates                        |
 |                         `27` | `clopen.level3_word_count`                        | realized ternary boundary words               |
+|                         `28` | `long_psec.connected_edge_count`                  | focused A985 sector-address seam edges        |
 |                         `29` | `long_orac.resolved_surface_count`                | focused oracle resolved surfaces              |
 |                         `30` | `d20.edge_count`                                  | icosahedral boundary edges                    |
 |                         `32` | `optics.spin_packet_dimension`                    | spin-packet aperture dimension                |
 |                         `34` | `A236.center_simple_count`                        | tube-center simple objects                    |
-|                         `35` | `integrity.integral_codimension`                  | public integral codimension                   |
+|                         `35` | `integrity.integral_codimension`                  | visible integral codimension                  |
 |                         `36` | `integrity.operation_algebra_dimension`           | operation algebra dimension                   |
 |                         `37` | `long_mat.resolved_surface_count`                 | explicit packet/matrix oracle surfaces        |
 |                         `39` | `C985.center_dimension`                           | full center dimension / half-braiding nullity |
 |                         `42` | `A42.class_count`                                 | Pin descent classes                           |
+|                         `56` | `long_cluster.seam_candidate_count`               | remaining multi-theme seam candidates         |
+|                         `57` | `long_cluster.unconsumed_certified_report_count`  | certified reports outside focused inputs      |
 |                         `62` | `A12.tensor_nonzero`                              | nonzero A12 product cells                     |
 |                         `64` | `tensor.coefficient_max`                          | maximum multiplication coefficient            |
 |                         `90` | `branching.triplet_ideal_dimension`               | simple-branching triplet ideal dimension      |
 |                         `91` | `W_D6.sum_m_i`                                    | Weyl reciprocity mass sum                     |
 |                         `96` | `long_paths.max_raw_support_fiber_digits`         | largest compressed raw-path fiber digits      |
+|                        `104` | `long_cluster.focused_consumed_report_count`      | certified reports consumed by focused inputs  |
 |                        `109` | `tube.primitive_idempotent_count`                 | closed-loop tube primitive idempotents        |
 |                        `120` | `coorient.marker_order`                           | lifted coorientation marker order             |
 |                        `128` | `optics.closed_area_weyl_cells`                   | Weyl cells per closed area packet             |
@@ -71,8 +79,8 @@ We study the infinitesimally rigid and discrete object with the following invari
 |                        `306` | `long_thm.universal_law_count`                    | universal LLN laws                            |
 |                        `340` | `A42.tensor_nonzero`                              | nonzero A42 product cells                     |
 |                        `384` | `H6.object_orbit_size.B_minus`                    | B- object orbit size                          |
-|                        `404` | `inventory.certified_report_count`                | certified invariant reports                   |
-|                        `414` | `inventory.report_count`                          | total invariant reports                       |
+|                        `418` | `inventory.certified_report_count`                | certified invariant reports                   |
+|                        `428` | `inventory.report_count`                          | total invariant reports                       |
 |                        `455` | `optics.closed_packet_count`                      | closed packets in E_d20                       |
 |                        `512` | `H6.object_orbit_size.S_minus`                    | S- object orbit size                          |
 |                        `576` | `H6.object_orbit_size.V_plus`                     | V+ object orbit size                          |
@@ -117,14 +125,17 @@ We study the infinitesimally rigid and discrete object with the following invari
 
 and denote this object by "`d20`".
 
-At a glance, `d20` is the icosahedral boundary algebra of the finite semisimple multifusion category `C985`. It may be intuited as the process ontology behind Fata Morgana–type condensation: thermally dependent optical projection with stratified boundary.
+At a glance, `d20` is the icosahedral boundary algebra of the finite semisimple multifusion category `C985`. It may be intuited as the process ontology behind mirage—type condensation: thermally dependent optical projections with stratified boundaries.
+
+---
 
 ![fata morgana.](./assets/fm.png)
+(RBTKTN, ![Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_Fata_Morgana_of_a_cargo_ship_seen_off_the_coast_of_Oceanside,_California.jpg))
 
-An alternative way to think about `d20` is to imagine a shape in your head (the red triangle being mildly iconic): `d20` is the object of study enabling calculus to directly probe **how** you induced that image into being, and **where** it exists relative to *hyperspace*. (Yes, I said *hyperspace*. We are talking about actual *hyperspace* in the year 2026.)
+An alternative way to think about `d20` is to imagine a shape in your head (the red triangle being mildly iconic): `d20` is the object of study enabling calculus to directly probe *how* you induced that image into being, and *where* it exists relative to **hyperspace**. (Yes, I said **hyperspace**. We are talking about actual **hyperspace** in the year 2026.)
 
 So, as is tradition: the proof is left to the ~~reader~~ arbiter.
-
+s
 ---
 
 # Computation
@@ -170,7 +181,7 @@ You may find yourself down the rabbit hole most quickly with the following lead-
 - "What basic ontology of the universe does d20 represent?"
 - "How do I find grounding in a d20-integrated world?"
 
-Those of you with a formal mathematics background will be greatly benefited by also consulting the following papers:
+Those of you with a formal mathematics background will be greatly benefited by also consulting the following materials:
 
 - [*Condensed Mathematics and Complex Geometry*](https://doi.org/10.48550/arXiv.2605.11731)
 - [*Sheaf theory: from deep geometry to deep learning*](https://doi.org/10.48550/arXiv.2502.15476)
@@ -181,7 +192,7 @@ What's *my* thesis, you ask?
 ---
 
 "The time between the notes relates the color to the scenes."
-― Jon Anderson, while blissed out of his marbles
+― Jon Anderson
 
 </details>
 

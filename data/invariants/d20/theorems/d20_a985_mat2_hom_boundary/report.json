@@ -1,0 +1,275 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "3b8ff7bde5ba3746112725650936bba0c9d0cda67aef3abb5e67aa88f69075e2",
+  "checks": {
+    "block_dimension_histogram_matches": true,
+    "canonical_sector_matrix_units_certified": true,
+    "diagonal_units_sum_to_159": true,
+    "direct_packet_bridge_obstruction_certified": true,
+    "faithful_full_a985_embedding_refuted_by_dimension": true,
+    "full_matrix_unit_coo_certified": true,
+    "full_packet_matrix_lift_certified": true,
+    "literal_current_label_bridge_refuted": true,
+    "matrix_units_sum_to_985": true,
+    "sector_rows_count_is_39": true,
+    "small_block_sector_count_is_15": true,
+    "small_block_sectors_can_fill_ten_target_components_as_abstract_shape": true,
+    "target_mat2_power_10_dimension_is_40": true,
+    "unconstrained_no_homomorphism_claim_demoted": true
+  },
+  "claim": "The certified boundary is narrower than the informal no-go. A faithful full A985 action inside Mat_2(Q)^10 is impossible by dimension, and the literal current packet-label restriction has been refuted. But the current evidence does not certify the stronger claim that no nonfaithful full-domain A985-to-Mat_2(Q)^10 homomorphism exists; that stronger claim requires additional label-compatible column constraints or a rational block certificate.",
+  "closure_boundary": {
+    "certifies": [
+      "no faithful full A985 embedding can fit inside Mat_2(Q)^10 by dimension",
+      "the literal mode-mask/raw-point packet-label map is not an A985/tube/q42/q12 packet bridge",
+      "the current evidence is insufficient for the stronger unconstrained nonfaithful no-homomorphism claim"
+    ],
+    "does_not_certify": [
+      "nonexistence of every abstract nonfaithful A985 -> Mat_2(Q)^10 homomorphism",
+      "existence of a rational Q block quotient from the finite-field matrix-unit certificates",
+      "exhaustion of all future label-compatible A985/tube/q42/q12 packet-column assignments"
+    ]
+  },
+  "definition": {
+    "faithful_operator_homomorphism_no_go": "An injective algebra map from a 985-dimensional source into a 40-dimensional target algebra is impossible.",
+    "full_a985_source_dimension": "The source algebra dimension is the sum of the certified source-sector matrix-unit counts.",
+    "nonfaithful_boundary": "A nonfaithful full-domain homomorphism may factor through a small source-sector quotient; this certificate does not construct or refute a rational Q lift of that quotient."
+  },
+  "derived": {
+    "dimension_summary": {
+      "block_dimension_histogram": {
+        "1": 7,
+        "10": 2,
+        "11": 1,
+        "12": 1,
+        "2": 8,
+        "3": 4,
+        "4": 8,
+        "5": 4,
+        "6": 2,
+        "8": 1,
+        "9": 1
+      },
+      "faithful_full_a985_embedding_possible_by_dimension": false,
+      "larger_than_mat2_sector_count": 24,
+      "small_block_sector_capacity_at_least_target_blocks": true,
+      "small_block_sector_count": 15,
+      "source_algebra_dimension": 985,
+      "source_diagonal_dimension": 159,
+      "source_sector_count": 39,
+      "target_algebra": "Mat_2(Q)^10",
+      "target_algebra_dimension": 40,
+      "target_block_count": 10,
+      "target_block_dimension": 2
+    },
+    "direct_label_bridge_summary": {
+      "block_landing_relation_count": 28,
+      "direct_compressed_map_is_multiplicative": false,
+      "full_exposure_mode_count": 40,
+      "full_exposure_packet_count": 20,
+      "label_hypothesis": "mode_mask_equals_raw_point_id",
+      "leaking_relation_count": 979,
+      "preserving_relation_ids": [
+        6,
+        163,
+        227,
+        349,
+        618,
+        893
+      ],
+      "q12_preserving_class_ids": [
+        1
+      ],
+      "q42_preserving_class_ids": [
+        2,
+        3
+      ],
+      "quotient_target_action_matches": {
+        "q12": {
+          "2I": [],
+          "2I+4S": [],
+          "4S": []
+        },
+        "q42": {
+          "2I": [],
+          "2I+4S": [],
+          "4S": []
+        }
+      },
+      "raw_relation_count": 985,
+      "relation_target_action_matches": {
+        "2I": [],
+        "2I+4S": [],
+        "4S": []
+      },
+      "relations_preserving_full_packet_modes_on_source": 6,
+      "relations_touching_full_packet_modes": 985,
+      "relations_with_inside_hits": 628,
+      "tube_identity_relation_ids": [
+        6,
+        163,
+        227,
+        349,
+        618,
+        893
+      ],
+      "zero_source_hit_relation_count": 0
+    },
+    "homomorphism_boundary": {
+      "current_label_constraint_needed_for_a_real_no_go": "A valid packet theorem must supply explicit A985/tube/q42/q12-to-packet columns, or a certificate that every label-compatible column assignment violates preservation, Mat_2(Q)^10 landing, target-action matching, or multiplication.",
+      "faithful_full_a985_to_mat2_power_10": "refuted_by_dimension",
+      "literal_current_packet_label_map": "refuted_by_direct_restriction_certificate",
+      "reason_unconstrained_no_go_is_too_strong": "The certified A985 block profile contains 15 source sectors of dimension 1 or 2, enough to feed ten 2x2 target components as an abstract nonfaithful quotient shape. The current source matrix-unit evidence is finite-field block data, so this boundary does not certify a rational Q homomorphism; it only prevents upgrading the dimension argument into a universal no-go.",
+      "unconstrained_nonfaithful_full_domain_homomorphism": "not_refuted_by_current_evidence"
+    },
+    "small_block_sector_rows": [
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.aa5f72ad7400f95b1490aa84",
+        "mat2_component_embedding_shape": "2x2_block_identity",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.9d42d1525738f3767a79c3ba",
+        "source_sector": 5
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.8b0381188ff5b5b5bf854edb",
+        "mat2_component_embedding_shape": "2x2_block_identity",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.404cf670100d6a5f1a2dd250",
+        "source_sector": 6
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.3c87a850283f68ad6e7f5fdd",
+        "mat2_component_embedding_shape": "scalar_to_2x2_identity",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.41d0312324b2f0c15d007f6d",
+        "source_sector": 7
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.a7cab8e86acf5d3b7cd959fb",
+        "mat2_component_embedding_shape": "scalar_to_2x2_identity",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.6a5e79e5cd51d443d142d532",
+        "source_sector": 10
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.a867de8ab97fae143e663619",
+        "mat2_component_embedding_shape": "2x2_block_identity",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.6cd0c272a8079b2d47dc4ed0",
+        "source_sector": 13
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.4ea5c02ccd7e013e441b327a",
+        "mat2_component_embedding_shape": "scalar_to_2x2_identity",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.034e9541a05e71f5bb32c17d",
+        "source_sector": 19
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.2710d2e520d3bd0dd8f76051",
+        "mat2_component_embedding_shape": "2x2_block_identity",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.605336b16161cbfacb8c7451",
+        "source_sector": 20
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.c40efde730c8f02557d7b8a1",
+        "mat2_component_embedding_shape": "2x2_block_identity",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.5e5bfcc366256ec7df15b71c",
+        "source_sector": 21
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.c9a14e2cdc62a74eda2c9824",
+        "mat2_component_embedding_shape": "2x2_block_identity",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.d12a943a54a67bb5ae120747",
+        "source_sector": 22
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.110286a1a8b1f401969b938e",
+        "mat2_component_embedding_shape": "scalar_to_2x2_identity",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.b0f0ffa7a70b464fb1c6be3b",
+        "source_sector": 24
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.679dfe35a3ec900ef94e3fee",
+        "mat2_component_embedding_shape": "scalar_to_2x2_identity",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.f5c4748a515dca877336eb56",
+        "source_sector": 25
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.90b3dfdbbd10982f7e31ff7f",
+        "mat2_component_embedding_shape": "scalar_to_2x2_identity",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.1c291d5534c311edc48123b2",
+        "source_sector": 26
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.3b43e81d41920f044a201f66",
+        "mat2_component_embedding_shape": "2x2_block_identity",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.8cf60f8da9783cf93a08b3c3",
+        "source_sector": 32
+      },
+      {
+        "block_dimension": 2,
+        "coordinate_fingerprint_id": "a985coord.468ec3c4d550c16c63fa2f3d",
+        "mat2_component_embedding_shape": "2x2_block_identity",
+        "matrix_units": 4,
+        "perennial_id": "a985pf.0f1476a5434aef02bb516590",
+        "source_sector": 33
+      },
+      {
+        "block_dimension": 1,
+        "coordinate_fingerprint_id": "a985coord.111958fabfcf6eb85501a38d",
+        "mat2_component_embedding_shape": "scalar_to_2x2_identity",
+        "matrix_units": 1,
+        "perennial_id": "a985pf.dee5a3615e2ca5e9f7b6d662",
+        "source_sector": 34
+      }
+    ],
+    "small_block_sector_rows_sha256": "18c42e9734499144849ea852dcf5046712cfab7f55404b4581847f7f5fbd9fd7"
+  },
+  "inputs": {
+    "a985_direct_packet_bridge_obstruction_report": {
+      "path": "data/invariants/d20/theorems/d20_a985_direct_packet_bridge_obstruction/report.json",
+      "sha256": "e9e5dc70038379e2a2626ad2b2ef298561b0392a34a0c84dd76563a55cea96c9"
+    },
+    "canonical_sector_matrix_units_report": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/report.json",
+      "sha256": "17f24baf5ce9387f8da366566693452d7597dc21285ef143bc7f5e0ace303465"
+    },
+    "canonical_sector_summary_csv": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_matrix_units/canonical_source_sector_matrix_unit_summary.csv",
+      "sha256": "13870c6eb0e724fcf6d4c86e58c339b3d1d0e3a8804d28d0b17a50f70b52fe01"
+    },
+    "full_matrix_unit_coo_report": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_full_matrix_unit_orbital_coo/report.json",
+      "sha256": "85585d952206401d42679abc2f4538cec8a89c80439abe437012578137040bdf"
+    },
+    "full_packet_matrix_lift_report": {
+      "path": "data/invariants/d20/theorems/d20_full_packet_matrix_lift/report.json",
+      "sha256": "5c7a8bd31562f50ef1e2a56729002990159040732fe53edeb582b2ba19c55870"
+    }
+  },
+  "next_highest_yield_item": "Turn the remaining homomorphism question into a finite labelled-column problem: enumerate q42/q12/object-compatible packet-column assignments and test each for subspace preservation, Mat_2(Q)^10 landing, target-action matching, and A985 multiplication.",
+  "object": "D20",
+  "schema": "d20.theorem.d20_a985_mat2_hom_boundary",
+  "status": "D20_A985_MAT2_HOM_BOUNDARY_CERTIFIED"
+}
