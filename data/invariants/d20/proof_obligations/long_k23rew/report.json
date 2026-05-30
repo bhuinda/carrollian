@@ -1,0 +1,108 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1a5f5224758a41a3f134ca84f1339a439c12e15a3ac5ebc30c68e099d8fe3ed0",
+  "checks": {
+    "boundary_flags_match": true,
+    "identity_class_matches": true,
+    "inputs_pass": true,
+    "rewrite_class_profile_matches": true,
+    "rewrite_obstruction_matches": true
+  },
+  "claim": "long_k23rew certifies the bounded fingerprint-preserving rewrite obstruction.",
+  "closure_boundary": {
+    "certifies": [
+      "the 91 depth-two words collapse to 56 source/target carrier fingerprint classes",
+      "the class-size profile is 29 singleton classes, 26 pair classes, and one 10-word identity class",
+      "each carrier fingerprint class has a stable product residual fingerprint",
+      "there is one product-clean carrier class and 55 product-defective carrier classes",
+      "no carrier fingerprint class mixes product-clean and product-defective words",
+      "therefore no depth-two fingerprint-preserving rewrite closes a product defect"
+    ],
+    "does_not_certify": [
+      "rewrite behavior beyond word depth two",
+      "rewrites that intentionally change the source or target carrier fingerprint",
+      "a quotient by non-fingerprint semantic labels",
+      "a computational hardness claim",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23rew.py",
+      "sha256": "8ccfa3ce49dfd71e07f6feaae641ce187ba00904106a722f9eec1518f7e679cc"
+    },
+    "long_k23cl_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/k23cl_matrices.npz",
+      "sha256": "066a9a9ab4c252d0f1f6352af6438e1f4dbe024f1ac33e045a9ef5b2d939a865"
+    },
+    "long_k23poly": {
+      "certificate_sha256": "038ea23f66444c578a6d06569390b64527b0e17a431402a2648912cd41f49256",
+      "path": "data/invariants/d20/proof_obligations/long_k23poly/report.json",
+      "sha256": "6c7a5ab8d9e3d97cea1577b94ff462383f249bcd986eb10f6194ef70a344441c",
+      "status": "SECTOR33_K23_CONCATENATIVE_POLYMORPHISM_CARRIER_CERTIFIED"
+    },
+    "long_k23poly_fingerprints": {
+      "path": "data/invariants/d20/proof_obligations/long_k23poly/fingerprint_rows.csv",
+      "sha256": "9fdd8fb0816d815299bc63be52853d0d79d9ffe09ebdc6c3c65a8ae5a141c188"
+    },
+    "long_k23poly_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23poly/k23poly_matrices.npz",
+      "sha256": "414c4c32cef8adc76372573445bf7d997cd83c1d7c543d5181e0b5e62817608d"
+    },
+    "long_k23poly_words": {
+      "path": "data/invariants/d20/proof_obligations/long_k23poly/word_rows.csv",
+      "sha256": "b2d60cb415f053542ea3858f93283cfde11fbdce9b22d5d5dcae165069f95aa2"
+    },
+    "validator": {
+      "path": "src/certify_long_k23rew.py",
+      "sha256": "5b671c8067518ee7ba27c5d9df7656a425f34991cdcad737eee96e7dc2a7d610"
+    }
+  },
+  "next_highest_yield_item": "Promote the obstruction into a commit/open protocol certificate: public transcript is the source/target fingerprint pair plus residual-class code, while operator matrices remain dereferenced by hash.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23rew/cert.json",
+    "class_rows_csv": "data/invariants/d20/proof_obligations/long_k23rew/class_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23rew/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23rew/k23rew_matrices.npz",
+    "member_rows_csv": "data/invariants/d20/proof_obligations/long_k23rew/member_rows.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23rew/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23rew/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23rew/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23rew/tables.npz"
+  },
+  "schema": "long.k23rew.report@1",
+  "stage_protocol": {
+    "closure": "certify the bounded rewrite obstruction while leaving deeper or transcript-changing rewrites open",
+    "coherence": "check class-size profile, residual fingerprint consistency, and absence of mixed clean/defective classes",
+    "draft": "read long_k23poly word rows, source/target fingerprints, matrices, and closure60 product tensor",
+    "emit": "write long_k23rew artifacts and verifier hook",
+    "witness": "emit carrier fingerprint classes, class memberships, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_BOUNDED_REWRITE_FINGERPRINT_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that depth-two fingerprint-preserving rewrites cannot close any defective product residual without changing the carrier transcript.",
+    "classification": "sector33_k23_bounded_rewrite_fingerprint_obstruction",
+    "matrix_sha256": "d9b05cf5df55cb9efddfa5ebb5a3aa8feb09ff3c3b9863f552193ff5e479445e",
+    "name": "long_k23rew",
+    "summary": {
+      "carrier_class_count": 56,
+      "complete_goal_claim_flag": 0,
+      "defective_class_count": 55,
+      "defective_word_count": 81,
+      "fingerprint_preserving_closing_rewrite_count": 0,
+      "identity_class_product_residual": 0,
+      "identity_class_size": 10,
+      "long_k23poly_certified_flag": 1,
+      "mixed_product_class_count": 0,
+      "pair_class_count": 26,
+      "product_preserved_class_count": 1,
+      "product_preserved_word_count": 10,
+      "residual_fingerprint_count": 56,
+      "singleton_class_count": 29,
+      "ten_class_count": 1,
+      "word_count": 91,
+      "word_depth": 2
+    }
+  }
+}

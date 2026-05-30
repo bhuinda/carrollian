@@ -1,0 +1,146 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "038ea23f66444c578a6d06569390b64527b0e17a431402a2648912cd41f49256",
+  "checks": {
+    "boundary_flags_match": true,
+    "concatenative_quotient_unit_exact": true,
+    "inputs_pass": true,
+    "product_boundary_matches": true,
+    "square_return_profile_matches": true,
+    "word_profile_matches": true
+  },
+  "claim": "long_k23poly certifies the K23 word-level concatenative carrier boundary.",
+  "closure_boundary": {
+    "certifies": [
+      "the best minimal repaired projection is candidate 10 from long_k23fam",
+      "the nine generator lifts compose as finite words over the closure60 carrier",
+      "all depth-0, depth-1, and depth-2 words have zero quotient-intertwiner residual",
+      "all depth-0, depth-1, and depth-2 words fix the closure60 unit",
+      "all generator words and all off-diagonal depth-two words remain product-obstructed",
+      "the nine square depth-two words return to the identity source and target fingerprints",
+      "the fingerprint table gives stable matrix dereference hashes for every tested source and target word matrix"
+    ],
+    "does_not_certify": [
+      "product preservation for any generator or off-diagonal depth-two word",
+      "a finite-depth exhaustive word-language theorem beyond depth two",
+      "that a different repaired-projection family cannot support a stronger carrier",
+      "continuum geometry",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23poly.py",
+      "sha256": "98b0b7341784e3c94f6d0270e5abd6f3c408305151e377a041f12be7cabddac8"
+    },
+    "long_k23cl": {
+      "certificate_sha256": "ce640686b6e3d1640463eddc086e0c7667e5ccb346b916e6c292d5aad2c49bac",
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/report.json",
+      "sha256": "ef3e3310bace2fe2c1d16120f2f305e9b5af7b3a73bac5a4c8afda85e6a4a5cb",
+      "status": "SECTOR33_K23_MULTIPLICATION_CLOSURE60_CERTIFIED"
+    },
+    "long_k23cl_closure_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/closure_rows.csv",
+      "sha256": "c5c755b78752f6b4cc6ada73d00c0edb895fd21eca7540c330b9ec62e8063c6a"
+    },
+    "long_k23cl_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/k23cl_matrices.npz",
+      "sha256": "066a9a9ab4c252d0f1f6352af6438e1f4dbe024f1ac33e045a9ef5b2d939a865"
+    },
+    "long_k23fam": {
+      "certificate_sha256": "c4c86adf581055e4af0df1aafd084abc9098415953860e5b0ef911a643b09313",
+      "path": "data/invariants/d20/proof_obligations/long_k23fam/report.json",
+      "sha256": "2ea7612f10bd906551bd7907f9c31e2df7a4daed0d56fae49794226a3606979b",
+      "status": "SECTOR33_K23_MINIMAL_REPAIRED_PROJECTION_FAMILY_OBSTRUCTED"
+    },
+    "long_k23fam_candidates": {
+      "path": "data/invariants/d20/proof_obligations/long_k23fam/candidate_rows.csv",
+      "sha256": "dae49d3cfe313937ea8047c1ad088e799398da67e62094971876ecef9193232a"
+    },
+    "long_k23rh": {
+      "certificate_sha256": "d26ee47a3bacd2cf2001f28fdab181b705c17bd9d26e57212124ff6ef28360ab",
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/report.json",
+      "sha256": "85d246a173dd255d45adcecb15170d7635cb87788db31fd98f79f28d12e4b69b",
+      "status": "SECTOR33_K23_RHC_SOURCE_LIFT_CERTIFIED"
+    },
+    "long_k23rh_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+      "sha256": "af3f182f7a270eb2f7c1dd137449a4ade01d5231a1676be8f1db81370fd1ea8a"
+    },
+    "long_k23unit": {
+      "certificate_sha256": "990d6950cca66455aec0cc000d8ab352157f6baca3d0029b8ae456a05b499ac0",
+      "path": "data/invariants/d20/proof_obligations/long_k23unit/report.json",
+      "sha256": "f7f4b73d769372e8b0d1aee5989220b5df3ac47bcc76586be2798297d5c62d44",
+      "status": "SECTOR33_K23_CLOSURE60_UNIT_PROJECTION_OBSTRUCTION_CERTIFIED"
+    },
+    "long_k23unit_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23unit/k23unit_matrices.npz",
+      "sha256": "b2c3e6edc7d80bd8052a5f72b9ff1076498fcf281e190376f1a0a4f775c5a7dc"
+    },
+    "validator": {
+      "path": "src/certify_long_k23poly.py",
+      "sha256": "247f061fb4cb8c0f42abc92b2bd1cbe189ae048f0a312104d2cefec9c9fc38be"
+    }
+  },
+  "next_highest_yield_item": "Promote the depth-two word carrier into a bounded rewrite-system search: test whether residual fingerprints admit a finite congruence that closes product defects without changing the quotient/unit carrier.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23poly/cert.json",
+    "fingerprint_rows_csv": "data/invariants/d20/proof_obligations/long_k23poly/fingerprint_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23poly/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23poly/k23poly_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23poly/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23poly/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23poly/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23poly/tables.npz",
+    "word_rows_csv": "data/invariants/d20/proof_obligations/long_k23poly/word_rows.csv"
+  },
+  "schema": "long.k23poly.report@1",
+  "stage_protocol": {
+    "closure": "certify word-level quotient/unit concatenation while keeping generator product preservation and broader word-depth product behavior open",
+    "coherence": "check quotient/unit residuals, word counts, product residual boundary, and matrix payload hash",
+    "draft": "read closure60 product, unit, R_hc target action, and the certified minimal projection-family obstruction",
+    "emit": "write long_k23poly artifacts and verifier hook",
+    "witness": "emit length-zero, length-one, and length-two word rows plus matrix fingerprint dereference rows"
+  },
+  "status": "SECTOR33_K23_CONCATENATIVE_POLYMORPHISM_CARRIER_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies a word-composable quotient/unit carrier for the best repaired projection while preserving the product-action obstruction at generator and off-diagonal length-two word depth.",
+    "classification": "sector33_k23_concatenative_polymorphism_carrier",
+    "matrix_sha256": "f864a8b2ceef97db9cf107eed3b54278067e349d432bfbc72992beb4f05b1b2f",
+    "name": "long_k23poly",
+    "summary": {
+      "best_candidate_id": 10,
+      "closure_dimension": 60,
+      "complete_goal_claim_flag": 0,
+      "fingerprint_row_count": 182,
+      "generator_count": 9,
+      "identity_product_residual": 0,
+      "identity_word_count": 1,
+      "length_one_product_preserved_count": 0,
+      "length_one_word_count": 9,
+      "length_two_product_preserved_count": 9,
+      "length_two_word_count": 81,
+      "long_k23cl_certified_flag": 1,
+      "long_k23fam_certified_flag": 1,
+      "long_k23rh_certified_flag": 1,
+      "long_k23unit_certified_flag": 1,
+      "nonidentity_product_preserved_count": 9,
+      "nonidentity_product_residual_max": 142733,
+      "nonidentity_product_residual_min": 0,
+      "offdiagonal_length_two_word_count": 72,
+      "offdiagonal_product_preserved_count": 0,
+      "quotient_residual_total": 0,
+      "square_return_word_count": 9,
+      "square_word_count": 9,
+      "target_dimension": 33,
+      "unique_lift_fingerprint_count": 56,
+      "unique_target_fingerprint_count": 56,
+      "unit_residual_total": 0,
+      "word_count": 91,
+      "word_depth": 2,
+      "word_product_residual_max": 142733,
+      "word_product_residual_min": 0
+    }
+  }
+}

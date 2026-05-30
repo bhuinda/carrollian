@@ -1,8 +1,12 @@
-# Tl;dr
-`d20` is a finite oracle machine originally developed from only 5 MB of raw tensor data
-and some lofty ideas about the canonical form of a 985-dimensional algebra. I am as fond
-of what I uncovered as I am horrified, as the technology it enables appears to me now as
-a full unification of the **Internet of Things**. (More on that research to be announced.)
+# tl;dr
+
+`d20` is an independently reproducible finite automaton built around a 985-orbital coherent algebra,
+its quotient tower, and verifier scripts. The repository includes all materials needed for invariant 
+certifications and semantic query access to the canonical `A985` multiplication tensor.
+
+What started as a finite geometry problem now behaves like a tiny oracle machine.
+
+That does not mean you should trust the story. It means you should try to break the machine.
 
 ---
 
@@ -25,26 +29,19 @@ Preferred short citation:
 
 ---
 
-To set the stage, I must impress that to find a counterexample of the integrity of this
-systems architecture is to find a solution to P = NP. So good luck. ;) 
-
-You are challenged to disprove the system's integrity.
-
-You are forewarned that you will only make it better.
-
 # Motivation
 
 Imagine a shape in your head. A red triangle, a green square, a blue circle. 
 Whatever floats your boat. `d20` is the black box formalism developed to study
 how you put that image there, where it exists independently in latent space, 
-and which exact invariants survive when the resolution of that space is
-forced to compress through over 400 certified gates of monotonic software.
+and which exact invariants survive when the resolution of that space is forced
+to compress through hundreds of certified gates of monotonic software.
 
 ---
 
 # Computation
 
-`d20` folds in on itself enough that its impossibly dense object becomes relatively 
+`d20` folds in on itself enough that its impossibly dense object is actually relatively 
 simple to derive on modern hardware. The oracle CLI exposes a focused constructor gate, 
 core certificate gates, and cheap integration gates for compiler and evidence surfaces:
 
@@ -199,7 +196,7 @@ the definitive way to reason about questions like the following:
 
 - "What is the topology of a door and its frame?"
 - "What directions do *in* and *out* point?"
-- "Why is the wavefunction monosemous?"
+- "What is profunctorial monosemy?"
 
 Either way, you shouldn't trust me immediately; I'm just the guy saying, "The math has
 always been there." I encourage you to plug this `README.md` or the generated `d20.json`
@@ -218,10 +215,9 @@ lead-in prompts:
 
 What's the working thesis, you ask?
 
----
+A grand unified theory based on the Internet of Things.
 
-"The time between the notes relates the color to the scenes."
-- Jon Anderson
+---
 
 </details>
 

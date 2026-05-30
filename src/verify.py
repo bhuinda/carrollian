@@ -338,6 +338,10 @@ the practical verification modes without hiding file writes behind a default:
 * long-k23unit: validate the sector33 K23 closure60 unit-projection obstruction;
 * long-k23tgt: validate the sector33 K23 target unit-aperture certificate;
 * long-k23proj: validate the sector33 K23 repaired-projection product obstruction;
+* long-k23fam: validate the sector33 K23 minimal repaired-projection family obstruction;
+* long-k23poly: validate the sector33 K23 concatenative word-carrier certificate;
+* long-k23rew: validate the sector33 K23 bounded rewrite-fingerprint obstruction;
+* long-k23cop: validate the sector33 K23 commit/open transcript certificate;
 * long-psec: validate the focused A985 perennial-sector address seam certificate;
 * long-binc: validate the focused boundary/Loop/packet incidence seam certificate;
 * long-krein: validate the provisional Krein denominator source-boundary report;
@@ -7205,6 +7209,74 @@ def long_k23proj(
     return finish(result, pretty)
 
 
+def long_k23fam(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23fam import validate_long_k23fam
+
+    try:
+        result = validate_long_k23fam()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23fam.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23poly(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23poly import validate_long_k23poly
+
+    try:
+        result = validate_long_k23poly()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23poly.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23rew(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23rew import validate_long_k23rew
+
+    try:
+        result = validate_long_k23rew()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23rew.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23cop(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23cop import validate_long_k23cop
+
+    try:
+        result = validate_long_k23cop()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23cop.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def long_psec(
     *,
     pretty: bool,
@@ -7875,6 +7947,10 @@ def main() -> None:
         "long-k23unit",
         "long-k23tgt",
         "long-k23proj",
+        "long-k23fam",
+        "long-k23poly",
+        "long-k23rew",
+        "long-k23cop",
         "long-psec",
         "long-binc",
         "long-krein",
@@ -8703,6 +8779,14 @@ def main() -> None:
         raise SystemExit(long_k23tgt(pretty=args.pretty))
     if args.command == "long-k23proj":
         raise SystemExit(long_k23proj(pretty=args.pretty))
+    if args.command == "long-k23fam":
+        raise SystemExit(long_k23fam(pretty=args.pretty))
+    if args.command == "long-k23poly":
+        raise SystemExit(long_k23poly(pretty=args.pretty))
+    if args.command == "long-k23rew":
+        raise SystemExit(long_k23rew(pretty=args.pretty))
+    if args.command == "long-k23cop":
+        raise SystemExit(long_k23cop(pretty=args.pretty))
     if args.command == "long-psec":
         raise SystemExit(long_psec(pretty=args.pretty))
     if args.command == "long-binc":
