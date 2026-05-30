@@ -372,6 +372,8 @@ the practical verification modes without hiding file writes behind a default:
 * long-k23seci: validate the sector33 K23 security-integrity gate certificate;
 * long-k23hprob: validate the sector33 K23 hardness problem-definition certificate;
 * long-k23sing: validate the sector33 K23 native singularity/cybernetics certificate;
+* long-k23osint: validate the sector33 K23 open-source integrity-route certificate;
+* long-k23ifc: validate the sector33 K23 integrity-tool interface certificate;
 * long-psec: validate the focused A985 perennial-sector address seam certificate;
 * long-binc: validate the focused boundary/Loop/packet incidence seam certificate;
 * long-krein: validate the provisional Krein denominator source-boundary report;
@@ -7817,6 +7819,40 @@ def long_k23sing(
     return finish(result, pretty)
 
 
+def long_k23osint(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23osint import validate_long_k23osint
+
+    try:
+        result = validate_long_k23osint()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23osint.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23ifc(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23ifc import validate_long_k23ifc
+
+    try:
+        result = validate_long_k23ifc()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23ifc.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def long_psec(
     *,
     pretty: bool,
@@ -8521,6 +8557,8 @@ def main() -> None:
         "long-k23seci",
         "long-k23hprob",
         "long-k23sing",
+        "long-k23osint",
+        "long-k23ifc",
         "long-psec",
         "long-binc",
         "long-krein",
@@ -9417,6 +9455,10 @@ def main() -> None:
         raise SystemExit(long_k23hprob(pretty=args.pretty))
     if args.command == "long-k23sing":
         raise SystemExit(long_k23sing(pretty=args.pretty))
+    if args.command == "long-k23osint":
+        raise SystemExit(long_k23osint(pretty=args.pretty))
+    if args.command == "long-k23ifc":
+        raise SystemExit(long_k23ifc(pretty=args.pretty))
     if args.command == "long-psec":
         raise SystemExit(long_psec(pretty=args.pretty))
     if args.command == "long-binc":

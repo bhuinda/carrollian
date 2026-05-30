@@ -1,0 +1,173 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "81b8dd777adda5e29ddd62a01c1b2929614b3298a7c600a088b59d720147b395",
+  "checks": {
+    "audit_profile_matches": true,
+    "completion_flag_matches": true,
+    "field_profile_matches": true,
+    "gate_profile_matches": true,
+    "inputs_pass": true,
+    "mandate_and_epoch_match": true,
+    "rejection_profile_matches": true,
+    "route_claims_match": true,
+    "tool_profile_matches": true
+  },
+  "claim": "long_k23ifc certifies the exact integrity tooling interface contract for the selected K23 route.",
+  "closure_boundary": {
+    "certifies": [
+      "five public deterministic integrity tools have explicit interface rows",
+      "ten required public interface fields are listed",
+      "four terminal/boundary result codes are listed",
+      "eight audit transcript fields are listed and bound to decoder and mandate witnesses"
+    ],
+    "does_not_certify": [
+      "cryptographic hardness",
+      "deployment readiness",
+      "secret witness protection",
+      "external benchmark compatibility",
+      "zero knowledge"
+    ]
+  },
+  "inputs": {
+    "decode_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23dist/decode_rows.csv",
+      "sha256": "253622e687fc66fef0976740501918c07ab5593726d79e08044effaae834948a"
+    },
+    "derive_script": {
+      "path": "src/derive_long_k23ifc.py",
+      "sha256": "ea7d4670269eeba36d4f87bef5d88879a05dc2b6112f3e9a01de5f6e71ed9b1d"
+    },
+    "invalid_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23dist/invalid_rows.csv",
+      "sha256": "419b405529a0784e35d4dc4dd4e956c023b60d21a029706fe293e555c250b962"
+    },
+    "long_k23dist": {
+      "certificate_sha256": "dc777884ea90b11afbb37da25d6e4c5bf49ad20d86927bdc2744bab654696904",
+      "path": "data/invariants/d20/proof_obligations/long_k23dist/report.json",
+      "sha256": "ba6992467bbfd521284710f2d47946b6806391b1689a60a8dbac17d84a7260e3",
+      "status": "SECTOR33_K23_PUBLIC_TABLE_DISTRIBUTION_DECODER_CERTIFIED"
+    },
+    "long_k23epoch": {
+      "certificate_sha256": "6f54c790f19b646c4034b40b339428c58805f8d6a2592f10a33be9bfe74f717d",
+      "path": "data/invariants/d20/proof_obligations/long_k23epoch/report.json",
+      "sha256": "c5156aa2b934722c52473d51c6fa1a53fed4d28f8e6780ab62b65124b52e75e9",
+      "status": "SECTOR33_K23_REAL_EPOCH_MANIFEST_CERTIFIED"
+    },
+    "long_k23hprob": {
+      "certificate_sha256": "dde14452489b3aac6d91d3a80ce160536da1186854f524ecd1a02459bbf06b77",
+      "path": "data/invariants/d20/proof_obligations/long_k23hprob/report.json",
+      "sha256": "bfdbddc062ad2b6b2b7d718608c136cc93b46aa98baaf36efd0c5593eb3599e0",
+      "status": "SECTOR33_K23_HARDNESS_PROBLEM_DEFINITION_CERTIFIED"
+    },
+    "long_k23mand": {
+      "certificate_sha256": "e85de2a5c2e49d56a89081288aa43a86f563caab939c048f0475e2f41e119412",
+      "path": "data/invariants/d20/proof_obligations/long_k23mand/report.json",
+      "sha256": "b1403b991d63e4033b3ae7eb7032949672c8f21b91acdeaa33b8b65b35833c28",
+      "status": "SECTOR33_K23_SOURCE_BOUND_MANDATE_CERTIFIED"
+    },
+    "long_k23osint": {
+      "certificate_sha256": "7e9c92dceccee07c441dba2019fb6c8975cabaef2e5bcd4e321ad9758049f591",
+      "path": "data/invariants/d20/proof_obligations/long_k23osint/report.json",
+      "sha256": "2e67da2a8b72a60158eeb021eccc2ca3db18300e848e0555dd54cae61fa0fcd7",
+      "status": "SECTOR33_K23_OPEN_SOURCE_INTEGRITY_ROUTE_CERTIFIED"
+    },
+    "mandate_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23mand/mandate_rows.csv",
+      "sha256": "c5460432c153ae296d0a39766d08f3d5084f463e83ea4b8fe9106d47870e17c2"
+    },
+    "validator": {
+      "path": "src/certify_long_k23ifc.py",
+      "sha256": "37f91375a1efccb0b4b29c26bbe3588d8ba06181b2f869245c82e913686e719e"
+    }
+  },
+  "next_highest_yield_item": "Emit a minimal verifier-contract adapter that consumes the interface rows and produces deterministic accept/reject audit rows.",
+  "outputs": {
+    "audit_rows_csv": "data/invariants/d20/proof_obligations/long_k23ifc/audit_rows.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_k23ifc/cert.json",
+    "field_rows_csv": "data/invariants/d20/proof_obligations/long_k23ifc/field_rows.csv",
+    "gate_rows_csv": "data/invariants/d20/proof_obligations/long_k23ifc/gate_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23ifc/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23ifc/k23ifc_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23ifc/obs.csv",
+    "rejection_rows_csv": "data/invariants/d20/proof_obligations/long_k23ifc/rejection_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23ifc/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23ifc/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23ifc/tables.npz",
+    "tool_rows_csv": "data/invariants/d20/proof_obligations/long_k23ifc/tool_rows.csv"
+  },
+  "schema": "long.k23ifc.report@1",
+  "stage_protocol": {
+    "closure": "certify the interface contract without claiming deploy-grade cryptographic hardness",
+    "coherence": "check field counts, rejection semantics, decoder totals, mandate audit fields, and nondeployment guardrails",
+    "draft": "read open-source integrity route, decoder, mandate, hardness-boundary, epoch reports, and row witnesses",
+    "emit": "write long_k23ifc artifacts and verifier hook",
+    "witness": "emit tool rows, field rows, rejection-code rows, audit rows, gate rows, observables, and tables"
+  },
+  "status": "SECTOR33_K23_INTEGRITY_TOOL_INTERFACE_CERTIFIED",
+  "witness": {
+    "boundary": "This materializes exact interface rows for the selected public integrity-tooling route.",
+    "classification": "sector33_k23_integrity_tool_interface",
+    "field_code_map": {
+      "0": "encoded_transcript_id",
+      "1": "epoch_id",
+      "2": "version_code",
+      "3": "selected_opening_id",
+      "4": "residual_class_code",
+      "5": "selector_value_mod",
+      "6": "verifier_accept_flag",
+      "7": "reject_code",
+      "8": "selector_match_flag",
+      "9": "digest_bound_flag"
+    },
+    "matrix_sha256": "967cc4c2ad5f93b4fa8c8068d6d3794129b017925da10f1e2fa7a3dca6adf743",
+    "name": "long_k23ifc",
+    "summary": {
+      "accept_valid_count": 56,
+      "audit_field_count": 2,
+      "audit_row_count": 8,
+      "audit_transcript_tool_count": 5,
+      "blocking_gate_count": 1,
+      "certified_input_count": 5,
+      "claim_gate_count": 0,
+      "complete_goal_claim_flag": 0,
+      "decode_match_count": 56,
+      "deploy_ready_flag": 0,
+      "deterministic_tool_count": 5,
+      "digest_bound_count": 56,
+      "external_randomness_used_count": 0,
+      "field_row_count": 10,
+      "gate_row_count": 5,
+      "hardness_claim_count": 0,
+      "input_csv_count": 3,
+      "input_field_count": 3,
+      "input_report_count": 5,
+      "integrity_check_tool_count": 5,
+      "integrity_tooling_ready_flag": 1,
+      "interface_contract_ready_flag": 1,
+      "invalid_reject_count": 200,
+      "mandate_row_count": 56,
+      "materialized_version_count": 2,
+      "migration_pass_count": 1,
+      "missing_reduction_boundary_count": 1,
+      "nonhardness_reject_count": 2,
+      "one_byte_field_count": 1,
+      "one_byte_namespace_size": 256,
+      "output_field_count": 5,
+      "package_row_count": 147,
+      "public_code_count": 4,
+      "public_field_count": 10,
+      "public_tool_count": 5,
+      "reject_code_count": 3,
+      "rejection_row_count": 4,
+      "required_audit_field_count": 8,
+      "required_field_count": 10,
+      "satisfied_gate_count": 4,
+      "selector_match_count": 56,
+      "terminal_code_count": 3,
+      "tool_row_count": 5,
+      "transcript_index_bytes": 56,
+      "valid_decode_count": 56,
+      "verifier_accept_count": 56
+    }
+  }
+}
