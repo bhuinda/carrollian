@@ -1,0 +1,144 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "38e291424ec17ba07a8cb5f151e630de8bf94975765752392504e48a540584bd",
+  "checks": {
+    "balance_identity_inverse_laws": true,
+    "class_algebra_laws": true,
+    "class_shape_exact": true,
+    "input_reports_checked": true,
+    "irreducible_gap_recorded": true,
+    "product_rows_match_tensor": true,
+    "table_shapes_match": true,
+    "tensor_shape_exact": true
+  },
+  "claim": "long_b3alg certifies the Gamma class-sum multiplication algebra behind the acceptance-basis character computation. The 41-class screen produces an integral 41 by 41 by 41 structure-constant tensor, satisfies the class-size balance law, has the expected identity and inverse class behavior, and is commutative and associative. It does not yet diagonalize this algebra into irreducible characters or decompose E0..E7.",
+  "closure_boundary": {
+    "certifies": [
+      "the 41 Gamma classes form a class-sum multiplication algebra",
+      "the dense structure tensor has shape 41 by 41 by 41",
+      "all pair-counts are divisible by the output class size",
+      "the identity class and inverse-class laws hold",
+      "the class algebra is commutative and associative"
+    ],
+    "does_not_certify_because_open": [
+      "irreducible character diagonalization",
+      "ordinary character values over the complex numbers",
+      "E0..E7 irrep decomposition",
+      "R7 C2 projection",
+      "acceptance-basis Krein parameter computation"
+    ]
+  },
+  "inputs": {
+    "b3mod_class_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_b3mod/class.csv",
+      "row_count": 41,
+      "sha256": "8ca55814498d5f891d0e6abcfba6b4830cd184f771be3d9a41be44a79098b4d7"
+    },
+    "b3mod_permutation_character_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_b3mod/permutation_character.csv",
+      "row_count": 41,
+      "sha256": "78bfbdfb1c97534fcb2323e3b42dc3bd8c342f184fb6be68d66942fff1e72607"
+    },
+    "coorient_npz": {
+      "path": "data/coorient/be3_coorient_generators.npz",
+      "sha256": "06d9eccfa580f97983d5b06f1edde19431902d65d04cb1da14aa99a347e0fa97"
+    },
+    "derive_script": {
+      "path": "src/derive_long_b3alg.py",
+      "sha256": "c428d4d11e65014607c193b695471955a39cde268c25b48677475b6badee0f1d"
+    },
+    "long_b3mod": {
+      "certificate_sha256": "339d602f00c1d7d0d8fc21199aa968bd906c963f4c516055cc891f9a257a7ffb",
+      "path": "data/invariants/d20/proof_obligations/long_b3mod/report.json",
+      "sha256": "5cdf39aecb025565f03c4fe34bc9f5990a4ee4ecde6e0a56cb2401e39c3afd09",
+      "status": "LONG_B3MOD_ACTION_CHARACTER_SOURCE_BOUNDARY_PROVISIONAL"
+    },
+    "long_kr39": {
+      "certificate_sha256": "8ccf8ae303e8dd9bb2154d7a3748840dca7fe8227f4f92ff00a5004c0e7b6a96",
+      "path": "data/invariants/d20/proof_obligations/long_kr39/report.json",
+      "sha256": "5b8ffea31ae2fa6ad89ce9732860296bc7adcb7dc412e04ffbd21497b9b1406f",
+      "status": "LONG_KR39_DIRECT_SECTOR_HADAMARD_SCREEN_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_b3alg.py",
+      "sha256": "39b5090d5e42b0a502cc46822bb519256a5d7a469df9c2ace0b2f6f7f78d0141"
+    }
+  },
+  "next_highest_yield_item": "Diagonalize the certified 41-class multiplication algebra to get the irreducible character table, then decompose the six orbit permutation characters and E0..E7.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_b3alg/cert.json",
+    "class_algebra": "data/invariants/d20/proof_obligations/long_b3alg/class_algebra.json",
+    "class_csv": "data/invariants/d20/proof_obligations/long_b3alg/class.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_b3alg/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_b3alg/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_b3alg/obs.csv",
+    "product_csv": "data/invariants/d20/proof_obligations/long_b3alg/class_product.csv",
+    "report": "data/invariants/d20/proof_obligations/long_b3alg/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_b3alg/tables.npz"
+  },
+  "schema": "long.b3alg.report@1",
+  "stage_protocol": {
+    "closure": "certify the class algebra tensor while keeping irreducible diagonalization open",
+    "coherence": "check tensor shape, class-size balance, identity, inverse, commutativity, associativity, and hashes",
+    "draft": "read long_b3mod, long_kr39, and the coorient action source",
+    "emit": "write long_b3alg artifacts and verifier hook",
+    "witness": "emit class metadata, nonzero class-product rows, tensor tables, gaps, and observables"
+  },
+  "status": "LONG_B3ALG_CLASS_MULTIPLICATION_TENSOR_CERTIFIED",
+  "witness": {
+    "class_size_sha256": "fc1a3df8a87e1656a987f149e4f311816b95a1aaa34b7315c1133d7a1de8692a",
+    "class_table_sha256": "8d7694bf80fa6534ea10856713f658101a1a663edf9e90abbb82d8d21f2d058b",
+    "class_text_sha256": "e982c571e59bb93bc43dc39437c6272d4b9db2cce7d0a5ed393567a99405fec7",
+    "classification": "gamma_class_algebra_multiplication_tensor",
+    "gap_code_map": {
+      "0": "gamma_class_screen_input",
+      "1": "class_multiplication_tensor",
+      "2": "identity_and_inverse_class_laws",
+      "3": "commutative_class_algebra",
+      "4": "associative_class_algebra",
+      "5": "irreducible_character_diagonalization_missing",
+      "6": "E0_E7_decomposition_missing"
+    },
+    "gap_table_sha256": "6d3a092687e9c3fb5593db57c62a46869167914735f4262173540cf15b1a0320",
+    "name": "long_b3alg",
+    "observable_code_map": {
+      "0": "group_order",
+      "1": "degree",
+      "10": "commutativity_pass_flag",
+      "11": "associativity_pass_flag",
+      "12": "balance_pass_flag",
+      "13": "irreducible_table_present_flag",
+      "14": "next_gap_code",
+      "2": "class_count",
+      "3": "class_size_sum",
+      "4": "nonzero_product_row_count",
+      "5": "dense_product_entry_count",
+      "6": "max_structure_constant",
+      "7": "identity_class",
+      "8": "identity_law_pass_flag",
+      "9": "inverse_law_pass_flag"
+    },
+    "observable_table_sha256": "d5b21dfd2d1292cafd5604c7ae0be5511484cc1ecadddabdc49d6d0f9db284e4",
+    "pair_count_tensor_sha256": "d3411abd87167843852ca4844be2599e93acfe73b81bfc90b9c4d23423d6d9d3",
+    "product_table_sha256": "9a5faaffcec3088ba5d3e60e98b6f735884b07fd86cb54865c9746e39b891f93",
+    "product_text_sha256": "0937d319a2a23249d513adb348f1ae02c870d328786c5347a9f68ff5053c8b06",
+    "summary": {
+      "associativity_pass_flag": 1,
+      "balance_pass_flag": 1,
+      "class_count": 41,
+      "class_size_sum": 9216,
+      "commutativity_pass_flag": 1,
+      "degree": 2576,
+      "dense_product_entry_count": 68921,
+      "group_order": 9216,
+      "identity_class": 0,
+      "identity_law_pass_flag": 1,
+      "inverse_law_pass_flag": 1,
+      "irreducible_table_present_flag": 0,
+      "max_structure_constant": 768,
+      "next_gap_code": 5,
+      "nonzero_product_row_count": 7293
+    },
+    "tensor_sha256": "8e1e3615daf0b04a7518f19d4b626ff68b1f403e3a4b9d9950d259dc15f6ab68"
+  }
+}

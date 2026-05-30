@@ -1,0 +1,180 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dac0250c0909226c6094899a508d0877cc130b6e68b63828300e9c120a30d204",
+  "checks": {
+    "definite_counts_exact": true,
+    "global_max_is_sign_dual_pair": true,
+    "input_reports_certified": true,
+    "low_support_search_exhaustive": true,
+    "physical_boundaries_preserved": true,
+    "sign_volume_maxima_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3v exhaustively scores the low-support 3-plane candidate family by exact Gram volume. It finds a unique positive maximum and a unique negative maximum, but the two are an exact sign-dual pair with equal absolute volume. The formal selector is therefore reduced to a two-element sign-dual pair, not a physical choice.",
+  "closure_boundary": {
+    "certifies": [
+      "all 5,616,324 triples in the low-support 18D candidate family are scored",
+      "2,047 positive definite and 1,459 negative definite low-support triples exist",
+      "the positive max-volume triple is uniquely [48,180,235]",
+      "the negative max-volume triple is uniquely [49,181,234]",
+      "the two sign maxima have equal absolute Gram volume and form a sign-dual pair"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "a unique global physical 3-plane selector",
+      "an orientation rule choosing between the sign-dual pair",
+      "acceptance of a physical selector axiom",
+      "semantic transition-operation realization",
+      "a transition-to-stress coupling map",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3v.py",
+      "sha256": "4a55825fcc681e88e45a579f068ad42061676348503cdd9bf3e61c8c0da41dd2"
+    },
+    "long_c59p3s": {
+      "certificate_sha256": "899a15b1316207b585c17836aec287f4b1e0f99cb501d3df61487bb63fe2fac1",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3s/report.json",
+      "sha256": "a00ce7c3a53b34092a42f229d7a2f068946ae0e4ec2f7f1393b640e7db136524",
+      "status": "LONG_C59P3S_NONPRINCIPAL_PLANE_SELECTOR_GATE_CERTIFIED"
+    },
+    "long_c59pk": {
+      "certificate_sha256": "a6606fadbdb436f3869db1fd863e31ccb3c0139ced13be9ff8687b20dcf6ad8e",
+      "path": "data/invariants/d20/proof_obligations/long_c59pk/report.json",
+      "sha256": "72c0d1251255abe59a609e0d817507d2a97d72fe95e88da8324c4b4224f9cd44",
+      "status": "LONG_C59PK_INDUCED_PUBLIC_KERNEL_RESTRICTION_CERTIFIED"
+    },
+    "long_c59pk_basis": {
+      "path": "data/invariants/d20/proof_obligations/long_c59pk/restrict_basis.csv",
+      "sha256": "b558466918b1ff1668cb5ce6b27c1da633a04d8b468fce8d0b916b3b4b32f9b3"
+    },
+    "long_c59pk_restricted": {
+      "path": "data/invariants/d20/proof_obligations/long_c59pk/restricted_entry.csv",
+      "sha256": "b09b53a1720395578590be5229ed5f8bf44f784f134af04d451c828d49a2222a"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3v.py",
+      "sha256": "dcd98d8d1371f47cf8285940cea15e6af05d1529ed130aee38edf0a0676ed0e4"
+    }
+  },
+  "next_highest_yield_item": "Resolve the sign-dual orientation gap: test whether time direction, transition semantics, or stress coupling distinguishes [48,180,235] from [49,181,234]; otherwise certify the symmetry as the current orientation obstruction.",
+  "outputs": {
+    "c59p3v": "data/invariants/d20/proof_obligations/long_c59p3v/c59p3v.json",
+    "candidate_csv": "data/invariants/d20/proof_obligations/long_c59p3v/candidate.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3v/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_c59p3v/decision.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3v/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3v/manifest.json",
+    "max_csv": "data/invariants/d20/proof_obligations/long_c59p3v/max.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3v/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3v/report.json",
+    "summary_csv": "data/invariants/d20/proof_obligations/long_c59p3v/summary.csv",
+    "support_csv": "data/invariants/d20/proof_obligations/long_c59p3v/support.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3v/tables.npz"
+  },
+  "schema": "long.c59p3v.report@1",
+  "stage_protocol": {
+    "closure": "certify the low-support volume selector pair and the sign-dual orientation gap",
+    "coherence": "check exhaustive candidate-triple counts, definite counts, max triples, sign-dual equality, and physical exclusions",
+    "draft": "read long_c59p3s and the 18D restricted form from long_c59pk",
+    "emit": "write long_c59p3v artifacts and verifier hook",
+    "witness": "emit the low-support candidate family, max-volume selector rows, support rows, summary, decisions, gaps, and observables"
+  },
+  "status": "LONG_C59P3V_LOW_SUPPORT_VOLUME_SELECTOR_CERTIFIED",
+  "witness": {
+    "candidate_table_sha256": "a40f233783633a380fa4d796f09a3ddbab6c0a036ff48dad744529efbca80e48",
+    "candidate_text_sha256": "9749a9ea64a8ef5aa3f0a7733b9d090128bc654a41e75846751a5266fcde32c6",
+    "candidate_type_code_map": {
+      "0": "singleton",
+      "1": "pair_plus",
+      "2": "pair_minus"
+    },
+    "classification": "low_support_volume_selector",
+    "decision_code_map": {
+      "0": "low_support_volume_search_exhaustive",
+      "1": "positive_volume_max_unique",
+      "2": "negative_volume_max_unique",
+      "3": "global_volume_selector_unique",
+      "4": "sign_dual_volume_pair_certified",
+      "5": "physical_selector_axiom_available",
+      "6": "physical_plane_selected"
+    },
+    "decision_table_sha256": "6dc04f1737933b40e604d97204d8789d71bc3f923888ca374e985c17c09618d6",
+    "gap_code_map": {
+      "0": "low_support_volume_pair",
+      "1": "sign_dual_orientation_rule",
+      "2": "physical_selector_axiom",
+      "3": "semantic_transition_operation",
+      "4": "stress_coupling_map",
+      "5": "four_dimensional_metric_reduction",
+      "6": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "7691ea49f549bcb76416576a6a7c36bd3185c924ba98b860194d936cbe78e8e0",
+    "max_table_sha256": "812a2e95d26fbe70fbb1ec5360f22a1833793b0206679142a7d428917bb2386d",
+    "max_text_sha256": "70f05c4b297f033918a79d8637921fa0f1c774e02c11dab33c0cfb0eeeb1815b",
+    "name": "long_c59p3v",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "positive_max_candidate_c",
+      "11": "negative_max_candidate_a",
+      "12": "negative_max_candidate_b",
+      "13": "negative_max_candidate_c",
+      "14": "max_abs_det_digit_count",
+      "15": "max_abs_det_mod_1000000007",
+      "16": "max_abs_det_mod_1000000009",
+      "17": "positive_max_tie_count",
+      "18": "negative_max_tie_count",
+      "19": "global_max_tie_count",
+      "2": "restricted_dimension",
+      "20": "sign_dual_pair_flag",
+      "21": "physical_selector_axiom_flag",
+      "22": "global_unique_selector_flag",
+      "23": "unique_physical_selector_flag",
+      "24": "selected_physical_flag",
+      "25": "next_gap_code",
+      "3": "candidate_family_size",
+      "4": "triple_count",
+      "5": "positive_definite_count",
+      "6": "negative_definite_count",
+      "7": "definite_total_count",
+      "8": "positive_max_candidate_a",
+      "9": "positive_max_candidate_b"
+    },
+    "observable_table_sha256": "240e6b09864ab1c0c5fcda240dc18219677eec7deee8f205bf6fe7a7c54258cb",
+    "selector_code_map": {
+      "0": "positive_volume_max",
+      "1": "negative_volume_max"
+    },
+    "summary": {
+      "candidate_family_size": 324,
+      "definite_total_count": 3506,
+      "global_max_tie_count": 2,
+      "global_unique_selector_flag": 0,
+      "max_abs_det_digit_count": 31,
+      "max_abs_det_mod_1000000007": 307381493,
+      "max_abs_det_mod_1000000009": 372213646,
+      "negative_definite_count": 1459,
+      "negative_max_candidate_triple": [
+        49,
+        181,
+        234
+      ],
+      "negative_max_tie_count": 1,
+      "physical_selector_axiom_flag": 0,
+      "positive_definite_count": 2047,
+      "positive_max_candidate_triple": [
+        48,
+        180,
+        235
+      ],
+      "positive_max_tie_count": 1,
+      "selected_physical_flag": 0,
+      "sign_dual_pair_flag": 1,
+      "triple_count": 5616324
+    },
+    "summary_table_sha256": "84c0d642185529c63994fc26420eea472011aff87413bbbb9c11db35bf78192c",
+    "support_table_sha256": "181d31ba09a0def33810407061355d2468e39d81c31db583216b3e7b08038e2a"
+  }
+}

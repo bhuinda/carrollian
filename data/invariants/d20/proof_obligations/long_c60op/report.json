@@ -1,0 +1,144 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "659adeac75bfa2526f2cba45fc38f829e0a168e8bea4f6aa74dd34fd82f5b999",
+  "checks": {
+    "adjacent_compositions_pass": true,
+    "golden_ticks_edges_and_atoms_covered": true,
+    "input_reports_certified": true,
+    "opcode_family_counts_match": true,
+    "physical_and_a985_boundaries_preserved": true,
+    "raw_time_and_alpha_flux_guards_pass": true,
+    "semantic_opcode_assignment_total": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c60op assigns a formal C60/d20 semantic opcode row to each of the 59 guarded golden relation witnesses. The assignment covers all 20 golden ticks, all 30 C60 transition bonds, and all 60 endpoint atoms, with unit normal-form time and alpha-flux guards. It remains a formal execution semantic layer, not a physical conductance or manufacturability certificate.",
+  "closure_boundary": {
+    "certifies": [
+      "59 of 59 guarded golden relation witnesses receive formal C60/d20 semantic opcode rows",
+      "the assignment covers 20 golden ticks, 30 C60 transition bonds, and 60 endpoint atoms",
+      "all 59 rows are raw-endpoint backed, unit-time guarded, and alpha-flux-law passing",
+      "174 adjacent formal composition checks pass with zero failures",
+      "opcode family counts are 36 selector-flux transfers, 21 alpha-flux balances, and 2 static selector anchors"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "semantic A985 operation-row realization",
+      "physical conductance signatures",
+      "DFT or NEGF numerical results",
+      "switching speed, decoherence, thermal stability, or manufacturability",
+      "a physical selector axiom",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c60op.py",
+      "sha256": "2c1f6101cfcac924c374dee8cb4043a105394b57b49f43cd75b909eab9b945cf"
+    },
+    "long_oprom": {
+      "certificate_sha256": "e4e7050b1d4ea7d8a03b74eb1b7da5252cf1eb613e85a99831a68b3f863ee5d1",
+      "path": "data/invariants/d20/proof_obligations/long_oprom/report.json",
+      "sha256": "67da912597543bb76572d94413b66c6edce400b500121800eb251ebb9b7426e3",
+      "status": "LONG_OPROM_GOLDEN_OPERATION_PROMOTION_OBSTRUCTION_CERTIFIED"
+    },
+    "long_oprom_promotion": {
+      "path": "data/invariants/d20/proof_obligations/long_oprom/promotion.csv",
+      "sha256": "300bced91684d62faf1501edabf5e24291884718be74d0fbd3bde8af69bb8ed8"
+    },
+    "long_rsem": {
+      "certificate_sha256": "99ce4b61e31bec166a1ade4ead371e06d115d0757bfc6b32cab8ada0839b1780",
+      "path": "data/invariants/d20/proof_obligations/long_rsem/report.json",
+      "sha256": "bcbe9598ff9ffdd4cc82bcc5d56f0e3c4b9df9ba9c3841654ba3b3c72f0e8186",
+      "status": "LONG_RSEM_GUARDED_RELATION_SEMANTIC_LAW_CERTIFIED"
+    },
+    "long_rsem_relation": {
+      "path": "data/invariants/d20/proof_obligations/long_rsem/relation.csv",
+      "sha256": "f88f47edd7933a07692c98a7860d70a40257445338de66d0d47e169974b6f100"
+    },
+    "validator": {
+      "path": "src/certify_long_c60op.py",
+      "sha256": "eccd5eb7d47e4b0c6492f88166f42288c39acb4c145f36df85fe944076b30232"
+    }
+  },
+  "next_highest_yield_item": "Materialize the DFT/NEGF validation protocol that turns the three formal opcode families into measurable molecular-signature job cards while preserving the no-physical-result boundary.",
+  "outputs": {
+    "c60op": "data/invariants/d20/proof_obligations/long_c60op/c60op.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c60op/cert.json",
+    "composition_csv": "data/invariants/d20/proof_obligations/long_c60op/composition.csv",
+    "family_csv": "data/invariants/d20/proof_obligations/long_c60op/family.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c60op/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c60op/obs.csv",
+    "opcode_csv": "data/invariants/d20/proof_obligations/long_c60op/opcode.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c60op/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c60op/tables.npz"
+  },
+  "result_status": "C60_D20_SEMANTIC_OPCODE_ASSIGNMENT_STAGE5_CONSTRUCTED",
+  "schema": "long.c60op.report@1",
+  "stage_protocol": {
+    "closure": "certify the Stage 5 formal C60/d20 semantic opcode assignment",
+    "coherence": "check 59 assigned rows, 20 ticks, 30 C60 edges, 60 atoms, 174 adjacent checks, and explicit physical exclusions",
+    "draft": "read long_rsem relation witnesses and long_oprom promotion boundary",
+    "emit": "write long_c60op artifacts and verifier hook",
+    "witness": "emit opcode rows, family counts, composition checks, and observables"
+  },
+  "status": "LONG_C60OP_STAGE5_OPCODE_ASSIGNMENT_CERTIFIED",
+  "witness": {
+    "classification": "c60_d20_formal_semantic_opcode_assignment",
+    "composition_rule_code_map": {
+      "0": "unit_normal_form_time_adjacency",
+      "1": "alpha_flux_local_balance",
+      "2": "c60_transition_endpoint_coherence"
+    },
+    "composition_table_sha256": "c33edda578aa2532b37c499fcfa227c8ed28d3ddcd8489602b65ffad7101eb84",
+    "family_code_map": {
+      "0": "OP_SELECTOR_FLUX_TRANSFER",
+      "1": "OP_ALPHA_FLUX_BALANCE",
+      "2": "OP_STATIC_SELECTOR_ANCHOR"
+    },
+    "family_table_sha256": "c9833e565f89c8cdf2371ab77e3218d7394b1bb7f58f34b1685a5c1ec99e38c0",
+    "name": "long_c60op",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "adjacent_composition_check_count",
+      "11": "adjacent_composition_failure_count",
+      "12": "selector_flux_transfer_count",
+      "13": "alpha_flux_balance_count",
+      "14": "static_selector_anchor_count",
+      "15": "c60_hexagon_tick_state_count",
+      "16": "c60_transition_bond_count",
+      "17": "c60_endpoint_atom_count",
+      "18": "oprom_operation_promotion_flag",
+      "19": "semantic_a985_operation_flag",
+      "2": "semantic_opcode_row_count",
+      "20": "physical_signature_validated_flag",
+      "21": "manufacturability_validation_flag",
+      "3": "golden_tick_covered_count",
+      "4": "c60_transition_edge_used_count",
+      "5": "c60_endpoint_atom_used_count",
+      "6": "raw_endpoint_backed_row_count",
+      "7": "unit_time_row_count",
+      "8": "alpha_flux_law_pass_row_count",
+      "9": "semantic_opcode_assigned_row_count"
+    },
+    "observable_table_sha256": "b4b0428594145208272e2cc3515923b9132c9569553f592f5edb5c2241494d78",
+    "opcode_table_sha256": "5afe7abed7981a683aec4b721ff95c1056a4509ba93dce2b030308b36906144b",
+    "opcode_text_sha256": "225da3abe4e56a09a9aa97e63f9e7774cc1b01ee2ed6d2e57b7da9f43ff0aa5e",
+    "result_status": "C60_D20_SEMANTIC_OPCODE_ASSIGNMENT_STAGE5_CONSTRUCTED",
+    "summary": {
+      "adjacent_composition_checks": 174,
+      "adjacent_composition_failures": 0,
+      "alpha_flux_balance_count": 21,
+      "alpha_flux_law_pass_rows": 59,
+      "c60_endpoint_atoms_used": 60,
+      "c60_transition_edges_used": 30,
+      "golden_ticks_covered": 20,
+      "physical_signature_validated_flag": 0,
+      "raw_endpoint_backed_rows": 59,
+      "selector_flux_transfer_count": 36,
+      "semantic_a985_operation_flag": 0,
+      "semantic_opcode_rows_assigned": 59,
+      "static_selector_anchor_count": 2,
+      "unit_normal_form_time_rows": 59
+    }
+  }
+}

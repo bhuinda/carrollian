@@ -1,0 +1,148 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5b68c53ad442c266b522725258fdf1838a974c3e68e404157d5ab02f5ef3f3cf",
+  "checks": {
+    "formal_pushforward_is_total": true,
+    "input_reports_certified": true,
+    "operation_and_physical_boundaries_preserved": true,
+    "rule_counts_match": true,
+    "source_counts_match": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3f supplies a total formal stress pushforward for the 59 guarded relation witnesses. The rule uses a directed stress edge when present, otherwise a reversed edge, otherwise the strongest incident stress edge at either visible endpoint. This is a formal selector rule only: operation rows, semantic transition flags, and the physical selector axiom remain absent.",
+  "closure_boundary": {
+    "certifies": [
+      "a total formal stress assignment exists for all 59 guarded relation witnesses",
+      "8 relation witnesses use a directed visible stress edge",
+      "7 relation witnesses use a reversed visible stress edge",
+      "44 relation witnesses use the strongest incident stress-edge fallback",
+      "the formal pushforward uses 14 distinct stress edges"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "semantic operation rows for the assigned witnesses",
+      "semantic transition flags for the assigned witnesses",
+      "a physical selector axiom for the fallback rule",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3f.py",
+      "sha256": "c574e2c1c80684a932eaa38ae4189bde65644b4ad19888f0dc5ba855c009bea6"
+    },
+    "long_c59p3i": {
+      "certificate_sha256": "e7b5f3820c0597a4df95ccbd360ee022731563e50659a698cf18cd422d857f34",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3i/report.json",
+      "sha256": "802b5b742051555812fd5f2a1397c6bf60801d0ada701ffb8d5605534f4c3888",
+      "status": "LONG_C59P3I_VISIBLE_TICK_STRESS_INCIDENCE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_c59p3r": {
+      "certificate_sha256": "588caf3384268994f817a7062a4b5f720e435886d7c67cd4f1014b0e1a3b4cd2",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3r/report.json",
+      "sha256": "f4eb60707be2171ebbb6747a4c34a072f739ad4535d31a8f26f0dd9f70c83690",
+      "status": "LONG_C59P3R_RELATION_STRESS_EXTENSION_GATE_CERTIFIED"
+    },
+    "long_rsem": {
+      "certificate_sha256": "99ce4b61e31bec166a1ade4ead371e06d115d0757bfc6b32cab8ada0839b1780",
+      "path": "data/invariants/d20/proof_obligations/long_rsem/report.json",
+      "sha256": "bcbe9598ff9ffdd4cc82bcc5d56f0e3c4b9df9ba9c3841654ba3b3c72f0e8186",
+      "status": "LONG_RSEM_GUARDED_RELATION_SEMANTIC_LAW_CERTIFIED"
+    },
+    "long_rsem_relation": {
+      "path": "data/invariants/d20/proof_obligations/long_rsem/relation.csv",
+      "sha256": "f88f47edd7933a07692c98a7860d70a40257445338de66d0d47e169974b6f100"
+    },
+    "long_rsem_tick": {
+      "path": "data/invariants/d20/proof_obligations/long_rsem/tick.csv",
+      "sha256": "045dc3d2af84f593547e28f7ca7d0170112ac4d925cd6211e47f98ec3e18a08a"
+    },
+    "long_stress_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/stress_edge.csv",
+      "sha256": "7a25f7a5501af7158311ffa0fc65c2ef9d1cab1cd67d1b3c9ee4d01b514060e1"
+    },
+    "long_stress_gate": {
+      "certificate_sha256": "a31d87700816b5ed5a205c4fbaf2e0774e2132fd550c32242f0988d4e54e4fea",
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/report.json",
+      "sha256": "8c23f384cbb3e5115001e5cf93880d4ba08290c27fbea9e42ecfef70a7c195cb",
+      "status": "LONG_STRESS_GATE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3f.py",
+      "sha256": "c8c20367640d97a2f61b7563de637a596f633d35be53ce6ba018bf54031f8725"
+    }
+  },
+  "next_highest_yield_item": "Test the formal pushforward against operation-row promotion: decide whether the 59 assigned relation witnesses can be represented as semantic A985 operations, or keep the construction formal only.",
+  "outputs": {
+    "assignment_csv": "data/invariants/d20/proof_obligations/long_c59p3f/assignment.csv",
+    "c59p3f": "data/invariants/d20/proof_obligations/long_c59p3f/c59p3f.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3f/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3f/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3f/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3f/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3f/report.json",
+    "rule_csv": "data/invariants/d20/proof_obligations/long_c59p3f/rule.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3f/tables.npz"
+  },
+  "schema": "long.c59p3f.report@1",
+  "stage_protocol": {
+    "closure": "certify the formal selector stress-pushforward candidate",
+    "coherence": "check total assignment, direct/reverse/fallback counts, unique stress-edge count, and preserved boundaries",
+    "draft": "read long_c59p3i, long_c59p3r, long_rsem, and long_stress_gate",
+    "emit": "write long_c59p3f artifacts and verifier hook",
+    "witness": "emit per-relation stress assignments, rule rows, gaps, and observables"
+  },
+  "status": "LONG_C59P3F_FORMAL_SELECTOR_STRESS_PUSHFORWARD_CERTIFIED",
+  "witness": {
+    "assignment_table_sha256": "d5a0ff11a866932c7dc325dd8dc3ee4aa00c85f6a9c3064b57e16d5fa61c941a",
+    "assignment_text_sha256": "80a80d22382736fbb8f3f00f8e35618ea3d749ca565b001884734face43f694d",
+    "classification": "formal_selector_stress_pushforward",
+    "gap_code_map": {
+      "0": "formal_selector_stress_pushforward",
+      "1": "operation_row_promotion",
+      "2": "semantic_transition_flags",
+      "3": "physical_selector_axiom",
+      "4": "four_dimensional_metric_reduction",
+      "5": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "5f579ddeb0b598274188091031a160e63454d4f0b81f16b722e5ff3fdcf16977",
+    "name": "long_c59p3f",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "formal_pushforward_flag",
+      "11": "operation_row_match_count",
+      "12": "semantic_transition_match_count",
+      "13": "physical_selector_axiom_flag",
+      "14": "four_dimensional_metric_flag",
+      "15": "thermal_gravity_flag",
+      "16": "next_gap_code",
+      "2": "relation_row_count",
+      "3": "stress_edge_row_count",
+      "4": "assigned_relation_count",
+      "5": "direct_assignment_count",
+      "6": "reverse_assignment_count",
+      "7": "fallback_assignment_count",
+      "8": "unique_stress_edge_count",
+      "9": "max_assignment_multiplicity"
+    },
+    "observable_table_sha256": "0b48ad481e99b4b2cc1dc86a8774cc33ec7a95f5398ff33bbc0c4369f8d53c86",
+    "rule_code_map": {
+      "0": "direct_stress_edge",
+      "1": "reverse_stress_edge",
+      "2": "max_abs_incident_stress_edge"
+    },
+    "rule_table_sha256": "82510024b6e19af7bb52c2304e2921d7ed5d55cad8b3651b7367b9a5de4ea817",
+    "summary": {
+      "assigned_relation_count": 59,
+      "direct_assignment_count": 8,
+      "fallback_assignment_count": 44,
+      "formal_pushforward_flag": 1,
+      "max_assignment_multiplicity": 10,
+      "operation_row_match_count": 0,
+      "physical_selector_axiom_flag": 0,
+      "relation_row_count": 59,
+      "reverse_assignment_count": 7,
+      "unique_stress_edge_count": 14
+    }
+  }
+}

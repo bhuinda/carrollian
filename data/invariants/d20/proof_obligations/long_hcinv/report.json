@@ -1,0 +1,275 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7b020d3e3c6765ac6a5430e939a849d211691092d46f8818b35cd211d4b10323",
+  "checks": {
+    "c2_anomaly_split": true,
+    "focused_hcinv_closed_without_goal_claim": true,
+    "gamma8_height_matches_single_cycle": true,
+    "height_residue_counts": true,
+    "inputs_accepted": true,
+    "lambda_act_invariant_for_all_masks": true,
+    "lift_target_locked_not_materialized": true,
+    "raw543_orbit_split": true,
+    "selector_nonunique_boundary_marked": true,
+    "tables_have_expected_shapes": true,
+    "transport_projection_split": true,
+    "vector_support_matches_lift_dimension": true
+  },
+  "claim": "long_hcinv certifies the invariant ledger for the sourced C2 action against the sector-33 height/action-return boundary using the current report boundary. It identifies the 71/472 orbit anomaly split and preserves the 56-to-33 lift target as open until pi_Foam33, R_hc, and R_Foam are materialized.",
+  "closure_boundary": {
+    "certifies": [
+      "the finite C2 action is sourced and agrees with the Raw543 543-orbit quotient",
+      "tau has 63 fixed nonzero kernel orbits and 480 two-cycle orbits",
+      "the tau projection has rank 543 and nullity 480 over the 1023 nonzero target masks",
+      "the all-residue height/action-return layer has 2048 masks with 2047 nonzero height rows",
+      "sector 33 carries the transport with e33 support 56 and 28/28 signed split",
+      "Lambda_hc is Act-kernel invariant on all 2048 masks in the finite audit",
+      "the C2 failure to descend is an exact cocycle with 71 zero-anomaly orbits and 472 nonzero-anomaly orbits",
+      "the selector layer has 543 candidates and no selector-free unique operator",
+      "the locked lift target has support dimension 56, Foam rank 33, and bridge kernel dimension 23"
+    ],
+    "does_not_certify": [
+      "a materialized pi_Foam33 matrix",
+      "a materialized R_hc matrix or generator family",
+      "a materialized R_Foam matrix or generator family",
+      "the intertwining equation for all action-return generators",
+      "recursive upstream input-hash refresh for every consumed source report",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "c2_dynamics_selector": {
+      "certificate_sha256": "d7de87dc8113b00135d34f61e27f86cd3af9f4e46203043b2986efa24562939a",
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_dynamics_selector/report.json",
+      "sha256": "e63d6180e905acf73b4fdf41ffb5fb8900569cfa9a008cccc62b2d8e46a4291e",
+      "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_DYNAMICS_SELECTOR_CERTIFIED"
+    },
+    "c2_quotient_anomaly": {
+      "certificate_sha256": "ab63411686c441fa4317cce9857748cc31b388f51fdfb8b1818a471ea33a20e6",
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_quotient_anomaly/report.json",
+      "sha256": "84f098e4b516ece5e03922d4a90c96774ae7525c25dca412cb681da8c22c8078",
+      "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_ANOMALY_CERTIFIED"
+    },
+    "c2_quotient_transport_ledger": {
+      "certificate_sha256": "ea7f9072b6c8fcb73187ef1f954716e2a2f198196de9f0d41c7ff26ccd8349d4",
+      "path": "data/invariants/d20/theorems/full_exposure_zero_pair_sourced_balance_c2_quotient_transport_ledger/report.json",
+      "sha256": "a0e4b54c1ab7ec7d2d67b043f9e3724c19ea58ce500a267253498e4986f232c1",
+      "status": "D20_FULL_EXPOSURE_ZERO_PAIR_SOURCED_BALANCE_C2_QUOTIENT_TRANSPORT_LEDGER_CERTIFIED"
+    },
+    "derive_script": {
+      "path": "src/derive_long_hcinv.py",
+      "sha256": "09ec698ac62a7131d0abde3d7b1a6356067040d25b5f04fbb9f1dc33e1ab0afc"
+    },
+    "e33_full_corrected_transport": {
+      "certificate_sha256": "b1450772bc495a50e83c25ccf7ba570ef092c72bceda8c6fea5005c9785701df",
+      "path": "data/evidence/talagrand_python_handoff/work/e33_full_corrected_transport/e33_full_corrected_transport_certificate.json",
+      "sha256": "add7c450b1cafc1bcb8c1c16a561fc4522fadc65944819fdee24efc55d1f10b6",
+      "status": "E33_VECTOR_AND_ALL_CORRECTED_TRANSPORTS_CERTIFIED"
+    },
+    "height_action_return_intertwining": {
+      "certificate_sha256": "6dac92ebd774ded452b2b968d6edcdeb413d6abb2b03a25bd7f12860004c3663",
+      "path": "data/evidence/talagrand_python_handoff/work/height_coherent_action_return_intertwining/height_coherent_action_return_intertwining_certificate.json",
+      "sha256": "047f81a2dacd675b955b518e9861c9f5a357e81583765e9356a2f4f9f8bb13f7",
+      "status": "HEIGHT_COHERENT_ACTION_RETURN_INTERTWINING_TARGET_LOCKED"
+    },
+    "height_action_return_reconstruction": {
+      "certificate_sha256": "1582dc9ad41a1219ff7c7c9d23ba80bf01096419f03ca21efe4db28f2752807c",
+      "path": "data/evidence/talagrand_python_handoff/work/all_residue_height_action_return_reconstruction/all_residue_height_action_return_certificate.json",
+      "sha256": "d4de13929cda3a11475bbb49f751bf3f2593b1428315ca4a8d94b70745c57583",
+      "status": "ALL_RESIDUE_HEIGHT_ACTION_RETURN_RECONSTRUCTED_PASS"
+    },
+    "lambda_hc_act_invariance": {
+      "certificate_sha256": "cfaa611486bdda499229d2f24c55e6394e4b31441aa6d9f783ecac331800e0d4",
+      "path": "data/evidence/talagrand_python_handoff/work/lambda_hc_act_invariance_audit/lambda_hc_act_invariance_certificate.json",
+      "sha256": "99fea72597e687f7e985e3e263fff2fcebe562f95f3bb87e7369624968fdd5ca",
+      "status": "LAMBDA_HC_ACT_INVARIANCE_CERTIFIED"
+    },
+    "long_c2uf": {
+      "certificate_sha256": "3d5be4193299c7ca7c1e794037b34a76a931b1a1f86acdbc4d3205dfc4081f70",
+      "path": "data/invariants/d20/proof_obligations/long_c2uf/report.json",
+      "sha256": "de5effd48dcc0ba3cb3cc179e906cb8e670594a2c9963f57ddf8495aaf15d817",
+      "status": "LONG_C2UF_CERTIFIED"
+    },
+    "raw543_repo_c2_kernel_action": {
+      "certificate_sha256": "1a42fc86b1c412806ac5cd35dbcf9c8e883dc6a16e2eaeceeb98ea8dbda92d14",
+      "path": "data/invariants/d20/theorems/raw543_repo_c2_kernel_action/report.json",
+      "sha256": "a057871e44668b6c1789bdbb63b5dc83056900e5a434301da7c000b3f210f455",
+      "status": "RAW543_REPO_C2_KERNEL_ACTION_CERTIFIED"
+    },
+    "raw543_repo_c2_kernel_agda_bridge_data": {
+      "certificate_sha256": "891cf94503306f48682bfb107e4f36c114823e4263629cf60e50a4a105be3204",
+      "path": "data/invariants/d20/theorems/raw543_repo_c2_kernel_agda_bridge_data/report.json",
+      "sha256": "48a1f5ea49eb5e01177f732a2ba86b330eef459e81035e2bbbb4472912f1b636",
+      "status": "RAW543_REPO_C2_KERNEL_AGDA_BRIDGE_DATA_CERTIFIED"
+    },
+    "sector33_all_residue_height_transport": {
+      "certificate_sha256": "f7df7a0372ed0720a172247130b0c82cc49e579942d97e2b19e79460baeddf25",
+      "path": "data/invariants/d20/theorems/sector33_all_residue_height_transport/report.json",
+      "sha256": "a9e98422d6c185e3408f3f54c620970c270ce87b2734333c4e070f746dffd07f",
+      "status": "D20_ALL_RESIDUE_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "sector33_height_coherent_transport": {
+      "certificate_sha256": "b8723a036edf2876f3f83a1ea66b2dcbba1af94730d790547892157e2829368e",
+      "path": "data/invariants/d20/theorems/sector33_height_coherent_transport/report.json",
+      "sha256": "a33668aef24f3405c5f7c4caa5f1301d076ac6c778f7e54afcaff1b61e71f708",
+      "status": "D20_SECTOR33_HEIGHT_COHERENT_TRANSPORT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_hcinv.py",
+      "sha256": "b1e04b0b403c34b5b4a7b1c897a9ca5e6834d0ae4afbb7d97a73b2d84d73195c"
+    }
+  },
+  "next_highest_yield_item": "Materialize pi_Foam33 as 33x56, R_hc on the 56-support, and R_Foam on the 33-core, then run a focused verifier for pi_Foam33 R_hc = R_Foam pi_Foam33.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_hcinv/cert.json",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_hcinv/edge.csv",
+    "invariant_csv": "data/invariants/d20/proof_obligations/long_hcinv/invariant.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_hcinv/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_hcinv/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_hcinv/report.json",
+    "sample_csv": "data/invariants/d20/proof_obligations/long_hcinv/sample.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_hcinv/seam.json",
+    "surface_csv": "data/invariants/d20/proof_obligations/long_hcinv/surface.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_hcinv/tables.npz"
+  },
+  "schema": "long.hcinv.report@1",
+  "stage_protocol": {
+    "closure": "certify the invariant ledger without claiming the height-coherent intertwiner",
+    "coherence": "check orbit splits, projection ranks, height/vector counts, cocycle split, selector boundary, and lift dimensions",
+    "draft": "read sourced C2, Raw543, sector-33, action-return, anomaly, selector, and target-lock artifacts",
+    "emit": "write long_hcinv artifacts and focused verifier hook",
+    "witness": "emit surface rows, invariant rows, dependency edges, sample rows, and table hashes"
+  },
+  "status": "LONG_HCINV_CERTIFIED",
+  "witness": {
+    "classification": "height_coherent_action_return_invariant_ledger",
+    "group_code_map": {
+      "0": "input",
+      "1": "action",
+      "2": "quotient",
+      "3": "height",
+      "4": "vector",
+      "5": "anomaly",
+      "6": "selector",
+      "7": "lift"
+    },
+    "invariant_code_map": {
+      "0": "input_report_count",
+      "1": "accepted_input_count",
+      "10": "tau_spectrum_plus",
+      "11": "tau_spectrum_minus",
+      "12": "tau_trace",
+      "13": "tau_projection_rank",
+      "14": "tau_projection_nullity",
+      "15": "transport_target_domain",
+      "16": "residue_mask_count",
+      "17": "nonzero_residue_class_count",
+      "18": "edge_mod2_mismatch_count",
+      "19": "gamma8_height",
+      "2": "raw543_orbit_count",
+      "20": "gamma8_residual",
+      "21": "gamma8_transport_scalar",
+      "22": "full_mask_height",
+      "23": "e33_support",
+      "24": "e33_positive_count",
+      "25": "e33_negative_count",
+      "26": "e33_signed_sum",
+      "27": "corrected_vector_count",
+      "28": "corrected_total_sparse_entries",
+      "29": "lambda_act_kernel_masks",
+      "3": "raw543_fixed_orbit_count",
+      "30": "lambda_act_kernel_failures",
+      "31": "zero_anomaly_orbit_count",
+      "32": "nonzero_anomaly_orbit_count",
+      "33": "anomaly_cocycle_gcd_abs",
+      "34": "tau_cocycle_zero_mask_count",
+      "35": "tau_cocycle_nonzero_mask_count",
+      "36": "selector_candidate_count",
+      "37": "selector_free_unique_operator_flag",
+      "38": "primitive_selector_orbit_id",
+      "39": "global_selector_orbit_id",
+      "4": "raw543_pair_orbit_count",
+      "40": "paired_selector_orbit_id",
+      "41": "foam_support_dimension",
+      "42": "foam_projection_rank",
+      "43": "foam_bridge_kernel_dimension",
+      "44": "hidden_generator_index",
+      "45": "r_hc_matrix_materialized_flag",
+      "46": "r_foam_matrix_materialized_flag",
+      "47": "pi_foam33_matrix_materialized_flag",
+      "48": "complete_goal_claim_flag",
+      "5": "raw543_kernel_dimension",
+      "6": "raw543_fixed_dimension",
+      "7": "tau_squared_identity",
+      "8": "gamma8_fixed",
+      "9": "gamma8_mask"
+    },
+    "name": "long_hcinv",
+    "operator_boundary": {
+      "bridge_kernel_dimension": 23,
+      "foam_rank": 33,
+      "matrix_materialized": false,
+      "statement": "pi_Foam33 R_hc = R_Foam pi_Foam33",
+      "support_dimension": 56
+    },
+    "role_code_map": {
+      "0": "raw543_repo_c2_kernel_action",
+      "1": "raw543_repo_c2_kernel_agda_bridge_data",
+      "10": "lambda_hc_act_invariance",
+      "11": "height_action_return_intertwining",
+      "2": "long_c2uf",
+      "3": "c2_quotient_transport_ledger",
+      "4": "c2_quotient_anomaly",
+      "5": "c2_dynamics_selector",
+      "6": "sector33_height_coherent_transport",
+      "7": "sector33_all_residue_height_transport",
+      "8": "height_action_return_reconstruction",
+      "9": "e33_full_corrected_transport"
+    },
+    "selector_delta_samples": {
+      "global": [
+        384
+      ],
+      "paired": [
+        288,
+        320
+      ],
+      "primitive": [
+        8,
+        1034
+      ]
+    },
+    "summary": {
+      "accepted_input_count": 12,
+      "anomaly_cocycle_gcd_abs": 3072,
+      "closed_edge_count": 10,
+      "complete_goal_claim_flag": 0,
+      "connected_edge_count": 15,
+      "corrected_vector_count": 2048,
+      "e33_negative_count": 28,
+      "e33_positive_count": 28,
+      "e33_support": 56,
+      "foam_bridge_kernel_dimension": 23,
+      "foam_core_rank": 33,
+      "foam_support_dimension": 56,
+      "focused_hcinv_closed_flag": 1,
+      "gap_edge_count": 5,
+      "height_coherent_operator_materialized_flag": 0,
+      "input_report_count": 12,
+      "lambda_act_kernel_failures": 0,
+      "lambda_act_kernel_masks": 2048,
+      "nonzero_anomaly_orbit_count": 472,
+      "nonzero_height_mask_count": 2047,
+      "raw543_fixed_orbit_count": 63,
+      "raw543_orbit_count": 543,
+      "raw543_pair_orbit_count": 480,
+      "residue_mask_count": 2048,
+      "selector_candidate_count": 543,
+      "selector_free_unique_operator_flag": 0,
+      "tau_projection_nullity": 480,
+      "tau_projection_rank": 543,
+      "transport_orbit_count": 543,
+      "zero_anomaly_orbit_count": 71
+    }
+  }
+}

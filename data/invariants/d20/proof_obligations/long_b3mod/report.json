@@ -1,0 +1,180 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "339d602f00c1d7d0d8fc21199aa968bd906c963f4c516055cc891f9a257a7ffb",
+  "checks": {
+    "conjugacy_classes_partition_group": true,
+    "e_module_gap_recorded": true,
+    "generator_shape_exact": true,
+    "group_action_order_exact": true,
+    "input_reports_checked": true,
+    "permutation_characters_constant": true,
+    "point_orbit_sizes_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_b3mod certifies the Gamma coorient action source needed before the acceptance-basis Krein computation. The action closes to order 9216 on 2576 points, has six point orbits of sizes 384, 192, 144, 576, 512, and 768, and now has a materialized conjugacy-class screen with six orbit permutation characters. It does not yet materialize the irreducible character table, the E0..E7 module decomposition, or the R7 C2 projection.",
+  "closure_boundary": {
+    "certifies": [
+      "the Gamma coorient action source is present and closes to group order 9216",
+      "the action degree is 2576 and the six point-orbit sizes are 384, 192, 144, 576, 512, and 768",
+      "the conjugacy-class screen partitions all 9216 action elements",
+      "the six point-orbit permutation characters are constant on the materialized classes",
+      "the E0..E7 rows are emitted as explicit open module-decomposition obligations"
+    ],
+    "does_not_certify_because_provisional": [
+      "the irreducible character table",
+      "the E0..E7 irrep decomposition",
+      "the R7 C2 projection",
+      "the acceptance-basis Krein parameters",
+      "denominator clearance or acceptance-ladder closure"
+    ]
+  },
+  "inputs": {
+    "coorient_formula": {
+      "expected_closure_order": 9216,
+      "path": "data/coorient/lifted_coorient_signature_formula.json",
+      "schema": "d20.coorient.lift.signature_formula@1",
+      "sha256": "d736855b70354d8248c3b57121c4bcf4deeda6479a5d939e508d7c03ba69cea9"
+    },
+    "coorient_npz": {
+      "degree": 2576,
+      "generator_count": 3,
+      "path": "data/coorient/be3_coorient_generators.npz",
+      "sha256": "06d9eccfa580f97983d5b06f1edde19431902d65d04cb1da14aa99a347e0fa97"
+    },
+    "derive_script": {
+      "path": "src/derive_long_b3mod.py",
+      "sha256": "91389f39c9f6720ae2344d82c22aac016669acb754192ed0f86950978dc134e0"
+    },
+    "docs_real": {
+      "path": "docs/real.txt",
+      "sha256": "9d73c6c02859127bf9eb9a05a4dccfc373dcf502de222d62985e49c1dc46b7d9"
+    },
+    "long_kr39": {
+      "certificate_sha256": "8ccf8ae303e8dd9bb2154d7a3748840dca7fe8227f4f92ff00a5004c0e7b6a96",
+      "path": "data/invariants/d20/proof_obligations/long_kr39/report.json",
+      "sha256": "5b8ffea31ae2fa6ad89ce9732860296bc7adcb7dc412e04ffbd21497b9b1406f",
+      "status": "LONG_KR39_DIRECT_SECTOR_HADAMARD_SCREEN_CERTIFIED"
+    },
+    "source_cache_report": {
+      "certificate_sha256": "da6983ce98e931ffc94b074df36288d9c86064259d65f3b0d506b6c84c855003",
+      "path": "data/invariants/d20/theorems/zero_axiom_coorient_cache/report.json",
+      "sha256": "2618580932b931d702a6c8b77595d9f9e3b3f88a9271795406eb54b97a0c7e91",
+      "status": "D20_ZERO_AXIOM_COORIENT_CACHE_CERTIFIED"
+    },
+    "strict_replay_report": {
+      "certificate_sha256": "09849421b0f74ea67230efc811e280a43055534b2d51de1bb1158af02cf9e8b6",
+      "path": "data/invariants/d20/theorems/zero_axiom_coorient_strict_replay/report.json",
+      "sha256": "c4e99d2c252dabab84e1d78d1ebd0dc853f9963cf79e7fb365c529a0b5e2796b",
+      "status": "D20_ZERO_AXIOM_COORIENT_STRICT_REPLAY_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_b3mod.py",
+      "sha256": "646db74746245be9081eb464e258e8932c1690bf36b650c50876cadb7dba459c"
+    }
+  },
+  "next_highest_yield_item": "Compute the irreducible character table for the Gamma action source, then decompose E0..E7 and feed the resulting basis into the Krein parameter computation.",
+  "outputs": {
+    "b3mod": "data/invariants/d20/proof_obligations/long_b3mod/b3mod.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_b3mod/cert.json",
+    "character_source": "data/invariants/d20/proof_obligations/long_b3mod/widetildeB3_character_table.json",
+    "class_csv": "data/invariants/d20/proof_obligations/long_b3mod/class.csv",
+    "e_decomposition_csv": "data/invariants/d20/proof_obligations/long_b3mod/balanced_Ei_irrep_decomposition.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_b3mod/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_b3mod/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_b3mod/obs.csv",
+    "permutation_character_csv": "data/invariants/d20/proof_obligations/long_b3mod/permutation_character.csv",
+    "report": "data/invariants/d20/proof_obligations/long_b3mod/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_b3mod/tables.npz"
+  },
+  "schema": "long.b3mod.report@1",
+  "stage_protocol": {
+    "closure": "certify the source boundary and keep the irreducible module basis provisional",
+    "coherence": "check action order, point-orbit sizes, class partition, character constancy, and table hashes",
+    "draft": "read docs/real.txt, long_kr39, and the coorient action source reports",
+    "emit": "write long_b3mod artifacts and verifier hook",
+    "witness": "emit Gamma class rows, six orbit permutation characters, E0..E7 open rows, gaps, and observables"
+  },
+  "status": "LONG_B3MOD_ACTION_CHARACTER_SOURCE_BOUNDARY_PROVISIONAL",
+  "witness": {
+    "E_labels": [
+      "E0",
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6",
+      "E7"
+    ],
+    "action_sha256": "a153e0a0587089bf8511ae5c8e6722c9acdfa80a0c41884dd14a5fae812ef955",
+    "class_table_sha256": "0ba197cdc554e0e7ab0144fe8c36df0d5bf3cf4902fd653a59a1a7ba33ec0ed7",
+    "class_text_sha256": "4dd8225afc2f8fa98a76cdceab79c210cfc98cd675810cdead6c3fe26ca95a1b",
+    "classification": "gamma_action_character_source_boundary",
+    "e_table_sha256": "e39c8d98091a650d99b33feee75495606e8653bb44968b77f98119ba6836e5b6",
+    "e_text_sha256": "6187c187ef0b0fe6d658ef6330ed0c021e7a1aeb2ce44ff2c2615cc207d7e9a3",
+    "gap_code_map": {
+      "0": "coorient_action_source",
+      "1": "conjugacy_class_screen",
+      "2": "six_orbit_permutation_characters",
+      "3": "irreducible_character_table_missing",
+      "4": "E0_E7_decomposition_missing",
+      "5": "R7_C2_projection_missing",
+      "6": "krein_acceptance_basis_missing"
+    },
+    "gap_table_sha256": "a9a9efd30f8c7d8bdc20625bb3aabf39b0a301d7ae7c7a0c10d7639852d058c6",
+    "generator_permutations_sha256": "b0aacddfec6f38bd0fb85a6fac24f9ee9b063cf4c721fffc6051bc9a3e9d9f8a",
+    "name": "long_b3mod",
+    "object_labels": [
+      "B_minus",
+      "B_plus",
+      "V_minus",
+      "V_plus",
+      "S_minus",
+      "S_plus"
+    ],
+    "object_of_point_sha256": "b93902a7f846379c5fc7f7b853ef831f547fee70e7b97fb378b0f03638e10709",
+    "observable_code_map": {
+      "0": "generator_count",
+      "1": "degree",
+      "10": "e_module_row_count",
+      "11": "e_module_decomposition_present_count",
+      "12": "c2_projection_present_count",
+      "13": "acceptance_completion_flag",
+      "14": "next_gap_code",
+      "2": "group_order",
+      "3": "point_orbit_count",
+      "4": "object_size_sum",
+      "5": "class_count",
+      "6": "class_size_sum",
+      "7": "max_class_size",
+      "8": "permutation_character_count",
+      "9": "permutation_character_constant_flag"
+    },
+    "observable_table_sha256": "c1d8c9088d8299616b3e48b873593fbd0e5f7bdfce3a496c56762202d42bbab4",
+    "permchar_table_sha256": "a8439e9b4fdb673fe80bac2889e54d50bd5114483431d843662f6a80ad58e5f3",
+    "permchar_text_sha256": "69decff639e022132ec06abb749e4d7bb77f5e562e3877261cba615854b60d36",
+    "summary": {
+      "acceptance_completion_flag": 0,
+      "c2_projection_present_count": 0,
+      "class_count": 41,
+      "class_size_sum": 9216,
+      "degree": 2576,
+      "e_module_decomposition_present_count": 0,
+      "e_module_row_count": 8,
+      "generator_count": 3,
+      "group_order": 9216,
+      "max_class_size": 768,
+      "next_gap_code": 3,
+      "orbit_sizes_by_integral_label": [
+        384,
+        192,
+        144,
+        576,
+        512,
+        768
+      ],
+      "permutation_character_count": 6,
+      "point_orbit_count": 6
+    }
+  }
+}

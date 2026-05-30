@@ -1,0 +1,161 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "f800874495159135e24f6bd4c2c0505e7bb6e8665fe1d6415f185f0b52bf4042",
+  "checks": {
+    "directed_relation_is_incomplete": true,
+    "input_reports_certified": true,
+    "loop_support_domain_coheres": true,
+    "semantic_and_physical_promotion_absent": true,
+    "table_shapes_match": true,
+    "transition_and_clock_counts_match": true,
+    "undirected_relation_covers_but_is_not_functorial": true
+  },
+  "claim": "long_abmap tests the strongest current public-atom-to-endpoint candidate: use the certified 20x25 public atom to Loop-step incidence support, then identify Loop step ids with endpoint basis ids 0..24 as a finite candidate. This gives relation-level undirected coverage of all 20 affine golden ticks, but the global single-valued atom-to-basis CSP has no surviving domain after arc-consistency pruning. The bridge is therefore a non-functorial relation witness, not a certified atom-to-basis map.",
+  "closure_boundary": {
+    "certifies": [
+      "the certified public atom to Loop-step incidence gives 90 nonzero atom-step support memberships",
+      "the directed identity step-to-basis relation covers only 15 of 20 affine golden ticks",
+      "the undirected identity step-to-basis relation covers all 20 affine golden ticks with 59 candidate transition pairs",
+      "the undirected cover is nonunique, with maximum tick multiplicity 6",
+      "arc-consistency pruning eliminates every atom domain for both directed and undirected single-valued atom-to-basis CSPs",
+      "the current evidence gives a relation-level atom/Loop-step/transition cover, not a functorial atom-to-endpoint-basis map",
+      "no semantic A985 transition operation rows are materialized for this relation cover"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "a certified Loop-step-to-endpoint-basis identification beyond the tested identity candidate",
+      "a single-valued atom-to-basis functor",
+      "semantic A985 transition-operation realization for the affine clock",
+      "a physical selector axiom",
+      "that the affine golden clock is physical time",
+      "a selected 1+3 Lorentzian spacetime boundary",
+      "a physical stress-energy tensor or Einstein equation",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_abmap.py",
+      "sha256": "eb11cdaf1cfdc4f31147688ca5dc5cfa25fff247b2a2eaffd421d125b96dcafd"
+    },
+    "long_binc": {
+      "certificate_sha256": "4395335af3820133892cd4a76c31c3a1c51a5490556cc257ca1519b977209e27",
+      "path": "data/invariants/d20/proof_obligations/long_binc/report.json",
+      "sha256": "cdbf5f7ec41fde66c4d463e1bd1c45f586729d7e7e6a30156e58ffc9cc7c3ef8",
+      "status": "LONG_BINC_CERTIFIED"
+    },
+    "long_gclk": {
+      "certificate_sha256": "6a86d36f11f084058d447f68362c026cca8ea4219b53c3946e49463cdc750760",
+      "path": "data/invariants/d20/proof_obligations/long_gclk/report.json",
+      "sha256": "837cf618f85c091857ef3fbacb78d107e7c9cf5e2d99c4cd2ac381341a03e6df",
+      "status": "D20_STAGE5_F2_6_BRIDGE_AND_AFFINE_CLOCK_CERTIFIED"
+    },
+    "long_gclk_clock": {
+      "path": "data/invariants/d20/proof_obligations/long_gclk/clock.csv",
+      "sha256": "cc6d43f17771b5b5be10ff87ee50c69228aab25d8a5d58d1648d6597f71ed80f"
+    },
+    "long_tlift": {
+      "certificate_sha256": "409181d5643e58583a2cdd1accc8306e7d08163fdda98b88de4b6dd7c56b219a",
+      "path": "data/invariants/d20/proof_obligations/long_tlift/report.json",
+      "sha256": "19cd49dca2cae04b28ff94b23b7b79d7e5c206d85f1d285794b09b333a69f5e8",
+      "status": "LONG_TLIFT_AFFINE_TICK_TRANSITION_LIFT_OBSTRUCTION_CERTIFIED"
+    },
+    "long_transition_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+      "sha256": "c77f941ae6af4d79999a691157030d64eecf9435b3fa708266751d14db9cc630"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "loop_incidence": {
+      "certificate_sha256": "e2bf596a7f7b21d4f67bf5ca70bc8d9592615cf076490193378115ae46aa08f3",
+      "path": "data/invariants/d20/theorems/d20_boundary_loop_step_atom_incidence/report.json",
+      "sha256": "fb7c4dbc7789d3ce8477dd2dbd3a7143aeb04e01a433654b7acab2a7409ba5bd",
+      "status": "D20_BOUNDARY_LOOP_STEP_ATOM_INCIDENCE_CERTIFIED"
+    },
+    "loop_incidence_csv": {
+      "path": "data/invariants/d20/theorems/d20_boundary_loop_step_atom_incidence/boundary_atom_step_incidence.csv",
+      "sha256": "b6801e71bc14a0252c048e4ee1ecb80143d2997daab2423dbc887c878235f865"
+    },
+    "validator": {
+      "path": "src/certify_long_abmap.py",
+      "sha256": "b79dcf21bc5ddc32d0b31eb3790bf26ae3ef596935fc612160d54826f4282067"
+    }
+  },
+  "next_highest_yield_item": "Promote the relation cover into a real bridge only by supplying a certified Loop-step-to-endpoint-basis map or a multi-valued transition semantics that explicitly allows relation-valued time ticks.",
+  "outputs": {
+    "abmap": "data/invariants/d20/proof_obligations/long_abmap/abmap.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_abmap/cert.json",
+    "csp_csv": "data/invariants/d20/proof_obligations/long_abmap/csp.csv",
+    "domain_csv": "data/invariants/d20/proof_obligations/long_abmap/domain.csv",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_abmap/edge.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_abmap/manifest.json",
+    "match_csv": "data/invariants/d20/proof_obligations/long_abmap/match.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_abmap/obs.csv",
+    "prune_csv": "data/invariants/d20/proof_obligations/long_abmap/prune.csv",
+    "report": "data/invariants/d20/proof_obligations/long_abmap/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_abmap/tables.npz"
+  },
+  "schema": "long.abmap.report@1",
+  "stage_protocol": {
+    "closure": "certify relation-level coverage but no functorial atom-to-endpoint-basis map under the identity step-to-basis candidate",
+    "coherence": "check Loop-support domain count, directed/undirected relation coverage, CSP domain collapse, semantic transition absence, and table hashes",
+    "draft": "read long_gclk, long_tlift, long_binc, boundary Loop-step incidence, and long_transition_sem",
+    "emit": "write long_abmap artifacts and verifier hook",
+    "witness": "emit atom-step domains, per-tick relation covers, all relation matches, arc-consistency pruning rows, CSP summary rows, and observables"
+  },
+  "status": "LONG_ABMAP_ATOM_BASIS_FUNCTOR_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "classification": "atom_to_endpoint_basis_functor_obstruction",
+    "csp_table_sha256": "b46ad8b762b57ba51a9c773938f5491ca42b017248609883868b949f39d0ab4f",
+    "domain_table_sha256": "1b3cbcf8e765f288206e6d834e8ce05379e76a6af7e7604a64342630566e726d",
+    "domain_text_sha256": "a70a85581f1679b803bc1bb6ec79f309bc3eea5e72bef81424e54ab10fc0fd8f",
+    "edge_table_sha256": "38fb9484ce2943e306accb4eb97aed5df2202487601d64e381f6b2d2e288a172",
+    "match_table_sha256": "77dcdf59dcfe21f58fec25dca2149ab04de65c0266338a4883a187eb44cd3ac7",
+    "name": "long_abmap",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "directed_final_domain_count",
+      "11": "undirected_edge_covered_count",
+      "12": "undirected_candidate_pair_count",
+      "13": "undirected_max_pair_multiplicity",
+      "14": "undirected_relation_cover_flag",
+      "15": "undirected_functorial_map_exists_flag",
+      "16": "undirected_final_domain_count",
+      "17": "atom_to_basis_function_certified_flag",
+      "18": "semantic_transition_operation_flag",
+      "19": "physical_selector_axiom_flag",
+      "2": "atom_count",
+      "20": "gr_source_ready_flag",
+      "3": "loop_step_atom_count",
+      "4": "domain_row_count",
+      "5": "affine_tick_count",
+      "6": "transition_row_count",
+      "7": "directed_edge_covered_count",
+      "8": "directed_candidate_pair_count",
+      "9": "directed_functorial_map_exists_flag"
+    },
+    "observable_table_sha256": "873c11cbb5716a6ce92627c81169d1b6c7bde07a42b7113f1394e54bd400af6a",
+    "orientation_code_map": {
+      "0": "directed",
+      "1": "undirected"
+    },
+    "prune_table_sha256": "e23a082df94b96d0eda41a949e14d2f34e698d911e51aa3494b2bc8a59744d71",
+    "summary": {
+      "atom_to_basis_function_certified_flag": 0,
+      "directed_candidate_pair_count": 24,
+      "directed_edge_covered_count": 15,
+      "domain_row_count": 90,
+      "gr_source_ready_flag": 0,
+      "semantic_transition_operation_flag": 0,
+      "undirected_candidate_pair_count": 59,
+      "undirected_edge_covered_count": 20,
+      "undirected_functorial_map_exists_flag": 0,
+      "undirected_max_pair_multiplicity": 6,
+      "undirected_relation_cover_flag": 1
+    }
+  }
+}

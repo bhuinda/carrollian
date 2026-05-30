@@ -1,0 +1,152 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c54b8b11e0780ad7e070371ea08a891f7ec324d3519a7cfa1ee91d1033f19daf",
+  "checks": {
+    "c59x_split_exact": true,
+    "input_reports_certified": true,
+    "physical_metric_boundaries_preserved": true,
+    "semstress_node_source_available": true,
+    "signed_routes_materialized": true,
+    "source_nodes_covered_in_both_modes": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59x certifies a formal C59X signed-sentinel rule on top of long_semstress: 59 semantic carrier rows plus one sentinel close to a 60-site split, and the positive/negative sentinel modes route every carrier row to materialized outgoing directed stress edges with matching signed tension. The result is a formal edge-routing law, not a physical stress-energy tensor or thermal-gravity claim.",
+  "closure_boundary": {
+    "certifies": [
+      "a formal C59X 59+1 carrier/sentinel split over the 59 semantic rows",
+      "two signed sentinel modes: C59N_PLUS and C59B_MINUS",
+      "118 signed semantic-row routes to materialized outgoing directed stress edges",
+      "positive and negative routes cover all 20 semantic source nodes",
+      "each route matches the selected sentinel sign against directed-edge tension"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "a physical stress-energy tensor",
+      "a smooth Lorentzian metric",
+      "curvature, Einstein tensor, or field equations",
+      "a thermal-gravity derivation",
+      "chemical stability, synthesis, or transport measurement"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59x.py",
+      "sha256": "5ace4a8251c9293e21a5294477a5d139456b3c47747807b94842d1322937e73d"
+    },
+    "long_rsem": {
+      "certificate_sha256": "99ce4b61e31bec166a1ade4ead371e06d115d0757bfc6b32cab8ada0839b1780",
+      "path": "data/invariants/d20/proof_obligations/long_rsem/report.json",
+      "sha256": "bcbe9598ff9ffdd4cc82bcc5d56f0e3c4b9df9ba9c3841654ba3b3c72f0e8186",
+      "status": "LONG_RSEM_GUARDED_RELATION_SEMANTIC_LAW_CERTIFIED"
+    },
+    "long_rsem_relation": {
+      "path": "data/invariants/d20/proof_obligations/long_rsem/relation.csv",
+      "sha256": "f88f47edd7933a07692c98a7860d70a40257445338de66d0d47e169974b6f100"
+    },
+    "long_semstress": {
+      "certificate_sha256": "a23e366669b09dca14f3489d4055e4afd06990035c073e297686f13a78f2d818",
+      "path": "data/invariants/d20/proof_obligations/long_semstress/report.json",
+      "sha256": "691b7d7905f573c7c7aeb500336de8274c81c2b819c9cd0522b5a3cd0bc59f65",
+      "status": "LONG_SEMSTRESS_NODE_SOURCE_MEASURE_CERTIFIED"
+    },
+    "long_semstress_source": {
+      "path": "data/invariants/d20/proof_obligations/long_semstress/source.csv",
+      "sha256": "e6c55e4dbe52df36110596893fd668649755016648ebd9fe244c3710429b49fe"
+    },
+    "long_stress_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/stress_edge.csv",
+      "sha256": "7a25f7a5501af7158311ffa0fc65c2ef9d1cab1cd67d1b3c9ee4d01b514060e1"
+    },
+    "long_stress_gate": {
+      "certificate_sha256": "a31d87700816b5ed5a205c4fbaf2e0774e2132fd550c32242f0988d4e54e4fea",
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/report.json",
+      "sha256": "8c23f384cbb3e5115001e5cf93880d4ba08290c27fbea9e42ecfef70a7c195cb",
+      "status": "LONG_STRESS_GATE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59x.py",
+      "sha256": "936904d13acc3f20c82d3d4f89ce017f9291a22e3d6615c3306ff8dd3202950a"
+    }
+  },
+  "next_highest_yield_item": "Feed the signed C59X route rows into a finite stress-energy ansatz: aggregate signed route weights by source/target edge and test whether conservation or a controlled defect survives.",
+  "outputs": {
+    "c59x": "data/invariants/d20/proof_obligations/long_c59x/c59x.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59x/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59x/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59x/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59x/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59x/report.json",
+    "route_csv": "data/invariants/d20/proof_obligations/long_c59x/route.csv",
+    "sentinel_csv": "data/invariants/d20/proof_obligations/long_c59x/sentinel.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59x/tables.npz"
+  },
+  "schema": "long.c59x.report@1",
+  "stage_protocol": {
+    "closure": "certify formal C59X signed sentinel routing from semantic rows to directed stress edges",
+    "coherence": "check 59+1 split, two signed modes, 118 materialized signed routes, source-node coverage, and physical exclusions",
+    "draft": "read long_semstress, long_rsem relation rows, and directed stress edges",
+    "emit": "write long_c59x artifacts and verifier hook",
+    "witness": "emit sentinel modes, signed route rows, gap rows, and observables"
+  },
+  "status": "LONG_C59X_SIGNED_SENTINEL_EDGE_ROUTING_CERTIFIED",
+  "witness": {
+    "classification": "c59x_signed_sentinel_edge_routing",
+    "gap_code_map": {
+      "0": "c59x_signed_sentinel_rule",
+      "1": "semantic_row_to_directed_stress_edge_route",
+      "2": "physical_stress_energy_tensor",
+      "3": "smooth_lorentzian_metric",
+      "4": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "2cbc250e489245c9a2919238490229d2611794ff702e3fa36a8d7ebd1d8a7929",
+    "name": "long_c59x",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "materialized_stress_edge_count",
+      "11": "source_node_count",
+      "12": "positive_source_node_count",
+      "13": "negative_source_node_count",
+      "14": "all_routes_materialized_flag",
+      "15": "all_routes_outgoing_flag",
+      "16": "all_routes_sign_matched_flag",
+      "17": "formal_edge_routing_flag",
+      "18": "physical_stress_energy_flag",
+      "19": "smooth_metric_flag",
+      "2": "semantic_carrier_count",
+      "20": "thermal_gravity_flag",
+      "21": "next_gap_code",
+      "3": "sentinel_count",
+      "4": "closure_total",
+      "5": "sentinel_mode_count",
+      "6": "signed_route_row_count",
+      "7": "expected_signed_route_row_count",
+      "8": "positive_route_row_count",
+      "9": "negative_route_row_count"
+    },
+    "observable_table_sha256": "c9b5470c21ad9cdaf5b0710dd29e08c4e38e3219f45bbe07e63a8411a25bdd04",
+    "route_table_sha256": "09c72b7d1f5b24ee49ef195fe1ff024bbadf0f204153c315a5efcb18f72fcc13",
+    "route_text_sha256": "15b52ca73f1b1be454a3cefc3c8af0f986c9d17e2616d03ed3c1a5dad035bb7f",
+    "sentinel_code_map": {
+      "0": "C59N_PLUS_SIGNED_SENTINEL",
+      "1": "C59B_MINUS_SIGNED_SENTINEL"
+    },
+    "sentinel_table_sha256": "933fad6b9f8539c3c63ec4bb79e82e7312482f9e57928267d4a6778c8162ea32",
+    "sentinel_text_sha256": "7791f58c9cac67f3b00d3006cee1f9bc880db8438ff93f82be0c9d9290c2f5a0",
+    "summary": {
+      "closure_total": 60,
+      "formal_edge_routing_flag": 1,
+      "materialized_stress_edge_count": 40,
+      "negative_route_row_count": 59,
+      "negative_source_node_count": 20,
+      "physical_stress_energy_flag": 0,
+      "positive_route_row_count": 59,
+      "positive_source_node_count": 20,
+      "semantic_carrier_count": 59,
+      "sentinel_count": 1,
+      "sentinel_mode_count": 2,
+      "signed_route_row_count": 118,
+      "smooth_metric_flag": 0,
+      "thermal_gravity_flag": 0
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c628fd15a76cb6fec564d684ee9cc2c9c8e6f5543d045977014c274e6926b3e5",
+  "checks": {
+    "all_four_lifts_constructs_foam_module": true,
+    "foam16_module_input_certified": true,
+    "foam16_shape_and_counts": true,
+    "foam33_block_structure": true,
+    "intertwining_spec_requires_r_foam": true,
+    "long_hcinv_input_passes": true,
+    "r_foam_shape_and_counts": true,
+    "remaining_intertwiner_inputs_marked_open": true,
+    "signed_monomial_and_orthogonal": true,
+    "tables_have_expected_shapes": true,
+    "target_shape_is_one_plus_two_foam16": true
+  },
+  "claim": "long_hcfoam turns the Foam target operator requested by the height/action-return intertwining spec into concrete checked 33x33 matrices. It deliberately leaves pi_Foam33 and R_hc open.",
+  "closure_boundary": {
+    "certifies": [
+      "the Foam16 generator edge table materializes nine signed-monomial 16x16 operators",
+      "the target action is lifted to nine 33x33 signed-monomial R_Foam operators on 1_glob plus two Foam16 copies",
+      "the global coordinate is fixed by every R_Foam generator",
+      "the two Foam16 copies carry identical generator actions",
+      "the R_Foam matrices are ready as verifier input for the height/action-return intertwining test"
+    ],
+    "does_not_certify": [
+      "a materialized pi_Foam33 projection matrix",
+      "a materialized R_hc source-side matrix family",
+      "the full pi_Foam33 R_hc equals R_Foam pi_Foam33 identity",
+      "broad bundle integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "all_four_lifts_report": {
+      "path": "data/evidence/tensor_chain/stages/all_four_lifts/all_four_lifts_report.json",
+      "sha256": "dd82ea3c6f5faf84fa37a699b5abbe6230fbd6dc6bff4f7c5f51eb011e472924",
+      "status": "ALL_FOUR_REQUESTED_TESTS_COMPLETE"
+    },
+    "derive_script": {
+      "path": "src/derive_long_hcfoam.py",
+      "sha256": "72388f9e12a026298019400ac50c76d53a7178a1f5e5055b6cf9dbd2129350fc"
+    },
+    "foam16_basis": {
+      "path": "data/evidence/tensor_chain/stages/all_four_lifts/faithful_foam16_module_basis.csv",
+      "sha256": "f9dbbee4461995c86a0a772598f954e6ce26015ba059f5c9f0516fc7cdcb5030"
+    },
+    "foam16_generator_edges": {
+      "path": "data/evidence/tensor_chain/stages/all_four_lifts/faithful_foam16_generator_action_edges.csv",
+      "sha256": "c135f3ea2f9ba63ca2ceb1f92afbd35289508b68739e0f93362e652d0be5953d"
+    },
+    "foam16_module_certification": {
+      "path": "data/evidence/tensor_chain/stages/all_four_lifts/faithful_foam16_module_certification.csv",
+      "sha256": "34176c245fa128c25ec7a2886cbda9f8b84b486844de86954b8746f7f63449d4"
+    },
+    "intertwining_spec": {
+      "path": "data/evidence/talagrand_python_handoff/work/height_coherent_action_return_intertwining/next_intertwining_verifier_spec.json",
+      "sha256": "67bf7c7eda90a2553b441c88488409d27079f93f3a2e4a9930a3ad20f4b271ee"
+    },
+    "intertwining_target": {
+      "path": "data/evidence/talagrand_python_handoff/work/height_coherent_action_return_intertwining/height_coherent_action_return_intertwining_target.json",
+      "sha256": "d792c2c8d8ad1f2807667e4361683e43eeb025c0cb7b05cacc6f1e7666389826"
+    },
+    "long_hcinv": {
+      "certificate_sha256": "7b020d3e3c6765ac6a5430e939a849d211691092d46f8818b35cd211d4b10323",
+      "path": "data/invariants/d20/proof_obligations/long_hcinv/report.json",
+      "sha256": "d5f47b0cec457cb2dabef7982c7e7cd07fb3d3002a04f53f4c8a5e253a978ccb",
+      "status": "LONG_HCINV_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_hcfoam.py",
+      "sha256": "68ee6b250eab597983a50b52821d45abaf7b746d0ea6d4fd2da80fb471e58693"
+    }
+  },
+  "next_highest_yield_item": "Materialize pi_Foam33 as the 33x56 support projection, then bind R_hc on the e33 56-support and run the existing matrix verifier against the checked R_Foam family.",
+  "outputs": {
+    "basis_csv": "data/invariants/d20/proof_obligations/long_hcfoam/foam33_basis.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_hcfoam/cert.json",
+    "edge_csv": "data/invariants/d20/proof_obligations/long_hcfoam/r_foam_edges.csv",
+    "generator_csv": "data/invariants/d20/proof_obligations/long_hcfoam/r_foam_generators.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_hcfoam/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_hcfoam/r_foam_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_hcfoam/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_hcfoam/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_hcfoam/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_hcfoam/tables.npz"
+  },
+  "schema": "long.hcfoam.report@1",
+  "stage_protocol": {
+    "closure": "certify only the R_Foam target-side matrix family",
+    "coherence": "check signed-monomial, orthogonality, block structure, counts, and open remaining inputs",
+    "draft": "read long_hcinv, the Foam16 module basis/action edges, the module certification, and the intertwining target spec",
+    "emit": "write long_hcfoam artifacts and verifier hook",
+    "witness": "emit Foam33 basis rows, R_Foam generator summaries, signed action edges, and matrix hashes"
+  },
+  "status": "LONG_HCFOAM_CERTIFIED",
+  "witness": {
+    "classification": "foam_target_action_return_operator_family",
+    "generator_names": [
+      "s4_perm_0",
+      "s4_perm_1",
+      "s4_perm_2",
+      "s4_perm_3",
+      "even_sign_flip_0",
+      "even_sign_flip_1",
+      "even_sign_flip_2",
+      "even_sign_flip_3",
+      "even_sign_flip_4"
+    ],
+    "matrix_hashes": {
+      "foam16_matrix_sha256": "c64d9c772cc0b2538365e5cfe0d8482999e79461e9a7e5f2acf52a3bc89d8b1a",
+      "r_foam_matrix_sha256": "8043206760e31da9c6b16903271142546f21f4df456e379120760daefd371712"
+    },
+    "name": "long_hcfoam",
+    "operator_boundary": {
+      "full_intertwiner_verified": false,
+      "pi_foam33_materialized": false,
+      "r_foam_materialized": true,
+      "r_hc_materialized": false
+    },
+    "summary": {
+      "all_copy_actions_identical_flag": 1,
+      "all_foam16_orthogonal_flag": 1,
+      "all_foam16_signed_monomial_flag": 1,
+      "all_foam33_orthogonal_flag": 1,
+      "all_foam33_signed_monomial_flag": 1,
+      "all_global_fixed_flag": 1,
+      "complete_goal_claim_flag": 0,
+      "field_prime": 1000003,
+      "foam16_copy_count": 2,
+      "foam16_dimension": 16,
+      "foam16_edge_count": 144,
+      "foam16_nonzero_count": 144,
+      "foam33_dimension": 33,
+      "foam33_edge_count": 297,
+      "foam33_nonzero_count": 297,
+      "focused_hcfoam_closed_flag": 1,
+      "generator_closure_count": 384,
+      "generator_count": 9,
+      "module_basis_rank": 16,
+      "pi_foam33_materialized_flag": 0,
+      "projective_action_count": 384,
+      "r_foam_materialized_flag": 1,
+      "r_hc_materialized_flag": 0
+    }
+  }
+}

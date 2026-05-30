@@ -1,0 +1,174 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "cd10ce1d7e05fc968b56b55d59f58b85f5fc4f93300156f47e09a720ea776ba0",
+  "checks": {
+    "canonical_selection_obstructed": true,
+    "definite_spatial_principal_obstructed": true,
+    "input_reports_certified": true,
+    "metric_physical_boundaries_preserved": true,
+    "nondegenerate_candidates_materialized": true,
+    "principal_inventory_exact": true,
+    "principal_search_exhaustive": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59s3 exhaustively enumerates principal three-coordinate subforms of the 18D induced public-kernel form. It finds 11 nondegenerate principal triples and a unique maximum-volume triple, but no definite spatial principal triple and no certified physical selector axiom. Therefore the current boundary still does not certify a canonical three-spatial-rank selection.",
+  "closure_boundary": {
+    "certifies": [
+      "all 816 principal three-coordinate subforms of the 18D restricted form are enumerated",
+      "11 principal triples are nondegenerate",
+      "the unique maximum-volume principal triple has inertia (2,1,0)",
+      "no positive-definite or negative-definite principal three-subform exists",
+      "the current certified selector boundary still lacks a physical selector axiom"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "a definite three-spatial principal subform",
+      "a canonical physical selector for a three-spatial-rank boundary",
+      "an exhaustive search over all non-principal 3D linear subspaces",
+      "a four-dimensional metric reduction",
+      "a smooth Lorentzian metric",
+      "a physical stress-energy tensor",
+      "a thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59s3.py",
+      "sha256": "912af1dd97223c95b20d293f725268290fe60ef4f7a0861149c759f674b712f8"
+    },
+    "long_c59pk": {
+      "certificate_sha256": "a6606fadbdb436f3869db1fd863e31ccb3c0139ced13be9ff8687b20dcf6ad8e",
+      "path": "data/invariants/d20/proof_obligations/long_c59pk/report.json",
+      "sha256": "72c0d1251255abe59a609e0d817507d2a97d72fe95e88da8324c4b4224f9cd44",
+      "status": "LONG_C59PK_INDUCED_PUBLIC_KERNEL_RESTRICTION_CERTIFIED"
+    },
+    "long_c59pk_basis": {
+      "path": "data/invariants/d20/proof_obligations/long_c59pk/restrict_basis.csv",
+      "sha256": "b558466918b1ff1668cb5ce6b27c1da633a04d8b468fce8d0b916b3b4b32f9b3"
+    },
+    "long_c59pk_restricted": {
+      "path": "data/invariants/d20/proof_obligations/long_c59pk/restricted_entry.csv",
+      "sha256": "b09b53a1720395578590be5229ed5f8bf44f784f134af04d451c828d49a2222a"
+    },
+    "long_dim4_gate": {
+      "certificate_sha256": "ee3849c1f565871193f7f72e59ccc2176d43685f53b0017b15f707fb5f68b9d9",
+      "path": "data/invariants/d20/proof_obligations/long_dim4_gate/report.json",
+      "sha256": "631e00d621041534a30fb9bcd497baa91f8197f7faab31accd233465ec8ded09",
+      "status": "LONG_DIM4_GATE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_sel": {
+      "certificate_sha256": "886f7efe5a521ed62a1cd34428e62ed674c43cad7f9bc388a0b4ccb22614c24b",
+      "path": "data/invariants/d20/proof_obligations/long_sel/report.json",
+      "sha256": "2d173ec7254934f8886d9cfc401baddee592b66bcc9765154921e89f2a47a672",
+      "status": "LONG_SEL_PHYSICAL_SELECTOR_AXIOM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59s3.py",
+      "sha256": "b226e5fce0da3adf16374d8bc6c226f576223ce672583b12f8b84eba25131346"
+    }
+  },
+  "next_highest_yield_item": "Decide the non-principal 3D question: either construct a selector for a definite 3-plane inside the 18D form, or certify that the current oracle only supplies principal-coordinate candidates.",
+  "outputs": {
+    "c59s3": "data/invariants/d20/proof_obligations/long_c59s3/c59s3.json",
+    "candidate_csv": "data/invariants/d20/proof_obligations/long_c59s3/candidate.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59s3/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_c59s3/decision.csv",
+    "determinant_csv": "data/invariants/d20/proof_obligations/long_c59s3/determinant.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59s3/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59s3/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59s3/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59s3/report.json",
+    "subform_csv": "data/invariants/d20/proof_obligations/long_c59s3/subform.csv",
+    "summary_csv": "data/invariants/d20/proof_obligations/long_c59s3/summary.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59s3/tables.npz"
+  },
+  "schema": "long.c59s3.report@1",
+  "stage_protocol": {
+    "closure": "certify principal three-subform inventory and the current-boundary spatial-selection obstruction",
+    "coherence": "check rank/inertia counts, determinant max uniqueness, definite-spatial absence, selector absence, and metric exclusions",
+    "draft": "read long_c59pk, long_sel, and long_dim4_gate",
+    "emit": "write long_c59s3 artifacts and verifier hook",
+    "witness": "emit all 816 principal three-subform rows, exact determinant rows, nondegenerate candidates, summary, decisions, gaps, and observables"
+  },
+  "status": "LONG_C59S3_PRINCIPAL_THREE_SUBFORM_SEARCH_CERTIFIED",
+  "witness": {
+    "candidate_table_sha256": "0d9cb7d7f8023991a9576f450e60c62942b3d1f12c0ca38459c26040a895dcaf",
+    "classification": "principal_three_subform_search",
+    "decision_code_map": {
+      "0": "principal_three_search_exhaustive",
+      "1": "nondegenerate_principal_three_exists",
+      "2": "unique_max_volume_principal_three_exists",
+      "3": "definite_spatial_principal_three_exists",
+      "4": "physical_selector_axiom_available",
+      "5": "canonical_three_spatial_selection_certified"
+    },
+    "decision_table_sha256": "d2b15a11316a37ecccd3087d9eb9ab39d0dbaaa1810e4f72b727dc50fb4fbb66",
+    "determinant_text_sha256": "b6ecf6209af6c4f47d0f0855f4fe9e1b597b6e7132054c08a5e9b0753109f5b9",
+    "gap_code_map": {
+      "0": "principal_three_subform_inventory",
+      "1": "definite_spatial_three_subform",
+      "2": "physical_selector_axiom",
+      "3": "canonical_three_spatial_selection",
+      "4": "four_dimensional_metric_reduction",
+      "5": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "5f579ddeb0b598274188091031a160e63454d4f0b81f16b722e5ff3fdcf16977",
+    "name": "long_c59s3",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "definite_spatial_count",
+      "11": "inertia_210_count",
+      "12": "inertia_120_count",
+      "13": "unique_max_abs_det_flag",
+      "14": "max_abs_det_subform_id",
+      "15": "max_abs_det_inertia_positive",
+      "16": "max_abs_det_inertia_negative",
+      "17": "max_abs_det_digit_count",
+      "18": "max_abs_det_mod_1000000007",
+      "19": "physical_selector_axiom_flag",
+      "2": "restricted_dimension",
+      "20": "dim4_reduction_certified_flag",
+      "21": "canonical_three_spatial_selection_flag",
+      "22": "four_dimensional_metric_flag",
+      "23": "physical_stress_energy_flag",
+      "24": "smooth_metric_flag",
+      "25": "thermal_gravity_flag",
+      "26": "next_gap_code",
+      "3": "principal_three_subform_count",
+      "4": "rank3_subform_count",
+      "5": "rank2_subform_count",
+      "6": "rank1_subform_count",
+      "7": "rank0_subform_count",
+      "8": "positive_definite_count",
+      "9": "negative_definite_count"
+    },
+    "observable_table_sha256": "8068cf805acd54f49c3c72b6cac77304c3ffaa61cd5d3a54511833b8bc169c59",
+    "subform_table_sha256": "7baabb695fb6ed8025dae0b6c14d748131803e0ca3d42fd0f14b3c98e60628c1",
+    "subform_text_sha256": "1f0ebe4d0e03da5c26e35554585bf1c6d3250c2effe9afaee54f741191597f36",
+    "summary": {
+      "canonical_three_spatial_selection_flag": 0,
+      "four_dimensional_metric_flag": 0,
+      "inertia_120_count": 3,
+      "inertia_210_count": 8,
+      "max_abs_det_inertia_negative": 1,
+      "max_abs_det_inertia_positive": 2,
+      "max_abs_det_subform_id": 119,
+      "negative_definite_count": 0,
+      "physical_selector_axiom_flag": 0,
+      "physical_stress_energy_flag": 0,
+      "positive_definite_count": 0,
+      "principal_three_subform_count": 816,
+      "rank0_subform_count": 379,
+      "rank2_subform_count": 426,
+      "rank3_subform_count": 11,
+      "restricted_dimension": 18,
+      "smooth_metric_flag": 0,
+      "thermal_gravity_flag": 0,
+      "unique_max_abs_det_flag": 1
+    },
+    "summary_code_map": {
+      "0": "principal_three_subform_inventory"
+    },
+    "summary_table_sha256": "65600c6357ca5848bafa8582204ef6d54e0b00fd02aec16f8903e7fe18016673"
+  }
+}

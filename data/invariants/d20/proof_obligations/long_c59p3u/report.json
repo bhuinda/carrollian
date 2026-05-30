@@ -1,0 +1,143 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c869b06ec91c52f25217f6e7b110dcb8f23c851a4b004b65ed85fca197ab77db",
+  "checks": {
+    "assignment_join_total": true,
+    "input_reports_certified": true,
+    "operation_backing_absent": true,
+    "physical_boundaries_preserved": true,
+    "source_ledger_counts_match": true,
+    "source_ledger_sums_match": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3u joins the 59 formal stress assignments to the operation promotion and transition surfaces. The join is total, and it yields a 14-edge formal stress-source ledger, but zero assigned witnesses have operation rows or semantic transition flags. The source is therefore formal rather than operation-backed.",
+  "closure_boundary": {
+    "certifies": [
+      "all 59 formal stress assignments join to promotion and transition rows",
+      "the formal assignments induce a 14-edge stress-source ledger",
+      "the formal source has signed tension total -197809407552 and absolute total 354128490312",
+      "zero assigned witnesses have operation rows or semantic transition flags",
+      "zero stress-source rows are operation-backed in the current boundary"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "semantic operation rows for the assigned witnesses",
+      "semantic transition flags for the assigned witnesses",
+      "a physical selector axiom",
+      "stress-source conservation or balance",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3u.py",
+      "sha256": "45d2ffe498e8a2f59310cd191567f64c005fb75e690886e0924aea7c523f8d7e"
+    },
+    "long_c59p3f": {
+      "certificate_sha256": "5b68c53ad442c266b522725258fdf1838a974c3e68e404157d5ab02f5ef3f3cf",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3f/report.json",
+      "sha256": "68a9bc7d32f1c23d5cdaab47cafc01a81d1dafd6223867e14248bee40c496546",
+      "status": "LONG_C59P3F_FORMAL_SELECTOR_STRESS_PUSHFORWARD_CERTIFIED"
+    },
+    "long_c59p3f_assignment": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3f/assignment.csv",
+      "sha256": "598f6105099f0055d424e14943dcb398e881f01b9b4198c9a1614d314aea69ca"
+    },
+    "long_oprom": {
+      "certificate_sha256": "e4e7050b1d4ea7d8a03b74eb1b7da5252cf1eb613e85a99831a68b3f863ee5d1",
+      "path": "data/invariants/d20/proof_obligations/long_oprom/report.json",
+      "sha256": "67da912597543bb76572d94413b66c6edce400b500121800eb251ebb9b7426e3",
+      "status": "LONG_OPROM_GOLDEN_OPERATION_PROMOTION_OBSTRUCTION_CERTIFIED"
+    },
+    "long_oprom_promotion": {
+      "path": "data/invariants/d20/proof_obligations/long_oprom/promotion.csv",
+      "sha256": "300bced91684d62faf1501edabf5e24291884718be74d0fbd3bde8af69bb8ed8"
+    },
+    "long_transition_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+      "sha256": "c77f941ae6af4d79999a691157030d64eecf9435b3fa708266751d14db9cc630"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3u.py",
+      "sha256": "780ba0d60b741b9c3e1d748101676cffb5b6b54e376f6028551faf5ba8366e25"
+    }
+  },
+  "next_highest_yield_item": "Test conservation and balance of the 14-edge formal stress-source ledger, since operation backing is still absent.",
+  "outputs": {
+    "c59p3u": "data/invariants/d20/proof_obligations/long_c59p3u/c59p3u.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3u/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3u/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3u/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3u/obs.csv",
+    "opcheck_csv": "data/invariants/d20/proof_obligations/long_c59p3u/opcheck.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3u/report.json",
+    "source_csv": "data/invariants/d20/proof_obligations/long_c59p3u/source.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3u/tables.npz"
+  },
+  "schema": "long.c59p3u.report@1",
+  "stage_protocol": {
+    "closure": "certify the formal stress-source operation gate",
+    "coherence": "check total joins, source ledgers, tension sums, and absent operation backing",
+    "draft": "read long_c59p3f assignments, long_oprom promotions, and long_transition_sem rows",
+    "emit": "write long_c59p3u artifacts and verifier hook",
+    "witness": "emit per-assignment operation checks, formal source rows, gaps, and observables"
+  },
+  "status": "LONG_C59P3U_FORMAL_STRESS_SOURCE_OPERATION_GATE_CERTIFIED",
+  "witness": {
+    "classification": "formal_stress_source_operation_gate",
+    "gap_code_map": {
+      "0": "formal_stress_source_ledger",
+      "1": "operation_row_promotion",
+      "2": "semantic_transition_flags",
+      "3": "physical_selector_axiom",
+      "4": "stress_conservation_balance",
+      "5": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "4dc777e75b21acfccf2c882c9f6271d7027600fcc7a9d2c690054b593b338814",
+    "name": "long_c59p3u",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "formal_pushforward_count",
+      "11": "operation_row_match_count",
+      "12": "semantic_transition_match_count",
+      "13": "operation_backed_source_count",
+      "14": "source_assignment_total",
+      "15": "source_signed_tension_total_scaled",
+      "16": "source_abs_tension_total_scaled",
+      "17": "source_max_assignment_multiplicity",
+      "18": "physical_selector_axiom_flag",
+      "19": "thermal_gravity_flag",
+      "2": "assignment_row_count",
+      "20": "next_gap_code",
+      "3": "promotion_row_count",
+      "4": "transition_row_count",
+      "5": "joined_assignment_count",
+      "6": "source_row_count",
+      "7": "direct_assignment_count",
+      "8": "reverse_assignment_count",
+      "9": "fallback_assignment_count"
+    },
+    "observable_table_sha256": "c9c2f545f5b3a55d75f9e3e30f9ce0a6f04b0ae851229d773f7cabb709edeb9d",
+    "opcheck_table_sha256": "db1e8718bb12ab043000030f00284238cc0888ed2327d83fced0e6e74306bca9",
+    "opcheck_text_sha256": "af987d9f0941a3e7a2cf7d0d9cd7df4744173588fe7a3571354afa13f81c8301",
+    "source_table_sha256": "6e5a9db9ac2d497a5b19001925f0362f5ab3a924e0fc08cb1e8ffbc1509b4e34",
+    "source_text_sha256": "6ab04c885554272384f65b00fe9d264298d95f02ea4bac8b23c51335816f05d1",
+    "summary": {
+      "assignment_row_count": 59,
+      "operation_backed_source_count": 0,
+      "operation_row_match_count": 0,
+      "semantic_transition_match_count": 0,
+      "source_abs_tension_total_scaled": 354128490312,
+      "source_assignment_total": 59,
+      "source_max_assignment_multiplicity": 10,
+      "source_row_count": 14,
+      "source_signed_tension_total_scaled": -197809407552
+    }
+  }
+}

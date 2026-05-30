@@ -1,0 +1,169 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "588caf3384268994f817a7062a4b5f720e435886d7c67cd4f1014b0e1a3b4cd2",
+  "checks": {
+    "input_reports_certified": true,
+    "operation_promotion_absent": true,
+    "physical_boundaries_preserved": true,
+    "relation_semantics_present": true,
+    "relation_stress_extension_blocked": true,
+    "stress_bridge_absent": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3r tests whether the guarded relation-valued tick law can be extended to stress scoring. All 59 relation witnesses are present and matched to guarded transitions, but zero have operation rows, zero have semantic transition flags, and the current boundary still has no endpoint atom key or stress-atom bridge. The relation law therefore remains a guarded transition law, not a stress-scored operation law.",
+  "closure_boundary": {
+    "certifies": [
+      "the guarded relation-valued tick law supplies 59 matched transition witnesses",
+      "zero of the 59 relation witnesses is promoted to an operation row",
+      "zero of the 59 relation witnesses has a semantic transition flag",
+      "the current boundary has no endpoint atom key or stress-atom bridge for the relation law",
+      "zero relation witnesses are extended to stress scoring under the current boundary"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "operation rows for the 59 guarded relation witnesses",
+      "a relation-valued stress-transition law that bypasses operation rows by explicit rule",
+      "a physical selector axiom",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3r.py",
+      "sha256": "b45bc7abb0c55baee99fd011dab247182449e68f758cdd2a91fccd0d4ee2d319"
+    },
+    "long_c59p3b": {
+      "certificate_sha256": "1758a1bf7e16a67e8179bf368e9b8f05833a9ea84c408c9eadf7431f671e0b36",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3b/report.json",
+      "sha256": "bbc4dc0f7fb2eb88b46f0cf19d7adbfee4ed93d9e06ca0fb5b09b766fb4bcd22",
+      "status": "LONG_C59P3B_BASIS_STRESS_ATOM_BRIDGE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_c59p3b_bridge": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3b/bridge.csv",
+      "sha256": "27d0a277a765009ad0d7d343d1a1858df57731febf4b36256ab46d90396506f8"
+    },
+    "long_c59p3b_obs": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3b/obs.csv",
+      "sha256": "a35b03d5e32893840ab08db40a01c0f7f294af45cb0f31d0a3690e1274bf3578"
+    },
+    "long_oprom": {
+      "certificate_sha256": "e4e7050b1d4ea7d8a03b74eb1b7da5252cf1eb613e85a99831a68b3f863ee5d1",
+      "path": "data/invariants/d20/proof_obligations/long_oprom/report.json",
+      "sha256": "67da912597543bb76572d94413b66c6edce400b500121800eb251ebb9b7426e3",
+      "status": "LONG_OPROM_GOLDEN_OPERATION_PROMOTION_OBSTRUCTION_CERTIFIED"
+    },
+    "long_oprom_obs": {
+      "path": "data/invariants/d20/proof_obligations/long_oprom/obs.csv",
+      "sha256": "58dfb3005482f786f9f6c00b91348a2f58191ac401cf252e3690de9b755bfc88"
+    },
+    "long_oprom_promotion": {
+      "path": "data/invariants/d20/proof_obligations/long_oprom/promotion.csv",
+      "sha256": "300bced91684d62faf1501edabf5e24291884718be74d0fbd3bde8af69bb8ed8"
+    },
+    "long_rsem": {
+      "certificate_sha256": "99ce4b61e31bec166a1ade4ead371e06d115d0757bfc6b32cab8ada0839b1780",
+      "path": "data/invariants/d20/proof_obligations/long_rsem/report.json",
+      "sha256": "bcbe9598ff9ffdd4cc82bcc5d56f0e3c4b9df9ba9c3841654ba3b3c72f0e8186",
+      "status": "LONG_RSEM_GUARDED_RELATION_SEMANTIC_LAW_CERTIFIED"
+    },
+    "long_rsem_obs": {
+      "path": "data/invariants/d20/proof_obligations/long_rsem/obs.csv",
+      "sha256": "ad942b24c0d472119f55901dbcce4667341b5de2ff13e4d812f397bb1c5f9501"
+    },
+    "long_rsem_relation": {
+      "path": "data/invariants/d20/proof_obligations/long_rsem/relation.csv",
+      "sha256": "f88f47edd7933a07692c98a7860d70a40257445338de66d0d47e169974b6f100"
+    },
+    "long_rsem_tick": {
+      "path": "data/invariants/d20/proof_obligations/long_rsem/tick.csv",
+      "sha256": "045dc3d2af84f593547e28f7ca7d0170112ac4d925cd6211e47f98ec3e18a08a"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3r.py",
+      "sha256": "22038a1ccefb1c76a4b5f80b6b19027c4d622457da6e9477e49eb3defcf7fee9"
+    }
+  },
+  "next_highest_yield_item": "Construct operation rows for the 59 guarded relation witnesses, or emit an explicit relation-valued stress-transition law that names how multivalued witnesses push forward into stress atoms.",
+  "outputs": {
+    "c59p3r": "data/invariants/d20/proof_obligations/long_c59p3r/c59p3r.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3r/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3r/gap.csv",
+    "gate_csv": "data/invariants/d20/proof_obligations/long_c59p3r/gate.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3r/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3r/obs.csv",
+    "relation_stress_csv": "data/invariants/d20/proof_obligations/long_c59p3r/relation_stress.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3r/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3r/tables.npz"
+  },
+  "schema": "long.c59p3r.report@1",
+  "stage_protocol": {
+    "closure": "certify the current relation-valued stress-extension gate",
+    "coherence": "check relation semantics, operation-promotion absence, stress-bridge absence, and physical exclusions",
+    "draft": "read long_c59p3b, long_rsem, and long_oprom",
+    "emit": "write long_c59p3r artifacts and verifier hook",
+    "witness": "emit per-relation stress-extension rows, gate rows, gap rows, and observables"
+  },
+  "status": "LONG_C59P3R_RELATION_STRESS_EXTENSION_GATE_CERTIFIED",
+  "witness": {
+    "classification": "relation_valued_stress_extension_gate",
+    "gap_code_map": {
+      "0": "guarded_relation_semantic_law",
+      "1": "operation_row_promotion",
+      "2": "endpoint_atom_key",
+      "3": "stress_atom_bridge",
+      "4": "stress_score_consumption",
+      "5": "physical_selector_axiom",
+      "6": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "7691ea49f549bcb76416576a6a7c36bd3185c924ba98b860194d936cbe78e8e0",
+    "gate_code_map": {
+      "0": "guarded_relation_semantics",
+      "1": "operation_row_promotion",
+      "2": "semantic_transition_flags",
+      "3": "endpoint_atom_key",
+      "4": "stress_atom_bridge",
+      "5": "stress_score_consumption",
+      "6": "relation_stress_extension"
+    },
+    "gate_table_sha256": "0f29edff4c99b39523e16eaca9c90dc517b741bfa5d19e78c8537d0311494f25",
+    "name": "long_c59p3r",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "promotion_blocked_count",
+      "11": "operation_promotion_flag",
+      "12": "semantic_a985_operation_flag",
+      "13": "endpoint_atom_column_count",
+      "14": "raw_endpoint_stress_atom_bridge_flag",
+      "15": "current_schema_consumes_atom_score_flag",
+      "16": "relation_stress_extension_success_count",
+      "17": "relation_stress_extension_blocked_count",
+      "18": "relation_stress_extension_flag",
+      "19": "physical_selector_axiom_flag",
+      "2": "relation_row_count",
+      "20": "thermal_gravity_flag",
+      "21": "next_gap_code",
+      "3": "guarded_relation_row_count",
+      "4": "guarded_semantic_tick_count",
+      "5": "multivalued_tick_count",
+      "6": "matched_transition_row_count",
+      "7": "operation_row_match_count",
+      "8": "semantic_transition_match_count",
+      "9": "promotion_success_count"
+    },
+    "observable_table_sha256": "8f9f69a2c0b11ebd04e56a3f1877ee5ce77ca72e3b9474dd53c414ff7849fef4",
+    "relation_stress_table_sha256": "746e3ede95aebff8ca31d204555b992a997bc9217d4082ed71e4e06e057cd6e5",
+    "relation_stress_text_sha256": "f307e53390445c88cd7fe45b3ca2f1d7417028952119285c05cdc03dc7c29c38",
+    "summary": {
+      "current_schema_consumes_atom_score_flag": 0,
+      "endpoint_atom_column_count": 0,
+      "guarded_semantic_tick_count": 20,
+      "operation_row_match_count": 0,
+      "raw_endpoint_stress_atom_bridge_flag": 0,
+      "relation_row_count": 59,
+      "relation_stress_extension_blocked_count": 59,
+      "relation_stress_extension_flag": 0,
+      "relation_stress_extension_success_count": 0,
+      "semantic_transition_match_count": 0
+    }
+  }
+}

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>J(6,3) — continuous true SO(6) loop</title>
+<style>
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #05060a;
+    color: #f4f4f4;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  #stage {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #121624 0%, #080a10 55%, #020306 100%);
+  }
+  #hud {
+    position: fixed;
+    left: 18px;
+    top: 14px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 10px;
+    background: rgba(0,0,0,0.36);
+    backdrop-filter: blur(6px);
+    line-height: 1.35;
+    font-size: 12px;
+    user-select: none;
+  }
+  #hud button, #hud input {
+    background: #111725;
+    color: #f4f4f4;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 6px;
+    padding: 4px 7px;
+    font-family: inherit;
+    font-size: 12px;
+  }
+  #hud input {
+    width: 90px;
+    vertical-align: middle;
+  }
+  .muted { color: #9aa4b5; }
+</style>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div id="hud">
+  <div><b>J(6,3)</b> — continuous true SO(6) loop</div>
+  <div class="muted">6D object rotates; fixed 3D projection; no coordinate planes</div>
+  <div style="margin-top:8px;">
+    <button id="toggle">Pause</button>
+    <button id="labels">Labels: on</button>
+    <span class="muted">speed</span>
+    <input id="speed" type="range" min="0.1" max="2.5" step="0.05" value="0.65"/>
+  </div>
+</div>
+<script>
+const DATA = {"labels": ["123", "124", "125", "126", "134", "135", "136", "145", "146", "156", "234", "235", "236", "245", "246", "256", "345", "346", "356", "456"], "outer6Centered": [[0.5, 0.5, 0.5, -0.5, -0.5, -0.5], [0.5, 0.5, -0.5, 0.5, -0.5, -0.5], [0.5, 0.5, -0.5, -0.5, 0.5, -0.5], [0.5, 0.5, -0.5, -0.5, -0.5, 0.5], [0.5, -0.5, 0.5, 0.5, -0.5, -0.5], [0.5, -0.5, 0.5, -0.5, 0.5, -0.5], [0.5, -0.5, 0.5, -0.5, -0.5, 0.5], [0.5, -0.5, -0.5, 0.5, 0.5, -0.5], [0.5, -0.5, -0.5, 0.5, -0.5, 0.5], [0.5, -0.5, -0.5, -0.5, 0.5, 0.5], [-0.5, 0.5, 0.5, 0.5, -0.5, -0.5], [-0.5, 0.5, 0.5, -0.5, 0.5, -0.5], [-0.5, 0.5, 0.5, -0.5, -0.5, 0.5], [-0.5, 0.5, -0.5, 0.5, 0.5, -0.5], [-0.5, 0.5, -0.5, 0.5, -0.5, 0.5], [-0.5, 0.5, -0.5, -0.5, 0.5, 0.5], [-0.5, -0.5, 0.5, 0.5, 0.5, -0.5], [-0.5, -0.5, 0.5, 0.5, -0.5, 0.5], [-0.5, -0.5, 0.5, -0.5, 0.5, 0.5], [-0.5, -0.5, -0.5, 0.5, 0.5, 0.5]], "inner6Centered": [[0.23, 0.23, 0.23, -0.23, -0.23, -0.23], [0.23, 0.23, -0.23, 0.23, -0.23, -0.23], [0.23, 0.23, -0.23, -0.23, 0.23, -0.23], [0.23, 0.23, -0.23, -0.23, -0.23, 0.23], [0.23, -0.23, 0.23, 0.23, -0.23, -0.23], [0.23, -0.23, 0.23, -0.23, 0.23, -0.23], [0.23, -0.23, 0.23, -0.23, -0.23, 0.23], [0.23, -0.23, -0.23, 0.23, 0.23, -0.23], [0.23, -0.23, -0.23, 0.23, -0.23, 0.23], [0.23, -0.23, -0.23, -0.23, 0.23, 0.23], [-0.23, 0.23, 0.23, 0.23, -0.23, -0.23], [-0.23, 0.23, 0.23, -0.23, 0.23, -0.23], [-0.23, 0.23, 0.23, -0.23, -0.23, 0.23], [-0.23, 0.23, -0.23, 0.23, 0.23, -0.23], [-0.23, 0.23, -0.23, 0.23, -0.23, 0.23], [-0.23, 0.23, -0.23, -0.23, 0.23, 0.23], [-0.23, -0.23, 0.23, 0.23, 0.23, -0.23], [-0.23, -0.23, 0.23, 0.23, -0.23, 0.23], [-0.23, -0.23, 0.23, -0.23, 0.23, 0.23], [-0.23, -0.23, -0.23, 0.23, 0.23, 0.23]], "center6": [0.5, 0.5, 0.5, 0.5, 0.5, 0.5], "projection6to3": [[-0.3655736581436624, 0.6268801991813208, -0.3036313403631366], [-0.7221911745265163, -0.41725750862998834, 0.3176637973511847], [0.32831198671803014, -0.5117580331118852, -0.3370453139128483], [-0.058288794101768106, -0.015706214620807003, 0.6104672014040253], [-0.18899174118916912, 0.2578402189912208, -0.08135332213223956], [-0.44485007084317657, -0.3229440186852541, -0.5603656041898762]], "edges": [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 10], [0, 11], [0, 12], [1, 2], [1, 3], [1, 4], [1, 7], [1, 8], [1, 10], [1, 13], [1, 14], [2, 3], [2, 5], [2, 7], [2, 9], [2, 11], [2, 13], [2, 15], [3, 6], [3, 8], [3, 9], [3, 12], [3, 14], [3, 15], [4, 5], [4, 6], [4, 7], [4, 8], [4, 10], [4, 16], [4, 17], [5, 6], [5, 7], [5, 9], [5, 11], [5, 16], [5, 18], [6, 8], [6, 9], [6, 12], [6, 17], [6, 18], [7, 8], [7, 9], [7, 13], [7, 16], [7, 19], [8, 9], [8, 14], [8, 17], [8, 19], [9, 15], [9, 18], [9, 19], [10, 11], [10, 12], [10, 13], [10, 14], [10, 16], [10, 17], [11, 12], [11, 13], [11, 15], [11, 16], [11, 18], [12, 14], [12, 15], [12, 17], [12, 18], [13, 14], [13, 15], [13, 16], [13, 19], [14, 15], [14, 17], [14, 19], [15, 18], [15, 19], [16, 17], [16, 18], [16, 19], [17, 18], [17, 19], [18, 19]], "mid3": [-0.7257917260431311, -0.19147267843769655, -0.17713229092144533], "span3": 2.352865738045823, "planes": [[0, 1, 1], [2, 3, 2], [4, 5, 3], [0, 3, 4], [1, 4, 5], [2, 5, 6]]};
+
+const canvas = document.getElementById("stage");
+const ctx = canvas.getContext("2d", { alpha: false });
+let running = true;
+let showLabels = true;
+let startMs = performance.now();
+let pausedAt = 0;
+let speedFactor = 0.65;
+
+document.getElementById("toggle").onclick = () => {
+  running = !running;
+  const btn = document.getElementById("toggle");
+  if (running) {
+    startMs = performance.now() - pausedAt;
+    btn.textContent = "Pause";
+    requestAnimationFrame(draw);
+  } else {
+    pausedAt = performance.now() - startMs;
+    btn.textContent = "Play";
+  }
+};
+
+document.getElementById("labels").onclick = () => {
+  showLabels = !showLabels;
+  document.getElementById("labels").textContent = "Labels: " + (showLabels ? "on" : "off");
+};
+
+document.getElementById("speed").oninput = (ev) => {
+  const oldTheta = thetaNow();
+  speedFactor = Number(ev.target.value);
+  // keep phase visually continuous after speed change
+  startMs = performance.now() - (oldTheta / (2*Math.PI)) * 9000 / speedFactor;
+};
+
+function resize() {
+  const dpr = Math.max(1, window.devicePixelRatio || 1);
+  canvas.width = Math.floor(window.innerWidth * dpr);
+  canvas.height = Math.floor(window.innerHeight * dpr);
+  canvas.style.width = window.innerWidth + "px";
+  canvas.style.height = window.innerHeight + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+window.addEventListener("resize", resize);
+resize();
+
+function thetaNow() {
+  // Periodic seamless loop. Since all SO(6) plane speeds are integers, R(2π)=I.
+  return (((performance.now() - startMs) * speedFactor / 9000) * 2 * Math.PI) % (2 * Math.PI);
+}
+
+function givensApply(vec, i, j, angle) {
+  const c = Math.cos(angle), s = Math.sin(angle);
+  const xi = vec[i], xj = vec[j];
+  vec[i] = c * xi - s * xj;
+  vec[j] = s * xi + c * xj;
+}
+
+function rotate6(centered, theta) {
+  const out = new Array(centered.length);
+  for (let p = 0; p < centered.length; p++) {
+    const v = centered[p].slice();
+    // Apply the same left-composed Givens sequence used in the certificate.
+    for (const [i, j, speed] of DATA.planes) {
+      givensApply(v, i, j, speed * theta);
+    }
+    for (let k = 0; k < 6; k++) v[k] += DATA.center6[k];
+    out[p] = v;
+  }
+  return out;
+}
+
+function project6to3(points6) {
+  const P = DATA.projection6to3;
+  return points6.map(v => {
+    const x = v[0]*P[0][0] + v[1]*P[1][0] + v[2]*P[2][0] + v[3]*P[3][0] + v[4]*P[4][0] + v[5]*P[5][0];
+    const y = v[0]*P[0][1] + v[1]*P[1][1] + v[2]*P[2][1] + v[3]*P[3][1] + v[4]*P[4][1] + v[5]*P[5][1];
+    const z = v[0]*P[0][2] + v[1]*P[1][2] + v[2]*P[2][2] + v[3]*P[3][2] + v[4]*P[4][2] + v[5]*P[5][2];
+    return [x - DATA.mid3[0], y - DATA.mid3[1], z - DATA.mid3[2]];
+  });
+}
+
+function screenPoint(p3) {
+  const w = window.innerWidth, h = window.innerHeight;
+  const base = Math.min(w, h) / (DATA.span3 * 2.15);
+  const camera = 4.2;
+  const z = p3[2] / DATA.span3;
+  const persp = camera / (camera - z);
+  return [
+    w/2 + p3[0] * base * persp,
+    h/2 - p3[1] * base * persp,
+    p3[2],
+    persp
+  ];
+}
+
+function drawEdges(points, color, width, alpha) {
+  // Sort edges back-to-front by projected z-depth.
+  const edgeItems = DATA.edges.map(([a,b]) => {
+    return { a, b, z: (points[a][2] + points[b][2]) * 0.5 };
+  }).sort((u, v) => u.z - v.z);
+
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  for (const e of edgeItems) {
+    const A = screenPoint(points[e.a]);
+    const B = screenPoint(points[e.b]);
+    const fade = Math.max(0.25, Math.min(1.0, 0.62 + 0.38 * ((e.z / DATA.span3) + 0.5)));
+    ctx.globalAlpha = alpha * fade;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width * ((A[3] + B[3]) * 0.5);
+    ctx.beginPath();
+    ctx.moveTo(A[0], A[1]);
+    ctx.lineTo(B[0], B[1]);
+    ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+}
+
+function drawVertices(points, color, radius, labelMode) {
+  const items = points.map((p, i) => { return { p, i, z: p[2] }; }).sort((a,b) => a.z - b.z);
+  for (const item of items) {
+    const S = screenPoint(item.p);
+    ctx.globalAlpha = 0.95;
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(S[0], S[1], radius * S[3], 0, 2*Math.PI);
+    ctx.fill();
+
+    if (labelMode) {
+      ctx.globalAlpha = 0.92;
+      ctx.font = `${Math.max(9, 11*S[3])}px ui-monospace, Menlo, Consolas, monospace`;
+      ctx.fillStyle = "#f4f4f4";
+      ctx.fillText(DATA.labels[item.i], S[0] + 5, S[1] - 5);
+    }
+  }
+  ctx.globalAlpha = 1;
+}
+
+function draw() {
+  if (!running) return;
+  const theta = thetaNow();
+
+  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+  const outer3 = project6to3(rotate6(DATA.outer6Centered, theta));
+  const inner3 = project6to3(rotate6(DATA.inner6Centered, theta));
+
+  drawEdges(outer3, "#86d7ff", 4.8, 0.90);
+  drawEdges(inner3, "#ff5fd2", 2.0, 0.78);
+  drawVertices(outer3, "#ffffff", 3.9, showLabels);
+  drawVertices(inner3, "#ffd166", 2.1, false);
+
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+</script>
+</body>
+</html>

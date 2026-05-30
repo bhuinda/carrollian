@@ -1,0 +1,127 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "79c0134cbca47a86640a1fea5255ed3b663fb8c7503d33e77766fdd4dc94e90b",
+  "checks": {
+    "formal_law_is_not_physical_selector": true,
+    "golden_class_is_unique": true,
+    "golden_coefficients_match_formal_law": true,
+    "golden_orbit_is_unique": true,
+    "input_reports_certified": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_glaw materializes the formal golden selector law: select the unique defect class whose half-tick polynomial is x^10*(x^2-36)*(x^4-52*x^2+656)^2. This closes the formal law for golden class 0 but does not make it a physical selector.",
+  "closure_boundary": {
+    "certifies": [
+      "there is exactly one golden defect class under the current rim classification",
+      "the selected formal golden class is class 0",
+      "the golden class has one S6 rim orbit and 144 unoriented rims",
+      "the class-0 coefficients match x^10*(x^2-36)*(x^4-52*x^2+656)^2",
+      "the formal golden selector law is available as an input to branch-frontier checks"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "that the formal golden selector is physically valid",
+      "that stress selection should be ignored",
+      "semantic A985 transition operations",
+      "a physical selector axiom",
+      "a selected 1+3 Lorentzian spacetime boundary",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_glaw.py",
+      "sha256": "b5c2c9e00de20fd0ebba50e0058e8d4a65f3bfa3058d5562b0f3614a78f06e22"
+    },
+    "long_frim": {
+      "certificate_sha256": "a41c02675e59fc8eb624b539c183639e7d51ab47f4093c2b515d22975cc957d2",
+      "path": "data/invariants/d20/proof_obligations/long_frim/report.json",
+      "sha256": "4a23f90f75644bed1de26f7a29e28d3fe3fa96e2025d20eb67bc73cb22964790",
+      "status": "LONG_FRIM_F63_RIM_STRESS_LIFT_OBSTRUCTION_CERTIFIED"
+    },
+    "long_rim": {
+      "certificate_sha256": "7bef16da8db573c382ee7660f118c9ce6774cf8e3104f726ed6d162dbec50568",
+      "path": "data/invariants/d20/proof_obligations/long_rim/report.json",
+      "sha256": "91b4a667f01d88f90934092692a1e60375fcde9714bc219d8ae5fb66f6a694ea",
+      "status": "LONG_RIM_DEFECT_PHASES_CERTIFIED"
+    },
+    "long_rim_class": {
+      "path": "data/invariants/d20/proof_obligations/long_rim/class.csv",
+      "sha256": "7d8aec76e5214e3a82d2cf100f7f78dd755db29db6d3c5eee120c51fcc0a5765"
+    },
+    "long_rim_orbit": {
+      "path": "data/invariants/d20/proof_obligations/long_rim/orbit.csv",
+      "sha256": "896bfb3fa13ed89e7e85235db002a09ff53d78a8c70bf1f287cf283d31d43da1"
+    },
+    "validator": {
+      "path": "src/certify_long_glaw.py",
+      "sha256": "c6a524305228fc929182321bf03c4fc31e6283cd3e103687442982bd4151a1fc"
+    }
+  },
+  "next_highest_yield_item": "Rerun the selector branch frontier with long_glaw as an input so the golden branch advances to the next real blocker.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_glaw/cert.json",
+    "coeff_csv": "data/invariants/d20/proof_obligations/long_glaw/coeff.csv",
+    "glaw": "data/invariants/d20/proof_obligations/long_glaw/glaw.json",
+    "law_csv": "data/invariants/d20/proof_obligations/long_glaw/law.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_glaw/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_glaw/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_glaw/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_glaw/tables.npz"
+  },
+  "schema": "long.glaw.report@1",
+  "stage_protocol": {
+    "closure": "certify a formal golden selector law while preserving physical and transition blockers",
+    "coherence": "check uniqueness, coefficient match, formal selector flag, and table hashes",
+    "draft": "read long_rim, long_frim, long_sfork, and rim class/orbit rows",
+    "emit": "write long_glaw artifacts and verifier hook",
+    "witness": "emit the formal golden law row and coefficient witness rows"
+  },
+  "status": "LONG_GLAW_FORMAL_GOLDEN_SELECTOR_CERTIFIED",
+  "witness": {
+    "classification": "formal_golden_selector_law",
+    "coeff_table_sha256": "2a8f84c1836c83023a1a2901a7d3b47019df3bd056a5ed5269bfe1229ed2141e",
+    "coeff_text_sha256": "46ecdfb60cffae39f02b6727efaececad5c4c2410eb0936adf8cd634f25a6d85",
+    "golden_charpoly_factorization": "x^10*(x^2-36)*(x^4-52*x^2+656)^2",
+    "golden_spectrum_squares": [
+      "36",
+      "26+2*sqrt(5)",
+      "26-2*sqrt(5)"
+    ],
+    "law_code_map": {
+      "0": "golden_polynomial_unique_defect_class"
+    },
+    "law_table_sha256": "ff3486e8162989b751eb6699342e1107bfd481c77d967801ab886c84046b5ffa",
+    "law_text_sha256": "aa7efecd3017e1150894a7b6f3345d1f63f64de215fb7721e9dbe4e53dc19621",
+    "name": "long_glaw",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "coefficient_match_count",
+      "11": "coefficient_row_count",
+      "12": "formal_golden_selector_law_flag",
+      "13": "physical_selector_axiom_flag",
+      "14": "transition_semantics_flag",
+      "2": "defect_class_count",
+      "3": "golden_class_count",
+      "4": "golden_class_id",
+      "5": "golden_orbit_count",
+      "6": "golden_orbit_id",
+      "7": "golden_unoriented_rim_count",
+      "8": "golden_rank",
+      "9": "golden_nullity"
+    },
+    "observable_table_sha256": "b086a14ac20d1de7e6a11074c996fa4884c7ae5ae164e8281ad638599650b955",
+    "summary": {
+      "defect_class_count": 63,
+      "formal_golden_selector_law_flag": 1,
+      "golden_class_count": 1,
+      "golden_class_id": 0,
+      "golden_nullity": 10,
+      "golden_orbit_count": 1,
+      "golden_rank": 10,
+      "golden_unoriented_rim_count": 144,
+      "physical_selector_axiom_flag": 0,
+      "transition_semantics_flag": 0
+    }
+  }
+}

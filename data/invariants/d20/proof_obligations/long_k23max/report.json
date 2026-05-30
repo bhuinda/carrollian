@@ -1,0 +1,109 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "4154e47b1a627751b47d4847bbeaae72a2f00d2073fa28bdab996c90d6231a41",
+  "checks": {
+    "candidate_family_count_is_6400": true,
+    "current_route_is_max_rank_one": true,
+    "delete_contract_input_passes": true,
+    "dual_compatible_rank_histogram_is_55_plus_15": true,
+    "global_claims_remain_open": true,
+    "long_k23row_input_passes": true,
+    "only_nonzero_support_is_mapped_w24_subcode": true,
+    "primal_side_has_no_compatible_shadow": true
+  },
+  "claim": "long_k23max certifies that the current sector33 delete/contract shadow route cannot produce a W24-compatible rowspace above rank one.",
+  "closure_boundary": {
+    "certifies": [
+      "the current delete/contract shadow family has 6400 tested candidates",
+      "the primal side has zero W24-compatible shadows",
+      "the dual side has 55 rank-zero compatible shadows and 15 rank-one compatible shadows",
+      "there are zero rank-two-or-higher W24-compatible shadows in this route",
+      "the only nonzero compatible support is the long_k23row W24 octad subcode"
+    ],
+    "does_not_certify": [
+      "absence of a sector33-to-W24 morphism outside the current delete/contract route",
+      "a full 56-to-W24 syzygy basis-binding map",
+      "rowspan(K23) equals the W24/Euler-punctured syzygy rowspace",
+      "an M23 module action on K23",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23max.py",
+      "sha256": "028e3f8758b40ac841e6d84908a1aa9c17dda5944270d34ad2172ac7ddacae93"
+    },
+    "long_k23oct_octad": {
+      "path": "data/invariants/d20/proof_obligations/long_k23oct/octad_rows.csv",
+      "sha256": "335173fce5a4588a152972dfeafd041935e6b741cd055feb3976c359899d3fbc"
+    },
+    "long_k23row": {
+      "certificate_sha256": "88cedc2de809a3f6ee28b77053e4702aa50752ad28084ab0162bf610572886fc",
+      "path": "data/invariants/d20/proof_obligations/long_k23row/report.json",
+      "sha256": "ef1f9fdcf574b37ecfa0e4084d4f9c536d459679790af0545e14622c3e19aaac",
+      "status": "SECTOR33_K23_SELECTED_W24_ROWSPACE_SUBCODE_CERTIFIED"
+    },
+    "sector33_w24_marked_delete_contract_shadow_probe": {
+      "certificate_sha256": "2a810ec48b3b4ee5cf76a2bb9dc888e1f6873f5d7000c0ea71da27fc478d0dc8",
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_delete_contract_shadow_probe/report.json",
+      "sha256": "a1f560b8e7aa08aca6caedccf48086dbbcab2df1b29dcd0dc2e664190bb10e93",
+      "status": "D20_SECTOR33_W24_MARKED_DELETE_CONTRACT_SHADOW_PROBE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23max.py",
+      "sha256": "c7582eeef3f110c4291e0fb7138e2593fd1b9ed35dd9793d434fbc64a2e1832d"
+    }
+  },
+  "next_highest_yield_item": "Leave the exhausted delete/contract route and test a general quotient or non-edge 56-to-W24 binding family with rank and W24 containment as hard gates.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23max/cert.json",
+    "class_rows_csv": "data/invariants/d20/proof_obligations/long_k23max/class_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23max/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23max/k23max_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23max/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23max/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23max/seam.json",
+    "support_rows_csv": "data/invariants/d20/proof_obligations/long_k23max/support_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23max/tables.npz"
+  },
+  "schema": "long.k23max.report@1",
+  "stage_protocol": {
+    "closure": "certify maximal rank-one closure for this route only",
+    "coherence": "check 6400 candidates, primal obstruction, dual 55+15 rank split, unique nonzero support, and open outside-route flags",
+    "draft": "read long_k23row and the full delete/contract shadow probe",
+    "emit": "write long_k23max artifacts and verifier hook",
+    "witness": "emit route-class rows, support-placement rows, observables, and matrix payloads"
+  },
+  "status": "SECTOR33_K23_DELETE_CONTRACT_ROUTE_MAX_RANK1_CERTIFIED",
+  "witness": {
+    "boundary": "This closes the current cocircuit-plus-one delete/contract W24 shadow route at maximal compatible rank one; it does not rule out non-edge, quotient, or full 56-to-W24 binding routes.",
+    "classification": "sector33_k23_delete_contract_route_max_rank1",
+    "matrix_sha256": "b1c5321a50653504580effecce3afd3f1f4fe9c7a2ed383204e288804f43208d",
+    "name": "long_k23max",
+    "summary": {
+      "complete_goal_claim_flag": 0,
+      "current_route_higher_rank_possible_flag": 0,
+      "current_route_max_compatible_rank": 1,
+      "current_route_maximal_rank1_closed_flag": 1,
+      "delete_contract_candidate_count": 6400,
+      "delete_contract_input_certified_flag": 1,
+      "dual_candidate_count": 3200,
+      "dual_compatible_count": 70,
+      "dual_rank0_compatible_count": 55,
+      "dual_rank1_compatible_count": 15,
+      "dual_rank_ge2_compatible_count": 0,
+      "k23_equality_certified_flag": 0,
+      "long_k23row_certified_flag": 1,
+      "m23_module_proven_flag": 0,
+      "mapped_w24_mask": 1331525,
+      "mapped_w24_subcode_flag": 1,
+      "mapped_w24_weight": 8,
+      "outside_delete_contract_route_open_flag": 1,
+      "primal_candidate_count": 3200,
+      "primal_compatible_count": 0,
+      "unique_nonzero_support_case_count": 15,
+      "unique_nonzero_support_count": 1,
+      "unique_nonzero_support_weight": 8
+    }
+  }
+}

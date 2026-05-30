@@ -1,0 +1,124 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "138656ffc506787f52c87d3b43aecfc8cf17f96b5201aabfd34551ebb05e29b8",
+  "checks": {
+    "input_reports_certified": true,
+    "operation_and_physical_boundaries_preserved": true,
+    "selector_support_covers_counterterm_atoms": true,
+    "source_counts_match": true,
+    "table_shapes_match": true,
+    "zero_counterterm_atoms_preserved": true
+  },
+  "claim": "long_c59p3d joins the formal atom counterterm to the certified atom-step selector carrier. All 17 nonzero counterterm atoms have selector-domain support, giving 77 carrier rows. This certifies carrier support only, not an exact selector-weight distribution or operation-backed counterterm realization.",
+  "closure_boundary": {
+    "certifies": [
+      "all 17 nonzero atom counterterms have certified selector-domain carrier support",
+      "the selector carrier contains 77 atom-step rows over the corrected atoms",
+      "each corrected atom has between 3 and 6 selector-domain carriers",
+      "the three zero-counterterm atoms remain outside the active carrier support"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "an exact selector-weight distribution over the carrier rows",
+      "operation-backed counterterm rows",
+      "a physical selector axiom",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3d.py",
+      "sha256": "20e79ef6ac92846798dbdac9d585819d08816874680b6cbecb0ff7cdc6a6148d"
+    },
+    "long_abmap": {
+      "certificate_sha256": "f800874495159135e24f6bd4c2c0505e7bb6e8665fe1d6415f185f0b52bf4042",
+      "path": "data/invariants/d20/proof_obligations/long_abmap/report.json",
+      "sha256": "379bd0b523e22af0f5daa5a68760830b37c25fd7f814580e6eee9da70b23d2ac",
+      "status": "LONG_ABMAP_ATOM_BASIS_FUNCTOR_OBSTRUCTION_CERTIFIED"
+    },
+    "long_abmap_domain": {
+      "path": "data/invariants/d20/proof_obligations/long_abmap/domain.csv",
+      "sha256": "8b7dbe97b75f634a3a3c4e1ca5ac7a62253faf703d277bb11317b3d940936a94"
+    },
+    "long_c59p3c": {
+      "certificate_sha256": "ec25b0f1231234198b9d79b9aeee08583aa469ac5d5f1acca2f04db7e98e8ef2",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3c/report.json",
+      "sha256": "ed87233f1e80b91b4e64abecbbd8192aaf28f5751550301df7f4eaa305808d38",
+      "status": "LONG_C59P3C_FORMAL_LOCAL_COUNTERTERM_CERTIFIED"
+    },
+    "long_c59p3c_counterterm": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3c/counterterm.csv",
+      "sha256": "305e375762400272a163e8171ffd75eb8f91d53e32d2fecb8ab358fa2361c7ac"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3d.py",
+      "sha256": "33c9f92474bec3ab4a812f0610d89cb6cc7792d63a88fadde59cf1162ffa23aa"
+    }
+  },
+  "next_highest_yield_item": "Construct an exact selector-weight distribution over the 77 carrier rows, or certify the divisibility/normalization obstruction.",
+  "outputs": {
+    "atom_csv": "data/invariants/d20/proof_obligations/long_c59p3d/atom.csv",
+    "c59p3d": "data/invariants/d20/proof_obligations/long_c59p3d/c59p3d.json",
+    "carrier_csv": "data/invariants/d20/proof_obligations/long_c59p3d/carrier.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3d/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3d/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3d/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3d/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3d/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3d/tables.npz"
+  },
+  "schema": "long.c59p3d.report@1",
+  "stage_protocol": {
+    "closure": "certify selector-carrier support for the formal atom counterterm",
+    "coherence": "check all nonzero counterterm atoms have selector-domain carriers and preserve operation/physical gaps",
+    "draft": "read long_c59p3c counterterm rows and long_abmap atom-step domains",
+    "emit": "write long_c59p3d artifacts and verifier hook",
+    "witness": "emit atom support rows, carrier rows, gaps, and observables"
+  },
+  "status": "LONG_C59P3D_COUNTERTERM_SELECTOR_CARRIER_CERTIFIED",
+  "witness": {
+    "atom_table_sha256": "bc49b9ee68204b1e9f886555d608fed9e0b76b0b330843d47b8b54d745b6be15",
+    "carrier_table_sha256": "38199f1014500c9a175b85eee60663290192fef26dcc91efaa1f09b2def210bc",
+    "carrier_text_sha256": "34cc48c08a606eb61066783623e9215ccb1fea3e7e51659f50e82fda8e089e26",
+    "classification": "counterterm_selector_carrier",
+    "gap_code_map": {
+      "0": "formal_atom_counterterm",
+      "1": "selector_carrier_support",
+      "2": "exact_selector_weight_distribution",
+      "3": "operation_backed_counterterm",
+      "4": "physical_selector_axiom",
+      "5": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "895f7e48c2afa8248603694087433e55b95155b998b403ae61c26f8572a69be1",
+    "name": "long_c59p3d",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "zero_counterterm_domain_row_count",
+      "11": "selector_carrier_flag",
+      "12": "exact_selector_weight_distribution_flag",
+      "13": "operation_backed_counterterm_flag",
+      "14": "physical_selector_axiom_flag",
+      "15": "thermal_gravity_flag",
+      "16": "next_gap_code",
+      "2": "atom_count",
+      "3": "domain_row_count",
+      "4": "counterterm_support_count",
+      "5": "selector_supported_counterterm_atom_count",
+      "6": "selector_carrier_row_count",
+      "7": "min_selector_domain_count_on_support",
+      "8": "max_selector_domain_count_on_support",
+      "9": "zero_counterterm_atom_count"
+    },
+    "observable_table_sha256": "d33e0cb1bd9e79698658f8cffa2123380473ed4d9994f705804193bb984fe168",
+    "summary": {
+      "counterterm_support_count": 17,
+      "exact_selector_weight_distribution_flag": 0,
+      "max_selector_domain_count_on_support": 6,
+      "min_selector_domain_count_on_support": 3,
+      "operation_backed_counterterm_flag": 0,
+      "selector_carrier_flag": 1,
+      "selector_carrier_row_count": 77,
+      "selector_supported_counterterm_atom_count": 17
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "f4a880344917e150defdfccb6d71aab21400e7ac9c63e129c02da755ff59f0f2",
+  "checks": {
+    "abstract_candidate_remains_rank33_kernel23": true,
+    "abstract_scalar_input_passes": true,
+    "count_only_binding_is_rejected": true,
+    "e33_input_is_certified": true,
+    "support_join_has_expected_size_and_sign_split": true,
+    "support_profile_matches_sector33": true,
+    "support_rows_are_active_closed_loop_blocks": true,
+    "unique_sector33_input_is_certified": true
+  },
+  "claim": "long_hcsupp certifies the current source-bound e33 relation-support profile and marks the relation-row to Lambda3(A2+H6) basis binding as still open.",
+  "closure_boundary": {
+    "certifies": [
+      "the materialized e33 support has 56 relation rows with 28 positive and 28 negative signed entries",
+      "all support rows lie in the active closed-loop blocks B+->B+ and S+->S+",
+      "the raw block profile is 12 B+ rows and 44 S+ rows, matching the sector33 object-loop support profile",
+      "the abstract 20+30+6 Lambda3(A2+H6) partition cannot by itself be identified with the raw 12+44 relation profile"
+    ],
+    "does_not_certify": [
+      "the relation-row to Lambda3(A2+H6) basis binding",
+      "the actual pi_Foam33 relation-support projection table",
+      "a materialized R_hc generator family",
+      "the full matrix intertwining equation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_hcsupp.py",
+      "sha256": "e0aedf88de4072cd9d3a2d8d2d2b517cc1a88e4cc25b05318ecbe8be8327599b"
+    },
+    "e33_certificate": {
+      "certificate_sha256": "b1450772bc495a50e83c25ccf7ba570ef092c72bceda8c6fea5005c9785701df",
+      "path": "data/evidence/talagrand_python_handoff/work/e33_full_corrected_transport/e33_full_corrected_transport_certificate.json",
+      "sha256": "add7c450b1cafc1bcb8c1c16a561fc4522fadc65944819fdee24efc55d1f10b6",
+      "status": "E33_VECTOR_AND_ALL_CORRECTED_TRANSPORTS_CERTIFIED"
+    },
+    "e33_entries": {
+      "path": "data/evidence/talagrand_python_handoff/work/e33_full_corrected_transport/e33_vector_entries.csv",
+      "sha256": "5a0c68e8fcec378e9cc818bac7766de036d54cc6bc9ad2410b7b705945e7a12d"
+    },
+    "long_hcscalar": {
+      "certificate_sha256": "7e11a69dfc3c24f358698978c73ceeeba3c8f1100055f2d7958853a5948aa553",
+      "path": "data/invariants/d20/proof_obligations/long_hcscalar/report.json",
+      "sha256": "11f10d4eb724df88b2fd18947684ad9794d43fbf1cbddacdf7ee8bac5e95a24a",
+      "status": "LONG_HCSCALAR_ABSTRACT_COMPLETION_CERTIFIED"
+    },
+    "long_hcshape": {
+      "certificate_sha256": "9d3583e45704893aa4ab15781a416937072e0aa3c9e1952723c221d9fe126612",
+      "path": "data/invariants/d20/proof_obligations/long_hcshape/report.json",
+      "sha256": "fc18fef3256f4f3b2ead1a7e61b41d13bf77dde1960badfd4be17bc79b86aab4",
+      "status": "LONG_HCSHAPE_CERTIFIED"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "sector33_unique_public_zero": {
+      "certificate_sha256": "199313b70a1247e8b4a9ee46f241fb3d509e048e6911f1200a5e06c7ae30d692",
+      "path": "data/invariants/d20/theorems/sector33_unique_public_zero_support/report.json",
+      "sha256": "72d94a621f2dc84f7407673a676ba1cf46651f4284e91332b82a14bd0788f1c8",
+      "status": "D20_SECTOR33_UNIQUE_PUBLIC_ZERO_SUPPORT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_hcsupp.py",
+      "sha256": "bf63e823c8397d95caad749ed4e9cd863a9aeb4a7815af3870939e1f1c7aface"
+    }
+  },
+  "next_highest_yield_item": "Reconstruct or expose the local center-basis expansion for the sector33 B+ and S+ pre-idempotents, then use it to bind the 56 relation rows to the abstract Lambda3(A2+H6) basis.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_hcsupp/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_hcsupp/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_hcsupp/obs.csv",
+    "profile_csv": "data/invariants/d20/proof_obligations/long_hcsupp/profile.csv",
+    "report": "data/invariants/d20/proof_obligations/long_hcsupp/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_hcsupp/seam.json",
+    "support_rows_csv": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_hcsupp/tables.npz"
+  },
+  "schema": "long.hcsupp.report@1",
+  "stage_protocol": {
+    "closure": "certify the support profile without claiming a pi_Foam33 relation-row binding",
+    "coherence": "check support count, sign split, raw closed-loop blocks, sector33 object-loop profile, and abstract partition mismatch",
+    "draft": "read e33 vector rows, raw relation memberships, sector33 public-zero profile, and long_hcscalar",
+    "emit": "write long_hcsupp artifacts and verifier hook",
+    "witness": "emit joined 56-row support table, two-block profile table, and observable counts"
+  },
+  "status": "LONG_HCSUPP_PROFILE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the relation-row support profile of e33, not a relation-row to Lambda3(A2+H6) basis binding.",
+    "classification": "height_coherent_relation_support_profile",
+    "coefficient_counter": {
+      "-164063": 18,
+      "-31250": 1,
+      "-343751": 5,
+      "-492189": 4,
+      "164063": 18,
+      "31250": 1,
+      "343751": 5,
+      "492189": 4
+    },
+    "name": "long_hcsupp",
+    "sector33_local_pre_idempotent_keys": [
+      [
+        1,
+        12
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "summary": {
+      "abstract_candidate_kernel_dimension": 23,
+      "abstract_candidate_rank": 33,
+      "abstract_domain_dimension": 56,
+      "abstract_hidden_pair_count": 6,
+      "abstract_twoform_count": 30,
+      "abstract_visible_count": 20,
+      "block_counts_match_abstract_partition_flag": 0,
+      "bplus_block_support": 12,
+      "complete_goal_claim_flag": 0,
+      "count_only_binding_possible_flag": 0,
+      "e33_negative_count": 28,
+      "e33_positive_count": 28,
+      "e33_reconstruction_bplus_candidate": 3,
+      "e33_reconstruction_splus_candidate": 17,
+      "e33_signed_sum": 0,
+      "e33_support": 56,
+      "focused_hcsupp_closed_flag": 1,
+      "raw_block_profile_count": 2,
+      "relation_support_table_materialized_flag": 1,
+      "relation_to_lambda3_binding_materialized_flag": 0,
+      "sector33_bplus_local_pre_idempotent": 12,
+      "sector33_pre_idempotent_support_size": 2,
+      "sector33_profile_support": 56,
+      "sector33_public_zero_flag": 1,
+      "sector33_q12_nonzero_count": 0,
+      "sector33_q42_nonzero_count": 0,
+      "sector33_splus_local_pre_idempotent": 6,
+      "splus_block_support": 44
+    },
+    "support_table_sha256": "c42256881fb73135503585c7f0d4187e2f63d6a37d9d238e4db00cb360884140"
+  }
+}

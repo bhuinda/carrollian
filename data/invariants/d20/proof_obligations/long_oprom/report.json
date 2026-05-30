@@ -1,0 +1,127 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e4e7050b1d4ea7d8a03b74eb1b7da5252cf1eb613e85a99831a68b3f863ee5d1",
+  "checks": {
+    "downstream_physical_gr_boundaries_preserved": true,
+    "guarded_relations_match_contact_lift_transitions": true,
+    "input_reports_certified": true,
+    "operation_rows_absent_for_all_golden_relations": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_oprom tests whether the 59 guarded relation-valued golden tick witnesses can be promoted to semantic A985 operation rows under the current transition surface. Each guarded relation matches a contact-lift transition row, but none has an operation row or semantic transition flag. The golden relation law therefore remains a guarded transition law, not an A985 operation law.",
+  "closure_boundary": {
+    "certifies": [
+      "all 59 golden guarded relation witnesses match contact-lift transition rows",
+      "zero of those 59 matched transitions has a semantic A985 operation row",
+      "zero of those 59 matched transitions has semantic_transition_flag=1",
+      "the golden guarded relation law is not promoted to semantic A985 operations in the current artifact boundary"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "absolute impossibility of future operation-row promotion",
+      "a transition composition law from contact lifts to A985 multiplication",
+      "a physical selector axiom",
+      "that relation-valued ticks are physical time",
+      "a selected 1+3 Lorentzian spacetime boundary",
+      "a physical stress-energy tensor or Einstein equation",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_oprom.py",
+      "sha256": "e47e60d13936cf0c6f764c42757a67500bd328124f38f828fbbdb2764d4d4864"
+    },
+    "long_rsem": {
+      "certificate_sha256": "99ce4b61e31bec166a1ade4ead371e06d115d0757bfc6b32cab8ada0839b1780",
+      "path": "data/invariants/d20/proof_obligations/long_rsem/report.json",
+      "sha256": "bcbe9598ff9ffdd4cc82bcc5d56f0e3c4b9df9ba9c3841654ba3b3c72f0e8186",
+      "status": "LONG_RSEM_GUARDED_RELATION_SEMANTIC_LAW_CERTIFIED"
+    },
+    "long_rsem_relation": {
+      "path": "data/invariants/d20/proof_obligations/long_rsem/relation.csv",
+      "sha256": "f88f47edd7933a07692c98a7860d70a40257445338de66d0d47e169974b6f100"
+    },
+    "long_transition_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+      "sha256": "c77f941ae6af4d79999a691157030d64eecf9435b3fa708266751d14db9cc630"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_oprom.py",
+      "sha256": "d5eb48c5fd7084fb749a57438bdebcb1f6517a9b826d203f82f96df0bc2269e8"
+    }
+  },
+  "next_highest_yield_item": "Construct actual A985 operation rows for the 59 matched golden relation witnesses, or certify a stronger no-go theorem showing why contact-lift transitions cannot be promoted under the current A985 operation schema.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_oprom/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_oprom/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_oprom/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_oprom/obs.csv",
+    "oprom": "data/invariants/d20/proof_obligations/long_oprom/oprom.json",
+    "promotion_csv": "data/invariants/d20/proof_obligations/long_oprom/promotion.csv",
+    "report": "data/invariants/d20/proof_obligations/long_oprom/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_oprom/tables.npz"
+  },
+  "schema": "long.oprom.report@1",
+  "stage_protocol": {
+    "closure": "certify the current operation-promotion obstruction for the golden guarded relation law",
+    "coherence": "check 59 guarded relation witnesses, transition-row matches, absent operation rows, and preserved physical boundary",
+    "draft": "read long_rsem relation rows and long_transition_sem transition rows",
+    "emit": "write long_oprom artifacts and verifier hook",
+    "witness": "emit matched promotion rows, gap rows, and observables"
+  },
+  "status": "LONG_OPROM_GOLDEN_OPERATION_PROMOTION_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "classification": "golden_guarded_relation_operation_promotion_gate",
+    "gap_code_map": {
+      "0": "guarded_relation_witnesses_present",
+      "1": "contact_lift_transition_rows_present",
+      "2": "semantic_operation_rows_absent",
+      "3": "transition_composition_law_absent"
+    },
+    "gap_table_sha256": "cb8aad1e4a029fab93e94ee511710e65b419c9b195ea5e0850533dd7760e0a3f",
+    "gap_text_sha256": "71bb81ce79923ffbb0a05cfa1601f6fb980ef568235c4a1cbad1f395cf049887",
+    "name": "long_oprom",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "operation_promotion_flag",
+      "11": "semantic_a985_operation_flag",
+      "12": "transition_composition_law_flag",
+      "13": "physical_selector_axiom_flag",
+      "14": "gr_source_ready_flag",
+      "2": "golden_relation_row_count",
+      "3": "transition_row_count",
+      "4": "matched_transition_row_count",
+      "5": "guarded_relation_row_count",
+      "6": "operation_row_match_count",
+      "7": "semantic_transition_match_count",
+      "8": "promotion_success_count",
+      "9": "promotion_blocked_count"
+    },
+    "observable_table_sha256": "c8e81372567787ee012b5baff7826892a4b35347b6189300e358403a1ac7dbdc",
+    "obstruction_code_map": {
+      "0": "matched_contact_lift_has_no_a985_operation_row"
+    },
+    "promotion_table_sha256": "090df2b2e0956000416e1551c84e7cd48f8979408806dff9a64c85dd45f04f91",
+    "promotion_text_sha256": "e1fc8cdb8f8a28575785df461c131004dbed043d363141fc707b5c74fccbe98d",
+    "summary": {
+      "golden_relation_row_count": 59,
+      "gr_source_ready_flag": 0,
+      "guarded_relation_row_count": 59,
+      "matched_transition_row_count": 59,
+      "operation_promotion_flag": 0,
+      "operation_row_match_count": 0,
+      "physical_selector_axiom_flag": 0,
+      "promotion_blocked_count": 59,
+      "promotion_success_count": 0,
+      "semantic_a985_operation_flag": 0,
+      "semantic_transition_match_count": 0
+    }
+  }
+}

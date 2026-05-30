@@ -1,0 +1,141 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "f0dde895072bfef65e9c7b491112b5dcc04ab7906a6772c4149a6535470d93ca",
+  "checks": {
+    "idempotent_laws_hold": true,
+    "local_center_dimensions_match_source": true,
+    "local_expansions_match_e33": true,
+    "long_hcsupp_input_passes": true,
+    "remaining_intertwiner_inputs_marked_open": true,
+    "selected_keys_match_sector33_profile": true,
+    "sign_balance_matches_e33": true
+  },
+  "claim": "long_hcbasis certifies the source reconstruction of e33 from the B+ local 12 and S+ local 6 center-basis expansions.",
+  "closure_boundary": {
+    "certifies": [
+      "the selected sector33 local pre-idempotents are B+ local 12 and S+ local 6",
+      "the local center dimensions are 13 for B+ and 22 for S+",
+      "the reconstructed local vectors have support 12 and 44 and sum exactly to e33",
+      "the selected local pieces and their sum satisfy the idempotent law over the certified tensor"
+    ],
+    "does_not_certify": [
+      "the relation-row to Lambda3(A2+H6) basis binding",
+      "the actual pi_Foam33 relation-support projection table",
+      "a materialized R_hc generator family",
+      "the full matrix intertwining equation"
+    ]
+  },
+  "inputs": {
+    "core_a985": {
+      "path": "data/core/a985.json",
+      "sha256": "b2caee558395078c39d984fcd3d8c9d9a625d81924aa122aa3c10b36daddfc5d"
+    },
+    "derive_script": {
+      "path": "src/derive_long_hcbasis.py",
+      "sha256": "00a2706e047fa099bf9373197ee0c0d3a572678c28700495b100e72ad42f0b30"
+    },
+    "e33_entries": {
+      "path": "data/evidence/talagrand_python_handoff/work/e33_full_corrected_transport/e33_vector_entries.csv",
+      "sha256": "5a0c68e8fcec378e9cc818bac7766de036d54cc6bc9ad2410b7b705945e7a12d"
+    },
+    "long_hcsupp": {
+      "certificate_sha256": "f4a880344917e150defdfccb6d71aab21400e7ac9c63e129c02da755ff59f0f2",
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/report.json",
+      "sha256": "d5618b0e0159b88ec43f7ca6e75070a9e4e3508d7bd4e2c0a152140e775898c7",
+      "status": "LONG_HCSUPP_PROFILE_CERTIFIED"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "t985_tensor": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_hcbasis.py",
+      "sha256": "e9285547cc7a9f4d72d64e789e2d4f7b2f23c7fde37cf45ea023af7b5be0b353"
+    }
+  },
+  "next_highest_yield_item": "Use the materialized center-basis expansion to search for a canonical 56-row grading or filtration that can be compared to the ordered Lambda3(A2+H6) basis.",
+  "outputs": {
+    "basis_summary_csv": "data/invariants/d20/proof_obligations/long_hcbasis/basis_summary.csv",
+    "center_coordinates_csv": "data/invariants/d20/proof_obligations/long_hcbasis/center_coordinates.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_hcbasis/cert.json",
+    "expansion_rows_csv": "data/invariants/d20/proof_obligations/long_hcbasis/expansion_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_hcbasis/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_hcbasis/center_expansion_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_hcbasis/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_hcbasis/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_hcbasis/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_hcbasis/tables.npz"
+  },
+  "schema": "long.hcbasis.report@1",
+  "stage_protocol": {
+    "closure": "certify the local center-basis expansion without claiming the Lambda3 binding",
+    "coherence": "check center dimensions, support counts, coefficient equality with e33, idempotent laws, and open pi/R_hc flags",
+    "draft": "read long_hcsupp, e33 rows, raw relation memberships, T_985, and stored tube-center primitive coordinates",
+    "emit": "write long_hcbasis artifacts and verifier hook",
+    "witness": "emit local center summaries, primitive-coordinate rows, relation expansion rows, and matrix payloads"
+  },
+  "status": "LONG_HCBASIS_CENTER_EXPANSION_CERTIFIED",
+  "witness": {
+    "boundary": "This materializes the local center-basis expansion of the sector33 e33 vector, but not the Lambda3(A2+H6) basis binding or pi_Foam33.",
+    "classification": "height_coherent_local_center_expansion",
+    "matrix_sha256": "cce3c7ab19b7dbdbf36422bac2aef4d46893a659ab2354770a8b3e786033a5b9",
+    "name": "long_hcbasis",
+    "pieces": [
+      {
+        "center_basis_sha256": "d45d9627d1335c8f70b6594dc0729c3ed73e20ae30a10c8a0233b30e2b7cd058",
+        "global_vector_sha256": "67aca20a98c469ea1de22b462caab61d6d30ab20c617624209cd4ecab014e327",
+        "idempotent": true,
+        "label": "B+",
+        "local_pre_idempotent": 12,
+        "local_vector_sha256": "6aa97c70d8c38d8dd48bd0c2f52f1da8ee5af13bfff839a9c8ac45a1cb0d9853",
+        "matches_e33_piece": true,
+        "object": 1,
+        "support": 12
+      },
+      {
+        "center_basis_sha256": "2ce1bfe0866b8afaee6a856756b3ef787ca9bbe1ac11d2e62f6a0901f1854dc0",
+        "global_vector_sha256": "e34adce1e8aad52faadc31fb156a5f4d3dcbd1c35305750c2b68054272752f47",
+        "idempotent": true,
+        "label": "S+",
+        "local_pre_idempotent": 6,
+        "local_vector_sha256": "25ea77117ba1cc1d265e3537fb36490c72a2fb238a0e9fd78487905d98d345ec",
+        "matches_e33_piece": true,
+        "object": 5,
+        "support": 44
+      }
+    ],
+    "summary": {
+      "bplus_center_dimension": 13,
+      "bplus_closed_loop_relation_count": 16,
+      "bplus_idempotent_flag": 1,
+      "bplus_local_support_count": 12,
+      "bplus_matches_e33_flag": 1,
+      "center_basis_expansion_materialized_flag": 1,
+      "complete_goal_claim_flag": 0,
+      "focused_hcbasis_closed_flag": 1,
+      "pi_foam33_materialized_flag": 0,
+      "r_hc_materialized_flag": 0,
+      "relation_to_lambda3_binding_materialized_flag": 0,
+      "selected_local_pre_idempotent_0": 12,
+      "selected_local_pre_idempotent_1": 6,
+      "selected_object_0": 1,
+      "selected_object_1": 5,
+      "selected_piece_count": 2,
+      "splus_center_dimension": 22,
+      "splus_closed_loop_relation_count": 104,
+      "splus_idempotent_flag": 1,
+      "splus_local_support_count": 44,
+      "splus_matches_e33_flag": 1,
+      "summed_sector33_idempotent_flag": 1,
+      "summed_vector_matches_e33_flag": 1,
+      "total_local_support_count": 56,
+      "total_negative_count": 28,
+      "total_positive_count": 28,
+      "total_signed_sum": 0
+    }
+  }
+}

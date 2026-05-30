@@ -1,0 +1,172 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "9532bc9b666663286772a0b1935c7b6fdc76f84652ee87fc898a978d882a8896",
+  "checks": {
+    "all_job_cards_require_dft_and_negf": true,
+    "claim_update_matrix_shape_matches": true,
+    "protocol_only_boundary_preserved": true,
+    "stage5_counts_carried_forward": true,
+    "stage5_opcode_certificate_present": true,
+    "table_shapes_match": true,
+    "validation_matrix_shape_matches": true
+  },
+  "claim": "long_c60negf converts the Stage 5 formal C60/d20 semantic opcode assignment into a DFT/NEGF validation protocol. It carries forward 59 opcode rows, 20 golden ticks, 30 C60 transition edges, and zero Stage 5 composition failures, then emits 13 validation cases, 78 job cards, 6 controls, 8 observable classes, and success criteria. It contains no physical simulation result rows.",
+  "closure_boundary": {
+    "certifies": [
+      "the Stage 6 validation protocol carries forward 59 Stage 5 C60 opcode rows",
+      "the protocol contains 13 validation cases and 78 DFT/NEGF job cards",
+      "the protocol includes 6 controls and 8 observable classes",
+      "the protocol includes a 6-row claim update matrix",
+      "all job cards require both DFT and NEGF evaluation",
+      "zero DFT result rows and zero NEGF result rows are present in this certificate"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "physical conductance signatures",
+      "switching speed, decoherence, thermal stability, or manufacturability",
+      "DFT convergence or NEGF transmission values",
+      "experimental synthesis feasibility",
+      "a physical selector axiom",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c60negf.py",
+      "sha256": "4b22337b05c019a51a6d8ab933141e69a054729fb82a732f5429a6ff2023f79b"
+    },
+    "long_c60op": {
+      "certificate_sha256": "659adeac75bfa2526f2cba45fc38f829e0a168e8bea4f6aa74dd34fd82f5b999",
+      "path": "data/invariants/d20/proof_obligations/long_c60op/report.json",
+      "result_status": "C60_D20_SEMANTIC_OPCODE_ASSIGNMENT_STAGE5_CONSTRUCTED",
+      "sha256": "37a57ce3fb03099ba67eca6b126030ebf0e7b10d138127062504fbe10dd0d291",
+      "status": "LONG_C60OP_STAGE5_OPCODE_ASSIGNMENT_CERTIFIED"
+    },
+    "long_c60op_opcode": {
+      "path": "data/invariants/d20/proof_obligations/long_c60op/opcode.csv",
+      "sha256": "ec5450007856ebbf9d3c964db07b06b8795d1e7baf507e802b03f72d6d7b5ca6"
+    },
+    "validator": {
+      "path": "src/certify_long_c60negf.py",
+      "sha256": "51b61dd32d75d39025c2a44987b6f6d47c73fa9c0e62e537327de04ce05d9b47"
+    }
+  },
+  "next_highest_yield_item": "Run or import signed DFT/NEGF result tables for the 78 protocol job cards, then certify whether the three opcode families produce separable molecular signatures against the six controls.",
+  "outputs": {
+    "c60negf": "data/invariants/d20/proof_obligations/long_c60negf/c60negf.json",
+    "case_csv": "data/invariants/d20/proof_obligations/long_c60negf/case.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_c60negf/cert.json",
+    "claim_csv": "data/invariants/d20/proof_obligations/long_c60negf/claim.csv",
+    "control_csv": "data/invariants/d20/proof_obligations/long_c60negf/control.csv",
+    "job_card_csv": "data/invariants/d20/proof_obligations/long_c60negf/job_card.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c60negf/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c60negf/obs.csv",
+    "observable_class_csv": "data/invariants/d20/proof_obligations/long_c60negf/observable_class.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c60negf/report.json",
+    "success_csv": "data/invariants/d20/proof_obligations/long_c60negf/success.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c60negf/tables.npz"
+  },
+  "result_status": "C60_D20_STAGE6_DFT_NEGF_VALIDATION_PROTOCOL_CONSTRUCTED",
+  "schema": "long.c60negf.report@1",
+  "stage_protocol": {
+    "closure": "certify the Stage 6 DFT/NEGF validation protocol as a protocol only",
+    "coherence": "check carried Stage 5 counts, 13x6 job matrix, 8 observable classes, and zero physical-result rows",
+    "draft": "read long_c60op C60 opcode-assignment certificate",
+    "emit": "write long_c60negf artifacts and verifier hook",
+    "witness": "emit validation cases, controls, observable classes, job cards, success criteria, and observables"
+  },
+  "status": "LONG_C60NEGF_STAGE6_DFT_NEGF_PROTOCOL_CERTIFIED",
+  "witness": {
+    "case_code_map": {
+      "0": "static_anchor_symmetry_break",
+      "1": "static_anchor_charge_baseline",
+      "10": "selector_transfer_isomer_mix",
+      "11": "mixed_family_discriminant",
+      "12": "minimal_protocol_replay",
+      "2": "alpha_flux_pair_partition",
+      "3": "alpha_flux_transport_window",
+      "4": "alpha_flux_endpoint_reversal",
+      "5": "alpha_flux_vibronic_sensitivity",
+      "6": "selector_transfer_local_coupling",
+      "7": "selector_transfer_charge_gate",
+      "8": "selector_transfer_current_gate",
+      "9": "selector_transfer_scrambled_alpha"
+    },
+    "case_table_sha256": "33cd0e328573fd5faf5a64a5cc43afaf4b08ae361f54836f9b728a1f216afdaf",
+    "case_text_sha256": "44e3d36debe88e8ea45017a0fde9c1cf25e8d52d819afe197eae6f9e7b401337",
+    "claim_area_code_map": {
+      "0": "formal_opcode_assignment",
+      "1": "molecular_signature_test",
+      "2": "control_discrimination",
+      "3": "transport_observable",
+      "4": "manufacturability_boundary",
+      "5": "device_claim_boundary"
+    },
+    "claim_table_sha256": "ce21a975583ab60da8bebf09623e16ec2e889d8458e69dbce867143401d1d10c",
+    "classification": "c60_d20_dft_negf_validation_protocol",
+    "control_code_map": {
+      "0": "bare_c60",
+      "1": "selector_only",
+      "2": "alpha_only",
+      "3": "endpoint_reversal",
+      "4": "scrambled_alpha",
+      "5": "nearby_isomer_mix"
+    },
+    "control_table_sha256": "0780e75d253266f195e5dda19510fb7f290883435c336d0d3eeaf29dfb9a84f1",
+    "family_code_map": {
+      "0": "SEM_SELECTOR_FLUX_TRANSFER",
+      "1": "SEM_ALPHA_FLUX_BALANCE",
+      "2": "SEM_STATIC_SELECTOR_ANCHOR"
+    },
+    "job_card_table_sha256": "c393cd1c01d627cfed04868ada04372aa2a851431c8500c455842acdb204f19a",
+    "name": "long_c60negf",
+    "observable_class_code_map": {
+      "0": "relaxed_geometry",
+      "1": "charge_partition",
+      "2": "frontier_orbital_shift",
+      "3": "transmission_spectrum",
+      "4": "iv_curve",
+      "5": "local_current_density",
+      "6": "vibronic_sensitivity",
+      "7": "functionalization_energy"
+    },
+    "observable_class_table_sha256": "e046e94f9a2ca420302f669c26751b32b8ad400485b43891c4577f1b2b09ef90",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "observable_class_count",
+      "11": "success_criterion_count",
+      "12": "claim_update_count",
+      "13": "dft_result_row_count",
+      "14": "negf_result_row_count",
+      "15": "protocol_only_flag",
+      "16": "physical_signature_validated_flag",
+      "17": "conductance_validated_flag",
+      "18": "manufacturability_validation_flag",
+      "2": "stage5_result_present_flag",
+      "3": "semantic_opcode_rows_carried_forward",
+      "4": "golden_ticks_carried_forward",
+      "5": "c60_transition_edges_carried_forward",
+      "6": "stage5_adjacent_composition_failures",
+      "7": "minimal_validation_case_count",
+      "8": "dft_negf_job_card_count",
+      "9": "control_experiment_count"
+    },
+    "observable_table_sha256": "a2b36ac032492bfa9d15185ced0eaf7014105d6c51ad729a12aa230c9848e66f",
+    "result_status": "C60_D20_STAGE6_DFT_NEGF_VALIDATION_PROTOCOL_CONSTRUCTED",
+    "success_table_sha256": "40892a0498cd6974eabf02e8c9b7ca83ff8fc4ec2c0bfd80f3aff7f6be67e6d9",
+    "summary": {
+      "c60_transition_edges_carried_forward": 30,
+      "claim_update_count": 6,
+      "control_experiments": 6,
+      "dft_negf_job_cards": 78,
+      "dft_result_row_count": 0,
+      "golden_ticks_carried_forward": 20,
+      "minimal_validation_cases": 13,
+      "negf_result_row_count": 0,
+      "observable_classes": 8,
+      "physical_signature_validated_flag": 0,
+      "semantic_opcode_rows_carried_forward": 59,
+      "stage5_adjacent_composition_failures": 0
+    }
+  }
+}

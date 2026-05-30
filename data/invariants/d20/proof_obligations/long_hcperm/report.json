@@ -1,0 +1,116 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8d6baa89310e7b901b29fe7712385e64305f590e87decd1998cc4f11bdc73b70",
+  "checks": {
+    "best_combo_is_still_obstructed": true,
+    "long_c2uf_input_passes": true,
+    "long_hcfoam_input_passes": true,
+    "long_hcgrade_input_passes": true,
+    "no_signed_column_lift_in_declared_family": true,
+    "open_boundaries_preserved": true,
+    "rank33_family_has_expected_size": true,
+    "selected_combo_matches_prior_hcgrade": true
+  },
+  "claim": "long_hcperm certifies an obstruction: the current center-grade projection family cannot be the final support action through a signed row-basis permutation lift of the target action.",
+  "closure_boundary": {
+    "certifies": [
+      "all 256 rank-33 completions in the declared center-grade feature family were tested",
+      "zero completions admit a signed row-basis permutation lift for all nine target generators",
+      "the selected long_hcgrade completion has 412 misses across 504 generator-column tests",
+      "the best completion still has 314 misses across 504 generator-column tests"
+    ],
+    "does_not_certify": [
+      "nonexistence of a nonmonomial 56x56 source-side operator family",
+      "nonexistence of a valid projection outside the declared center-grade feature family",
+      "the accepted Lambda3(A2+H6) row binding",
+      "the full matrix intertwining equation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_hcperm.py",
+      "sha256": "2e1b6c01dff777ae149e6458bd11be954c6dd02fa8c50813dc93928eafaa969d"
+    },
+    "hcfoam_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_hcfoam/r_foam_matrices.npz",
+      "sha256": "7e676d0d92d1f272f0f6935aa9312617af90e85c80e0c56a5573ad3a8ab5e7ab"
+    },
+    "hcgrade_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_hcgrade/center_grade_projection.npz",
+      "sha256": "392b120b53f9ef917b37137fa7e631180a147b7fe5636d75e4ebbfdb21930362"
+    },
+    "long_c2uf": {
+      "certificate_sha256": "3d5be4193299c7ca7c1e794037b34a76a931b1a1f86acdbc4d3205dfc4081f70",
+      "path": "data/invariants/d20/proof_obligations/long_c2uf/report.json",
+      "sha256": "de5effd48dcc0ba3cb3cc179e906cb8e670594a2c9963f57ddf8495aaf15d817",
+      "status": "LONG_C2UF_CERTIFIED"
+    },
+    "long_hcfoam": {
+      "certificate_sha256": "c628fd15a76cb6fec564d684ee9cc2c9c8e6f5543d045977014c274e6926b3e5",
+      "path": "data/invariants/d20/proof_obligations/long_hcfoam/report.json",
+      "sha256": "d9011f9f20ac3927a14047da51b8ca66d49f2ce4691466e06053289111752fc7",
+      "status": "LONG_HCFOAM_CERTIFIED"
+    },
+    "long_hcgrade": {
+      "certificate_sha256": "ef90afeb47b65f737990609960147c9842bd4d09e60d01dde95bfe01e6468aee",
+      "path": "data/invariants/d20/proof_obligations/long_hcgrade/report.json",
+      "sha256": "e953bb81e4e4bf38c64607d8fb2037d127654d61b036a892b7e3f8cbd4538e3e",
+      "status": "LONG_HCGRADE_CENTER_GRADE_RANK_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_hcperm.py",
+      "sha256": "e27615e0c91cab7a52fb698443875d23d74f4798a2bba2d2ec7991b1fbdf279f"
+    }
+  },
+  "next_highest_yield_item": "Drop the signed-permutation lift assumption and solve the linear source-side operator equation against the rank-33 projection candidate while preserving the 23-dimensional kernel.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_hcperm/cert.json",
+    "combo_rows_csv": "data/invariants/d20/proof_obligations/long_hcperm/combo_rows.csv",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_hcperm/generator_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_hcperm/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_hcperm/lift_obstruction_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_hcperm/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_hcperm/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_hcperm/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_hcperm/tables.npz"
+  },
+  "schema": "long.hcperm.report@1",
+  "stage_protocol": {
+    "closure": "certify only the signed column-lift obstruction inside the declared feature family",
+    "coherence": "check rank-33 family size, selected-completion statistics, best-completion statistics, and open nonmonomial boundaries",
+    "draft": "read long_hcgrade, long_hcfoam, long_c2uf, the 33x56 projection family data, and the target action matrices",
+    "emit": "write long_hcperm artifacts and verifier hook",
+    "witness": "emit all 256 rank-33 completion rows and per-generator signed-column lift statistics"
+  },
+  "status": "LONG_HCPERM_SIGNED_COLUMN_LIFT_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "boundary": "This rejects signed row-basis permutation lifts inside the declared center-grade family; it does not reject nonmonomial lifts or different feature families.",
+    "classification": "height_coherent_signed_column_lift_obstruction",
+    "matrix_sha256": "e74819a705e391514670322abefdec6896a658a1379601d8ebdb8227bdc2982b",
+    "name": "long_hcperm",
+    "summary": {
+      "alternate_feature_family_still_open_flag": 1,
+      "best_combo_id": 251,
+      "best_perfect_generator_count": 0,
+      "best_total_hit_count": 190,
+      "best_total_miss_count": 314,
+      "best_worst_generator_miss_count": 50,
+      "complete_goal_claim_flag": 0,
+      "feature_row_count": 24,
+      "focused_hcperm_closed_flag": 1,
+      "full_intertwiner_claim_flag": 0,
+      "generator_count": 9,
+      "nonmonomial_lift_still_open_flag": 1,
+      "perfect_combo_count": 0,
+      "rank33_combo_count": 256,
+      "selected_combo_id": 0,
+      "selected_perfect_generator_count": 0,
+      "selected_total_hit_count": 92,
+      "selected_total_miss_count": 412,
+      "signed_column_lift_obstruction_flag": 1,
+      "sourced_c2_surface_present_flag": 1,
+      "support_dimension": 56,
+      "target_dimension": 33
+    }
+  }
+}

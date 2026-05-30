@@ -1,0 +1,171 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c8daf7a9c6ec3e33f04096f2d976f0137adeca704d750cae0c7ec2ce08b9c74c",
+  "checks": {
+    "input_reports_certified": true,
+    "metric_physical_boundaries_preserved": true,
+    "public_kernel_boundary_retest": true,
+    "quotient_basis_exact": true,
+    "quotient_form_nondegenerate": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59q quotients the finite symmetric stress candidate by the certified gauge-null mode. The induced 19-dimensional form is nondegenerate with exact inertia (11,8,0). Its dimension matches the public-kernel count, but q_pub still has rank 1 on the quotient, so the quotient is a 1+18 split rather than the public kernel boundary itself.",
+  "closure_boundary": {
+    "certifies": [
+      "a concrete quotient by the certified gauge-null stress mode",
+      "a nondegenerate 19-dimensional finite quotient form",
+      "exact quotient inertia (11,8,0)",
+      "the quotient dimension matches the public-kernel count 19",
+      "q_pub descends to the quotient with rank 1, leaving a 1+18 split"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "identification of the quotient form with the public-kernel boundary itself",
+      "restriction of the quotient form to the induced q_pub kernel",
+      "a four-dimensional metric reduction",
+      "a smooth Lorentzian metric",
+      "a physical stress-energy tensor",
+      "a thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59q.py",
+      "sha256": "875deb583354470709993772dad585d601a43d32f643abfed5146f75233a532d"
+    },
+    "long_c59kt": {
+      "certificate_sha256": "ee402d7cbb3f698c5367465b83520705ef8d11058d8cc8f35227675ad1d9392c",
+      "path": "data/invariants/d20/proof_obligations/long_c59kt/report.json",
+      "sha256": "72212a5f28077b2e13d71dfafa5bc590b84a7fe1a10d07cd7e8b28c49387db8f",
+      "status": "LONG_C59KT_KERNEL_TIME_SEAM_CERTIFIED"
+    },
+    "long_c59st": {
+      "certificate_sha256": "2b0c7ea1aa9ec3abf427e28d34f944960230900ade95436ba39d5b834b051275",
+      "path": "data/invariants/d20/proof_obligations/long_c59st/report.json",
+      "sha256": "72cb94e4014f0ed4a1de518e19dc7e480a5c3228204a020c69372f5124a539ad",
+      "status": "LONG_C59ST_SYMMETRIC_STRESS_CANDIDATE_CERTIFIED"
+    },
+    "long_c59st_kernel": {
+      "path": "data/invariants/d20/proof_obligations/long_c59st/kernel.csv",
+      "sha256": "ae681b7149f3bf7ce519e6350455754bab4e38fff376ebaed38030732fc11c78"
+    },
+    "long_c59st_tensor": {
+      "path": "data/invariants/d20/proof_obligations/long_c59st/tensor_entry.csv",
+      "sha256": "822aa16d91bbbf560a7b0dfa778c421b6eacb9add84f962a238050c64fb40730"
+    },
+    "long_time_map_matrix": {
+      "path": "data/invariants/d20/proof_obligations/long_time_map/matrix.csv",
+      "sha256": "944e1f486d20401edb503e20723d3454925ddbe17b7326a56bd154017160d621"
+    },
+    "validator": {
+      "path": "src/certify_long_c59q.py",
+      "sha256": "38557ae96291aef5ab5b994d29d05a3d9c8b46157f66b49c4ee5298fb0822c8c"
+    }
+  },
+  "next_highest_yield_item": "Restrict the nondegenerate quotient form to the induced q_pub kernel and test the resulting 18-dimensional public-kernel form.",
+  "outputs": {
+    "basis_csv": "data/invariants/d20/proof_obligations/long_c59q/basis.csv",
+    "c59q": "data/invariants/d20/proof_obligations/long_c59q/c59q.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59q/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_c59q/decision.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59q/gap.csv",
+    "inertia_csv": "data/invariants/d20/proof_obligations/long_c59q/inertia.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59q/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59q/obs.csv",
+    "quotient_entry_csv": "data/invariants/d20/proof_obligations/long_c59q/quotient_entry.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59q/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c59q/tables.npz"
+  },
+  "schema": "long.c59q.report@1",
+  "stage_protocol": {
+    "closure": "certify the gauge-null quotient and preserve the induced public-time seam",
+    "coherence": "check nondegeneracy, inertia, induced q_pub rank, and public-kernel boundary obstruction",
+    "draft": "read long_c59st tensor/kernel and long_c59kt gauge-null decision",
+    "emit": "write long_c59q artifacts and verifier hook",
+    "witness": "emit quotient basis, 19x19 form entries, exact inertia pivots, decisions, gaps, and observables"
+  },
+  "status": "LONG_C59Q_GAUGE_NULL_QUOTIENT_CERTIFIED",
+  "witness": {
+    "basis_table_sha256": "ee1661c749330c1f1c0cf9529c486c8f545907d861e53dd92dab2471358d61e0",
+    "basis_text_sha256": "cb6c9156a5e8720ce81642733ae05427842aee1af609d1c0d878da2d9926abea",
+    "classification": "c59x_gauge_null_quotient",
+    "decision_code_map": {
+      "0": "gauge_null_mode_available",
+      "1": "quotient_basis_materialized",
+      "2": "quotient_form_nondegenerate",
+      "3": "exact_inertia_11_8_0",
+      "4": "quotient_dimension_matches_public_kernel_count",
+      "5": "induced_time_trace_survives",
+      "6": "public_kernel_boundary_identified",
+      "7": "one_plus_eighteen_quotient_split"
+    },
+    "decision_table_sha256": "34aa1f54106f1b31a9e8248d244f01c5764686db738571d8f07013713fce3a40",
+    "gap_code_map": {
+      "0": "gauge_null_quotient",
+      "1": "nondegenerate_19_form",
+      "2": "public_kernel_count_match",
+      "3": "public_kernel_boundary_identification",
+      "4": "induced_time_kernel_restriction",
+      "5": "four_dimensional_metric_reduction",
+      "6": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "708b5df942a9e96872a159ab7914bd6b5575791f415d475f88b4a87ce88305d2",
+    "induced_q_table_sha256": "cda5db5c39b31f6f37d55e5cd8007edde28cee714d98cadc021505367da3cf8d",
+    "inertia_table_sha256": "907bf2baa053a62538d9020b1a856e11bac546f76ea444d7d588711b4e8e1b76",
+    "name": "long_c59q",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "quotient_nullity",
+      "11": "inertia_positive_count",
+      "12": "inertia_negative_count",
+      "13": "inertia_zero_count",
+      "14": "public_kernel_dimension",
+      "15": "time_rank",
+      "16": "quotient_dimension_matches_public_kernel_flag",
+      "17": "induced_q_pub_rank",
+      "18": "induced_q_pub_kernel_dimension",
+      "19": "induced_time_survives_flag",
+      "2": "ambient_dimension",
+      "20": "public_kernel_boundary_identification_flag",
+      "21": "one_plus_eighteen_split_flag",
+      "22": "four_dimensional_metric_flag",
+      "23": "physical_stress_energy_flag",
+      "24": "smooth_metric_flag",
+      "25": "thermal_gravity_flag",
+      "26": "next_gap_code",
+      "3": "pivot_atom",
+      "4": "pivot_kernel_value",
+      "5": "gauge_kernel_support_count",
+      "6": "quotient_dimension",
+      "7": "quotient_entry_count",
+      "8": "active_quotient_pair_count",
+      "9": "quotient_rank"
+    },
+    "observable_table_sha256": "70fd6f51d8b553747ce662723cef87a158c53df66a59e99a2e519c8b9ae2dd78",
+    "quotient_entry_table_sha256": "52856cc4bed9c2615e49a336c74f0ad2a443edc73226b1a237a5a0c38aaeb033",
+    "quotient_entry_text_sha256": "0e68d45c1a32545e24a1abd44a2db1dc32f1fc13eda9799331d38c5d24b0c6f4",
+    "quotient_matrix_sha256": "fbddab545832ea3be51253b79d6c22836a6e8d051579199466c6687ffb93dc09",
+    "summary": {
+      "four_dimensional_metric_flag": 0,
+      "induced_q_pub_kernel_dimension": 18,
+      "induced_q_pub_rank": 1,
+      "induced_time_survives_flag": 1,
+      "inertia_negative_count": 8,
+      "inertia_positive_count": 11,
+      "inertia_zero_count": 0,
+      "one_plus_eighteen_split_flag": 1,
+      "physical_stress_energy_flag": 0,
+      "pivot_atom": 6,
+      "pivot_kernel_value": -1394657932,
+      "public_kernel_boundary_identification_flag": 0,
+      "public_kernel_dimension": 19,
+      "quotient_dimension": 19,
+      "quotient_dimension_matches_public_kernel_flag": 1,
+      "quotient_nullity": 0,
+      "quotient_rank": 19,
+      "smooth_metric_flag": 0,
+      "thermal_gravity_flag": 0,
+      "time_rank": 1
+    }
+  }
+}

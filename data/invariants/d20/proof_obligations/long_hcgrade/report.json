@@ -1,0 +1,132 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ef90afeb47b65f737990609960147c9842bd4d09e60d01dde95bfe01e6468aee",
+  "checks": {
+    "center_rank_is_twenty_eight": true,
+    "finite_feature_family_has_five_residual_ranks": true,
+    "long_hcbasis_input_passes": true,
+    "long_hcscalar_input_passes": true,
+    "long_hcsupp_input_passes": true,
+    "rank33_completions_are_finite_and_nonempty": true,
+    "remaining_intertwiner_inputs_marked_open": true,
+    "selected_grade_completion_has_target_shape": true
+  },
+  "claim": "long_hcgrade certifies the finite rank gap between the source center expansion and a 33-rank support projection candidate.",
+  "closure_boundary": {
+    "certifies": [
+      "the source center-coordinate projection on the 56 sector33 rows has rank 28 and kernel 28",
+      "the declared finite row-feature family has residual rank five modulo the center projection",
+      "five grading rows are necessary in this finite feature family to reach rank 33",
+      "the selected five-row completion gives a 33x56 rank-33 projection candidate with kernel 23"
+    ],
+    "does_not_certify": [
+      "that the selected feature completion is unique among all possible row functions",
+      "the accepted Lambda3(A2+H6) row binding",
+      "a materialized R_hc generator family",
+      "the full matrix intertwining equation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_hcgrade.py",
+      "sha256": "e8c8f70ddb33fa6a1d21f1a820f42bce72a950d9a2438da74f7e6e65abde70de"
+    },
+    "hcbasis_coordinates": {
+      "path": "data/invariants/d20/proof_obligations/long_hcbasis/center_coordinates.csv",
+      "sha256": "6503ea7f284fbd2fea5be482915d4d0109a04897e6a3d9c87ed911a5331b85d8"
+    },
+    "hcbasis_expansion": {
+      "path": "data/invariants/d20/proof_obligations/long_hcbasis/expansion_rows.csv",
+      "sha256": "6ef08c2edca0686d1a082496585529e2c79509900987fc2bc545552400e611c0"
+    },
+    "hcbasis_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_hcbasis/center_expansion_matrices.npz",
+      "sha256": "a8859e0c5095e47b9957db3818b96430f73662223e7c51cfd7e1c44734e4ecc8"
+    },
+    "hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_hcbasis": {
+      "certificate_sha256": "f0dde895072bfef65e9c7b491112b5dcc04ab7906a6772c4149a6535470d93ca",
+      "path": "data/invariants/d20/proof_obligations/long_hcbasis/report.json",
+      "sha256": "266e6ea898b632d24cc0b28c3641142aac1025922e16e7734f38506454bdadb0",
+      "status": "LONG_HCBASIS_CENTER_EXPANSION_CERTIFIED"
+    },
+    "long_hcscalar": {
+      "certificate_sha256": "7e11a69dfc3c24f358698978c73ceeeba3c8f1100055f2d7958853a5948aa553",
+      "path": "data/invariants/d20/proof_obligations/long_hcscalar/report.json",
+      "sha256": "11f10d4eb724df88b2fd18947684ad9794d43fbf1cbddacdf7ee8bac5e95a24a",
+      "status": "LONG_HCSCALAR_ABSTRACT_COMPLETION_CERTIFIED"
+    },
+    "long_hcsupp": {
+      "certificate_sha256": "f4a880344917e150defdfccb6d71aab21400e7ac9c63e129c02da755ff59f0f2",
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/report.json",
+      "sha256": "d5618b0e0159b88ec43f7ca6e75070a9e4e3508d7bd4e2c0a152140e775898c7",
+      "status": "LONG_HCSUPP_PROFILE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_hcgrade.py",
+      "sha256": "197ce68a8f2dfcf1f86685aef62331eb74274f08e383aea9fc8cfe566cb7d076"
+    }
+  },
+  "next_highest_yield_item": "Use the 28+5 center-grade projection candidate as the candidate pi table, then test the Foam target action against row permutations induced by the sourced C2/R7 action.",
+  "outputs": {
+    "center_rows_csv": "data/invariants/d20/proof_obligations/long_hcgrade/center_rows.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_hcgrade/cert.json",
+    "feature_rows_csv": "data/invariants/d20/proof_obligations/long_hcgrade/feature_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_hcgrade/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_hcgrade/center_grade_projection.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_hcgrade/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_hcgrade/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_hcgrade/seam.json",
+    "selected_grade_rows_csv": "data/invariants/d20/proof_obligations/long_hcgrade/selected_grade_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_hcgrade/tables.npz"
+  },
+  "schema": "long.hcgrade.report@1",
+  "stage_protocol": {
+    "closure": "certify the center-grade rank lift without claiming the accepted Lambda3 row binding",
+    "coherence": "check ranks 28 -> 33, kernel 28 -> 23, finite feature residual rank five, and open final-intertwiner flags",
+    "draft": "read long_hcbasis, long_hcsupp, long_hcscalar, the 56 support rows, and the center expansion matrices",
+    "emit": "write long_hcgrade artifacts and verifier hook",
+    "witness": "emit center-coordinate rows, finite row-feature rows, selected grading rows, and matrix payloads"
+  },
+  "status": "LONG_HCGRADE_CENTER_GRADE_RANK_CERTIFIED",
+  "witness": {
+    "boundary": "This materializes a rank-33 center-grade projection candidate, but not the accepted Lambda3 basis binding or action-return intertwiner.",
+    "classification": "height_coherent_center_grade_rank_lift",
+    "matrix_sha256": "a3758b5a5e58399024319c1fbe505181cecb92ca40f0b9b23fa0bc2eb16d39a0",
+    "name": "long_hcgrade",
+    "selected_feature_ids": [
+      2,
+      3,
+      4,
+      7,
+      10
+    ],
+    "summary": {
+      "center_coordinate_row_count": 28,
+      "center_grade_projection_materialized_flag": 1,
+      "center_kernel_dimension": 28,
+      "center_projection_rank": 28,
+      "complete_goal_claim_flag": 0,
+      "feature_family_row_count": 24,
+      "feature_residual_rank": 5,
+      "focused_hcgrade_closed_flag": 1,
+      "full_intertwiner_claim_flag": 0,
+      "kernel_matches_target_flag": 1,
+      "lambda3_binding_accepted_flag": 0,
+      "minimum_grade_row_count": 5,
+      "pi_foam33_accepted_flag": 0,
+      "r_hc_materialized_flag": 0,
+      "rank33_combo_count": 256,
+      "rank_matches_target_flag": 1,
+      "selected_grade_row_count": 5,
+      "selected_kernel_dimension": 23,
+      "selected_projection_rank": 33,
+      "support_dimension": 56,
+      "target_kernel_dimension": 23,
+      "target_projection_rank": 33
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ec25b0f1231234198b9d79b9aeee08583aa469ac5d5f1acca2f04db7e98e8ef2",
+  "checks": {
+    "corrected_balance_holds": true,
+    "counterterm_is_minimal_support": true,
+    "counterterm_sums_match": true,
+    "input_report_certified": true,
+    "operation_and_physical_boundaries_preserved": true,
+    "source_boundary_matches": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3c constructs the minimal formal atom counterterm for the 17 nonzero local stress-source divergences. The correction is the negative of each local residue, has zero total sum, and makes all 20 corrected local balances vanish. It is formal only and is not operation-backed in the current boundary.",
+  "closure_boundary": {
+    "certifies": [
+      "a formal atom counterterm exists for every nonzero local stress-source residue",
+      "the counterterm support has minimal size 17",
+      "the counterterm total sum is zero",
+      "the corrected local divergence is zero at all 20 atoms",
+      "the formal correction preserves the global zero-divergence ledger"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "operation-backed counterterm rows",
+      "semantic transition flags for the counterterm",
+      "a physical selector axiom",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3c.py",
+      "sha256": "73f66a8c31301d0e8d9290881553206f4bfa1c7628e22e1c459d034ce3c204dc"
+    },
+    "long_c59p3w": {
+      "certificate_sha256": "bdd901ded1e02edcef60296fc09ab8fe566f2367c5c49d95e4866d262b6ad242",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3w/report.json",
+      "sha256": "bad73277a00ac99cc4095d2fcfe42840fdd04318f702a97f79bca0a0dba9a5fc",
+      "status": "LONG_C59P3W_FORMAL_STRESS_SOURCE_BALANCE_GATE_CERTIFIED"
+    },
+    "long_c59p3w_balance": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3w/balance.csv",
+      "sha256": "d74504bfd4bb8d75c5235c1782458499a8135289de9f26c760813f3b72e98f42"
+    },
+    "long_c59p3w_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3w/edge.csv",
+      "sha256": "23b395df2c7ce3d32a443619d0c965dfaf98a55c1933e9bead9a82ea77931fbd"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3c.py",
+      "sha256": "cc33f7c37cb3f713b931f4438348c1c6425ef7c456685bed7944799506254094"
+    }
+  },
+  "next_highest_yield_item": "Attempt to lift the formal atom counterterm into operation-backed or selector-backed rows; otherwise keep it as a certified formal local-balance correction only.",
+  "outputs": {
+    "c59p3c": "data/invariants/d20/proof_obligations/long_c59p3c/c59p3c.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3c/cert.json",
+    "counterterm_csv": "data/invariants/d20/proof_obligations/long_c59p3c/counterterm.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3c/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3c/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3c/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3c/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3c/tables.npz"
+  },
+  "schema": "long.c59p3c.report@1",
+  "stage_protocol": {
+    "closure": "certify the formal local counterterm surface",
+    "coherence": "check minimal support, zero total counterterm, corrected local balance, and preserved operation/physical boundaries",
+    "draft": "read long_c59p3w balance rows and source edge rows",
+    "emit": "write long_c59p3c artifacts and verifier hook",
+    "witness": "emit atom counterterm rows, gaps, and observables"
+  },
+  "status": "LONG_C59P3C_FORMAL_LOCAL_COUNTERTERM_CERTIFIED",
+  "witness": {
+    "classification": "formal_local_counterterm",
+    "counterterm_table_sha256": "af04639e92ce825eab7058c3ab763ae86bc35d2b91f811683969f6515c7c5515",
+    "counterterm_text_sha256": "5c2ea26e6915f8daf1e7bccf6c9142090bb39d1e69d0208dea80850f2db4b476",
+    "gap_code_map": {
+      "0": "formal_stress_source_ledger",
+      "1": "formal_local_counterterm",
+      "2": "corrected_local_balance",
+      "3": "operation_backed_counterterm",
+      "4": "physical_selector_axiom",
+      "5": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "b20abd6cd480d9a10941a9a85b4e1872e65ea18f7c76b05f93ac01d65ba80604",
+    "name": "long_c59p3c",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "post_global_divergence_sum_scaled",
+      "11": "minimal_support_flag",
+      "12": "formal_counterterm_flag",
+      "13": "operation_backed_counterterm_flag",
+      "14": "physical_selector_axiom_flag",
+      "15": "thermal_gravity_flag",
+      "16": "next_gap_code",
+      "2": "atom_count",
+      "3": "edge_row_count",
+      "4": "pre_unbalanced_atom_count",
+      "5": "counterterm_support_count",
+      "6": "counterterm_sum_scaled",
+      "7": "counterterm_abs_total_scaled",
+      "8": "counterterm_max_abs_scaled",
+      "9": "post_unbalanced_atom_count"
+    },
+    "observable_table_sha256": "6d0ec50c9a95ab9985582f85d5cf70e3d7f74cd5af4ae1539df318e4237e4e00",
+    "summary": {
+      "atom_count": 20,
+      "counterterm_abs_total_scaled": 657962662788,
+      "counterterm_max_abs_scaled": 180000000000,
+      "counterterm_sum_scaled": 0,
+      "counterterm_support_count": 17,
+      "formal_counterterm_flag": 1,
+      "operation_backed_counterterm_flag": 0,
+      "post_unbalanced_atom_count": 0,
+      "pre_unbalanced_atom_count": 17
+    }
+  }
+}

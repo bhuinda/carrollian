@@ -1,0 +1,190 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "899a15b1316207b585c17836aec287f4b1e0f99cb501d3df61487bb63fe2fac1",
+  "checks": {
+    "downstream_failures_preserved": true,
+    "first_failure_is_physical_selector_axiom": true,
+    "formal_candidate_domain_present": true,
+    "input_reports_certified": true,
+    "no_physical_selection_or_metric_promotion": true,
+    "table_shapes_match": true,
+    "time_and_guarded_transition_prefix_passes": true
+  },
+  "claim": "long_c59p3s promotes the long_c59np3 witnesses only to formal finite 3-plane selector candidates. The algebraic plane domain, normal-form time trace, and guarded transition surface pass. The first failing clause is still the unaccepted physical selector axiom; semantic transition operations, stress coupling, and metric reduction remain downstream blocked.",
+  "closure_boundary": {
+    "certifies": [
+      "two formal non-principal 3-plane selector candidates are present",
+      "the normal-form time trace and guarded finite transition surface are available for the selector gate",
+      "the first failing selector-gate clause is the unaccepted physical selector axiom",
+      "semantic transition operation, stress coupling, and metric-reduction clauses remain downstream blocked"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "acceptance of a physical selector axiom",
+      "a canonical physical choice between the positive and negative 3-plane candidates",
+      "semantic A985 transition-operation realization",
+      "a transition-to-stress coupling map",
+      "a four-dimensional metric reduction",
+      "a physical source tensor or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3s.py",
+      "sha256": "85c95cf8d41b3b819b9be3588bfaae0177d05a120ed5812b1c1e5b1dfe3f2ed8"
+    },
+    "long_c59np3": {
+      "certificate_sha256": "f2d3f9b762b029732ae506d4f258c083cad7f82f24fe1fdb35d945d790b3a55a",
+      "path": "data/invariants/d20/proof_obligations/long_c59np3/report.json",
+      "sha256": "839a9c2a97d5723cf5c0d1ee116e73214b972685cdfe0fcc588892a615202d7d",
+      "status": "LONG_C59NP3_NONPRINCIPAL_THREE_PLANE_WITNESS_CERTIFIED"
+    },
+    "long_dim4_gate": {
+      "certificate_sha256": "ee3849c1f565871193f7f72e59ccc2176d43685f53b0017b15f707fb5f68b9d9",
+      "path": "data/invariants/d20/proof_obligations/long_dim4_gate/report.json",
+      "sha256": "631e00d621041534a30fb9bcd497baa91f8197f7faab31accd233465ec8ded09",
+      "status": "LONG_DIM4_GATE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_sel": {
+      "certificate_sha256": "886f7efe5a521ed62a1cd34428e62ed674c43cad7f9bc388a0b4ccb22614c24b",
+      "path": "data/invariants/d20/proof_obligations/long_sel/report.json",
+      "sha256": "2d173ec7254934f8886d9cfc401baddee592b66bcc9765154921e89f2a47a672",
+      "status": "LONG_SEL_PHYSICAL_SELECTOR_AXIOM_OBSTRUCTION_CERTIFIED"
+    },
+    "long_stress_couple": {
+      "certificate_sha256": "b2c8d18c8cce9050b455780f46d55b0f0d3f5a6728a0caf85a22ed3ad759abad",
+      "path": "data/invariants/d20/proof_obligations/long_stress_couple/report.json",
+      "sha256": "15f026fa8722999bff062dc35cfbeed6a0e5c0b4c93932bf8060e1fabb00d589",
+      "status": "LONG_STRESS_COUPLE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_time_map": {
+      "certificate_sha256": "b40ba13849c68c86d96c8457f1783ed29d5e335093656df680eb560eae17f78a",
+      "path": "data/invariants/d20/proof_obligations/long_time_map/report.json",
+      "sha256": "1c56d0252405469cca73c6d73699453494b6dfd66d7eb9f13a4a02ed758a1b51",
+      "status": "LONG_TIME_MAP_CERTIFIED"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3s.py",
+      "sha256": "153fd641af29a4930842df413f39270d5459a84a9ef44ec134d1cf7a1b00ef2a"
+    }
+  },
+  "next_highest_yield_item": "Attack the first failed selector-gate clause: either accept an explicit physical selector axiom, or avoid that extra axiom by constructing semantic transition operation rows that select one of the witnessed 3-planes.",
+  "outputs": {
+    "c59p3s": "data/invariants/d20/proof_obligations/long_c59p3s/c59p3s.json",
+    "candidate_csv": "data/invariants/d20/proof_obligations/long_c59p3s/candidate.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3s/cert.json",
+    "contract_csv": "data/invariants/d20/proof_obligations/long_c59p3s/contract.csv",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_c59p3s/decision.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3s/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3s/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3s/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3s/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3s/tables.npz"
+  },
+  "schema": "long.c59p3s.report@1",
+  "stage_protocol": {
+    "closure": "certify the current-boundary selector gate over the non-principal 3-plane witnesses",
+    "coherence": "check the passing prefix, first failure, downstream blocks, and absence of physical selector or metric promotion",
+    "draft": "read long_c59np3, long_time_map, long_transition_sem, long_stress_couple, long_sel, and long_dim4_gate",
+    "emit": "write long_c59p3s artifacts and verifier hook",
+    "witness": "emit formal plane-selector candidates, ordered selector-gate clauses, decisions, gaps, and observables"
+  },
+  "status": "LONG_C59P3S_NONPRINCIPAL_PLANE_SELECTOR_GATE_CERTIFIED",
+  "witness": {
+    "candidate_table_sha256": "a29062f28e993c7d2046ada06ee7a6b3ff6082825b0f719c4efcabe609c977c8",
+    "candidate_text_sha256": "b42e60afba3eae9925767ae8fae6317f3716fea3384378d61480f0b7b703e75d",
+    "classification": "nonprincipal_three_plane_selector_gate",
+    "clause_code_map": {
+      "0": "nonprincipal_definite_plane_domain_present",
+      "1": "normal_form_time_trace_present",
+      "2": "guarded_transition_surface_present",
+      "3": "physical_selector_axiom_present",
+      "4": "semantic_transition_operation_present",
+      "5": "stress_transition_coupling_map_present",
+      "6": "four_dimensional_metric_reduction_present",
+      "7": "physical_source_tensor_ready"
+    },
+    "contract_table_sha256": "8102eb36d94b1f90bedc58cf2572f660f2b9061074c9a6672ab6ab8085974a5a",
+    "contract_text_sha256": "2dc23cafed3cacbbed8dd62dec975616432fa8b180f74a263a7ff351cde055a0",
+    "decision_code_map": {
+      "0": "algebraic_plane_domain_certified",
+      "1": "normal_form_time_coherence_certified",
+      "2": "guarded_transition_coherence_certified",
+      "3": "physical_selector_axiom_available",
+      "4": "semantic_transition_operation_available",
+      "5": "stress_coupling_map_available",
+      "6": "canonical_physical_plane_selected"
+    },
+    "decision_table_sha256": "3898d235669b2c6fba2359d7123e25ea4ece616e9afed382aa64a3da43eadc47",
+    "gap_code_map": {
+      "0": "nonprincipal_plane_witnesses",
+      "1": "physical_selector_axiom",
+      "2": "semantic_transition_operation",
+      "3": "stress_coupling_map",
+      "4": "four_dimensional_metric_reduction",
+      "5": "physical_source_tensor",
+      "6": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "7691ea49f549bcb76416576a6a7c36bd3185c924ba98b860194d936cbe78e8e0",
+    "name": "long_c59p3s",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "negative_plane_candidate_b",
+      "11": "negative_plane_candidate_c",
+      "12": "normal_form_time_map_flag",
+      "13": "semantic_edge_operation_flag",
+      "14": "finite_guard_transition_flag",
+      "15": "semantic_transition_operation_flag",
+      "16": "stress_coupling_map_certified_flag",
+      "17": "shared_stress_coupling_key_count",
+      "18": "physical_selector_axiom_flag",
+      "19": "dim4_reduction_certified_flag",
+      "2": "candidate_count",
+      "20": "physical_stress_energy_flag",
+      "21": "contract_clause_count",
+      "22": "contract_pass_count",
+      "23": "contract_fail_count",
+      "24": "first_failure_clause_code",
+      "25": "downstream_blocked_clause_count",
+      "26": "canonical_physical_selection_flag",
+      "27": "four_dimensional_metric_flag",
+      "28": "thermal_gravity_flag",
+      "29": "next_gap_code",
+      "3": "selected_candidate_count",
+      "4": "formal_plane_selector_candidate_count",
+      "5": "nonprincipal_definite_plane_count",
+      "6": "positive_plane_candidate_a",
+      "7": "positive_plane_candidate_b",
+      "8": "positive_plane_candidate_c",
+      "9": "negative_plane_candidate_a"
+    },
+    "observable_table_sha256": "8d49b58a04778559db12b5a2e7ef8dc1942301e9011cc90b5aa7c10ee4f732d1",
+    "plane_code_map": {
+      "0": "positive_definite_plane",
+      "1": "negative_definite_plane"
+    },
+    "summary": {
+      "candidate_count": 2,
+      "canonical_physical_selection_flag": 0,
+      "downstream_blocked_clause_count": 4,
+      "finite_guard_transition_flag": 1,
+      "first_failure_clause_code": 3,
+      "formal_plane_selector_candidate_count": 2,
+      "four_dimensional_metric_flag": 0,
+      "nonprincipal_definite_plane_count": 2,
+      "normal_form_time_map_flag": 1,
+      "physical_selector_axiom_flag": 0,
+      "physical_stress_energy_flag": 0,
+      "selected_candidate_count": 0,
+      "semantic_transition_operation_flag": 0,
+      "stress_coupling_map_certified_flag": 0,
+      "thermal_gravity_flag": 0
+    }
+  }
+}

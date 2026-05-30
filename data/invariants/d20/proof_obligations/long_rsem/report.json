@@ -1,0 +1,130 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "99ce4b61e31bec166a1ade4ead371e06d115d0757bfc6b32cab8ada0839b1780",
+  "checks": {
+    "a985_physical_gr_boundaries_preserved": true,
+    "guarded_relation_law_is_total": true,
+    "guarded_relation_witnesses_cohere": true,
+    "input_reports_certified": true,
+    "multivalued_boundary_preserved": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_rsem promotes the long_rtick cover to a guarded finite relation-valued transition semantic law: every affine golden tick has a nonempty finite set of raw-backed, contact-lift-backed, unit-time witnesses. The law is nondeterministic and guarded; it does not require a single-valued atom-to-basis functor, and it does not materialize semantic A985 operation rows or physical transition data.",
+  "closure_boundary": {
+    "certifies": [
+      "a guarded finite relation-valued transition semantic law for the 20 affine golden ticks",
+      "all 59 relation witnesses are raw-backed, contact-lift-backed, and normal-form unit-time guarded transitions",
+      "the semantic law is nondeterministic: 7 singleton ticks and 13 multivalued ticks",
+      "the law does not require a single-valued atom-to-basis functor"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "semantic A985 operation-row realization",
+      "transition composition as A985 multiplication",
+      "a physical selector axiom",
+      "that relation-valued ticks are physical time",
+      "a selected 1+3 Lorentzian spacetime boundary",
+      "a physical stress-energy tensor or Einstein equation",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_rsem.py",
+      "sha256": "cf502cd958bc0b7432acc2e44bad3a0cbbd8342e9e722323e1e37d3f167b9375"
+    },
+    "long_rtick": {
+      "certificate_sha256": "fa4811e65d994add0dc149fcd06e3473eb51c412836b5b3fb0ce483bc787defc",
+      "path": "data/invariants/d20/proof_obligations/long_rtick/report.json",
+      "sha256": "cbbc38f23a35c81638868b83412777aefbe166f216862afdcb2cc0508c7c8d55",
+      "status": "LONG_RTICK_RELATION_VALUED_TICK_COVER_CERTIFIED"
+    },
+    "long_rtick_relation": {
+      "path": "data/invariants/d20/proof_obligations/long_rtick/relation.csv",
+      "sha256": "9ae9c7fb55836b241ee2a108aea826972b689000fbb5e8ed865419a2d04050e4"
+    },
+    "long_rtick_tick": {
+      "path": "data/invariants/d20/proof_obligations/long_rtick/tick.csv",
+      "sha256": "23e2e475e5c4ec24edb1a45c428f4176fcf3dba788b41090c626bf91771f3f60"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_rsem.py",
+      "sha256": "45cda0b0e3c1c08ed00f4c3f390a0165900305ae95c2b4a3a5ff07618a6d0903"
+    }
+  },
+  "next_highest_yield_item": "With guarded relation-valued tick semantics certified, the golden branch now needs either a physical selector axiom or a stricter promotion from guarded relations to semantic A985 operation rows.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_rsem/cert.json",
+    "law_csv": "data/invariants/d20/proof_obligations/long_rsem/law.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_rsem/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_rsem/obs.csv",
+    "relation_csv": "data/invariants/d20/proof_obligations/long_rsem/relation.csv",
+    "report": "data/invariants/d20/proof_obligations/long_rsem/report.json",
+    "rsem": "data/invariants/d20/proof_obligations/long_rsem/rsem.json",
+    "tables": "data/invariants/d20/proof_obligations/long_rsem/tables.npz",
+    "tick_csv": "data/invariants/d20/proof_obligations/long_rsem/tick.csv"
+  },
+  "schema": "long.rsem.report@1",
+  "stage_protocol": {
+    "closure": "certify guarded relation-valued finite transition semantics while preserving operation and physical boundaries",
+    "coherence": "check total guarded relation semantics, raw/unit/contact witness guards, multivalued boundary, and A985/physical exclusions",
+    "draft": "read long_rtick and long_transition_sem",
+    "emit": "write long_rsem artifacts and verifier hook",
+    "witness": "emit law rows, tick semantic rows, relation semantic rows, and observables"
+  },
+  "status": "LONG_RSEM_GUARDED_RELATION_SEMANTIC_LAW_CERTIFIED",
+  "witness": {
+    "classification": "guarded_relation_valued_transition_semantic_law",
+    "law_code_map": {
+      "0": "guarded_relation_valued_tick_semantics",
+      "1": "single_valued_atom_basis_functor",
+      "2": "semantic_a985_operation_realization",
+      "3": "physical_selector_axiom"
+    },
+    "law_table_sha256": "60bd1c520f0ad34d5edb676ef9affa6522403697e95648ee2b85b818baad2b26",
+    "name": "long_rsem",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "unit_time_relation_count",
+      "11": "contact_lift_relation_count",
+      "12": "relation_semantic_law_flag",
+      "13": "single_valued_functor_flag",
+      "14": "semantic_a985_operation_flag",
+      "15": "operation_row_materialized_count",
+      "16": "physical_selector_axiom_flag",
+      "17": "physical_transition_flag",
+      "18": "gr_source_ready_flag",
+      "2": "affine_tick_count",
+      "3": "relation_row_count",
+      "4": "covered_tick_count",
+      "5": "guarded_semantic_tick_count",
+      "6": "single_valued_tick_count",
+      "7": "multivalued_tick_count",
+      "8": "guarded_semantic_relation_count",
+      "9": "raw_backed_relation_count"
+    },
+    "observable_table_sha256": "e3fcb89233ee4a44607acfc8ca2b224096ccc40d18a189c1bd7fa6043b6ad323",
+    "relation_table_sha256": "85317988ef3664d1659215783448b9d0234b3626cd82a40f2b313cc0885c344c",
+    "relation_text_sha256": "da2808e422ef26fefe593520b87cf6153a0d817bddfd2b11fcf0178f36ce8b69",
+    "summary": {
+      "affine_tick_count": 20,
+      "gr_source_ready_flag": 0,
+      "guarded_semantic_relation_count": 59,
+      "guarded_semantic_tick_count": 20,
+      "multivalued_tick_count": 13,
+      "physical_selector_axiom_flag": 0,
+      "relation_row_count": 59,
+      "relation_semantic_law_flag": 1,
+      "semantic_a985_operation_flag": 0,
+      "single_valued_functor_flag": 0,
+      "single_valued_tick_count": 7
+    },
+    "tick_table_sha256": "81aea54a7ab46681ed4fd38acf049f0400355c111683948f8ff586205ba008c9"
+  }
+}

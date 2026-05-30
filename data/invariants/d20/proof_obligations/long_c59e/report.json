@@ -1,0 +1,155 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b230ab8fe030f36d4bf10f64866222c04e50dd586462f51fdc088876a0d46502",
+  "checks": {
+    "controlled_local_defect_explicit": true,
+    "global_conservation_exact": true,
+    "input_reports_certified": true,
+    "mode_fluxes_match_signed_weights": true,
+    "physical_metric_boundaries_preserved": true,
+    "signed_edge_ansatz_materialized": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59e aggregates the signed C59X route rows into a finite directed-edge ansatz. The ansatz has exact global conservation and an explicit controlled local defect table. It does not certify a physical stress-energy tensor, a smooth metric, or a thermal-gravity derivation.",
+  "closure_boundary": {
+    "certifies": [
+      "a finite signed directed-edge ansatz from the 118 C59X route rows",
+      "edge-level aggregation over the materialized routed stress edges",
+      "exact global divergence zero across the 20-node balance table",
+      "a controlled explicit local defect table where local conservation is not closed"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "local conservation at every node",
+      "a physical stress-energy tensor",
+      "a smooth Lorentzian metric",
+      "curvature, Einstein tensor, or field equations",
+      "a thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59e.py",
+      "sha256": "133db759b922564122a92ea2a008ba578ac73ecb229803aa60ca28796df7b804"
+    },
+    "long_c59x": {
+      "certificate_sha256": "c54b8b11e0780ad7e070371ea08a891f7ec324d3519a7cfa1ee91d1033f19daf",
+      "path": "data/invariants/d20/proof_obligations/long_c59x/report.json",
+      "sha256": "221ea08478e85209a452e2a91bd908ed3a5318c613e084978074c4436b86c8ae",
+      "status": "LONG_C59X_SIGNED_SENTINEL_EDGE_ROUTING_CERTIFIED"
+    },
+    "long_c59x_route": {
+      "path": "data/invariants/d20/proof_obligations/long_c59x/route.csv",
+      "sha256": "abd1e7e7735f349af3d4ff16235989ec43d6387d3f95d1eb3b943f7cbbd7e50d"
+    },
+    "long_c59x_sentinel": {
+      "path": "data/invariants/d20/proof_obligations/long_c59x/sentinel.csv",
+      "sha256": "0a19c8123e06f1c80a5f19220df9ab337780c539ab5274b71b2adffcaca50ab0"
+    },
+    "long_stress_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/stress_edge.csv",
+      "sha256": "7a25f7a5501af7158311ffa0fc65c2ef9d1cab1cd67d1b3c9ee4d01b514060e1"
+    },
+    "long_stress_gate": {
+      "certificate_sha256": "a31d87700816b5ed5a205c4fbaf2e0774e2132fd550c32242f0988d4e54e4fea",
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/report.json",
+      "sha256": "8c23f384cbb3e5115001e5cf93880d4ba08290c27fbea9e42ecfef70a7c195cb",
+      "status": "LONG_STRESS_GATE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59e.py",
+      "sha256": "67c0fe306ff15e5a7429d861302fe823bc53093d77ea9a6679170c9761256941"
+    }
+  },
+  "next_highest_yield_item": "Try to cancel the local defect by adding the minimal counterflow on existing directed stress edges, or certify the residual defect as the finite source obstruction.",
+  "outputs": {
+    "c59e": "data/invariants/d20/proof_obligations/long_c59e/c59e.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59e/cert.json",
+    "edge_flux_csv": "data/invariants/d20/proof_obligations/long_c59e/edge_flux.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59e/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59e/manifest.json",
+    "mode_csv": "data/invariants/d20/proof_obligations/long_c59e/mode.csv",
+    "node_balance_csv": "data/invariants/d20/proof_obligations/long_c59e/node_balance.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59e/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59e/report.json",
+    "route_flux_csv": "data/invariants/d20/proof_obligations/long_c59e/route_flux.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59e/tables.npz"
+  },
+  "schema": "long.c59e.report@1",
+  "stage_protocol": {
+    "closure": "certify finite signed edge ansatz with global conservation and explicit local defect",
+    "coherence": "check signed route counts, mode totals, global divergence, controlled local defect, and physical exclusions",
+    "draft": "read long_c59x routes and directed stress edges",
+    "emit": "write long_c59e artifacts and verifier hook",
+    "witness": "emit signed route flux rows, edge aggregates, node balances, mode totals, gaps, and observables"
+  },
+  "status": "LONG_C59E_SIGNED_EDGE_ANSATZ_CERTIFIED",
+  "witness": {
+    "classification": "c59x_signed_edge_ansatz",
+    "edge_flux_table_sha256": "0031961e75ccc5686912fd1c6a74f3e98d00bbc368d7775624dce4dcdfb7dff9",
+    "gap_code_map": {
+      "0": "signed_edge_ansatz",
+      "1": "global_conservation",
+      "2": "local_conservation",
+      "3": "controlled_local_defect",
+      "4": "physical_stress_energy_tensor",
+      "5": "smooth_lorentzian_metric",
+      "6": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "3b69bacb677bc4d6a75fe880e7a154e6f4789a9e25982e077779d20a8201c16c",
+    "mode_table_sha256": "e79d521c2f301c7b90f86124682fab24323f7d5af47a808712c2a3645824e3e1",
+    "name": "long_c59e",
+    "node_balance_table_sha256": "21fc125c0590fdb5cc0afa933e7182312e992ce7aaa71947cccd9863b2c5a287",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "negative_total_weight_scaled",
+      "11": "positive_total_flux_scaled",
+      "12": "negative_total_flux_scaled",
+      "13": "net_route_flux_scaled",
+      "14": "node_outgoing_total_scaled",
+      "15": "node_incoming_total_scaled",
+      "16": "global_divergence_scaled",
+      "17": "global_conservation_flag",
+      "18": "local_conserved_node_count",
+      "19": "defect_node_count",
+      "2": "route_row_count",
+      "20": "total_abs_defect_scaled",
+      "21": "max_abs_defect_scaled",
+      "22": "controlled_defect_flag",
+      "23": "formal_edge_ansatz_flag",
+      "24": "physical_stress_energy_flag",
+      "25": "smooth_metric_flag",
+      "26": "thermal_gravity_flag",
+      "27": "next_gap_code",
+      "3": "edge_flux_row_count",
+      "4": "node_balance_row_count",
+      "5": "sentinel_mode_count",
+      "6": "positive_route_count",
+      "7": "negative_route_count",
+      "8": "used_edge_count",
+      "9": "positive_total_weight_scaled"
+    },
+    "observable_table_sha256": "2bbd634e44cea10210a71e924bd7aafec7c51cdb63f02b266a856506b6007b76",
+    "route_flux_table_sha256": "8c28ea0778439f793f157447cd6a3e54a169dd8814a48037b993823f2147f506",
+    "route_flux_text_sha256": "e8c1d09263b7d7ce9631d9352ee4e1e7a81d9a9d1d3cecaa08317d168f7c3717",
+    "summary": {
+      "controlled_defect_flag": 1,
+      "defect_node_count": 20,
+      "edge_flux_row_count": 40,
+      "global_conservation_flag": 1,
+      "global_divergence_scaled": 0,
+      "local_conserved_node_count": 0,
+      "max_abs_defect_scaled": 12470508086,
+      "negative_route_count": 59,
+      "net_route_flux_scaled": 461995204,
+      "node_balance_row_count": 20,
+      "physical_stress_energy_flag": 0,
+      "positive_route_count": 59,
+      "route_row_count": 118,
+      "smooth_metric_flag": 0,
+      "thermal_gravity_flag": 0,
+      "total_abs_defect_scaled": 107198383282,
+      "used_edge_count": 40
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "26fa7fcc608f93e291abb1113911742f84caa26a377551f1965f728ef8fd51a1",
+  "checks": {
+    "exact_distribution_covers_carrier": true,
+    "input_report_certified": true,
+    "integer_distribution_obstructed": true,
+    "normalization_denominator_exact": true,
+    "operation_and_physical_boundaries_preserved": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3e distributes the formal atom counterterm exactly over the 77 selector-carrier rows. The distribution is exact over rational weights with common denominator 20, but not integral: 47 rows across 10 atoms require non-unit denominators.",
+  "closure_boundary": {
+    "certifies": [
+      "an exact rational selector-weight distribution exists over all 77 carrier rows",
+      "each of the 17 active atoms sums exactly to its formal counterterm",
+      "the common denominator of the reduced carrier weights is 20",
+      "an integral row-weight distribution is obstructed for the equal-carrier normalization",
+      "47 carrier rows across 10 atoms require non-unit denominators"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "an integral selector-weight distribution under this normalization",
+      "operation-backed counterterm rows",
+      "a physical selector axiom",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3e.py",
+      "sha256": "b5ce3d14c350f16689b2a0dece0b84dae134931d65233f061734cdb1d8e8c4ab"
+    },
+    "long_c59p3d": {
+      "certificate_sha256": "138656ffc506787f52c87d3b43aecfc8cf17f96b5201aabfd34551ebb05e29b8",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3d/report.json",
+      "sha256": "92a1eed6153132176531a6ce29229265f7b95e4fde55f88a68f2f616d3790553",
+      "status": "LONG_C59P3D_COUNTERTERM_SELECTOR_CARRIER_CERTIFIED"
+    },
+    "long_c59p3d_atom": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3d/atom.csv",
+      "sha256": "7727aea7ddf9c8d00feb5ab74ea0ea93d99287ee4011adcc628ced8b916530aa"
+    },
+    "long_c59p3d_carrier": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3d/carrier.csv",
+      "sha256": "ccef9508cd13de3d54fa6831216d9738ac65a62663fc70dc50c388813918011f"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3e.py",
+      "sha256": "2382ce8a0f93fd2d19326543625e18546f41186db27f4039d30b709df1ea64bd"
+    }
+  },
+  "next_highest_yield_item": "Attempt to clear the denominator-20 rational distribution through a certified packet/clock normalization, or prove that the denominator cannot be absorbed by the current packet scale.",
+  "outputs": {
+    "atom_sum_csv": "data/invariants/d20/proof_obligations/long_c59p3e/atom_sum.csv",
+    "c59p3e": "data/invariants/d20/proof_obligations/long_c59p3e/c59p3e.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3e/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3e/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3e/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3e/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3e/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3e/tables.npz",
+    "weight_csv": "data/invariants/d20/proof_obligations/long_c59p3e/weight.csv"
+  },
+  "schema": "long.c59p3e.report@1",
+  "stage_protocol": {
+    "closure": "certify exact rational selector-weight distribution and integral obstruction",
+    "coherence": "check exact per-atom sums, common denominator, integer divisibility obstruction, and preserved operation/physical gaps",
+    "draft": "read long_c59p3d atom and carrier rows",
+    "emit": "write long_c59p3e artifacts and verifier hook",
+    "witness": "emit per-carrier rational weights, per-atom exact sum rows, gaps, and observables"
+  },
+  "status": "LONG_C59P3E_EXACT_SELECTOR_WEIGHT_DISTRIBUTION_CERTIFIED",
+  "witness": {
+    "atom_sum_table_sha256": "56f731fda4e65ea41042a1f736f2ee62a0baa1025dec36b460a61b70487e6e10",
+    "classification": "exact_selector_weight_distribution",
+    "gap_code_map": {
+      "0": "selector_carrier_support",
+      "1": "exact_rational_selector_distribution",
+      "2": "integral_selector_weight_distribution",
+      "3": "operation_backed_counterterm",
+      "4": "physical_selector_axiom",
+      "5": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "e32f9f9d91225c8b30f0c2779062c03d896abf56baa23a756afe33909fdebe5c",
+    "name": "long_c59p3e",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "nonintegral_atom_count",
+      "11": "integral_distribution_flag",
+      "12": "exact_rational_distribution_flag",
+      "13": "common_den_weight_num_abs_total",
+      "14": "operation_backed_counterterm_flag",
+      "15": "physical_selector_axiom_flag",
+      "16": "thermal_gravity_flag",
+      "17": "next_gap_code",
+      "2": "active_atom_count",
+      "3": "carrier_row_count",
+      "4": "exact_weight_row_count",
+      "5": "atom_sum_pass_count",
+      "6": "common_denominator",
+      "7": "integral_weight_row_count",
+      "8": "nonintegral_weight_row_count",
+      "9": "integral_atom_count"
+    },
+    "observable_table_sha256": "c0b2652ed40c15c1b6a34f04c3eb4f61c39545850731d795604ede35f15a10a0",
+    "summary": {
+      "active_atom_count": 17,
+      "carrier_row_count": 77,
+      "common_denominator": 20,
+      "exact_rational_distribution_flag": 1,
+      "integral_atom_count": 7,
+      "integral_distribution_flag": 0,
+      "integral_weight_row_count": 30,
+      "nonintegral_atom_count": 10,
+      "nonintegral_weight_row_count": 47,
+      "operation_backed_counterterm_flag": 0
+    },
+    "weight_table_sha256": "e78fa55907d0bcb5740bf81e74dd4852daefa9667d04f45beae0a9af8bd597ea",
+    "weight_text_sha256": "1f32077aa913b497973d75bda4ceb46a976949360e8ebadbf8626a30a06a66cb"
+  }
+}

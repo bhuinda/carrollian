@@ -1,0 +1,135 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8ccf8ae303e8dd9bb2154d7a3748840dca7fe8227f4f92ff00a5004c0e7b6a96",
+  "checks": {
+    "central_idempotent_shape_exact": true,
+    "complete_pair_screen_shape": true,
+    "direct_target_rows_mismatch": true,
+    "inputs_checked": true,
+    "sector5_sector6_disjoint": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_kr39 certifies that the handoff Krein target rows cannot be read as direct canonical A985 sector labels. The complete 39 by 39 coordinatewise product screen has 402 pairs closed in the central-sector span and 1119 pairs outside it. For raw sector labels 5 and 6, the four requested k=2 target rows verify zero times against 135/2; sectors 5 and 6 are disjoint, and the mixed products are zero.",
+  "closure_boundary": {
+    "certifies": [
+      "the direct 39-sector A985 Hadamard screen covers all 1521 ordered sector pairs",
+      "402 ordered pairs close in the direct central-sector span and 1119 do not",
+      "raw A985 sectors 5 and 6 are disjoint under coordinatewise support",
+      "the direct raw-sector readings of q_55^2, q_56^2, q_65^2, and q_66^2 do not verify the 135/2 target",
+      "the handoff E5/E6 labels require a separate eight-module acceptance decomposition rather than raw A985 sector ids"
+    ],
+    "does_not_certify_because_open": [
+      "the widetilde B3 character table",
+      "the E0..E7 module decomposition",
+      "all Krein parameters in the acceptance scaffold",
+      "the four 135/2 target rows under the correct E-label basis",
+      "any denominator-clearing cover or acceptance-ladder closure"
+    ]
+  },
+  "inputs": {
+    "central_npz": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/a985_center_and_primitive_central_idempotents.npz",
+      "relation_count": 985,
+      "sector_count": 39,
+      "sha256": "d754721eb180e3503f4cd81b7ef7aeb7ce8aba40d4a3f2ccfbc99979e60d8df5"
+    },
+    "central_report": {
+      "certificate_sha256": "672c103f130231e19baa51912e6898584c80d0c4fb6cb8788e3e9e75f4338295",
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/report.json",
+      "sha256": "333f6ea147813858db3fc8de8abebc257535d935d18e6fdc978068de7a7082a7",
+      "status": "D20_TINY_POINTER_A985_ORBITAL_CENTRAL_IDEMPOTENTS_CERTIFIED"
+    },
+    "central_table": {
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_orbital_central_idempotents/primitive_central_idempotent_table.csv",
+      "row_count": 39,
+      "sha256": "2cd41d30a5c1008defb08631af70016863491c93b077c69691fab95feb0122a5"
+    },
+    "derive_script": {
+      "path": "src/derive_long_kr39.py",
+      "sha256": "7075d31f3241b3933fb3ecaa36017934471e54ecea0089469492c2130083236d"
+    },
+    "long_krein": {
+      "certificate_sha256": "befb9a857a610f29ed74b21bd814240c55ca26cc5a6204b3ff0c8c1f69cfe6ae",
+      "path": "data/invariants/d20/proof_obligations/long_krein/report.json",
+      "sha256": "241658d1b8a55ec68733c7deccf8d91832a8207eeafbb899f5860f3613f456da",
+      "status": "LONG_KREIN_DENOMINATOR_SOURCE_BOUNDARY_PROVISIONAL"
+    },
+    "validator": {
+      "path": "src/certify_long_kr39.py",
+      "sha256": "cf3bea85a5ef70736b0501a9987c401cd34fcd81544dfc72f3fc3303519179e8"
+    }
+  },
+  "next_highest_yield_item": "Materialize the widetilde B3 character table and E0..E7 module decomposition, then compute the Krein table in that acceptance basis instead of the raw A985 sector-label basis.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_kr39/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_kr39/gap.csv",
+    "kr39": "data/invariants/d20/proof_obligations/long_kr39/kr39.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_kr39/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_kr39/obs.csv",
+    "pair_csv": "data/invariants/d20/proof_obligations/long_kr39/pair.csv",
+    "report": "data/invariants/d20/proof_obligations/long_kr39/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_kr39/tables.npz",
+    "target_csv": "data/invariants/d20/proof_obligations/long_kr39/target.csv"
+  },
+  "schema": "long.kr39.report@1",
+  "stage_protocol": {
+    "closure": "certify direct A985 sector labels are not the E5/E6 labels needed for the handoff Krein target",
+    "coherence": "check closure counts, target-row coefficients, sector 5/6 supports, and table hashes",
+    "draft": "read long_krein and the canonical A985 central-idempotent certificate",
+    "emit": "write long_kr39 artifacts and verifier hook",
+    "witness": "emit the 1521-pair direct sector Hadamard screen, four target rows, gaps, and observables"
+  },
+  "status": "LONG_KR39_DIRECT_SECTOR_HADAMARD_SCREEN_CERTIFIED",
+  "witness": {
+    "classification": "direct_a985_sector_hadamard_screen",
+    "gap_code_map": {
+      "0": "central_idempotent_input",
+      "1": "direct_sector_hadamard_screen",
+      "2": "direct_sector_target_mismatch",
+      "3": "eight_module_decomposition_missing",
+      "4": "krein_acceptance_closure"
+    },
+    "gap_table_sha256": "7be58e197e6c000202fa2adcb14d10dcce611b5697126fcbf1301347d6607e6d",
+    "idempotent_table_sha256": "912fa9ea1137924db45ecf7f08602ef117ceda7f3edfb45a955c9d86cb0c9763",
+    "name": "long_kr39",
+    "observable_code_map": {
+      "0": "field_prime",
+      "1": "sector_count",
+      "10": "target_zero_product_pair_count",
+      "11": "target_verified_135_over_2_count",
+      "12": "target_projection_coeff_2_nonzero_count",
+      "13": "sector5_support",
+      "14": "sector6_support",
+      "15": "sector5_sector6_overlap",
+      "16": "direct_label_mismatch_flag",
+      "17": "next_gap_code",
+      "2": "relation_count",
+      "3": "pair_count",
+      "4": "closed_pair_count",
+      "5": "not_closed_pair_count",
+      "6": "zero_product_pair_count",
+      "7": "nonzero_product_pair_count",
+      "8": "target_pair_count",
+      "9": "target_closed_pair_count"
+    },
+    "observable_table_sha256": "bb1c2e1e9028bf237ad7b783b965b799165982d9ec28f273a025536fe075bf4e",
+    "pair_table_sha256": "61b1e89563107e5e364cbca4fadba60dfb0cecf0672a2479ed2a170bb4002cfc",
+    "pair_text_sha256": "a2816e7e1a4e1eaebf89ca66304e5804379dc71cb954c22730159bade62ff5d0",
+    "summary": {
+      "closed_pair_count": 402,
+      "next_gap_code": 3,
+      "not_closed_pair_count": 1119,
+      "pair_count": 1521,
+      "relation_count": 985,
+      "sector5_sector6_overlap": 0,
+      "sector5_support": 12,
+      "sector6_support": 133,
+      "sector_count": 39,
+      "target_pair_count": 4,
+      "target_verified_135_over_2_count": 0
+    },
+    "target_mod": 500069,
+    "target_table_sha256": "5f77a3c497c6f693ec7afc63db253229eb8d3cd48884b682d2cc499e00d931f0",
+    "target_text_sha256": "63e6a23ee28e27f62a044319a1ecd8c3f595ec76c342b24e4167e00d55d38427"
+  }
+}

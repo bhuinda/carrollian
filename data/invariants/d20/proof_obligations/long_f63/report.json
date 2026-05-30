@@ -1,0 +1,163 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8b031d0089fcafc6568a721d3661e0798c35bd84033a171cff9d14111c6a5906",
+  "checks": {
+    "complement_matches_atlas": true,
+    "coordinate_map_covers_fixed_space": true,
+    "exterior_grade_counts_match_binomial_row": true,
+    "fixed63_is_projective_f2_6": true,
+    "gamma8_remains_hidden_odd_outside_lazy63": true,
+    "grade_three_is_d20_atom_count": true,
+    "input_reports_certified": true,
+    "rim_phase_selection_still_not_claimed": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_f63 promotes the valid part of the lazy63 coincidence: the 63 lazy fixed rows are the nonzero vectors of a finite F2^6 coordinate spine, and the grade-three slice has exactly the 20 Lambda^3 H6 atoms with the certified d20 complement pairing.",
+  "closure_boundary": {
+    "certifies": [
+      "lazy63/fixed63 plus zero is a six-dimensional F2 vector space at the current raw543 boundary",
+      "a deterministic coordinate basis identifies the 63 lazy rows with nonzero F2^6 coordinates",
+      "the exterior grade distribution is 6, 15, 20, 15, 6, 1",
+      "the grade-three slice has 20 rows and matches the certified D20 atom complement pairing",
+      "gamma8 is fixed by the C2 action but hidden-odd and outside the lazy63 fixed kernel"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "that the deterministic F2^6 basis is the unique physical H6 basis",
+      "a semantic row map from lazy63 rows to rim defect classes",
+      "selection of the golden rim phase",
+      "a physical selector axiom",
+      "a selected 1+3 Lorentzian spacetime boundary",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "atlas": {
+      "certificate_sha256": "dca4fae79bc004af89c476c834e9be19e7938751cbe3a82c265a8e26c33e6a3f",
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/report.json",
+      "sha256": "c4a06fe54ede9305984391a4be10808467321d29003b68efb93b21b672982e95",
+      "status": "C985_D20_BOUNDARY_INVARIANT_ATLAS_CERTIFIED"
+    },
+    "atlas_csv": {
+      "path": "data/invariants/d20/proof_obligations/c985_d20_boundary_invariant_atlas/d20_boundary_invariant_atlas.csv",
+      "sha256": "dceac1e28f3ba578d841c2955b68dab96c60d3916f0c6cfc40b01abbe75b4481"
+    },
+    "derive_script": {
+      "path": "src/derive_long_f63.py",
+      "sha256": "7871129b5dc6cbe5223fca8634458a30aaee0b2b467f4a0bb1955274077b79ae"
+    },
+    "fixed63": {
+      "path": "data/invariants/d20/theorems/raw543_repo_c2_kernel_agda_bridge_data/actual_raw543_agda_fixed63.csv",
+      "sha256": "208687a8cdaa4ca99803abda8bac453c4787373e0d55dbbd9ae90ba9c4462fdf"
+    },
+    "long_l63": {
+      "certificate_sha256": "2a19866edb11e66b1c22b3199ab6afbfe0f78baf6406c79671c5e33ab193bdfe",
+      "path": "data/invariants/d20/proof_obligations/long_l63/report.json",
+      "sha256": "7f75b28aaba4e06a0f2c1d43580a4f8e1f6e6832b3fe753de14f305eff744a9b",
+      "status": "LONG_L63_SELECTOR_RIM_BRIDGE_OBSTRUCTION_CERTIFIED"
+    },
+    "raw543_action": {
+      "certificate_sha256": "1a42fc86b1c412806ac5cd35dbcf9c8e883dc6a16e2eaeceeb98ea8dbda92d14",
+      "path": "data/invariants/d20/theorems/raw543_repo_c2_kernel_action/report.json",
+      "sha256": "a057871e44668b6c1789bdbb63b5dc83056900e5a434301da7c000b3f210f455",
+      "status": "RAW543_REPO_C2_KERNEL_ACTION_CERTIFIED"
+    },
+    "raw543_agda": {
+      "certificate_sha256": "891cf94503306f48682bfb107e4f36c114823e4263629cf60e50a4a105be3204",
+      "path": "data/invariants/d20/theorems/raw543_repo_c2_kernel_agda_bridge_data/report.json",
+      "sha256": "48a1f5ea49eb5e01177f732a2ba86b330eef459e81035e2bbbb4472912f1b636",
+      "status": "RAW543_REPO_C2_KERNEL_AGDA_BRIDGE_DATA_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_f63.py",
+      "sha256": "259ffddcce881dbc694b5e4222f17aca28bf479757f9a8fc5d95317cd0372e3e"
+    }
+  },
+  "next_highest_yield_item": "Use the certified grade-three fixed63 atom bridge to test whether any C20 rim, stress graph, or transition surface can be lifted to a coordinate-basis-independent selector on the F2^6 exterior spine.",
+  "outputs": {
+    "atom_csv": "data/invariants/d20/proof_obligations/long_f63/atom.csv",
+    "basis_csv": "data/invariants/d20/proof_obligations/long_f63/basis.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_f63/cert.json",
+    "f63": "data/invariants/d20/proof_obligations/long_f63/f63.json",
+    "fixed_csv": "data/invariants/d20/proof_obligations/long_f63/fixed.csv",
+    "grade_csv": "data/invariants/d20/proof_obligations/long_f63/grade.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_f63/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_f63/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_f63/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_f63/tables.npz"
+  },
+  "schema": "long.f63.report@1",
+  "stage_protocol": {
+    "closure": "certify the fixed63 exterior boundary bridge while preserving the rim-selection obstruction",
+    "coherence": "check F2^6 closure, coordinate coverage, binomial grade counts, atom complement match, gamma8 exclusion, and table hashes",
+    "draft": "read raw543 C2 kernel action, Agda fixed63 bridge data, d20 atom atlas, and long_l63",
+    "emit": "write long_f63 artifacts and verifier hook",
+    "witness": "emit fixed-space basis, fixed63 coordinate rows, grade counts, and the 20 grade-three atom bridge rows"
+  },
+  "status": "LONG_F63_FIXED_EXTERIOR_BOUNDARY_CERTIFIED",
+  "witness": {
+    "atom_table_sha256": "c003184d9e6c8ab2802f879f92d7b372b5dabf92b42d0b27f4f87146594babc1",
+    "atom_text_sha256": "b6d769038b1a53a2ed09c58ff510b018b2d9f891150dc8d220e7f6e0b17a0edf",
+    "basis_table_sha256": "63dd8753789f84f647667e092c038d08c02c7520b53bf9d35502e58186b5aa32",
+    "basis_text_sha256": "5740d1cfd3346ad425d0ed83085625f771385fb6c8515e87c6a78549df9065b5",
+    "classification": "fixed63_exterior_d20_boundary_bridge",
+    "fixed_table_sha256": "ce59c8cd25aee7508a343bd53008000f65b36ac1dd586dd9c173a48e9af8c9c9",
+    "fixed_text_sha256": "1af5aa5ce876263db940375fc03c7617e80e7ae60e5236cb52ef8fa63d3ea9c3",
+    "grade_table_sha256": "ec57f5fae1f84fafd80ed540dfeef5152d34166e334397228779a1937fb185ff",
+    "h6_labels": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
+    ],
+    "name": "long_f63",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "grade2_count",
+      "11": "grade3_count",
+      "12": "grade4_count",
+      "13": "grade5_count",
+      "14": "grade6_count",
+      "15": "d20_atom_count",
+      "16": "atlas_atom_count",
+      "17": "atom_atlas_complement_match_count",
+      "18": "atom_atlas_complement_all_match_flag",
+      "19": "gamma8_mask",
+      "2": "fixed63_row_count",
+      "20": "gamma8_in_fixed63_flag",
+      "21": "gamma8_hidden_odd_flag",
+      "22": "long_l63_row_bridge_present_flag",
+      "23": "rim_phase_selected_flag",
+      "3": "fixed63_plus_zero_count",
+      "4": "fixed63_rank",
+      "5": "coordinate_dimension",
+      "6": "coordinate_nonzero_count",
+      "7": "coordinate_coverage_flag",
+      "8": "xor_closure_flag",
+      "9": "grade1_count"
+    },
+    "observable_table_sha256": "34deff2923ca905b54acf8a9a8aa587b36898586e10842a19be68236c2431bd4",
+    "summary": {
+      "atom_atlas_complement_match_count": 20,
+      "coordinate_dimension": 6,
+      "coordinate_nonzero_count": 63,
+      "d20_atom_count": 20,
+      "fixed63_rank": 6,
+      "fixed63_row_count": 63,
+      "gamma8_hidden_odd_flag": 1,
+      "gamma8_in_fixed63_flag": 0,
+      "grade_counts": [
+        6,
+        15,
+        20,
+        15,
+        6,
+        1
+      ],
+      "long_l63_row_bridge_present_flag": 0,
+      "rim_phase_selected_flag": 0
+    }
+  }
+}

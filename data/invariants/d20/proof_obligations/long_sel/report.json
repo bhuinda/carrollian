@@ -1,0 +1,173 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "886f7efe5a521ed62a1cd34428e62ed674c43cad7f9bc388a0b4ccb22614c24b",
+  "checks": {
+    "formal_selectors_do_not_supply_physical_axiom": true,
+    "input_reports_certified": true,
+    "physical_selector_missing_exact": true,
+    "rim_phase_and_stress_selection_blocked": true,
+    "table_shapes_match": true,
+    "transition_packet_sector_dim4_obstructions_preserved": true
+  },
+  "claim": "long_sel unifies the selector boundary after rim classification. The repository has finite formal C2 selectors, finite rim phases, stress overlap candidates, packet candidates, sector candidates, and rank candidates, but none is certified as a physical selector axiom. The current boundary therefore cannot select the golden rim phase, a 1+3 subboundary, or a GR source structure without a new selector construction.",
+  "closure_boundary": {
+    "certifies": [
+      "formal C2 selectors exist but do not certify a physical selector axiom",
+      "the golden rim phase is not selected by the current rim/stress/contact boundary",
+      "packet, sector-normalization, semantic-transition, and 1+3 selector candidates remain obstructed",
+      "no current certified selector chooses the golden rim phase or a physical 1+3 boundary",
+      "the next missing seam is an explicit physical selector construction or axiom"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "absolute nonexistence of a future physical selector",
+      "formal univalence for the C2 candidate universe",
+      "a raw A985-to-packet operator bridge",
+      "sector-local GL_d/scalar normalization for the 30 open sectors",
+      "a nondegenerate Lorentzian metric, stress-energy tensor, or Einstein equation",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_sel.py",
+      "sha256": "b17d0cb06e0c4003665bd496096067c490e937b811d8c01a7b95497786017e0d"
+    },
+    "long_binc": {
+      "certificate_sha256": "4395335af3820133892cd4a76c31c3a1c51a5490556cc257ca1519b977209e27",
+      "path": "data/invariants/d20/proof_obligations/long_binc/report.json",
+      "sha256": "cdbf5f7ec41fde66c4d463e1bd1c45f586729d7e7e6a30156e58ffc9cc7c3ef8",
+      "status": "LONG_BINC_CERTIFIED"
+    },
+    "long_c2uf": {
+      "certificate_sha256": "3d5be4193299c7ca7c1e794037b34a76a931b1a1f86acdbc4d3205dfc4081f70",
+      "path": "data/invariants/d20/proof_obligations/long_c2uf/report.json",
+      "sha256": "de5effd48dcc0ba3cb3cc179e906cb8e670594a2c9963f57ddf8495aaf15d817",
+      "status": "LONG_C2UF_CERTIFIED"
+    },
+    "long_dim4_gate": {
+      "certificate_sha256": "ee3849c1f565871193f7f72e59ccc2176d43685f53b0017b15f707fb5f68b9d9",
+      "path": "data/invariants/d20/proof_obligations/long_dim4_gate/report.json",
+      "sha256": "631e00d621041534a30fb9bcd497baa91f8197f7faab31accd233465ec8ded09",
+      "status": "LONG_DIM4_GATE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_psec": {
+      "certificate_sha256": "36c8393befdec06aa903d093b3c7557ea5bf68f31bf872132f3c296498ad1271",
+      "path": "data/invariants/d20/proof_obligations/long_psec/report.json",
+      "sha256": "eb755bc30566b08c3a479c20a662928367e8822b1e4eb73044ec3c7baa2511d3",
+      "status": "LONG_PSEC_CERTIFIED"
+    },
+    "long_rim_select": {
+      "certificate_sha256": "7e4d08aac3ef30afd07299824edbc187c413583a74254ea53fce38b7d2a67824",
+      "path": "data/invariants/d20/proof_obligations/long_rim_select/report.json",
+      "sha256": "0aba1387b9fd9cc80cbea8c2765a6b883ed081254129cb57cfdcee955e239f24",
+      "status": "LONG_RIM_SELECT_GAUGE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_sel.py",
+      "sha256": "eb216f58e71cffc329ec2d6833fb85c62c571d4958136cd3888f43cabbd6e02d"
+    }
+  },
+  "next_highest_yield_item": "Build the selector-construction attempt: define the minimal finite physical-selector contract over rim phase, atom boundary, packet bridge, and transition semantics, then either produce a witness or certify the contract's first failing clause.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_sel/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_sel/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_sel/obs.csv",
+    "obstruction_csv": "data/invariants/d20/proof_obligations/long_sel/obstruction.csv",
+    "report": "data/invariants/d20/proof_obligations/long_sel/report.json",
+    "sel": "data/invariants/d20/proof_obligations/long_sel/sel.json",
+    "selector_csv": "data/invariants/d20/proof_obligations/long_sel/selector.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_sel/tables.npz"
+  },
+  "schema": "long.sel.report@1",
+  "stage_protocol": {
+    "closure": "certify the current-boundary missing physical selector axiom",
+    "coherence": "check input statuses, formal selector counts, rim/stress selector failure, packet/sector/dim4 obstructions, and table hashes",
+    "draft": "read long_rim_select, long_c2uf, long_psec, long_binc, long_dim4_gate, and long_transition_sem",
+    "emit": "write long_sel artifacts and verifier hook",
+    "witness": "emit selector candidate rows, obstruction rows, and observables"
+  },
+  "status": "LONG_SEL_PHYSICAL_SELECTOR_AXIOM_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "classification": "physical_selector_axiom_current_boundary_obstruction",
+    "name": "long_sel",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "golden_phase_selected_flag",
+      "11": "golden_unoriented_rim_count",
+      "12": "stress_overlap_global_directed_max",
+      "13": "stress_overlap_golden_directed_max",
+      "14": "stress_transition_shared_key_count",
+      "15": "semantic_transition_operation_flag",
+      "16": "raw_compatible_packet_pair_count",
+      "17": "low_support_compatible_doublet_count",
+      "18": "low_support_rank_two_doublet_count",
+      "19": "missing_restriction_bridge_count",
+      "2": "c2_selector_count",
+      "20": "psec_open_normalization_sector_count",
+      "21": "psec_remaining_projective_gauge_dimension",
+      "22": "certified_dim4_candidate_count",
+      "23": "dim4_reduction_certified_flag",
+      "24": "physical_selector_candidate_count",
+      "25": "missing_physical_selector_axiom_flag",
+      "26": "next_obstruction_code",
+      "3": "c2_noncontractible_selector_count",
+      "4": "c2_singleton_selector_count",
+      "5": "c2_physical_selector_axiom_flag",
+      "6": "c2_formal_univalence_flag",
+      "7": "c2_lazy63_selector_count",
+      "8": "c2_raw543_selector_count",
+      "9": "rim_phase_count"
+    },
+    "observable_table_sha256": "747fc3463ff67539a3e3c663cd3f43bb749f5020496b9a3a7200d20893c5d1c6",
+    "obstruction_code_map": {
+      "0": "physical_selector_axiom_missing",
+      "1": "golden_rim_phase_unselected",
+      "2": "stress_selector_not_golden",
+      "3": "stress_transition_coupling_key_absent",
+      "4": "semantic_transition_operation_absent",
+      "5": "raw_packet_bridge_absent",
+      "6": "sector_normalization_open",
+      "7": "dim4_reduction_absent"
+    },
+    "obstruction_table_sha256": "4c13e6031f2071d52ba0a26667c31d55999f5288348d0a39e9ce0c70a7d745be",
+    "obstruction_text_sha256": "2cbdb29a7a1d1b90b8e1a5294743eb1f340a105c77d7d9b2ce5782aa88ac4d8d",
+    "selector_code_map": {
+      "0": "c2_raw543_formal_selector",
+      "1": "c2_lazy63_formal_selector",
+      "2": "c2_singleton_formal_selectors",
+      "3": "golden_rim_phase_candidate",
+      "4": "stress_overlap_selector_candidate",
+      "5": "boundary_packet_selector_candidate",
+      "6": "perennial_sector_selector_candidate",
+      "7": "dim4_subboundary_selector_candidate",
+      "8": "physical_selector_axiom"
+    },
+    "selector_table_sha256": "3e0b0bb8d6e57ab787ac67fb7b84f33ed772f260fe366697338929d58fa67e02",
+    "selector_text_sha256": "1c1adf6943b805615468de70e95f8c64960e47fcaf49f850097b91e3cbed53fb",
+    "summary": {
+      "c2_noncontractible_selector_count": 3,
+      "c2_singleton_selector_count": 5,
+      "certified_dim4_candidate_count": 0,
+      "formal_c2_selector_count": 8,
+      "formal_univalence_flag": 0,
+      "golden_phase_selected_flag": 0,
+      "golden_unoriented_rims": 144,
+      "missing_physical_selector_axiom_flag": 1,
+      "physical_selector_axiom_flag": 0,
+      "physical_selector_candidate_count": 0,
+      "psec_open_normalization_sector_count": 30,
+      "raw_compatible_packet_pair_count": 0,
+      "rim_phase_count": 63,
+      "semantic_transition_operation_flag": 0,
+      "stress_directed_gap_over_golden": 7,
+      "stress_transition_shared_key_count": 0
+    }
+  }
+}

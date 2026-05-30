@@ -1,0 +1,146 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "88cedc2de809a3f6ee28b77053e4702aa50752ad28084ab0162bf610572886fc",
+  "checks": {
+    "delete_contract_input_passes": true,
+    "entire_selected_rowspace_is_w24_subcode": true,
+    "higher_binding_claims_remain_open": true,
+    "long_k23oct_input_passes": true,
+    "mapped_basis_is_target_w24_octad": true,
+    "sector33_dual_input_passes": true,
+    "selected_minor_reconstructs_rank_one_rowspace": true,
+    "w24_code_input_passes": true
+  },
+  "claim": "long_k23row certifies the selected sector33 rank-one shadow as a W24 subcode under the long_k23oct coordinate placement.",
+  "closure_boundary": {
+    "certifies": [
+      "the selected delete/contract shadow record reconstructs as a rank-one rowspace on 24 columns",
+      "the nonzero row maps under long_k23oct placement to the certified target W24 octad",
+      "both words in the selected rank-one rowspace are contained in the certified W24 code",
+      "the selected sector33 shadow is therefore a W24 subcode under this placement"
+    ],
+    "does_not_certify": [
+      "that the selected rank-one rowspace equals the full W24 code",
+      "a full sector33-to-W24 rowspace morphism for all sector33 rows",
+      "rowspan(K23) equals the W24/Euler-punctured syzygy rowspace",
+      "an M23 module action on K23",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23row.py",
+      "sha256": "6535fb7919e0db1a12962a8975dbb1b2d70fcafdcbb41509271e1b67f5d544a4"
+    },
+    "long_k23oct": {
+      "certificate_sha256": "b1f1178682ebaeac74eeddd5e5339a220942f8ae865ff4f79c39de56cc92f5e8",
+      "path": "data/invariants/d20/proof_obligations/long_k23oct/report.json",
+      "sha256": "4905b4e0cda0fe0e778a8e01a8173373ea33063f9c76a2f902c30de12837aae7",
+      "status": "SECTOR33_K23_TYPED_W24_OCTAD_PLACEMENT_CERTIFIED"
+    },
+    "long_k23oct_placement": {
+      "path": "data/invariants/d20/proof_obligations/long_k23oct/placement_rows.csv",
+      "sha256": "4c8bfe996fc7071456a77d2ba8e699252a2d1ef1b261678f79c20a5f271dd819"
+    },
+    "sector33_dual": {
+      "certificate_sha256": "5b9eaef7f2434834cfa126bc1b7bbb713860c4bbdb7b22b3adeadd66b5ffdd29",
+      "path": "data/invariants/d20/theorems/d20_oriented_matroid_sector33_dual/report.json",
+      "sha256": "2ae0e8c81c89b609b5a1b370890e1732a4dcf6a11f5f5bd0f1a268aef88e751a",
+      "status": "D20_ORIENTED_MATROID_SECTOR33_DUAL_CERTIFIED"
+    },
+    "sector33_w24_marked_delete_contract_shadow_probe": {
+      "certificate_sha256": "2a810ec48b3b4ee5cf76a2bb9dc888e1f6873f5d7000c0ea71da27fc478d0dc8",
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_delete_contract_shadow_probe/report.json",
+      "sha256": "a1f560b8e7aa08aca6caedccf48086dbbcab2df1b29dcd0dc2e664190bb10e93",
+      "status": "D20_SECTOR33_W24_MARKED_DELETE_CONTRACT_SHADOW_PROBE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23row.py",
+      "sha256": "b31a4874825c4dffaadcc99c62241d47312512043203acc4259b1baa224fef34"
+    },
+    "w24_hexacode_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Lift from the selected rank-one rowspace to a higher-rank 24-column sector33-to-W24 rowspace morphism, or prove that this selected shadow is the maximal rowspace available under the current delete/contract route.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23row/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23row/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23row/k23row_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23row/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23row/report.json",
+    "rowspace_rows_csv": "data/invariants/d20/proof_obligations/long_k23row/rowspace_rows.csv",
+    "rowspace_words_csv": "data/invariants/d20/proof_obligations/long_k23row/rowspace_words.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_k23row/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23row/tables.npz"
+  },
+  "schema": "long.k23row.report@1",
+  "stage_protocol": {
+    "closure": "certify selected rowspace containment without claiming full K23 or W24 equality",
+    "coherence": "check minor reconstruction, mapping to the target W24 octad, and full rowspace containment in W24",
+    "draft": "read long_k23oct, the selected delete/contract shadow, the dual sector33 matrix, and the certified W24 code",
+    "emit": "write long_k23row artifacts and verifier hook",
+    "witness": "emit reconstructed source rowspace rows, mapped W24 rowspace words, observables, and matrix payloads"
+  },
+  "status": "SECTOR33_K23_SELECTED_W24_ROWSPACE_SUBCODE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that the selected rank-one sector33 shadow rowspace maps into the certified W24 code under the long_k23oct placement, but not that it equals the full W24 code or K23 syzygy rowspace.",
+    "classification": "sector33_k23_selected_w24_rowspace_subcode",
+    "matrix_sha256": "ff35a600c5399852e6bf06aedba7f2b0380660ba4088abca44fc8ad479a4cdab",
+    "name": "long_k23row",
+    "remaining_columns": [
+      0,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "summary": {
+      "complete_goal_claim_flag": 0,
+      "delete_contract_input_certified_flag": 1,
+      "full_morphism_certified_flag": 0,
+      "k23_equality_certified_flag": 0,
+      "long_k23oct_certified_flag": 1,
+      "m23_module_proven_flag": 0,
+      "mapped_basis_in_w24_flag": 1,
+      "mapped_basis_row_count": 1,
+      "mapped_nonzero_mask": 1331525,
+      "mapped_nonzero_weight": 8,
+      "rowspace_all_words_in_w24_flag": 1,
+      "rowspace_equals_w24_flag": 0,
+      "rowspace_rank": 1,
+      "rowspace_subcode_certified_flag": 1,
+      "rowspace_word_count": 2,
+      "sector33_dual_certified_flag": 1,
+      "selected_effective_contract_count": 3,
+      "selected_extra_removed": 5,
+      "selected_record_id": 0,
+      "selected_remaining_column_count": 24,
+      "selected_source_rank": 1,
+      "target_octad_mask": 1331525,
+      "w24_code_certified_flag": 1
+    }
+  }
+}

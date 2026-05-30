@@ -1,0 +1,203 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "200e5c47598b70808fcf84c2f33d1800be7f0186847ed52835ad583762b3056b",
+  "checks": {
+    "atom_score_not_consumed_by_transition_schema": true,
+    "bridge_and_map_absent": true,
+    "existing_joins_preserved": true,
+    "input_reports_certified": true,
+    "physical_boundaries_preserved": true,
+    "source_surfaces_exact": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3t tests whether the formal atom-overlap stress orientation score can be consumed by the guarded transition surface. The score joins to the stress-edge surface and transitions join to contact rows, but the transition/contact/endpoint schemas still have no certified atom or stress-edge key into the overlap score.",
+  "closure_boundary": {
+    "certifies": [
+      "the atom-overlap orientation score is joined to atom-keyed stress edges",
+      "the guarded transition surface is joined to contact rows",
+      "contact rows are bridged to raw endpoint rows by basis id",
+      "no transition/contact/endpoint schema currently exposes the stress atom key consumed by the score",
+      "no current transition-to-stress map consumes the atom-overlap score"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "a basis/raw-endpoint-to-stress-atom bridge",
+      "a transition-to-stress coupling map",
+      "semantic transition-operation realization",
+      "acceptance of a physical selector axiom",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3t.py",
+      "sha256": "85b9a5fa2018959991fe0e35174c03b97aed62a614e2bc412766ca54c61fb228"
+    },
+    "long_c59p3a": {
+      "certificate_sha256": "fa363e2387a73707c4dfe3bfa17fb825252832c63aeef1b851afd3c55c5b5188",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3a/report.json",
+      "sha256": "0ecd922e28bd0133ad4fccdbea60af8198dd4bab208cefe959d4fb3715ab6f3f",
+      "status": "LONG_C59P3A_ATOM_STRESS_ORIENTATION_CANDIDATE_CERTIFIED"
+    },
+    "long_c59p3a_overlap": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3a/overlap.csv",
+      "sha256": "fdf1cbf04f8ad52b741aaab62312e270b19aa526442bb6524cd47c05ba1cf6d0"
+    },
+    "long_contact_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_contact_lift/contact.csv",
+      "sha256": "d602639b9777c1955fec7fbfdde741c71263e2e5ba8daba4f538ff6b6ab980fb"
+    },
+    "long_contact_lift": {
+      "certificate_sha256": "ddae7da581bfbabd509cb9e1804a24b3bb66b422ed20108fe2b9ca410b97db4d",
+      "path": "data/invariants/d20/proof_obligations/long_contact_lift/report.json",
+      "sha256": "6b29c6daad7ffcc3250ef62d01e14242a2465f6e3c96673aad269d86b92b6d93",
+      "status": "LONG_CONTACT_LIFT_CERTIFIED"
+    },
+    "long_endpoint_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_contact_lift/endpoint.csv",
+      "sha256": "b8bb29300df7f1ab5f64f0e92fffdf8e21f19c0eb48b5767719e62e8ef3ce61c"
+    },
+    "long_stress_couple": {
+      "certificate_sha256": "b2c8d18c8cce9050b455780f46d55b0f0d3f5a6728a0caf85a22ed3ad759abad",
+      "path": "data/invariants/d20/proof_obligations/long_stress_couple/report.json",
+      "sha256": "15f026fa8722999bff062dc35cfbeed6a0e5c0b4c93932bf8060e1fabb00d589",
+      "status": "LONG_STRESS_COUPLE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_stress_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/stress_edge.csv",
+      "sha256": "7a25f7a5501af7158311ffa0fc65c2ef9d1cab1cd67d1b3c9ee4d01b514060e1"
+    },
+    "long_stress_gate": {
+      "certificate_sha256": "a31d87700816b5ed5a205c4fbaf2e0774e2132fd550c32242f0988d4e54e4fea",
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/report.json",
+      "sha256": "8c23f384cbb3e5115001e5cf93880d4ba08290c27fbea9e42ecfef70a7c195cb",
+      "status": "LONG_STRESS_GATE_CERTIFIED"
+    },
+    "long_transition_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+      "sha256": "c77f941ae6af4d79999a691157030d64eecf9435b3fa708266751d14db9cc630"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3t.py",
+      "sha256": "85407869de76d615e0d97df9d251b0f072de10a58b3409109a06c0674e4a0d85"
+    }
+  },
+  "next_highest_yield_item": "Construct the missing basis/raw-endpoint-to-stress-atom bridge, or certify that the current raw endpoint ontology cannot produce one.",
+  "outputs": {
+    "c59p3t": "data/invariants/d20/proof_obligations/long_c59p3t/c59p3t.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3t/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_c59p3t/decision.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3t/gap.csv",
+    "join_csv": "data/invariants/d20/proof_obligations/long_c59p3t/join.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3t/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3t/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3t/report.json",
+    "surface_csv": "data/invariants/d20/proof_obligations/long_c59p3t/surface.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3t/tables.npz"
+  },
+  "schema": "long.c59p3t.report@1",
+  "stage_protocol": {
+    "closure": "certify the current transition-stress lift gate around the atom-overlap orientation score",
+    "coherence": "check existing joins, absent atom/stress keys, absent atom-transition bridge, and preserved physical exclusions",
+    "draft": "read long_c59p3a, long_transition_sem, long_contact_lift, long_stress_gate, and long_stress_couple",
+    "emit": "write long_c59p3t artifacts and verifier hook",
+    "witness": "emit surface schema rows, join rows, decisions, gaps, and observables"
+  },
+  "status": "LONG_C59P3T_TRANSITION_STRESS_LIFT_GATE_CERTIFIED",
+  "witness": {
+    "classification": "transition_stress_lift_gate",
+    "decision_code_map": {
+      "0": "atom_overlap_orientation_candidate_available",
+      "1": "overlap_stress_join_available",
+      "2": "transition_contact_join_available",
+      "3": "transition_atom_key_available",
+      "4": "transition_stress_key_available",
+      "5": "atom_transition_bridge_available",
+      "6": "transition_stress_map_available",
+      "7": "semantic_transition_operation_available"
+    },
+    "decision_table_sha256": "c769589dec81a3669ce28092f36c5265828a2149d6484f019a85ded07abebae5",
+    "gap_code_map": {
+      "0": "atom_overlap_orientation_candidate",
+      "1": "transition_atom_key_bridge",
+      "2": "transition_to_stress_coupling_map",
+      "3": "semantic_transition_operation",
+      "4": "physical_selector_axiom",
+      "5": "four_dimensional_metric_reduction",
+      "6": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "7691ea49f549bcb76416576a6a7c36bd3185c924ba98b860194d936cbe78e8e0",
+    "join_code_map": {
+      "0": "overlap_to_stress_edge",
+      "1": "transition_to_contact",
+      "2": "contact_to_endpoint",
+      "3": "transition_to_stress_edge",
+      "4": "transition_to_overlap_score",
+      "5": "contact_to_overlap_score",
+      "6": "endpoint_to_overlap_score"
+    },
+    "join_table_sha256": "59ffcd90639955e98e3b537d0d4783d0215558b8ed476c67ae95042d87e9a220",
+    "join_text_sha256": "4c678c76624e1e748ffb632b22af66783ca2cea7cc48ba1c47ad5a5f379fda77",
+    "name": "long_c59p3t",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "transition_stress_shared_key_count",
+      "11": "transition_overlap_shared_key_count",
+      "12": "contact_overlap_shared_key_count",
+      "13": "endpoint_overlap_shared_key_count",
+      "14": "transition_atom_column_count",
+      "15": "transition_stress_edge_column_count",
+      "16": "contact_atom_column_count",
+      "17": "endpoint_atom_column_count",
+      "18": "atom_overlap_orientation_candidate_flag",
+      "19": "atom_transition_bridge_flag",
+      "2": "overlap_row_count",
+      "20": "transition_stress_map_certified_flag",
+      "21": "semantic_transition_operation_flag",
+      "22": "current_schema_consumes_atom_score_flag",
+      "23": "physical_selector_axiom_flag",
+      "24": "four_dimensional_metric_flag",
+      "25": "thermal_gravity_flag",
+      "26": "next_gap_code",
+      "3": "transition_row_count",
+      "4": "contact_row_count",
+      "5": "endpoint_row_count",
+      "6": "stress_edge_row_count",
+      "7": "overlap_stress_shared_key_count",
+      "8": "transition_contact_shared_key_count",
+      "9": "contact_endpoint_bridge_flag"
+    },
+    "observable_table_sha256": "af4e25329bd046c21ddd022a9911e930ae83c36821a6291f13aa4fefb78c36b7",
+    "summary": {
+      "atom_transition_bridge_flag": 0,
+      "contact_row_count": 642,
+      "current_schema_consumes_atom_score_flag": 0,
+      "endpoint_row_count": 259,
+      "overlap_row_count": 14,
+      "overlap_stress_shared_key_count": 5,
+      "physical_selector_axiom_flag": 0,
+      "semantic_transition_operation_flag": 0,
+      "stress_edge_row_count": 100,
+      "transition_atom_column_count": 0,
+      "transition_contact_shared_key_count": 7,
+      "transition_row_count": 642,
+      "transition_stress_edge_column_count": 0,
+      "transition_stress_map_certified_flag": 0
+    },
+    "surface_code_map": {
+      "0": "atom_overlap_orientation_score",
+      "1": "guarded_transition_surface",
+      "2": "contact_lift_surface",
+      "3": "endpoint_raw_surface",
+      "4": "stress_edge_surface"
+    },
+    "surface_table_sha256": "07eaf8cc3d857d2192d4666a684c9ab405086106cf3079de5359f414ebcafa20",
+    "surface_text_sha256": "63d810981bcc5f58677ea0cb754cfb96ca0974db900901082fad7833ed16311d"
+  }
+}

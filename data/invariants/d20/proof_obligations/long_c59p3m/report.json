@@ -1,0 +1,151 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "466da26cbc6540e7b3844998e45d7cd9774133a124beb0fb3ff48cf16c4c2758",
+  "checks": {
+    "first_failure_is_operation_promotion": true,
+    "input_reports_certified": true,
+    "normalized_visible_join_total": true,
+    "operation_promotion_absent_after_join": true,
+    "physical_boundaries_preserved": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3m joins the 77 visible-clock-normalized carrier rows to the guarded relation promotion surface through the certified visible cycle. The join is total at the carrier level and yields 229 carrier-promotion rows over 49 active promotion witnesses, but all joined rows still have zero operation rows and zero semantic transition flags.",
+  "closure_boundary": {
+    "certifies": [
+      "all 77 visible-clock-normalized carrier rows route through the visible cycle",
+      "all 77 routed carrier rows have at least one guarded relation promotion row",
+      "the active normalized carriers cover 49 of the 59 promotion witnesses and leave 10 promotion witnesses inactive because their visible atoms have no carrier counterterm",
+      "the carrier-promotion join emits 229 rows",
+      "zero joined rows have operation-row backing or semantic transition flags"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "operation-backed normalized counterterm rows",
+      "new semantic operation rows",
+      "a physical selector axiom",
+      "a four-dimensional metric reduction",
+      "a physical field equation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3m.py",
+      "sha256": "091f108b52c85730f30d419f323bcdc9fcaeb6de5e53399dc891a849088a288c"
+    },
+    "long_c59p3e_weight": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3e/weight.csv",
+      "sha256": "6a591b1210729959d3521702f7305cc9eb62506a8d90bc72d45843eee0d7e773"
+    },
+    "long_c59p3n": {
+      "certificate_sha256": "7385c3fcd14142cedc793bf9b4931f7070f14ff0f9f31448c4dd79b9f8c454c6",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3n/report.json",
+      "sha256": "930b9be72dd6becaff0a363da6d546fd055f0a788a814292505cd88c737471d1",
+      "status": "LONG_C59P3N_CLOCK_PACKET_DENOMINATOR_NORMALIZATION_CERTIFIED"
+    },
+    "long_c59p3n_weight_clear": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3n/weight_clear.csv",
+      "sha256": "6c4571200d4564ccdcece8460c366935c57c20f85269c8ee982b9101554225b5"
+    },
+    "long_gclk": {
+      "certificate_sha256": "6a86d36f11f084058d447f68362c026cca8ea4219b53c3946e49463cdc750760",
+      "path": "data/invariants/d20/proof_obligations/long_gclk/report.json",
+      "sha256": "837cf618f85c091857ef3fbacb78d107e7c9cf5e2d99c4cd2ac381341a03e6df",
+      "status": "D20_STAGE5_F2_6_BRIDGE_AND_AFFINE_CLOCK_CERTIFIED"
+    },
+    "long_gclk_cycle": {
+      "path": "data/invariants/d20/proof_obligations/long_gclk/cycle.csv",
+      "sha256": "dad08287bea655dafa91547059d75ad7a4ae5521138178ff33cb6b06d5cf00ae"
+    },
+    "long_oprom": {
+      "certificate_sha256": "e4e7050b1d4ea7d8a03b74eb1b7da5252cf1eb613e85a99831a68b3f863ee5d1",
+      "path": "data/invariants/d20/proof_obligations/long_oprom/report.json",
+      "sha256": "67da912597543bb76572d94413b66c6edce400b500121800eb251ebb9b7426e3",
+      "status": "LONG_OPROM_GOLDEN_OPERATION_PROMOTION_OBSTRUCTION_CERTIFIED"
+    },
+    "long_oprom_promotion": {
+      "path": "data/invariants/d20/proof_obligations/long_oprom/promotion.csv",
+      "sha256": "300bced91684d62faf1501edabf5e24291884718be74d0fbd3bde8af69bb8ed8"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3m.py",
+      "sha256": "b80d9585167cd07ee8e47b884ef3067eeeae2425e610c01c23e5b76176b3ecce"
+    }
+  },
+  "next_highest_yield_item": "Construct actual operation rows for the 49 active normalized promotion witnesses, or certify the schema-level reason those operation rows are absent.",
+  "outputs": {
+    "c59p3m": "data/invariants/d20/proof_obligations/long_c59p3m/c59p3m.json",
+    "carrier_csv": "data/invariants/d20/proof_obligations/long_c59p3m/carrier.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3m/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3m/gap.csv",
+    "join_csv": "data/invariants/d20/proof_obligations/long_c59p3m/join.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3m/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3m/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3m/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3m/tables.npz",
+    "visible_csv": "data/invariants/d20/proof_obligations/long_c59p3m/visible.csv"
+  },
+  "schema": "long.c59p3m.report@1",
+  "stage_protocol": {
+    "closure": "certify the first operation-promotion failure after visible-clock normalization",
+    "coherence": "check normalized row coverage, visible routing, promotion joins, operation-row absence, and preserved physical gaps",
+    "draft": "read long_c59p3n, long_gclk, long_oprom, normalized carrier rows, visible cycle rows, and promotion rows",
+    "emit": "write long_c59p3m artifacts and verifier hook",
+    "witness": "emit carrier-promotion joins, per-carrier rows, per-visible rows, gaps, and observables"
+  },
+  "status": "LONG_C59P3M_NORMALIZED_OPERATION_PROMOTION_GATE_CERTIFIED",
+  "witness": {
+    "carrier_table_sha256": "2a01ea630597d60219416976a9a80ed9fa0276089336374f298534c14255a842",
+    "classification": "normalized_operation_promotion_gate",
+    "gap_code_map": {
+      "0": "visible_clock_normalized_rows",
+      "1": "visible_relation_join",
+      "2": "operation_row_promotion_obstruction",
+      "3": "semantic_transition_flag_obstruction",
+      "4": "operation_backed_normalized_counterterm",
+      "5": "physical_selector_axiom",
+      "6": "metric_derivation"
+    },
+    "gap_table_sha256": "127cddada459bc86168640084f27debb982fba72b23a601985b85cf3cdbd24bf",
+    "join_table_sha256": "c07a92c76ad8b79396166788da3b7a0b89e1f95f05050e46e3eb767582d576d5",
+    "join_text_sha256": "c6067259df3f35141f547325016f91cdf0baec1948dd169524c7ce3c7705e141",
+    "name": "long_c59p3m",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "operation_row_join_count",
+      "11": "semantic_transition_join_count",
+      "12": "operation_backed_join_count",
+      "13": "operation_backed_carrier_count",
+      "14": "operation_promotion_flag",
+      "15": "semantic_transition_flag",
+      "16": "physical_selector_axiom_flag",
+      "17": "metric_derivation_flag",
+      "18": "first_failure_gap_code",
+      "19": "next_gap_code",
+      "2": "carrier_row_count",
+      "3": "active_atom_count",
+      "4": "active_visible_index_count",
+      "5": "active_unique_promotion_row_count",
+      "6": "inactive_promotion_row_count",
+      "7": "joined_row_count",
+      "8": "zero_promotion_carrier_count",
+      "9": "visible20_cleared_carrier_count"
+    },
+    "observable_table_sha256": "2ddd8d5da50c8f9e18cda3e2556528d9912de4fd7c6ff8dea284b28a98a04baa",
+    "obstruction_code_map": {
+      "0": "operation_row_absent_after_normalized_join"
+    },
+    "summary": {
+      "active_unique_promotion_row_count": 49,
+      "active_visible_index_count": 17,
+      "carrier_row_count": 77,
+      "joined_row_count": 229,
+      "operation_backed_carrier_count": 0,
+      "operation_backed_join_count": 0,
+      "operation_row_join_count": 0,
+      "semantic_transition_join_count": 0,
+      "visible20_cleared_carrier_count": 77,
+      "zero_promotion_carrier_count": 0
+    },
+    "visible_table_sha256": "dab979b3e10875c98ed23cb532820917e6d753aff225bbb9a57327163a47945e"
+  }
+}

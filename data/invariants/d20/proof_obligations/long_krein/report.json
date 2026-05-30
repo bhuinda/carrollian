@@ -1,0 +1,142 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "befb9a857a610f29ed74b21bd814240c55ca26cc5a6204b3ff0c8c1f69cfe6ae",
+  "checks": {
+    "canonical_character_input_certified": true,
+    "clearance_tests_open": true,
+    "handoff_target_present": true,
+    "krein_tensor_not_materialized": true,
+    "table_shapes_match": true,
+    "target_rows_recorded_not_verified": true
+  },
+  "claim": "long_krein records the source boundary for the Krein denominator obstruction requested by docs/real.txt. The canonical A985 character table is certified and has shape 39 by 985, but the full Krein parameter tensor and idempotent Hadamard-product witness are not materialized in this boundary, so the 135/2 rows remain provisional targets rather than certified values.",
+  "closure_boundary": {
+    "certifies": [
+      "the canonical A985 character table input is certified and has 39 sectors by 985 relations",
+      "the four handoff target rows q_55^2, q_56^2, q_65^2, and q_66^2 are recorded as expected 135/2 rows",
+      "the current boundary lacks a materialized full Krein parameter tensor",
+      "the current boundary lacks the idempotent Hadamard-product witness needed to verify q_ij^k"
+    ],
+    "does_not_certify_because_provisional": [
+      "all Krein parameters",
+      "the four 135/2 values as computed facts",
+      "doubling E5,E6 as a denominator clearance",
+      "a Z2-graded cover, spinor-state lift, weak fusion category, or module-category realization",
+      "acceptance-ladder closure at the Krein stage"
+    ]
+  },
+  "inputs": {
+    "character_report": {
+      "certificate_sha256": "7bcf6d2b9489e9f01847060347e8c8a0637cf41058df62e4805b5e6d3b0b1c3f",
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/report.json",
+      "sha256": "248852ae8f8c80250bd9ec1d1a5d4c257a7b621ffffbeebd79007618ba6dd291",
+      "status": "D20_TINY_POINTER_A985_CANONICAL_SECTOR_CHARACTERS_CERTIFIED"
+    },
+    "character_table": {
+      "column_count": 8,
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_character_table.csv",
+      "row_count": 38415,
+      "sha256": "d94a6767239ecf1f1454a868bd4f4c9d3776e7fc3688b21bc02ee226640b858a"
+    },
+    "derive_script": {
+      "path": "src/derive_long_krein.py",
+      "sha256": "c740f29e724da918e7517ac0bff7b4c4dc4aeedebedfe93c142e3a970d19e3bd"
+    },
+    "handoff": {
+      "path": "docs/real.txt",
+      "sha256": "9d73c6c02859127bf9eb9a05a4dccfc373dcf502de222d62985e49c1dc46b7d9"
+    },
+    "trace_summary": {
+      "column_count": 13,
+      "path": "data/invariants/d20/theorems/tiny_pointer_a985_canonical_sector_characters/canonical_sector_trace_summary.csv",
+      "row_count": 39,
+      "sha256": "86462da183e88ffe336964851179bb3f071da35913e823376a259fb00f732d5c"
+    },
+    "validator": {
+      "path": "src/certify_long_krein.py",
+      "sha256": "779da455773bcdb9961857f3047adf5ff0a47f5682131ed4d90bfb50d0603f03"
+    }
+  },
+  "next_highest_yield_item": "Compute q_ij^k from the canonical A985 idempotent/eigenmatrix data and replace this source-boundary report with a certified Krein denominator obstruction or clearance theorem.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_krein/cert.json",
+    "clearance_csv": "data/invariants/d20/proof_obligations/long_krein/clearance.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_krein/gap.csv",
+    "krein": "data/invariants/d20/proof_obligations/long_krein/krein.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_krein/manifest.json",
+    "markdown_report": "data/invariants/d20/proof_obligations/long_krein/krein_denominator_obstruction_report.md",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_krein/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_krein/report.json",
+    "source_csv": "data/invariants/d20/proof_obligations/long_krein/source.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_krein/tables.npz",
+    "target_csv": "data/invariants/d20/proof_obligations/long_krein/target.csv"
+  },
+  "schema": "long.krein.report@1",
+  "stage_protocol": {
+    "closure": "mark the Krein denominator task provisional until q_ij^k is computed from idempotent/eigenmatrix data",
+    "coherence": "check character-table shape, target-row recording, absent Krein tensor source, and open clearance tests",
+    "draft": "read docs/real.txt and the canonical A985 sector character-table certificate",
+    "emit": "write long_krein artifacts and verifier hook",
+    "witness": "emit source-boundary rows, target half-integral rows, clearance candidates, gaps, observables, and the markdown report"
+  },
+  "status": "LONG_KREIN_DENOMINATOR_SOURCE_BOUNDARY_PROVISIONAL",
+  "witness": {
+    "classification": "krein_denominator_source_boundary",
+    "clearance_code_map": {
+      "0": "double_E5_E6",
+      "1": "z2_graded_cover",
+      "2": "spinor_state_lift",
+      "3": "weak_fusion_category",
+      "4": "module_category_realization"
+    },
+    "clearance_table_sha256": "d9c0485f54908105004071921445ca1a081c0757289afcc391c1504b174c08a4",
+    "gap_code_map": {
+      "0": "canonical_character_table_available",
+      "1": "all_krein_parameters_computed",
+      "2": "specified_half_rows_verified",
+      "3": "denominator_clearance_tests",
+      "4": "acceptance_ladder_krein_closure"
+    },
+    "gap_table_sha256": "650af77961094cc88e6006c2400ce518f4149cc46b4a15967021d07501ccf7c5",
+    "markdown_report_sha256": "d9a0c66fe3ef6a455026cd3546d248b6256d684324d48021e220fd61446cc022",
+    "name": "long_krein",
+    "observable_code_map": {
+      "0": "source_row_count",
+      "1": "present_source_count",
+      "10": "verified_exception_row_count",
+      "11": "half_integral_exception_row_count",
+      "12": "clearance_candidate_count",
+      "13": "clearance_tested_count",
+      "14": "provisional_flag",
+      "15": "next_gap_code",
+      "2": "certified_source_count",
+      "3": "required_source_count",
+      "4": "blocking_source_count",
+      "5": "character_sector_count",
+      "6": "character_relation_count",
+      "7": "character_table_row_count",
+      "8": "target_exception_row_count",
+      "9": "computed_exception_row_count"
+    },
+    "observable_table_sha256": "a65de09c4e4e18b88fb13f69381f7a61653068e93c199e22647f4fc2c6646379",
+    "source_code_map": {
+      "0": "handoff_krein_target",
+      "1": "canonical_a985_character_table",
+      "2": "full_krein_parameter_tensor",
+      "3": "idempotent_hadamard_product_witness"
+    },
+    "source_table_sha256": "40646473e30dd41a7a2ca37e5693b48eb2ccf12da861a80cf3626c398f90c7d1",
+    "summary": {
+      "blocking_source_count": 2,
+      "character_relation_count": 985,
+      "character_sector_count": 39,
+      "character_table_row_count": 38415,
+      "clearance_candidate_count": 5,
+      "clearance_tested_count": 0,
+      "provisional_flag": 1,
+      "target_exception_row_count": 4,
+      "verified_exception_row_count": 0
+    },
+    "target_table_sha256": "82cd53d21deae3a080bc30e51cb5866e0323b7334297388ecbefaae76096b3ea"
+  }
+}

@@ -247,13 +247,79 @@ the practical verification modes without hiding file writes behind a default:
 * long-stress20: validate the stress graph versus canonical 20-gon comparison certificate;
 * long-stress-gate: validate the finite stress readout gate certificate;
 * long-stress-couple: validate the stress-transition coupling current-boundary obstruction certificate;
+* long-semstress: validate the semantic-row to stress-node source measure certificate;
 * long-metric-rank-gate: validate the finite metric rank gate certificate;
 * long-dim4-gate: validate the 1+3 reduction current-boundary obstruction certificate;
+* long-rim: validate the complement-antipodal C20 rim defect phase classification certificate;
+* long-rim-select: validate the golden rim phase selection current-boundary obstruction certificate;
+* long-sel: validate the physical selector axiom current-boundary obstruction certificate;
+* long-psel: validate the physical selector contract first-failure certificate;
+* long-pax: validate the physical selector axiom candidate certificate;
+* long-l63: validate the lazy63-to-rim bridge current-boundary obstruction certificate;
+* long-f63: validate the fixed63 exterior D20 boundary bridge certificate;
+* long-frim: validate the fixed63 rim/stress lift obstruction certificate;
+* long-sfork: validate the selector branch frontier certificate;
+* long-glaw: validate the formal golden selector law certificate;
+* long-gclk: validate the Stage 5 F2^6 bridge and affine golden clock certificate;
+* long-tlift: validate the affine tick transition-lift obstruction certificate;
+* long-abmap: validate the atom-to-endpoint-basis functor obstruction certificate;
+* long-rtick: validate the relation-valued affine tick cover certificate;
+* long-rsem: validate the guarded relation-valued transition semantic law certificate;
+* long-oprom: validate the golden guarded-relation operation-promotion gate;
+* long-c60op: validate the Stage 5 C60 semantic opcode assignment certificate;
+* long-c60negf: validate the Stage 6 C60 DFT/NEGF validation protocol certificate;
+* long-c59x: validate the C59X signed sentinel edge-routing certificate;
+* long-c59e: validate the C59X signed edge ansatz certificate;
+* long-c59cf: validate the C59X minimal counterflow certificate;
+* long-c59st: validate the C59X symmetric stress candidate certificate;
+* long-c59kt: validate the C59X kernel/time seam certificate;
+* long-c59q: validate the C59X gauge-null quotient certificate;
+* long-c59pk: validate the C59X induced public-kernel restriction certificate;
+* long-c59s3: validate the C59X principal three-subform search certificate;
+* long-c59np3: validate the C59X non-principal three-plane witness certificate;
+* long-c59p3s: validate the C59X non-principal three-plane selector gate certificate;
+* long-c59p3v: validate the C59X low-support volume selector pair certificate;
+* long-c59p3o: validate the C59X sign-dual orientation obstruction certificate;
+* long-c59p3a: validate the C59X atom-overlap stress orientation candidate certificate;
+* long-c59p3t: validate the C59X transition-stress lift gate certificate;
+* long-c59p3b: validate the C59X basis-to-stress-atom bridge obstruction certificate;
+* long-c59p3r: validate the C59X relation-valued stress-extension gate certificate;
+* long-c59p3i: validate the C59X visible-tick stress-incidence obstruction certificate;
+* long-c59p3f: validate the C59X formal selector stress-pushforward certificate;
+* long-c59p3u: validate the C59X formal stress-source operation gate certificate;
+* long-c59p3w: validate the C59X formal stress-source balance gate certificate;
+* long-c59p3c: validate the C59X formal local counterterm certificate;
+* long-c59p3d: validate the C59X counterterm selector-carrier certificate;
+* long-c59p3e: validate the C59X exact selector-weight distribution certificate;
+* long-c59p3g: validate the C59X operation schema-gap certificate;
+* long-c59p3h: validate the C59X active endpoint-field address-map screen certificate;
+* long-c59p3j: validate the C59X endpoint-projector degeneracy certificate;
+* long-c59p3k: validate the C59X mixed contact address-screen certificate;
+* long-c59p3m: validate the C59X normalized operation-promotion gate certificate;
+* long-c59p3n: validate the C59X clock/packet denominator normalization certificate;
 * long-frontier: validate the oracle-driven certificate frontier planner;
 * long-cluster: validate the oracle reopen clustering certificate;
 * long-c2uf: validate the focused C2 univalent-foundation seam certificate;
+* long-hcinv: validate the height-coherent action-return invariant ledger;
+* long-hcfoam: validate the Foam target operator matrix family;
+* long-hcpi: validate the remaining height-coherent projection input gap;
+* long-hcshape: validate the 56-to-33 projection-shape certificate;
+* long-hcscalar: validate the abstract scalar-completion certificate;
+* long-hcsupp: validate the e33 relation-support profile certificate;
+* long-hcbasis: validate the sector33 local center-basis expansion certificate;
+* long-hcgrade: validate the sector33 center-grade rank-lift certificate;
+* long-hcperm: validate the signed-column lift obstruction certificate;
+* long-k23: validate the sector33 K23 punctured-MOG syzygy aperture target certificate;
+* long-k23oct: validate the sector33 K23 typed W24 octad-placement certificate;
+* long-k23row: validate the selected sector33 K23/W24 rowspace-subcode certificate;
+* long-k23max: validate the current delete/contract K23/W24 max-rank-one certificate;
 * long-psec: validate the focused A985 perennial-sector address seam certificate;
 * long-binc: validate the focused boundary/Loop/packet incidence seam certificate;
+* long-krein: validate the provisional Krein denominator source-boundary report;
+* long-kr39: validate the direct 39-sector A985 Hadamard screen certificate;
+* long-b3mod: validate the Gamma action/module-basis source-boundary report;
+* long-b3alg: validate the Gamma class-algebra multiplication tensor;
+* long-gchar: validate the Gamma modular character diagonalization certificate;
 * a985-direct-packet-bridge: validate the direct-label A985 packet-bridge no-go theorem;
 * a985-mat2-hom-boundary: validate the faithful/nonfaithful A985 Mat2 homomorphism boundary;
 * a985-labelled-nonfaithful-packet-hom: validate the labelled nonfaithful A985 packet homomorphism obstruction;
@@ -5567,6 +5633,23 @@ def long_stress_couple(
     return finish(result, pretty)
 
 
+def long_semstress(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_semstress import validate_long_semstress
+
+    try:
+        result = validate_long_semstress()
+    except Exception as exc:
+        result = {
+            "schema": "long.semstress.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def long_metric_rank_gate(
     *,
     pretty: bool,
@@ -5595,6 +5678,805 @@ def long_dim4_gate(
     except Exception as exc:
         result = {
             "schema": "long.dim4_gate.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_rim(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_rim import validate_long_rim
+
+    try:
+        result = validate_long_rim()
+    except Exception as exc:
+        result = {
+            "schema": "long.rim.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_rim_select(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_rim_select import validate_long_rim_select
+
+    try:
+        result = validate_long_rim_select()
+    except Exception as exc:
+        result = {
+            "schema": "long.rim_select.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_sel(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_sel import validate_long_sel
+
+    try:
+        result = validate_long_sel()
+    except Exception as exc:
+        result = {
+            "schema": "long.sel.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_psel(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_psel import validate_long_psel
+
+    try:
+        result = validate_long_psel()
+    except Exception as exc:
+        result = {
+            "schema": "long.psel.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_l63(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_l63 import validate_long_l63
+
+    try:
+        result = validate_long_l63()
+    except Exception as exc:
+        result = {
+            "schema": "long.l63.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_f63(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_f63 import validate_long_f63
+
+    try:
+        result = validate_long_f63()
+    except Exception as exc:
+        result = {
+            "schema": "long.f63.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_frim(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_frim import validate_long_frim
+
+    try:
+        result = validate_long_frim()
+    except Exception as exc:
+        result = {
+            "schema": "long.frim.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_sfork(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_sfork import validate_long_sfork
+
+    try:
+        result = validate_long_sfork()
+    except Exception as exc:
+        result = {
+            "schema": "long.sfork.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_glaw(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_glaw import validate_long_glaw
+
+    try:
+        result = validate_long_glaw()
+    except Exception as exc:
+        result = {
+            "schema": "long.glaw.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_gclk(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_gclk import validate_long_gclk
+
+    try:
+        result = validate_long_gclk()
+    except Exception as exc:
+        result = {
+            "schema": "long.gclk.verification@2",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_tlift(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_tlift import validate_long_tlift
+
+    try:
+        result = validate_long_tlift()
+    except Exception as exc:
+        result = {
+            "schema": "long.tlift.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_abmap(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_abmap import validate_long_abmap
+
+    try:
+        result = validate_long_abmap()
+    except Exception as exc:
+        result = {
+            "schema": "long.abmap.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_rtick(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_rtick import validate_long_rtick
+
+    try:
+        result = validate_long_rtick()
+    except Exception as exc:
+        result = {
+            "schema": "long.rtick.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_rsem(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_rsem import validate_long_rsem
+
+    try:
+        result = validate_long_rsem()
+    except Exception as exc:
+        result = {
+            "schema": "long.rsem.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_oprom(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_oprom import validate_long_oprom
+
+    try:
+        result = validate_long_oprom()
+    except Exception as exc:
+        result = {
+            "schema": "long.oprom.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c60op(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c60op import validate_long_c60op
+
+    try:
+        result = validate_long_c60op()
+    except Exception as exc:
+        result = {
+            "schema": "long.c60op.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c60negf(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c60negf import validate_long_c60negf
+
+    try:
+        result = validate_long_c60negf()
+    except Exception as exc:
+        result = {
+            "schema": "long.c60negf.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59x(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59x import validate_long_c59x
+
+    try:
+        result = validate_long_c59x()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59x.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59e(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59e import validate_long_c59e
+
+    try:
+        result = validate_long_c59e()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59e.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59cf(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59cf import validate_long_c59cf
+
+    try:
+        result = validate_long_c59cf()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59cf.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59st(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59st import validate_long_c59st
+
+    try:
+        result = validate_long_c59st()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59st.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59kt(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59kt import validate_long_c59kt
+
+    try:
+        result = validate_long_c59kt()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59kt.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59q(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59q import validate_long_c59q
+
+    try:
+        result = validate_long_c59q()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59q.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59pk(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59pk import validate_long_c59pk
+
+    try:
+        result = validate_long_c59pk()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59pk.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59s3(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59s3 import validate_long_c59s3
+
+    try:
+        result = validate_long_c59s3()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59s3.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59np3(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59np3 import validate_long_c59np3
+
+    try:
+        result = validate_long_c59np3()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59np3.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3s(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3s import validate_long_c59p3s
+
+    try:
+        result = validate_long_c59p3s()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3s.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3v(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3v import validate_long_c59p3v
+
+    try:
+        result = validate_long_c59p3v()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3v.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3o(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3o import validate_long_c59p3o
+
+    try:
+        result = validate_long_c59p3o()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3o.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3a(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3a import validate_long_c59p3a
+
+    try:
+        result = validate_long_c59p3a()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3a.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3t(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3t import validate_long_c59p3t
+
+    try:
+        result = validate_long_c59p3t()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3t.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3b(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3b import validate_long_c59p3b
+
+    try:
+        result = validate_long_c59p3b()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3b.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3r(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3r import validate_long_c59p3r
+
+    try:
+        result = validate_long_c59p3r()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3r.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3i(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3i import validate_long_c59p3i
+
+    try:
+        result = validate_long_c59p3i()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3i.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3f(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3f import validate_long_c59p3f
+
+    try:
+        result = validate_long_c59p3f()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3f.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3u(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3u import validate_long_c59p3u
+
+    try:
+        result = validate_long_c59p3u()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3u.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3w(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3w import validate_long_c59p3w
+
+    try:
+        result = validate_long_c59p3w()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3w.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3c(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3c import validate_long_c59p3c
+
+    try:
+        result = validate_long_c59p3c()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3c.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3d(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3d import validate_long_c59p3d
+
+    try:
+        result = validate_long_c59p3d()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3d.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3e(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3e import validate_long_c59p3e
+
+    try:
+        result = validate_long_c59p3e()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3e.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3g(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3g import validate_long_c59p3g
+
+    try:
+        result = validate_long_c59p3g()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3g.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3h(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3h import validate_long_c59p3h
+
+    try:
+        result = validate_long_c59p3h()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3h.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3j(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3j import validate_long_c59p3j
+
+    try:
+        result = validate_long_c59p3j()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3j.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3k(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3k import validate_long_c59p3k
+
+    try:
+        result = validate_long_c59p3k()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3k.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3m(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3m import validate_long_c59p3m
+
+    try:
+        result = validate_long_c59p3m()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3m.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_c59p3n(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_c59p3n import validate_long_c59p3n
+
+    try:
+        result = validate_long_c59p3n()
+    except Exception as exc:
+        result = {
+            "schema": "long.c59p3n.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_pax(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_pax import validate_long_pax
+
+    try:
+        result = validate_long_pax()
+    except Exception as exc:
+        result = {
+            "schema": "long.pax.verification@1",
             "status": "FAIL",
             "error": str(exc),
         }
@@ -5652,6 +6534,227 @@ def long_c2uf(
     return finish(result, pretty)
 
 
+def long_hcinv(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcinv import validate_long_hcinv
+
+    try:
+        result = validate_long_hcinv()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcinv.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hcfoam(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcfoam import validate_long_hcfoam
+
+    try:
+        result = validate_long_hcfoam()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcfoam.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hcpi(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcpi import validate_long_hcpi
+
+    try:
+        result = validate_long_hcpi()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcpi.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hcshape(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcshape import validate_long_hcshape
+
+    try:
+        result = validate_long_hcshape()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcshape.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hcscalar(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcscalar import validate_long_hcscalar
+
+    try:
+        result = validate_long_hcscalar()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcscalar.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hcsupp(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcsupp import validate_long_hcsupp
+
+    try:
+        result = validate_long_hcsupp()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcsupp.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hcbasis(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcbasis import validate_long_hcbasis
+
+    try:
+        result = validate_long_hcbasis()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcbasis.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hcgrade(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcgrade import validate_long_hcgrade
+
+    try:
+        result = validate_long_hcgrade()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcgrade.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_hcperm(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_hcperm import validate_long_hcperm
+
+    try:
+        result = validate_long_hcperm()
+    except Exception as exc:
+        result = {
+            "schema": "long.hcperm.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23 import validate_long_k23
+
+    try:
+        result = validate_long_k23()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23oct(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23oct import validate_long_k23oct
+
+    try:
+        result = validate_long_k23oct()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23oct.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23row(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23row import validate_long_k23row
+
+    try:
+        result = validate_long_k23row()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23row.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23max(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23max import validate_long_k23max
+
+    try:
+        result = validate_long_k23max()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23max.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def long_psec(
     *,
     pretty: bool,
@@ -5680,6 +6783,91 @@ def long_binc(
     except Exception as exc:
         result = {
             "schema": "long.binc.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_krein(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_krein import validate_long_krein
+
+    try:
+        result = validate_long_krein()
+    except Exception as exc:
+        result = {
+            "schema": "long.krein.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_kr39(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_kr39 import validate_long_kr39
+
+    try:
+        result = validate_long_kr39()
+    except Exception as exc:
+        result = {
+            "schema": "long.kr39.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_b3mod(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_b3mod import validate_long_b3mod
+
+    try:
+        result = validate_long_b3mod()
+    except Exception as exc:
+        result = {
+            "schema": "long.b3mod.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_b3alg(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_b3alg import validate_long_b3alg
+
+    try:
+        result = validate_long_b3alg()
+    except Exception as exc:
+        result = {
+            "schema": "long.b3alg.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_gchar(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_gchar import validate_long_gchar
+
+    try:
+        result = validate_long_gchar()
+    except Exception as exc:
+        result = {
+            "schema": "long.gchar.verification@1",
             "status": "FAIL",
             "error": str(exc),
         }
@@ -6146,13 +7334,79 @@ def main() -> None:
         "long-stress20",
         "long-stress-gate",
         "long-stress-couple",
+        "long-semstress",
         "long-metric-rank-gate",
         "long-dim4-gate",
+        "long-rim",
+        "long-rim-select",
+        "long-sel",
+        "long-psel",
+        "long-pax",
+        "long-l63",
+        "long-f63",
+        "long-frim",
+        "long-sfork",
+        "long-glaw",
+        "long-gclk",
+        "long-tlift",
+        "long-abmap",
+        "long-rtick",
+        "long-rsem",
+        "long-oprom",
+        "long-c60op",
+        "long-c60negf",
+        "long-c59x",
+        "long-c59e",
+        "long-c59cf",
+        "long-c59st",
+        "long-c59kt",
+        "long-c59q",
+        "long-c59pk",
+        "long-c59s3",
+        "long-c59np3",
+        "long-c59p3s",
+        "long-c59p3v",
+        "long-c59p3o",
+        "long-c59p3a",
+        "long-c59p3t",
+        "long-c59p3b",
+        "long-c59p3r",
+        "long-c59p3i",
+        "long-c59p3f",
+        "long-c59p3u",
+        "long-c59p3w",
+        "long-c59p3c",
+        "long-c59p3d",
+        "long-c59p3e",
+        "long-c59p3g",
+        "long-c59p3h",
+        "long-c59p3j",
+        "long-c59p3k",
+        "long-c59p3m",
+        "long-c59p3n",
         "long-frontier",
         "long-cluster",
         "long-c2uf",
+        "long-hcinv",
+        "long-hcfoam",
+        "long-hcpi",
+        "long-hcshape",
+        "long-hcscalar",
+        "long-hcsupp",
+        "long-hcbasis",
+        "long-hcgrade",
+        "long-hcperm",
+        "long-k23",
+        "long-k23oct",
+        "long-k23row",
+        "long-k23max",
         "long-psec",
         "long-binc",
+        "long-krein",
+        "long-kr39",
+        "long-b3mod",
+        "long-b3alg",
+        "long-gchar",
         "a985-direct-packet-bridge",
         "a985-mat2-hom-boundary",
         "a985-labelled-nonfaithful-packet-hom",
@@ -6792,20 +8046,152 @@ def main() -> None:
         raise SystemExit(long_stress_gate(pretty=args.pretty))
     if args.command == "long-stress-couple":
         raise SystemExit(long_stress_couple(pretty=args.pretty))
+    if args.command == "long-semstress":
+        raise SystemExit(long_semstress(pretty=args.pretty))
     if args.command == "long-metric-rank-gate":
         raise SystemExit(long_metric_rank_gate(pretty=args.pretty))
     if args.command == "long-dim4-gate":
         raise SystemExit(long_dim4_gate(pretty=args.pretty))
+    if args.command == "long-rim":
+        raise SystemExit(long_rim(pretty=args.pretty))
+    if args.command == "long-rim-select":
+        raise SystemExit(long_rim_select(pretty=args.pretty))
+    if args.command == "long-sel":
+        raise SystemExit(long_sel(pretty=args.pretty))
+    if args.command == "long-psel":
+        raise SystemExit(long_psel(pretty=args.pretty))
+    if args.command == "long-pax":
+        raise SystemExit(long_pax(pretty=args.pretty))
+    if args.command == "long-l63":
+        raise SystemExit(long_l63(pretty=args.pretty))
+    if args.command == "long-f63":
+        raise SystemExit(long_f63(pretty=args.pretty))
+    if args.command == "long-frim":
+        raise SystemExit(long_frim(pretty=args.pretty))
+    if args.command == "long-sfork":
+        raise SystemExit(long_sfork(pretty=args.pretty))
+    if args.command == "long-glaw":
+        raise SystemExit(long_glaw(pretty=args.pretty))
+    if args.command == "long-gclk":
+        raise SystemExit(long_gclk(pretty=args.pretty))
+    if args.command == "long-tlift":
+        raise SystemExit(long_tlift(pretty=args.pretty))
+    if args.command == "long-abmap":
+        raise SystemExit(long_abmap(pretty=args.pretty))
+    if args.command == "long-rtick":
+        raise SystemExit(long_rtick(pretty=args.pretty))
+    if args.command == "long-rsem":
+        raise SystemExit(long_rsem(pretty=args.pretty))
+    if args.command == "long-oprom":
+        raise SystemExit(long_oprom(pretty=args.pretty))
+    if args.command == "long-c60op":
+        raise SystemExit(long_c60op(pretty=args.pretty))
+    if args.command == "long-c60negf":
+        raise SystemExit(long_c60negf(pretty=args.pretty))
+    if args.command == "long-c59x":
+        raise SystemExit(long_c59x(pretty=args.pretty))
+    if args.command == "long-c59e":
+        raise SystemExit(long_c59e(pretty=args.pretty))
+    if args.command == "long-c59cf":
+        raise SystemExit(long_c59cf(pretty=args.pretty))
+    if args.command == "long-c59st":
+        raise SystemExit(long_c59st(pretty=args.pretty))
+    if args.command == "long-c59kt":
+        raise SystemExit(long_c59kt(pretty=args.pretty))
+    if args.command == "long-c59q":
+        raise SystemExit(long_c59q(pretty=args.pretty))
+    if args.command == "long-c59pk":
+        raise SystemExit(long_c59pk(pretty=args.pretty))
+    if args.command == "long-c59s3":
+        raise SystemExit(long_c59s3(pretty=args.pretty))
+    if args.command == "long-c59np3":
+        raise SystemExit(long_c59np3(pretty=args.pretty))
+    if args.command == "long-c59p3s":
+        raise SystemExit(long_c59p3s(pretty=args.pretty))
+    if args.command == "long-c59p3v":
+        raise SystemExit(long_c59p3v(pretty=args.pretty))
+    if args.command == "long-c59p3o":
+        raise SystemExit(long_c59p3o(pretty=args.pretty))
+    if args.command == "long-c59p3a":
+        raise SystemExit(long_c59p3a(pretty=args.pretty))
+    if args.command == "long-c59p3t":
+        raise SystemExit(long_c59p3t(pretty=args.pretty))
+    if args.command == "long-c59p3b":
+        raise SystemExit(long_c59p3b(pretty=args.pretty))
+    if args.command == "long-c59p3r":
+        raise SystemExit(long_c59p3r(pretty=args.pretty))
+    if args.command == "long-c59p3i":
+        raise SystemExit(long_c59p3i(pretty=args.pretty))
+    if args.command == "long-c59p3f":
+        raise SystemExit(long_c59p3f(pretty=args.pretty))
+    if args.command == "long-c59p3u":
+        raise SystemExit(long_c59p3u(pretty=args.pretty))
+    if args.command == "long-c59p3w":
+        raise SystemExit(long_c59p3w(pretty=args.pretty))
+    if args.command == "long-c59p3c":
+        raise SystemExit(long_c59p3c(pretty=args.pretty))
+    if args.command == "long-c59p3d":
+        raise SystemExit(long_c59p3d(pretty=args.pretty))
+    if args.command == "long-c59p3e":
+        raise SystemExit(long_c59p3e(pretty=args.pretty))
+    if args.command == "long-c59p3g":
+        raise SystemExit(long_c59p3g(pretty=args.pretty))
+    if args.command == "long-c59p3h":
+        raise SystemExit(long_c59p3h(pretty=args.pretty))
+    if args.command == "long-c59p3j":
+        raise SystemExit(long_c59p3j(pretty=args.pretty))
+    if args.command == "long-c59p3k":
+        raise SystemExit(long_c59p3k(pretty=args.pretty))
+    if args.command == "long-c59p3m":
+        raise SystemExit(long_c59p3m(pretty=args.pretty))
+    if args.command == "long-c59p3n":
+        raise SystemExit(long_c59p3n(pretty=args.pretty))
     if args.command == "long-frontier":
         raise SystemExit(long_frontier(pretty=args.pretty))
     if args.command == "long-cluster":
         raise SystemExit(long_cluster(pretty=args.pretty))
     if args.command == "long-c2uf":
         raise SystemExit(long_c2uf(pretty=args.pretty))
+    if args.command == "long-hcinv":
+        raise SystemExit(long_hcinv(pretty=args.pretty))
+    if args.command == "long-hcfoam":
+        raise SystemExit(long_hcfoam(pretty=args.pretty))
+    if args.command == "long-hcpi":
+        raise SystemExit(long_hcpi(pretty=args.pretty))
+    if args.command == "long-hcshape":
+        raise SystemExit(long_hcshape(pretty=args.pretty))
+    if args.command == "long-hcscalar":
+        raise SystemExit(long_hcscalar(pretty=args.pretty))
+    if args.command == "long-hcsupp":
+        raise SystemExit(long_hcsupp(pretty=args.pretty))
+    if args.command == "long-hcbasis":
+        raise SystemExit(long_hcbasis(pretty=args.pretty))
+    if args.command == "long-hcgrade":
+        raise SystemExit(long_hcgrade(pretty=args.pretty))
+    if args.command == "long-hcperm":
+        raise SystemExit(long_hcperm(pretty=args.pretty))
+    if args.command == "long-k23":
+        raise SystemExit(long_k23(pretty=args.pretty))
+    if args.command == "long-k23oct":
+        raise SystemExit(long_k23oct(pretty=args.pretty))
+    if args.command == "long-k23row":
+        raise SystemExit(long_k23row(pretty=args.pretty))
+    if args.command == "long-k23max":
+        raise SystemExit(long_k23max(pretty=args.pretty))
     if args.command == "long-psec":
         raise SystemExit(long_psec(pretty=args.pretty))
     if args.command == "long-binc":
         raise SystemExit(long_binc(pretty=args.pretty))
+    if args.command == "long-krein":
+        raise SystemExit(long_krein(pretty=args.pretty))
+    if args.command == "long-kr39":
+        raise SystemExit(long_kr39(pretty=args.pretty))
+    if args.command == "long-b3mod":
+        raise SystemExit(long_b3mod(pretty=args.pretty))
+    if args.command == "long-b3alg":
+        raise SystemExit(long_b3alg(pretty=args.pretty))
+    if args.command == "long-gchar":
+        raise SystemExit(long_gchar(pretty=args.pretty))
     if args.command == "a985-direct-packet-bridge":
         raise SystemExit(a985_direct_packet_bridge(pretty=args.pretty))
     if args.command == "a985-mat2-hom-boundary":

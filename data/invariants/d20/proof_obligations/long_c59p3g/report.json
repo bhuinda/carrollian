@@ -1,0 +1,150 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "963f27125ca06e32125adf820c893a3279e48d1f248588cc48e2b22a00f2e185",
+  "checks": {
+    "active_transition_schema_total": true,
+    "active_transitions_ready": true,
+    "input_reports_certified": true,
+    "operation_columns_are_sentinel": true,
+    "physical_boundaries_preserved": true,
+    "schema_gap_rows_explain_obstruction": true,
+    "semantic_flags_absent": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_c59p3g certifies the schema-level reason the 49 active normalized promotion witnesses from long_c59p3m do not become operation-backed rows. Their 229 joined rows touch 29 transition ids that are contact-backed, endpoint-backed, and unit-time-backed, but every joined row has operation sentinel fields and no semantic transition flag. The transition schema-gap table records semantic operation rows and the transition composition law as absent.",
+  "closure_boundary": {
+    "certifies": [
+      "the 229 normalized promotion joins touch 49 relation witnesses and 29 transition ids",
+      "all 229 joined transition rows are contact-backed, raw-endpoint-backed, and unit-time-backed",
+      "all 229 joined rows have operation row id -1 and operation address sentinels",
+      "all 229 joined rows have zero operation coefficient, zero operation time component, and semantic_transition_flag=0",
+      "the upstream schema-gap table marks semantic operation rows and the transition composition law absent"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "operation-backed normalized counterterm rows",
+      "a transition composition law",
+      "new semantic operation rows",
+      "a physical selector axiom",
+      "a four-dimensional metric reduction",
+      "a physical field equation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3g.py",
+      "sha256": "545680cb3697394955d6a8d43617b2eeb11aaa04479c44c2cff8c1f57314bf91"
+    },
+    "long_c59p3m": {
+      "certificate_sha256": "466da26cbc6540e7b3844998e45d7cd9774133a124beb0fb3ff48cf16c4c2758",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3m/report.json",
+      "sha256": "baa596e1f0c535ba96211a00249721b68334b3e901c555b0ddbb564f61f5785d",
+      "status": "LONG_C59P3M_NORMALIZED_OPERATION_PROMOTION_GATE_CERTIFIED"
+    },
+    "long_c59p3m_join": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3m/join.csv",
+      "sha256": "4bcb651bf95babde212f6ccba695b9b8de0ee9451bccb876dc86453bd6990848"
+    },
+    "long_transition_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+      "sha256": "c77f941ae6af4d79999a691157030d64eecf9435b3fa708266751d14db9cc630"
+    },
+    "long_transition_schema_gap": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/schema_gap.csv",
+      "sha256": "e78333bebefad4d04584e225f6d3f05a44da814f9b4ab110b272447b3625d84e"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3g.py",
+      "sha256": "95530951e674ab19876167c5c20d38d02bebd0ede38a8b1d5d6384f2dfeaf828"
+    }
+  },
+  "next_highest_yield_item": "Construct the missing transition composition law from raw endpoint pairs to operation rows, or certify that the current A985 operation schema has no admissible address map for the 29 active transition ids.",
+  "outputs": {
+    "c59p3g": "data/invariants/d20/proof_obligations/long_c59p3g/c59p3g.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3g/cert.json",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3g/gap.csv",
+    "join_schema_csv": "data/invariants/d20/proof_obligations/long_c59p3g/join_schema.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3g/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3g/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3g/report.json",
+    "schema_gap_csv": "data/invariants/d20/proof_obligations/long_c59p3g/schema_gap.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3g/tables.npz",
+    "transition_schema_csv": "data/invariants/d20/proof_obligations/long_c59p3g/transition_schema.csv"
+  },
+  "schema": "long.c59p3g.report@1",
+  "stage_protocol": {
+    "closure": "certify the operation-schema gap after normalized promotion routing",
+    "coherence": "check active transition coverage, ready transition evidence, operation sentinel fields, absent semantic flags, and preserved physical gaps",
+    "draft": "read long_c59p3m joins, long_transition_sem transition rows, and schema-gap rows",
+    "emit": "write long_c59p3g artifacts and verifier hook",
+    "witness": "emit per-join schema rows, per-active-transition rows, schema-gap rows, gaps, and observables"
+  },
+  "status": "LONG_C59P3G_OPERATION_SCHEMA_GAP_CERTIFIED",
+  "witness": {
+    "classification": "operation_schema_gap",
+    "gap_code_map": {
+      "0": "normalized_join_certified",
+      "1": "active_transition_schema_present",
+      "2": "operation_columns_all_sentinel",
+      "3": "semantic_transition_flags_absent",
+      "4": "transition_composition_law_absent",
+      "5": "operation_backed_normalized_counterterm",
+      "6": "physical_selector_axiom",
+      "7": "metric_derivation"
+    },
+    "gap_table_sha256": "a672e16991ab2531cd65401880c2e83a87f0621f38c4f0477ed3f2578829a9bb",
+    "join_schema_table_sha256": "3467dfbf50fc48ad846cbe671c17a736f47a4eb6e49099387ec43dc3847fbab3",
+    "join_schema_text_sha256": "f5103ed04fa5646b5613deb90b7bd19bd4cddceedbf636002b3aefa6d9364318",
+    "name": "long_c59p3g",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "operation_coeff_zero_join_count",
+      "11": "operation_time_component_zero_join_count",
+      "12": "semantic_transition_zero_join_count",
+      "13": "transition_ready_join_count",
+      "14": "operation_backed_join_count",
+      "15": "schema_gap_operation_rows_absent_flag",
+      "16": "schema_gap_composition_law_absent_flag",
+      "17": "operation_schema_gap_flag",
+      "18": "physical_selector_axiom_flag",
+      "19": "metric_derivation_flag",
+      "2": "join_row_count",
+      "20": "next_gap_code",
+      "3": "active_relation_count",
+      "4": "active_transition_count",
+      "5": "contact_lift_join_count",
+      "6": "endpoint_pair_raw_row_join_count",
+      "7": "unit_time_join_count",
+      "8": "operation_row_sentinel_join_count",
+      "9": "operation_addr_sentinel_join_count"
+    },
+    "observable_table_sha256": "305ef12c6353f6b3aa00905182661ec8ea661399cef8c024a42b33eac46ddcf1",
+    "schema_evidence_code_map": {
+      "0": "raw_endpoint_row_ids_present",
+      "1": "contact_lift_rows_present",
+      "2": "normal_form_time_rows_present",
+      "3": "semantic_operation_rows_absent",
+      "4": "transition_composition_law_absent"
+    },
+    "schema_gap_table_sha256": "a5ba2f86c0dc24879f4a47741df7f158574f23eb32c9c5b670d3dc260884241b",
+    "summary": {
+      "active_relation_count": 49,
+      "active_transition_count": 29,
+      "join_row_count": 229,
+      "operation_addr_sentinel_join_count": 229,
+      "operation_backed_join_count": 0,
+      "operation_row_sentinel_join_count": 229,
+      "schema_gap_composition_law_absent_flag": 1,
+      "schema_gap_operation_rows_absent_flag": 1,
+      "semantic_transition_zero_join_count": 229,
+      "transition_ready_join_count": 229
+    },
+    "transition_schema_table_sha256": "458cad0ae72f3b0f5c835ca8d6e3935d078398e5504538d462f68bfce600e2e4"
+  }
+}

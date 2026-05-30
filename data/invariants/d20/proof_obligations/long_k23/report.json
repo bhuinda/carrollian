@@ -1,0 +1,148 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e3cf1697bce23179c6738bf97e4088e49ce966580fd5f25bb4fa06c532be29c8",
+  "checks": {
+    "binding_map_is_explicitly_open": true,
+    "canonical_w24_frame_has_punctured_syzygy": true,
+    "dimension_arithmetic_is_56_to_33_kernel23": true,
+    "focused_k23_target_closed": true,
+    "k23_dimension_matches_w24_punctured_syzygy": true,
+    "kernel_basis_annihilates_projection": true,
+    "long_hcgrade_input_passes": true,
+    "prior_sector33_w24_searches_pass": true,
+    "w24_hexacode_input_passes": true
+  },
+  "claim": "long_k23 certifies the sector33 K23 aperture as a 23-dimensional kernel with the right W24/Euler-punctured syzygy target dimension, but not the actual subspace equality or M23 module action.",
+  "closure_boundary": {
+    "certifies": [
+      "the selected long_hcgrade projection has rank 33 on 56 sector33 support coordinates",
+      "the emitted K23 kernel basis has 23 rows and annihilates the projection",
+      "the W24 frame has coordinate 0 as Euler/unit and coordinates 1..23 as syzygy coordinates",
+      "the K23 dimension matches the W24/Euler-punctured syzygy target dimension",
+      "the certified W24 row alphabetization and prior sector33-to-W24 search certificates are recorded as the current binding boundary"
+    ],
+    "does_not_certify": [
+      "a basis-binding map from the 56 sector33 support coordinates to the W24 syzygy frame",
+      "rowspan(K23) equals the W24/Euler-punctured syzygy rowspace",
+      "a selected sector33-to-W24 coordinate morphism",
+      "an M23 module action on K23",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "canonical_w24_frame": {
+      "canonical_24_syzygy_frame_sha256": "1164fc0ae884ec7fd3bce24ecde7f07264298aa786d82fb3fa05562c77298c1b",
+      "path": "data/geometry/canonical_24_syzygy_frame.json",
+      "sha256": "0e8712ee10e9838a1e15a142f01255a3e7a38a774057b705a4c6183ccb203c84",
+      "status": "CANONICAL_24_COORDINATE_SYZYGY_FRAME_CERTIFIED_GOLAY_SELECTION_STILL_OPEN"
+    },
+    "derive_script": {
+      "path": "src/derive_long_k23.py",
+      "sha256": "ea9bce88279f61228bfa04a3b769dc4be1d4b69cfe3fc5041d1f297016fdaa37"
+    },
+    "long_hcgrade": {
+      "certificate_sha256": "ef90afeb47b65f737990609960147c9842bd4d09e60d01dde95bfe01e6468aee",
+      "path": "data/invariants/d20/proof_obligations/long_hcgrade/report.json",
+      "sha256": "e953bb81e4e4bf38c64607d8fb2037d127654d61b036a892b7e3f8cbd4538e3e",
+      "status": "LONG_HCGRADE_CENTER_GRADE_RANK_CERTIFIED"
+    },
+    "long_hcgrade_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_hcgrade/center_grade_projection.npz",
+      "sha256": "392b120b53f9ef917b37137fa7e631180a147b7fe5636d75e4ebbfdb21930362"
+    },
+    "sector33_w24_f4_row_lift_solver": {
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_f4_row_lift_solver/report.json",
+      "sha256": "e4ab0800ddd0f147e44fb81285cf3a41f6fe812fba1e83c97dc1f79d87fc1ee4"
+    },
+    "sector33_w24_marked_big_cell_quotient_search": {
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_big_cell_quotient_search/report.json",
+      "sha256": "ffd0c8e6a330b77bc8102eae98983d7465cf1a9118780b55c51d63879381a98b"
+    },
+    "sector33_w24_marked_delete_contract_shadow_probe": {
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_delete_contract_shadow_probe/report.json",
+      "sha256": "a1f560b8e7aa08aca6caedccf48086dbbcab2df1b29dcd0dc2e664190bb10e93"
+    },
+    "sector33_w24_marked_quotient_shadow_obstruction": {
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_marked_quotient_shadow_obstruction/report.json",
+      "sha256": "14f95afd46c04e8b7744e827772858053d128c752cf1d72d2ff56b9b8cf3115f"
+    },
+    "sector33_w24_mixed_duad_quotient_orthogonality_prune": {
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_mixed_duad_quotient_orthogonality_prune/report.json",
+      "sha256": "3992b62860d81f3f3da47b7589ed1cc80b780a6a2d971acb2e854e462d9515ed"
+    },
+    "sector33_w24_per_edge_rowspace_prune": {
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_per_edge_rowspace_prune/report.json",
+      "sha256": "6ca731a6c328f8e3081ffacf39f582e0cee6dc9becf477bbad9fd69f09ab05a6"
+    },
+    "sector33_w24_typed_coordinate_search": {
+      "path": "data/invariants/d20/proof_obligations/d20_sector33_w24_typed_coordinate_search/report.json",
+      "sha256": "bd56bf8aeeaa493ee35bb4e67e5afdf62993bb3290585ce9c33beab214785019"
+    },
+    "validator": {
+      "path": "src/certify_long_k23.py",
+      "sha256": "a972f01e978728a558222aa1c975db549bb6999460ea16b80c8ef5e796705ff8"
+    },
+    "w24_hexacode_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Solve the explicit basis-binding map from the 56 sector33 support coordinates to the W24 syzygy frame, then rerun the rowspace equality test.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23/cert.json",
+    "dimension_rows_csv": "data/invariants/d20/proof_obligations/long_k23/dimension_rows.csv",
+    "kernel_basis_csv": "data/invariants/d20/proof_obligations/long_k23/kernel_basis.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23/k23_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23/seam.json",
+    "source_rows_csv": "data/invariants/d20/proof_obligations/long_k23/source_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23/tables.npz"
+  },
+  "schema": "long.k23.report@1",
+  "stage_protocol": {
+    "closure": "certify the aperture target while marking subspace equality and M23 action as open",
+    "coherence": "check 56-to-33 rank, K23 kernel residual zero, W24 24=1+23 split, and prior binding-search boundary flags",
+    "draft": "read long_hcgrade, the canonical W24 syzygy frame, the W24 row alphabetization, and the existing sector33-to-W24 search certificates",
+    "emit": "write long_k23 artifacts and verifier hook",
+    "witness": "emit dimension arithmetic rows, source-boundary rows, an explicit K23 kernel basis, observables, and matrix payloads"
+  },
+  "status": "SECTOR33_K23_PUNCTURED_MOG_SYZYGY_APERTURE_TARGET_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the K23 dimension target and emitted kernel basis, while keeping the sector33-to-W24 basis binding and M23 action unproven.",
+    "classification": "sector33_k23_punctured_mog_syzygy_aperture_target",
+    "matrix_sha256": "bc58ffbf61c6db0a1cd127d70c25dca3ba125db7cb0aebe6d793df077e62e034",
+    "name": "long_k23",
+    "projection_pivot_count": 33,
+    "projection_rank": 33,
+    "summary": {
+      "binding_map_materialized_flag": 0,
+      "complete_goal_claim_flag": 0,
+      "delete_contract_candidate_count": 6400,
+      "f4_row_lift_rule_total": 102400,
+      "focused_k23_target_closed_flag": 1,
+      "k23_dimension_matches_syzygy_flag": 1,
+      "k23_kernel_dimension": 23,
+      "kernel_basis_column_count": 56,
+      "kernel_basis_row_count": 23,
+      "kernel_basis_zero_residual_flag": 1,
+      "m23_module_proven_flag": 0,
+      "mixed_duad_assignment_count": 14348907,
+      "per_edge_coordinate_bijections_pruned": 346931209175040,
+      "subspace_equality_certified_flag": 0,
+      "support_dimension": 56,
+      "target_projection_rank": 33,
+      "typed_projection_candidate_count": 150,
+      "unique_dual_octad_weight": 8,
+      "w24_dimension": 24,
+      "w24_euler_coordinate_count": 1,
+      "w24_hexacode_certified_flag": 1,
+      "w24_hexacode_minimum_weight": 8,
+      "w24_hexacode_rank": 12,
+      "w24_syzygy_dimension": 23
+    }
+  }
+}

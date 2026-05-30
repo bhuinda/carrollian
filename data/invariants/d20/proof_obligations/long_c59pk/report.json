@@ -1,0 +1,141 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "a6606fadbdb436f3869db1fd863e31ccb3c0139ced13be9ff8687b20dcf6ad8e",
+  "checks": {
+    "induced_kernel_restriction_exact": true,
+    "input_report_certified": true,
+    "physical_boundaries_preserved": true,
+    "restricted_form_nondegenerate": true,
+    "table_shapes_match": true,
+    "three_spatial_rank_not_certified": true
+  },
+  "claim": "long_c59pk restricts the 19-dimensional gauge-null quotient form to the induced q_pub kernel. The resulting 18-dimensional form is nondegenerate with exact inertia (10,8,0). This removes the public time trace but does not certify a three-spatial-rank or 3+1 metric selection.",
+  "closure_boundary": {
+    "certifies": [
+      "the induced q_pub-kernel restriction of the 19D quotient form",
+      "a nondegenerate 18-dimensional finite form",
+      "exact restricted inertia (10,8,0)",
+      "removal of the public time trace from the quotient form"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "a canonical three-spatial-rank selection inside the 18D form",
+      "a four-dimensional metric reduction",
+      "a smooth Lorentzian metric",
+      "a physical stress-energy tensor",
+      "a thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59pk.py",
+      "sha256": "3d6f02021327510f14b0346137c490f3fa5ec00470a96c871a0ff8657aabc1e3"
+    },
+    "long_c59q": {
+      "certificate_sha256": "c8daf7a9c6ec3e33f04096f2d976f0137adeca704d750cae0c7ec2ce08b9c74c",
+      "path": "data/invariants/d20/proof_obligations/long_c59q/report.json",
+      "sha256": "015f524bb343935f070b613f1ee92aa2b8e2642f0d73dada53183813da585c8e",
+      "status": "LONG_C59Q_GAUGE_NULL_QUOTIENT_CERTIFIED"
+    },
+    "long_c59q_basis": {
+      "path": "data/invariants/d20/proof_obligations/long_c59q/basis.csv",
+      "sha256": "875ab50bc8923a4d0a83bfbb5823657751b28c1dbb28e27c760c912c515123e5"
+    },
+    "long_c59q_quotient": {
+      "path": "data/invariants/d20/proof_obligations/long_c59q/quotient_entry.csv",
+      "sha256": "eefa59cf6ffffdd73b54dead2ed410ac7d985b04155ebc663d962f29f0104a24"
+    },
+    "validator": {
+      "path": "src/certify_long_c59pk.py",
+      "sha256": "c6ff2ef86baf21e33124e9b87f2f66a2566bd5407a42dfd6437d3909b7c61c76"
+    }
+  },
+  "next_highest_yield_item": "Search for, or obstruct, a canonical three-dimensional spatial subform inside the 18-dimensional induced public-kernel form.",
+  "outputs": {
+    "c59pk": "data/invariants/d20/proof_obligations/long_c59pk/c59pk.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59pk/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_c59pk/decision.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59pk/gap.csv",
+    "inertia_csv": "data/invariants/d20/proof_obligations/long_c59pk/inertia.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59pk/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59pk/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59pk/report.json",
+    "restrict_basis_csv": "data/invariants/d20/proof_obligations/long_c59pk/restrict_basis.csv",
+    "restricted_entry_csv": "data/invariants/d20/proof_obligations/long_c59pk/restricted_entry.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_c59pk/tables.npz"
+  },
+  "schema": "long.c59pk.report@1",
+  "stage_protocol": {
+    "closure": "certify the 18D induced public-kernel restriction while preserving the 3-rank gap",
+    "coherence": "check q_pub-kernel restriction, nondegeneracy, exact inertia, and metric boundaries",
+    "draft": "read long_c59q quotient basis and quotient form",
+    "emit": "write long_c59pk artifacts and verifier hook",
+    "witness": "emit induced-kernel basis rows, restricted form entries, inertia pivots, decisions, gaps, and observables"
+  },
+  "status": "LONG_C59PK_INDUCED_PUBLIC_KERNEL_RESTRICTION_CERTIFIED",
+  "witness": {
+    "classification": "c59x_induced_public_kernel_restriction",
+    "decision_code_map": {
+      "0": "induced_q_pub_kernel_materialized",
+      "1": "restricted_form_nondegenerate",
+      "2": "exact_inertia_10_8_0",
+      "3": "time_trace_removed",
+      "4": "three_spatial_rank_certified",
+      "5": "four_dimensional_metric_certified"
+    },
+    "decision_table_sha256": "df3136e6518ca23816f50aecb4b12193c684018213d7872bf0fee815db6a7ab0",
+    "gap_code_map": {
+      "0": "induced_q_pub_kernel_restriction",
+      "1": "nondegenerate_18_form",
+      "2": "three_spatial_rank_selection",
+      "3": "four_dimensional_metric_reduction",
+      "4": "physical_stress_energy_lift",
+      "5": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "59cfb897af28658394bffcb428874d1847c081cccac2e48658d6791c314f9f6b",
+    "inertia_table_sha256": "9245172c812cb13369956fda3ba8ad7da232b6ce6d6aa45169f87d15db80900f",
+    "name": "long_c59pk",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "inertia_negative_count",
+      "11": "inertia_zero_count",
+      "12": "time_trace_removed_flag",
+      "13": "three_spatial_rank_flag",
+      "14": "four_dimensional_metric_flag",
+      "15": "physical_stress_energy_flag",
+      "16": "smooth_metric_flag",
+      "17": "thermal_gravity_flag",
+      "18": "next_gap_code",
+      "2": "quotient_dimension",
+      "3": "induced_q_pub_rank",
+      "4": "restricted_dimension",
+      "5": "restricted_entry_count",
+      "6": "active_restricted_pair_count",
+      "7": "restricted_rank",
+      "8": "restricted_nullity",
+      "9": "inertia_positive_count"
+    },
+    "observable_table_sha256": "b71e642709eb5de3b36e666ec96d2c7e1ee29c3a9e1cf986fd69970181233a89",
+    "restrict_basis_table_sha256": "46c6d46a626109e456b0cdc3e544fe55769f86127c3c5d0f5ba6b26e731781d2",
+    "restrict_basis_text_sha256": "dad0c24e43b3bca4e0e27edebf6cd91b3fc4a58a617530ffd418d860c94d8671",
+    "restricted_entry_table_sha256": "b144bb0e51512781377cedc1d4db1ea56ad61988c8529f8963e561348763ec5e",
+    "restricted_entry_text_sha256": "805bc64c6ee513b2c07c638ce5ca37d347688a8769dd19658e3d22828097099e",
+    "restricted_matrix_sha256": "4bc35f6410602a0823da2c4c356a50d5b0dce733be503e51668fe4dc536df4e4",
+    "summary": {
+      "four_dimensional_metric_flag": 0,
+      "induced_q_pub_rank": 1,
+      "inertia_negative_count": 8,
+      "inertia_positive_count": 10,
+      "inertia_zero_count": 0,
+      "physical_stress_energy_flag": 0,
+      "quotient_dimension": 19,
+      "restricted_dimension": 18,
+      "restricted_nullity": 0,
+      "restricted_rank": 18,
+      "smooth_metric_flag": 0,
+      "thermal_gravity_flag": 0,
+      "three_spatial_rank_flag": 0,
+      "time_trace_removed_flag": 1
+    }
+  }
+}

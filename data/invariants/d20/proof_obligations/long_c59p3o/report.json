@@ -1,0 +1,169 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "42bac94b50f06bd3dc3dd413ac1214e6fcb68b7244979df8befb2d9a181a8e9b",
+  "checks": {
+    "current_obstruction_certified": true,
+    "input_reports_certified": true,
+    "sign_dual_pair_exact": true,
+    "stress_orientation_obstructed": true,
+    "table_shapes_match": true,
+    "time_orientation_obstructed": true,
+    "transition_orientation_obstructed": true
+  },
+  "claim": "long_c59p3o tests whether the current finite time, transition, or stress-coupling surfaces distinguish the sign-dual max-volume 3-plane pair from long_c59p3v. They do not: the time trace has been removed in the restricted form, semantic transition operations are absent, and no stress-coupling map is materialized.",
+  "closure_boundary": {
+    "certifies": [
+      "the max-volume 3-plane pair is sign-dual with equal support and opposite determinant sign",
+      "the restricted 18D form has the public time trace removed",
+      "the current semantic transition-operation surface does not distinguish the pair",
+      "the current stress-coupling surface does not distinguish the pair",
+      "the sign-dual orientation choice is a current-boundary obstruction"
+    ],
+    "does_not_certify_because_obstructed_or_open": [
+      "absolute nonexistence of a future orientation rule",
+      "a semantic transition operation that chooses an orientation",
+      "a stress-coupling map that chooses an orientation",
+      "acceptance of a physical selector axiom",
+      "a four-dimensional metric reduction or thermal-gravity derivation"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_c59p3o.py",
+      "sha256": "35521d3f8a00d38e1df3bfdaf1828c2aac642a54796046d0189779a955edf559"
+    },
+    "long_c59p3v": {
+      "certificate_sha256": "dac0250c0909226c6094899a508d0877cc130b6e68b63828300e9c120a30d204",
+      "path": "data/invariants/d20/proof_obligations/long_c59p3v/report.json",
+      "sha256": "74d76139431ee9bf44ef88d61e55445afef7ba608ec6409166300d548e540b2e",
+      "status": "LONG_C59P3V_LOW_SUPPORT_VOLUME_SELECTOR_CERTIFIED"
+    },
+    "long_c59p3v_max": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3v/max.csv",
+      "sha256": "753e3be92c2b74fd42a01650b818707ee06bc333c116e58bf6aa0f1ab191a8a5"
+    },
+    "long_c59p3v_support": {
+      "path": "data/invariants/d20/proof_obligations/long_c59p3v/support.csv",
+      "sha256": "b0a2d263cca9d40f1765e8805f92b51d3128d1f495e394d613be4dc5e538302b"
+    },
+    "long_c59pk": {
+      "certificate_sha256": "a6606fadbdb436f3869db1fd863e31ccb3c0139ced13be9ff8687b20dcf6ad8e",
+      "path": "data/invariants/d20/proof_obligations/long_c59pk/report.json",
+      "sha256": "72c0d1251255abe59a609e0d817507d2a97d72fe95e88da8324c4b4224f9cd44",
+      "status": "LONG_C59PK_INDUCED_PUBLIC_KERNEL_RESTRICTION_CERTIFIED"
+    },
+    "long_stress_couple": {
+      "certificate_sha256": "b2c8d18c8cce9050b455780f46d55b0f0d3f5a6728a0caf85a22ed3ad759abad",
+      "path": "data/invariants/d20/proof_obligations/long_stress_couple/report.json",
+      "sha256": "15f026fa8722999bff062dc35cfbeed6a0e5c0b4c93932bf8060e1fabb00d589",
+      "status": "LONG_STRESS_COUPLE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_time_map": {
+      "certificate_sha256": "b40ba13849c68c86d96c8457f1783ed29d5e335093656df680eb560eae17f78a",
+      "path": "data/invariants/d20/proof_obligations/long_time_map/report.json",
+      "sha256": "1c56d0252405469cca73c6d73699453494b6dfd66d7eb9f13a4a02ed758a1b51",
+      "status": "LONG_TIME_MAP_CERTIFIED"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_c59p3o.py",
+      "sha256": "05b1ab7b6b3d18dd9cef0d038d7586c9dfdc12d81ee923d0b858dce97050b203"
+    }
+  },
+  "next_highest_yield_item": "Break the sign-dual obstruction by constructing either semantic transition operation rows or a transition-to-stress coupling map; without one of those, orientation remains a selector axiom.",
+  "outputs": {
+    "c59p3o": "data/invariants/d20/proof_obligations/long_c59p3o/c59p3o.json",
+    "certificate": "data/invariants/d20/proof_obligations/long_c59p3o/cert.json",
+    "decision_csv": "data/invariants/d20/proof_obligations/long_c59p3o/decision.csv",
+    "gap_csv": "data/invariants/d20/proof_obligations/long_c59p3o/gap.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_c59p3o/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_c59p3o/obs.csv",
+    "pair_csv": "data/invariants/d20/proof_obligations/long_c59p3o/pair.csv",
+    "report": "data/invariants/d20/proof_obligations/long_c59p3o/report.json",
+    "tables": "data/invariants/d20/proof_obligations/long_c59p3o/tables.npz",
+    "test_csv": "data/invariants/d20/proof_obligations/long_c59p3o/test.csv"
+  },
+  "schema": "long.c59p3o.report@1",
+  "stage_protocol": {
+    "closure": "certify the current-boundary orientation obstruction for the sign-dual max-volume pair",
+    "coherence": "check equal-support sign duality, time-trace removal, transition-operation absence, stress-coupling absence, and current obstruction",
+    "draft": "read long_c59p3v, long_c59pk, long_time_map, long_transition_sem, and long_stress_couple",
+    "emit": "write long_c59p3o artifacts and verifier hook",
+    "witness": "emit sign-dual pair rows, orientation-test rows, decisions, gaps, and observables"
+  },
+  "status": "LONG_C59P3O_SIGN_DUAL_ORIENTATION_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "classification": "sign_dual_orientation_obstruction",
+    "decision_code_map": {
+      "0": "sign_dual_pair_certified",
+      "1": "time_trace_distinguishes_orientation",
+      "2": "semantic_transition_distinguishes_orientation",
+      "3": "stress_coupling_distinguishes_orientation",
+      "4": "physical_orientation_selected",
+      "5": "current_orientation_obstruction_certified"
+    },
+    "decision_table_sha256": "75eb8a55aa252f1500b3ed14295bd01f4490b77f11a9671ae23342f4adce05a3",
+    "gap_code_map": {
+      "0": "sign_dual_volume_pair",
+      "1": "orientation_rule",
+      "2": "semantic_transition_operation",
+      "3": "stress_coupling_map",
+      "4": "physical_selector_axiom",
+      "5": "four_dimensional_metric_reduction",
+      "6": "thermal_gravity_derivation"
+    },
+    "gap_table_sha256": "7691ea49f549bcb76416576a6a7c36bd3185c924ba98b860194d936cbe78e8e0",
+    "name": "long_c59p3o",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "semantic_transition_operation_flag",
+      "11": "semantic_transition_orientation_distinguishing_flag",
+      "12": "stress_coupling_map_certified_flag",
+      "13": "shared_stress_coupling_key_count",
+      "14": "stress_orientation_distinguishing_flag",
+      "15": "physical_orientation_selector_flag",
+      "16": "current_orientation_obstruction_flag",
+      "17": "next_gap_code",
+      "2": "orientation_candidate_count",
+      "3": "same_support_flag",
+      "4": "opposite_det_sign_flag",
+      "5": "equal_abs_volume_flag",
+      "6": "sign_dual_pair_flag",
+      "7": "time_trace_removed_flag",
+      "8": "normal_form_time_map_flag",
+      "9": "time_orientation_distinguishing_flag"
+    },
+    "observable_table_sha256": "d8461110e3c3d350bda3b5b956d67e33e2b4bfa9b9c130f7c26492970edfee6e",
+    "pair_table_sha256": "1f992f2f13e4eac091d6c5efc3a119c5833ed99d9de660a54de0cdb6966666f1",
+    "pair_text_sha256": "5f58bab7a663d4f3a116e7274bb7987e666469078cfc268cfd1c626cdaf51f8c",
+    "summary": {
+      "current_orientation_obstruction_flag": 1,
+      "equal_abs_volume_flag": 1,
+      "normal_form_time_map_flag": 1,
+      "opposite_det_sign_flag": 1,
+      "orientation_candidate_count": 2,
+      "physical_orientation_selector_flag": 0,
+      "same_support_flag": 1,
+      "semantic_transition_operation_flag": 0,
+      "sign_dual_pair_flag": 1,
+      "stress_coupling_map_certified_flag": 0,
+      "time_orientation_distinguishing_flag": 0,
+      "time_trace_removed_flag": 1
+    },
+    "test_code_map": {
+      "0": "sign_dual_volume_pair_present",
+      "1": "time_trace_orientation_rule",
+      "2": "semantic_transition_orientation_rule",
+      "3": "stress_coupling_orientation_rule",
+      "4": "physical_orientation_selector"
+    },
+    "test_table_sha256": "ae73e5a0eee3d3805e655edd41f6bfe54282ded5d937d8d19d6aadb4a5d3a7f4",
+    "test_text_sha256": "e4dbd4ea2a1722f13c4da2424a250d34dae891f4ed3ba1896866b7dd5f2154eb"
+  }
+}

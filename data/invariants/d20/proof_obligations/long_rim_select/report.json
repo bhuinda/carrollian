@@ -1,0 +1,198 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7e4d08aac3ef30afd07299824edbc187c413583a74254ea53fce38b7d2a67824",
+  "checks": {
+    "contact_transition_schema_cannot_select_rim": true,
+    "existing_selector_absent": true,
+    "input_reports_certified": true,
+    "many_classes_compete_with_golden_stress_overlap": true,
+    "rim_phase_boundary_exact": true,
+    "stress_does_not_select_golden_phase": true,
+    "table_shapes_match": true
+  },
+  "claim": "long_rim_select compares the special golden rim phase against the certified stress, contact, and transition surfaces. The stress surface does not select the golden phase: other defect classes have larger directed overlap, larger undirected overlap, and larger stress-weight overlap. The contact and transition surfaces are basis/raw keyed and have no certified atom/rim selector key or semantic transition operation. The current boundary therefore leaves the golden rim phase as an unselected gauge phase.",
+  "closure_boundary": {
+    "certifies": [
+      "the golden rim phase is a certified special phase but not selected by current stress-overlap maxima",
+      "stress overlap competition favors other defect classes under directed, undirected, and weight-max readings",
+      "the contact and transition surfaces remain basis/raw keyed rather than atom/rim-phase keyed",
+      "no materialized stress-transition coupling key or golden rim selector exists in the current boundary",
+      "the current golden rim phase remains gauge-unselected"
+    ],
+    "does_not_certify_because_out_of_scope": [
+      "absolute nonexistence of a future physical rim-selection rule",
+      "that stress overlap is the correct physical selector criterion",
+      "a semantic A985 transition operation for recurrence edges",
+      "a physical stress-energy tensor, Lorentzian metric, or Einstein equation",
+      "a derivation of general relativity from A985 alone"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_rim_select.py",
+      "sha256": "48e515db99387a453f50715d384808c783bd7caced6d334a177e9c93e8464a2b"
+    },
+    "long_contact_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_contact_lift/contact.csv",
+      "sha256": "d602639b9777c1955fec7fbfdde741c71263e2e5ba8daba4f538ff6b6ab980fb"
+    },
+    "long_contact_lift": {
+      "certificate_sha256": "ddae7da581bfbabd509cb9e1804a24b3bb66b422ed20108fe2b9ca410b97db4d",
+      "path": "data/invariants/d20/proof_obligations/long_contact_lift/report.json",
+      "sha256": "6b29c6daad7ffcc3250ef62d01e14242a2465f6e3c96673aad269d86b92b6d93",
+      "status": "LONG_CONTACT_LIFT_CERTIFIED"
+    },
+    "long_rim": {
+      "certificate_sha256": "7bef16da8db573c382ee7660f118c9ce6774cf8e3104f726ed6d162dbec50568",
+      "path": "data/invariants/d20/proof_obligations/long_rim/report.json",
+      "sha256": "91b4a667f01d88f90934092692a1e60375fcde9714bc219d8ae5fb66f6a694ea",
+      "status": "LONG_RIM_DEFECT_PHASES_CERTIFIED"
+    },
+    "long_rim_class": {
+      "path": "data/invariants/d20/proof_obligations/long_rim/class.csv",
+      "sha256": "7d8aec76e5214e3a82d2cf100f7f78dd755db29db6d3c5eee120c51fcc0a5765"
+    },
+    "long_rim_orbit": {
+      "path": "data/invariants/d20/proof_obligations/long_rim/orbit.csv",
+      "sha256": "896bfb3fa13ed89e7e85235db002a09ff53d78a8c70bf1f287cf283d31d43da1"
+    },
+    "long_stress20": {
+      "certificate_sha256": "e1687d555e3e1775bc6977a4ea711c9164ba27cbe127f60938dca3cf8ad82b06",
+      "path": "data/invariants/d20/proof_obligations/long_stress20/report.json",
+      "sha256": "5e7a6cecc5a825ff6a42ac638228e5879e09c3744805edf7de3a29f1ef5df71d",
+      "status": "LONG_STRESS20_CERTIFIED"
+    },
+    "long_stress_couple": {
+      "certificate_sha256": "b2c8d18c8cce9050b455780f46d55b0f0d3f5a6728a0caf85a22ed3ad759abad",
+      "path": "data/invariants/d20/proof_obligations/long_stress_couple/report.json",
+      "sha256": "15f026fa8722999bff062dc35cfbeed6a0e5c0b4c93932bf8060e1fabb00d589",
+      "status": "LONG_STRESS_COUPLE_OBSTRUCTION_CERTIFIED"
+    },
+    "long_stress_couple_schema": {
+      "path": "data/invariants/d20/proof_obligations/long_stress_couple/schema.csv",
+      "sha256": "9347a307a72001f0fe79f5eb7309f3aaa58031557cb2a4462abf14292d77b553"
+    },
+    "long_stress_edge": {
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/stress_edge.csv",
+      "sha256": "7a25f7a5501af7158311ffa0fc65c2ef9d1cab1cd67d1b3c9ee4d01b514060e1"
+    },
+    "long_stress_gate": {
+      "certificate_sha256": "a31d87700816b5ed5a205c4fbaf2e0774e2132fd550c32242f0988d4e54e4fea",
+      "path": "data/invariants/d20/proof_obligations/long_stress_gate/report.json",
+      "sha256": "8c23f384cbb3e5115001e5cf93880d4ba08290c27fbea9e42ecfef70a7c195cb",
+      "status": "LONG_STRESS_GATE_CERTIFIED"
+    },
+    "long_transition_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/transition.csv",
+      "sha256": "c77f941ae6af4d79999a691157030d64eecf9435b3fa708266751d14db9cc630"
+    },
+    "long_transition_sem": {
+      "certificate_sha256": "6c54379cf941c3830c6ed5125583aca4d6f0cd7cd32852ccbdeb4160559eca24",
+      "path": "data/invariants/d20/proof_obligations/long_transition_sem/report.json",
+      "sha256": "3ad863f6e1a1f55da5df2cc61249e0958773b7fb62133f1f67bb384cffc8f667",
+      "status": "LONG_TRANSITION_SEM_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_rim_select.py",
+      "sha256": "ca15bbfb0734fae6d1be2ce091228fcb5d6e0974cfea5a7f8e797255ad1b9965"
+    }
+  },
+  "next_highest_yield_item": "Build a selector-construction seam: either derive an atom/rim-phase selector from A985-backed stress/contact data, or certify the next stronger obstruction as a missing physical selector axiom.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_rim_select/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_rim_select/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_rim_select/obs.csv",
+    "phase_csv": "data/invariants/d20/proof_obligations/long_rim_select/phase.csv",
+    "report": "data/invariants/d20/proof_obligations/long_rim_select/report.json",
+    "rim_select": "data/invariants/d20/proof_obligations/long_rim_select/rim_select.json",
+    "schema_csv": "data/invariants/d20/proof_obligations/long_rim_select/schema.csv",
+    "selector_csv": "data/invariants/d20/proof_obligations/long_rim_select/selector.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_rim_select/tables.npz"
+  },
+  "schema": "long.rim_select.report@1",
+  "stage_protocol": {
+    "closure": "certify that no current artifact selects the golden rim phase",
+    "coherence": "check input statuses, rim partition, stress-overlap competition, absent coupling keys, semantic-operation absence, and table hashes",
+    "draft": "read long_rim, long_stress20, long_stress_gate, long_stress_couple, long_contact_lift, and long_transition_sem",
+    "emit": "write long_rim_select artifacts and verifier hook",
+    "witness": "emit rim-phase stress-overlap rows, selector rows, schema rows, and observables"
+  },
+  "status": "LONG_RIM_SELECT_GAUGE_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "classification": "golden_rim_phase_selection_current_boundary_obstruction",
+    "name": "long_rim_select",
+    "observable_code_map": {
+      "0": "input_report_count",
+      "1": "input_certified_count",
+      "10": "stress_overlap_global_directed_max",
+      "11": "stress_overlap_golden_directed_max",
+      "12": "stress_overlap_classes_ge_golden_directed_max",
+      "13": "stress_overlap_global_undirected_max",
+      "14": "stress_overlap_golden_undirected_max",
+      "15": "stress_overlap_classes_ge_golden_undirected_max",
+      "16": "stress_weight_global_max",
+      "17": "stress_weight_golden_max",
+      "18": "stress_weight_classes_ge_golden_max",
+      "19": "contact_row_count",
+      "2": "rim_phase_count",
+      "20": "transition_row_count",
+      "21": "stress_transition_shared_key_count",
+      "22": "semantic_transition_operation_flag",
+      "23": "existing_golden_selector_count",
+      "24": "golden_phase_selected_flag",
+      "25": "rim_selection_obstruction_flag",
+      "26": "next_gap_code",
+      "3": "rim_orbit_count",
+      "4": "rim_unoriented_count",
+      "5": "golden_class_count",
+      "6": "golden_orbit_count",
+      "7": "golden_unoriented_rim_count",
+      "8": "stress_directed_edge_count",
+      "9": "stress_undirected_edge_count"
+    },
+    "observable_table_sha256": "e889833186d28c40967ca105dd58e8e3241e8c75bfa791c08094b8e42ad44d91",
+    "phase_table_sha256": "f22a0625faebe607812978d4161c972900b6f75d2c246ba34bd3da507bae2047",
+    "phase_text_sha256": "788d13c6e8688d4eb63a5183a6ea9785ce711613de9aa69be1f5179c5ad1acfd",
+    "schema_code_map": {
+      "0": "rim_phase_atom_schema",
+      "1": "stress_atom_edge_schema",
+      "2": "contact_basis_raw_schema",
+      "3": "transition_basis_raw_schema",
+      "4": "stress_transition_shared_key_absent",
+      "5": "materialized_rim_selector_absent"
+    },
+    "schema_table_sha256": "7c37d6b698db7c4d1609fe24083495a0fb53a2a481f9c7f136ec28c848a771de",
+    "schema_text_sha256": "9e64043a756eb4cab4087ece3464fcad5b38c8556dd7636087144c71341a44b9",
+    "selector_code_map": {
+      "0": "rim_phase_canonicality",
+      "1": "stress_undirected_overlap_max",
+      "2": "stress_directed_overlap_max",
+      "3": "stress_undirected_weight_max",
+      "4": "contact_atom_rim_key",
+      "5": "transition_atom_rim_key",
+      "6": "stress_transition_coupling_key",
+      "7": "existing_golden_phase_selector"
+    },
+    "selector_table_sha256": "f2a2d75698393ef8311cfdf8e00be526214ae3042db1d17df76e96ed8ed7985e",
+    "selector_text_sha256": "4700bd00bb8952eecfbd4478cde72abb052b54e932d62111ba462670b1494870",
+    "summary": {
+      "classes_at_least_golden_undirected_overlap": 59,
+      "contact_row_count": 642,
+      "global_directed_overlap_max": 18,
+      "global_undirected_overlap_max": 18,
+      "global_weight_max": 18781825174,
+      "golden_directed_overlap_max": 11,
+      "golden_phase_selected_flag": 0,
+      "golden_undirected_overlap_max": 15,
+      "golden_unoriented_rims": 144,
+      "golden_weight_max": 13211212940,
+      "rim_phase_count": 63,
+      "rim_selection_obstruction_flag": 1,
+      "semantic_transition_operation_flag": 0,
+      "stress_directed_edge_count": 100,
+      "stress_transition_shared_key_count": 0,
+      "stress_undirected_edge_count": 64,
+      "transition_row_count": 642
+    }
+  }
+}

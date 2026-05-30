@@ -1,0 +1,156 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "7e11a69dfc3c24f358698978c73ceeeba3c8f1100055f2d7958853a5948aa553",
+  "checks": {
+    "forced_twoform_block_is_preserved": true,
+    "long_hcshape_input_passes": true,
+    "remaining_full_intertwiner_inputs_marked_open": true,
+    "scalar_completion_has_required_rank": true,
+    "scalar_rows_have_expected_support": true,
+    "selector_marking_has_scalar_plus_twoforms": true,
+    "selector_marking_has_six_channel_order": true,
+    "target_lock_active_objects_are_source_bound": true
+  },
+  "claim": "long_hcscalar certifies the sourced abstract scalar completion of long_hcshape: the public visible-volume scalar and the two active-object hidden-pair scalars raise the projection skeleton from rank 30 to rank 33 with kernel 23.",
+  "closure_boundary": {
+    "certifies": [
+      "the stored six-channel order maps active objects B+ and S+ to H6 indices 1 and 5",
+      "the three residual scalar rows have supports 20, 1, and 1 on the ordered Lambda3(A2+H6) domain",
+      "the scalar rows extend the rank-30 skeleton to an abstract rank-33 projection candidate",
+      "the candidate has the required 23-dimensional kernel and preserves the forced two-form block"
+    ],
+    "does_not_certify": [
+      "the actual pi_Foam33 table on the e33 relation-support order",
+      "a materialized R_hc generator family",
+      "the full matrix intertwining equation",
+      "broad bundle integration"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_hcscalar.py",
+      "sha256": "454cf655f35721acb2326f2cf9268c6f4fbed011ecaf0c3be07c0b22224f33f6"
+    },
+    "domain_csv": {
+      "path": "data/invariants/d20/proof_obligations/long_hcshape/domain.csv",
+      "sha256": "974cb0d519f5301e68f296f6ecc53ef45c9b8c46964377abb3d04285bf3174e9"
+    },
+    "intertwining_certificate": {
+      "certificate_sha256": "6dac92ebd774ded452b2b968d6edcdeb413d6abb2b03a25bd7f12860004c3663",
+      "path": "data/evidence/talagrand_python_handoff/work/height_coherent_action_return_intertwining/height_coherent_action_return_intertwining_certificate.json",
+      "sha256": "047f81a2dacd675b955b518e9861c9f5a357e81583765e9356a2f4f9f8bb13f7",
+      "status": "HEIGHT_COHERENT_ACTION_RETURN_INTERTWINING_TARGET_LOCKED"
+    },
+    "long_hcshape": {
+      "certificate_sha256": "9d3583e45704893aa4ab15781a416937072e0aa3c9e1952723c221d9fe126612",
+      "path": "data/invariants/d20/proof_obligations/long_hcshape/report.json",
+      "sha256": "fc18fef3256f4f3b2ead1a7e61b41d13bf77dde1960badfd4be17bc79b86aab4",
+      "status": "LONG_HCSHAPE_CERTIFIED"
+    },
+    "selector_marking": {
+      "path": "data/selectors/wu_spinh_6j_marking.json",
+      "sha256": "37380690f539e8ea2be666149485ab60556e42b44fb00f0767f6a7b283d7bf70",
+      "status": "WU_SPINH_OCTAD_SPIN12_6J_MARKING_CERTIFIED_GOLAY_SELECTOR_STILL_EXTERNAL"
+    },
+    "skeleton": {
+      "path": "data/invariants/d20/proof_obligations/long_hcshape/projection_skeleton.npz",
+      "sha256": "1521add04840c34d2c2d6a4b05a49889bece0612edf73e1519e3b3af8d5f7994"
+    },
+    "validator": {
+      "path": "src/certify_long_hcscalar.py",
+      "sha256": "6482ffa7cebd60a73e7981222cde197eddf9cda77f0eb03dc096796648ee9909"
+    }
+  },
+  "next_highest_yield_item": "Bind the 56 e33 relation-support entries to the ordered Lambda3(A2+H6) domain; then derive R_hc generators and test the matrix identity.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_hcscalar/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_hcscalar/manifest.json",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_hcscalar/obs.csv",
+    "projection_candidate": "data/invariants/d20/proof_obligations/long_hcscalar/projection_candidate.npz",
+    "report": "data/invariants/d20/proof_obligations/long_hcscalar/report.json",
+    "scalar_rows_csv": "data/invariants/d20/proof_obligations/long_hcscalar/scalar_rows.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_hcscalar/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_hcscalar/tables.npz"
+  },
+  "schema": "long.hcscalar.report@1",
+  "stage_protocol": {
+    "closure": "certify the abstract scalar completion without claiming the e33 relation-row projection or R_hc",
+    "coherence": "check source label order, active-object indices, scalar support, rank 33, kernel 23, and preservation of the forced two-form block",
+    "draft": "read long_hcshape, the six-channel selector marking, and the target-lock active-object list",
+    "emit": "write long_hcscalar artifacts and verifier hook",
+    "witness": "emit scalar rows, observable counts, and the abstract 33x56 projection candidate"
+  },
+  "status": "LONG_HCSCALAR_ABSTRACT_COMPLETION_CERTIFIED",
+  "witness": {
+    "active_objects": [
+      "B+",
+      "S+"
+    ],
+    "boundary": "This is an abstract 33x56 completion on the ordered Lambda3(A2+H6) basis, not yet the e33 relation-support projection table.",
+    "classification": "height_coherent_scalar_completion",
+    "h6_labels": [
+      "B-",
+      "B+",
+      "V-",
+      "V+",
+      "S-",
+      "S+"
+    ],
+    "name": "long_hcscalar",
+    "pi_candidate_sha256": "c2acf9003d46a25014307deed107cbbacd05e6a9ca10b31a677034147a384d15",
+    "scalar_details": [
+      {
+        "domain_id_max": 55,
+        "domain_id_min": 36,
+        "functional": "visible_volume",
+        "h6_label": null,
+        "scalar_id": 0,
+        "support_count": 20,
+        "target_row": 0
+      },
+      {
+        "domain_id_max": 1,
+        "domain_id_min": 1,
+        "functional": "active_object_copy0",
+        "h6_label": "B+",
+        "scalar_id": 1,
+        "support_count": 1,
+        "target_row": 1
+      },
+      {
+        "domain_id_max": 5,
+        "domain_id_min": 5,
+        "functional": "active_object_copy1",
+        "h6_label": "S+",
+        "scalar_id": 2,
+        "support_count": 1,
+        "target_row": 17
+      }
+    ],
+    "scalar_matrix_sha256": "dd2120ed84e61ef2585cb3aad4a776b3f92b95793e347c5020ca9343662849b2",
+    "summary": {
+      "active_hidden_support_count": 2,
+      "active_object_0_h6_index": 1,
+      "active_object_1_h6_index": 5,
+      "active_object_count": 2,
+      "candidate_kernel_dimension": 23,
+      "candidate_projection_rank": 33,
+      "complete_goal_claim_flag": 0,
+      "e33_basis_binding_materialized_flag": 0,
+      "focused_hcscalar_closed_flag": 1,
+      "forced_twoform_block_preserved_flag": 1,
+      "full_intertwiner_claim_flag": 0,
+      "h6_label_count": 6,
+      "r_hc_materialized_flag": 0,
+      "residual_domain_dimension": 26,
+      "scalar_rank_addition": 3,
+      "scalar_row_count": 3,
+      "selector_scalar_coordinate_flag": 1,
+      "skeleton_kernel_dimension": 26,
+      "skeleton_rank": 30,
+      "source_domain_dimension": 56,
+      "target_dimension": 33,
+      "visible_volume_support_count": 20
+    }
+  }
+}
