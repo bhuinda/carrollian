@@ -1,0 +1,130 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "ce640686b6e3d1640463eddc086e0c7667e5ccb346b916e6c292d5aad2c49bac",
+  "checks": {
+    "boundary_flags_match": true,
+    "closure_product_profile_matches": true,
+    "closure_support_profile_matches": true,
+    "identity_extension_obstruction_matches": true,
+    "inputs_pass": true,
+    "pair_profile_matches": true
+  },
+  "claim": "long_k23cl certifies the 60-relation multiplication closure of the sector33 K23 support surface.",
+  "closure_boundary": {
+    "certifies": [
+      "the first leaked target relation set is exactly 151, 152, 153, 154",
+      "adjoining those four rows gives a 60-relation support surface",
+      "raw multiplication of the 60-relation surface has 6,579 product rows and zero outside-support target rows",
+      "the 60-relation product has 2,192 nonzero support pairs and 1,408 zero pairs",
+      "the identity extension of the current 56-dimensional R_hc lifts to the four new rows does not preserve the 60-relation product"
+    ],
+    "does_not_certify": [
+      "a nontrivial R_hc action on the four added relation rows",
+      "existence or nonexistence of a 60x60 R_hc-compatible product automorphism",
+      "that the 60-relation surface is the final physical/operator carrier",
+      "broad bundle integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23cl.py",
+      "sha256": "fee3bd97736a397f633e5d7bb6bd91cb0a195a6466d1bcc888406dbce6d6fdd7"
+    },
+    "long_hcsupp": {
+      "certificate_sha256": "f4a880344917e150defdfccb6d71aab21400e7ac9c63e129c02da755ff59f0f2",
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/report.json",
+      "sha256": "d5618b0e0159b88ec43f7ca6e75070a9e4e3508d7bd4e2c0a152140e775898c7",
+      "status": "LONG_HCSUPP_PROFILE_CERTIFIED"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23mul": {
+      "certificate_sha256": "bdb2077e4668e91059d6daaaa9c6c825177075595b4f89abceb96d16a589a04b",
+      "path": "data/invariants/d20/proof_obligations/long_k23mul/report.json",
+      "sha256": "bf206116494e34a55fb1672d7bc9fd07a72c8fa8376e7e5e4216161ffb1f4d85",
+      "status": "SECTOR33_K23_RHC_PROJECTED_PRODUCT_OBSTRUCTION_CERTIFIED"
+    },
+    "long_k23rh_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+      "sha256": "af3f182f7a270eb2f7c1dd137449a4ade01d5231a1676be8f1db81370fd1ea8a"
+    },
+    "raw_tensor": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "relation_memberships": {
+      "path": "data/raw/relation_memberships.npz",
+      "sha256": "9d7ff1ccc220ee5b6e0b77b7c809b4428f5f3d557b66b4c8f3e901443ab9fc4e"
+    },
+    "validator": {
+      "path": "src/certify_long_k23cl.py",
+      "sha256": "dcf2e6b2697ab6985b0565be2c367ce75ab8650135aac412abfb68e9991d5bcd"
+    }
+  },
+  "next_highest_yield_item": "Solve for a 60x60 extension of the R_hc action on the four added relations and test whether any extension preserves the now-closed 60-relation multiplication surface.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23cl/cert.json",
+    "closure_rows_csv": "data/invariants/d20/proof_obligations/long_k23cl/closure_rows.csv",
+    "extension_rows_csv": "data/invariants/d20/proof_obligations/long_k23cl/extension_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23cl/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23cl/k23cl_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23cl/obs.csv",
+    "pair_rows_csv": "data/invariants/d20/proof_obligations/long_k23cl/pair_rows.csv",
+    "product_rows_csv": "data/invariants/d20/proof_obligations/long_k23cl/product_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23cl/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23cl/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23cl/tables.npz"
+  },
+  "schema": "long.k23cl.report@1",
+  "stage_protocol": {
+    "closure": "certify the 60-row multiplication closure while keeping the missing four-row R_hc action open",
+    "coherence": "check leaked relation set, closure product rows, pair counts, zero outside leakage, and identity-extension residuals",
+    "draft": "read long_k23mul, the 56 support rows, raw relation memberships, raw multiplication tensor, and R_hc lifts",
+    "emit": "write long_k23cl artifacts and verifier hook",
+    "witness": "emit 60 closure rows, closed product rows, pair rows, identity-extension residual rows, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_MULTIPLICATION_CLOSURE60_CERTIFIED",
+  "witness": {
+    "added_relations": [
+      151,
+      152,
+      153,
+      154
+    ],
+    "boundary": "This certifies the 60-relation raw multiplication closure obtained by adjoining the four leaked target relations to the original 56 support rows.",
+    "classification": "sector33_k23_multiplication_closure60",
+    "matrix_sha256": "8bb04b74d39b6ebec161c1b9375e41a90130bcff5fb5776b32c4f358feb5995b",
+    "name": "long_k23cl",
+    "summary": {
+      "added_relation_count": 4,
+      "closed_pair_count": 2192,
+      "closure_action_dimension": 60,
+      "closure_product_closed_flag": 1,
+      "closure_support_row_count": 60,
+      "complete_goal_claim_flag": 0,
+      "current_r_hc_action_dimension": 56,
+      "first_leak_target_count": 4,
+      "identity_extension_preserving_generator_count": 0,
+      "identity_extension_residual_nonzero_max": 128750,
+      "identity_extension_residual_nonzero_min": 82229,
+      "identity_extension_residual_nonzero_total": 944444,
+      "identity_extension_tested_flag": 1,
+      "inside_closure_product_row_count": 6579,
+      "leaking_pair_count": 0,
+      "long_hcsupp_certified_flag": 1,
+      "long_k23mul_certified_flag": 1,
+      "missing_new_relation_action_count": 4,
+      "nonzero_pair_count": 2192,
+      "original_support_row_count": 56,
+      "outside_closure_product_row_count": 0,
+      "projected_product_tensor_nonzero_count": 6579,
+      "raw_product_coefficient_total": 14336,
+      "raw_product_row_count": 6579,
+      "support_pair_count": 3600,
+      "zero_pair_count": 1408
+    }
+  }
+}

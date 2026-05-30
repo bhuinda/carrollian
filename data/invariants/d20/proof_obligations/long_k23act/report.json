@@ -1,0 +1,110 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c5b013a26855708296f48b878d3a2e1ecc681f1335d83fad76835c3976f45d0a",
+  "checks": {
+    "inputs_pass": true,
+    "intersection_profile_matches": true,
+    "no_row_permutation_lift_for_generators": true,
+    "obstruction_boundary": true,
+    "support_lift_shape_matches": true
+  },
+  "claim": "long_k23act certifies the row-action obstruction between the M23 punctured selector action and the current K23 56-support binding.",
+  "closure_boundary": {
+    "certifies": [
+      "the three certified M23 design generators do not preserve the current 56-row frame lift as a row multiset",
+      "the same generators do not preserve it after signed-row normalization by plus/minus sign",
+      "the same generators do not preserve the row support-pattern multiset",
+      "the current support binding therefore has a row-action obstruction against the certified M23 design action"
+    ],
+    "does_not_certify": [
+      "nonexistence of a general prime-field linear lift",
+      "nonexistence of a changed support binding with M23 equivariance",
+      "intrinsic recovery of the selector from the naive binary shadow",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23act.py",
+      "sha256": "ef2625b5dac229e4a0c40a51b347cabd6f47d7966b617247d6369c41a513307f"
+    },
+    "long_k23stab": {
+      "certificate_sha256": "1f0c004ee944d6df362ee40469d1642f9e6d91ab5c48e73ae4dbbd45f72327ff",
+      "path": "data/invariants/d20/proof_obligations/long_k23stab/report.json",
+      "sha256": "3af20837a418e184a7837cd5e0a78ef8f7fe95236850517dec80f04ee036d80c",
+      "status": "SECTOR33_K23_PUNCTURED_SELECTOR_M23_STABILIZER_CERTIFIED"
+    },
+    "long_k23stab_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23stab/k23stab_matrices.npz",
+      "sha256": "3cef366b5a7132a16ae6289bf3a1ca3587d2ca1c1a43f67194e466174d6c89ef"
+    },
+    "long_k23syz": {
+      "certificate_sha256": "2cb403117f9997abaf32ea1ac6e5719609d923f799e412bd2b2ffa3921a353ef",
+      "path": "data/invariants/d20/proof_obligations/long_k23syz/report.json",
+      "sha256": "dc95c777a6e2b06f88b99e21f96c649b56bdc88e2ea62c4cffee1dec8a26641a",
+      "status": "SECTOR33_K23_CANONICAL_SYZYGY_FRAME_BINDING_CERTIFIED"
+    },
+    "long_k23syz_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23syz/k23syz_matrices.npz",
+      "sha256": "5659cf1cbf3c19d69a0e26c836314a152ec1a9caa0ba7927f563eaedf28e41d4"
+    },
+    "validator": {
+      "path": "src/certify_long_k23act.py",
+      "sha256": "98563439d93a34b2b379f1fb0c32f45a9804d569a17bf269140b1d2d3e4b57fa"
+    }
+  },
+  "next_highest_yield_item": "Solve the general prime-linear intertwiner equation for the three certified M23 generators against the K23 basis/support lift, or emit the corresponding linear obstruction.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23act/cert.json",
+    "generator_lift_rows_csv": "data/invariants/d20/proof_obligations/long_k23act/generator_lift_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23act/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23act/k23act_matrices.npz",
+    "mismatch_rows_csv": "data/invariants/d20/proof_obligations/long_k23act/mismatch_rows.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23act/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23act/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23act/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23act/tables.npz"
+  },
+  "schema": "long.k23act.report@1",
+  "stage_protocol": {
+    "closure": "certify the row-action obstruction while keeping general prime-linear lifting open",
+    "coherence": "check row-multiset, signed-row, sign-normalized, and support-pattern preservation counts",
+    "draft": "read long_k23syz support-frame lift and long_k23stab generator permutations",
+    "emit": "write long_k23act artifacts and verifier hook",
+    "witness": "emit generator lift rows, transformed-row mismatch rows, observables, and transformed matrices"
+  },
+  "status": "SECTOR33_K23_M23_SUPPORT_BINDING_ROW_ACTION_OBSTRUCTED",
+  "witness": {
+    "boundary": "This certifies that the current 56-row K23 support binding is not preserved by the three certified M23 design generators as a row-permutation, signed-row, or support-pattern action; a general prime-linear lift remains open.",
+    "classification": "sector33_k23_m23_support_binding_row_action_obstruction",
+    "matrix_sha256": "60bd4f53e724accc3e2c9f6358948c3683af9ad59cd95b502e2204ff80a15a87",
+    "name": "long_k23act",
+    "summary": {
+      "active_support_row_count": 23,
+      "complete_goal_claim_flag": 0,
+      "frame_coordinate_count": 24,
+      "general_prime_linear_lift_proven_flag": 0,
+      "generator_count": 3,
+      "inactive_support_row_count": 33,
+      "long_k23stab_certified_flag": 1,
+      "long_k23syz_certified_flag": 1,
+      "m23_design_action_certified_flag": 1,
+      "plain_preserving_generator_count": 0,
+      "pm_signed_preserving_generator_count": 0,
+      "prime_field": 1000003,
+      "row_permutation_lift_exists_for_all_generators_flag": 0,
+      "row_sign_lift_exists_for_all_generators_flag": 0,
+      "signed_preserving_generator_count": 0,
+      "support_binding_row_action_obstructed_flag": 1,
+      "support_pattern_lift_exists_for_all_generators_flag": 0,
+      "support_preserving_generator_count": 0,
+      "support_row_count": 56,
+      "total_exact_active_row_intersection_count": 21,
+      "total_exact_row_intersection_count": 120,
+      "total_missing_exact_row_count": 48,
+      "total_missing_support_row_count": 48,
+      "total_support_active_row_intersection_count": 21,
+      "total_support_row_intersection_count": 120
+    }
+  }
+}

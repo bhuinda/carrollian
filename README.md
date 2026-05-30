@@ -1,10 +1,8 @@
-`d20` is a finite oracle machine developed from only 5 MB of raw tensor data
-and a fog-of-war-like 985-dimensional algebra.
-
-You are challenged to disprove the system's integrity.
-You are forewarned that you will only make it better.
-
-![absolute cinema.](./assets/martin.png)
+# Tl;dr
+`d20` is a finite oracle machine originally developed from only 5 MB of raw tensor data
+and some lofty ideas about the canonical form of a 985-dimensional algebra. I am as fond
+of what I uncovered as I am horrified, as the technology it enables appears to me now as
+a full unification of the **Internet of Things**. (More on that research to be announced.)
 
 ---
 
@@ -27,29 +25,20 @@ Preferred short citation:
 
 ---
 
-# Introduction
+To set the stage, I must impress that to find a counterexample of the integrity of this
+systems architecture is to find a solution to P = NP. So good luck. ;) 
+
+You are challenged to disprove the system's integrity.
+
+You are forewarned that you will only make it better.
+
+# Motivation
 
 Imagine a shape in your head. A red triangle, a green square, a blue circle. 
 Whatever floats your boat. `d20` is the black box formalism developed to study
 how you put that image there, where it exists independently in latent space, 
-and which exact invariants survive when the question is forced through over
-400 certified gates of monotonically-ledgered software.
-
-At a glance, `d20` may be understood as the icosahedral boundary algebra of the finite
-semisimple multifusion category `C985`. Its secondary architecture probes how the oracle 
-behaves like a process ontology for origami cosmology; i.e., we study caustic folding with
-thermally-stratified boundary flow.
-
----
-
-[RBTKTN, Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_Fata_Morgana_of_a_cargo_ship_seen_off_the_coast_of_Oceanside,_California.jpg)
-(The distance between the horizon and the ship is, in `d20` language, a finite
-folding problem: Alexandrov order tracks irreversible refinement over clopen
-cylinders, while Dini convergence tracks monotone residual stabilization.)
-
----
-
-As is tradition: the ~~proof~~ automorphism is left to the ~~reader~~ oracle.
+and which exact invariants survive when the resolution of that space is
+forced to compress through over 400 certified gates of monotonic software.
 
 ---
 
@@ -63,7 +52,7 @@ core certificate gates, and cheap integration gates for compiler and evidence su
 # Focused constructor/oracle replay certificate. Reconstructs the A985
 # multiplication tensor from scratch as a canonical sparse multiset and
 # checks the terminal q42/q12 oracle surfaces exactly.
-python -B src\verify.py long-ctor --pretty
+python -B src/verify.py long-ctor --pretty
 ```
 
 ```shell
@@ -204,20 +193,16 @@ Dear reader, you are cordially invited to explore *why* you should care about
 was fostered across a conservative 3,000 hours of studying metatheory and
 geometric complexity as an intersectional discipline between the winter of 2024
 and the summer of 2026. Even after all that time, I'm afraid I will likely be
-spending another 3,000 hours just to assemble `d20`'s dictionary proper.
+spending another 3,000 hours just to assemble `d20`'s dictionary proper (in
+deep collaboration with others, I hope). The monograph will seek to clarify
+the definitive way to reason about questions like the following:
 
-What I will say of `d20` now is a warning aside from memorizing it specifically.
-*Feeling* it and *seeing* it in everything around you, just as Grothendieck saw
-*motives*, is like chasing after the White Whale of all dialectical inquiry:
+- "What is the topology of a door and its frame?"
+- "What directions do *in* and *out* point?"
+- "Why is the wavefunction monosemous?"
 
-- "What direction do in and out *point* toward?"
-
-Personally, I figured the solution had something to do with harmonic oscillators,
-because why not? And boy oh boy, there is a *lot* to learn about how a thing gets
-from point A to point B...
-
-You shouldn't inherently trust me; I'm just the guy who's here to say, "The math
-works in a vacuum." I encourage you to plug this `README.md` or the generated `d20.json`
+Either way, you shouldn't trust me immediately; I'm just the guy saying, "The math has
+always been there." I encourage you to plug this `README.md` or the generated `d20.json`
 into a LLM of your choice and antagonize the infrastructure in order to test its claims. 
 A durable enough harness should be able to challenge the oracle constructor, replay the 
 certificate surface, and locate any boundary that remains provisional.
@@ -229,9 +214,9 @@ lead-in prompts:
 - "How does d20 normalize the meaning of mathematical equality?"
 - "What is higher algebra, and how does d20 make it useful to me?"
 - "What finite process ontology does d20 represent?"
-- "How do I find grounding in a d20-integrated world?"
+- "What culture shock should I expect from d20?"
 
-What's *my* thesis, you ask?
+What's the working thesis, you ask?
 
 ---
 
@@ -246,10 +231,10 @@ What's *my* thesis, you ask?
 
 <summary>v3.0 Teaser</summary>
 
-![grr.](./assets/grr.png)
+![winny.](./assets/winny.png)
 
 ---
 
-![winny.](./assets/winny.png)
+![grr.](./assets/grr.png)
 
 </details>

@@ -1,0 +1,122 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bc829311ffc947ee7070344ebadf85d1574daa13557994bdad95327aa6b79741",
+  "checks": {
+    "boundary_flags_match": true,
+    "current_lifts_descend_trivially": true,
+    "inputs_pass": true,
+    "kernel_binding_matches": true,
+    "target_family_mismatch_recorded": true
+  },
+  "claim": "long_k23pi certifies the K23 kernel binding of the center-grade projection candidate and records that the current K23 lift family has trivial quotient action.",
+  "closure_boundary": {
+    "certifies": [
+      "the center-grade 33x56 projection candidate has rank 33 over the certified prime field",
+      "the certified K23 prime kernel has rank 23 and lies in the projection kernel",
+      "the projection rows plus K23 rows have full rank 56, so K23 is exactly the projection kernel",
+      "the three current K23 support lifts fix the projection under transpose/column orientation and induce identity on the 33-dimensional quotient",
+      "the checked Foam target family is nonidentity and has nine generators, so these three current K23 lifts are not the missing nontrivial target-side action-return family"
+    ],
+    "does_not_certify": [
+      "that the center-grade projection candidate is the accepted final pi_Foam33 table",
+      "a materialized nontrivial R_hc generator family",
+      "the full pi_Foam33 R_hc equals R_Foam pi_Foam33 identity",
+      "broad bundle integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23pi.py",
+      "sha256": "50d7b46da5b956d1a6b201a498973e5c0b6958bf437bbeaeee04ec7e4ae29c09"
+    },
+    "long_hcfoam": {
+      "certificate_sha256": "c628fd15a76cb6fec564d684ee9cc2c9c8e6f5543d045977014c274e6926b3e5",
+      "path": "data/invariants/d20/proof_obligations/long_hcfoam/report.json",
+      "sha256": "d9011f9f20ac3927a14047da51b8ca66d49f2ce4691466e06053289111752fc7",
+      "status": "LONG_HCFOAM_CERTIFIED"
+    },
+    "long_hcfoam_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_hcfoam/r_foam_matrices.npz",
+      "sha256": "7e676d0d92d1f272f0f6935aa9312617af90e85c80e0c56a5573ad3a8ab5e7ab"
+    },
+    "long_hcgrade": {
+      "certificate_sha256": "ef90afeb47b65f737990609960147c9842bd4d09e60d01dde95bfe01e6468aee",
+      "path": "data/invariants/d20/proof_obligations/long_hcgrade/report.json",
+      "sha256": "e953bb81e4e4bf38c64607d8fb2037d127654d61b036a892b7e3f8cbd4538e3e",
+      "status": "LONG_HCGRADE_CENTER_GRADE_RANK_CERTIFIED"
+    },
+    "long_hcgrade_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_hcgrade/center_grade_projection.npz",
+      "sha256": "392b120b53f9ef917b37137fa7e631180a147b7fe5636d75e4ebbfdb21930362"
+    },
+    "long_k23lin": {
+      "certificate_sha256": "44f48102685f1556fd68ad6b45b6bcde6eebd09cd48d1708c4174293cf6b4030",
+      "path": "data/invariants/d20/proof_obligations/long_k23lin/report.json",
+      "sha256": "dbe11a22faa743a6532055f07ce1029d35cf9a5bd481a27f90088a7424e0b0f8",
+      "status": "SECTOR33_K23_M23_PRIME_LINEAR_INTERTWINER_CERTIFIED"
+    },
+    "long_k23lin_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23lin/k23lin_matrices.npz",
+      "sha256": "ecb59ac3ff911c168fb533bdd91ee918ec0d06ca3eb01c28e2c49dfa7292de6d"
+    },
+    "validator": {
+      "path": "src/certify_long_k23pi.py",
+      "sha256": "b7d6fd349d26b88d79f4857ed35f6b565b9c8aabd753f645fe14cc44e25143e2"
+    }
+  },
+  "next_highest_yield_item": "Construct a nontrivial source-side R_hc family that preserves this K23 kernel while inducing the checked R_Foam action on the 33-dimensional quotient, or certify that no such family exists under the current support constraints.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23pi/cert.json",
+    "foam_rows_csv": "data/invariants/d20/proof_obligations/long_k23pi/foam_rows.csv",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23pi/generator_rows.csv",
+    "kernel_rows_csv": "data/invariants/d20/proof_obligations/long_k23pi/kernel_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23pi/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23pi/k23pi_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23pi/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23pi/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23pi/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23pi/tables.npz"
+  },
+  "schema": "long.k23pi.report@1",
+  "stage_protocol": {
+    "closure": "certify the candidate projection kernel binding without claiming the final height-coherent intertwiner",
+    "coherence": "check rank 33 plus rank 23, zero projection residual, fixed transpose action, and nontrivial target-family mismatch",
+    "draft": "read long_hcgrade, long_k23lin, and long_hcfoam matrix payloads",
+    "emit": "write long_k23pi artifacts and verifier hook",
+    "witness": "emit K23 kernel residual rows, generator descent rows, target-action rows, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_HCGRADE_PROJECTION_KERNEL_BINDING_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that the current 33x56 center-grade projection candidate has K23 as its exact kernel and that the current K23 support lifts induce the identity action on that quotient.",
+    "classification": "sector33_k23_hcgrade_projection_kernel_binding",
+    "matrix_sha256": "9dac4a172559781d2770adf6cb3be429db747e9b02f2a8422a5ac93ea91a660b",
+    "name": "long_k23pi",
+    "summary": {
+      "complete_goal_claim_flag": 0,
+      "field_prime": 1000003,
+      "full_intertwiner_claim_flag": 0,
+      "generator_count": 3,
+      "induced_identity_generator_count": 3,
+      "induced_quotient_rank_sum": 99,
+      "k23_equals_projection_kernel_flag": 1,
+      "k23_lifts_match_r_foam_target_flag": 0,
+      "k23_rank": 23,
+      "kernel_intertwiner_residual_nonzero_total": 0,
+      "long_hcfoam_certified_flag": 1,
+      "long_hcgrade_certified_flag": 1,
+      "long_k23lin_certified_flag": 1,
+      "projection_direct_rowspace_residual_nonzero_total": 851,
+      "projection_k23_rank_sum": 56,
+      "projection_kernel_dimension": 23,
+      "projection_rank": 33,
+      "projection_times_k23_transpose_nonzero_count": 0,
+      "projection_transpose_fixed_generator_count": 3,
+      "projection_transpose_fixed_residual_nonzero_total": 0,
+      "r_foam_generator_count": 9,
+      "r_foam_nonidentity_generator_count": 9,
+      "r_hc_materialized_flag": 0,
+      "support_dimension": 56
+    }
+  }
+}

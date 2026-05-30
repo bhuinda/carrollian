@@ -1,0 +1,189 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "1f0c004ee944d6df362ee40469d1642f9e6d91ab5c48e73ae4dbbd45f72327ff",
+  "checks": {
+    "automorphism_upper_bound_is_sharp": true,
+    "generators_preserve_design": true,
+    "inputs_pass": true,
+    "m23_type_action_boundary": true,
+    "punctured_design_profile_matches": true,
+    "schreier_order_matches_m23": true
+  },
+  "claim": "long_k23stab certifies the M23-type stabilizer action of the punctured K23 selector design.",
+  "closure_boundary": {
+    "certifies": [
+      "the Euler-deleted selector weight-7 words form a 253-block S(4,7,23) design",
+      "three explicit coordinate permutations preserve all 253 design blocks",
+      "the generated permutation group has Schreier orbit product 10200960",
+      "the pointwise stabilizer of the ordered base 4-tuple has exactly 48 automorphisms by finite search",
+      "the resulting automorphism upper bound equals the generated group order, so the full design automorphism group is certified at M23 order"
+    ],
+    "does_not_certify": [
+      "that the M23 action lifts to the signed 56-by-24 K23 support map",
+      "a linear representation of M23 on the prime-field K23 lift",
+      "intrinsic recovery of the selector from the naive binary shadow",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23stab.py",
+      "sha256": "b1cca5830bf3c528f6cc0406e8a886f81173ae57b9bf9758beac7bdd292ef9d0"
+    },
+    "long_k23sel": {
+      "certificate_sha256": "6388247b46dabfc01780c5967b97d1eda0171753bd2bb8b62118eff0c01524ee",
+      "path": "data/invariants/d20/proof_obligations/long_k23sel/report.json",
+      "sha256": "3b3e73faf730599bc4dcc0b9bf17597a8aa24ba991ebd27d777024bf6e22357d",
+      "status": "SECTOR33_K23_CANONICAL_FRAME_GOLAY_SELECTOR_CERTIFIED"
+    },
+    "long_k23sel_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23sel/k23sel_matrices.npz",
+      "sha256": "e7233e85da4767d0549338a72c9e660c79de7f1d970f51b377749994e5e354be"
+    },
+    "validator": {
+      "path": "src/certify_long_k23stab.py",
+      "sha256": "716dba514f96bf3b8e12acf1d62906ca07b855ec3ad0cbda8a4c46496600d4ef"
+    }
+  },
+  "next_highest_yield_item": "Lift the certified M23-order punctured selector action through the signed K23 support map and test which generators preserve the 56-support binding.",
+  "outputs": {
+    "base_stabilizer_rows_csv": "data/invariants/d20/proof_obligations/long_k23stab/base_stabilizer_rows.csv",
+    "block_rows_csv": "data/invariants/d20/proof_obligations/long_k23stab/block_rows.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_k23stab/cert.json",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23stab/generator_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23stab/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23stab/k23stab_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23stab/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23stab/report.json",
+    "schreier_rows_csv": "data/invariants/d20/proof_obligations/long_k23stab/schreier_rows.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_k23stab/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23stab/tables.npz"
+  },
+  "schema": "long.k23stab.report@1",
+  "stage_protocol": {
+    "closure": "certify the full Euler-deleted selector design automorphism group while keeping the lifted K23 support action open",
+    "coherence": "check S(4,7,23) block counts, generator block preservation, generated group order, and sharp automorphism upper bound",
+    "draft": "read long_k23sel and its punctured selector word masks",
+    "emit": "write long_k23stab artifacts and verifier hook",
+    "witness": "emit weight-7 design blocks, generator permutations, Schreier orbit levels, base-4 pointwise stabilizer rows, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_PUNCTURED_SELECTOR_M23_STABILIZER_CERTIFIED",
+  "witness": {
+    "base4_search_node_count": 832,
+    "boundary": "This certifies the full automorphism group of the Euler-deleted weight-7 selector design as the generated M23-order action; the lifted action on the signed K23 support map remains open.",
+    "classification": "sector33_k23_punctured_selector_m23_stabilizer",
+    "generator_permutations": [
+      [
+        1,
+        0,
+        2,
+        3,
+        4,
+        17,
+        13,
+        12,
+        20,
+        9,
+        10,
+        11,
+        7,
+        6,
+        14,
+        21,
+        22,
+        5,
+        19,
+        18,
+        8,
+        15,
+        16
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        0,
+        11,
+        19,
+        20,
+        15,
+        10,
+        6,
+        17,
+        7,
+        8,
+        21,
+        16,
+        12,
+        5,
+        13,
+        14,
+        9,
+        22,
+        18
+      ],
+      [
+        0,
+        2,
+        4,
+        6,
+        1,
+        14,
+        18,
+        5,
+        17,
+        21,
+        8,
+        13,
+        12,
+        22,
+        7,
+        9,
+        16,
+        10,
+        3,
+        19,
+        20,
+        15,
+        11
+      ]
+    ],
+    "matrix_sha256": "b7ca55d387299518bc4ce5e923ca0ff7191d7e5013e7ad424c312a2d905e0261",
+    "name": "long_k23stab",
+    "schreier_orbit_sizes": [
+      23,
+      22,
+      21,
+      20,
+      16,
+      3
+    ],
+    "summary": {
+      "automorphism_upper_bound": 10200960,
+      "base4_pointwise_stabilizer_count": 48,
+      "base4_pointwise_stabilizer_expected_count": 48,
+      "base_ordered_4_tuple_count": 212520,
+      "block_count": 253,
+      "block_size": 7,
+      "complete_goal_claim_flag": 0,
+      "expected_m23_order": 10200960,
+      "four_subset_count": 8855,
+      "four_subset_expected_count": 8855,
+      "full_design_automorphism_group_certified_flag": 1,
+      "generated_group_order": 10200960,
+      "generator_count": 3,
+      "generator_preserve_count": 3,
+      "group_order_matches_m23_flag": 1,
+      "long_k23sel_certified_flag": 1,
+      "m23_type_action_certified_flag": 1,
+      "point_count": 23,
+      "schreier_level_count": 6,
+      "schreier_terminal_stabilizer_generator_count": 0,
+      "support_action_on_k23_proven_flag": 0,
+      "unique_block_per_4_subset_flag": 1,
+      "upper_bound_matches_generated_order_flag": 1,
+      "weight7_block_count": 253
+    }
+  }
+}

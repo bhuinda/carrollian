@@ -1,0 +1,118 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "990d6950cca66455aec0cc000d8ab352157f6baca3d0029b8ae456a05b499ac0",
+  "checks": {
+    "boundary_flags_match": true,
+    "dimension_profile_matches": true,
+    "inputs_pass": true,
+    "target_action_profile_matches": true,
+    "unit_profile_matches": true
+  },
+  "claim": "long_k23unit certifies the closure60 unit-projection obstruction to a quotient-preserving product action.",
+  "closure_boundary": {
+    "certifies": [
+      "the closure60 product has a unique two-sided unit supported on relation rows 163 and 893",
+      "the current 33-row projection sends that unit to a nonzero 4-support quotient vector",
+      "all nine checked quotient generators are full-rank target maps",
+      "each checked quotient generator moves the projected unit",
+      "there is no invertible product action on closure60 satisfying the current quotient intertwining with the fixed old projection"
+    ],
+    "does_not_certify": [
+      "nonexistence of non-invertible product endomorphisms",
+      "nonexistence under a changed old projection",
+      "nonexistence under a nonunital product-action convention",
+      "a final operator carrier",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23unit.py",
+      "sha256": "b156f544189c48fa2b606e7144a9d793bf5284bc028d012e1ddd5e49099fd819"
+    },
+    "long_k23cl": {
+      "certificate_sha256": "ce640686b6e3d1640463eddc086e0c7667e5ccb346b916e6c292d5aad2c49bac",
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/report.json",
+      "sha256": "ef3e3310bace2fe2c1d16120f2f305e9b5af7b3a73bac5a4c8afda85e6a4a5cb",
+      "status": "SECTOR33_K23_MULTIPLICATION_CLOSURE60_CERTIFIED"
+    },
+    "long_k23cl_closure_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/closure_rows.csv",
+      "sha256": "c5c755b78752f6b4cc6ada73d00c0edb895fd21eca7540c330b9ec62e8063c6a"
+    },
+    "long_k23cl_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/k23cl_matrices.npz",
+      "sha256": "066a9a9ab4c252d0f1f6352af6438e1f4dbe024f1ac33e045a9ef5b2d939a865"
+    },
+    "long_k23fix": {
+      "certificate_sha256": "6b9a23e354313c905517e659266a1d4cd8ef16167b5818c5b073af961a0cb941",
+      "path": "data/invariants/d20/proof_obligations/long_k23fix/report.json",
+      "sha256": "cbad2604084acbdcf8ce902b9b8f8177d319645a54f5d9ed40feb602527ea27d",
+      "status": "SECTOR33_K23_FIXED_OLD_MIXED_EXTENSION_OBSTRUCTED"
+    },
+    "long_k23rh": {
+      "certificate_sha256": "d26ee47a3bacd2cf2001f28fdab181b705c17bd9d26e57212124ff6ef28360ab",
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/report.json",
+      "sha256": "85d246a173dd255d45adcecb15170d7635cb87788db31fd98f79f28d12e4b69b",
+      "status": "SECTOR33_K23_RHC_SOURCE_LIFT_CERTIFIED"
+    },
+    "long_k23rh_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+      "sha256": "af3f182f7a270eb2f7c1dd137449a4ade01d5231a1676be8f1db81370fd1ea8a"
+    },
+    "validator": {
+      "path": "src/certify_long_k23unit.py",
+      "sha256": "c5f603e0160730d0d5ab9f09c716ce6a7eca00d1a634e3211cba71b21e086539"
+    }
+  },
+  "next_highest_yield_item": "Decide whether to demote the current quotient-action target or replace the projection/target pairing so the projected unit is fixed before attempting another 60-row product action.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23unit/cert.json",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23unit/generator_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23unit/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23unit/k23unit_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23unit/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23unit/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23unit/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23unit/tables.npz",
+    "unit_rows_csv": "data/invariants/d20/proof_obligations/long_k23unit/unit_rows.csv"
+  },
+  "schema": "long.k23unit.report@1",
+  "stage_protocol": {
+    "closure": "obstruct invertible product actions satisfying the current quotient intertwining",
+    "coherence": "check unit uniqueness, two-sided unit residuals, projection rank, target ranks, and moved projected-unit counts",
+    "draft": "read corrected long_k23cl, long_k23fix, and the R_hc projection/target matrices",
+    "emit": "write long_k23unit artifacts and verifier hook",
+    "witness": "emit the unique unit support and projected-unit residual rows for all target generators"
+  },
+  "status": "SECTOR33_K23_CLOSURE60_UNIT_PROJECTION_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that the closed 60-row algebra has a unique unit whose projected class is moved by every checked quotient generator; therefore no invertible product action can satisfy the current quotient intertwining.",
+    "classification": "sector33_k23_closure60_unit_projection_obstruction",
+    "matrix_sha256": "9ad762823f926f37da152350ff08817c1eef86b438814ec1fde15dd321ac1645",
+    "name": "long_k23unit",
+    "summary": {
+      "automorphism_obstructed_generator_count": 9,
+      "closure60_quotient_automorphism_obstructed_flag": 1,
+      "closure_dimension": 60,
+      "complete_goal_claim_flag": 0,
+      "generator_count": 9,
+      "long_k23cl_certified_flag": 1,
+      "long_k23fix_certified_flag": 1,
+      "long_k23rh_certified_flag": 1,
+      "projected_unit_support_count": 4,
+      "projection_rank": 33,
+      "r_foam_rank_sum": 297,
+      "target_dimension": 33,
+      "unit_free_dimension": 0,
+      "unit_left_residual_nonzero_count": 0,
+      "unit_projection_fixed_generator_count": 0,
+      "unit_projection_moved_generator_count": 9,
+      "unit_right_residual_nonzero_count": 0,
+      "unit_support_count": 2,
+      "unit_system_inconsistent_count": 0,
+      "unit_system_rank": 60
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bdb2077e4668e91059d6daaaa9c6c825177075595b4f89abceb96d16a589a04b",
+  "checks": {
+    "boundary_flags_match": true,
+    "inputs_pass": true,
+    "projected_product_obstruction_matches": true,
+    "raw_support_product_leak_matches": true,
+    "raw_support_product_profile_matches": true
+  },
+  "claim": "long_k23mul certifies that the materialized R_hc lifts fail the current projected 56-support multiplication surface.",
+  "closure_boundary": {
+    "certifies": [
+      "raw products of the 56 support relations have 6,272 nonzero product rows",
+      "68 raw product rows leak outside the 56 support relation set",
+      "60 nonzero support-relation pairs have at least one outside-support product row",
+      "the projected inside-support product has 6,204 nonzero tensor entries",
+      "none of the nine materialized R_hc lifts preserves that projected product"
+    ],
+    "does_not_certify": [
+      "nonexistence of a different R_hc-compatible lift preserving another product surface",
+      "nonexistence of a corrected product on a larger closure containing the 68 leaked rows",
+      "full raw A985 multiplication preservation or failure for all possible completions",
+      "broad bundle integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23mul.py",
+      "sha256": "59a23def5d29d8605279dde42bd08e9d8f559dfa4e9adacb95f6f297ae017a1b"
+    },
+    "long_hcsupp": {
+      "certificate_sha256": "f4a880344917e150defdfccb6d71aab21400e7ac9c63e129c02da755ff59f0f2",
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/report.json",
+      "sha256": "d5618b0e0159b88ec43f7ca6e75070a9e4e3508d7bd4e2c0a152140e775898c7",
+      "status": "LONG_HCSUPP_PROFILE_CERTIFIED"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23op": {
+      "certificate_sha256": "42fa00ea4e9f4a7e180d6e9586e76653d7aa53918ca11c9e24f21e5f2afdcf7f",
+      "path": "data/invariants/d20/proof_obligations/long_k23op/report.json",
+      "sha256": "873da0601a7704e4b1988224a5e6a498e643363de864c7b0f84d72a4c695e7d9",
+      "status": "SECTOR33_K23_RHC_DENSE_SUPPORT_OBSTRUCTION_CERTIFIED"
+    },
+    "long_k23rh_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+      "sha256": "af3f182f7a270eb2f7c1dd137449a4ade01d5231a1676be8f1db81370fd1ea8a"
+    },
+    "raw_tensor": {
+      "path": "data/raw/Halloween.npz",
+      "sha256": "5d638460422d790ec2e959795d8ca8e7f7beb012879fcb87d7c5d10a1702152d"
+    },
+    "validator": {
+      "path": "src/certify_long_k23mul.py",
+      "sha256": "52cf9cabccba8a77a01ce0b0f3e96bb002c6f3a35feebe02f86fdddf7c83944c"
+    }
+  },
+  "next_highest_yield_item": "Close the 56-support multiplication leak by adjoining the leaked target relations, then retest closure and R_hc compatibility on the enlarged support surface.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23mul/cert.json",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23mul/generator_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23mul/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23mul/k23mul_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23mul/obs.csv",
+    "pair_rows_csv": "data/invariants/d20/proof_obligations/long_k23mul/pair_rows.csv",
+    "product_rows_csv": "data/invariants/d20/proof_obligations/long_k23mul/product_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23mul/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23mul/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23mul/tables.npz"
+  },
+  "schema": "long.k23mul.report@1",
+  "stage_protocol": {
+    "closure": "certify the current projected-product obstruction without claiming nonexistence of all possible product-compatible lifts",
+    "coherence": "check support closure counts, product leakage, projected tensor size, and R_hc projected-product residuals",
+    "draft": "read long_k23op, the 56 support rows, R_hc lift matrices, and the raw multiplication tensor",
+    "emit": "write long_k23mul artifacts and verifier hook",
+    "witness": "emit raw support product rows, pair closure rows, generator residual rows, observables, and projected product matrices"
+  },
+  "status": "SECTOR33_K23_RHC_PROJECTED_PRODUCT_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the raw 56-support multiplication leak and shows that the materialized R_hc lifts do not preserve the projected 56-support product.",
+    "classification": "sector33_k23_rhc_projected_product_obstruction",
+    "matrix_sha256": "74980542cf3d6a8734371ab006efdec59eacfdef7ea45927907c133e3e212c5d",
+    "name": "long_k23mul",
+    "summary": {
+      "closed_pair_count": 2020,
+      "complete_goal_claim_flag": 0,
+      "generator_count": 9,
+      "inside_support_product_coefficient_total": 11872,
+      "inside_support_product_row_count": 6204,
+      "leaking_pair_count": 60,
+      "long_hcsupp_certified_flag": 1,
+      "long_k23op_certified_flag": 1,
+      "nonzero_pair_count": 2080,
+      "outside_support_product_coefficient_total": 104,
+      "outside_support_product_row_count": 68,
+      "projected_product_obstruction_flag": 1,
+      "projected_product_preserving_generator_count": 0,
+      "projected_product_residual_nonzero_max": 127386,
+      "projected_product_residual_nonzero_min": 81629,
+      "projected_product_residual_nonzero_total": 936661,
+      "projected_product_tensor_nonzero_count": 6204,
+      "raw_support_product_coefficient_total": 11976,
+      "raw_support_product_row_count": 6272,
+      "support_pair_count": 3136,
+      "support_product_closed_flag": 0,
+      "support_row_count": 56,
+      "zero_pair_count": 1056
+    }
+  }
+}

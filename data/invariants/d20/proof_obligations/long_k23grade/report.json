@@ -1,0 +1,110 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d303c401712afd37a5f15a0aba532593791a309cb9d33ca116b7045a40b34037",
+  "checks": {
+    "boundary_flags_match": true,
+    "inputs_pass": true,
+    "leak_profile_matches": true,
+    "preservation_counts_match": true,
+    "shape_matches": true
+  },
+  "claim": "long_k23grade certifies the sector33 support-grading profile of the prime-linear K23 M23 intertwiners.",
+  "closure_boundary": {
+    "certifies": [
+      "one of the three certified support intertwiners preserves the coarse block_i split",
+      "the full generator set does not preserve the coarse block_i split",
+      "the full generator set does not preserve rep4, sign, absolute coefficient, or combined block/rep4 support grading",
+      "the exact leakage counts for each grading family are emitted as finite witnesses"
+    ],
+    "does_not_certify": [
+      "preservation or obstruction for the actual height-coherent projection layer",
+      "nonexistence of a different complement choice with better grading behavior",
+      "multiplication-structure preservation",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23grade.py",
+      "sha256": "8d3e526fc2a4e1ec0eb641c1171d206445b87d8e9975e19e7e2258682401f58f"
+    },
+    "long_hcsupp": {
+      "certificate_sha256": "f4a880344917e150defdfccb6d71aab21400e7ac9c63e129c02da755ff59f0f2",
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/report.json",
+      "sha256": "d5618b0e0159b88ec43f7ca6e75070a9e4e3508d7bd4e2c0a152140e775898c7",
+      "status": "LONG_HCSUPP_PROFILE_CERTIFIED"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23lin": {
+      "certificate_sha256": "44f48102685f1556fd68ad6b45b6bcde6eebd09cd48d1708c4174293cf6b4030",
+      "path": "data/invariants/d20/proof_obligations/long_k23lin/report.json",
+      "sha256": "dbe11a22faa743a6532055f07ce1029d35cf9a5bd481a27f90088a7424e0b0f8",
+      "status": "SECTOR33_K23_M23_PRIME_LINEAR_INTERTWINER_CERTIFIED"
+    },
+    "long_k23lin_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23lin/k23lin_matrices.npz",
+      "sha256": "ecb59ac3ff911c168fb533bdd91ee918ec0d06ca3eb01c28e2c49dfa7292de6d"
+    },
+    "validator": {
+      "path": "src/certify_long_k23grade.py",
+      "sha256": "2ce4a2d658c8cd13b89f73b5fd83dafbe4153dc89178e1367ee30c2b3bda7fc4"
+    }
+  },
+  "next_highest_yield_item": "Test the certified prime-linear K23 intertwiners against the height-coherent projection inputs, especially pi_Foam33/R_hc once a materialized projection table is exposed.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23grade/cert.json",
+    "label_rows_csv": "data/invariants/d20/proof_obligations/long_k23grade/label_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23grade/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23grade/k23grade_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23grade/obs.csv",
+    "profile_rows_csv": "data/invariants/d20/proof_obligations/long_k23grade/profile_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23grade/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23grade/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23grade/tables.npz"
+  },
+  "schema": "long.k23grade.report@1",
+  "stage_protocol": {
+    "closure": "certify the grading profile while keeping height-projection preservation open",
+    "coherence": "check preservation counts and leakage counts for block_i, rep4, sign, absolute coefficient, and block/rep4 gradings",
+    "draft": "read long_k23lin support intertwiners and long_hcsupp support rows",
+    "emit": "write long_k23grade artifacts and verifier hook",
+    "witness": "emit support-label rows, generator-by-family leak profiles, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_M23_LINEAR_LIFT_SUPPORT_GRADING_PROFILE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the support-grading preservation profile of the prime-linear M23 lifts: coarse block preservation is partial, and the finer certified support gradings are not preserved by the full generator set.",
+    "classification": "sector33_k23_m23_linear_lift_support_grading_profile",
+    "matrix_sha256": "f2a378bd1c5fe5b388bf890928ab9407f8ab79a2423d86e7237405c1cc8a8684",
+    "name": "long_k23grade",
+    "summary": {
+      "abs_coeff_preserving_generator_count": 0,
+      "abs_coeff_total_leak_nonzero_count": 118,
+      "block_i_preserving_generator_count": 1,
+      "block_i_total_leak_nonzero_count": 8,
+      "block_rep4_preserving_generator_count": 0,
+      "block_rep4_total_leak_nonzero_count": 337,
+      "coarse_block_partial_preservation_flag": 1,
+      "complete_goal_claim_flag": 0,
+      "family_count": 5,
+      "full_generator_set_preserves_abs_coeff_flag": 0,
+      "full_generator_set_preserves_block_i_flag": 0,
+      "full_generator_set_preserves_block_rep4_flag": 0,
+      "full_generator_set_preserves_rep4_flag": 0,
+      "full_generator_set_preserves_sign_flag": 0,
+      "generator_count": 3,
+      "height_projection_preservation_proven_flag": 0,
+      "label_row_count": 20,
+      "long_hcsupp_certified_flag": 1,
+      "long_k23lin_certified_flag": 1,
+      "profile_row_count": 15,
+      "rep4_preserving_generator_count": 0,
+      "rep4_total_leak_nonzero_count": 329,
+      "sign_preserving_generator_count": 0,
+      "sign_total_leak_nonzero_count": 263,
+      "support_row_count": 56
+    }
+  }
+}

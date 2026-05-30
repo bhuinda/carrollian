@@ -313,6 +313,31 @@ the practical verification modes without hiding file writes behind a default:
 * long-k23oct: validate the sector33 K23 typed W24 octad-placement certificate;
 * long-k23row: validate the selected sector33 K23/W24 rowspace-subcode certificate;
 * long-k23max: validate the current delete/contract K23/W24 max-rank-one certificate;
+* long-k23slice: validate the sector33 K23 rep4=6 support-slice W24 obstruction certificate;
+* long-k23bin: validate the sector33 K23 emitted-basis binary rowspace profile;
+* long-k23q: validate the sector33 K23 pair-collapse 24-quotient obstruction certificate;
+* long-k23merge: validate the sector33 K23 active-merge W24 rank-2 subcode certificate;
+* long-rm13: validate the RM(1,3) source-to-K23 W24 coordinate-seam certificate;
+* long-rm13map: validate the RM(1,3) source-to-W24 coordinate-map certificate;
+* long-k23src: validate the sector33 K23 source-side rank-12 W24 extension certificate;
+* long-k23bind: validate the sector33 K23 binary 56-support binding certificate;
+* long-k23lift: validate the sector33 K23 signed prime-field support-lift certificate;
+* long-k23syz: validate the sector33 K23 canonical syzygy-frame binding certificate;
+* long-k23sel: validate the sector33 K23 canonical-frame binary selector certificate;
+* long-k23stab: validate the sector33 K23 punctured selector M23 stabilizer certificate;
+* long-k23act: validate the sector33 K23 M23 support-binding row-action obstruction;
+* long-k23lin: validate the sector33 K23 M23 prime-linear intertwiner certificate;
+* long-k23grade: validate the sector33 K23 M23 linear-lift support-grading profile;
+* long-k23pi: validate the sector33 K23 center-grade projection-kernel binding;
+* long-k23rh: validate the sector33 K23 source-side R_hc lift certificate;
+* long-k23op: validate the sector33 K23 R_hc dense support-obstruction certificate;
+* long-k23mul: validate the sector33 K23 R_hc projected-product obstruction;
+* long-k23cl: validate the sector33 K23 60-relation multiplication closure;
+* long-k23ext: validate the sector33 K23 60-relation extension seam;
+* long-k23fix: validate the sector33 K23 fixed-old mixed-extension obstruction;
+* long-k23unit: validate the sector33 K23 closure60 unit-projection obstruction;
+* long-k23tgt: validate the sector33 K23 target unit-aperture certificate;
+* long-k23proj: validate the sector33 K23 repaired-projection product obstruction;
 * long-psec: validate the focused A985 perennial-sector address seam certificate;
 * long-binc: validate the focused boundary/Loop/packet incidence seam certificate;
 * long-krein: validate the provisional Krein denominator source-boundary report;
@@ -6755,6 +6780,431 @@ def long_k23max(
     return finish(result, pretty)
 
 
+def long_k23slice(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23slice import validate_long_k23slice
+
+    try:
+        result = validate_long_k23slice()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23slice.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23bin(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23bin import validate_long_k23bin
+
+    try:
+        result = validate_long_k23bin()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23bin.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23q(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23q import validate_long_k23q
+
+    try:
+        result = validate_long_k23q()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23q.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23merge(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23merge import validate_long_k23merge
+
+    try:
+        result = validate_long_k23merge()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23merge.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_rm13(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_rm13 import validate_long_rm13
+
+    try:
+        result = validate_long_rm13()
+    except Exception as exc:
+        result = {
+            "schema": "long.rm13.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_rm13map(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_rm13map import validate_long_rm13map
+
+    try:
+        result = validate_long_rm13map()
+    except Exception as exc:
+        result = {
+            "schema": "long.rm13map.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23src(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23src import validate_long_k23src
+
+    try:
+        result = validate_long_k23src()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23src.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23bind(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23bind import validate_long_k23bind
+
+    try:
+        result = validate_long_k23bind()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23bind.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23lift(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23lift import validate_long_k23lift
+
+    try:
+        result = validate_long_k23lift()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23lift.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23syz(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23syz import validate_long_k23syz
+
+    try:
+        result = validate_long_k23syz()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23syz.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23sel(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23sel import validate_long_k23sel
+
+    try:
+        result = validate_long_k23sel()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23sel.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23stab(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23stab import validate_long_k23stab
+
+    try:
+        result = validate_long_k23stab()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23stab.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23act(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23act import validate_long_k23act
+
+    try:
+        result = validate_long_k23act()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23act.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23lin(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23lin import validate_long_k23lin
+
+    try:
+        result = validate_long_k23lin()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23lin.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23grade(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23grade import validate_long_k23grade
+
+    try:
+        result = validate_long_k23grade()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23grade.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23pi(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23pi import validate_long_k23pi
+
+    try:
+        result = validate_long_k23pi()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23pi.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23rh(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23rh import validate_long_k23rh
+
+    try:
+        result = validate_long_k23rh()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23rh.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23op(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23op import validate_long_k23op
+
+    try:
+        result = validate_long_k23op()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23op.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23mul(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23mul import validate_long_k23mul
+
+    try:
+        result = validate_long_k23mul()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23mul.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23cl(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23cl import validate_long_k23cl
+
+    try:
+        result = validate_long_k23cl()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23cl.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23ext(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23ext import validate_long_k23ext
+
+    try:
+        result = validate_long_k23ext()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23ext.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23fix(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23fix import validate_long_k23fix
+
+    try:
+        result = validate_long_k23fix()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23fix.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23unit(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23unit import validate_long_k23unit
+
+    try:
+        result = validate_long_k23unit()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23unit.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23tgt(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23tgt import validate_long_k23tgt
+
+    try:
+        result = validate_long_k23tgt()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23tgt.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23proj(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23proj import validate_long_k23proj
+
+    try:
+        result = validate_long_k23proj()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23proj.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def long_psec(
     *,
     pretty: bool,
@@ -7400,6 +7850,31 @@ def main() -> None:
         "long-k23oct",
         "long-k23row",
         "long-k23max",
+        "long-k23slice",
+        "long-k23bin",
+        "long-k23q",
+        "long-k23merge",
+        "long-rm13",
+        "long-rm13map",
+        "long-k23src",
+        "long-k23bind",
+        "long-k23lift",
+        "long-k23syz",
+        "long-k23sel",
+        "long-k23stab",
+        "long-k23act",
+        "long-k23lin",
+        "long-k23grade",
+        "long-k23pi",
+        "long-k23rh",
+        "long-k23op",
+        "long-k23mul",
+        "long-k23cl",
+        "long-k23ext",
+        "long-k23fix",
+        "long-k23unit",
+        "long-k23tgt",
+        "long-k23proj",
         "long-psec",
         "long-binc",
         "long-krein",
@@ -8178,6 +8653,56 @@ def main() -> None:
         raise SystemExit(long_k23row(pretty=args.pretty))
     if args.command == "long-k23max":
         raise SystemExit(long_k23max(pretty=args.pretty))
+    if args.command == "long-k23slice":
+        raise SystemExit(long_k23slice(pretty=args.pretty))
+    if args.command == "long-k23bin":
+        raise SystemExit(long_k23bin(pretty=args.pretty))
+    if args.command == "long-k23q":
+        raise SystemExit(long_k23q(pretty=args.pretty))
+    if args.command == "long-k23merge":
+        raise SystemExit(long_k23merge(pretty=args.pretty))
+    if args.command == "long-rm13":
+        raise SystemExit(long_rm13(pretty=args.pretty))
+    if args.command == "long-rm13map":
+        raise SystemExit(long_rm13map(pretty=args.pretty))
+    if args.command == "long-k23src":
+        raise SystemExit(long_k23src(pretty=args.pretty))
+    if args.command == "long-k23bind":
+        raise SystemExit(long_k23bind(pretty=args.pretty))
+    if args.command == "long-k23lift":
+        raise SystemExit(long_k23lift(pretty=args.pretty))
+    if args.command == "long-k23syz":
+        raise SystemExit(long_k23syz(pretty=args.pretty))
+    if args.command == "long-k23sel":
+        raise SystemExit(long_k23sel(pretty=args.pretty))
+    if args.command == "long-k23stab":
+        raise SystemExit(long_k23stab(pretty=args.pretty))
+    if args.command == "long-k23act":
+        raise SystemExit(long_k23act(pretty=args.pretty))
+    if args.command == "long-k23lin":
+        raise SystemExit(long_k23lin(pretty=args.pretty))
+    if args.command == "long-k23grade":
+        raise SystemExit(long_k23grade(pretty=args.pretty))
+    if args.command == "long-k23pi":
+        raise SystemExit(long_k23pi(pretty=args.pretty))
+    if args.command == "long-k23rh":
+        raise SystemExit(long_k23rh(pretty=args.pretty))
+    if args.command == "long-k23op":
+        raise SystemExit(long_k23op(pretty=args.pretty))
+    if args.command == "long-k23mul":
+        raise SystemExit(long_k23mul(pretty=args.pretty))
+    if args.command == "long-k23cl":
+        raise SystemExit(long_k23cl(pretty=args.pretty))
+    if args.command == "long-k23ext":
+        raise SystemExit(long_k23ext(pretty=args.pretty))
+    if args.command == "long-k23fix":
+        raise SystemExit(long_k23fix(pretty=args.pretty))
+    if args.command == "long-k23unit":
+        raise SystemExit(long_k23unit(pretty=args.pretty))
+    if args.command == "long-k23tgt":
+        raise SystemExit(long_k23tgt(pretty=args.pretty))
+    if args.command == "long-k23proj":
+        raise SystemExit(long_k23proj(pretty=args.pretty))
     if args.command == "long-psec":
         raise SystemExit(long_psec(pretty=args.pretty))
     if args.command == "long-binc":

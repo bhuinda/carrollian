@@ -1,0 +1,107 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e595f6622f889f9e54197a178d6ac4cacde32bff41aba9d19bdba493dffe661d",
+  "checks": {
+    "fixed_space_profile_matches": true,
+    "generator_profile_matches": true,
+    "inputs_pass": true,
+    "projected_unit_profile_matches": true,
+    "repair_boundary_matches": true
+  },
+  "claim": "long_k23tgt certifies the target-side unit aperture and current projection miss.",
+  "closure_boundary": {
+    "certifies": [
+      "the common fixed subspace of the nine checked target generators has dimension 3",
+      "the fixed aperture is represented by target rows 0, 1, and 17",
+      "the current projected closure60 unit is supported on target rows 6, 10, 28, and 32",
+      "the current projected unit is not in the common fixed aperture",
+      "because the closure60 unit has no support on the four appended rows, adding new projection columns cannot repair the current projection miss"
+    ],
+    "does_not_certify": [
+      "a replacement projection",
+      "a product action for a replacement projection",
+      "that the target action must be demoted absolutely",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23tgt.py",
+      "sha256": "09ed51abf546c7d70a0f71014cb28569be2c8d031c07d54a5e3cd38667937f49"
+    },
+    "long_k23rh": {
+      "certificate_sha256": "d26ee47a3bacd2cf2001f28fdab181b705c17bd9d26e57212124ff6ef28360ab",
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/report.json",
+      "sha256": "85d246a173dd255d45adcecb15170d7635cb87788db31fd98f79f28d12e4b69b",
+      "status": "SECTOR33_K23_RHC_SOURCE_LIFT_CERTIFIED"
+    },
+    "long_k23rh_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+      "sha256": "af3f182f7a270eb2f7c1dd137449a4ade01d5231a1676be8f1db81370fd1ea8a"
+    },
+    "long_k23unit": {
+      "certificate_sha256": "990d6950cca66455aec0cc000d8ab352157f6baca3d0029b8ae456a05b499ac0",
+      "path": "data/invariants/d20/proof_obligations/long_k23unit/report.json",
+      "sha256": "f7f4b73d769372e8b0d1aee5989220b5df3ac47bcc76586be2798297d5c62d44",
+      "status": "SECTOR33_K23_CLOSURE60_UNIT_PROJECTION_OBSTRUCTION_CERTIFIED"
+    },
+    "long_k23unit_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23unit/k23unit_matrices.npz",
+      "sha256": "b2c3e6edc7d80bd8052a5f72b9ff1076498fcf281e190376f1a0a4f775c5a7dc"
+    },
+    "validator": {
+      "path": "src/certify_long_k23tgt.py",
+      "sha256": "4cce4a4ed1d0c43b2bd57faca41e8865abfb9f43aa1c73e5be4cf24774a50169"
+    }
+  },
+  "next_highest_yield_item": "Construct a replacement projection candidate that maps the closure60 unit into the 3-dimensional fixed aperture while preserving rank 33, then test product-action compatibility against that repaired projection.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23tgt/cert.json",
+    "fixed_basis_csv": "data/invariants/d20/proof_obligations/long_k23tgt/fixed_basis.csv",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23tgt/generator_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23tgt/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23tgt/k23tgt_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23tgt/obs.csv",
+    "projected_unit_csv": "data/invariants/d20/proof_obligations/long_k23tgt/projected_unit.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23tgt/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23tgt/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23tgt/tables.npz"
+  },
+  "schema": "long.k23tgt.report@1",
+  "stage_protocol": {
+    "closure": "certify that the target side has a repair aperture while the old projection must change",
+    "coherence": "check stacked fixed-space rank, individual fixed dimensions, projected-unit membership, and repair boundary flags",
+    "draft": "read long_k23unit and the checked target action matrices",
+    "emit": "write long_k23tgt artifacts and verifier hook",
+    "witness": "emit common fixed-basis rows, current projected-unit rows, generator fixed-dimension rows, and observables"
+  },
+  "status": "SECTOR33_K23_TARGET_UNIT_APERTURE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that the target action has a 3-dimensional common fixed aperture, but the current projected unit misses it; repair requires changing the old projection, not merely adding new projection columns.",
+    "classification": "sector33_k23_target_unit_aperture",
+    "matrix_sha256": "905f3880b2b711f9aab3757a5988c3b00b0c1699a8f66118c32b7a5e91286f30",
+    "name": "long_k23tgt",
+    "summary": {
+      "common_fixed_basis_row_count": 3,
+      "common_fixed_dimension": 3,
+      "complete_goal_claim_flag": 0,
+      "generator_count": 9,
+      "individual_fixed_dimension_max": 17,
+      "individual_fixed_dimension_min": 17,
+      "long_k23rh_certified_flag": 1,
+      "long_k23unit_certified_flag": 1,
+      "new_projection_columns_can_repair_flag": 0,
+      "old_projection_must_change_flag": 1,
+      "projected_unit_common_fixed_coordinate_count": 0,
+      "projected_unit_in_common_fixed_space_flag": 0,
+      "projected_unit_residual_nonzero_total": 37,
+      "projected_unit_support_count": 4,
+      "r_foam_rank_sum": 297,
+      "stacked_fixed_equation_rank": 30,
+      "stacked_fixed_equation_row_count": 297,
+      "target_dimension": 33,
+      "target_has_unit_aperture_flag": 1
+    }
+  }
+}

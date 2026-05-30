@@ -1,0 +1,141 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "15bf73561b1112267c07da4d51df03b25539c3bb95752a5f0619ddd2a389fbed",
+  "checks": {
+    "global_claims_remain_open": true,
+    "image_is_rank2_w24_subcode": true,
+    "inputs_pass": true,
+    "merge_shape_is_expected": true,
+    "w24_pair_has_required_intersection": true
+  },
+  "claim": "long_k23merge certifies a concrete active-merge quotient witness from the pair-collapsed K23 surface into a W24 rank-2 subcode.",
+  "closure_boundary": {
+    "certifies": [
+      "a deterministic active-component merge of the pair-collapsed K23 quotient",
+      "the merge produces 17 used W24 coordinates with output pattern counts 1:8, 4:4, 5:4, 0:1",
+      "the selected W24 dodecad has weight 12 and the selected octad has weight 8",
+      "their intersection has weight 4 and their sum has weight 12",
+      "the quotient image has rank 2 and all 4 image words are in the certified W24 code"
+    ],
+    "does_not_certify": [
+      "a rank-12 W24 image",
+      "full K23 rowspace equality with the W24/Euler-punctured syzygy rowspace",
+      "basis-independence over all possible integral K23 lattice bases",
+      "an M23 module action on K23",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23merge.py",
+      "sha256": "3032bc493a63c98ae58e75b0e0a4ea129e7818ff087f9d6104f00a7e5b9b3f65"
+    },
+    "long_k23_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23/k23_matrices.npz",
+      "sha256": "3948afb27670d21630a5d8e88d98e956a3c6ada5094b08877050383d7d344f48"
+    },
+    "long_k23q": {
+      "certificate_sha256": "f64add206d9de075b7c27a3728da672f6e1522f0b93baa7857328f864b7caa82",
+      "path": "data/invariants/d20/proof_obligations/long_k23q/report.json",
+      "sha256": "e47c4abe0d0110e57c3925791d3da00255d1647ccfae78d81c1c1ec95cc3b15f",
+      "status": "SECTOR33_K23_PAIR_COLLAPSE_24_QUOTIENT_FAMILY_OBSTRUCTED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23merge.py",
+      "sha256": "f5f0ecd7d05df4ed5264df46dff0e4baae11c296d5c9d02748cf540e7a60a216"
+    },
+    "w24_artifact": {
+      "artifact_sha256_excluding_this_field": "9f351233c506ed57d11105ab8caf65909d3ec864f921426bb03d12079e9a0fa2",
+      "path": "generated/d20_w24_hexacode_row_alphabetization.json",
+      "sha256": "03c3bd16612b051963527cfc2554d4f2da0154242a968e80b6cf773f9b495958",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_DERIVED"
+    },
+    "w24_hexacode_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Promote the active-merge solver from rank 2 to rank 3 or prove rank 2 is maximal under support-normalized pair-collapse merges.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23merge/cert.json",
+    "group_rows_csv": "data/invariants/d20/proof_obligations/long_k23merge/group_rows.csv",
+    "image_rows_csv": "data/invariants/d20/proof_obligations/long_k23merge/image_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23merge/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23merge/k23merge_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23merge/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23merge/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23merge/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23merge/tables.npz",
+    "target_rows_csv": "data/invariants/d20/proof_obligations/long_k23merge/target_rows.csv"
+  },
+  "schema": "long.k23merge.report@1",
+  "stage_protocol": {
+    "closure": "certify this rank-2 W24 subcode witness while keeping full K23 equality open",
+    "coherence": "check merge counts, dodecad/octad intersection, image rank, and W24 membership for all image words",
+    "draft": "read long_k23q, K23 matrices, and the certified W24 code",
+    "emit": "write long_k23merge artifacts and verifier hook",
+    "witness": "emit merge groups, target W24 coordinates, image codewords, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_ACTIVE_MERGE_W24_RANK2_SUBCODE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies one active-merge quotient landing in a rank-2 W24 subcode; it is not a full K23-to-W24 equality proof.",
+    "classification": "sector33_k23_active_merge_w24_rank2_subcode",
+    "dodecad_mask": 4095,
+    "image_generator_masks": [
+      4095,
+      0,
+      61833,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "matrix_sha256": "e8ff8ee62cc11daf63e6eb9410fc31b3046d471a3a15841bfae944eeaecf1636",
+    "name": "long_k23merge",
+    "octad_mask": 61833,
+    "pattern_counts": {
+      "0": 1,
+      "1": 8,
+      "4": 4,
+      "5": 4
+    },
+    "summary": {
+      "active_component_count": 21,
+      "complete_goal_claim_flag": 0,
+      "component_count": 37,
+      "dodecad_weight": 12,
+      "full_k23_equality_certified_flag": 0,
+      "image_generator_rank": 2,
+      "image_rowspace_word_count": 4,
+      "image_w24_member_word_count": 4,
+      "image_w24_subcode_flag": 1,
+      "intersection_weight": 4,
+      "long_k23q_certified_flag": 1,
+      "merge_group_count": 17,
+      "nonzero_merge_group_count": 16,
+      "octad_weight": 8,
+      "sum_weight": 12,
+      "target_used_coordinate_count": 17,
+      "w24_code_certified_flag": 1,
+      "zero_merge_group_count": 1
+    }
+  }
+}

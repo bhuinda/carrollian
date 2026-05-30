@@ -1,0 +1,179 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "44f48102685f1556fd68ad6b45b6bcde6eebd09cd48d1708c4174293cf6b4030",
+  "checks": {
+    "basis_decomposition_matches": true,
+    "inputs_pass": true,
+    "linear_intertwiner_equations_pass": true,
+    "module_boundary_matches": true
+  },
+  "claim": "long_k23lin certifies the prime-field M23 intertwiners for the K23 support/frame binding.",
+  "closure_boundary": {
+    "certifies": [
+      "the syzygy frame-lift columns plus a computed kernel complement form a 56-dimensional support basis",
+      "for each of the three M23 design generators there is an explicit invertible 56-by-56 support operator",
+      "each support operator satisfies K R_g = A_g K with zero residual",
+      "each support operator satisfies R_g F = F P_g with zero residual",
+      "the K23 rowspace therefore carries the certified M23-order action through the canonical frame binding"
+    ],
+    "does_not_certify": [
+      "that the support lift is unique or canonical",
+      "that the M23 action is a row-permutation or signed-row action on the current support rows",
+      "that the same lift preserves additional A985 multiplication or physical structure",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23lin.py",
+      "sha256": "947f50b9a85474263f0d6be7bbde39b282384b7af7b6d2e484e32fc97295e158"
+    },
+    "long_k23act": {
+      "certificate_sha256": "c5b013a26855708296f48b878d3a2e1ecc681f1335d83fad76835c3976f45d0a",
+      "path": "data/invariants/d20/proof_obligations/long_k23act/report.json",
+      "sha256": "787f0537abc120eff2d1ceafb2ae9190b809a2fa884941eeaaca987c0e8fe4a3",
+      "status": "SECTOR33_K23_M23_SUPPORT_BINDING_ROW_ACTION_OBSTRUCTED"
+    },
+    "long_k23stab": {
+      "certificate_sha256": "1f0c004ee944d6df362ee40469d1642f9e6d91ab5c48e73ae4dbbd45f72327ff",
+      "path": "data/invariants/d20/proof_obligations/long_k23stab/report.json",
+      "sha256": "3af20837a418e184a7837cd5e0a78ef8f7fe95236850517dec80f04ee036d80c",
+      "status": "SECTOR33_K23_PUNCTURED_SELECTOR_M23_STABILIZER_CERTIFIED"
+    },
+    "long_k23stab_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23stab/k23stab_matrices.npz",
+      "sha256": "3cef366b5a7132a16ae6289bf3a1ca3587d2ca1c1a43f67194e466174d6c89ef"
+    },
+    "long_k23syz": {
+      "certificate_sha256": "2cb403117f9997abaf32ea1ac6e5719609d923f799e412bd2b2ffa3921a353ef",
+      "path": "data/invariants/d20/proof_obligations/long_k23syz/report.json",
+      "sha256": "dc95c777a6e2b06f88b99e21f96c649b56bdc88e2ea62c4cffee1dec8a26641a",
+      "status": "SECTOR33_K23_CANONICAL_SYZYGY_FRAME_BINDING_CERTIFIED"
+    },
+    "long_k23syz_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23syz/k23syz_matrices.npz",
+      "sha256": "5659cf1cbf3c19d69a0e26c836314a152ec1a9caa0ba7927f563eaedf28e41d4"
+    },
+    "validator": {
+      "path": "src/certify_long_k23lin.py",
+      "sha256": "28527e91d4b9ff6c828ec89b8f5dfce229add39718e809a228cc49ed288ce254"
+    }
+  },
+  "next_highest_yield_item": "Test whether the certified prime-linear K23 intertwiners preserve any additional sector33 structure: support grading, signed coefficients, or the height-coherent projection layer.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23lin/cert.json",
+    "coefficient_histogram_csv": "data/invariants/d20/proof_obligations/long_k23lin/coefficient_histogram.csv",
+    "complement_rows_csv": "data/invariants/d20/proof_obligations/long_k23lin/complement_rows.csv",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23lin/generator_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23lin/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23lin/k23lin_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23lin/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23lin/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23lin/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23lin/tables.npz"
+  },
+  "schema": "long.k23lin.report@1",
+  "stage_protocol": {
+    "closure": "certify prime-linear M23 support intertwiners while preserving the row-action obstruction and non-uniqueness boundary",
+    "coherence": "check the 23+33 basis decomposition, exact K and frame intertwining residuals, and invertibility",
+    "draft": "read long_k23syz, long_k23stab, long_k23act, and their matrices",
+    "emit": "write long_k23lin artifacts and verifier hook",
+    "witness": "emit kernel-complement rows, generator intertwiner rows, coefficient histograms, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_M23_PRIME_LINEAR_INTERTWINER_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies invertible prime-field support intertwiners for the three M23 design generators by fixing a 33-dimensional kernel complement; row-permutation lifting remains obstructed and uniqueness is not claimed.",
+    "classification": "sector33_k23_m23_prime_linear_intertwiner",
+    "free_columns": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      18,
+      22,
+      24,
+      25,
+      26,
+      27,
+      35,
+      40,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      54,
+      55
+    ],
+    "matrix_sha256": "6bb82b010280202330940f327dad12a3056b962e9ecee9e9cb26fb955843359b",
+    "name": "long_k23lin",
+    "pivot_columns": [
+      0,
+      2,
+      12,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      23,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      39,
+      41,
+      53
+    ],
+    "summary": {
+      "basis_change_inverse_residual_nonzero_count": 0,
+      "basis_change_rank": 56,
+      "complete_goal_claim_flag": 0,
+      "frame_coordinate_count": 24,
+      "frame_intertwiner_residual_nonzero_count": 0,
+      "frame_lift_syzygy_rank": 23,
+      "generator_count": 3,
+      "inverse_residual_nonzero_count": 0,
+      "invertible_support_operator_count": 3,
+      "k23_basis_row_count": 23,
+      "k23_intertwiner_residual_nonzero_count": 0,
+      "kernel_complement_dimension": 33,
+      "kernel_complement_rank": 33,
+      "kernel_complement_residual_nonzero_count": 0,
+      "linear_lift_generator_count": 3,
+      "long_k23act_certified_flag": 1,
+      "long_k23stab_certified_flag": 1,
+      "long_k23syz_certified_flag": 1,
+      "m23_k23_module_action_certified_flag": 1,
+      "prime_field": 1000003,
+      "prime_linear_lift_certified_flag": 1,
+      "row_action_obstruction_preserved_flag": 1,
+      "row_permutation_lift_proven_flag": 0,
+      "support_operator_nullity_sum": 0,
+      "support_operator_rank_sum": 168,
+      "support_row_count": 56,
+      "unique_lift_proven_flag": 0
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "42fa00ea4e9f4a7e180d6e9586e76653d7aa53918ca11c9e24f21e5f2afdcf7f",
+  "checks": {
+    "boundary_flags_match": true,
+    "dense_obstruction_matches": true,
+    "grading_leak_profile_matches": true,
+    "inputs_pass": true,
+    "shape_matches": true
+  },
+  "claim": "long_k23op certifies the dense support-operation obstruction for the materialized R_hc lift family.",
+  "closure_boundary": {
+    "certifies": [
+      "none of the nine materialized R_hc lifts is signed-monomial on the 56 support rows",
+      "all nine lifts have dense-support obstruction under the current row-support operation test",
+      "the lift family has 5,508 nonzero entries and 3,047 non-unit nonzero entries across nine generators",
+      "the lift family leaks across the certified block_i, rep4, sign, absolute-coefficient, and block/rep4 support gradings",
+      "the prior signed-column lift obstruction and the new dense lift are consistent: the target action lifts linearly, but not as a signed finite support operation"
+    ],
+    "does_not_certify": [
+      "failure of every possible non-dense source-side lift",
+      "failure of every projection outside the current center-grade candidate",
+      "multiplication-structure nonpreservation",
+      "a raw A985 action or homomorphism on the 56 support rows",
+      "broad bundle integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23op.py",
+      "sha256": "08e2bf3794fbed22c45e6816f6cfe1e8febc3f3d95cea9f0280dc28860d23cae"
+    },
+    "long_hcperm": {
+      "certificate_sha256": "8d6baa89310e7b901b29fe7712385e64305f590e87decd1998cc4f11bdc73b70",
+      "path": "data/invariants/d20/proof_obligations/long_hcperm/report.json",
+      "sha256": "6031a420232949167c422f735300b74113a670a4d0342c755b2ae32b9750c5d0",
+      "status": "LONG_HCPERM_SIGNED_COLUMN_LIFT_OBSTRUCTION_CERTIFIED"
+    },
+    "long_hcsupp": {
+      "certificate_sha256": "f4a880344917e150defdfccb6d71aab21400e7ac9c63e129c02da755ff59f0f2",
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/report.json",
+      "sha256": "d5618b0e0159b88ec43f7ca6e75070a9e4e3508d7bd4e2c0a152140e775898c7",
+      "status": "LONG_HCSUPP_PROFILE_CERTIFIED"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23rh": {
+      "certificate_sha256": "d26ee47a3bacd2cf2001f28fdab181b705c17bd9d26e57212124ff6ef28360ab",
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/report.json",
+      "sha256": "85d246a173dd255d45adcecb15170d7635cb87788db31fd98f79f28d12e4b69b",
+      "status": "SECTOR33_K23_RHC_SOURCE_LIFT_CERTIFIED"
+    },
+    "long_k23rh_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+      "sha256": "af3f182f7a270eb2f7c1dd137449a4ade01d5231a1676be8f1db81370fd1ea8a"
+    },
+    "validator": {
+      "path": "src/certify_long_k23op.py",
+      "sha256": "f61b8c42f3ef37dfc32614f33d01b8421ed426c041449b138ad83f193da8ca3d"
+    }
+  },
+  "next_highest_yield_item": "Move from row-support obstruction to multiplication: build the induced 56-support product/projection algebra needed to test whether any R_hc-compatible lift preserves the finite multiplication surface.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23op/cert.json",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23op/generator_rows.csv",
+    "grade_rows_csv": "data/invariants/d20/proof_obligations/long_k23op/grade_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23op/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23op/k23op_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23op/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23op/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23op/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23op/tables.npz"
+  },
+  "schema": "long.k23op.report@1",
+  "stage_protocol": {
+    "closure": "certify dense signed-support obstruction without claiming multiplication nonpreservation",
+    "coherence": "check signed-monomial failure, exact density totals, and support-grading leakage totals",
+    "draft": "read long_k23rh lift matrices, long_hcsupp support rows, and long_hcperm signed-lift obstruction",
+    "emit": "write long_k23op artifacts and verifier hook",
+    "witness": "emit per-generator density rows, support-grading leak rows, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_RHC_DENSE_SUPPORT_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that the materialized R_hc lifts are dense prime-field operators, not signed row-support operations on the 56 certified support rows.",
+    "classification": "sector33_k23_rhc_dense_support_obstruction",
+    "matrix_sha256": "ae53f2c8e66631190e120bbd2928bf9aba3ed8eef5e3e44d0eb4c35a70d0f48a",
+    "name": "long_k23op",
+    "summary": {
+      "abs_coeff_total_leak_nonzero_count": 2066,
+      "all_gradings_preserved_generator_count": 0,
+      "block_i_total_leak_nonzero_count": 787,
+      "block_rep4_total_leak_nonzero_count": 3745,
+      "column_singleton_total": 87,
+      "complete_goal_claim_flag": 0,
+      "dense_obstruction_generator_count": 9,
+      "generator_count": 9,
+      "generator_row_count": 9,
+      "grade_row_count": 45,
+      "grading_family_count": 5,
+      "long_hcperm_certified_flag": 1,
+      "long_hcsupp_certified_flag": 1,
+      "long_k23rh_certified_flag": 1,
+      "max_column_nonzero_count": 20,
+      "max_row_nonzero_count": 53,
+      "multiplication_preservation_tested_flag": 0,
+      "nonunit_entry_total": 3047,
+      "rep4_total_leak_nonzero_count": 3526,
+      "row_singleton_total": 308,
+      "sign_total_leak_nonzero_count": 2557,
+      "signed_monomial_generator_count": 0,
+      "signed_operation_support_obstruction_flag": 1,
+      "signed_unit_entry_total": 2461,
+      "support_row_count": 56,
+      "total_nonidentity_count": 5288,
+      "total_nonzero_count": 5508
+    }
+  }
+}

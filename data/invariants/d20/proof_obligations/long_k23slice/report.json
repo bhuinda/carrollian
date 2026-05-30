@@ -1,0 +1,153 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "523a13943c77366876b964470ba4c3a6907126877874b9d0175f2632d4dfc349",
+  "checks": {
+    "global_claims_remain_open": true,
+    "identity_order_containment_fails": true,
+    "long_k23_input_passes": true,
+    "restricted_rank_is_16_and_exceeds_w24_rank": true,
+    "rowspace_weight_profile_obstructs_w24": true,
+    "support_grade_histogram_has_unique_24_slice": true,
+    "w24_code_input_passes": true
+  },
+  "claim": "long_k23slice certifies that the canonical rep4=6 24-coordinate sector33 support slice is obstructed as a W24 binding target for K23.",
+  "closure_boundary": {
+    "certifies": [
+      "the sector33 support rows have a unique exact 24-coordinate rep4=6 support-grade slice",
+      "K23 restricted to that slice over GF(2) has rank 16",
+      "the restricted rowspace has 65,536 words and minimum nonzero weight 1",
+      "the restricted rowspace has 50,844 words in weight classes forbidden by W24",
+      "no coordinate permutation of this rep4=6 slice can make the restricted K23 rowspace a W24 subcode"
+    ],
+    "does_not_certify": [
+      "absence of a non-coordinate quotient map from the 56 support coordinates to W24",
+      "a full 56-to-W24 syzygy basis-binding map",
+      "rowspan(K23) equals the W24/Euler-punctured syzygy rowspace",
+      "an M23 module action on K23",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23slice.py",
+      "sha256": "92dab467c1a04421a99f3dc1835f20d809075a72ba852911f569e008c419a098"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23": {
+      "certificate_sha256": "e3cf1697bce23179c6738bf97e4088e49ce966580fd5f25bb4fa06c532be29c8",
+      "path": "data/invariants/d20/proof_obligations/long_k23/report.json",
+      "sha256": "201d9c4d09b94efef782a05268f2a9a077a91b10a2a46418b2acd8fd97ecf595",
+      "status": "SECTOR33_K23_PUNCTURED_MOG_SYZYGY_APERTURE_TARGET_CERTIFIED"
+    },
+    "long_k23_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23/k23_matrices.npz",
+      "sha256": "3948afb27670d21630a5d8e88d98e956a3c6ada5094b08877050383d7d344f48"
+    },
+    "validator": {
+      "path": "src/certify_long_k23slice.py",
+      "sha256": "eab594fa4c625220587b804e5d4d5fb5be6bb25a861f2bf65042a0837e73a115"
+    },
+    "w24_artifact": {
+      "artifact_sha256_excluding_this_field": "9f351233c506ed57d11105ab8caf65909d3ec864f921426bb03d12079e9a0fa2",
+      "path": "generated/d20_w24_hexacode_row_alphabetization.json",
+      "sha256": "03c3bd16612b051963527cfc2554d4f2da0154242a968e80b6cf773f9b495958",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_DERIVED"
+    },
+    "w24_hexacode_row_alphabetization": {
+      "certificate_sha256": "ecd1f8bbe2a0412335a9e3a4955124032eba6ae781aa28e56b1d62ce3b6caca9",
+      "path": "data/invariants/d20/proof_obligations/d20_w24_hexacode_row_alphabetization/report.json",
+      "sha256": "757fb8ab288ad8932d7b70b6bda5479e5cba4c026e48237317638701139d4bb9",
+      "status": "D20_W24_HEXACODE_ROW_ALPHABETIZATION_CERTIFIED"
+    }
+  },
+  "next_highest_yield_item": "Test non-coordinate 56-to-24 quotient maps that collapse the 16 unit directions before comparing the resulting rowspace with W24.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23slice/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23slice/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23slice/k23slice_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23slice/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23slice/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23slice/seam.json",
+    "slice_rows_csv": "data/invariants/d20/proof_obligations/long_k23slice/slice_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23slice/tables.npz",
+    "weight_rows_csv": "data/invariants/d20/proof_obligations/long_k23slice/weight_rows.csv"
+  },
+  "schema": "long.k23slice.report@1",
+  "stage_protocol": {
+    "closure": "certify a coordinate-slice obstruction while keeping quotient and full binding routes open",
+    "coherence": "check the unique 24-coordinate support-grade slice, restricted GF(2) rank, rowspace weight profile, and W24 containment failure",
+    "draft": "read long_k23, long_hcsupp support rows, K23 kernel matrices, and the certified W24 code endpoint",
+    "emit": "write long_k23slice artifacts and verifier hook",
+    "witness": "emit rep4=6 slice rows, rowspace weight histogram rows, observables, and matrix payloads"
+  },
+  "status": "SECTOR33_K23_REP4_6_SLICE_W24_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "basis_masks": [
+      4,
+      8,
+      32,
+      128,
+      256,
+      512,
+      2048,
+      4096,
+      32768,
+      65536,
+      131072,
+      262144,
+      524288,
+      2097152,
+      4194304,
+      8388608
+    ],
+    "boundary": "This certifies an obstruction for the canonical rep4=6 24-coordinate support slice only; it does not rule out a non-coordinate quotient or a full 56-to-W24 binding.",
+    "classification": "sector33_k23_rep4_6_support_slice_w24_obstruction",
+    "forbidden_weight_classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15
+    ],
+    "matrix_sha256": "16f73d88a8d05733ab9dee0b9f729259106fb73be2952572f3e16f6e4194715d",
+    "name": "long_k23slice",
+    "summary": {
+      "complete_goal_claim_flag": 0,
+      "forbidden_weight_class_count": 13,
+      "forbidden_word_count": 50844,
+      "identity_order_w24_contained_words": 16,
+      "identity_order_w24_containment_flag": 0,
+      "k23_equality_certified_flag": 0,
+      "k23_kernel_dimension": 23,
+      "long_k23_certified_flag": 1,
+      "m23_module_proven_flag": 0,
+      "min_nonzero_weight": 1,
+      "permutation_invariant_weight_obstruction_flag": 1,
+      "rep4_6_slice_w24_subcode_flag": 0,
+      "rep4_grade_12_count": 12,
+      "rep4_grade_1_count": 6,
+      "rep4_grade_3_count": 14,
+      "rep4_grade_6_count": 24,
+      "restricted_binary_rank": 16,
+      "restricted_rank_exceeds_w24_rank_flag": 1,
+      "rowspace_doubly_even_flag": 0,
+      "rowspace_word_count": 65536,
+      "selected_slice_coordinate_count": 24,
+      "selected_slice_rep4": 6,
+      "support_input_row_count": 56,
+      "w24_code_certified_flag": 1,
+      "w24_rank": 12
+    }
+  }
+}

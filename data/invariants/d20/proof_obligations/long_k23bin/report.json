@@ -1,0 +1,152 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "201d38e9f923ccd8b407ac77a8e5e2fc9e488daad33c7bb8615bffb6edd7b7b9",
+  "checks": {
+    "binary_code_is_not_even": true,
+    "binary_rank_preserves_23_rows": true,
+    "global_claims_remain_open": true,
+    "long_k23_input_passes": true,
+    "unit_weight_and_inactive_columns_are_explicit": true
+  },
+  "claim": "long_k23bin certifies the GF(2) rowspace profile of the emitted K23 basis.",
+  "closure_boundary": {
+    "certifies": [
+      "the emitted K23 kernel basis has GF(2) rank 23",
+      "the emitted-basis binary rowspace has 8,388,608 words",
+      "the emitted-basis binary rowspace has 19 weight-one words",
+      "24 of the 56 support columns are inactive in the emitted-basis GF(2) profile",
+      "any useful W24-directed quotient must collapse or combine these unit directions"
+    ],
+    "does_not_certify": [
+      "basis-independence over all possible integral K23 lattice bases",
+      "a selected non-coordinate quotient map from the 56 support coordinates to W24",
+      "rowspan(K23) equals the W24/Euler-punctured syzygy rowspace",
+      "an M23 module action on K23",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23bin.py",
+      "sha256": "3fb12b55b74541e3d8184dce332e3efd003fac1ca2595ac7d9fef51d70bf6e7e"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23": {
+      "certificate_sha256": "e3cf1697bce23179c6738bf97e4088e49ce966580fd5f25bb4fa06c532be29c8",
+      "path": "data/invariants/d20/proof_obligations/long_k23/report.json",
+      "sha256": "201d9c4d09b94efef782a05268f2a9a077a91b10a2a46418b2acd8fd97ecf595",
+      "status": "SECTOR33_K23_PUNCTURED_MOG_SYZYGY_APERTURE_TARGET_CERTIFIED"
+    },
+    "long_k23_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23/k23_matrices.npz",
+      "sha256": "3948afb27670d21630a5d8e88d98e956a3c6ada5094b08877050383d7d344f48"
+    },
+    "validator": {
+      "path": "src/certify_long_k23bin.py",
+      "sha256": "bb75b0ee35ebebb81106aea14651d75639ceb1d725ef3b036b102239189af320"
+    }
+  },
+  "next_highest_yield_item": "Use the 19 unit words and 24 inactive columns to build a bounded quotient family, then test whether any quotient image has W24 rank, minimum weight, and containment.",
+  "outputs": {
+    "basis_rows_csv": "data/invariants/d20/proof_obligations/long_k23bin/basis_rows.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_k23bin/cert.json",
+    "column_rows_csv": "data/invariants/d20/proof_obligations/long_k23bin/column_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23bin/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23bin/k23bin_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23bin/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23bin/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23bin/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23bin/tables.npz",
+    "weight_rows_csv": "data/invariants/d20/proof_obligations/long_k23bin/weight_rows.csv"
+  },
+  "schema": "long.k23bin.report@1",
+  "stage_protocol": {
+    "closure": "certify the emitted-basis binary profile while keeping quotient and basis-independence claims open",
+    "coherence": "check GF(2) rank 23, 8,388,608 rowspace words, 19 unit words, and 24 inactive support columns",
+    "draft": "read long_k23, K23 kernel matrices, and sector33 support rows",
+    "emit": "write long_k23bin artifacts and verifier hook",
+    "witness": "emit binary basis rows, support-column activity rows, full weight histogram rows, observables, and matrix payloads"
+  },
+  "status": "SECTOR33_K23_BINARY_ROWSPACE_PROFILE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the GF(2) profile of the emitted K23 basis; it does not certify that this profile is independent of all possible integral kernel bases.",
+    "classification": "sector33_k23_binary_rowspace_profile",
+    "matrix_sha256": "ac4bd0fd73eb1b6974391b79780c488a6285fdd75a157d10fcb1e97d84f55ecf",
+    "name": "long_k23bin",
+    "pivots": [
+      9,
+      10,
+      12,
+      13,
+      19,
+      20,
+      23,
+      27,
+      28,
+      31,
+      34,
+      36,
+      37,
+      39,
+      40,
+      42,
+      43,
+      45,
+      46,
+      48,
+      49,
+      52,
+      53
+    ],
+    "summary": {
+      "active_column_count": 32,
+      "binary_doubly_even_code_flag": 0,
+      "binary_even_code_flag": 0,
+      "binary_rank": 23,
+      "binary_rowspace_word_count": 8388608,
+      "complete_goal_claim_flag": 0,
+      "even_nonzero_column_count": 5,
+      "k23_equality_certified_flag": 0,
+      "kernel_basis_column_count": 56,
+      "kernel_basis_row_count": 23,
+      "long_k23_certified_flag": 1,
+      "m23_module_proven_flag": 0,
+      "max_weight": 29,
+      "min_nonzero_weight": 1,
+      "odd_column_count": 27,
+      "quotient_collapse_required_flag": 1,
+      "support_input_row_count": 56,
+      "weight_one_word_count": 19,
+      "zero_column_count": 24
+    },
+    "zero_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11,
+      14,
+      15,
+      17,
+      18,
+      22,
+      25,
+      26,
+      30,
+      32,
+      33,
+      38,
+      41,
+      44,
+      50
+    ]
+  }
+}

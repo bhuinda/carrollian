@@ -1,0 +1,137 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e7f178cee20800a9cd44c25436e050243838694953ee464350b996222312c2f3",
+  "checks": {
+    "binding_matrix_shape_matches": true,
+    "inputs_pass": true,
+    "row_reconstruction_is_exact": true,
+    "signed_binding_remains_open": true,
+    "support_shape_matches": true
+  },
+  "claim": "long_k23bind certifies that the 56 sector33 support coordinates admit a binary support-normalized binding onto the rank-12 source endpoint assignment.",
+  "closure_boundary": {
+    "certifies": [
+      "the support-normalized K23 basis has rank 23 over 56 support coordinates",
+      "an explicit 56-by-24 binary binding matrix exists",
+      "the binding reconstructs all 23 source-assignment rows with zero residual",
+      "the reconstructed image has rank 12 and is the same source-side assignment certified by long_k23src"
+    ],
+    "does_not_certify": [
+      "a signed or integral lift using the prime-field coefficients",
+      "uniqueness or canonicity of the support binding",
+      "a one-hot partition of support coordinates",
+      "an M23 module action on K23",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23bind.py",
+      "sha256": "b96adb7ca151826cab1b37950edb67620b91864824fd2e1b718b2853e01fdaf8"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23": {
+      "certificate_sha256": "e3cf1697bce23179c6738bf97e4088e49ce966580fd5f25bb4fa06c532be29c8",
+      "path": "data/invariants/d20/proof_obligations/long_k23/report.json",
+      "sha256": "201d9c4d09b94efef782a05268f2a9a077a91b10a2a46418b2acd8fd97ecf595",
+      "status": "SECTOR33_K23_PUNCTURED_MOG_SYZYGY_APERTURE_TARGET_CERTIFIED"
+    },
+    "long_k23_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23/k23_matrices.npz",
+      "sha256": "3948afb27670d21630a5d8e88d98e956a3c6ada5094b08877050383d7d344f48"
+    },
+    "long_k23src": {
+      "certificate_sha256": "27db891b3ae6110740d8b340d6b6a14cc588d3dbba7233699ed148f32ac05164",
+      "path": "data/invariants/d20/proof_obligations/long_k23src/report.json",
+      "sha256": "feaa602fdf570f6ab4260bd46a90643d168766b3747b68334e5d0c8dc6ae6b3c",
+      "status": "SECTOR33_K23_SOURCE_W24_RANK12_EXTENSION_CERTIFIED"
+    },
+    "long_k23src_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23src/k23src_matrices.npz",
+      "sha256": "dfbcb5dc1bdc70b5a0370f332b30722b2a583f0dff739acb6c4e6b4d159e095f"
+    },
+    "validator": {
+      "path": "src/certify_long_k23bind.py",
+      "sha256": "be17f32eed21b4e158f9d0deab9383ff19117e0e5115e2b2b04c4e07065ee7c8"
+    }
+  },
+  "next_highest_yield_item": "Attempt the signed prime-field lift of this binary support binding: solve the same 56-to-24 map against the actual K23 coefficients and compare its reduction to the certified binary binding.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23bind/cert.json",
+    "coordinate_preimage_rows_csv": "data/invariants/d20/proof_obligations/long_k23bind/coordinate_preimage_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23bind/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23bind/k23bind_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23bind/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23bind/report.json",
+    "row_check_rows_csv": "data/invariants/d20/proof_obligations/long_k23bind/row_check_rows.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_k23bind/seam.json",
+    "support_binding_rows_csv": "data/invariants/d20/proof_obligations/long_k23bind/support_binding_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23bind/tables.npz"
+  },
+  "schema": "long.k23bind.report@1",
+  "stage_protocol": {
+    "closure": "certify binary support binding while keeping signed/integral lifting and module action open",
+    "coherence": "check support rank, pivot columns, exact K23 row reconstruction, and zero residual",
+    "draft": "read long_k23, long_k23src, K23 matrices, source assignment, and sector33 support rows",
+    "emit": "write long_k23bind artifacts and verifier hook",
+    "witness": "emit support binding rows, source-coordinate preimage rows, row reconstruction checks, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_BINARY_SUPPORT_BINDING_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies a binary support-normalized map from the 56 sector33 support coordinates to the 24 source endpoint coordinates; signed integral lifting remains open.",
+    "classification": "sector33_k23_binary_support_binding",
+    "matrix_sha256": "7ce48a63cda5258dfd356794a5f990a783b1db4897dd768d627b3e3e4177bb23",
+    "name": "long_k23bind",
+    "pivot_columns": [
+      0,
+      2,
+      12,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      23,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      39,
+      41,
+      53
+    ],
+    "summary": {
+      "active_binding_support_row_count": 13,
+      "binary_support_binding_certified_flag": 1,
+      "binding_matrix_column_count": 24,
+      "binding_matrix_row_count": 56,
+      "binding_nonzero_entry_count": 112,
+      "complete_goal_claim_flag": 0,
+      "coordinate_preimage_nonempty_count": 24,
+      "inactive_binding_support_row_count": 43,
+      "k23_basis_row_count": 23,
+      "long_k23_certified_flag": 1,
+      "long_k23src_certified_flag": 1,
+      "max_residual_weight": 0,
+      "pivot_column_count": 23,
+      "reconstructed_image_rank": 12,
+      "reconstructed_nonzero_row_count": 12,
+      "row_check_count": 23,
+      "signed_integral_binding_certified_flag": 0,
+      "source_coordinate_count": 24,
+      "support_normalized_rank": 23,
+      "support_row_count": 56,
+      "zero_residual_row_count": 23
+    }
+  }
+}

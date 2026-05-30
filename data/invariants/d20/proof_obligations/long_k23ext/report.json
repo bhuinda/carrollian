@@ -1,0 +1,113 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "8efa453190e3f62759d10d93bdeb3e59cccc056cd90f259b6a1ac55384479c19",
+  "checks": {
+    "boundary_flags_match": true,
+    "dimension_profile_matches": true,
+    "fingerprint_profile_matches": true,
+    "inputs_pass": true,
+    "old_residual_coverage_matches": true,
+    "old_slice_obstruction_matches": true
+  },
+  "claim": "long_k23ext certifies the first 60-row extension seam for the sector33 K23 product surface.",
+  "closure_boundary": {
+    "certifies": [
+      "all nine current R_hc generators have nonzero old-target old-pair residuals on the 60-relation product surface",
+      "the residual counts range from 81,629 to 127,386, with total 936,661",
+      "the obstruction slice touches 54 to 56 old target rows across the nine generators",
+      "any product-preserving 60-row lift must use cross-boundary mixing rather than only assigning an action to the four added rows",
+      "the 60 relation rows collapse into 20 product-fingerprint classes, with the four added rows occupying four distinct classes"
+    ],
+    "does_not_certify": [
+      "existence or nonexistence of a fully mixed 60x60 product-preserving lift",
+      "a solution for the cross-boundary entries",
+      "a final operator carrier",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23ext.py",
+      "sha256": "32d2b770462d2e410129fead11bbd84d1bdd30a65060b5fdbbaf732b5068d867"
+    },
+    "long_k23cl": {
+      "certificate_sha256": "ce640686b6e3d1640463eddc086e0c7667e5ccb346b916e6c292d5aad2c49bac",
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/report.json",
+      "sha256": "ef3e3310bace2fe2c1d16120f2f305e9b5af7b3a73bac5a4c8afda85e6a4a5cb",
+      "status": "SECTOR33_K23_MULTIPLICATION_CLOSURE60_CERTIFIED"
+    },
+    "long_k23cl_closure_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/closure_rows.csv",
+      "sha256": "c5c755b78752f6b4cc6ada73d00c0edb895fd21eca7540c330b9ec62e8063c6a"
+    },
+    "long_k23cl_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/k23cl_matrices.npz",
+      "sha256": "066a9a9ab4c252d0f1f6352af6438e1f4dbe024f1ac33e045a9ef5b2d939a865"
+    },
+    "long_k23rh": {
+      "certificate_sha256": "d26ee47a3bacd2cf2001f28fdab181b705c17bd9d26e57212124ff6ef28360ab",
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/report.json",
+      "sha256": "85d246a173dd255d45adcecb15170d7635cb87788db31fd98f79f28d12e4b69b",
+      "status": "SECTOR33_K23_RHC_SOURCE_LIFT_CERTIFIED"
+    },
+    "long_k23rh_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+      "sha256": "af3f182f7a270eb2f7c1dd137449a4ade01d5231a1676be8f1db81370fd1ea8a"
+    },
+    "validator": {
+      "path": "src/certify_long_k23ext.py",
+      "sha256": "869dc01ff45b261c82464891362621e8e6a64630fe75b46c6913d986db110e86"
+    }
+  },
+  "next_highest_yield_item": "Set up the fully mixed 60x60 extension equations using the old-slice obstruction as a guardrail, then solve or demote the cross-boundary lift candidate by certificate.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23ext/cert.json",
+    "extension_obstructions_csv": "data/invariants/d20/proof_obligations/long_k23ext/extension_obstructions.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23ext/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23ext/k23ext_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23ext/obs.csv",
+    "relation_fingerprints_csv": "data/invariants/d20/proof_obligations/long_k23ext/relation_fingerprints.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23ext/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23ext/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23ext/tables.npz"
+  },
+  "schema": "long.k23ext.report@1",
+  "stage_protocol": {
+    "closure": "certify that any product-preserving 60-row lift must mix across the 56+4 boundary",
+    "coherence": "check input certificates, dimension counts, old-slice residual counts, and fingerprint class counts",
+    "draft": "read long_k23cl, the 60-row product tensor, and the nine source-side R_hc lifts",
+    "emit": "write long_k23ext artifacts and verifier hook",
+    "witness": "emit relation fingerprint rows, generator obstruction rows, observables, and matrix payloads"
+  },
+  "status": "SECTOR33_K23_CLOSURE60_EXTENSION_SEAM_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that a four-row-only extension cannot repair the old-target old-pair product residuals; any viable 60-row lift must mix across the 56+4 boundary.",
+    "classification": "sector33_k23_closure60_extension_seam",
+    "matrix_sha256": "d27a978ec189233bb214edcdb1869f10bd381d25b63041628a01a3cefddb1e57",
+    "name": "long_k23ext",
+    "summary": {
+      "added_relation_count": 4,
+      "added_relation_fingerprint_class_count": 4,
+      "closure_dimension": 60,
+      "closure_support_row_count": 60,
+      "complete_goal_claim_flag": 0,
+      "cross_boundary_required_generator_count": 9,
+      "fingerprint_class_count": 20,
+      "generator_count": 9,
+      "long_k23cl_certified_flag": 1,
+      "long_k23rh_certified_flag": 1,
+      "old_pair_count": 3136,
+      "old_pair_residual_column_max": 2992,
+      "old_pair_residual_column_min": 2402,
+      "old_slice_failed_generator_count": 9,
+      "old_slice_residual_nonzero_max": 127386,
+      "old_slice_residual_nonzero_min": 81629,
+      "old_slice_residual_nonzero_total": 936661,
+      "old_source_dimension": 56,
+      "old_target_count": 56,
+      "old_target_residual_row_max": 56,
+      "old_target_residual_row_min": 54
+    }
+  }
+}

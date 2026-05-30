@@ -1,0 +1,115 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d26ee47a3bacd2cf2001f28fdab181b705c17bd9d26e57212124ff6ef28360ab",
+  "checks": {
+    "boundary_flags_match": true,
+    "inputs_pass": true,
+    "intertwiner_equations_pass": true,
+    "source_lifts_materialized": true,
+    "split_basis_constructed": true
+  },
+  "claim": "long_k23rh constructs source-side R_hc lifts for the center-grade projection candidate and verifies the target intertwining equations.",
+  "closure_boundary": {
+    "certifies": [
+      "a 56x33 right inverse of the center-grade projection candidate",
+      "a 56x56 split basis from K23 kernel columns plus quotient right-inverse columns",
+      "nine explicit 56x56 source-side R_hc lift matrices",
+      "each lift fixes the K23 kernel pointwise",
+      "each lift satisfies P R_hc = R_Foam P for the checked target operator with zero residual"
+    ],
+    "does_not_certify": [
+      "that the center-grade projection candidate is the accepted final pi_Foam33 table",
+      "that these dense prime-field lifts are sparse, signed-row, or raw-operation-supported",
+      "multiplication-structure preservation beyond the displayed intertwining equation",
+      "broad bundle integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23rh.py",
+      "sha256": "122435b84ec77fbf00fbae9814ca9da94664d5559e17309588bf1e5a2e7ea4c3"
+    },
+    "long_hcfoam": {
+      "certificate_sha256": "c628fd15a76cb6fec564d684ee9cc2c9c8e6f5543d045977014c274e6926b3e5",
+      "path": "data/invariants/d20/proof_obligations/long_hcfoam/report.json",
+      "sha256": "d9011f9f20ac3927a14047da51b8ca66d49f2ce4691466e06053289111752fc7",
+      "status": "LONG_HCFOAM_CERTIFIED"
+    },
+    "long_hcfoam_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_hcfoam/r_foam_matrices.npz",
+      "sha256": "7e676d0d92d1f272f0f6935aa9312617af90e85c80e0c56a5573ad3a8ab5e7ab"
+    },
+    "long_hcgrade_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_hcgrade/center_grade_projection.npz",
+      "sha256": "392b120b53f9ef917b37137fa7e631180a147b7fe5636d75e4ebbfdb21930362"
+    },
+    "long_k23lin_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23lin/k23lin_matrices.npz",
+      "sha256": "ecb59ac3ff911c168fb533bdd91ee918ec0d06ca3eb01c28e2c49dfa7292de6d"
+    },
+    "long_k23pi": {
+      "certificate_sha256": "bc829311ffc947ee7070344ebadf85d1574daa13557994bdad95327aa6b79741",
+      "path": "data/invariants/d20/proof_obligations/long_k23pi/report.json",
+      "sha256": "cfc4979a1be13b11fe97247561945d1b3ca0942e43069d2dc07467a0d8571bf0",
+      "status": "SECTOR33_K23_HCGRADE_PROJECTION_KERNEL_BINDING_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23rh.py",
+      "sha256": "25bbd913278bc565a61665a31c0ca13f75305ea57c942a1664174e27b1010b7c"
+    }
+  },
+  "next_highest_yield_item": "Test whether the certified R_hc lifts preserve the finite operation/multiplication surfaces, or certify the first obstruction such as dense-support leakage against raw operation support.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23rh/cert.json",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23rh/generator_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23rh/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23rh/obs.csv",
+    "pivot_rows_csv": "data/invariants/d20/proof_obligations/long_k23rh/pivot_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23rh/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23rh/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23rh/tables.npz"
+  },
+  "schema": "long.k23rh.report@1",
+  "stage_protocol": {
+    "closure": "certify candidate-projection R_hc lifts without accepting the projection as final pi_Foam33",
+    "coherence": "check right inverse, split-basis invertibility, source-lift ranks, kernel identity, and P R_hc = R_Foam P",
+    "draft": "read long_k23pi, the center-grade projection, K23 prime kernel, and checked target operators",
+    "emit": "write long_k23rh artifacts and verifier hook",
+    "witness": "emit pivot/right-inverse rows, source-lift generator rows, observables, and matrix payloads"
+  },
+  "status": "SECTOR33_K23_RHC_SOURCE_LIFT_CERTIFIED",
+  "witness": {
+    "boundary": "This materializes a nontrivial source-side R_hc family for the center-grade projection candidate by acting trivially on K23 and by the checked target action on the quotient.",
+    "classification": "sector33_k23_candidate_projection_rhc_source_lift",
+    "matrix_sha256": "3565d286356901386a11328d655c4bc1ba5530d27f9624d342d66376a8741ffc",
+    "name": "long_k23rh",
+    "summary": {
+      "candidate_projection_flag": 1,
+      "complete_goal_claim_flag": 0,
+      "field_prime": 1000003,
+      "final_pi_accepted_flag": 0,
+      "generator_count": 9,
+      "intertwiner_residual_nonzero_total": 0,
+      "kernel_dimension": 23,
+      "kernel_identity_residual_nonzero_total": 0,
+      "long_hcfoam_certified_flag": 1,
+      "long_k23pi_certified_flag": 1,
+      "projection_rank": 33,
+      "quotient_dimension": 33,
+      "r_hc_materialized_flag": 1,
+      "right_inverse_column_count": 33,
+      "right_inverse_nonzero_count": 343,
+      "right_inverse_residual_nonzero_count": 0,
+      "source_lift_generator_count": 9,
+      "source_lift_nonidentity_total": 5288,
+      "source_lift_nonzero_total": 5508,
+      "source_lift_rank_sum": 504,
+      "split_basis_inverse_residual_nonzero_count": 0,
+      "split_basis_rank": 56,
+      "support_dimension": 56,
+      "target_nonidentity_generator_count": 9
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "c65ccc5c7f0871a0b4d399d0adb25253f978323850c6c9d1be959cadb5657d20",
+  "checks": {
+    "coefficient_profile_matches": true,
+    "inputs_pass": true,
+    "parity_boundary_recorded": true,
+    "prime_lift_shape_matches": true,
+    "prime_reconstruction_is_exact": true,
+    "signed_support_matches_binary_support": true
+  },
+  "claim": "long_k23lift certifies an exact signed prime-field support lift of the K23 source assignment, with nonzero support matching the binary support binding.",
+  "closure_boundary": {
+    "certifies": [
+      "the actual prime-field K23 coefficient matrix has rank 23 for this solve",
+      "an explicit 56-by-24 prime-field lift reconstructs all 23 source-assignment rows with zero residual",
+      "the signed coefficients are supported on exactly the same 112 entries as the binary binding",
+      "the nonzero signed coefficients are only -2, -1, and 1"
+    ],
+    "does_not_certify": [
+      "that residue parity is an algebraic reduction from the prime field to binary support",
+      "uniqueness or canonicity of the signed lift",
+      "a one-hot partition of support coordinates",
+      "an M23 module action on K23",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23lift.py",
+      "sha256": "1fe7527c23c1f28941e691226b75bef4f9013dff1b441dd5609bded11e16c0e6"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23": {
+      "certificate_sha256": "e3cf1697bce23179c6738bf97e4088e49ce966580fd5f25bb4fa06c532be29c8",
+      "path": "data/invariants/d20/proof_obligations/long_k23/report.json",
+      "sha256": "201d9c4d09b94efef782a05268f2a9a077a91b10a2a46418b2acd8fd97ecf595",
+      "status": "SECTOR33_K23_PUNCTURED_MOG_SYZYGY_APERTURE_TARGET_CERTIFIED"
+    },
+    "long_k23_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23/k23_matrices.npz",
+      "sha256": "3948afb27670d21630a5d8e88d98e956a3c6ada5094b08877050383d7d344f48"
+    },
+    "long_k23bind": {
+      "certificate_sha256": "e7f178cee20800a9cd44c25436e050243838694953ee464350b996222312c2f3",
+      "path": "data/invariants/d20/proof_obligations/long_k23bind/report.json",
+      "sha256": "5fc5c2d3758e681a4b343451ca9834a6b9a2823bee6fe59e5eb1c7048a2ccbed",
+      "status": "SECTOR33_K23_BINARY_SUPPORT_BINDING_CERTIFIED"
+    },
+    "long_k23bind_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23bind/k23bind_matrices.npz",
+      "sha256": "ad4c7f815d3918ca507c37d0d3437372d7f7de163929ff73e502615de0988548"
+    },
+    "long_k23src": {
+      "certificate_sha256": "27db891b3ae6110740d8b340d6b6a14cc588d3dbba7233699ed148f32ac05164",
+      "path": "data/invariants/d20/proof_obligations/long_k23src/report.json",
+      "sha256": "feaa602fdf570f6ab4260bd46a90643d168766b3747b68334e5d0c8dc6ae6b3c",
+      "status": "SECTOR33_K23_SOURCE_W24_RANK12_EXTENSION_CERTIFIED"
+    },
+    "long_k23src_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23src/k23src_matrices.npz",
+      "sha256": "dfbcb5dc1bdc70b5a0370f332b30722b2a583f0dff739acb6c4e6b4d159e095f"
+    },
+    "validator": {
+      "path": "src/certify_long_k23lift.py",
+      "sha256": "d91bf0b0e8bd0f2e470a6d11987fc11e4c8a29f68cda1b4f8bbdfcda7c59caec"
+    }
+  },
+  "next_highest_yield_item": "Use the signed support lift to test compatibility with the canonical 24 syzygy frame, then either certify K23-to-syzygy rowspace equality or emit the exact remaining obstruction.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23lift/cert.json",
+    "coefficient_histogram_csv": "data/invariants/d20/proof_obligations/long_k23lift/coefficient_histogram.csv",
+    "coefficient_rows_csv": "data/invariants/d20/proof_obligations/long_k23lift/coefficient_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23lift/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23lift/k23lift_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23lift/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23lift/report.json",
+    "row_check_rows_csv": "data/invariants/d20/proof_obligations/long_k23lift/row_check_rows.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_k23lift/seam.json",
+    "support_signed_rows_csv": "data/invariants/d20/proof_obligations/long_k23lift/support_signed_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23lift/tables.npz"
+  },
+  "schema": "long.k23lift.report@1",
+  "stage_protocol": {
+    "closure": "certify signed prime-field lift while keeping parity reduction and module action out of scope",
+    "coherence": "check prime rank, exact residual zero, support equality against binary binding, and coefficient profile",
+    "draft": "read long_k23, long_k23src, long_k23bind, prime K23 coefficients, and support rows",
+    "emit": "write long_k23lift artifacts and verifier hook",
+    "witness": "emit signed support rows, nonzero coefficient rows, row reconstruction checks, coefficient histogram, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_SIGNED_PRIME_SUPPORT_LIFT_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies an exact signed prime-field lift whose nonzero support matches the binary binding; residue parity is recorded only as a diagnostic, not as an algebraic reduction.",
+    "classification": "sector33_k23_signed_prime_support_lift",
+    "matrix_sha256": "ef10af53bb8dc6c3a8600d53072467c5671e37128ade81aa93f1f751f0c846e6",
+    "name": "long_k23lift",
+    "pivot_columns": [
+      0,
+      2,
+      12,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      23,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      39,
+      41,
+      53
+    ],
+    "summary": {
+      "active_signed_support_row_count": 13,
+      "binary_binding_nonzero_entry_count": 112,
+      "binary_only_entry_count": 0,
+      "coefficient_distinct_count": 3,
+      "coefficient_max_signed": 1,
+      "coefficient_min_signed": -2,
+      "complete_goal_claim_flag": 0,
+      "inactive_signed_support_row_count": 43,
+      "k23_basis_row_count": 23,
+      "long_k23_certified_flag": 1,
+      "long_k23bind_certified_flag": 1,
+      "long_k23src_certified_flag": 1,
+      "negative_coefficient_count": 62,
+      "parity_is_algebraic_reduction_flag": 0,
+      "pivot_column_count": 23,
+      "positive_coefficient_count": 50,
+      "prime_field": 1000003,
+      "prime_rank": 23,
+      "prime_residual_nonzero_entry_count": 0,
+      "reconstructed_image_rank": 12,
+      "residue_parity_mismatch_count": 54,
+      "signed_l1_total": 120,
+      "signed_lift_column_count": 24,
+      "signed_lift_nonzero_entry_count": 112,
+      "signed_lift_row_count": 56,
+      "signed_only_entry_count": 0,
+      "signed_prime_lift_certified_flag": 1,
+      "source_coordinate_count": 24,
+      "support_overlap_entry_count": 112,
+      "support_profile_match_flag": 1,
+      "support_row_count": 56,
+      "zero_residual_row_count": 23
+    }
+  }
+}

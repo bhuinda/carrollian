@@ -1,0 +1,154 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "2cb403117f9997abaf32ea1ac6e5719609d923f799e412bd2b2ffa3921a353ef",
+  "checks": {
+    "canonical_target_shape_matches": true,
+    "coefficient_profile_matches": true,
+    "euler_is_killed_and_syzygy_identity_reconstructs": true,
+    "frame_lift_shape_matches": true,
+    "golay_selector_and_module_remain_open": true,
+    "inputs_pass": true
+  },
+  "claim": "long_k23syz certifies the explicit K23 binding to the canonical Euler-plus-23-syzygy coordinate frame.",
+  "closure_boundary": {
+    "certifies": [
+      "the canonical frame has one Euler coordinate and 23 syzygy coordinates",
+      "an explicit 56-by-24 prime-field support map kills Euler",
+      "the same map reconstructs the 23-by-23 syzygy identity with zero residual",
+      "K23 is therefore bound to the canonical punctured syzygy coordinate frame over the certified prime field"
+    ],
+    "does_not_certify": [
+      "the quadratic/isotropic binary selector inside the canonical frame",
+      "that the canonical frame's naive binary shadow is the Golay code",
+      "an M23 module action on K23",
+      "uniqueness or canonicity of the support map",
+      "a rebuild of d20.json or broad bundle closure"
+    ]
+  },
+  "inputs": {
+    "canonical_24_syzygy_frame": {
+      "canonical_24_syzygy_frame_sha256": "1164fc0ae884ec7fd3bce24ecde7f07264298aa786d82fb3fa05562c77298c1b",
+      "path": "data/geometry/canonical_24_syzygy_frame.json",
+      "sha256": "0e8712ee10e9838a1e15a142f01255a3e7a38a774057b705a4c6183ccb203c84",
+      "status": "CANONICAL_24_COORDINATE_SYZYGY_FRAME_CERTIFIED_GOLAY_SELECTION_STILL_OPEN"
+    },
+    "derive_script": {
+      "path": "src/derive_long_k23syz.py",
+      "sha256": "dfde5735c6361ab0805f6ebd6f2234cfa4c983e94e01f3479cbf309084e60f3f"
+    },
+    "long_hcsupp_support": {
+      "path": "data/invariants/d20/proof_obligations/long_hcsupp/support_rows.csv",
+      "sha256": "60b5e8066659b8e1ae293ab44e09a046a7d3584822b5bce7468e790d5f37e5c1"
+    },
+    "long_k23": {
+      "certificate_sha256": "e3cf1697bce23179c6738bf97e4088e49ce966580fd5f25bb4fa06c532be29c8",
+      "path": "data/invariants/d20/proof_obligations/long_k23/report.json",
+      "sha256": "201d9c4d09b94efef782a05268f2a9a077a91b10a2a46418b2acd8fd97ecf595",
+      "status": "SECTOR33_K23_PUNCTURED_MOG_SYZYGY_APERTURE_TARGET_CERTIFIED"
+    },
+    "long_k23_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23/k23_matrices.npz",
+      "sha256": "3948afb27670d21630a5d8e88d98e956a3c6ada5094b08877050383d7d344f48"
+    },
+    "long_k23lift": {
+      "certificate_sha256": "c65ccc5c7f0871a0b4d399d0adb25253f978323850c6c9d1be959cadb5657d20",
+      "path": "data/invariants/d20/proof_obligations/long_k23lift/report.json",
+      "sha256": "816a5ef237b2aa6525829acff4560562b7e274af292d6c6eb468290689e2edc6",
+      "status": "SECTOR33_K23_SIGNED_PRIME_SUPPORT_LIFT_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23syz.py",
+      "sha256": "e1e2e8ef10ce0b68df462b1f3391757c320fea71e098aef460edffae3488b80e"
+    }
+  },
+  "next_highest_yield_item": "Use the canonical syzygy-frame binding to search for the quadratic/isotropic binary selector inside W24, then test whether the induced stabilizer action is M23-type.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23syz/cert.json",
+    "coefficient_histogram_csv": "data/invariants/d20/proof_obligations/long_k23syz/coefficient_histogram.csv",
+    "coefficient_rows_csv": "data/invariants/d20/proof_obligations/long_k23syz/coefficient_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23syz/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23syz/k23syz_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23syz/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23syz/report.json",
+    "row_check_rows_csv": "data/invariants/d20/proof_obligations/long_k23syz/row_check_rows.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_k23syz/seam.json",
+    "support_frame_rows_csv": "data/invariants/d20/proof_obligations/long_k23syz/support_frame_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23syz/tables.npz"
+  },
+  "schema": "long.k23syz.report@1",
+  "stage_protocol": {
+    "closure": "certify canonical syzygy-frame binding while keeping the binary selector and module action open",
+    "coherence": "check Euler-zero target, syzygy identity rank, exact prime residual zero, and coefficient profile",
+    "draft": "read long_k23, long_k23lift, the canonical 24 syzygy frame, and sector33 support rows",
+    "emit": "write long_k23syz artifacts and verifier hook",
+    "witness": "emit support-frame rows, nonzero coefficient rows, row reconstruction checks, coefficient histogram, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_CANONICAL_SYZYGY_FRAME_BINDING_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies an exact prime-field binding of K23 to the canonical Euler-plus-syzygy coordinate frame; the binary selector and M23 action remain open.",
+    "classification": "sector33_k23_canonical_syzygy_frame_binding",
+    "matrix_sha256": "9fee1c993b44fbcf45fa1147e6bd15c3143b8c8d52874699ea3254e34ff2db19",
+    "name": "long_k23syz",
+    "pivot_columns": [
+      0,
+      2,
+      12,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      23,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      39,
+      41,
+      53
+    ],
+    "summary": {
+      "active_frame_support_row_count": 23,
+      "canonical_coordinate_count": 24,
+      "canonical_frame_certified_flag": 1,
+      "coefficient_distinct_count": 5,
+      "coefficient_max_signed": 2,
+      "coefficient_min_signed": -500001,
+      "complete_goal_claim_flag": 0,
+      "euler_coordinate_count": 1,
+      "euler_lift_nonzero_entry_count": 0,
+      "frame_lift_column_count": 24,
+      "frame_lift_nonzero_entry_count": 43,
+      "frame_lift_row_count": 56,
+      "golay_selector_certified_flag": 0,
+      "half_residue_entry_count": 2,
+      "inactive_frame_support_row_count": 33,
+      "k23_basis_row_count": 23,
+      "long_k23_certified_flag": 1,
+      "long_k23lift_certified_flag": 1,
+      "m23_module_proven_flag": 0,
+      "negative_coefficient_count": 29,
+      "pivot_column_count": 23,
+      "positive_coefficient_count": 14,
+      "prime_field": 1000003,
+      "prime_rank": 23,
+      "prime_residual_nonzero_entry_count": 0,
+      "reconstructed_syzygy_rank": 23,
+      "rowspace_identity_certified_flag": 1,
+      "signed_l1_total": 1000050,
+      "support_row_count": 56,
+      "syzygy_coordinate_count": 23,
+      "syzygy_lift_nonzero_entry_count": 43,
+      "target_euler_nonzero_count": 0,
+      "target_syzygy_rank": 23,
+      "zero_residual_row_count": 23
+    }
+  }
+}

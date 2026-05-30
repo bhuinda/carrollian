@@ -1,0 +1,130 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dcdbda6e92764cce9c52f5f356078bd5396785bab257d208397cb97a3415e109",
+  "checks": {
+    "boundary_flags_match": true,
+    "inputs_pass": true,
+    "product_obstruction_profile_matches": true,
+    "projection_repair_profile_matches": true,
+    "quotient_lift_profile_matches": true
+  },
+  "claim": "long_k23proj certifies the first repaired-projection quotient lift and its product obstruction.",
+  "closure_boundary": {
+    "certifies": [
+      "a rank-33 repaired projection mapping the closure60 unit to fixed target row 0",
+      "the unit-only old-column repair has rank 32, so one appended projection column is needed to restore rank",
+      "the induced split-basis source lifts satisfy the quotient intertwining with zero residual",
+      "the induced lifts fix the closure60 unit",
+      "all nine induced lifts fail to preserve the 60-row product"
+    ],
+    "does_not_certify": [
+      "nonexistence of some other repaired projection with product-preserving lifts",
+      "a final projection table",
+      "a final operator carrier",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23proj.py",
+      "sha256": "b46b16f757cda2e84317c47d552cc237d209575b0531dcaca0cb6e6a35f03e48"
+    },
+    "long_k23cl": {
+      "certificate_sha256": "ce640686b6e3d1640463eddc086e0c7667e5ccb346b916e6c292d5aad2c49bac",
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/report.json",
+      "sha256": "ef3e3310bace2fe2c1d16120f2f305e9b5af7b3a73bac5a4c8afda85e6a4a5cb",
+      "status": "SECTOR33_K23_MULTIPLICATION_CLOSURE60_CERTIFIED"
+    },
+    "long_k23cl_closure_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/closure_rows.csv",
+      "sha256": "c5c755b78752f6b4cc6ada73d00c0edb895fd21eca7540c330b9ec62e8063c6a"
+    },
+    "long_k23cl_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/k23cl_matrices.npz",
+      "sha256": "066a9a9ab4c252d0f1f6352af6438e1f4dbe024f1ac33e045a9ef5b2d939a865"
+    },
+    "long_k23rh": {
+      "certificate_sha256": "d26ee47a3bacd2cf2001f28fdab181b705c17bd9d26e57212124ff6ef28360ab",
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/report.json",
+      "sha256": "85d246a173dd255d45adcecb15170d7635cb87788db31fd98f79f28d12e4b69b",
+      "status": "SECTOR33_K23_RHC_SOURCE_LIFT_CERTIFIED"
+    },
+    "long_k23rh_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rh/k23rh_matrices.npz",
+      "sha256": "af3f182f7a270eb2f7c1dd137449a4ade01d5231a1676be8f1db81370fd1ea8a"
+    },
+    "long_k23tgt": {
+      "certificate_sha256": "e595f6622f889f9e54197a178d6ac4cacde32bff41aba9d19bdba493dffe661d",
+      "path": "data/invariants/d20/proof_obligations/long_k23tgt/report.json",
+      "sha256": "c757874b3aa1fa5bdd93645112ed80510c498a764b7b3850b0584dcdcd29de67",
+      "status": "SECTOR33_K23_TARGET_UNIT_APERTURE_CERTIFIED"
+    },
+    "long_k23unit": {
+      "certificate_sha256": "990d6950cca66455aec0cc000d8ab352157f6baca3d0029b8ae456a05b499ac0",
+      "path": "data/invariants/d20/proof_obligations/long_k23unit/report.json",
+      "sha256": "f7f4b73d769372e8b0d1aee5989220b5df3ac47bcc76586be2798297d5c62d44",
+      "status": "SECTOR33_K23_CLOSURE60_UNIT_PROJECTION_OBSTRUCTION_CERTIFIED"
+    },
+    "long_k23unit_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23unit/k23unit_matrices.npz",
+      "sha256": "b2c3e6edc7d80bd8052a5f72b9ff1076498fcf281e190376f1a0a4f775c5a7dc"
+    },
+    "validator": {
+      "path": "src/certify_long_k23proj.py",
+      "sha256": "e3ccb64750f9f7fa01aa72aba8e5402d0b763a1598647bb73539a173a9510629"
+    }
+  },
+  "next_highest_yield_item": "Search the repaired-projection family, not just this first candidate, for a product-preserving quotient lift or certify a family-level obstruction.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23proj/cert.json",
+    "generator_rows_csv": "data/invariants/d20/proof_obligations/long_k23proj/generator_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23proj/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23proj/k23proj_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23proj/obs.csv",
+    "projection_edits_csv": "data/invariants/d20/proof_obligations/long_k23proj/projection_edits.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23proj/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23proj/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23proj/tables.npz"
+  },
+  "schema": "long.k23proj.report@1",
+  "stage_protocol": {
+    "closure": "certify quotient-level repair while preserving the product-action obstruction",
+    "coherence": "check repaired projection rank, unit target row, right inverse, split basis, quotient residuals, and product residuals",
+    "draft": "read closure60 product, closure unit, target aperture, and checked target action",
+    "emit": "write long_k23proj artifacts and verifier hook",
+    "witness": "emit projection edits, repaired quotient-lift rows, observables, and matrices"
+  },
+  "status": "SECTOR33_K23_REPAIRED_PROJECTION_PRODUCT_OBSTRUCTION_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies a rank-33 replacement projection that fixes the closure60 unit class and has exact quotient lifts, while those induced lifts still fail to preserve the 60-row product.",
+    "classification": "sector33_k23_repaired_projection_product_obstruction",
+    "matrix_sha256": "1e6687a529bc8bdc59fdf295f08e85f5c2fb09cc6fa7a9ec10c9a25ad3523062",
+    "name": "long_k23proj",
+    "summary": {
+      "closure_dimension": 60,
+      "complete_goal_claim_flag": 0,
+      "kernel_dimension": 27,
+      "long_k23cl_certified_flag": 1,
+      "long_k23rh_certified_flag": 1,
+      "long_k23tgt_certified_flag": 1,
+      "long_k23unit_certified_flag": 1,
+      "old_projection_rank": 33,
+      "product_obstructed_generator_count": 9,
+      "product_preserved_generator_count": 0,
+      "product_residual_nonzero_max": 147893,
+      "product_residual_nonzero_min": 79106,
+      "product_residual_nonzero_total": 1009706,
+      "projection_edit_row_count": 6,
+      "quotient_intertwiner_residual_nonzero_total": 0,
+      "repaired_projection_rank": 33,
+      "repaired_unit_support_count": 1,
+      "repaired_unit_target_row": 0,
+      "right_inverse_residual_nonzero_count": 0,
+      "split_basis_rank": 60,
+      "target_dimension": 33,
+      "unit_repaired_base_rank": 32,
+      "unit_residual_nonzero_total": 0
+    }
+  }
+}
