@@ -1,0 +1,160 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "0c1e3bf9422ca0335045e2d2b0166115ec2c954674d4d9f26e791f845f1c5180",
+  "checks": {
+    "frontier_flags_match": true,
+    "gate_profile_matches": true,
+    "inputs_pass": true,
+    "local_audit_separation_matches": true,
+    "objective_delta_profile_matches": true,
+    "profile_shape_matches": true,
+    "wire_dependency_profile_matches": true
+  },
+  "claim": "long_k23ptran certifies objective public-transport potential and current blocking gates.",
+  "closure_boundary": {
+    "certifies": [
+      "the current self-contained public surface is 5376 bytes against a 1568-byte baseline, so it is not an improvement",
+      "the shared-table candidate surface is 224 bytes against a 1568-byte baseline",
+      "the shared-table candidate has conditional byte savings 1344/1568 = 6/7",
+      "the shared-table candidate has one objective improvement-potential row",
+      "five public-claim gates remain blocking"
+    ],
+    "does_not_certify": [
+      "current public transport improvement",
+      "wire-format equivalence",
+      "shared-table public distribution",
+      "self-contained public compression",
+      "external runtime superiority",
+      "standards compliance",
+      "deployment readiness",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23ptran.py",
+      "sha256": "27ba1c5ff8de26e9d7fa20c28592762096603055b8c755886fa9e49a88ee375a"
+    },
+    "long_k23audit": {
+      "certificate_sha256": "b01eb9b464b90933887aca07c415d44791faf27766f3c2e6150e2379cdb378ef",
+      "path": "data/invariants/d20/proof_obligations/long_k23audit/report.json",
+      "sha256": "28725337aba4f95ec0c2f5583efad900acc7cb3d7fe1d72fd268b17b15dc742e",
+      "status": "SECTOR33_K23_LOCAL_AUDIT_COST_CERTIFIED"
+    },
+    "long_k23crypt": {
+      "certificate_sha256": "646475308f0e266eeda3563af63d40fa85d073aeb0bc2e157b636ff3b1c3c7a7",
+      "path": "data/invariants/d20/proof_obligations/long_k23crypt/report.json",
+      "sha256": "10b0d9111e10f136773bebf9b5b1dcde4451c854962a2c1014455c94a7934650",
+      "status": "SECTOR33_K23_CRYPTOLOGIC_POTENTIAL_FRONTIER_CERTIFIED"
+    },
+    "long_k23norm": {
+      "certificate_sha256": "38911cb2fd6594d2455b91d3bbbfb60e64ddb496baf2d5dab603ff1df6861600",
+      "path": "data/invariants/d20/proof_obligations/long_k23norm/report.json",
+      "sha256": "583ce9f8826fcbd4f41db3131ce91bc8bf538af7bafb49c6f343d13422b9afbf",
+      "status": "SECTOR33_K23_MLKEM512_NORMALIZATION_CERTIFIED"
+    },
+    "long_k23vwork": {
+      "certificate_sha256": "d3990d666ebb3b34a8bafb8bf08e96c93cc46f608f09ab35a54017aaa5459b9f",
+      "path": "data/invariants/d20/proof_obligations/long_k23vwork/report.json",
+      "sha256": "9b6a55b6c217e0bbe47adc92e05fa4b9e79d20731da51681d60ade9b1bb131b5",
+      "status": "SECTOR33_K23_VERIFIER_WORKLOAD_BINDING_CERTIFIED"
+    },
+    "long_k23wdep": {
+      "certificate_sha256": "6ef4e9c580841e7c07e9cc581a6f4adb2288dae75f80fbc24e8c2d7386de33f3",
+      "path": "data/invariants/d20/proof_obligations/long_k23wdep/report.json",
+      "sha256": "23c13541eb10b1401236cd50f264630981e06f32341d17b4fc216edd7a981bc9",
+      "status": "SECTOR33_K23_WIRE_DEPENDENCY_DECISION_CERTIFIED"
+    },
+    "long_k23wire": {
+      "certificate_sha256": "e196e26335c3977e0709bcd11bd50fa4c9297a86b67eda63448771a4dac06bc8",
+      "path": "data/invariants/d20/proof_obligations/long_k23wire/report.json",
+      "sha256": "23480a48dd12446349bbe5d451501c3244b067e53924da06bef0d1b2856772e8",
+      "status": "SECTOR33_K23_COMPACT_WIRE_MAP_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23ptran.py",
+      "sha256": "9f012b2f070d6382f8f5aaffe6792eb39368bfcaa86e4ce688bbc7fe8f9fc826"
+    }
+  },
+  "next_highest_yield_item": "Attack the highest-value blocker: construct a public shared-table distribution/equivalence certificate or a self-contained compression certificate.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23ptran/cert.json",
+    "gate_rows_csv": "data/invariants/d20/proof_obligations/long_k23ptran/gate_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23ptran/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23ptran/k23ptran_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23ptran/obs.csv",
+    "profile_rows_csv": "data/invariants/d20/proof_obligations/long_k23ptran/profile_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23ptran/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23ptran/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23ptran/tables.npz"
+  },
+  "schema": "long.k23ptran.report@1",
+  "stage_protocol": {
+    "closure": "certify objective transport potential without converting it into a public improvement claim",
+    "coherence": "check public byte deltas, conditional improvement ratio, self-contained penalty, dependency gates, and nonclaims",
+    "draft": "read normalization, wire-map, dependency, audit, workload, and cryptologic-frontier reports",
+    "emit": "write long_k23ptran artifacts and verifier hook",
+    "witness": "emit public-transport profiles, claim gates, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_PUBLIC_TRANSPORT_POTENTIAL_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the objective public-transport deltas and the conditional shared-table improvement potential while keeping public improvement claims blocked.",
+    "classification": "sector33_k23_public_transport_potential",
+    "gate_code_map": {
+      "0": "public_shared_table_distribution",
+      "1": "wire_equivalence_proof",
+      "2": "self_contained_public_compression",
+      "3": "external_runtime_or_size_benchmark",
+      "4": "interop_and_side_channel_profile"
+    },
+    "matrix_sha256": "e1dd59f72be325044169e201bcb3a74350becc8cf57aafcdaff78b08912127a3",
+    "name": "long_k23ptran",
+    "profile_code_map": {
+      "0": "current_self_contained_public_surface",
+      "1": "shared_table_public_candidate_surface",
+      "2": "local_verifier_audit_surface_not_public_transport"
+    },
+    "summary": {
+      "baseline_public_exchange_bytes": 1568,
+      "blocking_gate_count": 5,
+      "certified_input_count": 6,
+      "claim_gate_count": 0,
+      "complete_goal_claim_flag": 0,
+      "conditional_saved_vs_baseline_bytes": 1344,
+      "cryptologic_frontier_flag": 1,
+      "current_delta_vs_baseline_bytes": 3808,
+      "current_improvement_den": 1,
+      "current_improvement_num": 0,
+      "current_public_claim_ready_count": 0,
+      "current_self_contained_bytes": 5376,
+      "digest_surface_total_bytes": 5376,
+      "external_efficiency_path_demoted_count": 1,
+      "external_improvement_claim_count": 0,
+      "gate_row_count": 5,
+      "input_report_count": 6,
+      "local_audit_total_bytes": 224,
+      "local_bytes_per_game_den": 3,
+      "local_bytes_per_game_num": 2,
+      "objective_improvement_potential_count": 1,
+      "profile_row_count": 3,
+      "public_transport_claim_count": 0,
+      "public_transport_potential_flag": 1,
+      "public_transport_profile_count": 2,
+      "ready_for_external_claim_count": 0,
+      "required_gate_count": 5,
+      "satisfied_gate_count": 0,
+      "self_contained_penalty_bytes": 3808,
+      "self_contained_profile_count": 1,
+      "shared_delta_vs_baseline_bytes": -1344,
+      "shared_improvement_den": 7,
+      "shared_improvement_num": 6,
+      "shared_table_profile_count": 2,
+      "shared_table_wire_bytes": 224,
+      "table_index_dependency_count": 56,
+      "wire_equivalence_claim_count": 0,
+      "wire_row_bytes": 4,
+      "wire_row_count": 56,
+      "wire_total_bytes": 224
+    }
+  }
+}

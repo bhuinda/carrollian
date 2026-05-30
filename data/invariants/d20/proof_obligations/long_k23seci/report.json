@@ -1,0 +1,108 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "04e1298e637974cc1ffda465751fe5d9c25d5263214baaab3d3985ccc592b70b",
+  "checks": {
+    "bounded_game_profile_matches": true,
+    "completion_flag_matches": true,
+    "decode_and_epoch_profile_matches": true,
+    "inputs_pass": true,
+    "open_security_claims_match": true,
+    "security_gate_matches": true
+  },
+  "claim": "long_k23seci certifies the bounded security-integrity gate for the K23 transcript-index surface.",
+  "closure_boundary": {
+    "certifies": [
+      "bounded finite-game bad accepts are zero",
+      "the bounded soundness-error numerator is zero over 112869680 counted tamper strategies",
+      "56 valid transcript-index bytes decode and 200 invalid one-byte values reject"
+    ],
+    "does_not_certify": [
+      "computational hardness",
+      "zero knowledge",
+      "unbounded adversary security",
+      "external randomness security",
+      "public security superiority"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23seci.py",
+      "sha256": "81c42e7912b8634065edf63f5c39d6ae9c6ead56307c9f9ba0ac335b94eaad77"
+    },
+    "long_k23dist": {
+      "certificate_sha256": "dc777884ea90b11afbb37da25d6e4c5bf49ad20d86927bdc2744bab654696904",
+      "path": "data/invariants/d20/proof_obligations/long_k23dist/report.json",
+      "sha256": "ba6992467bbfd521284710f2d47946b6806391b1689a60a8dbac17d84a7260e3",
+      "status": "SECTOR33_K23_PUBLIC_TABLE_DISTRIBUTION_DECODER_CERTIFIED"
+    },
+    "long_k23epoch": {
+      "certificate_sha256": "6f54c790f19b646c4034b40b339428c58805f8d6a2592f10a33be9bfe74f717d",
+      "path": "data/invariants/d20/proof_obligations/long_k23epoch/report.json",
+      "sha256": "c5156aa2b934722c52473d51c6fa1a53fed4d28f8e6780ab62b65124b52e75e9",
+      "status": "SECTOR33_K23_REAL_EPOCH_MANIFEST_CERTIFIED"
+    },
+    "long_k23sound": {
+      "certificate_sha256": "942daa6742b554672aed14a86debb880113dab2f81f2db1c5fcb61c98c3226dc",
+      "path": "data/invariants/d20/proof_obligations/long_k23sound/report.json",
+      "sha256": "220c9d855069815e51dbfa5835d0fbd537eab9bce44ac501372df092b1bddd54",
+      "status": "SECTOR33_K23_BOUNDED_ADVERSARY_SOUNDNESS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23seci.py",
+      "sha256": "a3aab26b7515e009ce214ac2420cba2abc18375657fc009fee436dd74f13bc12"
+    }
+  },
+  "next_highest_yield_item": "Turn this gate into an external threat-model matrix only after real benchmark and third-party epoch artifacts exist.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23seci/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23seci/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23seci/k23seci_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23seci/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23seci/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23seci/seam.json",
+    "security_rows_csv": "data/invariants/d20/proof_obligations/long_k23seci/security_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23seci/tables.npz"
+  },
+  "schema": "long.k23seci.report@1",
+  "stage_protocol": {
+    "closure": "certify finite bounded integrity without hardness or unbounded-security overclaim",
+    "coherence": "check bounded false accepts, invalid-byte rejection, epoch scope, and open security nonclaims",
+    "draft": "read bounded soundness, distribution decoder, and epoch manifest certificates",
+    "emit": "write long_k23seci artifacts and verifier hook",
+    "witness": "emit security gate rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_SECURITY_INTEGRITY_GATE_CERTIFIED",
+  "witness": {
+    "boundary": "This separates the certified bounded finite-game integrity surface from open hardness, zero-knowledge, and unbounded-adversary claims.",
+    "classification": "sector33_k23_security_integrity_gate",
+    "matrix_sha256": "8dd27c7b7e8bf6c3cff11b5ef128bacb8f317243dd339ed9c36d325e66a98cd7",
+    "name": "long_k23seci",
+    "summary": {
+      "all_depth_false_accept_strategy_words": 0,
+      "all_depth_tamper_reject_strategy_words": 112869680,
+      "bad_accept_count": 0,
+      "blocking_security_count": 3,
+      "bounded_soundness_error_denominator": 112869680,
+      "bounded_soundness_error_numerator": 0,
+      "certified_input_count": 3,
+      "claim_security_count": 0,
+      "complete_goal_claim_flag": 0,
+      "external_randomness_claim_flag": 0,
+      "final_acceptance_denominator": 1679616,
+      "final_acceptance_numerator": 1,
+      "finite_bounded_integrity_flag": 1,
+      "hardness_claim_flag": 0,
+      "input_report_count": 3,
+      "invalid_reject_count": 200,
+      "materialized_version_count": 2,
+      "public_security_claim_count": 0,
+      "real_epoch_count": 1,
+      "satisfied_security_count": 3,
+      "security_integrity_gate_flag": 1,
+      "security_row_count": 6,
+      "unbounded_adversary_claim_flag": 0,
+      "valid_decode_count": 56,
+      "zero_knowledge_claim_flag": 0
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "76aab33f66fade3290797d5b87a8204c70780bb12aaed0252cbda1eab26f8e64",
+  "checks": {
+    "completion_flag_matches": true,
+    "decoder_and_epoch_match": true,
+    "external_nonclaim_matches": true,
+    "gate_profile_matches": true,
+    "inputs_pass": true,
+    "objective_byte_improvement_matches": true,
+    "profile_profile_matches": true,
+    "saving_profile_matches": true
+  },
+  "claim": "long_k23interop certifies the internal interop/benchmark gate for the K23 transcript-index surface.",
+  "closure_boundary": {
+    "certifies": [
+      "the transcript-index surface is 56 bytes across 56 rows",
+      "the selected byte comparison records 1512 bytes saved against the 1568-byte baseline",
+      "the internal decoder has 56 valid decodes and 200 invalid-byte rejects"
+    ],
+    "does_not_certify": [
+      "drop-in compatibility",
+      "third-party benchmark results",
+      "external public transport readiness",
+      "security superiority",
+      "deployment readiness"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23interop.py",
+      "sha256": "05253edddb39709df81a0aaf938818e95d620b715262741d0a9c2595c5453e5c"
+    },
+    "long_k23bench": {
+      "certificate_sha256": "b7bbbd122bfa4a2a1d988679a4e25827e666501a866f121db16248b50b71607d",
+      "path": "data/invariants/d20/proof_obligations/long_k23bench/report.json",
+      "sha256": "4dc5b798d696a10a856820602836ee83574562e9e7d7fb25f368d819706cd088",
+      "status": "SECTOR33_K23_BENCHMARK_SURFACE_CERTIFIED"
+    },
+    "long_k23dist": {
+      "certificate_sha256": "dc777884ea90b11afbb37da25d6e4c5bf49ad20d86927bdc2744bab654696904",
+      "path": "data/invariants/d20/proof_obligations/long_k23dist/report.json",
+      "sha256": "ba6992467bbfd521284710f2d47946b6806391b1689a60a8dbac17d84a7260e3",
+      "status": "SECTOR33_K23_PUBLIC_TABLE_DISTRIBUTION_DECODER_CERTIFIED"
+    },
+    "long_k23epoch": {
+      "certificate_sha256": "6f54c790f19b646c4034b40b339428c58805f8d6a2592f10a33be9bfe74f717d",
+      "path": "data/invariants/d20/proof_obligations/long_k23epoch/report.json",
+      "sha256": "c5156aa2b934722c52473d51c6fa1a53fed4d28f8e6780ab62b65124b52e75e9",
+      "status": "SECTOR33_K23_REAL_EPOCH_MANIFEST_CERTIFIED"
+    },
+    "long_k23ptran": {
+      "certificate_sha256": "0c1e3bf9422ca0335045e2d2b0166115ec2c954674d4d9f26e791f845f1c5180",
+      "path": "data/invariants/d20/proof_obligations/long_k23ptran/report.json",
+      "sha256": "4327b1785f53335804c52b353097e7acb3306708e0ae3f6779bd47474b8a9d48",
+      "status": "SECTOR33_K23_PUBLIC_TRANSPORT_POTENTIAL_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23interop.py",
+      "sha256": "d205825b4ed659ce37175c9f58802ea78d956c27ab1c6cc860c6bfb696c93b05"
+    }
+  },
+  "next_highest_yield_item": "Materialize the security-integrity gate so byte efficiency is separated from bounded finite-game security and open hardness claims.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23interop/cert.json",
+    "gate_rows_csv": "data/invariants/d20/proof_obligations/long_k23interop/gate_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23interop/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23interop/k23interop_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23interop/obs.csv",
+    "profile_rows_csv": "data/invariants/d20/proof_obligations/long_k23interop/profile_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23interop/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23interop/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23interop/tables.npz"
+  },
+  "schema": "long.k23interop.report@1",
+  "stage_protocol": {
+    "closure": "certify internal byte efficiency while blocking external interop and benchmark claims",
+    "coherence": "check the 56-byte surface, 27/28 byte saving, decoder totals, and external nonclaim flags",
+    "draft": "read epoch manifest, decoder, public transport, and benchmark-surface certificates",
+    "emit": "write long_k23interop artifacts and verifier hook",
+    "witness": "emit byte-profile rows, gate rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_INTEROP_BENCHMARK_GATE_CERTIFIED",
+  "witness": {
+    "boundary": "This records internal byte-surface improvement for the transcript-index surface while keeping external benchmark and drop-in compatibility claims closed.",
+    "classification": "sector33_k23_interop_benchmark_gate",
+    "matrix_sha256": "cfd8b8b1e9607ca5d218ec5143ec22bcc5a60a65fc79f4482cc209ee99d1501c",
+    "name": "long_k23interop",
+    "summary": {
+      "baseline_public_exchange_bytes": 1568,
+      "benchmark_surface_flag": 1,
+      "blocking_gate_count": 3,
+      "certified_input_count": 4,
+      "claim_gate_count": 0,
+      "compact_saved_vs_baseline_bytes": 1344,
+      "compact_saved_vs_baseline_den": 7,
+      "compact_saved_vs_baseline_num": 6,
+      "compact_shared_table_bytes": 224,
+      "complete_goal_claim_flag": 0,
+      "current_self_contained_bytes": 5376,
+      "drop_in_compat_count": 0,
+      "epoch_manifest_ready_flag": 1,
+      "external_benchmark_count": 0,
+      "external_improvement_claim_count": 0,
+      "gate_row_count": 6,
+      "index_saved_vs_baseline_bytes": 1512,
+      "index_saved_vs_baseline_den": 28,
+      "index_saved_vs_baseline_num": 27,
+      "input_report_count": 4,
+      "internal_certified_profile_count": 3,
+      "invalid_reject_count": 200,
+      "objective_byte_improvement_flag": 1,
+      "profile_row_count": 3,
+      "public_transport_claim_count": 0,
+      "runtime_package_row_count": 147,
+      "satisfied_gate_count": 3,
+      "transcript_index_bytes": 56,
+      "valid_decode_count": 56
+    }
+  }
+}

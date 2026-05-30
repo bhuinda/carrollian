@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "claim_gates_match": true,
+    "equivalence_profile_matches": true,
+    "frontier_flags_match": true,
+    "inputs_pass": true,
+    "one_byte_ranges_match": true,
+    "transport_byte_profile_matches": true
+  },
+  "schema": "long.k23ptab.cert@1",
+  "status": "SECTOR33_K23_PUBLIC_TABLE_EQUIVALENCE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that the four-byte compact wire row is derivable from a one-byte transcript index when the certified transcript/opening table is already public.",
+    "classification": "sector33_k23_public_table_equivalence",
+    "gate_code_map": {
+      "0": "certificate_resident_table",
+      "1": "wire_field_derivation_equivalence",
+      "2": "runtime_public_distribution",
+      "3": "external_interop_profile",
+      "4": "external_benchmark_claim"
+    },
+    "matrix_sha256": "382771c94a874fa0a05b533015443e0c9137fe760de8382efadc1bd5f34a4af4",
+    "name": "long_k23ptab",
+    "selector_formula": "selector = int(public_digest_sha256[:16], 16) mod transcript_opening_count",
+    "summary": {
+      "baseline_public_exchange_bytes": 1568,
+      "blocking_gate_count": 3,
+      "certificate_resident_table_flag": 1,
+      "certified_input_count": 3,
+      "claim_gate_count": 0,
+      "complete_goal_claim_flag": 0,
+      "derived_match_count": 56,
+      "equiv_row_count": 56,
+      "external_improvement_claim_count": 0,
+      "gate_row_count": 5,
+      "input_report_count": 3,
+      "max_residual_class_code": 55,
+      "max_selected_opening_id": 90,
+      "max_selector_value_mod": 5,
+      "max_transcript_id": 55,
+      "one_byte_transcript_index_flag": 1,
+      "opening_row_count": 91,
+      "per_message_transport_potential_flag": 1,
+      "public_table_equivalence_count": 56,
+      "public_transcript_count": 56,
+      "public_transport_potential_flag": 1,
+      "runtime_distribution_claim_count": 0,
+      "satisfied_gate_count": 2,
+      "saved_vs_baseline_bytes": 1512,
+      "saved_vs_baseline_den": 28,
+      "saved_vs_baseline_num": 27,
+      "saved_vs_wire_bytes": 168,
+      "saved_vs_wire_den": 4,
+      "saved_vs_wire_num": 3,
+      "selector_formula_count": 56,
+      "transcript_only_bytes_per_row": 1,
+      "transcript_only_total_bytes": 56,
+      "wire_row_bytes": 4,
+      "wire_row_count": 56,
+      "wire_total_bytes": 224
+    }
+  }
+}

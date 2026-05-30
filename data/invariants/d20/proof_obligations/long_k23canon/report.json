@@ -1,0 +1,115 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "bcdd074f09541e9a59458455706d38ebd7bb6b176d06b2de40170e362f1cefd1",
+  "checks": {
+    "canonicality_profile_matches": true,
+    "completion_flag_matches": true,
+    "epoch_scope_matches": true,
+    "gate_profile_matches": true,
+    "inputs_pass": true,
+    "version_profile_matches": true
+  },
+  "claim": "long_k23canon certifies dereference canonicality across the compact and transcript-index byte versions.",
+  "closure_boundary": {
+    "certifies": [
+      "the compact four-byte version and one-byte transcript-index version decode to the same mint normal form on all 56 valid rows",
+      "the transcript-index version has one quarter of the per-message byte surface of the compact version",
+      "no cross-version canonicality failures occur between the two materialized byte distributions"
+    ],
+    "does_not_certify": [
+      "future external epoch compatibility",
+      "third-party version migration",
+      "external interoperability",
+      "external benchmark superiority",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23canon.py",
+      "sha256": "c174c1a00366fd0ff5b9459b2545ffd6453bb8ed187d0cb974fe30fd5c116ea5"
+    },
+    "long_k23dist": {
+      "certificate_sha256": "dc777884ea90b11afbb37da25d6e4c5bf49ad20d86927bdc2744bab654696904",
+      "path": "data/invariants/d20/proof_obligations/long_k23dist/report.json",
+      "sha256": "ba6992467bbfd521284710f2d47946b6806391b1689a60a8dbac17d84a7260e3",
+      "status": "SECTOR33_K23_PUBLIC_TABLE_DISTRIBUTION_DECODER_CERTIFIED"
+    },
+    "long_k23dist_decode_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23dist/decode_rows.csv",
+      "sha256": "253622e687fc66fef0976740501918c07ab5593726d79e08044effaae834948a"
+    },
+    "long_k23wire": {
+      "certificate_sha256": "e196e26335c3977e0709bcd11bd50fa4c9297a86b67eda63448771a4dac06bc8",
+      "path": "data/invariants/d20/proof_obligations/long_k23wire/report.json",
+      "sha256": "23480a48dd12446349bbe5d451501c3244b067e53924da06bef0d1b2856772e8",
+      "status": "SECTOR33_K23_COMPACT_WIRE_MAP_CERTIFIED"
+    },
+    "long_k23wire_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23wire/wire_rows.csv",
+      "sha256": "15326f464ca484cce0eccdf147c92e07b443ea7b728498ed79f98bddc8aef860"
+    },
+    "validator": {
+      "path": "src/certify_long_k23canon.py",
+      "sha256": "8adfb58abcb94272470a13942e016633d5650702138573002013e4325f02934f"
+    }
+  },
+  "next_highest_yield_item": "Materialize an explicit external epoch/version manifest, then rerun this canonicality test across real epoch artifacts instead of the two current byte-version surfaces.",
+  "outputs": {
+    "canon_rows_csv": "data/invariants/d20/proof_obligations/long_k23canon/canon_rows.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_k23canon/cert.json",
+    "gate_rows_csv": "data/invariants/d20/proof_obligations/long_k23canon/gate_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23canon/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23canon/k23canon_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23canon/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23canon/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23canon/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23canon/tables.npz",
+    "version_rows_csv": "data/invariants/d20/proof_obligations/long_k23canon/version_rows.csv"
+  },
+  "schema": "long.k23canon.report@1",
+  "stage_protocol": {
+    "closure": "certify cross-version dereference canonicality for the two materialized byte versions",
+    "coherence": "check both byte versions decode to the same mint normal form on all valid rows",
+    "draft": "read compact wire rows and public-table decoder rows",
+    "emit": "write long_k23canon artifacts and verifier hook",
+    "witness": "emit version rows, canonicality rows, gate rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_DEREFERENCE_VERSION_CANONICALITY_CERTIFIED",
+  "witness": {
+    "boundary": "This tests Decode_v(b,T_v) ~ Decode_v'(b',T_v') for the compact and transcript-index byte versions under the same mint normal form.",
+    "classification": "sector33_k23_dereference_version_canonicality",
+    "matrix_sha256": "20dcc68f5ba7dd54597b8480fb4bca1b5ed39ff46b21230d210ea85aa4cd2073",
+    "mint_normal_form": "(transcript_id, selected_opening_id, residual_class_code, selector_value_mod)",
+    "name": "long_k23canon",
+    "summary": {
+      "blocking_gate_count": 1,
+      "byte_surface_ratio_den": 4,
+      "byte_surface_ratio_num": 1,
+      "canonical_across_versions_flag": 1,
+      "canonical_pair_row_count": 56,
+      "canonicality_failure_count": 0,
+      "certified_input_count": 2,
+      "claim_gate_count": 0,
+      "compact_version_byte_surface": 4,
+      "complete_goal_claim_flag": 0,
+      "decode_equiv_count": 56,
+      "external_epoch_claim_count": 0,
+      "gate_row_count": 3,
+      "index_version_byte_surface": 1,
+      "input_report_count": 2,
+      "invalid_reject_count": 200,
+      "real_epoch_count": 1,
+      "same_mint_normal_form_count": 56,
+      "satisfied_gate_count": 2,
+      "simulated_epoch_count": 0,
+      "valid_decode_count": 56,
+      "version_pair_count": 1,
+      "version_row_count": 2
+    },
+    "version_code_map": {
+      "0": "compact_four_byte_wire_version",
+      "1": "one_byte_transcript_index_version"
+    }
+  }
+}

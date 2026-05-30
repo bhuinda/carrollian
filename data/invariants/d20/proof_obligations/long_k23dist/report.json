@@ -1,0 +1,146 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dc777884ea90b11afbb37da25d6e4c5bf49ad20d86927bdc2744bab654696904",
+  "checks": {
+    "claim_gates_match": true,
+    "completion_flag_matches": true,
+    "inputs_pass": true,
+    "invalid_decoder_profile_matches": true,
+    "package_profile_matches": true,
+    "transport_surface_matches": true,
+    "valid_decoder_profile_matches": true
+  },
+  "claim": "long_k23dist certifies public table package distribution and transcript-index decoder integrity.",
+  "closure_boundary": {
+    "certifies": [
+      "the public table package consists of the certified public transcript table and certified opening table",
+      "all 56 valid one-byte transcript indexes decode to the certified verifier challenge row",
+      "all 200 invalid one-byte indexes reject",
+      "the 56-byte transcript-index surface remains the public-table transport surface inside the certificate boundary",
+      "the 56-byte surface saves 1512/1568 = 27/28 against the selected public baseline"
+    ],
+    "does_not_certify": [
+      "external protocol interoperability",
+      "external runtime benchmark superiority",
+      "security superiority",
+      "standards compliance",
+      "deployment readiness",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23dist.py",
+      "sha256": "9230d63d75670c5720c01e47c40c86deb46b3de94b49884c529413c2f3f1997d"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23chal_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/challenge_rows.csv",
+      "sha256": "d609fe76273d30d885b99b794ee9d1bc9ca843b35d711fd75a9daed0a2a9e6f1"
+    },
+    "long_k23cop": {
+      "certificate_sha256": "987651497febd89570bd1c1d4f2708b38cfb83260537c7721f0529c972cde3ee",
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/report.json",
+      "sha256": "2fc0b0f401ac977ea909b57240707a455b8272c8d1baba2320fda88edbbebaaa",
+      "status": "SECTOR33_K23_COMMIT_OPEN_TRANSCRIPT_CERTIFIED"
+    },
+    "long_k23cop_openings": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/opening_rows.csv",
+      "sha256": "92218eca35d8dd7275b8697e8d03bcdc2d6c9f658db71471ea29058824067393"
+    },
+    "long_k23cop_public": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/public_transcript.csv",
+      "sha256": "4dcd25751f5ec9ec67500741f75c21ecc38e5dcc6072d583822f6ddd3caedc85"
+    },
+    "long_k23ptab": {
+      "certificate_sha256": "3097af7add48c0cad589b109035bae2a36afd7c703e44874e7eac1eb6caeac39",
+      "path": "data/invariants/d20/proof_obligations/long_k23ptab/report.json",
+      "sha256": "5231a06835f995871ac6dc06dfc4fc5985c7cd6726daeb5432530651250d414a",
+      "status": "SECTOR33_K23_PUBLIC_TABLE_EQUIVALENCE_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23dist.py",
+      "sha256": "e8be4f283b1683ef3eccbe48ecec97cf4be8c355ae0a781a32c0b1f7f1651926"
+    }
+  },
+  "next_highest_yield_item": "Emit the external-comparison integrity gate: interop/benchmark rows for the 56-byte transcript-index surface against the selected baseline.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23dist/cert.json",
+    "decode_rows_csv": "data/invariants/d20/proof_obligations/long_k23dist/decode_rows.csv",
+    "gate_rows_csv": "data/invariants/d20/proof_obligations/long_k23dist/gate_rows.csv",
+    "invalid_rows_csv": "data/invariants/d20/proof_obligations/long_k23dist/invalid_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23dist/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23dist/k23dist_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23dist/obs.csv",
+    "package_rows_csv": "data/invariants/d20/proof_obligations/long_k23dist/package_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23dist/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23dist/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23dist/tables.npz"
+  },
+  "schema": "long.k23dist.report@1",
+  "stage_protocol": {
+    "closure": "certify public-table decoder integrity inside the certificate boundary",
+    "coherence": "check valid decoder agreement, invalid-byte rejection, public table package binding, and open external claims",
+    "draft": "read public-table equivalence, commit/open table rows, and verifier challenge rows",
+    "emit": "write long_k23dist artifacts and verifier hook",
+    "witness": "emit package rows, decoder rows, invalid-byte rows, gate rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_PUBLIC_TABLE_DISTRIBUTION_DECODER_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies a runtime-public table package and one-byte transcript-index decoder inside the certificate boundary, while leaving external interop and benchmark claims open.",
+    "classification": "sector33_k23_public_table_distribution_decoder",
+    "decoder_rule": "encoded_transcript_id selects public_transcript row; selector = int(public_digest_sha256[:16], 16) mod transcript_opening_count; selected opening recovers verifier row",
+    "gate_code_map": {
+      "0": "certificate_resident_table_package",
+      "1": "valid_transcript_decoder_totality",
+      "2": "invalid_one_byte_rejection",
+      "3": "external_interop_profile",
+      "4": "external_benchmark_claim"
+    },
+    "matrix_sha256": "b87f643c4a90b86f9e88ddbd4cb501f1da9f402bae7878b865ffe84b16af022c",
+    "name": "long_k23dist",
+    "summary": {
+      "baseline_public_exchange_bytes": 1568,
+      "blocking_gate_count": 2,
+      "certificate_resident_count": 2,
+      "certified_input_count": 3,
+      "claim_gate_count": 0,
+      "complete_goal_claim_flag": 0,
+      "decoder_totality_flag": 1,
+      "external_benchmark_claim_count": 0,
+      "external_improvement_claim_count": 0,
+      "external_interop_claim_count": 0,
+      "file_hash_bound_count": 2,
+      "gate_row_count": 5,
+      "input_report_count": 3,
+      "invalid_byte_count": 200,
+      "invalid_decode_row_count": 200,
+      "invalid_reject_count": 200,
+      "max_invalid_transcript_id": 255,
+      "max_valid_transcript_id": 55,
+      "min_invalid_transcript_id": 56,
+      "one_byte_namespace_size": 256,
+      "package_row_count": 147,
+      "package_table_count": 2,
+      "public_table_equivalence_count": 56,
+      "public_transport_surface_flag": 1,
+      "runtime_public_distribution_flag": 1,
+      "runtime_public_package_count": 2,
+      "satisfied_gate_count": 3,
+      "saved_vs_baseline_bytes": 1512,
+      "saved_vs_baseline_den": 28,
+      "saved_vs_baseline_num": 27,
+      "selector_formula_count": 56,
+      "transcript_only_total_bytes": 56,
+      "valid_byte_count": 56,
+      "valid_decode_match_count": 56,
+      "valid_decode_row_count": 56,
+      "valid_verifier_accept_count": 56
+    }
+  }
+}

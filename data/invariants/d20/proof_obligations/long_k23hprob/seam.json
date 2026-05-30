@@ -1,0 +1,53 @@
+{
+  "checks": {
+    "evidence_profile_matches": true,
+    "gate_profile_matches": true,
+    "hardness_and_deploy_nonclaims_match": true,
+    "inputs_pass": true,
+    "problem_definition_matches": true,
+    "reduction_gap_matches": true
+  },
+  "claim": "The K23 hardness problem boundary is now explicit: finite integrity and byte efficiency are certified, but no reduction target or deploy-grade hardness proof is materialized.",
+  "schema": "long.k23hprob.seam@1",
+  "status": "SECTOR33_K23_HARDNESS_PROBLEM_DEFINITION_CERTIFIED",
+  "witness": {
+    "boundary": "This defines hardness candidates and rejects public-table-trivial targets as hardness claims under the current artifact boundary.",
+    "classification": "sector33_k23_hardness_problem_definition",
+    "matrix_sha256": "7f9b029388b3bb6d9032cd5ab5eca7370f7e099fdd7b2ba51c4510fb8a08c0b7",
+    "name": "long_k23hprob",
+    "problem_code_map": {
+      "0": "noncanonical_accept_forgery",
+      "1": "public_opening_recovery",
+      "2": "public_valid_byte_distinguishing",
+      "3": "bounded_tamper_game_break"
+    },
+    "summary": {
+      "blocking_gate_count": 3,
+      "blocking_reduction_count": 4,
+      "bounded_soundness_error_denominator": 112869680,
+      "bounded_soundness_error_numerator": 0,
+      "certified_input_count": 4,
+      "claim_gate_count": 0,
+      "complete_goal_claim_flag": 0,
+      "deploy_ready_flag": 0,
+      "finite_evidence_problem_count": 4,
+      "gate_row_count": 6,
+      "hardness_claim_count": 0,
+      "hardness_problem_defined_flag": 1,
+      "input_report_count": 4,
+      "invalid_reject_count": 200,
+      "materialized_reduction_count": 0,
+      "nontrivial_problem_candidate_count": 2,
+      "objective_byte_improvement_flag": 1,
+      "problem_row_count": 4,
+      "proof_claim_count": 0,
+      "public_table_trivial_problem_count": 2,
+      "reduction_row_count": 4,
+      "reduction_target_present_count": 0,
+      "reduction_target_required_count": 2,
+      "satisfied_gate_count": 3,
+      "transcript_index_bytes": 56,
+      "valid_decode_count": 56
+    }
+  }
+}

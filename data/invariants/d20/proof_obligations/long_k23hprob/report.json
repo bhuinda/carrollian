@@ -1,0 +1,124 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "dde14452489b3aac6d91d3a80ce160536da1186854f524ecd1a02459bbf06b77",
+  "checks": {
+    "evidence_profile_matches": true,
+    "gate_profile_matches": true,
+    "hardness_and_deploy_nonclaims_match": true,
+    "inputs_pass": true,
+    "problem_definition_matches": true,
+    "reduction_gap_matches": true
+  },
+  "claim": "long_k23hprob certifies the explicit hardness problem-definition boundary for the K23 protocol surface.",
+  "closure_boundary": {
+    "certifies": [
+      "four explicit adversary problem rows are defined",
+      "two public-table-trivial targets are rejected as hardness targets",
+      "two nontrivial finite-game candidates require reduction targets not yet present",
+      "deployment readiness remains zero"
+    ],
+    "does_not_certify": [
+      "computational hardness",
+      "a reduction to a known hard problem",
+      "a private witness source",
+      "an asymptotic security family",
+      "deployment readiness"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23hprob.py",
+      "sha256": "d809e105bc9de9fa36343bf544a535d40c79b62f87de54e8416f543860cb9177"
+    },
+    "long_k23dist": {
+      "certificate_sha256": "dc777884ea90b11afbb37da25d6e4c5bf49ad20d86927bdc2744bab654696904",
+      "path": "data/invariants/d20/proof_obligations/long_k23dist/report.json",
+      "sha256": "ba6992467bbfd521284710f2d47946b6806391b1689a60a8dbac17d84a7260e3",
+      "status": "SECTOR33_K23_PUBLIC_TABLE_DISTRIBUTION_DECODER_CERTIFIED"
+    },
+    "long_k23interop": {
+      "certificate_sha256": "76aab33f66fade3290797d5b87a8204c70780bb12aaed0252cbda1eab26f8e64",
+      "path": "data/invariants/d20/proof_obligations/long_k23interop/report.json",
+      "sha256": "95f0cb231c170e6807c0561c575411c4f939b1988dfbb0c20a14148fb012a09c",
+      "status": "SECTOR33_K23_INTEROP_BENCHMARK_GATE_CERTIFIED"
+    },
+    "long_k23seci": {
+      "certificate_sha256": "04e1298e637974cc1ffda465751fe5d9c25d5263214baaab3d3985ccc592b70b",
+      "path": "data/invariants/d20/proof_obligations/long_k23seci/report.json",
+      "sha256": "49add4c079f30e7208116f54ee05a7947e8dc84ec93cb412f8eac8c7198f494c",
+      "status": "SECTOR33_K23_SECURITY_INTEGRITY_GATE_CERTIFIED"
+    },
+    "long_k23sound": {
+      "certificate_sha256": "942daa6742b554672aed14a86debb880113dab2f81f2db1c5fcb61c98c3226dc",
+      "path": "data/invariants/d20/proof_obligations/long_k23sound/report.json",
+      "sha256": "220c9d855069815e51dbfa5835d0fbd537eab9bce44ac501372df092b1bddd54",
+      "status": "SECTOR33_K23_BOUNDED_ADVERSARY_SOUNDNESS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23hprob.py",
+      "sha256": "017db978cfad31739b659a0803e80fab55fbe781acf766468c54d282bb142574"
+    }
+  },
+  "next_highest_yield_item": "Choose the reduction route: either add a private or one-way source for the noncanonical-forgery problem, or demote the current public-table codec to integrity-only infrastructure.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23hprob/cert.json",
+    "gate_rows_csv": "data/invariants/d20/proof_obligations/long_k23hprob/gate_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23hprob/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23hprob/k23hprob_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23hprob/obs.csv",
+    "problem_rows_csv": "data/invariants/d20/proof_obligations/long_k23hprob/problem_rows.csv",
+    "reduction_rows_csv": "data/invariants/d20/proof_obligations/long_k23hprob/reduction_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23hprob/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23hprob/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23hprob/tables.npz"
+  },
+  "schema": "long.k23hprob.report@1",
+  "stage_protocol": {
+    "closure": "certify the hardness target boundary without claiming hardness or deployment readiness",
+    "coherence": "check finite evidence, public-table-trivial targets, missing reductions, and deploy nonclaims",
+    "draft": "read security-integrity, interop, decoder, and bounded-soundness certificates",
+    "emit": "write long_k23hprob artifacts and verifier hook",
+    "witness": "emit problem rows, reduction rows, gate rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_HARDNESS_PROBLEM_DEFINITION_CERTIFIED",
+  "witness": {
+    "boundary": "This defines hardness candidates and rejects public-table-trivial targets as hardness claims under the current artifact boundary.",
+    "classification": "sector33_k23_hardness_problem_definition",
+    "matrix_sha256": "7f9b029388b3bb6d9032cd5ab5eca7370f7e099fdd7b2ba51c4510fb8a08c0b7",
+    "name": "long_k23hprob",
+    "problem_code_map": {
+      "0": "noncanonical_accept_forgery",
+      "1": "public_opening_recovery",
+      "2": "public_valid_byte_distinguishing",
+      "3": "bounded_tamper_game_break"
+    },
+    "summary": {
+      "blocking_gate_count": 3,
+      "blocking_reduction_count": 4,
+      "bounded_soundness_error_denominator": 112869680,
+      "bounded_soundness_error_numerator": 0,
+      "certified_input_count": 4,
+      "claim_gate_count": 0,
+      "complete_goal_claim_flag": 0,
+      "deploy_ready_flag": 0,
+      "finite_evidence_problem_count": 4,
+      "gate_row_count": 6,
+      "hardness_claim_count": 0,
+      "hardness_problem_defined_flag": 1,
+      "input_report_count": 4,
+      "invalid_reject_count": 200,
+      "materialized_reduction_count": 0,
+      "nontrivial_problem_candidate_count": 2,
+      "objective_byte_improvement_flag": 1,
+      "problem_row_count": 4,
+      "proof_claim_count": 0,
+      "public_table_trivial_problem_count": 2,
+      "reduction_row_count": 4,
+      "reduction_target_present_count": 0,
+      "reduction_target_required_count": 2,
+      "satisfied_gate_count": 3,
+      "transcript_index_bytes": 56,
+      "valid_decode_count": 56
+    }
+  }
+}

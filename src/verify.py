@@ -363,6 +363,15 @@ the practical verification modes without hiding file writes behind a default:
 * long-k23audit: validate the sector33 K23 local verifier-side audit-cost certificate;
 * long-k23vwork: validate the sector33 K23 verifier-workload binding certificate;
 * long-k23crypt: validate the sector33 K23 cryptologic-potential frontier certificate;
+* long-k23ptran: validate the sector33 K23 public-transport potential certificate;
+* long-k23ptab: validate the sector33 K23 public-table equivalence certificate;
+* long-k23dist: validate the sector33 K23 public-table distribution decoder certificate;
+* long-k23canon: validate the sector33 K23 dereference version-canonicality certificate;
+* long-k23epoch: validate the sector33 K23 real epoch/version manifest certificate;
+* long-k23interop: validate the sector33 K23 interop/benchmark gate certificate;
+* long-k23seci: validate the sector33 K23 security-integrity gate certificate;
+* long-k23hprob: validate the sector33 K23 hardness problem-definition certificate;
+* long-k23sing: validate the sector33 K23 native singularity/cybernetics certificate;
 * long-psec: validate the focused A985 perennial-sector address seam certificate;
 * long-binc: validate the focused boundary/Loop/packet incidence seam certificate;
 * long-krein: validate the provisional Krein denominator source-boundary report;
@@ -7655,6 +7664,159 @@ def long_k23crypt(
     return finish(result, pretty)
 
 
+def long_k23ptran(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23ptran import validate_long_k23ptran
+
+    try:
+        result = validate_long_k23ptran()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23ptran.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23ptab(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23ptab import validate_long_k23ptab
+
+    try:
+        result = validate_long_k23ptab()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23ptab.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23dist(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23dist import validate_long_k23dist
+
+    try:
+        result = validate_long_k23dist()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23dist.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23canon(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23canon import validate_long_k23canon
+
+    try:
+        result = validate_long_k23canon()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23canon.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23epoch(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23epoch import validate_long_k23epoch
+
+    try:
+        result = validate_long_k23epoch()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23epoch.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23interop(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23interop import validate_long_k23interop
+
+    try:
+        result = validate_long_k23interop()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23interop.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23seci(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23seci import validate_long_k23seci
+
+    try:
+        result = validate_long_k23seci()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23seci.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23hprob(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23hprob import validate_long_k23hprob
+
+    try:
+        result = validate_long_k23hprob()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23hprob.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
+def long_k23sing(
+    *,
+    pretty: bool,
+) -> int:
+    from src.certify_long_k23sing import validate_long_k23sing
+
+    try:
+        result = validate_long_k23sing()
+    except Exception as exc:
+        result = {
+            "schema": "long.k23sing.verification@1",
+            "status": "FAIL",
+            "error": str(exc),
+        }
+    return finish(result, pretty)
+
+
 def long_psec(
     *,
     pretty: bool,
@@ -8350,6 +8512,15 @@ def main() -> None:
         "long-k23audit",
         "long-k23vwork",
         "long-k23crypt",
+        "long-k23ptran",
+        "long-k23ptab",
+        "long-k23dist",
+        "long-k23canon",
+        "long-k23epoch",
+        "long-k23interop",
+        "long-k23seci",
+        "long-k23hprob",
+        "long-k23sing",
         "long-psec",
         "long-binc",
         "long-krein",
@@ -9228,6 +9399,24 @@ def main() -> None:
         raise SystemExit(long_k23vwork(pretty=args.pretty))
     if args.command == "long-k23crypt":
         raise SystemExit(long_k23crypt(pretty=args.pretty))
+    if args.command == "long-k23ptran":
+        raise SystemExit(long_k23ptran(pretty=args.pretty))
+    if args.command == "long-k23ptab":
+        raise SystemExit(long_k23ptab(pretty=args.pretty))
+    if args.command == "long-k23dist":
+        raise SystemExit(long_k23dist(pretty=args.pretty))
+    if args.command == "long-k23canon":
+        raise SystemExit(long_k23canon(pretty=args.pretty))
+    if args.command == "long-k23epoch":
+        raise SystemExit(long_k23epoch(pretty=args.pretty))
+    if args.command == "long-k23interop":
+        raise SystemExit(long_k23interop(pretty=args.pretty))
+    if args.command == "long-k23seci":
+        raise SystemExit(long_k23seci(pretty=args.pretty))
+    if args.command == "long-k23hprob":
+        raise SystemExit(long_k23hprob(pretty=args.pretty))
+    if args.command == "long-k23sing":
+        raise SystemExit(long_k23sing(pretty=args.pretty))
     if args.command == "long-psec":
         raise SystemExit(long_psec(pretty=args.pretty))
     if args.command == "long-binc":
