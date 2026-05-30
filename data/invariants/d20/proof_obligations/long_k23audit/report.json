@@ -1,0 +1,111 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "b01eb9b464b90933887aca07c415d44791faf27766f3c2e6150e2379cdb378ef",
+  "checks": {
+    "audit_profile_matches": true,
+    "boundary_flags_match": true,
+    "equation_profile_matches": true,
+    "input_pass": true,
+    "limit_profile_matches": true,
+    "totals_match": true
+  },
+  "claim": "long_k23audit certifies local verifier-side audit-cost reduction for the compact K23 shared-table map.",
+  "closure_boundary": {
+    "certifies": [
+      "each of the 56 local audit rows uses 4 shared-table wire bytes instead of 96 digest-surface bytes",
+      "local verifier-side audit bytes fall from 5376 to 224 under the shared-table condition",
+      "the local saved audit surface is 5152 bytes",
+      "public transport efficiency remains demoted by long_k23wdep"
+    ],
+    "does_not_certify": [
+      "public transport efficiency",
+      "public wire-format equivalence",
+      "external speed or size improvement",
+      "security superiority",
+      "standards compliance",
+      "deployment readiness",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23audit.py",
+      "sha256": "4ce22b992707072fae651d75bc8aec1b771a32f724ade943a92ae7322f5311dc"
+    },
+    "long_k23wdep": {
+      "certificate_sha256": "6ef4e9c580841e7c07e9cc581a6f4adb2288dae75f80fbc24e8c2d7386de33f3",
+      "path": "data/invariants/d20/proof_obligations/long_k23wdep/report.json",
+      "sha256": "23c13541eb10b1401236cd50f264630981e06f32341d17b4fc216edd7a981bc9",
+      "status": "SECTOR33_K23_WIRE_DEPENDENCY_DECISION_CERTIFIED"
+    },
+    "long_k23wire_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23wire/wire_rows.csv",
+      "sha256": "15326f464ca484cce0eccdf147c92e07b443ea7b728498ed79f98bddc8aef860"
+    },
+    "validator": {
+      "path": "src/certify_long_k23audit.py",
+      "sha256": "fe2a836ccc844813efd5e02adb437e838d356254db789d5237696c4d30915568"
+    }
+  },
+  "next_highest_yield_item": "Use the local audit-cost certificate to strengthen proof-of-mandate: bind audit-cost reduction to verifier workload, not public transport.",
+  "outputs": {
+    "audit_rows_csv": "data/invariants/d20/proof_obligations/long_k23audit/audit_rows.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_k23audit/cert.json",
+    "equation_rows_csv": "data/invariants/d20/proof_obligations/long_k23audit/equation_rows.csv",
+    "limit_rows_csv": "data/invariants/d20/proof_obligations/long_k23audit/limit_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23audit/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23audit/k23audit_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23audit/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23audit/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23audit/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23audit/tables.npz"
+  },
+  "schema": "long.k23audit.report@1",
+  "stage_protocol": {
+    "closure": "certify local audit-cost reduction without reopening external-efficiency claims",
+    "coherence": "check row costs, totals, shared-table dependence, and public-transport nonclaim",
+    "draft": "read long_k23wdep and compact wire rows",
+    "emit": "write long_k23audit artifacts and verifier hook",
+    "witness": "emit audit rows, equations, open limits, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_LOCAL_AUDIT_COST_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies local verifier-side audit cost reduction under shared-table dereference while preserving public transport demotion.",
+    "classification": "sector33_k23_local_verifier_audit_cost",
+    "equation_code_map": {
+      "0": "local_wire_total_bytes",
+      "1": "digest_surface_total_bytes",
+      "2": "saved_audit_total_bytes",
+      "3": "local_total_less_than_digest_total"
+    },
+    "limit_code_map": {
+      "0": "shared_table_availability",
+      "1": "public_transport_claim",
+      "2": "security_or_interop_claim"
+    },
+    "matrix_sha256": "1e0602bb90cf24c273abc8ae9562599989942826a41cc5543559f0d6ab71452f",
+    "name": "long_k23audit",
+    "summary": {
+      "audit_row_count": 56,
+      "certified_input_count": 1,
+      "complete_goal_claim_flag": 0,
+      "digest_surface_bytes_per_row": 96,
+      "digest_surface_total_bytes": 5376,
+      "equation_pass_count": 4,
+      "equation_row_count": 4,
+      "external_efficiency_path_demoted_count": 1,
+      "input_report_count": 1,
+      "limit_row_count": 3,
+      "local_audit_cost_flag": 1,
+      "local_audit_improvement_count": 56,
+      "local_wire_bytes_per_row": 4,
+      "local_wire_total_bytes": 224,
+      "open_limit_count": 3,
+      "overclaim_count": 0,
+      "public_transport_claim_count": 0,
+      "saved_audit_bytes_per_row": 92,
+      "saved_audit_total_bytes": 5152,
+      "table_dependency_count": 56
+    }
+  }
+}

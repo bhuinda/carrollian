@@ -1,0 +1,109 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "3a9804e6ac37758f42c44b0ba5bde58a58486b77c8b3eb17af057bb2c955d9b1",
+  "checks": {
+    "authority_rows_close": true,
+    "finite_scope_exact": true,
+    "inputs_pass": true,
+    "no_external_randomness_required": true,
+    "security_limits_unclaimed": true
+  },
+  "claim": "long_k23auth certifies finite authority closure for the K23 proof-of-mandate surface.",
+  "closure_boundary": {
+    "certifies": [
+      "all 56 selected openings are source-bound by the mandate selector",
+      "all 56 authority decisions are guarded by the bounded soundness certificate",
+      "the finite authority layer requires no external randomness rows",
+      "the proof-of-mandate surface is closed inside the bounded verifier game"
+    ],
+    "does_not_certify": [
+      "a random challenge source",
+      "cryptographic hardness",
+      "zero knowledge",
+      "unbounded adversary security",
+      "bundle-wide integration",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23auth.py",
+      "sha256": "934ac208bacc2b4626855725bdc09ab59cdfa5dc27a2f0ff57adacbd2f633ee8"
+    },
+    "long_k23mand": {
+      "certificate_sha256": "e85de2a5c2e49d56a89081288aa43a86f563caab939c048f0475e2f41e119412",
+      "path": "data/invariants/d20/proof_obligations/long_k23mand/report.json",
+      "sha256": "b1403b991d63e4033b3ae7eb7032949672c8f21b91acdeaa33b8b65b35833c28",
+      "status": "SECTOR33_K23_SOURCE_BOUND_MANDATE_CERTIFIED"
+    },
+    "long_k23mand_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23mand/mandate_rows.csv",
+      "sha256": "c5460432c153ae296d0a39766d08f3d5084f463e83ea4b8fe9106d47870e17c2"
+    },
+    "long_k23sound": {
+      "certificate_sha256": "942daa6742b554672aed14a86debb880113dab2f81f2db1c5fcb61c98c3226dc",
+      "path": "data/invariants/d20/proof_obligations/long_k23sound/report.json",
+      "sha256": "220c9d855069815e51dbfa5835d0fbd537eab9bce44ac501372df092b1bddd54",
+      "status": "SECTOR33_K23_BOUNDED_ADVERSARY_SOUNDNESS_CERTIFIED"
+    },
+    "long_k23sound_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23sound/soundness_rows.csv",
+      "sha256": "501e0c1c96714daef576ea261ccba12f0bc81a880ae5b92ea4bba2c9fc708090"
+    },
+    "validator": {
+      "path": "src/certify_long_k23auth.py",
+      "sha256": "d86c63a435204458288c8c2abce9ced43aa14f850e42aa449b03b1f85f435da9"
+    }
+  },
+  "next_highest_yield_item": "Search for the next authority seam: either source-bound mandate transport into the frontier, or an explicit challenge-source extension if finite determinism is not enough downstream.",
+  "outputs": {
+    "authority_rows_csv": "data/invariants/d20/proof_obligations/long_k23auth/authority_rows.csv",
+    "certificate": "data/invariants/d20/proof_obligations/long_k23auth/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23auth/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23auth/k23auth_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23auth/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23auth/report.json",
+    "scope_rows_csv": "data/invariants/d20/proof_obligations/long_k23auth/scope_rows.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_k23auth/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23auth/tables.npz"
+  },
+  "schema": "long.k23auth.report@1",
+  "stage_protocol": {
+    "closure": "certify finite authority while leaving randomness and external security limits open",
+    "coherence": "check every authority row is mandate-bound and soundness-guarded",
+    "draft": "read source-bound mandate rows and bounded soundness rows",
+    "emit": "write long_k23auth artifacts and verifier hook",
+    "witness": "emit authority decision rows, scope rows, and observables"
+  },
+  "status": "SECTOR33_K23_FINITE_AUTHORITY_CLOSURE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies that source-bound mandate plus bounded soundness closes finite authority for the selected K23 openings.",
+    "classification": "sector33_k23_finite_authority_closure",
+    "matrix_sha256": "f776f5a1a321564ae46ef85fac106930bc991597a9d89eb8744117def925d4e9",
+    "name": "long_k23auth",
+    "summary": {
+      "accepted_authority_count": 56,
+      "all_depth_false_accept_strategy_words": 0,
+      "all_depth_tamper_reject_strategy_words": 112869680,
+      "authority_row_count": 56,
+      "bounded_soundness_error_numerator": 0,
+      "certified_input_count": 2,
+      "certified_scope_count": 3,
+      "complete_goal_claim_flag": 0,
+      "digest_binding_count": 56,
+      "external_randomness_required_count": 0,
+      "finite_authority_closure_flag": 1,
+      "hardness_claim_flag": 0,
+      "input_report_count": 2,
+      "open_scope_count": 4,
+      "opening_binding_count": 56,
+      "proof_of_mandate_flag": 1,
+      "randomness_claim_flag": 0,
+      "scope_row_count": 7,
+      "selector_binding_count": 56,
+      "soundness_guard_count": 56,
+      "unbounded_adversary_claim_flag": 0,
+      "zero_knowledge_claim_flag": 0
+    }
+  }
+}

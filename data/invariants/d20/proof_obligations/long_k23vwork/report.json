@@ -1,0 +1,131 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "d3990d666ebb3b34a8bafb8bf08e96c93cc46f608f09ab35a54017aaa5459b9f",
+  "checks": {
+    "audit_totals_match": true,
+    "boundary_flags_match": true,
+    "equation_profile_matches": true,
+    "inputs_pass": true,
+    "limit_profile_matches": true,
+    "per_game_ratios_match": true,
+    "workload_profile_matches": true
+  },
+  "claim": "long_k23vwork certifies verifier-workload binding for the K23 local audit-cost reduction.",
+  "closure_boundary": {
+    "certifies": [
+      "the local audit-cost rows bind to all 336 verifier-game rows through 56 challenge workloads",
+      "each workload has 6 game rows: 1 honest row and 5 tamper rows",
+      "local audit bytes are 224 over the workload surface",
+      "digest-surface audit bytes are 5376 over the workload surface",
+      "the local audit-cost ratio is 2/3 bytes per verifier game row under shared-table dereference"
+    ],
+    "does_not_certify": [
+      "public transport efficiency",
+      "public wire-format equivalence",
+      "external speed or size improvement",
+      "security superiority",
+      "standards compliance",
+      "deployment readiness",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23vwork.py",
+      "sha256": "9bd095d119dbefdb4fcb9d63108c46c5feac1f4d826dd7d381b9c89d8eea3f16"
+    },
+    "long_k23audit": {
+      "certificate_sha256": "b01eb9b464b90933887aca07c415d44791faf27766f3c2e6150e2379cdb378ef",
+      "path": "data/invariants/d20/proof_obligations/long_k23audit/report.json",
+      "sha256": "28725337aba4f95ec0c2f5583efad900acc7cb3d7fe1d72fd268b17b15dc742e",
+      "status": "SECTOR33_K23_LOCAL_AUDIT_COST_CERTIFIED"
+    },
+    "long_k23audit_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23audit/audit_rows.csv",
+      "sha256": "c30713880855995e4245775acd4608260438714074fd5cf6579bba04add2ba36"
+    },
+    "long_k23game": {
+      "certificate_sha256": "e9277292874464aeb1b13cfe9e7f96bcc83a454bf3f0645fe2e8e92e360216cf",
+      "path": "data/invariants/d20/proof_obligations/long_k23game/report.json",
+      "sha256": "0f1d86bdb4b6106de910e038ead70448bd16291ea2cff0af6f72c77c55c20973",
+      "status": "SECTOR33_K23_VERIFICATION_GAME_TABLE_CERTIFIED"
+    },
+    "long_k23game_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23game/game_rows.csv",
+      "sha256": "11b7d1d032a00cd4d5c09c15bd2a92c73bec0d9ecf9de621b884a7ab839c7f4e"
+    },
+    "validator": {
+      "path": "src/certify_long_k23vwork.py",
+      "sha256": "94f530c17139a1ea653681310825c012a3614364e4a80845ef130ddc9dbe000e"
+    }
+  },
+  "next_highest_yield_item": "Roll the verified workload binding back into the proof-of-mandate ledger so mandate benefit is stated as verifier audit work, not transport efficiency.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23vwork/cert.json",
+    "equation_rows_csv": "data/invariants/d20/proof_obligations/long_k23vwork/equation_rows.csv",
+    "limit_rows_csv": "data/invariants/d20/proof_obligations/long_k23vwork/limit_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23vwork/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23vwork/k23vwork_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23vwork/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23vwork/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23vwork/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23vwork/tables.npz",
+    "workload_rows_csv": "data/invariants/d20/proof_obligations/long_k23vwork/workload_rows.csv"
+  },
+  "schema": "long.k23vwork.report@1",
+  "stage_protocol": {
+    "closure": "certify proof-of-mandate workload binding without reopening public transport claims",
+    "coherence": "check game-row partition, audit byte totals, per-game ratios, and nonclaims",
+    "draft": "read local audit-cost rows and finite verifier-game rows",
+    "emit": "write long_k23vwork artifacts and verifier hook",
+    "witness": "emit workload rows, equations, open limits, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_VERIFIER_WORKLOAD_BINDING_CERTIFIED",
+  "witness": {
+    "boundary": "This binds local audit-cost reduction to the 336-row verifier game workload while keeping public transport claims demoted.",
+    "classification": "sector33_k23_verifier_workload_binding",
+    "equation_code_map": {
+      "0": "bounded_game_rows",
+      "1": "local_audit_total_bytes",
+      "2": "digest_surface_total_bytes",
+      "3": "saved_audit_total_bytes",
+      "4": "local_total_less_than_digest_total"
+    },
+    "limit_code_map": {
+      "0": "shared_table_workload_assumption",
+      "1": "public_transport_claim",
+      "2": "external_security_or_interop_claim"
+    },
+    "matrix_sha256": "1e6657b1710d7be5cc9575200dd26ee1bb24ec562dfd44c6830d6a5ff57d4743",
+    "name": "long_k23vwork",
+    "summary": {
+      "certified_input_count": 2,
+      "complete_goal_claim_flag": 0,
+      "digest_bytes_per_game_den": 1,
+      "digest_bytes_per_game_num": 16,
+      "digest_surface_total_bytes": 5376,
+      "equation_pass_count": 5,
+      "equation_row_count": 5,
+      "external_efficiency_path_demoted_count": 1,
+      "game_row_count": 336,
+      "game_rows_per_workload": 6,
+      "honest_row_total": 56,
+      "input_report_count": 2,
+      "limit_row_count": 3,
+      "local_audit_improvement_count": 56,
+      "local_audit_total_bytes": 224,
+      "local_bytes_per_game_den": 3,
+      "local_bytes_per_game_num": 2,
+      "open_limit_count": 3,
+      "overclaim_count": 0,
+      "proof_of_mandate_workload_flag": 1,
+      "public_transport_claim_count": 0,
+      "saved_audit_total_bytes": 5152,
+      "saved_bytes_per_game_den": 3,
+      "saved_bytes_per_game_num": 46,
+      "tamper_row_total": 280,
+      "verifier_payoff_total": 336,
+      "workload_row_count": 56
+    }
+  }
+}

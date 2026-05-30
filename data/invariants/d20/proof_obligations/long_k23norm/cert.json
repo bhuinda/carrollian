@@ -1,0 +1,73 @@
+{
+  "checks": {
+    "byte_equations_match": true,
+    "claim_boundary_matches": true,
+    "input_pass": true,
+    "limit_profile_matches": true,
+    "parameter_profile_matches": true,
+    "selected_candidate_matches": true
+  },
+  "schema": "long.k23norm.cert@1",
+  "status": "SECTOR33_K23_MLKEM512_NORMALIZATION_CERTIFIED",
+  "witness": {
+    "boundary": "This normalizes one K23 benchmark candidate against ML-KEM-512 byte-size constants and equations without asserting an improvement.",
+    "classification": "sector33_k23_mlkem512_one_candidate_normalization",
+    "equation_code_map": {
+      "0": "internal_public_digest_bytes",
+      "1": "internal_opening_digest_bytes",
+      "2": "baseline_public_exchange_bytes",
+      "3": "baseline_total_material_bytes",
+      "4": "public_digest_minus_baseline_public_exchange_bytes"
+    },
+    "external_source_url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf",
+    "limit_code_map": {
+      "0": "wire_format_mapping",
+      "1": "operation_model_equivalence",
+      "2": "implementation_timing_or_memory_measurement",
+      "3": "security_reduction",
+      "4": "interoperability_or_compliance"
+    },
+    "matrix_sha256": "f107beed4032acfa0cedb9b0e11e9ebfc98f56230e1b1786886c61ec95a25283",
+    "name": "long_k23norm",
+    "parameter_set": "ML-KEM-512",
+    "selected_candidate": "authority_decision_table_candidate",
+    "summary": {
+      "baseline_public_exchange_bytes": 1568,
+      "baseline_total_material_bytes": 3232,
+      "bench_candidate_count": 6,
+      "certified_input_count": 1,
+      "ciphertext_bytes": 768,
+      "comparison_delta_public_bytes": 3808,
+      "complete_goal_claim_flag": 0,
+      "decapsulation_key_bytes": 1632,
+      "digest_bytes": 32,
+      "encapsulation_key_bytes": 800,
+      "equation_pass_count": 5,
+      "equation_row_count": 5,
+      "external_numeric_baseline_count": 1,
+      "improvement_claim_count": 0,
+      "input_report_count": 1,
+      "internal_opening_digest_bytes": 7168,
+      "internal_operation_count": 56,
+      "internal_public_digest_bytes": 5376,
+      "internal_transcript_rows": 56,
+      "internal_verification_path_count": 56,
+      "limit_row_count": 5,
+      "normalization_surface_flag": 1,
+      "official_parameter_source_count": 1,
+      "open_limit_count": 5,
+      "opening_digest_columns": 4,
+      "overclaim_count": 0,
+      "parameter_row_count": 1,
+      "parameter_set_code": 512,
+      "public_digest_columns": 3,
+      "public_ratio_denominator": 7,
+      "public_ratio_numerator": 24,
+      "required_rbg_strength_bits": 128,
+      "selected_baseline_spec_code": 0,
+      "selected_candidate_id": 3,
+      "selected_potential_code": 3,
+      "shared_secret_bytes": 32
+    }
+  }
+}

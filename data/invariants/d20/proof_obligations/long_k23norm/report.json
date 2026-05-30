@@ -1,0 +1,143 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "38911cb2fd6594d2455b91d3bbbfb60e64ddb496baf2d5dab603ff1df6861600",
+  "checks": {
+    "byte_equations_match": true,
+    "claim_boundary_matches": true,
+    "input_pass": true,
+    "limit_profile_matches": true,
+    "parameter_profile_matches": true,
+    "selected_candidate_matches": true
+  },
+  "claim": "long_k23norm certifies one-candidate ML-KEM-512 normalization for the K23 benchmark surface.",
+  "closure_boundary": {
+    "certifies": [
+      "candidate 3 from long_k23bench is selected for FIPS 203 ML-KEM-512 normalization",
+      "ML-KEM-512 parameter and byte constants are materialized as one local row",
+      "internal digest-row byte equations and public-exchange byte equations are explicit",
+      "one external numeric baseline is materialized",
+      "improvement, compliance, runtime, and deployment claims remain false"
+    ],
+    "does_not_certify": [
+      "speed or size improvement",
+      "security superiority",
+      "wire-format equivalence",
+      "operation-model equivalence",
+      "standards compliance",
+      "deployment readiness",
+      "completion of the active discovery goal"
+    ]
+  },
+  "external_sources": {
+    "source_kind": "official_nist_fips_203_pdf",
+    "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf",
+    "used_facts": [
+      "ML-KEM-512 parameter row: n=256, q=3329, k=2, eta1=3, eta2=2, du=10, dv=4, required RBG strength 128 bits",
+      "ML-KEM-512 byte row: encapsulation key 800, decapsulation key 1632, ciphertext 768, shared secret 32"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23norm.py",
+      "sha256": "0ee0bb6a082200cb1320aebe5f01a282cf0c36409f3f953825f95aa11473d6e4"
+    },
+    "long_k23bench": {
+      "certificate_sha256": "b7bbbd122bfa4a2a1d988679a4e25827e666501a866f121db16248b50b71607d",
+      "path": "data/invariants/d20/proof_obligations/long_k23bench/report.json",
+      "sha256": "4dc5b798d696a10a856820602836ee83574562e9e7d7fb25f368d819706cd088",
+      "status": "SECTOR33_K23_BENCHMARK_SURFACE_CERTIFIED"
+    },
+    "long_k23bench_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23bench/bench_rows.csv",
+      "sha256": "2dad808dc0cb842f8866c77de561d529bda61e067c7af7b747aed48c249d2405"
+    },
+    "validator": {
+      "path": "src/certify_long_k23norm.py",
+      "sha256": "6db715edab0e9f293e143e73662c7c8fe1093e0038cac51068e5aee2347cc757"
+    }
+  },
+  "next_highest_yield_item": "Use the normalization row to define a candidate-specific wire-format map or demote the candidate if no compact public transcript encoding exists.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23norm/cert.json",
+    "equation_rows_csv": "data/invariants/d20/proof_obligations/long_k23norm/equation_rows.csv",
+    "limit_rows_csv": "data/invariants/d20/proof_obligations/long_k23norm/limit_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23norm/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23norm/k23norm_matrices.npz",
+    "normalization_rows_csv": "data/invariants/d20/proof_obligations/long_k23norm/normalization_rows.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23norm/obs.csv",
+    "parameter_rows_csv": "data/invariants/d20/proof_obligations/long_k23norm/parameter_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23norm/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23norm/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23norm/tables.npz"
+  },
+  "schema": "long.k23norm.report@1",
+  "stage_protocol": {
+    "closure": "certify one concrete normalization row without asserting improvement, compliance, or deployment readiness",
+    "coherence": "check selected candidate, byte constants, equations, ratio, and claim boundary",
+    "draft": "read long_k23bench and select the FIPS 203 baseline candidate row",
+    "emit": "write long_k23norm artifacts and verifier hook",
+    "witness": "emit parameter constants, normalization row, equation rows, open-limit rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_MLKEM512_NORMALIZATION_CERTIFIED",
+  "witness": {
+    "boundary": "This normalizes one K23 benchmark candidate against ML-KEM-512 byte-size constants and equations without asserting an improvement.",
+    "classification": "sector33_k23_mlkem512_one_candidate_normalization",
+    "equation_code_map": {
+      "0": "internal_public_digest_bytes",
+      "1": "internal_opening_digest_bytes",
+      "2": "baseline_public_exchange_bytes",
+      "3": "baseline_total_material_bytes",
+      "4": "public_digest_minus_baseline_public_exchange_bytes"
+    },
+    "external_source_url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf",
+    "limit_code_map": {
+      "0": "wire_format_mapping",
+      "1": "operation_model_equivalence",
+      "2": "implementation_timing_or_memory_measurement",
+      "3": "security_reduction",
+      "4": "interoperability_or_compliance"
+    },
+    "matrix_sha256": "f107beed4032acfa0cedb9b0e11e9ebfc98f56230e1b1786886c61ec95a25283",
+    "name": "long_k23norm",
+    "parameter_set": "ML-KEM-512",
+    "selected_candidate": "authority_decision_table_candidate",
+    "summary": {
+      "baseline_public_exchange_bytes": 1568,
+      "baseline_total_material_bytes": 3232,
+      "bench_candidate_count": 6,
+      "certified_input_count": 1,
+      "ciphertext_bytes": 768,
+      "comparison_delta_public_bytes": 3808,
+      "complete_goal_claim_flag": 0,
+      "decapsulation_key_bytes": 1632,
+      "digest_bytes": 32,
+      "encapsulation_key_bytes": 800,
+      "equation_pass_count": 5,
+      "equation_row_count": 5,
+      "external_numeric_baseline_count": 1,
+      "improvement_claim_count": 0,
+      "input_report_count": 1,
+      "internal_opening_digest_bytes": 7168,
+      "internal_operation_count": 56,
+      "internal_public_digest_bytes": 5376,
+      "internal_transcript_rows": 56,
+      "internal_verification_path_count": 56,
+      "limit_row_count": 5,
+      "normalization_surface_flag": 1,
+      "official_parameter_source_count": 1,
+      "open_limit_count": 5,
+      "opening_digest_columns": 4,
+      "overclaim_count": 0,
+      "parameter_row_count": 1,
+      "parameter_set_code": 512,
+      "public_digest_columns": 3,
+      "public_ratio_denominator": 7,
+      "public_ratio_numerator": 24,
+      "required_rbg_strength_bits": 128,
+      "selected_baseline_spec_code": 0,
+      "selected_candidate_id": 3,
+      "selected_potential_code": 3,
+      "shared_secret_bytes": 32
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e85de2a5c2e49d56a89081288aa43a86f563caab939c048f0475e2f41e119412",
+  "checks": {
+    "inputs_pass": true,
+    "mandate_claim_scoped": true,
+    "randomness_obstruction_recorded": true,
+    "selector_binding_exact": true,
+    "selector_profile_matches": true
+  },
+  "claim": "long_k23mand certifies the source-bound verifier mandate for the K23 challenge layer.",
+  "closure_boundary": {
+    "certifies": [
+      "every verifier challenge selector recomputes from the public transcript digest prefix",
+      "every selected opening id matches the digest-derived selector",
+      "the challenge layer uses zero external randomness rows in the current certificate",
+      "the finite proof-of-mandate is source-bound and deterministic"
+    ],
+    "does_not_certify": [
+      "a random challenge source",
+      "cryptographic hardness",
+      "zero knowledge",
+      "unbounded adversary security",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23mand.py",
+      "sha256": "473edaab746afc83920dcd1efe574970fce9fd06d2c788ea14241b984a75ac46"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23chal_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/challenge_rows.csv",
+      "sha256": "d609fe76273d30d885b99b794ee9d1bc9ca843b35d711fd75a9daed0a2a9e6f1"
+    },
+    "long_k23cop_openings": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/opening_rows.csv",
+      "sha256": "92218eca35d8dd7275b8697e8d03bcdc2d6c9f658db71471ea29058824067393"
+    },
+    "long_k23cop_public": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/public_transcript.csv",
+      "sha256": "4dcd25751f5ec9ec67500741f75c21ecc38e5dcc6072d583822f6ddd3caedc85"
+    },
+    "long_k23sound": {
+      "certificate_sha256": "942daa6742b554672aed14a86debb880113dab2f81f2db1c5fcb61c98c3226dc",
+      "path": "data/invariants/d20/proof_obligations/long_k23sound/report.json",
+      "sha256": "220c9d855069815e51dbfa5835d0fbd537eab9bce44ac501372df092b1bddd54",
+      "status": "SECTOR33_K23_BOUNDED_ADVERSARY_SOUNDNESS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23mand.py",
+      "sha256": "7d234acbbea5fe5ab03cc803a38e9021edf9ce9586f96db7f8ad73fa7d5296a9"
+    }
+  },
+  "next_highest_yield_item": "Promote proof-of-mandate into the frontier: test whether mandate determinism is sufficient for the next semantic authority layer or whether a new challenge-source extension is required.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23mand/cert.json",
+    "mandate_rows_csv": "data/invariants/d20/proof_obligations/long_k23mand/mandate_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23mand/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23mand/k23mand_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23mand/obs.csv",
+    "profile_rows_csv": "data/invariants/d20/proof_obligations/long_k23mand/profile_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23mand/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23mand/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23mand/tables.npz"
+  },
+  "schema": "long.k23mand.report@1",
+  "stage_protocol": {
+    "closure": "certify deterministic proof-of-mandate while leaving external randomness and security claims open",
+    "coherence": "check selector recomputation, selected opening binding, and explicit randomness non-claim",
+    "draft": "read public transcript rows, opening rows, challenge rows, and bounded soundness report",
+    "emit": "write long_k23mand artifacts and verifier hook",
+    "witness": "emit mandate selector rows, selector profile rows, and observables"
+  },
+  "status": "SECTOR33_K23_SOURCE_BOUND_MANDATE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies deterministic source-bound mandate selection for the K23 verifier challenge.",
+    "classification": "sector33_k23_source_bound_mandate",
+    "matrix_sha256": "478fe8249183e6050e783e837ddce961364801b0110fb65ed92b785016d95386",
+    "name": "long_k23mand",
+    "summary": {
+      "certified_input_count": 2,
+      "challenge_count": 56,
+      "challenge_randomness_source_certified_flag": 0,
+      "complete_goal_claim_flag": 0,
+      "deterministic_mandate_certified_flag": 1,
+      "digest_bound_count": 56,
+      "external_randomness_claim_flag": 0,
+      "external_randomness_used_count": 0,
+      "hardness_claim_flag": 0,
+      "input_report_count": 2,
+      "mandate_row_count": 56,
+      "opening_match_count": 56,
+      "opening_row_count": 91,
+      "proof_of_mandate_flag": 1,
+      "public_transcript_count": 56,
+      "selected_opening_unique_count": 56,
+      "selected_word_unique_count": 56,
+      "selector_match_count": 56,
+      "selector_nonzero_count": 11,
+      "selector_profile_count": 3,
+      "selector_zero_count": 45,
+      "zero_knowledge_claim_flag": 0
+    }
+  }
+}

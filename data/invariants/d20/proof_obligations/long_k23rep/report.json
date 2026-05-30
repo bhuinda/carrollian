@@ -1,0 +1,99 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "40af7075b5d69d467fb912a0b983cdac0b4ff0198fe2b1c05d78f4a2bdaa983e",
+  "checks": {
+    "all_depth_accounting_matches": true,
+    "final_depth_accounting_matches": true,
+    "inputs_pass": true,
+    "no_broad_cryptologic_claims": true,
+    "round_profile_matches": true
+  },
+  "claim": "long_k23rep certifies bounded repeated-round accounting for the K23 verification game.",
+  "closure_boundary": {
+    "certifies": [
+      "the bounded move alphabet has one honest move family and five tamper move families",
+      "for depths one through eight, total strategy words per transcript are 6^depth",
+      "for each transcript and each depth, exactly one all-honest strategy word accepts",
+      "for each transcript and each depth, every non-all-honest strategy word is accounted as rejected",
+      "depth-eight total strategy words are 94,058,496 over 56 transcripts"
+    ],
+    "does_not_certify": [
+      "probabilistic repeated soundness",
+      "uniform random challenge semantics",
+      "strategies outside the six bounded prover move families",
+      "cryptographic hardness",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23rep.py",
+      "sha256": "91239e7d87eab5ca2070eb655f6f3ea74ba2ebb648180bccb4fe180d071323de"
+    },
+    "long_k23game": {
+      "certificate_sha256": "e9277292874464aeb1b13cfe9e7f96bcc83a454bf3f0645fe2e8e92e360216cf",
+      "path": "data/invariants/d20/proof_obligations/long_k23game/report.json",
+      "sha256": "0f1d86bdb4b6106de910e038ead70448bd16291ea2cff0af6f72c77c55c20973",
+      "status": "SECTOR33_K23_VERIFICATION_GAME_TABLE_CERTIFIED"
+    },
+    "long_k23game_payoff": {
+      "path": "data/invariants/d20/proof_obligations/long_k23game/payoff_rows.csv",
+      "sha256": "b30cfa1a4aeeabb84a73c75dc41958e24215d7748ac9d1bf41786c267f1ebfd8"
+    },
+    "long_k23game_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23game/game_rows.csv",
+      "sha256": "11b7d1d032a00cd4d5c09c15bd2a92c73bec0d9ecf9de621b884a7ab839c7f4e"
+    },
+    "validator": {
+      "path": "src/certify_long_k23rep.py",
+      "sha256": "89ac6faa53cf4bc6a677ee4cd54ac8e5143a15d1c6837ece2baddbdddb3d03ea"
+    }
+  },
+  "next_highest_yield_item": "Feed long_k23roll and long_k23rep into the focused frontier/oracle index when broad integration is permitted.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23rep/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23rep/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23rep/k23rep_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23rep/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23rep/report.json",
+    "round_rows_csv": "data/invariants/d20/proof_obligations/long_k23rep/round_rows.csv",
+    "seam": "data/invariants/d20/proof_obligations/long_k23rep/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23rep/tables.npz"
+  },
+  "schema": "long.k23rep.report@1",
+  "stage_protocol": {
+    "closure": "certify finite repeated-round accounting while leaving probabilistic soundness and hardness open",
+    "coherence": "check exact powers of the six-move bounded game alphabet through depth eight",
+    "draft": "read the certified K23 verification game table and payoff labels",
+    "emit": "write long_k23rep artifacts and verifier hook",
+    "witness": "emit repeated-round accounting rows and observables"
+  },
+  "status": "SECTOR33_K23_REPEATED_ROUND_ACCOUNTING_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies exact repeated-round accounting for the bounded K23 verification game through depth eight.",
+    "classification": "sector33_k23_repeated_round_accounting",
+    "matrix_sha256": "79ecac40e9a94ef032a43113b02e1909567dfd965b08ae96abe1691aed1b8fb5",
+    "name": "long_k23rep",
+    "summary": {
+      "all_depth_accepted_strategy_words": 448,
+      "all_depth_rejected_strategy_words": 112869680,
+      "all_depth_total_strategy_words": 112870128,
+      "complete_goal_claim_flag": 0,
+      "final_depth_accepted_strategy_words": 56,
+      "final_depth_rejected_strategy_words": 94058440,
+      "final_depth_total_strategy_words": 94058496,
+      "hardness_claim_flag": 0,
+      "honest_move_family_count": 1,
+      "long_k23game_certified_flag": 1,
+      "max_round_depth": 8,
+      "move_family_count": 6,
+      "one_round_game_row_count": 336,
+      "probability_soundness_claim_flag": 0,
+      "round_depth_count": 8,
+      "strategy_exhaustiveness_beyond_bounded_moves_flag": 0,
+      "tamper_move_family_count": 5,
+      "transcript_count": 56
+    }
+  }
+}

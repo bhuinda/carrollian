@@ -1,0 +1,60 @@
+{
+  "checks": {
+    "audit_totals_match": true,
+    "boundary_flags_match": true,
+    "equation_profile_matches": true,
+    "inputs_pass": true,
+    "limit_profile_matches": true,
+    "per_game_ratios_match": true,
+    "workload_profile_matches": true
+  },
+  "schema": "long.k23vwork.cert@1",
+  "status": "SECTOR33_K23_VERIFIER_WORKLOAD_BINDING_CERTIFIED",
+  "witness": {
+    "boundary": "This binds local audit-cost reduction to the 336-row verifier game workload while keeping public transport claims demoted.",
+    "classification": "sector33_k23_verifier_workload_binding",
+    "equation_code_map": {
+      "0": "bounded_game_rows",
+      "1": "local_audit_total_bytes",
+      "2": "digest_surface_total_bytes",
+      "3": "saved_audit_total_bytes",
+      "4": "local_total_less_than_digest_total"
+    },
+    "limit_code_map": {
+      "0": "shared_table_workload_assumption",
+      "1": "public_transport_claim",
+      "2": "external_security_or_interop_claim"
+    },
+    "matrix_sha256": "1e6657b1710d7be5cc9575200dd26ee1bb24ec562dfd44c6830d6a5ff57d4743",
+    "name": "long_k23vwork",
+    "summary": {
+      "certified_input_count": 2,
+      "complete_goal_claim_flag": 0,
+      "digest_bytes_per_game_den": 1,
+      "digest_bytes_per_game_num": 16,
+      "digest_surface_total_bytes": 5376,
+      "equation_pass_count": 5,
+      "equation_row_count": 5,
+      "external_efficiency_path_demoted_count": 1,
+      "game_row_count": 336,
+      "game_rows_per_workload": 6,
+      "honest_row_total": 56,
+      "input_report_count": 2,
+      "limit_row_count": 3,
+      "local_audit_improvement_count": 56,
+      "local_audit_total_bytes": 224,
+      "local_bytes_per_game_den": 3,
+      "local_bytes_per_game_num": 2,
+      "open_limit_count": 3,
+      "overclaim_count": 0,
+      "proof_of_mandate_workload_flag": 1,
+      "public_transport_claim_count": 0,
+      "saved_audit_total_bytes": 5152,
+      "saved_bytes_per_game_den": 3,
+      "saved_bytes_per_game_num": 46,
+      "tamper_row_total": 280,
+      "verifier_payoff_total": 336,
+      "workload_row_count": 56
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e9277292874464aeb1b13cfe9e7f96bcc83a454bf3f0645fe2e8e92e360216cf",
+  "checks": {
+    "boundary_flags_match": true,
+    "game_profile_matches": true,
+    "inputs_pass": true,
+    "payoff_profile_matches": true,
+    "surface_profile_matches": true
+  },
+  "claim": "long_k23game certifies the finite K23 verification game table.",
+  "closure_boundary": {
+    "certifies": [
+      "336 bounded game rows induced by 56 challenge rows and 6 prover move families",
+      "56 honest opening moves accept",
+      "280 tamper moves reject",
+      "there are zero unexpected accepts and zero unexpected rejects",
+      "verifier payoff is one on all bounded rows",
+      "prover payoff is one exactly on honest accepted rows"
+    ],
+    "does_not_certify": [
+      "probabilistic or repeated-game soundness",
+      "strategies outside the six bounded prover move families",
+      "cryptographic hardness",
+      "zero knowledge",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23game.py",
+      "sha256": "93daa51cb38f1409a80734e71c5ab652f6037cecb37cda2df7c97e68199716b1"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23chal_challenges": {
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/challenge_rows.csv",
+      "sha256": "d609fe76273d30d885b99b794ee9d1bc9ca843b35d711fd75a9daed0a2a9e6f1"
+    },
+    "long_k23chal_controls": {
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/control_rows.csv",
+      "sha256": "4704e7ac03a81c41539c9284d577fcd4ffd211ced4add8cff522f09e88b36cd8"
+    },
+    "validator": {
+      "path": "src/certify_long_k23game.py",
+      "sha256": "a1e9af00b0fbf3facc82a40c1277763d5dff8d5e853403975b6587f01b823f8b"
+    }
+  },
+  "next_highest_yield_item": "Fuse the semantic/game/protocol chain into a frontier rollup certificate that names the certified merge point and the remaining open cryptologic limits.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23game/cert.json",
+    "game_rows_csv": "data/invariants/d20/proof_obligations/long_k23game/game_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23game/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23game/k23game_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23game/obs.csv",
+    "payoff_rows_csv": "data/invariants/d20/proof_obligations/long_k23game/payoff_rows.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23game/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23game/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23game/tables.npz"
+  },
+  "schema": "long.k23game.report@1",
+  "stage_protocol": {
+    "closure": "certify the bounded game table while leaving repeated-game and hardness claims open",
+    "coherence": "check honest/tamper move counts, payoff labels, and accepted/rejected outcomes",
+    "draft": "read long_k23chal challenges and accept/reject controls",
+    "emit": "write long_k23game artifacts and verifier hook",
+    "witness": "emit game rows, payoff labels, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_VERIFICATION_GAME_TABLE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the bounded verifier game table induced by the K23 transcript challenge layer.",
+    "classification": "sector33_k23_verification_game_table",
+    "matrix_sha256": "9344d3e17b4776c84ffac0eee8267ae118748b54329c3eaec64ee209149e2062",
+    "name": "long_k23game",
+    "summary": {
+      "accepted_truth_count": 56,
+      "challenge_count": 56,
+      "complete_goal_claim_flag": 0,
+      "control_count": 336,
+      "game_row_count": 336,
+      "honest_move_count": 56,
+      "long_k23chal_certified_flag": 1,
+      "opening_count": 56,
+      "payoff_label_count": 4,
+      "prover_payoff_total": 56,
+      "rejected_tamper_count": 280,
+      "tamper_move_count": 280,
+      "transcript_count": 56,
+      "unexpected_accept_count": 0,
+      "unexpected_reject_count": 0,
+      "verifier_payoff_total": 336,
+      "word_count": 56
+    }
+  }
+}

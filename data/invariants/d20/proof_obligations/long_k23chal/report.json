@@ -1,0 +1,115 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+  "checks": {
+    "boundary_flags_match": true,
+    "challenge_profile_matches": true,
+    "challenge_selection_profile_matches": true,
+    "control_accept_reject_matches": true,
+    "inputs_pass": true
+  },
+  "claim": "long_k23chal certifies the K23 verifier-challenge layer.",
+  "closure_boundary": {
+    "certifies": [
+      "one deterministic challenge row for each of the 56 public transcripts",
+      "challenge selection uses the public digest modulo the transcript member count",
+      "56 accepting control rows pass",
+      "280 single-field tamper controls reject",
+      "selected openings remain public-transcript consistent by digest, source hash, target hash, and residual code"
+    ],
+    "does_not_certify": [
+      "probabilistic soundness under repeated random challenge",
+      "hash collision resistance beyond ordinary SHA-256 use",
+      "secrecy of repository-visible witness rows",
+      "zero knowledge",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23chal.py",
+      "sha256": "9fb01fdef2ab814da96396ab0c49f4d952889fce529c921e6992203fe16fe93a"
+    },
+    "long_k23cl_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cl/k23cl_matrices.npz",
+      "sha256": "066a9a9ab4c252d0f1f6352af6438e1f4dbe024f1ac33e045a9ef5b2d939a865"
+    },
+    "long_k23cop": {
+      "certificate_sha256": "987651497febd89570bd1c1d4f2708b38cfb83260537c7721f0529c972cde3ee",
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/report.json",
+      "sha256": "2fc0b0f401ac977ea909b57240707a455b8272c8d1baba2320fda88edbbebaaa",
+      "status": "SECTOR33_K23_COMMIT_OPEN_TRANSCRIPT_CERTIFIED"
+    },
+    "long_k23cop_openings": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/opening_rows.csv",
+      "sha256": "92218eca35d8dd7275b8697e8d03bcdc2d6c9f658db71471ea29058824067393"
+    },
+    "long_k23cop_public": {
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/public_transcript.csv",
+      "sha256": "4dcd25751f5ec9ec67500741f75c21ecc38e5dcc6072d583822f6ddd3caedc85"
+    },
+    "long_k23poly_fingerprints": {
+      "path": "data/invariants/d20/proof_obligations/long_k23poly/fingerprint_rows.csv",
+      "sha256": "9fdd8fb0816d815299bc63be52853d0d79d9ffe09ebdc6c3c65a8ae5a141c188"
+    },
+    "long_k23poly_matrices": {
+      "path": "data/invariants/d20/proof_obligations/long_k23poly/k23poly_matrices.npz",
+      "sha256": "414c4c32cef8adc76372573445bf7d997cd83c1d7c543d5181e0b5e62817608d"
+    },
+    "long_k23poly_words": {
+      "path": "data/invariants/d20/proof_obligations/long_k23poly/word_rows.csv",
+      "sha256": "b2d60cb415f053542ea3858f93283cfde11fbdce9b22d5d5dcae165069f95aa2"
+    },
+    "validator": {
+      "path": "src/certify_long_k23chal.py",
+      "sha256": "91cc1f094d293b76419e51a3c436c8db10808e296012b67567b11ce1dece5532"
+    }
+  },
+  "next_highest_yield_item": "Bind the challenge layer back to the finite game surface: define prover moves, verifier moves, payoff labels, and transcript acceptance as a certified game table.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23chal/cert.json",
+    "challenge_rows_csv": "data/invariants/d20/proof_obligations/long_k23chal/challenge_rows.csv",
+    "control_rows_csv": "data/invariants/d20/proof_obligations/long_k23chal/control_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23chal/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23chal/k23chal_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23chal/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23chal/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23chal/tables.npz"
+  },
+  "schema": "long.k23chal.report@1",
+  "stage_protocol": {
+    "closure": "certify bounded challenge acceptance while leaving randomness, repetition, and hardness claims open",
+    "coherence": "check selector determinism, one challenged opening per public transcript, and reject controls",
+    "draft": "read long_k23cop public transcripts and openings",
+    "emit": "write long_k23chal artifacts and verifier hook",
+    "witness": "emit deterministic challenge rows, accept/reject control rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies deterministic challenge selection and accept/reject controls over the bounded commit/open transcript surface.",
+    "classification": "sector33_k23_verifier_challenge",
+    "matrix_sha256": "d1c4b2c888dd15a4ea863ebd7ea1ba41c21fd220296ccc9359f2c61d87eaf336",
+    "name": "long_k23chal",
+    "summary": {
+      "accept_control_count": 56,
+      "challenge_count": 56,
+      "complete_goal_claim_flag": 0,
+      "control_row_count": 336,
+      "failed_accept_count": 0,
+      "failed_reject_count": 0,
+      "long_k23cop_certified_flag": 1,
+      "opening_digest_unique_count": 56,
+      "opening_row_count": 91,
+      "public_digest_unique_count": 56,
+      "public_transcript_count": 56,
+      "reject_control_count": 280,
+      "selected_clean_challenge_count": 1,
+      "selected_defective_challenge_count": 55,
+      "selected_opening_unique_count": 56,
+      "selected_word_unique_count": 56,
+      "selector_nonzero_count": 11
+    }
+  }
+}

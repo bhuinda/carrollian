@@ -1,0 +1,49 @@
+{
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23wire.py",
+      "sha256": "a4f5d42ab4f825a492eaac76898748c0ce8d322a2ce2f3bd0c7d6d1ffb5d754b"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23chal_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/challenge_rows.csv",
+      "sha256": "d609fe76273d30d885b99b794ee9d1bc9ca843b35d711fd75a9daed0a2a9e6f1"
+    },
+    "long_k23norm": {
+      "certificate_sha256": "38911cb2fd6594d2455b91d3bbbfb60e64ddb496baf2d5dab603ff1df6861600",
+      "path": "data/invariants/d20/proof_obligations/long_k23norm/report.json",
+      "sha256": "583ce9f8826fcbd4f41db3131ce91bc8bf538af7bafb49c6f343d13422b9afbf",
+      "status": "SECTOR33_K23_MLKEM512_NORMALIZATION_CERTIFIED"
+    },
+    "long_k23norm_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23norm/normalization_rows.csv",
+      "sha256": "9acaaa24d712cacde3fb28d0b8b2b129752ef7d7e9596a514f5e4d2d7be8e5c4"
+    },
+    "validator": {
+      "path": "src/certify_long_k23wire.py",
+      "sha256": "005dcf045dce686e32ec46441cfc8d8217e482dbc93d1fba6c1cb84395634b18"
+    }
+  },
+  "manifest_sha256": "dae70cad2b41186eed85c85b94567e143ebc301ba0186372249bd2154cd4bd91",
+  "name": "long_k23wire",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23wire/cert.json",
+    "equation_rows_csv": "data/invariants/d20/proof_obligations/long_k23wire/equation_rows.csv",
+    "limit_rows_csv": "data/invariants/d20/proof_obligations/long_k23wire/limit_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23wire/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23wire/k23wire_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23wire/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23wire/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23wire/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23wire/tables.npz",
+    "wire_rows_csv": "data/invariants/d20/proof_obligations/long_k23wire/wire_rows.csv"
+  },
+  "report_sha256": "e196e26335c3977e0709bcd11bd50fa4c9297a86b67eda63448771a4dac06bc8",
+  "schema": "long.k23wire.manifest@1",
+  "status": "SECTOR33_K23_COMPACT_WIRE_MAP_CERTIFIED"
+}

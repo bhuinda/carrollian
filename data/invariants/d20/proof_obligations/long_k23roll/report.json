@@ -1,0 +1,125 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "712432be0771cc5247ce426af1b69fb91def376f7f23b68333c111d51a3c224c",
+  "checks": {
+    "boundary_flags_match": true,
+    "inputs_pass": true,
+    "merge_flags_match": true,
+    "open_limits_explicit": true
+  },
+  "claim": "long_k23roll certifies the bounded K23 semantic/game/protocol merge point.",
+  "closure_boundary": {
+    "certifies": [
+      "the minimal repaired-projection family is product-action obstructed",
+      "the word-level carrier preserves quotient/unit behavior",
+      "bounded fingerprint-preserving rewrites cannot close product defects",
+      "the commit/open transcript surface is checked",
+      "the verifier challenge layer accepts canonical openings and rejects single-field tamper controls",
+      "the finite game table has verifier payoff one on all bounded rows",
+      "these surfaces form the certified finite merge point of semantics, transcript protocol, and game payoff"
+    ],
+    "does_not_certify": [
+      "cryptographic hardness",
+      "secrecy of repository-visible witnesses",
+      "zero knowledge",
+      "probabilistic repeated soundness",
+      "word-depth exhaustiveness beyond the bounded surface",
+      "bundle-wide integration",
+      "a final broad-goal closure claim"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23roll.py",
+      "sha256": "1f6ad9b6e35d29ac5201662dad3caa6b479195fdcfde9d99d03c882de02c01ac"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23cop": {
+      "certificate_sha256": "987651497febd89570bd1c1d4f2708b38cfb83260537c7721f0529c972cde3ee",
+      "path": "data/invariants/d20/proof_obligations/long_k23cop/report.json",
+      "sha256": "2fc0b0f401ac977ea909b57240707a455b8272c8d1baba2320fda88edbbebaaa",
+      "status": "SECTOR33_K23_COMMIT_OPEN_TRANSCRIPT_CERTIFIED"
+    },
+    "long_k23fam": {
+      "certificate_sha256": "c4c86adf581055e4af0df1aafd084abc9098415953860e5b0ef911a643b09313",
+      "path": "data/invariants/d20/proof_obligations/long_k23fam/report.json",
+      "sha256": "2ea7612f10bd906551bd7907f9c31e2df7a4daed0d56fae49794226a3606979b",
+      "status": "SECTOR33_K23_MINIMAL_REPAIRED_PROJECTION_FAMILY_OBSTRUCTED"
+    },
+    "long_k23game": {
+      "certificate_sha256": "e9277292874464aeb1b13cfe9e7f96bcc83a454bf3f0645fe2e8e92e360216cf",
+      "path": "data/invariants/d20/proof_obligations/long_k23game/report.json",
+      "sha256": "0f1d86bdb4b6106de910e038ead70448bd16291ea2cff0af6f72c77c55c20973",
+      "status": "SECTOR33_K23_VERIFICATION_GAME_TABLE_CERTIFIED"
+    },
+    "long_k23poly": {
+      "certificate_sha256": "038ea23f66444c578a6d06569390b64527b0e17a431402a2648912cd41f49256",
+      "path": "data/invariants/d20/proof_obligations/long_k23poly/report.json",
+      "sha256": "6c7a5ab8d9e3d97cea1577b94ff462383f249bcd986eb10f6194ef70a344441c",
+      "status": "SECTOR33_K23_CONCATENATIVE_POLYMORPHISM_CARRIER_CERTIFIED"
+    },
+    "long_k23rew": {
+      "certificate_sha256": "1a5f5224758a41a3f134ca84f1339a439c12e15a3ac5ebc30c68e099d8fe3ed0",
+      "path": "data/invariants/d20/proof_obligations/long_k23rew/report.json",
+      "sha256": "c2752d3bdbafa56cbfbc37ed24e7fa36136c8e17b77dcf36e3049f7d5b918b5c",
+      "status": "SECTOR33_K23_BOUNDED_REWRITE_FINGERPRINT_OBSTRUCTION_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23roll.py",
+      "sha256": "0f54cdbeb3b964992bc486a9346bb59a0c7ec0f26c16db6215c0baf37c6a6123"
+    }
+  },
+  "next_highest_yield_item": "Feed this rollup back into the focused frontier/oracle index when broad integration is permitted; otherwise extend the finite challenge game with repeated-round accounting.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23roll/cert.json",
+    "chain_rows_csv": "data/invariants/d20/proof_obligations/long_k23roll/chain_rows.csv",
+    "limit_rows_csv": "data/invariants/d20/proof_obligations/long_k23roll/limit_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23roll/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23roll/k23roll_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23roll/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23roll/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23roll/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23roll/tables.npz"
+  },
+  "schema": "long.k23roll.report@1",
+  "stage_protocol": {
+    "closure": "certify the finite merge point while leaving broad and cryptologic claims open",
+    "coherence": "check all input certificates pass and all open cryptologic limits remain claim-free",
+    "draft": "read the focused K23 family, word-carrier, rewrite, transcript, challenge, and game certificates",
+    "emit": "write long_k23roll artifacts and verifier hook",
+    "witness": "emit chain rows, open-limit rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_SEMANTIC_GAME_PROTOCOL_ROLLUP_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the bounded merge point where the K23 semantic carrier, transcript protocol, verifier challenge, and finite game payoff cohere.",
+    "classification": "sector33_k23_semantic_game_protocol_rollup",
+    "matrix_sha256": "3c1b3c3dd171a8e00d6093f2653cbd999395eb2ee8cae9c2739ff86293935a5c",
+    "name": "long_k23roll",
+    "summary": {
+      "bundle_integration_claim_flag": 0,
+      "certified_input_count": 6,
+      "certified_merge_point_flag": 1,
+      "chain_stage_count": 6,
+      "challenge_certified_flag": 1,
+      "commit_open_certified_flag": 1,
+      "complete_goal_claim_flag": 0,
+      "final_goal_claim_flag": 0,
+      "game_payoff_certified_flag": 1,
+      "hardness_claim_flag": 0,
+      "input_report_count": 6,
+      "merge_layer_count": 5,
+      "minimal_family_obstructed_flag": 1,
+      "open_limit_count": 7,
+      "repeated_soundness_claim_flag": 0,
+      "rewrite_obstructed_flag": 1,
+      "secrecy_claim_flag": 0,
+      "word_carrier_certified_flag": 1,
+      "zero_knowledge_claim_flag": 0
+    }
+  }
+}

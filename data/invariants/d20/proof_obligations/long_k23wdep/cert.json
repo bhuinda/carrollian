@@ -1,0 +1,58 @@
+{
+  "checks": {
+    "current_model_self_contained_loses": true,
+    "decision_matches": true,
+    "dependency_profile_matches": true,
+    "equation_profile_matches": true,
+    "input_pass": true,
+    "limit_profile_matches": true
+  },
+  "schema": "long.k23wdep.cert@1",
+  "status": "SECTOR33_K23_WIRE_DEPENDENCY_DECISION_CERTIFIED",
+  "witness": {
+    "boundary": "This demotes the current external-efficiency path because the compact wire map is shared-table dependent and no self-contained public transcript is materialized.",
+    "classification": "sector33_k23_shared_table_dependency_decision",
+    "decision_code_map": {
+      "0": "current_external_efficiency_path_demoted"
+    },
+    "equation_code_map": {
+      "0": "compact_wire_total_bytes",
+      "1": "all_wire_rows_depend_on_shared_table",
+      "2": "current_model_self_contained_bytes_exceed_baseline_public_bytes",
+      "3": "current_model_delta_vs_baseline_bytes"
+    },
+    "limit_code_map": {
+      "0": "self_contained_public_transcript",
+      "1": "wire_equivalence_proof",
+      "2": "security_reduction",
+      "3": "interop_or_deployment"
+    },
+    "matrix_sha256": "df6faf2bc2f0f7cfc2e77b73f442b2cc60fe173e2ce1097850a36ca475685714",
+    "name": "long_k23wdep",
+    "summary": {
+      "baseline_public_exchange_bytes": 1568,
+      "certified_input_count": 1,
+      "compact_wire_flag": 1,
+      "complete_goal_claim_flag": 0,
+      "current_model_delta_vs_baseline_bytes": 3808,
+      "current_model_greater_than_baseline_flag": 1,
+      "current_model_self_contained_bytes": 5376,
+      "decision_row_count": 1,
+      "decision_surface_flag": 1,
+      "demotion_support_count": 3,
+      "equation_pass_count": 4,
+      "equation_row_count": 4,
+      "external_efficiency_claim_count": 0,
+      "external_efficiency_path_demoted_count": 1,
+      "input_report_count": 1,
+      "limit_row_count": 4,
+      "open_limit_count": 4,
+      "overclaim_count": 0,
+      "self_contained_public_transcript_flag": 0,
+      "shared_dependency_all_rows_flag": 1,
+      "table_index_dependency_count": 56,
+      "wire_row_count": 56,
+      "wire_total_bytes": 224
+    }
+  }
+}

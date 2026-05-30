@@ -1,0 +1,64 @@
+{
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23sound.py",
+      "sha256": "dda4cb30f968e150ca95c8de18649eea8f107e1c7c807d4d1311897ce3a85fd0"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23game": {
+      "certificate_sha256": "e9277292874464aeb1b13cfe9e7f96bcc83a454bf3f0645fe2e8e92e360216cf",
+      "path": "data/invariants/d20/proof_obligations/long_k23game/report.json",
+      "sha256": "0f1d86bdb4b6106de910e038ead70448bd16291ea2cff0af6f72c77c55c20973",
+      "status": "SECTOR33_K23_VERIFICATION_GAME_TABLE_CERTIFIED"
+    },
+    "long_k23game_payoff": {
+      "path": "data/invariants/d20/proof_obligations/long_k23game/payoff_rows.csv",
+      "sha256": "b30cfa1a4aeeabb84a73c75dc41958e24215d7748ac9d1bf41786c267f1ebfd8"
+    },
+    "long_k23game_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23game/game_rows.csv",
+      "sha256": "11b7d1d032a00cd4d5c09c15bd2a92c73bec0d9ecf9de621b884a7ab839c7f4e"
+    },
+    "long_k23rep": {
+      "certificate_sha256": "40af7075b5d69d467fb912a0b983cdac0b4ff0198fe2b1c05d78f4a2bdaa983e",
+      "path": "data/invariants/d20/proof_obligations/long_k23rep/report.json",
+      "sha256": "9c77be512dc328885787848401407934a96e2eeb74eeb958344c86e19b019291",
+      "status": "SECTOR33_K23_REPEATED_ROUND_ACCOUNTING_CERTIFIED"
+    },
+    "long_k23rep_rounds": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rep/round_rows.csv",
+      "sha256": "a60b4ddae36a8afa5769899b6fea00e6cfeb0ecf7e26ec29395bff36e295600f"
+    },
+    "long_k23sync": {
+      "certificate_sha256": "0489cc85dfb2d7d7b758af96071d610436bda59fae61752ae7dda9db5c041df6",
+      "path": "data/invariants/d20/proof_obligations/long_k23sync/report.json",
+      "sha256": "ed2a52b5bbcdc9ff6ab35733828cdd0d4751795d429e767c6606edf93773d342",
+      "status": "SECTOR33_K23_PROTOCOL_FRONTIER_HANDOFF_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23sound.py",
+      "sha256": "ce6c26948f3a5617b954325f002fe36bb268f27c0772d2fc0401af6a51bb36ba"
+    }
+  },
+  "manifest_sha256": "93aa617e18572722a1d440c04fee15e871bd4e3d5d42ece49f97aafcbc82ddbc",
+  "name": "long_k23sound",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23sound/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23sound/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23sound/k23sound_matrices.npz",
+    "move_rows_csv": "data/invariants/d20/proof_obligations/long_k23sound/move_rows.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23sound/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23sound/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23sound/seam.json",
+    "soundness_rows_csv": "data/invariants/d20/proof_obligations/long_k23sound/soundness_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23sound/tables.npz"
+  },
+  "report_sha256": "942daa6742b554672aed14a86debb880113dab2f81f2db1c5fcb61c98c3226dc",
+  "schema": "long.k23sound.manifest@1",
+  "status": "SECTOR33_K23_BOUNDED_ADVERSARY_SOUNDNESS_CERTIFIED"
+}

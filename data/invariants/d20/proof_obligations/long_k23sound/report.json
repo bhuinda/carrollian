@@ -1,0 +1,130 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "942daa6742b554672aed14a86debb880113dab2f81f2db1c5fcb61c98c3226dc",
+  "checks": {
+    "bounded_round_soundness_exact": true,
+    "inputs_pass": true,
+    "move_partition_exact": true,
+    "one_round_no_bad_accepts": true,
+    "open_security_limits_unclaimed": true
+  },
+  "claim": "long_k23sound certifies bounded adversary soundness for the K23 verifier game.",
+  "closure_boundary": {
+    "certifies": [
+      "the bounded prover move alphabet has one honest move and five tamper move families",
+      "the one-round game has zero bad accepts and zero bad rejects",
+      "through depth eight, every non-all-honest move word is rejected",
+      "under the finite uniform counting law on bounded move words, acceptance mass is exactly 1/6^d at depth d"
+    ],
+    "does_not_certify": [
+      "external randomness generation",
+      "cryptographic hardness",
+      "zero knowledge",
+      "strategies outside the bounded six-move alphabet",
+      "security composition outside this finite verifier game",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23sound.py",
+      "sha256": "dda4cb30f968e150ca95c8de18649eea8f107e1c7c807d4d1311897ce3a85fd0"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23game": {
+      "certificate_sha256": "e9277292874464aeb1b13cfe9e7f96bcc83a454bf3f0645fe2e8e92e360216cf",
+      "path": "data/invariants/d20/proof_obligations/long_k23game/report.json",
+      "sha256": "0f1d86bdb4b6106de910e038ead70448bd16291ea2cff0af6f72c77c55c20973",
+      "status": "SECTOR33_K23_VERIFICATION_GAME_TABLE_CERTIFIED"
+    },
+    "long_k23game_payoff": {
+      "path": "data/invariants/d20/proof_obligations/long_k23game/payoff_rows.csv",
+      "sha256": "b30cfa1a4aeeabb84a73c75dc41958e24215d7748ac9d1bf41786c267f1ebfd8"
+    },
+    "long_k23game_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23game/game_rows.csv",
+      "sha256": "11b7d1d032a00cd4d5c09c15bd2a92c73bec0d9ecf9de621b884a7ab839c7f4e"
+    },
+    "long_k23rep": {
+      "certificate_sha256": "40af7075b5d69d467fb912a0b983cdac0b4ff0198fe2b1c05d78f4a2bdaa983e",
+      "path": "data/invariants/d20/proof_obligations/long_k23rep/report.json",
+      "sha256": "9c77be512dc328885787848401407934a96e2eeb74eeb958344c86e19b019291",
+      "status": "SECTOR33_K23_REPEATED_ROUND_ACCOUNTING_CERTIFIED"
+    },
+    "long_k23rep_rounds": {
+      "path": "data/invariants/d20/proof_obligations/long_k23rep/round_rows.csv",
+      "sha256": "a60b4ddae36a8afa5769899b6fea00e6cfeb0ecf7e26ec29395bff36e295600f"
+    },
+    "long_k23sync": {
+      "certificate_sha256": "0489cc85dfb2d7d7b758af96071d610436bda59fae61752ae7dda9db5c041df6",
+      "path": "data/invariants/d20/proof_obligations/long_k23sync/report.json",
+      "sha256": "ed2a52b5bbcdc9ff6ab35733828cdd0d4751795d429e767c6606edf93773d342",
+      "status": "SECTOR33_K23_PROTOCOL_FRONTIER_HANDOFF_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23sound.py",
+      "sha256": "ce6c26948f3a5617b954325f002fe36bb268f27c0772d2fc0401af6a51bb36ba"
+    }
+  },
+  "next_highest_yield_item": "Feed long_k23sound into the focused frontier and then test whether a challenge-randomness source can be certified without adding an external assumption.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23sound/cert.json",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23sound/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23sound/k23sound_matrices.npz",
+    "move_rows_csv": "data/invariants/d20/proof_obligations/long_k23sound/move_rows.csv",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23sound/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23sound/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23sound/seam.json",
+    "soundness_rows_csv": "data/invariants/d20/proof_obligations/long_k23sound/soundness_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23sound/tables.npz"
+  },
+  "schema": "long.k23sound.report@1",
+  "stage_protocol": {
+    "closure": "certify bounded tamper rejection while leaving external security claims open",
+    "coherence": "check exact move partition, no bad accepts, and bounded round counts",
+    "draft": "read challenge, game, repeated-round, and handoff certificates plus game/round witness rows",
+    "emit": "write long_k23sound artifacts and verifier hook",
+    "witness": "emit move-family rows, round soundness rows, and observables"
+  },
+  "status": "SECTOR33_K23_BOUNDED_ADVERSARY_SOUNDNESS_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies exact rejection of all bounded tamper move words through depth eight.",
+    "classification": "sector33_k23_bounded_adversary_soundness",
+    "matrix_sha256": "618c47d6aa4209ce700256490ba5c3431d6318dc111b47df9ddbd339650e7449",
+    "name": "long_k23sound",
+    "summary": {
+      "all_depth_false_accept_strategy_words": 0,
+      "all_depth_tamper_reject_strategy_words": 112869680,
+      "bad_accept_count": 0,
+      "bad_reject_count": 0,
+      "bounded_soundness_error_denominator": 112869680,
+      "bounded_soundness_error_numerator": 0,
+      "certified_input_count": 4,
+      "complete_goal_claim_flag": 0,
+      "external_randomness_claim_flag": 0,
+      "final_acceptance_denominator": 1679616,
+      "final_acceptance_numerator": 1,
+      "final_honest_accept_strategy_words": 56,
+      "final_tamper_reject_strategy_words": 94058440,
+      "final_tamper_words_per_transcript": 1679615,
+      "hardness_claim_flag": 0,
+      "honest_move_family_count": 1,
+      "input_report_count": 4,
+      "max_round_depth": 8,
+      "move_family_count": 6,
+      "one_round_game_row_count": 336,
+      "round_depth_count": 8,
+      "tamper_false_accept_count": 0,
+      "tamper_move_family_count": 5,
+      "transcript_count": 56,
+      "unbounded_adversary_claim_flag": 0,
+      "uniform_counting_law_flag": 1,
+      "zero_knowledge_claim_flag": 0
+    }
+  }
+}

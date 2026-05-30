@@ -1,0 +1,158 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e51ffaea6c2017f9a37b247ba9c91c29181e5329ddb6b5cef3f98eba39b6350f",
+  "checks": {
+    "boundary_flags_match": true,
+    "broad_boundary_matches": true,
+    "frontier_guardrail_matches": true,
+    "guard_profile_matches": true,
+    "ingestion_profile_matches": true,
+    "inputs_pass": true,
+    "proof_mandate_route_matches": true
+  },
+  "claim": "long_k23fing certifies local frontier ingestion for the proof-of-mandate chain.",
+  "closure_boundary": {
+    "certifies": [
+      "the proof-of-mandate chain is locally ingested into the frontier process ontology",
+      "the challenge-source decision and frontier route are certified inputs",
+      "open nonclaims are preserved as open guardrails",
+      "the existing frontier and cluster reports remain the guardrail sources",
+      "broad integration and oracle refresh are explicitly deferred"
+    ],
+    "does_not_certify": [
+      "bundle-wide integration",
+      "a regenerated long_frontier report containing the new proof-obligation row",
+      "independent challenge randomness",
+      "computational hardness",
+      "zero knowledge",
+      "unbounded adversary security",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23fing.py",
+      "sha256": "41bcad5316e20dac7e6a3327852928a6f5eddb35df4fe4feb8dcece12daef287"
+    },
+    "long_cluster": {
+      "certificate_sha256": "560d08a772a73924d2b7eeafc44c8b58d3a89c409cdfc01926c505772896bc00",
+      "path": "data/invariants/d20/proof_obligations/long_cluster/report.json",
+      "sha256": "84b19c4f682c50ec6d9ffcbca50c5693cd5415fcc9d8328d42823d7fc45b6c5f",
+      "status": "LONG_CLUSTER_CERTIFIED"
+    },
+    "long_frontier": {
+      "certificate_sha256": "815b9bcb07d2c9b922ee0d18775d232d2587604948d1a588957915bea2ede429",
+      "path": "data/invariants/d20/proof_obligations/long_frontier/report.json",
+      "sha256": "6e19f3a9abf77f2c57e19afd96ac2fee086ef794d4e82370067c4692cb1b4c2e",
+      "status": "LONG_FRONTIER_CERTIFIED"
+    },
+    "long_frontier_object": {
+      "path": "data/invariants/d20/proof_obligations/long_frontier/frontier.json",
+      "sha256": "b72647411c9559a14206099e54f109c944eaa1aada07bd37655b50018ef708f3"
+    },
+    "long_k23csrc": {
+      "certificate_sha256": "0dc7296b66a9154435d6b30151b3ce58a20a14290567f23dbb6d7d4e0f733bd4",
+      "path": "data/invariants/d20/proof_obligations/long_k23csrc/report.json",
+      "sha256": "9133a818d052274ff9bf09b27dfc2c431e0d75e1715b80b45572dfd87433dd0c",
+      "status": "SECTOR33_K23_CHALLENGE_SOURCE_DECISION_CERTIFIED"
+    },
+    "long_k23froute": {
+      "certificate_sha256": "3a5c6ea69c446e5553163ffc0c8d2e515ab23bf0059d11b27000bffd4aac09a6",
+      "path": "data/invariants/d20/proof_obligations/long_k23froute/report.json",
+      "sha256": "af1278d778ef87f1d2f9832fe01368b6a959e33a44df5f1430f757a192a34964",
+      "status": "SECTOR33_K23_PROOF_OF_MANDATE_FRONTIER_ROUTE_CERTIFIED"
+    },
+    "long_k23sync": {
+      "certificate_sha256": "0489cc85dfb2d7d7b758af96071d610436bda59fae61752ae7dda9db5c041df6",
+      "path": "data/invariants/d20/proof_obligations/long_k23sync/report.json",
+      "sha256": "ed2a52b5bbcdc9ff6ab35733828cdd0d4751795d429e767c6606edf93773d342",
+      "status": "SECTOR33_K23_PROTOCOL_FRONTIER_HANDOFF_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23fing.py",
+      "sha256": "d503261a09854f6984db9d07be6d3a91d901009df47ccc87efdfd9454785ca46"
+    }
+  },
+  "next_highest_yield_item": "Materialize a focused mandate-ledger certificate that lists the verified proof-of-mandate chain and the remaining explicit nonclaims.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23fing/cert.json",
+    "guard_rows_csv": "data/invariants/d20/proof_obligations/long_k23fing/guard_rows.csv",
+    "ingest_rows_csv": "data/invariants/d20/proof_obligations/long_k23fing/ingest_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23fing/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23fing/k23fing_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23fing/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23fing/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23fing/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23fing/tables.npz"
+  },
+  "schema": "long.k23fing.report@1",
+  "stage_protocol": {
+    "closure": "certify local frontier ingestion without claiming bundle-wide integration",
+    "coherence": "check process ontology rows, preserved guardrails, route counts, and deferred broad refresh",
+    "draft": "read challenge-source decision, route, handoff, frontier, and cluster reports",
+    "emit": "write long_k23fing artifacts and verifier hook",
+    "witness": "emit ingestion rows, guard rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_PROOF_OF_MANDATE_FRONTIER_INGESTION_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies local frontier ingestion for the K23 proof-of-mandate chain while deferring oracle refresh.",
+    "classification": "sector33_k23_proof_of_mandate_frontier_ingestion",
+    "guard_code_map": {
+      "0": "deterministic_selection",
+      "1": "finite_authority",
+      "2": "frontier_route",
+      "3": "independent_randomness",
+      "4": "computational_hardness",
+      "5": "zero_knowledge",
+      "6": "unbounded_security",
+      "7": "broad_integration"
+    },
+    "matrix_sha256": "f834928ff72c6a7a95a937f5a70d566c63007865ab6a46acc0cd53ba076bdad4",
+    "name": "long_k23fing",
+    "process_code_map": {
+      "0": "certified_surface",
+      "1": "open_boundary",
+      "2": "candidate_operator",
+      "3": "witness_artifact",
+      "4": "focused_verifier",
+      "5": "oracle_refresh"
+    },
+    "source_code_map": {
+      "0": "long_k23csrc",
+      "1": "open_nonclaims",
+      "2": "long_k23froute",
+      "3": "long_k23fing_artifacts",
+      "4": "long-k23fing",
+      "5": "long_frontier_and_long_cluster"
+    },
+    "summary": {
+      "broad_integration_required_count": 1,
+      "broad_integration_run_count": 0,
+      "certified_ingest_count": 6,
+      "certified_input_count": 5,
+      "closed_guard_count": 3,
+      "cluster_reopen_count": 6,
+      "cluster_seam_candidate_count": 49,
+      "complete_goal_claim_flag": 0,
+      "current_frontier_preserved_flag": 1,
+      "focused_verifier_count": 1,
+      "frontier_card_count": 13,
+      "frontier_highest_yield_target_code": 12,
+      "frontier_open_count": 1,
+      "frontier_route_flag": 1,
+      "guard_row_count": 8,
+      "ingest_row_count": 6,
+      "ingested_row_count": 6,
+      "input_report_count": 5,
+      "open_boundary_preserved_count": 5,
+      "open_guard_count": 5,
+      "oracle_refresh_deferred_count": 1,
+      "overclaim_count": 0,
+      "proof_of_mandate_frontier_ingestion_flag": 1,
+      "proof_source_decision_flag": 1,
+      "ready_route_count": 4,
+      "required_open_claim_count": 0,
+      "route_blocking_count": 0
+    }
+  }
+}

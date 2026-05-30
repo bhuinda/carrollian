@@ -1,0 +1,129 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "5c7569fcc2cc9ab8f7d3b0a8bb6456f42f423f19dfbb571ea3c3c4a4264c4cbc",
+  "checks": {
+    "authority_soundness_matches": true,
+    "boundary_flags_match": true,
+    "deterministic_chain_matches": true,
+    "inputs_pass": true,
+    "security_limits_open": true,
+    "source_profile_matches": true
+  },
+  "claim": "long_k23sdet certifies the source-bound superdeterministic cryptologic boundary for the K23 proof-of-mandate chain.",
+  "closure_boundary": {
+    "certifies": [
+      "the challenge selector is deterministic and source-bound",
+      "the bounded game table has zero unexpected accepts",
+      "bounded repeated tamper words have zero false accepts through depth eight",
+      "all 56 authority decisions are mandate-bound and accepted",
+      "no independent challenge randomness is required by the finite authority layer"
+    ],
+    "does_not_certify": [
+      "independent random challenge generation",
+      "computational hardness",
+      "zero knowledge",
+      "unbounded adversary security",
+      "secrecy of repository-visible witness rows",
+      "bundle-wide integration",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23sdet.py",
+      "sha256": "59ff4f74d611853c687b0d09b4befa0da785556b49bedbd90caa522881561f4d"
+    },
+    "long_k23auth": {
+      "certificate_sha256": "3a9804e6ac37758f42c44b0ba5bde58a58486b77c8b3eb17af057bb2c955d9b1",
+      "path": "data/invariants/d20/proof_obligations/long_k23auth/report.json",
+      "sha256": "5bcd158de14cfa5d1b9f12fdd7426d08df4079769eb6fe28d37ba2603b52fa3a",
+      "status": "SECTOR33_K23_FINITE_AUTHORITY_CLOSURE_CERTIFIED"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23game": {
+      "certificate_sha256": "e9277292874464aeb1b13cfe9e7f96bcc83a454bf3f0645fe2e8e92e360216cf",
+      "path": "data/invariants/d20/proof_obligations/long_k23game/report.json",
+      "sha256": "0f1d86bdb4b6106de910e038ead70448bd16291ea2cff0af6f72c77c55c20973",
+      "status": "SECTOR33_K23_VERIFICATION_GAME_TABLE_CERTIFIED"
+    },
+    "long_k23rep": {
+      "certificate_sha256": "40af7075b5d69d467fb912a0b983cdac0b4ff0198fe2b1c05d78f4a2bdaa983e",
+      "path": "data/invariants/d20/proof_obligations/long_k23rep/report.json",
+      "sha256": "9c77be512dc328885787848401407934a96e2eeb74eeb958344c86e19b019291",
+      "status": "SECTOR33_K23_REPEATED_ROUND_ACCOUNTING_CERTIFIED"
+    },
+    "long_k23sound": {
+      "certificate_sha256": "942daa6742b554672aed14a86debb880113dab2f81f2db1c5fcb61c98c3226dc",
+      "path": "data/invariants/d20/proof_obligations/long_k23sound/report.json",
+      "sha256": "220c9d855069815e51dbfa5835d0fbd537eab9bce44ac501372df092b1bddd54",
+      "status": "SECTOR33_K23_BOUNDED_ADVERSARY_SOUNDNESS_CERTIFIED"
+    },
+    "validator": {
+      "path": "src/certify_long_k23sdet.py",
+      "sha256": "7b066a1ccd01833c9f25e617161734d103ab2ad46722e3c5dde545c9d318a552"
+    }
+  },
+  "next_highest_yield_item": "Route this deterministic cryptologic boundary into the frontier handoff, then decide whether a new challenge-source extension is needed or should stay explicitly open.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23sdet/cert.json",
+    "limit_rows_csv": "data/invariants/d20/proof_obligations/long_k23sdet/limit_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23sdet/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23sdet/k23sdet_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23sdet/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23sdet/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23sdet/seam.json",
+    "source_rows_csv": "data/invariants/d20/proof_obligations/long_k23sdet/source_rows.csv",
+    "tables": "data/invariants/d20/proof_obligations/long_k23sdet/tables.npz"
+  },
+  "schema": "long.k23sdet.report@1",
+  "stage_protocol": {
+    "closure": "certify the deterministic finite security boundary while leaving independent randomness and hardness open",
+    "coherence": "check deterministic source binding, bounded soundness, and finite authority counts",
+    "draft": "read challenge, game, repeated-round, soundness, and authority reports",
+    "emit": "write long_k23sdet artifacts and verifier hook",
+    "witness": "emit source rows, open-limit rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_SUPERDETERMINISTIC_CRYPTOLOGIC_BOUNDARY_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies the deterministic finite challenge/security boundary: no independent challenge randomness is used or claimed.",
+    "classification": "sector33_k23_superdeterministic_cryptologic_boundary",
+    "matrix_sha256": "c60a9a46ffe84398368057b2be84078f625aee6771e36e3c80330962de26d1a2",
+    "name": "long_k23sdet",
+    "summary": {
+      "accepted_authority_count": 56,
+      "all_depth_false_accept_strategy_words": 0,
+      "all_depth_tamper_reject_strategy_words": 112869680,
+      "authority_closure_source_row_count": 1,
+      "authority_row_count": 56,
+      "bounded_soundness_error_numerator": 0,
+      "bounded_soundness_source_row_count": 2,
+      "certified_input_count": 5,
+      "certified_source_row_count": 5,
+      "challenge_count": 56,
+      "complete_goal_claim_flag": 0,
+      "deterministic_source_row_count": 5,
+      "external_randomness_claim_count": 0,
+      "external_randomness_required_count": 0,
+      "finite_authority_closure_flag": 1,
+      "finite_game_source_row_count": 4,
+      "game_row_count": 336,
+      "hardness_claim_count": 0,
+      "input_report_count": 5,
+      "limit_row_count": 8,
+      "max_round_depth": 8,
+      "open_limit_count": 8,
+      "randomness_independence_claim_flag": 0,
+      "rejected_tamper_count": 280,
+      "selected_opening_unique_count": 56,
+      "source_row_count": 5,
+      "superdeterministic_cryptologic_boundary_flag": 1,
+      "unbounded_adversary_claim_flag": 0,
+      "zero_knowledge_claim_flag": 0
+    }
+  }
+}

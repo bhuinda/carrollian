@@ -1,0 +1,136 @@
+{
+  "all_checks_pass": true,
+  "certificate_sha256": "e196e26335c3977e0709bcd11bd50fa4c9297a86b67eda63448771a4dac06bc8",
+  "checks": {
+    "claim_boundary_matches": true,
+    "compact_equations_match": true,
+    "inputs_pass": true,
+    "limit_profile_matches": true,
+    "one_byte_ranges_match": true,
+    "wire_profile_matches": true
+  },
+  "claim": "long_k23wire certifies a compact table-indexed wire map for the selected K23 candidate.",
+  "closure_boundary": {
+    "certifies": [
+      "all 56 challenge rows can be represented by four one-byte table-index fields",
+      "the compact local wire map totals 224 bytes over the 56-row challenge surface",
+      "the local wire map is smaller than the digest-row surface and the selected baseline public byte count",
+      "the map depends on a shared certified table"
+    ],
+    "does_not_certify": [
+      "public wire-format equivalence",
+      "external speed or size improvement",
+      "security superiority",
+      "standards compliance",
+      "drop-in replacement behavior",
+      "deployment readiness",
+      "completion of the active discovery goal"
+    ]
+  },
+  "inputs": {
+    "derive_script": {
+      "path": "src/derive_long_k23wire.py",
+      "sha256": "a4f5d42ab4f825a492eaac76898748c0ce8d322a2ce2f3bd0c7d6d1ffb5d754b"
+    },
+    "long_k23chal": {
+      "certificate_sha256": "51e699a5d73388b88184605e314ec78c2725fff8b646f4644b471557fbfe5f29",
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/report.json",
+      "sha256": "d49adc2639aad31a25bb8790956b13191c5feeafe5723c8849010fd01f00ec1e",
+      "status": "SECTOR33_K23_VERIFIER_CHALLENGE_CERTIFIED"
+    },
+    "long_k23chal_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23chal/challenge_rows.csv",
+      "sha256": "d609fe76273d30d885b99b794ee9d1bc9ca843b35d711fd75a9daed0a2a9e6f1"
+    },
+    "long_k23norm": {
+      "certificate_sha256": "38911cb2fd6594d2455b91d3bbbfb60e64ddb496baf2d5dab603ff1df6861600",
+      "path": "data/invariants/d20/proof_obligations/long_k23norm/report.json",
+      "sha256": "583ce9f8826fcbd4f41db3131ce91bc8bf538af7bafb49c6f343d13422b9afbf",
+      "status": "SECTOR33_K23_MLKEM512_NORMALIZATION_CERTIFIED"
+    },
+    "long_k23norm_rows": {
+      "path": "data/invariants/d20/proof_obligations/long_k23norm/normalization_rows.csv",
+      "sha256": "9acaaa24d712cacde3fb28d0b8b2b129752ef7d7e9596a514f5e4d2d7be8e5c4"
+    },
+    "validator": {
+      "path": "src/certify_long_k23wire.py",
+      "sha256": "005dcf045dce686e32ec46441cfc8d8217e482dbc93d1fba6c1cb84395634b18"
+    }
+  },
+  "next_highest_yield_item": "Decide whether shared-table dependence is acceptable: either lift the compact wire map into a self-contained public transcript or demote the external-efficiency path.",
+  "outputs": {
+    "certificate": "data/invariants/d20/proof_obligations/long_k23wire/cert.json",
+    "equation_rows_csv": "data/invariants/d20/proof_obligations/long_k23wire/equation_rows.csv",
+    "limit_rows_csv": "data/invariants/d20/proof_obligations/long_k23wire/limit_rows.csv",
+    "manifest": "data/invariants/d20/proof_obligations/long_k23wire/manifest.json",
+    "matrices": "data/invariants/d20/proof_obligations/long_k23wire/k23wire_matrices.npz",
+    "obs_csv": "data/invariants/d20/proof_obligations/long_k23wire/obs.csv",
+    "report": "data/invariants/d20/proof_obligations/long_k23wire/report.json",
+    "seam": "data/invariants/d20/proof_obligations/long_k23wire/seam.json",
+    "tables": "data/invariants/d20/proof_obligations/long_k23wire/tables.npz",
+    "wire_rows_csv": "data/invariants/d20/proof_obligations/long_k23wire/wire_rows.csv"
+  },
+  "schema": "long.k23wire.report@1",
+  "stage_protocol": {
+    "closure": "certify compact shared-table encoding without claiming public wire equivalence or external improvement",
+    "coherence": "check one-byte index ranges, compact-byte equations, and explicit nonclaims",
+    "draft": "read long_k23norm and the certified challenge table",
+    "emit": "write long_k23wire artifacts and verifier hook",
+    "witness": "emit wire rows, byte equations, open-limit rows, observables, and numeric tables"
+  },
+  "status": "SECTOR33_K23_COMPACT_WIRE_MAP_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies a compact table-indexed local wire map for the selected candidate, while leaving public wire equivalence and external improvement claims open.",
+    "classification": "sector33_k23_compact_table_index_wire_map",
+    "equation_code_map": {
+      "0": "wire_total_bytes",
+      "1": "saved_vs_internal_digest_bytes",
+      "2": "wire_total_less_than_internal_digest_bytes",
+      "3": "wire_total_less_than_baseline_public_exchange_bytes",
+      "4": "delta_vs_baseline_public_bytes"
+    },
+    "limit_code_map": {
+      "0": "shared_certified_table_required",
+      "1": "wire_format_equivalence",
+      "2": "security_reduction",
+      "3": "interop_or_deployment"
+    },
+    "matrix_sha256": "e5c8bb9114222049eaeff25eb3fe602a4d0abffd49f7c4a08e15f7065d02d34b",
+    "name": "long_k23wire",
+    "summary": {
+      "certified_input_count": 2,
+      "compact_vs_baseline_public_flag": 1,
+      "compact_vs_internal_digest_flag": 1,
+      "compact_wire_map_flag": 1,
+      "complete_goal_claim_flag": 0,
+      "delta_vs_baseline_public_bytes": -1344,
+      "digest_free_wire_count": 56,
+      "equation_pass_count": 5,
+      "equation_row_count": 5,
+      "external_improvement_claim_count": 0,
+      "input_report_count": 2,
+      "limit_row_count": 4,
+      "max_residual_class_code": 55,
+      "max_selected_opening_id": 90,
+      "max_selector_value_mod": 5,
+      "max_transcript_id": 55,
+      "norm_baseline_public_exchange_bytes": 1568,
+      "norm_internal_public_digest_bytes": 5376,
+      "one_byte_field_count": 4,
+      "open_limit_count": 4,
+      "overclaim_count": 0,
+      "saved_vs_internal_digest_bytes": 5152,
+      "table_index_dependency_count": 56,
+      "wire_equivalence_claim_count": 0,
+      "wire_row_bytes": 4,
+      "wire_row_count": 56,
+      "wire_total_bytes": 224
+    },
+    "wire_field_map": {
+      "0": "transcript_id",
+      "1": "selected_opening_id",
+      "2": "residual_class_code",
+      "3": "selector_value_mod"
+    }
+  }
+}

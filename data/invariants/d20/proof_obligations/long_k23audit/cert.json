@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "audit_profile_matches": true,
+    "boundary_flags_match": true,
+    "equation_profile_matches": true,
+    "input_pass": true,
+    "limit_profile_matches": true,
+    "totals_match": true
+  },
+  "schema": "long.k23audit.cert@1",
+  "status": "SECTOR33_K23_LOCAL_AUDIT_COST_CERTIFIED",
+  "witness": {
+    "boundary": "This certifies local verifier-side audit cost reduction under shared-table dereference while preserving public transport demotion.",
+    "classification": "sector33_k23_local_verifier_audit_cost",
+    "equation_code_map": {
+      "0": "local_wire_total_bytes",
+      "1": "digest_surface_total_bytes",
+      "2": "saved_audit_total_bytes",
+      "3": "local_total_less_than_digest_total"
+    },
+    "limit_code_map": {
+      "0": "shared_table_availability",
+      "1": "public_transport_claim",
+      "2": "security_or_interop_claim"
+    },
+    "matrix_sha256": "1e0602bb90cf24c273abc8ae9562599989942826a41cc5543559f0d6ab71452f",
+    "name": "long_k23audit",
+    "summary": {
+      "audit_row_count": 56,
+      "certified_input_count": 1,
+      "complete_goal_claim_flag": 0,
+      "digest_surface_bytes_per_row": 96,
+      "digest_surface_total_bytes": 5376,
+      "equation_pass_count": 4,
+      "equation_row_count": 4,
+      "external_efficiency_path_demoted_count": 1,
+      "input_report_count": 1,
+      "limit_row_count": 3,
+      "local_audit_cost_flag": 1,
+      "local_audit_improvement_count": 56,
+      "local_wire_bytes_per_row": 4,
+      "local_wire_total_bytes": 224,
+      "open_limit_count": 3,
+      "overclaim_count": 0,
+      "public_transport_claim_count": 0,
+      "saved_audit_bytes_per_row": 92,
+      "saved_audit_total_bytes": 5152,
+      "table_dependency_count": 56
+    }
+  }
+}

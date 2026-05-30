@@ -1,0 +1,84 @@
+{
+  "checks": {
+    "baseline_profile_matches": true,
+    "boundary_flags_match": true,
+    "candidate_profile_matches": true,
+    "inputs_pass": true,
+    "limit_profile_matches": true,
+    "source_counts_match": true,
+    "totals_match": true
+  },
+  "schema": "long.k23bench.cert@1",
+  "status": "SECTOR33_K23_BENCHMARK_SURFACE_CERTIFIED",
+  "witness": {
+    "baseline_code_map": {
+      "0": "NIST_FIPS_203_ML_KEM",
+      "1": "NIST_SP_800_227_KEM_RECOMMENDATIONS",
+      "2": "NIST_FIPS_204_ML_DSA",
+      "3": "NIST_FIPS_205_SLH_DSA"
+    },
+    "boundary": "This materializes internal benchmark columns for the six productive-potential rows, while leaving external metric baselines and improvement claims open.",
+    "classification": "sector33_k23_internal_benchmark_surface",
+    "limit_code_map": {
+      "0": "spec_normalized_bit_or_byte_model",
+      "1": "operation_model_normalization",
+      "2": "implementation_timing_or_memory_benchmark",
+      "3": "security_reduction_or_adversary_model",
+      "4": "interoperability_and_compliance_check",
+      "5": "deployment_profile_measurement"
+    },
+    "matrix_sha256": "d8dc7ce621be089f2b16ff34ed122973d9489883da78c3526cf4ea182e695cfe",
+    "name": "long_k23bench",
+    "operation_basis_code_map": {
+      "0": "challenge_row_count",
+      "1": "one_round_game_row_count",
+      "2": "bounded_strategy_word_count",
+      "3": "authority_acceptance_row_count",
+      "4": "mandate_ledger_row_count",
+      "5": "deterministic_challenge_source_row_count"
+    },
+    "potential_code_map": {
+      "0": "entropy_budget_reduction_candidate",
+      "1": "bounded_tamper_rejection_harness",
+      "2": "finite_strategy_accounting_audit",
+      "3": "authority_decision_table_candidate",
+      "4": "frontier_ingestion_ledgerability",
+      "5": "deterministic_challenge_source_boundary"
+    },
+    "summary": {
+      "accepted_authority_count": 56,
+      "all_depth_tamper_reject_strategy_words": 112869680,
+      "baseline_row_count": 4,
+      "benchmark_candidate_count": 6,
+      "benchmark_complete_count": 6,
+      "benchmark_surface_flag": 1,
+      "candidate_row_count": 6,
+      "certified_input_count": 6,
+      "challenge_count": 56,
+      "complete_goal_claim_flag": 0,
+      "explicit_baseline_count": 6,
+      "external_numeric_baseline_count": 0,
+      "external_superiority_claim_flag": 0,
+      "game_row_count": 336,
+      "improvement_claim_count": 0,
+      "input_report_count": 6,
+      "internal_operation_total": 112870196,
+      "ledger_row_count": 12,
+      "limit_row_count": 6,
+      "metric_baseline_materialized_count": 0,
+      "official_baseline_count": 4,
+      "open_limit_count": 6,
+      "opening_row_count": 91,
+      "operation_count_column_present_count": 6,
+      "overclaim_count": 0,
+      "potential_row_count": 6,
+      "productive_potential_count": 6,
+      "public_transcript_count": 56,
+      "required_before_improvement_claim_count": 6,
+      "transcript_size_column_present_count": 6,
+      "transcript_size_total_rows": 804,
+      "verification_path_column_present_count": 6,
+      "verification_path_total": 112870140
+    }
+  }
+}
